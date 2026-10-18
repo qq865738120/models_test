@@ -1,0 +1,2034 @@
+
+[PDF page 1]
+Beyond the Riemann Hypothesis bounds: A
+pair-correlation approach to the least prime in
+arithmetic progression and the smallest quadratic
+non-residue
+Neelam Kandhil 1*†, Alessandro Languasco 2† and Pieter Moree 3†
+1,3Max-Planck-Institut f¨ ur Mathematik, Vivatsgasse 7, Bonn, D-53111, Germany.
+2Dipartimento di Ingegneria dell’Informazione - DEI, Universit` a di Padova, Via
+Gradenigo 6/b, Padova, 35131, Italy.
+*Corresponding author(s). E-mail(s):neelamkandhil091@gmail.com;
+Contributing authors:alessandro.languasco@unipd.it;moree@mpim-bonn.mpg.de;
+†These authors contributed equally to this work.
+Abstract
+The Generalized Riemann Hypothesis (GRH) has long defined the expected
+bounds for the smallest prime in an arithmetic progression and the least quadratic
+non-residue. However, this hypothesis primarily addresses the horizontal loca-
+tion of non-trivial zeros. In this paper, we show that incorporating the vertical
+spacing–or pair-correlation–of these zeros allows us to surpass these classical
+bounds. By combining these two zero-distribution perspectives, we establish
+sharper estimates for both problems under GRH and specific pair-correlation hy-
+potheses, thereby providing a new link between pair-correlation phenomena for
+DirichletL-functions and these two classical problems.
+Keywords:Primes in arithmetic progressions, least quadratic non-residues, Dirichlet
+L-functions, Generalized Riemann Hypothesis, pair-correlation conjectures.
+MSC Classification:Primary 11M26; Secondary 11N13 , 11L40 , 11M50
+1
+arXiv:2607.14515v1  [math.NT]  16 Jul 2026
+
+[PDF page 2]
+1 Introduction
+The distribution of primes and the behavior of arithmetic characters are central
+themes in analytic number theory. Two of the most celebrated problems in these ar-
+eas concern the size of the smallest prime in an arithmetic progression and the least
+quadratic non-residue. Historically, these problems are often associated with the names
+of Linnik and Vinogradov and the progress on these problems has been dictated by
+our understanding of the distribution of the non-trivial zeros of DirichletL-functions.
+While the pole of Riemann zeta function ats= 1 determines the “main term”
+of our counting functions, the location of zeros of DirichletL-functions governs the
+size of the “error terms” that ultimately define these bounds (see Lemma 2 in§2).
+Under the assumption of the Generalized Riemann Hypothesis (GRH), we obtain a
+rigid horizontal control that places all non-trivial zeros on the critical line. In the
+classical approach, while we assume the zeros lie on the critical line, we have very
+little information about how they are spaced vertically. Recent developments in the
+spectral theory of these zeros, most notably the Montgomery pair-correlation conjec-
+ture ([24]) for the Riemann zeta-function, suggest that these zeros exhibit a form of
+repulsion that leads to a much more regular and even vertical distribution than pre-
+viously assumed. This phenomenon reflects a deep connection with Random Matrix
+Theory, suggesting that the spacing of zeros of zeta functions mimics the distribu-
+tion of eigenvalues of a generic large unitary matrix after appropriate scaling. In our
+previous work [13], we have shown that a suitable analogue of the Montgomery pair-
+correlation conjecture formulated for the non-trivial zeros of DirichletL-functions has
+very strong implications for the distribution of primes in arithmetic progressions. In
+this paper, we further exploit this refined conjectural information and show that it
+leads to better results on these two celebrated problems of Linnik and Vinogradov.
+For an accessible introduction to the classical pair-correlation conjecture, see, e.g.,
+Goldston [7].
+1.1 Estimates on least quadratic non-residue
+For a given primeq, letn(q) denote the least natural number that is not a quadratic
+residue moduloq. The first breakthrough in obtaining a good upper bound forn(q)
+is due to Vinogradov [28], who proved thatn(q)≪q
+1
+2√ e (logq) 2 for all primesq, and
+conjecturedthat
+n(q)≪qε,(1)
+for any fixedε>0. This conjecture remains open unconditionally; the best available
+bound (up to refinements of theq εfactor) for general primesqisn(q)≪q
+1
+4√ e +ε,for
+any fixedε>0. This is a well-known result of Burgess [4]. Linnik [18] demonstrated
+unconditionally that the set of primes for which Vinogradov’s conjecture fails has
+density zero.
+Next we consider conditional results. In 1942, Linnik [18] showed that Vinogradov
+conjecture (1) follows assuming GRH; in 1952, Ankeny [1] improved the bound fur-
+ther ton(q)≪(logq) 2 under the same hypothesis. Later in 2015, Lamzouri, Li
+and Soundararajan [15, Corollary 1.1] refined this ton(q)≤(logq) 2,for allq≥5,
+2
+
+[PDF page 3]
+again assuming GRH. In the same year, Tao [26] proved that Vinogradov’s conjec-
+ture follows from the Elliott–Halberstam conjecture. In 2016, assuming a conjectural
+improvement to bounds for long character sums, Bober and Goldmakher [3] showed
+thatn(q)≪(logq) 1.4 for primesq≡3 (mod 4) and provided heuristic arguments
+suggesting that the exponent 1.4 should be replaceable by 1 +ε.
+Regarding lower bounds, assuming GRH, in 1971 Montgomery [23, Theorem 13.15]
+established that
+n(q) = Ω
+(
+(logq) log logq
+)
+.
+In 1990, Graham and Ringrose [9]unconditionallyproved thatn(q) = Ω
+(
+(logq)
+log log logq
+)
+.For a comprehensive overview of these developments, see [21].
+In this article we are interested in the implication of various pair-correlation
+hypotheses for prime number theory. In particular, we show that a suitable pair-
+correlation hypothesis for the zeros of the quadratic DirichletL-function leads to a
+conditional improvement on the best known upper bound forn(q). This hypothesis is
+the direct analogue of Montgomery’s pair-correlation conjecture forζ(s). In order to
+state it, we start by defining the pair-correlation functions for the zeros of Dirichlet
+L-functions associated with quadratic characters.
+Throughout this note,sdenotes a complex number,ka natural number,q≥3
+a prime,χ□ the quadratic character modkandL(s,χ □) the associated DirichletL-
+function. From now on, we assume the Riemann Hypothesis for DirichletL-functions
+associated with quadratic characters. Letγj be the imaginary part of thej-th zero
+(ordered by height on the half line) and put
+F +
+χ□
+(x,T) :=
+∑
+0≤γj≤T, j=1,2
+L(1/2+iγj,χ□ )=0
+xi(γ1−γ2)W(γ1−γ2),
+whereW(u) = 4/(4+u 2). We remark that, sinceχ□ is real, the zeros of the associated
+DirichletLfunction are symmetrically distributed with respect to the real axis; hence
+F +
+χ□
+(x,T) =F −
+χ□
+(x,T), where
+F−
+χ□
+(x,T) :=
+∑
+−T≤γj≤0, j=1,2
+L(1/2+iγj,χ□ )=0
+xi(γ1−γ2)W(γ1−γ2).
+Our choice is to work withF +
+χ□
+(x,T) only. Henceforth, whenever in this section we
+writeγandγj in the summation without additional specifications, we assume, that
+L(1/2 +iγ,χ□) = 0, respectivelyL(1/2 +iγ j,χ□) = 0. Furthermore, in all of our
+sums, we count zeros of DirichletL-functions withmultiplicity.
+Now, using classical results about the distribution of the zeros of the Dirichlet
+L-functions ([5, Ch. 16, eqn. 1] and [5, Ch. 16, Lemma]), we deduce that
+|F+
+χ□
+(x,T)|≤
+∑
+0≤γj≤T, j=1,2
+4
+4 + (γ1−γ2)2≪T(log(kT))2,
+uniformly ink,xasT→∞.
+3
+
+[PDF page 4]
+We first prove the following result for the rangex≤T≤ex, inspired by a theorem
+proved in 1973 by Montgomery [24].
+Theorem 1.Under RH for the DirichletL-function associated withχ □, the quadratic
+character modulok, asymptotically inxwe have
+F +
+χ□
+(x,T)≪Tlog(kx),
+uniformly for3≤k≤exp
+(
+x(logx)−1)
+andx≤T≤ex.
+In the application we will only need upper bound estimates forF +
+χ□
+(x,T). For
+completeness, we will also give a result on its asymptotic behavior. This result requires
+GRH, since in a key point of the proof we use the prime number theorem in arithmetic
+progressions with error term.
+Theorem 2.Under GRH, asymptotically inxwe have
+F +
+χ□
+(x,T)∼T
+2πlogx
+uniformly forx≤T≤ex and3≤k≤√x/(logx) 3.
+Theorem 1 gives an upper bound forF +
+χ□
+(x,T) in the rangex≤T≤e x, the
+following hypothesis postulates that this bound remains valid in the larger range
+xε≤T <x.
+Hypothesis 1.Under RH for the DirichletL-function associated withχ □, the
+quadratic character modulok, asymptotically inxwe have
+F +
+χ□
+(x,T)≪Tlog(kx),
+uniformly for
+3≤k≤exp
+(
+x(logx)−1)
+andx ε≤T <x.
+This can be seen as the analogue of the pair-correlation conjecture used by Heath-
+Brown [11] in 1982, but for the DirichletL-function associated with the quadratic
+character modulok. In fact, in our application involvingn(q), we use the assumption
+only withk=qa prime, so from that perspective it suffices to state it only for prime
+moduli.
+We are now ready to state the main result of this section.
+Theorem 3.Letε>0,qbe a sufficiently large prime andn(q)be the least quadratic
+non-residue moduloq. Assuming RH for DirichletL-functions associated with the
+quadratic character moduloqand Hypothesis 1, we have
+n(q)≪(logq)1+ε.(2)
+4
+
+[PDF page 5]
+Remark 1.If theT-uniformity range in Hypothesis 1 is enlarged to (logx) 2≤T <x,
+then the estimate (2) can be further refined ton(q)≪(logq)(log logq) 2.
+1.2 Linnik’s constant
+Letkandabe coprime natural numbers with 1≤a≤k−1. The least primep>a
+for whichp≡a(modk) we denote byp(k,a). The existence ofp(k,a) is guaranteed
+by Dirichlet’s classical theorem on primes in arithmetic progression, which states that
+there are infinitely many primesp≡a(modk). A fundamental breakthrough was
+achieved by Linnik [19, 20], who established that
+p(k,a)≪kL (3)
+for some absolute constantL. His proof is a masterpiece involving a log-free zero-
+density theorem for DirichletL-functions and a result on the Deuring–Heilbronn
+phenomenon, a “repulsion” effect due to the possible existence of the so-called
+“exceptional” zero that generates a larger zero-free region for the DirichletL-functions.
+Subsequent research has focused on refining the value of the exponent in (3) (now
+known as “Linnik’s constant”). In 1992, Heath-Brown [12] proved thatL≤5.5. In
+2018, Xylouris [29, 30], using improvement ideas indicated in Heath-Brown’s paper,
+lowered the bound toL≤5, which has not been improved since. In the special case
+when the moduluskis prime, Meng [22] achievedL= 4.5.
+Let
+p(k) := max
+1≤a≤k−1
+(a,k)=1
+p(k,a).
+In 1930, Titchmarsh [27, Theorem 6] proved, assuming GRH, thatp(k)≪k 2(logk) 4.
+In 1977, Kumar Murty [14] applied the Bombieri–Vinogradov theorem to prove that,
+for everyε>0, one hasp(k)<k 2+εfor almost all integersk. Assuming the Elliott–
+Halberstam conjecture, this bound may be improved to
+p(k)<k 1+ε (4)
+for almost allk. In [13] we proved, assuming GRH and a suitable form of the pair-
+correlation conjecture for DirichletL-functions, Montgomery’s conjecture on primes
+(as modified by Friedlander and Granville [6, Conjecture 1(b), p. 366]), namely
+ψ(x;k,a)−x
+φ(k)≪
+√ x
+φ(k)xεfor every 1≤k≤x1−ε,(5)
+holds true, whereφdenotes Euler’s totient function. As a consequence, (4) follows for
+everyk. In 1978, Heath-Brown [10] conjectured thatp(k)≪k(logk) 2.
+In 1996, Bach and Sorenson [2], assuming GRH, established thatp(k,a)≤(1 +
+o(1))(φ(k) logk)2,and also derived the explicit boundp(k,a)≤2(klogk) 2.In 2015,
+Lamzouri, Li and Soundararajan [15, Corollary 1.2] (see also [16]) sharpened this,
+assuming GRH, top(k,a)≤(φ(k) logk)2,fork >3 and observed that one may derive
+5
+
+[PDF page 6]
+an asymptotic bound of the formp(k,a)≤(1−δ+o(1))(φ(k) logk)2 for some small
+δ >0.
+Our goal here is to obtain a (conditional) improvement of the upper bound for
+p(k) given in (4). By reworking our argument in [13], we will show that a suitable
+pair-correlation hypothesis for the zeros of DirichletL-functions will let us improve
+on (4).
+We define the pair-correlation functions for the zeros of DirichletL-functions anal-
+ogous to those introduced in the previous section (and already used in our earlier
+paper [13]). Assume the Riemann Hypothesis for DirichletL-functions (GRH). Let
+kbe a natural number,χa Dirichlet character modulokandL(s,χ) the associated
+DirichletL-function. Letγj be the imaginary part of thej-th zero (ordered by height
+on the half line). Given two Dirichlet charactersχ1 andχ2 modulok, one can wonder
+to what extent the zeros ofL(s,χ1) are correlated with those ofL(s,χ 2). In order to
+measure this, we define
+F +
+k (x,T) =F +
+k (x,T;a) :=
+∑
+χ1,χ2 (modk)
+χ1(a)χ2(a)G+
+χ1,χ2(x,T),
+and
+Fk(x,T) =F k(x,T;a) :=
+∑
+χ1,χ2 (modk)
+χ1(a)χ2(a)Gχ1,χ2(x,T),
+where
+G+
+χ1,χ2(x,T) :=
+∑
+0≤γj≤T,j=1,2
+L(1/2+iγj,χj )=0
+xi(γ1−γ2)W(γ1−γ2),
+and
+Gχ1,χ2(x,T) :=
+∑
+|γj|≤T,j=1,2
+L(1/2+iγj,χj )=0
+xi(γ1−γ2)W(γ1−γ2).
+Now, using classical results about the distribution of zeros of DirichletL-functions
+([5, Ch. 16, eq. (1)] and [5, Ch. 16, Lemma]), we have
+|G+
+χ1,χ2(x,T)|≤
+∑
+0≤γj≤T,j=1,2
+L(1/2+iγj,χj )=0
+4
+4 + (γ1−γ2)2≪T(log(kT))2,
+uniformly inxasT→∞. Therefore, under GRH we have
+F +
+k (x,T)≪T(φ(k) log(kT))2,
+uniformly inxasT→∞.
+We recall the following result from [13], which provides an estimate for the pair-
+correlation function whenTis large relative tox:
+Theorem.[13, Theorem 2] Letε>0be arbitrary and fixed. Under GRH, asx→∞,
+we have
+Fk(x,T)≪φ(k)TlogxandF +
+k (x,T)≪φ(k)Tlogx
+6
+
+[PDF page 7]
+uniformly for everyacoprime withkand
+1≤k≤x1−εandx≤T≤exp(√x).
+A discussion about the necessity of having to formulate separate results and con-
+jectures for bothF k(x,T) andF +
+k (x,T) can be found in the Introduction of [13]. In
+the same paper it was also explained why the reduction of the exponent ofφ(k) from
+2 to 1 in the estimates forF k(x,T) andF +
+k (x,T) is the most important feature of
+such a result. This reduction was achieved by exploiting the orthogonality of Dirichlet
+characters in the definition ofF k(x,T) andF +
+k (x,T).
+In [13, Remark 1] we also noted that thek-uniformity range in Theorem 1.2 can
+be extended to 1≤k≤x/(logx)1+εat the cost of weaker estimates, with the bounds
+forF k(x,T) andF +
+k (x,T) being of orderφ(k)T(logx) 2.
+We will show that having estimates forFk(x,T) andF +
+k (x,T) in the range whereT
+is small relative tox, allows one to obtain estimates for primes in arithmetic progres-
+sions sharper than (5). Specifically, we will consider the implications of the following
+hypothesis.
+Hypothesis 2.Letc 1 >0andc 2 ∈(1/2,1)be fixed. Under GRH, we have, as
+x→∞,
+Fk(x,T)≪φ(k)Texp
+(
+c1(logx)c2
+)
+andF +
+k (x,T)≪φ(k)Texp
+(
+c1(logx)c2
+)
+uniformly for
+exp
+(
+c1(logx)c2
+)
+< k≤xexp
+(
+−2c1(logx)c2
+)
+andexp
+(
+c1(logx)c2
+)
+≤T <x.
+Using it, in conjunction with the GRH, we are able to prove the following result.
+Theorem 4.Letc 1 >0andc 2∈(1/2,1)be fixed. Assume that both GRH and
+Hypothesis 2 hold true. Then
+ψ(x;k,a)−x
+φ(k)≪
+√ x
+φ(k)exp
+(
+c1(logx)c2
+)
+forxsufficiently large and uniformly for1≤k≤xexp
+(
+−2c1(logx)c2
+)
+and1≤a≤k
+with(a,k) = 1.
+The quality of the upper bound and of thek-uniformity level in Theorem 4 are
+crucial features. In an email communication about a previous version of this work,
+Granville remarked that the results in [6] imply that
+ψ(x;k,a)−x
+φ(k)≫u−ux
+φ(k),(6)
+whereuis such thatx/k= (logx) u with 1≤k≤x. As a consequence, Theorem 4 with
+exp
+(
+c1(logx)c2
+)
+replaced by (logx) A uniformly for 1≤k≤x(logx)−B,A,B >0,
+7
+
+[PDF page 8]
+cannot hold true. Moreover, Conjecture 1(a) of [6, p. 366] states that
+ψ(x;k,a)≪ε
+x
+φ(k) (7)
+is admissible for 1≤k≤x/(logx)2+ε. We note that thek-uniformity level in the
+statement of Hypothesis 2 is sharp, in the sense that otherwise the resulting variant
+of Theorem 4 would be in contradiction with formulae (6)-(7).
+We also remark that the sub-range 1≤k≤exp
+(
+c1(logx)c2
+)
+in Theorem 4 is
+handled by using the well-known estimate
+ψ(x;k,a)−x
+φ(k)≪√x(logx) 2,(8)
+that can be established using GRH.
+The technique we use in proving Theorem 4 is similar to that used by Heath-Brown
+in his proof of Theorem 1 in [11].
+As a consequence of Theorem 4 we obtain the following estimate forp(k).
+Theorem 5.Given coprime natural numbersaandkwith1≤a≤k−1, denote by
+p(k,a)be the least prime greater thanasuch thatp≡a(modk). Assume that both
+GRH and Hypothesis 2 hold true. Then there existA∈(1/2,1)andB >0such that
+p(k) = max
+1≤a≤k−1
+(a,k)=1
+p(k,a)≪φ(k) exp
+(
+B(logk)A)
+.
+The constantsA,Bappearing above correspond with the constantsc 2, respectively
+2c1 in Theorem 4.
+Remark 2.Unfortunately, this technique does not bring us closer to establishing
+Heath-Brown’s conjectural estimatep(k)≪k(logk)2. Namely, we would need a larger
+uniformity range forkin Hypothesis 2 and in Theorem 4, contradicting the results of
+Friedlander and Granville [6] just described above.
+2 Preliminaries
+2.1 Prime number distribution
+In this section, we recall the material we need on the distribution of prime numbers,
+using the notations
+π(t):=
+∑
+p≤t
+1, π(t;k,a) :=
+∑
+p≤t
+p≡a(modk)
+1,
+8
+
+[PDF page 9]
+and
+ψ(t):=
+∑
+n≤t
+Λ(n), ψ(t;k,a) :=
+∑
+n≤t
+n≡a(modk)
+Λ(n), ψ(t,χ) :=
+∑
+n≤t
+Λ(n)χ(n),
+where Λ denotes the von Mangoldt function andχa Dirichlet character modulok.
+Two equivalent forms of the Prime Number Theorem are
+π(t)∼
+∫ t
+2
+du
+logu andψ(t)∼t(t→∞).
+For fixed coprime integersaandk, we have asymptotic equidistribution:
+π(t;k,a)∼π(t)
+φ(k),andψ(t;k,a)∼ ψ(t)
+φ(k) (t→∞).
+An important tool we will use is the following theorem (for a proof, see, e.g.,
+Montgomery–Vaughan [25, Sect. 3–6]).
+Classical Theorem 1 (Brun–Titchmarsh theorem).Letx,y >0anda,kbe
+coprime positive integers. Then, uniformly for ally >k, we have
+π(x+y;k,a)−π(x;k,a)< 2y
+φ(k) log(y/k).
+Starting point for our deliberations is an explicit truncated form of the von Man-
+goldt explicit formula, which we state in the classical, respectively DirichletL-function
+case.
+Lemma 1.[5, Ch. 17]. Let2≤Z≤x. Assuming RH, we have, asx→∞,
+ψ(x) =x−
+∑
+|γ|≤Z
+ζ(1/2+iγ)=0
+x1/2+iγ
+1/2 +iγ+O
+(x
+Z (log(xZ)) 2
+)
+.
+Lemma 2.[5, Ch. 19]. Ifχis a non principal character modulokand2≤Z≤x,
+then assuming RH forL(s,χ)holds, we have, asx→∞,that
+ψ(x,χ) =−
+∑
+|γ|≤Z
+L(1/2+iγ)=0
+x1/2+iγ
+1/2 +iγ+O
+(x
+Z (log(kxZ)) 2
+)
+.(9)
+As an immediate consequence we have:
+9
+
+[PDF page 10]
+Lemma 3.[5, Ch. 19–20]. Ifχis a non principal character modulok, then assuming
+RH forL(s,χ)holds, we have, asx→∞,that
+ψ(x,χ)≪√x(log(kx))2.
+We will apply the Cauchy–Schwarz inequality (L 2-norm form) multiple times in
+our proofs and so we state it here:
+⏐⏐⏐
+∫ b
+a
+f(t)g(t) dt
+⏐⏐⏐≤
+(∫ b
+a
+|f(t)|2 dt
+)1/2(∫ b
+a
+|g(t)|2 dt
+)1/2
+,(10)
+wherefandgare arbitrary square-integrable complex functions.
+We also record the Sobolev–Gallagher inequality (which will play an important
+role in proving Lemma 8).
+Lemma 4.[23, Lemma 1.1] Leta<bbe real numbers andfa continuous complex
+valued function on[a,b], with continuous first derivativef ′in(a,b). Then
+|f(u)|≤1
+b−a
+∫ b
+a
+|f(t)|dt+
+∫ b
+a
+|f′(t)|dt
+for anyuin[a,b].
+Finally, we state an analogue of Lemma 6 of Goldston–Montgomery [8]. It will be
+crucially used in the proof of Lemma 6.
+Lemma 5.[8, Lemma 6] LetS(t) := ∑
+µ∈Mc(µ)e2πiµtbe a Fourier series with
+Mbe a countable set of real numbers and withc(µ)real Fourier coefficients. If∑
+µ∈M|c(µ)|<∞, then uniformly forT≥1and1/T≤δ≤1, we have
+∫ T
+0
+|S(t)|2 dt=T
+∑
+µ∈M
+|c(µ)|2 +O
+(
+δ−1∑
+µ∈M
+|c(µ)|2 +T
+∑
+µ,ν∈M
+0<|µ−ν|<δ
+|c(µ)c(ν)|
+)
+.
+3 Proofs of Theorems 1 and 2
+First of all we remark that ifχ′
+□
+(modk 1) is the primitive character that inducesχ□
+(modk) thenF +
+χ′
+□
+(x,T) =F +
+χ□
+(x,T) andk 1|k. Therefore, it is sufficient to prove
+Theorem 1 for primitive quadratic characters only.
+Under RH for the DirichletL-function associated with the quadratic character
+modulok, following the argument in Landau [17, p. 353] we obtain fork≥3, (a,k) =
+1,x>1, and for primitive quadratic charactersχ □, the identity
+∑′
+n≤x
+Λ(n)χ□(n)
+ns =
+∞∑
+ℓ=0
+x−2ℓ−s−a
+2ℓ+s+a−
+∑
+ρ
+xρ−s
+ρ−s−L′
+L (s,χ□),
+10
+
+[PDF page 11]
+where the dash over the summation symbol indicates that only half of the term with
+n=xis to be included in the sum. As is customary, the sum over the non-trivial
+zeroes has to be interpreted in the symmetrical sense as limZ→∞
+∑
+|γ|<Z,s∈C,s̸=ρ,
+s̸=−(2ℓ+a),a= 0 ifχ□(−1) = 1, anda= 1 ifχ□(−1) =−1. Lettings=σ+it
+andρ= 1/2 +iγ, and following the proof of Montgomery [24, pp. 185–186] (see also,
+[13,§3]), the previous formula can be rewritten as
+∑
+ρ
+x1/2−σxi(γ−t)
+σ−1/2 +i(t−γ)= L′
+L (s,χ□) +
+∑′
+n≤x
+Λ(n)χ□(n)
+ns −
+∞∑
+ℓ=0
+x−2ℓ−s−a
+2ℓ+s+a.(11)
+On replacingsby 1−σ+it, we obtain
+∑
+ρ
+xσ−1/2xi(γ−t)
+1/2−σ+i(t−γ)= L′
+L (1−σ+it,χ□) +
+∑′
+n≤x
+Λ(n)χ□(n)
+n1−σ+it
+−
+∞∑
+ℓ=0
+x−2ℓ−1+σ−it−a
+2ℓ+ 1−σ+it+a.(12)
+Subtracting the respective sides of (12) from (11) and using the relation
+L′
+L (s,χ□) =−
+∑
+n≥1
+Λ(n)χ□(n)
+ns (ℜ(s)>1),(13)
+we obtain
+∑
+γ
+(2σ−1)xiγ
+(σ−1/2)2 + (t−γ)2 =−1√x
+(∑′
+n≤x
+Λ(n)χ□(n)
+(x
+n
+)1−σ+it
++
+∑
+n>x
+Λ(n)χ□(n)
+(x
+n
+)σ+it)
+−L′
+L (1−σ+it,χ□)x1/2−σ+it
+−1√x
+∞∑
+ℓ=0
+(2σ−1)x−2ℓ−a
+(σ−1−it−2ℓ−a)(σ+it+ 2ℓ+a).(14)
+For primitiveχ□ (modk) we obtain, by logarithmic differentiation of both sides
+appearing in the functional equation ofL(s,χ □), the estimate
+−L′
+L (1−σ+it,χ□) = log
+(kτ
+2π
+)
++ L′
+L (σ−it,χ□) +Oσ(1),
+withτ=|t|+ 2, which, using (13), forσ >1 becomes
+−L′
+L (1−σ+it,χ□) = log(kτ) +Oσ(1).(15)
+11
+
+[PDF page 12]
+Lettingσ= 3/2, inserting (15) into (14), we have
+⏐⏐⏐
+∑
+γ
+2xiγ
+1 + (t−γ)2
+⏐⏐⏐
+2
+=
+⏐⏐⏐
+∑
+1≤j≤3
+Rj(x,t)
+⏐⏐⏐
+2
+,(16)
+where
+R1(x,t) :=−1√x
+(∑′
+n≤x
+Λ(n)χ□(n)
+(x
+n
+)−1/2+it
++
+∑
+n>x
+Λ(n)χ□(n)
+(x
+n
+)3/2+it)
+,
+R2(x,t) :=x−1+it(log(kτ) +O(1)),
+R3(x,t) :=O(x−1/2τ−1).
+The precise definition ofR 2 andR 3 is not relevant for our purposes, the estimates
+above will suffice.
+Proof of Theorem 1.We integrate both sides of equation (16) fromt= 0 tot=T,
+whereTwill be specified later. The left hand side of equation (16) can be written as
+∑
+γj,j=1,2
+4xi(γ1−γ2)
+(1 + (t−γ1)2)(1 + (t−γ2)2),
+Now we integrate this function fromt= 0 tot=T.We claim that
+∫ T
+0
+∑
+γj,j=1,2
+4xi(γ1−γ2)
+(1 + (t−γ1)2)(1 + (t−γ2)2) dt
+=
+∫ ∞
+−∞
+∑
+0≤γj≤T
+j=1,2
+4xi(γ1−γ2)
+(1 + (t−γ1)2)(1 + (t−γ2)2) dt+O
+(
+(logT)(log(kT)) 2)
+= 2πF+
+χ□
+(x,T) +O
+(
+(logT)(log(kT)) 2)
+.(17)
+To prove equation (17), we first recall that forχ□ (modk), there are≪log(kT) zeros
+such thatL(1/2 +iγ,χ□) = 0 andT≤γ≤T+ 1,T≥2. This implies for 0≤t≤T
+that ∑
+γ>T
+1
+1 + (t−γ)2≪log(kT)
+T−t+ 1.(18)
+We now recall [5, Ch. 16, Lemma], i.e.,
+∑
+γ
+1
+1 + (t−γ)2≪log(kτ).(19)
+12
+
+[PDF page 13]
+Using (18)-(19) we obtain that
+∫ T
+0
+∑
+γ1,γ2
+γ2>T
+4xi(γ1−γ2)
+(1 + (t−γ1)2)(1 + (t−γ2)2) dt≪(logT)(log(kT))2.(20)
+Fort>T, we have
+∑
+0≤γ≤T
+1
+1 + (t−γ)2≪log(kt)
+t−T+ 1,
+so that
+∫
+t>T
+∑
+0≤γj≤T
+j=1,2
+dt
+(1 + (t−γ1)2)(1 + (t−γ2)2)≪
+∫
+t>T
+log2(kt)
+(t−T+ 1)2 dt≪(log(kT))2.
+This implies that
+∫
+t>T
+∑
+0≤γj≤T
+j=1,2
+4xi(γ1−γ2)
+(1 + (t−γ1)2)(1 + (t−γ2)2) dt≪(log(kT))2.(21)
+Now (17) follows on combining equations (20)-(21) and applying Cauchy’s residue
+theorem to evaluate the second integral in (17). From (16)-(17) we obtain
+∫ T
+0
+⏐⏐ ∑
+1≤j≤3
+Rj(x,t)
+⏐⏐2
+dt= 2πF+
+χ□
+(x,T) +O
+(
+(logT)(log(kT)) 2)
+.(22)
+Using the Cauchy–Schwarz inequality (10), we can easily deduce that
+∫ T
+0
+⏐⏐ ∑
+1≤j≤3
+Rj(x,t)
+⏐⏐2
+dt=
+∑
+1≤j≤3
+∫ T
+0
+⏐⏐Rj(x,t)
+⏐⏐2
+dt
++O
+(∑
+1≤j≤3
+∑
+1≤ℓ≤3
+ℓ̸=j
+(∫ T
+0
+⏐⏐Rj(x,t)
+⏐⏐2
+dt
+)1/2(∫ T
+0
+⏐⏐Rℓ(x,t)
+⏐⏐2
+dt
+)1/2)
+.(23)
+Integrating|Rj(x,t)|2,j= 2,3 (see (16) for their definitions) fromt= 0 tot=T,
+we obtain, fork≥3, that
+∫ T
+0
+|R2(x,t)|2 dt≪T
+x2 (log(kT)) 2,(24)
+and ∫ T
+0
+|R3(x,t)|2 dt≪1.(25)
+13
+
+[PDF page 14]
+The mean square ofR 1(x,t) is evaluated in the following lemma.
+Lemma 6.Forx≤Twe have, asx→∞,
+∫ T
+0
+|R1(x,t)|2 dt=TS(x) +O
+(√
+TxS(x)
+)
+,(26)
+where
+S(x) := 1
+x2
+∑
+n≤x
+(n,k)=1
+nΛ(n) 2 +x 2 ∑
+n>x
+(n,k)=1
+Λ(n) 2
+n3 .(27)
+Proof.Recalling the definition ofR 1(x,t) given in (16), we can write
+−R1(x,t) =
+∑
+n≥1
+c(n)
+(x
+n
+)it
+,(28)
+wherec(n) := Λ(n)χ□(n)n1/2x−1, ifn≤xandc(n) := Λ(n)χ□(n)n−3/2x, ifn > x.
+Using the prime number theorem it is clear that ∑
+n|c(n)|2 <∞.Applying Lemma 5
+to the series in (28), we obtain
+∫ T
+0
+|R1(x,t)|2 dt=TS(x) +O
+(
+δ−1S(x) +E 1 +E 2
+)
+,(29)
+where
+E1 :=T
+∑
+n<x
+(n,k)=1
+( ∑
+m≤x
+(m,k)=1
+0<|log(n/m)|<2πδ
+Λ(n)Λ(m) (nm)1/2
+x2 +
+∑
+m>x
+(m,k)=1
+0<|log(n/m)|<2πδ
+Λ(n)Λ(m) n1/2
+m3/2
+)
+,
+and
+E2 :=T
+∑
+n≥x
+(n,k)=1
+( ∑
+m≤x
+(m,k)=1
+0<|log(n/m)|<2πδ
+Λ(n)Λ(m) m1/2
+n3/2 +
+∑
+m>x
+(m,k)=1
+0<|log(n/m)|<2πδ
+Λ(n)Λ(m) x2
+(nm)3/2
+)
+.
+We obtain, for allk≥3
+S(x)≪logx,(30)
+asx→∞.Choosing
+δ=
+√
+S(x)
+Tx ,(31)
+for sufficiently largex, we have that 1/T≤δ≤1,whenx≤T. Sincee2πδ−1≤104δ
+for anyδ≤1, we obtain
+14
+
+[PDF page 15]
+E1≪T
+x
+∑
+n≤x
+∑
+m≥1
+0<|log(n/m)|<2πδ
+Λ(n)Λ(m)≪T
+x
+∑
+n≤x
+Λ(n)
+∑
+n<m≤n+104δx
+Λ(m)
+≪T
+x
+∑
+n≤x
+Λ(n)(ψ(n+ 104δx)−ψ(n))≪Tδx,(32)
+for sufficiently largex, where we have used the prime number theorem in the final
+step. Moreover, we can write
+E2 =T
+∞∑
+r=0
+2r+1x∑
+n=2rx
+( ∑
+m≤x
+0<|log(n/m)|<2πδ
+Λ(n)Λ(m) m1/2
+n3/2 +
+∑
+m>x
+0<|log(n/m)|<2πδ
+Λ(n)Λ(m) x2
+(nm)3/2
+)
+≪T
+x
+∞∑
+r=0
+1
+23r
+2r+1x∑
+n=2rx
+∑
+m≥1
+0<|log(n/m)|<2πδ
+Λ(n)Λ(m)
+≪T
+x
+∞∑
+r=0
+1
+23r
+∑
+n≤2r+1x
+∑
+m≥1
+0<|log(n/m)|<2πδ
+Λ(n)Λ(m)
+≪
+∞∑
+r=0
+Tδx
+2r ≪Tδx,(33)
+asx→∞,where the final single sum is obtained on using (32). Combining (29) and
+(32)-(33), and substituting the value ofδgiven in (31), we have completed the proof
+of Lemma 6.
+From (26) and (30) we deduce that
+∫ T
+0
+|R1(x,t)|2 dt≪Tlogx+
+√
+Txlogx,(34)
+asx→∞.
+Combining (23)-(25) and (34) it follows that
+∫ T
+0
+⏐⏐ ∑
+1≤j≤3
+Rj(x,t)
+⏐⏐2
+dt≪Tlogx+
+√
+Txlogx+ T
+x2 (log(kT)) 2≪Tlog(kx),(35)
+uniformly in the range 3≤k≤ex andx≤T≤ex asx→∞.Recalling the estimate
+(22) and exploiting the monotonicity of (logT) 3/TforTsufficiently large, we also
+have (logT)(log(kT)) 2≪Tlog(kx) in the restricted range 3≤k≤exp(x(logx)−1)
+15
+
+[PDF page 16]
+andx≤T≤ex, asx→∞. Summarizing, we have shown that (22) and (35) allow
+one to show that the estimate
+F +
+χ□
+(x,T)≪Tlog(kx),
+holds uniformly in the range 3≤k≤exp(x(logx)−1) andx≤T≤ex asx→∞.
+Proof of Theorem 2.For (a,k) = 1, let
+S(x;k,a) := 1
+x2
+∑
+n≤x
+n≡a(modk)
+nΛ(n) 2 +x 2 ∑
+n>x
+n≡a(modk)
+Λ(n) 2
+n3 .
+In [13, eqn (35)], under the assumption of GRH we proved that
+S(x;k,a) = logx
+φ(k)+O
+((logx) 3
+√x
+)
+,
+asx→∞, uniformly in 1≤k≤√x/(logx) 3. Hence, summing over residue classes,
+we obtain thatS(x) defined in (27) satisfies the asymptotic
+S(x) = logx+O
+(
+φ(k)(logx) 3
+√x
+)
+= (logx)(1 +o(1)),(36)
+uniformly for 1≤k≤√x/(logx) 3. From Lemma 6, see (26), and (36) it follows that
+∫ T
+0
+⏐⏐ ∑
+1≤j≤3
+Rj(x,t)
+⏐⏐2
+dt=T(logx)(1 +o(1)) +O
+(√
+Txlogx+ T
+x2 (log(kT)) 2
+)
+=T(logx)(1 +o(1)),(37)
+asx→∞,uniformly forx≤T≤ex and 3≤k≤√x/(logx) 3. In this range, we also
+have (logT)(log(kT)) 2 =o(Tlogx),asx→∞. Equations (22) and (37) imply that
+F +
+χ□
+(x,T)∼T
+2πlogx,
+asx→∞,uniformly forx≤T≤ex and 3≤k≤√x/(logx) 3.
+4 Proof of Theorem 3
+We start by introduce some notation and proving some useful lemmas. Define
+Σ +
+χ□
+(x,T,v) :=
+∑
+0≤γ≤T
+xiγeivγ.(38)
+16
+
+[PDF page 17]
+An easy computation givesW(u) =
+∫∞
+−∞eivue−2|v|dvand
+F +
+χ□
+(x,T) =
+∫ ∞
+−∞
+|Σ+
+χ□
+(x,T,v)|2e−2|v|dv,
+implying thatF +
+χ□
+(x,T)≥0.
+Lemma 7.Forx≥2andT≥0, we have
+∫ 2x
+x
+|Σ+
+χ□
+(t,T,0)|2 dt≪xF+
+χ□
+(x,T).
+Proof.Note that
+∫ 2x
+x
+|Σ+
+χ□
+(t,T,0)|2 dt=x
+∫ log 2
+0
+|Σ+
+χ□
+(x,T,v)|2ev dv
+≪x
+∫ ∞
+−∞
+|Σ+
+χ□
+(x,T,v)|2e−2|v|dv=xF +
+χ□
+(x,T).
+Lemma 8.Forx≥2andT >U≥0, we have
+|Σ+
+χ□
+(x,T,0)−Σ+
+χ□
+(x,U,0)|≪
+√
+Tmax
+U≤t≤T
+F +χ□
+(x,t).
+Proof.Using (38), we define
+h(x,T,U,v) = Σ +
+χ□
+(x,T,v)−Σ+
+χ□
+(x,U,v) =
+∑
+U<γ≤T
+xiγeiγv.(39)
+Observe that
+∫ ∞
+−∞
+|h(x,T,U,v)|2e−2|v|dv=
+∑
+U<γj≤T
+j=1,2
+xi(γ1−γ2)
+∫ ∞
+−∞
+ei(γ1−γ2)ve−2|v|dv
+=
+∑
+U<γj≤T
+j=1,2
+xi(γ1−γ2)W(γ1−γ2) =F +
+χ□
+(x,T)−F+
+χ□
+(x,U).
+(40)
+LettingH(v) =|h(x,T,U,v)|2, we first remark that, using (40), we have
+∫ 1
+−1
+|H(v)|dv≪
+∫ ∞
+−∞
+|H(v)|e−2|v|dv≪F+
+χ□
+(x,T) +F +
+χ□
+(x,U).(41)
+17
+
+[PDF page 18]
+Combining the Sobolev–Gallagher inequality (Lemma 4) with (41) yields
+|h(x,T,U,0)|2 =H(0)≪
+∫ 1
+−1
+|H(v)|dv+
+∫ 1
+−1
+|H′(v)|dv
+≪F+
+χ□
+(x,T) +F +
+χ□
+(x,U) +
+∫ 1
+−1
+|H′(v)|dv.(42)
+By the Cauchy–Schwarz inequality (10), we obtain
+∫ 1
+−1
+|H′(v)|dv≪
+(∫ 1
+−1
+|H(v)|dv
+)1/2(∫ 1
+−1
+⏐⏐ ∑
+U<γ≤T
+γxiγeivγ⏐⏐2
+dv
+)1/2
+.(43)
+Moreover, by partial summation we have
+∑
+U<γ≤T
+γxiγeivγ=Th(x,T,U,v)−
+∫ T
+U
+h(x,t,U,v) dt
+and, again using (40), we obtain
+∫ 1
+−1
+⏐⏐ ∑
+U<γ≤T
+γxiγeivγ⏐⏐2
+dv≪
+∫ ∞
+−∞
+⏐⏐ ∑
+U<γ≤T
+γxiγeivγ⏐⏐2
+e−2|v|dv
+≪T2
+∫ ∞
+−∞
+H(v)e−2|v|dv+T
+∫ T
+U
+∫ ∞
+−∞
+|h(x,t,U,v)|2e−2|v|dvdt
+≪T2(F +
+χ□
+(x,T) +F +
+χ□
+(x,U)) +T
+∫ T
+U
+(F +
+χ□
+(x,t) +F +
+χ□
+(x,U)) dt
+≪T2 max
+U≤t≤T
+F +
+χ□
+(x,t).(44)
+Combining (41) and (43)-(44) we obtain the estimate
+∫ 1
+−1
+|H′(v)|dv≪Tmax
+U≤t≤T
+F +
+χ□
+(x,t),(45)
+and the lemma follows from (39), (42) and (45).
+Remark 3.Sinceχ □ is quadratic, it is a real character and soL(1/2 +iγ,χ□) = 0
+if and only ifL(1/2−iγ,χ□) = 0. This implies the identity
+∑
+−T≤γ≤−U
+wiγ
+1/2 +iγ=
+∑
+U≤γ≤T
+wiγ
+1/2 +iγ,
+valid forw∈RandT≥U≥0.
+18
+
+[PDF page 19]
+Lemma 9.Let
+I(x,T) :=
+∑
+|γ|≤T
+x1/2+iγ
+1/2 +iγ.
+Letk > xεandJbe the maximal integer such thatlogk≤(x/2 J)(log(x/2J))−1.
+Assuming RH for the DirichletL-function associated with the quadratic character
+modulokand Hypothesis 1 in the rangesx ε<k≤exp
+(
+x(logx)−1)
+andx ε≤T≤x,
+we have forj= 0,...,J,
+⏐⏐⏐I
+(x
+2j,T
+)
+−I
+( x
+2j+1,T
+)⏐⏐⏐≪
+√x
+2j log(kx)xε,
+uniformly forx ε≤T≤x/2j andx ε<k≤exp
+(
+(x/2j)(log(x/2j))−1)
+.
+Proof.We first focus on the contribution of the non-negative imaginary parts in the
+zero-sum embedded intoI(x,T).
+LetU=x ε. Letybe of the formx/2 j+1 withjchosen from 0,...,J. We first
+handle the high-lying zeros. Using partial summation, Hypothesis 1 and Lemma 8,
+forc= 1,2 we obtain
+⏐⏐⏐
+∑
+U<γ≤T
+(cy)iγ
+1/2 +iγ
+⏐⏐⏐≪
+|Σ+
+χ□
+(cy,T,0)−Σ+
+χ□
+(cy,U,0)|
+T
++
+∫ T
+U
+|Σ+
+χ□
+(cy,w,0)−Σ+
+χ□
+(cy,U,0)|dw
+w2
+≪1√
+T
+(
+max
+U≤t≤T
+F +
+χ□
+(cy,t)
+)1/2
++
+∫ T
+U
+(
+max
+U≤t≤w
+F +
+χ□
+(cy,t)
+)1/2 dw
+w3/2
+≪
+√
+log(ky) log(T/U)≪
+√
+log(kx) logx
+asx→∞.Combining this with the equivalence stated in Remark 3, we have, for
+U <T≤y, we have
+⏐⏐⏐
+∑
+U<|γ|≤T
+(2y)1/2+iγ−y1/2+iγ
+1/2 +iγ
+⏐⏐⏐≪
+√
+ylog(kx) logx,(46)
+asx→∞.
+We now handle the low-lying zeros. Recall thaty=x/2 j+1 for some 0≤j≤J.
+Using Hypothesis 1 and Lemma 7, we have
+⏐⏐⏐
+∑
+0≤γ≤U
+(2y)1/2+iγ−y1/2+iγ
+1/2 +iγ
+⏐⏐⏐ =
+⏐⏐⏐
+∑
+0≤γ≤U
+∫ 2y
+y
+w−1/2+iγdw
+⏐⏐⏐
+=
+⏐⏐⏐
+∫ 2y
+y
+w−1/2Σ +
+χ□
+(w,U,0) dw
+⏐⏐⏐
+19
+
+[PDF page 20]
+≪
+(∫ 2y
+y
+|Σ+
+χ□
+(w,U,0)|2 dw
+)1/2
+≪
+√
+yF +χ□
+(y,U)
+≪
+√
+yUlog(ky)≪
+√
+ylog(kx)x ε (47)
+asx→∞, where we have used the Cauchy–Schwarz inequality (10) in the previous
+estimate.
+Noting that the possible zero at 1/2 gives rise to a contribution 2(
+√
+2−1)√y, and
+combining this with (46)-(47), we obtain
+⏐⏐⏐
+∑
+|γ|≤T
+(2y)1/2+iγ−y1/2+iγ
+1/2 +iγ
+⏐⏐⏐≪
+√
+ylog(kx)x ε,
+and this completes the proof.
+We are now ready to prove Theorem 3.
+Proof of Theorem 3.Letqbe a prime number. Assuming RH for the DirichletL-
+function associated with the quadratic character moduloq, equation (9) implies that
+θ(x,χ□) =−
+∑
+|γ|≤Z
+x1/2+iγ
+1/2 +iγ+O
+(√x+ x
+Z
+(
+log(qxZ)
+)2)
+.(48)
+LetZ= √x(log(qx))2.Using Lemma 9 and (48), we have, forx ε< q≤
+exp
+(
+x(logx)−1)
+θ(x,χ□) =
+J∑
+j=0
+(
+θ
+(x
+2j,χ□
+)
+−θ
+( x
+2j+1,χ□
+))
++θ
+( x
+2J+1,χ□
+)
+≪x1/2+ε√
+log(qx) +√x+ x(log(qxZ)) 2
+Z + x
+2J
+≪x1/2+ε√
+log(qx) + (logq)(logx).
+Forq≤x ε, again assuming RH for the DirichletL-function associated with the
+quadratic character moduloq, from Lemma 3 we obtain
+θ(x,χ□)≪√x(log(qx))2,
+Combination of the previous two estimates, leads forq≤exp
+(
+x(logx)−1)
+to the upper
+bound
+θ(x,χ□)≪x1/2+ε√
+log(qx) + (logq)(logx).(49)
+Assume that all primes less thanc 1xare quadratic residues moduloq, wherec 1 >1
+is a constant. This implies thatχ □(p) = 1 forp < c 1x. Goal is to deduce an upper
+bound onx.
+20
+
+[PDF page 21]
+From Chebyshev’s bound we have
+θ(c1x,χ□)>θ(x,χ□) =θ(x)≥c2x,
+for somec 2 >0, independent fromc 1. Combining this estimate with (49) leads for
+q≤exp
+(
+x(logx)−1)
+andxsufficiently large to
+c2x<θ(c1x,χ□)≪x1/2+ε√
+log(qx) + (logq)(logx)
+It follows thatx≪(logq) 1+2ε, implying the required result.
+Remark 4.Observe that in the previous proof we chose √x(log(qx))2 as the upper
+bound for the height of the non-trivial zeros, denoted byZ. Therefore, it is enough
+to assume that Hypothesis 1 holds up to the maximum valueT= √x(log(qx))2.
+However, in the hypothesis of Lemma 9 we allowTto range up tox. We retain this
+larger range to keep the statement consistent with Lemma 13 and [13, Lemma 9].
+5 Proofs of Theorems 4 and 5
+We first record the following lemma that relates the sum over zeros in the lower half-
+plane to the conjugate sum over zeros in the upper half-plane. This relationship follows
+from the fact thatL(1/2 +iγ,χ) = 0 if and only ifL(1/2−iγ,χ) = 0.
+Lemma 10.[13, Lemma 8] If(a,k) = 1,w∈RandT≥0, then
+∑
+χ(modk)
+χ(a)
+∑
+−T≤γ≤0
+L(1/2+iγ,χ)=0
+wiγ
+1/2 +iγ=
+∑
+χ(modk)
+χ(a)
+∑
+0≤γ≤T
+L(1/2+iγ,χ)=0
+wiγ
+1/2 +iγ.
+From now on, whenever we writeγandγj in the summation without additional
+specifications, we assume, thatL(1/2 +iγ,χ) = 0, respectivelyL(1/2 +iγj,χj) = 0.
+Moreover, the zeros are counted with multiplicity. For fixed coprimeaandk, we define
+the following weighted sums over the zeros:
+Σ +(x,T,v) = Σ +(x,T,v;k,a) :=
+∑
+χ(modk)
+χ(a)
+∑
+0≤γ≤T
+xiγeivγ,
+and
+Σ(x,T,v) = Σ(x,T,v;k,a) :=
+∑
+χ(modk)
+χ(a)
+∑
+0≤|γ|≤T
+xiγeivγ.
+We now state two lemmas that connect Σ and Σ + withF k(x,T) andF +
+k (x,T).
+Lemma 11.[13, Lemma 6] Forx≥2andT >U≥0, we have
+|Σ+(x,T,0)−Σ+(x,U,0)|≪
+√
+Tmax
+U≤t≤T
+F +
+k (x,T).
+21
+
+[PDF page 22]
+Lemma 12.[13, Lemma 7] Forx≥2andT≥0, we have
+∫ 2x
+x
+|Σ(t,T,0)|2 dt≪xFk(x,T)and
+∫ 2x
+x
+|Σ+(t,T,0)|2 dt≪xF+
+k (x,T).
+We now prove the following lemma that will play a crucial role in the proof of
+Theorem 4.
+Lemma 13.Letc 1 >0andc 2∈(1/2,1)be fixed. Let further1≤a≤k−1,(a,k) = 1
+and put
+I(x,k,a,T) := 1
+φ(k)
+∑
+χ(modk)
+χ(a)
+∑
+|γ|≤T
+x1/2+iγ
+1/2 +iγ.
+Letk >exp
+(
+c1(logx)c2
+)
+andJbe the maximal integer such thatk≤(x/2 J)
+exp
+(
+−2c1(log(x/2J))c2
+)
+. Assuming GRH and Hypothesis 2 in the ranges
+exp
+(
+c1(logx)c2
+)
+<k≤xexp
+(
+−2c1(logx)c2
+)
+andexp
+(
+c1(logx)c2
+)
+≤T≤x,
+we have forj= 0,...,J, that
+⏐⏐⏐I
+(x
+2j,k,a,T
+)
+−I
+( x
+2j+1,k,a,T
+)⏐⏐⏐≪
+√ x
+2jφ(k)exp
+(
+c1(logx)c2
+)
+uniformly forexp
+(
+c1(logx)c2
+)
+< k≤(x/2 j) exp
+(
+−2c1(log(x/2j))c2
+)
+and
+exp
+(
+c1(logx)c2
+)
+≤T≤x/2j.
+Proof.We first focus on the contribution of the non-negative imaginary parts in the
+zero-sum embedded intoI(x,k,a,T).
+LetU= exp
+(
+c1(logx)c2
+)
+. Letybe of the formx/2 j+1 withjchosen from 0,...,J
+andk≤yexp
+(
+−2c1(logy)c2
+)
+We first handle the high-lying zeros. Using partial
+summation, Hypothesis 2 and Lemma 11, forc= 1,2 we obtain
+⏐⏐⏐
+∑
+χ(modk)
+χ(a)
+∑
+U<γ≤T
+(cy)iγ
+1/2 +iγ
+⏐⏐⏐≪|Σ+(cy,T,0)−Σ+(cy,U,0)|
+T
++
+∫ T
+U
+⏐⏐Σ +(cy,w,0)−Σ+(cy,U,0)
+⏐⏐ dw
+w2
+≪1√
+T
+(
+max
+U≤t≤T
+F +
+k (cy,t)
+)1/2
++
+∫ T
+U
+(
+max
+U≤t≤w
+F +
+k (cy,t)
+)1/2 dw
+w3/2
+≪
+√
+φ(k) exp
+(c1
+2 (logy)c2
+)
+log(T/U)
+≪
+√
+φ(k) exp
+(
+c1(logx)c2
+)
+22
+
+[PDF page 23]
+asx→∞,uniformly fork≤yexp
+(
+−2c1(logy)c2
+)
+. This implies that forU <T≤y,
+we have
+⏐⏐⏐
+∑
+χ(modk)
+χ(a)
+∑
+U<γ≤T
+(2y)1/2+iγ−y1/2+iγ
+1/2 +iγ
+⏐⏐⏐≪
+√
+φ(k)yexp
+(
+c1(logx)c2
+)
+,(50)
+asx→∞,uniformly fork≤yexp
+(
+−2c1(logy)c2
+)
+. From (50) (see Lemma 10) we also
+obtain
+⏐⏐⏐
+∑
+χ(modk)
+χ(a)
+∑
+−T≤γ<−U
+(2y)1/2+iγ−y1/2+iγ
+1/2 +iγ
+⏐⏐⏐≪
+√
+φ(k)yexp
+(
+c1(logx)c2
+)
+.(51)
+We now handle the low-lying zeros. Recall thaty=x/2 j+1 for some 0≤j≤J.
+Using Hypothesis 2 and Lemma 12, we obtain
+⏐⏐⏐
+∑
+χ(modk)
+χ(a)
+∑
+|γ|≤U
+(2y)1/2+iγ−y1/2+iγ
+1/2 +iγ
+⏐⏐⏐ =
+⏐⏐⏐
+∑
+χ(modk)
+χ(a)
+∑
+|γ|≤U
+∫ 2y
+y
+w−1/2+iγdw
+⏐⏐⏐
+=
+⏐⏐⏐
+∫ 2y
+y
+w−1/2Σ(w,U,0) dw
+⏐⏐⏐≪
+(∫ 2y
+y
+|Σ(w,U,0)|2 dw
+)1/2
+≪
+√
+yFk(y,U)≪
+√
+φ(k)yUexp
+(
+c1(logx)c2
+)
+≪
+√
+φ(k)yexp
+(
+c1(logx)c2
+)
+,(52)
+asx→∞, where we have used the Cauchy–Schwarz inequality (10) in the previous
+estimate.
+Combining (50)-(52), we obtain
+1
+φ(k)
+⏐⏐⏐
+∑
+χ(modk)
+χ(a)
+∑
+|γ|≤T
+(2y)1/2+iγ−y1/2+iγ
+1/2 +iγ
+⏐⏐⏐≪
+√ y
+φ(k)exp
+(
+c1(logx)c2
+)
+,
+completing the proof.
+Proof of Theorem 4.Under GRH, forZ≤xwe argue as in [13, eq. (58)], thus getting
+ψ(x;k,a) = 1
+φ(k)
+(
+x−
+∑
+χ(modk)
+χ(a)
+∑
+|γ|≤Z
+x1/2+iγ
+1/2 +iγ
+)
++O
+(x(log(kxZ)) 2
+Z
+)
+,(53)
+asx→∞.
+Letk >exp
+(
+c1(logx)c2
+)
+and letJbe the maximal integer such that (x/2 J)
+exp
+(
+−2c1(log(x/2J))c2
+)
+≥k. Using the Brun–Titchmarsh theorem (Classical Theorem
+1), Lemma 13 and equation (53) with exp
+(
+c1(logx)c2
+)
+< k≤xexp
+(
+−2c1(logx)c2
+)
+,
+23
+
+[PDF page 24]
+Z=x/2 j,j= 0,...,J, we deduce that, for every 1≤a≤k−1, (a,k) = 1,
+ψ(x;k,a)−x
+φ(k)=
+J∑
+j=0
+(
+ψ
+(x
+2j ;k,a
+)
+−ψ
+( x
+2j+1 ;k,a
+)
+− x
+2j+1φ(k)
+)
++ψ
+( x
+2J+1 ;k,a
+)
+− x
+2J+1φ(k)
+≪
+J∑
+j=0
+√ x
+2jφ(k)exp
+(
+c1(logx)c2
+)
++ (logx) 2 + x
+2J+1φ(k)
+≪
+√ x
+φ(k)exp
+(
+c1(logx)c2
+)
+.(54)
+Using (8), we obtain
+ψ(x;k,a)−x
+φ(k)≪√x(logx) 2≪
+√ x
+φ(k)exp
+(
+c1(logx)c2
+)
+,(55)
+fork≤exp
+(
+c1(logx)c2
+)
+and for every 1≤a≤k−1, (a,k) = 1. The proof is now
+completed on combining the estimates (54) and (55).
+Remark 5.In fact, in the proof of Theorem 4 we can chooseZ=
+√
+φ(k)x <√
+kx≤xexp
+(
+−c1(logx)c2
+)
+, but this would not change very much the uniformity
+ranges needed in Hypothesis 2. That is why we decided to use the slightly larger choice
+Z=xinstead.
+Proof of Theorem 5.Using the Brun–Titchmarsh theorem (Classical Theorem 1), we
+obtain
+ψ(x;k,a)−θ(x;k,a)≪π(√x;k,a) logx≪
+√xlogx
+φ(k) log(x/k)≪
+√xlogx
+φ(k) ,
+for every 1≤a≤k−1, (a,k) = 1, and uniformly fork≤xexp
+(
+−2c1(logx)c2
+)
+asx→
+∞. Theorem 4 implies that we also have, uniformly in 1≤k≤xexp
+(
+−2c1(logx)c2
+)
+,
+θ(x;k,a) = x
+φ(k)+O
+(√xlogx
+φ(k) +
+√ x
+φ(k)exp
+(
+c1(logx)c2
+))
+= x
+φ(k)+O
+(√ x
+φ(k)exp
+(
+c1(logx)c2
+))
+.
+In order to ensure thatθ(x;k,a) is positive, we write the error term with an explicit
+positive constantDand solve
+x
+φ(k)−D
+√ x
+φ(k)exp
+(
+c1(logx)c2
+)
+>0
+24
+
+[PDF page 25]
+forx, which yieldsx≫φ(k) exp
+(
+2c1(logk)c2
+)
+. This implies
+p(k,a)≪φ(k) exp
+(
+2c1(logk)c2
+)
+for every 1≤a≤k−1, (a,k) = 1, completing the proof.
+Acknowledgment. We wish to thank Professors Andrew Granville and Youness
+Lamzouri for helpful feedback. The first and the third author would like to thank
+the Max-Planck-Institut f¨ ur Mathematik in Bonn for the hospitality and excellent
+working conditions.
+Data availability .Not applicable.
+Competing Interests.The authors have no competing interests to declare that are
+relevant to the content of this article.
+References
+[1] N. C. Ankeny. The least quadratic non residue.Ann. of Math. (2), 55:65–72,
+1952.
+[2] E. Bach and J. Sorenson. Explicit bounds for primes in residue classes.Math.
+Comp., 65(216):1717–1735, 1996.
+[3] J. W. Bober and L. Goldmakher. P´ olya–Vinogradov and the least quadratic
+nonresidue.Math. Ann., 366(1-2):853–863, 2016.
+[4] D. A. Burgess. The distribution of quadratic residues and non-residues.
+Mathematika, 4:106–112, 1957.
+[5] H. Davenport.Multiplicative Number Theory, volume 74 ofGraduate Texts in
+Mathematics. Springer-Verlag, New York, third edition, 2000. Revised and with
+a preface by Hugh L. Montgomery.
+[6] J. B. Friedlander and A. Granville. Limitations to the equi-distribution of primes
+I.Ann. of Math. (2), 129:363–382, 1989.
+[7] D. A. Goldston. Notes on pair correlation of zeros and prime numbers. InRecent
+perspectives in random matrix theory and number theory, volume 322 ofLondon
+Math. Soc. Lecture Note Ser., pages 79–110. Cambridge Univ. Press, Cambridge,
+2005.
+[8] D. A. Goldston and H. L. Montgomery. Pair correlation of zeros and primes in
+short intervals. InAnalytic number theory and Diophantine problems (Stillwa-
+ter, OK, 1984), volume 70 ofProgr. Math., pages 183–203. Birkh¨ auser Boston,
+Boston, MA, 1987.
+[9] S. W. Graham and C. J. Ringrose. Lower bounds for least quadratic non-residues.
+In B. C. Berndt, H. G. Diamond, H. Halberstam, and A. Hildebrand, editors,An-
+alytic Number Theory: Proceedings of a Conference in Honor of Paul T. Bateman,
+pages 269–309. Birkh¨ auser Boston, Boston, MA, 1990.
+[10] D. R. Heath-Brown. Almost-primes in arithmetic progressions and short intervals.
+Math. Proc. Cambridge Philos. Soc., 83(3):357–375, 1978.
+[11] D. R. Heath-Brown. Gaps between primes, and the pair correlation of zeros of
+the zeta function.Acta Arith., 41(1):85–99, 1982.
+25
+
+[PDF page 26]
+[12] D. R. Heath-Brown. Zero-free regions for DirichletL-functions, and the least
+prime in an arithmetic progression.Proc. London Math. Soc. (3), 64(2):265–338,
+1992.
+[13] N. Kandhil, A. Languasco, and P. Moree. Pair Correlation of zeros of DirichletL-
+functions: A possible path towards the conjectures of Chowla, Elliott–Halberstam
+and Montgomery.Math. Ann., 394:Article no. 43, 2026.
+[14] V. Kumar Murty. The least prime in an arithmetic progression and an estimate
+of Linnik’s constant.B.Sc. thesis, Carleton University, Ottawa, 1977, 45 pp.
+[15] Y. Lamzouri, X. Li, and K. Soundararajan. Conditional bounds for the least
+quadratic non-residue and related problems.Math. Comp., 84(295):2391–2412,
+2015.
+[16] Y. Lamzouri, X. Li, and K. Soundararajan. Corrigendum to “Conditional
+bounds for the least quadratic non-residue and related problems” .Math. Comp.,
+86(307):2551–2554, 2017.
+[17] E. Landau.Handbuch der Lehre von der Verteilung der Primzahlen.Chelsea
+Publishing Co., New York, 1953. 2d ed, With an appendix by Paul T. Bateman.
+[18] J. V. Linnik. A remark on the least quadratic residue.C. R. (Doklady) Acad.
+Sci. URSS (N.S.), 36:119–120, 1942.
+[19] J. V. Linnik. On the least prime in an arithmetic progression. I. The basic
+theorem.Rec. Math. [Mat. Sbornik] N.S., 15/57:139–178, 1944.
+[20] J. V. Linnik. On the least prime in an arithmetic progression. II. The Deuring–
+Heilbronn phenomenon.Rec. Math. [Mat. Sbornik] N.S., 15/57:347–368, 1944.
+[21] K. McGown and E. Trevi˜ no. The least quadratic non-residue. InMexican mathe-
+maticians in the world—trends and recent contributions, volume 775 ofContemp.
+Math., pages 205–231. Amer. Math. Soc., [Providence], RI, 2021.
+[22] Z. Meng. The distribution of the zeros ofL-functions and the least prime in some
+arithmetic progression.Sci. China Ser. A, 43(9):937–944, 2000.
+[23] H. L. Montgomery.Topics in Multiplicative Number Theory, volume Vol. 227 of
+Lecture Notes in Mathematics. Springer-Verlag, Berlin-New York, 1971.
+[24] H. L. Montgomery. The pair correlation of zeros of the zeta function.Proc. Symp.
+Pure Math., 24:181–193, 1973.
+[25] H. L. Montgomery and R. C. Vaughan. The large sieve.Mathematika, 20:119–134,
+1973.
+[26] T. Tao. The Elliott–Halberstam conjecture implies the Vinogradov least
+quadratic nonresidue conjecture.Algebra Number Theory, 9(4):1005–1034, 2015.
+[27] E. C. Titchmarsh. A divisor problem.Renc. Circ. Math. Palermo, 54:414–429,
+1930.
+[28] I. M. Vinogradov.Selected works. Springer-Verlag, Berlin, 1985. With a biog-
+raphy by K. K. Mardzhanishvili, Bakhturin Yu. A. (ed.), Translated from the
+Russian by Naidu Psv.
+[29] T. Xylouris. On the least prime in an arithmetic progression and estimates for
+the zeros of DirichletL-functions.Acta Arith., 150(1):65–91, 2011.
+[30] T. Xylouris. Linniks konstante ist kleiner als 5.Chebyshevskii Sbornik, 19(3):80–
+94, 2018.
+26

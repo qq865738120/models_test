@@ -1,0 +1,2021 @@
+
+[PDF page 1]
+A FINITE ARITHMETIC FORM OF ROBIN’S INEQUALITY AND ITS
+EQUIV ALENCE TO THE RIEMANN HYPOTHESIS
+CHALLENGER MISHRA AND RAHUL SARKAR
+Abstract.Robin’s inequality reformulates the Riemann hypothesis as a bound on the sum-of-
+divisors functionσ. We introduce a finite-truncation version of Robin’s inequality determined
+intrinsically by the arithmetic structure ofn,
+σ(n)
+n < e γ
+ω(n)X
+j=0
+(ln ln lnn)j
+j! , n >5040,
+whereω(n) denotes the number of distinct prime factors ofn, andγis the Euler-Mascheroni
+constant. The resulting bound is pointwise stronger than Robin’s inequality and we prove it
+unconditionally for integers withω(n)≤6, primorials, odd integers and square-free integers.
+We also prove that this inequality is equivalent to Robin’s inequality, and hence to the Riemann
+hypothesis. Consequently, the Riemann hypothesis is equivalent to the truncated inequality
+holding for all colossally abundant numbers. We further show that if the inequality fails, its
+minimal counterexample must be a superabundant number, placing any obstruction within a
+rigid extremal class of integers.
+1.Introduction
+In [Rob84], Robin conjectured the inequality (calledRobin’s inequality)σ(n)< e γnln lnn, for
+alln >5040, whereσ(n) is the sum-of-divisors function ofn, andγ= 0.577215...is the Euler-
+Mascheroni constant, and proved that it is equivalent to the Riemann hypothesis (RH). Earlier it
+was shown by Ramanujan that RH itself implies this inequality [Ram15], albeit the asymptotic
+form, and hence this inequality is also called theRamanujan-Robin criterion[Bro17, Chapter 7].
+Since then, this inequality has been unconditionally proven for many classes of integers [LS25].
+These include: odd integers greater than 9 and square–free integers greater than 30 [CLMS07];
+integers greater than 720 expressible as a sum of two squares [BHMWN09]; integers free ofp 5
+[CLMS07],p 7 [SP12],p 11 [BT15],p 20 [PM21], andp 21 [Axl23] divisors for any primep.
+If Robin’s inequality is true, then for everyn >5040 there exists an integerA(n) such that
+(1)σ(n)< e γn
+A(n)X
+j=0
+(ln ln lnn)j
+j! .
+It is easy to see how the right hand side above reduces toe γnln lnnwhen summed to infinity
+instead, recovering Robin’s inequality. In this paper we consider two cases:A(n) =π(n) and
+A(n) =ω(n), whereπis theprime counting functionthat counts the number of primes less
+than or equal ton, andωis theprime omega function, the number of distinct primes in the
+factorization ofn. We refer to the inequality (1) for these two cases as theπ−inequalityand
+ω−inequalityrespectively. For both these cases, we prove the inequality (1) for many classes of
+integers. Specifically we establish conditions under which the inequality holds unconditionally,
+and find properties of a hypothetical minimal counterexample in each case. For theπ−inequality
+we show that the minimal counterexample if it exists is a superabundant number, whereas for the
+ω−inequality, we show that the minimal counterexample satisfies several rigid multiplicity bounds
+2020Mathematics Subject Classification.Primary 11N56, 11M26; Secondary 11A25.
+Key words and phrases.sum-of-divisors function, bounds for the sum-of-divisors function, Robin’s inequality,
+Riemann hypothesis, superabundant numbers, colossally abundant numbers.
+1
+arXiv:2609.26787v1  [math.NT]  22 Sep 2026
+
+[PDF page 2]
+2 CHALLENGER MISHRA AND RAHUL SARKAR
+5200 5400 5600 5800 6000
+0.4
+0.6
+0.8
+1.0
+n
+σ(n)/(eγ n ln ln n)
+ω(n)-bound
+Robin's bound
+Figure 1.We plot the ratio σ(n)
+eγ nln lnn in the rangen∈[5040,6040] together
+with two upper bounds: (1) theω−inequality: 1
+ln lnn
+Pω(n)
+j=0
+(ln ln lnn) j
+j! , and (2)
+Robin’s bound which in this normalization is identically 1. The pointn= 5040,
+the largest known counterexample common to both inequalities, is included for
+reference.
+and is in fact a superabundant number. We now proceed with theω−inequality:
+(2) σ(n)
+n < C(n) :=e γ
+ω(n)X
+j=0
+(ln ln lnn)j
+j! .
+For integers in the range 3≤n≤5040, Robin’s inequality fails for precisely the values [OEI98]:
+3,4,5,6,8,9,10,12,16,18,20,24,30,36,48,60,
+72,84,120,180,240,360,720,840,2520,5040.
+Notably, theω−inequality (2) fails for exactly the same set of integers, with the sole additional
+exceptionn= 7. In Figure 1, we present numerical evidence for both Robin’s inequality and the
+ω−inequality for integersn≥5040, where the largest numerically observed counterexample which
+is common to both inequalities and occurs atn= 5040 = 7! is kept deliberately. In this figure
+we have normalized theω−inequality (2) by ln lnnfor better visualization. In this normalization,
+Robin’s bound is identically 1.
+1.1.Organization of the paper.Section 1 introduces theω−andπ−inequalities, recalls the rel-
+evant background on Robin’s inequality, superabundant and colossally abundant numbers, fixes the
+notation used throughout the paper, and states the main results. Section 2 proves theω−inequality
+for alln >5040 withω(n)≤6. Section 3 establishes theω−inequality for primorial numbers and
+deduces the square-free and odd cases. Section 4 studies hypothetical minimal counterexamples,
+deriving strong restrictions on their prime factorizations and multiplicities and ultimately proving
+that a minimal counterexample to theω−inequality is superabundant. Section 5 proves that the
+ω−inequality is equivalent to Robin’s inequality, and hence to the Riemann hypothesis. Appen-
+dix A collects auxiliary analytic estimates and additional multiplicity bounds, while Appendix B
+records the finite computations used in the proofs and the corresponding reproducibility informa-
+tion.
+
+[PDF page 3]
+FINITE ARITHMETIC FORM OF ROBIN’S INEQUALITY AND EQUIV ALENCE TO RH 3
+1.2.Background and notation.We denote the set of all positive integers asN. Forn∈N, we
+denote its prime factorization asn=p a1
+1 pa2
+2 . . . paK
+K , wherep 1 < p 2 <· · ·< p K are primes, and
+ak ∈Nfor allk. Theprime supportofnis the set of all prime numbers appearing in its prime
+factorization. We define theradicalofn, denoted rad(n), as the product QK
+k=1 pk. Integers such
+thatn= rad(n) are calledsquare-freeintegers. The sum-of-divisors functionσ(n) is the sum of
+all positive integers that dividen, and it has the property that ifm, n∈Nare coprime, then
+σ(mn) =σ(m)σ(n). Using this fact,σ(n) andσ(n)/ncan be expressed as
+σ(n) =
+KY
+k=1
+(1 +p k +· · ·+p ak
+k ) =
+KY
+k=1
+pak+1
+k −1
+pk −1 ,
+σ(n)
+n =
+KY
+k=1
+
+1 + 1
+pk
++· · ·+ 1
+pak
+k
+
+=
+KY
+k=1
+1−(1/p k)ak+1
+1−1/p k
+.
+(3)
+We refer to the quantityσ(n)/nas thedivisor ratio. The number of distinct prime factors ofnis
+denoted byω(n), so thatK=ω(n). Throughout this paper, we will denote thek th prime number
+asq k, for allk∈N, that is,q 1 = 2,q 2 = 3,q 3 = 5, and so on. We also define theprimorial
+numbers
+(4)q #
+k :=
+kY
+j=1
+qj, k∈N.
+Expressions of the form P
+p≤x (resp. Q
+p≤x) will always denote sums (resp. products) over all
+primespless than or equal tox∈R, unless specified otherwise. We denoteϑ(x) := P
+p≤x lnp,
+and note thatϑ(q k) = lnq #
+k for allk∈N.
+Recall that a positive integernis superabundant (SA) if the divisor ratio satisfies
+σ(m)
+m < σ(n)
+n ,for all 0< m < n.
+Superabundant numbers were studied in great detail by Alaoglu and Erd¨ os in [AE44], who showed
+that ifnis superabundant with prime factorizationn=p k1
+1 pk2
+2 . . . p
+kω(n)
+ω(n) , then its factorization
+satisfies several properties, of which three are particularly significant, and these will interest us
+the most in this paper:
+•rad(n) =q #
+ω(n),
+•k 1 ≥k 2 ≥. . .≥k ω(n) ([AE44, Theorem 1]),
+•k ω(n) = 1 except whenn= 4 or 36 ([AE44, Theorem 3]).
+The first property above says that the prime factorization ofncontains the firstω(n) primes. It
+was later shown that the minimal counterexample to Robin’s inequality, if it exists, must be a
+superabundant number [AF09]. We will return to this point in Section 4.
+In the context of Robin’s inequality, another class of integers namelycolossally abundantnum-
+bers (CA) is well-studied [Bro17, Chapter 6]. A positive integernis called a colossally abundant
+number if∃ϵ >0, dependent onn, for which,
+σ(m)
+m1+ϵ ≤ σ(n)
+n1+ϵ ,for allm >1.
+Every colossally abundant number is also a superabundant number. It was shown by Robin [Rob84,
+Proposition 1] that if Robin’s inequality holds for two consecutive colossally abundant numbers,
+then it holds for all integers in between.
+We define thetruncated exponential sumfunctionP N(x) := PN
+j=0
+xj
+j! , for anyx∈R, and
+integerN≥0. Note that for allN∈N, the functionP N is positive and strictly increasing for all
+x≥0. Moreover, differentiating inxgivesP ′
+N(x) =P N−1(x). Also, forx≥0, and for allN≥0,
+we define thetruncated exponential tail functionT N(x) :=e x −P N(x), and we note that it is a
+strictly increasing function, forx≥0, for everyN≥1. TheLambertWfunction, denotedW,
+inverts the map [0,∞)∋x7→xe x, and we will take its domain to be [0,∞)⊂R. Sincexe x is
+
+[PDF page 4]
+4 CHALLENGER MISHRA AND RAHUL SARKAR
+increasing and injective, so isW, and satisfies the simple boundW(x)≤ 1
+2
+ √4x+ 1−1
+
+, for all
+x≥0. Moreover, it satisfies the identitye W(x) = x
+W(x) , for allx≥0.
+1.3.Main results.The main results of this paper are as follows.
+(i)Unconditional results.We prove that theω−inequality (2) holds unconditionally for all
+n >5040 withω(n)≤6, and for all primorial numbersq #
+k >5040. As consequences, the
+ω−inequality also holds for all square-free integers and all odd integers greater than 5040.
+(ii)Structure of a minimal counterexample.We show that a hypothetical minimal counterex-
+amplento theω−inequality, withω(n) =K, has prime support
+rad(n) =q #
+K,
+has non-increasing prime multiplicities, and has unit multiplicity at its largest prime factor.
+We further obtain quantitative bounds on its multiplicities, reducing the search at fixed
+Kto finitely many exponent tuples, and prove that any minimal counterexample must be
+superabundant. We also establish the corresponding superabundance result for a minimal
+counterexample to theπ−inequality.
+(iii)Equivalence with the Riemann hypothesis.We prove that theω−inequality is equivalent
+to Robin’s inequality, and hence to the Riemann hypothesis. We give a proof of this
+equivalence using the structure of a minimal counterexample. As a consequence, the
+Riemann hypothesis is also equivalent to theω−inequality restricted to colossally abundant
+numbers.
+2.Theω−inequality forω(n)≤6
+The goal of this section is to prove that theω−inequality holds for alln >5040 withω(n)≤6,
+as stated in Lemma 4. We first establish two auxiliary lemmas that will be used both in its proof
+and repeatedly throughout the paper.
+Lemma 1(Monotonicity).Letm, n > e e be integers withm < nandω(m)≤ω(n). Then
+C(m)< C(n).
+Proof.Proof is trivial.□
+Lemma 1 immediately yields the following substitution principle.
+Lemma 2(Substitution).Letn=q a1
+1 . . . qaK
+K for somea 1, . . . , aK ∈N, such that σ(n)
+n < C(n)
+holds. Then for anymwith the prime factorizationm=p a1
+1 . . . paK
+K , we have
+(5) σ(m)
+m ≤ σ(n)
+n < C(n)≤C(m),
+where the first and last inequalities are equalities if and only ifm=n.
+Proof.Assumem̸=n. By definition,q k is thek th prime, and thusq k ≤p k, for everyk, and there
+existsjsuch thatq j < p j. This impliesn < m, and the inequalityC(n)< C(m) now follows
+from Lemma 1, sinceω(m) =ω(n) =K. For the first inequality in (5), note thatq k ≤p k implies
+1 + 1
+pk
++· · ·+ 1
+p
+ak
+k
+
+≤
+
+1 + 1
+qk
++· · ·+ 1
+q
+ak
+k
+
+for everyk, and the inequality is strict whenk=j.
+Together with (3), this implies σ(m)
+m < σ(n)
+n .□
+The substitution Lemma 2 reduces a fixed exponent tuple to the case supported on the firstK
+primes. We first apply this reduction whenK≤3.
+Lemma 3(Three primes).Letm=p a1
+1 . . . paK
+K be the prime factorization of an arbitrary positive
+integerm, withω(m) =K. Then σ(m)
+m <QK
+k=1
+qk
+qk−1, and moreover, whenK≤3, andm >5040,
+we have σ(m)
+m < C(m).
+
+[PDF page 5]
+FINITE ARITHMETIC FORM OF ROBIN’S INEQUALITY AND EQUIV ALENCE TO RH 5
+Proof.Consider the numbern:=q a1
+1 . . . qaK
+K . Then by the same argument as in the proof of
+Lemma 2, we have
+(6) σ(m)
+m ≤ σ(n)
+n =
+KY
+k=1
+
+1 + 1
+qk
++· · ·+ 1
+qak
+k
+
+<
+KY
+k=1
+qk
+qk −1 =:r K.
+Next, assumingm >5040, we have ln ln ln(m)>0.7622. Therefore,C(m)> e γPK
+k=0
+0.7622k
+k! .
+Additionally assumingK≤3, one can check numerically thatr K < e γPK
+k=0
+0.7622k
+k! (see (L.1)),
+which completes the proof 1.□
+The argument of Lemma 3 extends to larger values ofω(n), at the cost of a finite computational
+verification. We carry this out forω(n)≤6.
+Lemma 4(Six primes).Letm∈Nbe such thatω(m)≤6. Ifm >5040, then σ(m)
+m < C(m).
+Proof.LetK=ω(m), and assume 4≤K≤6, as theK≤3 case is already proved in Lemma 3.
+The proof proceeds similarly to Lemma 3, except we first takem >1.5×10 8, so that ln ln ln(m)>
+1.076. Then it follows thatC(m)> e γPK
+k=0
+1.076k
+k! . Withr K as defined in (6), a numerical check
+showsr K < e γPK
+k=0
+1.076k
+k! , forK= 4,5,6 (see (L.2)). Finally, the casem∈[5041,1.5×10 8] is
+also verified to be true by another numerical check (see (L.3)).□
+The contrapositive of Lemma 2 also gives the following observation:
+Lemma 5.Letm=p a1
+1 . . . paK
+K be the prime factorization of a positive integerm, such that
+σ(m)
+m ≥C(m). Then, forn:=q a1
+1 . . . qaK
+K , σ(n)
+n ≥C(n).
+3.ω−inequality for primorial numbers and some consequences
+Robin’s inequality is known unconditionally for primorial numbers greater than 5040 [CLMS07,
+Theorem 1.1]. We prove the strongerω−inequality for the same class and derive the square-free
+and odd cases as consequences. We use the following estimates of Rosser–Schoenfeld [RS62] and
+Bertrand’s postulate [Ram19], which will be used repeatedly in the rest of the paper.
+Lemma 6(Rosser-Schoenfeld).The following bounds on arithmetic functions are true:
+(a) (Eq. 3.20) P
+p≤x 1/p <ln lnx+B+ 1/(lnx) 2, forx >1, whereB= 0.26149....
+(b) (Eq. 3.16)x(1−1/lnx)< ϑ(x), forx≥41.
+(c) (Eq. 3.14)x(1−1/(2 lnx))< ϑ(x), forx≥563.
+(d) (Eq. 3.15)ϑ(x)< x(1 + 1/(2 lnx)), forx >1.
+(e) (Eq. 3.13)q k < k(lnk+ ln lnk), forN∋k≥6.
+(f) (Eq. 3.29) Q
+p≤x
+p
+p−1 < e γ lnx
+
+1 + 1
+2(lnx) 2
+
+, forx≥286.
+(g) (Eq. 3.5) x
+lnx < π(x), forx≥17.
+Lemma 7(Bertrand’s postulate [Ram19]).Ifpis a prime, then there exists another primep ′
+such thatp < p ′ <2p. In particular,q k+1 <2q k, for allk∈N.
+3.1.The primorial numbers.We begin with an auxiliary estimate for primorials.
+Lemma 8.LetK, ℓ∈N. Then, we have the following:
+(a)ln(q K)
+
+1− α
+(ln(qℓ))2
+
+<lnϑ(q K), for allK≥ℓ≥13, whereα=
+
+ln(qℓ)
+ln(qℓ)−1
+
+.
+(b) For allK∈N, withBdefined as in Lemma 6(a), it holds that
+σ(q #
+K)
+q#
+K
+< e B ln(qK) exp
+ 1
+(ln(qK))2
+
+.
+(c) For allK≥3, we have
+C(q #
+K)> e γ lnϑ(q K)
+
+1− (ln lnϑ(qK))K+1
+(K+ 1)!
+
+.
+1This simple proof breaks down forK= 4 and higher integer values ofK.
+
+[PDF page 6]
+6 CHALLENGER MISHRA AND RAHUL SARKAR
+Proof.(a) SinceK≥13, we haveq K ≥41, and so we haveϑ(q K)> q K(1−1/ln(q K)), by
+Lemma 6(b). Taking log and using Lemma 26(a), we get
+lnϑ(q K)>ln(q K) + ln(1−1/ln(q K))>ln(q K)− α
+ln(qK)
+= ln(qK)
+
+1− α
+(ln(qK))2
+
+>ln(q K)
+
+1− α
+(ln(qℓ))2
+
+.
+(b) From the expression ofq #
+K in (4), the divisor ratio in (3), and the fact that ln(1 +x)< x,
+for allx >0 (Lemma 26(b)), we have σ(q #
+K )
+q#
+K
+=QK
+k=1
+
+1 + 1
+qk
+
+<exp
+PK
+k=1
+1
+qk
+
+, for allK∈N.
+Using Lemma 6(a), we can further bound the above expression as follows
+σ(q #
+K)
+q#
+K
+<exp
+ KX
+k=1
+1
+qk
+!
+< e B ln(qK) exp
+ 1
+(ln(qK))2
+
+, K∈N.
+(c) This follows using Lemma 25, and noting that ln ln ln(q #
+3 )>0:
+C(q #
+K) =e γ
+KX
+j=0
+(ln lnϑ(qK))j
+j! > e γ lnϑ(q K)
+
+1− (ln lnϑ(qK))K+1
+(K+ 1)!
+
+, K≥3,
+where we have used ln(q #
+K) =ϑ(q K).□
+Theorem 1(Primorial numbers). σ(q #
+K )
+q#
+K
+< C(q #
+K), for all positive integersK≥4.
+Proof.Setℓ= 13, and we divide the proof into two cases: (i)K≥ℓ, and (ii) 4≤K < ℓ. This
+givesq ℓ = 41. We first prove case (i). AssumingK≥ℓ, from Lemma 8(b),(c) it suffices to prove
+eB ln(qK) exp
+ 1
+(ln(qK))2
+
+≤e γ lnϑ(q K)
+
+1− (ln lnϑ(qK))K+1
+(K+ 1)!
+
+,
+or equivalently,
+(7)e B exp
+ 1
+(ln(qK))2
+
+≤e γ lnϑ(q K)
+ln(qK)
+
+1− (ln lnϑ(qK))K+1
+(K+ 1)!
+
+.
+By Lemma 8(a) we have
+lnϑ(q K)
+ln(qK) >1− α
+(ln(qℓ))2 >0.9, α:= ln(q13)
+ln(q13)−1 .(8)
+Next, we bound the term (ln lnϑ(q K ))K+1
+(K+1)! . By Lemma 6(d) and Lemma 26(b), we have lnϑ(q K)<
+ln(qK) + 1/(2 ln(qK)), and so we get
+(9) ln lnϑ(q K)<ln ln(q K) + 1
+2(ln(qK))2 <ln ln(q K) + 1
+2(ln(qℓ))2 .
+Now, we may use Lemma 6(e) and Lemma 26(b) again, to obtain
+ln(qK)<lnK+ ln lnK+ ln
+
+1 + ln lnK
+lnK
+
+<lnK+ ln lnK+ ln lnK
+lnK
+= lnK+ ln lnK(1 + 1/lnK)<lnK+ 2 ln lnK,
+which gives ln ln(qK)<ln lnK+ 2 ln lnK
+lnK = ln lnK(1 + 2/lnK)≤ln lnK(1 + 2/lnℓ). Using this
+bound in (9) leads to the estimate
+ln lnϑ(qK)<ln lnK
+
+1 + 2
+lnℓ
+
++ 1
+2(ln(qℓ))2 <1.78 ln lnK+ 0.037.
+Combining this estimate with the elementary lower bound (K+ 1)!>
+  K+1
+e
+K+1
+, we get
+(10) (ln lnϑ(qK))K+1
+(K+ 1)! <
+ eln lnϑ(q K)
+K+ 1
+K+1
+<
+ e(1.78 ln lnK+ 0.037)
+K+ 1
+K+1
+.
+
+[PDF page 7]
+FINITE ARITHMETIC FORM OF ROBIN’S INEQUALITY AND EQUIV ALENCE TO RH 7
+Now consider the functionf(x) := e(1.78 ln lnx+0.037)
+x+1 , forx≥13. We havef(x)>0,f ′(x)<0,
+for allx≥13, andf(13)<0.34; thusf(x)<1. Using these facts aboutf, together with (10),
+implies
+
+1− (ln lnϑ(qK))K+1
+(K+ 1)!
+
+>1−
+ e(1.78 ln lnK+ 0.037)
+K+ 1
+K+1
+>1−
+ e(1.78 ln lnK+ 0.037)
+K+ 1
+14
+≥1−
+ e(1.78 ln lnℓ+ 0.037)
+ℓ+ 1
+14
+>0.999,
+and then combining with (8) gives
+eγ lnϑ(q K)
+ln(qK)
+
+1− (ln lnϑ(qK))K+1
+(K+ 1)!
+
+> e γ ·0.9·0.999>1.6, K≥ℓ.
+On the other hand, we also havee B exp
+
+1
+(ln(qK ))2
+
+≤e B exp
+
+1
+(ln(qℓ))2
+
+<1.4, and thus, we have
+proved (7).
+It remains to prove case (ii). We verify theω−inequality directly for these primorial numbers
+q#
+K, for 4≤K < ℓ, in the numerical check in (L.7).□
+3.2.Square-free and odd integers.There are some easy corollaries of Theorem 1, which we
+list below, and they allow us to show that theω−inequality holds for both square-free integers
+and odd integers.
+Corollary 9(Square-free).Letn >5040be square-free. Then σ(n)
+n < C(n).
+Proof.Letn >5040 have the prime factorizationn=p 1 . . . pK. Ifω(n) =K≤3, then the
+result follows by Lemma 3, so we can assumeK >3. Now consider the primorialq #
+K. We get by
+Theorem 1, σ(q #
+K )
+q#
+K
+< C(q #
+K). Then the result follows immediately by Lemma 2.□
+Corollary 10(Odd integers).Letn >5040be odd. Then σ(n)
+n < C(n).
+Proof.Letω(n) =K. IfK≤3, the result is true by Lemma 3, so we may assumeK >3. Letn
+have the prime factorizationn=p a1
+1 . . . paK
+K . Now by (3), we have
+(11) σ(n)
+n =
+KY
+k=1
+
+1 + 1
+pk
++· · ·+ 1
+pak
+k
+
+<
+KY
+k=1
+pk
+pk −1 =
+KY
+k=1
+
+1 + 1
+pk −1
+
+.
+Notice thatp k −1≥q k for everyk= 1, . . . , K(sincenis odd, we havep 1 ≥3), and so we get
+from (11) the upper bound
+σ(n)
+n <
+KY
+k=1
+
+1 + 1
+qk
+
+= σ(q #
+K)
+q#
+K
+< C(q #
+K),
+where the last inequality is by Theorem 1. Finally, notice thatω(q #
+K) =ω(n) =K, and by
+constructionq #
+K < n, and so by Lemma 1, we haveC(q #
+K)< C(n), finishing the proof.□
+4.Minimal counterexamples to theπ−andω−inequalities
+We say that a positive integern >5040 is theminimal counterexampleto theπ−inequality
+(resp.ω−inequality) ifnis the first integer greater than 5040 for which theπ−inequality (resp.
+ω−inequality) is violated. In [AF09] Akbary and Friggstad proved that the minimal counterex-
+amplen >5040 to Robin’s inequality must be a superabundant number. The goal of this section
+is to prove the same for theπ−andω−inequalities.
+
+[PDF page 8]
+8 CHALLENGER MISHRA AND RAHUL SARKAR
+4.1.Superabundance for theπ−inequality.The argument of Akbary and Friggstad [AF09,
+Theorem 3] extends to theπ−inequality once the finite range 5041≤n≤10080 is verified.
+Lemma 11(π−superabundance).Letnbe the minimal counterexample to theπ−inequality.
+Thennis a superabundant number.
+Proof.A numerical check verifies theπ−inequality in the range 5041≤n≤10080 (see (L.4)).
+Now, letn >10080 be the minimal counterexample to theπ−inequality and supposenis not
+superabundant, which respectively impliesσ(n)/n≥e γPπ(n)
+j=0
+(ln ln lnn) j
+j! , and the existence of
+n′ < nsuch thatσ(n ′)/n′ ≥σ(n)/n. Sinceπis a monotonically non-decreasing function over the
+positive integers, this furthermore implies that
+(12) σ(n′)
+n′ ≥ σ(n)
+n ≥e γ
+π(n)X
+j=0
+(ln ln lnn)j
+j! ≥e γ
+π(n′)X
+j=0
+(ln ln lnn′)j
+j! ,
+and thereforen ′ is a smaller counterexample. Ifn ′ >5040 then we have a contradiction to the
+minimality ofn, so we may supposen ′ ≤5040. Setn ′′ = 10080, which is a superabundant number,
+and so we haveσ(n ′′)/n′′ > σ(n ′)/n′. Combined with (12) and again using the monotonicity of
+theπfunction, we haveσ(n ′′)/n′′ > e γPπ(n)
+j=0
+(ln ln lnn) j
+j! ≥e γPπ(n′′)
+j=0
+(ln ln lnn ′′)j
+j! . Thusn ′′ is a
+smaller counterexample thann, and again gives a contradiction.□
+4.2.Properties of the minimal counterexample toω−inequality.We next derive struc-
+tural properties of a minimal counterexample to theω−inequality, culminating in its superabun-
+dance in Section 4.3. These properties closely parallel the classical structure of superabundant
+numbers. We begin with the following extremality property.
+Lemma 12(ω−extremality).Letnbe the minimal counterexample to theω−inequality. Then
+σ(k)/k < σ(n)/n, for alle e < k < n, withω(k)≤ω(n).
+Proof.A numerical check verifies theω−inequality in the range 5041≤n≤10080 (see (L.3)). Let
+n >10080 be the minimal counterexample. For contradiction, assume there existse e < k < n,
+withω(k)≤ω(n), for whichσ(k)/k≥σ(n)/n. Sinceω(k)≤ω(n) andk < n,C(n)> C(k) by
+Lemma 1, leading to the chain of inequalities
+σ(k)
+k ≥ σ(n)
+n ≥C(n)> C(k).
+Now, there are two cases: (i)k >5040, and (ii)k≤5040. For case (i), we have a contradiction,
+sincenis minimal. For case (ii), we can simply takem= 10080, and since 10080 is superabundant,
+we have σ(m)
+m > σ(k)
+k . We also haveC(n)> C(m) sincen > m,ω(m) = 4, andω(n)≥7 by
+Lemma 4. The above chain is then replaced by
+σ(m)
+m > σ(n)
+n ≥C(n)> C(m),
+which is again a contradiction to minimality ofn.□
+The following two lemmas establish that the minimal counterexample to theω−inequality
+has the first two properties in common with superabundant numbers, as mentioned before in
+Section 1.2.
+Lemma 13(Ungapped prime support).Letnbe the minimal counterexample to theω−inequality,
+and letK=ω(n). Then the prime support ofncontains all the firstKprime numbers, that is,
+rad(n) =q #
+K.
+Proof.Letn >5040 be the minimal counterexample, andK=ω(n). We already know that
+theω−inequality holds whenK≤6, by Lemma 4, and that it is also true whennis odd, by
+Corollary 10. So we may assume thatK >6, and thatnis an even positive integer throughout
+this proof.
+Letnhave the prime factorizationn=p a1
+1 . . . paK
+K , and suppose for contradiction that rad(n)̸=
+q#
+K. Then there exists an integer 1< j≤Ksuch thatp ℓ =q ℓ, for all 1≤ℓ < j, andp j ̸=q j (the
+
+[PDF page 9]
+FINITE ARITHMETIC FORM OF ROBIN’S INEQUALITY AND EQUIV ALENCE TO RH 9
+inequalityj >1 uses the fact thatnis even). Note that this impliesp j > q j. Now construct the
+integern ′ :=nq aj
+j /paj
+j , and sinceω(n ′) =Kandn ′ < n, this impliesC(n ′)< C(n), by Lemma 1.
+Next, notice that by using (3), we have
+σ(n)/n
+σ(n′)/n′ =
+1 +p −1
+j +p −2
+j +· · ·+p −aj
+j
+1 +q −1
+j +q −2
+j +· · ·+q −aj
+j
+<1,
+and thus, combining with above, we have
+(13) σ(n′)
+n′ > σ(n)
+n ≥C(n)> C(n ′),
+where the second inequality is by the assumption thatnis the minimal counterexample. Now
+there are two cases possible: (i)n ′ >5040, and (ii)n ′ ≤5040. In the first case, (13) gives us a
+smaller counterexamplen ′ to theω−inequality, which contradicts the minimality assumption of
+n.
+Finally, consider the second case. Let us construct a new integern ′′ := 2 rn′ > n ′, where
+r:= min{r≥1|2 rn′ >5040}. Thenn ′′ >5040 by construction. The point of multiplyingn ′ by
+a power of two is to exploit the known property thatn(and hencen ′) is even, which also ensures
+ω(n′′) =K. Now, there can be two sub-cases: (ii.a)n ′′ > n, and (ii.b)n ′′ < n. For case (ii.a), the
+definition ofn ′′ impliesn ′′ ≤2·5040 = 10080, which in turn implies 5040< n <10080. But it is
+known from numerical checks that theω−inequality holds for alln≤10 9 (see (L.3)), thus leading
+to a contradiction. For case (ii.b), we have
+σ(n′)/n′
+σ(n′′)/n′′ = 1 + 2−1 + 2−2 +· · ·+ 2 −a1
+1 + 2−1 + 2−2 +· · ·+ 2 −(a1+r) <1,
+and therefore, combining with (13), and Lemma 1, we have σ(n′′)
+n′′ > σ(n)
+n ≥C(n)> C(n ′′), which
+yields another contradiction to the minimality ofn, and finishes the proof.□
+Lemma 14(Falling exponents).Letnbe the minimal counterexample to theω−inequality, with
+prime factorizationn=p a1
+1 . . . paK
+K , and letK=ω(n). Thena 1 ≥a 2 ≥ · · · ≥a K.
+Proof.By Lemma 13, we may assumep j =q j, for all 1≤j≤K. Also, we can assumeK >6
+by Lemma 4, andn >10080 by the numerical check in (L.3). Now for contradiction, assume
+that there exists 1≤ℓ < Ksuch thata ℓ < a ℓ+1, which also impliesa ℓ+1 ≥2. Construct the
+integern ′ :=nq ℓ/qℓ+1, and note that it satisfiesn ′ < nandω(n ′) =K. By Lemma 1, this implies
+C(n)> C(n ′). Next, we observe that the ratio
+σ(n)/n
+σ(n′)/n′ =
+ 
+1 +q −1
+ℓ +q −2
+ℓ +· · ·+q −aℓ
+ℓ
+
+1 +q −1
+ℓ+1 +q −2
+ℓ+1 +· · ·+q −aℓ+1
+ℓ+1
+
+
+1 +q −1
+ℓ +q −2
+ℓ +· · ·+q −(aℓ+1)
+ℓ
+
+1 +q −1
+ℓ+1 +q −2
+ℓ+1 +· · ·+q −(aℓ+1−1)
+ℓ+1
+ <1,
+by simply expanding the numerator and denominator, and using the fact thatq ℓ < q ℓ+1, and the
+assumptiona ℓ < a ℓ+1. Combining the above, we have obtained σ(n′)
+n′ > σ(n)
+n ≥C(n)> C(n ′).
+Finally notice thatq ℓ+1 <2q ℓ by Lemma 7 (Bertrand’s postulate), which impliesn ′ > n/2>5040,
+and thus we have arrived at a contradiction to the minimality ofn.□
+Henceforth, for the rest of this section, we write a minimal counterexample as
+n=q a1
+1 · · ·q aK
+K , a 1 ≥ · · · ≥a K, K∈N.
+We next derive quantitative bounds on these multiplicities. The next lemma identifies some more
+aspects of superabundant numbers (see [Bro17, Chapter 6], [AE44]), that also hold for the minimal
+counterexample. Note that part (a) of the lemma in fact implies Lemma 14.
+Lemma 15(Multiplicity bounds).Letnbe the minimal counterexample to theω−inequality, with
+prime factorizationn=q a1
+1 . . . qaK
+K . Then,
+(a)|a j − ⌊ai lnq i/lnq j⌋| ≤1, for all1≤i < j≤K.
+(b)q aj
+j < q a1+2
+1 = 4·2 a1, for all1≤j≤K.
+(c)a i ≤ ⌊(a j + 2) lnqj/lnq i⌋, for all1≤i < j≤K.
+
+[PDF page 10]
+10 CHALLENGER MISHRA AND RAHUL SARKAR
+(d)a i ≥max{⌊lnq j/lnq i⌋,⌊(a j −1) lnq j/lnq i⌋+ 1}, for all1≤i < j≤K.
+Proof.We can assumeω(n)≥7, by Lemma 4. We will construct smaller integersn ′ in the
+following proofs, for whichω(n ′)≥ω(n)−1, since we will remove at most one prime fromn,
+ensuringω(n ′)≥6 and thereforen ′ ≥30030.
+The proofs of parts (a) and (b) are exactly the same as [Bro17, Lemma 6.2] and [Bro17,
+Lemma 6.4] respectively. In the proofs of both cases, one constructsn ′ < n, withω(n ′)≤ω(n)
+and σ(n′)
+n′ ≥ σ(n)
+n , yielding a contradiction to the minimality ofn. In fact, we also provide a
+different proof of part (b) in Lemma 28, which slightly improves the bound.
+To prove part (c), note that by part (a), we have the implication⌊a i lnq i/lnq j⌋ ≤a j + 1. This
+immediately impliesa i <(a j + 2) lnqj/lnq i, and the result follows.
+For part (d), there are two cases: (i)a j ≥2, and (ii)a j = 1. For case (i), we use (a) to obtain
+⌊ai lnq i/lnq j⌋ ≥a j −1, which impliesa i >(a j −1) lnq j/lnq i. Sincea i is an integer andq i, qj
+are distinct primes, this yields the bounda i ≥ ⌊(a j −1) lnq j/lnq i⌋+ 1. For case (ii), we use the
+same construction as in the proof of [Bro17, Lemma 6.7], and we will prove thata i ≥ ⌊lnq j/lnq i⌋.
+Assume for contradiction thata i ≤ ⌊lnq j/lnq i⌋ −1, which impliesq ai+1
+i < q j. Now consider the
+integern ′ =nq ai+1
+i /qj < n. Then
+σ(n)/n
+σ(n′)/n′ = 1 + 1/qj
+1 + 1/qai+1
+i
+<1,
+which contradicts the minimality ofnby Lemma 12. Combining cases (i) and (ii), the lemma is
+proved. □
+It remains to establish the third structural property, namelyaK = 1. Together with Lemmas 13–
+14, this shows that a minimal counterexample satisfies all three superabundant-number properties
+listed in Section 1.2.
+Theorem 2(Last exponent).Ifn=q a1
+1 qa2
+2 . . . qaK
+K >5040is the minimal counterexample to the
+ω−inequality, whereK=ω(n), thena K = 1.
+Proof.For contradiction, assumea K ≥2, and by Lemma 4, we can also assumeK≥7. Moreover,
+by Lemma 14 we havea 1 ≥ · · · ≥a K ≥2, and thus we haven > Q7
+k=1 q2
+k >5040 2. Define
+n′ :=n/q K, so thatω(n ′) =K, and thus we also haven ′ >Q7
+k=1 qk >5040. Now sincenis the
+minimal counterexample, andn ′ < n, this impliesσ(n)/n≥C(n), andσ(n ′)/n′ < C(n ′), which
+upon combining yields
+(14) C(n)
+C(n ′) ≤ σ(n)/n
+σ(n′)/n′ = 1 + qK −1
+qK(qaK
+K −1) ,
+where the last equality follows using (3). Our next task is to lower bound C(n)
+C(n′) −1. Define
+λ:= lnn,λ ′ := lnn ′,µ:= lnλ, andµ ′ := lnλ ′, and note that lnµ >lnµ ′ >0 (asn ′ >5040). By
+Lemma 15(c) we also have,
+λ=
+KX
+k=1
+ak lnq k ≤a K lnq K +
+K−1X
+k=1
+(aK + 2) lnqK = (Ka K + 2K−2) lnq K =Dlnq K,
+
+[PDF page 11]
+FINITE ARITHMETIC FORM OF ROBIN’S INEQUALITY AND EQUIV ALENCE TO RH 11
+where we have definedD:=Ka K + 2K−2. We then obtain the following estimate:
+C(n)
+C(n ′) −1>ln
+ µ
+µ′
+
+1 + lnµ ′
+K
+−1
+>ln
+ µ
+µ′
+
+1 + lnµ
+K
+−1
+(by Lemma 27, µ > µ ′)
+≥ln
+ µ
+µ′
+
+1 + ln ln(Dlnq K)
+K
+−1
+(usingλ≤Dlnq K)
+> lnq K
+λµ
+
+1 + ln ln(Dlnq K)
+K
+−1
+(by Lemma 26(c) twice)
+≥ 1
+Dln(Dlnq K)
+
+1 + ln ln(Dlnq K)
+K
+−1
+.(usingλ≤Dlnq K)
+Now the right hand side of the above estimate is strictly greater than qK −1
+qK (q
+aK
+K −1), by Lemma 16
+proved next, and this shows that C(n)
+C(n′) −1> qK −1
+qK (q
+aK
+K −1). This contradicts (14), and proves the
+theorem. □
+Lemma 16(Auxiliary estimate).Letk, a∈N, withk≥7anda≥2, and letq k be thek th prime.
+Let us defineD:=k(a+ 2)−2. Then
+Dln(Dlnq k)
+
+1 + ln ln(Dlnq k)
+k
+
+< q a
+k < qk(qa
+k −1)
+qk −1 .
+Proof.Fork∈N,q, r∈Rwithq≥e 2, andr≥2, define the function
+Gk(r, q) := r(r+ 2) lnq
+2qr−1
+
+1 + ln(rlnq)
+k
+
+>0.
+This function is clearly decreasing ink. We now claim that it is also decreasing inq, r, by
+equivalently showing the same for lnG k(r, q). Computing partial derivatives yield
+q ∂
+∂q lnG k(r, q) = 1
+lnq
+
+1 + 1
+k+ ln(rlnq)
+
+−(r−1)< 1 +k −1
+lnq −(r−1)<0,
+r ∂
+∂r lnG k(r, q) = 2(r+ 1)
+r+ 2 −rlnq+ 1
+k+ ln(rlnq) <2−2 lne 2 + 1
+k <0,
+using the bounds onq, r, and this proves the claim. Returning back to the proof of the lemma,
+this claim impliesG k(a, qk)≤G 7(2,17)<0.84, sinceq k ≥q 7 = 17, and thus we get
+(15) a(a+ 2) lnq k
+2
+
+1 + ln(alnq k)
+k
+
+< q a−1
+k .
+Using (15) andD < k(a+ 2), we can further upper boundDlnq k as follows:
+Dlnq k < k(a+ 2) lnq k < 2kqa−1
+k
+a
+
+1 + ln(alnq k)
+k
+ < kq a−1
+k < q a
+k,
+where in the last two inequalities, we have useda≥2, andk≤q k. This gives ln(Dlnq k)< alnq k,
+and combining everything we finally obtain
+Dln(Dlnq k)
+
+1 + ln ln(Dlnq k)
+k
+
+< k(a+ 2)·alnq k ·
+
+1 + ln(alnq k)
+k
+
+<2kq a−1
+k < q a
+k < qk(qa
+k −1)
+qk −1 ,
+where in the second line, we have used the bound from (15) and the fact that 2k < q k, whenk≥5,
+and this finishes the proof.□
+Settingj=Kin Lemma 15(c),(d) and usinga K = 1 gives the following sharper bound:
+
+[PDF page 12]
+12 CHALLENGER MISHRA AND RAHUL SARKAR
+Corollary 17.Letnbe the minimal counterexample to theω−inequality, with prime factorization
+n=q a1
+1 . . . qaK
+K . Then, for all1≤i < K, we have
+⌊lnq K/lnq i⌋ ≤a i ≤ ⌊3 lnq K/lnq i⌋.
+These bounds also give explicit estimates forK=ω(n) in terms ofn.
+Corollary 18(LambertWbounds).Letnbe the minimal counterexample to theω−inequality,
+with prime factorizationn=q a1
+1 . . . qaK
+K . Then
+lnn
+6W
+  lnn
+6
+ < K < lnn
+W
+  lnn
+e
+ .
+A weaker lower bound isK≥ 1
+3
+
+1 +
+ 
+1 + 3 lnn
+ln 2
+1/2
+>
+q
+lnn
+3 ln 2.
+Proof.By Corollary 17, we havea i ≤3 lnq K/lnq i, for all 1≤i < K, from which it follows
+that lnn= PK
+i=1 ai lnq i ≤(3K−2) lnq K. First we prove the lower bounds. For the weak lower
+bound, we simply use Bertrand’s postulate (Lemma 7) to getq K <2 K, forK≥1, from which
+it follows that lnn≤K(3K−2) ln 2. Rearranging yieldsK≥ 1
+3
+
+1 +
+ 
+1 + 3 lnn
+ln 2
+1/2
+>
+q
+lnn
+3 ln 2,
+sinceK >0. For the lower bound in terms of the LambertWfunction, we note thatK≥7 by
+Lemma 4; thus by Lemma 6(e) we haveq K ≤K(lnK+ ln lnK)< K 2, since lnx+ ln lnx < x, for
+allx >1. Therefore, lnn <2(3K−2) lnK <6KlnK, and thusKlnK > lnn
+6 . We may invert
+this relationship to getK > e W( lnn
+6 ) = lnn
+6W( lnn
+6 ), which proves the lower bound.
+For the upper bound,n≥rad(n) =q #
+K > K!>(K/e) K. Thus lnn > K(lnK−1), and
+sincex7→x(lnx−1) is strictly increasing forx≥1, we may invert this inequality to obtain
+K < e 1+W( lnn
+e ) = lnn
+W( lnn
+e ). To see this, sinceK≥6, we may definet:= lnK−1>0, and thus
+lnn > K(lnK−1) is equivalent tote t < lnn
+e , which impliest < W
+  lnn
+e
+
+, and the conclusion
+follows. □
+4.2.1.Algorithm to extend theω−inequality range.Corollary 17 reduces the search for a minimal
+counterexample at fixedKto finitely many exponent tuples. The same strategy applies to Robin’s
+inequality and is known. Fork≥7, define
+Sk :={a= (a 1, . . . ,ak−1, ak)∈N k :
+lnq k
+lnq i
+
+≤a i ≤
+3 lnqk
+lnq i
+
+, a k = 1, a i ≥a i+1,∀1≤i < k},
+Nk :={q a1
+1 qa2
+2 · · ·q ak−1
+k−1 qk : (a1, . . . , ak−1,1)∈ S k}.
+By Lemmas 13, 14, Theorem 2, and Corollary 17, it then suffices to check theω−inequality for
+all integers in the setN K := SK
+k=7 Nk, and if no counterexamples are found, we conclude that
+ω(n)> K. This impliesn≥q #
+K+1, and in factn > q #
+K+1 (by Theorem 1) and can be slightly
+improved using Corollary 17.
+Lemma 19.Suppose that there are no counterexamples to theω−inequality inN K, for some
+K≥7. Then theω−inequality holds for all5040< n≤n 0, wheren 0 =q a1
+1 qa2
+2 · · ·q aK
+K qK+1 −1,
+witha i =
+j
+lnq K+1
+lnq i
+k
+, for all1≤i < K+ 1.
+Proof.Ifn >5040 is the minimal counterexample to theω−inequality, thenω(n)≥K+ 1, since
+there are no counterexamples inN k. By Corollary 17, this impliesn≥q a′
+1
+1 qa′
+2
+2 · · ·q
+a′
+K+1
+K+1 · · ·q
+a′
+ω(n)
+ω(n) ,
+wherea ′
+i =
+j lnq ω(n)
+lnq i
+k
+. Since
+j lnq ω(n)
+lnq i
+k
+≥
+j
+lnq K+1
+lnq i
+k
+=a i, for all 1≤i≤K+ 1, we conclude
+n > n 0. □
+The computation in (L.5) verifies thatN 20 contains no counterexample, and hence gives:
+
+[PDF page 13]
+FINITE ARITHMETIC FORM OF ROBIN’S INEQUALITY AND EQUIV ALENCE TO RH 13
+Lemma 20.The minimal counterexamplen >5040to theω−inequality must satisfyω(n)≥21.
+By Lemma 19, it also satisfies
+n >2 6 ·3 3 ·5 2 ·7 2 ·11·13·17·19·23·29·31·37·41·43·47·53·59·61·67·71·73−1
+= 410555180440430163438262940577599.
+4.3.Superabundance for theω−inequality.We now prove that a minimal counterexample
+to theω−inequality is superabundant. The first ingredient is an estimate for the truncated-
+exponential tail, which will also be used in Section 5.
+Lemma 21(Strong-tail estimate).Letn >5040be the minimal counterexample to theω−inequality,
+with prime factorizationn=q a1
+1 . . . qaK
+K , whereK=ω(n). Letτ K := ln ln(6KlnK). Then, we
+have
+ln lnn−
+KX
+j=0
+(ln ln lnn)j
+j! < τ K+1
+K
+(K+ 1)!
+
+1− τK
+K+ 2
+−1
+< 6.4×10 −15
+√
+6KlnK
+< 6.4×10 −15
+√
+lnn
+.
+Proof.Sincenis the minimal counterexample, we can assumeK≥21, by Lemma 20. We denote
+t:= ln ln lnn >0. The proof of Corollary 18 already shows that lnn <6KlnK(so the last
+inequality of this lemma is obvious), and thust < τ K. Moreover,τ K < K+ 2, for allK≥21, and
+thust < τ K < K+ 2. Therefore, we have
+ln lnn−
+KX
+j=0
+(ln ln lnn)j
+j! =e t −
+KX
+j=0
+tj
+j! =
+∞X
+j=K+1
+tj
+j! < tK+1
+(K+ 1)!
+
+1− t
+K+ 2
+−1
+< τ K+1
+K
+(K+ 1)!
+
+1− τK
+K+ 2
+−1
+,
+(16)
+which proves the first inequality of this lemma. For the second inequality of the lemma, we define
+RK :=
+√
+6KlnK τ K+1
+K
+(K+ 1)!
+
+1− τK
+K+ 2
+−1
+,
+and then it suffices to compute an upper bound onR K. We claim thatR K ≤R 21, for allK≥21.
+Let us prove this claim. On the domainx≥21, we introduce the functionsf(x) := (x+1) ln(x+1)
+xlnx
+andg(x) := ln ln(6xlnx)
+x+2 . Bothfandgare positive and strictly decreasing on this domain, and this
+is easily seen by computing their derivatives. For example,g′(x) = g(x)
+x+2
+
+(1+ 1
+lnx )(1+ 2
+x)
+ln ln(6xlnx) ln(6xlnx) −1
+
+,
+and since the term in parenthesis is decreasing inx, we can upper bound it by evaluating it at
+x= 21. This givesg ′(x)<−0.8g(x)/(x+ 2)<0, for allx≥21. Now, we compute the ratio
+RK+1
+RK
+=
+r
+(K+ 1) ln(K+ 1)
+KlnK ·
+ τK
+K+ 2
+
+·
+ τK+1
+τK
+K+2
+·
+ 
+1− τK
+K+2
+1− τK+1
+K+3
+!
+≤
+p
+f(21)·g(21)·
+ τK+1
+τK
+K+2
+· 1
+1−g(22) <0.087
+ τK+1
+τK
+K+2
+.
+(17)
+Next, onx≥21, let us define the functionτ(x) := ln ln(6xlnx)>0. On this domain, we have
+(18) τ ′(x)
+τ(x) = 1 + lnx
+xlnxln(6xlnx) ln ln(6xlnx) < 1
+4x ,
+where the inequality follows by noticing that 4
+ 
+1 + 1
+lnx
+
+≤4
+ 
+1 + 1
+ln 21
+
+<5.32, for allx≥21,
+and similarly ln(6xlnx) ln ln(6xlnx)≥ln(6·21·ln 21) ln ln(6·21·ln 21)>10.61; therefore
+4
+ 
+1 + 1
+lnx
+
+<ln(6xlnx) ln ln(6xlnx), for allx≥21. Integrating (18), we get
+ln
+ τK+1
+τK
+
+=
+Z K+1
+K
+τ ′(x)
+τ(x) dx <
+Z K+1
+K
+1
+4x dx= 1
+4 ln
+
+1 + 1
+K
+
+,
+
+[PDF page 14]
+14 CHALLENGER MISHRA AND RAHUL SARKAR
+from which we conclude that
+ τK+1
+τK
+K+2
+<(1 + 1/K)
+K+2
+4 < e
+K+2
+4K ≤e
+23
+84 <1.315, K≥21.
+Plugging this back into (17), we get RK+1
+RK
+<0.087·1.315<0.115, and thus the sequence{R K}K≥21
+is strictly decreasing (at a geometric rate), proving the claim. SinceR 21 <6.4×10 −15, the lemma
+is proved. □
+For later use, set
+(19)τ K := ln ln(6KlnK), E K := τ K+1
+K
+(K+ 1)!
+
+1− τK
+K+ 2
+−1
+, K≥21.
+The next lemma establishes a lower bound on theK th primorial numberq #
+K, assuming that the
+minimal counterexamplensatisfiesω(n) =K.
+Lemma 22(Primorial lower bound).Letn >5040be the minimal counterexample to the
+ω−inequality, with prime factorizationn=q a1
+1 . . . qaK
+K , whereK=ω(n). Then, we have
+EK lnnln lnn < q#
+K
+n .
+Proof.We can assumeK≥21, by Lemma 20. Definet:= ln ln lnn >0. Asnis the minimal
+counterexample, we have by (3)
+PK(t) =
+KX
+j=0
+tj
+j! ≤ σ(n)
+eγn = 1
+eγ
+KY
+j=1
+ 
+1 + 1
+qj
++· · ·+ 1
+qaj
+j
+!
+< 1
+eγ
+KY
+j=1
+qj
+qj −1 .
+Using this, together with Lemma 21, gives us
+ln lnn=e t =P K(t) +T K(t)< 1
+eγ
+KY
+j=1
+qj
+qj −1 +E K =:Y K.
+To prove the lemma, it thus suffices to prove the estimateE KYKeYK eeYK
+< q #
+K, or equivalently,
+(20)e YK +Y K + lnY K + lnE K <lnq #
+K =ϑ(q K), K≥21.
+For the range 21≤K <103, we perform a numerical check (L.6) and we see that (20) holds. So
+let us assumeK≥103, and thereforeq K ≥563, in the rest of this proof.
+We first derive two upper bounds onE K and lnE K. ForK≥103, we have ln(6KlnK)<
+√
+K,
+sincef(x) := √x−ln(6xlnx) satisfiesf(x)>2.1, andf ′(x) = 1
+x
+ √x
+2 −1− 1
+lnx
+
+>0, forx≥103.
+Therefore, by (19), we getτ K = ln ln(6KlnK)< lnK
+2 , and thus τK
+K+2 < lnK
+2(K+2) < 1
+2. Using (19)
+again givesE K < 2τ K+1
+K
+(K+1)! <2
+
+eτK
+K+1
+K+1
+<2
+
+elnK
+2(K+1)
+K+1
+, and thus taking logarithms, we get
+(21) lnE K <ln 2 + (K+ 1) ln
+ elnK
+2(K+ 1)
+
+<1 + (K+ 1) ln
+ 1√
+K
+
+= 1− (K+ 1)
+2 lnK,
+where we used elnK
+2(K+1) < 1√
+K , for allK≥103. Next, we use the boundq K ≤K(lnK+ ln lnK)<
+K 2 (see Lemma 6(e)), which holds forK≥103, to get lnq K <2 lnK <
+√
+K. Combining with
+(21) this gives lnE K + ln(2 lnqK)<1− (K+1)
+2 lnK+ ln(2
+√
+K)<1.7− KlnK
+2 <0, and therefore,
+we get the upper bound
+(22)E K < 1
+2 lnqK
+, K≥103.
+Next, we upper boundY K ande YK. By Lemma 6(f), we have 1
+eγ
+QK
+j=1
+qj
+qj −1 <lnq K + 1
+2 lnq K
+,
+which after combining with (22), givesY K <lnq K + 1
+lnq K
+. We conclude thate YK < q Ke
+1
+lnq K , and
+
+[PDF page 15]
+FINITE ARITHMETIC FORM OF ROBIN’S INEQUALITY AND EQUIV ALENCE TO RH 15
+then the estimate onϑ(q K), from Lemma 6(c), gives us
+ϑ(qK)−e YK > q K
+
+1− 1
+2 lnqK
+
+−q Ke
+1
+lnq K =− qK
+lnq K
+1
+2 + lnq K
+
+e
+1
+lnq K −1
+
+.
+Sinceq K ≥563, we have lnq K >1, and thuse
+1
+lnq K −1< 1
+lnq K −1; by Lemma 6(g) we have
+qK
+lnq K
+< K; and finally we also have lnq K >ln(K+ 1); therefore the above inequality yields
+(23)ϑ(q K)−e YK >−K
+1
+2 + lnq K
+lnq K −1
+
+>−K
+3
+2 + 1
+ln(K+ 1)−1
+
+.
+The estimatesY K <lnq K + 1
+lnq K
+and lnq K <
+√
+K, from above, also gives us
+(24)Y K + lnY K <2
+
+lnq K + 1
+lnq K
+
+≤2
+
+lnq K + 1
+lnq 103
+
+<2
+√
+K+ 0.32.
+From (21), (23), (24), in order to prove (20), it thus suffices to show that
+(K+ 1)
+2 lnK−K
+3
+2 + 1
+ln(K+ 1)−1
+
+−2
+√
+K−1.32≥0, K≥103.
+But this follows because the functionh(x) := 1
+2
+ 
+1 + 1
+x
+
+lnx− 3
+2 − 1
+ln(x+1)−1 − 2√x − 1.32
+x , satisfies
+h(103)>0.35, andh ′(x)>0, for allx≥103. The lemma is proved.□
+Theorem 3(ω−superabundance).Letn >5040be the minimal counterexample to theω−inequality.
+Thennis a superabundant number.
+Proof.Letnhave the prime factorizationn=q a1
+1 qa2
+2 . . . qaK
+K , withω(n) =K≥21 (by Lemma 20),
+and for contradiction assume thatnis not a superabundant number. Letn ′ be the superabundant
+number immediately precedingn, and we may assume 5040< n ′ < nthroughout this proof,
+since the numerical check in (L.3) verifies thatn >10 9. Since there are no other superabundant
+numbers in the interval betweenn ′ andn(non-inclusive), we must have σ(n′)
+n′ ≥ σ(n)
+n . Denoting
+K ′ :=ω(n ′), this further implies thatK ′ > K, because otherwise we would violate Lemma 12.
+Now sincen ′ is superabundant, we have rad(n ′) =q #
+K′ as already mentioned in Section 1;
+similarly, by Lemma 13, we also have rad(n) =q #
+K. This then implies thatq #
+K dividesn−n ′,
+and in particularn−n ′ ≥q #
+K. Let us also introduce some notation. We definet:= ln ln lnn,
+t′ := ln ln lnn′, and therefore we havet > t ′ >0. Sincenis the minimal counterexample to the
+ω−inequality, we have so farC(n)< C(n ′), or equivalently,P K(t)< P K′(t′), since
+C(n)≤ σ(n)
+n ≤ σ(n′)
+n′ < C(n ′).
+It follows thatP K(t)−P K(t′)< P K′(t′)−P K(t′)< T K(t′), whereT K was defined in Section 1.2.
+Moreover, ast > t ′, andK≥7, we also have
+PK(t)−P K(t′) = (ln ln lnn−ln ln lnn ′) +
+KX
+j=2
+(ln ln lnn)j −(ln ln lnn ′)j
+j!
+>(ln ln lnn−ln ln lnn ′) =
+Z n
+n′
+1
+xlnxln lnx dx > n−n ′
+nlnnln lnn ≥ q#
+K
+nlnnln lnn ,
+where in the last inequality on the second line, we used from above thatn−n ′ ≥q #
+K. Therefore,
+combining everything, we get that q#
+K
+nlnnln lnn < T K(t′)< T K(t)< E K, where the second-last
+inequality is due to the monotonicity ofT K, and the last inequality is by (16). This contradicts
+Lemma 22, and thus we have proved thatnis superabundant.□
+
+[PDF page 16]
+16 CHALLENGER MISHRA AND RAHUL SARKAR
+5.Equivalence with the Riemann hypothesis
+Theω−inequality trivially implies Robin’s inequality, which in turn is equivalent to Riemann
+hypothesis [Rob84], so it remains only to prove the converse. We give a proof that the Riemann
+hypothesis implies theω−inequality using the minimal counterexample results of Section 4.3. The
+proof uses the following conditional bound on the divisor ratio due to Nicolas [Nic22, Corollary 1.2]:
+Lemma 23(Nicolas’ bound under RH).If the Riemann hypothesis is true, then for alln >5040,
+(25) σ(n)
+n < e γ
+
+ln lnn− 0.095√
+lnn
+
+.
+The proof combines Nicolas’ bound with the strong-tail estimate of Lemma 21.
+Theorem 4(Equivalence with RH).Theω−inequality is equivalent to the Riemann hypothesis.
+Proof.Let us assume that RH is true. For contradiction, assume that theω−inequality is false, let
+n >5040 be the minimal counterexample to theω−inequality, and letω(n) =K. Then Nicolas’
+bound (25) holds for thisn, and we get
+σ(n)
+n < e γ
+
+ln lnn− 0.095√
+lnn
+
+< e γ
+
+ln lnn− 6.4×10 −15
+√
+lnn
+
+< e γ
+KX
+j=0
+(ln ln lnn)j
+j! =C(n),
+where the last inequality is by Lemma 21. This is a contradiction, which proves the theorem, as
+the other direction is obvious.□
+An immediate consequence of Theorem 4 is the following:
+Corollary 24.The Riemann hypothesis is true if and only if theω−inequality holds for all
+colossally abundant numbers strictly greater than5040.
+Proof.By Theorem 4, if RH is true, then theω−inequality holds for alln >5040, and hence also
+whennis a colossally abundant number. For the other direction, if theω−inequality holds for
+all colossally abundant numbers, then Robin’s inequality is also true for all colossally abundant
+numbers [Bro17, Lemma 7.1]. But this implies that Robin’s inequality is true for alln >5040,
+and hence the Riemann hypothesis holds.□
+6.Discussion
+Theω-inequality gives a finite-truncation criterion equivalent to Robin’s inequality and hence
+to the Riemann hypothesis. More generally, any integer-valued truncationA(n) in (1) satisfying
+A(n)≥ω(n)
+lies between theω-inequality and Robin’s inequality and is therefore again equivalent to RH; the
+π-inequality is one example.
+Theω-inequality arose from an extension of the study of inequalities in [MMS23] and was first
+supported by limited numerical evidence. The results developed here were obtained in stages.
+We first established the unconditional cases (primorials in Theorem 1, square-free integers in
+Corollary 9, and odd integers in Corollary 10) and the multiplicity bounds for a hypothetical
+minimal counterexample (Lemma 15), except for the final conditiona K = 1 derived in Theorem 2.
+Provinga K = 1 led to a proof of equivalence with Robin’s inequality (Theorem 4). The resultaK =
+1 remains important for a different reason: for each fixedK, it reduces the relevant search to a finite
+set of multiplicity tuples. This finite reduction, together with bounds for the truncated exponential
+that also entered the equivalence proof, is used in proving that a minimal counterexample must
+be superabundant.
+The scaleω(n) is also close to a natural lower threshold. Indeed, replacingω(n) byω(n)−1
+already gives infinitely many counterexamples. Forn= 2 a one hasA(n) =ω(n)−1 = 0, so the
+corresponding right-hand side ise γ, whereas
+σ(2a)
+2a = 2− 1
+2a > e γ
+
+[PDF page 17]
+FINITE ARITHMETIC FORM OF ROBIN’S INEQUALITY AND EQUIV ALENCE TO RH 17
+for everya≥3. Thus every 2 a >5040 is a counterexample. The same argument applies to
+A(n) =⌊c ω(n)⌋for every fixed 0< c <1, sinceA(2 a) = 0. Hence no uniform proportional
+reduction of the truncation order is possible, although this does not establish pointwise minimality
+ofω(n) among all arithmetic truncation rules.
+A further consequence of the present analysis is that, if theω-inequality fails, its minimal
+counterexample is superabundant. We record this in Theorem 3. Hence it is sufficient to verify the
+inequality on superabundant integers, or using Corollary 24, on the even smaller class of colossally
+abundant integers. This places the truncated criterion within the same extremal framework that
+governs maximal values ofσ(n)/n, while retaining the additional parameterK=ω(n). For fixed
+K, the problem is reduced to a finite tuple of non-increasing prime multiplicities subject to the
+structural bounds obtained above.
+These results suggest two related directions. First, one may ask how far the truncation order
+can be reduced while preserving equivalence with Robin’s inequality, and whether there is a natural
+minimal arithmetic choice ofA(n). Second, the finite-dimensional problem at fixedKmay admit
+a sharper extremal description, for example through explicit optimisation ofσ(n)/nunder size
+and multiplicity constraints, or through a sparse extremal sequence adapted specifically to the
+ω-truncation. Such a reduction would go beyond the equivalence itself and may clarify the ways
+in which the finite-truncation formulation provides additional leverage on Robin’s criterion.
+Acknowledgments.The authors thank Subhayan Roy Moulik, Tom Oliver, Minhyong Kim and
+participants at theAI×Mathematics 2026workshop at ICMS, Edinburgh, for helpful discussions.
+C.M. acknowledges support by theAccelerate Program for Scientific Discoveryand Turing AI
+grant G111021 at the Department of Computer Science and Technology, University of Cambridge.
+R.S. acknowledges support from the U.S. Department of Energy, Office of Science, Accelerated
+Research in Quantum Computing Centers, Quantum Utility through Advanced Computational
+Quantum Algorithms, grant no. DE-SC0025572.
+On LLM use.Large language models (LLMs) were consulted asynchronously to identify typos,
+check calculations, discuss proof sketches, identify errors in algebra, or other redundancies in the
+manuscript, and any suggestions were reviewed and implemented serially and by hand if correct.
+AppendixA.Supporting results and other related bounds
+A.1.Bounds on exponentials, logarithms, and truncated exponential sums.We collect
+some analytic estimates used in the main body of the paper.
+Lemma 25(Taylor remainder).Letf:R→Rbe a(k+ 1)-times differentiable function on the
+closed interval[a, b], and letx, y∈(a, b)be distinct. Then there existsξbetweenx, ysuch that
+f(x) = Pk
+j=0 f (j)(y) (x−y)j
+j! +f (k+1)(ξ) (x−y)k+1
+(k+1)! . In particular, for the functionf:x7→e x, we
+have for allx >0andk∈N, the estimatee x
+
+1− xk+1
+(k+1)!
+
+<Pk
+j=0
+xj
+j! .
+Lemma 26(Log-bounds).The following statements are true:
+(a)ln(1−x) + x
+1−y >0, for all0< x≤y <1.
+(b)ln(1 +x)< x, for all0̸=x >−1.
+(c)ln
+
+x
+y
+
+> x−y
+x , for allx > y >0.
+Proof.(a) Letf y(x) := ln(1−x) + x
+1−y . Then we havef y(0) = 0, andf ′
+y(x) = y−x
+(1−y)(1−x) >0,
+forx < y. (b) Follows frome x >1 +x, whenx̸= 0. (c) We apply (b) to ln
+  y
+x
+
+, noting that
+y−x
+x >−1, which gives ln
+  y
+x
+
+= ln
+ 
+1 + y−x
+x
+
+< y−x
+x .□
+Lemma 27(Truncated-exponential ratio bound).Letx > y >0. Then for everyN∈N,
+PN(x)
+PN(y) >1 + x−y
+1 +y/N .
+
+[PDF page 18]
+18 CHALLENGER MISHRA AND RAHUL SARKAR
+Proof.FixN∈N. We haveP N(x)−P N(y) =
+R x
+y PN−1(u)du >(x−y)P N−1(y) by the funda-
+mental theorem of calculus, where in the last inequality we have used the monotonicity ofP N−1.
+This immediately gives the bound
+PN(x)
+PN(y) −1 = PN(x)−P N(y)
+PN(y) >(x−y) PN−1(y)
+PN(y) = (x−y)
+
+1 + yN
+PN−1(y)N!
+−1
+≥(x−y)
+
+1 + yN(N−1)!
+yN−1 N!
+−1
+= (x−y)
+
+1 + y
+N
+−1
+,
+where we used the fact thatP N−1(y)≥ yN−1
+(N−1)! in the second line.□
+A.2.Additional multiplicity bounds.We record some further multiplicity bounds, valid for
+the minimal counterexample to theω−inequality and for superabundant numbers.
+Lemma 28(Multiplicity upper bound).Letn=q a1
+1 . . . qaK
+K >5040be either the minimal coun-
+terexample to theω−inequality or a superabundant number withω(n)≥7. Then
+qai
+i ≤2 a1+2Ξ(qi)−∆(q i)<2 a1+2,
+for all2≤i≤K, whereΞ(q) :=
+1− 1
+q
+2−21−sq ,∆(q) :=
+1− 2sq
+q
+2sq −1 , ands q :=⌊log 2(q−1)⌋. The first
+inequality is strict in the superabundant case.
+Proof.Ifnis the minimal counterexample to theω−inequality, then by Lemma 4,ω(n)≥7. Thus
+qi must be an odd prime for any 2≤i≤K, which gives 1≤s qi =⌊log 2(qi −1)⌋=⌊log 2(qi)⌋.
+This implies 2≤2 sqi < q i, and it follows that Ξ(q i)<1 and ∆(q i)>0; so the inequality
+2a1+2Ξ(qi)−∆(q i)<2 a1+2 is clear.
+Now setn ′ :=n
+
+2sqi
+qi
+
+,so we haven ′ < n, and we noteω(n ′)≥6, which impliesn ′ ≥30030.
+Ifnis superabundant then σ(n′)
+n′ < σ(n)
+n , while σ(n′)
+n′ ≤ σ(n)
+n ifnis the minimal counterexample to
+theω−inequality, by Lemma 12. A calculation shows that the inequality
+σ(n′)/n′
+σ(n)/n =
+1−2 −(a1+s+1)
+1−2 −(a1+1)
+ 
+1−q −ai
+i
+1−q −(ai+1)
+i
+!
+≤1
+is true if and only if the inequalityq ai
+i ≤2 a1+2Ξ(qi)−∆(q i) is true as well, with the same
+equivalence also holding when both the inequalities are strict. This proves the lemma.□
+Lemma 29(Largest abundant index).Letn >5040be either the minimal counterexample to the
+ω−inequality or a superabundant number withω(n)≥7, with prime factorizationn=q a1
+1 . . . qaK
+K .
+Denote the index of the largest prime with non unit multiplicity asJ:= max{j:a j ≥2}, such
+thata J ≥2, anda J+1 =· · ·=a K = 1. Then,
+π
+
+2a1/3
+
+−1< J≤π
+
+2a1/2+1
+
+.
+Proof.We have already proved that the minimal counterexample to theω−inequality is a super-
+abundant number in Theorem 3, so we just prove the lemma assumingnis superabundant. Note
+that all superabundant numbers greater than 30 are divisible by 4. If this is not the case (i.e. if
+a1 = 1), thennmust be the primorial numberq #
+K, by the properties listed in Section 1.2. As
+n >36 andq #
+4 = 210 is not superabundant, this also impliesK >4, orq K ≥11, and moreover,
+aK = 1 by [AE44, Theorem 3]. Then Lemma 28 givesq K <8, which is a contradiction. Thus the
+set{j:a j ≥2}is non-empty.
+Next, asa K = 1, and the multiplicity exponents are non-increasing (i.e.a 1 ≥a 2 ≥ · · · ≥a K),
+using [AE44, Theorem 1], we have 1≤J≤K−1. From this, it follows by Lemma 28, that
+q2
+J ≤q aJ
+J <4·2 a1, and thereforeq J <2 a1/2+1. Sinceπis a non-decreasing function, this implies
+the upper boundJ≤π
+ 
+2a1/2+1
+. For the lower bound, we use Lemma 15(a) anda J+1 = 1, which
+gives
+j
+a1 ln 2
+lnq J+1
+k
+≤2. Hence,a 1 ln 2
+lnq J+1
+<3, or equivalentlyq J+1 >2 a1/3. Again by monotonicity of
+π, we concludeJ+ 1> π(2 a1/3), completing the proof.□
+
+[PDF page 19]
+FINITE ARITHMETIC FORM OF ROBIN’S INEQUALITY AND EQUIV ALENCE TO RH 19
+Lemma 30(Multiplicity bound usingq K+1).Letn=q a1
+1 . . . qaK
+K be a superabundant number, let
+1≤j≤K, and letα∈N. Ifq α
+j > q K+1 + 1, thena j ≤2(α−1).
+Proof.Supposeq α
+j > q K+1+1, so we may assumeα≥2 (asq j ≤q K < q K+1), and for contradiction
+assumea j >2(α−1)> α. We construct a smaller integern ′ with a greater divisor ratio; let
+n′ :=n qK+1
+qα
+j
+< n. We compute the ratio σ(n′)/n′
+σ(n)/n :
+σ(n′)/n′
+σ(n)/n =
+σ(q aj −α
+j )/qaj −α
+j
+σ(q aj
+j )/qaj
+j
+· σ(qK+1)
+qK+1
+=
+qaj −α+1
+j −1
+qaj +1
+j −1
+·q α
+j ·
+
+1 + 1
+qK+1
+
+.
+Sincenis superabundant, we must have σ(n′)/n′
+σ(n)/n <1, which impliesq aj +1
+j −q α
+j < q K+1
+ 
+qα
+j −1
+
+.
+Definet:=⌊log qj(1+qK+1)⌋; thust≤log qj(1+qK+1)< t+1, or equivalently,q t
+j ≤1+q K+1 < q t+1
+j .
+We claim thata j < α+t. To see this, assume otherwise thata j ≥α+t. Thenq aj −α+1
+j −1≥
+qt+1
+j −1> q K+1, or equivalently,q aj +1
+j −q α
+j > q K+1qα
+j > q K+1(qα
+j −1), which cannot be true,
+proving the claim. Moreover, we further have⌊log qj(1 +q K+1)⌋ ≤α−1, sinceq α
+j > q K+1 + 1,
+and sinceαis an integer. Therefore, combining we get,
+aj < α+t=α+⌊log qj(1 +q K+1)⌋ ≤2α−1,
+from which it follows thata j ≤2(α−1), since both sides are integers.□
+For the above lemma, note the special caseα= 2, which forcesa j ∈ {1,2}wheneverq 2
+j >
+qK+1 + 1.
+AppendixB.Numerical data and list of finite checks
+We list the finite computations used in the proofs together with the code required to reproduce
+them. Table 1 summarizes their usage.
+(L.1)Arbitrary powers of at most three primes. Withr K as defined in proof of Lemma 3, we
+haver K = 2, 3, 3.75, and the computed values ofe γPK
+k=0
+0.7622k
+k! are 3.138, 3.656, 3.787,
+forK= 1,2,3 respectively.
+(L.2)Arbitrary powers of at most six primes. In proof of Lemma 4, we haver K = 4.375, 4.8125,
+5.2135, and the computed values ofe γPK
+k=0
+1.076k
+k! are 5.201, 5.223, 5.227, forK= 4,5,6
+respectively.
+(L.3)Checkω−inequality up ton≤10 9. The followingMathematicacode (v15.0) was used
+to verify this for everyn∈(5040,10 9]:
+DivisorSigma[1, n]/(Exp[EulerGamma] n) <
+Sum[(Log[Log[Log[n]]])^j/j!, {j, 0, PrimeNu[n]}]
+(L.4)Checkπ−inequality for5041≤n≤10080. The followingMathematicacode (v15.0)
+was used to verify this for everyn∈(5040,10080]:
+DivisorSigma[1, n]/(Exp[EulerGamma] n) <
+Sum[(Log[Log[Log[n]]])^j/j!, {j, 0, PrimePi[n]}]
+(L.5)Checkω−inequality on minimal counterexample candidates withω(n)≤20.Mathemat-
+icacode (v15.0) was used to verify this for everynwith 7≤ω(n)≤20.
+(L.6)Checke YK +Y K + lnY K + lnE K <lnq #
+K =ϑ(q K)for21≤K <103in Lemma 22. The
+followingMathematicacode (v15.0) was used to conduct the check:
+check[ω ] := Module[{θ,τ, E, Y, k},
+θ[k ] := Total[Log[Prime[#]] & /@ Range[k]];
+τ[k ] := Log[Log[6 k Log[k]]];
+E[k ] := (τ[k]^(k + 1)/(k + 1)!)/ (1 -τ[k]/(k + 2));
+Y[k ] := E[k] + Exp[-EulerGamma] Times @@
+(Prime[#]/(Prime[#] - 1) & /@ Range[k]);
+N[Exp[Y[ω]] + Y[ω] + Log[E[ω]] + Log[Y[ω]]< θ[ω], 80]];
+check /@ Range[21, 102]
+
+[PDF page 20]
+20 CHALLENGER MISHRA AND RAHUL SARKAR
+(L.7)Checkω−inequality for some primorials.Mathematicacode (v15.0) was used to verify
+this for alln=q #
+K with 4≤K <13
+Check[n_] := DivisorSigma[1, n]/(Exp[EulerGamma] n) <
+Sum[(Log[Log[Log[n]]])^j/j!, {j, 0, PrimeNu[n]}];
+Primorial[k_] := Times @@ (Prime /@ Range[k]);
+ns = Primorial[#] & /@ Range[4, 12];
+Check /@ ns
+Claim number Program name Usage
+(L.1) Powers of at most 3 primes threePrimes.py Lemma 3
+(L.2) Powers of at most 6 primes sixPrimes.py Lemma 4
+(L.3) Checkω−inequality (n≤10 9) see code above Lemma 4
+(L.4) Checkπ−inequality (5041≤n≤10080) see code above Lemma 11
+(L.5) Checkω−inequality minimal counterexamples checkToK20.nb Lemma 20
+(L.6) Check Equation (20) for 21≤K <103 see code above Lemma 22
+(L.7) Checkω−inequality for primorials see code above Theorem 1
+Table 1.Numerical claims and corresponding program names for reproducibil-
+ity, and first usage. The actual codes are available at this GitHub link.
+References
+[AE44] Leonidas Alaoglu and Paul Erd¨ os,On highly composite and similar numbers, Transactions of the
+American Mathematical Society56(1944), no. 3, 448–469.
+[AF09] Amir Akbary and Zachary Friggstad,Superabundant numbers and the Riemann hypothesis, The
+American Mathematical Monthly116(2009), no. 3, 273–275.
+[Axl23] Christian Axler,On Robin’s inequality, The Ramanujan Journal61(2023), no. 3, 909–919.
+[BHMWN09] William D Banks, Derrick N Hart, Pieter Moree, and C Wesley Nevans,The Nicolas and Robin
+inequalities with sums of two squares, Monatshefte f¨ ur Mathematik157(2009), no. 4, 303–322.
+[Bro17] Kevin Broughan,Equivalents of the Riemann Hypothesis: Volume 1, Arithmetic Equivalents, vol.
+164, Cambridge University Press, 2017.
+[BT15] Kevin A Broughan and Tim Trudgian,Robin’s inequality for 11-free integers, Integers15(2015),
+no. A12.
+[CLMS07] YoungJu Choie, Nicolas Lichiardopol, Pieter Moree, and Patrick Sol´ e,On Robin’s criterion for the
+Riemann hypothesis, Journal de th´ eorie des nombres de Bordeaux19(2007), no. 2, 357–372.
+[LS25] Florian Luca and Patrick Sol´ e,On Robin’s inequality, Integers: Electronic Journal of Combinatorial
+Number Theory25(2025), A8.
+[MMS23] Challenger Mishra, Subhayan Roy Moulik, and Rahul Sarkar,Mathematical conjecture generation
+using machine intelligence, arXiv preprint arXiv:2306.07277 (2023).
+[Nic22] Jean-Louis Nicolas,The sum of divisors function and the Riemann hypothesis, The Ramanujan
+Journal58(2022), no. 4, 1113–1157.
+[OEI98] OEIS Foundation Inc.,The online encyclopedia of integer sequences,https://oeis.org/A067698,
+Sequence A067698.
+[PM21] David J Platt and Thomas Morrill,Robin’s inequality for 20-free integers, Integers: Electronic Journal
+of Combinatorial Number Theory21(2021), 28.
+[Ram15] Srinivasa Ramanujan,Highly composite numbers, Proceedings of the London Mathematical Society
+2(1915), no. 1, 347–409.
+[Ram19] ,A proof of Bertrand’s postulate, Journal of the Indian Mathematical Society11(1919),
+181–182.
+[Rob84] G Robin,Grandes valeurs de la fonction somme des diviseurs et hypoth` ese de Riemann, Journal de
+Math´ ematiques Pures et Appliqu´ ees63(1984), no. 2, 187–213.
+[RS62] J Barkley Rosser and Lowell Schoenfeld,Approximate formulas for some functions of prime numbers,
+Illinois Journal of Mathematics6(1962), no. 1, 64–94.
+[SP12] Patrick Sol´ e and Michel Planat,The Robin inequality for 7-free integers, Integers12.2(2012), 301–
+309.
+
+[PDF page 21]
+FINITE ARITHMETIC FORM OF ROBIN’S INEQUALITY AND EQUIV ALENCE TO RH 21
+Department of Computer Science and Technology, University of Cambridge CB3 0FD
+Email address:cm2099@cam.ac.uk
+Department of Mathematics, University of California, Berkeley, CA 94720
+Email address:rsarkar@berkeley.edu

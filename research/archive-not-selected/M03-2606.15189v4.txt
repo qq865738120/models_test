@@ -1,0 +1,3254 @@
+
+[PDF page 1]
+Blow-up and uniqueness of Leray-Hopf solutions
+to forced Navier-Stokes equations
+Giovanni Paolo GALDI ∗– Filippo GAZZOLA †
+Abstract
+We prove the existence of forces and smooth initial data for which the associated Leray-Hopf solution
+to the three-dimensional Navier-Stokes equations is unique and global in time, satisfies the energy equality,
+and exhibits infinitely many (countably many) blow-up instants within a finite time interval. We consider
+several classes of forces and different blow-up strengths, all of which are shown to be sharp with respect
+to known boundedness results in the literature. Our method also yields examples of blow-up solutions for
+the forced three-dimensional Euler equations.
+Keywords:Navier-Stokes equations, finite time blow-up, global uniqueness.
+AMS 2010 Subject Classification:35Q30, 76D03.
+Contents
+1 Introduction 2
+2 Main results 5
+3 Sharpness of the results 9
+4 Construction of the solution 11
+4.1 The velocity vector field . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+4.2 The survived triangles and the pressure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+5 Proofs 18
+5.1 Proof of Theorem 2.2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+5.2 Proof of Theorem 2.3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+5.3 Proof of Theorem 2.4 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+5.4 Proof of Theorem 2.5 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+5.5 Proof of Theorem 2.6 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+5.6 Proof of Theorem 2.7 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+5.7 Proof of Theorem 2.9 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+6 Appendices 31
+6.1 Survey on the Lane-Emden equation and connections . . . . . . . . . . . . . . . . . . . . . . . 31
+6.2 Proofs of Theorems 3.5 and 3.7 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+∗Department of Mechanical Engineering and Materials Science – University of Pittsburgh – Benedum Engineering Hall 607
+– Pittsburgh, PA 15261 – USA – galdi@pitt.edu
+†Dipartimento di Matematica (Dipartimento di Eccellenza MUR 2023-2027) – Politecnico di Milano – Piazza Leonardo da
+Vinci 32, 20133, Milano, Italy – filippo.gazzola@polimi.it
+1
+arXiv:2606.15189v4  [math.AP]  15 Aug 2026
+
+[PDF page 2]
+1 Introduction
+The question of global regularity for the three-dimensional incompressible Navier–Stokes equations is one
+of the central open problems in mathematical fluid dynamics and constitutes one of the seven Millennium
+Prize Problems [17]. In the whole spaceR 3, the forced Navier–Stokes problem reads
+Vt −∆V+ (V· ∇)V+∇P=f
+∇ ·V= 0
+)
+inR 3 ×(0,∞),
+V(ξ,0) =V 0(ξ), ξ= (x, y, z)∈R 3.
+(1.1)
+One of the formulations of the Millennium Problem [17, Statement (C)] asks whether there exist smooth,
+divergence-free initial dataV 0 of finite energy and a smooth forcing termffor which (1.1) fails to possess a
+global smooth solution. Despite the enormous effort devoted to this question, the possibility of finite-time
+singularity formation for smooth data and smooth forcing remains unresolved.
+On the other hand, at the level of finite-energy weak solutions, global existence has been known since the
+pioneering works of Leray [37] and Hopf [33]. Recall that, for the general forced problem (1.1), a Leray–Hopf
+solution is, in particular, a distributional solution satisfying 1
+V∈L ∞
+loc(R+;L 2
+σ(R3))∩L 2
+loc(R+;H 1(R3)),
+together with the energy inequality
+1
+2 ∥V(t)∥ 2
+L2(R3) +
+Z t
+0
+∥∇V(τ)∥ 2
+L2(R3) dτ≤ 1
+2 ∥V(0)∥ 2
+L2(R3) +
+Z t
+0
+⟨f(τ), u(τ)⟩dτ, t >0 (1.2)
+for the appropriatef. A precise definition, including the assumptions on the force and the meaning of the
+energy inequality (1.2), is given in Definition 2.1 below together with the comments immediately following
+it. Thus, global existence in the Leray–Hopf class does not by itself settle the fundamental questions of
+regularity and uniqueness.
+In this paper, we investigate these questions by allowing the forcing term to have less than full smoothness.
+Precisely, we construct forcing termsfandsmoothinitial data for which singularities do occur in finite
+time. More importantly, the regularity of the forces in our constructions is essentially optimal: a slight
+improvement in their regularity, in the appropriate function-space scale, rules out the corresponding type
+of singular behaviour by known regularity results. In this sense, our examples approach from the singular
+side some of the regularity thresholds separating presently known regularity theory from the unresolved
+smooth-data problem.
+More specifically, for an arbitrarily givenT >0, we construct classes of forcing termsfand smooth
+initial data for which the corresponding solution (V, P) has the following properties. First,Vis a global
+Leray–Hopf solution, satisfies the energy equality – namely, (1.2) with the equality sign and allt >0 – and
+is unique in the Leray–Hopf class. Second, there exist an increasing sequence
+{Tm} ⊂(0, T) (1.3)
+and a (possibly unbounded or constant) sequence of points
+{ξm} ⊂R 3 (1.4)
+such that
+(V, P) is smooth in (R 3 ×R +)\
+∞[
+m=1
+{(ξm, Tm)},(1.5)
+1See Section 2 for notation.
+2
+
+[PDF page 3]
+whileVdevelops a singularity at eachT m in suitable norms, depending on the functional class wherefis
+prescribed. In other words, the solution has countably many blow-up instants in a finite time interval where
+the strength of the singularities that can be produced depends quantitatively on the regularity imposed on
+the forcing term.
+A particularly significant feature of these examples is that singularity formation occurs without any
+loss of uniqueness or of the energy equality. This distinguishes the phenomenon considered here from
+the striking recent developments concerning nonuniqueness of three-dimensional Navier–Stokes solutions.
+Albritton, Bru´ e and Colombo [1] constructed a forcing term for which the same initial data give rise to
+distinct Leray solutions. More recently, Coiculescu and Palasek [10] established nonuniqueness for the
+unforced Cauchy problem with initial data in the critical spaceBM O −1, while Hou, Wang and Yang [34]
+obtained nonuniqueness of Leray–Hopf solutions for the unforced problem through a rigorous computer-
+assisted construction.
+Our results concern a fundamentally different mechanism. The solutions constructed here remain unique in
+the Leray–Hopf class and satisfy the energy equality throughout their evolution, yet they develop singularities
+at a prescribed countable collection of time–points. Consequently, the singular behaviour exhibited in this
+paper cannot be attributed to nonuniqueness of weak solutions. Rather, it is generated by the limited
+regularity of the external force. Thus,blow-up and uniqueness may occur simultaneously.
+Our findings are, moreover,sharpwith respect to the available regularity theory. For each class of
+forces considered below, we identify a corresponding strength of blow-up and show that the regularity of
+the force lies precisely at the threshold permitted by known boundedness criteria. If the force is assumed
+to possess slightly better regularity, those criteria prevent the corresponding norm of the solution from
+becoming unbounded. The examples therefore complement the classical regularity theory by showing, from
+the opposite direction, the essential optimality of these thresholds.
+The construction of our solutions is inspired by the concentration phenomena arising in the Lane–Emden
+equation [36, 14]. The basic idea can be described as follows. We first introduce a family of solenoidal vector
+fieldsV=V(ξ, t), obtained by suitably modifying an analogous family of solutions to the stationary Lane–
+Emden equation. The fieldsVdepend on the given time spanTand three positive parameters,δ,γ, andℓ,
+whose choice determines their concentration and regularity properties; see (4.4). We then define the forcing
+termfby substitutingVinto the left-hand side of (1.1), and using the Helmholtz-Weyl decomposition to
+define the pressureP. Thus,Vis, by construction, a solution of the corresponding forced Navier–Stokes
+problem. By appropriately choosing the triple (δ, γ, ℓ), we can vary the functional class to whichfbelongs
+and, at the same time, determine the resulting regularity and blow-up behaviour ofV. This flexibility allows
+us to identify the borderline between the regularity of the forcing term and the strength of the singularities
+that the corresponding solution may exhibit. For this argument to work, it is essential that the nonlinear
+term (V· ∇)Varising from this procedure is not “too singular.” In fact, this is precisely what occurs, thanks
+to amagic cancellationthat we discuss in Remark 4.3; see also Remark 4.8. This cancellation substantially
+reduces the contribution of the nonlinear term and, in particular, allows our construction to yieldblow-up
+results even for the linear Stokes equations; see Remark 3.8 below. Since the cancellation is a consequence
+of the divergence-free constraint, this mechanism is specific to the incompressible setting and, in general, is
+no longer available for compressible fluid models or for certain classes of semilinear parabolic systems.
+Our main results fall into five fundamental categories, according to the functional classCto which the
+forcing termfbelongs. Irrespective of the choice ofC, the corresponding solutions (V, P) always enjoy the
+following properties:
+1. Their initial datumV 0 belongs to a suitable set of solenoidal functionsG σ ⊂C ∞(R3); see (2.5).
+2. They are global Leray–Hopf solutions and satisfy the energy equality for everyt >0.
+3. They are unique within the class of Leray–Hopf solutions corresponding to the same data.
+3
+
+[PDF page 4]
+4. They satisfy (1.3)–(1.5).
+5. Fort > T, both the forcing termfand the corresponding solution become regular and decay uniformly
+to zero pointwise ast→ ∞.
+The five categories are then distinguished by the choice ofC, with the corresponding solutions exhibiting
+blow-up in different norms.
+Precisely, let
+C1
+r,q :=
+
+L1
+loc(R+;L 2(R3))∩L r
+loc(R+;L 6/5(R3)), r∈[2,4)
+	
+∪
+
+Lq
+loc(R+;L 2(R3)), q∈[ 5
+4 , 4
+3)
+	
+;
+C2
+r,q :=
+
+L2
+loc(R+;L q(R3)), q∈(1,2)
+	
+∪
+
+Lr
+loc(R+;L 2(R3)), r∈[1,2)
+	
+;
+C3
+r,q :=
+[
+(r,q)∈A1
+Lr
+loc
+ 
+R+;L q(R3)
+
+,A 1 :=
+
+(r, q)∈[1,∞)×(1,∞) :q≤3 or 2
+r + 3
+q >1
+
+;
+C4
+r,q :=
+[
+(r,q)∈A2
+Lr
+loc
+ 
+R+;L q(R3)
+
+,A 2 :=
+
+(r, q)∈[1,∞)×(1,∞) :q≤ 3
+2 or 2
+r + 3
+q >2
+
+;
+C5
+r,q :=
+[
+(r,q)∈(1,∞)2
+Lr
+loc
+ 
+R+;L q(R3)
+
+.
+Then, for any choice of (r, q) for the above classesC i
+r,q,i= 1, . . .5, there isV 0 ∈ G σ andf∈ C i
+r,q such that
+the corresponding solutionVsatisfies the following conditions:
+lim
+t→Tm
+4
+p
+|Tm −t| ∥∇V(t)∥ L2(R3) = lim
+t→Tm
+∥V(t)∥ Lp(R3) =∞ ∀m≥1 and∀p≥¯p(r),inC 1
+r,q ,
+see Theorems 2.2 and 2.3 ;
+lim
+t→Tm
+|Tm −t| λ ∥∇V(t)∥ L2(R3) =∞, λ=λ(q, r)>0,inC 2
+r,q ,
+see Theorem 2.4 ;
+lim
+t→Tm
+∥V(t)∥ L∞(R3) =∞,inC 3
+r,q ,
+see Theorem 2.5 ;
+lim
+t→Tm
+∥∇V(t)∥ L∞(R3) =∞,inC 4
+r,q ,
+see Theorem 2.6. Finally,
+lim
+t→Tm
+∥∆V(t)∥ L∞(R3) =∞,inC 5
+r,q ;
+see Theorem 2.7. Moreover, in each of the cases considered above, we establish a corresponding blow-up
+result for the pressure fieldPin suitable norms.
+As mentioned earlier on, the above classes are “optimal” for the occurrence of blow-up in the indicated
+norms. This important property is established in Section 3. To this end, for
+f∈L s′
+loc(R+;L s(R3)),(s ′, s)∈[1,∞)×(1,∞),
+we introduce the quantity
+Sf = 2
+s′ + 3
+s .
+We then show that, as soon as the integrability properties off, as measured byS f, placefstrictlyoutside
+the corresponding class above, blow-up in the associated norm cannot occur. In this regard, see also Remark
+5.6.
+4
+
+[PDF page 5]
+The proof of Theorem 2.7, which yields the blow-up of ∆V, shows that the singularities offaffect only
+the second-order spatial derivatives ofV, but neither the vorticity∇ ∧Vnor the time derivativeV t. This
+observation suggests that a blow-up result might also hold for theEuler problem, obtained from (1.1) by
+formally suppressing the term ∆V, even for relatively smooth forcing terms. This is indeed established in
+Theorem 2.9, where we show that there existV 0 ∈ G σ and
+f∈C ∞(R3 ×[0, T))∩C 0,α(R3 ×[0, T]), α∈(0,1),
+such that the corresponding Euler problem admits a solution (V, P), with
+V∈C ∞(R3 ×[0, T))∩C 0,α(R3 ×[0, T]),
+that blows up at timeTin the sense of the Beale–Kato–Majda criterion [4], namely,
+lim
+t→T
+Z t
+0
+∥∇ ∧V(s)∥ L∞(R3) ds=∞.
+We conclude this outline by noting that the problem of constructing forces leading to blow-up in different
+norms has also been investigated very recently by Zhang [49], whose results were subsequently extended and
+generalised by Beir˜ ao da Veiga–Yang [5]. However, their approach and results are of a different nature from
+those presented here.
+The paper is organised as follows. In Section 2, we give a precise formulation of our main results.
+In Section 3, we employ well-known results and some of their consequences—developed in the Appendix,
+Section 6.2—to show that our blow-up findings are sharp in the sense specified previously. The backbone of
+the paper is presented in Section 4. There, inspired by the “bubble” solution of the Lane–Emden equation,
+we introduce a solenoidal vector fieldV=V(ξ, t) depending on a givenT >0 and on three parameters,δ,γ,
+andℓ. We first identify the range of these parameters for whichVis a Leray–Hopf solution; see Lemma 4.4.
+We then further restrict this range in order to guarantee thatVis unique in the class of Leray–Hopf solutions
+and satisfies the energy equality; see Lemma 4.5. Next, we characterise the range of parameters for which
+Vexhibits blow-up in different norms (Lemma 4.6) and then, in Lemma 4.7, determine the summability
+properties ofg:=V t +(V· ∇)V−∆V. As previously mentioned, a fundamental role in this analysis is played
+by themagic cancellationresulting from the solenoidality ofV; see Lemma 4.7 and Remark 4.3. The section
+ends with the introduction of the pressure field via Helmholtz-Weyl decomposition of the vector fieldg, and
+the study of its corresponding summability properties. The subsequent Section 5 is entirely dedicated to
+the proofs of our main results. They are essentially developed in two steps. On the one hand, thanks to the
+results established in the previous section, we prove the existence of a unique, global Leray–Hopf solution
+satisfying the energy equality and possessing the stated singularity properties at a single timeT >0. On the
+other hand, we define a vector fieldWas a suitably weighted series of solutionsV m, each of which possesses
+a singularity at a prescribed timeT m, and show thatWis a Leray–Hopf solution to (1.1) possessing all the
+properties stated in the main theorems. The final section contains an Appendix divided into two parts. In
+the first part, Section 6.1, we recall the stationary and evolution Lane–Emden equation and some relevant
+results concerning its solutions, including their uniqueness properties. In the second part, Section 6.2, we
+employ the results of [32] to prove local existence theorems for (1.1) in maximal regularity classes, which
+are needed to establish the sharpness of our blow-up conditions.
+2 Main results
+Forp≥1, letL p
+σ(R3) be the subspace ofL p(R3) of divergence-free vector fields. For anyT >0, let
+DT =
+n
+ϕ∈C ∞
+c
+ 
+R3 ×[0, T)
+
+s.t.∇ ·ϕ= 0 inR 3 ×[0, T)
+o
+and we make precise what is meant by Leray-Hopf solution.
+5
+
+[PDF page 6]
+Definition 2.1.For givenV 0 ∈L 2
+σ(R3), givenT >0andf∈L 2(0, T;H −1(R3)) +L 1(0, T;L 2(R3)), a
+vector fieldV=V(ξ, t)is a Leray-Hopf solution to(1.1)inR 3 ×(0, T)if
+V∈L ∞(0, T;L 2
+σ(R3))∩L 2(0, T;H 1(R3)),(2.1)
+Z ∞
+0
+Z
+R3
+
+∇V:∇ϕ+ (V· ∇)V·ϕ−V·ϕ t
+
+dt=
+Z ∞
+0
+⟨f, ϕ⟩dt+
+Z
+R3
+V0 ·ϕ(0)∀ϕ∈ D T ,(2.2)
+∥V(t)∥ 2
+L2(R3) + 2
+Z t
+0
+∥∇V(s)∥ 2
+L2(R3)ds≤ ∥V 0∥2
+L2(R3) + 2
+Z t
+0
+⟨f(s), V(s)⟩ds∀t∈(0, T].(2.3)
+A vector field is a global Leray-Hopf solution to(1.1)if it is a Leray-Hopf solution for anyT >0.
+Condition (2.3) is called the energy inequality, and⟨·,·⟩denotes the duality betweenH −1(R3) andH 1(R3).
+Note that, at those timestfor which (2.3) holds with strict inequality, there is a loss of kinetic energy that
+cannot be attributed to viscous dissipation.
+In order to recover the pressure, the minimal condition isP∈L 1
+loc(R3 ×(0, T)) and one is naturally led
+to solve (in distributional sense)
+−∆P=∇ ·
+
+(V· ∇)V−f
+
+inR 3 for a.e.t∈(0, T).(2.4)
+Throughout the paper, the initial velocityV 0 in (1.1) 3 will be taken in the following space of smooth
+functions
+Gσ ={V∈ G;∇ ·V= 0 inR 3}whereG=
+\
+k∈N
+\
+q∈[2,∞]
+W k,q(R3)⊂C ∞(R3).(2.5)
+Our first statement reads.
+Theorem 2.2.LetG σ be as in(2.5). For anyT >0and any2≤r <4there exist
+V0 ∈ G σ , f∈L 1
+loc(R+;L 2(R3))∩L r
+loc(R+;L 6/5(R3))⊂L 2
+loc(R+;H −1(R3)),
+such thatT7→ ∥∇V 0∥L2(R3) is strictly decreasing and:
+(a)problem(1.1)admits a global Leray-Hopf solutionV∈C 0(R+;L 2(R3))which satisfies the energy equality,
+(2.3)with equality sign, for allt >0;
+(b)there exists q >3such thatV∈L 2q/(q−3)
+loc (R+;L q(R3))for allq > qand, hence, such solution is unique;
+(c)there exist a strictly increasing sequence
+{Tm} ⊂(0, T)
+and a sequence{ξ m} ⊂R 3 such that the solution satisfiesV, P∈C ∞(R3 ×R + \ ∪∞
+m=1{(ξm, Tm)});
+(d)such solution also satisfiesV̸∈L 8
+loc(R+;L 4(R3)),∇V̸∈L 4
+loc(R+;L 2(R3))and
+lim
+t→Tm
+4
+p
+|Tm −t| ∥∇V(t)∥ L2(R3) = lim
+t→Tm
+∥V(t)∥ Lp(R3) =∞ ∀m≥1,∀p > 18
+5 − 12
+5r ,(2.6)
+while the associated pressurePsatisfiesP∈L 2
+loc(R+;L p(R3))for allp≥1,∇P∈L r
+loc(R+;L 6/5(R3))and
+∃s > rsuch thatlim
+t→Tm
+∥∇P∥ Ls(0,t;L6/5(R3)) =∞ ∀s > s∀m≥1.
+We obtain the same statement forf∈L r
+loc(R+;L 2(R3)).
+6
+
+[PDF page 7]
+Theorem 2.3.LetG σ be as in(2.5). For anyT >0and5/4≤r <4/3there exist
+V0 ∈ G σ , f∈L r
+loc(R+;L 2(R3))⊂L 1
+loc(R+;L 2(R3)),
+such thatT7→ ∥∇V 0∥L2(R3) is strictly decreasing and:
+–(a)-(b)-(c)in Theorem 2.2 hold;
+– such solution also satisfiesV̸∈L 8(0, T;L 4(R3)),∇V̸∈L 4(0, T;L 2(R3))and
+lim
+t→Tm
+4
+p
+|Tm −t| ∥∇V(t)∥ L2(R3) = lim
+t→Tm
+∥V(t)∥ Lp(R3) =∞ ∀m≥1,∀p >6− 4
+r ,(2.7)
+while the associated pressurePsatisfiesP∈L 2
+loc(R+;L p(R3))for allp≥1,∇P∈L r
+loc(R+;L 2(R3))and
+∃s > rsuch thatlim
+t→Tm
+∥∇P∥ Ls(0,t;L2(R3)) =∞ ∀s > s∀m≥1.
+We then weaken the blow-up requests (2.6) and (2.7), going towards the criticality condition for the
+external forcef. But, even to reach the “weaker blow-up condition” of the enstrophy (with no rate), we do
+not cover the case wheref∈L 2
+loc(0, T;L 2(R3)).
+Theorem 2.4.LetG σ be as in(2.5). For anyT >0, anyq∈(1,2)
+ 
+resp.r∈[1,2)
+
+there exist
+V0 ∈ G σ , f∈L 2
+loc(R+;L q(R3))
+
+resp.f∈L r
+loc(R+;L 2(R3))
+
+(2.8)
+such thatT7→ ∥∇V 0∥L2(R3) is strictly decreasing and:
+–(a)-(b)-(c)in Theorem 2.2 hold;
+– such solution also satisfies
+lim
+t→Tm
+∥∇V(t)∥ L2(R3) =∞ ∀m≥1with
+∀q≥ 3
+2 lim
+t→Tm
+|Tm −t| λ∥∇V(t)∥ L2(R3) =∞ ∀λ < 3(2−q)
+4q (2.9)
+
+resp.∀r≥ 4
+3 lim
+t→Tm
+|Tm −t| λ∥∇V(t)∥ L2(R3) =∞ ∀λ < 2−r
+2r
+
+,(2.10)
+while the associated pressure satisfiesP∈L 2
+loc(R+;L p(R3))for allp≥1,∇P∈L 2
+loc(R+;L q(R3))
+ 
+resp.
+∇P∈L r
+loc(R+;L 2(R3))
+
+with some norms of∇Pdiverging to∞ast→T m.
+Although the whole rangeq∈(1,2) can be analysed in (2.9), we consider the simpler caseq∈[ 3
+2 ,2)
+which, in particular, excludesq= 6
+5 that plays a major role in Theorem 2.2. For (2.10), the caser < 4
+3
+is treated in Theorem 2.3 and it will become clear from the proof of Theorem 2.4 (see Section 5.3) how
+important this threshold is in our approach. Both (2.9) and (2.10) show that (r, q) = (2,2) is a limit case.
+Our next results concern pointwise blow-up. We first deal with the pointwise blow-up ofV: in the next
+result we reach the threshold of the criticality off, although we do not attain it.
+Theorem 2.5.LetG σ be as in(2.5). For anyT >0, any(r, q)∈[1,∞)×(1,∞)satisfying
+
+r≥1andq > 3
+2 and2< 2
+r + 3
+q <5
+
+or
+
+r≥1and either 2
+r + 3
+q ≥5or1< q≤ 3
+2
+
+,(2.11)
+there existV 0 ∈ G σ andf∈L r
+loc(R+;L q(R3))such that:
+–(a)-(b)-(c)in Theorem 2.2 hold;
+– such solution satisfies
+lim
+t→Tm
+∥V(t)∥ L∞(R3) =∞,(2.12)
+while the associated pressurePsatisfiesP∈L 2
+loc(R+;L p(R3))for allp≥1and∇P∈L r
+loc(R+;L q(R3)).
+7
+
+[PDF page 8]
+We reach criticality forf, and also strict subcriticality, by lowering the pointwise blow-up request to∇V.
+Theorem 2.6.LetG σ be as in(2.5). For anyT >0, any(r, q)∈[1,∞)×(1,∞)satisfying
+
+r≥1andq >3and1< 2
+r + 3
+q <5
+
+or
+
+r≥1and either 2
+r + 3
+q ≥5or1< q≤3
+
+,(2.13)
+there existV 0 ∈ G σ andf∈L r
+loc(R+;L q(R3))such that:
+–(a)-(b)-(c)in Theorem 2.2 hold;
+– such solution satisfies
+lim
+t→Tm
+∥∇V(t)∥ L∞(R3) =∞,(2.14)
+while the associated pressurePsatisfiesP∈L 2
+loc(R+;L p(R3))for allp≥1and∇P∈L r
+loc(R+;L q(R3));
+- there exist(r, q)∈[1,∞)×(1,∞)satisfying(2.13) 1 such that
+V∈C 0(R3 ×R +)andV(ξ, T m)≡0inR 3 for allm≥1.(2.15)
+We get rid of the restriction in (2.13) 2 by lowering further the request of pointwise blow-up to the second
+spatial derivatives.
+Theorem 2.7.final LetG σ be as in(2.5). For anyT >0, any(r, q)∈[1,∞)×(1,∞)there existV 0 ∈ G σ
+andf∈L r(0, T;L q(R3))such that:
+–(a)-(b)in Theorem 2.2 hold;
+– there exist a bounded strictly increasing sequence{T m}of positive instants0< T 1 < T 2 < ... < T m < Tand
+a sequence{ξ m} ⊂R 3 such that the solution satisfiesV, P∈C 1(R3 ×R +)∩C ∞(R3 ×R + \ ∪∞
+m=1{(ξm, Tm)});
+– such solution satisfiesV(ξ, T m)≡ ∇V(ξ, T m)≡V t(ξ, Tm)≡0inR 3 for allm≥1and
+lim
+t→Tm
+∥∆V(t)∥ L∞(R3) =∞,(2.16)
+while the associated pressurePsatisfiesP∈L 2
+loc(R+;L p(R3))for allp≥1and∇P∈L r
+loc(R+;L q(R3)).
+Remark 2.8.A careful look at their proofs allows us to complement all the above statements with
+lim
+t→∞
+∥f(t)∥ L∞(R3) = lim
+t→∞
+∥V(t)∥ L∞(R3) = lim
+t→∞
+∥∇V(t)∥ L∞(R3) = lim
+t→∞
+∥(V· ∇)V(t)∥ L∞(R3) =
+= lim
+t→∞
+∥Vt(t)∥L∞(R3) = lim
+t→∞
+∥∆V(t)∥ L∞(R3) = lim
+t→∞
+∥∇P(t)∥ L∞(R3) = 0.
+Therefore, our results describe a violent thunderstormfacting on the bounded interval of time[0, T]and,
+with possibly different magnitudes, generating infinitely many epochs of irregularity in the fluid. Once the
+thunderstorm is over (t > T), the force and the fluid regularise and, asymptotically and uniformly, converge
+to a full rest.
+Theorem 2.7 and its proof show that singularities offmay affect only the second space derivatives of
+the solution and not the vorticity∇ ∧Vnor the time derivativeV t. Theorem 2.7 also suggests that if we
+“eliminate” the blow-up term ∆Vand consider the Cauchy problem for the Euler equations:
+Vt + (V· ∇)V+∇P=f ,∇ ·V= 0 inR 3 ×R + , V(ξ,0) =V 0(ξ) inR 3 ,(2.17)
+then blow-up may occur with a relatively nice force. Indeed, by exploiting further the main ideas of the
+present paper, we are able to reach the blow-up criterion by Beale-Kato-Majda [4]. Closely related to recent
+results in [11], we prove
+Theorem 2.9.LetG σ be as in(2.5)and letT >0. For anyα∈(0,1)there existf∈C ∞(R3 ×[0, T))∩
+C0,α(R3 ×[0, T])andV 0 ∈ G σ ⊂C ∞(R3)such that(2.17)admits a solution(V, P)satisfying
+V∈C ∞(R3 ×[0, T))∩C 0,α(R3 ×[0, T]),lim
+t→T
+Z t
+0
+∥∇ ∧V(s)∥ L∞(R3) ds=∞, P∈C 1,α(R3 ×[0, T]).
+8
+
+[PDF page 9]
+3 Sharpness of the results
+We recall here a number of known statements that show that the results in Section 2 are sharp. To this
+end, we define thestrength of the forceas
+∀(r, q)∈[1,∞)×(1,∞)∀f∈L r
+loc(R+;L q(R3)),S f := 2
+r + 3
+q .(3.1)
+We start with
+Proposition 3.1.LetV 0 ∈L 2
+σ(R3)and letf∈L 2
+loc(R+;L 6/5(R3)) +L 5/4
+loc (R+;L 2(R3)). LetVbe a global
+Leray-Hopf solution to(1.1), according to Definition 2.1.
+(i)IfV∈L 4
+loc(R+;L 4(R3))then the energy equality holds, that is,(2.3)with equality sign.
+(ii)If there existsq >3such thatV∈L 2q/(q−3)
+loc (R+;L q(R3)), thenVis the unique Leray-Hopf solution
+to(1.1).
+Proof.For Item (i), see [38] and also [25, Theorem 4.1]. Whenf∈L 2
+loc(R+;L 6/5(R3))⊂L 2
+loc(R+;H −1(R3))
+orf∈L 5/4
+loc (R+;L 2(R3))⊂L 1
+loc(R+;L 2(R3)), see [44, Theorem 1.4.1, Chapter V, p.272].
+For Item (ii), see Serrin [42, Theorem 5] and also [44, Theorem 1.5.1, Chapter V, p.276].□
+For our purposes, the following significantly different functional setting due to Kozono-Sohr [35, Theorem
+2.6], is of great interest.
+Proposition 3.2.LetV 0 ∈L 3
+σ(R3), letT 0 >0, letf∈L 1(0, T0;L 2(R3))∩L r(0, T0;L q(R3))for some
+1< r <∞and1< q≤3satisfying2/r+ 3/q <3. Then there exists0< T ∗ ≤T 0 and a weak solutionVto
+(1.1)(not necessarily being a Leray-Hopf solution, i.e.,(2.3)may not hold) satisfyingV∈L ∞(0, T∗;L 3(Rn)).
+But to show sharpness of Theorems 2.2 and 2.3 we also need the following statement taken from Sohr
+[44, Theorem 4.2.2, Chapter V, p.345].
+Proposition 3.3.LetV 0 ∈ G, letT 0 >0, letf∈L 4/3(0, T0;L 2(R3)) +L 4(0, T0;H −1(R3)). Then there
+exists0< T ∗ ≤T 0 and a unique Leray-Hopf solutionVto(1.1)in(0, T ∗)satisfyingV∈L 8(0, T∗;L 4(R3))
+and∇V∈L 4(0, T∗;L 2(R3)).
+Sharpness of Theorems 2.2 and 2.3. We rephrase the assumptions in Proposition 3.2 with
+f∈L 1(0, T0;L 2(R3)) andS f <3.
+In both Theorems 2.2 and 2.3, we have the assumption that
+f∈L 1
+loc(R+;L 2(R3)) andS f >3
+which, combined with Proposition 3.2, shows that they are sharp, up to the caseS f = 3 which remains
+open. Indeed, fix anyT 0 >0 and the related 0< T ∗ ≤T 0 from Proposition 3.2. Then take 0< T < T ∗ in
+Theorems 2.2 and 2.3. By (2.6) and (2.7) we findV̸∈L ∞(0, T∗;L 3(R3)): in fact, there may be a countable
+number of blow-up instants for theL 3(R3)-norm. Moreover, Proposition 3.3 considers cases whereS f = 3
+and the stated integrability forVand∇Vis violated in Theorems 2.2 and 2.3. Finally, concerning the
+blow-up conditions for∥V(t)∥ Lp(R3), see (2.6) and (2.7), the best one can expect is to lowerpuntilp >2
+while forp= 3 they are both ensured up to the criticalr.
+In order to comment Theorem 2.4, we collect several contributions in literature whose full (lengthy) proof
+can be found in the monograph by Sohr [44, Theorem 1.8.1, p.296], where a stronger result is proved.
+9
+
+[PDF page 10]
+Proposition 3.4.LetV 0 ∈H 1(R3)be divergence-free and letf∈L 2
+loc(R+;L 2(R3)). LetVbe a global
+Leray-Hopf solution to(1.1), according to Definition 2.1.
+IfV∈L 2q/(q−3)
+loc (R+;L q(R3))for someq >3, then the solution to(1.1)is unique and, in particular,
+∇V∈L ∞
+loc(R+, L2(R3)); moreover, there exists an associated pressurePsatisfying∇P∈L 2
+loc(R+;L 2(R3)).
+Notice that in Proposition 3.4 bothV 0 andfare more regular than needed in Definition 2.1.
+Sharpness of Theorem 2.4. By using (3.1), Proposition 3.4 states that for some forces satisfyingS f = 5
+2,
+one has∇V∈L ∞
+loc(R+, L2(R3)). Theorem 2.4 gives examples offsatisfyingS f > 5
+2 (as close to 5
+2 as wanted)
+for which∇V̸∈L ∞
+loc(R+, L2(R3)). Sincer=q= 2 is excluded,∇P∈L 2
+loc(R+;L 2(R3)) is not ensured.
+For anyT >0 put
+W r,q
+T :=
+
+U∈L 1
+1oc(R3 ×(0, T)) :U∈W 1,r(0, T;L q
+σ(R3))∩L r(0, T;W 2,q(R3))
+	
+.
+As a consequence of results by Giga-Sohr [32], in Section 6.2 we prove
+Theorem 3.5.LetT 0 >0and assume that
+f∈L r(0, T0;L q(R3))with 2
+r + 3
+q <2, V 0 ∈L q
+σ(R3)with∆V 0 ∈L q(R3).
+Then there existsT ∗ ∈(0, T 0]such that(1.1)has one and only one solutionV∈ W r,q
+T∗ . In particular,
+V∈L ∞(R3 ×(0, T ∗)).(3.2)
+Sharpness of Theorem 2.5. Theorem 3.5 shows that (3.2) holds by assumingS f <2. Theorem 2.5 shows
+that it may happen that (3.2) fails whenS f >2, see (2.11) 1. Only the caseS f = 2 remains open.
+Remark 3.6.In particular, Theorem 2.5 states thatP∈L 5/3
+loc (R+;L 5/3(R3)). By uniqueness,(V, P)is then
+the suitable solution [8, Definition p.779] obtained in [8, Theorem A1]: all the assumptions are satisfied since
+we can constructf∈L 2
+loc(R+;H −1(R3))as in Theorem 2.5 and the assumption∇ ·f= 0in [8, Theorem A’]
+is not restrictive because one may always reduce to this case thanks to the Helmholtz-Weyl decomposition in
+anyL p(R3)-space (1< p <∞), see [21, 39, 43]. Hence, Theorem 2.5 shows that [8, Theorem A’] is somehow
+sharp: the set of singular points(ξ, t)for(1.1)has zero 1D-Hausdorff measure, but it may contain countable
+many infinite points. Even more, Theorems 2.6 and 2.7 show that a countable number of singularities may
+appear also with weaker blow-up conditions.
+By weakening the assumptions and using again results by Giga-Sohr [32], in Section 6.2 we also prove
+Theorem 3.7.LetT 0 >0and assume that
+f∈L r(0, T0;L q(R3))with 2
+r + 3
+q <1, V 0 ∈L q
+σ(R3)with∆V 0 ∈L q(R3).
+Then there existsT ∗ ∈(0, T 0]such that(1.1)has one and only one solutionV∈ W r,q
+T∗ . In particular,
+∇V∈L ∞(R3 ×(0, T ∗)).(3.3)
+Sharpness of Theorems 2.6 and 2.7. Theorem 3.7 shows that (3.3) holds ifS f <1. Theorem 2.6 shows
+that (3.3) may fail whenS f >1, see (2.13) 1: therefore, it is sharp, up to the caseS f = 1.
+Theorem 2.7 states the existence offsuch thatS f >0 andV∈C 1(R3 ×R +)\C 2(R3 ×R +). The
+(stationary) couple
+U(ξ) = (2yz,−xz,−xy)
+(1 +|ξ| 2)5/2 , Q(ξ)≡0,(3.4)
+10
+
+[PDF page 11]
+satisfiesU∈C ∞(R3) with uniformly bounded derivatives,∇ ·U= 0 inR 3, and
+−∆U+ (U· ∇)U+∇Q= 35 (2yz,−xz,−xy)
+(1 +|ξ| 2)9/2 − (2xy2 + 2xz2,2yz 2 −yx 2,2zy 2 −zx 2)
+(1 +|ξ| 2)5 =:f(ξ)
+so thatf∈L ∞(R3): this gives an example whereS f = 0 with smoothU.
+Remark 3.8.For small velocitiesV, one can linearise the Navier-Stokes equations and obtain, instead of
+(1.1), a Cauchy problem for thelinearStokes equations:
+Vt −∆V+∇P=f ,∇ ·V= 0inR 3 ×R + , V(ξ,0) =V 0(ξ)inR 3.(3.5)
+Weak solution to(3.5)are as in Definition 2.1, by omitting the nonlinearity and the energy inequality. From
+Giga-Sohr [32, Theorem 2.8], we know that both Theorems 3.5 and 3.7 hold for(3.5). Since our results also
+hold for(3.5)(with the same proof since(V· ∇)Vbenefits of themagic cancellationdiscussed in Remark
+4.3 below), our blow-up examples are sharp also in this linear setting.
+4 Construction of the solution
+We begin this section with a technical computation.
+Lemma 4.1.LetT, α, γ >0,k∈N,p > k. For the functionh:R 3 ×[0, T)→Rdefined by
+h(ξ, t) = (T−t) 2α xk
+[(T−t) 2γ +|ξ| 2]p/2 ∀(ξ, t)∈R 3 ×[0, T)
+we have that
+∀q >max
+
+1, 3
+p−k
+
+∃Cq >0s.t.∥h(t)∥ q
+Lq(R3) =C q(T−t) 2qα+(kq+3−pq)γ ∀t∈[0, T).(4.1)
+Hence,
+∀r≥1h∈L r(0, T;L q(R3))⇐ ⇒2qα+ (kq+ 3−pq)γ >−q/r ,
+h∈L ∞(0, T;L q(R3))⇐ ⇒2qα+ (kq+ 3−pq)γ≥0,
+limt→T ∥h(t)∥Lq(R3) = 0⇐ ⇒2qα+ (kq+ 3−pq)γ >0.
+(4.2)
+The same statements hold ifx k is replaced by any homogeneous polynomial (w.r.t.x, y, z) of degreek.
+Proof.In what follows,C >0 denotes suitable constants that may also vary within the same equation.
+Using spherical coordinates (ρ, θ, ϕ), combined with the change of variablesρ= (T−t) γsfor fixedt∈[0, T),
+we find
+∥h(t)∥q
+Lq(R3) = (T−t) 2qα
+Z
+R3
+|x|kq dξ
+[(T−t) 2γ +|ξ| 2]pq/2 =C(T−t) 2qα
+Z ∞
+0
+ρkq+2 dρ
+[(T−t) 2γ +ρ 2]pq/2
+=C(T−t) 2qα+(kq+3−pq)γ
+Z ∞
+0
+skq+3 ds
+[1 +s 2]pq/2 =C q(T−t) 2qα+(kq+3−pq)γ ∀q > 3
+p−k ,
+which proves (4.1). Then also the three statements in (4.2) follow.
+Finally, after switching to spherical coordinates, the computations do not change ifx k is replaced by any
+homogeneous polynomial of degreek.□
+11
+
+[PDF page 12]
+4.1 The velocity vector field
+When the explicit form will not be necessary, in the sequel we denote by
+Pj(ξ) any homogeneous polynomial of degreej≥0 with respect to|ξ|. (4.3)
+For instance,P 1(ξ) =|ξ|andP 1(ξ) =x(with an abuse of notation).
+For someδ, γ >0 andℓ >7/2 to be determined, we introduce the vector field
+V(ξ, t) = (T−t) 2δ
+[(T−t) 2γ +|ξ| 2]ℓ/2 (2yz,−xz,−xy) (4.4)
+that satisfies∇ ·V= 0 inR 3 ×[0, T); the lower boundℓ >7/2 ensures thatV(t)∈L 2(R3) fort∈[0, T).
+By scaling invariance, anyℓ >7/2 in (4.4) will enable us to build the blow-up examples. As we now show,
+a special choice ofℓslightly simplifies the computations.
+Lemma 4.2. (Choice ofℓ).Assume thatℓ >7/2, letVas in(4.4), let
+g:=V t −∆V+ (V· ∇)V .(4.5)
+Then for any(q, r)∈(1,∞)×[1,∞),
+g∈L r(0, T;L q(R3))⇐ ⇒ 1
+r + 3γ
+q >max
+
+(ℓ−2)γ+ 1−2δ, ℓγ−2δ,(2ℓ−3)γ−4δ
+	
+.(4.6)
+In particular, ifℓ= 5and(q, r)∈(1,∞)×[1,∞),
+g∈L r(0, T;L q(R3))⇐ ⇒γ <min
+ q
+5q−3(2δ+ 1
+r ), q
+7q−3(4δ+ 1
+r ), q
+3q−3(2δ− r−1
+r )
+	
+.(4.7)
+Proof.ForVas in (4.4), we find
+Vt(ξ, t) = (T−t) 2δ−1 P2(ξ)
+[(T−t) 2γ +|ξ| 2]ℓ/2 + (T−t) 2δ+2γ−1 P2(ξ)
+[(T−t) 2γ +|ξ| 2]1+ℓ/2 ,
+∆V(ξ, t) = (T−t) 2δ+2γ P2(ξ) + (ℓ−5)(T−t) 2δ P4(ξ)
+[(T−t) 2γ +|ξ| 2]2+ℓ/2 ,(V· ∇)V(ξ, t) = (T−t) 4δ P3(ξ)
+[(T−t) 2γ +|ξ| 2]ℓ .
+We emphasise that the exponent at the denominator of (V· ∇)Vis not1 +ℓas expected when multiplying
+Vwith a first order derivative: the reason for this is amagic cancellationthat occurs in computations (see
+Remark 4.3 below) and that plays afundamental rolein our analysis. We also notice that ∆V(which does
+have the expected power 2 +ℓ/2 at the denominator!) has a numerator where we highlighted the coefficient
+(ℓ−5): by choosingℓ= 5>7/2 this term vanishes and the numerator simplifies. This choice makesVin
+(4.4) similar to the Laplacian of the bubble (6.4), see (6.2) and Remark 6.2 below. But let us first conclude
+with the general form (4.6).
+From (4.2)1 with (α, k, p, q, r) = (δ−1/2,2, ℓ, q, r) and (α, k, p, q, r) = (δ+γ−1/2,2,2 +ℓ, q, r), we get
+Vt ∈L r(0, T;L q(R3))⇐ ⇒2δ−1 +
+3
+q + 2−ℓ
+
+γ >− 1
+r .(4.8)
+From (4.2)1 with (α, k, p, q, r) = (δ+γ,2,4 +ℓ, q, r) and (α, k, p, q, r) = (δ,4,4 +ℓ, q, r), we infer
+∆V∈L r(0, T;L q(R3))⇐ ⇒2δ+
+3
+q −ℓ
+
+γ >− 1
+r .(4.9)
+From (4.2)1 with (α, k, p, q, r) = (2δ,3,2ℓ, q, r), we obtain
+(V· ∇)V∈L r(0, T;L q(R3))⇐ ⇒4δ+
+3
+q + 3−2ℓ
+
+γ >− 1
+r .(4.10)
+Recalling the definition ofgin (4.5), from (4.8)-(4.9)-(4.10) we infer (4.6) and, then, (4.7).□
+12
+
+[PDF page 13]
+Remark 4.3.The magic cancellation that occurred while computing(V· ∇)Vis due to the divergence-free
+condition. To see this, for some(a, b)∈R 2 satisfyingab̸= 0, consider the slightly modified vector field
+H(ξ, t) = (T−t) 2δ
+[(T−t) 2γ +|ξ| 2]ℓ/2 (a yz, b xz, xy),
+which is divergence-free if and only ifa+b+ 1 = 0. The three components of the vector field(H· ∇)Hare
+h
+(H· ∇)H
+i1
+(ξ, t) = a(T−t) 4δx
+[(T−t) 2γ +|ξ| 2]ℓ
+
+y2 +bz 2 −(a+b+ 1) ℓ y2z2
+(T−t) 2γ +|ξ| 2
+
+,
+h
+(H· ∇)H
+i2
+(ξ, t) = b(T−t) 4δy
+[(T−t) 2γ +|ξ| 2]ℓ
+
+x2 +az 2 −(a+b+ 1) ℓ x2z2
+(T−t) 2γ +|ξ| 2
+
+,
+h
+(H· ∇)H
+i3
+(ξ, t) = (T−t) 4δz
+[(T−t) 2γ +|ξ| 2]ℓ
+
+bx2 +ay 2 −(a+b+ 1) ℓ x2y2
+(T−t) 2γ +|ξ| 2
+
+,
+whose denominators have exponentℓ(and notℓ+ 1) if and onlya+b+ 1 = 0.
+The proof of Lemma 4.2 suggests to takeℓ= 5 and, then, (4.4) becomes
+ℓ= 5 =⇒V(ξ, t) = (T−t) 2δ (2yz,−xz,−xy)
+[(T−t) 2γ +|ξ| 2]5/2 (4.11)
+so that, by (4.2) 2 with (α, k, p) = (δ,2,5)
+V∈L r(0, T;L q(R3))⇐ ⇒2δ+ 1
+r >3
+
+1− 1
+q
+
+γ ,(4.12)
+while by (4.1) with (α, k, p) = (δ,2,5) we find
+∥V(t)∥ q
+Lq(R3) =C q(T−t) 2qδ−3(q−1)γ ∀q >1.(4.13)
+We then put
+V0(ξ) :=V(ξ,0) = T 2δ (2yz,−xz,−xy)
+[T 2γ +|ξ| 2]5/2 (4.14)
+and we claim thatV 0 ∈ G σ, as defined in (2.5). Indeed, the divergence-free condition is a consequence of
+(4.11) witht= 0, while the integrability ofV 0 follows from (4.13) witht= 0 and 4δ≥3γ. Moreover,
+∇V0(ξ) = T 2δ P1(ξ)
+[T 2γ +|ξ| 2]5/2 + T 2δ P3(ξ)
+[T 2γ +|ξ| 2]7/2
+so that∇V 0 ∈L q(R3) for allq≥2 by using (4.1). TheL ∞-bounds are trivial. The decay at infinity increases
+for higher order derivatives, showing thatV 0 ∈ G σ.
+By (4.13) and (4.2) 2 with (α, k, p, q) = (δ,2,5,2),
+V∈L ∞(0, T;L 2(R3))⇐ ⇒4δ≥3γ .
+With some care, we compute the spatial derivatives ofVand find
+v1
+x = −10xyz(T−t) 2δ
+[(T−t) 2γ +|ξ| 2]7/2 , v 1
+y = 2z(T−t) 2δ
+[(T−t) 2γ +|ξ| 2]5/2 − 10y2z(T−t) 2δ
+[(T−t) 2γ +|ξ| 2]7/2 , v 1
+z(x, y, z, t) =v 1
+y(x, z, y, t).
+13
+
+[PDF page 14]
+Similarly, for the spatial partial derivatives ofv 2 andv 3. Therefore,
+|∇V(ξ, t)| 2 = (T−t) 4δ+4γ P2(ξ) + (T−t) 4δ+2γ P4(ξ) + (T−t) 4δ P6(ξ)
+[(T−t) 2γ +|ξ| 2]7 ∀t∈[0, T).(4.15)
+Moreover, by applying (4.2) 2 with (α, k, p) = (δ,3,7) and (α, k, p) = (δ,1,5), we obtain
+∇V∈L r(0, T;L q(R3))⇐ ⇒2δ+ 1
+r >
+
+4− 3
+q
+
+γ(4.16)
+which yields, in particular,∇V∈L 2(0, T;L 2(R3))⇔4δ+ 1>5γ. We have so proved
+Lemma 4.4. (Conditions for existence).Letδ, γ >0satisfy4δ≥3γand4δ+ 1>5γ. Then, for any
+T >0the vector fieldVin(4.11)satisfies(1.1) 2 andV∈L ∞(0, T;L 2(R3))∩L 2(0, T;H 1(R3)).
+This means thatVin (4.11) is a candidate velocity to weakly solve (1.1) withV 0 as in (4.14).
+So far, (δ, γ)are not fixed, they will be chosen depending on the result that we need to prove. ForVas
+in (4.11), we determine conditions onδ, γ >0 that ensure suitable integrability properties.
+Lemma 4.5. (Conditions for uniqueness and energy equality).Besides the assumptions in Lemma
+4.4, assume thatδ, γ >0satisfy4δ+ 1>6γ. Then the vector fieldVin(4.11)satisfies
+V∈L 4(0, T;L 4(R3))and∃ q >3s.t.V∈L 2q/(q−3)(0, T;L q(R3))∀q > q.(4.17)
+Proof.We first notice that the additional assumption 4δ+ 1>6γimplies 4δ+ 1>5γfrom Lemma 4.4 and,
+hence, from now on we may omit the latter.
+From (4.12) with (q, r) = (4,4) we infer that
+V∈L 4(0, T;L 4(R3))⇐ ⇒8δ+ 1>9γ .(4.18)
+But, since 4δ≥3γis assumed in Lemma 4.4, we have that
+8δ+ 1
+[4δ≥3γ]
+≥4δ+ 1 + 3γ
+[4δ+1>6γ]
+>9γ ,(4.19)
+the condition on the right of (4.18) is satisfied and, in turn, also the condition on the left; this proves (4.17)1.
+Forq >3, from (4.12) withr= 2q/(q−3), we infer
+V∈L 2q/(q−3)(0, T;L q(R3))⇐ ⇒
+ 
+4δ+ 1−6γ
+
+q >3−6γ .(4.20)
+Since 4δ+ 1>6γ, this proves (4.17) 2.
+It is well-known [25, p.28] that the condition ensuring uniqueness (4δ+ 1>6γin our case) implies the
+condition ensuring the energy equality (8δ+ 1>9γin our case), see (4.18) and (4.19).□
+By Proposition 3.1, Lemma 4.5 strengthens Lemma 4.4: the vectorVin (4.11) is not only a candidate weak
+solution to (1.1), but also theuniquecandidate Leray-Hopf solution to (1.1) for somefto be determined.
+The next step is to tackle the blow-up issue in several different forms.
+Lemma 4.6. (Conditions for blow-up).Under the assumptions of Lemma 4.5 (and 4.4), forVas in
+(4.11), we have that:
+ifq >2thenlim
+t→T
+∥V(t)∥ Lq(R3) = +∞ ⇐ ⇒2qδ <3(q−1)γ; (4.21)
+lim
+t→T
+∥∇V(t)∥ L2(R3) = +∞ ⇐ ⇒4δ <5γ; (4.22)
+lim inf
+t→T
+4√
+T−t∥∇V(t)∥ L2(R3) >0⇐ ⇒8δ+ 1≤10γ; (4.23)
+ifδ≤ 1
+2 thenV̸∈L 8(0, T;L 4(R3))and∇V̸∈L 4(0, T;L 2(R3))⇐ ⇒8δ+ 1≤10γ .(4.24)
+14
+
+[PDF page 15]
+Proof.From (4.13) we deduce (4.21). As a consequence of Lemma 4.1 and (4.15), we find
+∥∇V(t)∥ 2
+L2(R3) =C(T−t) 4δ−5γ ∀t∈[0, T) ; (4.25)
+hence, we obtain (4.22). Moreover, we infer (4.23) from (4.25). Finally, by (4.12) and (4.16),
+V̸∈L 8(0, T;L 4(R3)) and∇V̸∈L 4(0, T;L 2(R3))⇐ ⇒γ≥max
+16δ+ 1
+18 , 8δ+ 1
+10
+
+= 8δ+ 1
+10 ,
+the last equality being true wheneverδ≤1/2: this proves (4.24).□
+Whenf= 0, it is known that the three conditions (4.21) (withq= 3), (4.22), (4.23) are equivalent,
+see [37, p.246, p.227], [25, Theorems 6.4 and 7.3], [15, 41]. In general, both (4.21) (withq≤6) and (4.23)
+imply (4.22). Condition (4.21) is related to Proposition 3.2 and will be analysed in Sections 5.1 and 5.2.
+Condition (4.22) will be analysed in Section 5.3. Quite surprisingly, (4.23) is equivalent to (4.24), at least
+whenδ≤1/2, a bound that will be satisfied in the proofs of Theorems 2.2 and 2.3.
+Assuming the blow-up condition (4.21) whenq= 3, Lemmas 4.4-4.5-4.6 all hold whenever
+0< δ < γ <min
+4δ
+3 , 4δ+ 1
+6
+
+.(4.26)
+This defines a nonempty open triangle that will change during the course, both enlarging it or shrinking it,
+depending on the result that we need to prove. The first step is to shrink it, after particularising Lemma
+4.2 with the following statement.
+Lemma 4.7. (Integrability of g).Assume(4.26), letVbe as in(4.11), letgbe as in(4.5). Then,
+g∈L 2(0, T;L 6/5(R3))⇐ ⇒ 1
+3 < δ < γ <min
+4δ+ 1
+6 ,4δ−1, 1
+2
+
+,(4.27)
+g∈L 5/4(0, T;L 2(R3))⇐ ⇒ 2
+5 < δ < γ <min
+4δ+ 1
+6 , 4
+3 δ− 2
+15 , 1
+2
+
+.(4.28)
+Proof.ForVas in (4.11) and arguing as in the proof of Lemma 4.2, we obtain
+Vt(ξ, t) = (T−t) 2δ−1 P2(ξ)
+[(T−t) 2γ +|ξ| 2]5/2 + (T−t) 2δ+2γ−1 P2(ξ)
+[(T−t) 2γ +|ξ| 2]7/2 ,(4.29)
+∆V(ξ, t) = (T−t) 2δ+2γ P2(ξ)
+[(T−t) 2γ +|ξ| 2]9/2 ,(V· ∇)V(ξ, t) = (T−t) 4δ P3(ξ)
+[(T−t) 2γ +|ξ| 2]5 .(4.30)
+From (4.29) we infer
+4δ > γ+ 1⇐ ⇒V t ∈L 2(0, T;L 6/5(R3)).(4.31)
+From (4.30) we infer
+4δ+ 1>6γ=⇒4δ+ 1>5γ⇐ ⇒∆V∈L 2(0, T;L 6/5(R3)).(4.32)
+The constraint 4δ+ 1>5γalready appears in Lemma 4.4, as expected because similar arguments apply for
+the linear Stokes parabolic equation. From (4.10) and (4.30) we infer
+8δ+ 1>9γ⇐ ⇒(V· ∇)V∈L 2(0, T;L 6/5(R3)),(4.33)
+and the inequality on the left is satisfied in view of (4.19): it already appears in (4.18), which had to be
+expected since the proof of Proposition 3.1 (ii) is based on the fact that one can takeϕ=Vin (2.2).
+15
+
+[PDF page 16]
+If the inequality in (4.31) holds, we may complement (4.26) with bounds forγandδ:
+4γ+ 1
+(4.26)
+>4δ+ 1
+(4.26)
+>6γ=⇒δ < γ < 1
+2
+4δ
+(4.31)
+> γ+ 1
+(4.26)
+> δ+ 1 =⇒ 1
+3 < δ < γ
+
+
+ =⇒ 1
+3 < δ < γ < 1
+2 .(4.34)
+Putting together (4.31)-(4.32)-(4.33)-(4.34), we infer (4.27).
+From (4.29) we infer
+Vt ∈L 5/4(0, T;L 2(R3))⇐ ⇒γ < 4
+3 δ− 2
+15 .(4.35)
+From and (4.30) we infer
+∆V∈L 5/4(0, T;L 2(R3))⇐ ⇒γ < 4
+7 δ+ 8
+35 ,(V· ∇)V∈L 5/4(0, T;L 2(R3))⇐ ⇒γ < 8
+11 δ+ 8
+55 .(4.36)
+Then we impose (4.26) and we notice that 6δ <6γ <4δ+ 1 implies firstδ <1/2 and thenγ <1/2; in
+such range,
+min
+4
+3 δ− 2
+15 , 4
+7 δ+ 8
+35 , 8
+11 δ+ 8
+55
+
+= min
+4
+3 δ− 2
+15 , 8
+11 δ+ 8
+55
+
+.
+Altogether the above conditions yield
+2
+5 < δ < γ <min
+4
+3 δ, 4δ+ 1
+6 , 4
+3 δ− 2
+15 , 8
+11 δ+ 8
+55 , 1
+2
+
+= min
+4δ+ 1
+6 , 4
+3 δ− 2
+15 , 1
+2
+
+.
+Therefore, (4.36) play no role and only the constraint in (4.35) remains: this proves (4.28).□
+4.2 The survived triangles and the pressure
+The necessary and sufficient condition for both (4.26) and (4.27) to hold is
+(δ, γ)∈A:=
+
+(δ, γ)∈R 2
++; 1
+3 < δ < γ <min
+4δ+ 1
+6 ,4δ−1, 1
+2
+
+(4.37)
+which is the (nonempty!) open triangle depicted in Figure 1 (left).
+Similarly, the necessary and sufficient condition for both (4.26) and (4.28) to hold is
+(δ, γ)∈B:=
+
+(δ, γ)∈R 2
++; 2
+5 < δ < γ <min
+4δ+ 1
+6 , 4δ
+3 − 2
+15 , 1
+2
+
+(4.38)
+which is the (nonempty!) open triangle depicted in Figure 1 (right).
+Remark 4.8.Without the magic cancellation, the power of the denominator of(V· ∇)Vin(4.30)would be
+6, that is,p= 12instead ofp= 10. In turn, the conditions in(4.33)and(4.36)would become, respectively,
+γ < 8δ+1
+13 andγ < 40δ+8
+75 ; the trianglesAandBwould then be empty.
+We now introduce the pressureP. Since we do not yet have an explicitf, we cannot solve (2.4). Taking
+advantage of the facts thatV t and ∆Vare solenoidal inR 3 ×R +, we solve instead−∆P=∇ ·
+ 
+(V· ∇)V
+
+in distributional form and then putf:=g+∇P. To this end, we first make precise (4.30) 2 and obtain
+(V· ∇)V(ξ, t) = (T−t) 4δ
+[(T−t) 2γ +|ξ| 2]5
+
+−2x(y 2 +z 2), y(x2 −2z 2), z(x2 −2y 2)
+
+;
+16
+
+[PDF page 17]
+Figure 1: The survived trianglesAandBfor (δ, γ) satisfying (4.27) or (4.28).
+then we compute
+∇ ·
+
+(V· ∇)V
+
+= 2(T−t) 4δ x4 + 4x2(y2 +z 2)−2y 4 + 16y2z2 −2z 4
+[(T−t) 2γ +|ξ| 2]6 + 2(T−t) 4δ+2γ x2 −2y 2 −2z 2
+[(T−t) 2γ +|ξ| 2]6 .
+After convolution with the fundamental solution of−∆, we obtain
+P(ξ, t) = 2(T−t) 4δ
+4π
+Z
+R3
+ζ 4
+1 + 4ζ2
+1(ζ 2
+2 +ζ 2
+3)−2ζ 4
+2 + 16ζ2
+2 ζ 2
+3 −2ζ 4
+3
+[(T−t) 2γ +|ζ| 2]6
+dζ
+|ζ−ξ|
++ 2(T−t) 4δ+2γ
+4π
+Z
+R3
+ζ 2
+1 −2ζ 2
+2 −2ζ 2
+3
+[(T−t) 2γ +|ζ| 2]6
+dζ
+|ζ−ξ| .(4.39)
+We emphasise that the integrand is smooth in space, with a removable singularity atζ=ξ: in fact,
+P∈C ∞(R3 ×[0, T)). From (4.12) and 4δ+ 1>6γwe inferV∈L 2(0, T;L 2p(R3)) forp∈[1,∞) and, hence,
+P∈L 2(0, T;L p(R3))∀p∈[1,∞).(4.40)
+We then differentiate (4.39) under the integral sign and obtain the vector field
+∇P(ξ, t) = (T−t) 4δ
+2π
+Z
+R3
+ζ 4
+1 + 4ζ2
+1(ζ 2
+2 +ζ 2
+3)−2ζ 4
+2 + 16ζ2
+2 ζ 2
+3 −2ζ 4
+3
+[(T−t) 2γ +|ζ| 2]6
+ζ−ξ
+|ζ−ξ| 3 dζ
++ (T−t) 4δ+2γ
+2π
+Z
+R3
+ζ 2
+1 −2ζ 2
+2 −2ζ 2
+3
+[(T−t) 2γ +|ζ| 2]6
+ζ−ξ
+|ζ−ξ| 3 dζ(4.41)
+and, again, the integrands are smooth in space so that∇P∈C ∞(R3 ×[0, T)). Using once more 4δ+1>6γ,
+by (4.2)1 with (α, k, p, q, r)∈ {(2δ,4,12,3/2,1); (2δ+γ,2,12,3/2,1)}we infer ∆P∈L 1(0, T;L 3/2(R3)) so
+that, by [26, Theorem 4.1],P∈L 1(0, T;D 2,3/2(R3)). Hence,∇P∈L 1(0, T;D 1,3/2(R3))⊂L 1(0, T;L 3(R3))
+by Sobolev embedding; by (4.41) we see that∇Phas “enough decay” as|ξ| → ∞, possible singularities
+fort=Tmay arise only at the originξ= 0 and, hence,∇P∈L 1(0, T;D 1,3/2(R3))⊂L 1(0, T;L 2(R3)).
+Summarising, by the Helmholtz-Weyl decomposition [21, 39, 43], we obtain
+(V· ∇)V=−∇P+
+h
+(V· ∇)V+∇P| {z }
+F
+i
+and∇ ·F= 0 with
+∇P∈L 2(0, T;L 6/5(R3))∩L 1(0, T;L 2(R3)), F∈L 2(0, T;L 6/5(R3)) (4.42)
+In the same way we can argue in theL 5/4(0, T;L 2(R3))-setting, which means that the trianglesAandB
+in (4.37)-(4.38) are not modified after introduction of the pressureP.
+17
+
+[PDF page 18]
+5 Proofs
+5.1 Proof of Theorem 2.2
+We use the computations in Section 4 and, in order to explain in detail how we use them, we first prove
+Theorem 2.2 for solutions to (1.1) that blow up in auniqueinstant (and point). Moreover, we need the
+integrability properties onfto satisfy both thefirst minimal requestsin Definition 2.1 and Proposition
+3.1. This is why we takef∈L 2
+loc(R+;L 6/5(R3))⊂L 2
+loc(R+;H −1(R3)) as a starting assumption: the
+time-exponent will then be increased with no harm and this is be done at the end of the present subsection.
+Theorem 5.1.LetG σ be as in(2.5), letAbe as in(4.37). For any(δ, γ)∈AandT >0there exist
+V0 ∈ G σ , f∈L 1
+loc(R+;L 2(R3))∩L 2
+loc(R+;L 6/5(R3))⊂L 2
+loc(R+;H −1(R3)),
+such thatT7→ ∥∇V 0∥L2(R3) is decreasing and(1.1):
+– admits a unique global Leray-Hopf solutionV∈C 0(R+;L 2(R3))∩L 2
+loc(R+;H 1(R3)), which satisfies the
+energy equality,(2.3)with equality sign, for allt >0;
+– such solution satisfies
+lim
+t→T
+∥V(t)∥ L3(R3) = lim
+t→T
+∥∇V(t)∥ L2(R3) =∞;
+– the associated pressure satisfiesP∈L 2
+loc(R+;L p(R3))for allp∈[1,∞),∇P∈L 2
+loc(R+;L 6/5(R3))and
+∃r= r(δ, γ)>2such thatlim
+t→T
+∥∇P∥ Lr(0,t;L6/5(R3)) =∞ ∀r > r;
+– such solution satisfiesV, P∈C ∞(R3 ×R + \ {(0, T)}), that is, it admits a unique blow-up instant.
+Proof.LetT >0 and (δ, γ)∈A, see (4.37). LetVandV 0 be as in (4.11), letPbe as in (4.39) implying
+(4.40). The fact thatV 0 ∈ G σ is proved just after its definition in (4.14). Using (4.1) fort= 0 with
+(α, k, p, q) = (δ,3,7,2) we obtain∥∇V 0∥2
+L2(R3) =CT 4δ−5γ, which is decreasing since (δ, γ)∈A. Letgbe
+as in (4.5), letf:=g+∇P: then, by Lemma 4.7 and (4.42),f∈L 2(0, T;L 6/5(R3))⊂L 2(0, T;H −1(R3)).
+Moreover,f∈L 1(0, T;L 2(R3)) follows from (4.42) and from (4.7) with (r, q) = (1,2), that is,
+g∈L 1(0, T;L 2(R3))⇐ ⇒γ <min
+ 2
+7(2δ+ 1), 2
+11(4δ+ 1), 4
+3 δ
+	
+and the inequality is satisfied since (δ, γ)∈A.
+By Lemma 4.4 we know thatV∈L ∞(0, T;L 2(R3))∩L 2(0, T;H 1(R3)) while by Lemma 4.5, combined
+with Proposition 3.1 (i),Vsatisfies the energy equality: hence,Vis a Leray-Hopf solution to
+ Vt −∆V+ (V· ∇)V+∇P=f ,∇ ·V= 0 inR 3 ×[0, T)
+V(ξ,0) =V 0(ξ) inR 3 . (5.1)
+By (4.17) 2, the solution to (5.1) is unique by Proposition 3.1 (ii). The blow-up of theL 3(R3)-norm of
+V(t) (condition (4.21)) follows from Lemma 4.6 and (4.37); this also implies the blow-up of theL 2(R3)-norm
+of∇V(t) (condition (4.22)). The blow-up of theL r(0, t;L 6/5(R3))-norm of∇Pfollows from (4.41).
+SinceV(ξ, T) = 0 inR 3 \ {0}, if we extendVin (4.11) also fort≥T, by (4.2) 3 we see that
+V∈C 0
+w(R+;L 2(R3))⇐ ⇒4δ≥3γ , V∈C 0(R+;L 2(R3))⇐ ⇒4δ >3γ .(5.2)
+ThenVin (4.11), with (T−t) replaced by|T−t|, may be extended fort≥Tas a vector fieldV∈
+C0(R+;L 2(R3))∩L 2
+loc(R+;H 1(R3)) and its extension is a global Leray-Hopf solution to
+ Vt −∆V+ (V· ∇)V+∇P=f ,∇ ·V= 0 inR 3 ×(T,+∞)
+V(ξ, T) = 0 inR 3 , (5.3)
+18
+
+[PDF page 19]
+according to Definition 2.1; in (5.3) also∇P∈L 2
+loc(R+;L 6/5(R3)), after extension of (4.39) and (4.41) for
+t > T. The condition (4.18) ensures the validity of the energy equality
+∥V(t)∥ 2
+L2(R3) + 2
+Z t
+T
+∥∇V(s)∥ 2
+L2(R3)ds= 2
+Z t
+T
+Z
+R3
+V(s)f(s)ds∀t≥T(5.4)
+alsobeyondt=T, see Proposition 3.1 (i). By gluing togetherVand its extension (withV(ξ, T) = 0 in
+R3 \{0}) we obtain a global Leray-Hopf solutionV∈L ∞
+loc(R+;L 2(R3))∩L 2
+loc(R+;H 1(R3)), whose uniqueness
+is (again) ensured by Proposition 3.1 (ii) combined with (4.17) 2.
+The smoothness of the extended (V, P) follows from (4.11) and (4.39) with (T−t) replaced by|T−t|.□
+Example 5.2.ForVas in (4.11), take
+δ= 9
+25 = 0.36, γ= 2
+5 = 0.4,
+ 9
+25 , 2
+5
+
+∈A ,
+so that (4.20) yieldsq >15. Choosingq= 18 gives 2q/(q−2) = 12/5 andV∈L 12/5
+loc (R+;L 18(R3)) for
+V(ξ, t) =
+ 
+2yz|T−t| 18/25
+
+|T−t| 4/5 +|ξ| 25/2 , −xz|T−t| 18/25
+
+|T−t| 4/5 +|ξ| 25/2 , −xy|T−t| 18/25
+
+|T−t| 4/5 +|ξ| 25/2
+!
+.
+LetP(ξ, t) be as in (4.39)-(4.41), letf=g+∇P. Then, Theorem 5.1 and its proof show that (V, P) is the
+unique global Leray-Hopf solution to (1.1) and∥V(t)∥ L3(R3) blows up ast→T.
+Remark 5.3.MaintainingT >0fixed, Theorem 5.1 generates a bijective relation between the triangleA
+and the couples(V 0, f)∈ G σ ×L 2
+loc(R+;L 6/5(R3)), thereby giving a continuum of examples of Leray-Hopf
+solutions with blow-up. This somehow complements the existence of strong solutions for allfin a dense set
+of a suitable functional space proved by Fursikov [22, 23], that is, a generical property.
+To continue, we consider the shrinked triangle
+A2 :=
+
+(δ, γ)∈A; 8δ+ 1
+10 < γ
+
+which is nonempty and has vertices at (δ, γ)∈ {(11/32,3/8); (7/20,2/5); (1/2,1/2)}: notice thestrictlower
+bound. Since (δ, γ)∈A 2 impliesδ <1/2, taking (δ, γ)∈A 2 yields the blow-up conditions in both (4.23)
+and (4.24), that is, the solution determined in Theorem 5.1 also satisfies
+lim
+t→T
+4√
+T−t∥∇V(t)∥ L2(R3) =∞, V̸∈L 8(0, T;L 4(R3)),∇V̸∈L 4(0, T;L 2(R3))
+that are three of the four blow-up conditions in Theorem 2.2 when a unique blow-up instantT >0 exists.
+What remains to be done is to letr∈[2,4) vary, to prove the last blow-up condition (2.6) 2, and to exhibit
+countably many blow-up instants.
+Proof of Theorem 2.2.In order to increaser, we first rewrite (4.7) in the particular caseq= 6/5:
+g∈L r(0, T;L 6/5(R3))⇐ ⇒γ <min
+ 2
+5(2δ+ 1
+r ), 2
+9(4δ+ 1
+r ),2(2δ− r−1
+r )
+	
+.
+Takingr≥2, the triangleA 2 should then be further shrink and replaced by the (more stringent) conditions
+3
+8 < 8δ+ 1
+10 < γ <min
+4δ
+3 , 4δ+ 1
+6 , 2
+5
+
+2δ+ 1
+r
+
+, 2
+9
+
+4δ+ 1
+r
+
+,2
+
+2δ−1 + 1
+r
+
+, 1
+2
+
+.(5.5)
+19
+
+[PDF page 20]
+Sinceδ >11/32, we have 8δ >4δ+ 1 and the first term inside the min can be omitted. Also notice that
+min
+ 4δ+1
+6 ,2
+ 
+2δ−1 + 1
+r
+	
+<min
+ 2
+5
+ 
+2δ+ 1
+r
+
+, 2
+9
+ 
+4δ+ 1
+r
+	
+= 2
+9
+ 
+4δ+ 1
+r
+
+∀δ∈
+  11
+32 , 1
+2
+
+,∀r∈[2,4).
+Therefore (5.5) becomes
+3
+8 < 8δ+ 1
+10 < γ <min
+4δ+ 1
+6 ,2
+
+2δ−1 + 1
+r
+
+which is the open triangleA r (contained inA 2) having vertices
+21
+32 − 5
+8r , 5
+8 − 1
+2r
+
+,
+13
+20 − 3
+5r , 3
+5 − 2
+5r
+
+,
+1
+2 , 1
+2
+
+;
+this triangleA r coincides withA 2 whenr= 2, it is nonemepty as long asr <4 and its closure collapses
+to the point (1/2,1/2) asr→4. Hence, forr∈[2,4) we may find (δ, γ)∈A r for which bothVandf
+satisfy all the stated properties, except for (2.6) 2: to obtain this last property, by (4.13) one may take (δ, γ)
+sufficiently close to the vertex (13/20−3/5r,3/5−2/5r).
+We finally extend the framework of Theorem 5.1 and of the first part of the present proof to the case of
+a countable number of uniformly bounded blow-up instants. To this end, we slightly change notation. Let
+VT,δ,γ (ξ, t) be the vector field in (4.11) for someT >0 and some (δ, γ)∈A r. For anyξ 0 ∈R 3 we can repeat
+the construction leading to Theorem 5.1 by starting withV T,δ,γ (ξ−ξ 0, t), as for the “shifted bubble” (6.4)
+below. Therefore, the solution in Theorem 5.1 has six degrees of freedom described by the six parameters:
+ξ0 ∈R 3 ,(δ, γ)∈A r , T >0.(5.6)
+For simplicity, we maintain the first five parameters in (5.6) fixed and we only focus on different blow-up
+instantsT m, all occurring at the origin (ξ 0 = 0).
+Let (δ, γ)∈A r and take any bounded strictly increasing sequence{T m}of positive instants: 0< T 1 <
+T2 < ... < T m < Tfor someT >0. LetVbe as in (4.11), putV m(ξ, t) =V Tm,δ,γ(ξ, t) and take
+W(ξ, t) =
+∞X
+m=1
+Vm(ξ, t)
+2m , W 0(ξ) =W(ξ,0) =
+∞X
+m=1
+1
+2m
+
+2yz T 2δ
+m
+[T 2γ
+m +|ξ|2]
+5/2 , −xz T 2δ
+m
+[T 2γ
+m +|ξ|2]
+5/2 , −xy T 2δ
+m
+[T 2γ
+m +|ξ|2]
+5/2
+
+∈ G σ,
+see (2.5). Therefore, by extending eachV m over (Tm, T],
+∥W∥ L∞(0,T;L 2(R3)) ≤
+∞X
+m=1
+∥Vm∥L∞(0,T;L 2(R3))
+2m =∥V∥ L∞(0,T;L 2(R3))
+and similarly for the other norms. The delicate point is to bound∥(W· ∇)W∥ L2(0,T;L 6/5(R3)). To this end,
+we notice that
+(W· ∇)W=
+∞X
+i,j=1
+(Vi · ∇)Vj
+2i+j
+and this series is composed by two kinds of terms.
+•Ifj=ithen each (V i · ∇)Vi enjoys the same regularity properties as in Theorem 5.1 and, hence,
+∞X
+i=1
+(Vi · ∇)Vi
+4i ∈L 2
+loc(R+;L 6/5(R3)).
+•Ifj̸=ithenV j andV i are regular, respectively, whent=T i andt=T j: sinceT j ̸=T i we then have
+∞X
+i,j=1
+j̸=i
+(Vi · ∇)Vj
+2i+j ∈L 2
+loc(R+;L 6/5(R3)).
+20
+
+[PDF page 21]
+Next, letP=P T be as in (4.39) and put
+Q(ξ, t) =
+∞X
+m=1
+PTm(ξ, t)
+2m .
+SinceV m andP Tm have a singularity att=T m and since they can be extended also fort > T m, see the
+proof of Theorem 5.1, all the statements can be obtained in the same way. Finally, put again
+f:=W t −∆W+ (W· ∇)W+∇Q∈L 1(0, T;L 2(R3))∩L 2(0, T;L 6/5(R3))
+and the proof of Theorem 2.2 is complete, up to renamingWwithV.□
+5.2 Proof of Theorem 2.3
+Here we takefto satisfy both thesecond minimal requestsin Definition 2.1 and Proposition 3.1:f∈
+L5/4
+loc (R+;L 2(R3)) as a starting assumption, with the time-exponent free to increase until some maximum
+threshold. We use again the computations in Section 4 and we repeat the steps of the proof of Theorem 5.1.
+We first prove Theorem 2.3 for solutions to (1.1) that blow up in a unique instant (and point), then we go
+to a countable number of points, finally we increase the time exponent.
+By replacingAin (4.37) withBin (4.38), we can repeat the proof of Theorem 5.1, to obtain
+Theorem 5.4.LetG σ be as in(2.5), letBbe as in(4.37). For any(δ, γ)∈BandT >0there exist
+V0 ∈ G σ , f∈L 5/4
+loc (R+;L 2(R3))⊂L 1
+loc(R+;L 2(R3)),
+such thatT7→ ∥∇V 0∥L2(R3) is decreasing and(1.1)admits a unique global Leray-Hopf solutionV∈
+C0(R+;L 2(R3))∩L 2
+loc(R+;H 1(R3))which satisfies the energy equality,(2.3)with equality sign, for allt >0;
+moreover,P∈L 2
+loc(R+;L p(R3))for allp∈[1,∞),∇P∈L 5/4
+loc (R+;L 2(R3))and
+lim
+t→T
+∥V(t)∥ L3(R3) = lim
+t→T
+∥∇V(t)∥ L2(R3) =∞,∃ r= r(δ, γ)> 5
+4 s.t.lim
+t→T
+∥∇P∥ Lr(0,t;L2(R3)) =∞ ∀r > r;
+such solution satisfiesV, P∈C ∞(R3 ×R + \ {(0, T)}).
+By using Theorem 5.4 and by arguing as in the proof of Theorem 2.2, we proceed with the full proof.
+Proof of Theorem 2.3.We consider the shrinked triangle
+B5/4 :=
+
+(δ, γ)∈B; 8δ+ 1
+10 < γ
+
+which is nonempty and has vertices at (δ, γ)∈ {(7/16,9/20); (9/20,7/15); (1/2,1/2)}; notice thestrictlower
+bound. Since (δ, γ)∈B 5/4 impliesδ <1/2, taking (δ, γ)∈B 5/4 yields the blow-up conditions in both (4.23)
+and (4.24), that is, the solution determined in Theorem 5.4 also satisfies
+lim
+t→T
+4√
+T−t∥∇V(t)∥ L2(R3) =∞, V̸∈L 8(0, T;L 4(R3)),∇V̸∈L 4(0, T;L 2(R3)),
+that are three of the four blow-up conditions in Theorem 2.3 when a unique blow-up instantT >0 exists.
+Only the last blow-up condition (2.7) 2 is missing.
+Before doing this, let us increaserup tor <4/3 and let us rewrite (4.7) in the particular caseq= 2:
+g∈L r(0, T;L 2(R3))⇐ ⇒γ <min
+ 2
+7(2δ+ 1
+r ), 2
+11(4δ+ 1
+r ), 2
+3(2δ− r−1
+r )
+	
+.
+21
+
+[PDF page 22]
+Takingr≥5/4, the triangleB 5/4 should then be further shrink and replaced by the (more stringent)
+conditions
+9
+20 < 8δ+ 1
+10 < γ <min
+4δ
+3 , 4δ+ 1
+6 , 2
+7
+
+2δ+ 1
+r
+
+, 2
+11
+
+4δ+ 1
+r
+
+, 2
+3
+
+2δ−1 + 1
+r
+
+, 1
+2
+
+.(5.7)
+Sinceδ >7/16, the first term within the min in (5.7) can be dropped. Also notice that
+min
+ 4δ+1
+6 , 2
+3
+ 
+2δ−1 + 1
+r
+	
+<min
+ 2
+7
+ 
+2δ+ 1
+r
+
+, 2
+11
+ 
+4δ+ 1
+r
+	
+= 2
+11
+ 
+4δ+ 1
+r
+
+∀δ∈
+  7
+16 , 1
+2
+
+,∀r∈
+ 5
+4 , 4
+3
+
+.
+Therefore (5.7) becomes
+8δ+ 1
+10 < γ <min
+4δ+ 1
+6 , 2
+3
+
+2δ−1 + 1
+r
+
+which is the open triangleB r (contained inB 5/4) having vertices
+23
+16 − 5
+4r , 5
+4 − 1
+r
+
+,
+5
+4 − 1
+r ,1− 2
+3r
+
+,
+1
+2 , 1
+2
+
+;
+this triangleB r coincides withB 5/4 whenr= 5/4, it is nonemepty as long asr <4/3 and its closure
+collapses to the point (1/2,1/2) asr→4/3. Hence, forr∈[5/4,4/3) we may find (δ, γ)∈B r for which
+bothVandfsatisfy all the stated properties, except for (2.7) 2: to obtain this last property, by (4.13) one
+may take (δ, γ) sufficiently close to the vertex (13/20−3/5r,3/5−2/5r).
+Finally, the extension of the result to a countable number of blow-up instants, can be obtained by
+combining the just improved version of Theorem 5.4 with the same procedure (convergent series) as in the
+proof of Theorem 2.2. □
+5.3 Proof of Theorem 2.4
+Proposition 3.4 requires thatV 0 ∈H 1(R3), that holds in our construction, see (4.14) and the subsequent
+comments. But Proposition 3.4 also requires thatf∈L 2
+loc(R+;L 2(R3)) and we preliminarily show that,
+even if instead of (4.21) we assume the “weaker blow-up condition” (4.22),
+the examples of Theorems 2.2 and 2.3 cannot be extended to the case wheref∈L 2
+loc(0, T;L 2(R3)).(5.8)
+Since it is visually enlightening, we give a geometric evidence to (5.8) before entering in the details of
+the proof of Theorem 2.4. We start by discussing the exponentsq >1 andr≥1 for which Theorems
+5.1 and 5.4 continue to hold when eitherf∈L 2
+loc(R+;L q(R3)) orf∈L r
+loc(R+;L 2(R3)), that is, when the
+L2-integrability offis maintained either with respect to time or with respect to space. After replacing
+(4.21) with (4.22), the statements of Lemmas 4.4-4.5-4.6 all hold whenever
+(δ, γ)∈D:=
+
+(δ, γ)∈R 2
++; 4
+5 δ < γ <min
+4
+3 δ, 4δ+ 1
+6 ,1
+
+.(5.9)
+Hence, the trianglesAandBin (4.37) and (4.38) are “inflated”, see Figure 2.
+Next, we extend Lemma 4.7. LetVbe as in (4.11) andgbe as in (4.5). We particularise (4.7) to the
+cases whengis square-integrable either with respect to time or with respect to space:
+∀q >1g∈L 2(0, T;L q(R3))⇐ ⇒γ <min
+ q
+5q−3(2δ+ 1
+2), q
+7q−3(4δ+ 1
+2), q
+3q−3(2δ− 1
+2)
+	
+,
+∀r≥1g∈L r(0, T;L 2(R3))⇐ ⇒γ <min
+ 2
+7(2δ+ 1
+r ), 2
+11(4δ+ 1
+r ), 2
+3(2δ− r−1
+r )
+	
+. (5.10)
+Then we introduce the pressurePas in (4.39), by following the integrability of (V· ∇)Vand, after setting
+againf:=g+∇P, by (4.41) and (5.10) we infer that
+∀q >1f∈L 2(0, T;L q(R3))⇐ ⇒γ <min
+ q
+5q−3(2δ+ 1
+2), q
+7q−3(4δ+ 1
+2), q
+3q−3(2δ− 1
+2)
+	
+,
+∀r≥1f∈L r(0, T;L 2(R3))⇐ ⇒γ <min
+ 2
+7(2δ+ 1
+r ), 2
+11(4δ+ 1
+r ), 2
+3(2δ− r−1
+r )
+	
+. (5.11)
+22
+
+[PDF page 23]
+Figure 2: The triangleAin (4.37) (black) and the inflated triangleDin (5.9) (black+grey).
+The question then reduces to find for whichq∈(1,2] (resp.r∈[1,2]) the triangle defined in (5.9) intersects
+the two polygons (either a triangle or a quadrilateral) defined by (5.11), that is,
+0< 4
+5 δ < γ <Ψ q(δ) := min
+ q
+5q−3(2δ+ 1
+2), q
+7q−3(4δ+ 1
+2), q
+3q−3(2δ− 1
+2), 4δ+1
+6 , 4
+3 δ,1
+	
+,
+0< 4
+5 δ < γ <Φ r(δ) := min
+ 2
+7(2δ+ 1
+r ), 2
+11(4δ+ 1
+r ), 2
+3(2δ− r−1
+r ), 4δ+1
+6 , 4
+3 δ,1
+	
+. (5.12)
+In the limit caseq=r= 2, we have Φ 2 ≡Ψ 2; we are now ready to graphically explain how to deduce (5.8).
+By fixingr= 2 and lettingq∈(1,2] vary, we obtain the pictures in Figure 3. On the left (q= 3/2), the
+polygon in (5.12)1 intersects the triangle in (5.9). On the middle (q= 5/3), the polygon in (5.12) 1 intersects
+the triangle in (5.9). On the right (q= 2), the polygon in (5.12) 1 no longer intersects the triangle in (5.9).
+Figure 3: The triangle in (5.9) and graphs of the functions Ψ 3/2 (left), Ψ5/3 (middle), Ψ2 (right).
+Similarly, by fixingq= 2 and lettingr∈[1,2] vary, we obtain the pictures in Figure 4. On the left
+(r= 8/5), the polygon defined by (5.12) 2 intersects the triangle in (5.9). On the middle (r= 9/5), the
+polygon in (5.12) 2 intersects the triangle in (5.9). On the right (r= 2), the polygon in (5.12) 2 no longer
+intersects the triangle in (5.9).
+Figure 4: The triangle in (5.9) and graphs of the functions Φ 8/5 (left), Φ9/5 (middle), Φ2 (right).
+Therefore, the polygons in (5.12) intersect the triangle in (5.9) if and only if (q, r)∈(1,2]×[1,2]\ {(2,2)}
+and this illustrates (5.8).
+Proof of Theorem 2.4.Except for the blow-up rates in (2.9)-(2.10), all the statements in Theorem 2.4 may
+be obtained as in the proof of Theorem 2.2 (including the countable number of blow-up instants), provided
+that (δ, γ) satisfy the conditions in (5.12). So, let us now prove (2.9)-(2.10).
+23
+
+[PDF page 24]
+♢Whenr= 2, for the region (5.12) 1 to be nonempty it is necessary that
+4δ
+5 < q
+3q−3
+
+2δ− 1
+2
+
+⇐ ⇒δ > 5q
+4(6−q) ;
+since 5q
+4(6−q) ≥ 1
+4 for allq∈[1,2], this implies that 8δ≥4δ+ 1 and that 4δ/3 can be omitted in the min
+inside (5.12) 1. Moreover, 4δ+ 1<6 because of the constraintδ <5/4: we may also omit 1. Then (5.12) 1
+may be rewritten as
+q
+6−q < 4δ
+5 < γ <min
+ q
+5q−3
+
+2δ+ 1
+2
+
+, q
+7q−3
+
+4δ+ 1
+2
+
+, q
+3q−3
+
+2δ− 1
+2
+
+, 4δ+ 1
+6
+
+.(5.13)
+There are still too many terms (four) inside the min. So, we consider the simpler situation whereq∈[ 3
+2 ,2):
+in such case, a straightforward observation reads
+q
+5q−3
+
+2δ+ 1
+2
+
+= q
+2(5q−3) (4δ+ 1)
+q≥ 3
+2
+≤ 4δ+ 1
+6 ,
+showing that the last term in the min in (5.13) can be omitted. The next step is to eliminate the second
+term for which we need to show that
+min
+ q
+5q−3
+
+2δ+ 1
+2
+
+, q
+3q−3
+
+2δ− 1
+2
+
+≤ q
+7q−3
+
+4δ+ 1
+2
+
+.(5.14)
+For this, we preliminarily notice three facts
+q
+5q−3
+ 
+2δ+ 1
+2
+
+≤ q
+7q−3
+ 
+4δ+ 1
+2
+
+⇔δ≥ q
+6(q−1) , q
+3q−3
+ 
+2δ− 1
+2
+
+≤ q
+7q−3
+ 
+4δ+ 1
+2
+
+⇔δ≤ 5q−3
+2(q+3) ,
+q
+6(q−1) ≤1− 3
+4q ≤ 5q−3
+2(q+ 3) ∀q∈
+ 3
+2 ,2
+
+;
+they yield the following implications
+δ≤1− 3
+4q ⇒δ≤ 5q−3
+2(q+3) ⇔ q
+3q−3
+ 
+2δ− 1
+2
+
+≤ q
+7q−3
+ 
+4δ+ 1
+2
+
+,
+δ≥1− 3
+4q ⇒δ≥ q
+6(q−1) ⇔ q
+5q−3
+ 
+2δ+ 1
+2
+
+≤ q
+7q−3
+ 
+4δ+ 1
+2
+
+.
+Hence, in any case, (5.14) follows. In turn, this shows that (5.13) reduces to
+q
+6−q < 4δ
+5 < γ <min
+ q
+5q−3
+
+2δ+ 1
+2
+
+, q
+3q−3
+
+2δ− 1
+2
+
+,
+which defines a triangle whose vertices are (recall thatq≥3/2>6/5)
+(δ, γ)∈
+ 5q
+4(6−q) , q
+6−q
+
+;
+
+1− 3
+4q , 1
+2
+
+;
+ 5q
+4(5q−6) , q
+5q−6
+
+.
+The important vertex is the only one not belonging to the line 5γ= 4δ: its distance from the line will give
+the blow-up rate for∥∇V(t)∥ L2(R3) ast→T m. From (4.25) we know that
+|Tm −t| λ∥∇V(t)∥ L2(R3) ∼ |T m −t| λ+2δ−5γ/2 ast→T m .(5.15)
+The line parallel to 5γ= 4δand containing the middle vertex has equation
+5γ
+2 = 2δ+ 3(2−q)
+4q
+24
+
+[PDF page 25]
+and, then, (2.9) holds for allλ < 3(2−q)
+4q .
+♢Whenq= 2 is fixed, we first notice that
+4δ
+3 ≥ 2
+3
+
+2δ−1 + 1
+r
+
+∀r∈[1,2]
+and, hence, 4δ/3 can be omitted in the min inside (5.12) 2. Moreover, 4δ+ 1<6 because of the constraint
+δ <5/4: we may also omit 1. For the region (5.12) 2 to be nonempty it is necessary that
+4δ
+5 <min
+2
+7
+
+2δ+ 1
+r
+
+, 2
+3
+
+2δ−1 + 1
+r
+
+⇐ ⇒ 5
+4
+
+1− 1
+r
+
+< δ < 5
+4r (5.16)
+and, from now on, we takeδin this interval: its amplitude is 5
+2r − 5
+4 >0 and tends to 0 forr→2, recovering
+the behaviour illustrated in Figure 4. Therefore, (5.12) 2 is reduced to
+1− 1
+r < 4
+5 δ < γ <min
+2
+7
+
+2δ+ 1
+r
+
+, 2
+3
+
+2δ− r−1
+r
+
+, 2
+11
+
+4δ+ 1
+r
+
+, 4δ+ 1
+6
+
+.(5.17)
+This polygon changes shape and number of vertices, depending onr. This is the point where it is crucial
+to assume thatr≥4/3. In such case, we claim that (5.17) reduces to
+1− 1
+r < 4
+5 δ < γ <min
+2
+7
+
+2δ+ 1
+r
+
+, 2
+3
+
+2δ− r−1
+r
+
+.(5.18)
+To this end, we notice that
+2
+3
+
+2δ− r−1
+r
+
+≤ 2
+7
+
+2δ+ 1
+r
+
+=⇒δ≤ 7
+8 − 1
+2r
+and the proof of (5.18) then follows if we show the following facts:
+2
+3
+
+2δ− r−1
+r
+
+≤ 4δ+ 1
+6 and 2
+3
+
+2δ− r−1
+r
+
+≤ 2
+11
+
+4δ+ 1
+r
+
+∀δ≤ 7
+8 − 1
+2r ,(5.19)
+2
+7
+
+2δ+ 1
+r
+
+≤ 4δ+ 1
+6 and 2
+7
+
+2δ+ 1
+r
+
+≤ 2
+11
+
+4δ+ 1
+r
+
+∀δ≥ 7
+8 − 1
+2r .(5.20)
+The following chain of inequalities proves (5.19) 1:
+4
+
+2δ− r−1
+r
+
+= 4δ+ 4δ−4 + 4
+r
+δ≤ 7
+8 − 1
+2r
+≤4δ+ 2
+r − 1
+2
+r≥ 4
+3
+≤4δ+ 1.
+The following chain of inequalities proves (5.19) 2:
+11
+
+2δ− r−1
+r
+
+= 12δ+ 10δ−11 + 11
+r
+δ≤ 7
+8 − 1
+2r
+≤12δ− 4
+3 + 6
+r
+r≥ 4
+3
+≤3
+
+4δ+ 1
+r
+
+.
+The following chain of inequalities proves (5.20) 1:
+12
+
+2δ+ 1
+r
+
+= 28δ−4δ+ 12
+r
+δ≥ 7
+8 − 1
+2r
+≤28δ+ 14
+r − 7
+2
+r≥ 4
+3
+≤7(4δ+ 1).
+25
+
+[PDF page 26]
+The following chain of inequalities proves (5.20) 2:
+11
+
+2δ+ 1
+r
+
+= 28δ−6δ+ 11
+r
+δ≥ 7
+8 − 1
+2r
+≤28δ+ 14
+r − 21
+4
+r≥ 4
+3
+≤7
+
+4δ+ 1
+r
+
+.
+All the inequalities in (5.19)-(5.20) are proved, which also proves (5.18). The region in (5.18) is an open
+triangle whose vertices are
+(δ, γ)∈
+5
+4 − 5
+4r ,1− 1
+r
+
+;
+7
+8 − 1
+2r , 1
+2
+
+;
+ 5
+4r , 1
+r
+
+.
+The important vertex is the only one not belonging to the line 5γ= 4δ: its distance from the line will give
+the blow-up rate (2.10). Using again (5.15), we find that the line parallel to 5γ= 4δand containing the
+middle vertex has equation
+5γ
+2 = 2δ+ 2−r
+2r
+and, then, (2.10) holds for allλ < 2−r
+2r .□
+Remark 5.5.The parameterT >0in both Theorems 5.1 and 5.4 is relevant not only because it determines
+the blow-up time but also because it measures the size of the initial velocityV 0 in(4.11). Using(4.1)for
+t= 0with, respectively,(α, k, p, q) = (δ,2,5,2)and(α, k, p, q) = (δ,3,7,2), we obtain that
+∥V0∥2
+L2(R3) =CT 4δ−3γ ,∥∇V 0∥2
+L2(R3) =CT 4δ−5γ .
+Since for any(δ, γ)∈A∪Bwe have3γ <4δ <5γ, we infer that
+T7→ ∥V 0∥L2(R3) is increasing,T7→ ∥∇V 0∥L2(R3) is decreasing.
+Also for all(δ, γ)∈D, see(5.9), the same properties hold.
+5.4 Proof of Theorem 2.5
+We need to find conditions onfensuring thepointwise blow-upofV, that is,
+lim
+t→T
+∥V∥ L∞([0,t)×R3) =∞.(5.21)
+Recall thatVin (4.11) is bounded and smooth in [0, t]×R 3 for allt < T. Moreover, from (4.13) withq=∞,
+we know that (5.21) occurs whenever
+γ > 2δ
+3 .
+So, by (4.7), the question becomes for which (r, q)∈[1,∞)×(1,∞) there exist (δ, γ)∈R 2
++ such that
+2δ
+3 < γ <min
+4
+3 δ, 4δ+ 1
+6 , q
+5q−3
+
+2δ+ 1
+r
+
+, q
+7q−3
+
+4δ+ 1
+r
+
+, q
+3q−3
+
+2δ− r−1
+r
+
+.
+The first two terms in the min are always strictly larger than 2δ/3. Therefore, (5.21) holds for those (r, q)
+ensuring the existence of (δ, γ)∈R 2
++ such that
+2δ
+3 < γ <min
+ q
+5q−3
+
+2δ+ 1
+r
+
+, q
+7q−3
+
+4δ+ 1
+r
+
+, q
+3q−3
+
+2δ− r−1
+r
+
+.
+26
+
+[PDF page 27]
+We then notice that
+δ≥ 5
+4 − 1
+4
+2
+r + 3
+q
+
+⇐ ⇒ q
+5q−3
+
+2δ+ 1
+r
+
+≤ q
+3q−3
+
+2δ− r−1
+r
+
+.
+Hence, (5.21) holds for those (r, q)∈[1,∞)×(1,∞) ensuring the existence of
+δ >0, δ≥ 5
+4 − 1
+4
+2
+r + 3
+q
+
+(5.22)
+such that
+2δ
+3 <min
+ q
+5q−3
+
+2δ+ 1
+r
+
+, q
+7q−3
+
+4δ+ 1
+r
+
+.
+When (5.22) hold, we are so left with two inequalities.
+Thefirst inequality
+2δ
+3 < q
+5q−3
+
+2δ+ 1
+r
+
+(5.23)
+is satisfied for anyδ≥5/4 (that ensures (5.22)) whenever 1< q≤3/2. Ifq >3/2, two cases may occur:
+– if 2/r+ 3/q≥5, then (5.22) reduces toδ >0 and (5.23) is satisfied forδsufficiently small whatever
+(r, q)∈[1,∞)×(1,∞) are;
+– if 2/r+ 3/q <5, then (5.22) reduces toδ≥δ ∗ := 5/4−(2/r+ 3/q)/4 and, by takingδ=δ ∗ in (5.23), we
+find that it is satisfied whenever
+1≤r < 2q
+2q−3 ⇐ ⇒(2.11) 1 .(5.24)
+Thesecond inequality
+2δ
+3 < q
+7q−3
+
+4δ+ 1
+r
+
+(5.25)
+is satisfied for anyδ≥5/4 (that ensures (5.22)) whenever 1< q≤3. Ifq >3, two cases may occur:
+– if 2/r+ 3/q≥5, then (5.22) reduces toδ >0 and (5.25) is satisfied forδsufficiently small whatever
+(r, q)∈[1,∞)×(1,∞) are;
+– if 2/r+ 3/q <5, then (5.22) reduces toδ≥δ ∗ and, takingδ=δ ∗ in (5.25), we see that it is satisfied when
+1≤r < 2q(4q−3)
+(5q−3)(q−3) ,
+which is less restrictive than (5.24).
+Summarising, if (2.11) holds, then (5.23) and (5.25) are fulfilled for someδsatisfying (5.22).
+To prove (2.15) int=T, we notice that, if (r, q) satisfy (2.13) 1, then
+q
+5q−3
+
+2δ+ 1
+r
+
+≤ 2δ
+3 ⇐ ⇒ 3q
+2r(2q−3) ≤δ, q
+7q−3
+
+4δ+ 1
+r
+
+≤ 2δ
+3 ⇐ ⇒ 3q
+2r(q−3) ≤δ.
+Therefore, (2.15) follows if we show that there exist (r, q) satisfying (2.13) 1 such that
+q
+7q−3
+
+4δ∗ + 1
+r
+
+≤ 2δ∗
+3 ⇐ ⇒ 2
+r + 3
+q ≤ 5q−6
+4q−3 ∈(1,5)∀q >3 (5.26)
+since, then, we findγ <2δ ∗/3 and, by (4.13) (withq=∞) and the same principle as in (5.2), we infer that
+V∈C 0(R3 ×R +) andV(ξ, T)≡0 inR 3. Condition (5.26) has to be added to (2.13) 1 for (2.15) to hold.
+The proof of Theorem 2.5 is so complete for a unique blow-up instant and point. The extension to
+countable blow-up can be obtained by using the convergent numerical series as in Theorem 2.2.
+27
+
+[PDF page 28]
+5.5 Proof of Theorem 2.6
+By applying Lemma 4.1 to (4.29)-(4.30), we find that
+∆V∈L ∞(R3 ×(0, T))⇐ ⇒γ≤ 2δ
+5 ,(V· ∇)V∈L ∞(R3 ×(0, T))⇐ ⇒γ≤ 4δ
+7 ,
+∇V∈L ∞(R3 ×(0, T))⇐ ⇒γ≤ δ
+2 , V t ∈L ∞(R3 ×(0, T))⇐ ⇒γ≤ 2δ−1
+3 . (5.27)
+Due themagic cancellationwhich lead to (4.30) and was discussed in Remark 4.3, the condition for∇Vto
+remain bounded is more restrictive than the condition for (V· ∇)Vto remain bounded.
+We need here to find conditions onfensuring the pointwise blow-up of∇V, that is,
+lim
+t→T
+∥∇V∥ L∞([0,t)×R3) =∞.(5.28)
+Recall that∇Vis bounded and smooth in [0, t]×R 3 for allt < T. Moreover, from (5.27) we know that
+(5.28) occurs whenever
+γ > δ
+2 .
+So, by (4.7), the question becomes for which (r, q)∈[1,∞)×(1,∞) there exist (δ, γ)∈R 2
++ such that
+δ
+2 < γ <min
+4
+3 δ, 4δ+ 1
+6 , q
+5q−3
+
+2δ+ 1
+r
+
+, q
+7q−3
+
+4δ+ 1
+r
+
+, q
+3q−3
+
+2δ− r−1
+r
+
+.
+Clearly, the first two terms in the min are always strictly larger thanδ/2. Therefore, (5.28) holds for those
+(r, q) ensuring the existence of (δ, γ)∈R 2
++ such that
+δ
+2 < γ <min
+ q
+5q−3
+
+2δ+ 1
+r
+
+, q
+7q−3
+
+4δ+ 1
+r
+
+, q
+3q−3
+
+2δ− r−1
+r
+
+.
+Arguing as for (5.22), we find that (5.28) holds for those (r, q)∈[1,∞)×(1,∞) ensuring the existence of
+δ >0 satisfying (5.22) and such that
+δ
+2 <min
+ q
+5q−3
+
+2δ+ 1
+r
+
+, q
+7q−3
+
+4δ+ 1
+r
+
+.
+When (5.22) hold, we are so left with two inequalities.
+Thefirst inequality
+δ
+2 < q
+5q−3
+
+2δ+ 1
+r
+
+(5.29)
+is satisfied for anyδ≥5/4 (that ensures (5.22)) whenever 1< q≤3. Ifq >3, two cases may occur:
+– if 2/r+ 3/q≥5, then (5.22) reduces toδ >0 and (5.29) is satisfied forδsufficiently small whatever
+(r, q)∈[1,∞)×(1,∞) are;
+– if 2/r+ 3/q <5, then (5.22) reduces toδ≥δ ∗ := 5/4−(2/r+ 3/q)/4 and, by takingδ=δ ∗ in (5.29), we
+find that it is satisfied whenever
+1≤r < 2q
+q−3 ⇐ ⇒(2.13) 1 .(5.30)
+Thesecond inequality
+δ
+2 < q
+7q−3
+
+4δ+ 1
+r
+
+(5.31)
+is satisfied for anyδ≥5/4 (that ensures (5.22)) whatever (r, q)∈[1,∞)×(1,∞) are.
+Summarising, if (2.13) holds, then (5.29) and (5.31) are fulfilled for someδsatisfying (5.22). This proves
+Theorem 2.6 for a unique blow-up instant and point. The extension to countable blow-up can be obtained
+by using the convergent numerical series as in Theorem 2.2.
+28
+
+[PDF page 29]
+5.6 Proof of Theorem 2.7
+LetVbe as in (4.11). Then, using (5.27) and arguing as for (4.2) 3 and (5.2), we have that
+γ <min
+ δ
+2 , 2δ−1
+3
+
+=⇒V∈C 1(R3 ×[0, T]), V(ξ, T)≡ ∇V(ξ, T)≡V t(ξ, T)≡0 inR 3,(5.32)
+the last condition being intended as limit fort→Tand extension by continuity. By (5.27) and aiming to
+construct an example whereonlythe second derivatives blow up ast→T, we assume that
+2δ
+5 < γ <min
+ δ
+2 , 2δ−1
+3
+
+.(5.33)
+If (5.33) holds, we necessarily have
+δ > 5
+4 , γ > 1
+2 (5.34)
+and the inequalities 4δ≥3γand 4δ+ 1>6γare satisfied so that both the statements of Lemmas 4.4-4.5
+hold. This means that the existence, uniqueness, and energy equality conditions are all fulfilled. The region
+in (5.33) is unbounded, see Figure 5 (left). By taking (δ, γ) inside this region we haveV∈C 1(R3 ×[0, T])
+Figure 5: The pointM( 5
+4 , 1
+2), the region in (5.33) (left), the triangle in (5.35) (right).
+while ∆V̸∈L ∞(R3 ×(0, T)). However, for anyq, r <∞, if (δ, γ) is sufficiently close to the vertexM( 5
+4 , 1
+2),
+we obtain ∆V∈L r(0, T;L q(R3)). LetPbe as in (4.39) so that∇Pis given by (4.41), letf=g+∇P. With
+slight modifications of the above proofs (in particular, Theorem 2.2), we conclude the proof of Theorem 2.7.
+Remark 5.6.The condition(5.34)states that bothδandγare “large”, as expected ifVin(4.11)has to
+be smooth with respect to time. To reach the blow-up results in Theorems 2.2 and 2.3 we needδ, γ <1/2,
+whereas for Theorem 2.4 we needδ <5/4andγ <1.
+By imposing2δ >max{5γ,3γ+ 1}we obtain classical solutions to(1.1): to see this, one can use again
+(5.27)combined with(4.13)and(5.2), then takingf=g+∇p∈C 0(R3 ×R +). The statements of Theorems
+2.5, 2.6, 2.7 are summarised in the next table.
+2δ∈ (0,3γ) (3γ,4γ] (4γ,5γ] (5γ,∞)
+t7→ ∥V(t)∥ L∞(R3)
+regularity V̸∈L ∞
+loc(R3 ×R +) V∈C 0(R3 ×R +) V∈C 1(R3 ×R +) V∈C 2(R3 ×R +)
+annihilation att=T none V V,∇V, V t V,∇V, V t,∆V
+An example of blow-up of the sole accelerationV t may be obtained by replacing(5.32)with
+2δ−1
+3 < γ < 2δ
+5 =⇒V(ξ, T)≡ ∇V(ξ, T)≡∆V(ξ, T)≡0inR 3 : (5.35)
+29
+
+[PDF page 30]
+thenδ < 5
+4,γ < 1
+2, and the inequalities4δ≥3γand4δ+ 1>6γare satisfied: hence, both the statements
+of Lemmas 4.4-4.5 hold: existence, uniqueness, and energy equality conditions are all fulfilled. The region
+in(5.35)is a triangle having a vertex at the same pointM, see Figure 5 (right). By taking(δ, γ)therein
+we haveV,∇V,∆V∈C 0(R3 ×[0, T])and(5.35)whileV t ̸∈L ∞(R3 ×(0, T)). However, for anyq, r <∞, if
+(δ, γ)is sufficiently close to the vertexM, we obtainV t ∈L r(0, T;L q(R3)). We omit further details.
+5.7 Proof of Theorem 2.9
+Themagic cancellationleading to (4.30) creates a gap between the blow-up of∇ ∧Vand (V· ∇)V, see
+(5.27). The idea is then to fit (δ, γ) within this gap.
+Let us rewriteV=V(ξ, t) in (4.11) in spatial spherical coordinatesV=V(|ξ|, θ, φ, t):
+v1(|ξ|, θ, φ, t) = g1(θ,φ)|ξ|2(T−t) 2δ
+[(T−t) 2γ +|ξ|2]5/2 , v 2(|ξ|, θ, φ, t) = g2(θ,φ)|ξ|2(T−t) 2δ
+[(T−t) 2γ +|ξ|2]5/2 , v 3(|ξ|, θ, φ, t) = g3(θ,φ)|ξ|2(T−t) 2δ
+[(T−t) 2γ +|ξ|2]5/2 ,
+for some smooth bounded functionsg i ∈C ∞(R2) (i= 1,2,3). If we putX=|ξ| ≥0 andY= (T−t) γ ≥0,
+they may be rewritten as
+v1(X,Y) = g1(θ, φ)X2Y2δ/γ
+[Y2 +X 2]5/2 , v 2(X,Y) = g2(θ, φ)X2Y2δ/γ
+[Y2 +X 2]5/2 , v 3(X,Y) = g3(θ, φ)X2Y2δ/γ
+[Y2 +X 2]5/2 .
+To check the regularity, we argue in the (X,Y)-plane, where these functions are inC ∞(R2
++) and we only
+need to analyse their behaviour at the origin (X,Y) = (0,0) where we setv i(0,0) = 0. We transform these
+functions in polar coordinates (ρ, β) with 0≤β≤ π
+2 and obtain
+vi(ρ, β) =g i(θ, φ) (cosβ) 2 (sinβ) 2δ/γ ρ2δ/γ−3 ,(i= 1,2,3).
+Therefore,
+V∈C 0,α(R3 ×[0, T])⇐ ⇒γ < 2δ
+3 +α ,(5.36)
+whileV∈C ∞(R3 ×[0, T)) because, fort < Tthe denominator ofVdoes not vanish and neither does (T−t).
+We apply the same method toV t in (4.29) and to (V· ∇)Vin (4.30) and we obtain
+[(V· ∇)V] i(ρ, β) = Λi(θ, φ, β)ρ4δ/γ−7 , V i
+t (ρ, β) = Γi(θ, φ, β)ρ(2δ−1)/γ−3
+for some smooth Λ i,Γ i (i= 1,2,3). Therefore,
+(V· ∇)V∈C 0,α(R3 ×[0, T])⇐ ⇒γ < 4δ
+7 +α , V t ∈C 0,α(R3 ×[0, T])⇐ ⇒γ < 2δ−1
+3 +α .
+Then we takePas in (4.39), so that∇Pand (V· ∇)Vhave the same regularity, see (4.41); we put
+f=V t + (V· ∇)V+∇Pand obtain
+f∈C 0,α(R3 ×[0, T])⇐ ⇒γ <min
+ 4δ
+7 +α , 2δ−1
+3 +α
+
+.
+On the other hand, from (5.27) we know that∇V̸∈L ∞(R3 ×(0, T)) if and only ifγ > δ
+2. But we need
+to refine this result, because the statement is stronger, it requires that the blow-up of thevorticityoccurs
+at anL 1(0, T)-rate. ForV= (v 1, v2, v3) as in (4.11), the relevant partial derivatives are given by
+v1
+y(x, y, z, t) = 2z(T−t) 2δ
+[(T−t) 2γ +|ξ| 2]5/2 − 10y2z(T−t) 2δ
+[(T−t) 2γ +|ξ| 2]7/2 , v 1
+z(x, y, z, t) =v 1
+y(x, z, y, t),
+30
+
+[PDF page 31]
+v2
+x(x, y, z, t) = −z(T−t) 2δ
+[(T−t) 2γ +|ξ| 2]5/2 + 5x2z(T−t) 2δ
+[(T−t) 2γ +|ξ| 2]7/2 , v 2
+z(x, y, z, t) =v 2
+x(z, y, x, t),
+v3
+x(x, y, z, t) = −y(T−t) 2δ
+[(T−t) 2γ +|ξ| 2]5/2 + 5x2z(T−t) 2δ
+[(T−t) 2γ +|ξ| 2]7/2 , v 3
+y(x, y, z, t) =v 2
+x(y, x, z, t).
+In particular,
+∇ ∧V(ξ, t)
+ ≥
+
+3z(T−t) 2δ
+[(T−t) 2γ +|ξ| 2]5/2 − 15y2z(T−t) 2δ
+[(T−t) 2γ +|ξ| 2]7/2
+
+and, by extending (4.2) 1 to the caseq=∞, we obtain
+lim
+t→T
+Z t
+0
+∥∇ ∧V(s)∥ L∞(R3) ds=∞ ⇐ ⇒γ≥ 2δ+ 1
+4 .
+Therefore, the result is proved if there existα∈(0,1) andγ >0 such that
+2δ+ 1
+4 ≤γ <min
+ 4δ
+7 +α , 2δ−1
+3 +α
+
+.
+By takingδsufficiently large, one can check that, for anyα∈(0,1) there exist (δ, γ) satisfying these
+constraints.
+6 Appendices
+6.1 Survey on the Lane-Emden equation and connections
+Named after the astrophysicists Lane [36] and Emden [14], the Lane–Emden ODE
+1
+ρ2
+d
+dρ
+
+ρ2 dθ
+dρ
+
++θ p = 0, ρ >0, p >1,(6.1)
+describes in dimensionless form the Poisson equation for the gravitational potential of a Newtonian self-
+gravitating, spherically symmetric, polytropic fluid; see also subsequent work by Fowler [19, 20].
+The Lane-Emden equation (6.1) is the radial version of the stationary superlinear PDE
+−∆u=u p, u≥0 inR 3 ,(6.2)
+in which the exponentp= 5 is critical since (6.2) is the Euler-Lagrange equation of the “energy functional”
+J(u) = 1
+2
+Z
+R3
+|∇u|2 − 1
+p+ 1
+Z
+R3
+|u|p+1 (6.3)
+defined over the spaceD 1,2(R3) which is the closure ofC ∞
+c (R3) with respect to the Dirichlet norm. It is
+well-known thatD 1,2(R3)⊂L 6(R3) with no embedding into otherL p(R3)-spaces; hence, the only exponent
+for which (6.3) is well-defined isp= 5 and its (nontrivial) critical points are the minimisers of the Sobolev
+ratio∥∇u∥ 2
+L2(R3)/∥u∥2
+L6(R3), thus leading to (6.2) forp= 5.
+Whenp >1 varies, different behaviours appear in (6.2), as summarised in the next result.
+Proposition 6.1.(i)If1< p <5, then the unique solution to(6.2)isu≡0.
+(ii)Ifp= 5, then for anyξ 0 ∈R n,(6.2)admits infinitely many positive bounded solutions, radially symmetric
+and decreasing with respect toξ 0 ∈R n explicitly given by
+wε,ξ0(ξ) =
+4√
+3ε2
+p
+ε2 +|ξ−ξ 0|2 ∀ε >0,∀ξ 0 ∈R 3 .(6.4)
+31
+
+[PDF page 32]
+Moreover, these are the only positive solutions to(6.2)and
+wε,ξ0 ∈L q(R3)⇐ ⇒q >3,∥w ε,ξ0∥L6(R3) ≡C∀ε >0,
+∥wε,ξ0∥Lq(R3)
+ε→0→0∀q∈(3,6),∥w ε,ξ0∥Lq(R3)
+ε→0→ ∞ ∀q∈(6,∞]. (6.5)
+(iii)Ifp >5, then for anyξ 0 ∈R n,(6.2)admits infinitely many positive bounded smooth solutionsu=u(ξ),
+radially symmetric and decreasing with respect toξ 0 ∈R n, all satisfying (as|ξ| → ∞)
+|ξ|
+2
+p−1 u(|ξ|)→
+h
+2(p−3)
+(p−1)2
+i 1
+p−1 ,|ξ|
+p+1
+p−1
+∇u(|ξ|)
+ →
+h
+2p(p−3)
+(p−1)p+1
+i 1
+p−1 ,|ξ|
+2p
+p−1
+∆u(|ξ|)
+ →
+h
+2(p−3)
+(p−1)2
+i p
+p−1 (6.6)
+and, hence:u∈L q(R3)⇔q > 3(p−1)
+2 ,∇u∈L q(R3)⇔q > 3(p−1)
+p+1 ,∆u∈L q(R3)⇔q > 3(p−1)
+2p .
+Proof.For Item (i), see [31, Theorem 1.1]. Concerning Item (ii), forp= 5 the solutions to (6.2) coincide
+with the so-called Talenti bubbles [46] given in (6.4) (see also [3] and their first appearance in [6, (16)],
+earlier than the introduction of Sobolev spaces in 1935!). By restricting to the caseξ 0 = 0, and simply
+denotingw ε =w ε,0, switching to spherical coordinates we find
+∥wε∥q
+Lq(R3) = 4π3 q/4 εq/2
+Z ∞
+0
+ρ2
+(ε2 +ρ 2)q/2 dρ
+ρ=εs
+= 4π3 q/4 ε3−q/2
+Z ∞
+0
+s2
+(1 +s 2)q/2 ds .(6.7)
+Since we also have∥w ε∥L∞(R3) =w ε(0) =
+4√
+3/√ε, we infer (6.5). For Item (iii), we refer to [40, Theorem
+3.2] and to the remark included in the proof of it, see also [7] and [47, (E2), p.551]. The proofs of (6.6) 2-(6.6)3
+can be derived from (6.6) 1 after writing (6.2) in its radial form (6.1).□
+Proposition 6.1 shows that the critical exponentp= 5 discriminates between existence and nonexistence of
+positive solutions to (6.2) (and also to (6.1)). Due to (6.2), the exponent at the denominator ofu5 is the same
+as for the Laplacian, to be compared withUin (3.4) and−∆U. TheL 3(R3)-threshold of integrability for
+the bubble (6.4), see (6.5), is found also in the blow-up condition for the unforced Navier-Stokes equations,
+see [15, 41]. Incidentally we recall that, whenp= 5, there exist infinitely many sign-changing solutions to
+(6.2), see [12]. As far as we are aware, nothing is known about the possible existence of nonradial positive
+solutions to (6.2) whenp >5. Finally, by puttingp= 5 in (6.6) (whichis notallowed!), we would obtain
+u(|ξ|)≍ |ξ| −1/2 as|ξ| → ∞, while the decay of (6.4) isw ε,ξ0(|ξ|)≍ |ξ| −1; therefore, there is discontinuity of
+the behaviour at infinity asp↓5.
+Remark 6.2.One may wonder whether the bubble(6.4)can be replaced by a similar function with more
+integrability. More precisely, consider the functionw(ξ) = (1 +|ξ| β)−α for someα, β >0since, otherwise,
+wdoes not vanish as|ξ| → ∞. Then, by using radial coordinates, we find
+−∆w= αβ|ξ| β−2[β+ 1 + (1−αβ)|ξ| β]
+(1 +|ξ| β)α+2
+which is proportional to some powerp >1ofw(thereby satisfying(6.2)) if and only if(α, β) = (1/2,2),
+bringing us back to the bubble(6.4). This is also connected with the proof of Lemma 4.2.
+Let us now recall some results about the superlinear parabolic Lane-Emden equation
+ut −∆u=u p (p >1, u≥0) inR n ×R + , u(ξ,0) =u 0(ξ) inR n ,(6.8)
+whereu p should be replaced by|u| p−1uwhen seeking sign-changing solutions. Let us then explain why
+dissipation is not enough to exclude blow up for (6.8). Although the energyt7→J
+ 
+u(t)
+
+(Jas in (6.3)) is
+decreasing for smooth solutions to (6.8), Wang [47, Theorems 0.1-0.2-0.3] proved the following statement:
+32
+
+[PDF page 33]
+Proposition 6.3.Assume thatp= 3. Then:
+– there existsu 0 ∈C 0(R3)∩L ∞(R3)such that the unique local solution to(6.8)is global, classical and
+∥u(t)∥L∞(R3) →0ast→ ∞;
+– there existsu 0 ∈C 0(R3)∩L ∞(R3)andT >0such that the unique local solution to(6.8)is classical in
+R3 ×(0, T)and∥u(t)∥ L∞(R3) → ∞ast→T.
+The blow-up for (6.8) is then intended as in [8, p.772], see Theorem 2.5 and Remark 3.6. Although the
+assumptions onu 0 involve pointwise inequalities, global existence or blow-up for (6.8)are notdue to the
+comparison principle which holds thanks to the positivity of the heat kernel since similar phenomena also
+appear in higher order parabolic equations [24, 27]. In spite of the fact that polyharmonic heat kernels
+may change sign [18, 29, 30], similar results for biharmonic Lane-Emden parabolic equations continue to
+hold [9, 13, 24, 28]. Moreover, (part of) the results in [47] have been extended tosystemsof parabolic
+Lane-Emden equations [2, 48]. Hence, the positivity preserving property for the heat equation is not strictly
+necessary and one may hope to find similar results also for vector fields and different nonlinearities; in [16,
+p.3244] this difficulty was emphasised and attributed to the nonlocality of the Stokes operator [16, p.3245].
+Summarising, the behaviour of the solutions to these parabolic equations strongly depends on the nonlin-
+earity and on the initial datum but, quite paradoxically, it depends much less on the differential operator.
+This is how we built the blow-up examples for (1.1): the main idea was to employ modified versions of (6.4)
+(see also [37, (3.12)] by choosing adequate exponentspas for (6.8) and with a time-dependent concentra-
+tion parameterε=ε(t), see (6.5). We focused on positive powers of|T−t|, possibly different in the two
+appearances ofε(t) but, perhaps, other choices could lead to better results.
+6.2 Proofs of Theorems 3.5 and 3.7
+ForT >0 and (r, q)∈[1,∞)×(1,∞) we define the Banach space
+W r,q
+T :=
+
+U∈L 1
+1oc(R3 ×(0, T)) :U∈W 1,r(0, T;L q
+σ(R3))∩L r(0, T;W 2,q(R3))
+	
+with corresponding norm
+∥U∥ W r,q
+T
+:=
+Z T
+0
+
+∥Ut(t)∥r
+Lq(R3) +∥U(t)∥ r
+W 2,q(R3)
+
+dt
+1/r
+.
+The following properties hold.
+Lemma 6.4.LetT >0; there existsc >0such that
+∥U∥ Lp(0,T;L s(R3)) +∥∇U∥ Lp1 (0,T;L s1 (R3)) ≤c∥U∥ W r,q
+T
+∀U∈ W r,q
+T ,
+with 2
+p + 3
+s − 2
+r − 3
+q + 2≥0and 2
+p1
++ 3
+s1
+− 2
+r − 3
+q + 1≥0,(6.9)
+and where the strict inequality signs hold if eitherp(resp.p 1) ors(resp.s 1) is equal to∞.
+Proof.We show only the inequality forU, since the the proof for that of∇Uis entirely analogous. To this
+end, we use an argument similar to that given in [45, Theorem 2.1]. PickU∈ W r,q and extend it to the
+entire space (ξ, t)∈R 4, with preservation of (equivalent) norms, to get the following representation
+U(ξ, t) =
+Z t
+t−1
+Z
+R3
+Γ1(ξ−ζ, t−τ)(U τ −∆U)(ζ, τ)dζ dτ+
+Z t
+t−1
+Z
+R3
+Γ2(ξ−ζ, t−τ)U(ζ, τ)dζ dτ .(6.10)
+33
+
+[PDF page 34]
+Here,ψ:R→Ra smooth non-negative function such thatψ≤1,ψ(w) = 0 ifw≥1 andψ(w) = 1 if
+w≤1/2, Γ 1(ξ, t) = Γ(ξ, t)ψ(|ξ|)ψ(t),
+Γ2(ξ, t) = 2ψ(t)∇Γ(ξ, t)· ∇ψ(|ξ|) + Γ(ξ, t)
+ 
+ψ(t)∆ψ(|ξ|)−ψ ′(t)ψ(|ξ|)
+
+,
+and
+Γ(ξ, t) =
+(
+1
+4πt exp
+
+− |ξ|2
+4t
+
+ift >0
+0 ift≤0
+.(6.11)
+By using in (6.10) the generalised Minkowski inequality and Young’s inequality for convolutions we get
+∥U(t)∥ Ls(R3) ≤
+Z t
+t−1
+ 
+∥Γ1(t−τ)∥ Lσ(R3)+∥Γ 2(t−τ)∥ Lσ(R3)
+ 
+∥Uτ(τ)∥ Lq(R3)+∥U(τ)∥ W 2,q(R3)
+
+dτ,
+wheres≥q, and 1/σ= 1 + 1/s−1/q. As a result, taking into account that, by (6.11) and the properties
+of the functionψ,
+|Γi(ξ, ρ)| ≤ c1
+(|ξ|2 +ρ)
+3
+2
+, i= 1,2,
+we find
+∥U(t)∥ Ls(R3) ≤c 2
+Z t
+t−1
+∥Uτ(τ)∥ Lq(R3) +∥U(τ)∥ W 2,q(R3)
+(t−τ)
+3
+2 ( 1
+q − 1
+s ) dτ ,(6.12)
+withc 2 independent oft. The stated bound (6.9) then follows by employing in (6.12) and the Hardy-
+Littlewood inequality if (6.9) 1 holds with the equality sign, and the Young inequality otherwise.□
+Takeλ >0,A:=λ−∆: then,D(A) =L q
+σ(R3)∩W 2,q(R3) for any 1< q <∞and
+∥u∥W 2,q(R3) ≤C 1 ∥A∥q ≤C 2 ∥u∥W 2,q(R3) , C i =C i(λ), i= 1,2.(6.13)
+Forγ >1 define
+D
+1− 1
+γ ,γ
+q :=
+n
+u∈L q
+σ(R3) :∥u∥
+D
+1− 1
+γ ,γ
+q
+:=∥u∥ Lq(R3) +
+Z ∞
+0
+∥Ae −tAu∥γ
+Lq(R3) dt
+ 1
+γ
+<∞
+o
+.
+The following properties hold.
+Lemma 6.5.There existsc=c(q, γ)>0such that
+∥u∥
+D
+1− 1
+γ ,γ
+q
+≤c∥u∥ W 2,q(R3) for allu∈D(A).
+Proof.SinceAand e −tA commute, we have
+∥Ae −tAu∥Lq(R3) =∥e −tAA u∥Lq(R3) ≤ ∥Au∥ Lq(R3) ≤c(q, λ)∥u∥ W 2,q(R3) ∀t≥0.(6.14)
+Moreover, from classical results, we also have
+∥Ae −tAu∥Lq(R3) ≤c(q)t −1∥u∥Lq(R3) ≤c(q)∥u∥ Lq(R3) ∀t >1.(6.15)
+Thus, writing
+Z ∞
+0
+∥Ae −tAu∥γ
+Lq(R3)dt=
+Z 1
+0
+∥Ae −tAu∥γ
+Lq(R3)dt+
+Z ∞
+1
+∥Ae −tAu∥γ
+Lq(R3)dt=:I 1 +I 2 ,
+we employ (6.14) inI 1 and (6.15) inI 2 so that, taking into account thatγ >1, the lemma follows.□
+34
+
+[PDF page 35]
+Proof of Theorem 3.5.We seek a solution of the type (V, P) = (u S +v, p S +ϕ) e λ t,λ >0, where (u S, pS)
+solve the Stokes problem
+(uS)t +Au S +∇p S =fe −λ t ,∇ ·u S = 0 inR 3 ×(0, T), u S(ξ,0) =V 0(ξ) forξ∈R 3 ,(6.16)
+whereas (v, ϕ) satisfy
+vt +Av+ e λ t
+(v· ∇)v+ (u S · ∇)v+ (v· ∇)u S + (uS · ∇)uS
+
++∇ϕ= 0,∇ ·v= 0 inR 3 ×(0, T),
+v(ξ,0) = 0 forξ∈R 3 .
+From [32, Theorem 2.7], Lemma 6.5 and (6.13), we know that, under the given assumptions, (6.16) admits a
+unique solutionu S ∈ W r,q
+T . Furthermore, by Lemma 6.4 and the assumption on the exponentsr, q, we have
+∥uS∥L∞(R3×(0,T)) ≤c∥u S∥W r,q
+T
+≤c(∥f∥ W r,q
+T
++∥V 0∥W 2,q(R3)).(6.17)
+A solution to (1.1) is then sought as a fixed point of the map
+M:w∈ W r,q
+T →v∈ W r,q
+T
+withvsolving
+vt +Av+ e λ t[(w· ∇)w+ (u S · ∇)w+ (w· ∇)u S + (uS · ∇)uS] +∇ϕ= 0,∇ ·v= 0 inR 3 ×(0, T),
+v(ξ,0) = 0 forξ∈R 3 .
+(6.18)
+From Lemma 6.4 and (6.17) we get
+∥(w· ∇)w+ (u S · ∇)w+ (w· ∇)u S + (uS · ∇)uS∥W r,q
+T
+≤(∥w∥ L∞(R3×(0,T)) +∥u S∥L∞(R3×(0,T)) )(∥w∥W r,q
+T
++∥u S∥W r,q
+T
+)≤c(∥w∥ 2
+W r,q
+T
++∥u S∥2
+W r,q
+T
+).
+Therefore, applying [32, Theorem 2.8] to (6.18) and taking into account (6.13), we deduce
+∥v∥W r,q
+T
+≤c 1 eλ T(∥w∥2
+W r,q
+T
++∥u S∥2
+W r,q
+T
+).(6.19)
+Next, if∥w∥ W r,q
+T
+≤Rfor someR >0, the previous inequality furnishes
+∥v∥W r,q
+T
+≤c 1 eλ T(R2 +∥u S∥2
+W r,q
+T
+),
+from which it follows that, if we takeR <e −λT /2c1 andTsmall enough that∥u S∥W r,q
+T
+<e − λ
+2 Tp
+R/2c1,
+thenMmaps the ball of radiusRcentered at the origin ofW r,q into itself. Similarly, if we set
+vi =M(w i), i= 1,2, v=v 1 −v 2 , w=w 1 −w 2
+and we use (6.18), we get
+∥v∥W r,q
+T
+≤c 1eλT
+
+∥w1∥W r,q
+T
++∥w 2∥W r,q
+T
++∥u S∥W r,q
+T
+
+∥w∥W r,q
+T
+which, again by takingRandTsufficiently small (say,T≤T ∗), proves thatMis a contraction. Existence
+and uniqueness are proved. Finally, (3.2) is a consequence of (6.17), (6.19) and Lemma 6.4.□
+35
+
+[PDF page 36]
+Proof of Theorem 3.7.It is entirely analogous to that of Theorem 3.5, once we observe the following facts.
+(i) In view of the assumptions on the exponentsr, q, from Lemma 6.4 it follows
+∥∇uS∥L∞(0,T×R 3) ≤c∥u S∥W r,q
+T
+.
+(ii) Using again Lemma 6.5 and the previous bound, we get
+∥(w· ∇)w+ (u S · ∇)w+ (w· ∇)u S + (uS · ∇)uS∥W r,q
+T
+≤
+
+∥∇w∥L∞(R3×(0,T)) +∥∇u S∥L∞(R3×(0,T))
+h
+∥w∥W r,q
+T
++∥u S∥W r,q
+T
+i
+≤c(∥w∥ 2
+W r,q
+T
++∥u S∥2
+W r,q
+T
+).
+The remaining details, including (3.3), are left to the reader.□
+Data availability statement.Data sharing not applicable to this article as no datasets were generated
+or analysed during the current study.
+Conflict of interest statement. The Authors declare that they have no conflict of interest.
+Acknowledgements.G.P.G. is partially supported by NSF Grant DMS-2307811; F.G. is supported by
+the MUR grantDipartimento di Eccellenza 2023-27(Italy) and by INdAM.
+References
+[1] D. Albritton, E. Bru´ e, M. Colombo,Non-uniqueness of Leray solutions of the forced Navier-Stokes equations,
+Ann. of Math. 196, 415-455, 2022
+[2] D. Andreucci, M.A. Herrero, J.J.L. Vel´ azquez,Liouville theorems and blow up behaviour in semilinear reaction
+diffusion systems, Ann. Inst. H. Poincar´ e Anal. Non Lin´ eaire 14, 1–53, 1997
+[3] T. Aubin,Probl` emes isop´ erim´ etriques et espaces de Sobolev, J. Differ. Geom. 11, 573–598, 1976
+[4] J.T. Beale, T. Kato, A. Majda,Remarks on the breakdown of smooth solutions for the 3-D Euler equations,
+Comm. Math. Phys. 94, 61-66, 1984
+[5] H. Beir˜ ao da Veiga, J. Yang,A note on the development of singularities on solutions to the Navier-Stokes
+equations under super critical forcing terms, arXiv:2411.10823v1 [math.AP]
+[6] G.A. Bliss,An integral inequality, J. London Math. Soc. 5, 40-46, 1930
+[7] H. Berestycki, P.L. Lions, L.A. Peletier,An ODE approach to the existence of positive solutions for semilinear
+problems inR N, Indiana Univ. Math. J. 30, 141-157, 1981
+[8] L. Caffarelli, R. Kohn, L. Nirenberg,Partial regularity of suitable weak solutions of the Navier-Stokes equations,
+Comm. Pure Appl. Math. 35, 771-831, 1982
+[9] G. Caristi, E. Mitidieri,Existence and nonexistence of global solutions of higher-order parabolic problems with
+slow decay initial data, J. Math. Anal. Appl. 279, 710-722, 2003
+[10] M.P. Coiculescu, S. Palasek,Non-uniqueness of smooth solutions of the Navier-Stokes equations from critical
+data, Invent. Math. 244, 165-219, 2026
+[11] D. C´ ordoba, L. Mart´ ınez-Zoroa,Blow-up for the incompressible 3D-Euler equations with uniformC 1, 1
+2 −ϵ ∩L 2
+force, arXiv:2309.08495v1 [math.AP]
+[12] W.Y. Ding,On a conformally invariant elliptic equation onR n, Comm. Math. Phys. 107, 331-335, 1986
+[13] Y.V. Egorov, V.A. Galaktionov, V.A. Kondratiev, S.I. Pohoˇ zaev,Global solutions of higher-order semilinear
+parabolic equations in the supercritical range, Adv. Diff. Eq. 9, 1009-1038, 2004
+[14] R. Emden,Gaskugeln: Anwendungen der Mechanischen W¨ armetheorie auf Kosmologische und Meteorologische
+Probleme, Teubner, Berlin, 1907. Reprinted by Forgotten Books, 2018
+36
+
+[PDF page 37]
+[15] L. Escauriaza, G.A. Ser¨ egin, V. Shverak,L 3,∞-solutions of Navier-Stokes equations and backward uniqueness,
+Uspekhi Mat. Nauk 58, 3-44, 2003
+[16] R. Farwig,From Jean Leray to the millennium problem: the Navier-Stokes equations, J. Evol. Equ. 21, 3243-3263,
+2021
+[17] C.L. Fefferman,Existence and smoothness of the Navier-Stokes equation, The millennium prize problems, Clay
+Math. Inst., Cambridge, MA, 57-67, 2006
+[18] A. Ferrero, F. Gazzola, H.C. Grunau,Decay and eventual local positivity for biharmonic parabolic equations,
+Disc. Cont. Dynam. Syst. A 21, 1129-1157, 2008
+[19] R. Fowler,The solution of Emden’s and similar differential equations, Monthly Notices Roy. Astronom. Soc. 91,
+63-91, 1930
+[20] R. Fowler,Further studies of Emden’s and similar differential equations, Quarterly J. Math. Oxford Ser. 2,
+259-288, 1931
+[21] D. Fujiwara, H. Morimoto,AnL r-theorem of the Helmholtz decomposition of vector fields, J. Fac. Sci. Univ.
+Tokyo Sect. IA Math. 24, 685-700, 1977
+[22] A.V. Fursikov,On some control problems and results concerning the unique solvability of a mixed boundary value
+problem for the three-dimensional Navier–Stokes and Euler systems, Dokl. Akad. Nauk SSSR 252:5, 1066–1070,
+1980
+[23] A.V. Fursikov,Control problems and theorems concerning the unique solvability of a mixed boundary value
+problem for the three-dimensional Navier–Stokes and Euler equations, Math. USSR Sbornik 43, 251–273, 1982
+[24] V.A. Galaktionov, S.I. Pohoˇ zaev,Existence and blow-up for higher-order semilinear parabolic equations: ma-
+jorizing order-preserving operators, Indiana Univ. Math. J. 51, 1321-1338, 2002
+[25] G.P. Galdi,An Introduction to the Navier-Stokes Initial-Boundary Value Problem, In: G.P. Galdi, J.G. Heywood,
+R. Rannacher (eds), Fundamental Directions in Mathematical Fluid Mechanics. Advances in Mathematical Fluid
+Mechanics. Birkh¨ auser, Basel, 1-70, 2000
+[26] G.P. Galdi, G. Metafune, C. Spina, C. Tacelli,Homogeneous Calder´ on-Zygmund estimates for a class of second-
+order elliptic operators, Commun. Contemp. Math. 17, 1450017, 14pp., 2015
+[27] F. Gazzola, H.C. Grunau,Radial entire solutions for supercritical biharmonic equations, Math. Ann. 334, 905-
+936, 2006
+[28] F. Gazzola, H.C. Grunau,Global solutions for superlinear parabolic equations involving the biharmonic operator
+for initial data with optimal slow decay, Calc. Var. Part. Diff. Eq. 30, 389-415, 2007
+[29] F. Gazzola, H.C. Grunau,Eventual local positivity for a biharmonic heat equation inR n, Disc. Cont. Dynam.
+Syst. S 1, 83-87, 2008
+[30] F. Gazzola, H.C. Grunau,Some new properties of biharmonic heat kernels, Nonlin. Anal. TMA 70, 2965-2973,
+2009
+[31] B. Gidas, J. Spruck,Global and local behavior of positive solutions of nonlinear elliptic equations, Comm. Pure
+Appl. Math. 34, 525-598, 1981
+[32] Y. Giga, H. Sohr,AbstractL p estimates for the Cauchy problem with applications to the Navier-Stokes equations
+in exterior domains, J. Funct. Anal. 102, 72-94, 1991
+[33] E. Hopf, ¨Uber die anfangswertaufgabe f¨ ur die hydrodynamischen grundgleichungen, Math. Nachr. 4, 213-231
+(1951)
+[34] T. Hou, Y. Wang, C. Yang,Nonuniqueness of Leray-Hopf solutions to the unforced incompressible 3D Navier-
+Stokes equation, arXiv:2509.25116v2 [math.AP]
+[35] H. Kozono, H. Sohr,Remark on uniqueness of weak solutions to the Navier-Stokes equations, Analysis 16, 3,
+255-271, 1996
+37
+
+[PDF page 38]
+[36] J.H. Lane,On the theoretical temperature of the Sun, under the hypothesis of a gaseous mass maintaining its
+volume by its internal heat, and depending on the laws of gases as known to terrestrial experiment, American
+Journal of Science 50 (148), 57–74, 1870
+[37] J. Leray,Sur le mouvement d’un liquide visqueux emplissant l’espace, Acta Mathematica 63, 193-248, 1934
+[38] J.L. Lions,Sur la r´ egularit´ e et l’unicit´ e des solutions turbulentes des ´ equations de Navier Stokes, Rend. Sem.
+Mat. Univ. Padova 30, 16-23, 1960
+[39] T. Miyakawa,On nonstationary solutions of the Navier-Stokes equations in an exterior domain, Hiroshima Math.
+J. 12, 115-140, 1982
+[40] W.M. Ni, J. Serrin,Existence and nonexistence theorems for ground states for quasilinear partial differential
+equations. The anomalous case, Accad. Naz. Lincei, Atti dei Convegni 77, 231-257, 1986
+[41] G. Seregin,A certain necessary condition of potential blow up for Navier-Stokes equations, Comm. Math. Phys.
+312, 833-845, 2012
+[42] J. Serrin,The initial value problem for the Navier-Stokes equations, In: Nonlinear Problems (Proc. Sympos.,
+Madison, 1962), Univ. Wisconsin Press, Madison, 69–98, 1963
+[43] C. Simader, H. Sohr,A new approach to the Helmholtz decomposition and the Neumann problem inL q-spaces
+for bounded and exterior domains, In: Mathematical problems relating to the Navier-Stokes equation, Ser. Adv.
+Math. Appl. Sci. 11, 1-35, World Sci. Publ., River Edge, NJ, 1992
+[44] H. Sohr,The Navier-Stokes equations - An elementary functional analytic approach, Birkh¨ auser Advanced Texts:
+Basel Textbooks, 2001
+[45] V.A. Solonnikov,Estimates of the solutions of the nonstationary Navier-Stokes system(Russian)Boundary value
+problems of mathematical physics and related questions in the theory of functions, Zap. Naucn. Sem. Leningrad.
+Otdel. Mat. Inst. Steklov (LOMI), 38, 153-231, 1973
+[46] G. Talenti,Best constant in Sobolev inequality, Ann. Mat. Pura Appl. 110, 353-372, 1976
+[47] X. Wang,On the Cauchy problem for reaction-diffusion equations, Trans. Amer. Math. Soc. 337, 549-590, 1993
+[48] X. Wang, J. Wang,Global existence and stability analysis for the parabolic Lane–Emden system with initial data,
+Nonlinearity 39, 4, 045008, 2026
+[49] Q.S. Zhang,A blow up solution of the Navier-Stokes equations with a super critical forcing term, J. Math. Study
+58, 4, 429-438, 2025
+38

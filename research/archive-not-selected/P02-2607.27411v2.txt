@@ -1,0 +1,2499 @@
+
+[PDF page 1]
+Validation of the DESI DR2 Lyαforest full-shape analysis
+M. Herbold ,1, 2, 3 A. Cuceu ,4, 5 P. Martini ,1, 6, 3 H. K. Herrera-Alcantar ,7, 8 J. Guy ,4 C. Gordon ,9
+O. Manasoiu,9 J. Aguilar,4 S. Ahlen ,10 O. Alves,11 U. Andrade ,12, 11 E. Armengaud ,8 S. Avila ,13
+A. Aviles ,14, 15, 16 A. Bault ,4 F. Beutler ,17 D. Bianchi ,18, 19 M. Bonici,20 A. Brodzeller ,4 D. Brooks,9
+A. Carnero Rosell ,21, 22 E. Chaussidon ,4 J. Chaves-Montero ,23 Z. Chen,17 T. Claybaugh,4
+K. S. Dawson ,24 A. de la Macorra ,16 A. Dey ,25 W. Elbers ,26 V. A. Fawcett ,27 S. Ferraro ,4, 28
+A. Font-Ribera ,29, 23 J. E. Forero-Romero ,30, 31 G. Gambardella,32 S. Gontcho A Gontcho,33
+D. Gonzalez ,34 A. X. Gonzalez-Morales ,34 R. Gsponer ,35 G. Gutierrez,36 B. Hadzhiyska ,37, 28
+C. Hahn ,38 K. Honscheid ,1, 2, 3 D. Huterer ,39, 11 M. Ishak ,40 S. Jos,10 S. Juneau ,25 N. V. Kamble ,40
+N. G. Karaçaylı,1, 6, 2, 3 T. Karim ,41, 42 R. Kehoe,43 D. Kirkby ,44 F.-S. Kitaura ,21, 22 A. Kremin ,4
+O. Lahav ,9 M. Landriau ,4 J. Lasker ,45 L. Le Guillou ,46 A. Leauthaud ,47, 48 M. E. Levi ,4 Q. Li ,24
+W. Liu ,49 K. Lodha ,50, 51 M. Manera ,52, 23 A. Meisner ,25 R. Miquel,29, 23 J. Morawetz,53 J. Moustakas ,54
+P. Mukherjee ,50 A. Muñoz-Gutiérrez,16 S. Nadathur ,55 G. Niz ,34, 14 H. E. Noriega ,15, 16 E. Paillas ,56, 57
+N. Palanque-Delabrouille ,8, 4 J. Pan ,11 M. P. Ibanez ,17 W. J. Percival ,53, 20, 58 F. Prada ,59
+H. Pulido-Hernández ,60 A. Pérez-Fernández ,61 I. Pérez-Ràfols ,62 C. Ravoux ,63 J. Rohlf ,10 G. Rossi,64
+R. Ruggeri ,65 M. F. Ruiz-Herrera Bernal,13 L. Samushia ,66, 67 E. Sanchez ,13 C. Saulder ,61 D. Schlegel,4
+H. Seo ,49 J. Silber ,4 T. Simon ,46 F. Sinigaglia ,21, 22 M. Siudek ,32, 22 G. Tarlé ,11 W. Turner ,1, 6, 3
+R. Vaisakh ,43 M. Vargas-Magaña ,16 B. A. Weaver,25 M. Wolfson,3 H. Yang,17 and H. Zhang 53, 58
+(DESI Collaboration)
+1Center for Cosmology and AstroParticle Physics, The Ohio State University,
+191 West Woodruff Avenue, Columbus, OH 43210, USA
+2Department of Physics, The Ohio State University,
+191 West Woodruff Avenue, Columbus, OH 43210, USA
+3The Ohio State University, Columbus, 43210 OH, USA
+4Lawrence Berkeley National Laboratory, 1 Cyclotron Road, Berkeley, CA 94720, USA
+5NASA Einstein Fellow
+6Department of Astronomy, The Ohio State University,
+4055 McPherson Laboratory, 140 W 18th Avenue, Columbus, OH 43210, USA
+7Institut d’Astrophysique de Paris. 98 bis boulevard Arago. 75014 Paris, France
+8IRFU, CEA, Université Paris-Saclay, F-91191 Gif-sur-Yvette, France
+9Department of Physics & Astronomy, University College London, Gower Street, London, WC1E 6BT, UK
+10Department of Physics, Boston University, 590 Commonwealth Avenue, Boston, MA 02215 USA
+11University of Michigan, 500 S. State Street, Ann Arbor, MI 48109, USA
+12Leinweber Center for Theoretical Physics, University of Michigan,
+450 Church Street, Ann Arbor, Michigan 48109-1040, USA
+13CIEMAT, Avenida Complutense 40, E-28040 Madrid, Spain
+14Instituto Avanzado de Cosmología A. C., San Marcos 11 - Atenas
+202. Magdalena Contreras. Ciudad de México C. P. 10720, México
+15Instituto de Ciencias Físicas, Universidad Nacional Autónoma de México,
+Av. Universidad s/n, Cuernavaca, Morelos, C. P. 62210, México
+16Instituto de Física, Universidad Nacional Autónoma de México,
+Circuito de la Investigación Científica, Ciudad Universitaria, Cd. de México C. P. 04510, México
+17Institute for Astronomy, University of Edinburgh,
+Royal Observatory, Blackford Hill, Edinburgh EH9 3HJ, UK
+18Dipartimento di Fisica “Aldo Pontremoli”, Università degli Studi di Milano, Via Celoria 16, I-20133 Milano, Italy
+19INAF-Osservatorio Astronomico di Brera, Via Brera 28, 20122 Milano, Italy
+20Perimeter Institute for Theoretical Physics, 31 Caroline St. North, Waterloo, ON N2L 2Y5, Canada
+21Departamento de Astrofísica, Universidad de La Laguna (ULL), E-38206, La Laguna, Tenerife, Spain
+22Instituto de Astrofísica de Canarias, C/ Vía Láctea, s/n, E-38205 La Laguna, Tenerife, Spain
+23Institut de Física d’Altes Energies (IFAE), The Barcelona Institute of Science and Technology,
+Edifici Cn, Campus UAB, 08193, Bellaterra (Barcelona), Spain
+24Department of Physics and Astronomy, The University of Utah,
+115 South 1400 East, Salt Lake City, UT 84112, USA
+25NSF NOIRLab, 950 N. Cherry Ave., Tucson, AZ 85719, USA
+26Institute for Computational Cosmology, Department of Physics,
+Durham University, South Road, Durham DH1 3LE, UK
+27European Southern Observatory, Karl-Schwarzschild-Str. 2, 85748 Garching bei München, Germany
+28University of California, Berkeley, 110 Sproul Hall #5800 Berkeley, CA 94720, USA
+arXiv:2607.27411v2  [astro-ph.CO]  4 Aug 2026
+
+[PDF page 2]
+2
+29Institució Catalana de Recerca i Estudis Avançats,
+Passeig de Lluís Companys, 23, 08010 Barcelona, Spain
+30Departamento de Física, Universidad de los Andes,
+Cra. 1 No. 18A-10, Edificio Ip, CP 111711, Bogotá, Colombia
+31Observatorio Astronómico, Universidad de los Andes,
+Cra. 1 No. 18A-10, Edificio H, CP 111711 Bogotá, Colombia
+32Institute of Space Sciences, ICE-CSIC, Campus UAB,
+Carrer de Can Magrans s/n, 08913 Bellaterra, Barcelona, Spain
+33University of Virginia, Department of Astronomy, Charlottesville, VA 22904, USA
+34Departamento de Física, DCI-Campus León, Universidad de Guanajuato,
+Loma del Bosque 103, León, Guanajuato C. P. 37150, México
+35Institute of Physics, Laboratory of Astrophysics,
+École Polytechnique Fédérale de Lausanne (EPFL),
+Observatoire de Sauverny, Chemin Pegasi 51, CH-1290 Versoix, Switzerland
+36Fermi National Accelerator Laboratory, PO Box 500, Batavia, IL 60510, USA
+37Institute of Astronomy, University of Cambridge, Madingley Road, Cambridge CB3 0HA, UK
+38Department of Astronomy, University of Texas at Austin, 2515 Speedway, TX 78712, USA
+39Department of Physics, University of Michigan, 450 Church Street, Ann Arbor, MI 48109, USA
+40Department of Physics, The University of Texas at Dallas,
+800 W. Campbell Rd., Richardson, TX 75080, USA
+41Center for Astrophysics|Harvard & Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA
+42Department of Astronomy & Astrophysics, University of Toronto, Toronto, ON M5S 3H4, Canada
+43Department of Physics, Southern Methodist University, 3215 Daniel Avenue, Dallas, TX 75275, USA
+44Department of Physics and Astronomy, University of California, Irvine, 92697, USA
+45Astrophysics & Space Institute, Schmidt Sciences, New York, NY 10011, USA
+46Sorbonne Université, CNRS/IN2P3, Laboratoire de Physique
+Nucléaire et de Hautes Energies (LPNHE), FR-75005 Paris, France
+47Department of Astronomy and Astrophysics, UCO/Lick Observatory,
+University of California, 1156 High Street, Santa Cruz, CA 95064, USA
+48Department of Astronomy and Astrophysics, University of California,
+Santa Cruz, 1156 High Street, Santa Cruz, CA 95065, USA
+49Department of Physics & Astronomy, Ohio University,
+139 University Terrace, Athens, OH 45701, USA
+50Korea Astronomy and Space Science Institute, 776,
+Daedeokdae-ro, Yuseong-gu, Daejeon 34055, Republic of Korea
+51University of Science and Technology, 217 Gajeong-ro, Yuseong-gu, Daejeon 34113, Republic of Korea
+52Departament de Física, Serra Húnter, Universitat Autònoma de Barcelona, 08193 Bellaterra (Barcelona), Spain
+53Department of Physics and Astronomy, University of Waterloo,
+200 University Ave W, Waterloo, ON N2L 3G1, Canada
+54Department of Physics and Astronomy, Siena University,
+515 Loudon Road, Loudonville, NY 12211, USA
+55Institute of Cosmology and Gravitation, University of Portsmouth,
+Dennis Sciama Building, Portsmouth, PO1 3FX, UK
+56Instituto de Estudios Astrofísicos, Facultad de Ingeniería y Ciencias,
+Universidad Diego Portales, Av. Ejército Libertador 441, Santiago, Chile
+57Steward Observatory, University of Arizona, 933 N. Cherry Avenue, Tucson, AZ 85721, USA
+58Waterloo Centre for Astrophysics, University of Waterloo,
+200 University Ave W, Waterloo, ON N2L 3G1, Canada
+59Instituto de Astrofísica de Andalucía (CSIC), Glorieta de la Astronomía, s/n, E-18008 Granada, Spain
+60Departamento de Física, Instituto Nacional de Investigaciones Nucleares,
+Carreterra México-Toluca S/N, La Marquesa, Ocoyoacac, Edo. de México C. P. 52750, México
+61Max Planck Institute for Extraterrestrial Physics, Gießenbachstraße 1, 85748 Garching, Germany
+62Departament de Física, EEBE, Universitat Politècnica de Catalunya,
+c/Eduard Maristany 10, 08930 Barcelona, Spain
+63Université Clermont-Auvergne, CNRS, LPCA, 63000 Clermont-Ferrand, France
+64Department of Physics and Astronomy, Sejong University,
+209 Neungdong-ro, Gwangjin-gu, Seoul 05006, Republic of Korea
+65Queensland University of Technology, School of Chemistry & Physics, George St, Brisbane 4001, Australia
+66Abastumani Astrophysical Observatory, Tbilisi, GE-0179, Georgia
+67Department of Physics, Kansas State University, 116 Cardwell Hall, Manhattan, KS 66506, USA
+(Dated: August 5, 2026)
+
+[PDF page 3]
+3
+We present the validation of the Dark Energy Spectroscopic Instrument (DESI) Data Release
+2 (DR2) Lyman-αforest full-shape analysis. This analysis combines measurements of the three-
+dimensional Lyman-αforest auto-correlations, as well as cross-correlations with quasar positions,
+to extract information from both the baryon acoustic oscillation (BAO) feature and the broadband
+clustering signal. We primarily focus on the Alcock-Paczynski (AP) measurement from these corre-
+lations. Compared to the DESI DR1 full-shape analysis, the DR2 validation employs substantially
+larger and more realistic synthetic datasets (mocks), includingCoLoRe 2LPTandAbacusSummit
+Lyman-αforest simulations, which include more realistic small-scale Lyman-αand quasar cluster-
+ing. We additionally incorporate several improvements into the modeling framework, most notably
+analytic marginalization over small-scales (<10h −1Mpc) that could otherwise bias larger scales
+due to the distortion matrix, and the impact of ultraviolet background fluctuations. The validation
+program was developed prior to unblinding to establish the robustness of the final measurements.
+We define quantitative validation criteria for the cosmological parameters of interest, and evaluate
+them using hundreds of mock realizations. We further test the analysis through independent fits
+to the auto- and cross-correlation functions, multiple splits of the quasar and forest catalogs, and
+apply a large suite of analysis and modeling variations to both mock and blinded observational
+data. We find that the BAO and AP parameters satisfy all validation requirements and remain
+stable across the full suite of tests. In contrast, mock studies reveal a significant bias in the inferred
+growth-rate parameterf σ8, which leads us to exclude this measurement from the final DR2 analysis.
+The agreement observed across mock challenges, data splits, and robustness tests demonstrates that
+the DR2 Lyman-αfull-shape analysis provides a reliable and substantially improved broadband AP
+measurement relative to previous Lyman-αforest studies.
+ArXiv ePrint:xxxx.xxxxx
+Keywords: Lyman-alpha forest, baryon acoustic oscillations, cosmological parameters
+I. INTRODUCTION
+Understanding the origin and nature of the accelerat-
+ing expansion of the universe and the evolution of cosmic
+structure are some of the outstanding questions of mod-
+ern cosmology. Surveys that probe large scale structure
+provide a unique and powerful approach to addressing
+these questions by mapping the spatial distribution of
+matter across cosmic time, as well as measuring the im-
+print of various physical processes, such as through the
+clustering of galaxies and intergalactic gas. The most
+common measures of large-scale clustering are power
+spectra and correlation functions, which encode informa-
+tion about the expansion history of the universe, struc-
+ture growth, and the underlying cosmology. Extracting
+and understanding these data with growing precision re-
+quires increasingly large datasets, as well as robust mod-
+eling frameworks that are capable of capturing the full
+statistical information of these measurements.
+The Dark Energy Spectroscopic Instrument (DESI) is
+a Stage-IV spectroscopic survey designed to investigate
+the nature of dark energy and the growth of cosmic struc-
+ture through precision measurements of the large-scale
+distribution of matter [1, 2]. DESI is in the midst of
+an eight-year survey that aims to collect spectra from
+over 60 million galaxies and quasars in its 17000 deg2
+footprint, producing the largest three-dimensional spec-
+troscopic map of the Universe to date [3, 4].. The first
+DESI Data Release (DR1) included measurements from
+the first 13 months of the main survey [5]. Those observa-
+tions were a key part of the most statistically significant
+measurements of the equation of state of dark energy to
+date [6, 7] based on measurements of baryon acoustic
+oscillations (BAO) and redshift space distortions from
+galaxies, quasars, and the Lyman-α(Lyα) forest [8, 9].
+The second DESI Data Release (DR2) includes measure-
+ments from the first three years of the main survey [10].
+ThefirstDESIDR2resultspublishedlastyear[11,12]ex-
+tended the DR1 results with more statistically significant
+BAO measurements and analysis improvements. The
+present paper validates additional analysis of the DR2
+correlation function, which is presented in the DESI DR2
+Lyαforest full-shape paper [13].
+The Lyαforest provides a unique probe of large-scale
+structure at high redshift by tracing the absorption of
+light from distant quasars by foreground neutral hydro-
+gen in the intergalactic medium (IGM). Because each
+quasar spectrum traces the matter density field along a
+given line-of-sight, collections of Lyαforest spectra pro-
+vide a three-dimensional map of matter fluctuations at
+redshiftsz >∼ 2, where measurements using traditional
+tracers become increasingly challenging [14]. The Lyα
+forest has therefore played an important role in extend-
+ing measurements in precision cosmology to higher red-
+shifts than are accessible to galaxy surveys, such as with
+measurements of the baryon acoustic oscillation (BAO)
+scale from both the Lyαforest flux auto-correlation and
+its cross-correlation with the positions of quasars. This
+technique was originally developed using data from the
+Baryon Oscillation Spectroscopic Survey (BOSS) as part
+of the Sloan Digital Sky Survey (SDSS) [15–17] and ex-
+tended BOSS (eBOSS) [18, 19]. Those early measure-
+ments established the Lyαforest as a powerful probe for
+constraining the expansion history of the universe, and
+recent DESI observations have further improved the sta-
+tistical precision of these measurements [9, 11].
+However, the Lyαforest contains additional cosmolog-
+ical information beyond the BAO scale. This informa-
+
+[PDF page 4]
+4
+tion can be accessed through the full shape of the clus-
+tering signal, including information from the broadband
+shape of the correlation functions and the anisotropic
+distortions induced by structure growth. These measure-
+mentsprovidesensitivitytoboththegeometryoftheuni-
+verse through the Alcock-Paczynski (AP) effect and the
+growth of cosmic structure through redshift-space distor-
+tions (RSD). Galaxy full-shape analyses have successfully
+used RSD to measuref σ8 [7, 20–22], however, extracting
+cosmological information from RSD is more challenging
+in the Lyαforest than in galaxy surveys. The Lyαfor-
+est is affected by an unknown velocity divergence bias,
+due to the RSD sensitivity to the growth rate of cos-
+mic structure and the amplitude of matter fluctuations,
+that strongly degrades constraints onf σ8 [23–26]. This
+degeneracy between the Lyαand QSO RSD signals in
+theLyα-QSOcross-correlationcanbepartiallybrokenby
+jointly fitting the Lyαauto- and cross-correlation func-
+tions [27]. Furthermore, unlike galaxy full-shape analy-
+ses, which constrain a single isotropic dilation parame-
+ter, the Lyαfull-shape analysis separates the isotropic
+AP scaling into peak (αp) and broadband (smooth) (αs)
+components. Marginalizing overαsreduces sensitivity to
+isotropic broadband-specific systematics while preserving
+the cosmological information contained in the BAO peak.
+The DESI DR2 Lyαkey paper [13] on the full-shape of
+the Lyαcorrelation function builds on the DESI DR1
+Lyαforest full-shape measurement [28], by utilizing both
+the increased statistical power and improved data qual-
+ity of DR2, as well as a number of improvements in the
+modeling and analysis choices.
+The increased cosmological information provided by
+full-shape analyses also introduces additional challenges
+comparedto BAOmeasurements. Byutilizing thebroad-
+band shape and anisotropic dependence of the correlation
+functions, full-shape analyses extract information from a
+wider range of scales, and are therefore sensitive to the
+accuracy of the theoretical modeling, observational sys-
+tematics, and analysis choices. Establishing the robust-
+ness of the resulting cosmological constraints therefore
+requires a comprehensive validation program beyond the
+standard measurement pipeline. In this work, we vali-
+date the DESI DR2 Lyαforest full-shape analysis using
+both synthetic spectra and blinded observational data.
+Synthetic mock datasets are used to assess the accuracy
+of the modeling framework, quantify potential parame-
+ter biases, and verify the calibration of statistical uncer-
+tainties, while blinded data analyses provide an indepen-
+dent assessment of the robustness of the measurements
+to changes in data selection and analysis choices with-
+out knowledge of the final cosmological results. These
+tests include internal consistency checks using indepen-
+dent data splits, and alternative analysis configurations
+designed to verify the robustness of the pipeline and iden-
+tify potential sensitivities to modeling assumptions at
+various stages of the analysis. The goal of this work
+is to demonstrate the reliability and robustness of the
+DESI DR2 Lyαforest full-shape measurements and the
+subsequent cosmological interpretation presented in the
+companion analysis paper [13].
+The remainder of this paper is organized as follows.
+In Section II, we describe the DESI DR2 dataset and the
+catalogs used in this analysis. Section III summarizes the
+analysis methodology, including the measurement and
+modeling of the Lyαcorrelation functions, the param-
+eterization and fitting of cosmological constraints, and
+the baseline model used throughout this work. In Sec-
+tion IV, we present validation tests performed using syn-
+thetic mock datasets, including assessments of parameter
+biases, uncertainty estimates, and model performance.
+Section V presents validation tests performed on blinded
+observational data, including catalog splits and alterna-
+tive analysis choices designed to assess the robustness of
+the measurements. In Section VI, we discuss the primary
+findings of the validation campaign and investigate the
+origin of any notable discrepancies observed in the tests.
+Finally, Section VII summarizes our findings and the im-
+plications for the DESI DR2 Lyαfull-shape cosmological
+analysis.
+II. DA T A
+The DESI survey is conducted with the 4-meter May-
+all Telescope at Kitt Peak National Observatory and a
+highly multiplexed fiber spectrograph. DESI combines a
+wide-field optical corrector, 5000 robotic fiber position-
+ers, and a high-throughput spectroscopic system capable
+of simultaneously obtaining thousands of spectra across
+a three-degree diameter field of view [29]. This unique
+combination makes DESI extraordinarily efficient, some-
+times measuring more than 100,000 galaxy spectra per
+night. A number of papers describe the DESI instru-
+mentation and science goals [30], the focal plane system
+[31], optical corrector [32], and fiber system [33].
+DESI targets were selected from the DESI Legacy
+Imaging Surveys [34, 35]. The quasar target selection
+algorithms are described in [36, 37], are integrated into
+the target selection pipeline [38], and were extensively
+tested during the survey validation period [39] before the
+main survey began. This early survey validation period
+combined with the first two months of observations re-
+sulted in the DESI Early Data Release (EDR) [40], which
+gave rise to many BAO scientific results using galaxies,
+quasars, and the Lyαforest [41, 42]. The EDR com-
+bined with the first year of DESI observations resulted
+in data release 1 (DR1) [5], which supported many key
+sciencepapers. Thoseincludedthemeasurementandval-
+idationofthetwo-pointclusteringofgalaxiesandquasars
+[43], BAO measurements of galaxies and quasars [8] and
+the Lyαforest [9], and the full-shape of the correlation
+functions of galaxies and quasars [44]. Additional DR1
+papers explored the cosmological interpretation of the
+BAO measurements [6], Lyαfull-shape [28], and galaxy
+and quasar measurements of both BAO and full-shape
+information [7].
+
+[PDF page 5]
+5
+Inthiswork, weutilizedatafromthefirstthreeyearsof
+the DESI survey, which will be publicly released as data
+release 2 (DR2). In addition to a much larger footprint
+(comprising∼70%of the full dark time survey), DR2
+z >2quasars are re-observed on average three times
+(compared to∼1-2 times in DR1), resulting in higher
+SNR per quasar. It is worth noting that DR2 will be
+released in two versions,kiboandloa.Kibois the pre-
+decessor toloa, and was used for the majority of the
+DR2 BAO analysis validation [11]. However, theloare-
+lease implemented a number of software related fixes such
+as the weighting in coadded spectra, and is the release
+used in this analysis.
+A. Spectra
+DESI spectra are collected by ten three-channel spec-
+trographs, and each channel has a distinct diffraction
+grating design and resolution range. The blue channel,
+which is most relevant for Lyαanalyses, has a spectral
+resolution range that varies from∼2000−3000. The red
+and infrared channels have resolutions that vary from
+approximately 3500 - 4500 and 4000 - 5500, respectively.
+The total wavelength range is from 3600 - 9800 Å, con-
+tributed by the blue (3600-5930 Å), red (5600-7720 Å),
+and infrared (7470-9800 Å) arms of each spectrograph.
+Data collected at the observatory are transferred to the
+National Energy Research Scientific Computing Center
+(NERSC) for processing and analysis.
+The spectroscopic pipeline [45] processes the spectrum
+from each source to produce a 1-D spectrum with 0.8Å
+per pixel dispersion that is used for subsequent analyses.
+The spectral data products contain information about
+masked pixels, instrumental noise, sky noise, and the
+spectrograph resolution. We estimate target redshifts
+usingRedrock[46, 47], which fits with spectral tem-
+plates, including high redshift quasars [48]. Additionally,
+we identify quasars missed byredrockby searching for
+Mgiiemission in quasar targets classified as galaxies by
+redrock[37] and using a convolutional neural network
+quasar classifier,QuasarNet, which has been developed
+by [49] and optimized for DESI spectra [50] based on vi-
+sual inspection during validation [51].
+Because DESI prioritizes quasars for Lyαforest analy-
+ses, these targets are re-observed on multiple passes over
+the footprint to increase SNR. Repeated observations of
+any sources are coadded and organized byHEALPix
+pixel [52].
+B. Catalogs
+The DESI DR2 quasar catalog is constructed using the
+samemethoddescribedin[9]andisthesamecatalogthat
+is used for [11]. This catalog contains quasars classified
+by each of the three classifiers that do not have problems
+identified by the spectroscopic pipeline. The DR2 quasar
+catalog has 1,289,874 quasars withz >1.77and 824,989
+quasars withz >2.09.
+We construct two auxiliary catalogs prior to measuring
+the Lyαforest: a Damped LyαAbsorption (DLA) sys-
+tem catalog and a Broad Absorption Line (BAL) quasar
+catalog. DLA systems have neutral hydrogen densities
+log10 (NHI )>20.3 cm −2, which lead to wide damping
+wings that can impact the continuum level and com-
+plicate correlation modeling due to increased clustering
+[53]. DR2 Lyαanalyses utilize three methods to identify
+and characterize DLAs: a convolutional neural network
+[54], Gaussian Process [55], and template-based approach
+[56]. The DR2 full-shape paper [13] briefly describes the
+construction of the DLA catalog with an emphasis on
+changes relative to DR2 LyαBAO. BAL quasars contain
+absorption troughs that are associated with many emis-
+sion features [57], which can add absorption unrelated
+to the IGM matter distribution and introduce redshift
+errors [58, 59]. BAL troughs associated with emission
+lines in the forest region are identified and masked based
+on the velocities of the Civabsorption troughs. This
+method is described in detail in a DESI DR1 supporting
+paper [60].
+C. Continuum Fitting
+The final part of the data selection process involves
+measuring flux decrements in the forest region. We re-
+strict our measurement to 3600 - 5772 Å in the observed
+frame, where the lower bound is set by the minimum
+wavelength of the blue spectrograph channel, and the
+upper bound corresponds to the central overlap region of
+the blue and red spectrograph channels. We measure the
+Lyαabsorptionoftheforestintwodifferentregionsofthe
+rest-frame of the quasar, which we will refer to as Region
+A (1040 - 1205 Å), and Region B (920 - 1020 Å). Because
+the B region is associated with higher redshift quasars,
+these spectra typically have lower SNR. Some of Region
+B also includes higher order Lyman lines. We therefore
+analyze the A and B region correlations separately.
+To measure the fluctuations, we first mask regions of
+the forest associated with bad pixels (e.g., cosmic rays)
+orastrophysicalcontaminants(e.g., BALs, DLAs). Addi-
+tionally, forests with less than the minimum path length
+(<120Å) to fit the continuum are discarded. Then we
+apply a small correction to the spectro-photometric cal-
+ibration and instrumental noise estimates by calculating
+the mean transmitted flux in the rest-frame Ciiiregion
+(1600 - 1850 Å). Finally, the remainder of the analysis
+utilizes the transmitted flux fieldδq(λ), which relates the
+observed and expected flux:
+δq(λ) = fq(λ)
+F(λ)C q(λ) −1(1)
+where F(λ)is the mean transmitted flux andC q(λ)is
+the unabsorbed continuum of quasarq. The continuum-
+
+[PDF page 6]
+6
+fitting procedure assumes a universal mean continuum
+shape as a function of rest-frame wavelength and mod-
+els quasar-to-quasar variations through two nuisance pa-
+rameters that account for spectral diversity and lumi-
+nosity dependence. The mean continuum shape and nui-
+sance parameters are determined simultaneously through
+a maximum-likelihood fit that incorporates both instru-
+mental noise and the intrinsic variance of the Lyαforest.
+Further details of the Ciiicorrection and continuum-
+estimation procedure are given in [61].
+III. ANAL YSIS
+A. Measurement of Correlations
+Using the catalog of quasar positions and redshifts,
+and the transmitted flux field (deltas) of the A and B re-
+gions described previously, we measure four correlation
+functions following [19]. The correlations include: the
+auto-correlation of the Lyαforest measured in the A and
+B regions (Lyα(A)×Lyα(A)andLyα(A)×Lyα(B), re-
+spectively), and the cross-correlation of the Lyαforest
+measured in the A and B regions with quasar positions
+(Lyα(A)×QSOandLyα(B)×QSO), respectively). We
+then use a comoving separation grid along (r∥) and across
+(r⊥) the line-of-sight, as well as convert angles and red-
+shifts using fiducial cosmology (flatΛCDM from Planck
+2018 [62]). We measure the correlations using a bin size
+of4h −1Mpc extending to separations of200h −1Mpc.
+We use the same method to measure correlations as in
+DR1 and DR2 BAO [9, 11], which is detailed in [42] and
+builds on previous work by BOSS and eBOSS [19, 63].
+We then compute the covariance matrix using the
+HEALPix pixel subsampling method of [19], where the
+size of a HEALPix pixel is about(250h −1Mpc)2 at an
+effective redshiftz∼2.3for a choice ofNSIDE = 16.
+The correlation functions are measured independently
+in unique sub-samples of the sky and combined using
+weighted averages, with the covariance estimated from
+the scatter among the regional measurements (i.e. re-
+placing the unknown covariance of a given sub-sample
+with the square of its difference with the computed av-
+erage). We then smooth the covariance by averaging
+the correlation-matrix elements that share line-of-sight
+transverse separations, and replacing all non-diagonal el-
+ements by their corresponding average, which is detailed
+in [64]. We use this sub-sampling technique to measure
+the covariance of the full data set, composed of all four
+correlation functions.
+B. Modeling of Correlations
+In this section, we briefly describe how the correlations
+and main contaminants are modeled, which are described
+in greater detail in [42, 64, 65].
+The continuum fitting method described in the previ-
+ous section introduces a distortion of the measured Lyα
+fluctuation field [66]. As a result, the measured correla-
+tion function is a distorted version of the true under-
+lying correlation function, with the largest impact on
+modes oriented along the line-of-sight. Following pre-
+vious DESI analyses [9], and using the formalism intro-
+duced by [63], we apply the same transformation to the
+model using a distortion matrix that relates the undis-
+torted and observed correlation functions. The distortion
+matrixD M N multiplies the undistorted correlation func-
+tion modelξ(r ||, r⊥)to give the distorted correlation:
+ˆξM =
+X
+N
+DM NξN ,(2)
+whereNare the undistorted model bins, andMare the
+data bins. The auto- and cross-correlation elements are
+given by equations (21) and (22) of [19], respectively. It
+is worth noting that the comoving separation bin size of
+the model (2h−1Mpc) is half as large as the bin size used
+for the data (4h−1Mpc), and the line-of-sight separation
+is extended to300h −1Mpc rather than200h −1Mpc.
+The distortion matrix is computed from the survey ge-
+ometry and continuum-fitting weights discussed in the
+previous section, and it is incorporated into all model
+predictions prior to fitting and parameter inference. Be-
+cause the distortion matrix is computationally expensive,
+we use only a fraction (1%) of the Lyαpixels as an ap-
+proximation [42, 63]. However, in §VB2, we verify that
+using larger samples of the data, as well as alternative
+binning schemes and scale cuts, have negligible effect on
+the measurement. Additionally, the calculation also ac-
+counts for redshift evolution of the Lyαand quasar clus-
+teringamplitudes, whichisapproximatedbyapowerlaw.
+Tests on synthetic data demonstrate that this improved
+treatment provides a better description of the measured
+correlations while producing negligible impacts on the
+recovered cosmological parameters. A more detailed de-
+scription of the continuum fit distortion can be found in
+[67].
+In addition to Lyαabsorption, the observed flux con-
+tains contributions from several foreground absorber
+transitions along the line-of-sight, which we call met-
+als, such as Siii, Siiii, Civ[42]. If an absorption fea-
+ture’s true and assumed comoving separations do not
+match, such as when assuming that a metal feature is
+from the Lyαtransition, then we observe spurious corre-
+lationswhichappearaspeaksinthemeasuredcorrelation
+function [9]. These lines are especially prominent when
+stacking spectra centered around strong absorbers [68].
+We model this effect using the metal-matrix formalism
+introduced in previous DESI analyses, such as [9, 11].
+The metal matrix is a collection of weighted pairs,
+which quantifies how correlations measured under the
+assumption that the absorber is from the Lyαtransi-
+tion, are related to the true separations of pairs involv-
+ing metal transitions. This is incorporated directly into
+
+[PDF page 7]
+7
+the model prediction, allowing the contribution of each
+absorber type to be propagated into the observed cor-
+relation function. Following the DR2 BAO analysis, we
+compute the metal matrix as a function of both the line-
+of-sight and transverse components, which is an improve-
+ment over the previous approach which only accounted
+for the line-of-sight. Although we find that this addi-
+tional correction has negligible impact on the cosmolog-
+ical constraints, it provides a more accurate representa-
+tion of metal contamination in the measured correlations.
+In addition, the model includes several nuisance con-
+tributions known to affect Lyαforest correlations. Cor-
+related noise introduced during the spectroscopic data
+processing [45] is modeled following [9] and detailed in
+[65], where the dominant contribution arises from the
+sky-background noise, and primarily affects pairs of spec-
+tra observed on the same spectrograph. We also account
+for contamination from high-column-density (HCD) ab-
+sorbers, includingLyman-limitsystemsandDLAs, whose
+broad damping wings introduce additional large-scale
+correlations along the line-of-sight [69–71]. Although
+identified DLAs are masked during data processing (see
+§IIB), residual contamination from unidentified HCDs is
+modeled through a scale-dependent modification of the
+Lyαclustering signal (see [72]).
+For the Lyα×QSO cross-correlations, the model addi-
+tionally includes the impact of quasar redshift uncertain-
+ties, which can smooth the clustering signal along the
+line-of-sight, as well as introduce a possible systematic
+redshift offset between quasars and the Lyαforest refer-
+ence frame [73, 74]. We additionally model the transverse
+proximity effect following [53], which accounts for the
+modification of the surrounding intergalactic medium by
+ionizing radiation from quasars. Finally, following [75],
+we incorporate a small-scale nonlinear correction to ac-
+count for structure growth, peculiar velocities, and ther-
+mal broadening of the intergalactic medium.
+C. Fitting Alcock-Paczynski and Growth Rate
+The Alcock-Paczynski (AP) effect [76] arises when an-
+gular separations and redshift differences are converted
+into comoving distances using an incorrect assumed cos-
+mological model. In this case, intrinsically isotropic clus-
+tering appears anisotropically distorted along and across
+the line-of-sight. Deviations between the true and fidu-
+cial cosmologies can be modeled through anisotropic co-
+ordinate rescaling, which are related to the underlying
+cosmological distances. Following the convention intro-
+duced by [27] adopted in the DR1 full-shape analysis [28],
+we characterize the AP effect using the parameter:
+ϕ≡ q⊥
+q∥
+= DM H
+[DM H]fid
+,(3)
+whereq ⊥ andq ∥ rescale coordinates along and across
+the line-of-sight,D M is the comoving angular diame-
+ter distance, andHis the Hubble parameter. Whereϕ
+parametrizes the anisotropic rescaling of the correlation
+function,α≡ √q⊥q∥ parametrizes an isotropic rescaling.
+Additionally,ϕandαcontain both a peak and a
+smooth component, which we denote (ϕp ϕs ), and (αp
+αs ), respectively. Unlike BAO measurements, which ex-
+tract AP information primarily from the anisotropic scal-
+ing of the BAO feature, the full-shape analysis addition-
+ally exploits the broadband anisotropy of the Lyman-α
+forest correlation functions, which enables significantly
+tighter AP constraints from the same dataset. We sep-
+arately parameterize the AP information contained in
+the BAO peak feature and broadband clustering signal
+through the parametersϕ p andϕ s respectively. Al-
+though both the peak and smooth components are af-
+fected byϕin the same way, they are treated separately
+to better understand the cosmological value of rescaling
+the broadband separately. However, the smooth compo-
+nent ofαis less constrained, as it is likely not the only
+feature contributing to the isotropic scale of the broad-
+band. Therefore, we do not focus on the measurement or
+interpretation ofα s alone.
+In addition to AP information, the anisotropy of the
+correlation functions is sensitive to RSD, whose ampli-
+tude is governed by the growth-rate parameterf σ8. The
+model therefore simultaneously fits the AP and RSD con-
+tributions, together with the nuisance parameters. How-
+ever, extensive tests on mock datasets (see §IV) revealed
+a significant bias in the recoveredf σ8 measurement, and
+blinded data validation tests (see Appendix C1) further
+demonstrated the parameter’s instability under reason-
+able analysis modeling choices. This parameter was con-
+sequently removed from the final DR2 cosmological anal-
+ysis. The BAO parameters (ϕp αp) and the AP param-
+eterϕ s however, were found to be robust across all vali-
+dation tests and remain the primary focus of this work.
+D. Changes Since DR2 BAO
+This analysis uses the same DESI DR2 dataset used
+for the DR2 LyαBAO analysis [9], which is detailed in
+§II. However, there are some changes to the catalogs and
+model used in this analysis. First, we use an improved
+DLA catalog, which is described in the DESI DR2 Lyα
+forest full-shape paper [13], and whose impact is assessed
+in §VB1. Second, we use a slightly modified version
+of the BAL catalog after modest code changes focused
+on increased computational efficiency of the BAL find-
+ing tool. Finally, we adopted two significant modeling
+changes, which are detailed below.
+The first significant change to our model since the
+DR2 LyαBAO analysis is marginalization over the small
+scales of the undistorted model. This effectively intro-
+duces scale cuts at the level of undistorted correlations
+rather than at the level of the fitted data, as in previous
+Lyαanalyses. While these scales are below the range
+of our model fit, they nevertheless impact larger sepa-
+
+[PDF page 8]
+8
+rations due to distortion introduced by our continuum-
+fittingprocedure. Thisdistortionmixesinformationfrom
+these small scales into the larger-scale correlation func-
+tion, meaning that conventional scale cuts do not fully re-
+move their influence.This small-scale contamination can
+cause biases in the measured parameters, which we have
+identifiedbyrunningfitswiththesamescalecutsonboth
+true-continuumandcontinuum-fittedmocksandcompar-
+ing the results. To eliminate this effect, we analytically
+marginalize over the undistorted correlation function at
+r < r min, wherer min ≥30h −1Mpc and40h −1Mpc for
+the auto- and cross-correlations, respectively, in the base-
+line analysis (see §IVB for validation of these scale-cuts).
+This is achieved by introducing a set of linear template
+amplitudes, and incorporating their uncertainty into a
+modified covariance matrix while retaining the constrain-
+ing power of the excluded small-scale data. This proce-
+dure removes biases arising from continuum-fitting dis-
+tortions without increasing the effective number of de-
+grees of freedom in the fit. The complete formalism and
+implementation are described in [13].
+The second major change relative to the DR2 Lyα
+BAO analysis is the inclusion of ultraviolet background
+(UVB) fluctuations. Previous analyses assumed a ho-
+mogeneous ionizing UV background, but fluctuations in
+the UV radiation field are expected to produce a scale-
+dependent modification to the Lyαbias on scales compa-
+rable to the mean free path of ionizing photons. During
+validationofourDR2full-shapeanalysis, wefoundstatis-
+tically significant evidence for this effect, motivating its
+inclusion in the baseline model. We model UVB fluctu-
+ations following [77], introducing a scale-dependent cor-
+rection to the Lyαbias while treating the UVB response
+parameter as a free parameter and fixing the remaining
+quantities to their fiducial values. Although this model
+significantly improves the quality of the fit, it has only
+a negligible impact on the recovered AP parameters, as
+demonstratedbytherobustnesstestspresentedin§VB3.
+We also investigated more complex UVB models, includ-
+ing the source shot noise term of the UVB sources and
+the effect of Heiireionization, but found no statistically
+significant improvement. The complete formalism is de-
+scribed in [13].
+E. Baseline Model
+The baseline DR2 full-shape analysis builds upon the
+models developed for the DESI DR2 BAO analysis [11]
+and the DR1 full-shape analysis [28], while incorporating
+the methodological improvements described in §IIID. A
+complete description of the baseline model is provided in
+the DESI DR2 Lyαforest full-shape paper [13], including
+the full likelihood, parameterization, and modeling as-
+sumptions (see in particular Eq.9 for the non-linear Lyα
+forest correction). Here we summarize only the baseline
+analysis choices that provide the reference point for the
+validation tests presented throughout the remainder of
+FIG. 1. Comparison between the histogram of the distri-
+bution of normalized residuals of our measured correlation
+functions and best fitting model, with a normal Gaussian dis-
+tribution withµ= 0andσ= 1. The distribution of resid-
+uals does not display significant deviation from Gaussianity,
+demonstrating that the model accurately describes the sta-
+tistical properties of the observed correlations over the scales
+included in the analysis.
+this work.
+We fit the Lyαauto- and Lyα-QSO cross-correlations
+over the range30< r <200h −1Mpc and40< r <
+200h −1Mpc, respectively, simultaneously sampling in-
+dependent peak (αp,ϕ p) and smooth (αs,ϕ s) param-
+eters together with the growth ratef, while fixingσ 8
+to its fiducial value so thatf σ 8 is obtained as a de-
+rived parameter following [78], including the appropriate
+coordinate-rescaling correction. Gaussian priors are ap-
+plied to the nuisance parameters inherited from the DR2
+BAO analysis, with an updated prior onL HCD, while
+the non-linear Lyαforest correction is modeled using
+the Arinyo formalism [75]. In the baseline analysis, the
+Arinyo nuisance parameters are fixed to values calibrated
+usingForestFlowsimulations of the DESI DR1 P1D
+analysis [79, 80], and we validate the robustness of this
+choice with a number of tests in §VB. Baseline posterior
+constraints are obtained with thePolyChordnested
+sampler, while the majority of mock and blinded robust-
+ness tests use the computationally cheaperiminuitfit-
+ter, which we find provides equivalent best-fit parameter
+shiftsforthepurposesofthevalidationtests. Furtherdis-
+cussion on the comparison of sampler and fitter results
+can be found in Appendix C of [28].
+Before assessing the robustness of the analysis to alter-
+native modeling choices, we first verify that our baseline
+model provides an accurate description of the DR2 data.
+The overall goodness-of-fit of the baseline model yields
+χ2 = 11492.0for(11388−21)degrees of freedom, cor-
+responding to a reducedχ 2 = 1.011and probability to
+exceed (PTE) of 0.20, indicating an overall fit consistent
+with statistical expectations. While the reducedχ2 only
+summarizestheoverallagreementbetweenourmodeland
+
+[PDF page 9]
+9
+thedata, wealsoinvestigatewhethertheresidualsbehave
+as expected under the assumed likelihood. Following pre-
+vious large-scale structure analyses such as [81], we ex-
+amine the distribution of covariance-normalized residu-
+als compared to a normal Gaussian distribution. We use
+the full covariance matrix to transform the residual vec-
+tor, which is the difference between the measured corre-
+lation functions and our best-fitting model, into a set of
+uncorrelated, unit-variance residuals. If the covariance
+model accurately describes the data, and the Gaussian
+likelihood provides a sufficient statistical model, then the
+normalized residuals are expected to follow a standard
+normal distributionN(0,1)[82]. In Figure 1, we com-
+pare the normalized residuals for the combined auto- and
+cross- correlations with a standard normal distribution,
+and find no significant deviation from Gaussianity. This
+indicates that the model provides an adequate descrip-
+tion of the complete data vector, and provides a com-
+plimentary diagnostic to the overall reducedχ2. Having
+demonstrated the validity of the baseline model, the fol-
+lowing section investigates its robustness to reasonable
+alternative modeling choices at various stages of the anal-
+ysis pipeline.
+IV. V ALIDA TION WITH SYNTHETIC
+SPECTRA
+We perform extensive tests on synthetic spectra
+(mocks), providing an end-to-end validation of the analy-
+sis pipeline against a known underlying truth under con-
+trolled conditions. Our primary validation dataset con-
+sists of theCoLoRe 2LPTmocks described in §IVA.
+We first use high signal-to-noise stacked mock correla-
+tions to validate the baseliner min scale cuts, and ver-
+ify that with these cuts, the model accurately recov-
+ers the input cosmological parameters without significant
+bias (§IVB). We then analyze the ensemble of individual
+mock realizations to assess whether the recovered param-
+eters and their estimated uncertainties exhibit the ex-
+pected statistical behavior (§IVC). Appendix B presents
+additionaltestsoftherobustnessofourresultstochanges
+in the assumed fiducial cosmology.
+A. Mock Datasets
+Our primary validation suite consists of theCoLoRe
+2LPTmocks, a new generation of Lyαforest light-cone
+cosmological simulations based on theCoLoReframe-
+work [83], which extends the original log-normal prescrip-
+tion by adopting a second-order Lagrangian perturbation
+theory (2LPT) approximation. These simulations are
+presented and extensively validated in [84]. These mocks
+are designed to reproduce the DESI DR2 Lyαdataset in
+terms of quasar number density, footprint, and signal-to-
+noise ratio. The synthetic spectra additionally include
+astrophysical contaminants affecting the Lyαforest, in-
+cluding metal absorption, BAL features, and DLA sys-
+tems. The mock generation procedure is described in de-
+tail in [28, 85, 86], and we adopt the same methodology
+here. We include random Gaussian redshift uncertain-
+ties ofσ v = 400 km s−1 at the level of the mock catalogs
+to emulate statistical errors of the redshift measurement
+pipeline. However, unlike [86], these redshift errors are
+not propagated into the continuum-fitting step.1
+While theCoLoRe 2LPTmocks reproduce the observed
+Lyαforest and quasar clustering with good fidelity, their
+underlying density field is generated using an approxi-
+mate perturbative approach and therefore does not fully
+capture the non-linear evolution of structure on the
+smallest scales. To assess the robustness of our model
+and adopted scale cuts to non-linear effects, we comple-
+ment theCoLoRe 2LPTvalidation suite with Lyαforest
+mocks based on theAbacusSummitN-body simulations,
+which naturally capture the fully non-linear evolution of
+the matter density field. A detailed description of the
+mock generation and optical depth models is provided in
+[87, 88], and a comprehensive discussion of how we use
+these mocks in the full-shape analysis is deferred to the
+Key Paper [13].
+B. V alidating model and scale cuts
+We begin by validating thermin scale cuts that inform
+our baseline analysis. We use the stack of 400CoLoRe
+2LPTrealizations, which combines the mock correlation
+functions into a single high signal-to-noise measurement
+with an effective uncertainty substantially smaller than
+that of the DESI DR2 data. This reduced statistical un-
+certainty provides a sensitive probe of potential parame-
+ter biases with high precision.
+As part of our unblinding requirements, we establish
+that any bias must be smaller than one third of the sta-
+tistical uncertainty of the combined fit to the four DESI
+DR2 correlations. During the scale cut scan, this thresh-
+old is evaluated at eachr min, since the statistical un-
+certainty depends on the range of scales included in the
+fit. We adopt, for each correlation, the smallestrmin for
+which the recovered parameters remain stable and within
+the threshold.
+We follow the same baseline model setup described
+in §IIIE, with a few exceptions specific to the mocks.
+We include a sinc damping term to account for the fi-
+nite resolution of the mock grid, fixing the transverse
+1 In the current implementation, the effect of these redshift uncer-
+tainties in the mocks is possibly overestimated (as discussed in
+[74]) and likely unrealistically modeled as a Gaussian. Because
+the resulting spurious correlations are currently un-modeled in
+our baseline analysis, we instead treat this effect as a system-
+atic whose impact we quantify using an analysis variation. We
+additionally tested modeling with a Lorentzian rather than a
+Gaussian, and found no significant impact on AP.
+
+[PDF page 10]
+10
+FIG. 2. Broadband AP constraints relative to the truth as a
+function of the minimum separation (rmin) used in the anal-
+ysis, measured from the stacked correlations of 400CoLoRe
+2LPTmocks. The gray bands indicate the1/3σthresh-
+old obtained from the joint analysis of all four DESI DR2
+correlations. (Top) Results from the two auto-correlations
+with the baseline model (red) and a Kaiser-only model (or-
+ange). We also show the results from the joint analysis of
+all four correlations (blue), where the cross-correlation has
+fixedr min = 40h −1Mpc. (Bottom) Results from the two
+cross-correlations (black), and from the joint analysis with
+the auto-correlation having fixedr min = 30h −1Mpc (blue).
+The baseline result is shown as an empty square.
+smoothing scale to2.4h −1Mpc, corresponding to the
+grid cell size, and the line-of-sight smoothing scale to
+2.4(1 +f) = 4.73h −1Mpc, to account for the stretch-
+ing induced by redshift-space distortions.2 Because the
+metal contamination in the synthetic spectra is imple-
+mented as a rescaling of the Lyαforest transmission (see
+Section 2.3.3 of [85]), the metal absorption is expected
+to inherit the same redshift-space distortion behavior as
+the Lyαfield; we therefore allow an additional common
+metal RSD parameter to vary freely. Finally, since the
+CoLoRe 2LPTmocks do not include UV background fluc-
+tuations, Civabsorption, sky-subtraction residuals, or
+the quasar proximity effect, we remove the correspond-
+ing components from the model. We have verified that
+2 We have also tested allowing the line-of-sight smoothing to be
+independent of the transverse smoothing using an extra free pa-
+rameter, and did not find a significant impact on our results.
+including any of these components in the model has a
+negligible impact on the results.
+The impact of scale cuts is shown in Figure 2, which
+presents the dependence ofϕ s relative to the truth on
+rmin for the auto-correlation (top panel) and the cross-
+correlation (bottom panel). For the auto-correlation, we
+compare a Kaiser-only model with a model that includes
+the Arinyo small-scale corrections, where the Arinyo pa-
+rameters are sampled with Gaussian priors. We find
+no significant differences between these two approaches.
+The best-fit Arinyoq1 parameter is generally poorly con-
+strained and consistent with zero.
+As expected, the parameter biases increase asr min
+is reduced. The recovered parameters satisfy our val-
+idation threshold of remaining within one third of the
+statistical uncertainty forr min ≥25h −1Mpc in the
+auto-correlation, andr min ≥40h −1Mpc in the cross-
+correlation usingCoLoRe 2LPTmocks. We have also per-
+formed the same validation using mocks based on the
+AbacusSummitN-body simulations [87, 88], which in-
+corporate fully non-linear matter clustering and yield
+broadly consistent results, with all models converging for
+rmin ≥30h −1Mpc for a joint fit; these tests are presented
+in detail in the Lyαfull-shape analysis Key Paper [13].
+Taken together, these results support the conservative
+scale cuts ofr min = 30h −1Mpc for the auto-correlation
+andr min = 40h −1Mpc for the cross-correlation adopted
+for our baseline analysis (§IIIE).
+With the baseline scale cuts validated, we turn to the
+model itself to assess possible systematic biases in the
+recovered parameters. As before, we adopt a threshold
+of one-third of the statistical uncertainty, which, for the
+adoptedscalecuts, correspondstoatoleranceof∼0.38 %
+inϕ s. Any bias exceeding this threshold would be inves-
+tigated further and either corrected or incorporated into
+the systematic error budget. Although the DR2 BAO
+analysis has already been validated using earlier mock
+suites [9], we repeat these tests with the new generation
+ofCoLoRe 2LPTmocksandtheupdatedanalysismethod-
+ology.
+Figure 3 shows the correlation wedges measured from
+the stack of the 400CoLoRe 2LPTmocks, together with
+the best-fit model. The mock measurements closely fol-
+low the model across all four correlation functions and lie
+comfortably within the uncertainty envelope of the DESI
+DR2 data, confirming that the model provides a good fit
+to the stacked mock correlations at the precision of the
+DR2 measurement.
+Turning to the recovered parameters, Figure 4 shows
+the full-shape constraints from the stack of 400CoLoRe
+2LPTmocks obtained by combining all four Lyαcor-
+relation functions, shown as the blue shaded (baseline)
+contour. The two BAO parameters,αp andϕ p, as well
+as the broadband AP parameter,ϕ s, all lie within the
+one-third of the statistical uncertainty threshold, shown
+by the black dotted contour. Whileαp andϕ s are con-
+sistent with the truth,ϕ p shows a0.6 %bias at∼5σ
+significance. In contrast, we find that thef σ8 parame-
+
+[PDF page 11]
+11
+FIG. 3. Stacks of the four Lyαcorrelation functions measured from 400CoLoRe 2LPTmocks, along with the best-fit model
+(black). The shaded regions indicate the uncertainties of the DESI DR2 measurement on data, centered around the best-fit
+model. The model provides a great fit to the stacked mock correlations when compared to the DR2 uncertainties. The dark-
+shaded areas highlight the scales not used in this particular fit.
+ter lies outside the threshold, displaying a10 %bias at
+high significance (≫5σ). We have found no reasonable
+variation of the model that fully reconciles this measure-
+ment with the truth, and extending the scale cuts to
+rmin = 70h −1Mpc (60h−1Mpc) for the cross-correlation
+(auto-correlation) does not significantly reduce the bias
+onf σ 8. This persistent, statistically significant bias ob-
+served in these validation tests was a primary motivation
+for the decision to de-scope thef σ8 measurement.
+The same figure also shows the results obtained by fit-
+ting the auto- and cross-correlations separately. For the
+cross-correlation-only fit, we fix the growth rate,f, and
+the quasar bias,bQ, to the truth values used to generate
+the mocks. The resulting constraints are consistent with
+each other and with the joint fit. We also test the im-
+pact of spurious correlations along the line-of-sight due
+to redshift errors affecting the continuum-fitting process,
+as discussed in [73, 74], shown as the dashed orange con-
+tours in Figure 4. These redshift errors are present in the
+quasarcatalogforthebaselineanalysisbutonlyaffectthe
+cross-correlation measurement, producing a smoothing
+effect along the line-of-sight. We estimate the systematic
+error introduced by these spurious correlations from the
+difference between this variation and the baseline anal-
+ysis. The measured shifts for the main parameters are
+0.06 %inα p,0.27 %inϕ p, and0.15 %inϕ s, all within
+our threshold. However,f σ8 displays a much larger shift
+of∼7 %. As the impact of the spurious correlations
+is likely overestimated in our mocks [74], the observed
+shifts constitute upper bounds on the systematic errors.
+The results shown in Figure 2 and Figure 4 are consis-
+tent with those from theAbacusSummitmocks, which are
+discussed in [13]. Therefore, we find that for the purpose
+of the AP measurements, our baseline model and scale
+
+[PDF page 12]
+12
+FIG.4. Parameterconstraintsfromajointanalysisofallfour
+stacked correlations of 400CoLoRe 2LPTmocks (blue). The
+red and black contours show results for separate fits to the two
+auto-correlations and the two cross-correlations, respectively.
+The dashed orange contours show results from the joint anal-
+ysis with redshift errors included during the continuum-fitting
+process. The gray dotted contours show the1/3σthreshold,
+while the vertical and horizontal dotted lines indicate the true
+value of each parameter in these mocks. The baseline results
+are within the thresholds for the broadband AP constraint
+(ϕs) and for the two BAO parameters (αp andϕ p), but show
+a∼0.5σdeviation inf σ 8 relative to the truth.
+cuts have been validated with the mocks to within the
+threshold we imposed.
+C. Mock population tests
+In this section we focus on fits on each of the 400
+CoLoRe 2LPTmocks individually. For these fits, the com-
+mon metal RSD parameter, discussed in §IVB, is fixed
+to the best-fit value obtained from the stack of mocks.
+We examine the distribution of the recovered parameter
+uncertainties, as well as the distribution of the parameter
+values relative to the truth.
+First, we consider the distribution of parameter uncer-
+tainties. Figure 5 shows, forϕs andf σ 8, the histogram
+of uncertainties across the population ofCoLoRe 2LPT
+mocks (blue), the root mean square (RMS) of the param-
+eter best fits (red shaded region), and the uncertainties
+measured from the real DESI DR2 data with the fitter
+(black dashed line) and the sampler (orange dashed line).
+Forϕ s, all four quantities are consistent, whereas forf σ8,
+the data uncertainties are significantly larger than the
+mock uncertainties.
+FIG. 5. Histograms of measurement uncertainties forϕs and
+f σ8 from the population ofCoLoRe 2LPTmocks. DESI DR2
+uncertainties from both the fitter and sampler are shown for
+comparison, and are consistent in the case ofϕs, but differ
+significantly forf σ 8. The best-fit RMS from the 400 mocks
+is also shown for each parameter. In both cases, this is off-
+set relative to the uncertainty histogram, likely because fitter
+uncertainties are underestimated, as seen in the difference be-
+tween the black and orange dashed lines.
+For both parameters (ϕs,f σ 8), the RMS of the best
+fit is slightly larger than the mean of the mock uncer-
+tainties. This is at least in part because we are using
+Gaussian-approximated fitter uncertainties, which tend
+to underestimate the true uncertainty (see [89]), as can
+beseenfromthedifferencebetweenthefitterandsampler
+results on the data (black versus orange dashed lines). In
+the case ofϕs, this shift is small, and the RMS remains
+consistent with the mock uncertainties. Given that the
+fitter uncertainty from the data is also consistent with
+the mock uncertainties, we consider thatϕs uncertain-
+ties successfully pass this test.
+Forf σ 8, the offset between the best-fit RMS and the
+mock uncertainties may be related to the offset between
+the fitter and sampler results on the data. However, the
+data uncertainty from the fitter is still∼40 %larger
+than the mock uncertainties forf σ8. This could mean
+that the mocks are not representative of the data for this
+measurement, or that either the mocks or the data are
+affected by a systematic error.
+Next, we test the distribution of pulls from the mocks
+with respect to the truth for the four primary param-
+eters, defined for each mock as the difference between
+the best-fit value and the truth divided by the Gaussian
+uncertainty (Figure 6). Theϕ s andα p pulls are consis-
+tent with the target Gaussian distribution,N(0,1), while
+ϕp displays a shift consistent with the bias found in the
+stack of mocks (Figure 4). In contrast,f σ 8 is signifi-
+cantly shifted from the target distribution, both in mean
+and in shape, consistent with the bias found in the stack
+of mocks (§IVB).
+To quantify the widths of these pull distributions, we
+compute their standard deviations relative to the distri-
+
+[PDF page 13]
+13
+FIG. 6. Histogram of pull values with respect to the truth
+for the population ofCoLoRe 2LPTmocks (blue). BAO pa-
+rameters (αp,ϕ p) are shown in the top row of plots, while
+ϕs andf σ 8 are shown in the bottom row. The black lines
+are given by a Gaussian with null mean and unit variance,
+which is the target distribution assuming no systematic bi-
+ases and accurate uncertainties. The first three parameters
+are broadly consistent with the target Gaussian, except for a
+small shift in theϕp distribution, which is consistent with the
+∼0.6%systematic shift present in the parameter constraints
+from a joint analysis of all four stacked correlations of 400
+CoLoRe 2LPTmocks. However,f σ 8 displays a significant de-
+viation from the target distribution, both in terms of mean
+and shape.
+bution means:
+σ
+
+(αp − αp)/σαp
+
+= 0.98±0.04,
+σ
+
+(ϕp − ϕp)/σϕp
+
+= 1.04±0.04,
+σ
+
+(ϕs − ϕs)/σϕs
+
+= 1.10±0.04,
+σ
+
+(f σ8 − f σ8)/σf σ8
+
+= 1.2±0.04,
+where the uncertainties are estimated through bootstrap
+sampling. The values forαp andϕ p are consistent with
+unity, confirming that the BAO uncertainties are well
+calibrated. The somewhat high value ofσϕ s, deviat-
+ing from unity at∼2.5σsignificance, is at least in part
+due to the Gaussian approximation of the uncertainties.
+Tests on the data indicate that the sampler produces a
+3 %larger uncertainty than the fitter, which would re-
+duce the significance of this deviation in mocks to below
+2σ. Furthermore, this difference varies from one mock to
+another, with realizations that have larger uncertainties
+usually exhibiting a larger difference between the fitter
+and the sampler results as well [28, 89]. Given that our
+data uncertainty is smaller than the uncertainty of81 %
+of mocks (see Figure 5), we expect this difference to be
+larger than3 %for most mocks. Therefore, we conclude
+thatσϕ s is consistent with unity.
+A similar explanation may apply to the larger value
+off σ 8. However, this deviation is detected at a much
+higher significance level (∼5σ), so a full validation of
+thef σ 8 uncertainties would likely require rerunning the
+sampler on at least a subset of the mocks. Given our
+decision to de-scope thef σ 8 measurement, we did not
+pursue this further.
+V. V ALIDA TION WITH BLINDED DA T A
+Prior to unblinding, we performed an extensive vali-
+dation program on the DESI DR2 data. The purpose of
+these tests is to identify potential systematic effects, as-
+sess the robustness of the analysis to reasonable method-
+ological choices, and verify the internal consistency of
+the dataset before examining the final cosmological con-
+straints. To avoid experimenter bias, the analysis was
+blinded following the same procedure adopted for the
+DESI DR1 full-shape analysis [28]. Random offsets were
+drawn from Gaussian distributions with zero mean and
+widths comparable to expected statistical uncertainties,
+and added within the likelihood to the primary parame-
+ters of interest,ϕs andf σ 8. These offsets were generated
+using a fixed random seed, and were therefore identical
+across all validation tests, which allowed for meaningful
+comparison during validation while concealing the true
+parameter values. We defined a set of thresholds that
+we required all validation tests to either pass or be well
+understood under further investigation, before we were
+allowed to unblind.
+The data validation process was divided into two pri-
+mary categories: data splits and analysis variations.
+Data splits test the internal consistency of the dataset
+by repeating the analysis on subsets of the data and
+comparing the resulting constraints. Analysis variations,
+however, test the robustness of the pipeline by modify-
+ing choices made at various stages of the analysis. This
+includes changes made prior to the correlation-function
+fit, such as the estimation of transmitted-flux fluctua-
+tions, the construction of the correlation functions, and
+the computation of covariance and distortion matrices.
+This also includes modeling variations, which test the
+sensitivity of the results to assumptions in the theoretical
+description of the measured correlations, including alter-
+native scale cuts, priors, and nuisance-parameter treat-
+ments. Many of these tests were inherited from the DESI
+DR2 LyαBAO analysis [9], while others were introduced
+specifically to validate the new modeling components
+used in the full-shape analysis, such as the inclusion of
+UVB fluctuations. Additionally, although some of the
+BAO variations have been considered non-contingent for
+unblinding, they have been included for posterity in C3.
+Quantitative unblinding criteria were established for
+
+[PDF page 14]
+14
+each of these test classes. For tests that compare analy-
+sis results from sub-samples of the data, we defined the
+following threshold: differences inχ2 between a given set
+and the baseline analysis exceeding two standard devi-
+ations (p <0.045) triggered further investigation. This
+significance accounts for the number of independent tests
+and any known correlations between samples. Further in-
+vestigation involved improving the model, understanding
+the source of the shift and adding a systematic uncer-
+tainty, or performing a detailed investigation with mocks
+and accounting for uncertainties such as statistical fluc-
+tuations using nested sampling. For analysis and mod-
+eling variations, we required that shifts in the primary
+parameter of interest,ϕs remain below one third of the
+expected statistical uncertainty of the (blinded) baseline
+analysis. This corresponds to a tolerance of∼0.0038for
+ϕs. Variations that exceeded this threshold were inves-
+tigated further, accounting for expected statistical fluc-
+tuations arising from changes in sample size, weighting,
+binning, scale cuts, or other modifications to the anal-
+ysis. Depending on the outcome of that investigation,
+a variation could motivate improvements to the baseline
+methodology, the assignment of a systematic uncertainty,
+or additional validation using mock datasets.
+A. Data splits
+The first set of tests presented involves data splits,
+where the full analysis is performed using subsets of the
+data. Splitting the data enables checking for various in-
+consistencies and biases, which may be attributed to sta-
+tistical fluctuations.
+The list of data split tests are:
+•Auto vs Cross-correlations only
+•Lyα(A) vs Lyα(A)+Lyα(B) regions
+•North vs South
+•Signal to Noise Ratio
+•C IV Equivalent Width
+We consider two types of data splits: those that split
+the data vector, and those that split the quasar catalog.
+The first two data splits we discuss are the former.
+The first data split that we consider is indepen-
+dently fitting the auto- and cross-correlations, where
+we fit the two auto-correlations (Lyα(A)×Lyα(A)
+and Lyα(A)×Lyα(B) separately from the two cross-
+correlations (Lyα(A)×QSO and Lyα(B)×QSO). Because
+the auto and cross-correlation joint fit is needed to break
+the Lyαand QSO RSD terms, this data split can only
+measure the AP effect [27]. We show the constraints on
+the full-shape parameter,ϕs, as well as the BAO param-
+eters,ϕ p andα p in Figure 7. We find good agreement of
+the auto- and cross-correlations with the baseline analy-
+sis for all parameters of interest.
+The next data split is grouping the correlations that
+only use pixels in the A region (i.e. Lyα(A)×Lyα(A),
+Lyα(A)×QSO). The correlations in the A region contain
+information for both AP and RSD, and are therefore very
+similar to the baseline analysis, which uses all four corre-
+lations. The B region does not contain as much informa-
+tion as the A region for a few reasons, such as additional
+noise due to higher instances of contamination by other
+Lyman lines, reduced number of sightlines due to only
+existing in higher redshift QSOs, and being significantly
+shorter than the A region which results in fewer pixels
+per line-of-sight. This data split shows good agreement
+between using only the A region, and when using the A
+and B region combined, which is shown in Figure 7. Ad-
+ditionally, we find that including the B region, as in the
+baseline analysis, improves constraints onϕ s by about
+9%.
+The remaining data splits involve splitting at the
+quasar catalog level, where the full analysis is performed
+independently on each subset of the catalog. These data
+splits repeat consistency checks performed by previous
+Lyαanalyses [9, 11, 28].
+The first data split of this category is a geographic tar-
+get selection split, where we separate quasars targeted
+with different imaging surveys. Here, "North" refers to
+imaging performed by the BASS and MzLS surveys, ac-
+counting for approximately 18% of the quasar catalog.
+"South" refers to imaging performed with the DECam
+camera, including the entire South Galactic Cap, and the
+southernmost part of the North Galactic Cap (at decli-
+nationδ <32.375 ◦), accounting for the remaining 82%
+of the quasars in the sample. We find the size of uncer-
+tainties and location of the contours (green) in Figure 8
+are consistent with statistical fluctuations attributed to
+the difference in size of the quasar data subsets.
+The next data split separates the quasar catalog in
+signal-to-noise ratio (SNR), where we define SNR as
+the mean signal-to-noise over the rest-frame wavelength
+range,1420< λ rest <1480Å. The "High SNR" sam-
+ple refers to quasars with a SNR greater than 4.25 and
+the "Low SNR" refers to those below this threshold. We
+split the quasar catalog such that the uncertainties in
+each subset are approximately equivalent, rather than in
+equal numbers of Lyαforests. Figure 8 shows that the
+size of the (orange) contours are comparable in size, and
+that they are consistent with each other.
+The last data split separates the quasar catalog by the
+equivalent width (EW) of the Civemission line. We
+define a "High EW" and "Low EW" sample, split at
+39 Å. This split reflects the average of the measured
+median CivEW of quasars (37.3 Å), and the median
+of3σmeasurements of the Civemission line (41.6 Å).
+The CivEW measurements are performed usingf ast-
+specfit3, a collection of public code for spectral syn-
+3 https://github.com/desihub/fastspecfit
+
+[PDF page 15]
+15
+thesis and emission-line fitting of DESI spectrophoto-
+metric data [90]. This split is an important validation
+test, since there is a known anti-correlation between the
+quasar continuum luminosity and the EW of the emis-
+sion lines known as the Baldwin effect [91]. As a re-
+sult of this correlation, the low EW sample measures a
+slightly higher luminosity and effective redshift quasar
+sample relative to the high EW sample. We find the un-
+certainty contours (blue) in Figure 8 are consistent with
+one another.
+FIG. 7. Full-shape and BAO constraints from the two
+Lyαauto-correlations only (blue) and the constraints from
+the cross-correlations only (orange), compared to the base-
+line constraints (gray), which use all four correlations. The
+Auto and Cross only splits are in good agreement with the
+baseline results forϕ s. Also shown are the results from
+the correlations which only use pixels in the A-region (i.e.
+Lyα(A)×Lyα(A), Lyα(A)×QSO), which are in good agree-
+ment with the baseline results which additionally use the B-
+region (i.e. Lyα(A)×Lyα(B), Lyα(B)×QSO).
+All of the data splits considered here are within the
+thresholdsdefinedpriortounblinding. Therefore, wefind
+that all data splits are consistent, and do not require
+further investigation.
+B. Analysis V ariations
+Wehaveperformedmanyanalysisvariationstotestthe
+sensitivity of our results to plausible alternative analysis
+decisions at various stages of the pipeline. We present the
+shifts inϕs produced by these variations in Figures 9, 10,
+and 11, which show parameter values and uncertainties of
+these tests relative to the baseline analysis. The majority
+FIG. 8. Full-shape and BAO constraints from the baseline
+analysis (gray), and various data-splits at the catalog level.
+Catalogs have been split into high (solid) and low (dashed)
+Civequivalentwidthinthequasarspectra(blue), high(solid)
+and low (dashed) signal-to-noise ratios in the quasar spectra
+(orange), as well as North (solid) and South (dashed) imaging
+used in the quasar target selection (green).
+of these tests are inherited from previous BAO [9, 11] and
+full-shape [28] analyses. However, some variations used
+in earlier studies have been retired as they no longer rep-
+resent realistic analysis alternatives (see Appendix C3),
+while additional tests have been introduced to assess the
+robustness of methodological updates implemented for
+this analysis, such as those discussed in §IIID.
+1. Variations in the Estimation of the Fluctuations
+The first set of variations impact how we measure the
+Lyαfluctuations. The first group of these variations re-
+sult in changes to the dataset, and so we expect them
+to exhibit some statistical fluctuations due to differences
+in sample size. The brown (circle) points in Figure 9
+illustrates how the value ofϕ s changes for each of the
+following variations:
+•λ obs <5500Å: we only use Lyαpixels below this
+observed wavelength, instead of the baseline value
+ofλ obs <5577Å.
+•λ obs >3650Å: we only use Lyαpixels above this
+observed wavelength, instead of the baseline value
+ofλ obs >3600Å.
+•λ RF <1200Å: we only use Lyαpixels below this
+
+[PDF page 16]
+16
+rest-frame wavelength, instead of the baseline value
+ofλ RF <1205Å.
+•>50pixels in forest: we include lines-of-sight
+with more than 50 valid Lyαpixels, while the base-
+line requirement is at least 150 pixels.
+•only QSO targets: we only use quasars that
+were originally targeted as quasars. This variation
+causesasignificantchangeinthesizeofthedataset,
+as this subset represents approximately 88% of the
+quasar catalog used in the baseline analysis.
+•DLASNR>2: we only mask DLAs identified
+in quasar spectra withSNR_RED>2, as was
+done in previous BAO analyses, where SNR was
+measured over the rest-frame wavelength range of
+1420< λ rest <1480Å, and is calculated as the
+average SNR per pixel, with pixel width of 0.8 Å.
+The baseline full-shape analysis no longer uses a
+SNR threshold for masking DLAs, as discussed in
+the DESI DR2 Lyαforest full-shape paper [13].
+•DLASNR>3: we only mask DLAs identified in
+quasar spectra withSNR_RED>3, whereas the
+baseline analysis does not use an SNR threshold for
+masking DLAs.
+•DR2 BAO DLA catalog: we use the (older)
+DLA catalog from the DESI DR2 BAO analysis
+[9].
+•weak BALs: we do not include the Lyαforest
+of quasars where we have identified strong BAL
+features. In particular, we still apply BAL mask-
+ing as usual, but do not allow the strongest BALs
+(AI >436.5) to contributing to the delta field.
+This corresponds to excluding approximately the
+50% percentile of the strongest BALs in DR2 fol-
+lowing [60], as was done previously in eBOSS anal-
+yses [92].
+•no sharp lines mask: we do not mask sharp lines
+in the spectra, as discussed in [61]. In the baseline
+analysis we mask features related to sky lines and
+Calcium absorption from the Milky Way interstel-
+lar medium.
+The next subset of analysis variations do not result in
+changes to the dataset. These variations affect the con-
+tinuum fitting process, the shifts of which are shown by
+the purple (square) points in Figure 9. Since these vari-
+ations can impact the weights used for continuum fitting
+and measuring the correlation functions, some statistical
+fluctuations occur. The list of Lyαfluctuation estimation
+variation tests are as follows:
+•no calibration: we do not re-calibrate the spectra
+using the Ciiiregion, as is done in the baseline
+analysis (and described in detail in [61]).
+•η pip = 1: we do not re-calibrate the instrumental
+noiseη, as is done in the baseline analysis.
+•η LSS = 3.5: we use non-optimal weights, and re-
+duce by a factor of two the contribution from the
+intrinsic Lyαforest variance to the weights.
+•∆λ F = 2.4Å: we rebin flux by coadding pixels in
+groups of three, prior to continuum fitting. Addi-
+tionally, we useηLSS = 3.1, which was found to be
+optimal for coarser pixelization in [61].
+Allofthevariationspassourthreshold, withtheexcep-
+tion of∆λ= 2.4Å, which can be attributed to statistical
+fluctuations. This is discussed in more detail in §VI.
+2. Variations in the Measurement of Correlations
+The next set of analysis variations includes changes in
+the measurement of the correlation functions, covariance
+matrices, or distortion matrices. The orange (triangle)
+points in Figure 9 show the shifts in parameters from
+these alternative analyses.
+The correlation variation tests are as follows:
+•dmatr ∥ <340h −1Mpc: we model the distor-
+tion matrix up tor ∥ = 340h −1Mpc, whereas
+the baseline analysis extends the model tor ∥ =
+300h −1Mpc.
+•dmat2%: weuse2%ofthedatasettocomputethe
+distortion matrix, compared 1% to in the baseline
+analysis.
+•dmatdr M = 4h −1Mpc: we model the distortion
+matrix with 4h −1Mpc bins for the model, as is
+used in the measurement of the correlation func-
+tion, compared to 2h−1Mpc in the baseline analy-
+sis. The data is still binned in4h−1Mpc bins.
+•∆λ= 1.6Å: we re-bin the continuum-fitted Lyα
+pixels in groups of two (rebinned pixels of 1.6Å),
+rather than in groups of three (rebinned pixels of
+2.4Å) in the baseline analysis .
+•nside= 24: we measure the correlations in
+HEALPix pixels defined bynside= 24, rather
+thannside= 16as in the baseline analysis. Using
+smaller HEALPix regions reduces the number of
+quasars contributing to each subsample while in-
+creasing the total number of subsamples used to
+estimate the covariance matrix. This tests whether
+our results are sensitive to the choice of subsam-
+pling used in the covariance estimation.
+•∆r= 5h −1Mpc: we bin the correlation function
+in 5h −1Mpc bins, rather than in 4h−1Mpc bins
+used in the baseline analysis.
+
+[PDF page 17]
+17
+All validation tests related to the measurement of the
+correlation function, distortion matrix, and covariance
+matrix do not exceed more than one third of the ex-
+pected statistical uncertainty from the (blinded) baseline
+analysis, and are therefore not problematic.
+FIG. 9. Shifts in the AP measurement from a set of analy-
+sis variations. Analysis variations shown here are those that
+results in changes to the dataset (brown, circle), those that
+change the method of estimating Lyαoverdensities (purple,
+square), and those that change the method of computing cor-
+relations, covariances, and distortion matrices (orange, tri-
+angle). The shaded regions represent the uncertainty in the
+baseline measurement, at 1 (red) and 1/3 (gray) standard de-
+viation.
+3. Variations in the Modeling of Correlations and
+Parameter Estimation
+We also consider variations of the modeling process in
+order to test the robustness of our baseline analysis.
+The first subset of modeling variations are changes
+to scale cuts, the results of which are shown in Fig-
+ure 10. The baseline analysis utilizes a single maximum
+fitted scale ofr max <180h −1Mpc for both the auto-
+and cross-correlation functions, and a minimum fitted
+scale ofr min >30h −1Mpc for the auto-correlation and
+rmin >40h −1Mpc for the cross-correlation. We consider
+scale cut variations that are more or less conservative
+than the baseline analysis in both the auto- and cross-
+correlations, which can be seen by the top and bottom
+panels of Figure 10, respectively. Because these varia-
+tions result in changes to which data, or what physical
+scales contribute to our results, some level of statistical
+fluctuations are expected.
+In Figure 10, we show results for different scale cuts. In
+the top plot, we vary the minimum separation included
+in the auto-correlation measurements, while keepingrmin
+fixed to40h −1Mpc for the cross-correlations. In the bot-
+tom plot, we vary the minimum separation included in
+the cross-correlation measurements, while keepingr min
+fixed to30h −1Mpc for the auto-correlations. The dark
+and light gray shaded regions indicate the1/3σand1σ
+thresholds for each configuration of scale cuts, respec-
+tively.
+These results show thatϕs converges at roughlyrmin ≥
+20h −1Mpcintheauto-correlationandr min ≥30h −1Mpc
+in the cross-correlation. Note that we expect these re-
+sults to be impacted by statistical fluctuations because
+the smallest scales in a fit contribute significantly toϕs,
+which means that the data driving these values can be
+quite different for large changes inrmin. Therefore, we
+consider this test as a good validation of our results, but
+have not directly used it to choose our scale cuts, and
+instead relied on the same tests performed on stacks of
+mocks, which is detailed in §IV.
+The final selection of variations are variations in
+choices of priors and variations in the model used to fit
+the correlation functions. The shifts inϕs as well as un-
+certaintiescomparedtothebaselineanalysisareshownin
+Figure 11. The blue (circle) points in Figure 11 demon-
+strate shifts from alternative prior choices for certain pa-
+rameters, while the green (triangle) points demonstrate
+alternative modeling choices.
+The list of alternate prior variation tests are as follows:
+•no prior onL HCD: we remove the infor-
+mative Gaussian prior on the parameterL HCD
+(N(5.0,2.0)) in the baseline analysis), in the model
+of HCD contamination.
+•no prior onβ HCD: we remove the infor-
+mative Gaussian prior on the parameterβ HCD
+(N(0.5,0.09)) in the baseline analysis), in the
+model of HCD contamination. As this result is
+close to the threshold, we have also included an
+alternative test of theβHCD prior below.
+•no prior on∆r∥ QSO: we remove the informative
+Gaussian prior on the parameter∆r∥ (N(0.0,1.0)
+in the baseline analysis) in the model of quasar red-
+shift errors.
+•prioronb CIV,eff: weuseanalternativeinformative
+prior on the parameterbCIV,eff in the model of the
+contamination by Civabsorption. We use the 2024
+measurement of (N(−0.019,0.0015)by [65], rather
+than the baseline prior, (N(−0.019,0.005).
+•prior onβ HCD: we double the width of the infor-
+mative prior on the parameterβHCD in the model
+of the contamination by HCDs. The prior in the
+baseline analysis is N(0.5, 0.09), and is widened to
+N(0.5, 0.18) in this variation.
+
+[PDF page 18]
+18
+FIG. 10. Shifts in the AP measurement from a set of analysis
+variations that vary only the minimum scale cut in the Auto
+(top) and Cross (bottom) correlations. The baseline value
+(30h −1Mpc for Auto, and 40h−1Mpc for Cross) is centered
+at zero (gray) and variations (blue) are plotted with respect
+to the baseline value. The Auto (Cross) minimum scale cut
+is held constant while the Cross (Auto) value is varied. The
+shaded regions represent 1 (light gray) and 1/3 (dark gray)
+standard deviation of each variation with respect to the base-
+line analysis.
+•prior onb QSO: we add an informative prior on
+the quasar bias parameter N(3.4, 0.2), following
+the DESI DR2 BAO analysis [11]. The baseline
+analysis does not use a prior.
+The list of model variation tests that we conduct are
+as follows:
+•fixα s: we do not fit for the isotropic scale of the
+broadband,α s as in the baseline analysis, and in-
+stead set it equal to one (i.e., fixed to the Planck
+2018 [62] fiducial cosmology).
+•twoα s: we fit for the isotropic scale of the broad-
+band separately in the auto- and cross-correlations,
+whereasthebaselineanalysisfitsasingleparameter
+in both correlations.
+•ignore nonlinear small-scales correction: we
+omit the small-scale correction from [75] in the
+modeling of the Lyαauto-correlation. The param-
+eters used in this small-scale correction are fixed in
+the baseline analysis.
+•nonlinear small-scales correction from Hy-
+dro: we fix the small-scale correction parame-
+ters from [75] in the modeling of the Lyαauto-
+correlation to the best-fit values from hydro-
+simulations [93]. The parameters used in this small
+scale correction are fixed in the baseline analysis to
+the best-fit values from simulations [79] with tight
+priors from DESI DR1 P1D measurements [94, 95].
+•free nonlinear small-scales correction: we fit
+for the (six) small-scale correction parameters from
+[75] in the modeling of the Lyαauto-correlation,
+with Gaussian priors (q1 :N(1,2),q 2 :N(0,1),
+kν :N(1,2),a ν :N(0.3,0.5),b ν :N(1.6,0.5),k p :
+N(14,10)). The parameters used in this small-scale
+correction are fixed in the baseline analysis (q1 :
+0.303,q 2 : 0.267,k ν : 0.576,a ν : 0.443,b ν : 1.66,
+kp : 11.062).
+•free non-linear BAO: we marginalize over the
+parameter that models the non-linear broadening
+of the BAO peak. This parameter is fixed to a
+value predicted by Lagrangian Perturbation The-
+ory (LPT) in the baseline analysis.
+•Gaussian redshift errors: we use a Gaussian dis-
+tribution to model quasar redshift errors and pecu-
+liar velocities. We use a Lorentzian model in the
+baseline analysis.
+•allow QSO radiation strength<0: we allow
+for the parameter characterizing quasar radiation
+strengthtobenegative. Werequireittobepositive
+in the baseline analysis.
+•r ∥ > 4h −1Mpc: we impose a cut belowr ∥ =
+4h −1Mpc for the auto-correlation only (i.e., the
+first bin along the line-of-sight), and do not fit for
+DESI instrument systematics. This is a more real-
+istic and conservative alternative to an older (now
+depreciated) model in which we removed the model
+for sky contamination while still fitting the bins
+that are impacted by this effect (r∥ = 0h −1Mpc).
+See Appendix C3 for further discussion.
+•no UVB fluctuations: we do not model the im-
+pact of UV background fluctuations [77, 96] on the
+Lyαforest auto-correlation, following the prescrip-
+tion of [63].
+Of all the validation tests related to choices in pri-
+ors and modeling changes, none exceed more than one
+third of the expected statistical uncertainty from the
+(blinded) baseline analysis, and are therefore not prob-
+lematic. However, the variation in which we remove the
+
+[PDF page 19]
+19
+prior onβHCD did produce a notable shift relative to the
+baseline analysis, and is discussed further in §VI.
+FIG. 11. Shifts in the AP measurement from a set of analysis
+variations which change the model used to fit the correlation
+functions. This includes variations of the priors (blue, circle)
+andvariousmodelingchoices(green, triangle). Theshadedre-
+gions represent the uncertainty in the baseline measurement,
+at 1 (red) and 1/3 (gray) standard deviation.
+VI. DISCUSSION
+We have presented numerous validation tests of our
+baseline analysis using synthetic spectra (§IV), data
+splits (§VA), variations at the delta fluctuation level
+(§VB1), variations at the level of correlations (§VB2),
+and variations of the priors and modeling choices
+(§VB3). Severalofthosetestsproducedsignificantshifts
+and in some cases exceeded our thresholds. We next dis-
+cuss how we investigated and mitigated those cases in
+greater detail.
+A. Synthetic Spectra
+Our full-shape analysis of 400CoLoRe 2LPTmocks
+demonstrated that both BAO parameters,α p andϕ p,
+and the broadband AP parameter,ϕ s, are within our
+conservative threshold for unblinding. Additionally, we
+foundα p andϕ s are consistent with the truth, while
+ϕp displays a0.6%bias at∼5σsignificance. This is
+consistent in sign and magnitude with the results from
+theAbacusSummitsimulations. Although this is still
+within the threshold for this analysis, the shift should be
+carefully handled in the systematic error budget, which
+is discussed in detail in [13]. The DR2 BAO analysis [11]
+accounted for a possible shift in the BAO peak due to
+nonlinear clustering with the inclusion of anisotropic sys-
+tematic uncertainty to the total error budget. However,
+our full-shape tests indicate that this shift is primarily
+related to the anisotropic parameterϕ p and therefore
+should be independently considered as an uncertainty,
+rather than using an equal, isotropic contribution toα⊥
+andα ∥. Additionally, though we reportϕs for our vali-
+dation tests in this work, as it was a blinded parameter,
+the final result will combine smooth and peak compo-
+nents (ϕs andϕ p ) into a single AP parameter,ϕf.
+Finally, we found the growth rate parameterf σ8 to be
+outside of the threshold, as it displays a10%bias at high
+significance (≫5σ). Despite numerous tests, and vari-
+ations of scale cuts for the auto- and cross-correlations,
+we have found no reasonable change in our model that
+fully reconciles this measurement with the truth or sig-
+nificantly reduces the bias. Due to this large systematic
+bias, we do not report a measurement off σ8 in the main
+analysis, and therefore do not present the validation test
+results on blinded data withϕs in §VB, as was done in
+the DR1 full-shape analysis [28]. Plots forf σ 8 are in
+Appendix C1.
+B. Blinded Data
+Prior to unblinding the baseline analysis, we defined a
+threshold of one third of the expected statistical uncer-
+tainty from the (blinded) baseline analysis, correspond-
+ing to a tolerance of∼0.0038forϕ s. Of the many anal-
+ysis variation tests that we performed, the only variation
+that exceeded our threshold is∆λ= 2.4Å. In this test,
+we rebin the Lyαflux from the native DESI resolution of
+0.8Å to2.4Å before continuum fitting (i.e., at the level
+of the measured flux). This rebinning is done after con-
+tinuum fitting (i.e., at the level of Lyαfluctuations) in
+the baseline analysis.
+This test affects the data in several ways, which are
+expected to introduce small statistical fluctuations. The
+continuum fitting step includes a number of operations
+that would produce slightly different results when using
+a different binning scheme, including the masking of sky
+lines, the masking of DLAs and BALs, and the compu-
+tation of the variance in the forest region, all of which
+affect the weights used for both continuum fitting and
+the measurement of the correlations. We consider that
+using the native DESI resolution for the continuum fit-
+ting step is the superior choice, which is the standard
+used for all previous DESI Lyαanalyses.
+To better understand and quantify the significance of
+the observed shift, we performed this variation on a set
+of 10CoLoRe 2LPTmocks prior to unblinding. We found
+that the distribution of shifts between the baseline anal-
+ysis and this variation is consistent with zero, which indi-
+cates no significant systematic error, and has an RMS of
+∼0.25%(indicating the level of statistical fluctuation).
+Comparing the RMS of∼0.25%on a stack of mocks
+to the observed shift of0.68%indicates a significance of
+∼2.7σ. We have also checked this using a larger set of
+bootstrap realizations generated from the data measure-
+
+[PDF page 20]
+20
+ments of the correlation functions in Healpix pixels on
+the sky and found a shift of0.0065±0.0023. This cor-
+responds to a significance of∼2.8σ, which is consistent
+with the results on mocks. Given that we have performed
+19 tests in the analysis variations category (VB), which
+are expected to exhibit some level of statistical fluctua-
+tion, the probability of observing a shift at this level of
+significance is∼10%. We have therefore concluded that
+this shift can be explained by a statistical fluctuation. In
+addition, we also tested the effect of using smaller wave-
+length bins of1.6Å instead of2.4Å when computing the
+correlation functions. That choice gives minimal devia-
+tions from the baseline analysis.
+Another variation test that produces a large change,
+though it does not exceed our threshold, is when we re-
+move the prior on theβHCD parameter. The choice of
+this prior is based on measurements from BOSS Lyα-
+DLA cross-correlations [97]. The fact that theϕ s shift
+is close to the threshold when removing this prior indi-
+cates that our measurement retains some sensitivity to
+βHCD, making an informative prior necessary. Indeed,
+while this test passes, it may fail in future analyses with
+tighter statistical constraints. We therefore perform an
+additional test in which the width of the Gaussian prior is
+doubled. This produces no measurable change inϕs, in-
+dicating that while the parameter should be constrained
+by a physically motivated prior, the results are not sen-
+sitive to the exact width of a reasonable prior at this
+time. Future measurements from DESI Lyα-DLA cross-
+correlations could provide a more precise constraint on
+βHCD, but the current prior is sufficient for the present
+analysis.
+VII. CONCLUSION
+In this work, we have performed a comprehensive vali-
+dation of the DESI DR2 Lyman-αforest full-shape anal-
+ysis presented in [13]. Using both synthetic or mock
+datasets and blinded observational data, we evaluated
+the accuracy, robustness, and reliability of the analysis
+pipeline and cosmological parameter measurements, and
+the reliability of the resulting cosmological constraints.
+We described the DR2 datasets and catalogs used in
+this work in §II, the analysis methodology in §III, and
+the principal methodological developments relative to the
+DR2 BAO analysis [11] in §IIID. We then presented vali-
+dation tests on mock datasets in §IV, robustness tests on
+blinded observational data–including data splits and al-
+ternative analysis configurations–in §VA and §VB, and
+discussed the investigation of potentially concerning re-
+sults and their resolution in §VI.
+Compared to the DR1 full-shape analysis, the DR2
+analysis benefits from substantial improvements in both
+the datasets and the analysis methodology, which mo-
+tivated a correspondingly more extensive validation ef-
+fort. In addition to mock datasets that are both larger in
+number and more realistic than those available for DR1,
+the DR2 analysis employs updated catalogs and signif-
+icant methodological developments relative to the DR2
+LyαBAO analysis [11]. These developments improve
+the fidelity of both the data and modeling framework,
+but also introduce additional complexity and potential
+sources of systematic uncertainty. The validation pro-
+gram presented in this work was therefore designed to
+verify that these choices do not introduce significant bi-
+ases in the recovered cosmological parameters, and that
+the resulting measurements remain robust to reasonable
+variations in the data, modeling assumptions, and anal-
+ysis configuration.
+Our tests on mock datasets have shown that the mod-
+eling choices and scale cuts recover the expected cosmol-
+ogy within the predefined validation thresholds for the
+BAO and AP measurements. These conclusions are fur-
+ther supported by population tests on individual mock
+realizations, which recover parameter uncertainties that
+are consistent with the data, and recover BAO and AP
+parameter values that are consistent with the input cos-
+mology. Additional fiducial cosmology tests, presented in
+Appendix B, demonstrate that the measurements remain
+stable under reasonable changes to the assumed cosmo-
+logical model, with any observed shifts consistent with
+statistical fluctuations. While a small bias was observed
+forϕ p and a more significant discrepancy was found for
+f σ8, the latter was consistently identified across multiple
+mock-based tests and ultimately led to our decision to
+de-scopef σ 8 from the primary cosmological results.
+The blinded-data validation tests similarly demon-
+strate a high degree of robustness. All catalog and
+correlation-function data splits satisfy the predefined
+validation criteria and are consistent with the base-
+line analysis. Likewise, nearly all alternative analy-
+ses—includingvariationsinthetreatmentoffluctuations,
+correlations, covariances, distortion matrices, modeling
+assumptions, and priors—produced shifts substantially
+below the adopted tolerance threshold. A single anal-
+ysis variation involving rebinning the flux prior to con-
+tinuum fitting exceeded the nominal threshold, was in-
+vestigated in detail with mock datasets and alternative
+binning schemes, and no evidence for systematic bias in-
+troduced by baseline analysis choices was found.
+Furthermore, the baseline model provides a satisfac-
+tory description of the DR2 dataset, yielding a goodness-
+of-fit consistent with statistical expectations with a re-
+ducedχ 2 = 1.011, and PTE =0.20. Additionally,
+the covariance-normalized residuals (Figure 1), which are
+consistent with the expected standard normal distribu-
+tion, provide an independent validation of both the co-
+variancemodelandtheassumedGaussianlikelihood. To-
+gether, these results indicate that the adopted modeling
+framework accurately captures the statistical properties
+of the observed correlations over the scales used in the
+analysis.
+The agreement between mock-based validation tests,
+blinded-data robustness studies, and the goodness of fit
+of the baseline model provides strong evidence that the
+
+[PDF page 21]
+21
+DR2 Lyαfull-shape measurements are stable against rea-
+sonable variations in the data and analysis methodol-
+ogy, and that the quoted uncertainties accurately cap-
+ture the dominant sources of statistical error. These val-
+idation results provide the foundation for the cosmolog-
+ical interpretation presented in the DESI DR2 Lyαfull-
+shape measurement and cosmological analysis paper [13].
+More broadly, the validation framework developed in this
+work establishes a template for future DESI Lyαanaly-
+ses, including upcoming DR3 BAO and future full-shape
+measurements, which will benefit from larger datasets,
+improved simulations, and continued refinements to the
+modeling of astrophysical and instrumental systematics.
+As the statistical precision of DESI continues to improve,
+similarly rigorous validation efforts will remain essential
+to ensuring the robustness and reliability of cosmological
+constraints derived from the Lyαforest.
+ACKNOWLEDGMENTS
+MH and PM acknowledge support from the United
+States Department of Energy, Office of High Energy
+Physics under Award Number DE-SC0011726. AC ac-
+knowledges support provided by NASA through the
+NASA Hubble Fellowship grant HST-HF2-51526.001-A
+awarded by the Space Telescope Science Institute, which
+is operated by the Association of Universities for Re-
+search in Astronomy, Incorporated, under NASA con-
+tract NAS5-26555.
+This material is based upon work supported by the
+U.S. Department of Energy (DOE), Office of Science,
+Office of High-Energy Physics, under Contract No.
+DE–AC02–05CH11231, and by the National Energy Re-
+search Scientific Computing Center, a DOE Office of
+Science User Facility under the same contract. Ad-
+ditional support for DESI was provided by the U.S.
+National Science Foundation (NSF), Division of Astro-
+nomical Sciences under Contract No. AST-0950945
+to the NSF’s National Optical-Infrared Astronomy Re-
+search Laboratory; the Science and Technology Facili-
+ties Council of the United Kingdom; the Gordon and
+Betty Moore Foundation; the Heising-Simons Founda-
+tion; the French Alternative Energies and Atomic En-
+ergy Commission (CEA); the National Council of Hu-
+manities, Science and Technology of Mexico (CONAH-
+CYT); the Ministry of Science, Innovation and Universi-
+ties of Spain (MICIU/AEI/10.13039/501100011033), and
+by the DESI Member Institutions:https://www.desi.
+lbl.gov/collaborating-institutions. Any opinions,
+findings, and conclusions or recommendations expressed
+in this material are those of the author(s) and do not
+necessarily reflect the views of the U. S. National Science
+Foundation, the U. S. Department of Energy, or any of
+the listed funding agencies.
+The authors are honored to be permitted to conduct
+scientificresearchonI’oligamDu’ag(KittPeak), amoun-
+tain with particular significance to the Tohono O’odham
+Nation.
+Appendix A: Data A vailability
+Information and data associated with current and
+future DESI data releases, including the Early Data
+Release (EDR) and Data Release 1 (DR1), are pub-
+licly available athttps://data.desi.lbl.gov/doc/
+releases/. Data Release 2 (DR2), referenced in this
+work, will be available on the same webpage.
+The data points corresponding to the figures from this
+paper will be available in a Zenodo repository (https:
+//zenodo.org); the exact link will be provided upon
+publication.
+Appendix B: Fiducial Cosmology on Mocks
+Our mocks were generated with a fixed set of cosmo-
+logical parameters and in this section we assess the ro-
+bustness of our analysis to this fiducial cosmology choice.
+Specifically, we performed validation tests that vary the
+fiducial cosmology that is used to measure the correlation
+functions and perform the fits. In all of these variations,
+we generate a new template to describe the new cosmol-
+ogy, recompute correlations for several mocks with the
+new cosmology, and then run the full baseline analysis
+on the stack of those mocks.
+Since the cosmological inference uses both the AP sig-
+nal from the BAO and broadband, the fits are performed
+to the full-shape AP signal, and therefore we showϕ f
+rather thanϕ s. We investigate two alternative cosmolo-
+gies in this section: a flatΛCDM with a fixed sound
+horizon and dynamic dark energy model (w0 −w a).
+a. FlatΛCDM with fixed sound horizon
+The first fiducial cosmology test is a flatΛCDM uni-
+verse with a fixed sound horizon. The purpose of this
+test is to verify that the recovered full-shape AP mea-
+surement is insensitive to the assumed fiducial cosmology
+when converting observed redshifts and angular positions
+into comoving distances. By holding the sound horizon
+rd fixed, the isotropic component is unchanged, allowing
+this test to isolate the impact of the geometric distor-
+tion introduced by changing the fiducial cosmology. We
+select a subset of 100CoLoRe 2LPTmocks with true cos-
+mology defined by Planck 2018 [62]. We then modify
+Ωm such thatF AP,new/FAP,truth = [DM /DH]new
+[DM /DH]truth
+≈1.032.
+This corresponds to a∼3σshift in the AP parame-
+ter. Additionally, we tune the Hubble parameterH0 and
+density parameters to hold all physical densities (e.g.,
+Ωb, h2) fixed relative to the truth. However, we leave
+the sound horizonr d unchanged. This results in a new
+template power spectrumP(k)that remains unchanged
+
+[PDF page 22]
+22
+FIG. 12. Full-shape fit results from a stack of 100 mock cor-
+relations computed with different fiducial cosmologies. (Top)
+We vary cosmological parameters withinΛCDM using a set
+of 100CoLoRe 2LPTmocks. (Bottom) We vary cosmologi-
+cal parameters withinw0waCDM using a set of 100IFAE-QL
+mocks. The derived distance ratio from full-shape AP con-
+straints (ϕf), which includes AP from both BAO and broad-
+band, is shown on the x-axes. The derived distances from the
+isotropic BAO constraint (αp), is shown on the y-axes. Both
+alternative fiducial cosmologies demonstrate excellent agree-
+ment in the derived distance ratios fromϕf.
+in units ofMpc −1, but varies in units ofh−1Mpc. The
+new fiducial cosmology isΩm = 0.375,Ω b = 0.0587, and
+H0 = 61.755 km s−1 Mpc−1.
+The top panel of Figure 12 shows the results of the
+full-shape fits for both the baseline (blue) and different
+fiducial cosmology (orange). We find that the alternative
+fiducial cosmology is in good agreement with the baseline
+analysis, demonstrating that the analysis and results are
+robust to changes in the assumed cosmology. For this
+subset of mocks, the isotropic BAO result (y-axis) aligns
+well with the true cosmology, however, the AP results (x-
+axis) are slightly shifted by∼1/3σ. Given that the full
+set of 400 mocks is consistent with the truth, this small
+shift can be explained by a statistical fluctuation.
+b.w 0 −w a model
+The other alternative fiducial cosmology that we test
+is the best-fitw0waCDM cosmology from the DESI-DR2
++ CMB analysis [12] where the dark energy equation of
+state is parameterized byw(a) =w 0 +w a(1−a). For
+this test, we use a stack of 100 contaminatedIFAE-QL
+mocks, which are based on the Planck 2015 cosmol-
+ogy (see [86]). We perform a joint fit of the A-region
+correlations, Lyα(A)×Lyα(A) and Lyα(A)×QSO. Here,
+the new fiducial cosmology is defined byΩ m = 0.353,
+H0 = 63.6 km s−1 Mpc−1,w 0 =−0.42, andw a =−1.75.
+The bottom panel of Figure 12 shows the results of
+fits performed using the baseline analysis (blue) and the
+alternativew 0 −w a model. We find that the AP mea-
+surements (x-axis) are in good agreement with the base-
+line analysis. The two isotropic BAO constraints (y-axis)
+displays a small shift, however the shift is within the
+threshold of 1/3σof the expected statistical uncertainty.
+Therefore, we find that the results are robust to alterna-
+tive fiducial cosmology choices at the precision relevant
+for this analysis.
+Appendix C: Supplementary V alidation Results
+This appendix collects several supplementary valida-
+tion results that complement the primary analysis pre-
+sented in the main text. These include the behavior of
+the growth-rate parameterf σ8 under the analysis varia-
+tions considered in this work; the corresponding BAO
+peak-component measurements, which are required to
+construct the final full-shape constraints; and a set of
+deprecated validation tests retained for completeness and
+comparison with previous analyses.
+1. Growth Rate
+As discussed in §VI, we chose to de-scopef σ8 from
+the primary analysis because of a significant and unre-
+solved bias observed in the mock data, as well as a lack
+of robustness under several blinded analysis variations.
+Whilef σ 8 remains stable within the one-third statistical
+uncertainty threshold for variations affecting the mea-
+sured fluctuations and correlations, as shown in Figure
+13, and for prior variations, its behavior is substantially
+less stable under modeling variations, as illustrated in
+Figure 14.
+In particular, we find thatf σ8 is sensitive to changes
+in the modeling of the smooth anisotropic parameter,
+αs the quasar radiation strength (proximity effect), and
+UVB fluctuations. We also find thatf σ8 exhibits signif-
+icant degeneracies with several model parameters, most
+notablyα s. As discussed previously,αs is largely treated
+as a nuisance parameter because it is difficult to disentan-
+gle from other effects, including the Lyαflux bias. Com-
+bined, these results indicate that the current model lacks
+
+[PDF page 23]
+23
+FIG. 13. Shifts in the growth rate parameter (f) measure-
+ment from a set of analysis variations. Analysis variations
+shown here are those that result in changes to the dataset
+(brown, circle), changes in how we estimate Lyαfluctuations
+(purple, square), and variations that change the method of
+computing correlations, covariances, and distortion matrices
+(orange, triangle). The shaded regions represent the uncer-
+tainty in the baseline measurement, at 1 (red) and 1/3 (gray)
+standard deviation.
+sufficient sensitivity to robustly constrainf σ8. We there-
+fore conclude thatf σ8 cannot be reliably interpreted as
+a cosmological measurement in this analysis and do not
+report it among our primary results.
+2. BAO Parameters
+The primary focus of this work is the validation of the
+smooth anisotropic component of the full-shape model,
+characterized by the parametersα s andϕ s. Conse-
+quently, the analysis variations presented throughout the
+main text are reported in terms ofϕs, which was treated
+as the blinded parameter during the validation process.
+The BAO component of the model has already under-
+gone extensive validation as part of the DESI DR2 BAO
+analysis [11] and is therefore not re-examined in detail
+here.
+Nevertheless, the final full-shape cosmological mea-
+surement is obtained by combining the smooth and peak
+components into the full-shape parameters,α f andϕ f.
+The BAO component parameters,αp andϕ p, therefore
+remain an essential ingredient of the final result. Ad-
+ditionally, as discussed in §IIID, this work introduces
+modeling and catalog changes relative to the DR2 BAO
+analysis. While we have shown the full-shape measure-
+FIG.14. Shiftsinthegrowthrateparameter(f)measurement
+from a set of analysis variations which change the model used
+to fit the correlation functions. This includes variations of
+the priors (blue, circle) and various modeling choices (green,
+triangle). The shaded regions represent the uncertainty in
+the baseline measurement, at 1 (red) and 1/3 (gray) standard
+deviation.
+FIG. 15. Shifts in the measurement of BAO peak parameters
+(ϕp,α p) from a set of analysis variations. Analysis variations
+shown here are those that result in changes to the dataset
+(brown, circle), changes in how we estimate Lyαfluctuations
+(purple, square), and variations that change the method of
+computing correlations, covariances, and distortion matrices
+(orange, triangle). The shaded regions represent the uncer-
+tainty in the baseline measurement, at 1 (red) and 1/3 (gray)
+standard deviation.
+ment to be robust under these modifications, and we do
+notexpectthesechangestoaffecttheBAOmeasurement,
+we include for completeness the corresponding measure-
+ments of these parameters for the same set of analysis
+variations considered throughout this work. These fig-
+ures provide a complimentary comparison of the BAO
+peak component across the validation suite and demon-
+stratethatthevariationsaffectingthesmoothcomponent
+similarly leave the BAO measurements stable, consistent
+with the conclusions of the dedicated DR2 BAO valida-
+
+[PDF page 24]
+24
+FIG. 16. Shifts in the measurement of BAO parameters
+(ϕp,α p) from a set of analysis variations which change the
+model used to fit the correlation functions. This includes
+variations of the priors (blue, circle) and various modeling
+choices (green, triangle). The shaded regions represent the
+uncertainty in the baseline measurement, at 1 (red) and 1/3
+(gray) standard deviation.
+tion analysis, which is discussed in Appendix B of [11].
+Figures 15 and 16 summarize the shifts in the recov-
+ered BAO peak parameters,α p andϕ p, for the same
+analysis and model variations considered throughout this
+work. Overall, the BAO measurements are stable across
+the validation suite, with the vast majority of variations
+producing shifts well within the adopted1/3σthreshold.
+This demonstrates that the modeling and pipeline mod-
+ifications introduced for the full-shape analysis do not
+significantly alter the recovered BAO component.
+Among the analysis variations, three produce shifts in
+ϕp exceeding the1/3σthreshold:η LSS = 3.5,Only
+QSO Targets, andWeak BALs. TheOnly QSO
+Targetsvariation also produces a shift larger than1/3σ
+inα p. Of these, onlyOnly QSO Targetsexceeded
+the corresponding threshold in the DR2 BAO valida-
+tion, where it produced a significant shift in the trans-
+verse BAO parameter. This behavior is unsurprising, as
+restricting the sample to quasars originally targeted as
+quasars removes approximately12%of the quasar cat-
+alog used in the baseline analysis, making it one of the
+largest changes to the dataset considered. The remain-
+ing two variations were also among the largest shifts ob-
+served in the DR2 BAO analysis, withηLSS = 3.5lying
+close to the threshold for the line-of-sight BAO parame-
+ter andWeak BALslying close to the threshold for the
+transverse BAO parameter. Additionally, we have in-
+vestigated these three variations, and verified that they
+pass the threshold in the case of 2D covariance contours.
+These slightly larger shifts in the full-shape parameteri-
+zation are therefore consistent with the behavior already
+observed in the dedicated BAO validation and do not
+indicate any new sensitivity introduced by the updated
+full-shape analysis.
+3. Deprecated T ests
+This appendix contains validation tests that we have
+depreciated, and therefore their consistency with the
+baseline analysis was not a requirement for unblinding.
+These include tests that are inferior or redundant relative
+to the baseline analysis, or are included for comparison
+with prior conventions that are no longer relevant.
+The first two depreciated validation tests use alterna-
+tive distortion matrix models that are notably inferior to
+the baseline analysis; we include these variations here for
+historical context, as they were used in previous analyses
+(e.g. [9, 28]). The remainder of the tests in this section
+demonstrate important effects that cannot be ignored,
+and are therefore not valid alternatives to the baseline
+analysis. For instance, the test in which the effect of
+sky residuals is ignored removes the model for a well-
+known systematic, and produces a significant but under-
+stood impact on the AP measurement. The variation
+"∆λ= 3.2Å", in which we rebin pixels, results in an un-
+derstood loss of information due to oversmoothing, which
+was not detected in previous analyses.
+The list of depreciated variation tests are as follows:
+•dmatr ∥ <200h −1Mpc: we model the distor-
+tion matrix up tor ∥ = 200h −1Mpc, whereas
+the baseline analysis extends the model tor ∥ =
+300h −1Mpc. This analysis variation is inferior to
+the baseline and has been included only for com-
+parison with previous approaches (see [67]), not as
+a validation test. In Figure 9 we introduced a new
+variation in which we model the distortion matrix
+up tor ∥ = 340h −1Mpc.
+•dmat model z-indep: we use an older method for
+the computation of the distortion matrix in which
+we do not model redshift evolution. This is consis-
+tent with previous methods, as done in eBOSS and
+DESI DR1. This method is now considered infe-
+rior in the current baseline analysis, but has been
+included for historical comparison.
+•ignorequasarradiation: we ignore theimpact of
+quasar radiation in the cross-correlation, known as
+the transverse proximity effect. While this does not
+have a significant impact on our baselineϕs mea-
+surement, as seen in Figure 17, we decided to retire
+it because it is an inferior variation. Instead, we
+added the test "allow negative quasar radiation" as
+a better alternative to gauge the impact of quasar
+radiation.
+•ignore modeling of sky residuals: we ignore
+contamination from correlated sky residuals in the
+Lyαauto-correlation, as discussed in [65]. This test
+has a very large impact on AP, because it removes
+the model for a known systematic that directly
+changes the anisotropy of the Lyαauto-correlation,
+
+[PDF page 25]
+25
+FIG. 17. Shifts in the AP measurement from a set of analysis
+variations that have been retired, and therefore were not con-
+sidered in the path to unblinding. These include variations
+that were included in previous analyses and inferior models.
+showing that this effect cannot be ignored. There-
+fore, this does not constitute a relevant validation
+test and has been retired. To test the robustness of
+our model for sky residuals, we have instead added
+the test "r∥ >4h −1Mpc", which is more relevant
+because sky residuals only affectr ∥ = 0h −1Mpc.
+This alternative test is consistent with the baseline
+analysis as seen in Figure 11.
+•∆λ= 3.2Å: we rebin the continuum-fitted Lyα
+pixels into groups of four (rebinned pixels of 3.2Å),
+rather than groups of three (rebinned pixels of
+2.4Å), as is done in the baseline analysis. This vali-
+dation test results in a loss of information along the
+line-of-sight due to oversmoothing, which directly
+impacts the anisotropy of the correlation function
+and therefore AP. This test is therefore not a valid
+alternative to our baseline analysis.
+•no prior onb CIV,eff: we remove the infor-
+mative Gaussian prior on the parameterb CIV,eff
+(N(−0.019,0.005)in the baseline analysis) in the
+model of Civabsorption contamination. This test
+demonstrates that the prior on this parameter can-
+not be entirely ignored, as this effect is degenerate
+in our model. The test, "[a]dd prior onb CIV,eff,"
+is included as a better alternative in our validation
+and is consistent with the baseline analysis as seen
+in Figure 11.
+[1] A. Albrecht, G. Bernstein, R. Cahn, W. L. Freedman,
+J. Hewitt,et al., Report of the dark energy task force
+(2006), arXiv:astro-ph/0609591 [astro-ph].
+[2] DESI Collaboration, A. Aghamousa, J. Aguilar,
+S. Ahlen, S. Alam,et al., arXiv e-prints ,
+arXiv:1611.00036 (2016), arXiv:1611.00036 [astro-
+ph.IM].
+[3] M. Levi, C. Bebek, T. Beers, R. Blum, R. Cahn,et al.,
+arXiv e-prints , arXiv:1308.0847 (2013), arXiv:1308.0847
+[astro-ph.CO].
+[4] E. F. Schlafly, D. Kirkby, D. J. Schlegel, A. D.
+Myers, A. Raichoor,et al., AJ166, 259 (2023),
+arXiv:2306.06309 [astro-ph.CO].
+[5] D. Collaboration, M. Abdul Karim, A. G. Adame,
+D. Aguado, J. Aguilar,et al., The Astronomical Jour-
+nal171, 285 (2026).
+[6] DESI Collaboration, A. G. Adame, J. Aguilar,
+S. Ahlen, S. Alam,et al., JCAP2025, 021 (2025),
+arXiv:2404.03002 [astro-ph.CO].
+[7] DESI Collaboration, A. G. Adame, J. Aguilar,
+S. Ahlen, S. Alam,et al., JCAP2025, 028 (2025),
+arXiv:2411.12022 [astro-ph.CO].
+[8] DESI Collaboration, A. G. Adame, J. Aguilar,
+S. Ahlen, S. Alam,et al., JCAP2025, 012 (2025),
+arXiv:2404.03000 [astro-ph.CO].
+[9] DESI Collaboration, A. G. Adame, J. Aguilar,
+S. Ahlen, S. Alam,et al., JCAP2025, 124 (2025),
+arXiv:2404.03001 [astro-ph.CO].
+[10] DESI Collaboration, in preparation (2026).
+[11] DESI Collaboration, M. A. Karim, J. Aguilar, S. Ahlen,
+C. Allende Prieto,et al.,Phys. Rev.D 112, 083514
+(2025), arXiv:2503.14739 [astro-ph.CO].
+[12] M. Abdul Karim, J. Aguilar, S. Ahlen, S. Alam,
+L. Allen,et al.,Phys. Rev.D 112, 083515 (2025),
+arXiv:2503.14738 [astro-ph.CO].
+[13] DESI Collaboration et al., in preparation (2026).
+[14] M. McQuinn, Annual Review of Astronomy and Astro-
+physics54, 313 (2016).
+[15] K. S. Dawson, D. J. Schlegel, C. P. Ahn, S. F. Anderson,
+É. Aubourg,et al., The Astronomical Journal145, 10
+(2013), arXiv:1208.0022 [astro-ph.CO].
+[16] N. G. Busca, T. Delubac, J. Rich, S. Bailey, A. Font-
+Ribera,et al., Astronomy & Astrophysics552, A96
+(2013).
+[17] A. Slosar, V. Iršič, D. Kirkby, S. Bailey, N. G. Busca,
+et al., Journal of Cosmology and Astroparticle Physics
+2013(04), 026–026.
+[18] K. S. Dawson, J. A. Bailey, A. J. Cuesta, J. R. Brown-
+stein, D. J. Eisenstein,et al., The Astronomical Journal
+151, 44 (2016), arXiv:1508.04473 [astro-ph.CO].
+[19] H. du Mas des Bourboux, J. Rich, A. Font-Ribera, V. de
+Sainte Agathe, J. Farr,et al., Astrophys. J.901, 153
+(2020), arXiv:2007.08995 [astro-ph.CO].
+[20] B. A. Reid, L. Samushia, M. White, W. J. Percival,
+M. Manera,et al.,Mon. Not. Roy. Astron. Soc.426,
+2719 (2012), arXiv:1203.6641 [astro-ph.CO].
+[21] S. Alam, M. Ata, S. Bailey, F. Beutler, D. Bizyaev,
+et al.,Mon. Not. Roy. Astron. Soc.470, 2617 (2017),
+arXiv:1607.03155 [astro-ph.CO].
+[22] S. Alam, M. Aubert, S. Avila, C. Balland, J. E.
+Bautista,et al.,Phys. Rev.D 103, 083533 (2021),
+arXiv:2007.08991 [astro-ph.CO].
+[23] P. McDonald, Astrophys. J.585, 34 (2003), arXiv:astro-
+ph/0108064 [astro-ph].
+[24] U. Seljak, JCAP2012, 004 (2012), arXiv:1201.0594
+[astro-ph.CO].
+[25] S.-F. Chen, Z. Vlah, and M. White, JCAP2021, 053
+(2021).
+[26] M. M. Ivanov, Phys. Rev. D109, 023507 (2024).
+[27] A. Cuceu, A. Font-Ribera, B. Joachimi, and S. Nadathur,
+
+[PDF page 26]
+26
+Monthly Notices of the Royal Astronomical Society506,
+5439 (2021).
+[28] A. Cuceu, H. K. Herrera-Alcantar, C. Gordon,
+C. Ramírez-Pérez, E. Armengaud,et al., arXiv e-prints
+, arXiv:2509.15308 (2025), arXiv:2509.15308 [astro-
+ph.CO].
+[29] DESI Collaboration, A. Aghamousa, J. Aguilar,
+S. Ahlen, S. Alam,et al., arXiv e-prints ,
+arXiv:1611.00037 (2016), arXiv:1611.00037 [astro-
+ph.IM].
+[30] DESI Collaboration, B. Abareshi, J. Aguilar, S. Ahlen,
+S. Alam,et al., AJ164, 207 (2022), arXiv:2205.10939
+[astro-ph.IM].
+[31] J. H. Silber, P. Fagrelius, K. Fanning, M. Schubnell,
+J. N. Aguilar,et al., AJ165, 9 (2023), arXiv:2205.09014
+[astro-ph.IM].
+[32] T. N. Miller, P. Doel, G. Gutierrez, R. Besuner,
+D. Brooks,et al., AJ168, 95 (2024), arXiv:2306.06310
+[astro-ph.IM].
+[33] C. Poppett, L. Tyas, J. Aguilar, C. Bebek, D. Bramall,
+et al., AJ168, 245 (2024).
+[34] H. Zou, X. Zhou, X. Fan, T. Zhang, Z. Zhou,et al., PASP
+129, 064101 (2017), arXiv:1702.03653 [astro-ph.GA].
+[35] A. Dey, D. J. Schlegel, D. Lang, R. Blum, K. Burleigh,
+et al., AJ157, 168 (2019), arXiv:1804.08657 [astro-
+ph.IM].
+[36] C. Yèche, N. Palanque-Delabrouille, C.-A. Claveau,
+D. D. Brooks, E. Chaussidon,et al., Research Notes
+of the American Astronomical Society4, 179 (2020),
+arXiv:2010.11280 [astro-ph.CO].
+[37] E. Chaussidon, C. Yèche, N. Palanque-Delabrouille,
+D. M. Alexander, J. Yang,et al., Astrophys. J.944, 107
+(2023), arXiv:2208.08511 [astro-ph.CO].
+[38] A. D. Myers, J. Moustakas, S. Bailey, B. A. Weaver,
+A.P.Cooper,et al.,AJ165,50(2023),arXiv:2208.08518
+[astro-ph.IM].
+[39] DESI Collaboration, A. G. Adame, J. Aguilar, S. Ahlen,
+S. Alam,et al., AJ167, 62 (2024), arXiv:2306.06307
+[astro-ph.CO].
+[40] DESI Collaboration, A. G. Adame, J. Aguilar, S. Ahlen,
+S. Alam,et al., AJ168, 58 (2024), arXiv:2306.06308
+[astro-ph.CO].
+[41] J. Moon, D. Valcin, M. Rashkovetskyi, C. Saulder, J. N.
+Aguilar,et al.,Mon. Not. Roy. Astron. Soc.525, 5406
+(2023), arXiv:2304.08427 [astro-ph.CO].
+[42] C. Gordon, A. Cuceu, J. Chaves-Montero, A. Font-
+Ribera, A. X. González-Morales,et al., JCAP2023, 045
+(2023), arXiv:2308.10950 [astro-ph.CO].
+[43] A. G. Adame, J. Aguilar, S. Ahlen, S. Alam,
+D. M. Alexander,et al., JCAP2025, 017 (2025),
+arXiv:2411.12020 [astro-ph.CO].
+[44] A. G. Adame, J. Aguilar, S. Ahlen, S. Alam,
+D. M. Alexander,et al., JCAP2025, 008 (2025),
+arXiv:2411.12021 [astro-ph.CO].
+[45] J. Guy, S. Bailey, A. Kremin, S. Alam, D. M. Alexan-
+der,et al., AJ165, 144 (2023), arXiv:2209.14482 [astro-
+ph.IM].
+[46] Bailey et al., in preparation (2024).
+[47] A. Anand, J. Guy, S. Bailey, J. Moustakas, J. Aguilar,
+et al., The Astronomical Journal168, 124 (2024).
+[48] A. Brodzeller, K. Dawson, S. Bailey, J. Yu, A. J. Ross,
+et al., The Astronomical Journal166, 66 (2023).
+[49] N. Busca and C. Balland, Quasarnet: Human-level spec-
+tral classification and redshifting with deep neural net-
+works (2018), arXiv:1808.09955 [astro-ph.IM].
+[50] D. Green, D. Kirkby, J. Aguilar, S. Ahlen, D. M. Alexan-
+der,et al., Using active learning to improve quasar iden-
+tification for the desi spectra processing pipeline (2025),
+arXiv:2505.01596 [astro-ph.IM].
+[51] D. M. Alexander, T. M. Davis, E. Chaussidon, V. A.
+Fawcett, A. X. Gonzalez-Morales,et al., AJ165, 124
+(2023), arXiv:2208.08517 [astro-ph.GA].
+[52] K. M. Gorski, E. Hivon, A. J. Banday, B. D. Wandelt,
+F. K. Hansen,et al., The Astrophysical Journal622,
+759–771 (2005).
+[53] A. Font-Ribera, J. Miralda-Escudé, E. Arnau,
+B. Carithers, K.-G. Lee,et al., Journal of Cosmol-
+ogy and Astroparticle Physics2012(11), 059–059.
+[54] B. Wang, J. Zou, Z. Cai, J. X. Prochaska, Z. Sun,et al.,
+ApJS259, 28 (2022).
+[55] M.-F. Ho, S. Bird, and R. Garnett,Mon. Not. Roy.
+Astron. Soc.507, 704 (2021), arXiv:2103.10964 [astro-
+ph.GA].
+[56] A. Brodzeller, M. Wolfson, D. M. Santos, M. Ho,
+T. Tan,et al.,Phys. Rev.D 112, 083510 (2025),
+arXiv:2503.14740 [astro-ph.CO].
+[57] L. Ennesser, P. Martini, A. Font-Ribera, and I. Pérez-
+Ràfols, Monthly Notices of the Royal Astronomical Soci-
+ety511, 3514–3523 (2022).
+[58] L. Ángela García, P. Martini, A. X. Gonzalez-Morales,
+A. Font-Ribera, H. K. Herrera-Alcantar,et al., Analysis
+of the impact of broad absorption lines on quasar red-
+shift measurements with synthetic observations (2023),
+arXiv:2304.05855 [astro-ph.CO].
+[59] S. Filbert, P. Martini, K. Seebaluck, L. Ennesser, D. M.
+Alexander,et al.,Mon. Not. Roy. Astron. Soc.532,3669
+(2024), arXiv:2309.03434 [astro-ph.CO].
+[60] P. Martini, A. Cuceu, L. Ennesser, A. Brodzeller,
+J. Aguilar,et al., JCAP2025, 137 (2025),
+arXiv:2405.09737 [astro-ph.CO].
+[61] C. Ramírez-Pérez, I. Pérez-Ràfols, A. Font-Ribera, M. A.
+Karim, E. Armengaud,et al.,Mon. Not. Roy. Astron.
+Soc.528, 6666 (2024), arXiv:2306.06312 [astro-ph.CO].
+[62] Planck Collaboration, N. Aghanim, Y. Akrami, M. Ash-
+down, J. Aumont,et al.,Astron. Astrophys.641, A6
+(2020), arXiv:1807.06209 [astro-ph.CO].
+[63] J. E. Bautista, N. G. Busca, J. Guy, J. Rich,
+M. Blomqvist,et al., Astronomy & Astrophysics603,
+A12 (2017).
+[64] A. Cuceu, H. K. Herrera-Alcantar, C. Gordon, P. Mar-
+tini, J. Guy,et al., JCAP2025, 148 (2025),
+arXiv:2404.03004 [astro-ph.CO].
+[65] J. Guy, S. G. A. Gontcho, E. Armengaud,
+A. Brodzeller, A. Cuceu,et al., JCAP2025, 140
+(2025), arXiv:2404.03003 [astro-ph.CO].
+[66] A. Slosar, A. Font-Ribera, M. M. Pieri, J. Rich, J.-
+M.L.Goff,et al.,JournalofCosmologyandAstroparticle
+Physics2011(09), 001.
+[67] N. Busca, J. Rich, J. Bautista, A. Cuceu, A. Font-Ribera,
+et al., Journal of Cosmology and Astroparticle Physics
+2025(09), 020.
+[68] M. M. Pieri, M. J. Mortonson, S. Frank, N. Crighton,
+D. H. Weinberg,et al., Monthly Notices of the Royal
+Astronomical Society441, 1718–1740 (2014).
+[69] M. McQuinn and M. White, Monthly Notices of the
+Royal Astronomical Society415, 2257–2269 (2011).
+[70] A. Font-Ribera and J. Miralda-Escudé, Journal of Cos-
+mology and Astroparticle Physics2012(07), 028.
+
+[PDF page 27]
+27
+[71] K. K. Rogers, S. Bird, H. V. Peiris, A. Pontzen, A. Font-
+Ribera, and B. Leistedt, Monthly Notices of the Royal
+Astronomical Society476, 3716–3728 (2018).
+[72] T.Tan, J.Rich, E.Chaussidon, J.M.L.Goff, C.Balland,
+et al., Modeling of the high column density systems in
+the lyman-alpha forest (2025), arXiv:2506.13005 [astro-
+ph.CO].
+[73] S. Youles, J. E. Bautista, A. Font-Ribera, D. Bacon,
+J. Rich,et al.,Mon. Not. Roy. Astron. Soc.516, 421
+(2022), arXiv:2205.06648 [astro-ph.CO].
+[74] C. Gordon, A. Cuceu, A. Font-Ribera, H. K. Herrera-
+Alcantar, J. N. Aguilar,et al.,Mon. Not. Roy. As-
+tron. Soc.545, staf2035 (2026), arXiv:2505.08789 [astro-
+ph.CO].
+[75] A. Arinyo-i Prats, J. Miralda-Escudé, M. Viel, and
+R. Cen, Journal of Cosmology and Astroparticle Physics
+2015(12), 017–017.
+[76] C. Alcock and B. Paczyński, Nature281, 358 (1979).
+[77] S. Gontcho A Gontcho, J. Miralda-Escudé, and N. G.
+Busca, Monthly Notices of the Royal Astronomical Soci-
+ety442, 187–195 (2014).
+[78] H. Gil-Marín, J. E. Bautista, R. Paviot, M. Vargas-
+Magaña, S. de la Torre,et al.,Mon. Not. Roy. Astron.
+Soc.498, 2492 (2020), arXiv:2007.08994 [astro-ph.CO].
+[79] J. Chaves-Montero, L. Cabayol-Garcia, M. Lokken,
+A. Font-Ribera, J. Aguilar,et al., Astron.Astrophys.
+694, 10.1051/0004-6361/202452039 (2025).
+[80] J. Chaves-Montero, A. Font-Ribera, P. McDonald, E. Ar-
+mengaud, D. Chebat,et al., JCAP2026, 040 (2026),
+arXiv:2601.21432 [astro-ph.CO].
+[81] A. Loureiro, B. Moraes, F. B. Abdalla, A. Cuceu,
+M. McLeod,et al., Monthly Notices of the Royal As-
+tronomical Society485, 326–355 (2019).
+[82] R.Andrae, T.Schulze-Hartung,andP.Melchior,Dosand
+don’ts of reduced chi-squared (2010), arXiv:1012.3754
+[astro-ph.IM].
+[83] C. Ramírez-Pérez, J. Sanchez, D. Alonso, and A. Font-
+Ribera, JCAP2022, 002 (2022), arXiv:2111.05069
+[astro-ph.CO].
+[84] Ruiz-Herrera Bernal et al., in preparation (2026).
+[85] H. K. Herrera-Alcantar, A. Muñoz-Gutiérrez, T. Tan,
+A. X. González-Morales, A. Font-Ribera,et al., JCAP
+2025, 141 (2025), arXiv:2401.00303 [astro-ph.CO].
+[86] L. Casas, H. K. Herrera-Alcantar, J. Chaves-Montero,
+A. Cuceu, A. Font-Ribera,et al.(DESI Collaboration),
+Phys. Rev.D 113, 023520 (2026), arXiv:2503.14741
+[astro-ph.IM].
+[87] B. Hadzhiyska, A. Font-Ribera, A. Cuceu, S. Chabanier,
+J. Aguilar,et al.,Mon. Not. Roy. Astron. Soc.524, 1008
+(2023), arXiv:2305.08899 [astro-ph.CO].
+[88] B. Hadzhiyska, R. de Belsunce, A. Cuceu, J. Guy, M. M.
+Ivanov,et al.,Mon. Not. Roy. Astron. Soc.540, 1960
+(2025), arXiv:2503.13442 [astro-ph.CO].
+[89] A. Cuceu, A. Font-Ribera, and B. Joachimi, JCAP2020,
+035 (2020), arXiv:2004.02761 [astro-ph.CO].
+[90] J. Moustakas, J. Buhler, D. Scholte, B. Dey, and
+A. Khederlarian, FastSpecFit: Fast spectral synthe-
+sis and emission-line fitting of DESI spectra (2023),
+ascl:2308.005.
+[91] J. A. Baldwin, Astrophys. J.214, 679 (1977).
+[92] L. Ennesser, P. Martini, A. Font-Ribera, and I. Pérez-
+Ràfols, Monthly Notices of the Royal Astronomical Soci-
+ety511, 3514–3523 (2022).
+[93] S. Chabanier, C. Ravoux, L. Latrille, J. Sexton, É. Ar-
+mengaud,et al., Monthly Notices of the Royal Astronom-
+ical Society 10.1093/mnras/stae2255 (2024).
+[94] N. G. Karaçaylı, P. Martini, J. Aguilar, S. Ahlen,
+E. Armengaud,et al., JCAP2025, 004 (2025),
+arXiv:2505.07974 [astro-ph.CO].
+[95] C. Ravoux, M.-L. Abdul-Karim, J.-M. Le Goff, E. Ar-
+mengaud, J. N. Aguilar,et al., JCAP2025, 079 (2025),
+arXiv:2505.09493 [astro-ph.CO].
+[96] A. Pontzen, Physical Review D89, 10.1103/phys-
+revd.89.083010 (2014).
+[97] I. Pérez-Ràfols, A. Font-Ribera, J. Miralda-Escudé,
+M. Blomqvist, S. Bird,et al.,Mon. Not. Roy. Astron.
+Soc.473, 3019 (2018), arXiv:1709.00889 [astro-ph.CO].

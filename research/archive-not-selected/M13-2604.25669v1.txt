@@ -1,0 +1,1105 @@
+
+[PDF page 1]
+BOUNDARY EPSILON REGULARITY FOR INCOMPRESSIBLE
+NAVIER–STOKES EQUATIONS VIA WEAK-STRONG UNIQUENESS
+SIRAN LI
+Abstract.We show that finite-energy weak solutions to the incompressible Navier–Stokes
+equations on a three-dimensional bounded smooth domain are regular up to the boundary,
+provided that theL4
+t L4
+x-norm of the solution is smaller than a constant depending only on the
+domain. This answers a problem raised in [D. Albritton, T. Barker, and C. Prange,J. Math.
+Fluid Mech.25(2023), Paper No. 49]. Our proof relies on a new slicing construction near the
+boundary of the domain.
+0.Introduction
+This paper is concerned with the regularity theoryup to the boundaryof the incompressible
+Navier–Stokes equations on a smooth bounded domainΩ⊂R3:
+
+
+
+∂tU+U· ∇U−∆U+∇P= 0,
+∇ ·U= 0in]−1,0[×Ω.
+(1)
+Here,U:]t 1, t2[×Ω→R 3 is the velocity andp:]t1, t2[×Ω→Ris the pressure of an incompressible
+fluid flow for some−∞ ≤t 1 < t2 ≤ ∞. The kinematic viscosity is normalised to1.
+The partial regularity theory for the incompressible Navier–Stokes equations has long been
+a central topic in mathematical hydrodynamics and the analysis of PDE [15,22,23,26,28,36].
+In this direction, the epsilon regularity theorem at one scale has played a foundational role in
+the proof of some of the most important results in the regularity theory for Navier–Stokes;cf.
+Caffarelli–Kohn–Nirenberg [9], Escauriaza–Seregin–˘Sverák [10], Ne˘ cas–R˚ užička–˘Sverák [29], and
+Tsai [37], etc. Various proofs of the epsilon regularity theorem can be found in the literature,
+either via direct iteration [9,25] and De Giorgi–Nash–Moser iteration arguments [38,40], or via
+compactness arguments [24,27].
+In the recent nice work [2], Albritton–Barker–Prange (2023) gave a new proof of the one-
+scale epsilon regularity theorem, based on a weak-strong uniqueness argument and the theory of
+very weak solutionsto the Navier–Stokes equations pioneered by Foias [16], Amann [3,4], and
+Farwig–Galdi–Sohr [13].1 The following interior epsilon regularity theorem — the quantitative
+part of [2, Theorem B] — ascertains that if the first-time singularities of a finite-energy weak
+solutionUto the Navier–Stokes equations do not occur strictly before timet= 0, and if the
+spacetimeL 4-norm ofUover]−1,0[×B 1 is smaller than a universal constantε >0, thenUis
+essentially bounded and hence smooth (cf. Serrin [33]) up to time0in the interior ofΩ.
+Date: April 29, 2026.
+2020Mathematics Subject Classification.35Q30, 76D05.
+Key words and phrases.Navier–Stokes equations; boundary regularity; epsilon regularity; very weak solutions.
+1The authors of [2] attributed “the genesis of the paper” to “an offhanded comment in 2017” by Vladimír˘Sverák.
+1
+arXiv:2604.25669v1  [math.AP]  28 Apr 2026
+
+[PDF page 2]
+Theorem 1.There exists ε∈]0,1[such that for anyM∈]0,∞[, for any finite-energy weak
+solutionUto the Navier–Stokes equations belonging toC ∞ (]−1, T[×B 1)for allT∈]−1,0[
+such that∥U∥ L∞
+t L2x(]−1,0[×B1) +∥∇U∥ L2
+t L2x(]−1,0[×B1) ≤M,the following result holds.
+Let0< ε < ε. Assume that∥U∥ L4(]−1,0[×B1) ≤ε. ThenUis essentially bounded in
+]−1,0[×B 1/4 with∥U∥ L∞(]−1,0[×B1/4) ≤P(M, ε), wherePis a polynomial.
+For convenience of reference, we denote2
+SM(]t1, t2[×Ω]) :=
+ß
+U:Uis a finite-energy weak solution in]t 1, t2[×Ω
+with∥U∥ (L∞
+t L2x∩L2
+t ˙W 1,2
+x )(]t1,t2[×Ω) ≤M
+™
+.(2)
+Definition 2.A functionU:]t 1, t2[×Ω→R 3 is said to be a finite-energy weak solution to the
+Navier–Stokes equations in]t1, t2[×ΩifUsatisfies
+∂tU+U· ∇U−∆U+∇P= 0,∇ ·U= 0inD ′ (]t1, t2[×Ω)
+and the norm∥U∥ (L∞
+t L2x∩L2
+t ˙W 1,2
+x )(]t1,t2[×Ω) is finite.
+A brief outline of the proof in [2] is given below. It is a perturbative argument: thanks
+to the hypothesis∥U∥ L4
+t L4x
+≤ε < ε, one may regard the very weak solution to the Navier–
+Stokes equations as a perturbation of the very weak solution to the Stokes problem. Farwig–
+Galdi–Sohr [13] developed a linear theory for initial-boundary value problems for the very weak
+solutions. The major technicality for its application to the epsilon regularity lies in the selection
+of appropriate initial-boundary data.
+Consider the initial-boundary value problem for the Stokes problem on a smooth3 bounded
+domainΩ⊂R 3 and−∞< t 1 < t2 <∞:
+
+
+
+∂tU−∆U+∇P=∇ ·F,∇ ·U= 0in]t 1, t2[×Ω,
+U=aon]t 1, t2[×∂Ω,
+U=bon{t 1} ×Ω.
+(3)
+In the caseF≡0,b= 0, 4 this linear problem has a unique very weak solution in the regularity
+classL 4
+t L6
+x, such that∥U∥ L4
+t L6x
+≲∥a∥ L4
+t L4x
+; see [13,14]. Thus, under the smallness assumption
+∥U∥ L4
+t L4x
+≤ε < ε, by a fixed point argument applied to the mild solution (i.e., weak solution
+represented as an integral of the forcing term and initial-boundary data via the Stokes semigroup)
+to the Stokes problem, we may obtain a unique weak solution inL4
+t L6
+x for the Navier–Stokes
+equations,i.e., Equation(3)withtheforcingtermF=U⊗U. Then, byaweakstronguniqueness
+argument, this unique weak solution coincides withU. The contractivity of the solution operator
+needed to run the fixed point argument is guaranteed by the smallness of the universal constant
+ε. Moreover, the region where we apply the above arguments — which is required to haveL4
+x-
+small initial data andL4
+t L4
+x-small boundary data — can be chosen in view of theL4
+t L4
+x-smallness
+ofUinΩvia pigeonholing over the spheres centred at(t, x) = (0,0 ). This process is referred
+to as spatial-temporal slicing in [2]. Once we promote the regularity ofUfromL4
+t L4
+x toL 4
+t L6
+x,
+2For a functionf=f(x), we write∥f∥ ˙W 1,2
+x (Ω) :=R
+Ω |∇f(x)|2 dx	1/2
+≡ ∥∇f∥ L2x(Ω).
+3By [13,14],C 2,1-regularity for the domainΩsuffices here.
+4Subject to some technical compatibility conditions for the initial and boundary values. See §1 for details.
+2
+
+[PDF page 3]
+the latter falls within the range of indices entailed by the Ladyženskaja–Prodi–Serrin regularity
+criterion [23,30,33], which then bootstraps the interior regularity ofUtoL∞
+t L∞
+x .
+The following question is posed in [2]:Can we establish an epsilon regularity theo-
+remup to the boundaryfor the Navier–Stokes equations based on the weak strong
+uniqueness theory for very weak solutions?Let us quote [2, Remark 4.2]:
+Itremainsanopenproblemastowhethersuchaproofcanbedoneforestablishing
+epsilon regularity results near a boundary. Indeed, the linear results of Farwig
+et al.[14] and of Fabeset al.[12] ask for smoothness of the domainΩ, see for
+instance Theorem 2.2 above. However, we are unable to carry out the slicing
+procedure of Step 1 [in the proof of Theorem B] above near a smooth boundary.
+To address this problem, two difficulties must inevitably be encountered. They both echo
+the above quoted remark in that an effective slicing or foliation of the fluid domain arbitrarily
+close to the boundary remains elusive.
+(1) First, assuming thatUhas smallL 4
+t L4
+x-norm in]−1,0[×Ωdoes not imply that the trace
+ofUon∂Ωhas smallL 4
+t L4
+x-norm in]−1,0[×∂Ω. Indeed, for a finite-energy weak solution
+U∈
+Ä
+L∞
+t L2
+x ∩L 2
+t ˙W 1,2
+x
+ä
+(]−1,0[×Ω), one may only infer from the trace inequality that
+U∈L 2
+t L4
+x (]−1,0[×∂Ω), which is a weaker result thanU∈L 4
+t L4
+x (]−1,0[×∂Ω). 5
+(2) Second, toperformtheaforementionedslicingargumentneartheboundary, merelyslicing
+overconcentricspheresinspaceisnolongersufficient, asitonlyleadstointeriorregularity
+results. On the other hand, fixing a putative singular point on the boundary, we cannot
+simply slice by hemispheres centred at this point, because by Item (1) above we do not
+haveL 4
+t L4
+x-smallness of the trace ofUon∂Ω.
+The goal of this paper is to prove the boundary epsilon regularity theorem as follows. Other
+boundary regularity results for the Navier–Stokes equations have been obtained in Seregin [31],
+Seregin–Shilkin–Solonnikov [32], Albritton–Barker [1], and Breit [8], etc.
+Theorem 3.LetΩ⊂R 3 be a smooth bounded domain. There exists a constantε0 >0such
+that the following holds. LetU∈S M (]−1,0[×Ω)be a finite-energy weak solution to the
+Navier–Stokes equations. Assume that for anyT∈]−1,0[one hasU∈C ∞ (]−1, T[×Ω),
+and that∥U∥ L4(]−1,0[×Ω) < ε 0.ThenU∈C ∞ ]−1,0]× Ω. In addition,∥U∥ C∞(]−1,0]×Ω) ≤
+C′ ∥U∥ L4(]−1,0[×Ω) for a constantC′ depending only onMandΩ.
+The key tool for the proof of Theorem 3 is a new spatial slicing construction in Proposi-
+tion 8, which may be of independent interest. Assume∂Ω =∂R 3
++ and fix anyx ⋆ ∈∂Ω. One
+may find a paraboloid tangential to the boundary only atx⋆. Take a smooth convex regionV0
+enclosed by the paraboloid from below and some spherical cap from above. If we contract it to
+{x⋆}along the geodesics connectingx ⋆ and the points on∂V0, we obtain a foliation ofV0 such
+that each foliumΣs is a smooth convex region, whose bottom part is a paraboloid that touches
+∂Ωat a single pointx ⋆ in aC 1-tangential manner. In addition, it is clear that the annulus be-
+tween the contracted regions at times= 1/4ands= 1/2has large volume, due to the convexity
+ofV 0 and the regions obtained along the contraction. Hence, by pigeonholing over this foliation,
+we may find somes∈[0,1[such that the trace ofUoverΣ s has a smallL4
+t L4
+x-norm.
+5Throughout, the notationu∈L p
+t Lq
+x(]t1, t2[×∂Ω)and the like are understood in the sense of trace.
+3
+
+[PDF page 4]
+The region enclosed byΣs has zero distance from the boundary∂Ω, and all the estimates
+involved in the preceding process are uniform in the base pointx⋆ ∈∂Ω. The above construction
+thus allows us to deduce epsilon regularity results up to the boundary, namely Theorem 3.
+Organisation.The remaining parts of the paper are organised as follows. In §1 we collect some
+background knowledge on the theory of very weak solutions and the Ladyženskaja–Prodi–Serrin
+regularity criterion. In §2 we present the crucial novel slicing technique in this paper. The Main
+Theorem 3 is proved in §3. Finally, a few concluding remarks are given in §4.
+1.Preliminaries
+The notion ofvery weak solutionsto the Stokes equations is central to our development.
+The following formulation is taken from Amann [3,4], Farwig–Galdi–Sohr [13], and Farwig–
+Kozono–Sohr [14], whereof the caseF=U⊗U(e.g., forU∈L 2
+t L2
+x (]t1, t2[×Ω)) corresponds to
+the Navier–Stokes equations.
+Definition4.LetΩbe a domain inR 3 and−∞ ≤t 1 < t2 ≤+∞. Givena∈L 1 ]t1, t2[×∂Ω;R 3,
+b∈L 1 {t1} ×Ω;R 3, andF∈L 1 ]t1, t2[×Ω;R 3×3 satisfying the compatibility conditions
+Z
+∂Ω
+a(t, x)·n(x) dH 2(x) = 0and
+Z
+Ω
+b(x)· ∇ψ(x) dx= 0for allt∈]t 1, t2[andψ∈C ∞(R3).
+An integrable functionU:]t1, t2[×Ω→R 3 is said to be a very weak solution to the initial-boundary
+value problem of the forced Stokes problem:
+
+
+
+∂tU−∆U+∇P=∇ ·F,∇ ·U= 0in]t 1, t2[×Ω,
+U=aon]t 1, t2[×∂Ω,
+U=bon{t 1} ×Ω,
+if for all test functionsΦ∈C 1
+0
+Ä
+[t1, t2[;C 2
+0,σ
+ Ωä
+andq∈C ∞ [t1, t2]× Ω;R, it holds that
+−
+Z t2
+t1
+Z
+Ω
+U· {∂ tΦ + ∆Φ +∇q}dxdt=−
+Z t2
+t1
+Z
+Ω
+F:∇Φ dxdt
++
+Z
+Ω
+b(x)·Φ(t 1, x) dx−
+Z t2
+t1
+Z
+∂Ω
+{a·(∇Φ·n) + (a·n)q}dH 2(x) dt.
+Here and hereafter,C2
+0,σ
+ Ω :=u∈C 2 Ω;R 3 :u
+
+∂Ω ≡0,∇ ·u= 0 	.
+The following existence and uniqueness theorem has been established in [14, Lemma 1.2];
+see also [2, Theorem 2.2]. In this paper, we shall takes= 4andq= 6.
+Proposition 5.Lets, q∈[4,∞[with 2
+s + 3
+q = 1. Leta∈L s
+t L
+2q
+3
+x (]t1, t2[×Ω)andF≡0,b≡0.
+Assume thatasatisfies the compatibility condition in Definition 4. Then there exists a unique
+very weak solutionU∈L s
+t Lq
+x(]t1, t2[×Ω)to the Stokes problem(3). In addition,
+∥U∥ Ls
+t Lq
+x(]t1,t2[×Ω) ≤C∥a∥
+Ls
+t L
+2q
+3x (]t1,t2[×Ω)
+(4)
+for some constantCdepending only onq,t 1,t 2, andΩ.
+We also have the following result on the uniqueness ofL2
+t L2
+x-very weak solutions and the
+energy identity. See [2, lemma 2.5 and Remark 2.6] and [34, IV, Theorems 2.3.1 and 2.4.1].
+Proposition 6.In the setting of Definition 4, letU∈L 2
+t L2
+x (]t1, t2[×Ω)be a very weak solution
+to the linear Stokes problem(3).
+4
+
+[PDF page 5]
+(1) IfF,a,bare all constantly zero, thenU≡0on]t 1, t2[×Ω.
+(2) Ifaandbare constantly zero, and ifF∈  ]t1, t2[×Ω;R 3×3, thenU∈C 0
+t L2
+σ,x ([t1, t2]×Ω)∩
+L2
+t W 1,2
+0,σ,x (]t1, t2[×Ω)with the energy identity:
+∥U(t,•)∥ 2
+L2x(Ω) + 2
+Z t
+t1
+Z
+Ω
+|∇U(x, s)|2 dxds=−2
+Z t
+t1
+Z
+Ω
+F:∇Udxdsfor allt∈[t 1, t2].
+Finally, recall the following celebrated result by Ladyženskaja–Prodi–Serrin [23,30,33].6
+Theorem 7.LetU∈S M (]−1,0[×B r0(x0))be a finite-energy weak solution to the Navier–
+Stokes equations. Suppose for somes∈[2,∞[andr∈]3,∞]that
+U∈L s
+t Lr
+x (]−1,0[×B r0(x0))with 2
+s + 3
+r ≤1.
+ThenUis smooth with respect to the space variables inBr0/2(x0). The boundary regularity ver-
+sion of this result also holds,i.e., withB+
+r0(x0)andB +
+r0/2(x0)in place ofB r0(x0)andB r0/2(x0),
+respectively.
+The proof of Theorem 7 follows essentially from energy considerations. Note thatLs
+t Lr
+x
+with2/s+ 3/r= 1are scale-invariant spaces for the solutions to the Navier–Stokes equations.
+The endpoint case(s, r) = (∞,3)was established in Escauriaza–Seregin– ˘Sverák [10], which
+relies on delicate applications of the Carleman estimates for the backward uniqueness of the heat
+equation; see also Tao [36] for quantitative refinements.
+2.Slicing by clams
+We construct the following foliation of a convex body compactly supported in the upper
+halfspace R3
++.
+Proposition 8.There existsV 0 ⊂− 1
+2 , 1
+2
+ ×− 1
+2 , 1
+2
+ ×[0,1]such that the following holds.
+(1)V 0 is a smooth convex body rotationally symmetric with respect to thez-axis.
+(2) V0 = S
+s∈[0,1[ Σs where eachΣ s is a smooth convex surface. AlsoΣ s ∩Σ s′ ={0 }and
+T0Σs =T 0Σs′ =∂R 3
++ for anys̸=s ′ in[0,1[.
+(3) There is a smooth functionz 0 : [0,1]→ 0, 1
+4
+ withz 0(s)↘0ass↗1, such that
+Σs ∩ {0≤z≤z 0(s)}is a paraboloid andΣs ∩ {4z0(s)≤z≤1}is a spherical cap for each
+s∈[0,1[.
+(4) There exists a universal constantc0 >0such that the volume ofS
+s∈] 1
+4 , 1
+2[ Σs ≥c 0.
+In other words, we construct a smooth convex bodyV0 ⊂R 3 foliated by convex surfaces
+Σs that intersectC1-tangentially at the origin0. For each foliumΣs, its upper part is a spherical
+cap and its lower part is a paraboloid. The shape ofV0 is like a clam.
+Several notations are used in this section. Fora, b∈R 3, we write[a, b]for the straight
+line segment inR3 with endpointsa,b; similarly for]a, b[,[a, b[, and]a, b]. Also, forS⊂R 3 and
+λ≥0we writeλS:={λx:x∈S} ⊂R 3.
+Proof of Proposition 8.We first constructΣ0 =∂V 0 as follows. Consider the paraboloid
+P0 =
+ß
+(y′, y3)∈R 2 ×R:y 3 = |y′|2
+4 ,|y ′| ≤1
+™
+.
+6Throughout this paper,Br(x0)is the Euclidean ball inR3 centred atx0 with radiusr, andB +
+r (x0) :=B r(x0)∩
+R3
++. The boldface0 always denotes the origin inR3.
+5
+
+[PDF page 6]
+Then at|y ′|= 1√
+2 one hasy 3 = 1
+8 for(y ′, y3)∈P 0, whiley 3 = 1
+2 for(y ′, y3)∈∂B +
+1 (0), the
+hemisphere of radius1. An easy gluing ofP0 ∩ {y3 ≤ 1
+8 }and∂B +
+1 (0)∩ {y 3 ≥ 1
+2 }utilising the
+standard mollifier yields a smooth, (strictly) convex surfaceΣ0 ⊂− 1
+2 , 1
+2
+ ×− 1
+2 , 1
+2
+ ×[0,1]that
+is rotationally symmetric with respect to thez-axis. Note thatΣ0 intersects∂R 3
++ at the origin
+withT 0Σ0 =∂R 3
++.
+Denote byV0 the convex body enclosed byΣ0. It verifies Condition (1) in the proposition.
+Note thatV 0 is star-shaped with respect to0, and
+V0 =
+[
+x∈Σ0
+[0, x].
+Then, observe that
+Vs :=
+[
+x∈Σ0
+]0,(1−s)x[≡(1−s)V 0
+is a convex body for eachs∈]0,1[, whileΣs :=∂V s satisfies V0 =S
+s∈[0,1[ Σs andΣ s ∩Σ s′ ={0 }
+for distinctsands ′. We also observe that, for eachs∈[0,1[, the part ofΣ s in the vicinity of
+the origin0 is a paraboloid. Indeed, it takes the form(1−s)P0, and
+x3 = |x′|2
+4(1−s) for eachx= (x ′, x3)∈(1−s)P 0.
+That is,(1−s)P 0 is a paraboloid with a larger curvature thanP0, which intersects the halfspace
+∂R3
++ in theC 1-tangential manner at0. This verifies Condition (2) in the proposition. Earlier
+arguments in this paragraph and the choice
+z0(s) = 1−s
+8
+together verify Condition (3).
+Finally, denote byJ(K)the John ellipsoid of convex bodyK. Then
+Volume
+Ö
+[
+s∈] 1
+4 , 1
+2[
+Σs
+è
+= Volume
+Ä
+V 1
+4
+\V 1
+2
+ä
+≥ 1
+4Volume
+Ä
+V 1
+4
+ä
+≥ 1
+4Volume
+Ä
+J
+Ä
+V 1
+4
+ää
+=:c 0.
+This verifies Condition (4).□
+Remark 9.By adapting the proof above, one may construct a smooth convex bodyV 0 such
+that the graphing function of each foliumΣs has arbitrary vanishing order at the origin for each
+s∈[0,1[;i.e., for each fixedℓ∈N,Σ s intersects the halfspace∂R3
++ in theC ℓ-tangential manner
+at0 . To this end, we simply replaceP0 by
+¶
+(y′, y3)∈R 2 ×R:y 3 =c|y ′|ℓ+1,|y ′| ≤1
+©
+with some suitablec=c(ℓ).
+3.The proof
+This section is devoted to the proof of the Main Theorem 3.
+6
+
+[PDF page 7]
+Proof.The interior epsilon regularity theorem has already been established in [2], so it suffices
+to establish boundary regularity only. All the constantsCi,i∈Nin this proof are constants
+depending only on theC2-geometry of the domainΩ.
+We divide the arguments into eight steps below.
+Step 1: Boundary straightening.SinceΩ⋐R 3 is a bounded smooth domain, there exists a
+positive constantr0 depending only theC2-geometry ofΩsuch that the following holds: for each
+x⋆ ∈∂Ω, there exists a diffeomorphismΦx⋆ defined onB32r0(x⋆)∩Ωwhich flattens the boundary
+nearx ⋆ and has bilipschitz constant no larger than2(namely thatΦ x⋆ is 2-bilipschitz). It is
+crucial that the choice ofr0 is uniform inx⋆ ∈∂Ω.
+Recall thatB r(x)denotes the Euclidean ball of centrexand radiusrinR 3 andB +
+r (x) :=
+Br(x)∩R 3
++ is the upper half ball;Br ≡B r(0)andB +
+r ≡B +
+r (0). Now we fix, once and for all
+thoughout this proof, a pointx⋆ ∈∂Ωand a number
+r0 ∈
+ò
+0, inj rad (∂Ω)
+64
+ï
+.
+Here and hereafter,inj rad (∂Ω)is the injectivity radius of the boundary∂Ω, which depends only
+on theC 2-geometry ofΩ. That is, the collar{x∈Ω : dist(x, ∂Ω)<inj rad (∂Ω)}is globally
+diffeomorphic to the product∂Ω×]0,inj rad (∂Ω)[via the exponential map starting from the
+points on∂Ωalong the inward normal vector field.
+Let us designate
+‹U(t, y) :=U  t,Φ −1
+x⋆ (y) ∈L 4
+t L4
+x
+ ]−1,0[×B +
+64r0
+ .(5)
+Then
+‹U
+
+L4
+t L4x
+Ä
+]−1,0[×B+
+32r0
+ä <2ε 0.
+Step 2: Spatial slicing.Recall the clam-like smooth convex regionV0 constructed in Propo-
+sition 8. Consider
+V ′ := 16r0V0
+together with its foliation
+V ′ =
+[
+s∈[0,1[
+Σ′
+s
+with
+Σ′
+s := 16r0Σs.
+The symbolsV 0,Σ s are as in Proposition 8.
+By Fubini’s theorem, we have
+Z 0
+−1
+Z 8r0
+4r0
+Z
+Σ′s
+‹U
+
+4
+dH2 dsdt≤
+‹U
+
+4
+L4
+t L4x
+Ä
+]−1,0[×B+
+32r0
+ä <(2ε 0)4.
+We then infer from the pigeon hole principle that
+Z 0
+−1
+Z
+Σ′s
+‹U
+
+4
+dH2 dt≤8
+‹U
+
+4
+L4
+t L4x
+Ä
+]−1,0[×B+
+32r0
+ä <128ε 4
+0 (6)
+for somes∈]4r 0,8r 0[.
+7
+
+[PDF page 8]
+For future references, from now on we designate
+V≡V s,x⋆ :=the smooth, convex region whose boundary isΣ′
+s.(7)
+Step 3: Temporal slicing.Again, by pigeon hole and Fubini, we have
+Z
+B+
+32r0
+‹U(t 0, x)
+
+4
+dx≤8
+‹U
+
+4
+L4
+t L4x
+Ä
+]−1,0[×B+
+32r0
+ä <128ε 4
+0 (8)
+for somet 0 ∈−1,− 7
+8
+.
+Step 4: Boundary and initial data.Recall the nice regionVfrom Equation (7). Set
+ea:=‹U
+
+]−1,0[×∂V
+, eb:= ‹U
+
+{t=t0}
+.
+In view of Equations (6) and (8), one has
+∥ea∥L4
+t L4x(]−1,0[×∂V) +
+eb
+
+L4x
+Ä
+{t0}×B+
+32r0
+ä ≤2
+7
+4
+‹U
+
+L4
+t L4x
+Ä
+]−1,0[×B+
+32r0
+ä
+<2
+11
+4 ε0.(9)
+Also recall the diffeomorphismΦx⋆ defined in Step 1 of the proof. Set
+R:= Φ −1
+x⋆ (V)⊂Ω.(10)
+Note that Rintersects∂Ωin the singletonx ⋆, with
+Tx⋆ (∂R) =T x⋆ (∂Ω).
+We have the following:
+a:=U
+
+]−1,0[×∂R
+, b:=U
+
+{t=t0}
+(11)
+satisfy that
+∥a∥L4
+t L4x(]−1,0[×∂R) +∥b∥ L4x
+Ä
+{t0}×Φ−1
+⋆
+Ä
+B+
+16r0
+ää ≤8∥U∥ L4
+t L4x(]−1,0[×[B32r0(x⋆)∩Ω])
+<8ε 0,(12)
+thanks to Equation (9) and the fact thatΦx⋆ is2-bilipschitz.
+Step 5: Rectifying the boundary data.We argue as in [2, §3.2, Proof of Theorem A’]. The
+treatment for nonzero initial databrelies on the Stokes semigroup estimates in theLp-framework,
+which is a classical topic (see,e.g., Giga [20]).
+Indeed, the quantitybdefined in Equation (11) is divergence-free in the sense of distri-
+butions on{t 0} ×Φ −1
+⋆
+ B+
+16r0
+ ⊂ {t 0} ×(B 32r0 ∩Ω). Also, in view of the definition ofRin
+Equation (10) and thatΦx⋆ is 2-bilipschitz, we haveR⊂B 16r0(x⋆)∩Ω.
+Let us choose a spatial cutoff function
+φ∈C ∞
+c
+ Ω ,0≤φ≤1, φ≡1onB 10r0(x⋆)∩ Ω,
+φ≡0on Ω\B 14r0(x⋆),and|∇φ| ≤ 1
+r0
+.(13)
+Thenφb(identified with its one extension-by-zero) defines an extension ofb
+
+R on{t 0} ×Ω, which
+is not divergence-free in general.
+8
+
+[PDF page 9]
+By the Bogovski˘i estimates [6,7], one may find a correction termvBog ∈L 4
+x ({t0} ×Ω)and
+a constantC 0 depending only onr0 (hence only on theC2-geometry ofΩ) such that
+div (vBog) =−div(φb),∥v Bog∥L4x({t0}×Ω) ≤C 0∥b∥L4({t0}×[B16r0(x⋆)∩Ω]).
+To proceed, define
+E[b] :=φb+v Bog ∈L 4
+x ({t0} ×Ω).(14)
+This is a divergence-free extension ofφb(hence ofb
+
+R) with
+E[b]
+
+L4x({t0}×Ω) ≤C 1∥b∥L4x({t0}×[B16r0(x⋆)∩Ω]) (15)
+for someC 1 depending only onr0. Then we set
+vbdry :=H Ω(• −t 0)⋆ E[b],(16)
+whereH Ω is the Dirichlet heat kernel onΩ. Recall thatt 0 ∈ −1,− 7
+8
+. We then have the
+estimates (cf. Fabes–Lewis–Rivière [12, Lemma IV.3.2] and the analogues forHΩ [21,39]):
+
+
+
+∥vbdry∥L4(]t0,0[×∂R) ≤C 2
+¶
+(−t0)
+1
+8 + (−t0)
+1
+4
+©E[b]
+
+L4x({t0}×Ω) ≤C 3∥b∥L4x({t0}×Ω),
+∥vbdry∥L4
+t L6x(]t0,0[×R) ≤C 4(−t0)
+1
+8
+E[b]
+
+L4x({t0}×Ω) ≤C 5∥b∥L4x({t0}×Ω).
+(17)
+HereC 2,· · ·, C 5 depend only on theC2-geometry ofΩ.
+Observe thatdivv bdry = 0in the distributional sense. Hence,
+Z
+∂R
+vbdry ·ndH 2 = 0.
+Step 6: Linear estimates.Put
+a′ :=a−v bdry
+
+∂R .(18)
+By Farwig–Kozono–Sohr [14, Theorem 2.2], there exists a unique very weak solution
+Ua′ ∈L 4
+t L6
+x (]t0,0[×R)
+to the Stokes problem∂tUa′ −∆U a′ +∇P= 0with zero external forcing, zero initial data at
+t=t 0, and boundary dataa′ on∂R.
+Recall the boundary correction termvbdry from Equation (16). By Farwig–Galdi–Sohr [13]
+and Farwig–Kozono–Sohr [14, Lemma 1.2],
+U:=U a′ +v bdry ∈L 4
+t L6
+x (]t0,0[×R)(19)
+is the unique very weak solution to the Stokes problem∂tU−∆ U+∇P= 0with zero external
+forcing, initial databatt=t 0, and boundary dataaon∂R.
+Moreover, Usatisfies the estimate:
+U
+
+L4
+t L6x(]t0,0[×R) ≤C 6
+n
+∥a∥L4(]t0,0[×∂R) +∥b∥ L4x({t0}×[B32r0(x⋆)∩Ω])
+o
+,(20)
+whereC 6 depends only onr0. It then holds by Equation (12), it holds that
+U
+
+L4
+t L6x(]t0,0[×R) <8C 6ε0.(21)
+The remaining parts of the proof are essentially the same as in [2, Proof of Theorem A].
+We present the details for the sake of completeness.
+9
+
+[PDF page 10]
+Step 7: Fixed point arguments.Having obtained the linear Stokes estimate, namely Equa-
+tion (20), we are ready to deduce the existence and uniqueness of the very weak solution to the
+Navier–Stokes equation.
+Consider the perturbed Stokes system:
+
+
+
+∂tV−∆V+∇P=−div  U+V  ⊗ U+V  in]t 0,0[×R,
+divV= 0in]t 0,0[×R,
+V= 0on]t 0,0[×∂R,
+V
+
+t=t0
+= 0on{t 0} ×R.
+(22)
+We construct a fixed point for the mild solution
+V(t, x) =−
+Z 0
+t0
+esAdiv U+V  ⊗ U+V  ds≡B U+V; U+V  ,(23)
+where{e −tA}t>0 is the Stokes semigroup andAthe Stokes operator. Also,Bis a bilinear
+operator given by
+B[D;E] :=−
+Z 0
+t0
+esAdiv (D⊗E) ds.
+We shall also use the linear operator:
+L[D](t,•) :=−
+Z t
+t0
+esAdivD⊗ U+ U⊗D  ds.
+From the well-known estimate:
+esAdiv(D⊗E)
+
+L6x
+≤ C7
+(−s)3/4 ∥D(t,•)∥ L6x∥E(t,•)∥ L6x,
+together with the Hardy–Littlewood–Sobolev inequality, we deduce that
+B[D;E]
+
+L4
+t L6x(]t0,0[×R) ≤C 8∥D∥L4
+t L6x(]t0,0[×R)∥E∥L4
+t L6x(]t0,0[×R) (24)
+as well as
+L[D]
+
+L4
+t L6x(]t0,0[×R) ≤C 9∥D∥L4
+t L6x(]t0,0[×R)
+U
+
+L4
+t L6x(]t0,0[×R).(25)
+The constantC 7 =C 7(Ω). It then holds by Gallagher–Iftimie–Planchon [17, Lemma 4.1] that
+Equation (23) has a unique fixed pointV∈L4
+t L6
+x, provided that
+U
+
+L4
+t L6x(]t0,0[×R) < minC−1
+8 , C−1
+9
+	
+4 .(26)
+The parametersC8,C 9 are given by Equations (24) and (25). In addition, the solutionVsatisfies
+∥V∥ L4
+t L6x(]t0,0[×R) ≤4C 8
+U
+2
+L4
+t L6x(]t0,0[×R).
+In view of Equation (21) obtained in the previous step, the smallness condition in Equa-
+tion (26) is satisfied whenever
+ϵ0 ≤ minC−1
+8 , C−1
+9
+	
+32C6
+.(27)
+In this case, the unique fixed pointVsatisfies
+∥V∥ L4
+t L6x(]t0,0[×R) ≤4C 8(8C6ε0)2 = 256C 2
+6 C8ε2
+0 ≤64C 6ε0.(28)
+By [12, Theorem 3.3],Vis the unique strong solution to Equation (22) inL4
+t L6
+x (]t0,0[×R).
+10
+
+[PDF page 11]
+Step 7: Weak-strong uniqueness.We show that
+U≡ U+V,
+whereUis the given finite energy weak solution to the Navier–Stokes equations, andVis the
+unique strong solution to Equation (22) inL4
+t L6
+x (]t0,0[×R)constructed in the previous step.
+Indeed, we set
+Z:=V+ U−U
+and recall thatU− U∈L 4
+t L4
+x (]t0,0[×R). ThenZis a very weak solution to the Stokes system
+
+
+
+∂tZ−∆Z+∇P= 0anddivZ=Fin]t 0,0[×R,
+Z= 0on]t 0,0[×∂R,
+Z
+
+t=t0
+= 0on{t 0} ×R,
+with the forcing term
+F=U⊗U−  U+V  ⊗ U+V  .
+Observe by Hölder’s inequality thatF∈L2
+t L2
+x (]t0,0[×R). Thanks to Sohr [34, IV, Theo-
+rems 2.3.1 and 2.4.1] (see also Albritton–Barker–Prange [2, Lemma 2.5 and Remark 2.6]),Zis
+in the regularity class
+Ä
+C0
+t L2
+x ∩L 2
+t W 1,2
+0,x
+ä
+([t0,0]×R)and satisfies the energy identity:
+1
+2
+Z
+R
+|Z(t, x)|2 dx+
+Z t
+t0
+Z
+R
+|∇Z(t ′, x)|2 dxdt ′ =
+Z t
+t0
+Z
+R
+Z⊗  V+ U :∇Zdsdt ′ (29)
+for anyt∈[t 0,0[. See also Proposition 6.
+Consider
+E(t) := sup
+t′∈[t0,t]
+1
+2
+Z
+R
+|Z(t ′, x)|2 dx+
+Z t
+t0
+Z
+R
+|∇Z(t ′, x)|2 dxdt ′.
+By Equation (29) and Hölder’s, Young’s and the Sobolev inequalities, one concludes that
+E(t)≤C 10E(t)
+Z t
+t0
+ V+ U (s,•)
+4
+L6x(R) ds
+for anyt∈[t 0,0[. It is easy to see thatE(t) = 0for anyt > t 0 witht−t 0 sufficiently small.
+Thus, a continuity argument yields thatE(t)≡0for allt∈[t 0,0[.
+Step 8: Iteration for higher regularity via Ladyženskaja–Prodi–Serrin.Once we obtain
+U∈L 4
+t L6
+x (]t0,0[×R), we may conclude via a bootstrap argument via the Ladyženskaja–Prodi–
+Serrin regularity criterion [23,30,33],cf. e.g., Barker–Prange [5, Lemma 12], to promote the
+regularity ofU∈L 4
+t L6
+x (which is the endpoint of the range of indices entailed by Ladyženskaja–
+Prodi–Serrin) toL6
+t L6
+x (which is subcritical), and hence successively toL∞
+t L∞
+x . See also Seregin–
+Shilkin–Solonnikov [32] for a similar bootstrap process for the boundary regularity of suitable
+weak solutions involving a smallness condition on the pressure.
+Fromthepreviousstepsinthisproof,U∈L 4
+t L6
+x (]t0,0[×R)istheuniqueveryweaksolution
+to the Navier–Stokes equations in]t0,0[×R, wheret 0 ∈−1,− 7
+8
+ andR⊂Ωis a smooth convex
+subdomain. Moreover, in view of the bounds in Equations (21), (20), and (28), as well as the
+construction of the initial and boundary dataa,b(see Equations (11) and (12)), we obtain that
+∥U∥ L4
+t L6x(]t0,0[×R) ≤C 11
+n
+∥a∥L4(]t0,0[×∂R) +∥b∥ L4x({t0}×[B32r0(x⋆)∩Ω])
+o
+≤C 12ε0,(30)
+11
+
+[PDF page 12]
+whereC 11,C 12 depend only on theC2-geometry ofΩ.
+It is crucial here that the boundary dataa=U
+
+]t0,0[×R is small in theL4
+t L4
+x-norm. Fix
+anyx ⋆ ∈∂Ωand letRbe the smooth convex region in Equation (10) taken with respect to the
+base pointx ⋆. By bootstrap arguments in the previous paragraph, we deduce that
+∥U∥ L6
+t L6x(]t0,0[×R′) ≤M(1 +ε)whenever0< ε < ε 0.
+Here we denote
+
+
+ε:=∥a∥ L4(]t0,0[×∂R) +∥b∥ L4x({t0}×[B32r0(x⋆)∩Ω]),
+∥U∥(L∞
+t L2x∩L2
+t ˙W 1,2
+x )(]−1,0[×Ω) ≤M,
+R′ =R∩B +
+κr0(x⋆)with a constantκ∈]0,8]depending only on the geometry ofR.
+Therefore, we may bootstrap again as in [5,23,30,32,33] (see Theorem 7) to deduce that
+∥U∥ L∞
+t L∞x (]t0,0[×R′′) ≤℘(M, ε)whenever0< ε < ε 0,(31)
+where℘(M, ε)is a polynomial inMandε, and
+R′′ =R∩B +
+κr0
+2
+(x⋆).
+In particular, the region R′′ intersects the boundary∂Ωtangentially atx ⋆, and the bound in
+Equation (31) is independent of the choice ofx⋆. By varyingx ⋆ through∂Ωand invoking the
+interior regularity theorem (see [2, Theorem B]), we deduce that
+∥U∥ L∞
+t L∞x (]t0,0[×Ω) ≤C 13(M, ε0)whenever0< ε < ε 0,
+whereε 0 depends only on theC2-geometry ofΩ.
+It is classically known that essentially bounded weak solutions to the Navier–Stokes equa-
+tions areC ∞ [33]. Hence, the proof of Theorem 3 is now complete.□
+4.Discussions
+Several concluding remarks are in order below.
+(1) Theorem 3 remains valid for an unbounded domainΩ⊂R3 with compact smooth bound-
+ary∂Ω.
+(2) TheexistenceanduniquenessforveryweaksolutionsinL 4
+t L6
+x withboundarydatainL 4
+t L4
+x
+(i.e., Proposition 5 taken from [13,14]) require the domainΩ⊂R 3 to be of regularity
+C2,1. For future investigations, we shall explore how to lower the regularity assumptions
+forΩ. The recent paper [8] by Breit has proved an epsilon boundary regularity theorem
+for local suitable weak solutions (see [9,27]) over low-regularity domains.
+(3) Our boundary epsilon regularity Theorem 3 imposes no condition on pressure. This is in
+stark contrast to the epsilon regularity theorems for the “local suitable weak solutions”
+à laCaffarelli–Kohn–Nirenberg [9]. In our case, the control for pressure is implicitly
+contained in the estimates for the Stokes semigroup in the very weak solutions.
+(4) TheL ∞
+t L∞
+x -boundforUinTheorem3dependsonlyonMandtheC 2-geometryofΩ. The
+dependence onC 2-geometry enters the proof via the injectivity radius of the boundary
+∂Ωin Ω(i.e., the parameterr 0 in the proof of Theorem 3). Only the higher-regularity
+bounds forUmay depend on theC 2+-geometry ofΩ.
+12
+
+[PDF page 13]
+Acknowledgement. The research of Siran Li is supported by NSFC Projects 12331008 and
+12411530065, Young Elite Scientists Sponsorship Program by CAST 2023QNRC001, National
+KeyResearch&DevelopmentPrograms2023YFA1010900and2024YFA1014900, ShanghaiRising-
+Star Program 24QA2703600, Qi-Guang Scholarship, and Shanghai Frontiers Science Center of
+Modern Analysis.
+Competing Interest Statement. We declare that there are no conflicts of interest involved.
+Data Availability Statement. We declare that no data are associated with this work.
+References
+[1] D. Albritton and T. Barker, Localised necessary conditions for singularity formation in the Navier-Stokes
+equations with curved boundary,J. Differ. Equ.269(2020), 7529–7573.
+[2] D. Albritton, T. Barker, and C. Prange, Epsilon regularity for the Navier–Stokes equations via weak-strong
+uniqueness,J. Math. Fluid Mech.25(2023), Paper No. 49.
+[3] H. Amann, Navier–Stokes equations with nonhomogeneous Dirichlet data,Journal Nonlinear Math. Phys.
+10Suppl. 1 (2003), 1–11.
+[4] H. Amann,Nonhomogeneous Navier–Stokes equations with integrable low-regularity data, Int. Math. Ser.,
+Kluwer Academic/Plenum Publishing, New York, 2002, 1–26.
+[5] T. Barker and C. Prange, Localized smoothing for the Navier–Stokes equations and concentration of critical
+norms Near singularities,Arch. Ration. Mech. Anal.236, (2020) 1487–1541.
+[6] M. E. Bogovski˘ ı, Solution of the first boundary value problem for an equation of continuity of an incompress-
+ible medium,Dokl. Akad. Nauk SSSR,248(1979), no. 5, 1037–1040.
+[7] M. E. Bogovski˘ ı, Solutions of some problems of vector analysis, associated with the operatorsdivandgrad, in
+Theory of cubature formulas and the application of functional analysis to problems of mathematical physics,
+pp. 5–40, 149, Proc. Sobolev Sem.,No. 1, 1980, Akad. Nauk SSSR Sibirsk. Otdel., Inst. Mat., Novosibirsk.
+[8] D. Breit, Partial boundary regularity for the Navier–Stokes equations in irregular domains,J. Funct. Anal.
+289(2025), Article No. 111188.
+[9] L. Caffarelli, R. Kohn, and L. Nirenberg, Partial regularity of suitable weak solutions of the Navier–Stokes
+equations,Comm. Pure Appl. Math.35(1982), 771–831.
+[10] L. Escauriaza, G. A. Seregin, and V.˘Sverák,L 3,∞-solutions of Navier–Stokes equations and backward unique-
+ness,Uspekhi Mat. Nauk.58(2003), 3–44.
+[11] E. B. Fabes, J. E. Lewis, and N. M. Rivière, Singular integrals and hydrodynamic potentials,Amer. J. Math.
+99(1977), 601–625.
+[12] E. B. Fabes, J. E. Lewis, and N. M. Rivière, Boundary value problems for the Navier–Stokes equations,
+Amer. J. Math.99(1977), 626–668.
+[13] R. Farwig, G. P. Galdi, and H. Sohr, A new class of weak solutions of the Navier–Stokes equations with
+nonhomogeneous data,J. Math. Fluid Mech.8(2006), 423–444.
+[14] R. Farwig, H. Kozono, and H. Sohr, Global weak solutions of the Naveir–Stokes equations with nonhomoge-
+neous boundary data and divergence,Rend. Sem. Math. Univ. Padova125(2011), 51–70.
+[15] C. L. Fefferman, Existence and smoothness of the Navier–Stokes equation, pp. 57–67 inThe millennium prize
+problems, edited by J. Carlsonet al., Clay Math. Inst., 2006.
+[16] C. Foias, Une remarque sur l’unicité des solutions des équations de Navier-Stokes en dimensionn,Bull. Soc.
+Math. France89(1961), 1–8.
+[17] I. Gallagher, D. Iftimie, and F. Planchon, Asymptotics and stability for global solutions to the Navier–Stokes
+equations,Ann. Inst. Fourier (Grenoble)53(2003), 1387–1424.
+[18] G. P. Galdi, On the energy equality for distributional solutions to Naver–Stokes equations,Proc. Amer.
+Math. Soc.147(2019), 785–792.
+[19] G. P. Galdi, On the relation between very weak and Leray–Hopf solutions to Navier–Stokes equations,Proc.
+Amer. Math. Soc.147(2019), 5349–5359.
+[20] Y. Giga, Solutions for semilinear parabolic equations inLp and regularity of weak solutions of the Navier–
+Stokes system,J. Differ. Equ.62(1986), 186–212.
+13
+
+[PDF page 14]
+[21] P. Gyrya and L. Saloff-Coste, Neumann and Dirichlet heat kernels in inner uniform domains,Astérisque336
+(2011), viii+144pp.
+[22] E. Hopf, Uber die Anfangswertaufgabe für die hydrodynamischen Grundgleichungen,Math. Nachr.4(1951),
+213–231.
+[23] O.A. Ladyzhenskaya, Uniqueness and smoothness of generalized solutions of Navier-Stokes equations,Zap.
+Nau˘ c. Semin. Leningrad. Otdel. Mat. Inst. Steklov. (LOMI)5(1967) 169–185.
+[24] O. A. Ladyzhenskaya and G. A. Seregin, On partial regularity of suitable weak solutions to the three-
+dimensional Navier–Stokes equations,J. Math. Fluid Mech.1(1999), 356–387.
+[25] Z. Lei and X. Ren, Quantitative partial regularity of the Navier-Stokes equations and applications,Adv.
+Math.445(2024), Paper No. 109654, 40 pp.
+[26] J. Leray, Sur le mouvement d’un liquide visqueux emplissant l’espace,Acta. Math.63(1934), 183–248.
+[27] F. Lin, A new proof of the Caffarelli–Kohn–Nirenberg theorem,Comm. Pure Appl. Math.51(1998), 241–257.
+[28] P.-L. Lions,Mathematical topics in fluid mechanics, I: Incompressible models, Oxford Lecture Series in
+Mathematics and its Applications 3, Oxford University Press, New York, 1996.
+[29] J. Ne˘ cas, M. R˚ užička, and V.˘Sverák, On Leray’s self-similar solutions of the Navier–Stokes equations,Acta
+Math.176(1996), 283–294.
+[30] G. Prodi, Un teorema di unicità per le equazioni di Navier–Stokes,Ann. Mat. Pura Appl.48(1959), 173–182.
+[31] G. A. Seregin, Remarks on regularity of weak solutions to the Navier-Stokes equations near the boundary,
+Zap. Nauchn. Sem. S.-Peterburg. Otdel. Mat. Inst. Steklov. (POMI)295(2003), Kraev. Zadachi Mat. Fiz. i
+Smezh. Vopr. Teor. Funkts. 33, 168–179, 246; translation inJ. Math. Sci. (N.Y.)127(2005), 1915–1922.
+[32] G. A. Seregin, T. N. Shilkin, and V. A. Solonnikov, Boundary partial regularity for the Navier-Stokes equa-
+tions,Zap. Nauchn. Sem. S.-Peterburg. Otdel. Mat. Inst. Steklov. (POMI)310(2004), Kraev. Zadachi Mat.
+Fiz. i Smezh. Vopr. Teor. Funkts. 35 [34], 158–190, 228; translation inJ. Math. Sci. (N.Y.)132(2006),
+339–358.
+[33] J. Serrin, On the interior regularity of weak solutions of the Navier–Stokes equations,Arch. Ration. Mech.
+Anal.9(1962), 187–195.
+[34] H. Sohr,The Navier–Stokes equations. An elementary functional analytic approach, Modern Birkhäuser
+Classics, Birkhäuser/Springer Basel AG, Basel (2001) [2013 reprint of the 2001 original].
+[35] M. Struwe, On partial regularity results for the Navier–Stokes equations,Comm. Pure Appl. Math.41(1988),
+437–458.
+[36] T. Tao, Localisation and compactness properties of the Navier–Stokes global regularity problem,Anal. PDE
+6(2013), 25–107.
+[37] T. P. Tsai, On Leray’s self-similar solutions of the Navier–Stokes equations satisfying local energy estimates,
+Arch. Ration. Mech. Anal.143(1998), 29–51.
+[38] A. F. Vasseur, A new proof of partial regularity of solutions to Navier–Stokes equations,NoDEA Nonlinear
+Differ. Equ. Appl.14(2007), 753–785.
+[39] M. van den Berg, Gaussian bounds for the Dirichlet heat kernel,J. Funct. Anal.88(1990), 267–278.
+[40] L. Wang, Partial regularity for Navier-Stokes equations,J. Math. Fluid Mech.27(2025), Paper No. 26.
+Siran Li: School of Mathematical Sciences&CMA-Shanghai, Shanghai Jiao Tong Univer-
+sity, No. 6 Science Buildings, 800 Dongchuan Road, Minhang District, Shanghai, China (200240)
+Email address:siran.li@sjtu.edu.cn
+14

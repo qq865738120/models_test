@@ -1,0 +1,9 @@
+export type Phase='initial'|'change'
+export type Dimension={id:string;name:string;weight:number;description:string;anchors:{score:number;text:string}[]}
+export type Task={id:string;number:string;title:string;shortTitle:string;category:string;level:string;minutes:number;changeMinutes:number;color:string;icon:string;description:string;capabilities:string[];brief:string[];rubric:Dimension[]}
+export type Artifact={id:string;createdAt:string;entry:string;sha256:string;fileCount:number;integrityPassed:boolean;issues:unknown[];url:string}
+export type Score={artifactId:string;values:Record<string,number|null>;total:number|null;notes:string;savedAt:string}
+export type Run={id:string;suiteId:string|null;model:string;repeat:number;createdAt:string;bundleSha256:string;materialVersion:string;rubricVersion:string;archived?:boolean;legacy:boolean;notes?:string;taskIds:string[];taskCatalog?:Task[];artifactCount:number;taskScores:Record<string,Record<Phase,{score:number|null;artifactId:string|null;eligible:boolean}>>}
+export type Detail={run:Run;path:string;rubric:Task[];tasks:Record<string,{state:{phase:Phase;initialSnapshot:string|null;changeSnapshot:string|null;startedAt:string|null;deadlineAt?:string;changeReleasedAt:string|null};path:string;prompts:Partial<Record<Phase,string>>;artifacts:Partial<Record<Phase,Artifact[]>>}>;review:{revision:number;scores:Record<string,Score>;scoreHistory:Score[]}}
+export type Bootstrap={suiteId:string;suiteName:string;tasks:Task[];runs:Run[];token:string;prepared:{ready:boolean;hash:string;version:string}|null;storage:string;runsPath:string;previewOrigin:string}
+export type Job={id:string;label:string;status:'queued'|'running'|'done'|'failed';error?:string;result?:{runId?:string;passed?:boolean;issues?:unknown[]}}

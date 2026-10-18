@@ -1,0 +1,2746 @@
+
+[PDF page 1]
+ON NON-UNIQUENESS OF MILD SOLUTIONS AND
+STATIONARY SINGULAR SOLUTIONS TO THE
+NAVIER-STOKES EQUATIONS
+ALEXEY CHESKIDOV AND HEDONG HOU
+Abstract.We prove that the unconditional uniqueness of mild
+solutions to the Navier-Stokes equations fails inallthe Besov
+spaces with negative regularity index, by constructing non-trivial
+stationary singular solutions via convex integration. We also estab-
+lish uniqueness of stationary weak solutions in an endpoint critical
+space. Similar results are proved for the fractional Navier-Stokes
+equations with arbitrarily large power of the Laplacian in both
+Lebesgue and Besov spaces.
+1.Introduction
+Consider the Navier-Stokes equations
+(NSE)
+
+
+
+∂tu+ div(u⊗u)−∆u+∇p= 0
+divu= 0
+u(0) =u in,divu in = 0,
+on thed-dimensional torusT d =R d/Zd. Let 0< T≤ ∞. For a
+divergence-free distributionu in ∈D ′(Td), we sayu: [0, T)×T d →R d
+is amildsolution to (NSE) with initial datau in if it satisfies the integral
+equation
+u(t) =e t∆uin −B(u, u)(t)
+in the sense of distributionsD ′((0, T)×T d), where the bilinear operator
+Bis formally given by the integral
+B(u, u)(t) :=
+ˆ t
+0
+e(t−s)∆Pdiv(u⊗u)(s)ds, t∈(0, T).
+Date: June 11, 2026.
+2020Mathematics Subject Classification.35A02, 35K55, 35Q30, 42B37, 76D05.
+Key words and phrases.Navier-Stokes equations, unconditional uniqueness, sta-
+tionary solutions, convex integration, fractional Navier-Stokes equations.
+1
+arXiv:2603.03666v2  [math.AP]  11 Jun 2026
+
+[PDF page 2]
+2 ALEXEY CHESKIDOV AND HEDONG HOU
+Here,Pdenotes the Leray projection on divergence-free vector fields,
+and the tensor productu⊗uis defined as a paraproduct by the
+Littlewood-Paley series, see Section 1.3 for a detailed discussion 1.
+Based on the scaling property (when posed inR d)
+u(t, x)7→u λ(t, x) :=λu(λ 2t, λx),
+there is a chain of scale-invariant (also calledcritical) spaces
+˙H
+d
+2 −1
+,→L d ,→ ˙B
+−1+ d
+q
+q,r ,→BMO −1 ,→ ˙B
+−1
+∞,∞,2≤d < q <∞.
+The pioneering work of Fujita and Kato [FK64] (together with a com-
+plement of Chemin [Che92]) established local well-posedness of (NSE)
+in ˙H
+d
+2 −1
+. Such results are also valid inL d due to Kato [Kat84] and in
+˙B
+−1+ d
+q
+q,r due to Cannone [Can97] and Planchon [Pla98]. In endpoint crit-
+ical spaces, Koch and Tataru [KT01] first proved local well-posedness
+in VMO−1, the closure of Schwartz functions in BMO −1. On the other
+hand, Bourgain and Pavlovi´ c [BP08] proved ill-posedness of (NSE) in
+˙B
+−1
+∞,∞. See also the work of the first author and Shvydkoy [CS10] for ill-
+posedness inB −1
+∞,∞, as well as the works of Yoneda [Yon10] and Wang
+[Wan15] in ˙B
+−1
+∞,r. The reader can also refer to the works of Coiculescu
+and Palasek [CP25], and the first author, Dai and Palasek [CDP25] on
+non-uniqueness of mild solutions with initial data in BMO −1.
+Meanwhile, Fabes, Jones and Rivi` ere [FJR72] provedunconditional
+uniquenessof mild solutions in subcritical Lebesgue spacesL p(Rd) for
+d < p <∞. Namely, given the initial data inL p, there exists at most
+one mild solution in the solution classC([0, T];L p). Furioli, Lemari´ e-
+Rieusset and Terraneo [FLRT00] extended it to the critical Lebesgue
+spaceL d(Rd) ford≥3 (see also [Mon99, LM01]), while the caseL 2(R2)
+remains open.
+Recently, Buckmaster and Vicol [BV19b] disproved unconditional
+uniqueness in thesupercriticalspaceH β(T3) for someβ >0, using
+convex integration. See also the work of Luo [Luo19] ford≥4. Tao
+[Tao19] extended it toH β(Td(β)) for anyβ <1/2, with the dimension
+d(β) depending onβ.
+In this paper, we show that unconditional uniqueness of the Navier-
+Stokes equations (NSE)failsforallBesov spaces with negative regu-
+larity index, particularly including those in the (sub-)critical regime.
+1We do not imposeu∈L 2
+loc, sou⊗umay not belong toL 1
+loc. One may also
+refer to such mild solutions assingular mild solutionsto distinguish them from the
+classical mild solutions.
+
+[PDF page 3]
+NONUNIQUENESS NS 3
+To the best of our knowledge, this is the first non-uniqueness result in
+subcritical solution classes.
+1.1.Failure of unconditional uniqueness.Let us briefly recall the
+definition of Besov spaces. The reader can refer to [Tri83, BCD11,
+Saw18] for more details of the function spaces to be used below.
+For any distributionf∈D ′(Td), denote by bfthe Fourier transform
+offinS ′(Zd), given by the formula
+bf(m) =⟨f, e −2πim·x⟩, m∈Z d,
+where⟨·,·⟩denotes the dual pairing between distributions and smooth
+functions onT d. Letχ∈C ∞
+c (Rd) be a radial bump function that is
+supported inB(0,1) and equals 1 onB(0,9/10). For any dyadic integer
+N≥1, define theLittlewood-Paley projectionP ≤N by
+P≤N f(x) :=
+X
+m∈Zd
+χ(m/N)bf(m)e 2πim·x,
+and the companion projections
+P>N := Id−P ≤N , P 1 :=P ≤1, P N :=P ≤N −P ≤N/2 forN≥2.
+Lets∈Randq, r∈[1,∞]. TheBesov spaceB s
+q,r consists of distribu-
+tionsf∈D ′(Td) for which
+∥f∥ Bsq,r :=
+ X
+N
+N sr∥PN f∥ r
+Lq
+!1/r
+<∞,
+with the canonical modification whenr=∞. Define
+PBs
+q,r :=
+n
+f∈B s
+q,r : divf= 0, bf(0) = 0
+o
+.
+The same notation also applies to the Lebesgue spacesL p(Td).
+Our first theorem asserts that unconditional uniqueness of (NSE)
+fails inB −θ
+q,r (Td) for anyθ >0 andd≥2.
+Theorem 1.1(Failure of unconditional uniqueness of (NSE)).Let
+d≥2,θ >0, andq, r∈[1,∞]. The set of initial datau in ∈PB −θ
+q,r (Td),
+which admit two distinct mild solutions
+u, v∈C([0, T];B −θ
+q,r )for someT >0
+to the Navier-Stokes equations(NSE), is dense inPB −θ
+q,r (Td)(or weak*-
+dense ifr=∞).
+
+[PDF page 4]
+4 ALEXEY CHESKIDOV AND HEDONG HOU
+In fact, for such initial data, we shall construct two mild solutions
+that are distinct from each other at any positive time, i.e.,
+u(0) =v(0) =u in,butu(t)̸=v(t) for allt∈(0, T].
+Combining this result with [Can97, Pla98] and the work of Sawada
+[Saw03] on local well-posedness in subcritical Besov spaces, we con-
+clude that the Cauchy problem of the Navier-Stokes equations (NSE)
+is locally well-posed but not unconditionally well-posed in (sub-)critical
+Besov spaces with negative regularity index.
+The key mechanism behind our non-uniqueness results is that many
+admissible initial data are themselves stationary singular solutions of
+the Navier-Stokes equations (cf. Theorem 1.8). Such a datum gener-
+ates a time-independent mild solutionu(t)≡u in, while the classical
+fixed-point argument yields another mild solution with the same initial
+data. Thus, non-uniqueness arises from the coexistence of a stationary
+singular flow and the classical local mild flow. Closely related examples
+were recently obtained by Lemari´ e-Rieusset [LR25], Ashkarian, Bhar-
+gava, Gismondi and Novack [ABGN25], and Fujii [Fuj26]. The novelty
+here is that this mechanism is turned into a systematic construction in
+all negative Besov spaces, including subcritical ones.
+Moreover, applying the classical stability argument (see e.g., [GIP03,
+Proposition 4.1]) to these stationary singular solutions yields that the
+unconditional uniqueness fails forallinitial data in subcritical and
+non-endpoint critical Besov spaces.
+Corollary 1.2(Strong failure of unconditional uniqueness of (NSE)
+in the (sub-)critical regime).Letd≥2. Letθ,q, andrbe such that
+(i)eitherd < q <∞,1≤r <∞, and0< θ≤1− d
+q ;
+(ii)orq=∞,1≤r <∞, and0< θ <1.
+Then for any initial datau in ∈PB −θ
+q,r (Td), there exist two distinct mild
+solutions
+u, v∈C([0, T];B −θ
+q,r )for someT >0
+to the Navier-Stokes equations(NSE)such that
+u(0) =v(0) =u in,butu(t)̸=v(t)for allt∈(0, T].
+Remark1.3.Our result indicates sharpness of the existing results on
+uniqueness of mild solutions (see, e.g., [Can97, Pla98, GKP16]) in the
+critical Chemin-Lerner space eLp
+t B
+−1+ d
+q + 2
+p
+q,r for
+d < q <∞,1≤r <∞,2< p < 2q
+q−d .
+
+[PDF page 5]
+NONUNIQUENESS NS 5
+By contrast, our non-trivial stationary solutions belong to this Chemin-
+Lerner space when 2q
+q−d < p≤ ∞. See the end of Section 8 for a more
+detailed discussion.
+1.2.Fractional Navier-Stokes equations.Similar results also hold
+for the fractional Navier-Stokes equations
+(NSEα)
+
+
+
+∂tu+ div(u⊗u) + (−∆) αu+∇p= 0
+divu= 0
+u(0) =u in,divu in = 0,
+where (−∆)α denotes the fractional Laplacian operator defined on dis-
+tributions by the formula
+(−∆)αu(x) :=
+X
+m∈Zd
+(2π|m|)2αbu(m)e2πim·x, u∈D ′(Td).
+The series converges in the sense of distributions. For a divergence-free
+distributionu in ∈D ′(Td), we sayu: [0, T)×T d →R d is amildsolution
+to (NSEα) with initial datau in if it satisfies the integral equation
+u(t) =e −t(−∆)α
+uin −B α(u, u)(t)
+inD ′((0, T)×T d). The bilinear operatorB α is formally given by the
+integral
+(1.1)B α(u, u)(t) :=
+ˆ t
+0
+e−(t−s)(−∆)α
+Pdiv(u⊗u)(s)ds, t∈(0, T).
+The scaling property of (NSE α) (posed inR d) reads as
+u(t, x)7→u λ(t, x) :=λ 2α−1u(λ2αt, λx).
+The (homogeneous) Besov space ˙B
+−θ
+q,r(Rd) is critical if
+θ= 2α−1− d
+q .
+Whenα >1/2, there are (sub-)critical Besov spaces with negative reg-
+ularity index. Our next theorem shows that unconditional uniqueness
+of (NSE α) fails in such spaces.
+Theorem 1.4(Failure of unconditional uniqueness of (NSE α)).Let
+d≥2andα >1/2. Letθ >0andq, r∈[1,∞].
+(i)The set of initial datau in ∈PB −θ
+q,r (Td), which admit two distinct
+mild solutions
+u, v∈C([0, T];B −θ
+q,r )for someT >0
+to the fractional Navier-Stokes equations(NSE α), is dense in
+PB−θ
+q,r (Td)(or weak*-dense ifr=∞).
+
+[PDF page 6]
+6 ALEXEY CHESKIDOV AND HEDONG HOU
+(ii)Moreover, ifα >(d+ 2)/4, then the same statements also hold
+inL p(Td)for any1≤p <2.
+By scaling, whenα >(d+ 2)/4,L 2(Rd) becomes subcritical. In
+this case, Lions [Lio69] proved global regularity of (NSE α), see also
+[MS99, KP02, Tao09].
+However, there are two conflicting scenarios for local well-posedness
+of (NSEα) in Besov spaces with negative regularity index. When 1/2<
+α≤1, Wu [Wu06] proved local well-posedness in the critical Besov
+spaces ˙B
+1−2α+ d
+q
+q,r for 2< q <∞. But forα≥1, (NSE α) isill-posedin
+thesubcriticalBesov spaces ˙B
+−α
+∞,r, as proved by Bourgain and Pavlovi´ c
+[BP08] forα= 1 andr=∞, and later extended by the first author
+and Dai [CD14] to allα≥1 and 2< r≤ ∞. This suggests that
+(1.2)
+θα,∞ := sup{θ >0 : (NSE α) is locally well-posed inB −θ
+∞,∞} ≤α.
+In Proposition 2.1, we present a result on local well-posedness for all
+α >1/2. In particular, it provides a lower bound onθ α,∞ as
+θα,∞ ≥α−1/2,
+which indicates sharpness of (1.2) with respect to the order ofαas
+α→ ∞.
+Remark1.5.The statements in Corollary 1.2 also apply to the frac-
+tional Navier-Stokes equations (NSE α). A detailed formulation is left
+to the reader.
+1.3.Stationary singular solutions.Our main strategy to prove The-
+orems 1.1 and 1.4 is to construct non-trivialsingularsolutions to the
+stationary fractional Navier-Stokes equations
+(NSα)
+
+
+
+div(u⊗u) + (−∆) αu+∇p= 0, x∈T d
+divu= 0
+bu(0) = 0.
+By singular solutions, we mean solutions that are notL 2-integrable,
+for which the tensor productu⊗udoes not belong toL 1. Instead, we
+define it as a paraproduct in the space ofdistributions modulo constants
+D ′/C, which identifies with the dual of the space of smooth functions
+of mean zero.
+More precisely, we define the tensor productu⊗uin homogeneous
+Sobolev spaces with negative regularity index. Recall that fors∈R,
+
+[PDF page 7]
+NONUNIQUENESS NS 7
+thehomogeneous Sobolev space ˙H
+s
+consists off∈D ′/Cfor which
+∥f∥ ˙H
+s :=
+
+ X
+m∈Zd\{0}
+|m|2s|bf(m)| 2
+
+
+1/2
+<∞.
+Letu∈D ′(Td) ands >0. Thenu⊗uis said to bewell-defined as a
+paraproduct in ˙H
+−s
+, if
+(1.3)
+X
+N,M
+∥PN u⊗P M u∥ ˙H
+−s <∞,
+whereNandMrange over all dyadic integers. Define the paraproduct
+(1.4)u⊗u:=
+X
+N,M
+PN u⊗P M uin ˙H
+−s
+.
+Since the series in (1.4) converges absolutely in ˙H
+−s
+, we have
+(1.5)u⊗u= lim
+N→∞
+P≤N u⊗P ≤N uin ˙H
+−s
+.
+In fact, under the condition (1.3), one may also use Bony’s paraproduct
+decomposition to defineu⊗u, see, e.g., [Bon81, CM78, BCD11].
+Equivalently, one may viewu⊗uas arenormalized product. If
+u⊗uis well-defined as a paraproduct in ˙H
+−s
+, the nonzero Fourier
+modes ofP ≤N u⊗P ≤N uconverge asN→ ∞, whereas the zeroth mode
+may diverge. Since the zeroth Fourier mode is annihilated by div, the
+renormalization consists in subtracting this mode, namely the spatial
+average
+ffl
+P≤N u⊗P ≤N u, and then passing to the limit. In this way,
+the product is naturally defined modulo constants.
+We also identifyu⊗uwith a distribution in the inhomogeneous
+Sobolev spaceH −s, via the canonical embeddingιgiven by the formula
+ι(f) :=
+X
+m∈Zd\{0}
+bf(m)e 2πim·x, f∈ ˙H
+−s
+.
+Recall that theinhomogeneous Sobolev spaceH −s consists of distribu-
+tionsf∈D ′(Td) for which
+∥f∥ H −s :=
+ X
+m∈Zd
+⟨m⟩−2s|bf(m)| 2
+!1/2
+<∞,
+where⟨m⟩denotes the Japanese bracket⟨m⟩:= (1 +|m| 2)1/2. When
+u∈L 2(Td), one has
+ι(u⊗u) =u⊗u−
+ 
+u⊗u.
+
+[PDF page 8]
+8 ALEXEY CHESKIDOV AND HEDONG HOU
+For convenience, we also abbreviateι(u⊗u) asu⊗uinH −s.
+Definition 1.6(Singular solutions).We sayu∈D ′(Td) is asingular
+solution to(NS α) ifbu(0) = 0;uis weakly divergence free; there exists
+s >0 so thatu⊗uis well-defined as a paraproduct in ˙H
+−s
+; and for
+any divergence-freeφ∈C ∞(Td), it holds that
+(1.6)− ⟨u⊗u,∇φ⟩+⟨u,(−∆) αφ⟩= 0,
+where⟨·,·⟩denotes the dual pairing between distributions and smooth
+functions onT d.
+Note that any stationary weak solutionu∈L 2(Td) to (NSα) is indeed
+a singular solution, and every stationary singular solution that belongs
+toL 2(Td) is a weak solution. It is known that the existence of non-
+trivial stationary weak solutions to (NS α) indicates non-uniqueness of
+weak solutions to (NSE α). Forα= 1, Luo [Luo19] proved existence of
+non-trivial stationary weak solutions to (NS α) ford≥4.
+The notion of singular solutions allows us to study stationary solu-
+tions with infinite energy. To the best of our knowledge, such singular
+solutions defined by renormalized products were first considered by
+Christ in the context of evolutionary 1D nonlinear Schr¨ odinger equa-
+tions [Chr05b] and 2D Navier-Stokes equations [Chr05a]. The station-
+ary counterpart was recently considered by Lemari´ e-Rieusset [LR25].
+Our following proposition shows that they correspond to mild solutions
+to (NSEα).
+Proposition 1.7.Letu∈D ′(Td)be a singular solution to(NS α).
+Then
+U:=1 (0,∞)(t)⊗u(x)inD ′((0,∞)×T d)
+is a mild solution to(NSE α)with initial dataU(0) =u.
+The loss of unconditional uniqueness of mild solutions to the (frac-
+tional) Navier-Stokes equations, cf. Theorems 1.1 and 1.4, hence fol-
+lows from existence of non-trivial stationary singular solutions.
+Theorem 1.8(Density of non-trivial stationary singular solutions).
+Letd≥2andα >0. Let1≤p <2,θ >0, andq, r∈[1,∞]. The set
+of singular solutions to the stationary Navier-Stokes equations(NS α)
+u∈
+\
+1≤˜p<2
+L˜p(Td)∩
+\
+˜θ>0
+˜q,˜r∈[1,∞]
+B−˜θ
+˜q,˜r(Td)
+is dense inPL p(Td)andPB −θ
+q,r (Td)(or weak*-dense ifr=∞).
+
+[PDF page 9]
+NONUNIQUENESS NS 9
+Forα= 1, Lemari´ e-Rieusset [LR25] first proved existence of non-
+trivial singular solutions to (NSα) inH −1∩BMO−1(T2). Later, Ashkar-
+ian, Bhargava, Gismondi and Novack [ABGN25] extended it toT
+ϵ∈(0,1) L2−ϵ∩
+˙H
+−ϵ
+(T2). We demonstrate that convex integration can be used to con-
+struct non-trivial solutions in every Besov space with negative regular-
+ity index, and, more importantly, for an arbitrarily large power of the
+Laplacian.
+1.4.Weak solutions.As aforementioned, a mild solution (resp. sta-
+tionary singular solution)uis a weak solution ifu∈L 2
+loc((0,∞)×T d)
+(resp.u∈L 2(Td)). The following theorem is concerned with non-
+uniqueness of (stationary) weak solutions, which generalizes the result
+in [Luo19] forα= 1 andd≥4.
+Theorem 1.9(Non-uniqueness of weak solutions).Letd≥2and
+0< α < d+1
+4 . For anyϵ >0, there exists a non-trivial weak solution
+u∈L 2(Td)to the stationary Navier-Stokes equations(NS α)such that
+(1.7)∥u∥ L2 < ϵ.
+As a consequence, there exists initial datau in ∈L 2(Td)with∥u in∥L2 <
+ϵ, which admits two distinct weak solutions
+u, v∈L ∞([0,∞);L 2)∩C w([0,∞);L 2)
+to the fractional Navier-Stokes equations(NSE α)such that
+u(0) =v(0) =u in,butu(t)̸=v(t)for allt >0.
+Here,C w([0,∞);L 2)is the space of weak*-continuous functions valued
+inL 2(Td).
+We also show that there does not exist non-trivial stationary weak
+solutions to (NSE) in an endpoint critical spaceB −1
+∞,1(Td). This im-
+proves a result by Lemari´ e-Rieusset [LR25] ford= 2 inL 2,1(T2), since
+L2,1(T2) embeds intoL 2 ∩B −1
+∞,1(T2).
+Theorem 1.10(Uniqueness of stationary solutions).There does not
+exist a non-trivial stationary solutionuto(NS α)satisfying
+
+
+
+u∈L 2 ∩B 1−2α
+∞,1 (Td)if0< α≤1
+u∈L 2 ∩B −1
+q,1(Td)if1≤α≤ d+2
+4
+u∈L 2(Td)ifα > d+2
+4
+,
+whereq= d
+2α−2.
+
+[PDF page 10]
+10 ALEXEY CHESKIDOV AND HEDONG HOU
+We emphasize that the Besov spaces imposed in Theorem 1.10 always
+lie on the critical line.
+After the completion of the present paper, we became aware of recent
+work by Fujii [Fuj26] who constructed nontrivial singular stationary
+solutions incriticalBesov spaces with negative smoothness. This also
+implies non-uniqueness of mild solutions in those spaces. We emphasize
+that our singular stationary solutions belong to all the Besov spaces
+with negative smoothness, not only critical ones.
+1.5.Notation.Throughout the paper, without special mention,N
+andMare dyadic integers, by which we mean integers that are powers
+of 2.
+We sayX≲Y(orX≲ A Y, resp.) ifX≤CYwith an irrelevant
+constantC(or depending onA, resp.).
+For any vectorsu, v∈R d, the tensor productu⊗vis defined by
+(u⊗v) i,j =u ivj. For any matrix-valued functionA:T d →R d×d, the
+divergence operator is defined by (divA) i =∂ jAi,j.
+The pair⟨·,·⟩denotes the dual pairing between distributions and
+test functions on the prescribed set, which is clear from the context.
+1.6.Organization.Section 2 is concerned with local well-posedness
+(cf. Proposition 2.1) and unconditional uniqueness (cf. Corollary
+2.5) of the fractional Navier-Stokes equations (NSE α) in subcritical
+Lebesgue and Besov spaces.
+Section 3 presents the proof of Proposition 1.7 and uniqueness of
+stationary solutions in subcritical Lebesgue spaces (cf. Corollary 3.1).
+Section 4 collects two main propositions (cf. Propositions 4.1 and
+4.2) on the iterative procedure. Admitting these two propositions, we
+prove the main theorems in Section 5.
+Sections 6, 7, and 8 are devoted to the proof of Proposition 4.1 via
+convex integration. Section 9 presents the proof of Proposition 4.2.
+2.Local well-posedness of the fractional Navier-Stokes
+equations
+Let us start with local well-posedness of (NSEα) in subcritical spaces.
+Proposition 2.1(Local well-posedness of (NSE α)).Letd≥2and
+α >1/2. Letmax
+ d
+2α−1 ,1
+	
+< p <∞,max
+ d
+2α−1 ,1
+	
+< q≤ ∞,
+0< θ < 1
+2(2α−1− d
+q ), and1≤r <∞.
+(i)For everyR >0and everymax{p, p ′} ≤ρ≤ ∞, there exists
+a timeT=T(R, ρ)>0such that every divergence-freeu in ∈
+
+[PDF page 11]
+NONUNIQUENESS NS 11
+Lp(Td)with∥u in∥Lp ≤Rgives rise to a unique mild solutionu
+to(NSE α)in the solution class
+XT :=
+n
+u∈C([0, T];L p) :t
+d
+2α ( 1
+p − 1
+ρ )u(t)∈L ∞((0, T);L ρ)
+o
+.
+The solution map is continuous from
+{uin ∈L p(Td) : divu in = 0,∥u in∥Lp ≤R}
+toC([0, T];L p(Td)).
+(ii)For everyR >0and everyθ+ d
+2q < β < 1
+2(2α−1), there
+exists a timeT=T(R, β)>0such that every divergence-free
+uin ∈B −θ
+q,r (Td)with∥u in∥B−θ
+q,r
+≤Rgives rise to a unique mild
+solutionuto(NSE α)with initial datau in in the solution class
+YT :=
+n
+u∈C([0, T];B −θ
+q,r ) :t
+β
+α u(t)∈L ∞((0, T);B −θ+2β
+q,r )
+o
+.
+The solution map is continuous from
+{uin ∈B −θ
+q,r (Td) : divu in = 0,∥u in∥B−θ
+q,r
+≤R}
+toC([0, T];B −θ
+q,r (Td)).
+As a consequence,(NSE α)is locally well-posed inL p(Td)andB −θ
+q,r (Td).
+Moreover, in both cases,u∈C ∞((0, T)×T d).
+Remark2.2 (Local well-posedness in endpoint spaces).The proof below
+also indicates the following results in endpoint spaces.
+(1) Forp=∞, (NSE α) is locally well-posed inL ∞, equipped
+with the weak*-topology induced byL 1. The solution class
+isC((0, T];L ∞)∩C w([0, T];L ∞).
+(2) Forr=∞, (NSE α) is locally well-posed inB −θ
+q,∞, equipped
+with the weak*-topology induced byB θ
+q′,1. The solution class is
+{u∈C w([0, T];B −θ
+q,∞) :t β/αu(t)∈L ∞((0, T);B −θ+2β
+q,∞ }.
+Indeed, the heat semigroup is not necessarily strongly continuous but
+merely bounded and weak*-continuous in these endpoint spaces.
+Remark2.3.The statements in Proposition 2.1 also hold inR d.
+The proof is based on the classical smoothing effects of the heat
+kernel and the Oseen kernel.
+Lemma 2.4(Smoothing effects).Let1≤p≤q≤ ∞andβ≥0. Let
+f∈L p(Td). Then for any0< t≤1,
+∥(−∆)βe−t(−∆)α
+f∥ Lq ≲t − β
+α − d
+2α ( 1
+p − 1
+q )∥f∥ Lp,
+∥e−t(−∆)α
+Pdivf∥ Lq ≲t − 1
+2α − d
+2α ( 1
+p − 1
+q )∥f∥ Lp.
+
+[PDF page 12]
+12 ALEXEY CHESKIDOV AND HEDONG HOU
+TheL p-estimates are classical, the reader can refer to [MYZ08] for
+the proof. By applying the same Fourier multiplier bounds to each
+Littlewood–Paley block, one obtains the corresponding estimates in
+Bs
+q,r(Td) for everys∈Rand 1≤q, r≤ ∞.
+Proof of Proposition 2.1.In what follows, assume 0≤t≤T≤1.
+First, consider (i). The norm of the solution classX T is given by
+∥u∥XT := sup
+0≤t≤T
+∥u(t)∥Lp + sup
+0<t<T
+t
+d
+2α ( 1
+p − 1
+ρ )∥u(t)∥Lρ.
+The estimates for the linear part follow from Lemma 2.4 as
+∥e−t(−∆)α
+uin∥XT ≲∥u in∥Lp.
+We show that the bilinear operatorB α defined by (1.1) satisfies
+(2.1)∥B α(u, v)∥XT ≲T 1− 1
+2α − d
+2αp ∥u∥XT ∥v∥XT .
+Indeed, asρ≥p ′, one has (u⊗v)(t)∈L ϱ for 1
+ϱ = 1
+p + 1
+ρ ≤1. Then we
+apply Lemma 2.4 to get
+∥Bα(u, v)(t)∥Lp ≲
+ˆ t
+0
+(t−s) − 1
+2α − d
+2α ( 1
+ϱ − 1
+p )∥u⊗v(s)∥ Lϱds
+≲
+ˆ t
+0
+(t−s) − 1
+2α − d
+2αρ s− d
+2α ( 1
+p − 1
+ρ )∥u(s)∥Lp s
+d
+2α ( 1
+p − 1
+ρ )∥v(s)∥Lρds
+≲t 1− 1
+2α − d
+2αp ∥u∥XT ∥v∥XT .
+The estimate for the other term in (2.1) follows similarly. Asp > d
+2α−1,
+one has 1− 1
+2α − d
+2αp >0, so the desired properties directly follow from
+the classical Banach fixed-point argument. This proves (i).
+Next, we prove (ii). The norm ofY T is given by
+∥u∥YT := sup
+0≤t≤T
+∥u(t)∥B−θ
+q,r
++ sup
+0<t<T
+t
+β
+α ∥u(t)∥B−θ+2β
+q,r
+.
+The estimates for the linear part also follow from Lemma 2.4 as
+∥e−t(−∆)α
+uin∥B−θ
+q,r
++t
+β
+α ∥(−∆)βe−t(−∆)α
+uin∥B−θ
+q,r
+≲∥u in∥B−θ
+q,r
+.
+We show that the bilinear operatorB α satisfies the estimate
+(2.2)∥B α(u, v)∥YT ≲T 1− β
+α − 1
+2α ∥u∥YT ∥v∥YT .
+The desired properties also follow from the fact that 1− β
+α − 1
+2α >0.
+To prove (2.2), we first apply Lemma 2.4 to get
+∥Bα(u, v)(t)∥B−θ
+q,r
+≲
+ˆ t
+0
+(t−s) − 1
+2α ∥u⊗v(s)∥ B−θ
+q,r
+ds.
+
+[PDF page 13]
+NONUNIQUENESS NS 13
+As−θ+ 2β− d
+q > θ, we infer from Sobolev’s embedding and the
+paraproduct estimates (see e.g., [Saw18, Theorem 4.37]) that
+∥u⊗v(s)∥ B−θ
+q,r
+≲∥u(s)∥ B−θ
+q,r
+∥v(s)∥B−θ+2β
+q,r
+≲s − β
+α ∥u∥YT ∥v∥YT .
+Asα >1/2 and 1− β
+α − 1
+2α >0, gathering these estimates gives that
+sup
+0≤t≤T
+∥Bα(u, v)(t)∥B−θ
+q,r
+≲T 1− β
+α − 1
+2α ∥u∥YT ∥v∥YT .
+The estimate for the other term in (2.2) follows similarly. This proves
+(ii).
+Finally, we show thatu∈C ∞((0, T)×T d). By Sobolev’s embedding,
+we may only consider the caseu in ∈B −θ
+q,r . For any sufficiently small
+ϵ >0 andt≥2ϵ, we infer from the identity
+u(t) =e −(t−ϵ)(−∆)α
+u(ϵ)−
+ˆ t
+ϵ
+e−(t−s)(−∆)α
+Pdiv(u⊗u)(s)ds
+and Lemma 2.4 that
+∥u(t)∥B−θ+4β
+q,r
+≲ϵ − 2β
+α ∥u∥L∞((0,T);B −θ
+q,r )+
+ˆ t
+ϵ
+(t−s)− β
+α − 1
+2α ∥u⊗u(s)∥B−θ+2β
+q,r
+ds.
+Since−θ+ 2β > d
+q ,B −θ+2β
+q,r is a multiplication algebra (see e.g., [Tri83,
+Theorem 2.8.3]), so one has
+∥u⊗u(s)∥ B−θ+2β
+q,r
+≲∥u(s)∥ 2
+B−θ+2β
+q,r
+≲s − 2β
+α ∥u∥2
+YT .
+Asβ <(2α−1)/2 andt≤1, gathering these estimates gives that
+∥u(t)∥B−θ+4β
+q,r
+≲ϵ − 2β
+α ∥u∥YT +ϵ − 2β
+α ∥u∥2
+YT .
+Sou∈L ∞((2ϵ, T);B −θ+4β
+q,r ). By iteration and arbitrariness ofϵ, we
+know thatu(t) is smooth for any 0< t < T, and henceu∈C ∞((0, T)×
+Td) by iteratively taking time derivatives on both sides of the equation
+∂tu=−div(u⊗u)−(−∆) αu− ∇p. This completes the proof.□
+Corollary 2.5(Unconditional uniqueness).Letd≥2,α >1/2, and(
+d
+2α−1 < p≤ ∞if 1
+2 < α≤ d+2
+4
+2≤p≤ ∞ifα > d+2
+4
+.
+Then for every divergence-freeu in ∈L p(Td)and everyT >0, there
+exists at most one mild solution to(NSE α)inC([0, T];L p(Td)).
+Proof.The condition onpensures thatp≥p ′ andp > d
+2α−1. When
+p <∞, the statement hence follows from Proposition 2.1 (i) by taking
+ρ=p. Whenp=∞, the conclusion holds by embedding ofL ∞ into
+L˜pfor ˜p <∞.□
+
+[PDF page 14]
+14 ALEXEY CHESKIDOV AND HEDONG HOU
+3.Stationary singular solutions and mild solutions
+In this section, we prove Proposition 1.7. As an application, we show
+uniqueness of solutions to (NS α) in subcritical Lebesgue spaces.
+Proof of Proposition 1.7.Letu∈D ′(Td) be a singular solution to
+(NSα), for whichu⊗uis well-defined as a paraproduct in ˙H
+−s
+for
+somes >0. It is clear thatU∈C([0,∞);D ′)∩C ∞((0,∞);D ′)
+withU(0) =u. AsU(t, x) =1 (0,∞)(t)⊗u(x), we infer that for any
+divergence-freeϕ∈C ∞
+c ((0,∞)×T d),
+−⟨U, ∂tϕ⟩−⟨U⊗U,∇ϕ⟩+⟨U,(−∆) αϕ⟩=−⟨u⊗u,∇ ϕ⟩+⟨u,(−∆) αϕ⟩= 0,
+where ϕ(x) :=
+´ ∞
+0 ϕ(t, x)dt∈C ∞(Td). Thus, we have
+∂tU+Pdiv(U⊗U) + (−∆) αU= 0 inD ′((0,∞)×T d).
+Moreover, asPdiv(U⊗U)∈C([0,∞);H −s−1), we know that
+v(t) :=
+ˆ t
+0
+e−(t−s)(−∆)α
+Pdiv(U⊗U)(s)ds, t >0
+satisfies the equation
+∂tv+ (−∆) αv=Pdiv(U⊗U) inD ′((0,∞)×T d).
+AsU⊗U∈C([0,∞); ˙H
+−s
+), we get from the smoothing effects of the
+heat equation thatv∈C([0,∞);H −s−1+2α)∩C 1((0,∞);H −s−1) with
+v(0) = 0.
+Writew=U+v. It satisfies∂ tw+ (−∆) αw= 0 inD ′((0,∞)×T d),
+andw∈C([0,∞);D ′)∩C 1((0,∞);D ′) withw(0) =u. Hence, we
+infer from uniqueness of heat solutions in the classC([0,∞);D ′)∩
+C1((0,∞);D ′) thatw(t) =e −t(−∆)α
+u, and thus,
+U(t) =w(t)−v(t) =e −t(−∆)α
+u−
+ˆ t
+0
+e−(t−s)(−∆)α
+Pdiv(U⊗U)(s)ds
+inD ′((0,∞)×T d) as desired. This completes the proof.□
+Corollary 3.1(Uniqueness of stationary solutions).Letd≥2,α >
+1/2, and (
+d
+2α−1 < p≤ ∞if 1
+2 < α≤ d+2
+4
+2≤p≤ ∞ifα > d+2
+4
+.
+Ifu∈L p(Td)is a singular solution to(NS α), thenuis zero.
+Proof.DefineU(t) :=ufort≥0. Proposition 1.7 yields thatU∈
+C([0,∞);L p) is a mild solution to (NSEα) withU(0) =u. Moreover, we
+infer from unconditional uniqueness (cf. Corollary 2.5) and Proposition
+
+[PDF page 15]
+NONUNIQUENESS NS 15
+2.1 thatU∈C ∞((0,∞)×T d). Sou∈C ∞(Td). Therefore, testing the
+stationary equation (NS α) againstuitself gives
+∥(−∆)α/2u∥2
+L2 =
+ˆ
+(−∆)αu·u=
+ˆ
+(u⊗u) :∇u= 0.
+Sinceuis of mean zero, we conclude thatu= 0.□
+4.Iterative procedure
+The proofs of the main theorems are based on the following iterative
+procedure. Consider the stationary fractional Navier-Stokes-Reynolds
+system:
+(4.1)
+
+
+
+div(u⊗u) + (−∆) αu+∇p= divR
+divu= 0
+bu(0) = 0
+whereRis defined onT d with values in the space of symmetric ma-
+trices, called theReynolds stress. Here, we do not require thatRis
+trace-free. Indeed, if (u, R, p) is a solution to (4.1), then by taking
+˚R:=R− 1
+d Tr(R)I,˚p:=p− 1
+d Tr(R),
+one gets another solution (u,˚R,˚p) to (4.1) so that˚Ris trace-free. More-
+over, the normalized pressurepis uniquely determined by the equation
+∆p= div div(R−u⊗u),
+ 
+p= 0.
+For simplicity, we abbreviate a solution triple (u, R, p) to (4.1) as (u, R).
+Proposition 4.1(Main iteration).Letd≥2andα >0. There exists
+s >0depending only ondandαsuch that the following holds.
+Fix any1< p <2,0< θ <1,δ >0, and a dyadic integerN. Given
+a smooth solution(u, R)to(4.1)withsuppbu⊂B(0, N), there exists
+another smooth solution( u, R)such that
+(4.2)∥ R∥H −s < δ,
+and moreover, the velocity perturbationw:= u−usatisfies
+(i)The Fourier support ofwis away from that ofu, in the sense
+that there exists a dyadic numberD >50Nso that
+suppbw⊂
+
+m∈Z d : 1
+2 DN <|m|< 9
+10 DN
+
+;
+
+[PDF page 16]
+16 ALEXEY CHESKIDOV AND HEDONG HOU
+(ii)TheL p-estimate and theB −θ
+∞,1-estimate
+∥w∥Lp < δ,∥w∥ B−θ
+∞,1
+< δ;
+(iii)The paraproduct estimate
+∥w⊗w∥ ˙H
+−s +
+X
+M≤2N
+ 
+∥PM u⊗w∥ ˙H
+−s +∥w⊗P M u∥ ˙H
+−s
+
+< δ+∥R∥ H −s.
+The proof of Proposition 4.1 is deferred to Sections 6, 7, and 8. The
+next proposition is concerned with the iteration in theL 2-case.
+Proposition 4.2(L 2-iteration).Let0< α < d+1
+4 andNbe a dyadic
+integer. Then there exists a constantA≥1, depending only ondand
+α, such that the following holds.
+For anyδ, δ ′ >0, given a smooth solution(u, R)to(4.1), there exists
+another smooth solution( u, R)such that
+(4.3)∥ R∥L1 < δ 2,
+and moreover, the velocity perturbationw:= u−usatisfies
+(i)TheL 2-estimate
+(4.4)∥w∥ L2 < A∥R∥1/2
+L1 +δ;
+(ii)Almost Fourier support separation, in the sense that
+∥P≤N w∥L2 < δ ′.
+The proof of Proposition 4.2 is presented in Section 9.
+5.Proofs of Main Theorems
+Admitting Propositions 4.1 and 4.2, let us first prove Theorem 1.8.
+5.1.Proof of Theorem 1.8 admitting Proposition 4.1.Let 1≤
+p <2,θ >0, andq, r∈[1,∞]. We prove the statements forPB −θ
+q,r (Td),
+and the case inPL p(Td) follows similarly. Moreover, in what follows,
+we only consider the caser̸=∞. Forr=∞, the statement follows
+from weak*-density ofB −θ
+q,1 inB −θ
+q,∞.
+Pick an arbitrary vector fieldv∈PB −θ
+q,r . Fixϵ >0. We shall
+construct a stationary singular solution
+u∈
+\
+1≤p<2
+Lp ∩
+\
+θ>0, q,r∈[1,∞]
+B−θ
+q,r ,
+such that
+(5.1)∥u−v∥ B−θ
+q,r
+< ϵ.
+
+[PDF page 17]
+NONUNIQUENESS NS 17
+PickN 0 >1 and a non-zero, mean-zero, divergence-free smooth vector
+fieldu 0 ∈C ∞ such that suppbu0 ⊂B(0, N 0) and
+(5.2)∥v−u 0∥B−θ
+q,r
+< ϵ/2.
+For example, ifvis non-zero, then one may picku 0 =P ≤N0vfor large
+enoughN 0. Ifv= 0, then one may picku 0 with a single non-zero
+Fourier mode (e.g., suppbu0 ⊂S d−1 ∩Z d) and 0<∥u 0∥Lq < ϵ/2.
+Denote byRthe anti-divergence operator (introduced in [DLS13])
+from smooth vector fieldsC ∞(Td;R d) to the space of symmetric trace-
+freed×dmatrices, given by the formula
+(5.3) (Rf) i,j :=R i,j,kfk, f∈C ∞(Td;R d),
+where
+Ri,j,k := 2−d
+d−1 ∆−2∂i∂j∂k − 1
+d−1 ∆−1∂kδi,j + ∆−1∂iδj,k + ∆−1∂jδi,k.
+Here,δ i,j is the Kronecker symbol, and the inverse Laplacian ∆ −1 of a
+smooth functionf∈C ∞(Td) is given by the formula
+∆−1f(x) :=
+X
+m∈Zd\{0}
+− 1
+4π2|m|2
+bf(m)e 2πim·x.
+Note thatw= ∆ −1fis the unique solutionw∈C ∞(Td) to the equation
+(5.4) ∆w=f−
+ 
+f,
+ 
+w= 0.
+Direct computation shows that
+(5.5) divRf=f−
+ 
+f.
+Define
+R0 :=R(div(u 0 ⊗u 0) + (−∆)αu0),
+and set
+w0 :=u 0, D 0 := 1.
+Then (u0, R0) is a smooth solution to (4.1) with suppbu0 ⊂B(0, N 0).
+We use iteration to construct a sequence of smooth solutions (un, Rn)
+forn≥1 as follows. Lets >0 be the constant given by Proposition
+4.1. SetN n−1 =N 0D0 · · ·D n−1. Given (u n−1, Rn−1) with suppbun−1 ⊂
+B(0, Nn−1), we apply Proposition 4.1 to (u n−1, Rn−1) with the param-
+eters
+(5.6)δ n := 2−n−2ϵ, p n := 2−2 −n(2−p), θ n := min{2−nθ,1/2}.
+to get a smooth solution (u n, Rn) with
+∥Rn∥H −s < δ n.
+
+[PDF page 18]
+18 ALEXEY CHESKIDOV AND HEDONG HOU
+Moreover, denote byw n :=u n −u n−1 the velocity perturbation. Then
+there exists a dyadic numberD n >50N n−1 such that
+suppbwn ⊂
+
+m∈Z d : 1
+2 DnNn−1 <|m|< 9
+10 DnNn−1
+
+,
+andw n satisfies the estimates
+(5.7)∥w n∥Lpn < δ n,∥w n∥B−θn
+∞,1
+< δ n,
+and
+∥wn⊗wn∥ ˙H
+−s+
+X
+M≤2N n−1
+ 
+∥PM un−1⊗wn∥ ˙H
+−s+∥wn⊗PM un−1∥ ˙H
+−s
+
+< δ n+∥Rn−1∥H −s.
+For any 1≤ep <2, eθ >0, andeq,er∈[1,∞]. Then there existsn 0 ≥1
+such that forn≥n 0, one hasp n ≥epandθ n ≤eθ, so
+∥wn∥Lep+∥w n∥B−eθ
+eq,er
+≤ ∥w n∥Lpn +∥w n∥B−θn
+∞,1
+<2δ n.
+Thus, (un) is a Cauchy sequence inL epandB −eθ
+eq,er. Denote byuthe limit
+of (un) inD ′. Then
+u∈
+\
+1≤p<2
+Lp ∩
+\
+θ>0, q,r∈[1,∞]
+B−θ
+q,r ,
+and
+(5.8)u n →uinL p andB −θ
+q,r for all 1≤p <2, θ >0, q, r∈[1,∞].
+We claim thatuis a singular solution to (NS α). Indeed, we first
+verify thatu⊗uis well-defined as a paraproduct in ˙H
+−s
+. By Fourier
+support separation in Proposition 4.1, we observe that
+PN un−1 =
+
+
+
+PN u0 ifN≤2N 0
+wj ifN=N j for 1≤j≤n−1
+0 otherwise
+,
+and hence,
+(5.9)P N u=
+
+
+
+PM u0 ifM≤2N 0
+wn ifN=N n,forn≥1
+0 otherwise
+.
+
+[PDF page 19]
+NONUNIQUENESS NS 19
+Then using (4.2), we get
+X
+N,M
+∥PN u⊗P M u∥ ˙H
+−s
+=
+X
+N,M≤2N 0
+∥PM u0 ⊗P N u0∥ ˙H
+−s +
+X
+n≥1
+∥wn ⊗w n∥ ˙H
+−s
++
+X
+n≥1
+X
+M≤2N n−1
+ 
+∥PM un−1 ⊗w n∥ ˙H
+−s +∥w n ⊗P M un−1∥ ˙H
+−s
+
+≤
+X
+N,M≤2N 0
+∥PM u0 ⊗P N u0∥ ˙H
+−s +
+X
+n≥1
+(δn +∥R n−1∥H −s)
+≤
+X
+N,M≤2N 0
+∥PM u0 ⊗P N u0∥ ˙H
+−s +∥R 0∥H −s + 2
+X
+n≥1
+δn <∞.
+This proves (1.3), sou⊗uis well-defined as a paraproduct in ˙H
+−s
+.
+Next, consider (1.6). Since (u n, Rn) is a smooth solution to (4.1), we
+have that for any divergence-freeφ∈C ∞,
+(5.10)− ⟨u n ⊗u n,∇φ⟩+⟨u n,(−∆) αφ⟩=−⟨R n,∇φ⟩.
+We get from (1.5) that
+lim
+n→∞
+un ⊗u n = lim
+n→∞
+P≤Nnu⊗P ≤Nnu=u⊗uin ˙H
+−s
+.
+Moreover, as∥R n∥H −s < δ n, one gets
+Rn →0 inH −s.
+Gathering these limits with (5.8), we obtain (1.6) by taking limitsn→
+∞in (5.10).
+Finally, we get from (5.9) and (5.8) thatbu(0) = 0 anduis weakly
+divergence free. The claim hence follows.
+Let us finish by verifying (5.1). Indeed, using (5.2) and (5.7), we get
+∥v−u∥ B−θ
+q,r
+≤ ∥v−u 0∥B−θ
+q,r
++∥u−u 0∥B−θ
+q,r
+≤ ϵ
+2 +
+X
+n≥1
+∥wn∥B−θn
+∞,1
+≤ ϵ
+2 +
+X
+n≥1
+δn < ϵ
+as desired. This completes the proof.
+5.2.Proof of Theorem 1.9 admitting Proposition 4.2.The proof
+resembles that in Section 5.1. Let 0< α <(d+ 1)/4. Let 0< ϵ <1.
+Pick a non-zero divergence-free smooth vector fieldu 0 ∈C ∞(Td) of
+mean zero, with
+(5.11) suppbu 0 ∈Z d ∩S d−1,∥u 0∥C⌈2α⌉ < ϵ0,
+
+[PDF page 20]
+20 ALEXEY CHESKIDOV AND HEDONG HOU
+whereϵ 0 ∈(0,1) is a constant to be determined. Define the Reynolds
+stress
+R0 :=R(div(u 0 ⊗u 0) + (−∆)αu0).
+It is clear that
+∥R0∥L1 ≤C
+ 
+∥u0∥C⌈2α⌉ +∥u 0∥2
+C⌈2α⌉
+
+<2Cϵ 0,
+where the constantC≥1 depends only ondandα. Next, we use
+Proposition 4.2 for iteration. Namely, forn≥1, given (u n−1, Rn−1) a
+smooth solution to (4.1), we apply Proposition 4.2 with parameter
+δn :=A −12−n−4ϵ, N= 10, δ ′
+n := 2−n−2∥u0∥L2
+to get a new smooth solution (u n, Rn) to (4.1) with
+∥Rn∥L1 < δ 2
+n,∥w n∥L2 < A∥R n−1∥1/2
+L1 +δn,∥P ≤N wn∥L2 <2 −n−2∥u0∥L2
+forn≥1, wherew n :=u n −u n−1 denotes the velocity perturbation.
+Forn= 1, one has
+(5.12)∥w 1∥L2 < A∥R0∥1/2
+L1 +δ 1 <2CAϵ 1/2
+0 + 2−5ϵ.
+Forn≥2, using∥R n−1∥L1 < δ 2
+n−1, one has
+(5.13)∥w n∥L2 < Aδ n−1 +δ n <2 −n−2ϵ,
+so (u n) is a Cauchy sequence inL 2. Denote byuthe limit of (u n).
+Then we have
+un →uinL 2, u n ⊗u n →u⊗uinL 1, R n →0 inL 1.
+We thus conclude thatu∈L 2 is a singular, hence weak solution to
+(NSα). Moreover, we also have
+∥P≤N u∥L2 ≥ ∥u0∥L2 −
+X
+n≥1
+∥P≤N wn∥L2 ≥1/2∥u 0∥L2 >0,
+souis non-trivial. Combining (5.11), (5.12), and (5.13) gives that
+∥u∥L2 ≤ ∥u0∥L2 +
+X
+n≥1
+∥wn∥L2 <3CAϵ 1/2
+0 +ϵ/4.
+Takingϵ 0 sufficiently small with 3CAϵ 1/2
+0 < ϵ/2 proves (1.7).
+Let us finish by proving non-uniqueness of weak solutions to (NSEα)
+inL ∞([0,∞);L 2)∩C w([0,∞);L 2). For anyϵ >0, pick the initial data
+uin as a stationary weak solution inL 2(Td) with∥u in∥L2 < ϵ. Then
+Proposition 1.7 implies thatu(t) :=u in fort≥0 is a weak solution to
+(NSEα).
+Meanwhile, we takevas the classical Leray-Hopf weak solution evolv-
+ing fromu in ∈L 2, which belongs toL ∞((0,∞);L 2)∩C w([0,∞);L 2) and
+
+[PDF page 21]
+NONUNIQUENESS NS 21
+obeys the energy inequality (see [Ler34, Hop51] forα= 1 and straight-
+forward extension to allα >0). Note that sincevis non-trivial, the
+energy obeys∥v(t)∥ L2 <∥v in∥L2 for every positivet, but the energy of
+uis constant asuis stationary. Therefore,u(t) andv(t) are distinct
+for anyt >0. This completes the proof.
+5.3.Proofs of Theorems 1.1 and 1.4.We prove Theorem 1.4. The-
+orem 1.1 corresponds to the caseα= 1. Let us start with (i). Note
+that the Besov spaceB −θ
+q,1(Td) embeds intoB −θ1
+q1,r1(Td) when−θ 1 ≤ −θ,
+−θ1 − d
+q1
+≤ −θ− d
+q , and 1≤r 1 ≤ ∞. Therefore, it suffices to prove the
+statements for
+max
+ d
+2α−1 ,2
+
+< q <∞,0< θ < 1
+2
+
+2α−1− d
+q
+
+, r= 1.
+We first construct the initial datau in ∈B −θ
+q,1. Letfbe an arbitrary
+vector field inPB −θ
+q,1. For anyϵ >0, Theorem 1.8 yields that there
+exists a stationary singular solutionu in ∈PB −θ
+q,1(Td) such that∥u in −
+f∥ B−θ
+q,1
+< ϵ.
+Then we construct two different mild solutionsuandvto (NSE α)
+with the same initial datau in. Indeed, Proposition 1.7 yields that
+u(t) :=u in, t≥0
+is a mild solution to (NSE α), and particularly,u∈C([0,∞);B −θ
+q,1).
+Meanwhile, Proposition 2.1 says that there existT >0 and a mild
+solution
+v∈C([0, T];B −θ
+q,1)∩C ∞((0, T)×T d)
+to (NSEα) withv(0) =u in.
+Observe thatu in /∈C∞. Otherwise, Corollary 3.1 implies thatu in =
+0, a contradiction. Sou(t) =u in ̸=v(t) for anyt∈(0, T]. This proves
+(i).
+Statement (ii) follows from a verbatim adaptation of the above ar-
+gument with a slightly larger exponent. Fix any 1≤p <2. Since
+α >(d+ 2)/4, one has d
+2α−1 <2, so we can choose
+˜p∈
+
+max
+
+p, d
+2α−1
+
+,2
+
+.
+For anyf∈PL p(Td) andϵ >0, pick a smooth divergence-free
+and mean-zero approximationg∈C ∞ first with∥g−f∥ Lp < ϵ/2.
+Then by density (cf. Theorem 1.8), there exists a stationary singular
+solutionu in ∈L epto (NS α) with∥u in −g∥ Lep < ϵ/2. Thus, one has
+∥uin −f∥ Lp ≤ ∥uin −g∥ Lep+∥g−f∥ Lp < ϵ.
+
+[PDF page 22]
+22 ALEXEY CHESKIDOV AND HEDONG HOU
+Takeu(t) =u in fort≥0. Meanwhile, Proposition 2.1 yields that
+there existT >0 and a mild solution
+v∈C([0, T];L ˜p)∩C ∞((0, T)×T d)
+to (NSE α) withv(0) =u in. In particular,v∈C([0, T];L p). Again,
+sinceu in /∈C∞, we conclude thatu(t) =u in ̸=v(t) for anyt∈(0, T].
+This completes the proof.
+5.4.Proof of Theorem 1.10.Forα > d+2
+4 , this is Corollary 3.1.
+In what follows, we only considerα≤ d+2
+4 . The proof is based on
+estimates of the energy flux from high to low modes, introduced by
+[CCFS08]. For any dyadic integerN≥2, we decomposeuas
+u=u ≤N +u >N ,whereu ≤N :=P ≤N uandu >N :=P >N u.
+Testing the stationary equation againstP 2
+≤N u(equivalently, applying
+P≤N to (NSE) and then testing againstu ≤N), and using thatP ≤N
+commutes with∇and preserves divergence-free vector fields, we obtain
+(5.14) Π ≤N :=
+ˆ
+|(−∆)α/2u≤N |2 =
+ˆ
+P≤N(u⊗u) :∇u ≤N .
+We now exploit the skew-symmetry of the transport term. Introduce
+the commutator
+r≤N(u, u)(x) :=P ≤N(u⊗u)(x)−u ≤N ⊗u ≤N(x)
+=
+ˆ
+ˇχN(y)
+ 
+u(x−y)−u ≤N(x)
+
+⊗
+ 
+u(x−y)−u ≤N(x)
+
+dy,
+where ˇχN denotes the kernel ofP ≤N (i.e., the inverse Fourier transform
+ofm7→χ(m/N)). Since divu ≤N = 0, we have the exact cancellationˆ
+(u≤N ⊗u ≤N) :∇u ≤N = 0,
+and hence, from (5.14),
+(5.15) Π ≤N =
+ˆ
+r≤N(u, u) :∇u ≤N .
+We shall show that the energy concentrated in high modes
+EN :=
+X
+M >N
+∥PM u∥2
+L2
+vanishes for sufficiently largeN. Therefore,u >N = 0 anduis smooth.
+Testing (NSα) againstuand using divu= 0, we get
+∥(−∆)α/2u∥2
+L2 =
+ˆ
+(u⊗u) :∇u= 0.
+Henceuis constant, and the mean-zero condition impliesu= 0.
+
+[PDF page 23]
+NONUNIQUENESS NS 23
+To this end, the proof is divided into two cases: 0< α≤1 and
+1< α≤ d+2
+4 .
+Case 1: 0< α≤1. Bernstein’s inequality yields that
+∥∇u≤N ∥L∞ ≲
+X
+M≤N
+M∥P M u∥L∞ =N 2α
+X
+M≤N
+ M
+N
+2α
+M 1−2α∥PM u∥L∞ =:N 2αbN .
+Next, we show that
+(5.16)∥r ≤N(u, u)∥L1 ≲N −2αΠ≤N +E N .
+Indeed, by Minkowski’s inequality, one has
+∥r≤N(u, u)∥L1 ≤
+ˆ
+|ˇχN(y)|∥u(· −y)−u ≤N(·)∥2
+L2dy
+≲
+ˆ
+|ˇχN(y)|
+ 
+∥u≤N(· −y)−u ≤N(·)∥2
+L2 +∥u >N ∥2
+L2
+
+dy
+Using orthogonality and the mean value estimate, we infer that
+∥u≤N(· −y)−u ≤N ∥2
+L2 ≲
+X
+M≤N
+∥PM u(· −y)−P M u∥L2
+≲|y| 2
+X
+M≤N
+M 2∥PM u∥2
+L2 ≲|y| 2N 2−2αΠ≤N .
+Thus, (5.16) follows from the kernel bounds
+´
+|ˇχN(y)| |y|2 dy≲N −2
+and
+´
+|ˇχN(y)|dy≲1. Applying H¨ older’s inequality to (5.15) and gath-
+ering the above estimates gives that
+(5.17) Π ≤N ≤Cb NΠ≤N +CN 2αbN EN ,
+where the constantC >0 depends only ond.
+Let us exploit the smallness ofb N. For a reference dyadic number
+N0 ≥2, Fubini’s theorem yields that
+BN0 :=
+X
+N≥N0
+bN =
+X
+M
+X
+N≥max{M,N 0}
+ M
+N
+2α
+M 1−2α∥PM u∥L∞
+≲
+X
+M
+min
+(
+1,
+ M
+N0
+2α)
+M 1−2α∥PM u∥L∞.
+Since P
+M M 1−2α∥PM u∥L∞ =∥u∥ B1−2α
+∞,1
+<∞, Lebesgue’s dominated
+convergence theorem yields that
+(5.18) lim
+N0→∞
+BN0 = 0.
+
+[PDF page 24]
+24 ALEXEY CHESKIDOV AND HEDONG HOU
+PickN 0 large enough so thatCB N0 ≤1/2. In particular, for any
+N≥N 0, asCb N ≤CB N0 ≤1/2, we hence get from (5.17) that
+(5.19) Π ≤N ≲N 2αbN EN .
+Then we show that the energy concentrated on high modes is null.
+Indeed, using (5.19), we get that forN 1 ≥N 0,
+EN1 =
+X
+N >N1
+∥PN u∥2
+L2 ≲
+X
+N >N1
+N −2αΠ≤N ≲
+X
+N >N1
+bN EN ≲B N1EN1,
+where the implicit constant also depends only ond. Thanks to (5.18),
+for large enoughN 1, we conclude that
+EN1 = 0.
+This concludes the caseα≤1.
+Case 2: 1< α≤ d+2
+4 . The proof is similar to that of Case 1. Denote
+bypthe H¨ older conjugate ofq= d
+2α−2. H¨ older’s inequality yields that
+Π≤N ≤ ∥∇u ≤N ∥Lq ∥r≤N(u, u)∥Lp.
+Using Bernstein’s inequality again, one gets that
+∥∇u≤N ∥Lq ≲N 2
+X
+M≤N
+ M
+N
+2
+M −1∥PM u∥Lq =:N 2bN .
+Also, writeB N0 := P
+N≥N0 bN. Using Lebesgue’s dominated conver-
+gence theorem again, we get from the condition∥u∥ B−1
+q,1
+<∞that
+(5.20) lim
+N0→∞
+BN0 = 0.
+Meanwhile, we claim that
+(5.21)∥r ≤N(u, u)∥Lp ≲N −2Π≤N +N 2α−2EN .
+Suppose it holds. Then gathering these estimates gives that
+Π≤N ≲b NΠ≤N +N 2αbN EN ,
+which agrees with (5.17). Thanks to (5.20), the same reasoning as in
+Case 1 yields that
+EN1 = 0
+for sufficiently largeN 1 as desired. In summary, we only need to show
+(5.21) in what follows.
+To this end, we introduce a finer decomposition of the commutator
+r≤N(u, u). Define
+ℓy(x) :=u ≤N(x)−u ≤N(x+y).
+
+[PDF page 25]
+NONUNIQUENESS NS 25
+The kernel representation ofr N(u, u) thus reads as
+rN(u, u)(x) =
+ˆ
+ˇχN(y)(ℓy ⊗ℓ y +ℓ y ⊗u >N +u >N ⊗ℓ y +u >N ⊗u >N)(x−y)dy
+=:r l,l
+N (u, u)(x) +r l,h
+N (u, u)(x) +r h,l
+N (u, u)(x) +r h,h
+N (u, u)(x).
+We estimate these terms respectively. First, consider the low-low
+contributionr l,l
+N (u, u). H¨ older’s inequality yields that
+∥rl,l
+N (u, u)∥Lp ≤
+ˆ
+|ˇχN(y)|∥ℓy∥2
+L2pdy.
+Using the Littlewood-Paley theory and the mean value theorem, we get
+(5.22)
+∥ℓy∥2
+L2p ≲|y| 2
+X
+M≤N
+M 2∥PM u∥2
+L2p
+≲|y| 2
+X
+M≤N
+M 2α∥PM u∥2
+L2 ≲|y| 2Π≤N .
+The last inequality is due to Bernstein’s inequality andd(1
+2 − 1
+2p) =α−1.
+Thus, we obtain
+∥rl,l
+N (u, u)∥Lp ≲N −2Π≤N .
+Next, we consider the high-high contributionr h,h
+N (u, u). Note that
+rh,h
+N (u, u) = ˇχN ∗(u >N ⊗u >N) =P ≤N(u>N ⊗u >N),
+so using Young’s inequality and Bernstein’s inequality, we infer that
+∥rh,h
+N (u, u)∥Lp ≲∥P ≤N(u>N ⊗u >N)∥Lp ≲N d(1− 1
+p )∥u>N ∥2
+L2 ≲N 2α−2EN .
+It remains to estimate the mixed terms. We taker l,h
+N (u, u) for exam-
+ple and the other follows similarly. Note that
+rl,h
+N (u, u) =P ≤N(u≤N ⊗u >N)−u ≤N ⊗P ≤N u>N .
+In particular, we infer that the Fourier transform ofr l,h
+N (u, u) is sup-
+ported in{m∈Z d :|m| ≤2N}. Taker= 2p
+p+1 so that 1
+r = 1
+2p + 1
+2. We
+get from Bernstein’s inequality and (5.22) that
+∥rl,h
+N (u, u)∥Lp ≲N d( 1
+r − 1
+p )∥rl,h
+N (u, u)∥Lr
+≲N α−1
+ˆ
+|ˇχN(y)|∥ℓy∥L2p∥u>N ∥L2dy
+≲N α−2Π1/2
+≤N E1/2
+N ≲N −2Π≤N +N 2α−2EN .
+In the second inequality, we use the fact thatd( 1
+r − 1
+p) =α−1. Gath-
+ering these estimates gives (5.21). This completes the proof.
+
+[PDF page 26]
+26 ALEXEY CHESKIDOV AND HEDONG HOU
+6.Convex integration
+In this section, we construct the velocity perturbationwin Propo-
+sition 4.1 via convex integration. We use Mikado flows introduced by
+Daneri and Sz´ ekelyhidi in [DS17, Lemma 2.3] as building blocks of our
+convex integration scheme, see also [BV19a, CL22, ABGN25]. In what
+follows, we fix
+θ∈(0,1), e:= 2
+
+θ−1
+>2 .
+6.1.Mikado flows.Let us start with a geometric lemma by De Lel-
+lis and Sz´ ekelyhidi [DLS13, Lemma 3.2], which originated from Nash
+[Nas54].
+Denote byB 1/2(I) the ball of positive definite symmetricd×dmatri-
+ces (with respect to the matrix norm), centered at the identity matrix
+I, of radius 1/2. There exist a finite set Λ⊂Z d and smooth functions
+Γk :B 1/2(I)→Rfork∈Λ such that
+R=
+X
+k∈Λ
+Γ2
+k(R)k⊗k,∀R∈B 1/2(I).
+Fork∈Λ, pickp k ∈(0,1) d and denote byℓ k the line passing through
+pk in the directionkinT d, i.e.,ℓ k ={p k +tk∈T d :t∈R}. One may
+adjustp k so thatp k /∈ℓ−k when bothkand−klie in Λ.
+Letµ≥1 be a concentration parameter. Letψ: [1/2,1]→Rbe a
+non-zero smooth function such thatψ k :T d →R, defined by
+ψk(x) :=c kµ
+1
+2 (d−1)ψ(µdist(x, ℓ k)),
+withc k >0 a normalization constant, satisfies that
+ 
+ψk = 0,and
+ 
+ψ2
+k = 1.
+Define theMikado flowsW k :T d →R d fork∈Λ by
+Wk(x) :=ψ k(x)k.
+Notice thatW k is of mean zero, divergence-free, and satisfies
+ 
+Wk ⊗W k =k⊗k.
+Also,W k is a solution to the pressureless stationary Euler equation,
+namely, div(Wk ⊗W k) = 0. Moreover, define the anti-symmetric tensor
+Ωk :T d →Mat d(R) by
+Ωk :=k⊗ ∇∆ −1ψk − ∇∆−1ψk ⊗k.
+
+[PDF page 27]
+NONUNIQUENESS NS 27
+Using (k· ∇)ψ k = 0 and
+ffl
+ψk = 0, we get
+div Ωk = div(∇∆−1ψk)k−(k· ∇)∇∆ −1ψk =ψ kk−0 =W k.
+We collect estimates of the Mikado flows in the following lemma.
+The reader can refer to [CL22, Theorem 4.3] for the proof.
+Lemma 6.1(Estimates on the Mikado flows).Letd≥2and1≤p≤
+∞. Then for anym≥0,
+∥∇mWk∥Lp ≲m µmµ(d−1)( 1
+2 − 1
+p ),
+∥∇mΩk∥Lp ≲m µmµ−1+(d−1)( 1
+2 − 1
+p ).
+Moreover, forl∈Λbutl̸=k, it holds that
+∥Wk ⊗W l∥Lp ≲µ d−1− d
+p .
+6.2.Velocity perturbation.The main point of our construction is
+to localize the Fourier transform of the velocity perturbation, while
+also keeping intermittency. To this end, we define the principal part of
+the perturbationw (p) by
+w(p)(x) :=
+X
+k∈Λ
+ak(x)Wk(γx) cos(2πσkk⊥ ·x),
+whereγ, σ k ≥1 are oscillation parameters, andk ⊥ ∈Z d \ {0}is a
+lattice point that is perpendicular tokwith|k ⊥| ≤ |k|. The amplitude
+functiona k :T d →Ris given by
+ak(x) := (8d2∥R∥L∞)1/2 Γk
+
+I− R(x)
+4d2∥R∥L∞
+
+,
+in caseR(x) is not identically zero. IfR≡0, seta k ≡0 for allk∈Λ.
+Note thatI− R(x)
+4d2∥R∥L∞ lies inB 1/2(I). The role ofσ k is to ensure that
+allσ kk⊥ lie in the same dyadic shell that is sufficiently far away from
+the origin, particularly whenk ⊥ are not of the same length, as we shall
+see in Lemma 6.2.
+6.2.1.Localization corrector.We define the frequency localization cor-
+rectorw (l) with respect to a dyadic integerλ≥1 by
+w(l)(x) :=−
+X
+k∈Λ
+ak(x)P>λ(Wk(γ·))(x) cos(2πσkk⊥ ·x)
+−
+X
+k∈Λ
+P>λak(x)P≤λ(Wk(γ·))(x) cos(2πσkk⊥ ·x).
+
+[PDF page 28]
+28 ALEXEY CHESKIDOV AND HEDONG HOU
+Thus,
+(6.1)w (p) +w (l) =
+X
+k∈Λ
+P≤λakP≤λ(Wk(γ·)) cos(2πσkk⊥ ·x).
+Given a dyadic integerλ≥1, the following arithmetic lemma deter-
+minesσ k so that allσ kk⊥ lie in the same dyadic shell.
+Lemma 6.2(Arithmetic lemma).For any dyadic integerλ≥1, there
+exist integers{σ k}k∈Λ and a dyadic numberσ >50λ e so that
+[
+k∈Λ
+ 
+B(σkk⊥,2λ)∪B(−σ kk⊥,2λ)
+
+⊂
+
+m∈Z d : 1
+2 σ <|m|< 9
+10 σ
+
+.
+Proof.Writec Λ :=Q
+k∈Λ |k⊥|. We claim that it suffices to verify that
+there exist an integerb≥45λ e and a dyadic numberσsuch that
+(6.2) 11
+9 bcΛ < σ < 9
+5 bcΛ.
+Indeed, suppose (6.2) holds. Then pickσ k :=⌈ bcΛ/|k⊥|⌉. Asb≥45λ e >
+40λ, we have 2λ < bcΛ/20, and moreover,
+|σkk⊥| −bc Λ
+ ≤ |k ⊥| ≤c Λ <
+bcΛ/20. Hence, we have
+1
+2 σ < 9
+10 bcΛ <|σ kk⊥| −2λ <|σ kk⊥|+ 2λ < 11
+10 bcΛ < 9
+10 σ.
+Asb≥45λ e, we haveσ >55c Λλe >50λ e as desired.
+Let us finish by proving (6.2). Consider the translation mapTon
+T≃R/Zdefined by
+T(x) :=x+ log 2(3λe) mod 1.
+Sinceλis dyadic, log 2(3λe) = log 2 3 +mfor some integerm, hence
+it is irrational. The (positive) orbit of anyx∈T,{T nx:n≥0}, is
+dense inT. In particular, there existsl≥1 such thatT l(log2(55cΛ))∈
+(1−log 2 (81/55),1). Equivalently, there exists an integerj≥1 with
+log2(55cΛ) +llog 2(3λe)< j <log 2(81cΛ) +llog 2(3λe).
+Then (6.2) follows by takingσ= 2 j andb= 45(3λ e)l.□
+6.2.2.Divergence-free corrector.Sincew (p)+w(l) is not divergence-free,
+we need to introduce the divergence-free correctorw (d). Write
+Ψk :=P ≤λ(ψk(γ·)) cos(2πσkk⊥ ·x),
+and
+Wk := Ψkk=P ≤λ(Wk(γ·)) cos(2πσkk⊥ ·x).
+Define the anti-symmetric tensorΩ k by
+Ωk :=k⊗ ∇∆ −1Ψk − ∇∆−1Ψk ⊗k,
+
+[PDF page 29]
+NONUNIQUENESS NS 29
+and the divergence-free correctorw (d) by
+w(d) :=
+X
+k∈Λ
+∇P≤λak :Ω k.
+Lemma 6.3.Givenλ, µ, γ≥1andσ k ≥1as in Lemma 6.2, the
+velocity perturbation
+(6.3)w:=w (p) +w (l) +w (d)
+is divergence-free, and there exists a dyadic integerσ >50λ e so that
+(6.4) suppbw⊂
+
+m∈Z d : 1
+2 σ <|m|< 9
+10 σ
+
+.
+Proof.We first verify thatwis divergence-free. Using (k· ∇)ψ k = 0
+andk·k ⊥ = 0, we get (k· ∇)Ψ k = 0 and hence,
+divΩ k = div(∇∆−1Ψk)k−(k· ∇)∇∆ −1Ψk = Ψkk−0 =W k.
+Here, we use the fact that Ψk is of mean zero, as suppbΨk ⊂B(σ kk⊥, λ)∪
+B(−σkk⊥, λ) is away from 0. Thus, we get
+w=
+X
+k∈Λ
+P≤λakWk +∇P ≤λak :Ω k = div
+X
+k∈Λ
+P≤λakΩk.
+SinceP ≤λakΩk is anti-symmetric, we obtain divw= 0.
+Next, to prove (6.4), we notice that
+suppbw⊂
+[
+k∈Λ
+
+B(σkk⊥,2λ)∪B(−σ kk⊥,2λ)
+
+=:S.
+Indeed, we get from (6.1) that the Fourier transform ofw(p)+w(l) is sup-
+ported inS. Moreover, bΨk is supported inB(σ kk⊥, λ)∪B(−σ kk⊥, λ),
+and so is bΩk. Thus, the Fourier transform ofw (d) is supported inS,
+and so is that ofw. Then (6.4) follows from Lemma 6.2 as
+suppbw⊂S⊂
+
+m∈Z d : 1
+2 σ <|m|< 9
+10 σ
+
+.
+This completes the proof.□
+6.3.Reynolds stress.To make ( u, R) a solution to (4.1), the cor-
+rectorw= u−uand the new Reynolds stress Rshould satisfy the
+equation
+(6.5) div R= div(R+w⊗w) + (−∆) αw+ div(u⊗w+w⊗u) +∇P
+for certain pressureP∈C ∞.
+
+[PDF page 30]
+30 ALEXEY CHESKIDOV AND HEDONG HOU
+Givenwdefined by (6.3), let us construct R. First, consider the
+non-linear term. Denote byw (c) the full corrector
+w(c) :=w (l) +w (d).
+Sow=w (p) +w (c) and
+R+w⊗w=R+w (p) ⊗w (p) +w (p) ⊗w (c) +w (c) ⊗w.
+Define the correction errorR cor by
+Rcor :=w (p) ⊗w (c) +w (c) ⊗w.
+Then we decompose the tensorw (p) ⊗w (p) to the diagonal part and the
+off-diagonal part as
+R+w (p) ⊗w (p)
+=R+ 1
+2
+X
+k∈Λ
+a2
+k(1 + cos(4πσkk⊥ ·x))W k(γx)⊗W k(γx)
++
+X
+k,l∈Λ
+k̸=l
+akal cos(2πσkk⊥ ·x) cos(2πσ ll⊥ ·x)W k(γx)⊗W l(γx)
+Define the off-diagonal errorR off by
+Roff :=
+X
+k,l∈Λ
+k̸=l
+akal cos(2πσkk⊥ ·x) cos(2πσ ll⊥ ·x)W k(γx)⊗W l(γx),
+and the distortion errorR dis by
+Rdis := 1
+2
+X
+k∈Λ
+a2
+k cos(4πσkk⊥ ·x)W k(γx)⊗W k(γx).
+We further decompose the tensorW k(γx)⊗W k(γx) to the average part
+and the oscillation part. Since
+ffl
+Wk ⊗W k =k⊗k, we obtain
+R+w (p) ⊗w (p) =R+ 1
+2
+X
+k∈Λ
+a2
+kk⊗k
++ 1
+2
+X
+k∈Λ
+a2
+k
+
+Wk(γx)⊗W k(γx)−
+ 
+Wk ⊗W k
+
++R dis +R off.
+Define the oscillation errorR osc by
+Rosc = 1
+2
+X
+k∈Λ
+a2
+k
+
+Wk(γx)⊗W k(γx)−
+ 
+Wk ⊗W k
+
+.
+
+[PDF page 31]
+NONUNIQUENESS NS 31
+Moreover, one has
+1
+2
+X
+k∈Λ
+a2
+kk⊗k= 4d 2∥R∥L∞
+X
+k∈Λ
+Γ2
+k
+
+I− R
+4d2∥R∥L∞
+
+k⊗k= 4d 2∥R∥L∞I−R.
+Therefore, we obtain
+(6.6)R+w⊗w= 4d 2∥R∥L∞I+R osc +R dis +R off +R cor.
+Finally, we define the linear errorR lin by
+Rlin :=R((−∆) αw+ div(u⊗w+w⊗u)),
+and the new Reynolds stress Rby
+(6.7) R:=R osc +R dis +R off +R cor +R lin.
+Lemma 6.4.Let(u, R)be a smooth solution to(4.1)with the pressure
+p. Then for anyλ, µ, γ≥1,( u, R)is another smooth solution to(4.1)
+with the same pressurep, where the velocity perturbationw:= u−u
+and Rare defined by(6.3)and(6.7).
+Proof.First, we prove that Ris symmetric. Indeed, (6.6) implies that
+R−R lin =R+w⊗w−4d 2∥R∥L∞Iis symmetric. By definition of the
+anti-divergence operatorR,R lin is also symmetric, and so is R.
+Next, we show that Rsatisfies (6.5) withP= 0. By (6.6), we get
+div R= div(R+w⊗w−4d 2∥R∥L∞I) + divRlin
+= div(R+w⊗w) + divR((−∆) αw+ div(u⊗w+w⊗u))
+= div(R+w⊗w) + (−∆) αw+ div(u⊗w+w⊗u).
+The last equality holds thanks to (5.5) and the fact that (−∆) αw+
+div(u⊗w+w⊗u) is of mean zero.□
+7.Estimates on the perturbation and the stress
+This section is devoted to estimates onwand Rbased on the fol-
+lowing four parameters.
+λ≥2 dyadic integer reference frequency
+µ≥1 – concentration parameter
+γ≥1 dyadic integer slow oscillation
+σ >50λ e dyadic integer fast oscillation
+In what follows,C u denotes a constant that depends only on (u, R).
+Let us start with a lemma on boundedness of the Littlewood-Paley
+projections onL p.
+
+[PDF page 32]
+32 ALEXEY CHESKIDOV AND HEDONG HOU
+Lemma 7.1.Let1≤p≤ ∞. For anyf∈C ∞(Td)and any dyadic
+N, it holds that
+∥P≤N f∥ Lp ≲∥f∥ Lp,
+∥P>N f∥ Lp ≲N −1∥∇f∥ Lp.
+Proof.The first inequality is a direct consequence of Bernstein’s in-
+equality (see e.g., [BCD11, Lemma 2.1]). The second also follows from
+Bernstein’s inequality as
+∥P>N f∥ Lp ≤
+X
+M≥2N
+∥PM f∥ Lp ≲
+X
+M≥2N
+M −1∥∇PM f∥ Lp
+≲
+X
+M≥2N
+M −1∥∇f∥ Lp ≲N −1∥∇f∥ Lp.□
+Proposition 7.2(Estimates onw).Let1≤p≤ ∞andθ∈R. There
+exists a constantC 1 ≥1depending only on(u, R)with the following
+estimates
+∥w(p)∥Lp ≤C 1µ(d−1)( 1
+2 − 1
+p ),(7.1)
+∥w(l)∥L∞ ≤C 1λ−1γµ1+ 1
+2 (d−1),(7.2)
+∥w(d)∥L∞ ≤C 1σ−1µ
+1
+2 (d−1),(7.3)
+∥w∥B−θ
+∞,1
+≤C 1σ−θµ
+1
+2 (d−1).(7.4)
+Proof.First, (7.1) directly follows from H¨ older’s inequality as
+∥w(p)∥Lp ≤
+X
+k∈Λ
+∥ak∥L∞∥Wk(γ·)∥Lp∥cos(2πσ kk⊥ ·x)∥ L∞
+≤
+X
+k∈Λ
+∥ak∥L∞∥Wk∥Lp ≤C uµ(d−1)( 1
+2 − 1
+p ).
+Next, for (7.2), using Lemma 7.1, we obtain
+∥akP>λ(Wk(γ·)) cos(2πσkk⊥ ·x)∥ L∞ ≤ ∥a k∥L∞∥P>λ(Wk(γ·))∥L∞
+≲∥a k∥L∞λ−1∥∇(Wk(γ·))∥L∞
+≤C uλ−1γµ1+ 1
+2 (d−1).
+Moreover, asγ≥1 andµ≥1, we have
+∥P>λakP≤λ(Wk(γ·)) cos(2πσkk⊥ ·x)∥ L∞ ≲∥P >λak∥L∞∥Wk∥L∞
+≲λ −1∥ak∥C1µ
+1
+2 (d−1)
+≤C uλ−1γµ1+ 1
+2 (d−1).
+
+[PDF page 33]
+NONUNIQUENESS NS 33
+For (7.3), we also use Bernstein’s inequality to get
+∥Ωk∥L∞ ≲∥∇∆ −1Ψk∥L∞ ≲σ −1∥Ψk∥L∞
+≤σ −1∥P≤λ(ψk(γ·)) cos(2πσkk⊥ ·x)∥ L∞ ≲σ −1µ
+1
+2 (d−1).
+Here, we also use the fact that bΨk is supported in the annulus{m∈
+Zd :σ/2<|m|<9σ/10}. Thus, we have
+∥w(d)∥L∞ ≤
+X
+k∈Λ
+∥∇P≤λak∥L∞∥Ωk∥L∞ ≤C uσ−1µ
+1
+2 (d−1).
+Finally, to prove (7.4), we infer from (6.1) that
+∥w(p) +w (l)∥L∞ ≤
+X
+k∈Λ
+∥P≤λak∥L∞∥P≤λ(Wk(γ·))∥L∞ ≤C uµ
+1
+2 (d−1).
+Sincebwis supported in the annulus{m∈Z d :σ/2<|m|<9σ/10}
+(cf. Lemma 6.3), we obtain
+∥w∥B−θ
+∞,1
+≲σ −θ∥w∥L∞ ≤σ −θ 
+∥w(p) +w (l)∥L∞ +∥w (d)∥L∞
+
+≤C uσ−θµ
+1
+2 (d−1).
+This completes the proof.□
+Proposition 7.3(Estimates on R).Lets≥ d
+2 + 2α. Then there exists
+a constantC 2 ≥1depending only on(u, R)with the following estimates
+∥Rosc∥H −s ≤C 2
+
+γ−sµ
+1
+2 (d−1) +γ −1
+
+,(7.5)
+∥Rdis∥H −s ≤C 2
+
+σ−sµ
+1
+2 (d−1) +λ −1γµ
+
+,(7.6)
+∥Roff∥L1 ≤C 2µ−1,(7.7)
+∥Rcor∥L1 ≤ ∥w (c)∥L∞(∥w∥L1 +∥w (p)∥L1),(7.8)
+∥Rlin∥H −s ≤C 2∥w∥Lp,for all1< p <∞.(7.9)
+Proof.First consider (7.5). Write
+(7.10)T k(x) :=W k(γx)⊗W k(γx)−
+ 
+Wk ⊗W k,
+and we decomposeR osc as
+Rosc = 1
+2
+X
+k∈Λ
+a2
+kTk = 1
+2
+X
+k∈Λ
+ 
+P≤γ/2(a2
+k)Tk +P >γ/2(a2
+k)Tk
+
+.
+Since bTk is supported in{m∈Z d :|m| ≥γ}, one has
+∥P≤γ/2(a2
+k)Tk∥H −s ≲γ −s∥P≤γ/2(a2
+k)Tk∥L2 ≲γ −s∥P≤γ/2(a2
+k)∥L∞∥Tk∥L2
+≲γ −s∥ak∥2
+L∞∥Wk∥2
+L4 ≤C uγ−sµ
+1
+2 (d−1).
+
+[PDF page 34]
+34 ALEXEY CHESKIDOV AND HEDONG HOU
+Using Lemma 7.1, we also have
+∥P>γ/2(a2
+k)Tk∥L1 ≤ ∥P >γ/2(a2
+k)∥L∞∥Tk∥L1
+≲γ −1∥∇(a2
+k)∥L∞∥Wk∥2
+L2 ≤C uγ−1.
+Since−s−d/2<−d, Sobolev’s embedding theorem yields thatL 1
+embeds intoH −s, so gathering these estimates gives (7.5).
+Next, to prove (7.6), we decomposeR dis into three parts
+Rdis := 1
+2
+X
+k∈Λ
+P≤λ(a2
+k)P≤λ(Wk(γ·)⊗W k(γ·)) cos(4πσkk⊥ ·x)
++ 1
+2
+X
+k∈Λ
+P>λ(a2
+k)P≤λ(Wk(γ·)⊗W k(γ·)) cos(4πσkk⊥ ·x)
++ 1
+2
+X
+k∈Λ
+a2
+kP>λ(Wk(γ·)⊗W k(γ·)) cos(4πσkk⊥ ·x)
+:=I 1 +I 2 +I 3.
+Note that bI1 is supported in{m∈Z d :σ <|m|<9σ/5}, so we have
+∥I1∥H −s ≲σ −s
+X
+k∈Λ
+∥P≤λ(a2
+k)∥L∞∥P≤λ(Wk(γ·)⊗W k(γ·))∥L2
+≲σ −s
+X
+k∈Λ
+∥ak∥2
+L∞∥Wk∥2
+L4 ≤C uσ−sµ
+1
+2 (d−1).
+The estimates ofI 2 andI 3 also follow from Lemma 7.1 as
+∥I2∥L1 ≲
+X
+k∈Λ
+∥P>λ(a2
+k)∥L∞∥P≤λ(Wk(γ·)⊗W k(γ·))∥L1
+≲λ −1
+X
+k∈Λ
+∥∇(a2
+k)∥L∞∥Wk∥2
+L2 ≤C uλ−1 ≤C uλ−1γµ,
+where the last inequality holds asγ≥1 andµ≥1, and
+∥I3∥L1 ≲
+X
+k∈Λ
+∥a2
+k∥L∞∥P>λ(Wk(γ·)⊗W k(γ·))∥L1
+≲λ −1
+X
+k∈Λ
+∥ak∥2
+L∞∥∇((Wk ⊗W k)(γ·))∥L1
+≲λ −1γ
+X
+k∈Λ
+∥ak∥2
+L∞∥∇Wk∥L2∥Wk∥L2 ≤C uλ−1γµ.
+Using again the fact thatL 1 embeds intoH −s, we combine these esti-
+mates to obtain the estimate desired in (7.6).
+
+[PDF page 35]
+NONUNIQUENESS NS 35
+For (7.7), it follows from H¨ older’s inequality and Lemma 6.1 as
+∥Roff∥L1 ≤
+X
+k,l∈Λ
+k̸=l
+∥ak∥L∞∥al∥L∞∥Wk(γx)⊗W l(γx)∥L1 ≤C uµ−1.
+The estimate (7.8) directly follows from H¨ older’s inequality.
+For (7.9), note thatRdiv is a Calder´ on-Zygmund operator, so we
+have that for any 1< p <∞,
+∥Rdiv(u⊗w+w⊗u)∥ L1 ≤ ∥Rdiv(u⊗w+w⊗u)∥ Lp
+≲∥u∥ L∞∥w∥Lp ≤C u∥w∥Lp.
+Moreover, as−s+ 2α−1−d/2<−d, Sobolev’s embedding theorem
+yields thatL 1 embeds intoH −s+2α−1, so we get
+∥R(−∆)αw∥H −s ≲∥w∥ H −s+2α−1 ≲∥w∥ L1 ≤ ∥w∥ Lp.
+Combining these estimates gives (7.9). This completes the proof.□
+Corollary 7.4(Estimates on paraproducts).Lets≥ d
+2 + 2α. There
+existsC 3 ≥1depending only on(u, R)with the following estimates
+∥w⊗w∥ ˙H
+−s ≤ ∥R∥ H −s+C3 (∥Rosc∥H −s +∥R dis∥H −s +∥R off∥L1 +∥R cor∥L1),
+and X
+M≤2N
+ 
+∥PM u⊗w∥ ˙H
+−s +∥w⊗P M u∥ ˙H
+−s
+
+≤C 3∥w∥Lp.
+Proof.Using againL 1 ,→H −s, we get from (6.6) that
+∥w⊗w∥ ˙H
+−s ≤ ∥R∥ H −s +∥w⊗w+R∥ ˙H
+−s
+≤ ∥R∥ H −s +C u (∥Rosc∥H −s +∥R dis∥H −s +∥R off∥L1 +∥R cor∥L1).
+Moreover, H¨ older’s inequality yields thatX
+M≤2N
+∥PM u⊗w∥ ˙H
+−s ≲
+X
+M≤2N
+∥PM u⊗w∥ L1 ≲N ∥u∥L∞∥w∥Lp,
+and the other term follows similarly. This completes the proof.□
+8.Proof of Proposition 4.1
+In this section, we prove Proposition 4.1 via a particular choice of
+the parameters. Letλ≥2. We first determineσ,µ, andγwith respect
+toλ. The value ofσis given by Lemma 6.2. Also recall that
+θ∈(0,1), e:= 2
+
+θ−1
+>2.
+Define two exponentsϵandβby
+ϵ:= 2−p
+12 , β:= p
+6(d−1) = ϵ
+(d−1)( 1
+p − 1
+2) .
+
+[PDF page 36]
+36 ALEXEY CHESKIDOV AND HEDONG HOU
+Set
+(8.1)µ:=λ β, γ:=λ 1/2.
+Lemma 8.1.Letd≥2andp∈(1,2)with 1
+p − 1
+2 ≤ 1
+d−1. Then
+γ−1 ≤µ −1 ≤λ −ϵ,(8.2)
+µ(d−1)( 1
+2 − 1
+p ) ≤λ −ϵ,(8.3)
+λ−1γµ≤λ −1γµ1+ 1
+2 (d−1) ≤λ −ϵ.(8.4)
+Moreover, fors≥1, it holds that
+γ−sµ
+1
+2 (d−1) ≤λ −ϵ,(8.5)
+σ−sµ
+1
+2 (d−1) ≤σ −1µ
+1
+2 (d−1) ≤σ −θµ
+1
+2 (d−1) ≤λ −ϵ.(8.6)
+Proof.First, (8.2) is equivalent toϵ≤β≤1/2. The first inequality
+holds as (d−1)( 1
+p − 1
+2)≤1, and the second holds asp <2 andd≥2.
+Next, (8.3) follows by definition asµ (d−1)( 1
+2 − 1
+p ) =λ −ϵ.
+To prove (8.4), direct computation shows that
+λ− 1
+6 µ
+1
+2 (d−1) =λ − 1
+6 + 1
+2 (d−1)β =λ − 1
+6 + p
+12 =λ −ϵ.
+Then usingγ, µ≥1 andd≥2, we obtain (8.4) as
+λ−1γµ≤λ −1γµ1+ 1
+2 (d−1) ≤λ − 1
+3 µλ− 1
+6 µ
+1
+2 (d−1) ≤
+
+λ− 1
+6 µ
+1
+2 (d−1)
+3
+≤λ −ϵ.
+The estimates (8.5) and (8.6) directly follow from (8.4) asγ −s ≤
+γ−1 =λ −1/2 ≤λ −1γµandσ −s ≤σ −1 < σ −θ < λ −eθ < λ −1 ≤λ −1γµ.
+□
+Let us present the proof of Proposition 4.1.
+Proof of Proposition 4.1.Letd≥2 andα >0. Set
+s=d/2 + 2α+ 1.
+Let us verify the properties. Without loss of generality, we prove the
+statements forpsufficiently close to 2 so that
+1
+p − 1
+2 ≤ 1
+d−1 .
+The other cases follow by H¨ older’s inequality. Let 0< θ <1,δ >0,
+andNbe a dyadic integer. Let (u, R) be the given smooth solution to
+(4.1) with suppbu⊂B(0, N). Writee:= 2⌈θ −1⌉.
+Letλ≥2 be a sufficiently large dyadic number (to be determined)
+withγ=λ 1/2 ∈N. Pick the dyadic integerσ >50λ e as in Lemma 6.2
+and the parameterµas in (8.1).
+
+[PDF page 37]
+NONUNIQUENESS NS 37
+Applying these parameters to Lemma 6.4 gives a new smooth solu-
+tion (u, R) such that the Fourier transform of the velocity perturbation
+w:= u−uis supported in the annulus
+
+m∈Z d : 1
+2 σ <|m|< 9
+10 σ
+
+.
+Moreover, we infer from Propositions 7.2, 7.3, Corollary 7.4, and Lemma
+8.1 that there exists a constantC >0 depending only on (u, R) with
+the following estimates
+∥R∥H −s ≤Cλ −ϵ,
+∥w∥Lp ≤Cλ −ϵ,
+∥w∥B−θ
+∞,1
+≤Cλ −ϵ,
+∥w⊗w∥ ˙H
+−s +
+X
+M≤2N
+ 
+∥PM u⊗w∥ ˙H
+−s +∥w⊗P M u∥ ˙H
+−s
+
+≤ ∥R∥ H −s +Cλ −ϵ.
+Finally, pickλas a dyadic integer so that
+λ >max{C 1/ϵδ−1/ϵ,4N}andλ 1/2 ∈N.
+In particular, one hasCλ −ϵ < δ. The estimates (4.2), (ii), and (iii)
+follow from the inequalities right above. Moreover, we get (i) by taking
+D:=σ/N >50λ e/N >50λ 2/N >50N.
+This completes the proof.□
+We explain here why our non-trivial stationary solutionuto (NSE)
+does not belong to the Chemin-Lerner space eLp
+t B
+−1+ d
+q + 2
+p
+q,r ford < q <
+∞, 1≤r <∞, and 2< p < 2q
+q−d. Indeed, observe that for any finite
+timeT >0, any stationary solutionusatisfies that
+∥u∥
+eLp
+t B
+−1+ d
+q + 2
+p
+q,r
+=
+ X
+N
+N (−1+ d
+q + 2
+p )r∥PN u∥r
+Lp
+t Lq
+x
+!1/r
+≂T 1/p∥u∥
+B
+−1+ d
+q + 2
+p
+q,r
+.
+The conditions onqandpensure that−1 + d
+q + 2
+p >0, soB
+−1+ d
+q + 2
+p
+q,r
+embeds intoL q. Corollary 3.1 says that there does not exist non-trivial
+stationary solutions inL q. Particularly, our stationary singular solution
+does not belong to eitherB
+−1+ d
+q + 2
+p
+q,r or eLp
+t B
+−1+ d
+q + 2
+p
+q,r .
+However, on the other hand, Theorem 1.8 proves existence of singular
+stationary solutions in eLp
+t B
+−1+ d
+q + 2
+p
+q,r for all 2q
+q−d < p≤ ∞.
+
+[PDF page 38]
+38 ALEXEY CHESKIDOV AND HEDONG HOU
+9.Proof of Proposition 4.2
+The proof resembles the proof of Proposition 4.1. We introduce a
+cut-off functionζ: Mat d(R)→[0,∞) which is increasing with respect
+to the matrix norm| · |and satisfies
+ζ(X) :=
+(
+4∥R∥L1 if|X| ≤ ∥R∥ L1
+4|X|if|X| ≥2∥R∥ L1.
+Apply it to the Reynolds stress and defineρ:T d →[0,∞) by
+ρ(x) :=ζ(R(x)).
+It is clear thatI− R
+ρ lies inB 1/2(I).
+Define the new principal partw (p) by
+w(p)(x) :=
+X
+k∈Λ
+ak(x)Wk(γx),
+where the amplitude functiona k :T d →Ris given by
+ak :=ρ 1/2Γk
+
+I− R
+ρ
+
+.
+We do not need the frequency localization corrector in this case. Namely,
+the new correctorw (c) is given by
+w(c)(x) :=γ −1
+X
+k∈Λ
+∇ak(x) : Ωk(γx).
+The velocity perturbationw= u−uis hence given by
+w:=w (p) +w (c),
+which is divergence-free.
+Define the linear errorR lin by
+Rlin :=R(−∆) αw+u⊗w+w⊗u,
+the correction errorR cor by
+Rcor :=w (p) ⊗w (c) +w (c) ⊗w,
+and the off-diagonal errorR off by
+Roff :=
+X
+k̸=l
+akalWk(γx)⊗W l(γx).
+To define the oscillation error, we need to introduce a bilinear anti-
+divergence operatorBfromC ∞(Td;R d)×C ∞(Td; Matd(R)) toC ∞(Td; Matd(R))
+defined by
+(B(f, X)) i,j =f lRi,j,kXl,k − R(∂iflRi,j,kXl,k).
+
+[PDF page 39]
+NONUNIQUENESS NS 39
+It is clear thatB(f, X) is a traceless symmetric matrix. The reader
+can refer to [CL22, Appendix B.3] for more detailed properties ofB.
+Define the oscillation errorR osc by
+Rosc :=
+X
+k∈Λ
+B(∇(a2
+k), Tk),
+whereT k is the oscillation part ofW k(γx)⊗W k(γx) as defined in (7.10).
+The new Reynolds stress Ris hence defined by
+R:=R osc +R off +R cor +R lin.
+Observe that ( u, R) is a smooth solution to (4.1). Indeed, direct
+computation shows that
+div R= div(R+w⊗w) + (−∆) αw+ div(u⊗w+w⊗u)− ∇ρ,
+which agrees with (6.5) withP=−ρ.
+Now, we summarize the estimates needed.
+Lemma 9.1(Estimates onw).There existsA >0depending only
+ondandC 1 >0depending on(u, R)such that for anyβ≥0and
+1≤p≤ ∞, it holds that
+∥w(p)∥L2 ≤A∥R∥ 1/2
+L1 +C 1γ−1/2,(9.1)
+∥w(c)∥Lp ≤C 1γ−1µ−1+(d−1)( 1
+2 − 1
+p ),(9.2)
+∥(−∆)βw∥Lp ≤C 1γ2βµ2β+(d−1)( 1
+2 − 1
+p ),(9.3)
+∥P≤γ/2w∥L2 ≲C 1γ−1.(9.4)
+Proof.To prove (9.1), we use the improved H¨ older’s inequality (see
+[MS18, Lemma 2.1] and [BV19b, Lemma 3.7]) to get that
+∥w(p)∥L2 ≲
+X
+k∈Λ
+ 
+∥ak∥L2∥Wk∥L2 +γ −1/2∥ak∥C1∥Wk∥L2
+
+.
+Since Λ and Γ k only depend ond, we have
+∥ak∥L2 ≲d ∥ρ∥1/2
+L1 ≲∥R∥ 1/2
+L1 .
+Gathering these estimates gives (9.1).
+Next, (9.2) follows from Lemma 6.1 as
+∥w(c)∥Lp ≤γ −1
+X
+k∈Λ
+∥∇ak∥L∞∥Ωk∥Lp ≲C uγ−1µ−1+(d−1)( 1
+2 − 1
+p ).
+
+[PDF page 40]
+40 ALEXEY CHESKIDOV AND HEDONG HOU
+For (9.3), sinceW k is of mean zero, we infer from Lemma 6.1 that
+∥(−∆)βw(p)∥Lp ≲
+X
+k∈Λ
+∥ak∥C2⌈β⌉+1 ∥(−∆)β(Wk(γx))∥Lp
+≤C uγ2β∥(−∆)βWk∥Lp ≤C uγ2βµ2β+(d−1)( 1
+2 − 1
+p ).
+Similar computation shows that
+∥(−∆)βw(c)∥Lp ≲γ 2β−1µ2β−1+(d−1)( 1
+2 − 1
+p ).
+Asγ≥1 andµ≥1, combining these estimates gives (9.3).
+Finally, to prove (9.4), note that asW k is of mean zero, the Fourier
+support ofW k(γ·) is contained in{m∈Z d :|m| ≥γ}. So we get
+∥P≤γ/2w∥L2 ≤ ∥P ≤γ/2w(c)∥L2 +∥P ≤γ/2w(p)∥L2
+≤C uγ−1µ−1 +
+X
+k∈Λ
+∥P>γ/2ak∥L∞∥Wk∥L2 ≤C uγ−1.
+This completes the proof.□
+Lemma 9.2(Estimates on R).Let1< r <∞. There existsC 2 >0
+depending on(u, R)andrwith the following estimates
+∥Rosc∥L1 ≤C 2γ−1,(9.5)
+∥Roff∥L1 ≤C 2µ−1,(9.6)
+∥Rcor∥L1 ≤C 2γ−1µ−1,(9.7)
+∥Rlin∥L1 ≤C 2
+
+µ− 1
+2 (d−1) +γ 2α−1µ2α−1+(d−1)( 1
+2 − 1
+r )
+
+.(9.8)
+Proof.First consider (9.5). Notice that bTk is supported in{m∈Z d :
+|m| ≥γ}. So (9.5) follows from the bilinear estimates ofB(see [CL22,
+Theorem B.4]) and Bernstein’s inequality as
+∥Rosc∥L1 ≲
+X
+k∈Λ
+∥∇(a2
+k)∥C1∥RTk∥L1 ≲
+X
+k∈Λ
+∥ak∥2
+C2γ−1∥Tk∥L1 ≤C uγ−1.
+The proof of (9.6) is the same as that of (7.7) using Lemma 6.1.
+The estimate (9.7) follows from H¨ older’s inequality and Lemma 9.1.
+To prove (9.8), we use Lemma 9.1 to get
+∥u⊗w+w⊗u∥ L1 ≤C u∥w∥L1 ≤C uµ− 1
+2 (d−1).
+Forα <1/2, we infer from Bernstein’s inequality and Lemma 9.1 that
+∥R(−∆)αw∥L1 ≲∥w∥ L1 ≲µ − 1
+2 (d−1).
+
+[PDF page 41]
+NONUNIQUENESS NS 41
+Forα≥1/2, sinceR(−∆) 1/2 is a Calder´ on-Zygmund operator, we get
+∥R(−∆)αw∥L1 ≤ ∥R(−∆)1/2(−∆)α−1/2w∥Lr
+≲∥(−∆) α−1/2w∥Lr ≤C uγ2α−1µ2α−1+(d−1)( 1
+2 − 1
+r ).
+Gathering these estimates gives (9.8) as desired.□
+Now, let us prove Proposition 4.2.
+Proof of Proposition 4.2.Letγ≥1 be a dyadic number to be deter-
+mined. We first determineµwith respect toγ. Asα <(d+ 1)/4, one
+has
+ϵ:= 1
+3 min
+
+1, 1
+2(d−1)−(2α−1)
+
+>0.
+Define
+µ:=γ 2⌈α/ϵ⌉ ≥γ 2.
+By perturbation, pickr∈(1,2) sufficiently close to 1 such that
+(d−1)
+1
+r − 1
+2
+
+−(2α−1)≥2ϵ.
+Then one has
+γ2α−1µ2α−1+(d−1)( 1
+2 − 1
+r ) ≤γ 2α−1µ−2ϵ ≤γ −1−2α ≤γ −1,
+and
+µ− 1
+2 (d−1) ≤µ −1/2 ≤γ −1.
+Therefore, Lemmas 9.1 and 9.2 yield that there existsA >0 depending
+only ondandC >0 depending on (u, R), such that the following
+estimates hold:
+∥w∥L2 ≤A∥R∥ 1/2
+L1 +Cγ −1/2,
+∥P≤γ/2w∥L2 ≤Cγ −1,
+∥R∥L1 ≤Cγ −1.
+Then Proposition 4.2 follows from a particular choice ofγas a dyadic
+number such that
+γ >10N, Cγ −1/2 < δ,andCγ −1 <min{δ 2, δ′}.
+This completes the proof.□
+
+[PDF page 42]
+42 ALEXEY CHESKIDOV AND HEDONG HOU
+Statements and declarations
+•Conflict of interest: On behalf of all authors, the corresponding
+author states that the authors have no financial or non-financial
+interest to disclose, and there is no conflict of interest.
+•Data availability: Data sharing not applicable to this article
+as no datasets were generated or analyzed during the current
+study.
+•Open access: This article is licensed under a Creative Commons
+Attribution 4.0 International License, which permits use, shar-
+ing, adaptation, distribution and reproduction in any medium
+or format, as long as you give appropriate credit to the orig-
+inal author(s) and the source, provide a link to the Creative
+Commons license, and indicate if changes were made. The im-
+ages or other third party material in this article are included
+in the article’s Creative Commons license, unless indicated oth-
+erwise in a credit line to the material. If material is not in-
+cluded in the article’s Creative Commons license and your in-
+tended use is not permitted by statutory regulation or exceeds
+the permitted use, you will need to obtain permission directly
+from the copyright holder. To view a copy of this license, visit
+https://creativecommons.org/licenses/by/4.0/.
+References
+[ABGN25] E. Ashkarian, A. Bhargava, N. Gismondi, and M. No-
+vack. Intermittent singular solutions of the stationary
+2D Navier-Stokes equations in sharp Sobolev spaces, 2025.
+arXiv:2506.00841.
+[BCD11] H. Bahouri, J.-Y. Chemin, and R. Danchin.Fourier analy-
+sis and nonlinear partial differential equations, volume 343
+ofGrundlehren der mathematischen Wissenschaften [Fun-
+damental Principles of Mathematical Sciences]. Springer,
+Heidelberg, 2011.
+[Bon81] J.-M. Bony. Calcul symbolique et propagation des sin-
+gularit´ es pour les ´ equations aux d´ eriv´ ees partielles non
+lin´ eaires.Ann. Sci. ´Ecole Norm. Sup. (4), 14(2):209–246,
+1981.
+[BP08] J. Bourgain and N. Pavlovi´ c. Ill-posedness of the Navier-
+Stokes equations in a critical space in 3D.J. Funct. Anal.,
+255(9):2233–2247, 2008.
+
+[PDF page 43]
+NONUNIQUENESS NS 43
+[BV19a] T. Buckmaster and V. Vicol. Convex integration and phe-
+nomenologies in turbulence.EMS Surv. Math. Sci., 6(1-
+2):173–263, 2019.
+[BV19b] T. Buckmaster and V. Vicol. Nonuniqueness of weak so-
+lutions to the Navier-Stokes equation.Ann. of Math. (2),
+189(1):101–144, 2019.
+[Can97] M. Cannone. A generalization of a theorem by Kato
+on Navier-Stokes equations.Rev. Mat. Iberoamericana,
+13(3):515–541, 1997.
+[CCFS08] A. Cheskidov, P. Constantin, S. Friedlander, and R. Shvy-
+dkoy. Energy conservation and Onsager’s conjecture for the
+Euler equations.Nonlinearity, 21(6):1233–1252, 2008.
+[CD14] A. Cheskidov and M. Dai. Norm inflation for general-
+ized Navier-Stokes equations.Indiana Univ. Math. J.,
+63(3):869–884, 2014.
+[CDP25] A. Cheskidov, M. Dai, and S. Palasek. Instantaneous Type I
+blow-up and non-uniqueness of smooth solutions of the
+Navier–Stokes equations, 2025. arXiv:2511.09556.
+[Che92] J.-Y. Chemin. Remarques sur l’existence globale pour le
+syst` eme de Navier-Stokes incompressible.SIAM J. Math.
+Anal., 23(1):20–28, 1992.
+[Chr05a] M. Christ. Nonuniqueness of generalized so-
+lutions of the Navier-Stokes equations, 2005.
+https://math.berkeley.edu/ mchrist/Papers/stokes.pdf.
+[Chr05b] M. Christ. Nonuniqueness of weak solutions of the nonlinear
+Schr¨ odinger equation, 2005. arXiv:math/0503366.
+[CL22] A. Cheskidov and X. Luo. Sharp nonuniqueness for the
+Navier-Stokes equations.Invent. Math., 229(3):987–1054,
+2022.
+[CM78] R. R. Coifman and Y. Meyer.Au del` a des op´ erateurs
+pseudo-diff´ erentiels, volume 57 ofAst´ erisque. Soci´ et´ e
+Math´ ematique de France, Paris, 1978. With an English
+summary.
+[CP25] M. P. Coiculescu and S. Palasek. Non-uniqueness of smooth
+solutions of the Navier-Stokes equations from critical data.
+Invent. Math., 2025.
+[CS10] A. Cheskidov and R. Shvydkoy. Ill-posedness of the basic
+equations of fluid dynamics in Besov spaces.Proc. Amer.
+Math. Soc., 138(3):1059–1067, 2010.
+[DLS13] C. De Lellis and L. Sz´ ekelyhidi, Jr. Dissipative continuous
+Euler flows.Invent. Math., 193(2):377–407, 2013.
+
+[PDF page 44]
+44 ALEXEY CHESKIDOV AND HEDONG HOU
+[DS17] S. Daneri and L. Sz´ ekelyhidi, Jr. Non-uniqueness and h-
+principle for H¨ older-continuous weak solutions of the Eu-
+ler equations.Arch. Ration. Mech. Anal., 224(2):471–514,
+2017.
+[FJR72] E. B. Fabes, B. F. Jones, and N. M. Rivi` ere. The initial
+value problem for the Navier-Stokes equations with data in
+Lp.Arch. Rational Mech. Anal., 45:222–240, 1972.
+[FK64] H. Fujita and T. Kato. On the Navier-Stokes initial value
+problem. I.Arch. Rational Mech. Anal., 16:269–315, 1964.
+[FLRT00] G. Furioli, P. G. Lemari´ e-Rieusset, and E. Terraneo. Unicit´ e
+dansL 3(R3) et d’autres espaces fonctionnels limites pour
+Navier-Stokes.Rev. Mat. Iberoamericana, 16(3):605–667,
+2000.
+[Fuj26] M. Fujii. Sharp non-uniqueness for the Navier-Stokes equa-
+tions in scaling critical spaces, 2026. arXiv:2602.19846.
+[GIP03] I. Gallagher, D. Iftimie, and F. Planchon. Asymptotics and
+stability for global solutions to the Navier-Stokes equations.
+Ann. Inst. Fourier (Grenoble), 53(5):1387–1424, 2003.
+[GKP16] I. Gallagher, G. S. Koch, and F. Planchon. Blow-up of crit-
+ical Besov norms at a potential Navier-Stokes singularity.
+Comm. Math. Phys., 343(1):39–82, 2016.
+[Hop51] E. Hopf. ¨Uber die Anfangswertaufgabe f¨ ur die hydrody-
+namischen Grundgleichungen.Math. Nachr., 4:213–231,
+1951.
+[Kat84] T. Kato. StrongL p-solutions of the Navier-Stokes equa-
+tion inR m, with applications to weak solutions.Math. Z.,
+187(4):471–480, 1984.
+[KP02] N. H. Katz and N. Pavlovi´ c. A cheap Caffarelli-Kohn-
+Nirenberg inequality for the Navier-Stokes equation with
+hyper-dissipation.Geom. Funct. Anal., 12(2):355–379,
+2002.
+[KT01] H. Koch and D. Tataru. Well-posedness for the Navier-
+Stokes equations.Adv. Math., 157(1):22–35, 2001.
+[Ler34] J. Leray. Sur le mouvement d’un liquide visqueux emplis-
+sant l’espace.Acta Math., 63(1):193–248, 1934.
+[Lio69] J.-L. Lions.Quelques m´ ethodes de r´ esolution des probl` emes
+aux limites non lin´ eaires. Dunod, Paris; Gauthier-Villars,
+Paris, 1969.
+[LM01] P.-L. Lions and N. Masmoudi. Uniqueness of mild solu-
+tions of the Navier-Stokes system inL N.Comm. Partial
+Differential Equations, 26(11-12):2211–2226, 2001.
+
+[PDF page 45]
+NONUNIQUENESS NS 45
+[LR25] P. G. Lemari´ e-Rieusset. Highly singular (frequentially
+sparse) steady solutions for the 2D Navier-Stokes equations
+on the torus.J. Funct. Anal., 288(4):Paper No. 110761, 16,
+2025.
+[Luo19] X. Luo. Stationary solutions and nonuniqueness of weak so-
+lutions for the Navier-Stokes equations in high dimensions.
+Arch. Ration. Mech. Anal., 233(2):701–747, 2019.
+[Mon99] S. Monniaux. Uniqueness of mild solutions of the Navier-
+Stokes equation and maximalL p-regularity.C. R. Acad.
+Sci. Paris S´ er. I Math., 328(8):663–668, 1999.
+[MS99] J. C. Mattingly and Ya. ˜G. Sinai. An elementary proof of
+the existence and uniqueness theorem for the Navier-Stokes
+equations.Commun. Contemp. Math., 1(4):497–516, 1999.
+[MS18] S. Modena and L. Sz´ ekelyhidi, Jr. Non-uniqueness for the
+transport equation with Sobolev vector fields.Ann. PDE,
+4(2):Paper No. 18, 38, 2018.
+[MYZ08] C. Miao, B. Yuan, and B. Zhang. Well-posedness of the
+Cauchy problem for the fractional power dissipative equa-
+tions.Nonlinear Anal., 68(3):461–484, 2008.
+[Nas54] J. Nash.C 1 isometric imbeddings.Ann. of Math. (2),
+60:383–396, 1954.
+[Pla98] F. Planchon. Asymptotic behavior of global solutions to the
+Navier-Stokes equations inR 3.Rev. Mat. Iberoamericana,
+14(1):71–93, 1998.
+[Saw03] O. Sawada. On time-local solvability of the Navier-Stokes
+equations in Besov spaces.Adv. Differential Equations,
+8(4):385–412, 2003.
+[Saw18] Y. Sawano.Theory of Besov spaces, volume 56 ofDevelop-
+ments in Mathematics. Springer, Singapore, 2018.
+[Tao09] T. Tao. Global regularity for a logarithmically supercrit-
+ical hyperdissipative Navier-Stokes equation.Anal. PDE,
+2(3):361–366, 2009.
+[Tao19] T. Tao. 255B, Notes 2: Onsager’s conjecture,
+2019. https://terrytao.wordpress.com/2019/01/08/255b-
+notes-2-onsagers-conjecture/.
+[Tri83] H. Triebel.Theory of function spaces, volume 78 ofMono-
+graphs in Mathematics. Birkh¨ auser Verlag, Basel, 1983.
+[Wan15] B. Wang. Ill-posedness for the Navier-Stokes equations in
+critical Besov spaces ˙B−1
+∞,q.Adv. Math., 268:350–372, 2015.
+[Wu06] J. Wu. Lower bounds for an integral involving fractional
+Laplacians and the generalized Navier-Stokes equations in
+
+[PDF page 46]
+46 ALEXEY CHESKIDOV AND HEDONG HOU
+Besov spaces.Comm. Math. Phys., 263(3):803–831, 2006.
+[Yon10] T. Yoneda. Ill-posedness of the 3D-Navier-Stokes equations
+in a generalized Besov space near BMO −1.J. Funct. Anal.,
+258(10):3376–3387, 2010.
+Institute for Theoretical Sciences, Westlake University, 600 Dunyu
+Road, 310030 Hangzhou, Zhejiang, China
+Email address:cheskidov@westlake.edu.cn
+Westlake Institute for Advanced Study, Westlake University, 600
+Dunyu Road, 310030 Hangzhou, Zhejiang, China
+Email address:houhedong@westlake.edu.cn

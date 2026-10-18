@@ -1,0 +1,2005 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ubJyiR4itdTzLS1kCin1QN5MsAg</id>
+  <title>arXiv Query: search_query=&amp;id_list=2503.14738,2607.27411,2604.19393,2608.19883,2609.40176,2610.01836,2610.05729,2610.14354,2609.31113,2609.35317,2610.20716,2610.20002,2610.10585,2504.07258,2504.20212,2509.03815,2610.06059,2609.40279,2610.03399,2610.03869,2610.00504,2610.03682,2610.04613,2610.06811,2610.17612,2603.03666,2601.00331,2606.15189,2606.07501,2605.29934,2608.17456,2609.14688,2606.29512,2610.18178,2610.10341,2606.14308,2608.01872,2604.25669,2609.02882,2610.01035,2609.27715,2609.22624,2607.14515,2608.12257,2608.07399,2608.31060,2608.14852,2610.05227,2609.07918,2609.26787&amp;start=0&amp;max_results=50</title>
+  <updated>2026-10-18T08:12:18Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=50&amp;id_list=2503.14738,2607.27411,2604.19393,2608.19883,2609.40176,2610.01836,2610.05729,2610.14354,2609.31113,2609.35317,2610.20716,2610.20002,2610.10585,2504.07258,2504.20212,2509.03815,2610.06059,2609.40279,2610.03399,2610.03869,2610.00504,2610.03682,2610.04613,2610.06811,2610.17612,2603.03666,2601.00331,2606.15189,2606.07501,2605.29934,2608.17456,2609.14688,2606.29512,2610.18178,2610.10341,2606.14308,2608.01872,2604.25669,2609.02882,2610.01035,2609.27715,2609.22624,2607.14515,2608.12257,2608.07399,2608.31060,2608.14852,2610.05227,2609.07918,2609.26787" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>50</opensearch:itemsPerPage>
+  <opensearch:totalResults>50</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2606.29512v1</id>
+    <title>On uniqueness of solutions to stochastic Navier--Stokes equations</title>
+    <updated>2026-06-28T17:19:13Z</updated>
+    <link href="https://arxiv.org/abs/2606.29512v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.29512v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Theorems on uniqueness and continuous dependence on the initial condition of solutions to stochastic Navier-Stokes equations driven by Wiener processes and Poisson martingale measures are presented. These theorems generalise some results from \cite{GK2026}.</summary>
+    <category term="math.PR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-28T17:19:13Z</published>
+    <arxiv:primary_category term="math.PR"/>
+    <author>
+      <name>Raymond Cotter</name>
+    </author>
+    <author>
+      <name>István Gyöngy</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.02882v2</id>
+    <title>A new proof that more than $2/3$ of the zeros of the Riemann zeta function are simple and on the critical line</title>
+    <updated>2026-09-08T17:55:54Z</updated>
+    <link href="https://arxiv.org/abs/2609.02882v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.02882v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We obtain a new, conceptually simpler, unconditional proof that more than $67.25\%$ of the non-trivial zeros of the Riemann zeta function are simple and on the critical line, and that at least $83.62\%$ of the non-trivial zeros are distinct. Our approach also yields two new unconditional estimates on simple zeros and zeros on the critical line. More precisely, we prove that the proportion of zeros that are simple or lie on the critical line (or both) is at least $88.76\%$, and that the average of the proportions of simple zeros and of zeros on the critical line is at least $83.62\%$. A proof of the bounds for simple zeros on the critical line and for distinct zeros was very recently produced by an internal research version of Claude developed by Anthropic and subsequently verified by two mathematicians at Anthropic, Levent Alpöge and Ralph Furman, whereas our two additional estimates are neither stated nor proved in the Claude paper. The argument produced by Claude is technically intricate, and its main mechanism is not immediately transparent. It combines several ingredients from linear algebra, including a finite-dimensional matrix representation of Weil's Hermitian form and a rank--trace inequality for Hermitian matrices, with a second moment calculation over the zeros using the explicit formula. Our new approach proceeds by replacing the entire finite-dimensional matrix framework by a single Hilbert space inequality, which allows for a direct application of Montgomery's theorem on the pair correlation of zeros of the zeta function, in the unconditional form obtained by Baluyot, Goldston, Suriajaya and Turnage-Butterbaugh.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-02T17:56:49Z</published>
+    <arxiv:comment>17 pages. We establish two new unconditional results: more than 88.76% of zeta zeros are simple or lie on the critical line (or both), and the average of the proportions of simple zeros and of zeros on the critical line is at least 83.62%. We also expand the exposition</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Youness Lamzouri</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.27411v2</id>
+    <title>Validation of the DESI DR2 Ly$α$ forest full-shape analysis</title>
+    <updated>2026-08-04T14:45:41Z</updated>
+    <link href="https://arxiv.org/abs/2607.27411v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.27411v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present the validation of the Dark Energy Spectroscopic Instrument (DESI) Data Release 2 (DR2) Lyman-$α$ (Ly$α$) forest full-shape analysis. This analysis combines three-dimensional Ly$α$ forest auto-correlations and cross-correlations with quasars to extract information from both the baryon acoustic oscillation (BAO) feature and the broadband clustering signal, with primary emphasis on the Alcock-Paczynski (AP) measurement. Compared to the DESI DR1 analysis, the DR2 validation uses substantially larger and more realistic mock datasets, including CoLoRe 2LPT and AbacusSummit Ly$α$ forest simulations. The modeling framework is also improved through analytic marginalization over small scales ($&lt;10$ $h^{-1}$Mpc) and the impact of ultraviolet background fluctuations. The validation program was completed prior to unblinding and defines quantitative requirements for the cosmological parameters of interest, which are evaluated using hundreds of mock realizations. We further test the analysis through independent fits to the auto- and cross-correlations, multiple catalog splits, and a broad suite of analysis and modeling variations applied to both mocks and blinded observational data. We find that the BAO and AP parameters satisfy all validation requirements and remain stable across all tests. In contrast, mock studies reveal a significant bias in the inferred growth-rate parameter $fσ_8$, leading us to exclude this measurement from the final analysis. The consistency across mocks, data splits, and robustness tests demonstrates that the DR2 Ly$α$ full-shape analysis provides a reliable and substantially improved broadband AP measurement over previous Ly$α$ forest studies.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-29T19:29:28Z</published>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>M. Herbold</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Cuceu</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>P. Martini</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>H. K. Herrera-Alcantar</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Guy</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. Gordon</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>O. Manasoiu</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Aguilar</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Ahlen</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>O. Alves</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>U. Andrade</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>E. Armengaud</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Avila</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Aviles</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Bault</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>F. Beutler</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>D. Bianchi</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. Bonici</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Brodzeller</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>D. Brooks</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Carnero Rosell</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>E. Chaussidon</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Chaves-Montero</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Z. Chen</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>T. Claybaugh</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>K. S. Dawson</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. de la Macorra</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Dey</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>W. Elbers</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>V. A. Fawcett</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Ferraro</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Font-Ribera</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. E. Forero-Romero</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>G. Gambardella</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Gontcho A Gontcho</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>D. Gonzalez</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. X. Gonzalez-Morales</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>R. Gsponer</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>G. Gutierrez</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>B. Hadzhiyska</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. Hahn</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>K. Honscheid</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>D. Huterer</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. Ishak</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Jos</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Juneau</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>N. V. Kamble</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>N. G. Karaçaylı</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>T. Karim</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>R. Kehoe</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>D. Kirkby</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>F. -S. Kitaura</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Kremin</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>O. Lahav</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. Landriau</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Lasker</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>L. Le Guillou</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Leauthaud</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. E. Levi</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Q. Li</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>W. Liu</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>K. Lodha</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. Manera</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Meisner</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>R. Miquel</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Morawetz</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Moustakas</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>P. Mukherjee</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Muñoz-Gutiérrez</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Nadathur</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>G. Niz</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>H. E. Noriega</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>E. Paillas</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>N. Palanque-Delabrouille</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Pan</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. P. Ibanez</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>W. J. Percival</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>F. Prada</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>H. Pulido-Hernández</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Pérez-Fernández</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>I. Pérez-Ràfols</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. Ravoux</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Rohlf</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>G. Rossi</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>R. Ruggeri</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. F. Ruiz-Herrera Bernal</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>L. Samushia</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>E. Sanchez</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. Saulder</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>D. Schlegel</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>H. Seo</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Silber</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>T. Simon</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>F. Sinigaglia</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. Siudek</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>G. Tarlé</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>W. Turner</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>R. Vaisakh</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. Vargas-Magaña</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>B. A. Weaver</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. Wolfson</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>H. Yang</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+    <author>
+      <name>H. Zhang</name>
+      <arxiv:affiliation>DESI Collaboration</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.14688v1</id>
+    <title>On the uniqueness and the regularity of solutions to the Navier Stokes in the Lorentz space $L^{3,\infty}(\mathbb{R}^3)$</title>
+    <updated>2026-09-13T17:45:42Z</updated>
+    <link href="https://arxiv.org/abs/2609.14688v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.14688v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove uniqueness of solutions to the Navier-Stokes equations in the space \[ L^p\bigl([0,T],\widetilde{L}^{3,\infty}(\mathbb{R}^3)\bigr) \cap C\bigl([0,T],B^{-1,\infty}_{\infty}(\mathbb{R}^3)\bigr), \qquad p&gt;2, \] where $\widetilde{L}^{3,\infty}(\mathbb{R}^3)$ denotes the closure of the Schwartz space $\mathcal{S}(\mathbb{R}^3)$ in the Lorentz space $L^{3,\infty}(\mathbb{R}^3)$. Moreover, we prove that any solution $u$ in this class, if it exists, is smooth for positive time, namely, $u\in C^\infty((0,T]\times \mathbb{R}^3)$. In addition, we establish precise estimates for the behavior of $u(t)$ as $t\to0^+ $ in various Banach spaces.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-13T17:45:42Z</published>
+    <arxiv:comment>21 pages</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Ramzi May</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.22624v1</id>
+    <title>Zero density theorems for short intervals</title>
+    <updated>2026-09-18T22:21:00Z</updated>
+    <link href="https://arxiv.org/abs/2609.22624v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.22624v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We provide explicit bounds on the number of zeros for $ζ$ in short intervals near the edge of the critical strip. Ultimately we show that even in short intervals a positive proportion of zeros will not be near the edge of the critical strip. For example with $h&gt;100$ and $t&gt;10^{100}$ the proportion of zeros of $ζ$ with imaginary part in $[t-h,t+h]$ which have real part in $[\frac{1}{16},\frac{15}{16}]$ is at least $13\%$ and a positive proportion is already obtained at $t&gt;10^{43}$.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-18T22:21:00Z</published>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Andrew Fiori</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.05227v1</id>
+    <title>One-level density of zeros of the Riemann zeta function weighted by its special values</title>
+    <updated>2026-10-04T13:48:23Z</updated>
+    <link href="https://arxiv.org/abs/2610.05227v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.05227v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We consider the one-level density of zeros of the Riemann zeta function weighted by its special values on the line ${\rm Re}(s)=σ$, where $σ$ is a fixed real number such that $1/2\le σ\le1$. We show that the density function for the Riemann zeta function changes if and only if $σ=1/2$.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-04T13:48:23Z</published>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Shingo Sugiyama</name>
+    </author>
+    <author>
+      <name>Ade Irma Suriajaya</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.27715v1</id>
+    <title>Zero density estimates for $\mathrm{GL}_2$ automorphic $L$-functions</title>
+    <updated>2026-09-23T11:33:11Z</updated>
+    <link href="https://arxiv.org/abs/2609.27715v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.27715v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove zero density estimates for $L$-functions of cuspidal automorphic representations $π$ of $\mathrm{GL}_2(\mathbb{A}_{\mathbb{Q}})$. We show that $N_π(σ, T) \ll T^{\frac{5}{2}(1 - σ) + o(1)}$, where $N_π(σ, T)$ denotes the number of zeros $ρ= β+ iγ$ of $L(s,π)$ with $β\geq σ$ and $|γ| \leq T$. The key input is an extension of the Guth$\unicode{x2013}$Maynard argument to Dirichlet polynomials whose coefficients satisfy a weaker $\ell^q$ bound.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-23T11:33:11Z</published>
+    <arxiv:comment>36 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Catherine Cossaboom</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.31113v1</id>
+    <title>Observational constraints on scalar-vector-tensor dark energy with phantom-divide crossing</title>
+    <updated>2026-09-25T10:58:19Z</updated>
+    <link href="https://arxiv.org/abs/2609.31113v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.31113v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We constrain a scalar-vector-tensor (SVT) dark-energy model in which the vector sector drives the dark-energy equation of state below $-1$ at earlier times, while a canonical scalar field subsequently drives it across $-1$ toward a present-day value above $-1$. We confront the model with DES Year 5 supernovae, DESI DR2 baryon acoustic oscillations, and compressed cosmic microwave background information, and then include Gold-2017 redshift-space-distortion (RSD) measurements to probe structure growth. The background posterior assigns substantial weight to crossing histories and gives a better best fit than the flat $Λ$-cold-dark-matter ($Λ$CDM) model. The RSD analysis preserves this qualitative background evolution, constrains the clustering amplitude, and increases the posterior support for the directional crossing criterion. Since the growth analysis also imposes additional perturbative support conditions, this increase cannot be attributed to the RSD likelihood alone. Matched PolyChord calculations give Bayes factors larger than unity for SVT relative to $Λ$CDM under both prior-volume conventions considered here. The quantitative Bayes factor depends on the prior normalization assigned to the regular radiation-era branch and is larger in the RSD analysis under either convention. Overall, current expansion and structure-growth data are consistent with a stable dynamical crossing of the phantom divide in the SVT model.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-25T10:58:19Z</published>
+    <arxiv:comment>24 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Nandan Roy</name>
+    </author>
+    <author>
+      <name>Shinji Tsujikawa</name>
+    </author>
+    <author>
+      <name>Ying-li Zhang</name>
+    </author>
+    <author>
+      <name>Zejun Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.10585v1</id>
+    <title>Partially Thermalized eV-Scale Sterile Neutrinos in Dynamical Dark Energy and Non-Flat Cosmologies</title>
+    <updated>2026-10-06T08:32:02Z</updated>
+    <link href="https://arxiv.org/abs/2610.10585v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.10585v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We investigate cosmological constraints on a $(3+1)$ neutrino framework containing an additional partially thermalized, eV-scale sterile neutrino alongside the three active species. Rather than assuming full thermalization, we allow the sterile abundance to vary independently through its physical mass $m_s$ and contribution $ΔN_{\rm eff}$ to the effective number of relativistic species. The sterile state is modeled as a thermally distributed non-cold relic with a temperature below that of the active-neutrino background. We consider flat and non-flat $Λ$CDM and $w_0w_a$CDM cosmologies, all including the same $(3+1)ν$ sector. The models are constrained using Planck 2018 CMB data, DESI DR2 BAO, Pantheon+ Type Ia supernovae, a conservative compilation of $fσ_8$ measurements, and the recent H0DN. Oscillation-informed priors are imposed on the active-neutrino mass splittings, while the eV scale sterile-mass range is motivated by short-baseline oscillation searches and global $(3+1)$ analyses. We find that allowing additional freedom in the late-time cosmological background substantially changes the inferred sterile-neutrino sector. The effective sterile mass increases from $m_{s,\rm eff}\sim0.11\pm0.05~{\rm eV}$ in flat $Λ$CDM$+(3+1)ν$ to $\sim0.35\pm0.12~{\rm eV}$ in the non-flat $w_0w_a$CDM$+(3+1)ν$ model. The corresponding sterile abundance shifts from $ΔN_{\rm eff}\lesssim0.1$ to $ΔN_{\rm eff}\simeq0.35\pm0.15$, while remaining well below the fully thermalized limit, $ΔN_{\rm eff}\simeq1$. The non-flat $w_0w_a$CDM models also show $\sim 2.8σ$ preference for open spatial geometry, $Ω_k\simeq0.0045\pm0.0016$, and yield $H_0\simeq70.9\pm0.7~{\rm km\,s^{-1}\,Mpc^{-1}}$ and $S_8\simeq0.785\pm0.015$. These models improve the minimum $χ^2$ by approximately $21$-$25$ relative to flat $Λ$CDM$+(3+1)ν$.</summary>
+    <category term="physics.gen-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-06T08:32:02Z</published>
+    <arxiv:comment>18 pages, 7 caption figures</arxiv:comment>
+    <arxiv:primary_category term="physics.gen-ph"/>
+    <author>
+      <name>Gopal Kashyap</name>
+    </author>
+    <author>
+      <name>Kanhaiya Lal Pandey</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.20716v1</id>
+    <title>The unified Bound Dark Energy--Bound Dark Matter model: theory and constraints from DESI DR2</title>
+    <updated>2026-10-14T18:00:02Z</updated>
+    <link href="https://arxiv.org/abs/2610.20716v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.20716v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The unified Bound Dark Energy--Bound Dark Matter (BDE-BDM) model derives both the dark energy and the whole of the dark matter from a single supersymmetric $SU(3)$ gauge group with $N_f=6$ flavors. Gauge-coupling unification predicts the scale at which it condenses, $\Lc=34^{+16}_{-11}$~eV, before any cosmological data are used, so the dark-energy sector adds no parameter to those of \LCDM\ and the dark-matter sector adds only one. Fitting DESI DR2 BAO, Planck CMB, Planck+ACT DR6 CMB lensing, and three supernova compilations (PantheonPlus, Union3.1, DES-Dovekie) gives, for Union3.1, $\Lc=43.67\pm0.13$~eV, inside the predicted range: a high-energy prediction met by a late-time measurement. The equation of state evolves to $w_0=-0.9262\pm0.0005$ and never crosses the phantom divide. Relative to \LCDM\ the model lowers the DESI BAO $χ^2$ by $2.95$--$3.67$ and the supernova $χ^2$ by $2.53$--$4.07$, recovering $57\%$--$71\%$ of the total reduction that \wowa\ obtains by fitting two dark-energy parameters to the same data, and reaching the lower BAO $χ^2$ of the two models for two of the three compilations. Its $Δ\mathrm{DIC}$ against \LCDM\ is strong for every compilation, $-8.28$ to $-7.47$, varying by $0.81$ where that of \wowa\ varies by $4.8$. Because the dark-energy sector adds no parameter to those of \LCDM, the likelihood gain survives the Occam penalty: $\ln B=+4.09$, $+4.12$, and $+4.83$ against \LCDM, where \wowa\ gives $-2.11$, $-0.26$, and $-0.56$. Among six models pairing a cosmological constant, the \wowa\ parametrization or bound dark energy with cold or bound dark matter, BDE-BDM has the largest Bayesian evidence.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-14T18:00:02Z</published>
+    <arxiv:comment>26 pages, 11 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Jose Agustin Lozano Torres</name>
+    </author>
+    <author>
+      <name>Axel de la Macorra</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.14738v3</id>
+    <title>DESI DR2 Results II: Measurements of Baryon Acoustic Oscillations and Cosmological Constraints</title>
+    <updated>2025-10-09T16:45:28Z</updated>
+    <link href="https://arxiv.org/abs/2503.14738v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.14738v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present baryon acoustic oscillation (BAO) measurements from more than 14 million galaxies and quasars drawn from the Dark Energy Spectroscopic Instrument (DESI) Data Release 2 (DR2), based on three years of operation. For cosmology inference, these galaxy measurements are combined with DESI Lyman-$α$ forest BAO results presented in a companion paper. The DR2 BAO results are consistent with DESI DR1 and SDSS, and their distance-redshift relationship matches those from recent compilations of supernovae (SNe) over the same redshift range. The results are well described by a flat $Λ$CDM model, but the parameters preferred by BAO are in mild, $2.3σ$ tension with those determined from the cosmic microwave background (CMB), although the DESI results are consistent with the acoustic angular scale $θ_*$ that is well-measured by Planck. This tension is alleviated by dark energy with a time-evolving equation of state parametrized by $w_0$ and $w_a$, which provides a better fit to the data, with a favored solution in the quadrant with $w_0&gt;-1$ and $w_a&lt;0$. This solution is preferred over $Λ$CDM at $3.1σ$ for the combination of DESI BAO and CMB data. When also including SNe, the preference for a dynamical dark energy model over $Λ$CDM ranges from $2.8-4.2σ$ depending on which SNe sample is used. We present evidence from other data combinations which also favor the same behavior at high significance. From the combination of DESI and CMB we derive 95% upper limits on the sum of neutrino masses, finding $\sum m_ν&lt;0.064$ eV assuming $Λ$CDM and $\sum m_ν&lt;0.16$ eV in the $w_0w_a$ model. Unless there is an unknown systematic error associated with one or more datasets, it is clear that $Λ$CDM is being challenged by the combination of DESI BAO with other measurements and that dynamical dark energy offers a possible solution.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-18T21:14:12Z</published>
+    <arxiv:comment>40 pages, 18 figures. This DESI Collaboration Publication is part of the Data Release 2 publication series (see https://data.desi.lbl.gov/doc/papers ). Updated to match version published in Phys. Rev. D</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <arxiv:journal_ref>Phys. Rev. D 112, 083515, 2025</arxiv:journal_ref>
+    <author>
+      <name> DESI Collaboration</name>
+    </author>
+    <author>
+      <name>M. Abdul-Karim</name>
+    </author>
+    <author>
+      <name>J. Aguilar</name>
+    </author>
+    <author>
+      <name>S. Ahlen</name>
+    </author>
+    <author>
+      <name>S. Alam</name>
+    </author>
+    <author>
+      <name>L. Allen</name>
+    </author>
+    <author>
+      <name>C. Allende Prieto</name>
+    </author>
+    <author>
+      <name>O. Alves</name>
+    </author>
+    <author>
+      <name>A. Anand</name>
+    </author>
+    <author>
+      <name>U. Andrade</name>
+    </author>
+    <author>
+      <name>E. Armengaud</name>
+    </author>
+    <author>
+      <name>A. Aviles</name>
+    </author>
+    <author>
+      <name>S. Bailey</name>
+    </author>
+    <author>
+      <name>C. Baltay</name>
+    </author>
+    <author>
+      <name>P. Bansal</name>
+    </author>
+    <author>
+      <name>A. Bault</name>
+    </author>
+    <author>
+      <name>J. Behera</name>
+    </author>
+    <author>
+      <name>S. BenZvi</name>
+    </author>
+    <author>
+      <name>D. Bianchi</name>
+    </author>
+    <author>
+      <name>C. Blake</name>
+    </author>
+    <author>
+      <name>S. Brieden</name>
+    </author>
+    <author>
+      <name>A. Brodzeller</name>
+    </author>
+    <author>
+      <name>D. Brooks</name>
+    </author>
+    <author>
+      <name>E. Buckley-Geer</name>
+    </author>
+    <author>
+      <name>E. Burtin</name>
+    </author>
+    <author>
+      <name>R. Calderon</name>
+    </author>
+    <author>
+      <name>R. Canning</name>
+    </author>
+    <author>
+      <name>A. Carnero Rosell</name>
+    </author>
+    <author>
+      <name>P. Carrilho</name>
+    </author>
+    <author>
+      <name>L. Casas</name>
+    </author>
+    <author>
+      <name>F. J. Castander</name>
+    </author>
+    <author>
+      <name>R. Cereskaite</name>
+    </author>
+    <author>
+      <name>M. Charles</name>
+    </author>
+    <author>
+      <name>E. Chaussidon</name>
+    </author>
+    <author>
+      <name>J. Chaves-Montero</name>
+    </author>
+    <author>
+      <name>D. Chebat</name>
+    </author>
+    <author>
+      <name>X. Chen</name>
+    </author>
+    <author>
+      <name>T. Claybaugh</name>
+    </author>
+    <author>
+      <name>S. Cole</name>
+    </author>
+    <author>
+      <name>A. P. Cooper</name>
+    </author>
+    <author>
+      <name>A. Cuceu</name>
+    </author>
+    <author>
+      <name>K. S. Dawson</name>
+    </author>
+    <author>
+      <name>A. de la Macorra</name>
+    </author>
+    <author>
+      <name>A. de Mattia</name>
+    </author>
+    <author>
+      <name>N. Deiosso</name>
+    </author>
+    <author>
+      <name>J. Della Costa</name>
+    </author>
+    <author>
+      <name>R. Demina</name>
+    </author>
+    <author>
+      <name>A. Dey</name>
+    </author>
+    <author>
+      <name>B. Dey</name>
+    </author>
+    <author>
+      <name>Z. Ding</name>
+    </author>
+    <author>
+      <name>P. Doel</name>
+    </author>
+    <author>
+      <name>J. Edelstein</name>
+    </author>
+    <author>
+      <name>D. J. Eisenstein</name>
+    </author>
+    <author>
+      <name>W. Elbers</name>
+    </author>
+    <author>
+      <name>P. Fagrelius</name>
+    </author>
+    <author>
+      <name>K. Fanning</name>
+    </author>
+    <author>
+      <name>E. Fernández-García</name>
+    </author>
+    <author>
+      <name>S. Ferraro</name>
+    </author>
+    <author>
+      <name>A. Font-Ribera</name>
+    </author>
+    <author>
+      <name>J. E. Forero-Romero</name>
+    </author>
+    <author>
+      <name>C. S. Frenk</name>
+    </author>
+    <author>
+      <name>C. Garcia-Quintero</name>
+    </author>
+    <author>
+      <name>L. H. Garrison</name>
+    </author>
+    <author>
+      <name>E. Gaztañaga</name>
+    </author>
+    <author>
+      <name>H. Gil-Marín</name>
+    </author>
+    <author>
+      <name>S. Gontcho A Gontcho</name>
+    </author>
+    <author>
+      <name>D. Gonzalez</name>
+    </author>
+    <author>
+      <name>A. X. Gonzalez-Morales</name>
+    </author>
+    <author>
+      <name>C. Gordon</name>
+    </author>
+    <author>
+      <name>D. Green</name>
+    </author>
+    <author>
+      <name>G. Gutierrez</name>
+    </author>
+    <author>
+      <name>J. Guy</name>
+    </author>
+    <author>
+      <name>B. Hadzhiyska</name>
+    </author>
+    <author>
+      <name>C. Hahn</name>
+    </author>
+    <author>
+      <name>S. He</name>
+    </author>
+    <author>
+      <name>M. Herbold</name>
+    </author>
+    <author>
+      <name>H. K. Herrera-Alcantar</name>
+    </author>
+    <author>
+      <name>M. Ho</name>
+    </author>
+    <author>
+      <name>K. Honscheid</name>
+    </author>
+    <author>
+      <name>C. Howlett</name>
+    </author>
+    <author>
+      <name>D. Huterer</name>
+    </author>
+    <author>
+      <name>M. Ishak</name>
+    </author>
+    <author>
+      <name>S. Juneau</name>
+    </author>
+    <author>
+      <name>N. V. Kamble</name>
+    </author>
+    <author>
+      <name>N. G. Karaçaylı</name>
+    </author>
+    <author>
+      <name>R. Kehoe</name>
+    </author>
+    <author>
+      <name>S. Kent</name>
+    </author>
+    <author>
+      <name>A. G. Kim</name>
+    </author>
+    <author>
+      <name>D. Kirkby</name>
+    </author>
+    <author>
+      <name>T. Kisner</name>
+    </author>
+    <author>
+      <name>S. E. Koposov</name>
+    </author>
+    <author>
+      <name>A. Kremin</name>
+    </author>
+    <author>
+      <name>A. Krolewski</name>
+    </author>
+    <author>
+      <name>O. Lahav</name>
+    </author>
+    <author>
+      <name>C. Lamman</name>
+    </author>
+    <author>
+      <name>M. Landriau</name>
+    </author>
+    <author>
+      <name>D. Lang</name>
+    </author>
+    <author>
+      <name>J. Lasker</name>
+    </author>
+    <author>
+      <name>J. M. Le Goff</name>
+    </author>
+    <author>
+      <name>L. Le Guillou</name>
+    </author>
+    <author>
+      <name>A. Leauthaud</name>
+    </author>
+    <author>
+      <name>M. E. Levi</name>
+    </author>
+    <author>
+      <name>Q. Li</name>
+    </author>
+    <author>
+      <name>T. S. Li</name>
+    </author>
+    <author>
+      <name>K. Lodha</name>
+    </author>
+    <author>
+      <name>M. Lokken</name>
+    </author>
+    <author>
+      <name>F. Lozano-Rodríguez</name>
+    </author>
+    <author>
+      <name>C. Magneville</name>
+    </author>
+    <author>
+      <name>M. Manera</name>
+    </author>
+    <author>
+      <name>P. Martini</name>
+    </author>
+    <author>
+      <name>W. L. Matthewson</name>
+    </author>
+    <author>
+      <name>A. Meisner</name>
+    </author>
+    <author>
+      <name>J. Mena-Fernández</name>
+    </author>
+    <author>
+      <name>A. Menegas</name>
+    </author>
+    <author>
+      <name>T. Mergulhão</name>
+    </author>
+    <author>
+      <name>R. Miquel</name>
+    </author>
+    <author>
+      <name>J. Moustakas</name>
+    </author>
+    <author>
+      <name>A. Muñoz-Gutiérrez</name>
+    </author>
+    <author>
+      <name>D. Muñoz-Santos</name>
+    </author>
+    <author>
+      <name>A. D. Myers</name>
+    </author>
+    <author>
+      <name>S. Nadathur</name>
+    </author>
+    <author>
+      <name>K. Naidoo</name>
+    </author>
+    <author>
+      <name>L. Napolitano</name>
+    </author>
+    <author>
+      <name>J. A. Newman</name>
+    </author>
+    <author>
+      <name>G. Niz</name>
+    </author>
+    <author>
+      <name>H. E. Noriega</name>
+    </author>
+    <author>
+      <name>E. Paillas</name>
+    </author>
+    <author>
+      <name>N. Palanque-Delabrouille</name>
+    </author>
+    <author>
+      <name>J. Pan</name>
+    </author>
+    <author>
+      <name>J. Peacock</name>
+    </author>
+    <author>
+      <name>Marcos Pellejero Ibanez</name>
+    </author>
+    <author>
+      <name>W. J. Percival</name>
+    </author>
+    <author>
+      <name>A. Pérez-Fernández</name>
+    </author>
+    <author>
+      <name>I. Pérez-Ràfols</name>
+    </author>
+    <author>
+      <name>M. M. Pieri</name>
+    </author>
+    <author>
+      <name>C. Poppett</name>
+    </author>
+    <author>
+      <name>F. Prada</name>
+    </author>
+    <author>
+      <name>D. Rabinowitz</name>
+    </author>
+    <author>
+      <name>A. Raichoor</name>
+    </author>
+    <author>
+      <name>C. Ramírez-Pérez</name>
+    </author>
+    <author>
+      <name>M. Rashkovetskyi</name>
+    </author>
+    <author>
+      <name>C. Ravoux</name>
+    </author>
+    <author>
+      <name>J. Rich</name>
+    </author>
+    <author>
+      <name>A. Rocher</name>
+    </author>
+    <author>
+      <name>C. Rockosi</name>
+    </author>
+    <author>
+      <name>J. Rohlf</name>
+    </author>
+    <author>
+      <name>J. O. Román-Herrera</name>
+    </author>
+    <author>
+      <name>A. J. Ross</name>
+    </author>
+    <author>
+      <name>G. Rossi</name>
+    </author>
+    <author>
+      <name>R. Ruggeri</name>
+    </author>
+    <author>
+      <name>V. Ruhlmann-Kleider</name>
+    </author>
+    <author>
+      <name>L. Samushia</name>
+    </author>
+    <author>
+      <name>E. Sanchez</name>
+    </author>
+    <author>
+      <name>N. Sanders</name>
+    </author>
+    <author>
+      <name>D. Schlegel</name>
+    </author>
+    <author>
+      <name>M. Schubnell</name>
+    </author>
+    <author>
+      <name>H. Seo</name>
+    </author>
+    <author>
+      <name>A. Shafieloo</name>
+    </author>
+    <author>
+      <name>R. Sharples</name>
+    </author>
+    <author>
+      <name>J. Silber</name>
+    </author>
+    <author>
+      <name>F. Sinigaglia</name>
+    </author>
+    <author>
+      <name>D. Sprayberry</name>
+    </author>
+    <author>
+      <name>T. Tan</name>
+    </author>
+    <author>
+      <name>G. Tarlé</name>
+    </author>
+    <author>
+      <name>P. Taylor</name>
+    </author>
+    <author>
+      <name>W. Turner</name>
+    </author>
+    <author>
+      <name>L. A. Ureña-López</name>
+    </author>
+    <author>
+      <name>R. Vaisakh</name>
+    </author>
+    <author>
+      <name>F. Valdes</name>
+    </author>
+    <author>
+      <name>G. Valogiannis</name>
+    </author>
+    <author>
+      <name>M. Vargas-Magaña</name>
+    </author>
+    <author>
+      <name>L. Verde</name>
+    </author>
+    <author>
+      <name>M. Walther</name>
+    </author>
+    <author>
+      <name>B. A. Weaver</name>
+    </author>
+    <author>
+      <name>D. H. Weinberg</name>
+    </author>
+    <author>
+      <name>M. White</name>
+    </author>
+    <author>
+      <name>M. Wolfson</name>
+    </author>
+    <author>
+      <name>C. Yèche</name>
+    </author>
+    <author>
+      <name>J. Yu</name>
+    </author>
+    <author>
+      <name>E. A. Zaborowski</name>
+    </author>
+    <author>
+      <name>P. Zarrouk</name>
+    </author>
+    <author>
+      <name>Z. Zhai</name>
+    </author>
+    <author>
+      <name>H. Zhang</name>
+    </author>
+    <author>
+      <name>C. Zhao</name>
+    </author>
+    <author>
+      <name>G. B. Zhao</name>
+    </author>
+    <author>
+      <name>R. Zhou</name>
+    </author>
+    <author>
+      <name>H. Zou</name>
+    </author>
+    <arxiv:doi>10.1103/tr6y-kpc6</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/tr6y-kpc6" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.29934v3</id>
+    <title>Non-uniqueness for the hyperdissipative Navier-Stokes equations with arbitrarily small subcritical data</title>
+    <updated>2026-07-01T11:55:39Z</updated>
+    <link href="https://arxiv.org/abs/2605.29934v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.29934v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we consider the hyperdissipative Navier-Stokes equations with fractional dissipation $(-Δ)^β$ with $β&gt;1$. We prove that smooth solutions of the hyperdissipative Navier-Stokes equations are non-unique with arbitrarily small initial data in ${B}^{-β-α}_{\infty,1}(\mathbb{T}^d)$ for any $α&gt;0$. Moreover, we show the existence of a solution with arbitrarily small initial data in ${B}^{-β-α}_{\infty,1}(\mathbb{T}^d)$ ($α&gt;0$) that grows arbitrarily large in $\dot{B}^{-s}_{\infty,\infty}(\mathbb{T}^d)$ for all $s\in\mathbb{R}$ in arbitrarily small time. It is worth pointing out that ${B}^{-β-α}_{\infty,1}(\mathbb{T}^d)$ lies in the subcritical regime when $0&lt;α&lt;β-1$. To the best of our knowledge, this is the first non-uniqueness result of the Navier-Stokes equations with initial data at the subcritical regularity. To show the sharpness of the above results, we establish the local well-posedness of the hyperdissipative Navier-Stokes equations with initial data in $\dot{B}^{-β-α}_{\infty,\infty}(\mathbb{T}^d)$ with $α&lt; 0$.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-28T13:46:13Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Zipeng Chen</name>
+    </author>
+    <author>
+      <name>Song Liu</name>
+    </author>
+    <author>
+      <name>Zhaoyang Yin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.40279v1</id>
+    <title>Classical simulation of coherent crosstalk in surface codes</title>
+    <updated>2026-09-30T17:46:49Z</updated>
+    <link href="https://arxiv.org/abs/2609.40279v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.40279v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We give a polynomial-time classical algorithm which samples from the syndrome distribution of a surface code state corrupted by coherent nearest-neighbor $ZZ$ crosstalk. Our algorithm complements the known efficient simulation algorithms for coherent single-qubit errors in the surface code. When both single-qubit coherent noise and coherent crosstalk are present, we find a complexity-theoretic obstruction to efficient simulation: unless the polynomial hierarchy collapses, there is no efficient classical algorithm for sampling from the syndrome distribution, even up to a constant multiplicative error. This is obtained by connecting the syndrome distribution under coherent noise to the output distribution of certain IQP circuits associated with a non-planar graph.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T17:46:49Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Andrew S. Darmawan</name>
+    </author>
+    <author>
+      <name>Yelyzaveta Kolesnyk</name>
+    </author>
+    <author>
+      <name>Robert Koenig</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.31060v1</id>
+    <title>Large zeta sums and zeros of the Riemann zeta function</title>
+    <updated>2026-08-31T16:38:47Z</updated>
+    <link href="https://arxiv.org/abs/2608.31060v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.31060v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>For real $t$ and $x\ge 1$, set \[ S(x,t)=\sum_{n\le x} n^{\ii t}. \] We prove an unconditional inverse theorem relating large values of $S(x,t)$, with $|t|$ large, to zeros of the Riemann zeta function near height $t$. More precisely, if $T\le |t|\le 2T$, $\exp(\sqrt{\log T})\le x\le \sqrt T$, and $|S(x,t)|=x/N$ with $N\le (\log x)^{1/100}$, then for every $cN^6\le L\le (\log x)/2$ a disk centered at $1+\iiφ$, where $|φ-t|\ll N$, contains at least $L/360$ zeros of $ζ(s)$. As a consequence, a quantitative restriction on zeros in a short family of arbitrarily thin fixed windows to the left of the line $\Ree s=1$ yields $S(x,t)\ll x/(\log x)^{1/100}$ in polynomial ranges of $x$. The proof adapts the zero-forcing mechanism of Granville and Soundararajan for large character sums. In the zeta setting the spectral height is shifted by $t$, and an additional residue from the pole of $ζ(s)$ appears in the Gaussian transform; in the range considered here that residue is exponentially small.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-31T16:38:47Z</published>
+    <arxiv:comment>19 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Zikang Dong</name>
+    </author>
+    <author>
+      <name>Ruihua Wang</name>
+    </author>
+    <author>
+      <name>Weijia Wang</name>
+    </author>
+    <author>
+      <name>Hao Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.04613v1</id>
+    <title>Multi-Yoked Surface Codes</title>
+    <updated>2026-10-03T15:52:38Z</updated>
+    <link href="https://arxiv.org/abs/2610.04613v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.04613v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The surface code is the leading candidate for fault-tolerant quantum computation owing to its planar nearest-neighbor connectivity, high threshold, and efficient decoding, but its low encoding rate demands on the order of a thousand physical qubits per logical qubit in the teraquop regime. Yoked surface codes improve the density by a factor of two or three by concatenating a high-density parity check code on top of the surface code while retaining planar nearest-neighbor connectivity. In this work, we generalize this idea to multiple levels of concatenation and introduce multi-yoked surface codes. Our construction rests on two new ingredients. First, we propose a family of outer codes called chain codes, built by chaining copies of a seed code that detects the block errors of the code one level below; the resulting codes use all logical qubits of the lower level and achieve a high encoding rate within a few concatenation levels. Second, we design a patch allocation in which movable workspaces perform the yoking checks by lattice surgery with a hierarchy of yoking intervals, so that lower-level checks are performed frequently while higher-level checks are performed less often, which avoids the long yoking intervals that a single large-distance outer code would require. As a benchmark, we construct a three-yoked surface code with a $[[256,166,8]]$ outer code and evaluate it numerically under the SI1000 noise model using soft information from the surface code decoder. The logical error rate is suppressed exponentially in the inner code distance, and in the teraquop regime the three-yoked surface code is about 4 to 4.5$\times$ denser than the unyoked surface code.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-03T15:52:38Z</published>
+    <arxiv:comment>22 pages, 21 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Yuga Hirai</name>
+    </author>
+    <author>
+      <name>Yasunari Suzuki</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.12257v1</id>
+    <title>Power sums and Siegel-type zero-free regions for L-functions</title>
+    <updated>2026-08-12T17:00:49Z</updated>
+    <link href="https://arxiv.org/abs/2608.12257v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.12257v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Let $π$ and $π'$ be unitary cuspidal automorphic representations of $\mathrm{GL}(n)$ and $\mathrm{GL}(n')$ over a number field $F$. Let $\mathfrak{C}_π$ be the analytic conductor of $π$. We develop a new approach to zero-free regions for $L$-functions via lower bounds for power sums, proving for all $\varepsilon&gt;0$ the existence of ineffective constants $c=c_{n,F,\varepsilon}&gt;0$ and $c'=c'_{n,F,π',\varepsilon}&gt;0$ such that the standard $L$-function $L(s,π)$ satisfies \[ |L(σ+it,π)|\geq c(\mathfrak{C}_π(|t|+3))^{-\varepsilon},\qquad σ\geq 1-c(\mathfrak{C}_π(|t|+3))^{-\varepsilon} \] and the Rankin-Selberg $L$-function $L(s,π\timesπ')$ satisfies \[ |L(σ+it,π\timesπ')|\geq c'(\mathfrak{C}_π(|t|+3))^{-\varepsilon},\qquad σ\geq 1-c'(\mathfrak{C}_π(|t|+3))^{-\varepsilon}. \] Applications include improvements to the prime number theorems for these $L$-functions and new generalizations of the Brauer-Siegel theorem.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-12T17:00:49Z</published>
+    <arxiv:comment>21 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Jesse Thorner</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.15189v4</id>
+    <title>Blow-up and uniqueness of Leray-Hopf solutions to forced Navier-Stokes equations</title>
+    <updated>2026-08-15T18:40:02Z</updated>
+    <link href="https://arxiv.org/abs/2606.15189v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.15189v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove the existence of forces and smooth initial data such that the associated Leray-Hopf solution of the 3D Navier-Stokes equations is unique, global-in-time, satisfies the energy equality, and has infinitely many (countable) blow-up instants. Different classes of forces and blow-up strengths are considered. All of them are sharp compared to the boundedness statements in literature. Our method also enables us to construct examples of blow-up for the forced 3D Euler equations.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-13T08:34:21Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Giovanni Paolo Galdi</name>
+    </author>
+    <author>
+      <name>Filippo Gazzola</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.10341v1</id>
+    <title>Uniqueness and stability of planar shock wave to 2D compressible Euler equations in the vanishing viscosity limit of compressible Navier-Stokes equations</title>
+    <updated>2026-10-07T16:21:01Z</updated>
+    <link href="https://arxiv.org/abs/2610.10341v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.10341v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>It is well known that the compressible Euler equations with planar shock initial data may admit infinitely many entropy weak solutions, as shown by Chiodaroli, De Lellis and Kreml [Comm. Pure Appl. Math. (2015)]. In this paper, we introduce a suitable notion of global-in-time weak solutions to the two-dimensional (2D) compressible Navier-Stokes equations with density-dependent viscosities in $\mathbb{R} \times \mathbb{T}$. Within this solution framework, we establish the first vanishing viscosity limit selection criterion for the physically relevant planar shock solution to the 2D compressible Euler equations. More precisely, we prove the uniqueness and stability of the 2D Euler planar shock solution within a class of inviscid limits of Navier-Stokes solutions emanating from near-planar initial data while the shock direction perturbation can be arbitrarily large. Starting from the relative $κ$-entropy for 2D compressible Navier-Stokes equations in $\mathbb{T}^2$ by Bresch, Noble and Vila [ESAIM Proc. Surveys (2017)], we first establish the relative $\frac12$-entropy between 2D weak solution of compressible Navier-Stokes equations in $\mathbb{R} \times \mathbb{T}$ and one-dimensional (1D) strong solution for averaged initial data in $\mathbb{R}$. Then we achieve the desired vanishing viscosity limit selection criterion by successfully bridging the fundamental structural gap between 2D Eulerian formulation of the original Navier-Stokes system in the relative $\frac12$-entropy and 1D vanishing viscosity limit to a shock solution of Euler equations in Lagrangian coordinates by Kang and Vasseur [Invent. Math. (2021)]. The framework developed herein can be applied to the three-dimensional limit selection criterion in $\mathbb{R} \times \mathbb{T}^2$, as well as to more complex planar Riemann solutions and interacting wave patterns.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-07T16:21:01Z</published>
+    <arxiv:comment>66 pages</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Geng Chen</name>
+    </author>
+    <author>
+      <name>Jeffrey Cheng</name>
+    </author>
+    <author>
+      <name>Alexis F. Vasseur</name>
+    </author>
+    <author>
+      <name>Yi Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.03682v1</id>
+    <title>Low-Overhead Quantum Error Correction with Boundary-Connected Planar Modules</title>
+    <updated>2026-10-02T17:48:44Z</updated>
+    <link href="https://arxiv.org/abs/2610.03682v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.03682v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Realizing practical quantum computers requires quantum error correction, but the most widely implemented approach, the planar surface code, demands a substantial physical qubit overhead. Here, we demonstrate that partitioning quantum processors into manageable, flat modules with non-local inter-module connections provides a natural solution. By wiring sparse, static boundary connections between Euclidean planar modules, we construct modular hyperbolic surface and color codes, based on new families of semi-hyperbolic codes. Using modular syndrome extraction circuits and efficient neural network and matching decoders, our circuit-level simulations show that this modular memory design can reduce the physical qubit overhead by tenfold or more compared to the surface code, even under elevated inter-module seam error rates. Projecting to larger system sizes, we find modular codes with encoding rate $k/n=1/16$ and distance $d\geq 22$, exceeding both the rate and distance of the $[[288,12,18]]$ two-gross bivariate bicycle code while using mostly nearest-neighbor gates within planar modules, and implying an over $30\times$ overhead reduction relative to surface codes. We develop fault-tolerant walking circuits for implementing logic via code automorphisms, which we co-design with low-weight, highly symmetrical logical bases and a modular extractor system that is $\approx 4.5\times$ smaller than the code itself. Combining these methods, our modular memory can be used as dense storage in a universal fault-tolerant architecture, unlocking the efficiency of high-rate codes without sacrificing the fabrication advantages of planar modules.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T17:48:44Z</published>
+    <arxiv:comment>112 pages, 73 figures, 20 tables (19 pages main text and Methods; 93 pages Supplementary Information)</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Oscar Higgott</name>
+    </author>
+    <author>
+      <name>Hasan Sayginel</name>
+    </author>
+    <author>
+      <name>Francisco J. H. Heras</name>
+    </author>
+    <author>
+      <name>Zhiyang He</name>
+    </author>
+    <author>
+      <name>Tomas Jochym-O'Connor</name>
+    </author>
+    <author>
+      <name>Andrew W. Senior</name>
+    </author>
+    <author>
+      <name>Lei M. Zhang</name>
+    </author>
+    <author>
+      <name>Thomas Edlich</name>
+    </author>
+    <author>
+      <name>James S. Spencer</name>
+    </author>
+    <author>
+      <name>Matt McEwen</name>
+    </author>
+    <author>
+      <name>Craig Gidney</name>
+    </author>
+    <author>
+      <name>Johannes Bausch</name>
+    </author>
+    <author>
+      <name>Pushmeet Kohli</name>
+    </author>
+    <author>
+      <name>Hartmut Neven</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.01035v1</id>
+    <title>The sixth moment of the Riemann zeta function</title>
+    <updated>2026-10-01T04:21:57Z</updated>
+    <link href="https://arxiv.org/abs/2610.01035v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.01035v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove new large value estimates for the Riemann zeta function on the critical line. For instance, we improve the upper bound on the measure of $t\in [T, 2T]$ with $|ζ(1/2 + it)| \geq T^{1/8}$ for the first time since Hardy-Littlewood (1923). Our results imply improved upper bounds on the $k$-th moment of zeta for every $4 &lt; k \leq 12$. We show in particular that
+  \begin{equation*}
+  \int_{0}^{T} |ζ(\tfrac{1}{2} + it)|^6 \,d t \ll_\varepsilon T^{\frac{5}{4} - \frac{1}{60} + \varepsilon}.
+  \end{equation*}
+  The main ingredient is a new large value estimate for exponential sums with square-root phases, and certain perturbations. Those arise in the expansion of the short second moment of zeta.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-01T04:21:57Z</published>
+    <arxiv:comment>19 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Alexandre de Faveri</name>
+    </author>
+    <author>
+      <name>Mayank Pandey</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.03666v2</id>
+    <title>On non-uniqueness of mild solutions and stationary singular solutions to the Navier-Stokes equations</title>
+    <updated>2026-06-11T06:59:01Z</updated>
+    <link href="https://arxiv.org/abs/2603.03666v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.03666v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove that the unconditional uniqueness of mild solutions to the Navier-Stokes equations fails in all the Besov spaces with negative regularity index, by constructing non-trivial stationary singular solutions via convex integration. We also establish uniqueness of stationary weak solutions in an endpoint critical space. Similar results are proved for the fractional Navier-Stokes equations with arbitrarily large power of the Laplacian in both Lebesgue and Besov spaces.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-04T02:46:48Z</published>
+    <arxiv:comment>46 pages. Main Theorems are improved. Comments are welcome</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Alexey Cheskidov</name>
+    </author>
+    <author>
+      <name>Hedong Hou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2504.20212v1</id>
+    <title>Estimating decoding graphs and hypergraphs of memory QEC experiments</title>
+    <updated>2025-04-28T19:25:22Z</updated>
+    <link href="https://arxiv.org/abs/2504.20212v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2504.20212v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Characterizing the error sources of quantum devices is essential for building reliable large-scale quantum architectures and tailoring error correction codes to the noise profile of the devices. Tomography techniques can provide detailed information on the noise or quality of quantum states but are typically both computationally and experimentally intensive with respect to the system's size. For QEC experiments, however, the information captured by a detector error model is sufficient for extracting the success rate of the experiment, as well as some information about the underlying noise. In this work, we estimate Pauli noise on detector error models, including hypergraphs, using only the syndrome statistics. We apply this method to well-known codes such as the repetition, surface, and 2D color codes. Under bare-ancilla syndrome extraction, two-point correlations are enough to reconstruct the detector error model for repetition or surface codes. For color codes or repetition codes under Steane-style syndrome extraction, we show how to extend the estimation method to multi-point correlators and extract the error rates of the hypergraphs. Finally, we find an increase in logical error suppression when we calibrate the decoder to noise fluctuations typically present in experiments.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-04-28T19:25:22Z</published>
+    <arxiv:comment>17 pages, 13 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Evangelia Takou</name>
+    </author>
+    <author>
+      <name>Kenneth R. Brown</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.01872v1</id>
+    <title>Generalized solution and Weak-Strong uniqueness for a barotropic Euler-Riesz system</title>
+    <updated>2026-08-03T08:19:43Z</updated>
+    <link href="https://arxiv.org/abs/2608.01872v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.01872v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the Euler--Riesz system on the torus $\mathbb T^d$, $d=2,3$: the compressible Euler equations with barotropic pressure $p(\varrho)=a\varrho^γ$ ($γ&gt;1$, $a&gt;0$), coupled to a repulsive nonlocal force ($\approx \varrho \nabla_x K \ast \varrho$) with Riesz kernel $K(x)\propto|x|^{β-d}$ of order $β\in(0,2)$. Since $K$ is the kernel of the inverse fractional Laplacian $(-Δ)^{-β/2}$, we recast the force through the Caffarelli--Silvestre extension as the trace of a local stress tensor, replacing the nonlocal interaction by a local identity in one extra variable. For a repulsive kernel the total energy is coercive, and we use this to introduce a notion of global-in-time \emph{dissipative solution} for arbitrarily large finite-energy data. Our main result is weak (measure-valued)--strong uniqueness, for every order $β\in(0,2)$ and every $γ&gt;1$ independently: on any interval on which a strong solution exists, every dissipative solution with the same initial data coincides with it and all defects vanish. The proof rests on a suitable adaptation of relative energy.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-03T08:19:43Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Nilasis Chaudhuri</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.26787v1</id>
+    <title>A finite arithmetic form of Robin's inequality and its equivalence to the Riemann hypothesis</title>
+    <updated>2026-09-22T17:58:00Z</updated>
+    <link href="https://arxiv.org/abs/2609.26787v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.26787v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Robin's inequality reformulates the Riemann hypothesis as a bound on the sum-of-divisors function $σ$. We introduce a finite-truncation version of Robin's inequality determined intrinsically by the arithmetic structure of $n$, \[ \frac{σ(n)}{n} &lt;
+e^γ\sum_{j=0}^{ω(n)} \frac{(\ln\ln\ln n)^j}{j!}, \qquad n&gt;5040, \] where $ω(n)$ denotes the number of distinct prime factors of $n$, and $γ$ is the Euler-Mascheroni constant. The resulting bound is pointwise stronger than Robin's inequality and we prove it unconditionally for integers with $ω(n)\le 6$, primorials, odd integers and square-free integers. We also prove that this inequality is equivalent to Robin's inequality, and hence to the Riemann hypothesis. Consequently, the Riemann hypothesis is equivalent to the truncated inequality holding for all colossally abundant numbers. We further show that if the inequality fails, its minimal counterexample must be a superabundant number, placing any obstruction within a rigid extremal class of integers.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-22T17:58:00Z</published>
+    <arxiv:comment>21 pages and 1 figure</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Challenger Mishra</name>
+    </author>
+    <author>
+      <name>Rahul Sarkar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.01836v1</id>
+    <title>Cosmological inference from a joint DESI DR1 full-shape power spectrum and bispectrum analysis</title>
+    <updated>2026-10-01T15:07:29Z</updated>
+    <link href="https://arxiv.org/abs/2610.01836v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.01836v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The galaxy bispectrum directly probes the non-linear gravitational evolution of large-scale structure (LSS) and can break parameter degeneracies that remain in power-spectrum analyses. We present a joint full-shape cosmological analysis of three luminous red galaxy (LRG) redshift bins and the quasar (QSO) sample from the first Data Release (DR1) of the Dark Energy Spectroscopic Instrument (DESI). We model the redshift-space power spectrum at one loop and the tree-level bispectrum within the Effective Field Theory of LSS. The bispectrum is decomposed in the Tripolar Spherical Harmonics basis, for which the convolution with the survey window function can be formulated as a direct linear transformation of the theoretical multipoles. Our power-spectrum constraints are in good agreement with the official DESI DR1 full-modelling results. We investigate the impact of including the bispectrum in the inference, finding that the monopole substantially improves the constraints on the cold dark matter density and amplitude of matter fluctuations by 9-18% and 8-20%, respectively, in the individual-tracer analyses. The corresponding reductions are 15% and 10% for the combined LRG sample, and 6% and 4% when all tracers are combined. In a restricted test using the first LRG bin, the bispectrum quadrupole changes the marginalised uncertainties by only a few percent. Extending the analysis to $w_0w_a$CDM substantially broadens the cosmological posteriors, while the bispectrum produces only a mild change in the allowed dark-energy parameter region, which remains sensitive to the adopted prior ranges. Our results demonstrate the potential of higher-order clustering statistics to improve cosmological constraints, while providing a framework for incorporating the bispectrum into full-shape analyses of current and future spectroscopic galaxy surveys.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-01T15:07:29Z</published>
+    <arxiv:comment>53 pages, 16 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Caroline Guandalin</name>
+    </author>
+    <author>
+      <name>Prakhar Bansal</name>
+    </author>
+    <author>
+      <name>Pedro Carrilho</name>
+    </author>
+    <author>
+      <name>Alejandro Aviles</name>
+    </author>
+    <author>
+      <name>Mike Shengbo Wang</name>
+    </author>
+    <author>
+      <name>Marcos Pellejero-Ibañez</name>
+    </author>
+    <author>
+      <name>Aaditya Sarma</name>
+    </author>
+    <author>
+      <name>Jaide Swanson</name>
+    </author>
+    <author>
+      <name>Marco Bonici</name>
+    </author>
+    <author>
+      <name>Florian Beutler</name>
+    </author>
+    <author>
+      <name>Arnaud de Mattia</name>
+    </author>
+    <author>
+      <name>Hee-Jong Seo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.35317v1</id>
+    <title>LISA bright sirens as a tiebreaker among cosmologies in tension</title>
+    <updated>2026-09-28T14:49:00Z</updated>
+    <link href="https://arxiv.org/abs/2609.35317v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.35317v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Gravitational waves from massive black hole binaries detected by LISA will deliver luminosity distances without any astrophysical calibration, offering a probe of the expansion history independent of the cosmic distance ladder. Rather than asking how tightly LISA will constrain a single fiducial cosmology, we ask which of several mutually discrepant present-day cosmologies a future LISA dataset would render most self-consistent. We build mock catalogues of LISA bright sirens under three fiducial cosmologies drawn from datasets that participate in the current $H_0$ discrepancy (Planck 2018, Union3 and Pantheon+SH0ES), with a self-consistent error budget from instrumental noise, weak lensing and host peculiar velocities. We compare the posterior from the simulated LISA data alone with that of a real-data combination of Type Ia supernovae, DESI baryon acoustic oscillations, cosmic chronometers and the compressed Planck 2018 CMB, and quantify their internal tension in the $(H_0,Ω_m)$ plane, crossing each fiducial with three SN Ia compilations. The fiducial drives the tension, from $2.08σ$ to well beyond $5σ$, while the supernova compilation changes it by at most $1.2σ$. The discriminating power is strongly asymmetric: a Pantheon+SH0ES universe is inconsistent with every background we test, at a significance far in excess of $5σ$ and still at $3$-$5σ$ for the $10$-$20$ events expected from recent population models, whereas the Planck 2018 and Union3 fiducials, which differ by only $0.24$ km/s/Mpc in $H_0$, cannot be separated by any catalogue size. LISA bright sirens are therefore a sharp arbiter of the Cepheid-calibrated scenario and, on this error budget, silent between the other two.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-28T14:49:00Z</published>
+    <arxiv:comment>28 pages, 9 figures, 5 tables</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>M. F. A. Medeiros</name>
+    </author>
+    <author>
+      <name>F. C. Carvalho</name>
+    </author>
+    <author>
+      <name>L. L. Sales</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.06811v1</id>
+    <title>Polynomial-time simulation of non-Clifford quantum error correction</title>
+    <updated>2026-10-05T17:54:39Z</updated>
+    <link href="https://arxiv.org/abs/2610.06811v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.06811v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We show that every intermediate state of a broad class of non-Clifford quantum error-correction circuits is a third-order phase-polynomial state, even under stochastic Pauli noise. The class includes magic state distillation and cultivation, code switching and gauge fixing, transversal non-Clifford gates with syndrome extraction, and injection of diagonal magic states. Third-order phase-polynomial states strictly generalize stabilizer states, and we prove that they are exactly the stabilizer states of the diagonal-Clifford-and-Pauli (DCP) stabilizer formalism that we introduce. We characterize these states and show that their representations can be updated in polynomial time. This yields an exact polynomial-time simulation algorithm for these circuits and, more broadly, a framework for reasoning about their internal states and about magic states in general. We provide an open-source implementation, \texttt{merlin}, and benchmark it against existing non-Clifford simulators on distillation, cultivation, and code switching circuits. The benchmarks demonstrate improved runtime and memory scaling as the number of logical outputs grows in Bravyi-Haah distillation, and simulation of a code switching circuit beyond the reach of all other tested simulators.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-05T17:54:39Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Serban Cercelescu</name>
+    </author>
+    <author>
+      <name>Mark Koch</name>
+    </author>
+    <author>
+      <name>Arthur Pesah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.14354v1</id>
+    <title>No-Go Theorem for Phantom Crossing in Scalar-Tensor Gravity with Non-Minimal Derivative Coupling and Soft Scale-Invariance Breaking</title>
+    <updated>2026-10-09T21:58:44Z</updated>
+    <link href="https://arxiv.org/abs/2610.14354v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.14354v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent baryon acoustic oscillation measurements from the Dark Energy Spectroscopic Instrument (DESI 2024) reveal a preference for dynamical dark energy with an equation of state parameter crossing the phantom divide ($w &lt; -1$) at low redshifts. We investigate whether this phantom crossing can be realized within scale-invariant scalar-tensor theories featuring non-minimal derivative coupling (NMDC) between the scalar field and the Einstein tensor. Employing the effective field theory of dark energy formalism, we systematically derive the ghost-free and gradient stability conditions, and examine their compatibility with the swampland conjectures from quantum gravity. We establish three rigorous no-go theorems demonstrating that: (i)~phantom crossing necessitates $ξ_{\text{eff}} &lt; 0$, directly violating the no-ghost stability requirement $ξ_{\text{eff}} &gt; 0$; (ii)~the swampland de Sitter and distance conjectures independently obstruct phantom crossing; and (iii)~these theoretical obstructions are mutually reinforcing. Our results show that scale-invariant NMDC models cannot account for the DESI preference for $w &lt; -1$, providing robust theoretical guidance for dark energy model building beyond this class.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-09T21:58:44Z</published>
+    <arxiv:comment>28 pages, 5 figures, essential info</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Reza Baghbani</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.00331v1</id>
+    <title>Sharp nonuniqueness for the forced 2D Navier-Stokes and dissipative SQG equations</title>
+    <updated>2026-01-01T12:54:48Z</updated>
+    <link href="https://arxiv.org/abs/2601.00331v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.00331v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove a sharp nonuniqueness result for the forced generalized SQG equation. First, this yields nonunique $\dot{H}^s$- energy solutions below the Miura-Ju class. In particular, this shows that the solutions constructed by Resnick and Marchand for the dissipative SQG equation are not necessarily unique. Second, this establishes nonuniqueness below the Ladyzhenskaya-Prodi-Serrin class for the 2D Navier-Stokes equation, as well as below the Constantin-Wu and Dong-Chen-Zhao-Liu classes for the dissipative SQG equation.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-01T12:54:48Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Francisco Mengual</name>
+    </author>
+    <author>
+      <name>Marcos Solera</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.14308v1</id>
+    <title>Non-uniqueness of global-in-time admissible weak solutions to the isentropic compressible Euler equations for a dense set of initial data</title>
+    <updated>2026-06-12T09:44:28Z</updated>
+    <link href="https://arxiv.org/abs/2606.14308v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.14308v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In recent years, the technique of convex integration has demonstrated that for some initial data (also referred to as 'wild initial data'), many PDE models of mathematical fluid mechanics allow for a multitude of admissible (weak) solutions. This paper is concerned with the question regarding how large the set of such wild initial data is for the isentropic Euler equations. We prove that wild initial data form a dense set in $L^r$ for any $r \in [1,\infty)$. In contrast to existing results in the literature, in this paper 'wild initial data' are data which give rise to infinitely many global-in-time weak solutions which are admissible in the sense that the local energy inequality holds. In other words, the set of initial data with infinitely many admissible weak solutions (independent of the choice of time interval) is dense. A novel part of the construction is that we use a measure-valued (dissipative) solution as the ansatz for the subsolution. This requires several new ideas, in order to ensure the required regularity of the subsolution and to obtain a lower bound for the density. Another crucial ingredient of the proof is that the (local) energy density and the energy flux are constructed as part of the convex integration scheme, in order to obtain solutions which adhere to the local energy inequality.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-12T09:44:28Z</published>
+    <arxiv:comment>53 pages</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Daniel W. Boutros</name>
+    </author>
+    <author>
+      <name>Simon Markfelder</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.14515v1</id>
+    <title>Beyond the Riemann Hypothesis bounds: A pair-correlation approach to the least prime in arithmetic progression and the smallest quadratic non-residue</title>
+    <updated>2026-07-16T03:12:02Z</updated>
+    <link href="https://arxiv.org/abs/2607.14515v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.14515v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Generalized Riemann Hypothesis (GRH) has long defined the expected bounds for the smallest prime in an arithmetic progression and the least quadratic non-residue. However, this hypothesis primarily addresses the horizontal location of non-trivial zeros. In this paper, we show that incorporating the vertical spacing--or pair-correlation--of these zeros allows us to surpass these classical bounds. By combining these two zero-distribution perspectives, we establish sharper estimates for both problems under GRH and specific pair-correlation hypotheses, thereby providing a new link between pair-correlation phenomena for Dirichlet L-functions and these two classical problems.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-16T03:12:02Z</published>
+    <arxiv:comment>26 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Neelam Kandhil</name>
+    </author>
+    <author>
+      <name>Alessandro Languasco</name>
+    </author>
+    <author>
+      <name>Pieter Moree</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.14852v1</id>
+    <title>Reciprocity for The Short Twisted Second Moment of The Riemann Zeta Function</title>
+    <updated>2026-08-14T19:48:53Z</updated>
+    <link href="https://arxiv.org/abs/2608.14852v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.14852v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove a reciprocity formula for a twisted second moment of the Riemann zeta function over a short interval of length $T^δ$, where $δ\in (\frac{1}{2},1)$, centered at height $T$ on the critical line. This result extends Khan's reciprocity formula to the short interval setting and makes explicit the relation between the twisting parameters and the interval length.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-14T19:48:53Z</published>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Ze Sen Tang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.17456v1</id>
+    <title>Non-unique $L^2$ solutions to the stationary Navier--Stokes equations on the whole plane</title>
+    <updated>2026-08-18T07:35:31Z</updated>
+    <link href="https://arxiv.org/abs/2608.17456v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.17456v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove that, for a suitable small external force in $\dot H^{-2}(\mathbb R^2)$, the stationary Navier--Stokes equations on $\mathbb R^2$ admit multiple solutions in $L^2(\mathbb R^2)$.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-18T07:35:31Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Mikihiro Fujii</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.40176v1</id>
+    <title>Is DESI Seeing Dynamical Dark Energy, or a Cosmic Glitch in Gravity?</title>
+    <updated>2026-09-30T17:02:51Z</updated>
+    <link href="https://arxiv.org/abs/2609.40176v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.40176v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Combined baryon acoustic oscillation and cosmic microwave background data have begun to mildly favor departures from $Λ\mathrm{CDM}$. This is usually framed as 2-parameter dynamical dark energy. However, a 1-parameter "cosmic glitch in gravity" model, whose cosmological gravitational coupling differs from Newton's constant as in Hořava gravity, fits at least as well. $\textit{Planck}$+ACT+SPT and DESI~DR2 give $G_\mathrm{cosmo}/G_\mathrm{N}=0.9920\pm0.0025$, a $3.3\,σ$ preference for weaker cosmological gravity, robust to adding CMB lensing and supernovae. Fitted to the CMB alone, the glitch predicts DESI distances; $w_0w_a$CDM does not.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T17:02:51Z</published>
+    <arxiv:comment>6+8 pages, 9 figures, 4 tables</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Robin Y. Wen</name>
+    </author>
+    <author>
+      <name>Lukas Tobias Hergt</name>
+    </author>
+    <author>
+      <name>Niayesh Afshordi</name>
+    </author>
+    <author>
+      <name>Douglas Scott</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2504.07258v1</id>
+    <title>Characterising the failure mechanisms of error-corrected quantum logic gates</title>
+    <updated>2025-04-09T20:29:47Z</updated>
+    <link href="https://arxiv.org/abs/2504.07258v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2504.07258v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Mid-circuit measurements used in quantum error correction are essential in quantum computer architecture, as they read out syndrome data and drive logic gates. Here, we use a heavy-hex code prepared on a superconducting qubit array to investigate how different noise sources impact error-corrected logic. First, we identify that idling errors occurring during readout periods are highly detrimental to a quantum memory. We demonstrate significant improvements to the memory by designing and implementing a low-depth syndrome extraction circuit. Second, we perform a stability experiment to investigate the type of failures that can occur during logic gates due to readout assignment errors. We find that the error rate of the stability experiment improves with additional stabilizer readout cycles, revealing a trade-off as additional stability comes at the expense of time over which the memory can decay. We corroborate our results using holistic device benchmarking and by comparison to numerical simulations. Finally, by varying different parameters in our simulations we identify the key noise sources that impact the fidelity of fault-tolerant logic gates, with measurement noise playing a dominant role in logical gate performance.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-04-09T20:29:47Z</published>
+    <arxiv:comment>16 pages, 9 figures, comments welcome</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <arxiv:journal_ref>Nature Communications 17, 5039 (2026)</arxiv:journal_ref>
+    <author>
+      <name>Robin Harper</name>
+    </author>
+    <author>
+      <name>Constance Lainé</name>
+    </author>
+    <author>
+      <name>Evan Hockings</name>
+    </author>
+    <author>
+      <name>Campbell McLauchlan</name>
+    </author>
+    <author>
+      <name>Georgia M. Nixon</name>
+    </author>
+    <author>
+      <name>Benjamin J. Brown</name>
+    </author>
+    <author>
+      <name>Stephen D. Bartlett</name>
+    </author>
+    <arxiv:doi>10.1038/s41467-026-71773-6</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1038/s41467-026-71773-6" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.06059v1</id>
+    <title>Comparing thresholds of XZZX and rotated surface codes under spatio-temporal correlated noise</title>
+    <updated>2026-10-05T09:51:46Z</updated>
+    <link href="https://arxiv.org/abs/2610.06059v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.06059v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While independent and identically distributed noise is typically assumed in quantum computing research, complex error models such as correlated and spatio-temporal errors remain underexplored. In this paper, the performance of $\mathrm{XZZX}$ and rotated surface codes is evaluated under these complex noise models. Standard graph-based decoders struggle with the hyperedges generated by correlated errors on bias-tailored codes. To address this, we employ the Minimum Weight Parity Factor (MWPF) decoder, which natively processes syndrome hypergraphs without artificial edge decomposition. Our simulations show that under strong Z-biased circuit-level correlated noise ($η=100$), the threshold of the rotated code degrades to $\approx 0.36\%$, while the $\mathrm{XZZX}$ code drops to $\approx 0.70\%$. Furthermore, a distinct non-monotonic threshold dependence is observed for the $\mathrm{XZZX}$ code across different bias ratios. While the $\mathrm{XZZX}$ code effectively absorbs high-density Z-type hyperedges at extreme biases, it exhibits a threshold minimum at moderate biases ($η\approx 10$) because transverse X and Y errors actively bridge the diagonal strings, breaking the code's one-dimensional decoupling symmetry. These findings demonstrate that utilizing hypergraph-aware decoders is critical, as the performance of bias-tailored codes is highly sensitive to the geometric structure of spatio-temporal correlated noise.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-05T09:51:46Z</published>
+    <arxiv:comment>11 pages, 8 plots, simulation codes available on GitHub</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Dhruv Koul</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.03869v1</id>
+    <title>Modular Neural Decoder for Surface Code Memory and Logic on Superconducting Processors</title>
+    <updated>2026-10-02T18:00:34Z</updated>
+    <link href="https://arxiv.org/abs/2610.03869v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.03869v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Neural decoders for quantum error correction have achieved high accuracy on surface code memory experiments, but practical fault-tolerant computation requires decoders that transfer across devices, noise conditions, and logical operations. We introduce a modular graph-recurrent decoder designed for this setting. Built from reusable local syndrome encoders, it is pretrained in simulation and fine-tuned to hardware using a common pipeline, with only lightweight spatial aggregation adapted between experiments. The decoder performs competitively on conventional memory benchmarks, outperforming minimum-weight perfect matching (MWPM) at distances 3 and 5 on an IBM Nighthawk-generation processor and closely approaching AlphaQubit on Google's below-threshold hardware data. We then test the framework in two settings beyond memory decoding on the same IBM device. First, in an $X$-type stability experiment, we continuously tune the effective measurement error rate using a variable pre-readout rotation and train a single decoder jointly across the resulting noise range. It matches or outperforms MWPM across the sweep without requiring a separately calibrated decoder for each setting. Second, we decode a $ZZ$-merge lattice-surgery experiment between two distance-3 surface-code patches, improving the decoded correlation between the merge outcome and the final $ZZ$ parity relative to MWPM on real hardware. Together, these experiments demonstrate neural decoding that is portable not only across hardware, but also across qualitatively different surface code observables and logical operations, using models trainable on single-GPU academic resources.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T18:00:34Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Moritz Lange</name>
+    </author>
+    <author>
+      <name>Ole Fjeldså</name>
+    </author>
+    <author>
+      <name>Gustaf Jonasson Johansson</name>
+    </author>
+    <author>
+      <name>Mats Granath</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.20002v1</id>
+    <title>Testing Departures from the $Λ$CDM model in f(T) Gravity with DESI DR2</title>
+    <updated>2026-10-14T11:19:25Z</updated>
+    <link href="https://arxiv.org/abs/2610.20002v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.20002v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent analyses combining DESI baryon acoustic oscillation (BAO) measurements with other cosmological observations have reported indications of departures from the $Λ$CDM model within dynamical dark energy scenarios. We investigate whether such deviations are reproduced consistently in $f(T)$ gravity and whether they persist when different cosmological observations are combined. Using the DESI DR2 BAO measurements, Cosmic Microwave Background (CMB), and Pantheon+ Type Ia Supernovae (SNe Ia) sample, we constrain three representative $f(T)$ models: the power-law, exponential, and hyperbolic-tangent models. We compare the constraints obtained from different combinations of data, distinguishing changes in marginalized parameter distributions from changes in the relative statistical performance of the models. For the power-law model, the mild deviation from the $Λ$CDM model obtained from BAO+CMB disappears after the SNe Ia data are included. In contrast, the exponential model retains a preference for a nonzero deformation parameter in the full analysis, while the allowed parameter space of the hyperbolic-tangent model changes substantially after the CMB distance priors are included. Importantly, the parameter-level deviation found for the exponential model does not lead to a clear statistical preference over the $Λ$CDM model according to the information criteria, whereas the hyperbolic-tangent model shows a poorer statistical performance for the combined data. Despite these differences in the model constraints, the inferred transition redshift $z_T$ remains relatively stable among the three models and data combinations. Our results show that the departures from the $Λ$CDM model indicated by DESI analyses are not a generic feature of $f(T)$ gravity, but depend strongly on the specific modified gravity parameterization and on the combination of cosmological observations.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-14T11:19:25Z</published>
+    <arxiv:comment>18 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Jie Zheng</name>
+    </author>
+    <author>
+      <name>Mingzhi Wang</name>
+    </author>
+    <author>
+      <name>Ming Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.17612v1</id>
+    <title>From Syndromes to Computation: A General Framework for Logical Operations in Quantum Error-Correcting Codes</title>
+    <updated>2026-10-13T02:32:10Z</updated>
+    <link href="https://arxiv.org/abs/2610.17612v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.17612v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Fault-tolerant quantum computation requires error-correcting codes that not only protect quantum information but also support useful logical operations with practical physical realizations. Here we develop a general framework in which the stabilizer syndromes of commuting Pauli rotations directly organize logical-gate design. We derive an exact codespace-preservation condition valid at arbitrary rotation angles, providing a common stabilizer-level description for CSS and non-CSS codes and for both Clifford and non-Clifford operations. A particularly useful equal-syndrome specialization reduces Clifford gate design to stabilizer factorization, yields a general generator weight bound of $\lceil d/2\rceil$ for distance-$d$ codes, and systematically extends to logical rotations higher in the Clifford hierarchy. Applied to bivariate-bicycle (BB) and non-CSS Mirror qLDPC codes, the framework gives explicit low-weight Clifford and controlled-phase gates. Our implementations yield new low-weight gates, including an addressed $T$ gate on the $[[16,4,4]]$ BB code, $T$-type rotations on the $[[64,8,8]]$ BB code, and CCZ-, CS-, and $T$-type operations on the $[[36,6,6]]$ Mirror code. We also develop analytic constructions using Clifford algebra bases, which turn the syndrome constraints into explicit algebraic relations and provide a systematic route to logical addressability. We use this approach to analytically construct addressed CNOT, SWAP, controlled, and CCZ-type gates on recursive hypercube codes. An independent construction on middle quantum Reed--Muller codes yields C${}^r$Z gates that saturate the equal-syndrome weight bound. These results establish stabilizer syndromes as a constructive link between the stabilizer structure of a quantum code, the logical computations it can directly support, and the fault-tolerance properties of their physical realizations.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-13T02:32:10Z</published>
+    <arxiv:comment>29+19 pages</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Hunter Nelson</name>
+    </author>
+    <author>
+      <name>Arshag Danageozian</name>
+    </author>
+    <author>
+      <name>ChunJun Cao</name>
+    </author>
+    <author>
+      <name>Sophia E. Economou</name>
+    </author>
+    <author>
+      <name>Edwin Barnes</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.00504v1</id>
+    <title>Graph Neural Post-selection for Quantum Error Correction</title>
+    <updated>2026-09-30T18:04:38Z</updated>
+    <link href="https://arxiv.org/abs/2610.00504v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.00504v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Post-selection improves the logical reliability of quantum computation by rejecting shots which are likely to result in logical failure. We introduce graph neural networks that predict decoder failure without additional decoder executions, using only syndromes, and for high-rate quantum low-density parity-check (qLDPC) codes, existing belief-propagation posteriors. We evaluate rotated surface and bivariate bicycle (BB) code memories under uniform depolarising circuit-level noise. Retaining 90% of shots gives approximately 3700x and 740x reductions in logical error rates for [[72,12,6]] and [[144,12,12]] BB codes at realistic physical error rates. For the distance 5 surface code at physical noise p=0.003, our neural post-selector achieves logical error suppression comparable to the leading complementary gap method without running the decoder.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T18:04:38Z</published>
+    <arxiv:comment>19 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Conor Carty</name>
+    </author>
+    <author>
+      <name>Tamas Noszko</name>
+    </author>
+    <author>
+      <name>Joschka Roffe</name>
+    </author>
+    <author>
+      <name>Roberto Bondesan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.03815v1</id>
+    <title>Learning Neural Decoding with Parallelism and Self-Coordination for Quantum Error Correction</title>
+    <updated>2025-09-04T02:02:27Z</updated>
+    <link href="https://arxiv.org/abs/2509.03815v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.03815v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Fast, reliable decoders are pivotal components for enabling fault-tolerant quantum computation. Neural network decoders like AlphaQubit have demonstrated significant potential, achieving higher accuracy than traditional human-designed decoding algorithms. However, existing implementations of neural network decoders lack the parallelism required to decode the syndrome stream generated by a superconducting logical qubit in real time. Moreover, integrating AlphaQubit with sliding window-based parallel decoding schemes presents non-trivial challenges: AlphaQubit is trained solely to output a single bit corresponding to the global logical correction for an entire memory experiment, rather than local physical corrections that can be easily integrated.
+  We address this issue by training a recurrent, transformer-based neural network specifically tailored for sliding-window decoding. While our network still outputs a single bit per window, we derive training labels from a consistent set of local corrections and train on various types of decoding windows simultaneously. This approach enables the network to self-coordinate across neighboring windows, facilitating high-accuracy parallel decoding of arbitrarily long memory experiments. As a result, we resolve the throughput limitation that previously prohibited the application of AlphaQubit-type decoders in fault-tolerant quantum computation.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-04T02:02:27Z</published>
+    <arxiv:comment>21 pages, 11 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Kai Zhang</name>
+    </author>
+    <author>
+      <name>Situ Wang</name>
+    </author>
+    <author>
+      <name>Linghang Kong</name>
+    </author>
+    <author>
+      <name>Fang Zhang</name>
+    </author>
+    <author>
+      <name>Zhengfeng Ji</name>
+    </author>
+    <author>
+      <name>Jianxin Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.07501v1</id>
+    <title>On the non-uniqueness of solutions of the axi-symmetric swirl-free Navier-Stokes equations, I</title>
+    <updated>2026-06-05T17:53:56Z</updated>
+    <link href="https://arxiv.org/abs/2606.07501v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.07501v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper we construct numerically a new class of unstable self-similar solutions of the incompressible Navier-Stokes equations in $\mathbb{R}^3$. Our solutions are axially symmetric and homogeneous of degree $-1$ at $\infty$, and are unstable in the sense that the linearization around these solutions contains unstable modes. Solutions of this type have been discovered numerically by Guillod and Šverák and Hou, Wang, and Yang, and have applications to proving non-uniqueness results.
+  The main novelty in this paper is that we discover the existence of such solutions in the space of axially symmetric swirl-free (ASSF) vector fields. These approximate solutions are defined on all of $\mathbb R^3$ and achieve global pointwise residuals of order $10^{-10}$. We discuss the numerical construction of these solutions in detail, as well as their relevance to the problem of non-uniqueness of solutions of the incompressible Navier-Stokes equations in 3D, in the space of ASSF solutions.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-05T17:53:56Z</published>
+    <arxiv:comment>24 pages, 9 figures</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Alexandru D. Ionescu</name>
+    </author>
+    <author>
+      <name>Hao Jia</name>
+    </author>
+    <author>
+      <name>Stan Palasek</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.25669v1</id>
+    <title>Boundary epsilon regularity for incompressible Navier--Stokes equations via weak-strong uniqueness</title>
+    <updated>2026-04-28T14:02:43Z</updated>
+    <link href="https://arxiv.org/abs/2604.25669v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.25669v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We show that finite-energy weak solutions to the incompressible Navier--Stokes equations on a three-dimensional bounded smooth domain are regular up to the boundary, provided that the $L^4_tL^4_x$-norm of the solution is smaller than a constant depending only on the domain. This answers a problem raised in [D. Albritton, T. Barker, and C. Prange, J. Math. Fluid Mech. 25 (2023), Paper No. 49]. Our proof relies on a new slicing construction near the boundary of the domain.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.flu-dyn" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-28T14:02:43Z</published>
+    <arxiv:comment>14 pages</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Siran Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.19393v1</id>
+    <title>Model-independent consistency tests of DESI DR2 BAO and SN Ia</title>
+    <updated>2026-04-21T12:19:37Z</updated>
+    <link href="https://arxiv.org/abs/2604.19393v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.19393v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Cosmic distances can be measured using two complementary probes: Type Ia supernovae (SN Ia), serving as standard candles, and baryon acoustic oscillations (BAO), serving as standard rulers. The luminosity distance derived from supernovae and the angular diameter distance obtained from BAO must be mutually consistent if these data are to be combined for cosmological inference. Hence, the existence of potential discrepancies, whether arising from systematics in either dataset or from violation of the cosmic duality relation (in an unconventional cosmology), remains an important issue to address. Testing consistency under a particular cosmological model can be limiting, as the model may not be sensitive to every kind of inconsistency possible in the data. Thus, in this work we use a model-independent Crossing Statistics framework to test the consistency, using DESI DR2 BAO, and the Pantheon+ and Union3 SN Ia datasets. We find adding up to two additional degrees of freedom, using Crossing Statistics on the LambdaCDM distance-redshift relation, to be statistically justified. In these cases, the two probes remain mutually consistent at the 1-2 sigma level. Having established this statistical consistency, we combine the datasets to reconstruct the expansion history of the Universe and the inferred evolution of dark energy. The reconstructions obtained using different crossing variables show compatible behaviour where the data constraints are strongest, particularly at low redshift. Overall, the results are suggestive of a dark energy component that is evolving at low redshift, compatible with results from other reconstruction methods.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-21T12:19:37Z</published>
+    <arxiv:comment>20 pages, 7 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Hyeok Woo</name>
+    </author>
+    <author>
+      <name>William Luke Matthewson</name>
+    </author>
+    <author>
+      <name>Arman Shafieloo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.07399v1</id>
+    <title>Siegel zeros and small gaps between zeros of the Riemann zeta function</title>
+    <updated>2026-08-07T16:42:11Z</updated>
+    <link href="https://arxiv.org/abs/2608.07399v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.07399v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>On assuming the Riemann Hypothesis, we show that Siegel zeros imply the existence of gaps between the zeros of the Riemann zeta function less than 1/2 the normalised length. Specifically, we show that an infinite family of Siegel zeros implies $\liminf_{n\to\infty}(γ_{n+1}-γ_n)\log(γ_n)/2π&lt; 0.4733$ on RH. This refutes the existence of certain strong alternative hypotheses under these assumptions. Our arguments incorporate long Dirichlet polynomials of length $T^{17/14-\varepsilon}$ into the Montgomery--Odlyzko method.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-07T16:42:11Z</published>
+    <arxiv:comment>27 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Andriy Bondarenko</name>
+    </author>
+    <author>
+      <name>Winston Heap</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.19883v2</id>
+    <title>A Prediction for DESI Full-Shape: Increasing Tomographic $Ω_m(z)$ Trend</title>
+    <updated>2026-08-31T10:51:11Z</updated>
+    <link href="https://arxiv.org/abs/2608.19883v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.19883v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>To confirm $Λ$CDM deviations are due to missing physics (not systematics), one should demonstrate that the model fitting parameters exhibit qualitatively similar redshift drift across independent observables. This is the only way one guarantees new physics. Here, we show that a recent Dark Energy Spectroscopic Instrument (DESI) DR2 Full-Shape (FS) modelling Lyman-$α$ constraint at $z_{\rm eff} = 2.33$ combined with earlier DR1 FS modelling constraints with $0.295 \leq z_{\rm eff} \leq 1.491$ leads to a straight line $Ω_m(z) = m z + c$ with slope $m = 0.022 \pm 0.012$, $1.8 σ$ removed from constant $Ω_m$. Akaike Information Criterion and Bayesian evidence confirm that constant $Ω_m$ and increasing $Ω_m(z)$ are statistically indistinguishable. Through the $Om(z)$ diagnostic, we review how increasing and decreasing $Ω_m(z)$ trends map to phantom and quintessence dark energy (DE) regimes, respectively. While FS modelling constraints map to phantom DE, the decreasing and increasing $Ω_m(z)$ trends in DESI BAO and DESI with external data make a phantom crossing inevitable. Since dynamical DE is but one interpretation for $Ω_m(z)$ trends, it is imperative that different datasets converge on their $Ω_m(z)$ trends before one jumps to physical conclusions. We forecast how DESI FS modelling $Ω_m$ constraints will improve up to the final data release and explore the implications for model selection.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-20T10:44:12Z</published>
+    <arxiv:comment>4 pages, 2 figures plus references; v2 references added</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Eoin Ó Colgáin</name>
+    </author>
+    <author>
+      <name>M. M. Sheikh-Jabbari</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.03399v1</id>
+    <title>Optimizing quantum error correction through error attribution</title>
+    <updated>2026-10-02T14:47:36Z</updated>
+    <link href="https://arxiv.org/abs/2610.03399v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.03399v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Logical error rate is a standard benchmark for quantum error correction, providing an aggregate measure of the overall effect of physical noise. In actual QEC architectures, errors at different circuit locations can have markedly different effects on logical failure even when their probabilities are equal. Here we introduce an error attribution scheme to quantitatively characterize the influence of individual circuit components on the logical error rate and use this refined information to guide targeted intervention and design for improved QEC performance. Our attribution estimator computes all component sensitivities jointly from the same Monte Carlo samples used to estimate the logical error rate. The resulting sensitivity maps identify hotspots where targeted noise reduction can most effectively improve logical performance. We test the scheme in circuit simulations of rotated surface code memories and high-rate lifted product codes: halving the noise strength on about 5\%-7\% of physical components selected by sensitivity reduces logical error rates by approximately 15\%-25\%, roughly twice the mean reduction from the same intervention on an equal number of randomly selected components. By connecting performance benchmarking to targeted optimization, our scheme provides a practical strategy for improving quantum error correction with limited resources.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T14:47:36Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Yuguo Shao</name>
+    </author>
+    <author>
+      <name>Zi-Wen Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.05729v1</id>
+    <title>Testing $Λ$LTB as an alternative to dynamical dark energy</title>
+    <updated>2026-10-05T03:29:34Z</updated>
+    <link href="https://arxiv.org/abs/2610.05729v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.05729v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A cosmological constant $Λ$ in a universe weakly violating the cosmological principle (CP) can mimic a dynamical dark energy (DDE) in a FRW universe, and therefore challenging the recently reported DDE evidences. We test this scenario in the form of $Λ$LTB cosmology, against two data combinations. (1) DESI DR2 BAO, Planck CMB, together with any of the four SNe Ia compilations (UNION3, Pantheon+, DES SN5YR, and DES Dovekie) show no preference over DDE or $Λ$LTB. (2) The inclusion of the kinematic Sunyaev Zel'dovich (kSZ) effect rules out a large portion of the CP violation parameter space allowed by (1). However, the existence of a $\sim 300$ Mpc$/h$ region with $\sim 10\%$ matter density excess is still allowed by the current data, and therefore remains a viable alternative to DDE. To facilitate further tests, we present analytical expressions of the distance-redshift relation and the kSZ effect in a universe with weak CP violation.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-05T03:29:34Z</published>
+    <arxiv:comment>31 pages, 12 figures, 4 tables</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Yukang Zhang</name>
+    </author>
+    <author>
+      <name>Pengjie Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.07918v2</id>
+    <title>Simple critical zeros and distinct zeros of the Riemann zeta function in short intervals</title>
+    <updated>2026-10-06T23:49:27Z</updated>
+    <link href="https://arxiv.org/abs/2609.07918v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.07918v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recently, on the non-trivial zeros of the Riemann zeta function, it is obtained by Alpöge and Furman that more than 67.25% of the zeros are simple and on the critical line, and more than 83.62% are distinct. Later, Lamzouri gave a different and more direct proof. In this article, we will use the method of Lamzouri to give lower bounds on the number of the non-trivial zeros of the Riemann zeta function in short intervals. To prove the main result, we establish Montgomery's theorem on the pair correlation of zeros of the zeta function in short intervals by following the approach of Baluyot, Goldston, Suriajaya and Turnage-Butterbaugh, and then use Lamzouri's inequality on any finite multiset of complex numbers which is invariant under complex conjugation.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-07T19:30:23Z</published>
+    <arxiv:comment>17 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Biao Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.18178v1</id>
+    <title>Uniqueness of solutions to the 2D compressible Navier-Stokes equations for bounded densities</title>
+    <updated>2026-10-13T11:22:02Z</updated>
+    <link href="https://arxiv.org/abs/2610.18178v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.18178v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove the uniqueness of global solutions to the two dimensional barotropic compressible Navier--Stokes equations within the regularity class introduced by Danchin and Mucha [14], for general $C^1$ pressure laws. A crucial assumption is that both solutions have bounded divergence, locally integrable in time, which ensures that their densities remain bounded without excluding vacuum or requiring spatial regularity of the density.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-13T11:22:02Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Lorenzo Pescatore</name>
+    </author>
+    <author>
+      <name>Alessandro Violini</name>
+    </author>
+  </entry>
+</feed>

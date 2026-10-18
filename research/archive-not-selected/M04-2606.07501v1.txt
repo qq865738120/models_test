@@ -1,0 +1,1724 @@
+
+[PDF page 1]
+ON THE NON-UNIQUENESS OF SOLUTIONS OF THE AXI-SYMMETRIC
+SWIRL-FREE NAVIER–STOKES EQUATIONS, I
+A. D. IONESCU, H. JIA, AND S. PALASEK
+Abstract.In this paper we construct numerically a new class of unstable self-similar solutions
+of the incompressible Navier–Stokes equations inR 3. Our solutions are axially symmetric and
+homogeneous of degree−1 at∞, and are unstable in the sense that the linearization around
+these solutions contains unstable modes. Solutions of this type have been discovered numerically
+in [13] and [14], and have applications to proving non-uniqueness results.
+The main novelty in this paper is that we discover the existence of such solutions in the
+space of axially symmetric swirl-free (ASSF) vector fields. These approximate solutions are
+defined on all ofR 3 and achieve global pointwise residuals of order 10 −10. We discuss the
+numerical construction of these solutions in detail, as well as their relevance to the problem of
+non-uniqueness of solutions of the incompressible Navier–Stokes equations in 3D, in the space
+of ASSF solutions.
+Contents
+1. Introduction 1
+2. Numerical construction and results 8
+3. Proof of Theorem 1.2 15
+4. Remarks 21
+References 24
+1.Introduction
+We consider solutionsuof the incompressible Navier–Stokes equation inR 3,
+∂tu+u· ∇u+∇p−∆u= 0,∇ ·u= 0.(1.1)
+In 1934, Leray [18] pioneered the analysis of (1.1), showing local well-posedness of strong so-
+lutions from regular initial data and global existence of weak solutions in the energy space
+L∞
+t L2
+x ∩L 2
+t H1
+x. Two fundamental open problems were raised: whether classical solutions can
+develop finite time singularities, and whether Leray weak solutions are unique.
+The importance of Leray weak solutions stems, in part, from the weak-strong uniqueness
+phenomenon: if two Leray weak solutions have the same data att= 0, then they continue to
+agree as long as either solution is regular. Consequently, from smooth data, Leray solutions can
+violate uniqueness only after a blow-up has occurred. A natural possibility would be that some
+initially smooth solutions may develop a finite-time singularity and then split into several Leray
+weak solutions. Rigorously establishing such a scenario remains, of course, far out of reach.
+Instead, there has been significant effort to demonstrate non-uniqueness of Leray solutions from
+singularinitial data, ideally in sharp regularity classes.
+1
+arXiv:2606.07501v1  [math.AP]  5 Jun 2026
+
+[PDF page 2]
+2 A. D. IONESCU, H. JIA, AND S. PALASEK
+1.1.The main conjecture.Our goal in this paper is to provide strong numerical evidence
+and a theoretical framework for proving the following conjecture:
+Conjecture 1.1.(i) There are two different solutions
+u1, u2 ∈C([0,1] :H α
+x )∩L 2
+t H α+1
+x ∩L ∞
+t L3,∞
+x ,for anyα∈[0,1/2),(1.2)
+of the incompressible Navier–Stokes equations(1.1)inR 3, with the same initial datau 1(0) =
+u2(0) =u 0 ∈H α ∩L 3,∞,α∈[0,1/2). These solutions are smooth in(0,1]×R 3, satisfy
+t1/2∥uj(t)∥L∞ ≲1,j∈ {1,2}, and satisfy the energy identity
+1
+2 ∥uj(t0)∥2
+L2 = 1
+2 ∥uj(t1)∥2
+L2 +
+Z t1
+t0
+∥∇uj(s)∥2
+L2 ds(1.3)
+for anyt 0 ≤t 1 ∈[0,1]andj∈ {1,2}.
+(ii) (Strong form) The solutionsu 1, u2 are axially symmetric and swirl-free.
+This conjecture would provide a definitive answer to the question of non-uniqueness of solu-
+tions of the incompressible NSE in 3D, improving significantly on all the earlier non-uniqueness
+results in [3, 1, 9, 14, 6] (see the discussion below). The resulting solutions are Leray solutions
+that just miss being in the Ladyzhenskaya–Prodi–Serrin regularity class, but are in the critical
+spaceL ∞
+t L3,∞
+x ∩L 2,∞
+t L∞
+x and in optimal Sobolev spaces.
+Remarkably, proving Conjecture 1.1 (ii) in the class of axi-symmetric swirl-free vector fields
+(as suggested by our numerics) would have the implication that the non-uniqueness question is,
+in fact, completely decoupled from other outstanding questions concerning regularity of solutions
+of the 3D incompressible NSE.
+Indeed, the incompressible Navier–Stokes (or even Euler) equations in 3D in the case of
+ASSF solutions are well-known to be “regular” equations, similar to the 2D equations, for which
+large-data global regularity holds (see the classical work of Ladyzhenskaya [17] and Ukhovskii–
+Yudovich [19], and the more recent paper of Gallay– ˇSver´ ak [11] for a scale-invariant global
+well-posedness result). Conjecture 1.1 (ii) would show that sharp non-uniqueness still holds
+for this regular equation, and therefore is not related to unresolved issues such as singularity
+formation of 3D incompressible Navier–Stokes flows.
+1.1.1.Previous work on Navier–Stokes non-uniqueness.The first construction of non-unique
+weak solutions of the Navier–Stokes equations was given by Buckmaster–Vicol [3] in the space
+u∈C tH ϵ(R3) using convex integration. In the dissipative setting, despite a great deal of work
+in this direction, these methods generally fail to produce counterexamples close to the sharp
+regularity, which in theH s scale in dimension 3 iss <1/2.
+The problem can be reframed in the context of critical or slightly super-critical non-uniqueness
+results relative to the Ladyzhenskaya–Prodi–Serrin (LPS) criterion, which states that weak
+solutions are unique in the spaceL p
+t ([0, T];L q
+x(Rd)) wherep∈[2,∞) and 2/p+d/q= 1.
+Cheskidov–Luo [7, 8] used convex integration to prove non-uniqueness slightly below the end-
+points (p, q) = (2,∞) for alld≥2 and (p, q) = (∞,2) whend= 2; meanwhile, the rest of the
+LPS scale seems quite out of reach of these methods.
+A different method based on a discrete energy cascade was introduced by Coiculescu–Palasek
+in [9] to produce the first examples of non-uniqueness at the critical regularity. These solutions
+are smooth aftert= 0 and lie in the critical spaceL ∞
+t BM O−1
+x ∩L 2,∞
+t L∞
+x in 3D, subsequently
+extended to dimension two and the spaceL ∞
+t W −1,∞
+x in [6].
+
+[PDF page 3]
+SWIRL-FREE UNSTABLE SOLUTIONS OF THE NAVIER–STOKES EQUATION 3
+The solutions described above are not Leray solutions and do not satisfy the weak-strong
+uniqueness principle. Jia– ˇSver´ ak [16] and Guillod–ˇSver´ ak [13] proposed an approach towards
+proving sharp non-uniqueness of Leray weak solutions, based on self-similar profiles and bifur-
+cation. Using this method Albritton–Bru´ e–Colombo [1] first proved non-uniqueness of Leray
+solutions of the incompressible NSE with singular forcing. Very recently, Hou–Wang–Yang [14]
+announced a computer-assisted proof of non-uniqueness of the classical Leray solutions of the
+incompressible NSE without forcing.
+The framework we propose here for the proof of Conjecture 1.1 is based on this method, with
+two essential improvements:
+(1) We find numerically a new class of steady self-similar profiles, which are asymptotically
+homogeneous of degree−1, linearly unstable, axially symmetric, and swirl-free. The main
+novelty here is the swirl-free condition; the other conditions were already part of the numerical
+investigations of [13] and [14]. Instability in our case appears to be of a different nature than in
+these earlier works, since it is not generated by the swirl component. For contrast, the unstable
+profiles constructed numerically in [13] are pure-swirl at infinity. The unstable profiles proposed
+in [14] are not provided explicitly in the paper, but the pictures suggest that they contain all
+three velocity fields.
+(2) We prove stronger estimates on the resulting non-unique solutions of the Navier–Stokes
+equations (see Theorem 1.2 below), in optimal Sobolev spaces and critical LPS-type spaces
+(which imply in particular the Leray energy inequality in the strong form (1.3)).
+1.2.The Navier–Stokes equations in self-similar variables.Our main idea to prove Con-
+jecture 1.1 is to exploit the link between non-uniqueness and self-similar solutions of the incom-
+pressible NSE. We are looking for scale-invariant solutionsuof the form
+u(t,x) = 1
+t1/2 U
+ x
+t1/2 ,logt
+
+, p(t, x) = 1
+t P
+ x
+t1/2 ,logt
+
+.(1.4)
+The equation (1.1) becomes, in terms of the self-similar profilesU, P,
+∂tU−∆U− 1
+2x· ∇U− 1
+2 U+U· ∇U+∇P= 0,∇ ·U= 0.(1.5)
+Steady self-similar solutions of the system (1.5) have been investigated extensively, by many
+authors, and we refer to [15] (or to [2] and [12] for the 2D case) for a longer discussion of the
+problem, construction of general asymptotically homogeneous solutions of degree−1, and more
+references. Our main interest in these solutions is due to their relevance to the classical problem
+of non-uniqueness of solutions of the incompressible Navier–Stokes equations in 3D. This link was
+discovered by Jia–ˇSver´ ak [16], and expanded by Guillod–ˇSver´ ak [13], Albritton–Bru´ e–Colombo
+[1] and Hou–Wang–Yang [14]. We have the following precise theorem:
+Theorem 1.2.Assume that there areC 2 divergence-free vector fields(U, eU)and a numberλ
+withℜλ >0satisfying the identities
+∆U+ 1
+2x· ∇U+ 1
+2 U−Π(U· ∇U) = 0,
+∆eU+ 1
+2x· ∇eU+ 1
+2
+eU−Π
+ 
+U· ∇ eU+ eU· ∇U
+
+=λ eU ,
+(1.6)
+whereΠdenotes the Leray projection. Assume also that the vector fieldsU, eUsatisfy the bounds
+|U(x)−U 0(x)|≲⟨x⟩ −2,| eU(x)|≲⟨x⟩ −2,(1.7)
+
+[PDF page 4]
+4 A. D. IONESCU, H. JIA, AND S. PALASEK
+for a divergence-free−1-homogeneous vector fieldU 0 ∈C ∞(R3\{0}).
+Then Conjecture 1.1 (i) holds. In addition, if the vector fieldsUand eUare axially symmetric
+and swirl-free then Conjecture 1.1 (ii) holds.
+We will provide a complete proof of Theorem 1.2 in section 3 below. Results of this type have
+been known and used in the past, in [16], [1], and [14]. Here we prove stronger conclusions on
+the non-unique solutions, consistent with the claim (1.2) and part (ii) of Conjecture 1.1.
+1.3.Axi-symmetric swirl-free solutions.Our main goal in this paper is to present a new
+class of steady solutions of the system (1.6), which are asymptotically homogeneous of degree
+−1, linearly unstable, axially symmetric, and swirl-free.
+We work in cylindrical coordinatesx= (rcosθ, rsinθ, z) and define the vector fields
+er := t(cosθ,sinθ,0), e θ := t(−sinθ,cosθ,0), e z := t(0,0,1) (1.8)
+and the functionsU r,U θ,U z by
+U=U rer +U θeθ +U zez.(1.9)
+In the axially symmetric case∂ θUr =∂ θUθ =∂ θUz =∂ θP= 0, and the equations (1.5) are
+equivalent to
+
+e∆− 1
+r2
+
+Ur + 1
+2
+ 
+r∂r +z∂ z + 1
+
+Ur −
+
+Ur∂r +U z∂z
+
+Ur + 1
+r U 2
+θ −∂ rP=∂ tUr,
+
+e∆− 1
+r2
+
+Uθ + 1
+2
+ 
+r∂r +z∂ z + 1
+
+Uθ −
+
+Ur∂r +U z∂z
+
+Uθ − 1
+r UθUr =∂ tUθ,
+e∆Uz + 1
+2
+ 
+r∂r +z∂ z + 1
+
+Uz −
+
+Ur∂r +U z∂z
+
+Uz −∂ zP=∂ tUz,
+(1.10)
+where e∆ :=∂ 2
+r + (1/r)∂r +∂ 2
+z, while the incompressibility condition becomes
+∂rUr + 1
+r Ur +∂ zUz = 0.(1.11)
+We are in fact looking for swirl-free steady solutions, which correspond toU θ ≡0. The
+variableU r is not smooth inrdue to a coordinate singularity atr= 0. To work with smooth
+variables we define
+Ω := ∂zUr −∂ rUz
+r .(1.12)
+We can further simplify the equations by introducing the stream function Ψ defined by
+LΨ = Ω,L:=∂ 2
+r +∂ 2
+z + 3
+r ∂r.(1.13)
+It follows from (1.11)–(1.12) that
+Ur =r∂ zΨ, U z =−r∂ rΨ−2Ψ.(1.14)
+To summarize, in terms of the new variables Ψ,Ω :R 2 →R, the steady self-similar Navier–
+Stokes system (1.10) is equivalent to the system
+LΨ−Ω = 0,
+LΩ + 1
+2
+ 
+r∂r +z∂ z + 3
+
+Ω−r∂ zΨ∂rΩ +r∂ rΨ∂zΩ + 2Ψ∂zΩ = 0.
+(1.15)
+
+[PDF page 5]
+SWIRL-FREE UNSTABLE SOLUTIONS OF THE NAVIER–STOKES EQUATION 5
+We are interested in solutions of this system which are sufficiently smooth inr, z(sayC 2), even
+inr, decay at suitable rates at infinity, i.e.
+⟨r, z⟩|Ψ(r, z)|+⟨r, z⟩ 3|Ω(r, z)|≲1,
+and are linearly unstable in the sense that
+LeΨ− eΩ = 0,
+LeΩ + 1
+2
+ 
+r∂r +z∂ z + 3
+eΩ +
+
+r∂rΨ∂zeΩ +r∂ zΩ∂reΨ
+−r∂ zΨ∂reΩ−r∂ rΩ∂zeΨ + 2Ψ∂zeΩ + 2∂zΩeΨ
+	
+−λeΩ = 0
+(1.16)
+for some nontrivialC 2 functions (eΨ,eΩ) that are even inrand decay at infinity, and someλ∈C
+withℜλ >0.
+Fork∈Z + letC k
+e,o(R2) (respectivelyC k
+e,e(R2)) denote the spaces ofC k functions onR 2 which
+are even inrand odd inz(respectively even inrand even inz).
+Our main numerical result in this paper is the following:
+Main Numerical Result 1.3.(i) There are approximate global solutionsΨ,Ω∈C 2
+e,o(R2)and
+eΨ,eΩ∈C 2
+e,e(R2), normalized withsup r,z∈R2 |eΨ(r, z),eΩ(r, z)|= 1, and an approximate eigenvalue
+λ∗ = 0.235059597921 (1.17)
+such that the global pointwise residual bounds
+∥Res(Ψ)∥L∞(R2) ≤3×10 −10,∥Res(Ω)∥ L∞(R2) ≤3×10 −10,
+∥Res(eΨ)∥L∞(R2) ≤8×10 −11,∥Res( eΩ)∥L∞(R2) ≤3×10 −10 (1.18)
+hold inR 2, whereRes(Ψ),Res(Ω),Res( eΨ),Res( eΩ)denote the expressions in the left-hand side
+of the equations(1.15)–(1.16).
+(ii) The functionsΨ,Ω∈C 2
+e,o(R2)satisfy the exact identities
+Ψ(r, z) = σz
+r2 +z 2 + σ2z(3r2 −7z 2)
+3(r2 +z 2)3 − 6σz
+(r2 +z 2)2 ,
+Ω(r, z) = −6σz
+(r2 +z 2)2 + 12σ2z(3z2 −2r 2) + 24σz(r2 +z 2)
+(r2 +z 2)4 ,
+(1.19)
+for any(r, z)∈R 2 \[−L ′, L′]2, whereσ= 130andL ′ = 751. The functions eΨ,eΩ∈C 2
+e,e(R2)
+vanish identically inR 2 \[−L ′, L′]2.
+The residualsRes(Ψ),Res( eΨ), andRes( eΩ)also vanish inR 2 \[−L ′, L′]2, while
+|Res(Ω)(r, z)| ≤ 500σ3|z|
+(r2 +z 2)4 ≤2×10 −11 for(r, z)∈R 2 \[−L ′, L′]2.(1.20)
+We emphasize that there is a parity change inzof the unstable eigenvector ( eΨ,eΩ) compared
+to the base solution (Ψ,Ω). This is a key feature of the problem, and it is present in the earlier
+constructions in [13] and [14]. See Figures 1 and 2 for plots of the main variables (Ψ,Ω),( eΨ,eΩ)
+and of the corresponding velocity fields (U r, Uz),(eUr,eUz) restricted to the region [0,50] 2.
+
+[PDF page 6]
+6 A. D. IONESCU, H. JIA, AND S. PALASEK
+0 10 20 30 40 50
+r
+0
+10
+20
+30
+40
+50z
+(r, z) on [0,50.0]², Range: [0.000, 4.958]
+0 10 20 30 40 50
+r
+0
+10
+20
+30
+40
+50z
+(r, z) on [0,50.0]², Range: [-0.571, -0.000]
+0 10 20 30 40 50
+r
+0
+10
+20
+30
+40
+50z
+(r, z) on [0,50.0]², Range: [-0.675, 0.420]
+0 10 20 30 40 50
+r
+0
+10
+20
+30
+40
+50z
+(r, z) on [0,50.0]², Range: [-0.620, 1.000]
+0.0
+0.6
+1.2
+1.8
+2.4
+3.0
+3.6
+4.2
+4.8
+0.54
+0.48
+0.42
+0.36
+0.30
+0.24
+0.18
+0.12
+0.06
+0.00
+0.625
+0.500
+0.375
+0.250
+0.125
+0.000
+0.125
+0.250
+0.375
+0.6
+0.4
+0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Figure 1.Plots of the solutions (Ψ,Ω) and ( eΨ,eΩ) described in the Main Nu-
+merical Result 1.3 restricted to domain (r, z)∈[0,50] 2.
+Remark 1.4.Our solutions(Ψ,Ω),( eΨ,eΩ)are represented as B-splines of degree 10 with about
+148,000 degrees of freedom for each variable. We use globalL ∞ norms evaluated on dense grids
+in(1.18)to validate these solutions (see also Figure 7 for more detailed residual heatmaps of
+the solutions(Ψ,Ω)and( eΨ,eΩ)). One should think of these norms as proxy-type norms; other
+norms, such asL 2 norms with various weights, can be used as well. However, verifying pointwise
+L∞ bounds on a dense, independent grid provides a particularly rigorous form of validation, as
+it guarantees that the residuals are uniformly controlled across the entire physical domain.
+One could potentially reduce the residuals further, for example by increasing the number of
+basis functions of the B-splines, further optimizing the adaptive knot distribution, or using more
+precise asymptotic expansions (as discussed in subsection 4.3.1). Nevertheless, we note that the
+pointwise residuals we obtain here are global in space and are already better than the residuals
+
+[PDF page 7]
+SWIRL-FREE UNSTABLE SOLUTIONS OF THE NAVIER–STOKES EQUATION 7
+reported in recent numerical investigations and computer-assisted proofs of similar 2D fluid equa-
+tions, including the work on the Navier–Stokes equations in[13]and[14], as well as the rigorous
+numerical bounds for the Euler equations established in[4, 5]. Furthermore, our pointwise error
+bounds also exceed the precision achieved by modern machine-learning-based methods, such as
+PINNs applied to the Boussinesq equation in[20].
+0 10 20 30 40 50
+r
+0
+10
+20
+30
+40
+50z
+Ur(r, z) on [0,50.0]², Range: [-0.780, 22.294]
+0 10 20 30 40 50
+r
+0
+10
+20
+30
+40
+50z
+Uz(r, z) on [0,50.0]², Range: [-9.916, 4.360]
+0 10 20 30 40 50
+r
+0
+10
+20
+30
+40
+50z
+Velocity Streamlines & |U| on [0,50.0]²
+0 10 20 30 40 50
+r
+0
+10
+20
+30
+40
+50z
+Ur(r, z) on [0,50.0]², Range: [-2.629, 11.640]
+0 10 20 30 40 50
+r
+0
+10
+20
+30
+40
+50z
+Uz(r, z) on [0,50.0]², Range: [-5.399, 7.545]
+0 10 20 30 40 50
+r
+0
+10
+20
+30
+40
+50z
+Eigenmode Streamlines & |U| on [0,50.0]²
+0.0
+2.5
+5.0
+7.5
+10.0
+12.5
+15.0
+17.5
+20.0
+22.5
+9.0
+7.5
+6.0
+4.5
+3.0
+1.5
+0.0
+1.5
+3.0
+4.5
+0.0
+2.5
+5.0
+7.5
+10.0
+12.5
+15.0
+17.5
+20.0
+22.5
+1.5
+0.0
+1.5
+3.0
+4.5
+6.0
+7.5
+9.0
+10.5
+4.5
+3.0
+1.5
+0.0
+1.5
+3.0
+4.5
+6.0
+7.5
+0.0
+1.5
+3.0
+4.5
+6.0
+7.5
+9.0
+10.5
+12.0
+Figure 2.Plots of the physical velocity fields (U r, Uz) and (eUr,eUz) correspond-
+ing to the solutions (Ω,Ψ) and ( eΩ,eΨ), restricted to domain (r, z)∈[0,50] 2.
+This numerical result strongly indicates that the approximate solutions constructed above
+can be upgraded to exact solutions. Specifically, the main objective of our program is to prove
+rigorously that there exist exact solutions (Ψ,Ω)∈C 2
+e,o(R2)×C 2
+e,o(R2) and (λ,eΨ,eΩ)∈[0.2,0.3]×
+C2
+e,e ×C 2
+e,e of systems (1.15) and (1.16) inR 2, withσ= 130 and the precise asymptotics
+Ψ(r, z) = σz
+r2 +z 2 +O((r 2 +z 2)−1),Ω(r, z) = −6σz
+(r2 +z 2)2 +O((r 2 +z 2)−2),
+eΨ(r, z) =O((r 2 +z 2)−1), eΩ(r, z) =O((r 2 +z 2)−2).
+(1.21)
+Our main point is that establishing this will complete the proof of Conjecture 1.1, since
+the hypothesis (1.6)–(1.7) of Theorem 1.2 at the level of the velocity fields follows easily from
+the existence of these exact vorticity-stream function profiles. We will provide the rigorous,
+computer-assisted perturbative proof of this statement in the second part of this work.
+1.4.Organization.The rest of this paper is organized as follows: in section 2 we describe our
+numerical construction in detail. In fact, we provide numerical evidence showing that there is a
+
+[PDF page 8]
+8 A. D. IONESCU, H. JIA, AND S. PALASEK
+curve of smooth solutions (Ψ,Ω) = (Ψ σ,Ω σ) of the system (1.15), even inrand odd inz, with
+the simple asymptotics at∞
+Ψ(r, z) = σz
+r2 +z 2 +O((r 2 +z 2)−1),Ω(r, z) = −6σz
+(r2 +z 2)2 +O((r 2 +z 2)−2),(1.22)
+whereσ∈Ris a parameter, which become unstable forσsufficiently large. The solutions we
+describe above correspond to the specific valueσ= 130 and are refined with the more precise
+asymptotic conditions (1.19), which is needed in order to get better global residuals in (1.18).
+In section 3 we provide a proof of Theorem 1.2, thus showing that the existence and regu-
+larity of exact unstable solutions of the system (1.15)–(1.16) would lead to the definitive non-
+uniqueness result stated in Conjecture 1.1.
+In section 4 we discuss the stability of our numerical construction, as well as the derivation
+of the refined asymptotic expansion (1.19) at infinity.
+1.5.Acknowledgements.A. D. I. was supported in part by NSF-FRG grant DMS-2245228
+and by NSF-UEFISCDI grant DMS-2407694. S. P. was supported by NSF Grant No. DMS-
+2424441. H. J. was supported in part by NSF-FRG grant DMS-2245021 and NSF grant DMS-
+2453270.
+The authors acknowledge that this work was performed using the Princeton Research Com-
+puting resources, a consortium including the Princeton Institute for Computational Science and
+Engineering (PICSciE) and Research Computing at Princeton University. The authors would
+also like to thank Javier G´ omez-Serrano for useful discussions related to this work.
+Finally, the authors acknowledge the use of AI assistants to help draft portions of the Python
+codes used for the numerical simulations. The numerical analysis, including the Python codes,
+the changes of variables, the analytical Jacobian formulations, the specialized collocation grids,
+and the dense-grid validation, were designed and rigorously verified by the authors.
+2.Numerical construction and results
+All Python codes used to perform the numerical constructions, eigenvalue tracking, and resid-
+ual validations described in this section are publicly available on GitHub at
+https://github.com/alexionescu2/Leray_Uniqueness.
+The main idea of the construction of the solutions (Ψ,Ω) and (λ, eΨ,eΩ) in the Main Numerical
+Result 1.3 is to first construct precise solutions in a large square (r, z)∈[−L, L] 2 and then glue
+them using cutoff functions to their asymptotic data. There are two main issues to keep in
+mind, both of them having direct implications on the residual bounds (1.18): (1) the numerical
+solutions in the compact set [−L, L]2 have to satisfy the parity conditions exactly and have small
+residuals, and (2) the square [−L, L] 2 has to be large enough in order to lead to small residuals
+in the gluing region. We proceed in several steps:
+2.1.Step 1: renormalization.To construct precise global solutions with prescribed asymp-
+totic states we need to construct precise numerical solutions in very large Euclidean domains.
+One could, in principle, compactifyR 2 by a change of variables, and reduce the problem to the
+unit square (or the unit ball), but the Laplacian becomes a degenerate operator in compactified
+coordinates, leading to numerical instabilities.
+We approach this issue differently: we make changes of variables of the formu≈(1 +r 2)1/p,
+v≈(1+z 2)1/p, for suitable exponentsp≥2, and construct first numerical solutions in the (u, v)
+
+[PDF page 9]
+SWIRL-FREE UNSTABLE SOLUTIONS OF THE NAVIER–STOKES EQUATION 9
+space. We use the change of variables to also encode the important symmetries of the nonlinear
+solutions (Ψ,Ω) (even inrand odd inz) and of the unstable eigenfunctions ( eΨ,eΩ) (even inr
+and even inz). Precisely, we define
+Ψ(r, z) :=zΨ 2(u, v),Ω(r, z) :=zΩ 2(u, v),
+eΨ(r, z) :=eΨ2(u, v), eΩ(r, z) :=eΩ2(u, v),
+u=f(r 2), v=f(z 2),
+(2.1)
+wherep∈ {4,5,6}and
+f(x) = (1 + 12x)1/p −1.(2.2)
+v z
+u r
+Computational domain Physical domain
+500
+0
+50
+750.80
+0
+750.8
+Gluing region
+Gluing region
+Figure 3.The coordinate mapping (u, v)7→(r, z) for (A, p) = (50,4). Left: a
+uniform grid in the computational domain (u, v)∈[0,50] 2. Right: the image of
+the same grid lines in the physical domain (r, z), showing the concentration of
+resolution near the origin.
+In terms of the new variables, the equations (1.15) are equivalent to the system
+LuvΨ2 −Ω 2 = 0,
+LuvΩ2 +
+
+K(u)∂ u +K(v)∂ v + 2
+	
+Ω2 + 2
+
+2K(u)K(v)
+ 
+∂uΨ2∂vΩ2 −∂ vΨ2∂uΩ2
+
+−K(u)(Ψ 2∂uΩ2 −Ω 2∂uΨ2) + 2K(v)Ψ2∂vΩ2 + Ψ2Ω2
+	
+= 0
+(2.3)
+where
+Luv := 48
+p
+n K(u)
+(u+ 1) p−1 ∂2
+u + (p+ 1)(u+ 1) p +p−1
+p(u+ 1) 2p−1 ∂u
++ K(v)
+(v+ 1) p−1 ∂2
+v + (p/2 + 1)(v+ 1) p +p−1
+p(v+ 1) 2p−1 ∂v
+o
+,
+K(x) := (x+ 1) p −1
+p(x+ 1) p−1 .
+(2.4)
+
+[PDF page 10]
+10 A. D. IONESCU, H. JIA, AND S. PALASEK
+We think of the functions Ψ 2,Ω 2 as defined in large computational domains (u, v)∈[0, A] 2
+and impose the boundary conditions (consistent with (1.22))
+Ψ2(u, v) = σ
+U0(u) +U 0(v) ,Ω 2(u, v) = −6σ
+(U0(u) +U 0(v))2 ifv=Aoru=A,(2.5)
+whereU 0(u) = [(u+ 1) p −1]/12. There are no boundary conditions on the other two sides of
+the square [0, A]2, corresponding tov= 0 oru= 0, due to the choice of the variables (2.1). The
+parameterσis the continuation parameter that increases fromσ= 0 toσ= 160.
+Using the changes of variables (2.1) the linearized system (1.16) becomes
+L′
+uveΨ2 −eΩ2 = 0,
+L′
+uveΩ2 +
+ 
+K(u)∂ u +K(v)∂ v + 3/2
+eΩ2 + 2
+
+2K(u)K(v)
+ 
+∂uΨ2∂veΩ2 −∂ vΨ2∂ueΩ2
+
+−2K(u)K(v)
+ 
+∂uΩ2∂veΨ2 −∂ vΩ2∂ueΨ2
+
+−K(u)(Ψ 2∂ueΩ2 −Ω 2∂ueΨ2)
++ 2K(v)
+ 
+Ψ2∂veΩ2 +∂ vΩ2eΨ2
+
++ Ω2eΨ2
+	
+−λeΩ2 = 0,
+(2.6)
+whereλis the generalized eigenvalue to be found and
+L′
+uv := 48
+p
+n K(u)
+(u+ 1) p−1 ∂2
+u + (p+ 1)(u+ 1) p +p−1
+p(u+ 1) 2p−1 ∂u
++ K(v)
+(v+ 1) p−1 ∂2
+v + (1−p/2)(v+ 1) p +p−1
+p(v+ 1) 2p−1 ∂v
+o
+.
+(2.7)
+Notice that there are small differences between the LaplaciansL uv in (2.4) andL ′
+uv in (2.7),
+due to the difference in the changes of variables used for the nonlinear solutions and for the
+generalized eigenfunctions (coming mainly from the parity change).
+To summarize, we are first constructing high-precision solutions (Ψ 2,Ω 2) for the system
+(2.3) and (λ, eΨ2,eΩ2) for the system (2.6) on squares (u, v)∈[0, A] 2. The changes of vari-
+ables (2.1) serve two main purposes: (1) they encode the desired symmetries of the functions
+(Ψ,Ω, eΨ,eΩ), and (2) they compress very large physical domains of the form [−L, L],L≈1000,
+to computational domains of moderate size, for example (A, p) = (50,4) or (A, p) = (25,5) or
+(A, p) = (15,6).
+2.2.Step 2:σ-continuation.For the sake of concreteness, we describe our analysis in the
+case (A, p) = (50,4), which corresponds to the square domain (r, z)∈[−L, L] 2 in the physical
+space, whereL=
+p
+[(A+ 1) 4 −1]/12≈750.8. Similar results hold for other choices of the
+parametersAandp, such as (A, p) = (15,6) or (A, p) = (25,4) or (A, p) = (25,5).
+(1) Base state construction.We are searching for solutions (Ψ 2,Ω 2) = (σ/κ)(Ψ ′
+2,Ω ′
+2)
+of the system (2.3)–(2.5), where we fix the parameterκ:= 150 mainly to work with unit-size
+fields throughout theσ-continuation. We initialize the numerical construction by solving the
+renormalized system atσ= 0, in which case the system is linear. The unknowns Ψ ′
+2 and Ω ′
+2
+are represented using tensor products of B-splines of degree 4 defined on a uniform grid in the
+computational domain (u, v)∈[0, A] 2. We useN= 400 basis functions in each coordinate
+direction, resulting in a total problem size of 2N 2. The discretized equations are enforced at the
+collocation points (the Greville abscissae) associated with the knot vectors.
+We then employ natural parameter continuation with a linear secant predictor to advance in
+σ. The predictor extrapolates the initial guess for stepn+ 1 using the tangent approximation
+derived from solutions at stepsnandn−1. At each step, the nonlinear system is solved using
+
+[PDF page 11]
+SWIRL-FREE UNSTABLE SOLUTIONS OF THE NAVIER–STOKES EQUATION 11
+0 10 20 30 40 50
+u
+0
+10
+20
+30
+40
+50v
+2, 50(u, v), Range: [0.000, 1.301]
+0 10 20 30 40 50
+u
+0
+10
+20
+30
+40
+50v
+2, 100(u, v), Range: [0.000, 1.382]
+0 10 20 30 40 50
+u
+0
+10
+20
+30
+40
+50v
+2, 150(u, v), Range: [0.000, 1.422]
+0 10 20 30 40 50
+u
+0
+10
+20
+30
+40
+50v
+2, 50(u, v), Range: [-0.874, -0.000]
+0 10 20 30 40 50
+u
+0
+10
+20
+30
+40
+50v
+2, 100(u, v), Range: [-0.742, -0.000]
+0 10 20 30 40 50
+u
+0
+10
+20
+30
+40
+50v
+2, 150(u, v), Range: [-0.684, -0.000]
+0.00
+0.15
+0.30
+0.45
+0.60
+0.75
+0.90
+1.05
+1.20
+0.8
+0.7
+0.6
+0.5
+0.4
+0.3
+0.2
+0.1
+0.0
+0.00
+0.15
+0.30
+0.45
+0.60
+0.75
+0.90
+1.05
+1.20
+1.35
+0.72
+0.63
+0.54
+0.45
+0.36
+0.27
+0.18
+0.09
+0.00
+0.00
+0.15
+0.30
+0.45
+0.60
+0.75
+0.90
+1.05
+1.20
+1.35
+0.675
+0.600
+0.525
+0.450
+0.375
+0.300
+0.225
+0.150
+0.075
+0.000
+Figure 4.Evolution of the nonlinear solution (σ/κ)(Ψ ′
+2,Ω ′
+2) on the computa-
+tional domain (u, v)∈[0,50] 2, plotted for three valuesσ= 50,100,150.
+a Newton-Krylov method (GMRES). The solver is preconditioned by a sparse direct solver
+(SuperLU) applied to the Jacobian matrix, which is computed at the beginning of the step
+and lagged for subsequent inner iterations. The continuation step sizeδσadapts dynamically,
+starting fromδσ= 0.2 atσ= 0 and increasing toδσ= 2 forσ≥20.
+The continuation proceeds smoothly and the solution converges within 2–4 Newton iterations
+at every step, achieving a residualL ∞ norm below 10 −10 as evaluated at the collocation points
+of the spline. See Figure 4.
+(2) Stability analysis.To discover instability, for anyσ≥80 we seek generalized eigenvalues
+λand eigenvectors ( eΨ2,eΩ2) of the linearized system of equations (2.6) with 0 boundary data on
+the far field boundaries{v=A}and{u=A}. The perturbation functions eΨ2,eΩ2 are expanded
+in the same tensor product basis of quartic B-splines used for the base state.
+The generalized eigenvalue problem is solved using the Implicitly Restarted Arnoldi Method
+(IRAM) via the ARPACK library, employing a shift-invert spectral transformation. At each
+continuation step, the solver attempts to locate eigenvalues using shifts predicted from the
+leading eigenvalue of the previous step. We strictly filter the computed spectra to retain only
+non-oscillatory modes with|ℑλ| ≪1 that satisfy a residual tolerance of less than 10 −10.
+There are two types of eigenfunctions of the original linearized system (1.16). The important
+ones are those that are even inz, which we generate by solving the system (2.6) in the square
+[0, A]2. This is the case that leads to unstable modes, since the leading eigenvalueλ ∗ of the sys-
+tem (2.6) crosses the imaginary axis during theσ-continuation. Indeed, we observe numerically
+
+[PDF page 12]
+12 A. D. IONESCU, H. JIA, AND S. PALASEK
+80 90 100 110 120 130 140 150 160
+0.3
+0.2
+0.1
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+Eigenvalues
+Mode 1
+Mode 2
+Figure 5.The two highest eigenvalues detected by the solver during theσ-
+continuation. Both curves represent real single eigenvalues.
+that one single real eigenvalue becomes positive (unstable) atσ≈103, and grows steadily as
+σincreases towards 160. The eigenvalue solver detects one other real eigenvalue that increases
+towards 0, but never crosses the axis beforeσreaches 160. See Figure 5.
+2.3.Step 3: refinement.In the next stage, we fixσ= 130, a value for which we found nu-
+merically that the base solution is linearly unstable, and seek high-precision numerical solutions
+(Ψ2,Ω 2) of the nonlinear problem (2.3) and (λ ∗,eΨ2,eΩ2) of the eigenvalue problem (2.6).
+We initialize the computation using the solution (Ψ 2,Ω 2) obtained from the continuation
+phase. This predictor is interpolated onto a high-order tensor product B-spline basis of degree
+10. To resolve the fine spatial structures of the flow, we employ a non-uniform knot distribution
+defined by a multi-zone density function. The grid density is highest in the near-field region
+u∈[0,10], v∈[0,4] and transitions smoothly to a coarser resolution in the far field, ensuring
+spectral-like accuracy where gradients are steepest. See Figure 6.
+We then solve the system (2.3), subject to improved asymptotic boundary conditions on the
+far-field boundaries. The improved boundary conditions are obtained from a more precise formal
+expansion of the solution at infinity in the physical (r, z) space (see subsection 4.3 for details).
+In the (u, v) computational domain these conditions are (Ψ 2,Ω 2) = (Ψ a
+2,Ω a
+2) on the far-field
+boundaries{v=A}and{u=A}, where
+Ψa
+2(u, v) = σ
+U0(u) +U 0(v) + σ2(3U0(u)−7U 0(v))
+3(U0(u) +U 0(v))3 − 6σ
+(U0(u) +U 0(v))2 ,
+Ωa
+2(u, v) = −6σ
+(U0(u) +U 0(v))2 + 12σ2(3U0(v)−2U 0(u)) + 24σ(U0(u) +U 0(v))
+(U0(u) +U 0(v))4 .
+(2.8)
+It is important to use these improved asymptotics at this stage, instead of the more basic
+asymptotics (2.5), in order to get better matching of the numerical solution and the asymptotic
+data, thus reducing significantly the gluing error of the global solutions.
+The nonlinear system is solved using a modified Newton-Raphson method: we construct the
+exact sparse Jacobian matrix and compute its LU factorization using a direct sparse solver
+
+[PDF page 13]
+SWIRL-FREE UNSTABLE SOLUTIONS OF THE NAVIER–STOKES EQUATION 13
+0 10 20 30 40 50
+Coordinate (u or v)
+0
+10
+20
+30
+40
+50Knots per unit length
+Knot Density: Base Solution
+u direction
+v direction
+0 10 20 30 40 50
+Coordinate (u or v)
+0
+10
+20
+30
+40
+50Knots per unit length
+Knot Density: Eigenfunction
+u direction
+v direction
+Figure 6.Knot density (knots per unit ofuorv) of the splines used in the
+refinement stage, showing an adaptive multi-zone grid of degree-10 B-splines,
+concentrating up to∼50 knots per unit in the regions where the solution gradi-
+ents are steepest, and tapering to∼2 knots per unit in the far field.
+(SuperLU). The result is a high-precision solution of the system (2.3) with a residual norm
+below 3×10 −11 at the collocation points.
+Finally, we perform the stability analysis on this refined state. Using the converged high-
+precision solution (Ψ2,Ω 2), we construct the linearized operator on the same degree-10 spline ba-
+sis and solve the generalized eigenvalue problem using the Implicitly Restarted Arnoldi Method
+(IRAM). We target the leading unstable mode using a shift ofρ= 0.23, as estimated in the first
+stage by the eigenvalue solver. The solver converges to the unstable eigenvalue
+λ∗ = 0.235059597921 (2.9)
+and the computed eigenpair satisfies the discretized equations to a high degree of accuracy, with
+a residual norm of less than 3×10 −12 at the collocation points. The solution is validated using
+dense residuals: the true eigenpair has a dense residual≈10 −10 while all the other eigenpairs
+returned by the solver are spurious and have dense residuals≈10 −2.
+2.4.Step 4: conclusions.As a result of this procedure we produce approximate numerical
+solutions (Ψ 2,Ω 2) and (λ ∗,eΨ2,eΩ2) of the systems (2.3) and (2.6) respectively, on the compu-
+tational domain (u, v)∈[0,50] 2. The main point is that the residuals of these solutions are
+uniformly small in the square [0,50] 2 (not just at the collocation points),
+∥Res(Ψ2)∥L∞([0,50]2) ≤9×10 −12,∥Res(Ω 2)∥L∞([0,50]2) ≤5×10 −10,
+∥Res(eΨ2)∥L∞([0,50]2) ≤8×10 −11,∥Res( eΩ2)∥L∞([0,50]2) ≤3×10 −10,
+(2.10)
+where the residuals denote the expressions in the left-hand sides of (2.3) and (2.6), and theL ∞
+norms are estimated by evaluating these residuals on a uniform dense 6000×6000 grid in the
+(u, v) space.
+
+[PDF page 14]
+14 A. D. IONESCU, H. JIA, AND S. PALASEK
+Moreover, we can verify numerically that the solutions (Ψ 2,Ω 2) are well matched to their
+asymptotic states Ψ a
+2 and Ωa
+2 defined in (2.8), i.e.
+∥Ψ2 −Ψ a
+2∥L∞([0,50]2\[0,40]2) ≤1.2×10 −8,∥Ω 2 −Ω a
+2∥L∞([0,50]2\[0,40]2) ≤1.4×10 −13,
+∥eΨ2∥L∞([0,50]2\[0,40]2) ≤3.2×10 −8,∥ eΩ2∥L∞([0,50]2\[0,40]2) ≤3.5×10 −13.
+(2.11)
+0 200 400 600 800 1000
+r
+0
+200
+400
+600
+800
+1000z
+|Res( )(r, z)|, Range: [0.000e+00, 2.787e-10]
+0 200 400 600 800 1000
+r
+0
+200
+400
+600
+800
+1000z
+|Res( )(r, z)|, Range: [0.000e+00, 1.951e-10]
+0 200 400 600 800 1000
+r
+0
+200
+400
+600
+800
+1000z
+|Res( )(r, z)|, Range: [0.000e+00, 7.218e-11]
+0 200 400 600 800 1000
+r
+0
+200
+400
+600
+800
+1000z
+|Res( )(r, z)|, Range: [0.000e+00, 2.474e-10]
+1e-15
+1e-15 1e-14
+1e-14 1e-13
+1e-13 1e-12
+1e-12 1e-11
+1e-11 1e-10
+1e-10 1e-9
+1e-9
+1e-15
+1e-15 1e-14
+1e-14 1e-13
+1e-13 1e-12
+1e-12 1e-11
+1e-11 1e-10
+1e-10 1e-9
+1e-9
+1e-15
+1e-15 1e-14
+1e-14 1e-13
+1e-13 1e-12
+1e-12 1e-11
+1e-11 1e-10
+1e-10 1e-9
+1e-9
+1e-15
+1e-15 1e-14
+1e-14 1e-13
+1e-13 1e-12
+1e-12 1e-11
+1e-11 1e-10
+1e-10 1e-9
+1e-9
+Figure 7.Residual heatmaps of the solutions Ψ, Ω, eΨ, eΩ in the physical space
+R2 (compare with the main bounds (1.18) and (1.20)). Notice that the residuals
+of the stream functions Ψ, eΨ are more significant in the gluing region, while the
+residuals of the vorticities Ω, eΩ are largest near the point (r, z) = (26,0). The
+residuals in the gluing region can be further reduced by improving numerically
+the ansatz in the asymptotic region (as explained at the end of subsection 4.3),
+but we do not pursue such improvements in this paper.
+
+[PDF page 15]
+SWIRL-FREE UNSTABLE SOLUTIONS OF THE NAVIER–STOKES EQUATION 15
+We can thus define the global solutions Ψ ∗
+2,Ω ∗
+2,eΨ∗
+2,eΩ∗
+2 : [0,∞) 2 →Rby the gluing formulas
+Ψ∗
+2(u, v) := [1−ϕ(u)ϕ(v)]Ψ a
+2(u, v) +ϕ(u)ϕ(v)Ψ 2(u, v),
+Ω∗
+2(u, v) := [1−ϕ(u)ϕ(v)]Ω a
+2(u, v) +ϕ(u)ϕ(v)Ω 2(u, v),
+eΨ∗
+2(u, v) :=ϕ(u)ϕ(v) eΨ2(u, v), eΩ∗
+2(u, v) :=ϕ(u)ϕ(v) eΩ2(u, v),
+(2.12)
+whereϕ:R→[0,1] is a cutoff function equal to 1 in the interval [0, A−ρ] and equal to 0 in the
+interval [A,∞). In our caseA= 50,ρ= 10, and we define
+ϕ(x) :=ϕ 0((x−A)/ρ), x∈[A−ρ, A].
+ϕ0(y) := 1−30
+Z y
+−1
+z2(z+ 1) 2 dz=−6y 5 −15y 4 −10y 3, y∈[−1,0]. (2.13)
+The residuals in the gluing regionR:= [0, A] 2 \[0, A−ρ] 2 can be estimated numerically by
+∥Res(Ψ∗
+2)∥L∞(R) ≤6×10 −13,∥Res(Ω ∗
+2)∥L∞(R) ≤7×10 −14,
+∥Res(eΨ∗
+2)∥L∞(R) ≤2×10 −12,∥Res( eΩ∗
+2)∥L∞(R) ≤4×10 −11.
+(2.14)
+Finally, we pass to the physical space and define the global solutions Ψ,Ω, eΨ,eΩ :R 2 →Rby
+the formulas (Ψ(r, z),Ω(r, z)) = (zΨ ∗
+2(u, v), zΩ∗
+2(u, v)), (eΨ(r, z),eΩ(r, z)) = (eΨ∗
+2(u, v),eΩ∗
+2(u, v));
+see (2.1). This leads to the solutions described in our Main Numerical Result 1.3. The conclu-
+sions stated in part (ii) (the parity properties of the solutions and their asymptotic behavior)
+follow (rigorously) directly from the definitions. The main numerical conclusions in part (i) are
+the residual bounds (1.18). To verify them we notice that
+Res(Ψ)(r, z) =zRes(Ψ ∗
+2)(u, v),Res(Ω)(r, z) =zRes(Ω ∗
+2)(u, v),
+Res(eΨ)(r, z) = Res(eΨ∗
+2)(u, v),Res( eΩ)(r, z) = Res(eΩ∗
+2)(u, v),
+(2.15)
+as a consequence of the definitions. We can use these formulas to estimate the residuals of the
+functions Ψ,Ω, eΨ,eΩ in the interior domain, using the residuals of the functions Ψ ∗
+2,Ω ∗
+2,eΨ∗
+2,eΩ∗
+2
+estimated earlier in the computational domain. The bounds in the exterior domain are better,
+as described in part (ii).
+3.Proof of Theorem 1.2
+In this section we recall some results from [15, 16] and provide the proof of Theorem 1.2.
+Define the space of divergence free vector fields
+X:=
+
+ϕ∈L 2 ∩L 4(R3) : divϕ= 0
+	
+,D:=
+
+ϕ∈X:x· ∇ϕ∈X,∆ϕ∈X
+	
+,
+Y:=
+n
+U∈C 2(R3) : divU= 0,sup
+x∈R3,|α|=0,1,2
+⟨x⟩|α|+1|∇αU(x)|<∞
+o
+, (3.1)
+with the corresponding norms
+∥ϕ∥X :=∥ϕ∥ L2∩L4(R3),∥ϕ∥ D :=∥ϕ∥ X +∥∇ 2ϕ∥X +∥x· ∇ϕ∥ X ,
+∥U∥ Y := sup
+x∈R3,|α|≤2
+h
+⟨x⟩|α|+1|∇αU(x)|
+i
+. (3.2)
+ForU∈Y, we introduce the linearized operatorL U :D ⊆X→Xas follows
+LU ϕ:= ∆ϕ+ 1
+2x· ∇ϕ+ 1
+2 ϕ−Π(U· ∇ϕ+ϕ· ∇U),(3.3)
+
+[PDF page 16]
+16 A. D. IONESCU, H. JIA, AND S. PALASEK
+for anyϕ∈ D, where Π denotes the Leray projection. For anyϕ∈ D, we also defineL 0, KU :
+D ⊆X→Xby
+L0ϕ:= ∆ϕ+ 1
+2x· ∇ϕ+ 1
+2 ϕ, K U ϕ:=−Π(U· ∇ϕ+ϕ· ∇U).
+The operatorL U generates a continuous semigroupe tLU onXfort≥0, which can be seen
+as follows. Define forx∈R 3, t≥0,
+h(x, t) := 1√t+ 1 ϕ
+ x√t+ 1 ,log(t+ 1)
+
+, v(x, t) := 1√t+ 1 U
+ x√t+ 1 ,log(t+ 1)
+
+.(3.4)
+Thenϕ(s)∈ D ⊆Xsolving
+∂sϕ=L U ϕ(3.5)
+fors≥0 with initial dataϕ 0 ∈X, is equivalent tohsolving the linear Stokes equation (with
+lower order terms)
+∂th−∆h+ Π(v· ∇h+h· ∇v) = 0,divh= 0,(3.6)
+fort≥0 with the same initial data.
+Similarly, there is a correspondence on the level of resolvents. Consider the resolvent equation
+forλ:=α+iβ∈Cwithα, β∈Randα >−1/4,
+∆ϕ+ 1
+2x· ∇ϕ+ 1
+2 ϕ−Π(U· ∇ϕ+ϕ· ∇U)−λϕ=F,(3.7)
+for someF∈X. Set
+u(x, t) :=t − 1
+2 +α+iβϕ
+ x√
+t
+
+, v(x, t) =t − 1
+2 U
+ x√
+t
+
+, f(x, t) :=t − 3
+2 +α+iβF
+ x√
+t
+
+.(3.8)
+It follows from (3.7) that
+∂tu−∆u+ Π(v· ∇u+u· ∇v) =−f(x, t),divu= 0,(3.9)
+withu| t=0 ≡0.
+The main properties we need forL U ande tLU are summarized in the following proposition.
+Proposition 3.1.LetU∈Y,L U,K U andL 0 be defined as above. Then we have the following
+conclusions:
+(i) The spectrum ofL 0 is contained inΣ :={λ∈C:ℜλ≤ −1/4}and we have the bounds
+forλ=α+iβ̸∈Σand allϕ= (λ− L 0)−1g,
+∥ϕ∥X ≲ 1
+α+ 1/4 ∥g∥X ,∥∇ 2ϕ∥X +∥(− 1
+2 x· ∇+α+iβ)ϕ∥ X ≲ α+ 1
+α+ 1/4 ∥g∥X .(3.10)
+Moreover, the associated semigroup generated byL 0 satisfies the bound fort≥0andg∈X,
+∥eL0tg∥X + min{t
+1
+2 ,1}∥∇e L0tg∥X + min{t,1}∥∇ 2eL0tg∥X ≲e −t/4∥g∥X .(3.11)
+(ii) The operatorK U is relatively compact with respect toL 0, in the sense thatK U(λ−L 0)−1 :
+X→Xis compact for anyλ∈C\Σ. The spectrumσ(L U) = Σ∪ {λ j}, where the discrete
+sequenceλ j may only accumulate inΣ. Moreover, for anyα 0 >−1/4, there are only finitely
+manyλ j withℜλ j ≥α 0.
+(iii) Takem >max{−1/4,ℜλ j}. The semigroupe tLU is a relatively compact perturbation of
+etL0 for anyt≥0, and we have the bounds
+∥etLU g∥X + min{t
+1
+2 ,1}∥∇e tLU g∥X + min{t,1}∥∇ 2etLU g∥X ≲∥U∥ Y ,m emt∥g∥X .(3.12)
+
+[PDF page 17]
+SWIRL-FREE UNSTABLE SOLUTIONS OF THE NAVIER–STOKES EQUATION 17
+Proof.Most of the claims were proved in [16] using (3.4) and (3.8) which transform results in
+the proposition to corresponding results for the linear Stokes equations (with lower order terms).
+(i) The claims follow from Lemma 2.1 and Lemma 2.3 in [16]. The bounds (3.10) are somewhat
+more quantitative inαbut follow from the same arguments.
+(ii) The relative compactness ofK U with respect toL 0 follows from Lemma 2.2 in [16]. The
+claim concerning the spectrum structure ofσ(L U) then follows from standard analytic Fredholm
+theory (or Weyl’s theorem for essential spectra).
+The analysis in [16], while robust and sufficient for our applications, does not rule out the
+possibility thatℑλ j may be arbitrarily large. We can eliminate this possibility using the following
+bounds. For anyλ=α+iβwithα >−1/4,U∈Y,g∈ D ⊆X, we show that
+∥(λ− L 0)−1KU g∥X ≲ 1
+(1 +|α|+|β|) 1/2 ∥U∥ Y ∥g∥X . (3.13)
+This bound implies thatL U has no eigenvalues for sufficiently largeℑλ, using the well known
+resolvent identity
+(λ− L 0 −K U)−1 = (I−(λ− L 0)−1KU)−1(λ− L 0)−1.
+To prove (3.13) letg∈XandU∈Y, and denote the matrix
+h:=U⊗g+g⊗U, h ij =U igj +g iUj.(3.14)
+Notice that
+KU g=−Π div(U⊗g+g⊗U).(3.15)
+We have the bound
+∥⟨x⟩U⊗g∥ X +∥⟨x⟩g⊗U∥ X ≲∥U∥ Y ∥g∥X .(3.16)
+We show now that
+∥⟨x⟩(λ− L 0)−1KU g∥X ≲⟨α⟩ −1/3∥g∥X .(3.17)
+In view of the formulae (3.7)-(3.9) (with the lower terms being identically zero for the resolvent
+(λ− L 0)−1), it suffices to prove that
+⟨x⟩
+Z 1
+0
+e∆(1−s)s− 3
+2 +α+iβΠ
+ 
+divh
+
+( ·√s)ds
+
+X
+=
+⟨x⟩
+Z 1
+0
+s−1+α+iβe∆(1−s)div Πh( ·√s)ds
+
+X
+≲⟨α⟩ −1/3∥⟨x⟩h∥X ,
+(3.18)
+using standard estimates on the heat kernel. The desired bounds (3.17) follow.
+To proceed, we rewriteϕ:= (λ− L 0)−1KU gas
+∆ϕ−ϕ−αϕ−iβϕ= Π divh− 1
+2div (ϕ⊗x),
+thus
+ϕ= (∆−1−α−iβ) −1 div
+
+Πh− 1
+2(ϕ⊗x)
+
+.
+The desired bounds (3.13) then follow from (3.16)-(3.17), since the operator (∆−1−α−iβ) −1 div
+has an operator norm bounded byC(1 +|α|+|β|) −1/2.
+(iii) The differencee tLU −e tL0 is a compact operator onXfor anyt≥0, due to Lemma
+2.7 in [16]. Consequently, by Weyl’s theorem, the essential spectrum of the full semigroup is
+identical to that of the base semigroup, meaningσ ess(etLU )⊆ {λ∈C:|λ| ≤e −t/4}. Since
+
+[PDF page 18]
+18 A. D. IONESCU, H. JIA, AND S. PALASEK
+there are strictly finitely many discrete eigenvalues outside this stable region (due to (ii)), the
+spectral radius ofe tLU is bounded bye mt for anym >max{−1/4,ℜλ j}. The desired bounds
+(3.12) follow from Lemma 2.9 and equation (2.21) in [16].□
+We turn now to the proof of Theorem 1.2, which we divide into several steps:
+Step 1.Under the assumptions of Theorem 1.2 and standard elliptic bootstrapping argu-
+ments (similar to the arguments in [15, Section 4]), the vector fieldU∈C 2(R3) satisfies
+∆U+ 1
+2x· ∇U+ 1
+2 U−Π(U· ∇U) = 0,divU= 0,(3.19)
+inR 3, with
+|∇α(U−e ∆U0)(x)|≲⟨x⟩ −3−|α| for anyx∈R 3,|α| ≤2.(3.20)
+Moreover, the linearized operatorL U :D ⊆X→Xhas at least one unstable eigenvalueλwith
+ℜλ >0 and the corresponding eigenfunction Φ∈ Dsatisfying
+|∇αΦ(x)|≲⟨x⟩ −3−|α| for anyx∈R 3,|α| ≤2.(3.21)
+Consider the time-dependent version of the equation (3.19) given by
+∂sV= ∆V+ 1
+2x· ∇V+ 1
+2 V−Π
+ 
+V· ∇V
+
+,divV= 0,(3.22)
+with the boundary condition (3.20). The solutionUto (3.19) can be viewed as a steady state of
+(3.22). Since the linearized operatorL U has unstable eigenvalues, we can construct an unstable
+manifold nearU. Some care is needed, however, sinceUdecays like 1/|x|, soU̸∈L 2(R3). The
+localization argument we provide here is a modification of the argument in [16], which does not
+need the assumption that the maximum real part of all the unstable eigenvalues ofL U is less
+than 1/8. A similar argument was used recently in [14].
+We decompose first
+U0 =U 0l +U 0f ,(3.23)
+where the divergence free fieldU 0l ≡U 0 for|x| ≤2R, suppU 0l ⊆B 4R,U 0l ∈C ∞(B4R\{0}), for
+someR≫1 that we can choose freely to makeU 0f small. In addition,U 0f satisfies the property
+that for allx∈R 3 and multi-indexα,
+U0f ∈C ∞(R3\B2R),|∇ αU0f(x)|≲|x| −1−|α|.(3.24)
+To achieve the decomposition (3.23) in the divergence-free class, we define the vector potential
+A:=U 0 ×x, which is homogeneous of degree 0, and notice thatU 0 =∇ ×A(using the
+assumptions thatU 0 is divergence-free and homogeneous of degree−1). Letχ∈C ∞
+0 (B4R) be a
+smooth radial cutoff function such thatχ≡1 onB 2R. We define the localized velocity fields by
+U0l :=∇ ×(χA), U 0f :=∇ ×((1−χ)A),(3.25)
+and the desired decomposition follows.
+We are now looking for solutions of the Navier–Stokes equations (1.1) of the form
+eu(x, t) =1√
+t U( x√
+t)−e ∆tU0f(x) +h(x, t) :=u 1(x, t)−U f(x, t) +h(x, t),(3.26)
+wherehsatisfies onR 3 ×(0,1] the perturbed Navier–Stokes equation
+∂th−∆h+ Π
+ 
+u1 · ∇h+h· ∇u 1 −U f · ∇h−h· ∇U f +h· ∇h
+
+=g(x, t),
+divh= 0, (3.27)
+
+[PDF page 19]
+SWIRL-FREE UNSTABLE SOLUTIONS OF THE NAVIER–STOKES EQUATION 19
+with zero initial data and source term given by
+g:= Π
+ 
+u1 · ∇Uf +U f · ∇u1 −U f · ∇Uf
+
+.(3.28)
+To solve (3.27), we make the transformation forx∈R 3, t >0,
+Uf(x, t) := 1√
+t b
+  x√
+t ,logt
+
+, h(x, t) := 1√
+t H
+  x√
+t ,logt
+
+, g(x, t) := 1
+t3/2 G
+  x√
+t ,logt
+
+.(3.29)
+It follows from (3.26) and (3.28) that fors≤0,
+G= Π
+
+U· ∇b+b· ∇U−b· ∇b
+
+(3.30)
+and thatHsatisfies the equation fors≤0,
+∂sH=L U H+ Π
+
+b· ∇H+H· ∇b+H· ∇H
+
++G,
+divH= 0. (3.31)
+Step 2.Thanks to the spectral properties established in Proposition 3.1, we can directly
+construct a family of solutions bifurcating fromU. By Proposition 3.1, the spectrum ofL U
+in the right half-plane consists of strictly finitely many discrete eigenvalues. We define the
+finite-rank unstable projectionP u via the Riesz integral
+Pu = 1
+2πi
+I
+Γu
+(zI− L U)−1 dz,(3.32)
+where Γu is a smooth closed contour in the right half-plane strictly enclosingσ u, and letP cs =
+I−P u denote the complementary center-stable projection.
+By the spectral mapping theorem and the bounds established in (3.12), the restricted semi-
+groups satisfy the bounds
+∥esLU Pug∥X +∥∇e sLU Pug∥X ≲e γus/2∥g∥X fors≤0,
+∥esLU Pcsg∥X + min(1, s1/2)∥∇esLU Pcsg∥X ≲ϵ eϵs∥g∥X fors >0,
+(3.33)
+whereγ u >0 is the minimum real part of the unstable eigenvalues, andϵ >0 can be chosen
+arbitrarily small.
+We rewrite equation (3.31) using the variation of parameters formula. For a givenϕ u0 ∈
+Ran(Pu), we seek a trajectoryH(s) satisfying the boundary conditionP u(H)(0) =ϕ u0 and
+H(s) =e sLU ϕu0 +
+Z s
+−∞
+e(s−τ)L U PcsN(H)(τ)dτ−
+Z 0
+s
+e(s−τ)L U PuN(H)(τ)dτ,
+N(H) := Π
+
+b· ∇H+H· ∇b+H· ∇H
+
++G.
+(3.34)
+We solve this equation by a fixed point argument in the Banach spaceE η defined by
+Eη :=
+
+h∈C((−∞,0] :X 1) :∥h∥ Eη := sup
+s≤0
+e−ηs∥h(s)∥X 1 <∞
+	
+,
+X1 :=
+
+f∈X:∥f∥ X 1 :=∥f∥ X +∥∇f∥ X <∞
+	
+,
+(3.35)
+with a decay rateηsufficiently small,η:= min{1/100, γ u/4}.
+The functionbdefined in (3.29) satisfies the bounds
+∥b(s)∥L∞(R3) ≲e s/2R−1,∥b(s)∥ L4(R3) ≲e s/8R−1/4,
+∥∇b(s)∥L∞(R3) ≲e sR−2,∥∇b(s)∥ L4(R3) ≲e 5s/8R−5/4.
+(3.36)
+
+[PDF page 20]
+20 A. D. IONESCU, H. JIA, AND S. PALASEK
+It follows from (3.20) and (3.36) that for someϵ R →0+ asR→ ∞,
+∥(b· ∇b)(s)∥ L2 ≲e 3s/4ϵR,∥(b· ∇b)(s)∥ L4 ≲e sϵR,
+∥(b· ∇U)(s)∥ L2 ≲e s/2ϵR,∥(U· ∇b)(s)∥ L2 ≲e 5s/8ϵR,
+∥(b· ∇U)(s)∥ L4 ≲e s/2ϵR,∥(U· ∇b)(s)∥ L4 ≲e sϵR.
+Therefore, using also (3.30),
+∥G(s)∥X ≲e s/2ϵR.(3.37)
+Moreover, the definition (3.34) and the bounds (3.36) show that
+∥N(H 1)(s)− N(H 2)(s)∥X ≲∥(H 1 −H 2)(s)∥X 1(es/2ϵR +∥H 1(s)∥X 1 +∥H 2(s)∥X 1) (3.38)
+for anyH 1, H2 ∈C((−∞,0] :X 1). A standard fixed-point argument using (3.33), (3.37), and
+(3.38) shows that the equation (3.34) admits a unique solution
+H∈C((−∞,0] :X 1),sup
+s∈(−∞,0]
+e−ηs∥H(s)∥ X 1 ≲ϵ R +∥ϕ u0∥X 1,(3.39)
+provided that∥ϕ u0∥X 1 ≪1 andRis chosen sufficiently large.
+Step 3.The solutioneu∈C([0,1] :L 2) given by
+eu(x, t) :=1√
+t U( x√
+t)−e t∆U0f(x) + 1√
+t H( x√
+t ,logt) (3.40)
+then solves the Navier–Stokes equation with initial dataU 0l. Comparing the values att= 1,
+we conclude that different choices ofϕ u0 ∈Ran(P u) lead to different solutionseuwith the same
+initial dataU 0l ∈C ∞(R3\{0}), which is compactly supported and has a singularity of the order
+O(1/|x|) asx→0.
+Clearly, we have
+√
+t|eu(x, t)|≲1 and|x||eu(x, t)|≲1 for anyx, t∈R 3 ×(0,1], thuseu∈L ∞
+t L3,∞
+x
+and
+√
+t∥eu(t)∥L∞ ≲1. Moreover, we can rewrite
+eu(x, t)−et∆U0l(x) = 1√
+t(U−e ∆U0)( x√
+t) + 1√
+t H( x√
+t ,logt),(3.41)
+soeu∈C([0,1] :H α
+x ),α <1/2, as a consequence of (3.20) and (3.39).
+Finally, by parabolic regularization using the identity (3.31) and the bounds (3.12) and (3.37)–
+(3.38), we have∥H(s)∥ H α ≲α ϵR +∥ϕ u0∥X 1 for anys∈(−∞,0] andα∈[0,2). The identity
+(3.41) then shows thateu∈L 2
+t H α+1
+x for anyα∈[0,1/2), as desired.
+The strong energy identity (1.3) follows for allt0 ≤t 1 ∈(0,1], since the solutionseuare regular
+in this interval. It then follows for allt 0 ≤t 1 ∈[0,1], by the continuity ofeu(t) inL 2.
+Step 4.Assume now thatU, eUare axi-symmetric swirl-free vector fields, and we would like
+to prove the same property for the resulting solutions of the Navier–Stokes equation. Notice
+that a vector fieldV= (V 1, V2, V3) inR 3 is ASSF if and only if
+O(V1) =−V 2, O(V 2) =V 1, O(V 3) = 0,
+−x 2V1(x) +x 1V2(x) = 0 for allx∈R 3, (3.42)
+whereO:=x 1∂2 −x 2∂1.
+
+[PDF page 21]
+SWIRL-FREE UNSTABLE SOLUTIONS OF THE NAVIER–STOKES EQUATION 21
+We define the spaces
+Xsym :=
+
+ϕ∈X:ϕis axially symmetric and swirl-free
+	
+,D sym :=D ∩X sym,
+Ysym :=
+
+U∈Y:Uis axially symmetric and swirl-free
+	
+. (3.43)
+The characterization (3.42) can be used to show that ifU∈Y sym then the operatorL U preserves
+the symmetries, i.e.L U :D sym →X sym and (λ− L U)−1 :X sym →X sym. Moreover, the vector
+fieldsU 0l andU 0f defined in (3.25) are also ASSF. In particular, the vector fieldsgandGdefined
+in (3.28) and (3.30) are ASSF. Therefore the vector fieldHdefined in (3.34) is ASSF, provided
+thatϕ u0 ∈X sym. This completes the proof of Theorem 1.2.
+4.Remarks
+We conclude this article with several remarks.
+4.1.Numerical stability.Similar analysis can be carried out for other values of the parameters
+(A, p) that describe the computational domain. We have run the continuation procedure for the
+pairs (A, p) = (40,4), (A, p) = (50,4), (A, p) = (25,5), and (A, p) = (15,6), corresponding to
+physical domains of sizesL≈485,L≈751,L≈995, andL≈1182 respectively. The leading
+eigenvalue exhibits remarkable stability over all these domains. Similar stability is observed by
+running theσ-continuation directly in the physical space, using equations (1.15)–(1.16), which
+is possible for smaller values ofLsuch asL= 100,L= 150,L= 200, using either B-splines or
+finite elements with FEniCS.
+80 100 120 140 160 180 200
+0.0
+0.2
+0.4
+0.6
+σ
+Largest Eigenvalue
+L=100 splines(PD)
+L=150 splines(PD)
+L=200 splines(PD)
+L=485 splines(CD)
+L=751 splines(CD)
+L=995 splines(CD)
+L=1182 splines(CD)
+L=100 FEM(RPD)
+L=150 FEM(RPD)
+L=200 FEM(RPD)
+Figure 8.The leading eigenvalue during 10 different simulations, using several
+methods, computed in either the physical domain (PD), the computational do-
+main (CD), or the rescaled physical domain (RPD). The plotted curve actually
+consists of 10 nearly indistinguishable overlapping curves. The maximum devia-
+tion of the leading eigenvalue we have observed among all of these simulations is
+less than 5×10 −3, for all sampled values ofσ∈[80,200].
+More importantly, instability appears to be a broader phenomenon, even in the class of swirl-
+free vector fields. We have chosen the specific asymptotic data (1.22) mainly because of its
+
+[PDF page 22]
+22 A. D. IONESCU, H. JIA, AND S. PALASEK
+algebraic simplicity, but other homogeneous asymptotic data with suitable parities, such as
+Ψ(r, z) = σz3
+(r2 +z 2)2 ,Ω(r, z) = σz(6r 2 −14z 2)
+(r2 +z 2)3 ,(4.1)
+also lead to unstable eigenvalues, at different transition thresholds (such asσ≈145 for the
+asymptotic data (4.1)).
+4.2.Validation.Our primary form of validation is demonstrating that all our solutions satisfy
+the continuous equations to an extremely high degree of precision, as measured on dense uniform
+grids rather than merely at the collocation points. For comparison, spurious eigenmodes found
+by the solver exhibit much worse dense residuals, of≈10 −2.
+Figure 9 illustrates the convergence properties of both the nonlinear base solution (Ψ,Ω) and
+the principal unstable eigenmode ( eΨ,eΩ), as we track the maximum absolute residual and the
+eigenvalue deviation|λ−λ ref |as a function of the total degrees of freedom (DOF), using B-
+splines of degrees 6, 8, and 10. The results exhibit clear spectral-like convergence. For instance,
+transitioning from degree-6 to degree-10 splines at 10 5 degrees of freedom drops the eigenvalue
+error by nearly three orders of magnitude. At the highest resolution (approximately 3×105 DOF
+with degree-10 splines), the maximum pointwise residual of the nonlinear solution drops below
+10−9, and the computed eigenvalue converges to within 10 −12 of our high-precision reference
+valueλ ref. This steep, monotonic convergence confirms that our discrete approximations are
+resolving a true, exact mathematical solution rather than a numerical artifact.
+105 2 × 105 3 × 105
+Degrees of Freedom
+10 9
+10 8
+10 7
+10 6
+10 5
+10 4
+Maximum Absolute Residual
+Nonlinear Solution ||Res( , )||
+Degree 6
+Degree 8
+Degree 10
+105 2 × 105 3 × 105
+Degrees of Freedom
+10 9
+10 8
+10 7
+10 6
+10 5
+10 4
+Eigenfunction ||Res( , )||
+Degree 6
+Degree 8
+Degree 10
+105 2 × 105 3 × 105
+Degrees of Freedom
+10 12
+10 11
+10 10
+10 9
+10 8
+10 7
+10 6
+| ref|
+Eigenvalue Diff ( ref = 0.235059597921)
+Degree 6
+Degree 8
+Degree 10
+Figure 9.Dense residuals and eigenvalue deviation of the refined solutions
+(Ψ2,Ω 2) and ( eΨ2,eΩ2) using degree 6, degree 8, and degree 10 B-splines, with
+a total number of degrees of freedom ranging from 46,500 DOF to 148,000 DOF
+per variable. Notice the decrease of the dense residuals as the degrees of the
+B-splines and the number of degrees of freedom increases.
+4.3.Asymptotic expansion at infinity.We can gain insight, both at the numerical and at
+the theoretical level, by expanding at infinity the solutions of the system (1.15) with asymptotic
+
+[PDF page 23]
+SWIRL-FREE UNSTABLE SOLUTIONS OF THE NAVIER–STOKES EQUATION 23
+data (1.22). We start with the top order terms, homogeneous of orders−1 for Ψ and−3 for Ω,
+Ψ−1(r, z) := σz
+r2 +z 2 ,Ω −3(r, z) := −6σz
+(r2 +z 2)2 .(4.2)
+The first equation in (1.15) is satisfied identically for these functions. The second equation can
+be used to determine the homogeneous term Ω −5, by the formula
+LΩ−3 + 1
+2
+ 
+r∂r +z∂ z + 3
+
+Ω−5 −r∂ zΨ−1∂rΩ−3 + (r∂rΨ−1 + 2Ψ−1)∂zΩ−3 = 0,
+which leads to
+Ω−5 = 12σ2z(3z2 −2r 2) + 24σz(r2 +z 2)
+(r2 +z 2)4 .(4.3)
+We can then use the first equation in (1.15) to find the term of order−3 in Ψ,
+Ψ−3 = σ2z(3r2 −7z 2)
+3(r2 +z 2)3 − 6σz
+(r2 +z 2)2 + σ′
+(r2 +z 2)3/2 ,(4.4)
+whereσ ′ ∈R. Since our base solution is odd inzwe must haveσ ′ = 0, therefore
+Ψ(r, z) = σz
+r2 +z 2 + σ2z(3r2 −7z 2)
+3(r2 +z 2)3 − 6σz
+(r2 +z 2)2 . . . ,
+Ω(r, z) = −6σz
+(r2 +z 2)2 + 12σ2z(3z2 −2r 2) + 24σz(r2 +z 2)
+(r2 +z 2)4 . . . .
+(4.5)
+This gives us the refined boundary data (2.8) we use to construct our refined solutions.
+Unfortunately, this procedure cannot be continued further. In fact, we could still get a
+homogeneous term of degree−7 in Ω, by repeating the argument above, but this term is too small
+in the gluing region to matter. However, the equationL(Ψ) = 0 admits general homogeneous
+solutions of degree−4 at infinity of the form
+Ψ−4(r, z) =σ ′′z(r2 +z 2)−5/2, σ ′′ ∈R.(4.6)
+These solutions are odd inz, thus acceptable. The choice of the parameterσ ′′ is determined by
+global smoothness considerations and cannot be found just by asymptotic analysis.
+We use the refined expansion (4.5), instead of the more basic expansion (1.22) in the second
+stage of our construction, mainly to get better estimates on the residual|Res(Ψ ∗
+2)|in the gluing
+region, which leads to better overall estimates on the global residual∥Res(Ψ)∥ L∞ in (1.18).
+4.3.1.Further asymptotics.One can further improve the gluing residuals by using more precise
+asymptotic expansions of the functions Ψ,Ω, with coefficients determined numerically. For
+example, we can allow a general homogeneous term of the form (4.6) and optimize over the
+choice of parameterσ ′′. By including this term in our asymptotic function Ψ a
+2 and numerically
+minimizing the far-field difference|Ψ 2 −Ψ a
+2|overσ ′′, we find an optimal value ofσ ′′ ≈276,500.
+Rerunning the refinement step with this improved choice of
+Ψa
+2(r, z) = σz
+r2 +z 2 + σ2z(3r2 −7z 2)
+3(r2 +z 2)3 − 6σz
+(r2 +z 2)2 + σ′′z
+(r2 +z 2)5/2 ,
+and making the corresponding changes in the boundary data (2.8) ultimately reduces the value
+of∥Res(Ψ)∥ L∞ in (1.18) by a factor of about 4. This procedure could, in principle, be continued
+with more asymptotic terms, to reduce the gluing residuals of the variables.
+
+[PDF page 24]
+24 A. D. IONESCU, H. JIA, AND S. PALASEK
+References
+[1] D. Albritton, E. Bru´ e, and M. Colombo, Non-uniqueness of Leray solutions of the forced Navier–Stokes
+equations. Ann. of Math. (2)196(2022), no. 1, 415–455.
+[2] D. Albritton, J. Guillod, M. Korobkov, and X. Ren, Forward self-similar solutions to the 2D Navier–Stokes
+equations. Preprint (2026), arXiv:2601.03161.
+[3] T. Buckmaster and V. Vicol, Nonuniqueness of weak solutions to the Navier–Stokes equation. Ann. of Math.
+(2)189(2019), no. 1, 101–144.
+[4] J. Chen and T. Y. Hou, Stable nearly self-similar blowup of the 2D Boussinesq and 3D Euler equations with
+smooth data I: Analysis. Preprint (2022), arXiv:2210.07191.
+[5] J. Chen and T. Y. Hou, Stable nearly self-similar blowup of the 2D Boussinesq and 3D Euler equations with
+smooth data II: Rigorous Numerics. Preprint (2023), arXiv:2305.05660.
+[6] A. Cheskidov, M. Dai, and S. Palasek, Instantaneous Type I blow-up and non-uniqueness of smooth solutions
+of the Navier–Stokes equations. Preprint (2025), arXiv:2511.09556.
+[7] A. Cheskidov and X. Luo. Sharp nonuniqueness for the Navier–Stokes equations. Invent. Math.229(2022),
+no. 3, 987-1054.
+[8] A. Cheskidov and X. Luo.L 2-critical nonuniqueness for the 2D Navier–Stokes equations. Ann. PDE9
+(2023), no. 2, Paper No. 13, 56 pp.
+[9] M. Coiculescu and S. Palasek, Non-uniqueness of smooth solutions of the Navier–Stokes equations from
+critical data. Invent. Math. (to appear).
+[10] T. Gallay and C. E. Wayne, Invariant manifolds and the long-time asymptotics of the Navier–Stokes and
+vorticity equations onR 2, Archive for Rational Mechanics and Analysis 163 (3), 209-258
+[11] T. Gallay and V. ˇSver´ ak, Remarks on the Cauchy problem for the axisymmetric Navier–Stokes equations.
+Confluentes Math.7(2015), no. 2, 67–92.
+[12] C. Gui, H. Liu, and C. Xie, On the forward self-similar solutions to the two-dimensional Navier–Stokes
+equations. Preprint (2026), arXiv:2601.03833.
+[13] J. Guillod and V. ˇSver´ ak, Numerical investigations of non-uniqueness for the Navier–Stokes initial value
+problem in borderline spaces. J. Math. Fluid Mech.25(2023), no. 3, Paper No. 46, 25 pp.
+[14] T. Hou, Y. Wang, and C. Yang, Nonuniqueness of Leray-Hopf solutions to the unforced incompressible 3D
+Navier–Stokes Equation. Preprint (2025), arXiv:2509.25116.
+[15] H. Jia and V. ˇSver´ ak, Local-in-space estimates near initial time for weak solutions of the Navier–Stokes
+equations and forward self-similar solutions. Invent. Math.196(2014), no. 1, 233–265.
+[16] H. Jia and V. ˇSver´ ak, Are the incompressible 3d Navier–Stokes equations locally ill-posed in the natural
+energy space? J. Funct. Anal.268(2015), no. 12, 3734–3766.
+[17] O. Ladyzhenskaya, Unique solvability in the large of the three-dimensional Cauchy problem for the Navier–
+Stokes equations in the presence of axial symmetry. Zap. Nauchn. Semin. Leningr. Otd. Mat. Inst. Steklova
+7(1968), 155–177 (in Russian).
+[18] J. Leray, Sur le mouvement d’un liquide visqueux emplissant l’espace, Acta Math.63(1934), no. 1, 193–248.
+[19] M. Ukhovskii and V. Yudovich, Axially symmetric flows of ideal and viscous fluids filling the whole space.
+J. Appl. Math. Mech.32(1968), 52–61.
+[20] Y. Wang, M. Bennani, J. Martens, S. Racani´ ere, S. Blackwell, A. Matthews, S. Nikolov, G. Cao-Labora,
+D. S. Park, M. Arjovsky, D. Worrall, C. Qin, F. Alet, B. Kozlovskii, N. Tomaˇ sev, A. Davies, P. Kohli,
+T. Buckmaster, B. Georgiev, J. G´ omez-Serrano, R. Jiang, C.-Y. Lai, Discovery of unstable singularities.
+Preprint (2025), arXiv:2509.14185.
+Princeton University
+Email address:aionescu@math.princeton.edu
+University of Minnesota–Twin Cities
+Email address:jia@umn.edu
+Institute for Advanced Study
+Email address:palasek@ias.edu

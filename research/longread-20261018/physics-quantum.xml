@@ -1,0 +1,720 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/JsqSNv+QY32qcCgzGMLazqvWC24</id>
+  <title>arXiv Query: search_query=(ti:"quantum error correction" OR ti:"logical qubit" OR ti:"surface code") AND submittedDate:"202501010000 TO 202610182359"&amp;id_list=&amp;start=0&amp;max_results=30</title>
+  <updated>2026-10-18T08:09:31Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(ti:%22quantum+error+correction%22+OR+(ti:%22logical+qubit%22+OR+ti:%22surface+code%22))+AND+submittedDate:%22202501010000+TO+202610182359%22&amp;start=0&amp;max_results=30&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>30</opensearch:itemsPerPage>
+  <opensearch:totalResults>446</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.22205v1</id>
+    <title>Classification of bipartite observables III: simplicity, mixtures and quantum error correction</title>
+    <updated>2026-10-15T16:54:41Z</updated>
+    <link href="https://arxiv.org/abs/2610.22205v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.22205v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The paradigm of a simple unstable theory in the sense of Shelah is the theory of the random graph, the Fraïssé limit of the finite graphs. Quantum error correction has a paradigm of its own, and we show that it is the counterpart of the random graph: the Pauli group on countably many qubits, taken modulo phases and with commutation as its relation, is the Fraïssé limit of the finite alternating spaces over the two-element field, and its form computes the syndromes of stabilizer codes. Seen through this correspondence, simplicity theory turns out to be a theory of error correction. Clifford encoding circuits implement the homogeneity of the Pauli group, forking recognizes the logical errors, and the independence theorem of Kim and Pillay is the gluing of syndromes. The two paradigms look alike as first-order structures, and they part company only when observables enter. Each defines a bipartite observable, and we prove that, once preparations are mixed, both acquire the tree property of the second kind in real-valued logic. They reach it by different roads, however, and we show that the probes decide which. The probes of the Pauli observable are the Pauli channels; for them the indicator of each syndrome sector is the difference of the responses of two uniform mixtures, and actual mixtures already witness the tree. The probes of the Rado observable see only marginals; conditions given by actual mixtures remain compatible on disjoint blocks, and the tree must be sought among idealized preparations.</summary>
+    <category term="math.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-15T16:54:41Z</published>
+    <arxiv:comment>24 pages. Third paper of the series "Classification of Bipartite Observables" by the same authors</arxiv:comment>
+    <arxiv:primary_category term="math.LO"/>
+    <author>
+      <name>Eduardo Dueñez</name>
+    </author>
+    <author>
+      <name>José Iovino</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.21879v1</id>
+    <title>One generation of the Standard Model as a quantum error-correcting code</title>
+    <updated>2026-10-15T13:45:52Z</updated>
+    <link href="https://arxiv.org/abs/2610.21879v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.21879v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Together with a right-handed neutrino, the fermions of one generation of the Standard Model are labelled by five bits, a combinatorial structure tied to anomaly cancellation. We make this precise. Anomaly cancellation is the vanishing of a cubic form, the defining property of triorthogonal codes, the quantum error-correcting codes behind magic state distillation. Removing the right-handed neutrino gives a $[[15,1,3]]_p$ code for every prime $p$, including the Bravyi-Kitaev code for $p = 2$. For qutrits it is the unique shortest distance-three triorthogonal code.</summary>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-15T13:45:52Z</published>
+    <arxiv:comment>5 pages, 1 figure, 1 table; 12 pages of Supplemental Material. Code available at github.com/spdei/standard-model-code</arxiv:comment>
+    <arxiv:primary_category term="hep-th"/>
+    <author>
+      <name>Shiroman Prakash</name>
+    </author>
+    <author>
+      <name>K. L. Ramya</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.21357v1</id>
+    <title>Stitched surface codes: planar concatenation through GHZ corridors</title>
+    <updated>2026-10-15T06:39:05Z</updated>
+    <link href="https://arxiv.org/abs/2610.21357v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.21357v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present a fault-tolerant quantum-memory architecture that concatenates four distance-t rotated surface-code patches with the [[4,2,2]] outer code, encoding two logical qubits at code distance d = 2t in a physical footprint of N &lt; 2(2t+1)^2 qubits on a square lattice with nearest-neighbor connectivity. The outer-code stabilizer generators XXXX and ZZZZ, each of physical weight 4t, are measured in situ via verified Greenberger-Horne-Zeilinger (GHZ) ancillae distributed through narrow corridors between adjacent patches, without lattice surgery or long-range gates. The outer-code gadgets introduce hyperedge fault mechanisms, but by design each decomposes into graphlike components, so the complete syndrome is decoded by a single minimum-weight-perfect-matching pass. Circuit-level simulations show logical error rates that scale as p^t, consistent with distance-2t protection. Finally, we implement the construction experimentally on a 105-qubit Willow superconducting processor in both the ZZ and XX memory bases. With the correlated-matching decoder, increasing the code distance from d = 4 to d = 6 reduces the block logical error rate by a factor of 1.52. The construction thus provides a near-term testbed for concatenated architectures beyond the standard surface code.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-15T06:39:05Z</published>
+    <arxiv:comment>18 pages, 16 figures, 4 tables</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Mohamed A. Shalby</name>
+    </author>
+    <author>
+      <name>Alexandre Bourassa</name>
+    </author>
+    <author>
+      <name>Amir Karamlou</name>
+    </author>
+    <author>
+      <name>Leigh Martin</name>
+    </author>
+    <author>
+      <name>Alexis Morvan</name>
+    </author>
+    <author>
+      <name>Nicholas Noll</name>
+    </author>
+    <author>
+      <name>Craig Gidney</name>
+    </author>
+    <author>
+      <name>Leonid P. Pryadko</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.20515v1</id>
+    <title>Petz Recovery through a Single Polar Transformation for Approximate Quantum Error Correction</title>
+    <updated>2026-10-14T17:16:47Z</updated>
+    <link href="https://arxiv.org/abs/2610.20515v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.20515v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Petz recovery map provides a near optimal decoder for approximate quantum error correction, but its inverse square-root normalization complicates circuit implementation. We use the polar structure of the Petz recovery isometry to implement recovery through a single quantum singular value transformation (QSVT). We give explicit block-encoding circuits and an extended recovery isometry that yields approximate Petz recovery without postselection. We bound the diamond distance between the approximate and ideal Petz encoding-recovery channels in terms of a spectrum-weighted loss, which provides a channel specific objective for optimizing the QSVT angles. Uniform polynomial approximation yields an asymptotic error bound that decays exponentially with the number of QSVT iterations, at a rate controlled by the smallest nonzero scaled singular value. Applications to Haar-random encoding and the Hayden-Preskill protocol illustrate the tradeoff between circuit depth and recovery accuracy and place existing scrambling decoders within a common Petz recovery framework.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-14T17:16:47Z</published>
+    <arxiv:comment>16+5 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Hanzhang Zhao</name>
+    </author>
+    <author>
+      <name>Shenglong Xu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.18218v1</id>
+    <title>Methods for Automated Equivalence Checking of Quantum Error-Correction Codes</title>
+    <updated>2026-10-13T11:49:22Z</updated>
+    <link href="https://arxiv.org/abs/2610.18218v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.18218v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Quantum error-correction code and circuit construction is an active field of research, motivating automated methods for identifying equivalent designs. We develop and evaluate automated strategies for deciding whether two descriptions of quantum error-correction codes are equivalent under specified transformations. We formalize permutation equivalence for stabilizer and CSS codes and local-Clifford equivalence for stabilizer codes within a unified framework that separates physical from representation freedom. We develop three decision strategies (group-action search, isomorphism-based methods, and constraint solving), together with invariants and signatures for preprocessing. The empirical evaluation shows that no paradigm dominates across equivalence notions, code families, and parameter ranges. We therefore combine their complementary strengths in input-dependent hybrid checkers following a staged Refute-Refine-Decide architecture. Mean hybrid runtimes remain below 10 s for most evaluated structured-code cases with $n \leq 37$; for inequivalent code instances with $n=144$, they are about 310 s for permutation and 16 s for local-Clifford equivalence.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-13T11:49:22Z</published>
+    <arxiv:comment>22 pages, 16 main text + 2 references + 4 appendix, 19 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Maxie Bichmann</name>
+    </author>
+    <author>
+      <name>Ludwig Schmid</name>
+    </author>
+    <author>
+      <name>Robert Wille</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.17612v1</id>
+    <title>From Syndromes to Computation: A General Framework for Logical Operations in Quantum Error-Correcting Codes</title>
+    <updated>2026-10-13T02:32:10Z</updated>
+    <link href="https://arxiv.org/abs/2610.17612v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.17612v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Fault-tolerant quantum computation requires error-correcting codes that not only protect quantum information but also support useful logical operations with practical physical realizations. Here we develop a general framework in which the stabilizer syndromes of commuting Pauli rotations directly organize logical-gate design. We derive an exact codespace-preservation condition valid at arbitrary rotation angles, providing a common stabilizer-level description for CSS and non-CSS codes and for both Clifford and non-Clifford operations. A particularly useful equal-syndrome specialization reduces Clifford gate design to stabilizer factorization, yields a general generator weight bound of $\lceil d/2\rceil$ for distance-$d$ codes, and systematically extends to logical rotations higher in the Clifford hierarchy. Applied to bivariate-bicycle (BB) and non-CSS Mirror qLDPC codes, the framework gives explicit low-weight Clifford and controlled-phase gates. Our implementations yield new low-weight gates, including an addressed $T$ gate on the $[[16,4,4]]$ BB code, $T$-type rotations on the $[[64,8,8]]$ BB code, and CCZ-, CS-, and $T$-type operations on the $[[36,6,6]]$ Mirror code. We also develop analytic constructions using Clifford algebra bases, which turn the syndrome constraints into explicit algebraic relations and provide a systematic route to logical addressability. We use this approach to analytically construct addressed CNOT, SWAP, controlled, and CCZ-type gates on recursive hypercube codes. An independent construction on middle quantum Reed--Muller codes yields C${}^r$Z gates that saturate the equal-syndrome weight bound. These results establish stabilizer syndromes as a constructive link between the stabilizer structure of a quantum code, the logical computations it can directly support, and the fault-tolerance properties of their physical realizations.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-13T02:32:10Z</published>
+    <arxiv:comment>29+19 pages</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Hunter Nelson</name>
+    </author>
+    <author>
+      <name>Arshag Danageozian</name>
+    </author>
+    <author>
+      <name>ChunJun Cao</name>
+    </author>
+    <author>
+      <name>Sophia E. Economou</name>
+    </author>
+    <author>
+      <name>Edwin Barnes</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.13589v1</id>
+    <title>Decoder- and Noise-Aware Optimization Framework for Clifford-Deformed Quantum Error-Correcting Codes</title>
+    <updated>2026-10-09T13:39:27Z</updated>
+    <link href="https://arxiv.org/abs/2610.13589v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.13589v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Practical fault-tolerant quantum computing requires qubit-efficient quantum error correction (QEC). Clifford deformations (CDs) modify the stabilizers of a QEC code to lower its logical error rate at no additional resource cost. However, the number of possible CDs grows exponentially with the number of qubits, making exhaustive search infeasible beyond small codes. In this work, we further show that under circuit level noise the optimal CD depends strongly on both the noise model and decoder. To make systematic CD optimization possible, we introduce Evolution-Based Best-arm Identification (EBBI), a shot-efficient search algorithm that treats the circuit, noise model and decoder as a black box. We benchmark EBBI's performance on the rotated surface code, under two strongly $Z$-biased circuit-level noise models with the PyMatching decoder. At distance 3, EBBI finds the optimal CD using up to $\sim 1100\times$ fewer shots than random search. At distance 5, when run at the target error rate, the median EBBI run converges to the CDs we believe to be optimal, while random search never converges. Under a $Z$-biased SI1000-like noise model, EBBI discovers a new CD, the B-XZZX code, which we generalized to larger distances. It differs from XZZX on only a fraction $\mathcal{O}(d^{-1})$ of the qubits at code distance $d$, yet its relative advantage grows from $\approx 5\%$ at $d = 3$ to $\approx 12\%$ at $d = 11$. We thus show that the B-XZZX pattern found by EBBI can be systematically scaled to larger code distances. Our work represents a first step towards scalable CD optimization for general QEC codes.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-09T13:39:27Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Julius Rye Bønnelykke</name>
+    </author>
+    <author>
+      <name>Benjamin Joecker</name>
+    </author>
+    <author>
+      <name>Peter Krogstrup</name>
+    </author>
+    <author>
+      <name>Vincent Philippe Michal</name>
+    </author>
+    <author>
+      <name>Mark Kamper Svendsen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.11225v1</id>
+    <title>High-Rate Concatenated Quantum Error-Correcting Codes for Qudits</title>
+    <updated>2026-10-08T04:21:39Z</updated>
+    <link href="https://arxiv.org/abs/2610.11225v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.11225v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Qudits provide a larger local Hilbert space than qubits and have recently attracted interest as building blocks for efficient fault-tolerant quantum computation (FTQC). In this work, we extend many-hypercube (MHC) codes, high-rate concatenated quantum codes, from qubits to qudits of prime dimension $q$. We construct the level-2 and level-3 MHC codes with parameters $\left[\!\left[6^2,4^2,2^2\right]\!\right]_q$ and $\left[\!\left[6^3,4^3,2^3\right]\!\right]_q$, respectively, and generalize the level-by-level minimum-distance (LLMD) decoder originally proposed for the qubit MHC codes. In a qudit $X$-error model, we evaluate the code-capacity performance of the qudit MHC codes for dimensions up to $q=13$. We find that the error threshold increases monotonically with the local dimension $q$, reaching $10.0\%$ for $q=13$, nearly double the value of $5.1\%$ for qubits. Furthermore, for sufficiently large local dimensions, we observe a pronounced waterfall regime in which the logical error rate decreases substantially faster than expected from conventional distance-based estimates. To understand the origin of the observed qudit advantage, we analyze the decoding performance in terms of the entropy of the underlying $q$-ary noise channel. This analysis reveals a competition between the increased syndrome information available at larger $q$ and the simultaneous growth of the typical physical error weight at fixed entropy. These results demonstrate that higher-dimensional quantum systems can substantially improve the performance of high-rate concatenated quantum codes and motivate further development of qudit-based FTQC architectures.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T04:21:39Z</published>
+    <arxiv:comment>11 pages, 2 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Takanori Nishi</name>
+    </author>
+    <author>
+      <name>Hayato Goto</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.06811v1</id>
+    <title>Polynomial-time simulation of non-Clifford quantum error correction</title>
+    <updated>2026-10-05T17:54:39Z</updated>
+    <link href="https://arxiv.org/abs/2610.06811v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.06811v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We show that every intermediate state of a broad class of non-Clifford quantum error-correction circuits is a third-order phase-polynomial state, even under stochastic Pauli noise. The class includes magic state distillation and cultivation, code switching and gauge fixing, transversal non-Clifford gates with syndrome extraction, and injection of diagonal magic states. Third-order phase-polynomial states strictly generalize stabilizer states, and we prove that they are exactly the stabilizer states of the diagonal-Clifford-and-Pauli (DCP) stabilizer formalism that we introduce. We characterize these states and show that their representations can be updated in polynomial time. This yields an exact polynomial-time simulation algorithm for these circuits and, more broadly, a framework for reasoning about their internal states and about magic states in general. We provide an open-source implementation, \texttt{merlin}, and benchmark it against existing non-Clifford simulators on distillation, cultivation, and code switching circuits. The benchmarks demonstrate improved runtime and memory scaling as the number of logical outputs grows in Bravyi-Haah distillation, and simulation of a code switching circuit beyond the reach of all other tested simulators.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-05T17:54:39Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Serban Cercelescu</name>
+    </author>
+    <author>
+      <name>Mark Koch</name>
+    </author>
+    <author>
+      <name>Arthur Pesah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.06775v1</id>
+    <title>Engineering logical gates with irrep surface codes</title>
+    <updated>2026-10-05T17:42:00Z</updated>
+    <link href="https://arxiv.org/abs/2610.06775v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.06775v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Fault-tolerant quantum computation typically relies on a fixed set of logical primitives, while realizing other desired operations can require substantial resources. We introduce irrep surface codes (ISCs), two-dimensional topological quantum error-correcting codes engineered to transversally implement a prescribed set of logical gates. The engineered gates only need to satisfy two conditions: (i) they generate a finite group, which, up to global phases, is forced by the Eastin-Knill theorem, and (ii) they are irreducible, meaning that any operator commuting with the set of gates must be proportional to the identity. This accommodates arbitrary finite groups of diagonal gates and arbitrary reversible classical gates, since each can be embedded into a larger irreducible finite group of gates. It also enables logical gates outside every finite level of the Clifford hierarchy. To incorporate these operations into surface-code computations, we further develop lattice-surgery protocols to transfer the encoded information between surface codes and ISCs obeying either of two sufficient conditions. Together, these results establish a systematic method for tailoring topological codes to desired logical operations and integrating them into conventional computations.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.str-el" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-05T17:42:00Z</published>
+    <arxiv:comment>28+32 pages, 5+6 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Yabo Li</name>
+    </author>
+    <author>
+      <name>Zijian Song</name>
+    </author>
+    <author>
+      <name>Vieri Mattei</name>
+    </author>
+    <author>
+      <name>Naren Manjunath</name>
+    </author>
+    <author>
+      <name>Apoorv Tiwari</name>
+    </author>
+    <author>
+      <name>Tyler D. Ellison</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.06697v2</id>
+    <title>Measurement-free Preparation of Surface-Code States with Digital-Analog Counterdiabatic Drivings</title>
+    <updated>2026-10-06T14:42:49Z</updated>
+    <link href="https://arxiv.org/abs/2610.06697v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.06697v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Preparing stabilizer-code states with shallow circuits is an important primitive for near-term quantum error correction in superconducting circuits, where logical-state initialization requires four-body stabilizer correlations from native one- and two-body controls. We introduce a digital-analog method for the preparation of surface-code ground-state manifolds. The method exploits a structural property of the adiabatic gauge potential, mapping stabilizer-local counterdiabatic terms to digital-analog blocks on the superconducting layout using fixed-angle two-qubit XY gates, single-qubit rotations, and analog exchange-interaction evolutions. The dressed blocks generate higher-order operators used as the variational ansatz to determine the counterdiabatic terms within the Sels-Polkovnikov adiabatic-gauge-potential framework. We benchmark checkerboard plaquette-stabilizer grids up to 4 x 4; the square-grid instances correspond to rotated surface codes, while the rectangular cases probe the scaling of the method. For all grids, the proposed method generates the dominant four-body counterdiabatic basis and, at short evolution times, substantially improves ground-state preparation compared with bare adiabatic evolution. We further generalize the construction to n x m stabilizer lattices and show that digital-analog synthesis can reduce the entangling depth by an order of magnitude. Together, these results establish a direct connection between stabilizer geometry, the structure of the counterdiabatic gauge potential, and digital-analog control for measurement-free preparation of stabilizer-code states on near-term superconducting architectures.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-05T16:58:32Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Shubham Kumar</name>
+    </author>
+    <author>
+      <name>Balaganchi A. Bhargava</name>
+    </author>
+    <author>
+      <name>Paolo A. Erdman</name>
+    </author>
+    <author>
+      <name>Anne-Maria Visuri</name>
+    </author>
+    <author>
+      <name>Jose D. Martın-Guerrero</name>
+    </author>
+    <author>
+      <name>Yolanda Vives-Gilabert</name>
+    </author>
+    <author>
+      <name>Enrique Solano</name>
+    </author>
+    <author>
+      <name>Narendra N. Hegade</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.06606v1</id>
+    <title>Staying Sober: A Shot-Free Predictor of Logical Error Rates for Concatenated Quantum Error Correcting Codes</title>
+    <updated>2026-10-05T16:15:00Z</updated>
+    <link href="https://arxiv.org/abs/2610.06606v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.06606v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Estimating the logical error rate (LER) of a quantum error-correcting (QEC) code by Monte Carlo sampling takes $O(p^{-\lceil d/2 \rceil}/\varepsilon^2)$ samples at physical error rate $p$, code distance $d$ and relative error $\varepsilon$, which becomes intractable at large distances and low error rates, and especially for concatenated codes, whose distance grows as $d^{\ell}$ with the number of levels $\ell$. The fail fast method reduces this cost by sampling the failures of each weight separately, but it only works for unconcatenated codes, and does not model the soft information that the levels of a concatenated code pass to each other. We propose a predictor that takes the stabilizers, the minimum-weight logical operators and, for odd $d$, the logical operators of weight $d + 1$ of a code, and computes, without sampling, the leading monomial $c\,p^{o}$ of the LER when expressed as a polynomial in $p$, at every level of concatenation, in time polynomial in the code parameters and linear in $\ell$ for fixed budgets. We prove that our prediction is exact for any unconcatenated stabilizer code, for every logical observable and arbitrary per-qubit error rates, whenever no budget is exhausted. Furthermore, for concatenated codes, we construct a recursive approach that computes the leading monomial exactly in exponential time, and our predictor approximates this approach. Our predictions match exact enumeration at level 1 on every code we evaluate, and up to three levels for the iceberg code. Using our predictor, we evaluate and compare $37$ code configurations under four noise biases in $48$ core-hours, where Monte Carlo sampling would need more than $10^{12}$ shots at $p = 10^{-3}$ for $113$ of these $148$ cases.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-05T16:15:00Z</published>
+    <arxiv:comment>25 pages, 10 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Sayam Sethi</name>
+    </author>
+    <author>
+      <name>Aditi Awasthi</name>
+    </author>
+    <author>
+      <name>Maxwell Poster</name>
+    </author>
+    <author>
+      <name>Joshua Viszlai</name>
+    </author>
+    <author>
+      <name>Jonathan Mark Baker</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.06059v1</id>
+    <title>Comparing thresholds of XZZX and rotated surface codes under spatio-temporal correlated noise</title>
+    <updated>2026-10-05T09:51:46Z</updated>
+    <link href="https://arxiv.org/abs/2610.06059v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.06059v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While independent and identically distributed noise is typically assumed in quantum computing research, complex error models such as correlated and spatio-temporal errors remain underexplored. In this paper, the performance of $\mathrm{XZZX}$ and rotated surface codes is evaluated under these complex noise models. Standard graph-based decoders struggle with the hyperedges generated by correlated errors on bias-tailored codes. To address this, we employ the Minimum Weight Parity Factor (MWPF) decoder, which natively processes syndrome hypergraphs without artificial edge decomposition. Our simulations show that under strong Z-biased circuit-level correlated noise ($η=100$), the threshold of the rotated code degrades to $\approx 0.36\%$, while the $\mathrm{XZZX}$ code drops to $\approx 0.70\%$. Furthermore, a distinct non-monotonic threshold dependence is observed for the $\mathrm{XZZX}$ code across different bias ratios. While the $\mathrm{XZZX}$ code effectively absorbs high-density Z-type hyperedges at extreme biases, it exhibits a threshold minimum at moderate biases ($η\approx 10$) because transverse X and Y errors actively bridge the diagonal strings, breaking the code's one-dimensional decoupling symmetry. These findings demonstrate that utilizing hypergraph-aware decoders is critical, as the performance of bias-tailored codes is highly sensitive to the geometric structure of spatio-temporal correlated noise.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-05T09:51:46Z</published>
+    <arxiv:comment>11 pages, 8 plots, simulation codes available on GitHub</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Dhruv Koul</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.04613v1</id>
+    <title>Multi-Yoked Surface Codes</title>
+    <updated>2026-10-03T15:52:38Z</updated>
+    <link href="https://arxiv.org/abs/2610.04613v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.04613v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The surface code is the leading candidate for fault-tolerant quantum computation owing to its planar nearest-neighbor connectivity, high threshold, and efficient decoding, but its low encoding rate demands on the order of a thousand physical qubits per logical qubit in the teraquop regime. Yoked surface codes improve the density by a factor of two or three by concatenating a high-density parity check code on top of the surface code while retaining planar nearest-neighbor connectivity. In this work, we generalize this idea to multiple levels of concatenation and introduce multi-yoked surface codes. Our construction rests on two new ingredients. First, we propose a family of outer codes called chain codes, built by chaining copies of a seed code that detects the block errors of the code one level below; the resulting codes use all logical qubits of the lower level and achieve a high encoding rate within a few concatenation levels. Second, we design a patch allocation in which movable workspaces perform the yoking checks by lattice surgery with a hierarchy of yoking intervals, so that lower-level checks are performed frequently while higher-level checks are performed less often, which avoids the long yoking intervals that a single large-distance outer code would require. As a benchmark, we construct a three-yoked surface code with a $[[256,166,8]]$ outer code and evaluate it numerically under the SI1000 noise model using soft information from the surface code decoder. The logical error rate is suppressed exponentially in the inner code distance, and in the teraquop regime the three-yoked surface code is about 4 to 4.5$\times$ denser than the unyoked surface code.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-03T15:52:38Z</published>
+    <arxiv:comment>22 pages, 21 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Yuga Hirai</name>
+    </author>
+    <author>
+      <name>Yasunari Suzuki</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.03869v1</id>
+    <title>Modular Neural Decoder for Surface Code Memory and Logic on Superconducting Processors</title>
+    <updated>2026-10-02T18:00:34Z</updated>
+    <link href="https://arxiv.org/abs/2610.03869v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.03869v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Neural decoders for quantum error correction have achieved high accuracy on surface code memory experiments, but practical fault-tolerant computation requires decoders that transfer across devices, noise conditions, and logical operations. We introduce a modular graph-recurrent decoder designed for this setting. Built from reusable local syndrome encoders, it is pretrained in simulation and fine-tuned to hardware using a common pipeline, with only lightweight spatial aggregation adapted between experiments. The decoder performs competitively on conventional memory benchmarks, outperforming minimum-weight perfect matching (MWPM) at distances 3 and 5 on an IBM Nighthawk-generation processor and closely approaching AlphaQubit on Google's below-threshold hardware data. We then test the framework in two settings beyond memory decoding on the same IBM device. First, in an $X$-type stability experiment, we continuously tune the effective measurement error rate using a variable pre-readout rotation and train a single decoder jointly across the resulting noise range. It matches or outperforms MWPM across the sweep without requiring a separately calibrated decoder for each setting. Second, we decode a $ZZ$-merge lattice-surgery experiment between two distance-3 surface-code patches, improving the decoded correlation between the merge outcome and the final $ZZ$ parity relative to MWPM on real hardware. Together, these experiments demonstrate neural decoding that is portable not only across hardware, but also across qualitatively different surface code observables and logical operations, using models trainable on single-GPU academic resources.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T18:00:34Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Moritz Lange</name>
+    </author>
+    <author>
+      <name>Ole Fjeldså</name>
+    </author>
+    <author>
+      <name>Gustaf Jonasson Johansson</name>
+    </author>
+    <author>
+      <name>Mats Granath</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.03682v1</id>
+    <title>Low-Overhead Quantum Error Correction with Boundary-Connected Planar Modules</title>
+    <updated>2026-10-02T17:48:44Z</updated>
+    <link href="https://arxiv.org/abs/2610.03682v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.03682v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Realizing practical quantum computers requires quantum error correction, but the most widely implemented approach, the planar surface code, demands a substantial physical qubit overhead. Here, we demonstrate that partitioning quantum processors into manageable, flat modules with non-local inter-module connections provides a natural solution. By wiring sparse, static boundary connections between Euclidean planar modules, we construct modular hyperbolic surface and color codes, based on new families of semi-hyperbolic codes. Using modular syndrome extraction circuits and efficient neural network and matching decoders, our circuit-level simulations show that this modular memory design can reduce the physical qubit overhead by tenfold or more compared to the surface code, even under elevated inter-module seam error rates. Projecting to larger system sizes, we find modular codes with encoding rate $k/n=1/16$ and distance $d\geq 22$, exceeding both the rate and distance of the $[[288,12,18]]$ two-gross bivariate bicycle code while using mostly nearest-neighbor gates within planar modules, and implying an over $30\times$ overhead reduction relative to surface codes. We develop fault-tolerant walking circuits for implementing logic via code automorphisms, which we co-design with low-weight, highly symmetrical logical bases and a modular extractor system that is $\approx 4.5\times$ smaller than the code itself. Combining these methods, our modular memory can be used as dense storage in a universal fault-tolerant architecture, unlocking the efficiency of high-rate codes without sacrificing the fabrication advantages of planar modules.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T17:48:44Z</published>
+    <arxiv:comment>112 pages, 73 figures, 20 tables (19 pages main text and Methods; 93 pages Supplementary Information)</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Oscar Higgott</name>
+    </author>
+    <author>
+      <name>Hasan Sayginel</name>
+    </author>
+    <author>
+      <name>Francisco J. H. Heras</name>
+    </author>
+    <author>
+      <name>Zhiyang He</name>
+    </author>
+    <author>
+      <name>Tomas Jochym-O'Connor</name>
+    </author>
+    <author>
+      <name>Andrew W. Senior</name>
+    </author>
+    <author>
+      <name>Lei M. Zhang</name>
+    </author>
+    <author>
+      <name>Thomas Edlich</name>
+    </author>
+    <author>
+      <name>James S. Spencer</name>
+    </author>
+    <author>
+      <name>Matt McEwen</name>
+    </author>
+    <author>
+      <name>Craig Gidney</name>
+    </author>
+    <author>
+      <name>Johannes Bausch</name>
+    </author>
+    <author>
+      <name>Pushmeet Kohli</name>
+    </author>
+    <author>
+      <name>Hartmut Neven</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.03677v1</id>
+    <title>Exact Recovery for Non-Abelian Surface Codes</title>
+    <updated>2026-10-02T17:45:14Z</updated>
+    <link href="https://arxiv.org/abs/2610.03677v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.03677v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study exact recovery for non-Abelian topological surface codes based on the quantum double $D(G)$ of any finite group $G$. We determine an orthogonal error basis, that is comprised of group multiplication and irreducible representation operators. Whenever the errors are supported on closed loops on the lattice or dual lattice, there is a redundancy in the basis, due to stabilizers. To remedy this, we introduce a gauge-fixing that results in a complete and orthogonal error basis on the code space. Assuming as input predetermined, neutral correctable error clusters, we construct charge and flux transfer circuits that move the errors onto ancillas that then get projected out. This is an exact and deterministic recovery protocol, applicable to surface codes for any finite, in particular non-Abelian, group $G$.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.str-el" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.QA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T17:45:14Z</published>
+    <arxiv:comment>22 pages</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Alison Warman</name>
+    </author>
+    <author>
+      <name>Nathanan Tantivasadakarn</name>
+    </author>
+    <author>
+      <name>Sakura Schafer-Nameki</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.03399v1</id>
+    <title>Optimizing quantum error correction through error attribution</title>
+    <updated>2026-10-02T14:47:36Z</updated>
+    <link href="https://arxiv.org/abs/2610.03399v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.03399v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Logical error rate is a standard benchmark for quantum error correction, providing an aggregate measure of the overall effect of physical noise. In actual QEC architectures, errors at different circuit locations can have markedly different effects on logical failure even when their probabilities are equal. Here we introduce an error attribution scheme to quantitatively characterize the influence of individual circuit components on the logical error rate and use this refined information to guide targeted intervention and design for improved QEC performance. Our attribution estimator computes all component sensitivities jointly from the same Monte Carlo samples used to estimate the logical error rate. The resulting sensitivity maps identify hotspots where targeted noise reduction can most effectively improve logical performance. We test the scheme in circuit simulations of rotated surface code memories and high-rate lifted product codes: halving the noise strength on about 5\%-7\% of physical components selected by sensitivity reduces logical error rates by approximately 15\%-25\%, roughly twice the mean reduction from the same intervention on an equal number of randomly selected components. By connecting performance benchmarking to targeted optimization, our scheme provides a practical strategy for improving quantum error correction with limited resources.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T14:47:36Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Yuguo Shao</name>
+    </author>
+    <author>
+      <name>Zi-Wen Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.03318v2</id>
+    <title>Beyond Pure Dephasing: Quantum Error Correction in Single Molecules Requires Multiple Spins</title>
+    <updated>2026-10-07T12:30:19Z</updated>
+    <link href="https://arxiv.org/abs/2610.03318v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.03318v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We propose multi-spin molecules as a viable architecture for fault-tolerant quantum computing. To this aim, we introduce a correction protocol handling both diagonal and off-diagonal errors, typically associated with dephasing and relaxation. The scheme is based on a hybrid encoding which combines dephasing-tolerant units suppressing the leading pure dephasing error into a multi-spin molecule implementing a multi-qubit code for residual off-diagonal errors. Our proposal leverages peculiar properties of molecular spins, i.e. the strong hierarchy between different errors and the possibility to engineer multi-spin molecules at the synthetic level. Moreover, it addresses the important issue of the loss of coherences in anharmonic systems subject to off-diagonal errors, which hampers their correction at the single spin level. Thanks to the huge suppression of dephasing by the first-level code, we numerically demonstrate the potential performance of this strategy even with a limited number of spins per logical unit.</summary>
+    <category term="cond-mat.mes-hall" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.mtrl-sci" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T13:54:04Z</published>
+    <arxiv:primary_category term="cond-mat.mes-hall"/>
+    <author>
+      <name>Matteo Mezzadri</name>
+    </author>
+    <author>
+      <name>Silvia Macedonio</name>
+    </author>
+    <author>
+      <name>Luca Lepori</name>
+    </author>
+    <author>
+      <name>Emilio Macaluso</name>
+    </author>
+    <author>
+      <name>Francesco Albarelli</name>
+    </author>
+    <author>
+      <name>Richard E. P. Winpenny</name>
+    </author>
+    <author>
+      <name>Alessandro Chiesa</name>
+    </author>
+    <author>
+      <name>Stefano Carretta</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.03214v2</id>
+    <title>Quantum error-correcting code parameters, checkable by a certificate of provable size</title>
+    <updated>2026-10-05T18:49:04Z</updated>
+    <link href="https://arxiv.org/abs/2610.03214v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.03214v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Quantum error correction protects quantum information by encoding it in a code described by three numbers: how many physical qubits it uses, how many logical qubits it protects, and the smallest error it cannot detect. The last is an optimum over exponentially many candidates, so it is read off a solver rather than checked. Here we show that code parameters can be certified by a short certificate, a list or a pairing or a symbolic instance, whose correctness the kernel of a proof assistant decides by computation, and whose size is itself a theorem rather than an estimate. Two published code families have distances settled here: the bivariate bicycle code's $[[144,12,12]]$, certified, and the affine-permutation codes printed at $[[1152,580,\le 12]]$ and $[[2304,1156,\le 14]]$, settled at twelve and fourteen. Eleven code families and thirty-nine parameter sets follow, with nothing beyond three standard axioms trusted and the pipeline's specification step preset to twenty columns.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T12:31:45Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Shuoming An</name>
+    </author>
+    <author>
+      <name>Fusheng Yang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.02786v1</id>
+    <title>Quantum Error-Corrected Memories Keep Proper Time</title>
+    <updated>2026-10-02T04:20:47Z</updated>
+    <link href="https://arxiv.org/abs/2610.02786v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.02786v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>What does quantum error correction do to relativistic proper time? We show that when two error-corrected quantum memories follow distinct worldlines and are controlled by local references, their local correction histories factor exactly from the proper-time difference between them. Error correction therefore does not erase time dilation: when the memories are compared, the accumulated difference appears as a relational phase rotation. During locally referenced operation this rotation is invisible to every local error syndrome; at discrete phases admitted by a code, the final relational evolution instead returns exactly as a deterministic logical gate, including an $S$-type Clifford gate at a $π/2$ excursion. These results connect fault-tolerant quantum information with relativistic clocks and establish protected quantum memories as a platform for preserving proper-time information and for long-coherence tests of quantum evolution involving relativistic proper time.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T04:20:47Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Sebastian P. Kish</name>
+    </author>
+    <author>
+      <name>Simon J. Devitt</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.02734v1</id>
+    <title>SMP: A General Hyperedge-Based Framework for Circuit-Level Quantum Error Correction</title>
+    <updated>2026-10-02T03:07:44Z</updated>
+    <link href="https://arxiv.org/abs/2610.02734v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.02734v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Hyperedge faults remain a major challenge in circuit-level quantum error correction. Accurately exploiting hyperedge correlations often requires substantial computational resources, which complicates real-time decoding. Matching-based decoders are fast and scalable, but their pairwise graph representation limits the use of higher-order fault information. Here, we introduce Syndrome Motif Projection (SMP), a general framework for incorporating hyperedge information into matching-based decoding. The key idea is that a hyperedge fault produces a characteristic local syndrome motif. Observing such a motif provides evidence for the corresponding fault. SMP extracts this information directly from the measured syndrome with linear-complexity preprocessing while preserving the matching backend. It can therefore serve as a lightweight front end to existing scalable and real-time matching decoders. We demonstrate SMP across surface code memories, color code memories, and logical gate circuits. On Google's Willow experimental surface code data, SMP improves both standard and correlated matching and outperforms the tested belief matching baseline. For color code memories, SMP combined with Chromobius reduces logical failure probabilities by up to 77.8\%. For logical gate circuits, SMP reduces the failure probability of a six-CNOT circuit by 35.5\% relative to logical observable matching while achieving performance comparable to iterative belief matching. These results demonstrate that SMP provides a lightweight and transferable approach to hyperedge decoding, with a clear path toward integration into scalable real-time decoding architectures for fault-tolerant quantum computation.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-02T03:07:44Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Siying Wang</name>
+    </author>
+    <author>
+      <name>Yue Yan</name>
+    </author>
+    <author>
+      <name>Zhixin Xia</name>
+    </author>
+    <author>
+      <name>Canwei Shi</name>
+    </author>
+    <author>
+      <name>Hannuo Yuan</name>
+    </author>
+    <author>
+      <name>Xiang-Bin Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.02310v1</id>
+    <title>Homological Thresholds in Randomly Monitored Quantum Error-Correcting Codes</title>
+    <updated>2026-10-01T18:00:01Z</updated>
+    <link href="https://arxiv.org/abs/2610.02310v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.02310v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Random projective measurements are an effective tool to model the interlinked phenomenology of monitoring, inferring, and decoding highly entangled states such as quantum error-correcting codes. At the same time, the study of such monitored dynamics has opened a new arena for critical phenomena, renewing longstanding questions in disordered statistical mechanics, including percolation, random-bond models, and Nishimori physics. Here we investigate the robustness of stabilizer quantum error-correcting codes under a single round of independently sampled single-qubit Pauli measurements and demonstrate that their threshold behavior falls into two broad categories - geometric and homological percolation transitions, with the toric code and color code being the principal examples for each class. We establish the distinct character of these two threshold theories by analyzing the logical-support criteria of these codes and by providing numerical estimates of their respective critical exponents obtained from optimized stabilizer simulations of large-scale systems with over one million qubits. Our framework extends to non-CSS, subsystem, higher-dimensional, and Floquet stabilizer codes and allows us to determine their respective threshold phase diagrams. We exemplify how the latter provide quantitative and qualitative guidance for the computationally more demanding problems of tunable learning and maximum-likelihood decoding. As a practical application of our framework, we discuss the robustness of the gross code.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.stat-mech" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-01T18:00:01Z</published>
+    <arxiv:comment>22 pages, 14 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Yoshito Watanabe</name>
+    </author>
+    <author>
+      <name>Daiki Sasamoto</name>
+    </author>
+    <author>
+      <name>Bo Han</name>
+    </author>
+    <author>
+      <name>Simon Trebst</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.02168v1</id>
+    <title>A baby universe from a large family: booklet cosmology states and quantum error correction</title>
+    <updated>2026-10-01T17:55:46Z</updated>
+    <link href="https://arxiv.org/abs/2610.02168v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.02168v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We propose an extension of the cosmological-state construction of Antonini, Sasieta and Swingle (AS$^2$) to three or more holographic CFTs. Each CFT resides on the asymptotic boundary of an AdS page, and all pages are glued along a common interface by imposing the multiway junction conditions. The associated states are prepared by Euclidean evolution with a multilinear insertion. In appropriate heavy insertion limit the bulk geometry develop a closed universe in the center and we refer the state in this limit as a booklet cosmological state. Extending the effective Gaussian assumption used in AS$^2$, we model the three-page insertion by a circular complex Gaussian random tensor, yielding a tripartite Haar state in flat energy windows. In this Gaussian model of the cosmology-to-boundary map, each arm is a network branch associated with one boundary CFT. In the simplest example of three pages with three equal output Hilbert-space dimension $b$, we show that a prescribed code of dimension $K$ is approximately recoverable from any two arms, with vanishing error and high probability as $K/b\to0$.</summary>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-01T17:55:46Z</published>
+    <arxiv:primary_category term="hep-th"/>
+    <author>
+      <name>Jingshu Dai</name>
+    </author>
+    <author>
+      <name>Binye Dong</name>
+    </author>
+    <author>
+      <name>Cheng Peng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.00504v1</id>
+    <title>Graph Neural Post-selection for Quantum Error Correction</title>
+    <updated>2026-09-30T18:04:38Z</updated>
+    <link href="https://arxiv.org/abs/2610.00504v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.00504v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Post-selection improves the logical reliability of quantum computation by rejecting shots which are likely to result in logical failure. We introduce graph neural networks that predict decoder failure without additional decoder executions, using only syndromes, and for high-rate quantum low-density parity-check (qLDPC) codes, existing belief-propagation posteriors. We evaluate rotated surface and bivariate bicycle (BB) code memories under uniform depolarising circuit-level noise. Retaining 90% of shots gives approximately 3700x and 740x reductions in logical error rates for [[72,12,6]] and [[144,12,12]] BB codes at realistic physical error rates. For the distance 5 surface code at physical noise p=0.003, our neural post-selector achieves logical error suppression comparable to the leading complementary gap method without running the decoder.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T18:04:38Z</published>
+    <arxiv:comment>19 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Conor Carty</name>
+    </author>
+    <author>
+      <name>Tamas Noszko</name>
+    </author>
+    <author>
+      <name>Joschka Roffe</name>
+    </author>
+    <author>
+      <name>Roberto Bondesan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.40279v1</id>
+    <title>Classical simulation of coherent crosstalk in surface codes</title>
+    <updated>2026-09-30T17:46:49Z</updated>
+    <link href="https://arxiv.org/abs/2609.40279v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.40279v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We give a polynomial-time classical algorithm which samples from the syndrome distribution of a surface code state corrupted by coherent nearest-neighbor $ZZ$ crosstalk. Our algorithm complements the known efficient simulation algorithms for coherent single-qubit errors in the surface code. When both single-qubit coherent noise and coherent crosstalk are present, we find a complexity-theoretic obstruction to efficient simulation: unless the polynomial hierarchy collapses, there is no efficient classical algorithm for sampling from the syndrome distribution, even up to a constant multiplicative error. This is obtained by connecting the syndrome distribution under coherent noise to the output distribution of certain IQP circuits associated with a non-planar graph.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T17:46:49Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Andrew S. Darmawan</name>
+    </author>
+    <author>
+      <name>Yelyzaveta Kolesnyk</name>
+    </author>
+    <author>
+      <name>Robert Koenig</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.39764v1</id>
+    <title>Measurement and feedforward circuits from quantum error correcting codes</title>
+    <updated>2026-09-30T13:57:26Z</updated>
+    <link href="https://arxiv.org/abs/2609.39764v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.39764v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Measurements and feedforward enhance the power of shallow quantum circuits, enabling the deterministic implementation of global unitary operations and the preparation of long-range entangled states. We establish a general correspondence between all such protocols and quantum error-correcting codes: the circuit preceding the measurements acts as an encoder, and unitary feedforward can eliminate post-selection if and only if the measurement projectors are detectable errors on the codespace. This correspondence provides a common framework for state preparation and implementation of global unitaries with measurements and feedforward, turning both into a code-design problem. For stabilizer codes with Pauli measurements, although the resulting operation can be non-Clifford, we show that its nonstabilizerness originates entirely from the encoder. We overcome this restriction using non-Pauli measurements or non-additive codes, constructing protocols that generate long-range nonstabilizerness while requiring only single-qubit unitary corrections.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T13:57:26Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Georgios Styliaris</name>
+    </author>
+    <author>
+      <name>Rahul Trivedi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.39597v1</id>
+    <title>Thermodynamics of Ahn--Doherty--Landahl Continuous Quantum Error Correction</title>
+    <updated>2026-09-30T12:19:10Z</updated>
+    <link href="https://arxiv.org/abs/2609.39597v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.39597v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Continuous quantum error correction (CQEC) replaces discrete syndrome measurements and recovery operations with continuous syndrome extraction and real-time Hamiltonian feedback. Here we investigate the thermodynamic resources required by this process by formulating measurement-based continuous quantum error correction as an information engine. We distinguish the system-side power associated with energy transfer between the feedback field and the protected system from the controller-side power associated with the feedback Hamiltonian. The framework is first developed for the one-qubit Ahn-Doherty-Landahl (ADL) protocol and subsequently extended to the three-qubit repetition code under continuous stabilizer monitoring. Numerical simulations show that increasing the feedback strength improves the steady-state fidelity and reduces the conditional-state entropy, while both energetic contributions continue to increase in magnitude after the fidelity begins to saturate. These results expose a direct tradeoff between logical stabilization and the energetic resources required for continuous feedback, closely related to previously established energy--precision tradeoffs in quantum measurement and quantum-Zeno stabilization.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T12:19:10Z</published>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Juan Garcia-Nila</name>
+    </author>
+    <author>
+      <name>Pedro B. Melo</name>
+    </author>
+    <author>
+      <name>Lucas Johns</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.39016v1</id>
+    <title>Entropy threshold: A simple proxy for performance of quantum error correction</title>
+    <updated>2026-09-30T05:22:10Z</updated>
+    <link href="https://arxiv.org/abs/2609.39016v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.39016v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rapidly growing landscape of quantum error-correction (QEC) protocols has produced a wealth of numerical data, but comparatively few heuristics for understanding and predicting their performance. Here, we develop a simple entropy-based proxy that predicts the thresholds of a variety of QEC protocols, ranging from the code-capacity setting of Clifford-deformed surface codes with biased Pauli or erasure noise to the circuit-level noise model of the surface or color codes with flag qubits. Our proxy estimates the threshold by locally comparing the noise entropy with the error information gained via stabilizer measurements (or spacetime detectors and flag outcomes in the circuit-level settings). Despite neglecting correlations between stabilizer outcomes and the contribution from code degeneracy, the proxy captures the main trends across diverse settings and yields threshold estimates in good agreement with numerical results. Our work develops much-needed phenomenology that enables simple back-of-the-envelope estimates of QEC performance, recovering and providing an explanation for the results of computationally intensive detailed simulations.</summary>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T05:22:10Z</published>
+    <arxiv:comment>14 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="quant-ph"/>
+    <author>
+      <name>Diego Ruiz</name>
+    </author>
+    <author>
+      <name>Aleksander Kubica</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.38129v1</id>
+    <title>Conservation-Syndrome Quantum Error Correction for Lattice-Boltzmann Quantum Algorithms</title>
+    <updated>2026-09-29T17:52:39Z</updated>
+    <link href="https://arxiv.org/abs/2609.38129v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.38129v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reliable multistep quantum lattice-Boltzmann evolution requires controlling computational faults. When ideal collision preserves encoded mass and momentum exactly, changes in those charges can provide syndromes for selected faults at the post-collision checkpoint. A fault that shifts one population then leaves a unique mass-momentum residual labeled by the lattice velocity. A coherent reference register stores the expected charges, so the same test remains valid while the physical fluid charges vary across the lattice. Single bit flips on population number registers occupy disjoint syndrome sectors and satisfy the Knill-Laflamme condition. A state-vector demonstration on eighteen data qubits of the two-dimensional nine-velocity lattice (D2Q9) recovers that single-bit family to double-precision roundoff. Conservation still leaves a fifteen-dimensional kinetic nullspace on the three-dimensional nineteen-velocity lattice (D3Q19). Exact multiple-relaxation-time (MRT) streaming analysis ranks those charge-preserving modes by the order at which they return to density or momentum. A classical D3Q19 decaying-flow simulation at moderate Reynolds number then injects about $1.75\times10^4$ selected single-population shifts per realization. Recovery of that alphabet returns the trajectory to floating-point roundoff. The quantum statements assume an ideal charge-preserving collision and a reliable reference. The result is an inner recovery map for a stated charge-changing alphabet together with a kinetic classification of the unresolved sector.</summary>
+    <category term="physics.comp-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T17:52:39Z</published>
+    <arxiv:comment>21 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="physics.comp-ph"/>
+    <author>
+      <name>Muhammad Idrees Khan</name>
+    </author>
+  </entry>
+</feed>

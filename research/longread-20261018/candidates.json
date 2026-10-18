@@ -1,0 +1,2199 @@
+[
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2610.20720v1",
+    "title": "Nonlocal Gravity, Restricted CPL Dynamics and DESI Constraints",
+    "published": "2026-10-14T18:00:03Z",
+    "updated": "2026-10-14T18:00:03Z",
+    "summary": "Nonlocal modifications of gravity provide a theoretically motivated framework in which cosmic acceleration can emerge dynamically without introducing a fundamental cosmological constant. We revisit the cosmological predictions of the Maggiore--Mancarella nonlocal $R\\,\\Box^{-2}R$ model, with particular emphasis on its background dynamics and observational viability in light of recent DESI baryon acoustic oscillation measurements. A key feature of the theory is its predictive character: for fixed standard cosmological parameters, each value of the nonlocal parameter determines a specific effective pair $(w_0,w_a)$, so that the model traces a restricted trajectory in the Chevallier--Polarski--Linder plane rather than spanning the full phenomenological parameter space. We construct this mapping explicitly and confront the model with observations by implementing its cosmological dynamics in a Boltzmann solver and performing a Markov chain Monte Carlo analysis using Cosmic Microwave Background, supernova, and DESI BAO data. We find that current datasets constrain the nonlocal parameter close to the $Λ$CDM limit, with no statistically significant preference for nonlocal deviations.",
+    "authors": [
+      "Luca Amendola",
+      "Ismael Ayuso",
+      "Amlan Chakraborty",
+      "Javier Rubio",
+      "Subinoy Das"
+    ],
+    "categories": [
+      "astro-ph.CO",
+      "gr-qc"
+    ],
+    "url": "https://arxiv.org/abs/2610.20720v1",
+    "pdf": "https://arxiv.org/pdf/2610.20720v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2610.20716v1",
+    "title": "The unified Bound Dark Energy--Bound Dark Matter model: theory and constraints from DESI DR2",
+    "published": "2026-10-14T18:00:02Z",
+    "updated": "2026-10-14T18:00:02Z",
+    "summary": "The unified Bound Dark Energy--Bound Dark Matter (BDE-BDM) model derives both the dark energy and the whole of the dark matter from a single supersymmetric $SU(3)$ gauge group with $N_f=6$ flavors. Gauge-coupling unification predicts the scale at which it condenses, $\\Lc=34^{+16}_{-11}$~eV, before any cosmological data are used, so the dark-energy sector adds no parameter to those of \\LCDM\\ and the dark-matter sector adds only one. Fitting DESI DR2 BAO, Planck CMB, Planck+ACT DR6 CMB lensing, and three supernova compilations (PantheonPlus, Union3.1, DES-Dovekie) gives, for Union3.1, $\\Lc=43.67\\pm0.13$~eV, inside the predicted range: a high-energy prediction met by a late-time measurement. The equation of state evolves to $w_0=-0.9262\\pm0.0005$ and never crosses the phantom divide. Relative to \\LCDM\\ the model lowers the DESI BAO $χ^2$ by $2.95$--$3.67$ and the supernova $χ^2$ by $2.53$--$4.07$, recovering $57\\%$--$71\\%$ of the total reduction that \\wowa\\ obtains by fitting two dark-energy parameters to the same data, and reaching the lower BAO $χ^2$ of the two models for two of the three compilations. Its $Δ\\mathrm{DIC}$ against \\LCDM\\ is strong for every compilation, $-8.28$ to $-7.47$, varying by $0.81$ where that of \\wowa\\ varies by $4.8$. Because the dark-energy sector adds no parameter to those of \\LCDM, the likelihood gain survives the Occam penalty: $\\ln B=+4.09$, $+4.12$, and $+4.83$ against \\LCDM, where \\wowa\\ gives $-2.11$, $-0.26$, and $-0.56$. Among six models pairing a cosmological constant, the \\wowa\\ parametrization or bound dark energy with cold or bound dark matter, BDE-BDM has the largest Bayesian evidence.",
+    "authors": [
+      "Jose Agustin Lozano Torres",
+      "Axel de la Macorra"
+    ],
+    "categories": [
+      "astro-ph.CO"
+    ],
+    "url": "https://arxiv.org/abs/2610.20716v1",
+    "pdf": "https://arxiv.org/pdf/2610.20716v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2610.20002v1",
+    "title": "Testing Departures from the $Λ$CDM model in f(T) Gravity with DESI DR2",
+    "published": "2026-10-14T11:19:25Z",
+    "updated": "2026-10-14T11:19:25Z",
+    "summary": "Recent analyses combining DESI baryon acoustic oscillation (BAO) measurements with other cosmological observations have reported indications of departures from the $Λ$CDM model within dynamical dark energy scenarios. We investigate whether such deviations are reproduced consistently in $f(T)$ gravity and whether they persist when different cosmological observations are combined. Using the DESI DR2 BAO measurements, Cosmic Microwave Background (CMB), and Pantheon+ Type Ia Supernovae (SNe Ia) sample, we constrain three representative $f(T)$ models: the power-law, exponential, and hyperbolic-tangent models. We compare the constraints obtained from different combinations of data, distinguishing changes in marginalized parameter distributions from changes in the relative statistical performance of the models. For the power-law model, the mild deviation from the $Λ$CDM model obtained from BAO+CMB disappears after the SNe Ia data are included. In contrast, the exponential model retains a preference for a nonzero deformation parameter in the full analysis, while the allowed parameter space of the hyperbolic-tangent model changes substantially after the CMB distance priors are included. Importantly, the parameter-level deviation found for the exponential model does not lead to a clear statistical preference over the $Λ$CDM model according to the information criteria, whereas the hyperbolic-tangent model shows a poorer statistical performance for the combined data. Despite these differences in the model constraints, the inferred transition redshift $z_T$ remains relatively stable among the three models and data combinations. Our results show that the departures from the $Λ$CDM model indicated by DESI analyses are not a generic feature of $f(T)$ gravity, but depend strongly on the specific modified gravity parameterization and on the combination of cosmological observations.",
+    "authors": [
+      "Jie Zheng",
+      "Mingzhi Wang",
+      "Ming Zhang"
+    ],
+    "categories": [
+      "astro-ph.CO"
+    ],
+    "url": "https://arxiv.org/abs/2610.20002v1",
+    "pdf": "https://arxiv.org/pdf/2610.20002v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2610.16536v1",
+    "title": "CosmoAgent: AI Agent for Theoretical Cosmology",
+    "published": "2026-10-12T10:23:08Z",
+    "updated": "2026-10-12T10:23:08Z",
+    "summary": "We present CosmoAgent, an agentic AI framework using large language models (LLMs) to search for dark-energy and modified-gravity models. We define a covariant grammar that allows LLM agents to explore the space of modified-gravity Lagrangians. An in-house computational pipeline derives the equations of motion, solves the background dynamics, and evaluates the likelihood using late-time expansion data, including the DES 5-year type Ia supernova sample and the DESI Data Release 2 BAO measurements. Theories are ranked by the Akaike Information Criterion (AIC) to balance simplicity and likelihood. We benchmarked 8 frontier LLMs from ChatGPT, Claude, Gemini, Kimi, DeepSeek, and Qwen, and all LLMs are able to find theories with a lower nominal AIC than flat $Λ$CDM, with a best improvement of $Δ$AIC = -3.328. Seven recover quadratic quintessence. Exploratory searches also return induced-gravity and scalar-Gauss-Bonnet structures. The modest AIC improvements do not establish an observational preference for these models over flat $Λ$CDM. The code is publicly available at wsunamoutlook-prog/AI-Modified-Gravity.",
+    "authors": [
+      "Stephon Alexander",
+      "Loukas Gouskos",
+      "Savvas M. Koushiappas",
+      "Cooper Niu",
+      "Wenrong Sun"
+    ],
+    "categories": [
+      "astro-ph.CO",
+      "gr-qc"
+    ],
+    "url": "https://arxiv.org/abs/2610.16536v1",
+    "pdf": "https://arxiv.org/pdf/2610.16536v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2610.14354v1",
+    "title": "No-Go Theorem for Phantom Crossing in Scalar-Tensor Gravity with Non-Minimal Derivative Coupling and Soft Scale-Invariance Breaking",
+    "published": "2026-10-09T21:58:44Z",
+    "updated": "2026-10-09T21:58:44Z",
+    "summary": "Recent baryon acoustic oscillation measurements from the Dark Energy Spectroscopic Instrument (DESI 2024) reveal a preference for dynamical dark energy with an equation of state parameter crossing the phantom divide ($w < -1$) at low redshifts. We investigate whether this phantom crossing can be realized within scale-invariant scalar-tensor theories featuring non-minimal derivative coupling (NMDC) between the scalar field and the Einstein tensor. Employing the effective field theory of dark energy formalism, we systematically derive the ghost-free and gradient stability conditions, and examine their compatibility with the swampland conjectures from quantum gravity. We establish three rigorous no-go theorems demonstrating that: (i)~phantom crossing necessitates $ξ_{\\text{eff}} < 0$, directly violating the no-ghost stability requirement $ξ_{\\text{eff}} > 0$; (ii)~the swampland de Sitter and distance conjectures independently obstruct phantom crossing; and (iii)~these theoretical obstructions are mutually reinforcing. Our results show that scale-invariant NMDC models cannot account for the DESI preference for $w < -1$, providing robust theoretical guidance for dark energy model building beyond this class.",
+    "authors": [
+      "Reza Baghbani"
+    ],
+    "categories": [
+      "gr-qc"
+    ],
+    "url": "https://arxiv.org/abs/2610.14354v1",
+    "pdf": "https://arxiv.org/pdf/2610.14354v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2610.13739v1",
+    "title": "Relaxation Dark Energy: Compositional Dynamics and the Future of Cosmic Acceleration",
+    "published": "2026-10-09T15:33:40Z",
+    "updated": "2026-10-09T15:33:40Z",
+    "summary": "If cosmic acceleration is driven by a positive cosmological constant, the universe approaches an eternally accelerating de Sitter state, whose interpretation in quantum gravity remains elusive. We develop a framework in which acceleration is instead a transient stage of dark-sector relaxation towards compositional equilibrium: matter and dark energy approach a stationary density ratio, eventually diluting like pressureless matter. Guided by linear response theory and Onsager's near-equilibrium regression hypothesis, we describe this evolution through a composition variable measuring departure from equilibrium. Extending constant fractional relaxation to the full background evolution yields the dark-energy equation of state $w=w_0a^{-n}$, where $n$ is the relaxation rate per e-fold of expansion. This history connects early dark-energy suppression, an upward phantom crossing and a density maximum to a pressureless scaling future. Using DESI DR2 BAO and Planck distance priors, with and without three alternative supernova compilations, we find a nominal $2.6$--$3.6σ$ preference for nonzero relaxation over constant $w$. The composition framework also motivates a constitutive prescription for linear perturbations that remains regular at phantom crossing. Near equilibrium, regular long-wavelength composition disturbances relax at the background rate to leading order, while small-scale fluctuations propagate as damped sound waves. We prove, however, that for separately conserved matter and dark energy, the pointwise constitutive relation cannot sustain a regular, gradient-stable negative-pressure branch throughout its full past evolution. We explore modifications of the pressure response and their consistency with neighbouring homogeneous histories, identifying requirements for extending the near-equilibrium description to the full cosmological evolution.",
+    "authors": [
+      "Gianmassimo Tasinato"
+    ],
+    "categories": [
+      "astro-ph.CO",
+      "hep-th"
+    ],
+    "url": "https://arxiv.org/abs/2610.13739v1",
+    "pdf": "https://arxiv.org/pdf/2610.13739v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2610.13218v1",
+    "title": "The Population of Type~1 Active Galactic Nuclei in Dark Energy Spectroscopic Instrument. I. Profile-dependent Measurements of the Low-redshift Sample",
+    "published": "2026-10-09T08:35:26Z",
+    "updated": "2026-10-09T08:35:26Z",
+    "summary": "We present a spectral analysis of a large sample of low-redshift type 1 active galactic nuclei (AGNs) selected from the first data release of the Dark Energy Spectroscopic Instrument (DESI DR1). For objects at $z\\le0.9$, we perform spectral fitting and ML-assisted refinement, yielding 114,754 type 1 AGNs. We use two fitting schemes that differ only in the broad-line model: the broad Balmer components are fitted with either a Lorentzian function or a sum of Gaussians. The continuum and [O III] luminosity measurements agree closely between the two schemes, whereas the Gaussians scheme generally yields larger broad-H$β$ full width at half maximum (FWHM) values, larger virial black hole masses, and lower accretion rates. The adopted broad-Balmer profile also changes the decomposition of narrow Balmer emission. Specifically, the anti-correlation between [O III]$\\lambda5007$/narrow H$β$ and accretion rate is stronger under the Gaussians scheme with a Spearman rank correlation coefficient $r_{\\rm s}=-0.412$, than under the Lorentzian scheme with $r_{\\rm s}=-0.206$; the same tendency is observed in the narrow-line Seyfert 1 galaxies (NLS1s) subset ($r_{\\rm s}=-0.435$ and $-0.259$ for the Gaussians and Lorentzian schemes, respectively), suggesting that the Gaussians scheme may provide a more self-consistent separation of the broad and narrow H$β$ components. Moreover, the consistent correlations recovered under both profile prescriptions favor a continuous type 1 accretion-state sequence, with NLS1s occupying its high-accretion end rather than constituting a distinct population.",
+    "authors": [
+      "Zhu-Heng Yao",
+      "Wei-Jian Guo",
+      "Shuo Zhai",
+      "Yu-Chang Li",
+      "Cheng Cheng",
+      "Jun-Rong Liu",
+      "Shuang Jin",
+      "Antonios Katsianis",
+      "Jing Wang",
+      "Da-Wei Xu",
+      "Jian-Yan Wei"
+    ],
+    "categories": [
+      "astro-ph.GA"
+    ],
+    "url": "https://arxiv.org/abs/2610.13218v1",
+    "pdf": "https://arxiv.org/pdf/2610.13218v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2610.11616v1",
+    "title": "Holographic dark energy from generalized entropies and extended infrared cut-offs",
+    "published": "2026-10-08T09:57:03Z",
+    "updated": "2026-10-08T09:57:03Z",
+    "summary": "We study holographic dark energy models constructed from generalized entropy functionals and local infrared cut-offs. Three entropies (Barrow and the three and five-parameter generalized entropies) are each combined with the Granda-Oliveros (GO) cut-off and two extensions, one adding a $γH^{-2}$ term and one a $γ\\ddot{H}/H$ term, the latter raising the dark-energy evolution equation to second order. The nine resulting models are constrained against DESI DR2 BAO, Pantheon+ and a Planck compressed CMB likelihood through an MCMC analysis, and compared using the Akaike and Bayesian information criteria. The Hubble constant is stable across all models. The $H^{-2}$ term is unconstrained in every case, as it becomes relevant only in the far future, and never improves on the GO cut-off. The $\\ddot{H}/H$ term, instead, is tightly constrained for Barrow and $S_5$, where it improves the fit substantially, but not for $S_3$. The best fit is obtained for Barrow entropy with the $\\ddot{H}/H$ cut-off, yet the Barrow exponent remains compatible with zero in all cases. The data thus favour a higher-order infrared cut-off, while showing no significant evidence for a departure from the Bekenstein-Hawking area law. We also investigate the dark energy equation of state (EoS) of $S_3$ and $S_5$, discovering quintessence-like behavior and phantom crossing.",
+    "authors": [
+      "Ke Chen",
+      "Simone D'Onofrio",
+      "Sergei D. Odintsov",
+      "Tanmoy Paul"
+    ],
+    "categories": [
+      "gr-qc",
+      "astro-ph.CO",
+      "hep-th"
+    ],
+    "url": "https://arxiv.org/abs/2610.11616v1",
+    "pdf": "https://arxiv.org/pdf/2610.11616v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2610.10331v1",
+    "title": "Changing-look Active Galactic Nuclei from the Dark Energy Spectroscopic Instrument. VII. Testing Disk-Corona Diagnostics with eROSITA",
+    "published": "2026-10-07T16:15:02Z",
+    "updated": "2026-10-07T16:15:02Z",
+    "summary": "Changing-look active galactic nuclei (CL-AGN) have been proposed to follow an X-ray-binary-like, V-shaped relation between the optical/ultraviolet-to-X-ray spectral slope, $α_{\\rm OX}$, and the Eddington ratio, $λ_{\\rm Edd}\\equiv L_{\\rm bol}/L_{\\rm Edd}$. We test this interpretation using CL-AGN selected from the Dark Energy Spectroscopic Instrument (DESI) and control samples matched to the eROSITA all-sky survey (eRASS). We find that the apparent positive correlation between $α_{\\rm OX}$ and the optical-continuum-based Eddington ratio, $λ_{\\rm Edd,opt}$, is not unique to CL-AGN, but also appears in matched non-changing-look samples. In broad-H$α$ AGN, our main statistical sample, this structure is largely driven by the known dependence of $α_{\\rm OX}$ on ultraviolet luminosity and by the covariance between the rest-frame 2500 Angstrom luminosity, $L_{2500}$, the black-hole mass, $M_{\\rm BH}$, and $λ_{\\rm Edd,opt}$. When an X-ray-based Eddington ratio is used instead, the relation reverses sign because the X-ray luminosity, $L_X$, enters the two axes with opposite signs. An apparent $α_{\\rm OX}$-Eddington-ratio V-shape can therefore be induced by the luminosity estimator and is not a standalone accretion-state diagnostic. As a complementary test, we examine the eRASS effective photon index, $Γ_{\\rm eff}$, inferred from catalogue band fluxes. In broad-line AGN, it shows a weak positive association with the X-ray-independent optical Eddington ratio. However, the weaker hard-band trend depends on the null model and does not isolate coronal softening. These results motivate further X-ray spectroscopy, combined with independently estimated Eddington ratios, to test for intrinsic changes in the disk-corona system.",
+    "authors": [
+      "Wei-Jian Guo",
+      "Shuo Zhai",
+      "Zhu-Heng Yao",
+      "Huaqing Cheng",
+      "Jingwei Hu",
+      "Jun-Jie Jin"
+    ],
+    "categories": [
+      "astro-ph.GA",
+      "astro-ph.HE"
+    ],
+    "url": "https://arxiv.org/abs/2610.10331v1",
+    "pdf": "https://arxiv.org/pdf/2610.10331v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2610.10585v1",
+    "title": "Partially Thermalized eV-Scale Sterile Neutrinos in Dynamical Dark Energy and Non-Flat Cosmologies",
+    "published": "2026-10-06T08:32:02Z",
+    "updated": "2026-10-06T08:32:02Z",
+    "summary": "We investigate cosmological constraints on a $(3+1)$ neutrino framework containing an additional partially thermalized, eV-scale sterile neutrino alongside the three active species. Rather than assuming full thermalization, we allow the sterile abundance to vary independently through its physical mass $m_s$ and contribution $ΔN_{\\rm eff}$ to the effective number of relativistic species. The sterile state is modeled as a thermally distributed non-cold relic with a temperature below that of the active-neutrino background. We consider flat and non-flat $Λ$CDM and $w_0w_a$CDM cosmologies, all including the same $(3+1)ν$ sector. The models are constrained using Planck 2018 CMB data, DESI DR2 BAO, Pantheon+ Type Ia supernovae, a conservative compilation of $fσ_8$ measurements, and the recent H0DN. Oscillation-informed priors are imposed on the active-neutrino mass splittings, while the eV scale sterile-mass range is motivated by short-baseline oscillation searches and global $(3+1)$ analyses. We find that allowing additional freedom in the late-time cosmological background substantially changes the inferred sterile-neutrino sector. The effective sterile mass increases from $m_{s,\\rm eff}\\sim0.11\\pm0.05~{\\rm eV}$ in flat $Λ$CDM$+(3+1)ν$ to $\\sim0.35\\pm0.12~{\\rm eV}$ in the non-flat $w_0w_a$CDM$+(3+1)ν$ model. The corresponding sterile abundance shifts from $ΔN_{\\rm eff}\\lesssim0.1$ to $ΔN_{\\rm eff}\\simeq0.35\\pm0.15$, while remaining well below the fully thermalized limit, $ΔN_{\\rm eff}\\simeq1$. The non-flat $w_0w_a$CDM models also show $\\sim 2.8σ$ preference for open spatial geometry, $Ω_k\\simeq0.0045\\pm0.0016$, and yield $H_0\\simeq70.9\\pm0.7~{\\rm km\\,s^{-1}\\,Mpc^{-1}}$ and $S_8\\simeq0.785\\pm0.015$. These models improve the minimum $χ^2$ by approximately $21$-$25$ relative to flat $Λ$CDM$+(3+1)ν$.",
+    "authors": [
+      "Gopal Kashyap",
+      "Kanhaiya Lal Pandey"
+    ],
+    "categories": [
+      "physics.gen-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.10585v1",
+    "pdf": "https://arxiv.org/pdf/2610.10585v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2610.07069v1",
+    "title": "Viscous Ghost Dark Energy in $f(Q, L_m)$ Gravity: Observational and Thermodynamic Validity",
+    "published": "2026-10-05T08:39:08Z",
+    "updated": "2026-10-05T08:39:08Z",
+    "summary": "We investigate the cosmological implications of viscous ghost dark energy in the framework of modified $f(Q,\\mathcal{L}_m)$ gravity by considering the linear functional form $f(Q,\\mathcal{L}_m)=αQ+β\\mathcal{L}_m$. The non-minimal coupling between geometry and matter together with bulk viscous effects modifies the cosmic dynamics, leading to an analytical solution of the background Friedmann equations. Since the expansion history depends only on effective combinations of the model parameters, the observational analysis is performed in terms of the corresponding effective background parameters. We constrain the model using the latest joint compilation of Pantheon+ including SH0ES Type Ia supernovae, Cosmic Chronometers, and DESI baryon acoustic oscillation measurements. The model provides a satisfactory description of the late-time expansion history and reproduces the observed transition from decelerated to accelerated cosmic expansion. A statistical comparison with the standard $Λ$CDM model is performed using the minimum $χ^2$, Akaike Information Criterion (AIC), and Bayesian Information Criterion (BIC). Furthermore, the thermodynamic viability of the model is examined through the evolution of the total entropy, and the generalized second law of thermodynamics is found to remain valid throughout the cosmic evolution.",
+    "authors": [
+      "Ajay Kumar",
+      "Pankaj Kumar"
+    ],
+    "categories": [
+      "gr-qc"
+    ],
+    "url": "https://arxiv.org/abs/2610.07069v1",
+    "pdf": "https://arxiv.org/pdf/2610.07069v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2610.05729v1",
+    "title": "Testing $Λ$LTB as an alternative to dynamical dark energy",
+    "published": "2026-10-05T03:29:34Z",
+    "updated": "2026-10-05T03:29:34Z",
+    "summary": "A cosmological constant $Λ$ in a universe weakly violating the cosmological principle (CP) can mimic a dynamical dark energy (DDE) in a FRW universe, and therefore challenging the recently reported DDE evidences. We test this scenario in the form of $Λ$LTB cosmology, against two data combinations. (1) DESI DR2 BAO, Planck CMB, together with any of the four SNe Ia compilations (UNION3, Pantheon+, DES SN5YR, and DES Dovekie) show no preference over DDE or $Λ$LTB. (2) The inclusion of the kinematic Sunyaev Zel'dovich (kSZ) effect rules out a large portion of the CP violation parameter space allowed by (1). However, the existence of a $\\sim 300$ Mpc$/h$ region with $\\sim 10\\%$ matter density excess is still allowed by the current data, and therefore remains a viable alternative to DDE. To facilitate further tests, we present analytical expressions of the distance-redshift relation and the kSZ effect in a universe with weak CP violation.",
+    "authors": [
+      "Yukang Zhang",
+      "Pengjie Zhang"
+    ],
+    "categories": [
+      "astro-ph.CO"
+    ],
+    "url": "https://arxiv.org/abs/2610.05729v1",
+    "pdf": "https://arxiv.org/pdf/2610.05729v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2610.01836v1",
+    "title": "Cosmological inference from a joint DESI DR1 full-shape power spectrum and bispectrum analysis",
+    "published": "2026-10-01T15:07:29Z",
+    "updated": "2026-10-01T15:07:29Z",
+    "summary": "The galaxy bispectrum directly probes the non-linear gravitational evolution of large-scale structure (LSS) and can break parameter degeneracies that remain in power-spectrum analyses. We present a joint full-shape cosmological analysis of three luminous red galaxy (LRG) redshift bins and the quasar (QSO) sample from the first Data Release (DR1) of the Dark Energy Spectroscopic Instrument (DESI). We model the redshift-space power spectrum at one loop and the tree-level bispectrum within the Effective Field Theory of LSS. The bispectrum is decomposed in the Tripolar Spherical Harmonics basis, for which the convolution with the survey window function can be formulated as a direct linear transformation of the theoretical multipoles. Our power-spectrum constraints are in good agreement with the official DESI DR1 full-modelling results. We investigate the impact of including the bispectrum in the inference, finding that the monopole substantially improves the constraints on the cold dark matter density and amplitude of matter fluctuations by 9-18% and 8-20%, respectively, in the individual-tracer analyses. The corresponding reductions are 15% and 10% for the combined LRG sample, and 6% and 4% when all tracers are combined. In a restricted test using the first LRG bin, the bispectrum quadrupole changes the marginalised uncertainties by only a few percent. Extending the analysis to $w_0w_a$CDM substantially broadens the cosmological posteriors, while the bispectrum produces only a mild change in the allowed dark-energy parameter region, which remains sensitive to the adopted prior ranges. Our results demonstrate the potential of higher-order clustering statistics to improve cosmological constraints, while providing a framework for incorporating the bispectrum into full-shape analyses of current and future spectroscopic galaxy surveys.",
+    "authors": [
+      "Caroline Guandalin",
+      "Prakhar Bansal",
+      "Pedro Carrilho",
+      "Alejandro Aviles",
+      "Mike Shengbo Wang",
+      "Marcos Pellejero-Ibañez",
+      "Aaditya Sarma",
+      "Jaide Swanson",
+      "Marco Bonici",
+      "Florian Beutler",
+      "Arnaud de Mattia",
+      "Hee-Jong Seo"
+    ],
+    "categories": [
+      "astro-ph.CO"
+    ],
+    "url": "https://arxiv.org/abs/2610.01836v1",
+    "pdf": "https://arxiv.org/pdf/2610.01836v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2610.01430v1",
+    "title": "Can structure formation distinguish between holographic dark energy models?",
+    "published": "2026-10-01T10:28:27Z",
+    "updated": "2026-10-01T10:28:27Z",
+    "summary": "Structure formation has been used to test the viability of the IR cutoff in the THDE model, and the future event horizon was found to be a viable IR cutoff (Phys. Rev. D {\\bf 113}, 123531 (2026)). Motivated by this, in this paper, using the combined Pantheon+ SN Ia, OHD, DESI DR2, and CMB distance prior datasets, we constrain the model parameters for the HDE, THDE, and BHDE models, and use parameter sets from the MCMC samples to analyze the evolution of $fσ_{8}(z)$ and $S_{8}(z)$ for these models. We find that the evolutionary curves of both $fσ_{8}(z)$ and $S_{8}(z)$ for HDE and BHDE are nearly indistinguishable, while the curves for the THDE model lie lowest. The $χ^{2}$ statistic shows that the THDE model yields the lowest $χ^{2}$ value for both $fσ_{8}$ and $S_{8}$ measurements. Finally, we construct the ($fσ_{8}$,$S_{8}$) plane as a diagnostic to analyze the trajectories of these models, and find that the trajectory of the THDE model can achieve the current ($fσ_{8}$,$S_{8}$) data region. These results demonstrate that structure formation can distinguish THDE from HDE and BHDE, and suggest that structure formation can serve as a useful probe for distinguishing HDE models and can be extended to other HDE scenarios.",
+    "authors": [
+      "Qihong Huang",
+      "Bing Xu",
+      "Kaituo Zhang",
+      "Hao Chen"
+    ],
+    "categories": [
+      "gr-qc"
+    ],
+    "url": "https://arxiv.org/abs/2610.01430v1",
+    "pdf": "https://arxiv.org/pdf/2610.01430v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.40176v1",
+    "title": "Is DESI Seeing Dynamical Dark Energy, or a Cosmic Glitch in Gravity?",
+    "published": "2026-09-30T17:02:51Z",
+    "updated": "2026-09-30T17:02:51Z",
+    "summary": "Combined baryon acoustic oscillation and cosmic microwave background data have begun to mildly favor departures from $Λ\\mathrm{CDM}$. This is usually framed as 2-parameter dynamical dark energy. However, a 1-parameter \"cosmic glitch in gravity\" model, whose cosmological gravitational coupling differs from Newton's constant as in Hořava gravity, fits at least as well. $\\textit{Planck}$+ACT+SPT and DESI~DR2 give $G_\\mathrm{cosmo}/G_\\mathrm{N}=0.9920\\pm0.0025$, a $3.3\\,σ$ preference for weaker cosmological gravity, robust to adding CMB lensing and supernovae. Fitted to the CMB alone, the glitch predicts DESI distances; $w_0w_a$CDM does not.",
+    "authors": [
+      "Robin Y. Wen",
+      "Lukas Tobias Hergt",
+      "Niayesh Afshordi",
+      "Douglas Scott"
+    ],
+    "categories": [
+      "astro-ph.CO",
+      "gr-qc",
+      "hep-th"
+    ],
+    "url": "https://arxiv.org/abs/2609.40176v1",
+    "pdf": "https://arxiv.org/pdf/2609.40176v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.39039v1",
+    "title": "Metastable Dark Energy on the Phantom Brane",
+    "published": "2026-09-30T05:45:30Z",
+    "updated": "2026-09-30T05:45:30Z",
+    "summary": "Recent DESI observations hint at a preference for dynamical dark energy with an equation of state (EoS) that crosses the phantom divide at $w=-1$. In this work, we investigate \\textit{metastable} dark energy (DE) on the minimal phantom brane. Braneworld effects lead to $w < -1$ at early times, whereas metastable decay of DE results in $w > -1$ at late times. We consider three metastable decay prescriptions on the phantom brane: an exponentially decaying DE component (M1), decay of DE into non-baryonic dark matter (M2), and decay into dark radiation (M3). Using CMB observations, DESI DR2 BAO measurements, and the DES-Dovekie Type Ia supernova sample, we compare these models with $Λ$CDM, the Chevallier--Polarski--Linder (CPL) parametrization, and the minimal phantom-brane model with a non-decaying $Λ$. We find that metastable models on the brane are preferred over $Λ$CDM, their decay rates being $Γ/H_0=0.362\\pm0.086$, $0.539\\pm0.125$, and $0.483\\pm0.112$ for M1, M2, and M3, respectively. Best fits of metastable models improve over $Λ$CDM by $Δχ^2_{\\rm MAP}=-17.14$, $-18.76$, and $-18.22$, while the corresponding $Δ{\\rm DIC}$ values are $-8.66$, $-9.63$, and $-6.56$. Braneworld screening drives effective phantom behaviour at $z\\gtrsim0.4$, while DE decay drives the EoS toward non-phantom values closer to the present epoch, with the phantom divide $w=-1$ being crossed at $z \\simeq 0.3$--$0.4$. These results show that the interplay between metastable decay and phantom-brane screening provides a simple physical mechanism for an effective crossing of the phantom divide consistent with DESI observations.",
+    "authors": [
+      "Purba Mukherjee",
+      "Arman Shafieloo",
+      "Varun Sahni",
+      "Yuri Shtanov"
+    ],
+    "categories": [
+      "astro-ph.CO",
+      "gr-qc",
+      "hep-ph",
+      "hep-th"
+    ],
+    "url": "https://arxiv.org/abs/2609.39039v1",
+    "pdf": "https://arxiv.org/pdf/2609.39039v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.38422v1",
+    "title": "AdS - de Sitter transition in interacting dark energy models",
+    "published": "2026-09-29T19:13:45Z",
+    "updated": "2026-09-29T19:13:45Z",
+    "summary": "Recent cosmological results, including the persistent $H_0$ tension and indications of dynamical dark energy, have raised the possibility that the standard $Λ$-Cold Dark Matter ($Λ$CDM) model may be incomplete. At the same time, theoretical developments based on swampland conjectures indicate that the realization of a stable de Sitter vacuum within string theory is challenging. Motivated by these observational and theoretical considerations, we investigate an interacting $Λ$ scenario characterized by a general linear coupling in the dark sector. At the background level, this model naturally allows the dark energy density to evolve from negative to positive values, opening the possibility of a transition from an anti-de Sitter-like phase to the de Sitter-like phase inferred by current observations. We derive the analytic background solutions and perturbation equations, discuss the physically acceptable region of parameter space, and constrain the model with DES-Dovekie type Ia supernovae, DESI BAO and CMB data. Our analysis suggests a parameter space allowing the dark energy density to change sign while maintaining positive dark matter density, motivating further investigation of an interaction-driven anti-de Sitter to de Sitter transition.",
+    "authors": [
+      "Yifei Zhao",
+      "Jailson Alcaniz",
+      "Humberto A. Borges",
+      "Saulo Carneiro",
+      "Rodrigo von Marttens"
+    ],
+    "categories": [
+      "astro-ph.CO",
+      "gr-qc"
+    ],
+    "url": "https://arxiv.org/abs/2609.38422v1",
+    "pdf": "https://arxiv.org/pdf/2609.38422v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.38303v1",
+    "title": "A Strong Cosmologically Coupled Mass Growth Solution in Linearized General Relativity",
+    "published": "2026-09-29T18:00:00Z",
+    "updated": "2026-09-29T18:00:00Z",
+    "summary": "DESI Data Release 2 has heightened interest in cosmologically coupled black holes (CCBHs) as an explanation for accelerating late-time expansion, but known models for CCBHs grow too slowly to drive it. We construct at linear order a solution to General Relativity whose Hernandez-Misner-Sharp mass passively grows $\\propto a^κ$ as the universe expands. The constant $κ$ enters all eigenvalues of the Weyl and stress-tensor operators, so growth is unambiguously physical in both free-field and material sectors. The solution is causal over spacetime relevant for stellar collapse compact objects. A cloud of energized vacuum emerges at $κ= 3$, complementing the $a^3$ scaling predicted elsewhere for the masses of energized vacuum black holes. This first step toward $κ\\sim 3$ CCBH exact solutions enables observational tests with pulsar binaries.",
+    "authors": [
+      "Kevin S. Croker",
+      "Joshua Cohon",
+      "Viktor T. Toth",
+      "Massimiliano Rinaldi",
+      "Nicolas Fernandez",
+      "Joel L. Weiner",
+      "Duncan Farrah",
+      "Gregory Tarlé",
+      "Gustavo Niz",
+      "Christopher Cain",
+      "James W. Rohlf",
+      "Alejandro Aviles",
+      "Jake Summers",
+      "Leander Thiele",
+      "Rogier A. Windhorst",
+      "Joshua Grumski-Flores"
+    ],
+    "categories": [
+      "gr-qc",
+      "astro-ph.CO"
+    ],
+    "url": "https://arxiv.org/abs/2609.38303v1",
+    "pdf": "https://arxiv.org/pdf/2609.38303v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.37437v1",
+    "title": "Oscillatory dark energy with phantom crossings in Einstein-Gauss-Bonnet gravity",
+    "published": "2026-09-29T12:59:28Z",
+    "updated": "2026-09-29T12:59:28Z",
+    "summary": "Recent baryon acoustic oscillation measurements from the Dark Energy Spectroscopic Instrument (DESI), combined with supernova observations, show a mild preference for an evolving dark-energy equation of state, in which dark energy remains phantom-like at higher redshift while a transition toward the quintessence regime emerges around $z\\lesssim0.5$. Beyond the monotonic evolution of the equation of state, an oscillatory dark-energy scenario provides a potential alternative realization of dynamical dark energy. We study such an oscillatory scenario within the Einstein-scalar-Gauss-Bonnet gravity framework, where a scalar field with a hybrid exponential-quadratic potential couples nonminimally to the Gauss-Bonnet (GB) invariant. We choose a Gaussian GB coupling function localized around the minimum of the potential. During the late-time epoch, the field thereby oscillates around the potential minimum and eventually exits toward a stable de Sitter attractor phase. In the minimally coupled limit, the effective equation of state oscillates in the quintessence regime at low redshift, $z\\sim0$, without crossing the phantom divide. The nonminimal coupling amplifies the oscillations and drives the effective equation of state across the phantom divide multiple times. Although a sufficiently strong coupling can induce negative scalar and tensor sound speeds, rendering the perturbation modes unstable. We identify a region of parameter space in which the model undergoes multiple phantom crossings while remaining free of ghost and gradient instabilities and approaching a stable de Sitter attractor in the future.",
+    "authors": [
+      "Saddam Hussain",
+      "Sandip Biswas"
+    ],
+    "categories": [
+      "gr-qc"
+    ],
+    "url": "https://arxiv.org/abs/2609.37437v1",
+    "pdf": "https://arxiv.org/pdf/2609.37437v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.37293v1",
+    "title": "The alternative scalar field dark sector of the Universe: Cosmological inflation, quintessence and ekpyrotic model in the framework of scalar-tensor cosmology",
+    "published": "2026-09-29T11:34:06Z",
+    "updated": "2026-09-29T11:34:06Z",
+    "summary": "This dissertation investigates scalar field descriptions of the dark sector (of the Universe), with emphasis on scalar-tensor cosmology, inflationary effective field theory, quintessence, and ekpyrotic/cyclic alternatives to inflation. The thesis first reviews scalar-tensor theories of gravity, starting from Brans-Dicke theory and extending to general non-minimally coupled scalar fields. Particular attention is paid to the interpretation of the scalar field, the relation between the Jordan and Einstein conformal frames, and the role of conformal transformations in cosmology. This provides the theoretical basis for treating scalar fields either as modified matter or as additional gravitational degrees of freedom. The second part discusses cosmological inflation from the viewpoint of effective field theory. The spontaneous breaking of time translations, the Goldstone description of adiabatic perturbations, higher-dimensional operators, radiative corrections and Planck-suppressed terms are analyzed in the context of ultraviolet sensitivity and the eta problem. The third part is devoted to quintessence as the simplest dynamical dark energy model. 'Tracking', 'scaling', 'thawing' and 'freezing' behaviors are discussed, together with observational diagnostics such as the statefinder parameters, the $(ω_φ,ω'_φ)$ plane and the $Om(z)$ diagnostic. The DESI DR2 results are used as motivation for considering time-dependent effective dark energy beyond a strict cosmological constant. The final part studies ekpyrotic and cyclic cosmologies. The ekpyrotic phase is analyzed as a smoothing mechanism based on an ultra-stiff scalar field equation of state. Perturbations, non-Gaussianity, tensor modes, bounce conditions, entropy production, geodesic incompleteness and phase-resolved field-space distance bounds are discussed.",
+    "authors": [
+      "Marcin Postolak"
+    ],
+    "categories": [
+      "gr-qc",
+      "astro-ph.CO",
+      "hep-th"
+    ],
+    "url": "https://arxiv.org/abs/2609.37293v1",
+    "pdf": "https://arxiv.org/pdf/2609.37293v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.35317v1",
+    "title": "LISA bright sirens as a tiebreaker among cosmologies in tension",
+    "published": "2026-09-28T14:49:00Z",
+    "updated": "2026-09-28T14:49:00Z",
+    "summary": "Gravitational waves from massive black hole binaries detected by LISA will deliver luminosity distances without any astrophysical calibration, offering a probe of the expansion history independent of the cosmic distance ladder. Rather than asking how tightly LISA will constrain a single fiducial cosmology, we ask which of several mutually discrepant present-day cosmologies a future LISA dataset would render most self-consistent. We build mock catalogues of LISA bright sirens under three fiducial cosmologies drawn from datasets that participate in the current $H_0$ discrepancy (Planck 2018, Union3 and Pantheon+SH0ES), with a self-consistent error budget from instrumental noise, weak lensing and host peculiar velocities. We compare the posterior from the simulated LISA data alone with that of a real-data combination of Type Ia supernovae, DESI baryon acoustic oscillations, cosmic chronometers and the compressed Planck 2018 CMB, and quantify their internal tension in the $(H_0,Ω_m)$ plane, crossing each fiducial with three SN Ia compilations. The fiducial drives the tension, from $2.08σ$ to well beyond $5σ$, while the supernova compilation changes it by at most $1.2σ$. The discriminating power is strongly asymmetric: a Pantheon+SH0ES universe is inconsistent with every background we test, at a significance far in excess of $5σ$ and still at $3$-$5σ$ for the $10$-$20$ events expected from recent population models, whereas the Planck 2018 and Union3 fiducials, which differ by only $0.24$ km/s/Mpc in $H_0$, cannot be separated by any catalogue size. LISA bright sirens are therefore a sharp arbiter of the Cepheid-calibrated scenario and, on this error budget, silent between the other two.",
+    "authors": [
+      "M. F. A. Medeiros",
+      "F. C. Carvalho",
+      "L. L. Sales"
+    ],
+    "categories": [
+      "astro-ph.CO"
+    ],
+    "url": "https://arxiv.org/abs/2609.35317v1",
+    "pdf": "https://arxiv.org/pdf/2609.35317v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.31426v1",
+    "title": "Kruglov-entropy cosmology from apparent-horizon thermodynamics: background dynamics and observational constraints",
+    "published": "2026-09-25T15:47:01Z",
+    "updated": "2026-09-25T15:47:01Z",
+    "summary": "We investigate two late-time cosmological models generated by Kruglov's nonadditive entropy at the apparent horizon. Model I, originally derived by Kruglov, follows the Cai--Kim thermodynamic construction and leads to an implicit modified Friedmann equation, whereas Model II, proposed and derived in this work, is obtained from an entropy-integral prescription and contains an effective vacuum contribution. We formulate both models in terms of the dimensionless Hubble parameter, include radiation, impose exact present-day closure, and evolve the physical branch using analytic derivatives of the implicit Friedmann equations. We constrain the models with DESI DR2 baryon acoustic oscillations and a compressed CMB likelihood, with and without DES-Y5 Type-Ia supernovae. Model I is driven to a markedly lower Hubble constant, $H_0\\simeq62.4,\\mathrm{km,s^{-1},Mpc^{-1}}$ for the combined data, and remains non-phantom with $w_{\\rm DE,0}\\simeq-0.814$; it is strongly disfavoured relative to flat $Λ$CDM. Model II stays close to $Λ$CDM in the standard cosmological parameters and gives $w_{\\rm DE,0}\\simeq-1.003$, while its two entropy-sector parameters remain strongly degenerate. Its best-fit likelihood is comparable to $Λ$CDM, but the additional parameters are not supported by information criteria. These results show that the two thermodynamic realizations of the same nonadditive entropy have sharply different phenomenological consequences at the homogeneous-background level. In summary, the observational plausibility of entropy-based cosmology hinges critically on how the generalized horizon entropy is incorporated into the Friedmann dynamics.",
+    "authors": [
+      "Candrasyah Muhammad",
+      "Burin Gumjudpai",
+      "Nandan Roy",
+      "Pornrad Srisawad"
+    ],
+    "categories": [
+      "astro-ph.CO",
+      "gr-qc",
+      "hep-th"
+    ],
+    "url": "https://arxiv.org/abs/2609.31426v1",
+    "pdf": "https://arxiv.org/pdf/2609.31426v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.31113v1",
+    "title": "Observational constraints on scalar-vector-tensor dark energy with phantom-divide crossing",
+    "published": "2026-09-25T10:58:19Z",
+    "updated": "2026-09-25T10:58:19Z",
+    "summary": "We constrain a scalar-vector-tensor (SVT) dark-energy model in which the vector sector drives the dark-energy equation of state below $-1$ at earlier times, while a canonical scalar field subsequently drives it across $-1$ toward a present-day value above $-1$. We confront the model with DES Year 5 supernovae, DESI DR2 baryon acoustic oscillations, and compressed cosmic microwave background information, and then include Gold-2017 redshift-space-distortion (RSD) measurements to probe structure growth. The background posterior assigns substantial weight to crossing histories and gives a better best fit than the flat $Λ$-cold-dark-matter ($Λ$CDM) model. The RSD analysis preserves this qualitative background evolution, constrains the clustering amplitude, and increases the posterior support for the directional crossing criterion. Since the growth analysis also imposes additional perturbative support conditions, this increase cannot be attributed to the RSD likelihood alone. Matched PolyChord calculations give Bayes factors larger than unity for SVT relative to $Λ$CDM under both prior-volume conventions considered here. The quantitative Bayes factor depends on the prior normalization assigned to the regular radiation-era branch and is larger in the RSD analysis under either convention. Overall, current expansion and structure-growth data are consistent with a stable dynamical crossing of the phantom divide in the SVT model.",
+    "authors": [
+      "Nandan Roy",
+      "Shinji Tsujikawa",
+      "Ying-li Zhang",
+      "Zejun Zhang"
+    ],
+    "categories": [
+      "astro-ph.CO",
+      "gr-qc",
+      "hep-ph",
+      "hep-th"
+    ],
+    "url": "https://arxiv.org/abs/2609.31113v1",
+    "pdf": "https://arxiv.org/pdf/2609.31113v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.31800v1",
+    "title": "Cosmological Dynamics and Observational Constraints of a Logarithmic Herglotz $f(R,T)$ Gravity",
+    "published": "2026-09-25T10:11:13Z",
+    "updated": "2026-09-25T10:11:13Z",
+    "summary": "We investigate the cosmological dynamics and observational viability of a logarithmic Herglotz-type $f(R,T)$ gravity model described by $f(R,T)=R+β\\ln(-T/T_0)$. Assuming a spatially flat Friedmann--Lemaître--Robertson--Walker background and pressureless matter, the modified field equations are formulated as a coupled dynamical system involving the Herglotz field and the normalized matter density. A phenomenological closure relation is adopted for the effective Herglotz sector, allowing the background evolution to be determined numerically. The model is constrained using Cosmic Chronometer measurements, the DESI DR2 baryon acoustic oscillation compilation, and the Union3 supernova sample, considering both individual and combined datasets within a Bayesian Markov-chain Monte Carlo framework. The combined analysis provides a statistically consistent description of the background expansion. The reconstructed expansion history yields a present-day effective equation of state $w_{\\rm eff,0}\\simeq-0.702$ and exhibits the expected transition from accelerated expansion at late times toward decelerated expansion at higher redshifts. We further investigate the $Om(z)$ diagnostic and statefinder parameter. These results indicate that the logarithmic Herglotz model provides a consistent phenomenological description of the homogeneous and isotropic late-time expansion history, while allowing departures from the standard $Λ$CDM background.",
+    "authors": [
+      "Vishal M C",
+      "Sankarsan Tarai"
+    ],
+    "categories": [
+      "gr-qc"
+    ],
+    "url": "https://arxiv.org/abs/2609.31800v1",
+    "pdf": "https://arxiv.org/pdf/2609.31800v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.29303v1",
+    "title": "Noether Symmetry in a Non-Metricity Theory with a Boundary Term: Exact Solutions and Bayesian Cosmological Constraints",
+    "published": "2026-09-24T09:39:32Z",
+    "updated": "2026-09-24T09:39:32Z",
+    "summary": "We investigate the cosmological implications of a power-law $f(Q, B)$ gravity model, where $Q$ denotes the non-metricity scalar and $B$ is the associated boundary term. We employ the Noether symmetry approach to identify the admissible functional form of the gravitational Lagrangian and to obtain the corresponding conserved quantities and exact cosmological solutions. Using the exact solution, we find that for this model parameter condition $α+β>\\frac{3}{2}$, the model exhibits the accelerating phase of the Universe. Furthermore, we have also discussed the model with recent observational data using a Bayesian Markov Chain Monte Carlo analysis. We consider different combinations of Cosmic Chronometers (CC), Pantheon+ \\& SH0ES, and DESI DR2 observations to constrain the model parameters and the Hubble constant $H_0$. The inferred value of $H_0$ depends on the adopted dataset combination, ranging from a higher value for the CC+Pantheon+ combination to a lower value for CC+DESI DR2, with the latter yielding $H_0=67.5^{+1.4}_{-1.6}\\,\\mathrm{km\\,s^{-1}\\, Mpc^{-1}}$, consistent with the Planck 2018 CMB-preferred value within the standard $Λ$CDM framework. The inferred \\(H_0\\) is strongly dataset dependent, spanning the range between the early-Universe and locally calibrated determinations. We further examine the posterior covariance and correlation matrices to identify parameter degeneracies and assess the robustness of the MCMC constraints. The background evolution also exhibits late-time accelerated expansion and remains compatible with the observational constraints. These results demonstrate that the $f(Q, B)$ model provides a viable alternative description of late-time cosmology.",
+    "authors": [
+      "Pooja Vishwakarma",
+      "L K Duchaniya",
+      "Yu Shi"
+    ],
+    "categories": [
+      "gr-qc"
+    ],
+    "url": "https://arxiv.org/abs/2609.29303v1",
+    "pdf": "https://arxiv.org/pdf/2609.29303v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.28720v1",
+    "title": "Exploring mutated hilltop inflation in $f(φ, T)$ gravity with latest CMB and DESI observations",
+    "published": "2026-09-23T18:59:53Z",
+    "updated": "2026-09-23T18:59:53Z",
+    "summary": "The high-precision observations from the $Planck$ and BICEP/$Keck$ have imposed stringent bounds on the tensor-to-scalar ratio, ruling out many standard inflationary models. The recent bound from Atacama and SPT along with DESI provides a different viable landscape, making it difficult for the inflationary models to sustain. Amid these increasingly stringent and conflicting observational constraints, modified gravity theories offer a compelling avenue to restore the viability of inflationary models. With this motivation, we study mutated hilltop inflation within $f(φ, T)$ gravity, where a scalar field is non-minimally coupled to the trace of the energy-momentum tensor. The scalar spectral index $n_s$, the tensor spectral index $n_t$, and the tensor-to-scalar ratio $r$ are calculated, and their trajectories are presented in the $n_s-r$ plane. The results are then confronted with the latest combined CMB bounds from $Planck$, BICEP/$Keck$, ACT DR6, SPT, and DESI DR2. We report that MHI can predict $r \\sim 10^{-3}$ and is compatible with the latest CMB & DESI bound SPA+BK+DESI at $ 1σ$ CL.",
+    "authors": [
+      "Biswajit Deb",
+      "Atri Deshamukhya"
+    ],
+    "categories": [
+      "gr-qc"
+    ],
+    "url": "https://arxiv.org/abs/2609.28720v1",
+    "pdf": "https://arxiv.org/pdf/2609.28720v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.26566v1",
+    "title": "Regular Cosmologies: Three Distinct Routes",
+    "published": "2026-09-22T15:17:51Z",
+    "updated": "2026-09-22T15:17:51Z",
+    "summary": "Regular black holes avoid the central singularity by replacing it with a de Sitter core. We ask what cosmology follows if the same idea is brought to the early universe. Regular metrics define a position-dependent cosmological term, $Λ_{\\rm eff}(r)=8πG ρ_{\\rm MS}(r)$, and there is no unique way to carry it over to the expanding universe. We follow three different prescriptions: a Newtonian one following McCrea and Milne, a running vacuum evaluated at Hubble radius and a quasi-local one based on Misner-Sharp mass. We apply each of them to six regular black hole metrics and explore their consequences. In the Newtonian case the Friedmann equations are solved in closed form for the Hayward metric, and in terms of standard special functions or numerically for the others, and describe a universe that starts in a de Sitter phase and ends as dust (i.e. an inflationary model instead of dark energy). We find that in all three prescriptions a monotonically decreasing core density gives an equation of state that never crosses $w=-1$, and thus the phantom behaviour suggested by DESI would require a density shell which a regular core does not have. The three prescriptions agree on the de Sitter core but differ at late times, and we quantify the difference against the DESI DR2 results. We also point out that a single regularisation length cannot serve as both the inflationary and the dark-energy scale.",
+    "authors": [
+      "Sergio Bravo Medina",
+      "Marek Nowakowski"
+    ],
+    "categories": [
+      "gr-qc"
+    ],
+    "url": "https://arxiv.org/abs/2609.26566v1",
+    "pdf": "https://arxiv.org/pdf/2609.26566v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.26517v2",
+    "title": "Gravitational-Susceptibility Dip Behind DESI's results: Addressing the Phantom Crossing by Local limit of Nonlocal Gravity",
+    "published": "2026-09-22T14:43:14Z",
+    "updated": "2026-10-08T08:35:59Z",
+    "summary": "The second data release of the Dark Energy Spectroscopic Instrument (DESI), based on more than fourteen million galaxies and quasars, prefers a dark energy component whose equation of state is dynamical. In the simplest two-parameter description of this behavior, the Chevallier--Polarski--Linder (CPL) parametrization, the data favor the quadrant $w_0>-1$, $w_a<0$, which implies that the equation of state crosses the phantom divide $w=-1$ at a redshift $z\\simeq0.4$. We show that the local limit of nonlocal gravity, a teleparallel extension of general relativity governed by a scalar function called gravitational susceptibility $S(x)$, offers a natural explanation. In this model a cosmological constant is not allowed; dark energy is necessarily dynamical. The phantom crossing seen by an observer is an effective phenomenon generated by the time evolution of $S(z)$. We establish a correspondence: to every general-relativistic dark energy model with equation of state $w(z)$, there corresponds a modified TEGR cosmology with $w=-1$ and a suitable susceptibility $S(z)$ that are indistinguishable at the level of the background expansion. We construct the susceptibility functions that reproduce the CPL behavior favored by DESI data, and we confront the model with the combined CMB,BAO, and SNe data using Boltzmann solver codes. The recovered susceptibility displays a characteristic low-redshift dip with depth $β= -0.025 \\pm 0.007$ at $z\\simeq 0.4 $, and its derivative changes sign at a redshift equal to the phantom-crossing epoch.",
+    "authors": [
+      "Aria Hemmatian",
+      "Yahya Mohammadi",
+      "Javad Tabatabaei",
+      "Shant Baghram"
+    ],
+    "categories": [
+      "astro-ph.CO",
+      "gr-qc"
+    ],
+    "url": "https://arxiv.org/abs/2609.26517v2",
+    "pdf": "https://arxiv.org/pdf/2609.26517v2"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.24926v1",
+    "title": "Observational Features of Nonsingular Rotating Black Holes in the Dark-Energy Dominated Universe",
+    "published": "2026-09-21T17:22:18Z",
+    "updated": "2026-09-21T17:22:18Z",
+    "summary": "Recent DESI baryon acoustic oscillation measurements, combined with cosmic microwave background and type-Ia supernova data, suggest that dark energy may evolve with cosmic time. Along a cosmological background, an evolving dark-energy density can be expressed locally as a function of a monotonic curvature invariant, motivating an effective curvature-dependent cosmological term. Moreover, quantum field theory in curved spacetime and approaches to quantum gravity with running gravitational couplings provide complementary motivations for exploring such a term. Here we study how the phenomenology of nonsingular rotating black holes embedded in a Universe dominated by dark energy can differ substantially from that of the Kerr and Kerr--de Sitter geometries. The problem is directly formulated in phase space using a null geodesic super-Hamiltonian and a Mino-type parameter. The shadows of the black holes are calculated by backward ray tracing from a zero-angular-momentum observer. We define and analyze a comprehensive set of standard shadow observables, characterizing the size, shape, and displacement of the shadow. We show that the area of the shadow and its vertical diameter provide particularly clear signatures of a running cosmological term. In this way, joint analyses of multiple strong-field observables and of several black holes with different masses and spins could provide a realistic route to tightly constraining, or potentially measuring, the effective regularization scale behind the running of the cosmological term and statistically distinguishing the non-singular black hole geometry from Kerr/Kerr-dS solutions.",
+    "authors": [
+      "Ramon Torres"
+    ],
+    "categories": [
+      "gr-qc",
+      "hep-th"
+    ],
+    "url": "https://arxiv.org/abs/2609.24926v1",
+    "pdf": "https://arxiv.org/pdf/2609.24926v1"
+  },
+  {
+    "group": "physics-cosmology",
+    "arxiv": "2609.24361v1",
+    "title": "A novel phenomenological parametrization of dynamical dark energy via matter-gravity coupling",
+    "published": "2026-09-21T09:50:41Z",
+    "updated": "2026-09-21T09:50:41Z",
+    "summary": "We develop a new parametrization for generic departures from the $Λ$CDM model based on the Markov-Mukhanov action with non-minimal matter-gravity coupling. In this approach the cosmological constant $Λ$ and the gravitational coupling $G$ become dynamical with their values determined by the explicit form of the matter-gravity coupling. We use the framework to build a simple phenomenological model where dynamical dark energy is naturally obtained as a consequence of the departure of the theory from classical General Relativity at low densities. We show how the model's free parameters can be constrained from observational data and interpret the tentative observations of `phantom crossing' by the DESI collaboration in view of the proposed formalism.",
+    "authors": [
+      "Hrishikesh Chakrabarty",
+      "Daniele Malafarina"
+    ],
+    "categories": [
+      "gr-qc"
+    ],
+    "url": "https://arxiv.org/abs/2609.24361v1",
+    "pdf": "https://arxiv.org/pdf/2609.24361v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.22205v1",
+    "title": "Classification of bipartite observables III: simplicity, mixtures and quantum error correction",
+    "published": "2026-10-15T16:54:41Z",
+    "updated": "2026-10-15T16:54:41Z",
+    "summary": "The paradigm of a simple unstable theory in the sense of Shelah is the theory of the random graph, the Fraïssé limit of the finite graphs. Quantum error correction has a paradigm of its own, and we show that it is the counterpart of the random graph: the Pauli group on countably many qubits, taken modulo phases and with commutation as its relation, is the Fraïssé limit of the finite alternating spaces over the two-element field, and its form computes the syndromes of stabilizer codes. Seen through this correspondence, simplicity theory turns out to be a theory of error correction. Clifford encoding circuits implement the homogeneity of the Pauli group, forking recognizes the logical errors, and the independence theorem of Kim and Pillay is the gluing of syndromes. The two paradigms look alike as first-order structures, and they part company only when observables enter. Each defines a bipartite observable, and we prove that, once preparations are mixed, both acquire the tree property of the second kind in real-valued logic. They reach it by different roads, however, and we show that the probes decide which. The probes of the Pauli observable are the Pauli channels; for them the indicator of each syndrome sector is the difference of the responses of two uniform mixtures, and actual mixtures already witness the tree. The probes of the Rado observable see only marginals; conditions given by actual mixtures remain compatible on disjoint blocks, and the tree must be sought among idealized preparations.",
+    "authors": [
+      "Eduardo Dueñez",
+      "José Iovino"
+    ],
+    "categories": [
+      "math.LO",
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.22205v1",
+    "pdf": "https://arxiv.org/pdf/2610.22205v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.21879v1",
+    "title": "One generation of the Standard Model as a quantum error-correcting code",
+    "published": "2026-10-15T13:45:52Z",
+    "updated": "2026-10-15T13:45:52Z",
+    "summary": "Together with a right-handed neutrino, the fermions of one generation of the Standard Model are labelled by five bits, a combinatorial structure tied to anomaly cancellation. We make this precise. Anomaly cancellation is the vanishing of a cubic form, the defining property of triorthogonal codes, the quantum error-correcting codes behind magic state distillation. Removing the right-handed neutrino gives a $[[15,1,3]]_p$ code for every prime $p$, including the Bravyi-Kitaev code for $p = 2$. For qutrits it is the unique shortest distance-three triorthogonal code.",
+    "authors": [
+      "Shiroman Prakash",
+      "K. L. Ramya"
+    ],
+    "categories": [
+      "hep-th",
+      "cs.IT",
+      "hep-ph",
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.21879v1",
+    "pdf": "https://arxiv.org/pdf/2610.21879v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.21357v1",
+    "title": "Stitched surface codes: planar concatenation through GHZ corridors",
+    "published": "2026-10-15T06:39:05Z",
+    "updated": "2026-10-15T06:39:05Z",
+    "summary": "We present a fault-tolerant quantum-memory architecture that concatenates four distance-t rotated surface-code patches with the [[4,2,2]] outer code, encoding two logical qubits at code distance d = 2t in a physical footprint of N < 2(2t+1)^2 qubits on a square lattice with nearest-neighbor connectivity. The outer-code stabilizer generators XXXX and ZZZZ, each of physical weight 4t, are measured in situ via verified Greenberger-Horne-Zeilinger (GHZ) ancillae distributed through narrow corridors between adjacent patches, without lattice surgery or long-range gates. The outer-code gadgets introduce hyperedge fault mechanisms, but by design each decomposes into graphlike components, so the complete syndrome is decoded by a single minimum-weight-perfect-matching pass. Circuit-level simulations show logical error rates that scale as p^t, consistent with distance-2t protection. Finally, we implement the construction experimentally on a 105-qubit Willow superconducting processor in both the ZZ and XX memory bases. With the correlated-matching decoder, increasing the code distance from d = 4 to d = 6 reduces the block logical error rate by a factor of 1.52. The construction thus provides a near-term testbed for concatenated architectures beyond the standard surface code.",
+    "authors": [
+      "Mohamed A. Shalby",
+      "Alexandre Bourassa",
+      "Amir Karamlou",
+      "Leigh Martin",
+      "Alexis Morvan",
+      "Nicholas Noll",
+      "Craig Gidney",
+      "Leonid P. Pryadko"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.21357v1",
+    "pdf": "https://arxiv.org/pdf/2610.21357v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.20515v1",
+    "title": "Petz Recovery through a Single Polar Transformation for Approximate Quantum Error Correction",
+    "published": "2026-10-14T17:16:47Z",
+    "updated": "2026-10-14T17:16:47Z",
+    "summary": "The Petz recovery map provides a near optimal decoder for approximate quantum error correction, but its inverse square-root normalization complicates circuit implementation. We use the polar structure of the Petz recovery isometry to implement recovery through a single quantum singular value transformation (QSVT). We give explicit block-encoding circuits and an extended recovery isometry that yields approximate Petz recovery without postselection. We bound the diamond distance between the approximate and ideal Petz encoding-recovery channels in terms of a spectrum-weighted loss, which provides a channel specific objective for optimizing the QSVT angles. Uniform polynomial approximation yields an asymptotic error bound that decays exponentially with the number of QSVT iterations, at a rate controlled by the smallest nonzero scaled singular value. Applications to Haar-random encoding and the Hayden-Preskill protocol illustrate the tradeoff between circuit depth and recovery accuracy and place existing scrambling decoders within a common Petz recovery framework.",
+    "authors": [
+      "Hanzhang Zhao",
+      "Shenglong Xu"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.20515v1",
+    "pdf": "https://arxiv.org/pdf/2610.20515v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.18218v1",
+    "title": "Methods for Automated Equivalence Checking of Quantum Error-Correction Codes",
+    "published": "2026-10-13T11:49:22Z",
+    "updated": "2026-10-13T11:49:22Z",
+    "summary": "Quantum error-correction code and circuit construction is an active field of research, motivating automated methods for identifying equivalent designs. We develop and evaluate automated strategies for deciding whether two descriptions of quantum error-correction codes are equivalent under specified transformations. We formalize permutation equivalence for stabilizer and CSS codes and local-Clifford equivalence for stabilizer codes within a unified framework that separates physical from representation freedom. We develop three decision strategies (group-action search, isomorphism-based methods, and constraint solving), together with invariants and signatures for preprocessing. The empirical evaluation shows that no paradigm dominates across equivalence notions, code families, and parameter ranges. We therefore combine their complementary strengths in input-dependent hybrid checkers following a staged Refute-Refine-Decide architecture. Mean hybrid runtimes remain below 10 s for most evaluated structured-code cases with $n \\leq 37$; for inequivalent code instances with $n=144$, they are about 310 s for permutation and 16 s for local-Clifford equivalence.",
+    "authors": [
+      "Maxie Bichmann",
+      "Ludwig Schmid",
+      "Robert Wille"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.18218v1",
+    "pdf": "https://arxiv.org/pdf/2610.18218v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.17612v1",
+    "title": "From Syndromes to Computation: A General Framework for Logical Operations in Quantum Error-Correcting Codes",
+    "published": "2026-10-13T02:32:10Z",
+    "updated": "2026-10-13T02:32:10Z",
+    "summary": "Fault-tolerant quantum computation requires error-correcting codes that not only protect quantum information but also support useful logical operations with practical physical realizations. Here we develop a general framework in which the stabilizer syndromes of commuting Pauli rotations directly organize logical-gate design. We derive an exact codespace-preservation condition valid at arbitrary rotation angles, providing a common stabilizer-level description for CSS and non-CSS codes and for both Clifford and non-Clifford operations. A particularly useful equal-syndrome specialization reduces Clifford gate design to stabilizer factorization, yields a general generator weight bound of $\\lceil d/2\\rceil$ for distance-$d$ codes, and systematically extends to logical rotations higher in the Clifford hierarchy. Applied to bivariate-bicycle (BB) and non-CSS Mirror qLDPC codes, the framework gives explicit low-weight Clifford and controlled-phase gates. Our implementations yield new low-weight gates, including an addressed $T$ gate on the $[[16,4,4]]$ BB code, $T$-type rotations on the $[[64,8,8]]$ BB code, and CCZ-, CS-, and $T$-type operations on the $[[36,6,6]]$ Mirror code. We also develop analytic constructions using Clifford algebra bases, which turn the syndrome constraints into explicit algebraic relations and provide a systematic route to logical addressability. We use this approach to analytically construct addressed CNOT, SWAP, controlled, and CCZ-type gates on recursive hypercube codes. An independent construction on middle quantum Reed--Muller codes yields C${}^r$Z gates that saturate the equal-syndrome weight bound. These results establish stabilizer syndromes as a constructive link between the stabilizer structure of a quantum code, the logical computations it can directly support, and the fault-tolerance properties of their physical realizations.",
+    "authors": [
+      "Hunter Nelson",
+      "Arshag Danageozian",
+      "ChunJun Cao",
+      "Sophia E. Economou",
+      "Edwin Barnes"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.17612v1",
+    "pdf": "https://arxiv.org/pdf/2610.17612v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.13589v1",
+    "title": "Decoder- and Noise-Aware Optimization Framework for Clifford-Deformed Quantum Error-Correcting Codes",
+    "published": "2026-10-09T13:39:27Z",
+    "updated": "2026-10-09T13:39:27Z",
+    "summary": "Practical fault-tolerant quantum computing requires qubit-efficient quantum error correction (QEC). Clifford deformations (CDs) modify the stabilizers of a QEC code to lower its logical error rate at no additional resource cost. However, the number of possible CDs grows exponentially with the number of qubits, making exhaustive search infeasible beyond small codes. In this work, we further show that under circuit level noise the optimal CD depends strongly on both the noise model and decoder. To make systematic CD optimization possible, we introduce Evolution-Based Best-arm Identification (EBBI), a shot-efficient search algorithm that treats the circuit, noise model and decoder as a black box. We benchmark EBBI's performance on the rotated surface code, under two strongly $Z$-biased circuit-level noise models with the PyMatching decoder. At distance 3, EBBI finds the optimal CD using up to $\\sim 1100\\times$ fewer shots than random search. At distance 5, when run at the target error rate, the median EBBI run converges to the CDs we believe to be optimal, while random search never converges. Under a $Z$-biased SI1000-like noise model, EBBI discovers a new CD, the B-XZZX code, which we generalized to larger distances. It differs from XZZX on only a fraction $\\mathcal{O}(d^{-1})$ of the qubits at code distance $d$, yet its relative advantage grows from $\\approx 5\\%$ at $d = 3$ to $\\approx 12\\%$ at $d = 11$. We thus show that the B-XZZX pattern found by EBBI can be systematically scaled to larger code distances. Our work represents a first step towards scalable CD optimization for general QEC codes.",
+    "authors": [
+      "Julius Rye Bønnelykke",
+      "Benjamin Joecker",
+      "Peter Krogstrup",
+      "Vincent Philippe Michal",
+      "Mark Kamper Svendsen"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.13589v1",
+    "pdf": "https://arxiv.org/pdf/2610.13589v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.11225v1",
+    "title": "High-Rate Concatenated Quantum Error-Correcting Codes for Qudits",
+    "published": "2026-10-08T04:21:39Z",
+    "updated": "2026-10-08T04:21:39Z",
+    "summary": "Qudits provide a larger local Hilbert space than qubits and have recently attracted interest as building blocks for efficient fault-tolerant quantum computation (FTQC). In this work, we extend many-hypercube (MHC) codes, high-rate concatenated quantum codes, from qubits to qudits of prime dimension $q$. We construct the level-2 and level-3 MHC codes with parameters $\\left[\\!\\left[6^2,4^2,2^2\\right]\\!\\right]_q$ and $\\left[\\!\\left[6^3,4^3,2^3\\right]\\!\\right]_q$, respectively, and generalize the level-by-level minimum-distance (LLMD) decoder originally proposed for the qubit MHC codes. In a qudit $X$-error model, we evaluate the code-capacity performance of the qudit MHC codes for dimensions up to $q=13$. We find that the error threshold increases monotonically with the local dimension $q$, reaching $10.0\\%$ for $q=13$, nearly double the value of $5.1\\%$ for qubits. Furthermore, for sufficiently large local dimensions, we observe a pronounced waterfall regime in which the logical error rate decreases substantially faster than expected from conventional distance-based estimates. To understand the origin of the observed qudit advantage, we analyze the decoding performance in terms of the entropy of the underlying $q$-ary noise channel. This analysis reveals a competition between the increased syndrome information available at larger $q$ and the simultaneous growth of the typical physical error weight at fixed entropy. These results demonstrate that higher-dimensional quantum systems can substantially improve the performance of high-rate concatenated quantum codes and motivate further development of qudit-based FTQC architectures.",
+    "authors": [
+      "Takanori Nishi",
+      "Hayato Goto"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.11225v1",
+    "pdf": "https://arxiv.org/pdf/2610.11225v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.06811v1",
+    "title": "Polynomial-time simulation of non-Clifford quantum error correction",
+    "published": "2026-10-05T17:54:39Z",
+    "updated": "2026-10-05T17:54:39Z",
+    "summary": "We show that every intermediate state of a broad class of non-Clifford quantum error-correction circuits is a third-order phase-polynomial state, even under stochastic Pauli noise. The class includes magic state distillation and cultivation, code switching and gauge fixing, transversal non-Clifford gates with syndrome extraction, and injection of diagonal magic states. Third-order phase-polynomial states strictly generalize stabilizer states, and we prove that they are exactly the stabilizer states of the diagonal-Clifford-and-Pauli (DCP) stabilizer formalism that we introduce. We characterize these states and show that their representations can be updated in polynomial time. This yields an exact polynomial-time simulation algorithm for these circuits and, more broadly, a framework for reasoning about their internal states and about magic states in general. We provide an open-source implementation, \\texttt{merlin}, and benchmark it against existing non-Clifford simulators on distillation, cultivation, and code switching circuits. The benchmarks demonstrate improved runtime and memory scaling as the number of logical outputs grows in Bravyi-Haah distillation, and simulation of a code switching circuit beyond the reach of all other tested simulators.",
+    "authors": [
+      "Serban Cercelescu",
+      "Mark Koch",
+      "Arthur Pesah"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.06811v1",
+    "pdf": "https://arxiv.org/pdf/2610.06811v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.06775v1",
+    "title": "Engineering logical gates with irrep surface codes",
+    "published": "2026-10-05T17:42:00Z",
+    "updated": "2026-10-05T17:42:00Z",
+    "summary": "Fault-tolerant quantum computation typically relies on a fixed set of logical primitives, while realizing other desired operations can require substantial resources. We introduce irrep surface codes (ISCs), two-dimensional topological quantum error-correcting codes engineered to transversally implement a prescribed set of logical gates. The engineered gates only need to satisfy two conditions: (i) they generate a finite group, which, up to global phases, is forced by the Eastin-Knill theorem, and (ii) they are irreducible, meaning that any operator commuting with the set of gates must be proportional to the identity. This accommodates arbitrary finite groups of diagonal gates and arbitrary reversible classical gates, since each can be embedded into a larger irreducible finite group of gates. It also enables logical gates outside every finite level of the Clifford hierarchy. To incorporate these operations into surface-code computations, we further develop lattice-surgery protocols to transfer the encoded information between surface codes and ISCs obeying either of two sufficient conditions. Together, these results establish a systematic method for tailoring topological codes to desired logical operations and integrating them into conventional computations.",
+    "authors": [
+      "Yabo Li",
+      "Zijian Song",
+      "Vieri Mattei",
+      "Naren Manjunath",
+      "Apoorv Tiwari",
+      "Tyler D. Ellison"
+    ],
+    "categories": [
+      "quant-ph",
+      "cond-mat.str-el"
+    ],
+    "url": "https://arxiv.org/abs/2610.06775v1",
+    "pdf": "https://arxiv.org/pdf/2610.06775v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.06697v2",
+    "title": "Measurement-free Preparation of Surface-Code States with Digital-Analog Counterdiabatic Drivings",
+    "published": "2026-10-05T16:58:32Z",
+    "updated": "2026-10-06T14:42:49Z",
+    "summary": "Preparing stabilizer-code states with shallow circuits is an important primitive for near-term quantum error correction in superconducting circuits, where logical-state initialization requires four-body stabilizer correlations from native one- and two-body controls. We introduce a digital-analog method for the preparation of surface-code ground-state manifolds. The method exploits a structural property of the adiabatic gauge potential, mapping stabilizer-local counterdiabatic terms to digital-analog blocks on the superconducting layout using fixed-angle two-qubit XY gates, single-qubit rotations, and analog exchange-interaction evolutions. The dressed blocks generate higher-order operators used as the variational ansatz to determine the counterdiabatic terms within the Sels-Polkovnikov adiabatic-gauge-potential framework. We benchmark checkerboard plaquette-stabilizer grids up to 4 x 4; the square-grid instances correspond to rotated surface codes, while the rectangular cases probe the scaling of the method. For all grids, the proposed method generates the dominant four-body counterdiabatic basis and, at short evolution times, substantially improves ground-state preparation compared with bare adiabatic evolution. We further generalize the construction to n x m stabilizer lattices and show that digital-analog synthesis can reduce the entangling depth by an order of magnitude. Together, these results establish a direct connection between stabilizer geometry, the structure of the counterdiabatic gauge potential, and digital-analog control for measurement-free preparation of stabilizer-code states on near-term superconducting architectures.",
+    "authors": [
+      "Shubham Kumar",
+      "Balaganchi A. Bhargava",
+      "Paolo A. Erdman",
+      "Anne-Maria Visuri",
+      "Jose D. Martın-Guerrero",
+      "Yolanda Vives-Gilabert",
+      "Enrique Solano",
+      "Narendra N. Hegade"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.06697v2",
+    "pdf": "https://arxiv.org/pdf/2610.06697v2"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.06606v1",
+    "title": "Staying Sober: A Shot-Free Predictor of Logical Error Rates for Concatenated Quantum Error Correcting Codes",
+    "published": "2026-10-05T16:15:00Z",
+    "updated": "2026-10-05T16:15:00Z",
+    "summary": "Estimating the logical error rate (LER) of a quantum error-correcting (QEC) code by Monte Carlo sampling takes $O(p^{-\\lceil d/2 \\rceil}/\\varepsilon^2)$ samples at physical error rate $p$, code distance $d$ and relative error $\\varepsilon$, which becomes intractable at large distances and low error rates, and especially for concatenated codes, whose distance grows as $d^{\\ell}$ with the number of levels $\\ell$. The fail fast method reduces this cost by sampling the failures of each weight separately, but it only works for unconcatenated codes, and does not model the soft information that the levels of a concatenated code pass to each other. We propose a predictor that takes the stabilizers, the minimum-weight logical operators and, for odd $d$, the logical operators of weight $d + 1$ of a code, and computes, without sampling, the leading monomial $c\\,p^{o}$ of the LER when expressed as a polynomial in $p$, at every level of concatenation, in time polynomial in the code parameters and linear in $\\ell$ for fixed budgets. We prove that our prediction is exact for any unconcatenated stabilizer code, for every logical observable and arbitrary per-qubit error rates, whenever no budget is exhausted. Furthermore, for concatenated codes, we construct a recursive approach that computes the leading monomial exactly in exponential time, and our predictor approximates this approach. Our predictions match exact enumeration at level 1 on every code we evaluate, and up to three levels for the iceberg code. Using our predictor, we evaluate and compare $37$ code configurations under four noise biases in $48$ core-hours, where Monte Carlo sampling would need more than $10^{12}$ shots at $p = 10^{-3}$ for $113$ of these $148$ cases.",
+    "authors": [
+      "Sayam Sethi",
+      "Aditi Awasthi",
+      "Maxwell Poster",
+      "Joshua Viszlai",
+      "Jonathan Mark Baker"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.06606v1",
+    "pdf": "https://arxiv.org/pdf/2610.06606v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.06059v1",
+    "title": "Comparing thresholds of XZZX and rotated surface codes under spatio-temporal correlated noise",
+    "published": "2026-10-05T09:51:46Z",
+    "updated": "2026-10-05T09:51:46Z",
+    "summary": "While independent and identically distributed noise is typically assumed in quantum computing research, complex error models such as correlated and spatio-temporal errors remain underexplored. In this paper, the performance of $\\mathrm{XZZX}$ and rotated surface codes is evaluated under these complex noise models. Standard graph-based decoders struggle with the hyperedges generated by correlated errors on bias-tailored codes. To address this, we employ the Minimum Weight Parity Factor (MWPF) decoder, which natively processes syndrome hypergraphs without artificial edge decomposition. Our simulations show that under strong Z-biased circuit-level correlated noise ($η=100$), the threshold of the rotated code degrades to $\\approx 0.36\\%$, while the $\\mathrm{XZZX}$ code drops to $\\approx 0.70\\%$. Furthermore, a distinct non-monotonic threshold dependence is observed for the $\\mathrm{XZZX}$ code across different bias ratios. While the $\\mathrm{XZZX}$ code effectively absorbs high-density Z-type hyperedges at extreme biases, it exhibits a threshold minimum at moderate biases ($η\\approx 10$) because transverse X and Y errors actively bridge the diagonal strings, breaking the code's one-dimensional decoupling symmetry. These findings demonstrate that utilizing hypergraph-aware decoders is critical, as the performance of bias-tailored codes is highly sensitive to the geometric structure of spatio-temporal correlated noise.",
+    "authors": [
+      "Dhruv Koul"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.06059v1",
+    "pdf": "https://arxiv.org/pdf/2610.06059v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.04613v1",
+    "title": "Multi-Yoked Surface Codes",
+    "published": "2026-10-03T15:52:38Z",
+    "updated": "2026-10-03T15:52:38Z",
+    "summary": "The surface code is the leading candidate for fault-tolerant quantum computation owing to its planar nearest-neighbor connectivity, high threshold, and efficient decoding, but its low encoding rate demands on the order of a thousand physical qubits per logical qubit in the teraquop regime. Yoked surface codes improve the density by a factor of two or three by concatenating a high-density parity check code on top of the surface code while retaining planar nearest-neighbor connectivity. In this work, we generalize this idea to multiple levels of concatenation and introduce multi-yoked surface codes. Our construction rests on two new ingredients. First, we propose a family of outer codes called chain codes, built by chaining copies of a seed code that detects the block errors of the code one level below; the resulting codes use all logical qubits of the lower level and achieve a high encoding rate within a few concatenation levels. Second, we design a patch allocation in which movable workspaces perform the yoking checks by lattice surgery with a hierarchy of yoking intervals, so that lower-level checks are performed frequently while higher-level checks are performed less often, which avoids the long yoking intervals that a single large-distance outer code would require. As a benchmark, we construct a three-yoked surface code with a $[[256,166,8]]$ outer code and evaluate it numerically under the SI1000 noise model using soft information from the surface code decoder. The logical error rate is suppressed exponentially in the inner code distance, and in the teraquop regime the three-yoked surface code is about 4 to 4.5$\\times$ denser than the unyoked surface code.",
+    "authors": [
+      "Yuga Hirai",
+      "Yasunari Suzuki"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.04613v1",
+    "pdf": "https://arxiv.org/pdf/2610.04613v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.03869v1",
+    "title": "Modular Neural Decoder for Surface Code Memory and Logic on Superconducting Processors",
+    "published": "2026-10-02T18:00:34Z",
+    "updated": "2026-10-02T18:00:34Z",
+    "summary": "Neural decoders for quantum error correction have achieved high accuracy on surface code memory experiments, but practical fault-tolerant computation requires decoders that transfer across devices, noise conditions, and logical operations. We introduce a modular graph-recurrent decoder designed for this setting. Built from reusable local syndrome encoders, it is pretrained in simulation and fine-tuned to hardware using a common pipeline, with only lightweight spatial aggregation adapted between experiments. The decoder performs competitively on conventional memory benchmarks, outperforming minimum-weight perfect matching (MWPM) at distances 3 and 5 on an IBM Nighthawk-generation processor and closely approaching AlphaQubit on Google's below-threshold hardware data. We then test the framework in two settings beyond memory decoding on the same IBM device. First, in an $X$-type stability experiment, we continuously tune the effective measurement error rate using a variable pre-readout rotation and train a single decoder jointly across the resulting noise range. It matches or outperforms MWPM across the sweep without requiring a separately calibrated decoder for each setting. Second, we decode a $ZZ$-merge lattice-surgery experiment between two distance-3 surface-code patches, improving the decoded correlation between the merge outcome and the final $ZZ$ parity relative to MWPM on real hardware. Together, these experiments demonstrate neural decoding that is portable not only across hardware, but also across qualitatively different surface code observables and logical operations, using models trainable on single-GPU academic resources.",
+    "authors": [
+      "Moritz Lange",
+      "Ole Fjeldså",
+      "Gustaf Jonasson Johansson",
+      "Mats Granath"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.03869v1",
+    "pdf": "https://arxiv.org/pdf/2610.03869v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.03682v1",
+    "title": "Low-Overhead Quantum Error Correction with Boundary-Connected Planar Modules",
+    "published": "2026-10-02T17:48:44Z",
+    "updated": "2026-10-02T17:48:44Z",
+    "summary": "Realizing practical quantum computers requires quantum error correction, but the most widely implemented approach, the planar surface code, demands a substantial physical qubit overhead. Here, we demonstrate that partitioning quantum processors into manageable, flat modules with non-local inter-module connections provides a natural solution. By wiring sparse, static boundary connections between Euclidean planar modules, we construct modular hyperbolic surface and color codes, based on new families of semi-hyperbolic codes. Using modular syndrome extraction circuits and efficient neural network and matching decoders, our circuit-level simulations show that this modular memory design can reduce the physical qubit overhead by tenfold or more compared to the surface code, even under elevated inter-module seam error rates. Projecting to larger system sizes, we find modular codes with encoding rate $k/n=1/16$ and distance $d\\geq 22$, exceeding both the rate and distance of the $[[288,12,18]]$ two-gross bivariate bicycle code while using mostly nearest-neighbor gates within planar modules, and implying an over $30\\times$ overhead reduction relative to surface codes. We develop fault-tolerant walking circuits for implementing logic via code automorphisms, which we co-design with low-weight, highly symmetrical logical bases and a modular extractor system that is $\\approx 4.5\\times$ smaller than the code itself. Combining these methods, our modular memory can be used as dense storage in a universal fault-tolerant architecture, unlocking the efficiency of high-rate codes without sacrificing the fabrication advantages of planar modules.",
+    "authors": [
+      "Oscar Higgott",
+      "Hasan Sayginel",
+      "Francisco J. H. Heras",
+      "Zhiyang He",
+      "Tomas Jochym-O'Connor",
+      "Andrew W. Senior",
+      "Lei M. Zhang",
+      "Thomas Edlich",
+      "James S. Spencer",
+      "Matt McEwen",
+      "Craig Gidney",
+      "Johannes Bausch",
+      "Pushmeet Kohli",
+      "Hartmut Neven"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.03682v1",
+    "pdf": "https://arxiv.org/pdf/2610.03682v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.03677v1",
+    "title": "Exact Recovery for Non-Abelian Surface Codes",
+    "published": "2026-10-02T17:45:14Z",
+    "updated": "2026-10-02T17:45:14Z",
+    "summary": "We study exact recovery for non-Abelian topological surface codes based on the quantum double $D(G)$ of any finite group $G$. We determine an orthogonal error basis, that is comprised of group multiplication and irreducible representation operators. Whenever the errors are supported on closed loops on the lattice or dual lattice, there is a redundancy in the basis, due to stabilizers. To remedy this, we introduce a gauge-fixing that results in a complete and orthogonal error basis on the code space. Assuming as input predetermined, neutral correctable error clusters, we construct charge and flux transfer circuits that move the errors onto ancillas that then get projected out. This is an exact and deterministic recovery protocol, applicable to surface codes for any finite, in particular non-Abelian, group $G$.",
+    "authors": [
+      "Alison Warman",
+      "Nathanan Tantivasadakarn",
+      "Sakura Schafer-Nameki"
+    ],
+    "categories": [
+      "quant-ph",
+      "cond-mat.str-el",
+      "hep-th",
+      "math.QA"
+    ],
+    "url": "https://arxiv.org/abs/2610.03677v1",
+    "pdf": "https://arxiv.org/pdf/2610.03677v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.03399v1",
+    "title": "Optimizing quantum error correction through error attribution",
+    "published": "2026-10-02T14:47:36Z",
+    "updated": "2026-10-02T14:47:36Z",
+    "summary": "Logical error rate is a standard benchmark for quantum error correction, providing an aggregate measure of the overall effect of physical noise. In actual QEC architectures, errors at different circuit locations can have markedly different effects on logical failure even when their probabilities are equal. Here we introduce an error attribution scheme to quantitatively characterize the influence of individual circuit components on the logical error rate and use this refined information to guide targeted intervention and design for improved QEC performance. Our attribution estimator computes all component sensitivities jointly from the same Monte Carlo samples used to estimate the logical error rate. The resulting sensitivity maps identify hotspots where targeted noise reduction can most effectively improve logical performance. We test the scheme in circuit simulations of rotated surface code memories and high-rate lifted product codes: halving the noise strength on about 5\\%-7\\% of physical components selected by sensitivity reduces logical error rates by approximately 15\\%-25\\%, roughly twice the mean reduction from the same intervention on an equal number of randomly selected components. By connecting performance benchmarking to targeted optimization, our scheme provides a practical strategy for improving quantum error correction with limited resources.",
+    "authors": [
+      "Yuguo Shao",
+      "Zi-Wen Liu"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.03399v1",
+    "pdf": "https://arxiv.org/pdf/2610.03399v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.03318v2",
+    "title": "Beyond Pure Dephasing: Quantum Error Correction in Single Molecules Requires Multiple Spins",
+    "published": "2026-10-02T13:54:04Z",
+    "updated": "2026-10-07T12:30:19Z",
+    "summary": "We propose multi-spin molecules as a viable architecture for fault-tolerant quantum computing. To this aim, we introduce a correction protocol handling both diagonal and off-diagonal errors, typically associated with dephasing and relaxation. The scheme is based on a hybrid encoding which combines dephasing-tolerant units suppressing the leading pure dephasing error into a multi-spin molecule implementing a multi-qubit code for residual off-diagonal errors. Our proposal leverages peculiar properties of molecular spins, i.e. the strong hierarchy between different errors and the possibility to engineer multi-spin molecules at the synthetic level. Moreover, it addresses the important issue of the loss of coherences in anharmonic systems subject to off-diagonal errors, which hampers their correction at the single spin level. Thanks to the huge suppression of dephasing by the first-level code, we numerically demonstrate the potential performance of this strategy even with a limited number of spins per logical unit.",
+    "authors": [
+      "Matteo Mezzadri",
+      "Silvia Macedonio",
+      "Luca Lepori",
+      "Emilio Macaluso",
+      "Francesco Albarelli",
+      "Richard E. P. Winpenny",
+      "Alessandro Chiesa",
+      "Stefano Carretta"
+    ],
+    "categories": [
+      "cond-mat.mes-hall",
+      "cond-mat.mtrl-sci",
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.03318v2",
+    "pdf": "https://arxiv.org/pdf/2610.03318v2"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.03214v2",
+    "title": "Quantum error-correcting code parameters, checkable by a certificate of provable size",
+    "published": "2026-10-02T12:31:45Z",
+    "updated": "2026-10-05T18:49:04Z",
+    "summary": "Quantum error correction protects quantum information by encoding it in a code described by three numbers: how many physical qubits it uses, how many logical qubits it protects, and the smallest error it cannot detect. The last is an optimum over exponentially many candidates, so it is read off a solver rather than checked. Here we show that code parameters can be certified by a short certificate, a list or a pairing or a symbolic instance, whose correctness the kernel of a proof assistant decides by computation, and whose size is itself a theorem rather than an estimate. Two published code families have distances settled here: the bivariate bicycle code's $[[144,12,12]]$, certified, and the affine-permutation codes printed at $[[1152,580,\\le 12]]$ and $[[2304,1156,\\le 14]]$, settled at twelve and fourteen. Eleven code families and thirty-nine parameter sets follow, with nothing beyond three standard axioms trusted and the pipeline's specification step preset to twenty columns.",
+    "authors": [
+      "Shuoming An",
+      "Fusheng Yang"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.03214v2",
+    "pdf": "https://arxiv.org/pdf/2610.03214v2"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.02786v1",
+    "title": "Quantum Error-Corrected Memories Keep Proper Time",
+    "published": "2026-10-02T04:20:47Z",
+    "updated": "2026-10-02T04:20:47Z",
+    "summary": "What does quantum error correction do to relativistic proper time? We show that when two error-corrected quantum memories follow distinct worldlines and are controlled by local references, their local correction histories factor exactly from the proper-time difference between them. Error correction therefore does not erase time dilation: when the memories are compared, the accumulated difference appears as a relational phase rotation. During locally referenced operation this rotation is invisible to every local error syndrome; at discrete phases admitted by a code, the final relational evolution instead returns exactly as a deterministic logical gate, including an $S$-type Clifford gate at a $π/2$ excursion. These results connect fault-tolerant quantum information with relativistic clocks and establish protected quantum memories as a platform for preserving proper-time information and for long-coherence tests of quantum evolution involving relativistic proper time.",
+    "authors": [
+      "Sebastian P. Kish",
+      "Simon J. Devitt"
+    ],
+    "categories": [
+      "quant-ph",
+      "gr-qc"
+    ],
+    "url": "https://arxiv.org/abs/2610.02786v1",
+    "pdf": "https://arxiv.org/pdf/2610.02786v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.02734v1",
+    "title": "SMP: A General Hyperedge-Based Framework for Circuit-Level Quantum Error Correction",
+    "published": "2026-10-02T03:07:44Z",
+    "updated": "2026-10-02T03:07:44Z",
+    "summary": "Hyperedge faults remain a major challenge in circuit-level quantum error correction. Accurately exploiting hyperedge correlations often requires substantial computational resources, which complicates real-time decoding. Matching-based decoders are fast and scalable, but their pairwise graph representation limits the use of higher-order fault information. Here, we introduce Syndrome Motif Projection (SMP), a general framework for incorporating hyperedge information into matching-based decoding. The key idea is that a hyperedge fault produces a characteristic local syndrome motif. Observing such a motif provides evidence for the corresponding fault. SMP extracts this information directly from the measured syndrome with linear-complexity preprocessing while preserving the matching backend. It can therefore serve as a lightweight front end to existing scalable and real-time matching decoders. We demonstrate SMP across surface code memories, color code memories, and logical gate circuits. On Google's Willow experimental surface code data, SMP improves both standard and correlated matching and outperforms the tested belief matching baseline. For color code memories, SMP combined with Chromobius reduces logical failure probabilities by up to 77.8\\%. For logical gate circuits, SMP reduces the failure probability of a six-CNOT circuit by 35.5\\% relative to logical observable matching while achieving performance comparable to iterative belief matching. These results demonstrate that SMP provides a lightweight and transferable approach to hyperedge decoding, with a clear path toward integration into scalable real-time decoding architectures for fault-tolerant quantum computation.",
+    "authors": [
+      "Siying Wang",
+      "Yue Yan",
+      "Zhixin Xia",
+      "Canwei Shi",
+      "Hannuo Yuan",
+      "Xiang-Bin Wang"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.02734v1",
+    "pdf": "https://arxiv.org/pdf/2610.02734v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.02310v1",
+    "title": "Homological Thresholds in Randomly Monitored Quantum Error-Correcting Codes",
+    "published": "2026-10-01T18:00:01Z",
+    "updated": "2026-10-01T18:00:01Z",
+    "summary": "Random projective measurements are an effective tool to model the interlinked phenomenology of monitoring, inferring, and decoding highly entangled states such as quantum error-correcting codes. At the same time, the study of such monitored dynamics has opened a new arena for critical phenomena, renewing longstanding questions in disordered statistical mechanics, including percolation, random-bond models, and Nishimori physics. Here we investigate the robustness of stabilizer quantum error-correcting codes under a single round of independently sampled single-qubit Pauli measurements and demonstrate that their threshold behavior falls into two broad categories - geometric and homological percolation transitions, with the toric code and color code being the principal examples for each class. We establish the distinct character of these two threshold theories by analyzing the logical-support criteria of these codes and by providing numerical estimates of their respective critical exponents obtained from optimized stabilizer simulations of large-scale systems with over one million qubits. Our framework extends to non-CSS, subsystem, higher-dimensional, and Floquet stabilizer codes and allows us to determine their respective threshold phase diagrams. We exemplify how the latter provide quantitative and qualitative guidance for the computationally more demanding problems of tunable learning and maximum-likelihood decoding. As a practical application of our framework, we discuss the robustness of the gross code.",
+    "authors": [
+      "Yoshito Watanabe",
+      "Daiki Sasamoto",
+      "Bo Han",
+      "Simon Trebst"
+    ],
+    "categories": [
+      "quant-ph",
+      "cond-mat.stat-mech"
+    ],
+    "url": "https://arxiv.org/abs/2610.02310v1",
+    "pdf": "https://arxiv.org/pdf/2610.02310v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.02168v1",
+    "title": "A baby universe from a large family: booklet cosmology states and quantum error correction",
+    "published": "2026-10-01T17:55:46Z",
+    "updated": "2026-10-01T17:55:46Z",
+    "summary": "We propose an extension of the cosmological-state construction of Antonini, Sasieta and Swingle (AS$^2$) to three or more holographic CFTs. Each CFT resides on the asymptotic boundary of an AdS page, and all pages are glued along a common interface by imposing the multiway junction conditions. The associated states are prepared by Euclidean evolution with a multilinear insertion. In appropriate heavy insertion limit the bulk geometry develop a closed universe in the center and we refer the state in this limit as a booklet cosmological state. Extending the effective Gaussian assumption used in AS$^2$, we model the three-page insertion by a circular complex Gaussian random tensor, yielding a tripartite Haar state in flat energy windows. In this Gaussian model of the cosmology-to-boundary map, each arm is a network branch associated with one boundary CFT. In the simplest example of three pages with three equal output Hilbert-space dimension $b$, we show that a prescribed code of dimension $K$ is approximately recoverable from any two arms, with vanishing error and high probability as $K/b\\to0$.",
+    "authors": [
+      "Jingshu Dai",
+      "Binye Dong",
+      "Cheng Peng"
+    ],
+    "categories": [
+      "hep-th"
+    ],
+    "url": "https://arxiv.org/abs/2610.02168v1",
+    "pdf": "https://arxiv.org/pdf/2610.02168v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2610.00504v1",
+    "title": "Graph Neural Post-selection for Quantum Error Correction",
+    "published": "2026-09-30T18:04:38Z",
+    "updated": "2026-09-30T18:04:38Z",
+    "summary": "Post-selection improves the logical reliability of quantum computation by rejecting shots which are likely to result in logical failure. We introduce graph neural networks that predict decoder failure without additional decoder executions, using only syndromes, and for high-rate quantum low-density parity-check (qLDPC) codes, existing belief-propagation posteriors. We evaluate rotated surface and bivariate bicycle (BB) code memories under uniform depolarising circuit-level noise. Retaining 90% of shots gives approximately 3700x and 740x reductions in logical error rates for [[72,12,6]] and [[144,12,12]] BB codes at realistic physical error rates. For the distance 5 surface code at physical noise p=0.003, our neural post-selector achieves logical error suppression comparable to the leading complementary gap method without running the decoder.",
+    "authors": [
+      "Conor Carty",
+      "Tamas Noszko",
+      "Joschka Roffe",
+      "Roberto Bondesan"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2610.00504v1",
+    "pdf": "https://arxiv.org/pdf/2610.00504v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2609.40279v1",
+    "title": "Classical simulation of coherent crosstalk in surface codes",
+    "published": "2026-09-30T17:46:49Z",
+    "updated": "2026-09-30T17:46:49Z",
+    "summary": "We give a polynomial-time classical algorithm which samples from the syndrome distribution of a surface code state corrupted by coherent nearest-neighbor $ZZ$ crosstalk. Our algorithm complements the known efficient simulation algorithms for coherent single-qubit errors in the surface code. When both single-qubit coherent noise and coherent crosstalk are present, we find a complexity-theoretic obstruction to efficient simulation: unless the polynomial hierarchy collapses, there is no efficient classical algorithm for sampling from the syndrome distribution, even up to a constant multiplicative error. This is obtained by connecting the syndrome distribution under coherent noise to the output distribution of certain IQP circuits associated with a non-planar graph.",
+    "authors": [
+      "Andrew S. Darmawan",
+      "Yelyzaveta Kolesnyk",
+      "Robert Koenig"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2609.40279v1",
+    "pdf": "https://arxiv.org/pdf/2609.40279v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2609.39764v1",
+    "title": "Measurement and feedforward circuits from quantum error correcting codes",
+    "published": "2026-09-30T13:57:26Z",
+    "updated": "2026-09-30T13:57:26Z",
+    "summary": "Measurements and feedforward enhance the power of shallow quantum circuits, enabling the deterministic implementation of global unitary operations and the preparation of long-range entangled states. We establish a general correspondence between all such protocols and quantum error-correcting codes: the circuit preceding the measurements acts as an encoder, and unitary feedforward can eliminate post-selection if and only if the measurement projectors are detectable errors on the codespace. This correspondence provides a common framework for state preparation and implementation of global unitaries with measurements and feedforward, turning both into a code-design problem. For stabilizer codes with Pauli measurements, although the resulting operation can be non-Clifford, we show that its nonstabilizerness originates entirely from the encoder. We overcome this restriction using non-Pauli measurements or non-additive codes, constructing protocols that generate long-range nonstabilizerness while requiring only single-qubit unitary corrections.",
+    "authors": [
+      "Georgios Styliaris",
+      "Rahul Trivedi"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2609.39764v1",
+    "pdf": "https://arxiv.org/pdf/2609.39764v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2609.39597v1",
+    "title": "Thermodynamics of Ahn--Doherty--Landahl Continuous Quantum Error Correction",
+    "published": "2026-09-30T12:19:10Z",
+    "updated": "2026-09-30T12:19:10Z",
+    "summary": "Continuous quantum error correction (CQEC) replaces discrete syndrome measurements and recovery operations with continuous syndrome extraction and real-time Hamiltonian feedback. Here we investigate the thermodynamic resources required by this process by formulating measurement-based continuous quantum error correction as an information engine. We distinguish the system-side power associated with energy transfer between the feedback field and the protected system from the controller-side power associated with the feedback Hamiltonian. The framework is first developed for the one-qubit Ahn-Doherty-Landahl (ADL) protocol and subsequently extended to the three-qubit repetition code under continuous stabilizer monitoring. Numerical simulations show that increasing the feedback strength improves the steady-state fidelity and reduces the conditional-state entropy, while both energetic contributions continue to increase in magnitude after the fidelity begins to saturate. These results expose a direct tradeoff between logical stabilization and the energetic resources required for continuous feedback, closely related to previously established energy--precision tradeoffs in quantum measurement and quantum-Zeno stabilization.",
+    "authors": [
+      "Juan Garcia-Nila",
+      "Pedro B. Melo",
+      "Lucas Johns"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2609.39597v1",
+    "pdf": "https://arxiv.org/pdf/2609.39597v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2609.39016v1",
+    "title": "Entropy threshold: A simple proxy for performance of quantum error correction",
+    "published": "2026-09-30T05:22:10Z",
+    "updated": "2026-09-30T05:22:10Z",
+    "summary": "The rapidly growing landscape of quantum error-correction (QEC) protocols has produced a wealth of numerical data, but comparatively few heuristics for understanding and predicting their performance. Here, we develop a simple entropy-based proxy that predicts the thresholds of a variety of QEC protocols, ranging from the code-capacity setting of Clifford-deformed surface codes with biased Pauli or erasure noise to the circuit-level noise model of the surface or color codes with flag qubits. Our proxy estimates the threshold by locally comparing the noise entropy with the error information gained via stabilizer measurements (or spacetime detectors and flag outcomes in the circuit-level settings). Despite neglecting correlations between stabilizer outcomes and the contribution from code degeneracy, the proxy captures the main trends across diverse settings and yields threshold estimates in good agreement with numerical results. Our work develops much-needed phenomenology that enables simple back-of-the-envelope estimates of QEC performance, recovering and providing an explanation for the results of computationally intensive detailed simulations.",
+    "authors": [
+      "Diego Ruiz",
+      "Aleksander Kubica"
+    ],
+    "categories": [
+      "quant-ph"
+    ],
+    "url": "https://arxiv.org/abs/2609.39016v1",
+    "pdf": "https://arxiv.org/pdf/2609.39016v1"
+  },
+  {
+    "group": "physics-quantum",
+    "arxiv": "2609.38129v1",
+    "title": "Conservation-Syndrome Quantum Error Correction for Lattice-Boltzmann Quantum Algorithms",
+    "published": "2026-09-29T17:52:39Z",
+    "updated": "2026-09-29T17:52:39Z",
+    "summary": "Reliable multistep quantum lattice-Boltzmann evolution requires controlling computational faults. When ideal collision preserves encoded mass and momentum exactly, changes in those charges can provide syndromes for selected faults at the post-collision checkpoint. A fault that shifts one population then leaves a unique mass-momentum residual labeled by the lattice velocity. A coherent reference register stores the expected charges, so the same test remains valid while the physical fluid charges vary across the lattice. Single bit flips on population number registers occupy disjoint syndrome sectors and satisfy the Knill-Laflamme condition. A state-vector demonstration on eighteen data qubits of the two-dimensional nine-velocity lattice (D2Q9) recovers that single-bit family to double-precision roundoff. Conservation still leaves a fifteen-dimensional kinetic nullspace on the three-dimensional nineteen-velocity lattice (D3Q19). Exact multiple-relaxation-time (MRT) streaming analysis ranks those charge-preserving modes by the order at which they return to density or momentum. A classical D3Q19 decaying-flow simulation at moderate Reynolds number then injects about $1.75\\times10^4$ selected single-population shifts per realization. Recovery of that alphabet returns the trajectory to floating-point roundoff. The quantum statements assume an ideal charge-preserving collision and a reliable reference. The result is an inner recovery map for a stated charge-changing alphabet together with a kinetic classification of the unresolved sector.",
+    "authors": [
+      "Muhammad Idrees Khan"
+    ],
+    "categories": [
+      "physics.comp-ph"
+    ],
+    "url": "https://arxiv.org/abs/2609.38129v1",
+    "pdf": "https://arxiv.org/pdf/2609.38129v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2610.18178v1",
+    "title": "Uniqueness of solutions to the 2D compressible Navier-Stokes equations for bounded densities",
+    "published": "2026-10-13T11:22:02Z",
+    "updated": "2026-10-13T11:22:02Z",
+    "summary": "We prove the uniqueness of global solutions to the two dimensional barotropic compressible Navier--Stokes equations within the regularity class introduced by Danchin and Mucha [14], for general $C^1$ pressure laws. A crucial assumption is that both solutions have bounded divergence, locally integrable in time, which ensures that their densities remain bounded without excluding vacuum or requiring spatial regularity of the density.",
+    "authors": [
+      "Lorenzo Pescatore",
+      "Alessandro Violini"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2610.18178v1",
+    "pdf": "https://arxiv.org/pdf/2610.18178v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2610.16874v1",
+    "title": "Existence and uniqueness of viscous-dispersive shock profiles for the Navier-Stokes-Fourier-Korteweg system",
+    "published": "2026-10-12T14:37:02Z",
+    "updated": "2026-10-12T14:37:02Z",
+    "summary": "We establish the existence and uniqueness, up to translation, of monotone viscous-dispersive shock profiles for the one-dimensional Navier-Stokes-Fourier-Korteweg (NSFK) system, provided the two constant end states satisfy the Rankine-Hugoniot and Lax entropy conditions and the shock strength is small. Treating the small shock strength as a singular perturbation parameter, we construct the profiles via Fenichel's geometric singular perturbation theory. We further provide pointwise estimates for the profiles, which are used in the nonlinear stability analysis of generic Riemann solutions to the NSFK system in a companion work.",
+    "authors": [
+      "Sungho Han"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2610.16874v1",
+    "pdf": "https://arxiv.org/pdf/2610.16874v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2610.14383v1",
+    "title": "Uniqueness and stability of entropy waves among vanishing dissipation limits from the Navier--Stokes--Fourier System",
+    "published": "2026-10-09T23:07:53Z",
+    "updated": "2026-10-09T23:07:53Z",
+    "summary": "In this paper, we establish the stability of general entropy wave solutions of the compressible Euler equations (that is, profiles with constant velocity and pressure) in the class of vanishing dissipation limits from the Navier--Stokes--Fourier system. If the initial data of our sequence of solutions to the Navier--Stokes--Fourier system converges to the initial data of the entropy wave solution, we further have convergence of the solutions to the entropy wave. This gives uniqueness and stability of the entropy wave in this class. The proof is based on the $a$-contraction theory.",
+    "authors": [
+      "Cooper Faile",
+      "Ingrid Lacroix-Violet",
+      "Alexis F. Vasseur"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2610.14383v1",
+    "pdf": "https://arxiv.org/pdf/2610.14383v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2610.11927v1",
+    "title": "Uniqueness of pressureless flow",
+    "published": "2026-10-08T13:23:37Z",
+    "updated": "2026-10-08T13:23:37Z",
+    "summary": "We consider the pressureless Euler equations in one spatial dimension. These equations model the dynamics of particles on a line that interact only through perfectly inelastic collisions. The flow was first shown to be unique for given initial conditions by Huang and Wang, assuming the entropy and the strong initial continuity of energy conditions hold. In this paper, we prove an analogous uniqueness theorem using a Lagrangian interpretation. The key ingredients are showing that each solution satisfying the entropy condition and an initial kinetic energy bound has this particular type of Lagrangian interpretation and a monotonicity inequality involving conditional expectation.",
+    "authors": [
+      "Ryan Hynd",
+      "Hwa Kil Kim"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2610.11927v1",
+    "pdf": "https://arxiv.org/pdf/2610.11927v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2610.11193v1",
+    "title": "Local Existence and Uniqueness for the 3D Compressible Navier-Stokes/Cahn-Hilliard System with Vacuum",
+    "published": "2026-10-08T03:56:07Z",
+    "updated": "2026-10-08T03:56:07Z",
+    "summary": "We establish local existence and uniqueness of strong solutions to the compressible Navier-Stokes/Cahn-Hilliard system in a bounded smooth domain in $\\mathbb R^3$, allowing the initial density to vanish. The initial data satisfy suitable regularity and compatibility conditions for the momentum and phase equations. The main difficulty arises from the simultaneous degeneracy of the momentum equation and the density-weighted phase equations, which complicates the construction of compatible positive-density approximations and uniform initial estimates. We overcome this difficulty by introducing a time-independent residual into the chemical relation. The residual preserves the phase compatibility exactly, keeps the initial phase field unchanged, and vanishes in $H^1$ as the approximation parameter tends to zero. For each positive-density approximation, we construct a local strong solution using a semi-discrete Galerkin scheme that discretizes only the phase variables and retains the full transport and momentum equations. We then derive a priori estimates independent of the density lower bound, which yield a common lifespan and allow us to pass to the vacuum limit. Uniqueness is proved using a modified difference energy that accounts for the coupling between the density and the chemical potential. To our knowledge, this is the first local well-posedness result for the three-dimensional compressible Navier-Stokes/Cahn-Hilliard system with initial vacuum.",
+    "authors": [
+      "Yinghua Li",
+      "Jingxue Yin",
+      "Haoran Zheng"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2610.11193v1",
+    "pdf": "https://arxiv.org/pdf/2610.11193v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2610.10341v1",
+    "title": "Uniqueness and stability of planar shock wave to 2D compressible Euler equations in the vanishing viscosity limit of compressible Navier-Stokes equations",
+    "published": "2026-10-07T16:21:01Z",
+    "updated": "2026-10-07T16:21:01Z",
+    "summary": "It is well known that the compressible Euler equations with planar shock initial data may admit infinitely many entropy weak solutions, as shown by Chiodaroli, De Lellis and Kreml [Comm. Pure Appl. Math. (2015)]. In this paper, we introduce a suitable notion of global-in-time weak solutions to the two-dimensional (2D) compressible Navier-Stokes equations with density-dependent viscosities in $\\mathbb{R} \\times \\mathbb{T}$. Within this solution framework, we establish the first vanishing viscosity limit selection criterion for the physically relevant planar shock solution to the 2D compressible Euler equations. More precisely, we prove the uniqueness and stability of the 2D Euler planar shock solution within a class of inviscid limits of Navier-Stokes solutions emanating from near-planar initial data while the shock direction perturbation can be arbitrarily large. Starting from the relative $κ$-entropy for 2D compressible Navier-Stokes equations in $\\mathbb{T}^2$ by Bresch, Noble and Vila [ESAIM Proc. Surveys (2017)], we first establish the relative $\\frac12$-entropy between 2D weak solution of compressible Navier-Stokes equations in $\\mathbb{R} \\times \\mathbb{T}$ and one-dimensional (1D) strong solution for averaged initial data in $\\mathbb{R}$. Then we achieve the desired vanishing viscosity limit selection criterion by successfully bridging the fundamental structural gap between 2D Eulerian formulation of the original Navier-Stokes system in the relative $\\frac12$-entropy and 1D vanishing viscosity limit to a shock solution of Euler equations in Lagrangian coordinates by Kang and Vasseur [Invent. Math. (2021)]. The framework developed herein can be applied to the three-dimensional limit selection criterion in $\\mathbb{R} \\times \\mathbb{T}^2$, as well as to more complex planar Riemann solutions and interacting wave patterns.",
+    "authors": [
+      "Geng Chen",
+      "Jeffrey Cheng",
+      "Alexis F. Vasseur",
+      "Yi Wang"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2610.10341v1",
+    "pdf": "https://arxiv.org/pdf/2610.10341v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2609.17962v1",
+    "title": "A Variational Family of Traveling Vortex Dipoles: Transition, Uniqueness, and Stability",
+    "published": "2026-09-16T00:46:25Z",
+    "updated": "2026-09-16T00:46:25Z",
+    "summary": "We provide a unified description of a stable variational family of traveling vortex dipoles for the two-dimensional incompressible Euler equations, connecting the classical Lamb dipole to asymptotically radial dipoles in the large-impulse regime. We show that this family undergoes a sharp transition from the Lamb dipole, where the mass constraint is inactive, to non-explicit traveling waves for which the mass constraint becomes active, and determine the critical value exactly. We further prove that the variational solutions are unique up to translation both near the Lamb dipole and in the large-impulse regime. As a consequence, the corresponding individual traveling waves are orbitally stable. Our results provide a unified picture of these two distinct asymptotic regimes within a single variational family of traveling vortex dipoles.",
+    "authors": [
+      "Ken Abe",
+      "In-Jee Jeong",
+      "Guolin Qin",
+      "Weicheng Zhan"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2609.17962v1",
+    "pdf": "https://arxiv.org/pdf/2609.17962v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2609.14688v1",
+    "title": "On the uniqueness and the regularity of solutions to the Navier Stokes in the Lorentz space $L^{3,\\infty}(\\mathbb{R}^3)$",
+    "published": "2026-09-13T17:45:42Z",
+    "updated": "2026-09-13T17:45:42Z",
+    "summary": "We prove uniqueness of solutions to the Navier-Stokes equations in the space \\[ L^p\\bigl([0,T],\\widetilde{L}^{3,\\infty}(\\mathbb{R}^3)\\bigr) \\cap C\\bigl([0,T],B^{-1,\\infty}_{\\infty}(\\mathbb{R}^3)\\bigr), \\qquad p>2, \\] where $\\widetilde{L}^{3,\\infty}(\\mathbb{R}^3)$ denotes the closure of the Schwartz space $\\mathcal{S}(\\mathbb{R}^3)$ in the Lorentz space $L^{3,\\infty}(\\mathbb{R}^3)$. Moreover, we prove that any solution $u$ in this class, if it exists, is smooth for positive time, namely, $u\\in C^\\infty((0,T]\\times \\mathbb{R}^3)$. In addition, we establish precise estimates for the behavior of $u(t)$ as $t\\to0^+ $ in various Banach spaces.",
+    "authors": [
+      "Ramzi May"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2609.14688v1",
+    "pdf": "https://arxiv.org/pdf/2609.14688v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2609.08985v1",
+    "title": "Non-uniqueness for the Complex Ginzburg-Landau Equation",
+    "published": "2026-09-08T16:27:27Z",
+    "updated": "2026-09-08T16:27:27Z",
+    "summary": "We show that singularities of the three-dimensional cubic complex Ginzburg-Landau equation developing from smooth initial data can induce non-uniqueness of solutions after the time of blowup. The solutions we study start as backward self-similar solutions, and the source of the non-uniqueness is an unstable eigenvalue of the linearization around the forward self-similar profile generated by the singularity. We establish the existence of this eigenvalue, and hence the non-uniqueness, by a computer-assisted proof for specific values of the parameters in the equation. The work is in part motivated by similarities to conjectured behavior for the Navier-Stokes equation, with which the complex Ginzburg-Landau equation shares several important properties, such as an energy inequality and the scaling symmetry.",
+    "authors": [
+      "Joel Dahne",
+      "Vladimír Šverák"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2609.08985v1",
+    "pdf": "https://arxiv.org/pdf/2609.08985v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2609.08158v1",
+    "title": "Two global stability theorems for small-data $3D$ compressible Euler solutions: Unique maximal globally hyperbolic developments with gradient-blowup & smooth global existence in the entire spacetime",
+    "published": "2026-09-08T02:42:20Z",
+    "updated": "2026-09-08T02:42:20Z",
+    "summary": "We prove a pair of complementary small-data stability theorems describing the global future and past structure of classical solutions to the isentropic, spherically symmetric $3D$ compressible Euler equations. We allow any equation of state with positive sound speed, except that our shock-formation results do not apply to the Chaplygin gas. Our first theorem concerns open sets of smooth Cauchy data that are perturbations of trivial data with vanishing velocity and constant positive density. The perturbed data have finite kinetic energy, and the perturbed density is equal to a positive constant plus a signed ``asymptotically flat'' tail. Our main theorem yields a complete description of the existence and uniqueness of the maximal globally hyperbolic development (MGHD) of the data. The boundary of the MGHD contains hypersurfaces that extend to spatial infinity on which our solutions develop gradient-singularities. This is the first MGHD existence-uniqueness-stability result for shock-forming solutions for any multi-$D$ quasilinear wave system. While prior works have yielded local portions of ``candidate'' MGHDs, neither the existence nor the uniqueness of an MGHD can be inferred from local considerations. Our second theorem considers analogous data with the opposite sign of the $1/r$ density tail. We prove global existence throughout spacetime, to both the future and past. The solution's asymptotic behavior towards null infinity is not linear, but rather is distorted by a logarithmic bending of the sound cones away from the flat Minkowski ones, leading to logarithmically enhanced dispersion. This is the first small-data global existence result in the entire spacetime for any $3D$ quasilinear wave system that fails to satisfy the null condition and the weak null condition. The main mechanism of stabilization is a global-in-spacetime rarefaction effect, tied to the $1/r$ tail.",
+    "authors": [
+      "Leonardo Abbrescia",
+      "Jared Speck",
+      "Dongxiao Yu"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2609.08158v1",
+    "pdf": "https://arxiv.org/pdf/2609.08158v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2609.01697v1",
+    "title": "Unique ergodicity of projective cocycles over the 2D stochastic Navier-Stokes equations",
+    "published": "2026-09-01T16:44:05Z",
+    "updated": "2026-09-01T16:44:05Z",
+    "summary": "We consider the linear cocycles generated by the linearized vorticity equation and by passive scalar advection diffusion, both driven by the two dimensional stochastic Navier-Stokes flow on the torus with non degenerate additive forcing, and we prove uniqueness of the stationary measures for the projective process associated to such linear dynamics. The proof relies on a localized asymptotic strong coupling construction, and on the non-degeneracy of the Malliavin matrix of the projective process. Establishing this non-degeneracy for passive scalar advection poses additional challenges, and requires a proof (based on Cameron-Martin analyticity arguments) that generically the passive scalar is nowhere one-dimensional.",
+    "authors": [
+      "Sam Punshon-Smith",
+      "Tommaso Rosati"
+    ],
+    "categories": [
+      "math.PR",
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2609.01697v1",
+    "pdf": "https://arxiv.org/pdf/2609.01697v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2608.29721v1",
+    "title": "A Uniqueness theorem for the Vortex-Wave system with non-constant vorticity near the point vortex",
+    "published": "2026-08-30T11:05:12Z",
+    "updated": "2026-08-30T11:05:12Z",
+    "summary": "We study the uniqueness of the vortex wave system, i.e.\\ the 2D incompressible Euler equations with vorticity consisting of a point vortex and a bounded part. We show that if the initial vorticity and point vortex location $(w_0,X_0)$ satisfy a constraint of the type $|w_0(x)-w_0(X_0)|=O(|x-X_0|^α)$ for $α> 2$ and the vorticity is in $L^\\infty$, then solutions are unique, globally in time, even though the velocity is not log-Lipschitz.",
+    "authors": [
+      "David Meyer"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2608.29721v1",
+    "pdf": "https://arxiv.org/pdf/2608.29721v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2608.29138v1",
+    "title": "uniqueness and asymptotic behavior of the stationary Navier-Stokes equations in a slab",
+    "published": "2026-08-29T08:26:46Z",
+    "updated": "2026-08-29T08:26:46Z",
+    "summary": "In this paper, we investigate the uniqueness and asymptotic behavior of the stationary Navier-Stokes equations in a slab domain with no-slip boundary conditions. Specifically, under the given external force and the small Poiseuille flow assumptions, we prove that there is an H1 solution, and obtain the pointwise decay around the Poiseuille flow at far field. Furthermore, if the force is small, the solution is shown to be unique. The key point of the proof is the estimate of the Dirichlet integral of the solutions in the truncated domains and the Stokes regularity estimates.",
+    "authors": [
+      "Han Li",
+      "Jingwen Han"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2608.29138v1",
+    "pdf": "https://arxiv.org/pdf/2608.29138v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2608.18075v1",
+    "title": "Unique Ergodicity for the Projective Process of the 2D Navier--Stokes Equation with Nondegenerate Noise",
+    "published": "2026-08-18T17:58:37Z",
+    "updated": "2026-08-18T17:58:37Z",
+    "summary": "We prove unique ergodicity of the projective process associated with the two dimensional Navier--Stokes equation in vorticity form, with additive diagonal noise acting on every nonzero real Fourier phase and satisfying two sided power law bounds. Consequently, the exact Furstenberg--Khasminskii formula for the top Lyapunov exponent holds. The main new ingredient is a compact dense mechanism for asymptotic generalized coupling in the absence of a Foiaş--Prodi type high-low mode decomposition for the projective dynamics. Using the dense range of the Malliavin derivative and compactness of the state derivative, we construct finite rank perturbations of the Wiener path that compensate, to first order, for perturbations of the initial condition, leaving a residual whose logarithmic growth has negative stationary mean and hence contracts locally at an exponential rate, with a cost controlled by a triangular scheme of blockwise Ramer transformations.",
+    "authors": [
+      "Zeng Lian",
+      "Rongchang Liu",
+      "Kening Lu"
+    ],
+    "categories": [
+      "math.PR",
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2608.18075v1",
+    "pdf": "https://arxiv.org/pdf/2608.18075v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2608.17456v1",
+    "title": "Non-unique $L^2$ solutions to the stationary Navier--Stokes equations on the whole plane",
+    "published": "2026-08-18T07:35:31Z",
+    "updated": "2026-08-18T07:35:31Z",
+    "summary": "We prove that, for a suitable small external force in $\\dot H^{-2}(\\mathbb R^2)$, the stationary Navier--Stokes equations on $\\mathbb R^2$ admit multiple solutions in $L^2(\\mathbb R^2)$.",
+    "authors": [
+      "Mikihiro Fujii"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2608.17456v1",
+    "pdf": "https://arxiv.org/pdf/2608.17456v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2608.08493v1",
+    "title": "A new proof of uniqueness of ground state for pseudo-relativistic Hartree equation",
+    "published": "2026-08-09T05:27:53Z",
+    "updated": "2026-08-09T05:27:53Z",
+    "summary": "We present a new proof of the uniqueness of ground states for the pseudo-relativistic Hartree equation in the non-relativistic regime. The proof treats the Euler-Lagrange equation and the mass constraint as a single augmented system, with the Lagrange multiplier as an additional unknown. The key point is the invertibility of the augmented linearization at the non-relativistic ground state.",
+    "authors": [
+      "Chen Pan",
+      "Zeng xiaoyu"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2608.08493v1",
+    "pdf": "https://arxiv.org/pdf/2608.08493v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2608.01872v1",
+    "title": "Generalized solution and Weak-Strong uniqueness for a barotropic Euler-Riesz system",
+    "published": "2026-08-03T08:19:43Z",
+    "updated": "2026-08-03T08:19:43Z",
+    "summary": "We study the Euler--Riesz system on the torus $\\mathbb T^d$, $d=2,3$: the compressible Euler equations with barotropic pressure $p(\\varrho)=a\\varrho^γ$ ($γ>1$, $a>0$), coupled to a repulsive nonlocal force ($\\approx \\varrho \\nabla_x K \\ast \\varrho$) with Riesz kernel $K(x)\\propto|x|^{β-d}$ of order $β\\in(0,2)$. Since $K$ is the kernel of the inverse fractional Laplacian $(-Δ)^{-β/2}$, we recast the force through the Caffarelli--Silvestre extension as the trace of a local stress tensor, replacing the nonlocal interaction by a local identity in one extra variable. For a repulsive kernel the total energy is coercive, and we use this to introduce a notion of global-in-time \\emph{dissipative solution} for arbitrarily large finite-energy data. Our main result is weak (measure-valued)--strong uniqueness, for every order $β\\in(0,2)$ and every $γ>1$ independently: on any interval on which a strong solution exists, every dissipative solution with the same initial data coincides with it and all defects vanish. The proof rests on a suitable adaptation of relative energy.",
+    "authors": [
+      "Nilasis Chaudhuri"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2608.01872v1",
+    "pdf": "https://arxiv.org/pdf/2608.01872v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2607.03373v1",
+    "title": "Existence, uniqueness and regularity of solutions to the parabolic Ambrosio-Tortorelli system",
+    "published": "2026-07-03T14:27:32Z",
+    "updated": "2026-07-03T14:27:32Z",
+    "summary": "We investigate the existence, uniqueness, and regularity of the gradient flow of the Ambrosio-Tortorelli functional, viewed as an initial-boundary value problem, in arbitrary dimension. For any initial data, using a time-discrete Euler scheme, we establish the existence of a weak gradient flow satisfying a maximum principle. We also identify a functional space in which uniqueness holds. We further show that such gradient flow is smooth in the interior of the space-time domain. Under additional assumptions on the initial data, the regularity of the boundary of the domain, we prove optimal regularity for the solution, up to the space-time boundary.",
+    "authors": [
+      "Martin Rakovsky"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2607.03373v1",
+    "pdf": "https://arxiv.org/pdf/2607.03373v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2607.00225v1",
+    "title": "Onsager-Type Energy Equality and Prodi--Serrin Uniqueness for Nernst--Planck Fluid Systems",
+    "published": "2026-06-30T22:05:06Z",
+    "updated": "2026-06-30T22:05:06Z",
+    "summary": "We study weak solutions of electrodiffusion systems coupling the Nernst--Planck equations with fluid models. First, for the three-dimensional Nernst--Planck--Euler system, we establish an Onsager-type criterion for the validity of the coupled kinetic-electrostatic energy balance. The energy equality is shown to hold for weak solutions whose velocity satisfies critical Besov regularity and a vanishing dyadic flux condition. Furthermore, assuming the corresponding Onsager-type regularity for the ionic concentrations, we also prove parabolic regularity, preservation of non-negativity of the concentrations, and the associated charge-density energy identity. Second, for the three-dimensional Nernst--Planck--Navier--Stokes system, we prove a Prodi--Serrin-type uniqueness criterion for Leray--Hopf solutions: uniqueness in the Leray--Hopf class holds whenever the velocity field lies in the Ladyzhenskaya--Prodi--Serrin class $L^p_tL^q_x$ with $2/p+3/q=1$ and $q>3$. These results extend energy-equality and weak--strong uniqueness principles from incompressible fluid dynamics to electrodiffusion models involving convection, diffusion, and self-consistent electrostatic forcing.",
+    "authors": [
+      "Ruimeng Hu",
+      "Quyuan Lin",
+      "Qirui Peng"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2607.00225v1",
+    "pdf": "https://arxiv.org/pdf/2607.00225v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2606.29512v1",
+    "title": "On uniqueness of solutions to stochastic Navier--Stokes equations",
+    "published": "2026-06-28T17:19:13Z",
+    "updated": "2026-06-28T17:19:13Z",
+    "summary": "Theorems on uniqueness and continuous dependence on the initial condition of solutions to stochastic Navier-Stokes equations driven by Wiener processes and Poisson martingale measures are presented. These theorems generalise some results from \\cite{GK2026}.",
+    "authors": [
+      "Raymond Cotter",
+      "István Gyöngy"
+    ],
+    "categories": [
+      "math.PR",
+      "math-ph",
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2606.29512v1",
+    "pdf": "https://arxiv.org/pdf/2606.29512v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2606.15189v4",
+    "title": "Blow-up and uniqueness of Leray-Hopf solutions to forced Navier-Stokes equations",
+    "published": "2026-06-13T08:34:21Z",
+    "updated": "2026-08-15T18:40:02Z",
+    "summary": "We prove the existence of forces and smooth initial data such that the associated Leray-Hopf solution of the 3D Navier-Stokes equations is unique, global-in-time, satisfies the energy equality, and has infinitely many (countable) blow-up instants. Different classes of forces and blow-up strengths are considered. All of them are sharp compared to the boundedness statements in literature. Our method also enables us to construct examples of blow-up for the forced 3D Euler equations.",
+    "authors": [
+      "Giovanni Paolo Galdi",
+      "Filippo Gazzola"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2606.15189v4",
+    "pdf": "https://arxiv.org/pdf/2606.15189v4"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2606.14308v1",
+    "title": "Non-uniqueness of global-in-time admissible weak solutions to the isentropic compressible Euler equations for a dense set of initial data",
+    "published": "2026-06-12T09:44:28Z",
+    "updated": "2026-06-12T09:44:28Z",
+    "summary": "In recent years, the technique of convex integration has demonstrated that for some initial data (also referred to as 'wild initial data'), many PDE models of mathematical fluid mechanics allow for a multitude of admissible (weak) solutions. This paper is concerned with the question regarding how large the set of such wild initial data is for the isentropic Euler equations. We prove that wild initial data form a dense set in $L^r$ for any $r \\in [1,\\infty)$. In contrast to existing results in the literature, in this paper 'wild initial data' are data which give rise to infinitely many global-in-time weak solutions which are admissible in the sense that the local energy inequality holds. In other words, the set of initial data with infinitely many admissible weak solutions (independent of the choice of time interval) is dense. A novel part of the construction is that we use a measure-valued (dissipative) solution as the ansatz for the subsolution. This requires several new ideas, in order to ensure the required regularity of the subsolution and to obtain a lower bound for the density. Another crucial ingredient of the proof is that the (local) energy density and the energy flux are constructed as part of the convex integration scheme, in order to obtain solutions which adhere to the local energy inequality.",
+    "authors": [
+      "Daniel W. Boutros",
+      "Simon Markfelder"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2606.14308v1",
+    "pdf": "https://arxiv.org/pdf/2606.14308v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2606.13065v2",
+    "title": "Uniqueness of the dissipative SQG without time-continuity assumption",
+    "published": "2026-06-11T08:50:14Z",
+    "updated": "2026-10-15T04:16:18Z",
+    "summary": "We consider the uniqueness of the solution of the dissipative surface quasi-geostrophic equation, without assuming time-continuity and smallness of the solutions. We show that the uniqueness holds in the scale-critical Lebesgue spaces and non-homogeneous Besov spaces. The proof is based on the energy method, inspired by the approach introduced by Lions and Masmoudi (2001) in the study of uniqueness for the Navier-Stokes equations. A key ingredient of the argument is the justification of the energy inequality via the smoothing effect of the fractional heat semigroup together with an iteration scheme based on the structure of the integral equation.",
+    "authors": [
+      "Taiki Okazaki"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2606.13065v2",
+    "pdf": "https://arxiv.org/pdf/2606.13065v2"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2606.07501v1",
+    "title": "On the non-uniqueness of solutions of the axi-symmetric swirl-free Navier-Stokes equations, I",
+    "published": "2026-06-05T17:53:56Z",
+    "updated": "2026-06-05T17:53:56Z",
+    "summary": "In this paper we construct numerically a new class of unstable self-similar solutions of the incompressible Navier-Stokes equations in $\\mathbb{R}^3$. Our solutions are axially symmetric and homogeneous of degree $-1$ at $\\infty$, and are unstable in the sense that the linearization around these solutions contains unstable modes. Solutions of this type have been discovered numerically by Guillod and Šverák and Hou, Wang, and Yang, and have applications to proving non-uniqueness results. The main novelty in this paper is that we discover the existence of such solutions in the space of axially symmetric swirl-free (ASSF) vector fields. These approximate solutions are defined on all of $\\mathbb R^3$ and achieve global pointwise residuals of order $10^{-10}$. We discuss the numerical construction of these solutions in detail, as well as their relevance to the problem of non-uniqueness of solutions of the incompressible Navier-Stokes equations in 3D, in the space of ASSF solutions.",
+    "authors": [
+      "Alexandru D. Ionescu",
+      "Hao Jia",
+      "Stan Palasek"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2606.07501v1",
+    "pdf": "https://arxiv.org/pdf/2606.07501v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2606.02517v1",
+    "title": "Weak-strong uniqueness and low Mach number limit for a viscous compressible fluid around a rotating body",
+    "published": "2026-06-01T17:27:33Z",
+    "updated": "2026-06-01T17:27:33Z",
+    "summary": "We study the flow of an isothermal compressible Newtonian fluid around a body that performs a (time-independent) rigid motion. We derive a weak-strong uniqueness principle, and show that in the low Mach number limit, the governing equation is well approximated by the Navier-Stokes equations for incompressible rotating flow. Both results are based on the derivation of a relative energy inequality for weak solutions to this exterior-domain problem.",
+    "authors": [
+      "Thomas Eiter",
+      "Šárka Nečasová",
+      "Florian Oschmann"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2606.02517v1",
+    "pdf": "https://arxiv.org/pdf/2606.02517v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2605.29934v3",
+    "title": "Non-uniqueness for the hyperdissipative Navier-Stokes equations with arbitrarily small subcritical data",
+    "published": "2026-05-28T13:46:13Z",
+    "updated": "2026-07-01T11:55:39Z",
+    "summary": "In this paper, we consider the hyperdissipative Navier-Stokes equations with fractional dissipation $(-Δ)^β$ with $β>1$. We prove that smooth solutions of the hyperdissipative Navier-Stokes equations are non-unique with arbitrarily small initial data in ${B}^{-β-α}_{\\infty,1}(\\mathbb{T}^d)$ for any $α>0$. Moreover, we show the existence of a solution with arbitrarily small initial data in ${B}^{-β-α}_{\\infty,1}(\\mathbb{T}^d)$ ($α>0$) that grows arbitrarily large in $\\dot{B}^{-s}_{\\infty,\\infty}(\\mathbb{T}^d)$ for all $s\\in\\mathbb{R}$ in arbitrarily small time. It is worth pointing out that ${B}^{-β-α}_{\\infty,1}(\\mathbb{T}^d)$ lies in the subcritical regime when $0<α<β-1$. To the best of our knowledge, this is the first non-uniqueness result of the Navier-Stokes equations with initial data at the subcritical regularity. To show the sharpness of the above results, we establish the local well-posedness of the hyperdissipative Navier-Stokes equations with initial data in $\\dot{B}^{-β-α}_{\\infty,\\infty}(\\mathbb{T}^d)$ with $α< 0$.",
+    "authors": [
+      "Zipeng Chen",
+      "Song Liu",
+      "Zhaoyang Yin"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2605.29934v3",
+    "pdf": "https://arxiv.org/pdf/2605.29934v3"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2605.25097v2",
+    "title": "Sharp non-uniqueness of weak solutions to 2D magnetohydrodynamic equations",
+    "published": "2026-05-24T14:18:28Z",
+    "updated": "2026-06-01T02:26:07Z",
+    "summary": "In this paper, we prove that weak solutions to the 2D viscous and resistive magnetohydrodynamic (MHD) equations are non-unique in $L^2_t L^p(\\mathbb{R}^2) \\cap L^1_t W^{1,p}(\\mathbb{R}^2)$ for given any $1\\le p<\\infty$, showing the sharpness of the Ladyzhenskaya--Prodi--Serrin condition at the endpoint $(2,\\infty)$ and the solutions live on the borderline of the Beale--Kato--Majda criterion. To the best of our knowledge, this is the first non-uniqueness result for the 2D viscous and resistive MHD system. As byproducts, we also obtain non-uniqueness for the Navier--Stokes equations in $L^2_t L^p$ with $1\\le p<\\infty$, and for the MHD system with large $\\mathrm{BMO}^{-1}$ initial data.",
+    "authors": [
+      "Changxing Miao",
+      "Yao Nie",
+      "Weikui Ye"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2605.25097v2",
+    "pdf": "https://arxiv.org/pdf/2605.25097v2"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2605.13592v2",
+    "title": "Spectral instability and non-uniqueness for the Keller-Segel system",
+    "published": "2026-05-13T14:26:28Z",
+    "updated": "2026-07-20T13:31:37Z",
+    "summary": "We show that the Cauchy problem associated with the parabolic-elliptic Keller-Segel model is locally ill-posed in $L^q(\\mathbb{R}^n)$ for dimensions $n \\in \\{3,\\dots,9\\}$ and throughout the supercritical range $q\\in [1,\\frac{n}{2})$. An analog non-uniqueness result is given in the critical space of bounded functions taking values in $L^{n/2,\\infty}(\\R^n)$. The non-uniqueness is driven by an instability mechanism in self-similarity variables, in the spirit of the program proposed by Jia and Šverák for the three-dimensional Navier-Stokes equations.",
+    "authors": [
+      "Eliseo Luongo",
+      "Umberto Pappalettera"
+    ],
+    "categories": [
+      "math.AP",
+      "math.SP"
+    ],
+    "url": "https://arxiv.org/abs/2605.13592v2",
+    "pdf": "https://arxiv.org/pdf/2605.13592v2"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2604.25669v1",
+    "title": "Boundary epsilon regularity for incompressible Navier--Stokes equations via weak-strong uniqueness",
+    "published": "2026-04-28T14:02:43Z",
+    "updated": "2026-04-28T14:02:43Z",
+    "summary": "We show that finite-energy weak solutions to the incompressible Navier--Stokes equations on a three-dimensional bounded smooth domain are regular up to the boundary, provided that the $L^4_tL^4_x$-norm of the solution is smaller than a constant depending only on the domain. This answers a problem raised in [D. Albritton, T. Barker, and C. Prange, J. Math. Fluid Mech. 25 (2023), Paper No. 49]. Our proof relies on a new slicing construction near the boundary of the domain.",
+    "authors": [
+      "Siran Li"
+    ],
+    "categories": [
+      "math.AP",
+      "physics.flu-dyn"
+    ],
+    "url": "https://arxiv.org/abs/2604.25669v1",
+    "pdf": "https://arxiv.org/pdf/2604.25669v1"
+  },
+  {
+    "group": "math-pde",
+    "arxiv": "2604.08684v2",
+    "title": "Instantaneous blowup and non-uniqueness of smooth solutions of MHD",
+    "published": "2026-04-09T18:16:17Z",
+    "updated": "2026-05-31T17:30:39Z",
+    "summary": "We construct a family of solutions $(u,B)$ of the incompressible magnetohydrodynamic (MHD) system, the $L^\\infty$ norm of which blows up instantaneously at the critical rate. The solutions remain smooth except at the blowup time. An inverse energy cascade mechanism and a convex integration scheme along a time sequence are the main ingredients of the construction, inspired by our recent work [CDP25] for the Navier-Stokes equations. The challenge of the construction for the MHD system stems from the coupling and the necessity of preserving the same ansatz of the principal solution at every iterative step while implementing convex integration. Existing convex integration schemes for MHD can treat the coupling but fail to produce the same ansatz of the principal solution recursively. To achieve the goal, we introduce a coupled geometric lemma that decomposes a symmetric tensor and a skew-symmetric tensor simultaneously. We emphasize that such coupled geometric lemma is new and of independent interest.",
+    "authors": [
+      "Mimi Dai"
+    ],
+    "categories": [
+      "math.AP"
+    ],
+    "url": "https://arxiv.org/abs/2604.08684v2",
+    "pdf": "https://arxiv.org/pdf/2604.08684v2"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2610.22107v1",
+    "title": "The discrete second moment of the Riemann zeta-function along powers of Gram points",
+    "published": "2026-10-15T15:49:33Z",
+    "updated": "2026-10-15T15:49:33Z",
+    "summary": "Let $t_k$ be the Gram points, and let $d\\geq1$ be a fixed integer. Put $η_d=1/(2^{d+1}-2)$, $σ_d=1-η_d/d$, and $σ_d^*=7/8$ for $d=2$ and $σ_d^*=σ_d$ otherwise. We prove that, uniformly on compact subsets of $σ_d^*<\\Re s<1$, $$ \\frac1N\\sum_{k=2}^{N}|ζ(s+it_k^d)|^2 \\longrightarrow ζ(2\\Re s). $$ The underlying result is a mean-square approximation by finite Euler products. For the squares of Gram points, grouping equal frequency ratios and applying the double large sieve improves the general derivative-test boundary $11/12$ to $7/8$. Assuming the Lindelöf hypothesis, both the Euler-product approximation and the second-moment formula hold on every compact subset of $1/2<\\Re s<1$, for every fixed $d\\geq1$. As an application, we obtain a discrete universality theorem along the same Gram-power shifts, in the same unconditional and conditional regions.",
+    "authors": [
+      "Marius Dundulis",
+      "Ramūnas Garunkštis",
+      "Antanas Laurinčikas",
+      "Raivydas Šimėnas"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2610.22107v1",
+    "pdf": "https://arxiv.org/pdf/2610.22107v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2610.18491v2",
+    "title": "Some applications of the quasi-Riemann hypothesis to class groups and small generators of number fields",
+    "published": "2026-10-13T14:46:52Z",
+    "updated": "2026-10-14T15:12:14Z",
+    "summary": "We prove an effective version of the Chebotarev density theorem, conditional on the quasi-Riemann hypothesis for the Dedekind zeta function. Drawing on recent breakthroughs of OpenAI and Cureton--Thorner, we make unconditional the Ellenberg--Venkatesh bounds on $\\ell$-torsion in class groups of number fields and extend an averaged result of Lemke Oliver--Smith to arbitrary families of degree-$d$-fields. Further applications are given to the least prime splitting and to small generators in number fields.",
+    "authors": [
+      "Christopher Frei",
+      "Efthymios Sofos",
+      "Martin Widmer"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2610.18491v2",
+    "pdf": "https://arxiv.org/pdf/2610.18491v2"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2610.15989v2",
+    "title": "Zero density in short strips and short-interval bounds toward Hypothesis S",
+    "published": "2026-10-11T23:39:47Z",
+    "updated": "2026-10-14T19:09:31Z",
+    "summary": "We deduce zero-density estimates in short vertical strips from short-interval moments of globally tempered automorphic $L$-functions, by adapting the large-value estimate of Guth and Maynard and the Type II zero argument of Maynard and Pratt to the framework of Ye and Zhang. For the Riemann zeta function, we obtain $N_ζ(σ;T,T+T^a)\\ll T^{15a(1-σ)/(3+5σ)+\\varepsilon}$ for $2/3\\le a\\le1$ and $7/10\\leσ\\le4/5$, improving Ye--Zhang's exponent in the interior of this range. Combining the localized density bound with the recent quasi-Riemann theorems, we estimate smoothed prime-power sums with phase $\\exp(2πiαn^β)$ on intervals of length $K^δ$. For $0<β<13/20$, we obtain a power saving whenever $\\max\\{17/30,1-β\\}<δ<1$; in particular the square-root phase admits every $δ>17/30$. A revised transform estimate retains both the stationary spread and the Fourier width $K/L$. For example, the bound at $β=1/2$, $δ=3/5$ is $K^{15/26+\\varepsilon}$, uniformly for frequencies $mα$ with $1\\le m\\le K^{1/10}$. We also retain power savings for certain self-dual $GL(2)$ twists and self-dual $GL(3)$ cusp forms, without assuming Ramanujan. All three applications have explicit frequency dependence.",
+    "authors": [
+      "Yangbo Ye"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2610.15989v2",
+    "pdf": "https://arxiv.org/pdf/2610.15989v2"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2610.15291v2",
+    "title": "Amplified moments and a refinement of the quasi-Riemann hypothesis",
+    "published": "2026-10-11T02:55:48Z",
+    "updated": "2026-10-15T17:41:22Z",
+    "summary": "Recently, OpenAI announced a uniform $7/8$ zero-free half-plane for finite-order Hecke $L$-functions over $\\mathbb{Q}(\\sqrt{-3})$, together with its transfer to Dirichlet $L$-functions. Assuming the analytic inputs of that work, we improve the boundary from $7/8=0.875$ to $8748867/10000000=0.8748867$ for the same families. The improvement combines a relaxed direct estimate with an amplified first moment of the reflected numerator, obtained from the existing fourth-moment estimate. A two-stage parameter argument yields the stated boundary without strengthening the inverse-moment estimate.",
+    "authors": [
+      "Yuanda Xu",
+      "Hejian Sang"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2610.15291v2",
+    "pdf": "https://arxiv.org/pdf/2610.15291v2"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2610.14628v1",
+    "title": "Examples of Bessel Functions of Order Zero Related to the Functional Equation of the Riemann Zeta Function",
+    "published": "2026-10-10T06:23:15Z",
+    "updated": "2026-10-10T06:23:15Z",
+    "summary": "In 2010, M. A. Chaudhry et al. introduced a class of functions Sigma satisfying an L^1-condition. They proved that every function phi in Sigma gives rise to the functional equation for the Riemann zeta function. They also provided an example of a function outside Sigma for which the functional equation still holds. In this paper, we present several examples of Bessel functions of order zero that do not belong to Sigma but nevertheless give rise to the functional equation for the Riemann zeta function. In particular, we show that J_0(a sqrt(x)), J_0(ax), and Y_0(x) exhibit this phenomenon.",
+    "authors": [
+      "Hideto Iwata"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2610.14628v1",
+    "pdf": "https://arxiv.org/pdf/2610.14628v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2610.12234v2",
+    "title": "Improved zero-free half-planes for the quasi-Riemann hypothesis",
+    "published": "2026-10-08T16:18:53Z",
+    "updated": "2026-10-12T20:09:44Z",
+    "summary": "Recently, a uniform $\\frac{7}{8}$ zero-free half-plane for finite-order Hecke $L$-functions over $\\mathbb Q(\\sqrt{-3})$ and its transfer to Dirichlet $L$-functions was given by OpenAI in [Ope26a]. In its proof, there are several parameters $b=\\frac{1}{8}, \\ell=\\frac{1}{6}$, and $κ$. In this paper, via varying $b$, $\\ell$, and $κ$, following the same strategy, we slightly improve the bound $\\frac{7}{8}=0.875$ to \\[ B_{\\mathrm{new}}=\\frac{18ξ_{\\mathrm{new}}+7}{18ξ_{\\mathrm{new}}+9} =0.874957019420098946\\ldots, \\] where $ξ_{\\mathrm{new}}$ is the unique root in $(0.38858,0.38859)$ of $1188ξ^3-2160ξ^2+171ξ+190=0$. Explicitly, with $\\arccos\\in[0,π]$, \\[ ξ_{\\mathrm{new}}=\\frac{20}{33}+\\frac{\\sqrt{1391}}{33} \\cos\\!\\left(\\frac13\\arccos\\frac{28470}{1391^{3/2}} -\\frac{2π}{3}\\right). \\] The limiting parameters are \\[ \\begin{gathered} b_{\\mathrm{new}}=\\frac{8(3ξ_{\\mathrm{new}}-1)(12ξ_{\\mathrm{new}}^2-40ξ_{\\mathrm{new}}+15)} {9(2ξ_{\\mathrm{new}}+1)(24ξ_{\\mathrm{new}}^2-20ξ_{\\mathrm{new}}+5)}, \\ell_{\\mathrm{new}}=\\frac{5-6ξ_{\\mathrm{new}}}{9+18ξ_{\\mathrm{new}}},\\qquad κ_{\\mathrm{new}}=\\frac{18ξ_{\\mathrm{new}}+5}{18ξ_{\\mathrm{new}}+9} =2B_{\\mathrm{new}}-1. \\end{gathered} \\] We also prove its optimality within the explicitly specified exponent comparison system. This result has been formalized by Lean [Liu26].",
+    "authors": [
+      "Baiying Liu"
+    ],
+    "categories": [
+      "math.NT",
+      "math.RT"
+    ],
+    "url": "https://arxiv.org/abs/2610.12234v2",
+    "pdf": "https://arxiv.org/pdf/2610.12234v2"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2610.08965v1",
+    "title": "More than 83.9% of the zeros of the Riemann zeta function are distinct and more than 67.35% are simple and on the critical line",
+    "published": "2026-10-06T18:31:22Z",
+    "updated": "2026-10-06T18:31:22Z",
+    "summary": "Let N(T) count the nontrivial zeros of the Riemann zeta function up to height T with multiplicity, N_d(T) the distinct ones, and N_0^s(T) those that are simple and on the critical line. We prove liminf N_d(T)/N(T) >= 1645064/1960733 = 0.83900...; earlier work proves 0.83699..., and a report we have not verified claims 0.83805.... Hence more than 67.80% are simple. Also liminf N_0^s(T)/N(T) >= 0.67353...; earlier work proves 0.67250..., and reports we have not verified claim 0.673492. Two estimates of Lamzouri are improved: at least 88.93% of the zeros are simple or on the critical line, and the proportions of simple zeros and of zeros on the line average at least 83.67%. By the unconditional form of Montgomery's pair-correlation theorem the energy, a sum of a test function over pairs of zeros, is known asymptotically. A zero of multiplicity d contributes d^2 to it and nearby zeros contribute too, so a lower bound for such pairs leaves less energy for multiple zeros. The proof has three steps. First, for zeros at least a fixed fraction of the mean spacing apart, a large sieve inequality lets their pairs be used in full, with multiplicities. Second, their contribution is bounded below by a computer-assisted inequality for seven or eight consecutive zeros which distinguishes simple and double zeros. Its correction terms telescope, as increments of a storage function. Third, the test function is chosen to make this contribution large, at the cost of more energy. We also prove upper limits for what such inequalities can give with the two main test functions. The lower bounds and these limits are proved in Lean 4, analytic inputs included. The proofs use three axioms beyond those of Mathlib, one per inequality. Each records that a search program returned true; Lean's kernel does not check the run itself. This work is an experiment in AI-assisted mathematical research.",
+    "authors": [
+      "Kristian Muri Knausgård"
+    ],
+    "categories": [
+      "math.NT",
+      "cs.LO"
+    ],
+    "url": "https://arxiv.org/abs/2610.08965v1",
+    "pdf": "https://arxiv.org/pdf/2610.08965v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2610.05227v1",
+    "title": "One-level density of zeros of the Riemann zeta function weighted by its special values",
+    "published": "2026-10-04T13:48:23Z",
+    "updated": "2026-10-04T13:48:23Z",
+    "summary": "We consider the one-level density of zeros of the Riemann zeta function weighted by its special values on the line ${\\rm Re}(s)=σ$, where $σ$ is a fixed real number such that $1/2\\le σ\\le1$. We show that the density function for the Riemann zeta function changes if and only if $σ=1/2$.",
+    "authors": [
+      "Shingo Sugiyama",
+      "Ade Irma Suriajaya"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2610.05227v1",
+    "pdf": "https://arxiv.org/pdf/2610.05227v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2610.01035v1",
+    "title": "The sixth moment of the Riemann zeta function",
+    "published": "2026-10-01T04:21:57Z",
+    "updated": "2026-10-01T04:21:57Z",
+    "summary": "We prove new large value estimates for the Riemann zeta function on the critical line. For instance, we improve the upper bound on the measure of $t\\in [T, 2T]$ with $|ζ(1/2 + it)| \\geq T^{1/8}$ for the first time since Hardy-Littlewood (1923). Our results imply improved upper bounds on the $k$-th moment of zeta for every $4 < k \\leq 12$. We show in particular that \\begin{equation*} \\int_{0}^{T} |ζ(\\tfrac{1}{2} + it)|^6 \\,d t \\ll_\\varepsilon T^{\\frac{5}{4} - \\frac{1}{60} + \\varepsilon}. \\end{equation*} The main ingredient is a new large value estimate for exponential sums with square-root phases, and certain perturbations. Those arise in the expansion of the short second moment of zeta.",
+    "authors": [
+      "Alexandre de Faveri",
+      "Mayank Pandey"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2610.01035v1",
+    "pdf": "https://arxiv.org/pdf/2610.01035v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2609.33043v2",
+    "title": "More than 83.69% of the zeros of the Riemann zeta function are distinct",
+    "published": "2026-09-27T00:19:21Z",
+    "updated": "2026-10-07T17:59:09Z",
+    "summary": "The lower asymptotic proportion of distinct nontrivial zeros of the Riemann zeta function, relative to the total number counted with multiplicity, is at least $0.8369928814\\ldots$. Earlier work proves $0.83625\\ldots$, and a report we have not verified claims $0.83672\\ldots$. As in the proof of the bound $0.83625$, an unconditional version of Montgomery's pair-correlation theorem gives an asymptotic energy estimate. The new ingredient is a short matrix inequality with a free clipping parameter. It strengthens the lower bound for this energy in terms of the number of distinct zeros. The gain is a nonnegative correction from overlaps between different nearby zeros on the critical line, which is retained even when some of these zeros are double. The matrix inequality, the threshold lemma, the block dichotomy, the counting assembly and the exact arithmetic are proved formally in Lean 4. The constant relies on a computer-assisted local inequality from recent work that has not yet been refereed. That computation was re-run independently, and every imported input is listed. This paper is primarily an experiment in AI-assisted mathematical research (Section 4).",
+    "authors": [
+      "Kristian Muri Knausgård"
+    ],
+    "categories": [
+      "math.NT",
+      "cs.AI",
+      "cs.LO"
+    ],
+    "url": "https://arxiv.org/abs/2609.33043v2",
+    "pdf": "https://arxiv.org/pdf/2609.33043v2"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2609.27715v1",
+    "title": "Zero density estimates for $\\mathrm{GL}_2$ automorphic $L$-functions",
+    "published": "2026-09-23T11:33:11Z",
+    "updated": "2026-09-23T11:33:11Z",
+    "summary": "We prove zero density estimates for $L$-functions of cuspidal automorphic representations $π$ of $\\mathrm{GL}_2(\\mathbb{A}_{\\mathbb{Q}})$. We show that $N_π(σ, T) \\ll T^{\\frac{5}{2}(1 - σ) + o(1)}$, where $N_π(σ, T)$ denotes the number of zeros $ρ= β+ iγ$ of $L(s,π)$ with $β\\geq σ$ and $|γ| \\leq T$. The key input is an extension of the Guth$\\unicode{x2013}$Maynard argument to Dirichlet polynomials whose coefficients satisfy a weaker $\\ell^q$ bound.",
+    "authors": [
+      "Catherine Cossaboom"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2609.27715v1",
+    "pdf": "https://arxiv.org/pdf/2609.27715v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2609.26787v1",
+    "title": "A finite arithmetic form of Robin's inequality and its equivalence to the Riemann hypothesis",
+    "published": "2026-09-22T17:58:00Z",
+    "updated": "2026-09-22T17:58:00Z",
+    "summary": "Robin's inequality reformulates the Riemann hypothesis as a bound on the sum-of-divisors function $σ$. We introduce a finite-truncation version of Robin's inequality determined intrinsically by the arithmetic structure of $n$, \\[ \\frac{σ(n)}{n} < e^γ\\sum_{j=0}^{ω(n)} \\frac{(\\ln\\ln\\ln n)^j}{j!}, \\qquad n>5040, \\] where $ω(n)$ denotes the number of distinct prime factors of $n$, and $γ$ is the Euler-Mascheroni constant. The resulting bound is pointwise stronger than Robin's inequality and we prove it unconditionally for integers with $ω(n)\\le 6$, primorials, odd integers and square-free integers. We also prove that this inequality is equivalent to Robin's inequality, and hence to the Riemann hypothesis. Consequently, the Riemann hypothesis is equivalent to the truncated inequality holding for all colossally abundant numbers. We further show that if the inequality fails, its minimal counterexample must be a superabundant number, placing any obstruction within a rigid extremal class of integers.",
+    "authors": [
+      "Challenger Mishra",
+      "Rahul Sarkar"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2609.26787v1",
+    "pdf": "https://arxiv.org/pdf/2609.26787v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2609.24167v2",
+    "title": "Proportions of the non-trivial zeros of the Riemann zeta function",
+    "published": "2026-09-21T06:36:00Z",
+    "updated": "2026-10-06T11:17:43Z",
+    "summary": "Let $C_0=\\frac32-\\frac1{\\sqrt2}\\cot\\big(\\frac1{\\sqrt2}\\big) =0.67250\\ldots$ and $C_1=\\frac{C_0+1}{2}= 0.83625\\ldots$. Recently, it is obatained by Alpöge and Furman that more than 67.25\\% of the non-trivial zeros of the Riemann zeta function are simple and on the critical line, and more than 83.62\\% are distinct. Later, Lamzouri gave a different and more direct proof. In this article, by refining the method of Lamzouri, we slightly improve the bounds $C_0$ and $C_1$ in these two results to $C_0+δ_0$ and $C_1+\\frac{δ_0}2$ with $δ_0=6.66624\\ldots\\times10^{-8}$, respectively.",
+    "authors": [
+      "Biao Wang"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2609.24167v2",
+    "pdf": "https://arxiv.org/pdf/2609.24167v2"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2609.22624v1",
+    "title": "Zero density theorems for short intervals",
+    "published": "2026-09-18T22:21:00Z",
+    "updated": "2026-09-18T22:21:00Z",
+    "summary": "We provide explicit bounds on the number of zeros for $ζ$ in short intervals near the edge of the critical strip. Ultimately we show that even in short intervals a positive proportion of zeros will not be near the edge of the critical strip. For example with $h>100$ and $t>10^{100}$ the proportion of zeros of $ζ$ with imaginary part in $[t-h,t+h]$ which have real part in $[\\frac{1}{16},\\frac{15}{16}]$ is at least $13\\%$ and a positive proportion is already obtained at $t>10^{43}$.",
+    "authors": [
+      "Andrew Fiori"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2609.22624v1",
+    "pdf": "https://arxiv.org/pdf/2609.22624v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2609.17875v1",
+    "title": "Zero-Density Concentration for Dirichlet Polynomials",
+    "published": "2026-09-15T22:04:33Z",
+    "updated": "2026-09-15T22:04:33Z",
+    "summary": "We prove that broad families of finite Dirichlet sums exhibit deterministic concentration of normalized vertical zero density on a single line. The main result gives a general criterion under which the normalized Jessen potentials converge locally uniformly to a piecewise-linear convex function with a single corner. The associated normalized measures describing the distribution of real parts of zeros in vertical mean density then converge weakly to a Dirac mass. Thus, for each fixed truncation, zeros may occupy a nontrivial range of real parts, while asymptotically their normalized vertical density concentrates on one line. The proof combines the finite Bohr lift with a translation-uniform anti-concentration estimate for isolated prime coordinates. We apply the criterion to partial sums of the Riemann zeta function, fixed Dirichlet $L$-functions, and primitive holomorphic Hecke eigenforms of fixed level, trivial Dirichlet character, and without complex multiplication. The concentration line is $\\operatorname{Re} s=1/2$ in the normalized setting and becomes $\\operatorname{Re} s=k/2$ for the classical Fourier coefficients of a form of weight $k$.",
+    "authors": [
+      "Eric Dubon"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2609.17875v1",
+    "pdf": "https://arxiv.org/pdf/2609.17875v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2609.16048v1",
+    "title": "The Waring-Goldbach problem in short intervals under the Generalized Riemann Hypothesis",
+    "published": "2026-09-12T16:01:54Z",
+    "updated": "2026-09-12T16:01:54Z",
+    "summary": "Let N be a sufficiently large odd integer. We study the representation of a large integer m N^k as a sum of m almost equal k-th powers of primes, where the common distribution scale is at least N^theta. Assuming the Generalized Riemann Hypothesis (GRH), we prove that for any epsilon > 0 one may take theta > 1/2, provided that m < k(k+1)/2 and that m, k are odd integers sufficiently large. This is achieved by employing a new tool closely related to earlier work. For sufficiently large m, by refining the discussion of the minor arcs, we further show that under GRH the equation has a solution provided m > 16k log k + 4k + 2. Moreover, we give an asymptotic formula for the number of solutions, with main term involving N^{2k theta (1 - (1 - 1/k)^{m_1}) + theta(m-1) + 1 - k}, where m_1 = 4k. Under GRH and for sufficiently large m, k, the short-interval Waring-Goldbach problem is essentially settled.",
+    "authors": [
+      "YaoJie Guo"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2609.16048v1",
+    "pdf": "https://arxiv.org/pdf/2609.16048v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2609.07918v2",
+    "title": "Simple critical zeros and distinct zeros of the Riemann zeta function in short intervals",
+    "published": "2026-09-07T19:30:23Z",
+    "updated": "2026-10-06T23:49:27Z",
+    "summary": "Recently, on the non-trivial zeros of the Riemann zeta function, it is obtained by Alpöge and Furman that more than 67.25% of the zeros are simple and on the critical line, and more than 83.62% are distinct. Later, Lamzouri gave a different and more direct proof. In this article, we will use the method of Lamzouri to give lower bounds on the number of the non-trivial zeros of the Riemann zeta function in short intervals. To prove the main result, we establish Montgomery's theorem on the pair correlation of zeros of the zeta function in short intervals by following the approach of Baluyot, Goldston, Suriajaya and Turnage-Butterbaugh, and then use Lamzouri's inequality on any finite multiset of complex numbers which is invariant under complex conjugation.",
+    "authors": [
+      "Biao Wang"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2609.07918v2",
+    "pdf": "https://arxiv.org/pdf/2609.07918v2"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2609.02882v2",
+    "title": "A new proof that more than $2/3$ of the zeros of the Riemann zeta function are simple and on the critical line",
+    "published": "2026-09-02T17:56:49Z",
+    "updated": "2026-09-08T17:55:54Z",
+    "summary": "We obtain a new, conceptually simpler, unconditional proof that more than $67.25\\%$ of the non-trivial zeros of the Riemann zeta function are simple and on the critical line, and that at least $83.62\\%$ of the non-trivial zeros are distinct. Our approach also yields two new unconditional estimates on simple zeros and zeros on the critical line. More precisely, we prove that the proportion of zeros that are simple or lie on the critical line (or both) is at least $88.76\\%$, and that the average of the proportions of simple zeros and of zeros on the critical line is at least $83.62\\%$. A proof of the bounds for simple zeros on the critical line and for distinct zeros was very recently produced by an internal research version of Claude developed by Anthropic and subsequently verified by two mathematicians at Anthropic, Levent Alpöge and Ralph Furman, whereas our two additional estimates are neither stated nor proved in the Claude paper. The argument produced by Claude is technically intricate, and its main mechanism is not immediately transparent. It combines several ingredients from linear algebra, including a finite-dimensional matrix representation of Weil's Hermitian form and a rank--trace inequality for Hermitian matrices, with a second moment calculation over the zeros using the explicit formula. Our new approach proceeds by replacing the entire finite-dimensional matrix framework by a single Hilbert space inequality, which allows for a direct application of Montgomery's theorem on the pair correlation of zeros of the zeta function, in the unconditional form obtained by Baluyot, Goldston, Suriajaya and Turnage-Butterbaugh.",
+    "authors": [
+      "Youness Lamzouri"
+    ],
+    "categories": [
+      "math.NT",
+      "math.CV"
+    ],
+    "url": "https://arxiv.org/abs/2609.02882v2",
+    "pdf": "https://arxiv.org/pdf/2609.02882v2"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2608.31060v1",
+    "title": "Large zeta sums and zeros of the Riemann zeta function",
+    "published": "2026-08-31T16:38:47Z",
+    "updated": "2026-08-31T16:38:47Z",
+    "summary": "For real $t$ and $x\\ge 1$, set \\[ S(x,t)=\\sum_{n\\le x} n^{\\ii t}. \\] We prove an unconditional inverse theorem relating large values of $S(x,t)$, with $|t|$ large, to zeros of the Riemann zeta function near height $t$. More precisely, if $T\\le |t|\\le 2T$, $\\exp(\\sqrt{\\log T})\\le x\\le \\sqrt T$, and $|S(x,t)|=x/N$ with $N\\le (\\log x)^{1/100}$, then for every $cN^6\\le L\\le (\\log x)/2$ a disk centered at $1+\\iiφ$, where $|φ-t|\\ll N$, contains at least $L/360$ zeros of $ζ(s)$. As a consequence, a quantitative restriction on zeros in a short family of arbitrarily thin fixed windows to the left of the line $\\Ree s=1$ yields $S(x,t)\\ll x/(\\log x)^{1/100}$ in polynomial ranges of $x$. The proof adapts the zero-forcing mechanism of Granville and Soundararajan for large character sums. In the zeta setting the spectral height is shifted by $t$, and an additional residue from the pole of $ζ(s)$ appears in the Gaussian transform; in the range considered here that residue is exponentially small.",
+    "authors": [
+      "Zikang Dong",
+      "Ruihua Wang",
+      "Weijia Wang",
+      "Hao Zhang"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2608.31060v1",
+    "pdf": "https://arxiv.org/pdf/2608.31060v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2608.27718v1",
+    "title": "Zero-free columns in character tables of symmetric groups",
+    "published": "2026-08-27T21:12:02Z",
+    "updated": "2026-08-27T21:12:02Z",
+    "summary": "The rows and columns of the character table of the symmetric group $S_n$ are both naturally indexed by partitions of $n$. Let $D(n)$ denote the number of conjugacy classes of $S_n$ whose column contains no zero entry. The identity column is always zero-free, so $D(n)\\geq 1$. It is known that $D(n)\\ll n^2$. We prove that $D(n)\\ll n^{3/4}$. Second, we prove for almost all positive integers $n$ that $D(n)\\ll_B n^{1/2}(\\log n)^B$ for every $B>5/6$, with a quantitative bound for the exceptional set, using work of Matomäki and Radziwill. Finally, we offer a heuristic supporting our conjecture that $D(n)\\ll_{\\varepsilon} n^{\\varepsilon}$. AxiomProver formalized the results in this paper in Lean assuming preexisting literature.",
+    "authors": [
+      "Colin Defant",
+      "Sidharth Hariharan",
+      "Kenny Lau",
+      "Ken Ono"
+    ],
+    "categories": [
+      "math.CO",
+      "math.NT",
+      "math.RT"
+    ],
+    "url": "https://arxiv.org/abs/2608.27718v1",
+    "pdf": "https://arxiv.org/pdf/2608.27718v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2608.24878v2",
+    "title": "Oscillation of partial sums of the Möbius function and zeros of Riemann's zeta function",
+    "published": "2026-08-25T17:57:06Z",
+    "updated": "2026-09-01T20:24:35Z",
+    "summary": "The oscillation of M(x), the partial sum of the Möbius function has been in the focus of researchers in the theory of primes since the famous conjecture of Mertens in 1905 (formulated in a weaker form by Stieltjes in 1885 in a letter to Hermite). The average order of the modulus of M(x) in an interval of type [0,Y] is clearly in connection with the distribution of primes. The author proved at the beginning of 1980's that this average tends unconditionally to infinity with Y. The present work shows that (similarly to the average order of the error term of the Prime Number Theorem) this average agrees with great accuracy for large values of Y with the largest error term of the Riemann-von Mangoldt prime number formula for the value Y.",
+    "authors": [
+      "János Pintz"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2608.24878v2",
+    "pdf": "https://arxiv.org/pdf/2608.24878v2"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2608.14852v1",
+    "title": "Reciprocity for The Short Twisted Second Moment of The Riemann Zeta Function",
+    "published": "2026-08-14T19:48:53Z",
+    "updated": "2026-08-14T19:48:53Z",
+    "summary": "We prove a reciprocity formula for a twisted second moment of the Riemann zeta function over a short interval of length $T^δ$, where $δ\\in (\\frac{1}{2},1)$, centered at height $T$ on the critical line. This result extends Khan's reciprocity formula to the short interval setting and makes explicit the relation between the twisting parameters and the interval length.",
+    "authors": [
+      "Ze Sen Tang"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2608.14852v1",
+    "pdf": "https://arxiv.org/pdf/2608.14852v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2608.12257v1",
+    "title": "Power sums and Siegel-type zero-free regions for L-functions",
+    "published": "2026-08-12T17:00:49Z",
+    "updated": "2026-08-12T17:00:49Z",
+    "summary": "Let $π$ and $π'$ be unitary cuspidal automorphic representations of $\\mathrm{GL}(n)$ and $\\mathrm{GL}(n')$ over a number field $F$. Let $\\mathfrak{C}_π$ be the analytic conductor of $π$. We develop a new approach to zero-free regions for $L$-functions via lower bounds for power sums, proving for all $\\varepsilon>0$ the existence of ineffective constants $c=c_{n,F,\\varepsilon}>0$ and $c'=c'_{n,F,π',\\varepsilon}>0$ such that the standard $L$-function $L(s,π)$ satisfies \\[ |L(σ+it,π)|\\geq c(\\mathfrak{C}_π(|t|+3))^{-\\varepsilon},\\qquad σ\\geq 1-c(\\mathfrak{C}_π(|t|+3))^{-\\varepsilon} \\] and the Rankin-Selberg $L$-function $L(s,π\\timesπ')$ satisfies \\[ |L(σ+it,π\\timesπ')|\\geq c'(\\mathfrak{C}_π(|t|+3))^{-\\varepsilon},\\qquad σ\\geq 1-c'(\\mathfrak{C}_π(|t|+3))^{-\\varepsilon}. \\] Applications include improvements to the prime number theorems for these $L$-functions and new generalizations of the Brauer-Siegel theorem.",
+    "authors": [
+      "Jesse Thorner"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2608.12257v1",
+    "pdf": "https://arxiv.org/pdf/2608.12257v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2608.07399v1",
+    "title": "Siegel zeros and small gaps between zeros of the Riemann zeta function",
+    "published": "2026-08-07T16:42:11Z",
+    "updated": "2026-08-07T16:42:11Z",
+    "summary": "On assuming the Riemann Hypothesis, we show that Siegel zeros imply the existence of gaps between the zeros of the Riemann zeta function less than 1/2 the normalised length. Specifically, we show that an infinite family of Siegel zeros implies $\\liminf_{n\\to\\infty}(γ_{n+1}-γ_n)\\log(γ_n)/2π< 0.4733$ on RH. This refutes the existence of certain strong alternative hypotheses under these assumptions. Our arguments incorporate long Dirichlet polynomials of length $T^{17/14-\\varepsilon}$ into the Montgomery--Odlyzko method.",
+    "authors": [
+      "Andriy Bondarenko",
+      "Winston Heap"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2608.07399v1",
+    "pdf": "https://arxiv.org/pdf/2608.07399v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2607.25002v2",
+    "title": "How Random Is the Möbius Function? Smoothing, Probability, and the Riemann Hypothesis",
+    "published": "2026-07-27T18:58:35Z",
+    "updated": "2026-08-14T15:07:34Z",
+    "summary": "This article is primarily expository, but it also contains several new observations and reformulations concerning the Möbius function, probabilistic models, dynamical systems, and the Riemann hypothesis. Its starting question is classical: in what sense can the Möbius function be said to behave randomly? We begin with Denjoy's random-walk heuristic and place it in the context of later work on random multiplicative functions, short intervals, and Möbius pseudorandomness. We then develop two smoothing forms of the classical Mertens criterion for the Riemann hypothesis. The first uses the discrete Laplace transform \\[ Φ(t)=\\sum_{n\\geq1}μ(n)e^{-nt} \\] and identifies RH with the condition \\[ Φ\\in L^p(0,\\infty) \\qquad\\text{for every }1\\leq p<2. \\] The second uses normalized Möbius Fourier polynomials and local moments on arcs of length comparable with \\(1/N\\). The paper also revisits the author's earlier criterion for RH in terms of discrete measures, as presented in Broughan's account of analytic equivalents of RH. Denjoy's heuristic is made precise in a simple independent coefficient model, and this model is carefully distinguished from the modern theory of random multiplicative functions. The resulting coefficient space also gives a measure--category contrast: the relevant \\(L^p\\)-property has full measure but is topologically meagre. A further point of the paper is dynamical: the multiplicative semigroup of positive integers acts naturally on the coefficient space, and the Möbius sequence is a distinguished arithmetic point for this action. The aim throughout is explanatory, while keeping these new observations visible: to show how arithmetic, probability, Fourier analysis, Mellin transforms, and dynamics fit together, and to indicate what modern results add to the older random-walk picture.",
+    "authors": [
+      "Alberto Verjovsky"
+    ],
+    "categories": [
+      "math.PR",
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2607.25002v2",
+    "pdf": "https://arxiv.org/pdf/2607.25002v2"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2607.20041v2",
+    "title": "On the value distribution of the Riemann zeta-function with general shifts",
+    "published": "2026-07-22T11:36:24Z",
+    "updated": "2026-09-17T05:28:05Z",
+    "summary": "This paper studies the value distribution of the Riemann zeta-function under general shifts. We establish discrepancy estimates for the Bohr--Jessen limit theorem for a broad class of shifts. We also prove a universality theorem for logarithmic-power shifts, which are not covered by previous universality results for general shifts. Furthermore, we obtain a quantitative Bohr--Jessen limit theorem for logarithmic-power shifts.",
+    "authors": [
+      "Keita Nakai"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2607.20041v2",
+    "pdf": "https://arxiv.org/pdf/2607.20041v2"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2607.14515v1",
+    "title": "Beyond the Riemann Hypothesis bounds: A pair-correlation approach to the least prime in arithmetic progression and the smallest quadratic non-residue",
+    "published": "2026-07-16T03:12:02Z",
+    "updated": "2026-07-16T03:12:02Z",
+    "summary": "The Generalized Riemann Hypothesis (GRH) has long defined the expected bounds for the smallest prime in an arithmetic progression and the least quadratic non-residue. However, this hypothesis primarily addresses the horizontal location of non-trivial zeros. In this paper, we show that incorporating the vertical spacing--or pair-correlation--of these zeros allows us to surpass these classical bounds. By combining these two zero-distribution perspectives, we establish sharper estimates for both problems under GRH and specific pair-correlation hypotheses, thereby providing a new link between pair-correlation phenomena for Dirichlet L-functions and these two classical problems.",
+    "authors": [
+      "Neelam Kandhil",
+      "Alessandro Languasco",
+      "Pieter Moree"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2607.14515v1",
+    "pdf": "https://arxiv.org/pdf/2607.14515v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2609.18938v1",
+    "title": "An Omega result for partial sums of the Riemann zeta function",
+    "published": "2026-07-13T03:18:40Z",
+    "updated": "2026-07-13T03:18:40Z",
+    "summary": "In this paper, we establish an Omega result for partial sums of the Riemann zeta function on the \\(1\\)-line. Our work relies on the long resonance method and an effective asymptotic formula for smooth numbers. For sufficiently long partial sums, our result approaches the work obtained by Aistleitner, Mahatab and Munsch in 2019.",
+    "authors": [
+      "Qiyu Yang",
+      "Shengbo Zhao"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2609.18938v1",
+    "pdf": "https://arxiv.org/pdf/2609.18938v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2607.04632v1",
+    "title": "A decades-long breakthrough in zero-density estimates and primes in short intervals",
+    "published": "2026-07-06T03:32:22Z",
+    "updated": "2026-07-06T03:32:22Z",
+    "summary": "The Riemann Hypothesis (RH) asserts that every nontrivial zero of the Riemann zeta-function has real part equal to $1/2$. A zero-density theorem provides evidence towards RH by bounding the number of zeros of the zeta-function with real part greater than $1/2$. In 2024, Larry Guth and James Maynard announced a new zero-density theorem which, for a key location in the critical strip, strengthens previous work of Ingham and is the first such improvement in over 80 years. This expository paper places this remarkable achievement in the context of the rich history of zero-density theorems and explores its implications on the distribution of primes in short intervals.",
+    "authors": [
+      "Caroline L. Turnage-Butterbaugh"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2607.04632v1",
+    "pdf": "https://arxiv.org/pdf/2607.04632v1"
+  },
+  {
+    "group": "math-zeta",
+    "arxiv": "2607.04338v2",
+    "title": "A proof of Riemann's hypothesis via Hadamard-Weierstrass factorization",
+    "published": "2026-07-05T14:37:00Z",
+    "updated": "2026-07-08T21:20:40Z",
+    "summary": "Using the Hadamard-Weierstrass factorization theorem for Riemann's ξ function, we discuss and prove Riemann's hypothesis.",
+    "authors": [
+      "Athanasios Christou Micheas"
+    ],
+    "categories": [
+      "math.NT"
+    ],
+    "url": "https://arxiv.org/abs/2607.04338v2",
+    "pdf": "https://arxiv.org/pdf/2607.04338v2"
+  }
+]

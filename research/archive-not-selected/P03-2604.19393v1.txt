@@ -1,0 +1,911 @@
+
+[PDF page 1]
+Prepared for submission to JCAP
+Model-independent consistency tests
+of DESI DR2 BAO and SN Ia
+Hyeok Woo a,b William Luke Matthewson a Arman Shafieloo a,b
+aKorea Astronomy and Space Science Institute, 776, Daedeokdae-ro, Yuseong-gu, Daejeon
+34055, Republic of Korea
+bUniversity of Science and Technology, 217 Gajeong-ro, Yuseong-gu, Daejeon 34113, Repub-
+lic of Korea
+E-mail: wooh@kasi.re.kr, willmatt4th@kasi.re.kr, shafieloo@kasi.re.kr
+Abstract.Cosmic distances can be measured using two complementary probes: Type Ia
+supernovae (SN Ia), serving as standard candles, and baryon acoustic oscillations (BAO),
+serving as standard rulers. The luminosity distance derived from supernovae and the angular
+diameter distance obtained from BAO must be mutually consistent if these data are to
+be combined for cosmological inference. Hence, the existence of potential discrepancies,
+whether arising from systematics in either dataset or from violation of the cosmic duality
+relation (in an unconventional cosmology), remains an important issue to address. Testing
+consistency under a particular cosmological model can be limiting, as the model may not be
+sensitive to every kind of inconsistency possible in the data. Thus, in this work we use a
+model-independent Crossing Statistics framework to test the consistency, using DESI DR2
+BAO, and the Pantheon+ and Union3 SN Ia datasets. We find adding up to two additional
+degrees of freedom, using Crossing Statistics on the ΛCDM distance-redshift relation, to
+be statistically justified. In these cases, the two probes remain mutually consistent at the
+1σ−2σlevel. Having established this statistical consistency, we combine the datasets to
+reconstruct the expansion history of the Universe and the inferred evolution of dark energy.
+The reconstructions obtained using different crossing variables show compatible behaviour
+where the data constraints are strongest, particularly at low redshift. Overall, the results
+are suggestive of a dark energy component that is evolving at low redshift, compatible with
+results from other reconstructions methods.
+arXiv:2604.19393v1  [astro-ph.CO]  21 Apr 2026
+
+[PDF page 2]
+Contents
+1 Introduction 1
+2 Data and Methodology 3
+2.1 Background cosmology and observables 3
+2.2 Datasets 4
+2.2.1 Type Ia supernovae 4
+2.2.2 Baryon acoustic oscillations 5
+2.3 Crossing Statistics 5
+2.3.1 Deformation prescription 6
+2.3.2 Additional constraints 6
+2.3.3 Consistency diagnostics and model complexity 7
+2.4 Sampling 9
+3 Results 10
+3.1 Consistency test 10
+3.2 Combined reconstructions 13
+4 Discussion and Conclusions 16
+A Consistency test including DES Supernovae 17
+1 Introduction
+The accelerated expansion of the Universe has been established through various cosmological
+probes, most notably Type Ia supernovae (SN Ia) as standard candles and baryon acous-
+tic oscillations (BAO) as standard rulers [1–3]. These two datasets provide complementary
+constraints on the expansion history and play a crucial role in supporting the current con-
+cordance cosmological model, ΛCDM. The luminosity distanceD L(z) from supernovae and
+the angular diameter distanceD A(z) from BAO must satisfy the cosmic distance duality (or
+Etherington) relationD L(z) = (1 +z) 2DA(z) for metric theories of gravity [4, 5]. Therefore,
+measurements of BAO and SN Ia must remain mutually consistent when mapped into the
+same observable space. Any statistically significant deviation could be indicative of system-
+atic uncertainties or new physics, that are not accounted for.
+Most consistency studies rely on a specific cosmological model, typically ΛCDM or simple
+extensions of it. However, such approaches can obscure genuine discrepancies; the model itself
+might restrict the behaviours that can be probed in the data, and thus produce seemingly
+consistent results, even when there are inconsistencies in the raw data. A more robust strategy
+is to use model-independent tests that directly compare the cosmological information encoded
+in the data, in our case the distance-redshift relation.
+Several recent works have used such approaches in the context of the DESI DR2 BAO data
+and existing supernovae compilations. For example, Gaussian Process (GP) reconstructions
+of the expansion history have been used to perform tests of consistency between late-time
+probes. GP regression can reconstruct the relevant functions independently of a cosmological
+– 1 –
+
+[PDF page 3]
+model. In particular, the recent analysis in [6, 7] makes use of an Alcock-Paczynski variable,
+which also allows BAO and SN Ia measurements to be compared without assuming a calibra-
+tion for the sound horizon or supernova absolute magnitude. Their latest analysis found that
+current SN Ia and BAO datasets are broadly consistent with each other across their redshift
+ranges [7]. While GP methods provide flexible, non-parametric reconstructions, they can
+depend on the choice of kernel and mean function, as well as the marginalisation over the
+hyperparameters, which can influence the inferred behaviour, particularly in sparsely sam-
+pled redshift regions [8, 9]. It is also not trivial to perform model comparison, as the effective
+number of degrees of freedom of the GP reconstruction is not well-known.
+The Bayesian implementation of Crossing Statistics [10], provides an effective framework for
+this purpose, by introducing particular deformation freedoms to a chosen fiducial expansion
+history. These deformations are controlled by the coefficients of Chebyshev polynomial basis
+functions, have a well-defined number of additional degrees of freedom, and are always re-
+ducible to the (nested) fiducial case. By testing whether independent datasets prefer compat-
+ible deformation patterns in the extended parameter space, we can obtain a complementary
+cross-check of mutual consistency between SN Ia and BAO data.
+The recent analyses within DESI of the DR2 BAO data have also reported indications that
+the inferred expansion history may prefer departures from a cosmological constant descrip-
+tion, whether interpreted within a specific dark energy parametrization, or using model-
+independent methods [11, 12]. These developments highlight the importance of extracting
+the cosmological information encoded in different late-time probes without relying on a spe-
+cific cosmological model [10], as an apparent lack of discrepancies may depend strongly on
+the sensitivity of the assumed model to different behaviours [13, 14].
+Another recent work, focusing on reconstruction, tries to determine the evolution of the dark
+energy equation of state using Weighted Function Regression applied to a combination of
+DESI DR2 BAO, supernova and Planck cosmic microwave background (CMB) datasets [15].
+This model-independent analysis reports a 2σ- 4σpreference for a dark energy evolution
+that crossesw=−1, in agreement with the results from the DESI analysis.
+Crossing Statistics may also be used to investigate the behaviour of dark energy, through
+model-independent reconstructions of the equation of state, or relative energy density [16].
+Indeed, a related Crossing Statistics analysis was performed in DESI, where the method was
+applied to reconstruct the potential evolution of the relative dark energy density from the
+most recent BAO data release [12]. However, the above works focus on reconstruction of
+dark energy behaviour without first testing consistency between independent probes, and do
+not implement the reconstruction directly in the observableD L(z) space, favouring instead
+the equation of state parameter, or relative dark energy density.
+In this work, we investigate the consistency between SN Ia and BAO datasets in a model-
+independent manner, using Crossing Statistics. Both datasets are mapped to the luminosity-
+distance space to enable a direct comparison, and the deformation parameters are restricted
+to preserve the present-day Hubble parameter and defined with respect to the various data
+redshift ranges. We systematically increase the number of free parameters in the deforma-
+tions, to see at what level the resulting, more flexible behaviours agree across the datasets.
+We utilize the Pantheon+ and Union3 SN Ia samples, together with the Dark energy Spec-
+troscopic Instrument (DESI) DR2 BAO measurements, covering a broad redshift range.
+This paper is set out as follows. In Section 2, we introduce the methodology and data used
+in the analysis. Then, in Section 3, we display our results. Finally, we discuss our findings
+and summarise our conclusions in Section 4.
+– 2 –
+
+[PDF page 4]
+2 Data and Methodology
+2.1 Background cosmology and observables
+We model the late-time Universe as a spatially homogeneous and isotropic Friedmann-
+Lemaˆ ıtre-Robertson-Walker (FLRW) spacetime within general relativity, containing effective
+components such as non-relativistic matter and dark energy. Throughout this work we as-
+sume spatial flatness,k= 0, so that the expansion history is governed by the Friedmann
+equation
+H2(z) =H 2
+0
+
+Ωm,0(1 +z) 3 + Ωr,0(1 +z) 4 + ΩDE,0
+ρDE(z)
+ρDE,0
+
+,(2.1)
+whereH 0 is the present-day value of the Hubble parameter and Ωm,0, Ωr,0, and ΩDE,0 denote
+the present-day density parameters of matter, radiation, and dark energy, respectively, satis-
+fying Ωm,0 +Ω r,0 +Ω DE,0 = 1.ρ DE(z) denotes the physical dark energy density, andρ DE,0 its
+present-day value. Here we introduce the dimensionless relative dark energy density,f DE(z),
+defined such that
+fDE(z)≡ ρDE(z)
+ρDE,0
+= exp
+
+3
+Z z
+0
+1 +w(z ′)
+1 +z ′ dz′
+
+,(2.2)
+wherew(z) is the dark energy equation of state. In the ΛCDM model, the dark energy
+equation of state is constant,w=−1, which leads to a redshift-independent dark energy
+density, sof DE = 1. More generally, phenomenological extensions allow for a time-varying
+equation of state. In particular, the commonly-usedw 0wa parametrization [17, 18], is given
+by
+w(z) =w 0 +w a
+z
+1 +z .(2.3)
+While such parametrizations provide a convenient framework for exploring departures from
+a cosmological constant, they impose specific functional choices, which may limit their sen-
+sitivity to certain behaviours. In contrast, the Crossing Statistics approach adopted in this
+work does not rely on any single form ofw(z), but instead can probe deviations directly at
+the level of the luminosity distance-redshift relation, up to arbitrarily high order in principle.
+Cosmological distance measures depend on the background expansion history and are probed
+here using two complementary observables: Type Ia supernovae (SN Ia), which act as stan-
+dard candles, and baryon acoustic oscillations (BAO), which provide a standard ruler. SN Ia
+measurements are made using the apparent magnitudem B, which is related to the luminosity
+distance through the definition
+DL(z) = 10(mB−MB+5)/5 pc,(2.4)
+whereM B is the absolute magnitude, treated as a nuisance parameter.
+BAO measurements constrain the comoving transverse distanceD M(z), the Hubble distance
+DH(z)≡c/H(z), and the combined volume-averaged distance
+DV (z)≡
+
+z D2
+M(z)D H(z)
+1/3
+,(2.5)
+which are measured as dimensionless ratiosD M /rd,D H /rd, andD V /rd, wherer d denotes
+the sound horizon at the drag epoch.
+– 3 –
+
+[PDF page 5]
+In a spatially flat universe, the transverse comoving distance is given by
+DM(z) =c
+Z z
+0
+dz′
+H(z ′) .(2.6)
+To place BAO and SN Ia on a common footing, we map the BAO distance constraints into
+the luminosity-distance space using the cosmic distance duality relation
+DL(z) = (1 +z)D M(z) = (1 +z)c
+Z z
+0
+dz′
+H(z ′) ,(2.7)
+which holds in any metric theory of gravity under photon number conservation. This proce-
+dure enables a direct comparison of the two datasets with the fewest assumptions possible
+about the underlying cosmological model. Any deviation between SN Ia and BAO can hence
+be compared using the same quantity,D L(z).
+In addition to the luminosity-distance relation and the relative dark energy densityf DE(z),
+we also examine derived kinematic diagnostics of the expansion history. In particular, we
+consider theOm(z) diagnostic [19]
+Om(z)≡ H2(z)/H 2
+0 −1
+(1 +z) 3 −1 ,(2.8)
+which provides a null test of ΛCDM. In a spatially flat universe with a cosmological constant,
+Om(z) is constant and equal to Ωm,0. Therefore, deviations from this constant value indicate
+departures from a ΛCDM expansion history. We also consider the deceleration parameter
+q(z)≡ − ¨aa
+˙a2 = dlnH(z)
+dln(1 +z) −1,(2.9)
+which characterizes the acceleration of the Universe. A negative value ofq(z) corresponds
+to accelerated expansion, while positive values indicate that the expansion is decelerating.
+These complementary diagnostics help with the physical interpretation of possible deviations
+from ΛCDM in the reconstructed expansion history.
+2.2 Datasets
+2.2.1 Type Ia supernovae
+We employ two state-of-the-art Type Ia supernova (SN Ia) compilations, Pantheon+ and
+Union3, which together provide high-precision measurements of the luminosity distance re-
+lation over a wide redshift range.
+•Pantheon+: The Pantheon+ compilation [20] consists of spectroscopically confirmed
+SN Ia spanning the redshift range 0.01≲z≲2.26. It represents a significant improve-
+ment over earlier Pantheon releases through updated photometric calibration, refined
+light-curve fitting, and a comprehensive treatment of systematic uncertainties. Stan-
+dard quality cuts and calibration selections are applied as described in the original
+Pantheon+ analysis, resulting in a final set of 1590 supernovae with (z≥0.01).
+– 4 –
+
+[PDF page 6]
+•Union3: The Union3 compilation [21] contains 2087 SN Ia, combining data from multi-
+ple surveys with consistent calibration and systematic corrections. Unlike Pantheon+,
+Union3 distances are derived using a Bayesian hierarchical framework, implemented
+through the UNITY formalism, in which the redshift dependence of the luminosity dis-
+tance is summarized by a set of spline nodes (22 effective nodes) rather than individual
+supernovae. Although Pantheon+ and Union3 share a large subset of underlying super-
+novae, their independent analysis pipelines and distance reconstruction methodologies
+make them complementary for consistency tests.
+TheDES-Y5(Dark Energy Survey Year 5) SN sample [22] is excluded from the primary
+analysis. Its substantially lower maximum redshift compared to Pantheon+ and Union3 leads
+to a different normalization of the crossing hyperparameters, making a direct comparison
+within the full redshift range difficult, when using Crossing Statistics framework [23]. To
+assess its consistency with BAO measurements, we perform a dedicated low-redshift analysis,
+in which the DESI DR2 dataset is restricted to a comparable redshift range; the results are
+presented in Appendix A.
+2.2.2 Baryon acoustic oscillations
+•DESI DR2: The baryon acoustic oscillations measurements are taken from the DESI
+Data Release 2 (DR2) [11], and provide high-precision constraints on the comoving
+transverse distanceD M(z) and the Hubble distanceD H(z) =c/H(z) across multiple
+redshift bins. The DESI DR2 BAO sample includes 13 effective redshift bins derived
+from different tracer populations, enabling distance measurements over the approximate
+range 0.3≲z≲2.33. BAO observables are reported in the dimensionless combinations
+DM /rd,D H /rd, and, in one case,D V /rd. Since cosmic microwave background (CMB)
+data are not included in this analysis, we treatr d as a free nuisance parameter and
+marginalize over it.
+2.3 Crossing Statistics
+Consistency tests performed strictly within one model’s framework, for example ΛCDM, may
+obscure discrepancies between SN Ia and BAO, because the assumed background model en-
+forces a limited set of behaviours for the distance–redshift relation. If the datasets differ in
+a way that the model cannot capture, their constraints may nevertheless appear artificially
+consistent. This is equally true for ΛCDM and other extended models. To avoid this limita-
+tion, we employ the Bayesian application of Crossing Statistics [10, 24], in which the fiducial
+luminosity distance is modified by a smooth, model-agnostic deformation. This enables us to
+test whether the two probes favour the same underlying distance relation behaviour, without
+assuming a specific dark energy parametrization or modified-gravity model.
+The key idea is that, if SN Ia and BAO encode mutually consistent cosmological information,
+they should prefer overlapping posterior regions in the extended parameter space of crossing
+parametersC n even after additional flexibility is introduced. Conversely, persistent differ-
+ences in their preferred crossing coefficients would point to residual systematics or genuine
+physical inconsistencies [23, 24]. This method has been tested and used previously. The ap-
+proach adopted here modifies it slightly, introducing crossing deformations at the level of the
+luminosity distance itself, and enabling a direct comparison of SN Ia and BAO observables
+within a common framework, while simultaneously assessing their mutual consistency.
+– 5 –
+
+[PDF page 7]
+2.3.1 Deformation prescription
+We choose ΛCDM as our fiducial starting point, and deform the associated luminosity dis-
+tanceD ΛCDM
+L (z) using Chebyshev polynomials as follows [10]:
+D×
+L (z) =D ΛCDM
+L (z)×
+NX
+n=0
+CnTn(˜z),(2.10)
+whereT n(˜z) are Chebyshev polynomials of the first kind,
+T0(x) = 1,
+T1(x) =x ,
+Tn+1(x) = 2xTn(x)−T n−1(x),
+etc.
+and ˜zis the redshift, rescaled to the interval [−1,1]:
+˜z≡2 z
+zmax
+−1,(2.11)
+wherez max is chosen as the maximum redshift of the combined dataset. Normalizing each
+dataset to the same redshift interval ensures that the deformation coefficientsC n retain a
+consistent interpretation across all probes.
+A polynomial basis in this prescription is useful in various ways. First, the Chebyshev poly-
+nomials form an orthogonal set over the interval [−1,1], which helps to minimize correlations
+among the deformation coefficientsC i.
+Second, the ordering of the Chebyshev modes provides a natural hierarchy of deformations:
+low-order modes correspond to smooth, global modifications of the luminosity distance rela-
+tion, while higher-order modes capture progressively more localized features in redshift. This
+property allows for a controlled and systematic introduction of flexibility, making it possible
+to detect the onset of overfitting as additional degrees of freedom are included.
+Importantly, this construction does not impose any specific physical model for deviations
+from ΛCDM, but instead provides a flexible, data-driven description of departures in the
+distance-redshift relation [25].
+2.3.2 Additional constraints
+The crossing coefficients are constrained by the requirement that the present-day value of
+the Hubble parameter derived from the deformed luminosity distance remains unchanged.
+From Eq. (2.7), we can derive, by differentiating both sides with respect toz, the following
+relation at the present epoch:
+dDL(z)
+dz
+
+z=0
+= c
+H0
+.(2.12)
+For clarity of notation, we denote the fiducial ΛCDM luminosity distanceD ΛCDM
+L (z) simply
+asD L throughout this subsection, unless otherwise stated.
+– 6 –
+
+[PDF page 8]
+Following deformation, the crossed luminosity distance is given by
+D×
+L (z) =D L(z)×
+NX
+i=0
+CiTi(˜z) =c(1 +z)
+Z z
+0
+dz′
+H ×(z′) .
+Evaluating this atz= 0 yields
+dD×
+L (z)
+dz
+
+z=0
+= dDL(z)
+dz
+
+z=0
+×
+NX
+i=0
+CiTi(−1) = c
+H ×
+0
+.(2.13)
+Assuming that the deformed model preserves the same present-day Hubble parameter, we
+should impose the normalization conditionH ×
+0 =H 0. Along with the properties of Chebyshev
+polynomials and Eq. (2.12) this leads to the constraint equation
+NX
+i=0
+(−1)iCi = 1.(2.14)
+Given this constraint, the first-order coefficientC 1 is no longer independent and can be
+expressed in terms of the higher-order coefficients as
+C1 =
+NX
+i=2
+(−1)iCi ,
+which follows directly from the previously derived consistency condition Eq. (2.14) and fixing
+the coefficientC 0 is to unity (C 0 = 1). The latter is necessary becauseC 0 is completely
+degenerate with the absolute magnitudeM B in SN Ia observations and the sound horizon
+scaler d in BAO measurements. In other words, any change inC 0 can be fully absorbed by
+adjustingM B orr d, and therefore it does not represent an independent degree of freedom.
+Consequently, the additional free parameters in the crossing expansion start fromC 2, and
+for a polynomial of orderN, the number of independent degrees of freedom, additional to
+the fiducial model, isN−1.
+2.3.3 Consistency diagnostics and model complexity
+In the Crossing Statistics framework, consistency between two probes is assessed by whether
+they prefer compatible posterior regions in the extended (Ω m,0, Ci) parameter space, where
+the background matter density and the crossing coefficients are jointly sampled. Throughout
+this work, we diagnose consistency primarily through the overlap of the marginalized 1σ−2σ
+level in the relevant parameter projections. In particular, such agreement in theC i space
+indicates that the datasets favour compatible deformations of the fiducial distance-redshift
+relation.
+In practice, increasing the polynomial order,N, introduces additional flexibility that can
+improve the fit but will eventually lead to overfitting, whereby higher-order parameters are
+determined primarily by random statistical fluctuations specific to each dataset. Such be-
+haviour can artificially lower the resultingχ 2 and make the contours difficult to interpret in
+the context of mutual consistency, since they are influenced by each dataset’s features, rather
+than the underlying cosmological model. To maintain a well-defined notion of consistency, we
+– 7 –
+
+[PDF page 9]
+therefore evaluate the change inχ 2, for each crossing order, relative to the ΛCDM baseline
+through
+∆χ2 ≡χ 2
+ΛCDM −χ 2
+TN ,(2.15)
+whereχ 2
+TN denotes the minimumχ 2 obtained in theT N crossing model, i.e. the reconstruction
+including Chebyshev polynomials up ton max =N. With the normalization constraint and
+the choiceC 0 = 1, the number of additional degrees of freedom is
+k=N−1,(2.16)
+corresponding to the free coefficients{C 2, . . . , CN }.
+In the limit of large sample size, and for nested models, the statistic ∆χ2 is expected to follow
+a chi-squared distribution withkdegrees of freedom, according to Wilks’ theorem [26]. Thus,
+when interpreting a particular value of ∆χ 2 in the context of whether additional flexibility
+is warranted, we examine the corresponding value of the cumulative distribution function of
+a chi-squared distribution withkdegrees of freedom. This is defined as the probability of
+obtaining a value for ∆χ 2 less than or equal toxand is given by [26]
+P(∆χ 2 ≤x)≡CDF chi−square(x;k) =P
+ k
+2 , x
+2
+
+,(2.17)
+whereP(a, x) =
+R x
+0 ta−1etdt
+Γ(a) is the regularized lower incomplete gamma function, normalised
+by the factor Γ(a) =
+R ∞
+0 ta−1etdt. In Section 3, we use the joint behaviour of the posterior
+overlap in{C i}and the evolution of ∆χ 2 (i.e. the CDF) withNto identify the range of
+crossing orders that provides meaningful flexibility without becoming dominated by noise-
+driven deformations.
+Operationally, for each dataset we compute (∆χ 2,CDF) at successive crossing orders and
+track how the probabilityP=P(∆χ 2 ≤x) changes as flexibility is increased. Since the
+crossing extensions are nested parametrizations, as we increase the number of additional
+degrees of freedom, ∆χ 2 must increase in absolute magnitude. At the same time,Pcor-
+responds to the probability of getting, at random, a ∆χ 2 at most as large as a particular
+value,x. If ∆χ 2 does not increase sufficiently, given the increase in degrees of freedom, then
+this probability should decrease, because the value is more compatible with the expected
+distribution.
+A meaningful extension is characterized by a sustained shift toward improvements greater
+than what is expected from a random distribution (assumed to be a chi-square distribution
+in this case). Whereas, when further increases inNyield no additional improvement (i.e.,
+saturation or a reversal), then there is superfluous flexibility being introduced by the avail-
+ability of extra degrees of freedom. We thus define a maximum justified crossing orderN max
+as the point beyond which additional modes no longer produce significant improvements in
+∆χ2, thus causing the{C n}posteriors to overlap simply as a result of poorer constraints on
+a large number of unnecessary additional parameters.
+We emphasize that these statistics are used to determine the maximum justified level of
+flexibility in the crossing expansion, so that we can assess the mutual consistency of the
+datasets, rather than to claim evidence for any specific physical features beyond ΛCDM. In
+addition, if the additional degrees of freedom cause non-physical behaviour of the expansion
+history, we also exclude them (see Section 3.1).
+– 8 –
+
+[PDF page 10]
+2.4 Sampling
+For parameter estimation we employcobaya[27], using its implementation of the Metropo-
+lis–Hastings MCMC sampler to explore the posterior distributions of the cosmological and
+crossing parameters. The SN Ia and BAO likelihoods defined below are treated as statis-
+tically independent, and joint constraints are obtained by simply adding their respective
+log-likelihoods.
+The parameter sets sampled for each dataset are:
+ΘSN ={Ω m,0, M B, C 2, . . . , C N },Θ BAO ={Ω m,0, r d, C 2, . . . , C N }.
+The priors adopted for all parameters are summarized in Table 1.
+At each MCMC step, the crossing-modified luminosity distanceD ×
+L (z) is evaluated, and the
+corresponding SN and BAO observables (mB, D M /rd, D H /rd, D V /rd) are reconstructed, be-
+fore computing the likelihood. As discussed in Section 2.3.2, the constraint on the Hubble
+parameter normalization fixesC 1 in terms of the higher-order coefficients, andC 0 is fixed to
+1. Thus, only{C 2, . . . , CN }are varied independently. Posterior distributions and 1σand 2σ
+contours shown in the Results section are obtained from the converged MCMC samples after
+marginalization over the nuisance parameters.
+We define Gaussian likelihoods using Θ SN ,Θ BAO as:
+−2 lnL=χ 2 =
+( χ2
+SN = ∆m⊤
+B C−1
+SN ∆mB ,
+χ2
+BAO = ∆D⊤
+BAO C−1
+BAO ∆DBAO ,
+(2.18)
+where CX is the full covariance matrix supplied with each dataset X, and
+∆mB =m data
+B −m ×
+B(Ωm,0, MB, Ci),
+∆DBAO =
+
+
+DM /rd
+DH /rd
+DV /rd
+
+
+data
+−
+
+
+DM /rd
+DH /rd
+DV /rd
+
+
+×
+(Ωm,0, rd, Ci).
+The quantitiesm ×
+B for SN Ia and (D M /rd)×,(D H /rd)×,(D V /rd)× for BAO are obtained by
+evaluating the crossed luminosity distanceD ×
+L (z) at each MCMC step and converting the
+result into the corresponding observables in the same format as the original data.
+Dataset Parameter Prior
+Common Ωm,0 U[0.01, 0.99]
+Cn U[-5, 5]
+SN IaM B U[-30, -15]
+BAOr d [Mpc]U[10, 1000]
+Table 1: Priors
+– 9 –
+
+[PDF page 11]
+3 Results
+Within the standard ΛCDM framework, the BAO and SN Ia datasets already yield mutually
+consistent constraints on Ω m,0, showing no significant indication of tension or degeneracy.
+This baseline comparison establishes that both probes, when interpreted through an unmod-
+ified ΛCDM distance-redshift relation, occupy overlapping regions in parameter space at the
+level of less than 2σ. For completeness, the corresponding best-fit values and 1σuncertainties
+derived from each dataset are summarized in Table 2.
+Dataset Ω m,0
+DESI DR2 BAO 0.297 +0.009
+−0.008
+Pantheon+ 0.332 +0.019
+−0.018
+Union3 0.356 +0.029
+−0.024
+Table 2: Best-fit values and 1σuncertainties.
+However, agreement within ΛCDM does not guarantee that both datasets prefer the same
+underlying cosmological trends. There may be discrepancies present which only emerge
+when additional flexibility is introduced. We therefore employ Crossing Statistics to probe
+whether the consistency persists once the luminosity distance is allowed to deform away from
+the fiducial model.
+±
+0.40
+Union3 
+Pantheond-
+DESI DR2 BAO
+0.45
+Figure 1: Marginalized constraints on the present-day matter density parameter Ω m,0 ob-
+tained from SN Ia (Pantheon+, Union3) and DESI DR2 BAO within the standard ΛCDM
+framework. Shaded regions denote the 1σcredible intervals. The overlap of the posterior
+distributions indicates that the two probes are already mutually consistent when interpreted
+using an unmodified ΛCDM distance-redshift relation.
+3.1 Consistency test
+If BAO and SN Ia are mutually consistent, they should prefer compatible regions in the
+extended (Ωm,0, Ci) parameter space when analysed independently. In particular, consistency
+– 10 –
+
+[PDF page 12]
+manifests as overlapping posterior contours for both the background matter density Ωm,0 and
+the crossing coefficientsC i.
+Union3 
+Pantheon+
+DESIDR2 BAO
+Union3 
+Pantheon+
+DESIDR2 BAO
+C2 C3
+Figure 2: Marginalized constraints in the (Ωm,0, Ci) parameter space obtained from Crossing
+Statistics analyses of the same datasets. The left panel shows results for theT2 extension (one
+additional degree of freedom), while the right panel shows the corresponding constraints for
+theT 3 extension (two additional degrees of freedom). Darker and lighter contours indicate
+the 1σand 2σlevel regions, respectively. In both panels, the contours from Union3 SN
+Ia, Pantheon+ SN Ia, and DESI DR2 BAO exhibit overlap at 1σ, indicating that mutual
+consistency persists when Ω m,0 is treated as a free parameter and when the crossing order is
+increased to includeT 2 and subsequentlyT 3.
+The left and right panels of Fig. 2 present the constraints in the (Ω m,0, Ci) plane obtained
+using Crossing Statistics with one or two additional degree of freedom, respectively. In both
+cases, the posterior contours of the BAO overlap at 1σ- 2σwith each of the SN Ia datasets,
+indicating that the consistency observed for fixed Ω m,0 is preserved after marginalization
+over different values and as additional Chebyshev modes are included. As shown in Fig. 3,
+the SN Ia and BAO datasets continue to exhibit regions of overlap in the 1σcontours in all
+(Ωm,0, Ci) projections. This means each SN Ia dataset is consistent with the BAO, within
+the Crossing Statistics framework.
+A recurring feature visible in Figs. 2 and 3 are the broader posterior contours obtained from
+SN Ia relative to BAO. This difference arises from the distinct propagation of observational
+uncertainties into the luminosity-distance space: magnitude errors enter logarithmically for
+SN Ia, while BAO observables propagate linearly. Consequently, SN Ia data allow a wider
+range of crossing-induced deformations, naturally producing broaderC i constraints.
+We restrict the analysis to crossing ordersN≤5 in general, since reconstructions at higher
+order begin to exhibit non-physical behaviour in the luminosity-distance relation when only
+information from individual datasets are used. When additional crossing coefficients are
+introduced beyond this order, the deformations tend to overfit the data, increasingly tracking
+statistical fluctuations from within each dataset. In these cases the reconstructed expansion
+history leads to a non-monotonic luminosity distanceD L(z) evolution in the higher redshift
+range of the data, which we consider to be unphysical. In the case of Pantheon+ this occurs
+even atT 5, or 4 additional degrees of freedom. This behaviour signals that the degree
+– 11 –
+
+[PDF page 13]
+0.01
+(J 0.00
+-0.01
+0.01
+(J 0.00
+-0.01
+0.01
+0.00
+-0.01
+04 0.6 -0.01 0.01 -0.01 0.01 -0.01 0.01
+£2m?o C2 C3 C4
+Figure 3: Marginalized constraints in the extended (Ω m,0, Ci) parameter space obtained
+with higher-order crossing extensions. Constraints from DESI DR2 BAO, Pantheon+, and
+Union3 SN Ia are shown. Black dashed lines indicate the ΛCDM limit, corresponding to
+C2 =C 3 =C 4 = 0. Although the contours broaden as additional Chebyshev modes are
+included, their continued overlap indicates that the datasets remain mutually consistent,
+with the widening driven primarily by noise-dominated higher-order modes. We also note
+that the overlapping 1σregions do not contain the ΛCDM point.
+of allowed flexibility is too high, and so we consider crossing ordersN >5 (N >4 for
+Pantheon+) to be dominated by noise-driven overfitting and exclude them from the analysis
+entirely, on physical grounds.
+For the SN Ia datasets, the posterior contours remain sufficiently broad that the ΛCDM
+point (Ci = 0 for alli) is consistently contained within the 1σregion. In contrast, the BAO
+(DESI DR2) constraints exhibit a displacement of the region of strongest preference away
+from the undeformed ΛCDM limit. The peak of the BAO posterior is therefore not centered
+exactly atC i = 0, although the ΛCDM point remains just within the broader 2σregion. This
+indicates that while both probes are statistically consistent within the crossing framework,
+the regions of best agreement between both pairs of datasets show a slight preference for
+non-zero deformation parameters, reaching a level of tension of 1σ−2σwith the ΛCDM
+solution.
+As part of the consistency test, we also examine theχ 2 values as a function of the number
+of crossing degrees of freedom. In Fig. 4, for all datasets except Pantheon+, the largest
+improvement occurs when two additional crossing parameters are introduced. Beyond this
+point the statistical gain rapidly diminishes, as additional crossing parameters give an un-
+necessarily high level of freedom to the expansion history. This means that consistency may
+be trivially achieved simply by the resultant broadening of the contours.
+– 12 –
+
+[PDF page 14]
+In summary, even when additional crossing freedom is allowed, the DESI DR2 BAO con-
+straints remain consistent with those obtained from each of the supernova datasets individ-
+ually at the 2σlevel. We thus conclude that the preferred distance-redshift behaviour is
+mutually compatible across probes, independent of the background cosmological model.
+0 1 2 3 4
+ACDM r2 r3
+DoF adj
+74 r5
+Figure 4:Left:The solid curves show ∆χ 2 for each dataset (Pantheon+, Union3, and DESI
+DR2) relative to the ΛCDM baseline as the crossing order increases. The horizontal dashed
+lines indicate the corresponding ∆χ 2 values obtained from the best fitw 0waCDM model for
+each dataset.Right:Cumulative distribution functionP(∆χ 2 ≤x) for the improvement in
+χ2 obtained from crossing reconstructions as a function of the number of additional degrees
+of freedom (and crossing order). The dashed orange line for Pantheon+ indicates that in
+the case ofT 5, the seemingly improved fit actually arises from a non-physical solution that
+overfits to the data.
+3.2 Combined reconstructions
+Having established that the SN Ia and BAO datasets are mutually consistent within the
+Crossing Statistics framework, it is justified to consider their joint use for reconstruction
+purposes. Therefore, we subsequently combine DESI DR2 BAO with each supernova sample.
+Since the datasets show a preference for consistent deviations from the fiducial ΛCDM
+distance-redshift relation, the combined analysis allows us to explore how the mutually pre-
+ferred deformations translate into modifications of the expansion history and related cosmo-
+logical quantities.
+As discussed previously, in order to determine an appropriate truncation order, we examine
+the improvement in theχ 2 as additional crossing parameters are introduced. Specifically,
+we evaluate ∆χ2 relative to the fiducial model and compute the CDF of the corresponding
+expected chi-square distribution, which depends on the additional degrees of freedom. We
+find that beyond theT 3 model, the reduction inχ 2 becomes statistically insignificant. In
+particular, once two additional degrees of freedom are included, further extensions yield only
+marginal improvement inχ 2, so the correspondingχ 2 CDF indicates a decreasing validity
+of higher-order models. This behaviour suggests that two additional degrees of freedom are
+sufficient to capture the deformation preferred by the data, and higher-order terms primarily
+introduce unnecessary flexibility. Moreover, at higher polynomial order, the reconstructed
+DL(z) once again begins to exhibit unphysical behaviour. We therefore restrict the recon-
+struction analysis to the crossing models of orderT 3 and lower, which allows for flexibility
+– 13 –
+
+[PDF page 15]
+in capturing the deformations preferred by the combined data, while avoiding unnecessary
+additional degrees of freedom.
+Figure 5:Left:Best fitχ 2 values, from the combination of Union3 and DESI DR2 BAO,
+as a function of the number of additional degrees of freedom (DoF add), corresponding to
+increasing crossing order from ΛCDM (T0) toT 5. Cyan points correspond to crossing applied
+to the luminosity distanceD L(z), while pink points denote the results obtained by applying
+crossing tof DE(z). The dashed black line indicates theχ 2 value of the best fitw 0waCDM
+model for comparison.Middle:Improvement inχ 2, ∆χ 2 =χ 2
+ΛCDM −χ 2
+TN , for crossing
+applied toD L(z) and the combined data, as a function of the number of DoF add.Right:
+Corresponding CDF values, assuming a chi-squared distribution withk=N−1 DoF add.
+The saturation of the change inχ 2 beyond two crossing parameters indicates that higher-
+order extensions are not providing any meaningful additional freedom.
+We use the posterior samples of the crossing parameters in theD L space, fit to the combina-
+tion of DESI DR2 BAO and Union3, to reconstruct the corresponding evolution ofD L with
+redshift. From this we can infer the corresponding behaviour of the relative dark energy den-
+sity,f DE(z). For each MCMC sample, the crossing-modified expansion history is converted
+intoH(z) and subsequently intof DE(z) using the background Friedmann relation Eq. (2.1).
+The reconstructedf DE(z), corresponding to the cyan curves in Fig. 6, exhibits deviations
+from the constant behaviour expected in ΛCDM, indicating an evolving dark energy density
+within the allowed parameter space. At high redshift, the preferred behaviour is highly varied
+and the reconstructions display larger excursions from the constant ΛCDM value. This be-
+haviour can be attributed to the relative sparsity of data points in this regime, which affords
+higher-order crossing modes more flexibility. In addition, the absence of CMB information
+in the present analysis implies that early-Universe constraints on the expansion history are
+not imposed, further increasing the allowed freedom at high redshift.
+To test the robustness of the reconstruction, we perform an additional crossing analysis
+directly in thef DE space, following an approach analogous to that adopted in the DESI
+analysis [12]. In Fig. 6, these reconstructions are represented by pink curves. We then
+compare the resultingf DE(z) reconstruction with that obtained from crossing applied in
+the observableD L(z) space. Since the crossing deformation is implemented in different
+functional spaces, one should not expect the two reconstructions to coincide exactly. The
+flexibility introduced by a finite set of Chebyshev modes propagates differently inD L(z) and
+inf DE(z), leading to quantitative differences in general, particularly in regions where the
+data constraints are weak. Nevertheless, if the underlying cosmological information encoded
+in the data is consistent, the reconstructed dark energy evolution should remain statistically
+compatible.
+– 14 –
+
+[PDF page 16]
+Figure 6: Reconstructed cosmological functions obtained within the Crossing Statistics
+framework using theT 3 extension (corresponding to two additional independent crossing
+degrees of freedom,C 2 andC 3). From top to bottom we show: the reconstructed relative
+dark energy density functionf DE(z), theOm(z) diagnostic, and the deceleration parameter,
+q(z). In each panel, the dashed black line corresponds to the ΛCDM best fit, while the solid
+black lines in the top panel indicate the regions encompassed within 1σand 2σconfidence
+intervals of the sampled crossing parameters. Blue curves correspond to crossing applied
+to the luminosity distanceD L, whereas orange curves represent realizations obtained by
+applying crossing tof DE. The spread of the reconstructed trajectories illustrates the allowed
+deformation patterns under the adopted crossing order.
+While the behaviour at higher redshift differs due to the increased flexibility in poorly con-
+strained regions, the two reconstructions exhibit similar qualitative trends at low redshift. In
+particular, forz≲1, both approaches indicate an enhancement of the relative dark energy
+density compared to the ΛCDM expectationf DE(z) = 1, with overlapping 1σregions and
+consistency at better than 1σ. At intermediate redshifts (z≳1), the reconstructions tend
+to prefer values off DE(z) below unity, although the uncertainties grow substantially as the
+data constraints weaken. This is because, at higher redshifts where matter dominates, the
+relative contribution of dark energy to the expansion history is comparatively negligible. This
+transition fromf DE(z)>1 at low redshift tof DE(z)<1 at higher redshift is observed in
+– 15 –
+
+[PDF page 17]
+both reconstruction spaces, despite quantitative differences arising from the different crossing
+implementations.
+The correspondingOm(z) diagnostic departs from the constant behaviour expected in ΛCDM.
+Instead of remaining fixed at Ωm,0, the reconstructed curves tend to increase with decreasing
+redshift.
+The reconstructed deceleration parameterq(z) shows a transition from positive values at
+higher redshift (decelerating expansion) toward negative values at low redshift (accelerating
+expansion). While the qualitative behaviour remains consistent with the standard expansion
+picture, the reconstructed curves allow a somewhat different class of acceleration histories
+than those predicted by ΛCDM or the reconstruction from crossing onf DE(z).
+4 Discussion and Conclusions
+Across all analyses, the BAO (DESI DR2) and SN Ia (Pantheon+, Union3) datasets exhibit
+mutually consistent behaviour in the (Ωm,0, Ci) parameter space, for ΛCDM and its Crossing
+Statistics extensions (TN). The marginalized posterior distributions obtained from the differ-
+ent probes overlap at the 1σ−2σlevel, indicating statistically compatible luminosity-distance
+trends, even once additional deformation freedom is introduced.
+The consistency test was further examined using the evolution of the best fitχ 2 as a function
+of crossing order. We find that the largest improvement occurs when up to two additional
+degrees of freedom (corresponding to theT 3 extension) are included. Beyond this, the re-
+duction inχ 2 becomes marginal. AboveT 5, the reconstructions of the luminosity-distance
+relation begin to exhibit unphysical features, such as oscillatory behaviour or non-monotonic
+distance evolution. For this reason, we restrict the analysis to low-order crossing extensions
+(N≤3), where the number of additional degrees of freedom are statistically justified and
+the solutions remain physical.
+Having established consistency, we combine DESI DR2 BAO and Union3 data to reconstruct
+the relative dark energy densityf DE(z). Crossing deformations are applied in both the ob-
+servableD L(z) space and directly in thef DE(z) space to test robustness. Because crossing
+is implemented in different functional spaces, exact agreement between the two reconstruc-
+tions is not expected. The finite Chebyshev expansion propagates differently inD L andf DE,
+particularly at high redshift where data are sparse.
+Nevertheless, atz≲1, the reconstructedf DE(z) functions overlap within the 1σregion, and
+similar trends are observed in the derived kinematic quantities, theOm(z) diagnostic and
+the deceleration parameterq(z). At higher redshift, the uncertainties increase substantially
+due to the limited number of data points, the weaker effect of dark energy on the expansion
+history and the absence of CMB priors, leading to larger deformations in the reconstructed
+functions. Overall, the reconstruction suggests departures of more than 2σfrom constant-Λ
+behaviour at various regions across redshift.
+The Crossing Statistics methodology thus provides a controlled and flexible framework for
+probing departures from ΛCDM, directly at the level of cosmological observables, enabling
+consistency tests and reconstruction analyses without assuming a specific dark energy parametriza-
+tion. Applying this framework to current datasets, we find that the SN Ia (Pantheon+,
+Union3) and BAO (DESI DR2) measurements remain mutually consistent within the ex-
+tended (Ωm,0, Ci) parameter space, with their posterior contours overlapping at the 1-2σlevel.
+The combined analysis reveals reconstructions of the expansion history that are broadly con-
+sistent across different crossing implementations. In particular, reconstructions performed in
+– 16 –
+
+[PDF page 18]
+bothD L(z) andf DE(z) spaces exhibit similar evolutionary trends at low redshift, deviating
+from the ΛCDM behaviour at more than 2σ.
+A Consistency test including DES Supernovae
+As discussed in the main text, the DES-Y5 supernova sample, from [22], was excluded from
+the primary analysis due to its significantly lower maximum redshift compared to the other
+datasets. This mismatch in redshift coverage complicates the application of a common nor-
+malization in the crossing-statistics framework, leading to difficulties in making a fair com-
+parison.
+During the course of this work, the DES-Dovekie supernova compilation [28] was released,
+providing an updated version of the DES-Y5 dataset with improved calibration. We include
+both versions in this analysis, where we compare them to the DESI DR2 BAO, as was done
+with Pantheon+ and Union3 in the primary analysis.
+To address the mismatch in redshift ranges, we restrict the analysis to a similar redshift range
+as the DES supernovae,z DES-Y5
+max ≃1.12 andz DES-Dovekie
+max ≃1.144. In practice, we remove
+the highest-redshift DESI DR2 BAO points, so that the maximum redshift remaining is
+zDESI
+max ≃1.321, ensuring a more comparable redshift range and hyperparameter definition.
+Following the same procedure as in Section 3, we systematically increase the allowed de-
+formation freedom through the addition of crossing parameters, and examine the preferred
+regions of the hyperparameter space, taking into account the improvement inχ 2.
+Based on the latter, we may add a maximum of two crossing parameters to the fiducial
+ΛCDM model. Beyond this point, the improvement inχ 2 does not justify the additional
+degrees of freedom, leading to inflated posteriors that are trivially consistent.
+In Fig. 7, we show separately the posteriors from ΛCDM and the crossing extension with
+(Ωm,0, C2). All three datasets exhibit mutually consistent constraints to within 2σ. In the
+case of crossing withC 2, the region of best agreement is only consistent with ΛCDM (C2 = 0)
+at less than about 1σ, for reasonable values of Ω m,0. The overlapping region, with the DESI
+DR2 BAO, of DES-Dovekie is only marginally more consistent with ΛCDM than that of DES-
+Y5. At the next order in crossing, whereT 2 andT 3 are included, the posteriors of the DES-
+Dovekie data are slightly more consistent than DES-Y5, with respect to DESI DR2 BAO,
+at just over 2σ. However, this more flexible reconstruction exhibits non-physical behaviour,
+reflecting the onset of overfitting to each dataset’s statistical fluctuations. Practically, this
+means that these disagreements between the datasets in the crossing extension up toT 3,
+while perhaps interesting, do not reflect anything meaningful about the consistency. The
+maximum possible degrees of freedom, where we can apply the crossing framework to the
+low redshift data, is for the extension with (Ω m,0, C2).
+We therefore conclude that, for the available physically meaningful crossing extensions, the
+DES-Y5 and DES-Dovekie datasets are both consistent with the low-redshift data from DESI
+DR2 BAO, at 1σ−2σ. This is in agreement with the relevant results found for the other
+supernova datasets. The mutually preferred region of the DESI DR2 BAO and DES-Dovekie
+seems marginally more consistent with ΛCDM than that of DESI DR2 BAO and DES-Y5,
+but both at≳1σ.
+– 17 –
+
+[PDF page 19]
+Figure 7:Left:Marginalized constraints on the present-day matter density parameter Ω m,0,
+obtained from SN Ia (DES-Dovekie, DES-Y5) and DESI DR2 BAO, within the standard
+ΛCDM framework. Shaded regions denote the 1σlevel. The overlap of the posterior dis-
+tributions indicates that the two probes are already mutually consistent when interpreted
+using an unmodified ΛCDM distance-redshift relation, at 2σlevel.Right:Marginalized con-
+straints, in the (Ω m,0, C2) parameter space, obtained from the Crossing Statistics analysis of
+the same datasets. Darker and lighter contours indicate the 1σand 2σlevel regions, respec-
+tively. The contours from DES-Dovekie, DES-Y5, and DESI DR2 BAO exhibit overlap at
+1σin the space of hyperparameters, when the crossing order is increased toT 2.
+References
+[1]Supernova Search Teamcollaboration,Observational evidence from supernovae for an
+accelerating universe and a cosmological constant,Astron. J.116(1998) 1009
+[astro-ph/9805201].
+[2] S. Perlmutter et al.,Measurements of omega and lambda from 42 high-redshift supernovae,
+Astrophysical Journal517(1999) 565 [astro-ph/9812133].
+[3] D.J. Eisenstein et al.,Detection of the baryon acoustic peak in the large-scale correlation
+function of sdss luminous red galaxies,Astrophysical Journal633(2005) 560
+[astro-ph/0501171].
+[4] G.F.R. Ellis,On the definition of distance in general relativity: I. M. H. Etherington
+(Philosophical Magazine ser. 7, vol. 15, 761 (1933)),General Relativity and Gravitation39
+(2007) 1047.
+[5] G.F.R. Ellis,Republication of: Etherington’s reciprocity theorem,General Relativity and
+Gravitation39(2007) 1047 [astro-ph/0703759].
+[6] B.R. Dinda, R. Maartens and C. Clarkson,Calibration-independent consistency test of DESI
+DR2 BAO and SNIa,JCAP12(2025) 025 [2509.19899].
+[7] B.R. Dinda, R. Maartens and C. Clarkson,Calibration-independent consistency test of BAO
+and SNIa data: update,2601.16229.
+[8] A. Shafieloo, A.G. Kim and E.V. Linder,Gaussian process cosmography,Physical Review D85
+(2012) 123530 [1204.2272].
+[9] S.-g. Hwang, B. L’Huillier, R.E. Keeley, M.J. Jee and A. Shafieloo,How to use GP: effects of
+– 18 –
+
+[PDF page 20]
+the mean function and hyperparameter selection on Gaussian process regression,JCAP02
+(2023) 014 [2206.15081].
+[10] A. Shafieloo,Crossing statistic: Bayesian interpretation, model selection and resolving dark
+energy parametrization problem,JCAP2012(2012) 024 [1202.4808].
+[11]DESIcollaboration,DESI DR2 Results II: Measurements of Baryon Acoustic Oscillations and
+Cosmological Constraints,2503.14738.
+[12]DESIcollaboration,Extended dark energy analysis using DESI DR2 BAO measurements,
+Phys. Rev. D112(2025) 083511 [2503.14743].
+[13] E.V. Linder and R. Miquel,Cosmological Model Selection:. Statistics and Physics,
+International Journal of Modern Physics D17(2008) 2315 [astro-ph/0702542].
+[14] T. Holsclaw, U. Alam, B. Sans´ o, H. Lee, K. Heitmann, S. Habib et al.,Nonparametric
+reconstruction of the dark energy equation of state,Physical Review D82(2010) 103502
+[1009.5443].
+[15] A. Gonz´ alez-Fuentes and A. G´ omez-Valent,Reconstruction of dark energy and late-time cosmic
+expansion using the Weighted Function Regression method,JCAP12(2025) 049 [2506.11758].
+[16]DESIcollaboration,DESI 2024: reconstructing dark energy using crossing statistics with DESI
+DR1 BAO data,JCAP10(2024) 048 [2405.04216].
+[17] M. Chevallier and D. Polarski,Accelerating universes with scaling dark matter,International
+Journal of Modern Physics D10(2001) 213 [gr-qc/0009008].
+[18] E.V. Linder,Exploring the expansion history of the universe,Physical Review Letters90(2003)
+091301 [astro-ph/0208512].
+[19] V. Sahni, A. Shafieloo and A.A. Starobinsky,Two new diagnostics of dark energy,Phys. Rev.
+D78(2008) 103502 [0807.3548].
+[20] D. Brout et al.,The pantheon+ analysis: Cosmological constraints,Astrophysical Journal938
+(2022) 110 [2202.04077].
+[21] D. Rubin, G.S. Aldering, R. Amanullah, K.H. Barbary, A. Bruce, G. Chappell et al.,The
+Union3 Supernova Ia Compilation, inAmerican Astronomical Society Meeting Abstracts #227,
+vol. 227 ofAmerican Astronomical Society Meeting Abstracts, p. 139.18, Jan., 2016.
+[22]DEScollaboration,The Dark Energy Survey: Cosmology Results with∼1500 New
+High-redshift Type Ia Supernovae Using the Full 5 yr Data Set,Astrophys. J. Lett.973(2024)
+L14 [2401.02929].
+[23] W. Matthewson and A. Shafieloo,Star-crossed labours: checking consistency between current
+supernovae compilations,Journal of Cosmology and Astroparticle Physics2025(2025) 064.
+[24] A. Shafieloo, S. Majumdar, V. Sahni and A.A. Starobinsky,Searching for systematics in SNIa
+and galaxy cluster data using the cosmic duality relation,JCAP2013(2013) 042 [1212.1277].
+[25] A. Shafieloo,Crossing statistic: Reconstructing the expansion history of the universe,Journal
+of Cosmology and Astroparticle Physics2012(2012) 024 [1202.4808].
+[26] W.H. Press, S.A. Teukolsky, W.T. Vetterling and B.P. Flannery,Numerical Recipes 3rd
+Edition: The Art of Scientific Computing, Cambridge University Press, 3 ed. (Sept., 2007).
+[27] J. Torrado and A. Lewis,Cobaya: Code for bayesian analysis of hierarchical physical models,
+Journal of Cosmology and Astroparticle Physics2021(2021) 057 [2005.05290].
+[28]DEScollaboration,The Dark Energy Survey Supernova Program: A Reanalysis Of Cosmology
+Results And Evidence For Evolving Dark Energy With An Updated Type Ia Supernova
+Calibration,2511.07517.
+– 19 –

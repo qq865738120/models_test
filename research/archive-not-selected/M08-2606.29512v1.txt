@@ -1,0 +1,2338 @@
+
+[PDF page 1]
+ON UNIQUENESS OF SOLUTIONS TO STOCHASTIC
+NAVIER-STOKES EQUATIONS
+RAYMOND COTTER AND ISTV ´AN GY ¨ONGY
+Dedicated to Professor Bohdan Maslowski on the occasion of his 70th birthday
+Abstract.Theorems on uniqueness and continuous dependence on the
+initial condition of solutions to stochastic Navier-Stokes equations driven
+by Wiener processes and Poisson martingale measures are presented.
+These theorems generalise some results from [32].
+1.Introduction
+The Navier–Stokes equations
+Btu“ν∆u´ pu¨∇qu´∇p`D jfj `f,divu“0,(1.1)
+posed on a domainRĎR d with boundary and initial conditions
+u|BR “0, u| t“0 “u 0,(1.2)
+describe the motion of incompressible viscous fluids (whend“2,3q). Here
+utpxq “ pu 1
+t pxq, . . . , ud
+t pxqqandp tpxqare the velocity of the fluid and the
+pressure at timetě0 atxPR, andνą0 is the viscosity coefficient.
+Classical results of Leray [48] and Hopf [33] show that for every given
+initial conditionu 0 PH, force fieldsf j PL 2pr0,8s, L 2pR,R dqq pj“1,2, ..., dq
+andfPL 1pr0,8q, L 2pR,R dqqthere exists at least one weak solutionufrom
+the Hopf–Leray class
+W:“L 8pr0,8q,Hq XL 2pr0,8q,Vq,
+whereVandHdenote the closure of the space
+D“ tφPC 8
+0 pR,R dq: divφ“0u
+inW 1
+2 “W 1
+2 pR,R dqandL 2 “L 2pR,R dq, respectively. Here and throughout
+the paperC 8
+0 pR,R dqdenotes the space ofR d-valued smooth functions on
+Rwith compact support.
+By a theorem of Ladyzhenskaya [43] in 1958 and by Lions and Prodi [50]
+in 1959, the weak solution in this class is unique whend“2, whereas the
+corresponding problem in dimensionsdě3 remained open until a recent
+2020Mathematics Subject Classification.35Q30, 35R60, 60H15.
+Key words and phrases.Navier-Stokes equations, stochastic Navier-Stokes equations,
+weak solutions, conditional uniqueness, Ladyzhenskaya-Prodi-Serrin condition, Morrey
+spaces.
+1
+arXiv:2606.29512v1  [math.PR]  28 Jun 2026
+
+[PDF page 2]
+2 R. COTTER AND I. GY ¨ONGY
+paper [2] by Albritton, Bru´ e and Colombo, where the authors show the
+existence of more than one solution to the 3D Navier-Stokes equations with
+an appropriate force field and zero initial condition. In [34] the authors
+demonstrate by a computer-assisted proof the non-uniqueness of a weak
+solution for the unforced 3D Navier-Stokes equations.
+These developments further motivate the search for additional assump-
+tions ensuring uniqueness. There is an extensive literature on such results,
+often called conditional uniqueness theorems. The best-known conditional
+uniqueness criterion is the Ladyzhenskaya-Prodi-Serrin condition, which as-
+sumes
+uPL qpr0, Ts, L ppRqq, d
+p ` 2
+q ď1, pP pd,8q, qP r2,8q.(1.3)
+Under this condition, uniqueness of Hopf–Leray weak solutions was estab-
+lished by Prodi [58] and Serrin [61], uniqueness and regularity results were
+obtained by Ladyzhenskaya [44], and Serrin [61].
+In [32] the authors generalised the conditional uniqueness theorems in
+Prodi [58] and Serrin [61], and extended them to stochastic Navier–Stokes
+equations driven by Wiener processes whenR“R d fordě3.
+Motivated by [32], our purpose in this paper is to extend these conditional
+uniqueness results in three directions:
+‚to stochastic Navier–Stokes equations driven simultaneously by Wiener
+processes and compensated Poisson random measures;
+‚from the whole space to arbitrary Lipschitz domains;
+‚from classical Ladyzhenskaya–Prodi–Serrin assumptions to a sub-
+stantially weaker Morrey-type condition.
+To present a special case of our main result applied to deterministic Navier-
+Stokes, we introduce the following restricted Hopf-Leray class.
+For anyTą0 andrP p2, ds(dě3qa functionu:r0, Ts ˆRÑR d from
+Wis said to be in the restricted Hopf-Leray class ifucan be represented as
+uM `u B, such that for a constant ˆu“ˆupd, rqwe have
+ˆ 1
+|B|
+ˆ
+B
+1R|uM
+t pxq|r dx
+˙1{r
+ďˆuρ´1
+B fordt-a.e.tP r0, Ts,
+for any ballBof radiusρ B ď1, and for ¯ut “ess sup xPR |uB
+t pxq|we have
+ˆ T
+0
+|¯ut|2 dtă 8.
+Our main result, Theorem 2.2 below, for the deterministic problem (1.1)-
+(1.2) reads as follows.
+Theorem 1.1.There exists a constantNdepending only ondandrsuch
+that ifuis a solution to(1.1)-(1.2)from the restricted Leray-Hopf class
+satisfying
+ˆuďν{N
+
+[PDF page 3]
+ON STOCHASTIC NAVIER-STOKES EQUATIONS 3
+then this is the only solution to(1.1)-(1.2)from the restricted Leray-Hopf
+class.
+We further show (Corollary 2.4) that the assumption of this theorem is
+strictly weaker than the classical Ladyzhenskaya–Prodi–Serrin condition.
+Assume now thatRis a bounded Lipschitz domain and note that by the
+Poincar´ e inequality
+|v|L2 ďc|Dv| L2 (1.4)
+holds forvPH 1
+0 with a constantc“cpRq, whereH 1
+0 denotes the closure of
+C8
+0 pR,R dqinW 1
+2 pR,R dq.
+The next theorem illustrates our stability result, Theorem 2.3, which
+generalises a result in Serrin [61].
+Theorem 1.2.There exists a constantNą0depending only ond,rand
+csuch that ifuis a solution to(1.1)-(1.2)from the restricted Leray-Hopf
+class, satisfying
+˜u:“ˆu`ess sup
+tPr0,Ts
+¯ut ăν{N,
+then we have
+|ut ´v t|H ď |u0 ´v 0|He´γt fortP r0, Ts
+for any solutionvto(1.1)-(1.2)from the restricted Leray-Hopf class with
+initial conditionv t|t“0 “v 0 PH, whereγ:“c ´2pν´N˜uq ą0.
+In this paper we study stochastic Navier–Stokes equations driven simul-
+taneously by multiplicative Wiener noise and compensated Poisson random
+measures,
+du“
+`
+ν∆u´ pu¨∇qu`∇p`D jfj `f
+˘
+dt
+`
+`
+σ∇u´∇q`h
+˘
+˝dw`
+ˆ
+Z
+htput, zq˜πpdz, dtq,divu“0 (1.5)
+for a random velocity fieldu“ pu 1
+t pxq, ..., ud
+t pxqq, and random pressure fields
+p“p tpxqandq“q tpxqfortP r0, TsandxPR, with boundary and
+initial conditions (1.2) for a random velocity fieldu“ pu 1
+t pxq, ..., ud
+t pxqq, and
+random pressure fieldsp“p tpxqwherewis a Hilbert space-valued Wiener
+process,˝dw t indicates that the corresponding differential is understood in
+the Stratonovich sense, and ˜πis a compensated Poisson random measure.
+Such equations arise naturally from stochastic Lagrangian particle dynamics
+and extend the models considered in [53] and [54] and [56] by incorporating
+jump noise.
+WhenR“R d andh“0, the authors in [56] studied the Cauchy problem
+(1.5)-(1.2) with a second order elliptic differential operator instead of ∆, and
+with force fieldsD jfj,fandh, which may depend also onu. They proved the
+existence of a solution on some filtered probability spacepΩ,F,pF tqtě0, Pq
+carrying anF t-Wiener processwwith values in a Hilbert space. Moreover,
+ind“2 they show the existence and uniqueness of a unique strong solution.
+
+[PDF page 4]
+4 R. COTTER AND I. GY ¨ONGY
+The problem of existence and uniqueness of solutions of stochastic Navier–
+Stokes equations with random noises with jumps has been studied by many
+authors, see, e.g., [64] and the references therein.
+We consider fordě3 the type of stochastic Navier-Stokes equations
+as in [56], but with the additional last term in (1.5), see equations (5.1)–
+(5.2)–(5.3). Using the method developed in [29] for rewriting stochastic Itˆ o
+integrals with respect to martingale measures as stochastic Itˆ o integrals with
+respect to Hilbert space-valued martingales, we reformulate equations (5.1)–
+(5.2)–(5.3) as the system (2.1)–(2.2). We prove our main results, Theorems
+2.1 and 2.2, for the system (2.1)–(2.2). As a consequence, we obtain the
+corresponding results for the system (5.1)–(5.2)–(5.3), see Theorem 5.1.
+Theorem 2.1 states, in particular, that admissible solutions of (2.1)–(2.2)
+(see Definitions 2.2 and 2.4) admit (strongly) c` adl` agH-valued modifications
+on the intervalr0, Ts. Theorem 2.2 establishes continuous dependence on the
+initial data and, as a consequence, uniqueness within the class of admissible
+solutions. In the deterministic setting, it immediately yields Theorem 1.1.
+Furthermore, Theorem 2.2 yields Corollary 2.4, which asserts that ifuis
+a solution of the stochastic Navier–Stokes equations (2.1)–(2.2) satisfying
+uPL p,q almost surely for a pairpp, qqfulfilling the Ladyzhenskaya–Prodi–
+Serrin condition (1.3), then uniqueness holds within the class of admiss-
+ible solutions. This corollary generalises the classical uniqueness results
+of Ladyzhenskaya [44], Prodi [58], and Serrin [61], and extends it to the
+stochastic Navier–Stokes equations.
+In a subsequent paper we present regularity results for admissible solu-
+tions solutions to equations (2.1)-(2.2).
+Stochastic Navier–Stokes equations have been studied extensively over
+the past five decades. The pioneering work [8] initiated the mathematical
+analysis of these equations, and was followed by a substantial body of work
+on the existence of solutions under various assumptions and in different
+functional settings; see, for example, [3, 13, 27, 11, 14, 7, 16].
+The two-dimensional case is now comparatively well understood. In par-
+ticular, existence and uniqueness results have been established in a vari-
+ety of frameworks; see, for example, [4, 52, 5, 26, 56, 55]. More recently,
+stochastic Navier–Stokes equations driven by jump noise have also received
+considerable attention. Local well-posedness inL p-spaces for equations with
+L´ evy noise was obtained in [57], while existence and uniqueness in anL p-
+framework for the two-dimensional equations with jump noise were proved
+in [64]. For the three-dimensional equations, local well-posedness in crit-
+icalL p-spaces with multiplicative cylindrical noise on the whole space was
+established in [37].
+Several related directions have also been investigated. Global existence
+and uniqueness of mild solutions to the three-dimensional random vorticity
+equations for sufficiently small initial vorticity were proved in [6]. Ergodic
+properties of stochastic Navier–Stokes equations have been studied extens-
+ively, with results in two dimensions obtained in [40, 41, 21, 20, 10, 51] and
+
+[PDF page 5]
+ON STOCHASTIC NAVIER-STOKES EQUATIONS 5
+in three dimensions in [18]. Balance relations for randomly forced Navier–
+Stokes equations on the two-dimensional torus were established in [39]. More
+recently, [1] proved well-posedness, regularization, and blow-up criteria for
+stochastic Navier–Stokes equations on thed-dimensional torus (dě2), to-
+gether with a global well-posedness result with high probability for suffi-
+ciently small initial data in critical spaces.
+For a comprehensive account of stochastic fluid dynamics, we refer the
+reader to the monograph [24].
+While the well-posedness theory for stochastic Navier–Stokes equations is
+now well developed in many settings, considerably less is known about condi-
+tional uniqueness results in three dimensions. The present paper contributes
+to this direction by establishing conditional uniqueness for equations driven
+simultaneously by Wiener processes and compensated Poisson martingale
+measures on general Lipschitz domains.
+The paper is organised as follows. Section 2 introduces t he stochastic
+Navier–Stokes equations driven by a ‘cylindrical martingale’, the notion of
+admissible solutions, and the relevant function spaces. It also states our
+main results, Theorems 2.1 and 2.2, together with Theorem 2.3, which
+demonstrates how the approach developed in the paper can be applied to
+establish exponential stability of admissible solutions to the deterministic
+Navier–Stokes equations. Section 3 presents a “stochastic energy equality”,
+i.e., an Itˆ o formula for the square of the norm of semimartingales with val-
+ues in a Gelfand triple of Hilbert spaces, which plays an important role in
+the proof of Theorems 2.1, 2.2 and 2.3. Section 4 is dedicated to the proof
+of Theorems 2.1, 2.2 and 2.3. Finally, Section 5 applies Theorems 2.1 and
+2.2 to stochastic Navier–Stokes equations driven simultaneously by Wiener
+processes and compensated Poisson random measures.
+We conclude with introducing some notations. We use the notation
+pf, gq “
+ˆ
+R
+f ipxqgipxqdx|,|f| L2 “
+a
+pf, fq
+for vector fieldsf“ pf iqd
+i“1 andg“ pg iqd
+i“1 onR, when the integrals exist.
+Here and throughout the paper, unless otherwise indicated, the summation
+convention with respect to repeated integer-valued indices is in force.
+LetS:L 2pR,R dq ÑHdenote the projection ofL 2 ontoH, and define
+R:“I´S, whereIdenotes the identity operator onL 2. For scalar functions
+φand vector fieldsu“ pu 1, . . . , udqonR, we use the notations
+Diφ“ Bφ
+Bxi
+,∇φ“Dφ“ pD 1φ, . . . , Ddφq, φ puq :“ pu¨∇qφ“u jDjφ,
+and we writeDu“ pD juiqd
+i,j“1 for the Jacobian matrix ofu.
+For ballsBinR d and Lebesgue integrable functionsfonBwe use the
+notation
+´
+ˆ
+B
+f dx:“ 1
+|B|
+ˆ
+B
+f dx,
+
+[PDF page 6]
+6 R. COTTER AND I. GY ¨ONGY
+where|B|denotes the volume ofB. For a Banach spaceB, we denote by
+ℓ2pBqthe space of sequencesc“ pc nqnPZ0, c n PBequipped with the norm
+|c|ℓ2pBq “
+˜ 8ÿ
+nPZ
+|cn|2
+B
+¸1{2
+,
+whereZis the set of integers. In particular, we writeℓ 2 :“ℓ 2pRq. For
+topological spacesSwe writeBpSqfor the Borelσ-algebra onS.
+Throughout the paper all random variables and stochastic processes are
+defined on a filtered probability spacepΩ,F,pF tqtě0,Pqcarrying a sequence
+pmkqkPZ of c` adl` ag square integrableFt-martingales with predictable cov-
+ariation processesăm i, mj ąt“tδ i,j fori, jPZ, a sequencepw kq8
+k“1 of
+independentF t-Wiener processes and anF t-Poisson martingale measure
+˜πpdz, dtq “πpdz, dtq ´npdzq bdt, whereπpdz, dtqis anF t-Poisson ran-
+dom measure with aσ-finite characteristic measurenpdzqon a measurable
+spacepZ,Zqwith a countably generatedσ-algebraZ. Ifh“ ph k
+t qkPZ is an
+ℓ2pRdq-valued optional process such that
+ˆ T
+0
+|ht|2
+ℓ2pRdq dtă 8(a.s.),
+then one can the define the stochastic integral
+ˆ t
+0
+hk
+s dmk
+s “lim
+nÑ8
+nÿ
+k“1
+ˆ t
+0
+hk
+s dmk
+s `lim
+nÑ8
+ÿ
+´nďkď0
+ˆ t
+0
+hk
+s dmk
+s ,
+where the limits exist in probability, uniformly intP r0, Ts. We assume that
+pFtqtě0 is right-continuous andF 0 contains all subsets ofP-null sets ofF.
+We denote byOoptionalσ-algebra on Ωˆ r0,8q.
+2.Formulation of the Main Theorems
+LetRĎR d be Lipschitz domain andTP p0,8q. We consider the
+stochastic Navier-Stokes equations
+dut “
+´
+Di
+`
+aij
+t Djut `f i
+tputq
+˘
+`f tput, Dutq ´u tputq ´∇p t `γ ki
+t Diqk
+t
+¯
+dt
+`
+´
+σik
+t Diut `h k
+t putq ´∇q k
+t
+¯
+dmk
+t ,divu t “0 (2.1)
+on Ωˆ r0, Ts ˆR, with boundary and initial conditions
+ut|BR “0,fortP r0, Tsandu tpxq|t“0 “u 0pxq,xPR,(2.2)
+for a velocity fieldu“ pu 1
+t pxq, . . . , ud
+t pxqq,and pressure fieldsp“p tpxqand
+q“ pq k
+t pxqqkě1 on Ωˆ r0, Ts ˆR. We assume that
+(i) the coefficienta“ pa ijqisR dˆd-valued,γ i “ pγ ikqkPZ is anℓ 2pRdq-
+valued function, andσ i “ pσ ikqkPZ is anℓ 2-valuedObBpRq-measurable
+function on Ωˆ r0, Ts ˆRfori“1, . . . , d;
+(ii) the functionsf i andfareR d-valued,f i is aObBpRˆR dq-measurable
+mapping on Ωˆr0, TsˆRˆR d, andfis aObBpRˆR d ˆRdˆdq-measurable
+
+[PDF page 7]
+ON STOCHASTIC NAVIER-STOKES EQUATIONS 7
+mapping on Ωˆ r0, Ts ˆRˆR d ˆR dˆd, for eachi“1, . . . , d. The function
+h“ ph kqkPZ is anℓ 2pRdq-valuedObBpRˆR dq-measurable mapping on
+Ωˆ r0, Ts ˆRˆR d.
+Definition 2.1.AV-valued optional processu“ pu tqtPr0,Ts is a solution to
+(2.1)–(2.2) onr0, TsifuPL 2pr0, Ts,Vq XL 8pr0, Ts,Hq(a.s.),and for each
+φPVthe identity
+put, φq “ pu 0, φq ´
+ˆ t
+0
+”
+paij
+s Djus `f i
+spusq, Diφq ` puspusq, φq
+ı
+ds
+`
+ˆ t
+0
+`
+γki
+s Diqk
+s `f spus, Dusq, φ
+˘
+ds
+`
+ˆ t
+0
+`
+σik
+s Dius `h k
+s pusq, φ
+˘
+dmk
+s
+(2.3)
+holds forPbdt-almost everypω, tq PΩˆ r0, Ts, and
+∇qk
+t “R
+`
+σik
+t Diut `h k
+t putq
+˘
+pPbdtbdx-a.e.qforkPZ.(2.4)
+We callpu tqtPr0,Ts anH-solution if it is anH-valuedF t-adapted c` adl` ag pro-
+cess such thatuPL 2pr0, Ts,Vq(a.s.), and almost surely (2.3) holds for all
+tP r0, Ts, φPV, and (2.4) is satisfied.
+Remark2.1.By Assumptions 2.1 and 2.2 below, (2.4) implies that, for every
+solutionu,
+M k
+t putq ´∇q k
+t “SM k
+t putq PH,Pbdtbdx-a.e., kPZ 0,
+where
+M k
+t puq:“σ ik
+t Diu`h k
+t puq, uPV.(2.5)
+Moreover, by (2.4),
+γki
+t Diqk
+t “γ ki
+t
+`
+RM k
+t puq
+˘i, kPZ 0,(2.6)
+where
+`
+RM k
+t puq
+˘i denotes thei-th component ofRM k
+t puq. Consequently,
+the variational formulation (2.3) is closed inu.
+Assumption 2.1.(i) There exists a constantδą0 such that
+|at| ďδ ´1,
+´
+aij
+t ´ 1
+2 σik
+t σjk
+t
+¯
+λiλj ěδ|λ| 2,(2.7)
+for allλPR d,pω, t, xq PΩˆ r0, Ts ˆR.
+(ii) There exists a nonnegative optional processϑ“ pϑ tqtPr0,Ts such that
+almost surely
+ˆ T
+0
+ϑ2
+t dtă 8and|γ tpxq|2 :“
+dÿ
+i“1
+ÿ
+kPZ0
+|γki
+t pxq|2 ďϑ 2
+t (2.8)
+for allpt, xq P r0, Ts ˆR.
+Remark2.2.By (2.7),|σ t| ďNpd, δq.
+
+[PDF page 8]
+8 R. COTTER AND I. GY ¨ONGY
+Assumption 2.2.There exist nonnegative optional processesλ, κ, χ, and
+nonnegativeObBpRq-measurable functionsF,Gon Ωˆ r0,8s ˆRsuch
+that ˆ T
+0
+pλ2
+t `χ 2
+t `κ tqdtă 8,
+ˆ T
+0
+`
+|F|2
+L2 ` |G|L2
+˘
+dtă 8(a.s.),
+and
+(i) for allωPΩ,tě0,xPR,uPR d,zPR dˆd,
+|ftpx, uq| ` |htpx, uq| ďλ t|u| `F tpxq,(2.9)
+|ftpx, u, zq| ďκ t|u| `χ t|z| `G tpxq.
+(ii) for allωPΩ,tě0,xPR,u 1, u2 PR d andz 1, z2 PR dˆd,
+|ftpx, u1q ´f tpx, u2q| ` |htpx, u1q ´h tpx, u2q| ďλ t|u1 ´u 2|,(2.10)
+|ftpx, u1, z1q ´f tpx, u2, z2q| ďκ t|u1 ´u 2| `χ t|z1 ´z 2|.(2.11)
+Assumption 2.3.The initial conditionu 0 is anF 0-measurableH-valued
+random variable.
+Assumedě3 and letrP p2, dsbe a constant. LetB ρ denote the family
+of balls inR d of radiusρ.
+Definition 2.2.A real-, vector-, or tensor-valued function on Ωˆ r0, Ts ˆR
+is called admissible iff“f M `f B for someObBpRq-measurable functions
+f M,f B, and a constant ˆfą0 and a nonnegative optional process ¯f“
+p ¯ftqtPr0,Ts exist such that
+˜
+´
+ˆ
+Bρ
+1R|f M pt, xq|r dx
+¸1{r
+ď ˆf ρ ´1 forPbdt-a.epω, tq PΩˆ r0, Ts
+(2.12)
+for allB ρ PB ρ,ρď1, and
+ess sup
+xPR
+|f B
+t pxq| ď ¯ft (a.s.),sup
+ωPΩ
+ˆ T
+0
+¯f 2
+t dtă 8.(2.13)
+The componentsf M andf B are referred to asMorreyandboundedcom-
+ponents of the admissible functionf.
+Definition 2.3.ForrP r1,8q,λě0, we denote byE r,λ the Morrey space
+of Euclidean-valued functionsfonR d satisfying
+|f| r,λ :“sup
+ρPp0,1s, BPBρ
+ρλ
+ˆ
+´
+ˆ
+B
+1R|fpxq| r dx
+˙1{r
+ă 8.
+Thus (2.12) is equivalent to|f M |r,1 ď ˆfpPbdt-a.e.q.
+Definition 2.4.AnR d-valued functionuon Ωˆ r0, Ts ˆRis called an
+admissible solution to (2.1)–(2.2) ifuis an admissible function andpu tqtPr0,Ts
+is a solution in the sense of Definition 2.1.
+
+[PDF page 9]
+ON STOCHASTIC NAVIER-STOKES EQUATIONS 9
+Theorem 2.1.Let Assumptions 2.1, 2.2(i) and 2.3 hold, and letube an
+admissible solution to(2.1)–(2.2). Thenuadmits aPbdt-modification,
+denoted again byu, which is anH-solution. Moreover,
+Esup
+tďT
+|e´φtut|2
+H `E
+ˆ T
+0
+αt|e´φtut|2
+H dt`E
+ˆ T
+0
+|e´φtut|2
+V dt.
+ďNE|u 0|2
+H `NE
+ˆ T
+0
+|e´φtFt|2
+L2 dt`NE
+ˆˆ T
+0
+|e´φtGt|L2 dt
+˙2
+,
+whereN“Npd, δqis a constant, and
+φt “
+ˆ t
+0
+αs ds εăα s “N 1`
+λ2
+s `χ 2
+s `ϑ 2
+s `κ s
+˘
+`µ s,
+with constantsN 1 “N 1pd, δq ą0,εą0and any nonnegative optional
+processµsatisfying ˆ T
+0
+µt dtă 8(a.s.).
+Theorem 2.2.Let Assumptions 2.1, 2.2 and 2.3 hold. Then there exists
+a constantN“Npd, rq ą0such that ifuis an admissible solution to
+(2.1)–(2.2)satisfyinguďδ{N, then
+Ee´ϕt|ut ´v t|2
+H ďE|u 0 ´v 0|2
+H fortP r0, Ts
+for any admissible solutionvto(2.1)–(2.2)onr0, Tswith anH-valued initial
+conditionv t|t“0 “v 0, where
+ϕt “N
+ˆ t
+0
+βs ds, β s “ˆu2 `¯u2
+s `λ 2
+s `ϑ 2 `χ 2
+s `κ s
+andN“Npd, r, δqis a constant. In particular, ifu 0 “v 0 then almost surely
+ut “v t for alltP r0, Tsfor theH-valued c` adl` ag version of the solutions.
+Finally we present a theorem on exponential stability of admissible solu-
+tions to deterministic Navier-Stokes equations, i.e., when the functionsa,f,
+fand the initial condition in equations (2.1)–(2.2) do not depend onω, and
+σ“0,q“0 andh“0.
+This means we consider the equations
+dut “Di
+`
+aij
+t Djut `f i
+tputq
+˘
+dt
+`
+`
+ftput, Dutq ´u tputq ´∇p t
+˘
+dt,divu t “0 (2.14)
+onr0, Ts ˆR, with boundary and initial conditions
+ut|BR “0,fortP r0, Tsandu tpxq|t“0 “u 0pxq,xPR,(2.15)
+wherea“ pa ij
+t pxqqis anR dˆd-valued Borel function onr0,8q ˆR d, the
+functionsf i “f i
+tpx, uqandf“f tpx, u, zqareR d-valued Borel functions on
+r0,8qˆRˆR d andr0,8qˆRˆR d ˆR dˆd, respectively for eachi“1, . . . , d,
+andu 0 is a Borel function onRwith values inR d.
+
+[PDF page 10]
+10 R. COTTER AND I. GY ¨ONGY
+LetRbe a bounded Lipschitz domain and make the following assump-
+tions.
+Assumption 2.4.There exists a constantδą0 such that
+|atpxq| ďδ ´1, a tpxqijλiλj ěδ|λ| 2
+for allpt, xq P r0, Ts ˆRandλPR d.
+Assumption 2.5.There exist a constantLand Borel functionsF,Gon
+r0, Ts ˆRsuch that
+ˆ T
+0
+`
+|F|2
+L2 ` |G|L2
+˘
+dtă 8,
+|ftpx, uq| ďL|u| `F tpxq,|f tpx, u, zq| ďLp|u| ` |z|q `G tpxq
+for alltP r0, Ts,xPR, uPR d,zPR dˆd, and
+|ftpx, u1q ´f tpx, u2q| ďL|u 1 ´u 2|,(2.16)
+|ftpx, u1, z1q ´f tpx, u2, z2q| ďLp|u 1 ´u 2| ` |z1 ´z 2|q(2.17)
+for alltP r0, Ts,xPR,u 1, u2 PR d andz 1, z2 PR dˆd.
+Assumption 2.6.We haveu 0 PH.
+Now we are in the position to present our theorem on exponential stability,
+wherecis the constant in the Poincar´ e inequality (1.4).
+Theorem 2.3.Let Assumptions 2.4, 2.5 and 2.6 hold. Then there is a
+constantN“Npd, r, κqsuch that ifuis an admissible solution to(2.14)–
+(2.15)satisfying
+˜u`Lăδ{N,˜u“ˆu`ess sup
+tPr0,Ts
+¯ut,
+then we haveˆ T
+0
+|ut ´v t|2
+V ď 1
+2γ |u0 ´v 0|2
+H withγ:“δ´Np˜u`Lq,
+and
+|ut ´v t|H ď |u0 ´v 0|He´c´2γt fortP r0, Ts
+for any admissible solutionvto(1.5)with zero boundary condition and
+initial conditionv t|t“0 “v 0 PH.
+Theorem 2.2 shows that any admissible solution to (2.1)–(2.2) is anH-
+solution and it is unique in the restricted Leray-Hopf class whenever its
+Morrey component is sufficiently small. Hence Theorem 1.1 obviously fol-
+lows by virtue of the following corollary.
+Corollary 2.4.Let Assumptions 2.1, 2.2 and 2.3 hold, and letube a solu-
+tion top2.1q–p2.2qsuch that almost surely
+ˆ T
+0
+´ ˆ
+R
+|uspxq|p dx
+¯q{p
+dsă 8(2.18)
+
+[PDF page 11]
+ON STOCHASTIC NAVIER-STOKES EQUATIONS 11
+for some
+dăpď 8,2ďqă 8,(2.19)
+satisfying the Ladyzhenskaya–Prodi–Serrin condition
+d
+p ` 2
+q ď1.(2.20)
+Thenuis anH-solution. Moreover, ifvPL p1,q1 is a solution top2.1q–p2.2q,
+such thatp 1, q1 satisfy(2.19)-(2.20), then for itsH-valued c` adl` ag modifica-
+tion, still denoted byv, we have
+ut “v t almost surely for alltP r0, Ts.
+Proof.By virtue of Theorem 2.2 we need only show that ifuis andR d-valued
+ObBpRq-measurable function on Ωˆ r0, Ts ˆRsuch that almost surely
+(2.18) holds for a pairpp, qqsatisfying (2.19)–(2.20), thenuis an admissible
+function such that ˆuis as small as we wish. The argument proving this was
+given first in [35] and then used also in [32]. For the convenience of the
+reader we present it also here. Ifpă 8then letr“dand set
+ζt “c
+´ ˆ
+R
+|utpxq|p dx
+¯1{pp´dq
+with a constantc,
+and defineu M
+t pxq “u tpxq1|utpxq|ěζt,u B
+t “u t ´u M
+t “u t1|ut|ďζt. Then for
+anyBPB ρ andεą0
+´
+ˆ
+B
+|uM
+t pxq|d dxďζ d´p
+t ´
+ˆ
+B
+1R|utpxq|p dxďNpdqc d´pρ´d ďερ ´d
+for sufficiently largec“cpd, p, εq. Clearly,|u B
+t | ďζ t such that
+ˆ T
+0
+ζ2
+t dt“c 2
+ˆ T
+0
+|ut|2p{pp´qq
+Lp dtă 8,since 2p{pp´qq ďq.
+Ifp“ 8then we takeu M “0,u B “u, ˆu“0 and ¯u t :“ |u t|L8, and notice
+that ˆ T
+0
+¯u2
+t dt“
+ˆ T
+0
+|ut|2
+L8 dtă 8(a.s.), sinceqě2,
+which completes the proof of the corollary.□
+Remark2.3.IfuPL d,8 (a.s.) then the above calculations show thatu
+remains admissible in the critical caser“d. However, in order to obtain
+the corollary, we need additional assumptions to guarantee that the Morrey
+norm ofu M
+t is sufficiently small, uniformly inpω, tq. We note that in the
+three-dimensional case (d“3) uniqueness and regularity results for Hopf-
+Leray weak solutions of the deterministic Navier-Stokes equations (1.1)–(1.2)
+(withf“0,f“0) were established in [22] under the assumption that the
+solutions belong toL d,8. More generally for alldě3 analogous uniqueness
+and regularity results were proved in [19].
+
+[PDF page 12]
+12 R. COTTER AND I. GY ¨ONGY
+In the proofs of Theorems 2.1, 2.2 and 2.3 we will utilise a version of
+Itˆ o’s formula for Banach space-valued semimartingales in the framework of
+Gelfand tripletsVãÑH”H ˚ ãÑV ˚,whereHis a Hilbert space,Vis a
+Banach space, andH ˚ andV ˚ denote their dual spaces. In the next section
+we present this version which is an extension of the Itˆ o formula from in [30]
+in the direction when the drift component of of the semimartingale is a the
+sum of aV ˚-valued process and anH-valued process such thatp|v ˚
+t |V ˚qtě0
+is locally square integrable, buth“ p|h t|H qtě0 is only locally integrable
+in timet. Although this extension may appear to be a minor technical
+generalization, it can in fact play an essential role in many applications, as
+demonstrated in [31] and [32] in the special case where bothHandVare
+Hilbert spaces.
+3.An It ˆo’s formula for semimartingales in Banach Spaces
+LetpV,} ¨ } V qbe a separable and reflexive real Banach space which is
+continuously and densely embedded in a Hilbert spacepH,| ¨ |q. Thus we
+have
+VãÑH”H ˚ ãÑV ˚,
+whereH ˚ ãÑV ˚ is the adjoint of the embeddingVãÑH, andH ˚ is
+identified withHwith the help of the inner product inH, denoted byp¨,¨q.
+We use the notationx¨,¨yfor the duality pairing betweenVandV ˚ and
+| ¨ | V ˚ denotes the norm inV ˚. Note that ifv ˚ PV ˚ for somei, then its
+restriction toVbelongs toV ˚ note thatxv ˚, vy “ ph, vqfor allvPVwhen
+v˚ “hPH. Letm“ pmptqq tě0 be anH-valued locally square integrable
+martingale such thatxmy, the Doob-Meyer process of|m| 2
+H is continuous.
+Finally letv“ pvptqq tě0,phptqq tě0 andpv ˚ptqqtě0 be progressively meas-
+urable processes with values inV,HandV ˚ respectively, such that for
+everyTą0
+ˆ T
+0
+}vptq}2 ` |v˚ptq|2
+V ˚ ` |hptq|dtă 8(a.s.).
+Then the following version of Itˆ o’s formula plays an important role in this
+paper.
+Theorem 3.1.Suppose that for eachφPV
+pvptq, φq “
+ˆ
+p0,ts
+xv˚psq, φydApsq `
+ˆ
+p0,ts
+phpsq, φqdApsq ` pmptq, φq,(3.1)
+forPbdt-almost everypt, ωq PΩˆ p0,8q. Then there is a ˜ΩĎΩof
+full probability and anH-valued c` adl` ag process˜vsuch that the following
+statements hold:
+(i) FordAˆPalmost allpt, ωqsatisfyingtP p0, τpωqqwe have˜v“v.
+
+[PDF page 13]
+ON STOCHASTIC NAVIER-STOKES EQUATIONS 13
+(ii) For allωP ˜Ωandtě0we have
+p˜vptq, φq “
+ˆ
+p0,ts
+xv˚psq, φyds
+`
+ˆ t
+0
+phpsq, φqds` pmptq, φqfor allφPV.
+(iii) For allωP ˜Ωandtě0we have
+|˜vptq|2 “|mp0q|2 `2
+kÿ
+i“1
+ˆ
+p0,ts
+xv˚
+i psq, vpsqyds
+`2
+ˆ
+p0,ts
+phpsq, vpsqqds`2
+ˆ
+p0,ts
+p˜vps´q, dmpsqq ` rmsptq.
+This theorem can be obtained by an adaptation of the proof of Theorem 1
+in [30].
+4.Proof of the main results
+First we need some lemmas and corollaries. The first one is from [35].
+Lemma 4.1.Letfbe a real-valued admissible function. Then
+ˆ
+R
+|f M
+t |2|φ|2 dxďN ˆf 2
+ˆ
+R
+|Dφ|2 ` |φ|2 dxpPbdt-a.e.q.(4.1)
+forφPC 8
+0 pR,Rq, whereN“Npd, rqis a constant depending ondandr.
+Define the trilinear form
+bpu, v, wq:“
+ˆ
+Rd
+ujpxqDjvipxqwipxqdx,
+forR d-valued functionsu, v, wonR d whenever the integral is well defined.
+Then by 4.1 we have the following propositions.
+Proposition 4.2.Letwbe anR d-valued admissible function and letv, wP
+C8
+0 pR,R dq. Then forPbdt-almost everypω, tqwe have
+|bpu, v, wtq| ďNˆw
+`
+|Du|L2 ` |u|L2
+˘
+|Dv|L2
+`N¯wt|Dv|L2|Dv|L2
+with a constantN“Npd, rq.
+Proof.Clearly,
+pukDkv, wtq “ pw M
+t uk, Dkvq ` pw B
+t uk, Dkvq.
+By using the Cauchy-Schwarz-Bunyakovsky inequality and then (4.1) with
+f“w M i
+t andφ“u k (for eachk, iP t1,2, ..., du), we get
+pwM
+t uk, Dkvq ďNˆwp|Du|L2 ` |u|L2q|Dv|L2
+
+[PDF page 14]
+14 R. COTTER AND I. GY ¨ONGY
+with a constantN“Npd, rq. Hence we get the corollary by noting that
+pwB
+t uk, Dkvq ď
+ˆ
+R
+` ÿ
+i,k
+|wBiuk|2˘1{2` ÿ
+i,k
+|Dkvi|2˘1{2 dxď¯wt|u|L2|Dv|L2.
+□
+Proposition 4.3.Letube anR d-valued admissible function and letv, wP
+C8
+0 pR,R dq. Then forPbdt-almost everypω, tqwe have
+|bput, v, wq| ďNˆu
+`
+|Dw|L2|w|L2
+˘
+|Dv|L2
+`¯ut|Dv|L2|w|L2
+with a constantN“Npd, rq.
+Proof.The proof goes in the same way as that of the previous proposition.
+□
+Proposition 4.4.Letube anR d-valued admissible function and letv, wP
+H1
+0. Then|bpu t, v, wq| ă 8(Pbdt-a.e.). Moreover, ifu t PV, then
+bput, v, wq “ ´bpu t, w, vq,
+and hencebpu t, v, vq “0.
+Proof.Clearly,|bpu t, v, wq| ă 8(Pbdt-a.e.) by Proposition 4.3. Forεą0
+letφ ε PC 8
+0 pR,R dqsuch that|v t ´φ ε|H1
+0
+ďε. Then by integration by parts,
+by the Leibniz rule and using that divu t “0, we getˆ
+Rd
+uj
+t Djφi
+εwi dx“ ´
+ˆ
+Rd
+φi
+εDjpwiuj
+t qdx“ ´
+ˆ
+Rd
+uj
+t Djwiφi
+ε dx.(4.2)
+By Proposition 4.2 we have
+|bput, v´φ ε, wq| ďNˆup|Dw|L2 ` |w|L2q|Dv´Dφ ε|L2
+`N¯ut|Dv´Dφ ε|L2|w|L2,
+which shows that
+bput, φε, wq Ñbpu t, v, wqforεÑ0.
+In the same way we get lim εÑ0 bput, w, φεq “bpu t, w, vq. Thus lettingεÑ0
+in (4.2) we finish the proof of the lemma.□
+Proof of Theorem 2.1.Without loss of generality we may assume that
+E|u0|2
+H `E
+ˆ T
+0
+|Ft|2
+L2 dt`E
+ˆˆ T
+0
+|Gt|L2 dt
+˙2
+ă 8.
+Letu“u M `u B be an admissible solution onr0, Ts, and setH“H,
+V“V. Then clearly,Vis a separable Hilbert space, which is continuously
+and densely embedded into the Hilbert spaceH.
+We define the processes
+v˚
+t PV ˚, F t PH, G t “ pG k
+t qkPZ0 Pℓ 2pHq,
+
+[PDF page 15]
+ON STOCHASTIC NAVIER-STOKES EQUATIONS 15
+by requiring
+xv, v˚
+t yV,V ˚ “ ´xa ij
+t Djut `f i
+tputq, DivyV,V ˚ ´ xuM
+t Djut, vyV,V ˚,(4.3)
+pv, FtqH “ p´u B
+t Djut `f tput, Dutq `γ ik
+t Digk
+t , vq,
+and
+pv, Gk
+t qH “ pσ ik
+t Diut `h k
+t putq, vqH , kě1
+for everyvPV. By Assumptions 2.1, 2.2(i) and Proposition 4.3,
+|xaij
+t Djut `f i
+tputq, DivyV,V ˚| ď pδ ´1|Dut|L2 `λ t|ut|L2 ` |Ft|L2q|v|V ,
+and
+|puM
+t Djut, vq| ďNˆu|v|V |Dut|L2
+with a constantN“Npd, rq. Hence (4.3) defines aV ˚-valued processv ˚
+such that
+|v˚
+t |V ˚ ď pδ ´1 `Nˆuq|Dut|L2 `λ t|ut|L2 ` |Ft|L2.
+Thus taking into account that almost surely
+ˆ T
+0
+λ2
+t |ut|2
+L2 dtďsup
+tPr0,Ts
+|ut|2
+L2
+ˆ T
+0
+λ2
+t dtă 8,
+ˆ T
+0
+|Dut|2
+L2 dtă 8
+and ˆ T
+0
+|Ft|2
+L2 dtă 8,
+we get that ˆ T
+0
+|v˚
+t |2
+V ˚ dtă 8(a.s.). (4.4)
+Using the definition of admissible solution and Assumption 2.1(i), we have
+| ´u B
+t Djut `f tput, Dutq|L2 ď¯ut|Dut|L2 `κ t|ut|L2 `χ t|Dut|L2 ` |Gt|L2,
+whence ˆ T
+0
+κt|ut|L2 dtďsup
+tPr0,Ts
+|ut|L2
+ˆ T
+0
+κt dtă 8(a.s.).
+Moreover, by Cauchy–Schwarz,
+ˆ T
+0
+p¯ut|Dut|L2 `χ t|Dut|L2qdtă 8(a.s.).
+Using (2.6), Assumptions 2.1 and 2.2(i),
+|γki
+t Diqk
+t |L2 “ |γ ki
+t pRM k
+t putqqi|L2 ďϑ t
+´ ÿ
+kPZ0
+|RM k
+t putq|2
+L2
+¯1{2
+ďϑ t
+´ ÿ
+kPZ0
+|M k
+t putq|2
+L2
+¯1{2
+ďN
+`
+ϑt|Dut|L2 `ϑ tλt|ut|L2 `ϑ t|Ft|L2
+˘
+.
+Hence taking account that
+ˆ T
+0
+ϑtλt|ut|L2 dtďsup
+tPr0,Ts
+|ut|L2
+ˆ T
+0
+pϑ2
+t `λ 2
+t qdtă 8(a.s.),
+
+[PDF page 16]
+16 R. COTTER AND I. GY ¨ONGY
+and
+ˆ T
+0
+ϑt|Dut|L2 `ϑ t|Ft|L2 dtď
+ˆ T
+0
+ϑ2
+t ` |Dut|2
+L2 ` |Ft|2
+L2 dtă 8(a.s.),
+we get that
+Ft “S
+`
+´uB
+t Djut `f tput, Dutq `γ ki
+t Diqk
+t
+˘
+is anH-valued optional process satisfying
+ˆ T
+0
+|Ft|H dtă 8(a.s.).(4.5)
+Furthermore, by Assumptions 2.1(i), 2.2(i) and Remark 2.2,
+ÿ
+k
+|σik
+t Diut `h k
+t putq|2
+L2 ďN
+`
+|Dut|2
+L2 `λ 2
+t |ut|2
+L2 ` |Ft|2
+L2
+˘
+withN“Npδq. Hence,
+Gt “ pG k
+t qkPZ0 “ pSpσ ik
+t Diut `h k
+t putqqqkPZ0
+is anℓ 2pHq-valued optional process satisfying
+ˆ T
+0
+|Gt|2
+ℓ2pHq dtă 8(a.s.).(4.6)
+Thus by virtue of (4.4), (4.5) and (4.6) we can apply Theorem 3.1 to get
+|ut|2
+H “ |u0|2
+H `
+ˆ t
+0
+Is ` puspusq, usqds`2
+ˆ t
+0
+pus´, dmtq ` rmst,(4.7)
+whereI t :“ ´2
+`
+aij
+t Diut `2f i
+tputq, Djut
+˘
+`2
+`
+ftput, Dutq `2γ kj
+t Djqk
+t , ut
+˘
+,and
+mt “
+ˆ t
+0
+S
+`
+σik
+s Dius `h k
+s pusq
+˘
+dmk
+s .
+By Proposition 4.4,pu tputq, utq “0 (Pbdt-a.e.). Unless otherwise stated,N
+andN 1 below denote constants depending only onδ, and their values may
+change from one occurrence to another. Note that
+ămą t“
+ˆ t
+0
+Js dswithJ t “
+ÿ
+k
+|S
+`
+σik
+t Diut `h k
+t putq
+˘
+|2
+H .(4.8)
+Using Assumptions 2.1, 2.2(i), taking into account (2.6) and applying Young’s
+inequality, we get
+It ď ´2pa ij
+t Diut, Djutq `2λ t|ut|L2|Dut|L2 `2|F t|L2|Dut|L2
+`2κt|ut|2
+L2 `2χ t|Dut|L2|ut|L2 `2|G t|L2|ut|L2 `2ϑ t|Dut|L2|ut|L2
+ď ´2pa ij
+t Diut, Djutq ` δ
+2 |Dut|2
+L2 `Npλ 2
+t `χ 2
+t `ϑ 2
+t `κ tq|ut|2
+L2 (4.9)
+`N|F t|2
+L2 `2|G t|L2|ut|L2.
+
+[PDF page 17]
+ON STOCHASTIC NAVIER-STOKES EQUATIONS 17
+Taking into account that the operator norm ofSis 1, expanding the square
+and applying Young’s inequality we have
+Jt ď pσ ik
+t σjk
+t Diut, Djutq ` δ
+2 |Dut|2
+L2 `N λ 2
+t |ut|2
+L2 `N|F t|2
+L2.(4.10)
+Let
+Yt :“e ´2φt|ut|2
+H, φ t :“
+ˆ t
+0
+αs ds ˜mt :“
+ˆ t
+0
+e´2φspus, dmsq.
+Then by Itˆ o’s formula from (4.7) we get
+dYt “e ´2φt
+`
+It ´2α t|ut|2
+H
+˘
+dt`e ´2φt drmst `2d ˜mt.(4.11)
+From (4.9) and (4.10), taking into account Assumption 2.1 we get
+Is `J s ď ´δ|Du s|2
+L2 `N 0pλ2
+s `χ 2
+s `ϑ 2
+s `κ sq|us|2
+H
+`N|F s|2
+L2 `2|G s|L2|us|H
+with constantsN 0 “N 0pδqandN“Npδq. Choosing
+αs “N 1pλ2
+s `χ 2
+s `ϑ 2
+s `κ sq `µ s
+withN 1 ěN 0, we get
+Ee´2φT^τ |uT^τ |2
+H `δE
+ˆ T^τ
+0
+e´2φs|Dus|2
+L2 ds
+`E
+ˆ T^τ
+0
+αse´2φs|us|2
+H dsďE|u 0|2
+H `NE
+ˆ T^τ
+0
+e´2φs|Fs|2
+L2 ds
+`2E
+ˆ T^τ
+0
+e´2φs|Gs|L2|us|H dsă 8.(4.12)
+Using this and estimate (4.9), from (4.11) we have
+Esup
+tďT^τ
+Yt ďE|u 0|2
+H `N E
+ˆ T^τ
+0
+e´2φs|Fs|2
+L2 ds
+`2E
+ˆ T^τ
+0
+e´2φs|Gs|L2|us|H ds
+`E
+ˆ T^τ
+0
+e´2φs drmss `2Esup
+tďT^τ
+|˜ms|.
+(4.13)
+Using (4.10), Remark 2.2 and (4.12) we get
+E
+ˆ T^τ
+0
+e´2φs drmss ďN E|u0|2
+H `NE
+ˆ T^τ
+0
+e´2φs|Fs|2
+L2 ds
+`NE
+ˆ T^τ
+0
+e´2φs|Gs|L2|us|H ds.
+(4.14)
+By the Davis inequality have
+Esup
+tďT^τ
+|˜ms| ď3E
+ˆˆ T^τ
+0
+e´4φsJs|us|2
+H ds
+˙1{2
+.
+
+[PDF page 18]
+18 R. COTTER AND I. GY ¨ONGY
+Therefore
+Esup
+tďT^τ
+Yt ďNE|u 0|2
+H `NE
+ˆ T^τ
+0
+e´2φs|Fs|2
+L2 ds
+`NE
+ˆ T^τ
+0
+e´2φs|Gs|L2|us|H ds
+`N 1E
+ˆˆ T^τ
+0
+e´4φsJs|us|2
+H ds
+˙1{2
+ă 8.
+By H¨ older and Young inequalities,
+E
+ˆ T^τ
+0
+e´2φs|Gs|L2|us|H dsď 1
+4 Esup
+tďT^τ
+Yt
+`NE
+ˆˆ T^τ
+0
+e´φs|Gs|L2 ds
+˙2
+ă 8.
+(4.15)
+Next, by Davis inequality,
+Esup
+tďT^τ
+|˜ms| ď3E
+ˆˆ T^τ
+0
+e´4φsJs|us|2
+H ds
+˙1{2
+.
+Hence
+2Esup
+tďT^τ
+|˜ms| ď 1
+8 Esup
+tďT^τ
+Yt `NE
+ˆ T^τ
+0
+e´2φsJs dsă 8.
+Using (4.10) together with (4.12), we get
+E
+ˆ T^τ
+0
+e´2φsJs dsďNE|u 0|2
+H `NE
+ˆ T^τ
+0
+e´2φs|Fs|2
+L2 ds
+` 1
+16 Esup
+tďT^τ
+Yt `NE
+ˆˆ T^τ
+0
+e´φs|Gs|L2 ds
+˙2
+.
+(4.16)
+Combining the estimates (4.13)–(4.16) we get
+Esup
+tďT^τ
+Yt ďNE|u 0|2
+H `NE
+ˆ T^τ
+0
+e´2φs|Fs|2
+L2 ds
+`NE
+ˆˆ T^τ
+0
+e´φs|Gs|L2 ds
+˙2
+` 1
+2 Esup
+tďT^τ
+Yt ă 8,
+which yields
+Esup
+tďT^τ
+e´2φt|ut|2
+H ďNE|u 0|2
+H `NE
+ˆ T
+0
+e´2φs|Fs|2
+L2 ds
+`NE
+ˆˆ T
+0
+e´φs|Gs|L2 ds
+˙2
+.(4.17)
+
+[PDF page 19]
+ON STOCHASTIC NAVIER-STOKES EQUATIONS 19
+Using this estimate in (4.15), from (4.12) we obtain
+EYT^τ `E
+ˆ T^τ
+0
+e´2φs|Dus|2
+L2 ds
+`E
+ˆ T^τ
+0
+αse´2φs|us|2
+H dsďNE|u 0|2
+H `NE
+ˆ T
+0
+e´2φs|Fs|2
+L2 ds
+`NE
+ˆˆ T
+0
+e´φs|Gs|L2 ds
+˙2
+.(4.18)
+We can finish now the proof of the theorem by using Fatou’s lemma when
+takingnÑ 8forτ:“τ n Ò 8here and in (4.17).□
+Proof of Theorem 2.2.Without loss of generality we may assume thatE|u 0´
+v0|2
+H ă 8. Letw:“u´v. Then for eachφPDwe have
+put, φq “ ´
+ˆ t
+0
+“
+paij
+s Djus `f i
+spusq ´f i
+spvsq, Diφq ` puspusq ´v spvsq, φq
+‰
+ds
+`
+ˆ t
+0
+pfspus, Dusq ´f spvs, Dvsq, φqds
+`
+ˆ t
+0
+´
+γki
+s
+`
+R
+`
+M k
+s pusq ´M k
+s pvsq
+˘˘i, φ
+¯
+ds
+`
+ˆ t
+0
+pσik
+s Dius `h k
+s pusq ´h k
+s pvsq, φqdm k
+s
+forPbdt-almost everypω, tq P r0, Ts, whereM k
+s p¨qis defined in (2.5). Setting
+V:“V,H:“Hand arguing as in the proof of Theorem 2.1, we obtain an
+optionalV ˚-valued processv ˚ such that
+ˆ T
+0
+|v˚
+s |2
+V ˚ dsă 8(a.s.),
+and for allφPV,
+xφ, v˚
+s y “ ´
+`
+aij
+s Djus `f i
+spusq ´f i
+spvsq, Diφ
+˘
+´
+`
+uM i
+s Dius ´v M i
+s Divs, φ
+˘
+for allpω, tq. Moreover, define
+Fs :“S
+´
+vBi
+s Divs ´u Bi
+s Dius `f spus, Dusq ´f spvs, Dvsq
+¯
+`S
+´
+γki
+s
+`
+RpM k
+s pusq ´M k
+s pvsqq
+˘i¯
+, tP r0, Ts,
+and let
+Gs “ pG k
+s qkPZ
+be given by
+Gk
+s :“S
+`
+σik
+s Dius `h k
+s pusq ´h k
+s pvsq
+˘
+.
+
+[PDF page 20]
+20 R. COTTER AND I. GY ¨ONGY
+ThenF s isH-valued andG s isℓ 2pHq-valued optional process, such that
+ˆ T
+0
+|Gt|2
+ℓ2pHq ` |Ft|H dtă 8(a.s.).
+Therefore we can use Theorem 3.1 to get thatw“ pw tqtPr0,Ts admits an
+H-valued c` adl` agPbdt-modification, denoted also byw, such that almost
+surely
+|wt|2
+L2 “|w0|2
+H ´2
+ˆ t
+0
+`
+aij
+s Djws `f i
+spusq ´f i
+spvsq, Djws
+˘
+ds
+´2
+ˆ t
+0
+bpus, us, wsq ´bpv s, vs, wsqds
+`2
+ˆ t
+0
+`
+fpu s, Dusq ´fpv s, Dvsq, ws
+˘
+ds
+`2
+ˆ t
+0
+´
+γki
+s
+`
+RpM k
+s pusq ´M k
+s pvsqq
+˘i, ws
+¯
+ds
+`2
+ˆ t
+0
+pws, dmsq ` rmst (4.19)
+for alltP r0, Ts, where
+mt “
+ˆ t
+0
+S
+`
+σik
+s Diws `h k
+s pusq ´h k
+s pvsq
+˘
+dmk
+s , tP r0, Ts,
+andrmsis the quadratic variation process of the locally square integrable
+martingalem. Notice that
+bpus, us, wsq ´bpv s, vs, wsq “bpv s, ws, wsq `bpw s, us, wsq
+“bpw s, us, wsq “ ´bpw s, ws, usq,(4.20)
+by Proposition 4.4. By Proposition 4.2, using Young’s inequality we get
+2|bpws, ws, usq| ď ˆNˆu
+`
+|Dws|L2 ` |ws|L2
+˘
+|Dws|L2
+`2¯us|Dws|L2|ws|L2 (4.21)
+ď ˆNˆu|Dws|2
+L2 ` δ
+2 |Dws|2
+L2 `N 0pˆu2 `¯u2
+s q|ws|2
+L2
+with constants ˆN“ ˆNpd, rqandN 0 “N 0pd, r, δq. Using Assumption 2.2(ii)
+by the Cauchy-Schwartz and Young inequalities we obtain,
+´2
+`
+aij
+s Djws `f i
+spusq ´f i
+spvsq, Diws
+˘
+ď ´2pa ij
+s Djws, Diwsq `2λ s|ws|L2|Dws|L2
+ď ´2pa ij
+s Djws, Diwsq ` δ
+4 |Dws|2
+L2 `N λ 2
+s|ws|2
+L2,
+with a constantN“Npδq. Due to (2.11), we have
+2
+`
+fpu s, Dusq ´fpv s, Dvsq, ws
+˘
+ď2pκ s|ws|L2 `χ s|Dws|L2q|ws|L2 ď δ
+8 |Dws|2
+L2 `Npκ s `χ 2
+sq|ws|2
+L2
+
+[PDF page 21]
+ON STOCHASTIC NAVIER-STOKES EQUATIONS 21
+withN“Npδq. By condition (2.8) we have
+Ks :“
+´
+γki
+s
+`
+RpM k
+s pusq ´M k
+s pvsqq
+˘i, us
+¯
+ďϑ s
+ˇˇˇ
+ˇˇRpMspusq ´M spvsqq
+ˇˇ
+ℓ2pRdq |us|
+ˇˇˇ
+L1
+ďϑ s
+ˇˇˇ
+ˇˇRpMspusq ´M spvsqq
+ˇˇ
+ℓ2pRdq
+ˇˇˇ
+L2
+|us|L2.
+Since the operator norm ofRis 1,
+ˇˇˇ
+ˇˇRpMspusq ´M spvsqq
+ˇˇ
+ℓ2pRdq
+ˇˇˇ
+2
+L2
+“
+8ÿ
+k“1
+ˇˇˇR
+`
+M k
+s pusq ´M k
+s pvsq
+˘ˇˇˇ
+2
+L2
+ď
+ÿ
+kPZ0
+ˇˇˇM k
+s pusq ´M k
+s pvsq
+ˇˇˇ
+2
+L2
+“
+ˇˇ|Mspusq ´M spvsq|ℓ2pRdq
+ˇˇ2
+L2
+ď
+ˇˇˇ
+ˇˇσi
+sDiws
+ˇˇ
+Rd
+ˇˇ
+ℓ2
+`
+ˇˇhspusq ´h spvsq
+ˇˇ
+ℓ2pRdq
+ˇˇˇ
+2
+L2
+.
+Hence, by Remark 2.2 and condition (2.10),
+|Ks| ďϑ sN
+`
+|Dws|L2 `λ s|ws|L2
+˘
+|ws|L2
+ď δ
+16 |Dws|2
+L2 `N 1pϑ2
+s `λ 2
+sq|ws|2
+L2,
+whereN, N 1 depend only ondandδ. Since the operator norm ofSis 1, due
+to Assumption 2.1 and condition (2.10) we have
+Js :“
+ÿ
+k
+ˇˇˇSpσ ik
+s Diws `h k
+s pusq ´h k
+s pvsqq
+ˇˇˇ
+2
+H
+ď
+ÿ
+k
+|σik
+s Diws `h k
+s pusq ´h k
+s pvsq|2
+H
+ď pσ ik
+s σjk
+s Diws, Djwsq ` δ
+32 |Dws|2
+L2 `N 1λ2
+s|ws|2
+L2 (4.22)
+with a constantN 1 “N 1pd, δq. Thus by the above estimates, from (4.19)
+we obtain
+d|wt|2
+H ď ´2pa ij
+s Djws, Diwsq ` p ˆNˆu`δq|Dw s|2
+L2
+`N 1β|ws|2
+L2 `2pw t, dmsq `drms t (4.23)
+with a constantN 2 “N 2pd, r, δqand stochastic process
+βs “ˆu2 `¯u2
+s `λ 2
+s `ϑ 2 `χ 2
+s `κ s.
+Set
+ϕt “N 1
+ˆ t
+0
+βs ds1 andY t “e ´ϕt|wt|2
+H, ˜mt “
+ˆ t
+0
+e´ϕspws, dmsq,
+whereN 1 is a constant, specified later. Then from (4.23) we get
+dYt ďe ´ϕt
+`
+´2pa ij
+s Djwt, Diwtq ` p ˆNˆu` 7
+8 δq|Dwt|2
+L2
+˘
+dt
+`pN2 ´N 1qβt|wt|2
+H dt`dr˜mst `2d˜mt.(4.24)
+
+[PDF page 22]
+22 R. COTTER AND I. GY ¨ONGY
+Set
+τn “infttP r0, Ts, η t ěnu ^˜τn
+for integersně1, where
+ηt “
+ˆ t
+0
+|Dws|2
+L2 ` p¯u2
+s `λ 2
+s `ϑ 2 `χ 2
+s `κ sq|ws|2 ds,
+and ˜τn Ò 8is a localising sequence of stopping times for the local martingale
+˜m. Sinceηis a continuousF t-adapted process,τ n is a stopping time for every
+n. Clearly, forτ:“τ n we haveE ˜mt^τ “0 and due to (4.22) we have
+Er˜mst^τ “Ex ˜myt^τ “E
+ˆ t^τ
+0
+e´ϕsJs ds
+ďE
+ˆ t^τ
+0
+e´ϕs
+`
+pσik
+s σjk
+s Diws, Djwsq ` δ
+32 |Dws|2
+L2 `N 1λ2
+s|ws|2
+L2
+˘
+dsă 8
+for everytP r0, Ts. Hence, using that
+´
+`
+p2aij
+s ´σ ik
+s σjk
+s qDjws, Diws
+˘
+ď ´2δ|Dw s|2
+L2,
+from (4.24) we get
+EYt^τ ďE|w 0|2
+H
+`E
+ˆ t^τ
+0
+e´ϕsp ˆNˆu´δq|Dw s|2
+L2 ` pN1 `N 2 ´N 1qβ|ws|2
+H ds
+sinceE ˜mτ^t “0. Hence, assuming that ˆuďδ{ˆuand choosingN 1 ěN 1 `N2,
+we obtain
+Ee´φτn^t|wt|2
+H ďE|w 0|2 fortP r0, Ts
+for integersně1. Letting herenÑ 8and using Fatou’s lemma we finish
+the proof of the theorem.□
+Proof of Theorem 2.3.Settingw“u´v, we proceed as in the proof of
+Theorem 2.2 and apply Theorem 3.1 to obtain the ‘energy equality’
+|wt|2
+L2 “ |w0|2
+H ´2
+ˆ t
+0
+`
+aij
+s Djws, Diws
+˘
+`bpu s, us, wsq ´bpv s, vs, wsqds
+´2
+ˆ t
+0
+pfi
+spusq ´f i
+spvsq, Diwsqds`2
+ˆ t
+0
+`
+fspus, Dusq ´f spvs, Dvsq, ws
+˘
+ds.
+From (4.20) and (4.21), using the Poincar´ e inequality (1.4) to control|w|L2
+by|Dw| L2, we get
+2|bpus, us, wsq ´bpv s, vs, wsq| ďN˜u|Dws|2
+L2 (dt-a.e.sP r0, Ts)
+with a constantN“Npd, r,cqand ˜u“ˆu`ess sup sPr0,Ts ¯us. By conditions
+(2.16) and (2.17) in Assumption 2.5, and using the Poincar´ e inequality, we
+obtain
+2|pf i
+spusq ´f i
+spvsq, Diwsq| ď2cL|Dw s|2
+L2
+and
+2|pfpu s, Dusq ´fpv s, Dvsq, wsq| ď2pc 2 `cqL|Dw s|2
+L2.
+
+[PDF page 23]
+ON STOCHASTIC NAVIER-STOKES EQUATIONS 23
+Hence, using also the ellipticity condition from Assumption 2.4,
+paij
+s Djws, Diwsq ěδ|Dw s|2 (ds-a.e.sP r0, Ts),
+we obtain
+|wt|2
+H `
+ˆ t
+0
+|Dws|L2 ď |w0|2
+H `
+ˆ 2
+0
+`
+2Np˜u`Lq ´2δ
+˘
+|Dws|2 ds,fortP r0, Ts
+with a constantN“Npd, r,cq. Consequently, if
+˜u`Lăδ{N,
+and we set
+γ:“δ´Np˜u`Lq ą0,
+then
+|wt|2
+H ď |w0|2
+H ´
+ˆ t
+0
+2γ|Dw s|2
+L2 ds, tP r0, Ts.
+In particular, ˆ T
+0
+|Dws|2
+L2 dsď 1
+2γ |w0|2, tP r0, Ts.
+Furthermore, using the Poincar´ e inequality in the previous estimate yields
+|wt|2
+H ď |w0|2
+H ´2γc ´2
+ˆ t
+0
+|Dws|2
+L2 ds.fortP r0, Ts,
+and an application of Gronwall’s lemma therefore gives
+|wt|H ď |w0|He´c´2γt, tP r0, Ts.
+This completes the proof.□
+5.Applications to Stochastic Navier-Stokes equations driven
+by wiener processes and Poisson martingale measures
+We now consider the following stochastic Navier-Stokes equations
+dut “
+´
+Di
+`
+aij
+t Djut `f i
+tputqq `f tput, Dutq ´u tputq ´∇p t `γ ki
+t Diqk
+t
+¯
+dt
+`
+´
+σik
+t Diut `h k
+t putq ´∇q k
+t
+¯
+dwk
+t `
+ˆ
+Z
+htput´, zq˜πpdz, dtq,(5.1)
+together with the incompressibility condition
+divu t “0 (5.2)
+on Ωˆ r0, Ts ˆR, subject to the the boundary and initial conditions
+ut|BR “0,fortP r0, Tsandu tpxq|t“0 “u 0pxq,xPR.(5.3)
+Here the coefficientsa“ pa ijq,γ“ pγ kiq,σ“ pσ ikqand the functionsf“
+pfiq,fare the same as those appearing in (2.1). The only difference is that,
+in (5.1), the summation over the repeated indexkis understood to run only
+overkě1. The functionh“h tpx, u, zqis anR d-valuedObBpRˆR dq bZ-
+measurable function ofωPΩ,tě0,xPR,uPR d andzPZ, satisfying the
+following assumption.
+
+[PDF page 24]
+24 R. COTTER AND I. GY ¨ONGY
+Assumption 5.1.There exist a nonnegative optional process ˜λ“ p ˜λtqtě0
+and a nonnegativeObBpRq-measurable functionH“H tpxqsuch that
+ˆ T
+0
+˜λ2
+t dtă 8,
+ˆ T
+0
+|Ht|2
+L2 dtă 8(a.s.),
+and the following conditions hold:
+(i) For allωPΩ,tě0,xPRanduPR d we haveˆ
+Z
+|htpx, u, zq|2 npdzq ď ˜λ2
+t |u|2 `H 2
+t pxq.
+(ii) For allωPΩ,tě0 we havexPR,u 1, u2 PR d,ˆ
+Z
+|htpx, u1, zq ´h tpx, u2, zq|2 npdzq ď ˜λ2
+t |u1 ´u 2|2.
+The notion of solution is defined analogously to that introduced above.
+Definition 5.1.AV-valued optional processu“ pu tqtPr0,Ts is called a
+solution of (5.1)–(5.2)–(5.3) onr0, TsifuPL 2pr0, Ts,Vq XL 8pr0, Ts,Hq
+(a.s.), and for everyφPV,
+put, φq “pu0, φq ´
+ˆ t
+0
+”`
+aij
+s Djus `f i
+spusq, Diφ
+˘
+` puspusq, φq
+ı
+ds
+`
+ˆ t
+0
+`
+γki
+s Diqk
+s `f spus, Dusq, φ
+˘
+ds
+`
+ˆ t
+0
+`
+σik
+s Dius `h k
+s pusq, φ
+˘
+dwk
+s
+`
+ˆ t
+0
+ˆ
+Z
+`
+hspus´, zq, φ
+˘
+˜πpds, dzq(5.4)
+holds forPbdt-almost everypω, tq PΩˆ r0, Ts. In addition equation (2.4)
+is assumed to hold.
+As before, we callu“ pu tqtPr0,Ts anH-solution if it is anH-valuedF t-
+adapted c` adl` ag process such thatuPL2pr0, Ts,Vq(a.s.), almost surely (5.4)
+holds for alltP r0, Ts, φPV, and equation (2.4) is satisfied. Recall that a
+solution is called an admissible solution if it is an admissible function.
+Theorems 2.1 and 2.2 yield the following result.
+Theorem 5.1.Let Assumptions 2.1, 2.2, 2.3 and 5.1 hold. Then every
+admissible solution admits anH-valued c` adl` ag modification. Moreover, there
+exists a constantN“Npd, rq ą0such that ifuis an admissible solution
+to(5.1)–(5.2)–(5.3)satisfyingˆuďδ{N, then
+Ee´ψt|ut ´v t|2
+H ďE|u 0 ´v 0|2
+H fortP r0, Ts
+for any admissible solutionvof(5.1)–(5.2)–(5.3)onr0, TswithH-valued
+initial conditionv t|t“0 “v 0, where
+ψt “N
+ˆ t
+0
+βs ds, β s “ˆu2 `¯u2
+s `λ 2
+s ` ˜λ2
+s `ϑ 2 `χ 2
+s `κ s
+
+[PDF page 25]
+ON STOCHASTIC NAVIER-STOKES EQUATIONS 25
+with a constantN“Npd, r, δq. In particular, ifu 0 “v 0 then theH-valued
+c` adl` ag modifications ofuandvcoincide almost surely onr0, Ts.
+Proof.We adapt the method of rewriting stochastic integrals with respect
+to martingale measures as stochastic integrals with respect to martingales
+with values in Hilbert spaces, see [29]. Letpe kqkě1 be an orthonormal basis
+of the Hilbert spaceL 2ppZ,Z,nq,R dq, the space ofR d-valuedZ-measurable
+functions onZthat are square-integrable with respect tonpdzq. Define the
+sequencepm kqkPZ of real-valuedF t-martingales by
+mk
+t “w k
+t forkě1,m k
+t “
+ˆ t
+0
+ˆ
+Z
+ekpzq˜πpdz, dsqforkď0.
+Then the predictable quadratic variation processes satisfy
+xmk, mlyt “δ kltfork, lPZ.
+Next define for everykPZtheR d-valued function ˜hk “ ˜hk
+t px, uqby setting
+˜hk
+t px, uq “h k
+t px, uqforkě1,
+and, forkď0,
+˜hk
+t px, uq “
+ˆ
+Z
+htpx, u, zqekpzqnpdzq,
+forωPΩ,tě0,xPRanduPR d. Then for everyφPHwe have
+ˆ t
+0
+ˆ
+Z
+`
+hspus, zq, φ
+˘
+˜πpds, dzq “
+ÿ
+kď0
+ˆ t
+0
+ˆ
+Z
+`˜hk
+s pusq, φ
+˘
+dmk
+s
+and ˆ t
+0
+`
+hk
+s pusq, φ
+˘
+dwk
+s `
+ˆ t
+0
+ˆ
+Z
+`
+hspus, zq, φ
+˘
+˜πpds, dzq
+“
+ÿ
+kPZ
+ˆ t
+0
+`˜hk
+s pusq, φ
+˘
+dmk
+s
+almost surely for alltP r0, Ts. Moreover, define ˜σ ik “σ ik forkě1 and
+˜σik “0 forkď0. Then, for everyφPV, we have that
+ˆ t
+0
+`
+σik
+s Dius `h k
+s pusq, φ
+˘
+dwk
+s `
+ˆ t
+0
+ˆ
+Z
+`
+hspus, zq, φ
+˘
+˜πpds, dzq
+“
+ÿ
+kPZ
+ˆ t
+0
+`
+˜σik
+s Dius ` ˜hk
+s pusq, φ
+˘
+dmk
+s
+almost surely for alltP r0, Ts. Consequently, the stochastic Navier-Stokes
+equations (5.1) can be rewritten in the form of (2.1), where the coefficientσ
+and the functionhin (2.1) are replaced by ˜σand ˜h, and the driving sequence
+of martingalespm kqkPZ is given as above. It remains to verify that ˜σand
+˜hsatisfy the assumptions in Assumptions 2.1 and 2.2, respectively, which
+were imposed onσandh.
+
+[PDF page 26]
+26 R. COTTER AND I. GY ¨ONGY
+It is straightforward to verify that the coercivity condition (2.7) remains
+valid whenσis replaced by ˜σ. By Parseval’s identity and Assumption 5.1,
+we have
+ÿ
+kď0
+|˜hk
+t px, uq|2
+Rd “
+ˆ
+Z
+|htpx, u, zq|2
+Rd npdzq ď ˜λ2
+t |u|2 ` |Htpxq|2
+for allω,tP r0, Ts,xPR, anduPR d. Moreover,
+ÿ
+kď0
+|˜hk
+s px, u1q ´ ˜hk
+s px, u2q|2
+Rd “
+ˆ
+Z
+|hspx, u1, zq ´h spx, u2, zq|2 npdzq
+ď ˜λ2
+t |u1 ´u 2|2
+for allω,tP r0, TsxPR, andu 1, u2 PR d. Hence, using (2.9) and (2.10)
+from Assumption 2.2, we obtain
+|˜htpx, uq|ℓ2pRdq ď p˜λt `λ tq|u| `H tpxq `F tpxq
+and
+|˜htpx, u1q ´ ˜htpx, u2q|ℓ2pRdq ď p˜λt `λ tq|u1 ´u 2|.
+This shows that, with ˜hin place ofh, Assumption 2.2 is satisfied with
+˜λ`λreplacingλ, andH`GreplacingG. This completes the proof of the
+theorem.□
+References
+[1] A. Agresti and M. Veraar, Stochastic Navier-Stokes equations for turbulent flows in
+critical spaces, Comm. Math. Phys. 405 (2024), no. 2, Paper No. 43, 57 pp.
+[2] D. Albritton, E. Bru´ e, M. Colombo, Non-uniqueness of Leray solutions of the forced
+Navier-Stokes equations. Ann. Math. 196, 415–455 (2022)
+[3] S. Albeverio and A.B. Cruzeiro, Global flow and invariant (Gibbs) measure for Euler
+and Navier-Stokes two dimensional fluids, Comm. Math. Phys. 129 (1990), 431–444.
+[4] S. Albeverio and B. Ferrario, Uniqueness results for the generators of the two-
+dimensional Euler and Navier-Stokes flows. The case of Gaussian invariant measures,
+J. Funct. Anal. 193 (2002), no. 1, 77–93.
+[5] S. Albeverio and B. Ferrario, Uniqueness of solutions of the stochastic Navier-Stokes
+equation with invariant measure given by the enstrophy, Ann. Probab. 32 (2004), no.
+2, 1632–1649.
+[6] V. Barbu and M. R¨ ockner, Global solutions to random 3D vorticity equations for
+small initial data, J. Differential Equations 263 (2017) 5395–5411.
+[7] A. Bensoussan, Stochastic Navier-Stokes equations, Acta Appl. Math. 38 (1995),
+267–304.
+[8] A. Bensoussan and R. Temam, Equations Stochastiques du Type Navier-Stokes,
+Journal of Functional Analysis 13 (1973),195–222.
+[9] L. A. Bianchi and F. Flandoli, Stochastic Navier-Stokes Equations and Related Mod-
+els, Milan J. Math. Vol. 88 (2020) 225–246.
+[10] J. Bricmont, Ergodicity and mixing for stochastic partial differential equations, in
+Proceedings of the International Congress of Mathematicians ( Beijing, 2002), Vol. 1
+(Higher Ed. Press, Beijing, 2002), pp. 567–585.
+[11] Z. Brze´ zniak, M. Capi´ nski and F. Flandoli, Stochastic Navier-Stokes equations with
+multiplicative noise. Stoch. Anal. Appl. 10 (1992), 523–532.
+
+[PDF page 27]
+ON STOCHASTIC NAVIER-STOKES EQUATIONS 27
+[12] Brze´ zniak, Z., Hausenblas, E., Zhu, J., 2d stochastic Navier–Stokes equations driven
+by jump noise. Nonlinear Anal. TMA 79, 122–139.
+[13] M. Capinski, N. Cutland, Stochastic Navier-Stokes equations, Acta Appl. Math. 25
+(1991), 59–85.
+[14] M. Capinski, D. Gatarek, Stochastic equations in Hilbert space with application to
+Navier-Stokes equations in any dimension, J. Funct. Anal. 126 (1994), no. 1, 26–35.
+[15] M. Capinski, S. Peszat, On the existence of a solution to stochastic Navier–Stokes
+equations. Nonlinear Anal. 44 (2001), no. 2, Ser. A: Theory Methods, 141–177.
+[16] G. Da Prato, A. Debussche, Two-dimensional Navier-Stokes equations driven by a
+space-time white noise. J. Funct. Anal. 196 (2002), no. 1, 180–210.
+[17] G. Da Prato, A. Debussche, Dynamic programming for the stochastic Navier-Stokes
+equations, M2AN Math. Model Numer. Anal. 34 (2000), n.2, 459–475.
+[18] G. Da Prato, A. Debussche, Ergodicity for the 3D stochastic Navier-Stokes equations,
+J. Math. Pures Appl. 82 (2003), 877–947.
+[19] H. Dong and D. Dapeng, The Navier-Stokes Equations in the Critical Lebesgue Space,
+Commun. Math. Phys. 292 (2009), 811–827.
+[20] W. E and J.C. Mattingly, Ergodicity for the Navier-Stokes equation with degenerate
+random forcing: finite-dimensional approximation, Comm. Pure Appl. Math., vol. 54
+no. 11 (2001), pp. 1386–1402.
+[21] W. E, J.C. Mattingly and Ya. Sinai, Gibbsian dynamics and ergodicity for the
+stochastically forced Navier-Stokes equation, Comm. Math. Phys. 224 (2001), no.
+1, 83–106.
+[22] L. Escauriaza, G. Seregin and V. ˇSver´ ak,L3,8-solutions of Navier-Stokes equations
+and backward uniqueness (In Russian). Usp. Mat. Nauk 58(2)(350), 3–44 (2003);
+translation in Russ. Math. Surv. 58(2), 211–250 (2003).
+[23] R. Farwiq, From Jean Leray to the millennium problem: the Navier-Stokes equations,
+J. Evol. Equ. 21 (2021), 3243–3263.
+[24] F. Flandoli, An Introduction to 3D Stochastic Fluid Dynamics, 51-150, in Lecture
+Notes in Mathematics 1942, Springer Verlag Berlin Heidelberg 2008.
+[25] F. Flandoli and B. Maslowski, Ergodicity of the 2-D Navier-Stokes Equation Under
+Random Perturbations Commun. Math. Phys. 171, 119–141 (1995).
+[26] B. Ferrario, Uniqueness result for the 2D Navier-Stokes equation with additive noise,
+Stoch. Stoch. Rep. 75 (2003), no. 6, 435–442.
+[27] H. Fujita Yashima, Equations de Navier-Stokes Stochastiques non Homog` enes et Ap-
+plications. Scuola Normale Superiore, Pisa, 1992.
+[28] I. Gy¨ ongy and N. V. Krylov, Once again on evolution equations with monotone
+operators in Hilbert spaces and applications,
+[29] I. Gy¨ ongy and N. V. Krylov, On Stochastic Equations with Respect to Semimartin-
+gales I,Stochastics, 1980 Volume 4, pp. 1–21.
+[30] I. Gy¨ ongy and N. V. Krylov, On Stochastic Equations with Respect to Semimartin-
+gales II. Itˆ o Formula in Banach Spaces.Stochastics, 6:153–173, 1982.
+[31] I. Gy¨ ongy and N. V. Krylov, Once again on evolution equations with monotone op-
+erators in Hilbert spaces and applications,Stochastics and Partial Differential Equa-
+tions: Analysis and Computations, 2025.
+[32] I. Gy¨ ongy and N. V. Krylov, On conditional uniqueness of solutions to
+stochastic Navier–Stokes equations,Journal of Dynamics and Differential Equations,
+https://doi.org/10.1007/s10884-026-10484-4.
+[33] E. Hopf, ¨Uber die Anfangswertaufgabe ¨ uber die hydrodynamischen Grundgleichun-
+gen, Math. Nachr., 4 (1951) 213–231.
+[34] T. Hou, Yixuan Wang, Changhe Yang Nonuniqueness of Leray–Hopf
+solutions to the unforced incompressible 3D Navier-Stokes Equation, ht-
+tps://doi.org/10.48550/arXiv.2509.25116
+
+[PDF page 28]
+28 R. COTTER AND I. GY ¨ONGY
+[35] N.V. Krylov, Estimates inL p for solutions to SPDEs with coefficients in Morrey
+classes,Stoch. Partial Differ. Equ. Anal. Comput.11 (2023), no. 4, 1416–1432.
+[36] N.V. Krylov, On strong solutions of Itˆ o’s equations withDσandbin Morrey classes
+containingL d,Ann. Probab.51 (5) (2023) 1729–1751.
+[37] I. Kukavica, F. Wang and F. Xu, Local existence of the stochastic Navier-Stokes
+equations in the whole space, Stochastics and Partial Differential Equations: Analysis
+and Computations, https://doi.org/10.1007/s40072-024-00341-0.
+[38] N.V. Krylov, On parabolic equations in Sobolev spaces with lower order coefficients
+from Morrey spaces, arXiv:2311.03238.
+[39] S.B. Kuksin and O. Penrose, A family of balance relations for the two-dimensional
+Navier-Stokes equations with random forcing. J. Stat. Phys. 118 (2005), no. 3-4,
+437–449.
+[40] S.B. Kuksin and A. Shirikyan Stochastic dissipative PDEs and Gibbs measures,
+Comm. Math. Phys. 213 (2000), no. 2, 291–330.
+[41] S.B. Kuksin and A. Shirikyan, Ergodicity for the randomly forced 2D Navier-Stokes
+equations, Math. Phys. Anal. Geom. 4 (2001), no. 2, 147–195.
+[42] O. A. Ladyzhenskaya, The mathematical theory of viscous incompressible flow, New
+York, NY: Gordon & Breach 1963.
+[43] O. A. Ladyzhenskaya, Solution ‘in the large’ of boundary value problems for the
+Navier-Stokes equations in two space variables, Dokl. Akad. Nauk SSSR 123 (1958),
+427–429; English transl., Soviet Phys. Dokl. 3 (1959), 1128-1131.
+[44] O. Ladyzhenskaya, On the uniqueness and smoothness of generalized solutions to the
+Navier-Stokes equations.Zap. Nauchn. Sem. Leningrad. Otdel. Mat. Inst. Steklov.
+(LOMI)5 (1967), 169-185; English transl.: Sem. Math. V. A. Steklov Math. Inst.
+Leningrad 5, 60–66.
+[45] O.A. Ladyzhenskaya, V.A. Solonnikov, N.N. Ural’tseva, Linear and quasi-linear para-
+bolic equations, Nauka, Moscow, 1967 in Russian. English translation: American
+Math. Soc., Providence, 1968.
+[46] P. G. Lemari´ e-Rieusset, The Navier-Stokes problem in the 21st century. Chapman
+and Hall/CRC 2023.
+[47] P. G. Lemari´ e-Rieusset, The Navier-Stokes equations in mixed-norm time-space para-
+bolic Morrey spaces, Tunisian Journal of Mathematics, 2024, 6 (1) pp. 137–155.
+[48] J. Leray, Sur le mouvement d’un liquide visqueux emplissant l’espace, Acta Math. 63
+(1934), no. 1, 193–248.
+[49] J. L. Lions, Quelques m´ ethods de r´ esolution de probl` emes aux limites non lin´ eaires,
+Dunod Gauthier-Villars, Paris 1969.
+[50] J. L. Lions and G. Prodi, Un th´ eor` eme d’existence et unicit´ e dans les ´ equations de
+Navier-Stokes en dimension 2, C. R. Acad. Sci. Paris 248 (1959), 3519–3521.
+[51] J.C. Mattingly and M. Hairer, Ergodicity of the 2D Navier–Stokes equations with
+degenerate stochastic forcing. Ann. of Math. (2) 164 (2006), no. 3, 993–1032.
+[52] J.L. Menaldi, S.S. Sritharan, Stochastic 2-D Navier–Stokes equation, Appl. Math.
+Optimiz. 46 (2002), 31–53.
+[53] R. Mikulevicius and B. L. Rozovskii, Stochastic Navier-Stokes Equations. In
+Stochastics in Finite and Infinite Dimensions: in Honor of Gopiah Kallianpur(T.
+Hida et al., eds.) 285-302, Kirkhauser, Boston.
+[54] R. Mikulevicius and B. L. Rozovskii, Stochastic Navier-Stokes Equations for turbulent
+flows, Siam J. Math. Anal., Vol. 35 (2004), No. 5, pp. 1250-1310.
+[55] R. Mikulevicius, On strongH 1
+2-solutions of Stochastic Navier-Stokes Equations in a
+bounded domain, Siam J. Math. Anal., Vol. 41 (2009), No. 3, pp. 1206 -1230.
+[56] R. Mikulevicius and B. L. Rozovskii, GlobalL 2-Solutions of stochastic Navier-Stokes
+Equations, The Annals of Probability, Vol. 33 (2005), No. 1, 137–176.
+
+[PDF page 29]
+ON STOCHASTIC NAVIER-STOKES EQUATIONS 29
+[57] M. T. Mohan and S. S. Sritharan,L p-solutions of the stochastic Navier-Stokes equa-
+tions subject to L´ evy noise withL mpRmqinitial data, Evol. Equ. Control Theory 6
+(2017), no. 3, 409–425.
+[58] G. Prodi, Un teorema di unicit` a per le equazioni di Navier-Stokes,Ann. Mat. Pura
+Appl.48 (1959), 173–182.
+[59] J.C. Robinson, The Navier-Stokes regularity problem. Phil. Trans. R. Soc. A 378:
+20190526, 2022.
+[60] J. Serrin, On the interior regularity of weak solutions of Navier-Stokes equations,
+Arch. Rat. Mech. Anal.9 (1962), 187–195.
+[61] J. Serrin, The initial value problem for the Navier-Stokes equations, Nonlinear Prob-
+lems (R. E. Langer, ed.), Univ. of Wisconsin Press, Madison 1963, pp. 69–98.
+[62] R. Temam, Navier-Stokes equations, North-Holland Publishing Company,
+Amsterdam-New York-Oxford, 1977.
+[63] W. von Wahl, The Equations of Navier-Stokes and Abstract Parabolic Equations,
+Springer Fachmedien Wiesbaden GmbH, 1985.
+[64] J. Zhu, Z. Brze´ zniak and W. Liu,Lp-solutions for stochastic Navier-Stokes equations
+with jump noise, Statistics and Probability Letters 155 (2019), 108563
+School of Mathematics and Maxwell Institute, University of Edinburgh,
+King’s Buildings, Edinburgh, EH9 3JZ, United Kingdom
+Email address:cotterraymond30@gmail.com
+School of Mathematics and Maxwell Institute, University of Edinburgh,
+King’s Buildings, Edinburgh, EH9 3JZ, United Kingdom
+Email address:i.gyongy@ed.ac.uk

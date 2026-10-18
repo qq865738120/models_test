@@ -1,0 +1,558 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/q+H84tGHo/7AOyQhlDpkOilXkRU</id>
+  <title>arXiv Query: search_query=cat:math.AP AND (ti:uniqueness OR ti:nonuniqueness OR ti:non-uniqueness) AND (abs:"Navier-Stokes" OR abs:Euler) AND submittedDate:"202501010000 TO 202610182359"&amp;id_list=&amp;start=0&amp;max_results=30</title>
+  <updated>2026-10-18T08:09:35Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=cat:math.AP+AND+((ti:uniqueness+OR+(ti:nonuniqueness+OR+ti:non-uniqueness))+AND+((abs:%22Navier-Stokes%22+OR+abs:Euler)+AND+submittedDate:%22202501010000+TO+202610182359%22))&amp;start=0&amp;max_results=30&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>30</opensearch:itemsPerPage>
+  <opensearch:totalResults>79</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.18178v1</id>
+    <title>Uniqueness of solutions to the 2D compressible Navier-Stokes equations for bounded densities</title>
+    <updated>2026-10-13T11:22:02Z</updated>
+    <link href="https://arxiv.org/abs/2610.18178v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.18178v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove the uniqueness of global solutions to the two dimensional barotropic compressible Navier--Stokes equations within the regularity class introduced by Danchin and Mucha [14], for general $C^1$ pressure laws. A crucial assumption is that both solutions have bounded divergence, locally integrable in time, which ensures that their densities remain bounded without excluding vacuum or requiring spatial regularity of the density.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-13T11:22:02Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Lorenzo Pescatore</name>
+    </author>
+    <author>
+      <name>Alessandro Violini</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.16874v1</id>
+    <title>Existence and uniqueness of viscous-dispersive shock profiles for the Navier-Stokes-Fourier-Korteweg system</title>
+    <updated>2026-10-12T14:37:02Z</updated>
+    <link href="https://arxiv.org/abs/2610.16874v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.16874v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We establish the existence and uniqueness, up to translation, of monotone viscous-dispersive shock profiles for the one-dimensional Navier-Stokes-Fourier-Korteweg (NSFK) system, provided the two constant end states satisfy the Rankine-Hugoniot and Lax entropy conditions and the shock strength is small. Treating the small shock strength as a singular perturbation parameter, we construct the profiles via Fenichel's geometric singular perturbation theory. We further provide pointwise estimates for the profiles, which are used in the nonlinear stability analysis of generic Riemann solutions to the NSFK system in a companion work.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-12T14:37:02Z</published>
+    <arxiv:comment>18 pages</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Sungho Han</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.14383v1</id>
+    <title>Uniqueness and stability of entropy waves among vanishing dissipation limits from the Navier--Stokes--Fourier System</title>
+    <updated>2026-10-09T23:07:53Z</updated>
+    <link href="https://arxiv.org/abs/2610.14383v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.14383v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we establish the stability of general entropy wave solutions of the compressible Euler equations (that is, profiles with constant velocity and pressure) in the class of vanishing dissipation limits from the Navier--Stokes--Fourier system. If the initial data of our sequence of solutions to the Navier--Stokes--Fourier system converges to the initial data of the entropy wave solution, we further have convergence of the solutions to the entropy wave. This gives uniqueness and stability of the entropy wave in this class. The proof is based on the $a$-contraction theory.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-09T23:07:53Z</published>
+    <arxiv:comment>30 pages</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Cooper Faile</name>
+    </author>
+    <author>
+      <name>Ingrid Lacroix-Violet</name>
+    </author>
+    <author>
+      <name>Alexis F. Vasseur</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.11927v1</id>
+    <title>Uniqueness of pressureless flow</title>
+    <updated>2026-10-08T13:23:37Z</updated>
+    <link href="https://arxiv.org/abs/2610.11927v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.11927v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We consider the pressureless Euler equations in one spatial dimension. These equations model the dynamics of particles on a line that interact only through perfectly inelastic collisions. The flow was first shown to be unique for given initial conditions by Huang and Wang, assuming the entropy and the strong initial continuity of energy conditions hold. In this paper, we prove an analogous uniqueness theorem using a Lagrangian interpretation. The key ingredients are showing that each solution satisfying the entropy condition and an initial kinetic energy bound has this particular type of Lagrangian interpretation and a monotonicity inequality involving conditional expectation.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T13:23:37Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Ryan Hynd</name>
+    </author>
+    <author>
+      <name>Hwa Kil Kim</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.11193v1</id>
+    <title>Local Existence and Uniqueness for the 3D Compressible Navier-Stokes/Cahn-Hilliard System with Vacuum</title>
+    <updated>2026-10-08T03:56:07Z</updated>
+    <link href="https://arxiv.org/abs/2610.11193v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.11193v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We establish local existence and uniqueness of strong solutions to the compressible Navier-Stokes/Cahn-Hilliard system in a bounded smooth domain in $\mathbb R^3$, allowing the initial density to vanish. The initial data satisfy suitable regularity and compatibility conditions for the momentum and phase equations. The main difficulty arises from the simultaneous degeneracy of the momentum equation and the density-weighted phase equations, which complicates the construction of compatible positive-density approximations and uniform initial estimates. We overcome this difficulty by introducing a time-independent residual into the chemical relation. The residual preserves the phase compatibility exactly, keeps the initial phase field unchanged, and vanishes in $H^1$ as the approximation parameter tends to zero. For each positive-density approximation, we construct a local strong solution using a semi-discrete Galerkin scheme that discretizes only the phase variables and retains the full transport and momentum equations. We then derive a priori estimates independent of the density lower bound, which yield a common lifespan and allow us to pass to the vacuum limit. Uniqueness is proved using a modified difference energy that accounts for the coupling between the density and the chemical potential. To our knowledge, this is the first local well-posedness result for the three-dimensional compressible Navier-Stokes/Cahn-Hilliard system with initial vacuum.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T03:56:07Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Yinghua Li</name>
+    </author>
+    <author>
+      <name>Jingxue Yin</name>
+    </author>
+    <author>
+      <name>Haoran Zheng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.10341v1</id>
+    <title>Uniqueness and stability of planar shock wave to 2D compressible Euler equations in the vanishing viscosity limit of compressible Navier-Stokes equations</title>
+    <updated>2026-10-07T16:21:01Z</updated>
+    <link href="https://arxiv.org/abs/2610.10341v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.10341v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>It is well known that the compressible Euler equations with planar shock initial data may admit infinitely many entropy weak solutions, as shown by Chiodaroli, De Lellis and Kreml [Comm. Pure Appl. Math. (2015)]. In this paper, we introduce a suitable notion of global-in-time weak solutions to the two-dimensional (2D) compressible Navier-Stokes equations with density-dependent viscosities in $\mathbb{R} \times \mathbb{T}$. Within this solution framework, we establish the first vanishing viscosity limit selection criterion for the physically relevant planar shock solution to the 2D compressible Euler equations. More precisely, we prove the uniqueness and stability of the 2D Euler planar shock solution within a class of inviscid limits of Navier-Stokes solutions emanating from near-planar initial data while the shock direction perturbation can be arbitrarily large. Starting from the relative $κ$-entropy for 2D compressible Navier-Stokes equations in $\mathbb{T}^2$ by Bresch, Noble and Vila [ESAIM Proc. Surveys (2017)], we first establish the relative $\frac12$-entropy between 2D weak solution of compressible Navier-Stokes equations in $\mathbb{R} \times \mathbb{T}$ and one-dimensional (1D) strong solution for averaged initial data in $\mathbb{R}$. Then we achieve the desired vanishing viscosity limit selection criterion by successfully bridging the fundamental structural gap between 2D Eulerian formulation of the original Navier-Stokes system in the relative $\frac12$-entropy and 1D vanishing viscosity limit to a shock solution of Euler equations in Lagrangian coordinates by Kang and Vasseur [Invent. Math. (2021)]. The framework developed herein can be applied to the three-dimensional limit selection criterion in $\mathbb{R} \times \mathbb{T}^2$, as well as to more complex planar Riemann solutions and interacting wave patterns.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-07T16:21:01Z</published>
+    <arxiv:comment>66 pages</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Geng Chen</name>
+    </author>
+    <author>
+      <name>Jeffrey Cheng</name>
+    </author>
+    <author>
+      <name>Alexis F. Vasseur</name>
+    </author>
+    <author>
+      <name>Yi Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.17962v1</id>
+    <title>A Variational Family of Traveling Vortex Dipoles: Transition, Uniqueness, and Stability</title>
+    <updated>2026-09-16T00:46:25Z</updated>
+    <link href="https://arxiv.org/abs/2609.17962v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.17962v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We provide a unified description of a stable variational family of traveling vortex dipoles for the two-dimensional incompressible Euler equations, connecting the classical Lamb dipole to asymptotically radial dipoles in the large-impulse regime. We show that this family undergoes a sharp transition from the Lamb dipole, where the mass constraint is inactive, to non-explicit traveling waves for which the mass constraint becomes active, and determine the critical value exactly. We further prove that the variational solutions are unique up to translation both near the Lamb dipole and in the large-impulse regime. As a consequence, the corresponding individual traveling waves are orbitally stable. Our results provide a unified picture of these two distinct asymptotic regimes within a single variational family of traveling vortex dipoles.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-16T00:46:25Z</published>
+    <arxiv:comment>44 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Ken Abe</name>
+    </author>
+    <author>
+      <name>In-Jee Jeong</name>
+    </author>
+    <author>
+      <name>Guolin Qin</name>
+    </author>
+    <author>
+      <name>Weicheng Zhan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.14688v1</id>
+    <title>On the uniqueness and the regularity of solutions to the Navier Stokes in the Lorentz space $L^{3,\infty}(\mathbb{R}^3)$</title>
+    <updated>2026-09-13T17:45:42Z</updated>
+    <link href="https://arxiv.org/abs/2609.14688v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.14688v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove uniqueness of solutions to the Navier-Stokes equations in the space \[ L^p\bigl([0,T],\widetilde{L}^{3,\infty}(\mathbb{R}^3)\bigr) \cap C\bigl([0,T],B^{-1,\infty}_{\infty}(\mathbb{R}^3)\bigr), \qquad p&gt;2, \] where $\widetilde{L}^{3,\infty}(\mathbb{R}^3)$ denotes the closure of the Schwartz space $\mathcal{S}(\mathbb{R}^3)$ in the Lorentz space $L^{3,\infty}(\mathbb{R}^3)$. Moreover, we prove that any solution $u$ in this class, if it exists, is smooth for positive time, namely, $u\in C^\infty((0,T]\times \mathbb{R}^3)$. In addition, we establish precise estimates for the behavior of $u(t)$ as $t\to0^+ $ in various Banach spaces.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-13T17:45:42Z</published>
+    <arxiv:comment>21 pages</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Ramzi May</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.08985v1</id>
+    <title>Non-uniqueness for the Complex Ginzburg-Landau Equation</title>
+    <updated>2026-09-08T16:27:27Z</updated>
+    <link href="https://arxiv.org/abs/2609.08985v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.08985v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We show that singularities of the three-dimensional cubic complex Ginzburg-Landau equation developing from smooth initial data can induce non-uniqueness of solutions after the time of blowup. The solutions we study start as backward self-similar solutions, and the source of the non-uniqueness is an unstable eigenvalue of the linearization around the forward self-similar profile generated by the singularity. We establish the existence of this eigenvalue, and hence the non-uniqueness, by a computer-assisted proof for specific values of the parameters in the equation. The work is in part motivated by similarities to conjectured behavior for the Navier-Stokes equation, with which the complex Ginzburg-Landau equation shares several important properties, such as an energy inequality and the scaling symmetry.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-08T16:27:27Z</published>
+    <arxiv:comment>61 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Joel Dahne</name>
+    </author>
+    <author>
+      <name>Vladimír Šverák</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.08158v1</id>
+    <title>Two global stability theorems for small-data $3D$ compressible Euler solutions: Unique maximal globally hyperbolic developments with gradient-blowup &amp; smooth global existence in the entire spacetime</title>
+    <updated>2026-09-08T02:42:20Z</updated>
+    <link href="https://arxiv.org/abs/2609.08158v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.08158v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove a pair of complementary small-data stability theorems describing the global future and past structure of classical solutions to the isentropic, spherically symmetric $3D$ compressible Euler equations. We allow any equation of state with positive sound speed, except that our shock-formation results do not apply to the Chaplygin gas.
+  Our first theorem concerns open sets of smooth Cauchy data that are perturbations of trivial data with vanishing velocity and constant positive density. The perturbed data have finite kinetic energy, and the perturbed density is equal to a positive constant plus a signed ``asymptotically flat'' tail. Our main theorem yields a complete description of the existence and uniqueness of the maximal globally hyperbolic development (MGHD) of the data. The boundary of the MGHD contains hypersurfaces that extend to spatial infinity on which our solutions develop gradient-singularities. This is the first MGHD existence-uniqueness-stability result for shock-forming solutions for any multi-$D$ quasilinear wave system. While prior works have yielded local portions of ``candidate'' MGHDs, neither the existence nor the uniqueness of an MGHD can be inferred from local considerations.
+  Our second theorem considers analogous data with the opposite sign of the $1/r$ density tail. We prove global existence throughout spacetime, to both the future and past. The solution's asymptotic behavior towards null infinity is not linear, but rather is distorted by a logarithmic bending of the sound cones away from the flat Minkowski ones, leading to logarithmically enhanced dispersion. This is the first small-data global existence result in the entire spacetime for any $3D$ quasilinear wave system that fails to satisfy the null condition and the weak null condition. The main mechanism of stabilization is a global-in-spacetime rarefaction effect, tied to the $1/r$ tail.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-08T02:42:20Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Leonardo Abbrescia</name>
+    </author>
+    <author>
+      <name>Jared Speck</name>
+    </author>
+    <author>
+      <name>Dongxiao Yu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.01697v1</id>
+    <title>Unique ergodicity of projective cocycles over the 2D stochastic Navier-Stokes equations</title>
+    <updated>2026-09-01T16:44:05Z</updated>
+    <link href="https://arxiv.org/abs/2609.01697v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.01697v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We consider the linear cocycles generated by the linearized vorticity equation and by passive scalar advection diffusion, both driven by the two dimensional stochastic Navier-Stokes flow on the torus with non degenerate additive forcing, and we prove uniqueness of the stationary measures for the projective process associated to such linear dynamics. The proof relies on a localized asymptotic strong coupling construction, and on the non-degeneracy of the Malliavin matrix of the projective process. Establishing this non-degeneracy for passive scalar advection poses additional challenges, and requires a proof (based on Cameron-Martin analyticity arguments) that generically the passive scalar is nowhere one-dimensional.</summary>
+    <category term="math.PR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-01T16:44:05Z</published>
+    <arxiv:comment>77 pages, comments welcome</arxiv:comment>
+    <arxiv:primary_category term="math.PR"/>
+    <author>
+      <name>Sam Punshon-Smith</name>
+    </author>
+    <author>
+      <name>Tommaso Rosati</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.29721v1</id>
+    <title>A Uniqueness theorem for the Vortex-Wave system with non-constant vorticity near the point vortex</title>
+    <updated>2026-08-30T11:05:12Z</updated>
+    <link href="https://arxiv.org/abs/2608.29721v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.29721v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the uniqueness of the vortex wave system, i.e.\ the 2D incompressible Euler equations with vorticity consisting of a point vortex and a bounded part. We show that if the initial vorticity and point vortex location $(w_0,X_0)$ satisfy a constraint of the type $|w_0(x)-w_0(X_0)|=O(|x-X_0|^α)$ for $α&gt; 2$ and the vorticity is in $L^\infty$, then solutions are unique, globally in time, even though the velocity is not log-Lipschitz.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-30T11:05:12Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>David Meyer</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.29138v1</id>
+    <title>uniqueness and asymptotic behavior of the stationary Navier-Stokes equations in a slab</title>
+    <updated>2026-08-29T08:26:46Z</updated>
+    <link href="https://arxiv.org/abs/2608.29138v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.29138v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we investigate the uniqueness and asymptotic behavior of the stationary Navier-Stokes equations in a slab domain with no-slip boundary conditions. Specifically, under the given external force and the small Poiseuille flow assumptions, we prove that there is an H1 solution, and obtain the pointwise decay around the Poiseuille flow at far field. Furthermore, if the force is small, the solution is shown to be unique. The key point of the proof is the estimate of the Dirichlet integral of the solutions in the truncated domains and the Stokes regularity estimates.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-29T08:26:46Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Han Li</name>
+    </author>
+    <author>
+      <name>Jingwen Han</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.18075v1</id>
+    <title>Unique Ergodicity for the Projective Process of the 2D Navier--Stokes Equation with Nondegenerate Noise</title>
+    <updated>2026-08-18T17:58:37Z</updated>
+    <link href="https://arxiv.org/abs/2608.18075v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.18075v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove unique ergodicity of the projective process associated with the two dimensional Navier--Stokes equation in vorticity form, with additive diagonal noise acting on every nonzero real Fourier phase and satisfying two sided power law bounds. Consequently, the exact Furstenberg--Khasminskii formula for the top Lyapunov exponent holds.
+  The main new ingredient is a compact dense mechanism for asymptotic generalized coupling in the absence of a Foiaş--Prodi type high-low mode decomposition for the projective dynamics. Using the dense range of the Malliavin derivative and compactness of the state derivative, we construct finite rank perturbations of the Wiener path that compensate, to first order, for perturbations of the initial condition, leaving a residual whose logarithmic growth has negative stationary mean and hence contracts locally at an exponential rate, with a cost controlled by a triangular scheme of blockwise Ramer transformations.</summary>
+    <category term="math.PR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-18T17:58:37Z</published>
+    <arxiv:comment>83 pages</arxiv:comment>
+    <arxiv:primary_category term="math.PR"/>
+    <author>
+      <name>Zeng Lian</name>
+    </author>
+    <author>
+      <name>Rongchang Liu</name>
+    </author>
+    <author>
+      <name>Kening Lu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.17456v1</id>
+    <title>Non-unique $L^2$ solutions to the stationary Navier--Stokes equations on the whole plane</title>
+    <updated>2026-08-18T07:35:31Z</updated>
+    <link href="https://arxiv.org/abs/2608.17456v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.17456v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove that, for a suitable small external force in $\dot H^{-2}(\mathbb R^2)$, the stationary Navier--Stokes equations on $\mathbb R^2$ admit multiple solutions in $L^2(\mathbb R^2)$.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-18T07:35:31Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Mikihiro Fujii</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.08493v1</id>
+    <title>A new proof of uniqueness of ground state for pseudo-relativistic Hartree equation</title>
+    <updated>2026-08-09T05:27:53Z</updated>
+    <link href="https://arxiv.org/abs/2608.08493v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.08493v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present a new proof of the uniqueness of ground states for the pseudo-relativistic Hartree equation in the non-relativistic regime. The proof treats the Euler-Lagrange equation and the mass constraint as a single augmented system, with the Lagrange multiplier as an additional unknown. The key point is the invertibility of the augmented linearization at the non-relativistic ground state.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-09T05:27:53Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Chen Pan</name>
+    </author>
+    <author>
+      <name>Zeng xiaoyu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.01872v1</id>
+    <title>Generalized solution and Weak-Strong uniqueness for a barotropic Euler-Riesz system</title>
+    <updated>2026-08-03T08:19:43Z</updated>
+    <link href="https://arxiv.org/abs/2608.01872v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.01872v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the Euler--Riesz system on the torus $\mathbb T^d$, $d=2,3$: the compressible Euler equations with barotropic pressure $p(\varrho)=a\varrho^γ$ ($γ&gt;1$, $a&gt;0$), coupled to a repulsive nonlocal force ($\approx \varrho \nabla_x K \ast \varrho$) with Riesz kernel $K(x)\propto|x|^{β-d}$ of order $β\in(0,2)$. Since $K$ is the kernel of the inverse fractional Laplacian $(-Δ)^{-β/2}$, we recast the force through the Caffarelli--Silvestre extension as the trace of a local stress tensor, replacing the nonlocal interaction by a local identity in one extra variable. For a repulsive kernel the total energy is coercive, and we use this to introduce a notion of global-in-time \emph{dissipative solution} for arbitrarily large finite-energy data. Our main result is weak (measure-valued)--strong uniqueness, for every order $β\in(0,2)$ and every $γ&gt;1$ independently: on any interval on which a strong solution exists, every dissipative solution with the same initial data coincides with it and all defects vanish. The proof rests on a suitable adaptation of relative energy.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-03T08:19:43Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Nilasis Chaudhuri</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.03373v1</id>
+    <title>Existence, uniqueness and regularity of solutions to the parabolic Ambrosio-Tortorelli system</title>
+    <updated>2026-07-03T14:27:32Z</updated>
+    <link href="https://arxiv.org/abs/2607.03373v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.03373v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We investigate the existence, uniqueness, and regularity of the gradient flow of the Ambrosio-Tortorelli functional, viewed as an initial-boundary value problem, in arbitrary dimension. For any initial data, using a time-discrete Euler scheme, we establish the existence of a weak gradient flow satisfying a maximum principle. We also identify a functional space in which uniqueness holds. We further show that such gradient flow is smooth in the interior of the space-time domain. Under additional assumptions on the initial data, the regularity of the boundary of the domain, we prove optimal regularity for the solution, up to the space-time boundary.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-03T14:27:32Z</published>
+    <arxiv:comment>45 pages. Comments are welcome</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Martin Rakovsky</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.00225v1</id>
+    <title>Onsager-Type Energy Equality and Prodi--Serrin Uniqueness for Nernst--Planck Fluid Systems</title>
+    <updated>2026-06-30T22:05:06Z</updated>
+    <link href="https://arxiv.org/abs/2607.00225v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.00225v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study weak solutions of electrodiffusion systems coupling the Nernst--Planck equations with fluid models. First, for the three-dimensional Nernst--Planck--Euler system, we establish an Onsager-type criterion for the validity of the coupled kinetic-electrostatic energy balance. The energy equality is shown to hold for weak solutions whose velocity satisfies critical Besov regularity and a vanishing dyadic flux condition. Furthermore, assuming the corresponding Onsager-type regularity for the ionic concentrations, we also prove parabolic regularity, preservation of non-negativity of the concentrations, and the associated charge-density energy identity. Second, for the three-dimensional Nernst--Planck--Navier--Stokes system, we prove a Prodi--Serrin-type uniqueness criterion for Leray--Hopf solutions: uniqueness in the Leray--Hopf class holds whenever the velocity field lies in the Ladyzhenskaya--Prodi--Serrin class $L^p_tL^q_x$ with $2/p+3/q=1$ and $q&gt;3$. These results extend energy-equality and weak--strong uniqueness principles from incompressible fluid dynamics to electrodiffusion models involving convection, diffusion, and self-consistent electrostatic forcing.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-30T22:05:06Z</published>
+    <arxiv:comment>26 pages</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Ruimeng Hu</name>
+    </author>
+    <author>
+      <name>Quyuan Lin</name>
+    </author>
+    <author>
+      <name>Qirui Peng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.29512v1</id>
+    <title>On uniqueness of solutions to stochastic Navier--Stokes equations</title>
+    <updated>2026-06-28T17:19:13Z</updated>
+    <link href="https://arxiv.org/abs/2606.29512v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.29512v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Theorems on uniqueness and continuous dependence on the initial condition of solutions to stochastic Navier-Stokes equations driven by Wiener processes and Poisson martingale measures are presented. These theorems generalise some results from \cite{GK2026}.</summary>
+    <category term="math.PR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-28T17:19:13Z</published>
+    <arxiv:primary_category term="math.PR"/>
+    <author>
+      <name>Raymond Cotter</name>
+    </author>
+    <author>
+      <name>István Gyöngy</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.15189v4</id>
+    <title>Blow-up and uniqueness of Leray-Hopf solutions to forced Navier-Stokes equations</title>
+    <updated>2026-08-15T18:40:02Z</updated>
+    <link href="https://arxiv.org/abs/2606.15189v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.15189v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove the existence of forces and smooth initial data such that the associated Leray-Hopf solution of the 3D Navier-Stokes equations is unique, global-in-time, satisfies the energy equality, and has infinitely many (countable) blow-up instants. Different classes of forces and blow-up strengths are considered. All of them are sharp compared to the boundedness statements in literature. Our method also enables us to construct examples of blow-up for the forced 3D Euler equations.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-13T08:34:21Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Giovanni Paolo Galdi</name>
+    </author>
+    <author>
+      <name>Filippo Gazzola</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.14308v1</id>
+    <title>Non-uniqueness of global-in-time admissible weak solutions to the isentropic compressible Euler equations for a dense set of initial data</title>
+    <updated>2026-06-12T09:44:28Z</updated>
+    <link href="https://arxiv.org/abs/2606.14308v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.14308v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In recent years, the technique of convex integration has demonstrated that for some initial data (also referred to as 'wild initial data'), many PDE models of mathematical fluid mechanics allow for a multitude of admissible (weak) solutions. This paper is concerned with the question regarding how large the set of such wild initial data is for the isentropic Euler equations. We prove that wild initial data form a dense set in $L^r$ for any $r \in [1,\infty)$. In contrast to existing results in the literature, in this paper 'wild initial data' are data which give rise to infinitely many global-in-time weak solutions which are admissible in the sense that the local energy inequality holds. In other words, the set of initial data with infinitely many admissible weak solutions (independent of the choice of time interval) is dense. A novel part of the construction is that we use a measure-valued (dissipative) solution as the ansatz for the subsolution. This requires several new ideas, in order to ensure the required regularity of the subsolution and to obtain a lower bound for the density. Another crucial ingredient of the proof is that the (local) energy density and the energy flux are constructed as part of the convex integration scheme, in order to obtain solutions which adhere to the local energy inequality.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-12T09:44:28Z</published>
+    <arxiv:comment>53 pages</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Daniel W. Boutros</name>
+    </author>
+    <author>
+      <name>Simon Markfelder</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.13065v2</id>
+    <title>Uniqueness of the dissipative SQG without time-continuity assumption</title>
+    <updated>2026-10-15T04:16:18Z</updated>
+    <link href="https://arxiv.org/abs/2606.13065v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.13065v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We consider the uniqueness of the solution of the dissipative surface quasi-geostrophic equation, without assuming time-continuity and smallness of the solutions. We show that the uniqueness holds in the scale-critical Lebesgue spaces and non-homogeneous Besov spaces. The proof is based on the energy method, inspired by the approach introduced by Lions and Masmoudi (2001) in the study of uniqueness for the Navier-Stokes equations. A key ingredient of the argument is the justification of the energy inequality via the smoothing effect of the fractional heat semigroup together with an iteration scheme based on the structure of the integral equation.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-11T08:50:14Z</published>
+    <arxiv:comment>30 pages</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Taiki Okazaki</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.07501v1</id>
+    <title>On the non-uniqueness of solutions of the axi-symmetric swirl-free Navier-Stokes equations, I</title>
+    <updated>2026-06-05T17:53:56Z</updated>
+    <link href="https://arxiv.org/abs/2606.07501v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.07501v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper we construct numerically a new class of unstable self-similar solutions of the incompressible Navier-Stokes equations in $\mathbb{R}^3$. Our solutions are axially symmetric and homogeneous of degree $-1$ at $\infty$, and are unstable in the sense that the linearization around these solutions contains unstable modes. Solutions of this type have been discovered numerically by Guillod and Šverák and Hou, Wang, and Yang, and have applications to proving non-uniqueness results.
+  The main novelty in this paper is that we discover the existence of such solutions in the space of axially symmetric swirl-free (ASSF) vector fields. These approximate solutions are defined on all of $\mathbb R^3$ and achieve global pointwise residuals of order $10^{-10}$. We discuss the numerical construction of these solutions in detail, as well as their relevance to the problem of non-uniqueness of solutions of the incompressible Navier-Stokes equations in 3D, in the space of ASSF solutions.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-05T17:53:56Z</published>
+    <arxiv:comment>24 pages, 9 figures</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Alexandru D. Ionescu</name>
+    </author>
+    <author>
+      <name>Hao Jia</name>
+    </author>
+    <author>
+      <name>Stan Palasek</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.02517v1</id>
+    <title>Weak-strong uniqueness and low Mach number limit for a viscous compressible fluid around a rotating body</title>
+    <updated>2026-06-01T17:27:33Z</updated>
+    <link href="https://arxiv.org/abs/2606.02517v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.02517v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the flow of an isothermal compressible Newtonian fluid around a body that performs a (time-independent) rigid motion. We derive a weak-strong uniqueness principle, and show that in the low Mach number limit, the governing equation is well approximated by the Navier-Stokes equations for incompressible rotating flow. Both results are based on the derivation of a relative energy inequality for weak solutions to this exterior-domain problem.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-01T17:27:33Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Thomas Eiter</name>
+    </author>
+    <author>
+      <name>Šárka Nečasová</name>
+    </author>
+    <author>
+      <name>Florian Oschmann</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.29934v3</id>
+    <title>Non-uniqueness for the hyperdissipative Navier-Stokes equations with arbitrarily small subcritical data</title>
+    <updated>2026-07-01T11:55:39Z</updated>
+    <link href="https://arxiv.org/abs/2605.29934v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.29934v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we consider the hyperdissipative Navier-Stokes equations with fractional dissipation $(-Δ)^β$ with $β&gt;1$. We prove that smooth solutions of the hyperdissipative Navier-Stokes equations are non-unique with arbitrarily small initial data in ${B}^{-β-α}_{\infty,1}(\mathbb{T}^d)$ for any $α&gt;0$. Moreover, we show the existence of a solution with arbitrarily small initial data in ${B}^{-β-α}_{\infty,1}(\mathbb{T}^d)$ ($α&gt;0$) that grows arbitrarily large in $\dot{B}^{-s}_{\infty,\infty}(\mathbb{T}^d)$ for all $s\in\mathbb{R}$ in arbitrarily small time. It is worth pointing out that ${B}^{-β-α}_{\infty,1}(\mathbb{T}^d)$ lies in the subcritical regime when $0&lt;α&lt;β-1$. To the best of our knowledge, this is the first non-uniqueness result of the Navier-Stokes equations with initial data at the subcritical regularity. To show the sharpness of the above results, we establish the local well-posedness of the hyperdissipative Navier-Stokes equations with initial data in $\dot{B}^{-β-α}_{\infty,\infty}(\mathbb{T}^d)$ with $α&lt; 0$.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-28T13:46:13Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Zipeng Chen</name>
+    </author>
+    <author>
+      <name>Song Liu</name>
+    </author>
+    <author>
+      <name>Zhaoyang Yin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.25097v2</id>
+    <title>Sharp non-uniqueness of weak solutions to 2D magnetohydrodynamic equations</title>
+    <updated>2026-06-01T02:26:07Z</updated>
+    <link href="https://arxiv.org/abs/2605.25097v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.25097v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we prove that weak solutions to the 2D viscous and resistive magnetohydrodynamic (MHD) equations are non-unique in $L^2_t L^p(\mathbb{R}^2) \cap L^1_t W^{1,p}(\mathbb{R}^2)$ for given any $1\le p&lt;\infty$, showing the sharpness of the Ladyzhenskaya--Prodi--Serrin condition at the endpoint $(2,\infty)$ and the solutions live on the borderline of the Beale--Kato--Majda criterion. To the best of our knowledge, this is the first non-uniqueness result for the 2D viscous and resistive MHD system. As byproducts, we also obtain non-uniqueness for the Navier--Stokes equations in $L^2_t L^p$ with $1\le p&lt;\infty$, and for the MHD system with large $\mathrm{BMO}^{-1}$ initial data.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-24T14:18:28Z</published>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Changxing Miao</name>
+    </author>
+    <author>
+      <name>Yao Nie</name>
+    </author>
+    <author>
+      <name>Weikui Ye</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.13592v2</id>
+    <title>Spectral instability and non-uniqueness for the Keller-Segel system</title>
+    <updated>2026-07-20T13:31:37Z</updated>
+    <link href="https://arxiv.org/abs/2605.13592v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.13592v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We show that the Cauchy problem associated with the parabolic-elliptic Keller-Segel model is locally ill-posed in $L^q(\mathbb{R}^n)$ for dimensions $n \in \{3,\dots,9\}$ and throughout the supercritical range $q\in [1,\frac{n}{2})$. An analog non-uniqueness result is given in the critical space of bounded functions taking values in $L^{n/2,\infty}(\R^n)$. The non-uniqueness is driven by an instability mechanism in self-similarity variables, in the spirit of the program proposed by Jia and Šverák for the three-dimensional Navier-Stokes equations.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.SP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-13T14:26:28Z</published>
+    <arxiv:comment>50 pages, comments welcome! Improved presentation, fixed minor mistakes</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Eliseo Luongo</name>
+    </author>
+    <author>
+      <name>Umberto Pappalettera</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.25669v1</id>
+    <title>Boundary epsilon regularity for incompressible Navier--Stokes equations via weak-strong uniqueness</title>
+    <updated>2026-04-28T14:02:43Z</updated>
+    <link href="https://arxiv.org/abs/2604.25669v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.25669v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We show that finite-energy weak solutions to the incompressible Navier--Stokes equations on a three-dimensional bounded smooth domain are regular up to the boundary, provided that the $L^4_tL^4_x$-norm of the solution is smaller than a constant depending only on the domain. This answers a problem raised in [D. Albritton, T. Barker, and C. Prange, J. Math. Fluid Mech. 25 (2023), Paper No. 49]. Our proof relies on a new slicing construction near the boundary of the domain.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.flu-dyn" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-28T14:02:43Z</published>
+    <arxiv:comment>14 pages</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Siran Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.08684v2</id>
+    <title>Instantaneous blowup and non-uniqueness of smooth solutions of MHD</title>
+    <updated>2026-05-31T17:30:39Z</updated>
+    <link href="https://arxiv.org/abs/2604.08684v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.08684v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We construct a family of solutions $(u,B)$ of the incompressible magnetohydrodynamic (MHD) system, the $L^\infty$ norm of which blows up instantaneously at the critical rate. The solutions remain smooth except at the blowup time. An inverse energy cascade mechanism and a convex integration scheme along a time sequence are the main ingredients of the construction, inspired by our recent work [CDP25] for the Navier-Stokes equations. The challenge of the construction for the MHD system stems from the coupling and the necessity of preserving the same ansatz of the principal solution at every iterative step while implementing convex integration. Existing convex integration schemes for MHD can treat the coupling but fail to produce the same ansatz of the principal solution recursively. To achieve the goal, we introduce a coupled geometric lemma that decomposes a symmetric tensor and a skew-symmetric tensor simultaneously. We emphasize that such coupled geometric lemma is new and of independent interest.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-09T18:16:17Z</published>
+    <arxiv:comment>49 pages</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Mimi Dai</name>
+    </author>
+  </entry>
+</feed>

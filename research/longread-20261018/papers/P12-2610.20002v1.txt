@@ -1,0 +1,966 @@
+
+[PDF page 1]
+Prepared for submission to JCAP
+Testing Departures from theΛCDM
+model inf(T)Gravity with DESI DR2
+Jie Zheng, a,1 Mingzhi Wang b and Ming Zhang b
+aSchool of Microelectronics, Qingdao University of Science and Technology, Qingdao 266061, Shan-
+dong, China
+bSchool of Mathematics and Physics, Qingdao University of Science and Technology, Qingdao 266061,
+Shandong, China
+E-mail: zhengjie@mail.bnu.edu.cn
+Abstract.Recent analyses combining DESI baryon acoustic oscillation (BAO) measurements with
+other cosmological observations have reported indications of departures from the ΛCDM model within
+dynamical dark energy scenarios. We investigate whether such deviations are reproduced consistently
+inf(T) gravity and whether they persist when different cosmological observations are combined.
+Using the DESI DR2 BAO measurements, Cosmic Microwave Background (CMB), and Pantheon+
+Type Ia Supernovae (SNe Ia) sample, we constrain three representativef(T) models: the power-law,
+exponential, and hyperbolic-tangent models. We compare the constraints obtained from different
+combinations of data, distinguishing changes in marginalized parameter distributions from changes
+in the relative statistical performance of the models. For the power-law model, the mild deviation
+from the ΛCDM model obtained from BAO+CMB disappears after the SNe Ia data are included. In
+contrast, the exponential model retains a preference for a nonzero deformation parameter in the full
+analysis, while the allowed parameter space of the hyperbolic-tangent model changes substantially
+after the CMB distance priors are included. Importantly, the parameter-level deviation found for the
+exponential model does not lead to a clear statistical preference over the ΛCDM model according to the
+information criteria, whereas the hyperbolic-tangent model shows a poorer statistical performance for
+the combined data. Despite these differences in the model constraints, the inferred transition redshift
+zT remains relatively stable among the three models and data combinations. Our results show that
+the departures from the ΛCDM model indicated by DESI analyses are not a generic feature off(T)
+gravity, but depend strongly on the specific modified gravity parameterization and on the combination
+of cosmological observations.
+Keywords:modified gravity, baryon acoustic oscillations, dark energy.
+1Corresponding author.
+arXiv:2610.20002v1  [astro-ph.CO]  14 Oct 2026
+
+[PDF page 2]
+Contents
+1 Introduction 1
+2 Thef(T)theory 2
+2.1 Thef(T) cosmology 3
+2.2 Representativef(T) models 4
+2.2.1 The power-law model (f 1CDM) 5
+2.2.2 The exponential model (f 2CDM) 5
+2.2.3 The hyperbolic-tangent model (f 3CDM) 6
+3 Data and Methodology 6
+3.1 DESI BAO DR2 Measurement 6
+3.2 Cosmic Microwave Background (CMB) 7
+3.3 Type Ia Supernovae (SNe Ia) 8
+4 Results and Discussion 9
+5 Conclusions 15
+1 Introduction
+Over the past few decades, a variety of cosmological observations have established that the Universe
+is undergoing a phase of accelerated expansion [1, 2]. In the standard ΛCDM model, this acceler-
+ation is driven by a cosmological constant, which provides the simplest description of dark energy
+(DE). Although ΛCDM has been remarkably successful in explaining a wide range of cosmological
+and astrophysical observations, it still faces both theoretical and observational challenges. On the
+theoretical side, the extremely small observed value of the cosmological constant compared with the-
+oretical expectations gives rise to the well-known fine-tuning and cosmic coincidence problems [3, 4].
+On the observational side, discrepancies have emerged between cosmological parameters inferred from
+early- and late-Universe probes [5–12]. If these discrepancies cannot be fully attributed to systematic
+effects, they may point to physics beyond the standard ΛCDM framework and motivate the explo-
+ration of alternative descriptions of cosmic acceleration. From a theoretical perspective, two main
+approaches have been developed to explain the accelerated expansion of the Universe. The first re-
+tains Einstein’s general relativity and introduces additional dark energy components, while the second
+modifies the gravitational sector itself. Representative modified-gravity scenarios include the Dvali–
+Gabadadze–Porrati (DGP) braneworld model [13, 14] andf(R) gravity [15]. Of particular interest is
+f(T) gravity [16], which extends the Teleparallel Equivalent of General Relativity (TEGR). In telepar-
+allel gravity, gravitational interactions are described in terms of torsion rather than curvature: the
+torsion scalarT, constructed from the curvature-free Weitzenb¨ ock connection, plays a role analogous
+to the Ricci scalarRin general relativity. Thef(T) framework generalizes TEGR by replacing the
+torsion scalar in the gravitational action with a functionf(T), providing a geometrical mechanism for
+generating late-time cosmic acceleration.
+Thef(T) framework has attracted considerable attention as a viable alternative description of
+cosmic acceleration for several reasons. First, it provides a geometrical mechanism for generating late-
+time acceleration without introducing an explicit cosmological constant, thereby offering a different
+perspective on the cosmological constant problem [17–20]. Second, some viablef(T) models can
+modify the late-time expansion history while remaining close to the standard cosmological evolution
+at high redshift, and have therefore been investigated in connection with the Hubble tension [21, 22].
+Moreover, the effective dark energy sector induced by modified teleparallel gravity can exhibit a time-
+dependent equation of state, including phantom-like behavior or crossing of the phantom divide [19,
+23]. From a theoretical perspective, another appealing feature is that the field equations off(T)
+gravity remain second order, in contrast to the fourth-order equations generally encountered in metric
+– 1 –
+
+[PDF page 3]
+f(R) gravity, which simplifies both the theoretical and numerical treatment [19, 24, 25]. More detailed
+discussions off(T) gravity can be found in Refs. [16, 19].
+The recent baryon acoustic oscillation (BAO) measurements from the Dark Energy Spectroscopic
+Instrument (DESI) provide a timely opportunity to revisit these modified-gravity scenarios. The DESI
+Data Releases 1 and 2 have substantially improved the precision of BAO measurements over a broad
+redshift range [26, 27]. In particular, the DESI DR2 analysis, based on the first three years of observa-
+tions and more than 14 million galaxies and quasars, provides significantly improved measurements of
+the cosmic distance–redshift relation. When combined with cosmic microwave background (CMB) and
+Type Ia supernovae (SNe Ia) observations, the DESI BAO measurements strengthen the preference
+for an evolving dark energy equation of state within parametrized dynamical dark energy models,
+although the significance depends on the adopted SNe Ia sample and model parameterization [28–33].
+Although parametrized dynamical dark energy models, such as the Chevallier–Polarski–Linder
+(CPL) parameterization, provide a flexible description of departures from a cosmological constant,
+they remain phenomenological and do not by themselves specify the underlying physical mechanism
+responsible for cosmic acceleration. In this context, confronting viablef(T) gravity models with
+the latest DESI DR2 measurements provides a useful test of whether the indications of departures
+from ΛCDM found in phenomenological dark energy analyses can also be accommodated within a
+modified-gravity framework. Several studies have begun to confrontf(T) gravity with the DESI DR2
+measurements. In Ref. [34], the power-law, Linder, and exponentialf(T) models were constrained
+using DESI DR2 BAO together with cosmic chronometers, DES Year 5 SNe Ia, and CMB distance
+priors. The analysis showed that deviations allowed by late-time observations are substantially reduced
+after the CMB information is included. More recently, Ref. [35] investigated severalf(T) models using
+Pantheon+, DESI DR2 BAO, CMB distance priors, and redshift-space distortion measurements, with
+particular emphasis on theH 0 andS 8 tensions and the growth of cosmic structure. These studies
+demonstrate the constraining power of recent observations, while also motivating a closer comparison
+of how different distance probes affect the inferred model parameters. In particular, a displacement of a
+marginalized posterior away from the ΛCDM limit does not necessarily imply that the extended model
+is statistically preferred. The location and width of the posterior characterize parameter constraints
+within a model, whereas comparisons of the maximum likelihood and information criteria address
+its performance relative to a reference model. It is therefore useful to examine these complementary
+aspects together when assessing the response off(T) models to different combinations of cosmological
+observations.
+In this work, we systematically investigate and compare three representative and widely stud-
+iedf(T) models: the power-law modelf(T) =α(−T) b, the exponential modelf(T) =αT 0[1−
+exp(−p
+p
+T /T0)], and the hyperbolic tangent modelf(T) =α(−T) n tanh(T0/T), using the latest
+DESI DR2 BAO data, together with CMB distance priors and Pantheon+ SNe Ia. In particular,
+we assess their statistical performance relative to the ΛCDM model using the minimumχ 2 and the
+information criteria, including the Akaike information criterion (AIC) and Bayesian information cri-
+terion (BIC), and further compare the transition redshiftz T from cosmic deceleration to acceleration
+predicted by the different models. This combined statistical and dynamical analysis allows us to ex-
+amine not only whether the additional degree of freedom inf(T) gravity is supported by the latest
+cosmological observations, but also how different viablef(T) scenarios modify the recent expansion
+history of the Universe. Our aim is to distinguish changes in parameter constraints from changes in
+model preference within a common set of distance observations.
+The rest of the paper is organized as follows. In Sec. 2, we briefly introduce the threef(T)
+models considered in this work. In Sec. 3, we describe the observational data and methodology used
+in our analysis. The main cosmological constraints, model-comparison results, and implications for
+the late-time expansion history are presented in Sec. 4. Finally, we summarize our conclusions in
+Sec. 5.
+2 Thef(T)theory
+We begin this section with a brief review of the cosmological formulation off(T) gravity and then
+introduce the three representative models considered in this work.
+– 2 –
+
+[PDF page 4]
+2.1 Thef(T)cosmology
+In teleparallel gravity, the vierbein fieldse Aµ(x) (A= 0,1,2,3) are used as the dynamical variables.
+They form an orthonormal basis for the tangent space at each pointx µ and satisfy
+gµν(x) =η ABeAµ(x)eB ν(x),(2.1)
+whereη AB = diag(1,−1,−1,−1) is the Minkowski metric.
+Instead of the torsionless Levi–Civita connection used in general relativity, teleparallel gravity is
+formulated in terms of the curvature-free Weitzenb¨ ock connection,
+ˆΓλµν =e λA∂νeAµ,(2.2)
+which gives rise to a non-vanishing torsion tensor
+T λµν =e λA
+ 
+∂µeAν −∂ νeAµ
+
+.(2.3)
+The contortion tensor is defined as
+Kρµν =− 1
+2 (Tµρν −T ν ρµ −T ρµν),(2.4)
+and the superpotential is
+Sρµν = 1
+2
+ 
+Kµν ρ +δ µ
+ρ T αν α −δ ν
+ρ T αµα
+
+.(2.5)
+The torsion scalar is then constructed as
+T=S ρµνT ρµν.(2.6)
+In the teleparallel equivalent of general relativity (TEGR), the gravitational Lagrangian is given
+by the torsion scalarT. Throughout this work,f(T) denotes the modification to the TEGR La-
+grangian, while the complete gravitational Lagrangian is denoted byF(T) =T+f(T). The corre-
+sponding action in the presence of matter is therefore
+S= 1
+16πG
+Z
+d4x e[T+f(T)] +
+Z
+d4x eL m.(2.7)
+wheree≡det(e Aµ) = √−gandL m denotes the matter Lagrangian density. The TEGR limit is
+recovered forf(T) = 0.
+Varying the action with respect to the vierbein gives
+h
+e−1∂µ (eSAµν)−e AλT ρµλSρνµ
+i
+(1 +f T )
++S Aµν(∂µT)f T T + 1
+4 eAν [T+f(T)] = 4πG e AρTρν,(2.8)
+wheref T ≡d f /dT,f T T ≡d 2f /dT2, andT ρν is the matter energy-momentum tensor.
+For a spatially flat Friedmann-Robertson-Walker (FRW) Universe, we adopt the diagonal vierbein
+eAµ = diag(1, a, a, a),(2.9)
+which gives the spatially flat FRW metric
+ds2 =dt 2 −a 2(t)δijdxidxj.(2.10)
+The torsion scalar then reduces to
+T=−6H 2,(2.11)
+whereH≡˙a/ais the Hubble parameter.
+– 3 –
+
+[PDF page 5]
+Assuming that the matter sector is described by a perfect fluid with total energy densityρand
+pressurep, the modified Friedmann equations can be written as
+H2 = 8πG
+3 ρ− f
+6 + T fT
+3 ,(2.12)
+˙H=− 4πG(ρ+p)
+1 +f T + 2T fT T
+.(2.13)
+The modification to TEGR can be interpreted as an effective dark energy component. Its effective
+energy density and pressure are given by
+ρeff = 1
+16πG (2T fT −f),(2.14)
+peff = 1
+16πG
+h
+4 ˙H(f T + 2T fT T)−2T f T +f
+i
+,(2.15)
+and the corresponding effective equation-of-state parameter is
+weff = peff
+ρeff
+.(2.16)
+Introducing the normalized Hubble parameter
+E(z)≡ H(z)
+H0
+,(2.17)
+and using
+T=T 0E2(z), T 0 =−6H 2
+0 ,(2.18)
+the background expansion equation can be expressed as
+E2(z,p) = Ω m(1 +z) 3 + Ωr(1 +z) 4 + ΩF y(z,p),(2.19)
+where
+ΩF = 1−Ω m −Ω r,(2.20)
+and
+Ωi = 8πGρi0
+3H2
+0
+, i=m, r.(2.21)
+The functiony(z,p) characterizes the modification to the standard expansion history and is defined
+as
+y(z,p) = f(T)−2T f T (T)
+T0ΩF
+,(2.22)
+wherepdenotes the free parameter or parameters of a specificf(T) model. The normalization
+conditionE(z= 0) = 1 implies
+y(0,p) = 1.(2.23)
+2.2 Representativef(T)models
+In this work, we consider three specificf(T) models that have been widely studied and have passed
+basic observational tests. For each model, the normalization parameter is determined by imposing the
+boundary conditionE(z= 0) = 1. According to the above convention, the functionsf i(T) introduced
+below denote the modifications to TEGR, while the corresponding total gravitational Lagrangian is
+Fi(T) =T+f i(T).
+– 4 –
+
+[PDF page 6]
+2.2.1 The power-law model (f 1CDM)
+The first model is the power-law model [16],
+f1(T) =α(−T) b,(2.24)
+wherebquantifies the deviation from the ΛCDM model, whileαis fixed by the present-day normal-
+ization condition. Substituting Eq. (2.24) into the background equation gives
+α= (6H 2
+0)1−b ΩF
+2b−1 .(2.25)
+The corresponding deformation function is
+y1(z;b) =E 2b(z).(2.26)
+The normalized Hubble parameter therefore satisfies
+E2(z) = Ωm(1 +z) 3 + Ωr(1 +z) 4 + ΩF E2b(z).(2.27)
+The ΛCDM model is recovered forb= 0.
+2.2.2 The exponential model (f 2CDM)
+The second model is the exponential model [36],
+f2(T) =αT 0
+"
+1−exp
+ 
+−p
+r
+T
+T0
+!#
+,(2.28)
+whereαandpare dimensionless parameters. ImposingE(z= 0) = 1 gives
+α= ΩF
+1−(1 +p)e −p .(2.29)
+The corresponding deformation function is
+y2(z;p) = 1−[1 +pE(z)]e −pE(z)
+1−(1 +p)e −p .(2.30)
+This model approaches the ΛCDM limit asp→+∞.
+Following the parameterization commonly adopted for this model, we introduce
+b≡ 1
+p .(2.31)
+The deformation function can then be rewritten as
+y2(z;b) =
+1−
+
+1 + E(z)
+b
+
+exp
+
+− E(z)
+b
+
+1−
+
+1 + 1
+b
+
+exp
+
+−1
+b
+ .(2.32)
+In terms ofb, the ΛCDM limit corresponds tob→0 +.
+The corresponding normalized Hubble parameter is
+E2(z) = Ωm(1 +z) 3 + Ωr(1 +z) 4 + ΩF y2(z;b).(2.33)
+– 5 –
+
+[PDF page 7]
+2.2.3 The hyperbolic-tangent model (f 3CDM)
+The third model is the hyperbolic-tangent model [37],
+f3(T) =α(−T) n tanh
+ T0
+T
+
+,(2.34)
+whereαandnare the model parameters. The normalization conditionE(z= 0) = 1 gives
+α=− ΩF (6H2
+0)1−n
+2 sech2(1) + (1−2n) tanh(1) .(2.35)
+The corresponding deformation function is
+y3(z;n) =E 2(n−1)(z) 2 sech2
+E−2(z)
+
++ (1−2n)E 2(z) tanh
+
+E−2(z)
+
+2 sech2(1) + (1−2n) tanh(1) .(2.36)
+Hence, the normalized Hubble parameter satisfies
+E2(z) = Ωm(1 +z) 3 + Ωr(1 +z) 4 + ΩF y3(z;n).(2.37)
+Unlike thef 1CDM andf 2CDM models, thef 3CDM model cannot be reduced to the ΛCDM
+model for any value ofn. Consequently,ndoes not directly quantify the deviation from ΛCDM.
+Furthermore, requiring a positive effective energy density leads to
+n > 3
+2 .(2.38)
+The three models therefore represent qualitatively different modifications of the teleparallel grav-
+itational sector. Thef 1CDM andf 2CDM models contain ΛCDM as a limiting case, whereasf 3CDM
+represents a genuinely distinct background expansion history.
+3 Data and Methodology
+In this section, we describe the observational datasets and the analysis methodology adopted in this
+work. We briefly introduce the three cosmological probes employed in our analysis and then outline
+the statistical framework used to constrain thef(T) models with different combinations of BAO,
+BAO+CMB, and BAO+CMB+SN data.
+3.1 DESI BAO DR2 Measurement
+The Dark Energy Spectroscopic Instrument (DESI) is conducting a Stage IV spectroscopic survey
+designed to substantially improve cosmological constraints. The survey spans approximately 14,200
+square degrees over a five-year observational campaign and covers a broad redshift range of 0.1<
+z <4.2, with a spectroscopic sample size roughly an order of magnitude larger than that of previous
+surveys. Our analysis adopts the latest DESI DR2 BAO measurements reported in Ref. [27]. The
+compressed BAO likelihood adopted in our analysis contains 13 observables: the isotropic measurement
+DV /rd atz eff = 0.295 from the BGS sample, together with the transverse and radial measurements,
+DM /rd andD H /rd, atz eff = 0.510, 0.706, 0.934, 1.321, 1.484, and 2.330. The full covariance between
+the transverse and radial measurements is included in the likelihood analysis.
+The DESI DR2 measurements are expressed in terms of three key cosmological distance ratios.
+The first observable is
+DM(z)
+rd
+= DL(z)
+rd(1 +z) ,(3.1)
+whereD M(z) denotes the transverse comoving distance andr d is the sound horizon at the baryon drag
+epoch. The value ofr d depends on the physical matter and baryon densities, as well as the effective
+number of relativistic species. In our analysis, the combinationr dhis treated as a free nuisance
+– 6 –
+
+[PDF page 8]
+parameter. For a given cosmological model characterized by parameters ˆp, the luminosity distance is
+given by
+DL(z,ˆp) = c(1 +z)
+H0
+Z z
+0
+dz′
+E(z ′) ,(3.2)
+whereE(z) =H(z)/H 0 is the normalized Hubble parameter. The second observable is
+DH(z)
+rd
+= c
+rdH(z) .(3.3)
+The third observable is the volume-averaged distance,
+DV (z)
+rd
+=
+
+zD2
+M(z)DH(z)
+1/3
+rd
+.(3.4)
+Then, theχ 2 likelihood function of BAO data is expressed as
+χ2
+BAO = ∆XT C−1
+BAO∆X,(3.5)
+where ∆X = X obs −X th denotes the residual vector between the DESI DR2 measurements and the
+corresponding theoretical predictions. The covariance matrixC BAO is taken from the DESI DR2 data
+release [27].
+3.2 Cosmic Microwave Background (CMB)
+Precise measurements of the CMB temperature and polarization anisotropies provide crucial insights
+into the physics of the early Universe and the formation of large-scale structure. As a fundamental
+cosmological probe, CMB observations encode a wealth of information on key cosmological parameters
+[6, 38–40], including the Hubble constant and the properties of dark energy.
+Following Refs. [41, 42], we adopt the Planck 2018 CMB distance priors rather than the full CMB
+power-spectrum likelihood. This compressed approach retains the dominant geometrical information
+relevant to the background expansion while avoiding the computational complexity of a full CMB
+power-spectrum likelihood analysis.
+The CMB distance prior information adopted in our analysis consists of the shift parameterR, the
+acoustic scalel A, and the physical baryon density Ω bh2. These quantities provide robust constraints
+on the background expansion history and play an important role in our joint cosmological analysis.
+The acoustic scale and the shift parameter are defined as
+lA = (1 +z ∗) πDA(z∗)
+rs(z∗) ,(3.6)
+R≡ H0
+√Ωm
+c (1 +z ∗)DA(z∗).(3.7)
+wherez ∗ is the redshift at the photon decoupling epoch, which can be approximately calculated by
+z∗ = 1048[1 + 0.00124(Ωbh2)−0.738][1 +g 1(Ωmh2)g2],(3.8)
+where
+g1 = 0.0783(Ωbh2)−0.238
+1 + 39.5(Ωbh2)0.763 ,(3.9)
+g2 = 0.560
+1 + 21.1(Ωbh2)1.81 .(3.10)
+In Eq. (3.6), the comoving sound horizon is defined by
+rs(z) = c
+H0
+Z a
+0
+da
+a2E(a)
+q
+3(1 + 3Ωbh2
+4Ωγ h2 a)
+,(3.11)
+– 7 –
+
+[PDF page 9]
+wherea= 1/(1+z), 3
+4Ωγ h2 = 31500(TCM B/2.7K) −4 andT CM B = 2.7255K. And the angular diameter
+distanceD A is written by
+DA(z) = c
+H0(1 +z)
+Z z
+0
+dz′
+E(z ′) .(3.12)
+Theχ 2 of the CMB is given by
+χ2
+CM B = ∆YT C−1
+CMB∆Y,(3.13)
+where ∆Y =y i −y model, with
+yi =
+
+
+1.7502
+301.471
+0.02236
+
+ ,(3.14)
+ymodel =
+
+
+R
+lA
+Ωbh2
+
+ ,(3.15)
+The corresponding inverse covariance matrixC −1
+CMB is taken from Ref. [42].
+3.3 Type Ia Supernovae (SNe Ia)
+Type Ia supernovae are luminous and well-calibrated standardizable candles that play a pivotal
+role in modern cosmology, particularly in probing the late-Universe expansion history. Their well-
+characterized light-curve properties and relatively uniform peak luminosities enable precise distance
+measurements, making them powerful probes for constraining cosmological parameters. In this work,
+we adopt the full Pantheon+ compilation [43], which consists of 1,701 high-quality light curves from
+1,550 spectroscopically confirmed SNe Ia spanning a wide redshift range of 0.00122< z <2.26137. To
+minimize potential systematic effects associated with very low-redshift observations, we exclude data
+points withz <0.01. After applying this cut, the final sample contains 1590 data points.
+For this compilation, the observed distance modulus is given by
+µobs,i =m B +αx 1 −βc−M−δ bias +δ host,(3.16)
+wherem B denotes the apparent B-band magnitude,x 1 is the stretch parameter corresponding to
+light-curve width,cis the light-curve color that includes contributions from both intrinsic color and
+dust,Mis the absolute B-band magnitude of a fiducial SN Ia and treated as a nuisance parameter
+in our analysis,δ bias is a correction term to account for selection biases, andδ host is the luminosity
+correction for residual correlations.αandβare global nuisance parameters that relate stretch and
+color to luminosity, respectively. The theoretical distance modulusµ th is defined as
+µth(z) = 5log10[ DL(z)
+Mpc ] + 25,(3.17)
+whereD L(z) is the luminosity distance,
+DL(z) = c(1 +z)
+H0
+Z z
+0
+d˜z
+E(˜z).(3.18)
+Then, theχ 2 likelihood function of Pantheon+ compilation can be written as
+χ2
+SN = ∆DT C−1
+SN∆D,(3.19)
+where the covariance matrixCis the covariance matrix including both the systematic and statistical
+errors, which can be found on the website1, and ∆ ⃗Dis the vector of SNe Ia distance modulus residuals,
+∆Di =µ obs,i −µ model(zi).(3.20)
+1https://github.com/PantheonPlusSH0ES/DataRelease
+– 8 –
+
+[PDF page 10]
+4 Results and Discussion
+In this section, we present the observational constraints on the threef(T) cosmological models con-
+sidered in this work. Recent analyses combining DESI BAO with other cosmological observations
+have reported indications of departures from the ΛCDM model within dynamical dark energy scenar-
+ios. Motivated by these results, we examine whether similar deviations are also allowed by the DESI
+DR2 BAO measurements in the framework off(T) gravity. Then, we examine how the correspond-
+ing parameter regions change when the CMB distance priors and the Pantheon+ SNe Ia sample are
+progressively included. It also allows us to examine whether the indication of a deviation from the
+ΛCDM model remains in the combined analysis and whether the result depends on the specificf(T)
+model. We further investigate the transition redshiftz T to characterize the onset of late-time cosmic
+acceleration and assess the relative statistical performance of the models using the Akaike information
+criterion (AIC) and the Bayesian information criterion (BIC).
+Model Data Ωm born zT
+f1CDM model
+BAO 0.29±0.01 0.14+0.15
+−0.16 0.67+0.05
+−0.04
+BAO+CMB 0.30±0.01 −0.08±0.07 0.62+0.04
+−0.03
+BAO+CMB+SN 0.31±0.01 0.00±0.05 0.65±0.03
+f2CDM model
+BAO 0.31±0.01 0.27+0.12
+−0.17 0.68±0.03
+BAO+CMB 0.31±0.01 0.13+0.10
+−0.09 0.65±0.03
+BAO+CMB+SN 0.29±0.01 0.35+0.08
+−0.07 0.70±0.03
+f3CDM model
+BAO 0.22+0.03
+−0.04 1.86+0.07
+−0.08 0.70+0.14
+−0.16
+BAO+CMB 0.30±0.01 1.60±0.01 0.67+0.02
+−0.03
+BAO+CMB+SN 0.31±0.01 1.62±0.01 0.68+0.02
+−0.03
+T able 1: Marginalized constraints on the cosmological parameters and the transition redshift for the
+threef(T) models considered in this work, obtained from BAO, BAO+CMB, and BAO+CMB+SN
+data. The quoted uncertainties correspond to the 68% credible interval. For thef 1CDM andf 2CDM
+models,bdenotes the model parameter, whilenis the corresponding parameter of thef 3CDM model.
+The transition redshiftz T is defined byq(z T ) = 0.
+For thef 1CDM model, the BAO-only analysis givesb= 0.14 +0.15
+−0.16 and Ωm = 0.29±0.01, and the
+result is consistent with the ΛCDM model. After including the CMB distance priors, the constraint
+becomesb=−0.08±0.07, while Ω m remains close to 0.30. The uncertainty onbis substantially
+reduced, andb= 0 lies slightly outside the 68% credible interval. However, this behavior changes
+when the Pantheon+ SNe Ia sample is added. For the full combination, we obtainb= 0.00±0.05
+and Ω m = 0.31±0.01. The preferred value ofbis therefore fully consistent with the ΛCDM model.
+The mild deviation found in the BAO+CMB case does not persist once the SNe Ia data are included.
+This behavior is particularly interesting in the context of recent DESI analyses of dynamical dark
+energy, where combinations of DESI BAO, CMB, and SNe Ia can retain a preference for departures
+from the ΛCDM model. In thef 1CDM model considered here, by contrast, the full data combination
+is consistent with the ΛCDM model. This result indicates that the departure from the ΛCDM model
+suggested in dynamical dark energy analyses is not reproduced in the same way in thef 1(T) model.
+A different behavior is found for thef 2CDM model. The BAO-only analysis givesb= 0.27 +0.12
+−0.17
+– 9 –
+
+[PDF page 11]
+−0.4 −0.2 0.0 0.2 0.4
+b
+0.20
+0.22
+0.24
+0.26
+0.28
+0.30
+0.32
+0.34
+0.36
+Ωm
+f1CDM
+BAO
+BAO+CMB
+BAO+CMB+SN
+Figure 1: Two-dimensional marginalized constraints in theb–Ω m plane for thef 1CDM model ob-
+tained from BAO, BAO+CMB, and BAO+CMB+SN data. The inner and outer contours correspond
+to the 68% and 95% credible regions, respectively.
+−0.2 0.0 0.2 0.4 0.6
+b
+0.24
+0.26
+0.28
+0.30
+0.32
+0.34
+0.36
+Ωm
+f2CDM
+BAO
+BAO+CMB
+BAO+CMB+SN
+Figure 2: Two-dimensional marginalized constraints in theb–Ω m plane for thef 2CDM model ob-
+tained from BAO, BAO+CMB, and BAO+CMB+SN data. The inner and outer contours correspond
+to the 68% and 95% credible regions, respectively.
+– 10 –
+
+[PDF page 12]
+1.5 1.6 1.7 1.8 1.9 2.0
+n
+0.10
+0.15
+0.20
+0.25
+0.30
+Ωm
+f3CDM
+BAO
+BAO+CMB
+BAO+CMB+SN
+Figure 3: Two-dimensional marginalized constraints in then–Ω m plane for thef 3CDM model ob-
+tained from BAO, BAO+CMB, and BAO+CMB+SN data. The inner and outer contours correspond
+to the 68% and 95% credible regions, respectively.
+0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85
+Transition Redshift (zt)
+f1(T) Modelf2(T) Modelf3(T) Model
+Pantheon Sample
+Planck-2018 Sample
+BAO
+BAO+CMB
+BAO+CMB+SN
+Figure 4: Constraints on the transition redshiftz T for the threef(T) models obtained from the
+BAO, BAO+CMB, and BAO+CMB+SN data combinations. The points and error bars denote the
+marginalized constraints at the 68% credible interval. The gray and pink shaded regions represent
+the reference ranges obtained from the Planck 2018 and Pantheon samples, respectively, following
+Ref. [44].
+– 11 –
+
+[PDF page 13]
+Model Data χ2
+min AIC ∆AIC BIC ∆BIC
+ΛCDM model
+BAO 10.52 14.52 0 15.65 0
+BAO+CMB 13.34 21.34 0 24.43 0
+BAO+CMB+SN 1417.99 1427.99 0 1454.89 0
+f1CDM model
+BAO 9.86 15.86 +1.34 17.55 +1.90
+BAO+CMB 11.78 21.78 +0.44 25.64 +1.21
+BAO+CMB+SN 1417.99 1429.99 +2.00 1462.28 +7.39
+f2CDM model
+BAO 9.07 15.07 +0.55 16.76 +1.11
+BAO+CMB 13.09 23.09 +1.75 26.96 +2.53
+BAO+CMB+SN 1415.89 1427.89 -0.10 1460.18 +5.29
+f3CDM model
+BAO 10.85 16.85 +2.33 18.54 +2.89
+BAO+CMB 22.49 32.49 +11.15 36.35 +11.92
+BAO+CMB+SN 1435.16 1447.16 +19.17 1479.45 +24.56
+T able 2: Minimum chi-square values and the corresponding Akaike information criterion (AIC) and
+Bayesian information criterion (BIC) for the ΛCDM,f 1CDM,f 2CDM, andf 3CDM models using
+different data combinations. The quantities ∆AIC and ∆BIC are evaluated relative to the ΛCDM
+model for the same data combination, such that ∆AIC = ∆BIC = 0 for the ΛCDM model. Smaller
+values of AIC and BIC indicate a more favorable balance between goodness of fit and model complexity.
+and Ω m = 0.31±0.01. Sinceb= 0 corresponds to the ΛCDM model, the BAO-only result shows a
+mild preference for a positive value ofb, withb= 0 lying outside the 68% credible interval. After
+including the CMB distance priors, the constraint becomesb= 0.13 +0.10
+−0.09, while Ω m remains nearly
+unchanged. The preferred value ofbtherefore moves closer to zero, indicating that the inclusion
+of the CMB information reduces the deviation from the ΛCDM model. The trend changes again
+when the Pantheon+ SNe Ia sample is added. For the full BAO+CMB+SN combination, we obtain
+b= 0.35 +0.08
+−0.07 and Ωm = 0.29±0.01. The preferred value ofbshifts away from zero and the uncertainty
+is further reduced, so that the deviation from the ΛCDM model becomes more pronounced in the full
+data combination. Thus, unlike thef 1CDM model, for which the inclusion of SNe Ia brings the result
+back into agreement with the ΛCDM model, the SNe Ia data strengthen the preference for a nonzero
+deformation parameter in thef 2CDM model. This behavior shows that the response to the successive
+addition of CMB and SNe Ia information is strongly model dependent. In thef 2CDM case, the CMB
+distance priors reduce the deviation indicated by the BAO-only data, whereas the Pantheon+ SNe Ia
+measurements enhance it. However, a preference for a nonzero value ofbin the marginalized posterior
+does not necessarily imply that thef 2CDM model provides a statistically better description of the
+observations than the ΛCDM model. This point is examined below using the AIC and BIC.
+Thef 3CDM model shows a stronger dependence on the adopted data combination. The BAO-
+only analysis givesn= 1.86 +0.07
+−0.08 and Ωm = 0.22+0.03
+−0.04, with a relatively broad degeneracy in then–Ω m
+plane. After including the CMB distance priors, the preferred parameter region changes substantially,
+withn= 1.60±0.01 and Ω m = 0.30±0.01. In particular, the preferred value of Ω m shifts from
+– 12 –
+
+[PDF page 14]
+about 0.22 to 0.30, accompanied by a clear shift innand a substantial reduction in the parameter
+uncertainties. The inclusion of the CMB distance information therefore changes not only the precision
+of the constraints, but also the location of the parameter region preferred by the BAO data. The
+addition of the Pantheon+ SNe Ia sample produces a smaller further change. For the full combination,
+we obtainn= 1.62±0.01, while Ω m remains close to 0.31. Therefore, unlike the cases off 1CDM and
+f2CDM models, where the main changes induced by the different data combinations can be discussed
+in terms of the departure from the ΛCDM model, the behavior of thef 3CDM model is characterized
+mainly by the sensitivity of its parameter space when different observations are combined. The results
+show that the BAO-only preferred region changes markedly after the CMB distance priors are added,
+whereas the subsequent inclusion of Pantheon+ produces a comparatively smaller shift.
+The comparison among the three models shows that the inferred cosmological constraints are
+strongly dependent on the specific form of thef(T) model, even when the same observational data
+combinations are used. This is particularly clear for thef 1CDM andf 2CDM cases, both of which can
+be directly compared with the ΛCDM model through the parameterb. For thef 1CDM model, the
+mild deviation obtained from BAO+CMB disappears after the Pantheon+ SNe Ia data are added,
+and the full combination becomes fully consistent with the ΛCDM model. In contrast, for thef 2CDM
+model, the BAO-only data already favor a positive value ofb, the inclusion of the CMB distance priors
+reduces this deviation, and the addition of Pantheon+ strengthens it again. These different behaviors
+indicate that the departures from the ΛCDM model suggested by recent DESI BAO analyses are
+not reproduced in the same way for all cosmological models. In particular, the deviation found in
+dynamical dark energy analyses should not be interpreted as a generic consequence of the DESI
+BAO measurements alone. Its significance and even its direction can depend on the assumed form
+of the cosmological model and on how the different observations break the corresponding parameter
+degeneracies. Thef 3CDM model provides a complementary example because it cannot be compared
+with the ΛCDM model through a vanishing deformation parameter. In this case, the successive
+inclusion of the CMB distance priors and Pantheon+ SNe Ia data leads to clear changes in the allowed
+n–Ωm parameter space. The BAO-only constraints leave a relatively broad degeneracy in then–Ω m
+plane and favor a substantially lower value of Ω m than the joint constraints. After the CMB distance
+priors are added, bothnand Ω m become much more tightly constrained and the preferred region moves
+considerably, whereas the subsequent addition of Pantheon+ produces a smaller further change. This
+behavior illustrates the different roles played by the three cosmological probes. The BAO data alone
+provide relatively weak constraints on then–Ω m parameter space, whereas the inclusion of the CMB
+distance priors significantly reduces the parameter degeneracy. The subsequent addition of the SNe
+Ia data produces only a relatively small further change in the constraints. The fact that the relative
+importance of these data sets differs among the threef(T) models shows that current constraints on
+modified gravity are determined not only by the precision of the observations, but also by how each
+model changes the expansion history and how its parameters project onto the different cosmological
+measurements.
+We next consider the transition redshiftz T , which provides a physically transparent characteri-
+zation of the epoch at which the cosmic expansion changes from deceleration to acceleration [44–47].
+The expansion history can be characterized by the deceleration parameter
+q(z)≡ − ¨a
+aH2 ,(4.1)
+wherea(t) is the scale factor andH= ˙a/ais the Hubble parameter. In terms of the normalized
+Hubble parameter
+E(z)≡ H(z)
+H0
+,(4.2)
+the deceleration parameter can be written as
+q(z) = 1 +z
+2E2(z)
+dE2(z)
+dz −1.(4.3)
+The transition redshift is then defined by
+q(zT ) = 0,(4.4)
+– 13 –
+
+[PDF page 15]
+corresponding to the change from decelerated,q >0, to accelerated,q <0, cosmic expansion. For
+each posterior sample, we solveq(z T ) = 0, and quote the median and the 68% credible interval of the
+resultingz T distribution.
+The derived transition redshift is relatively stable across the different models and data combina-
+tions. For thef 1CDM model, the constraints lie in the rangez T ≃0.62–0.67, while thef 2CDM model
+givesz T ≃0.65–0.70. Forf 3CDM, the BAO-only constraint,z T = 0.70 +0.14
+−0.16, has a relatively large
+uncertainty, whereas the inclusion of the CMB distance priors and SNe Ia data givesz T ≃0.67–0.68
+with substantially reduced uncertainties. As shown in Fig. 4, the inferred values are also broadly
+consistent with the reference ranges from the Planck 2018 and Pantheon samples adopted in Ref. [44].
+This behavior differs from that found for the model parameters. For thef 1CDM case, the preferred
+value ofbvaries with the data combination and becomes consistent with the ΛCDM model after the
+SNe Ia data are included. For thef 2CDM model, the full data combination instead favors a nonzero
+value ofb, while the allowedn–Ω m region changes substantially after the CMB distance priors are
+added for thef 3CDM model. Despite these differences, the inferred values ofz T vary only modestly.
+Therefore, the differences found in the parameter constraints do not lead to comparably large changes
+in the inferred epoch of the transition from decelerated to accelerated expansion.
+Finally, we assess the relative statistical performance of the models by using the Akaike informa-
+tion criterion (AIC) [48] and the Bayesian information criterion (BIC) [49], which account for both
+the goodness of fit and the number of free model parameters. They are defined as
+AIC =−2 lnL max + 2k,(4.5)
+and
+BIC =−2 lnL max +klnN,(4.6)
+whereL max is the maximum likelihood,kdenotes the number of free parameters, andNis the number
+of data points included in the analysis. For the Gaussian likelihoods considered here, the likelihood
+contribution can be expressed in terms of the minimum chi-square when comparing models using the
+same data combination.
+Using the ΛCDM model as the reference model, we define
+∆AIC = AICmodel −AIC ΛCDM,(4.7)
+and
+∆BIC = BICmodel −BIC ΛCDM.(4.8)
+Accordingly, smaller values of the information criteria correspond to better statistical performance
+after accounting for model complexity. Values of ∆X≲2 generally indicate little statistical distinction
+between the models, whereas increasingly positive values indicate progressively stronger support for
+the reference ΛCDM model relative to the model being compared, whereXdenotes either AIC or
+BIC.
+The minimum chi-square values and information criteria are summarized in Table 2. For the
+BAO-only data, the threef(T) models yield relatively small differences in AIC and BIC with respect
+to the ΛCDM model. With the inclusion of the CMB distance priors, thef 1CDM model remains close
+to the ΛCDM model. For thef 2CDM model, the improvement in the minimum chi-square is negligible,
+giving ∆AIC = 1.75 and ∆BIC = 2.53. These values indicate little distinction according to AIC and
+a modest preference for the ΛCDM model according to BIC. In contrast, thef 3CDM model exhibits
+substantially larger information criterion differences. For the full BAO+CMB+SN combination, the
+f2CDM model yields a slightly lowerχ 2
+min than the ΛCDM model. The improvement approximately
+compensates for the additional parameter in AIC, resulting in ∆AIC =−0.10, whereas BIC favors the
+ΛCDM model, with ∆BIC = 5.29. Thef 1CDM model gives ∆AIC = 2.00 and ∆BIC = 7.39, while
+thef 3CDM model is more strongly disfavored, with ∆AIC = 19.17 and ∆BIC = 24.56.
+Overall, the threef(T) models show clearly different behaviors under the same observational
+combinations. Thef 1CDM model becomes consistent with ΛCDM when the full BAO+CMB+SN
+data set is used, whereas thef 2CDM model retains a preference for a nonzero deformation parame-
+ter without a corresponding statistical preference over ΛCDM. Thef 3CDM model shows a stronger
+– 14 –
+
+[PDF page 16]
+dependence on the adopted data combination and a poorer statistical performance in the joint analy-
+sis. In contrast to these differences in the model parameters and statistical performance, the inferred
+transition redshift remains relatively stable among the three models. These results show that the
+constraints derived from DESI DR2 and the combined cosmological data depend significantly on the
+specific form of thef(T) model.
+5 Conclusions
+Recent analyses based on DESI observations have reported indications of departures from the ΛCDM
+model within dynamical dark energy scenarios. In this work, we investigate whether similar behavior
+appears in three representativef(T) cosmological models using the DESI DR2 BAO measurements,
+together with the CMB distance priors and Pantheon+ SNe Ia data. Our main conclusions can be
+summarized as follows.
+First, the evidence for a deviation from the ΛCDM model is strongly dependent on the specific
+form of thef(T) model and on the adopted data combination. For thef 1CDM model, the mild
+deviation found from BAO+CMB disappears after the Pantheon+ SNe Ia data are included, and the
+full combination is consistent with the ΛCDM model. In contrast, thef 2CDM model favors a positive
+and nonzero value of the deformation parameterbin the full analysis. Thef 3CDM model shows an
+even stronger dependence on the data combination, with a substantial change in the allowedn–Ω m
+parameter space after the CMB distance priors are included. These results show that the departures
+from the ΛCDM model suggested by DESI analyses are not reproduced in a universal manner inf(T)
+gravity.
+Second, a deviation from the ΛCDM model at the parameter level does not necessarily imply a
+statistical preference for the corresponding modified gravity model. This is most clearly illustrated by
+thef 2CDM model. Although the full BAO+CMB+SN analysis favors a nonzero value ofband gives a
+slightly lower minimumχ2 than the ΛCDM model, the improvement is not sufficient to establish a clear
+model selection preference once the additional degree of freedom is taken into account. Thef 1CDM
+model also shows no statistical advantage over the ΛCDM model, while thef 3CDM model is more
+strongly disfavored by the combined data. The parameter constraints and information criterion results
+therefore provide complementary information when assessing possible departures from the standard
+cosmological model.
+Third, the transition redshift remains comparatively stable despite the different behaviors of the
+model parameters. The threef(T) models generally givez T values within a relatively narrow range
+and broadly consistent with the reference constraints from Planck 2018 and Pantheon sample. Thus,
+the differences in the modified gravity parameters do not lead to comparably large changes in the
+inferred epoch at which the Universe transitions from decelerated to accelerated expansion.
+The present analysis is based primarily on traditional observational datasets. A more complete
+test off(T) gravity will require observables that are directly sensitive to the growth of cosmic struc-
+ture and gravitational perturbations. Future studies using independent late-time probes, such as
+gravitational-wave standard sirens, strong gravitational lensing, and fast radio bursts, together with
+observables sensitive to the growth of cosmic structure, will provide complementary tests off(T) grav-
+ity and help further distinguish between different model parameterizations. The increasing precision
+of upcoming large-scale-structure surveys will therefore provide an important opportunity to further
+test modified gravity as an alternative explanation of the late-time cosmic acceleration.
+Acknowledgments
+Zheng, J. would like to thank Prof. Jing-Zhao Qi of Northeastern University for valuable discussions
+and suggestions. Zheng, J. was supported by the National Natural Science Foundation of China under
+Grant Nos. 12403002 and 12433001.
+– 15 –
+
+[PDF page 17]
+References
+[1] A.G. Riess, A.V. Filippenko, P. Challis, A. Clocchiatti, A. Diercks, P.M. Garnavich et al.,Observational
+Evidence from Supernovae for an Accelerating Universe and a Cosmological Constant,Astron. J.116
+(1998) 1009 [astro-ph/9805201].
+[2] S. Perlmutter, G. Aldering, G. Goldhaber, R.A. Knop, P. Nugent, P.G. Castro et al.,Measurements ofΩ
+andΛfrom 42 High-Redshift Supernovae,Astrophys. J.517(1999) 565 [astro-ph/9812133].
+[3] S. Weinberg,The cosmological constant problem,Rev. Mod. Phys.61(1989) 1.
+[4] S. Weinberg,The Cosmological Constant Problems (Talk given at Dark Matter 2000, February, 2000),
+arXiv e-prints(2000) astro [astro-ph/0005265].
+[5] A.G. Riess, S. Casertano and W.e.a. Yuan,A comprehensive measurement of the local value of the hubble
+constant,The Astrophysical Journal Letters934(2022) L7.
+[6] Planck Collaboration, N. Aghanim, Y. Akrami, M. Ashdown, J. Aumont, C. Baccigalupi et al.,Planck
+2018 results. VI. Cosmological parameters,Astron. Astrophys.641(2020) A6 [1807.06209].
+[7] C. Heymans, L. Van Waerbeke, L. Miller, T. Erben, H. Hildebrandt, H. Hoekstra et al.,CFHTLenS: the
+Canada-France-Hawaii Telescope Lensing Survey,Mon. Not. R. Astron. Soc.427(2012) 146
+[1210.0032].
+[8] E. Di Valentino, A. Melchiorri and J. Silk,Planck evidence for a closed Universe and a possible crisis for
+cosmology,Nature Astronomy4(2020) 196 [1911.02087].
+[9] W. Handley,Curvature tension: Evidence for a closed universe,Phys. Rev. D103(2021) L041301
+[1908.09139].
+[10] C. Heymans, T. Tr¨ oster, M. Asgari, C. Blake, H. Hildebrandt, B. Joachimi et al.,KiDS-1000 Cosmology:
+Multi-probe weak gravitational lensing and spectroscopic galaxy clustering constraints,Astron. Astrophys.
+646(2021) A140 [2007.15632].
+[11] E. Di Valentino, A. Melchiorri and J. Silk,Investigating Cosmic Discordance,Astrophys. J. Lett.908
+(2021) L9 [2003.04935].
+[12] T.M.C. Abbott, M. Aguena, A. Alarcon, S. Allam, O. Alves, A. Amon et al.,Dark Energy Survey Year 3
+results: Cosmological constraints from galaxy clustering and weak lensing,Phys. Rev. D105(2022)
+023520 [2105.13549].
+[13] G. Dvali, G. Gabadadze and M. Porrati,4D gravity on a brane in 5D Minkowski space,Phys. Lett. B
+484(2000) 112 [hep-th/0002190].
+[14] Y. Lian, S. Cao, M. Biesiada, Y. Chen, Y. Zhang and W. Guo,Probing modified gravity theories with
+multiple measurements of high-redshift quasars,Mon. Not. Roy. Astron. Soc.505(2021) 2111
+[2105.04992].
+[15] T. Chiba,1/R gravity and scalar-tensor gravity,Phys. Lett. B575(2003) 1 [astro-ph/0307338].
+[16] G.R. Bengochea and R. Ferraro,Dark torsion as the cosmic speed-up,Phys. Rev. D79(2009) 124019
+[0812.1205].
+[17] P. Wu and H.W. Yu,Observational constraints onf(T)theory,Phys. Lett. B693(2010) 415
+[1006.0674].
+[18] S. Nesseris, S. Basilakos, E.N. Saridakis and L. Perivolaropoulos,Viablef(T)models are practically
+indistinguishable fromΛCDM,Phys. Rev. D88(2013) 103010 [1308.6142].
+[19] Y.-F. Cai, S. Capozziello, M. De Laurentis and E.N. Saridakis,f(T) teleparallel gravity and cosmology,
+Rept. Prog. Phys.79(2016) 106901 [1511.07586].
+[20] Y.-F. Cai, M. Khurshudyan and E.N. Saridakis,Model-independent reconstruction off(T)gravity from
+Gaussian Processes,Astrophys. J.888(2020) 62 [1907.10813].
+[21] R.C. Nunes, S. Pan and E.N. Saridakis,New observational constraints on f(T) gravity from cosmic
+chronometers,JCAP08(2016) 011 [1606.04359].
+[22] S. Bahamonde, K.F. Dialektopoulos, C. Escamilla-Rivera, G. Farrugia, V. Gakis, M. Hendry et al.,
+Teleparallel gravity: from theory to cosmology,Rept. Prog. Phys.86(2023) 026901 [2106.13793].
+[23] K. Bamba, C.-Q. Geng, C.-C. Lee and L.-W. Luo,Equation of state for dark energy inf(T)gravity,
+JCAP01(2011) 021 [1011.0508].
+– 16 –
+
+[PDF page 18]
+[24] M. Krssak, R.J. van den Hoogen, J.G. Pereira, C.G. B¨ ohmer and A.A. Coley,Teleparallel theories of
+gravity: illuminating a fully invariant approach,Class. Quant. Grav.36(2019) 183001 [1810.12932].
+[25] J.-Z. Qi, S. Cao, M. Biesiada, X. Zheng and H. Zhu,New observational constraints onf(T)cosmology
+from radio quasars,Eur. Phys. J. C77(2017) 502 [1708.08603].
+[26] A.G. Adame, J. Aguilar, S. Ahlen, S. Alam, D.M. Alexander, M. Alvarez et al.,DESI 2024 III: baryon
+acoustic oscillations from galaxies and quasars,J. Cosmol. Astropart. Phys.2025(2025) 012
+[2404.03000].
+[27]DESIcollaboration,DESI DR2 results. II. Measurements of baryon acoustic oscillations and
+cosmological constraints,Phys. Rev. D112(2025) 083515 [2503.14738].
+[28] Z. Wang, S. Lin, Z. Ding and B. Hu,The role of LRG1 and LRG2’s monopole in inferring the DESI 2024
+BAO cosmology,Mon. Not. Roy. Astron. Soc.534(2024) 3869 [2405.02168].
+[29] G. Liu, Y. Wang and W. Zhao,Impact of LRG1 and LRG2 in DESI 2024 BAO data on dark energy
+evolution,arXiv e-prints(2024) arXiv:2407.04385 [2407.04385].
+[30] J. Zheng, D.-C. Qiang and Z.-Q. You,Cosmological constraints on dark energy models using DESI BAO
+2024,JCAP08(2025) 056 [2412.04830].
+[31] X. Lu, S. Gao and Y. Gong,The model-independent evidence of cosmic acceleration revisited,Chin. Phys.
+Lett.(2024) [2409.13399].
+[32] Q. Wang, S. Cao, J. Jiang, K. Zhang, X. Jiang, T. Liu et al.,New Tests of the Cosmic Distance Duality
+Relation with DESI 2024 Baryon Acoustic Oscillation Observations,Astrophys. J.987(2025) 58
+[2506.12759].
+[33] J. Zheng, D.-C. Qiang, Z.-Q. You and D. Kumar,Revisiting the equation of state of dark energy from
+DESI BAO with SNe Ia and CMB,European Physical Journal C86(2026) 924 [2608.04353].
+[34] D.M. Naik and N.S. Kavya,New constraints onf(t)gravity from desi dr2 and dark energy survey
+supernovae,Journal of High Energy Astrophysics53(2026) 100631.
+[35] M. Bouhmadi-L´ opez, C.G. Boiza, M. Petronikolou and E.N. Saridakis,Modified teleparallelf(t)gravity,
+desi bao and theh 0 tension,Universe12(2026) 81.
+[36] E.V. Linder,Einstein’s other gravity and the acceleration of the universe,Phys. Rev. D81(2010) 127301
+[1005.3039].
+[37] P. Wu and H. Yu,f(t)models with phantom divide line crossing,Eur. Phys. J. C71(2011) 1552
+[1008.3669].
+[38] E. Komatsu, K.M. Smith, J. Dunkley, C.L. Bennett, B. Gold, G. Hinshaw et al.,Seven-year Wilkinson
+Microwave Anisotropy Probe (WMAP) Observations: Cosmological Interpretation,Astrophys. J. Suppl.
+Ser.192(2011) 18 [1001.4538].
+[39] G. Hinshaw, D. Larson, E. Komatsu, D.N. Spergel, C.L. Bennett, J. Dunkley et al.,Nine-year Wilkinson
+Microwave Anisotropy Probe (WMAP) Observations: Cosmological Parameter Results,Astrophys. J.
+Suppl. Ser.208(2013) 19 [1212.5226].
+[40] Planck Collaboration, P.A.R. Ade, N. Aghanim, C. Armitage-Caplan, M. Arnaud, M. Ashdown et al.,
+Planck 2013 results. XVI. Cosmological parameters,Astron. Astrophys.571(2014) A16 [1303.5076].
+[41] Y. Wang and P. Mukherjee,Observational constraints on dark energy and cosmic curvature,Phys. Rev.
+D76(2007) 103533 [astro-ph/0703780].
+[42] L. Chen, Q.-G. Huang and K. Wang,Distance priors from Planck final release,
+J. Cosmol. Astropart. Phys.2019(2019) 028 [1808.05724].
+[43] D. Brout, D. Scolnic, B. Popovic, A.G. Riess, J. Zuntz, R. Kessler et al.,The Pantheon+ Analysis:
+Cosmological Constraints,arXiv e-prints(2022) arXiv:2202.04077 [2202.04077].
+[44] D. Kumar, P.K. Dhankar, S. Ray and F. Zhang,Joint analysis of constraints on f(R) parametrization
+from recent cosmological observations,Phys. Dark Univ.49(2025) 101989 [2504.04118].
+[45] Z.-H. Zhu and M.-K. Fujimoto,Constraints on Cardassian scenario from the expansion turnaround
+redshift and the Sunyaev-Zeldovich / x-ray data,Astrophys. J.602(2004) 12 [astro-ph/0312022].
+[46] Z.-H. Zhu and J.S. Alcaniz,Accelerating Universe from Gravitational Leakage into Extra Dimensions:
+Testing with Type Ia Supernovae,Astrophys. J.620(2005) 7 [astro-ph/0404201].
+– 17 –
+
+[PDF page 19]
+[47] Y. Chen, Z.-H. Zhu, J.S. Alcaniz and Y. Gong,Using a Phenomenological Model to Test the Coincidence
+Problem of Dark Energy,Astrophys. J.711(2010) 439 [1001.1489].
+[48] H. Akaike,A new look at the statistical model identification,IEEE Trans Autom Contr19(1974) 716.
+[49] G. Schwarz,Estimating the dimension of a model,The Annals of Statistics6(1978) .
+– 18 –

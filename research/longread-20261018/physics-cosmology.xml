@@ -1,0 +1,754 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/tV0YVoSAny+TUIjlDY/l+sASEw8</id>
+  <title>arXiv Query: search_query=(ti:DESI OR abs:DESI) AND (ti:"dark energy" OR ti:cosmological OR ti:gravity) AND submittedDate:"202501010000 TO 202610182359"&amp;id_list=&amp;start=0&amp;max_results=30</title>
+  <updated>2026-10-18T08:09:27Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(ti:DESI+OR+abs:DESI)+AND+((ti:%22dark+energy%22+OR+(ti:cosmological+OR+ti:gravity))+AND+submittedDate:%22202501010000+TO+202610182359%22)&amp;start=0&amp;max_results=30&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>30</opensearch:itemsPerPage>
+  <opensearch:totalResults>653</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.20720v1</id>
+    <title>Nonlocal Gravity, Restricted CPL Dynamics and DESI Constraints</title>
+    <updated>2026-10-14T18:00:03Z</updated>
+    <link href="https://arxiv.org/abs/2610.20720v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.20720v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Nonlocal modifications of gravity provide a theoretically motivated framework in which cosmic acceleration can emerge dynamically without introducing a fundamental cosmological constant. We revisit the cosmological predictions of the Maggiore--Mancarella nonlocal $R\,\Box^{-2}R$ model, with particular emphasis on its background dynamics and observational viability in light of recent DESI baryon acoustic oscillation measurements. A key feature of the theory is its predictive character: for fixed standard cosmological parameters, each value of the nonlocal parameter determines a specific effective pair $(w_0,w_a)$, so that the model traces a restricted trajectory in the Chevallier--Polarski--Linder plane rather than spanning the full phenomenological parameter space. We construct this mapping explicitly and confront the model with observations by implementing its cosmological dynamics in a Boltzmann solver and performing a Markov chain Monte Carlo analysis using Cosmic Microwave Background, supernova, and DESI BAO data. We find that current datasets constrain the nonlocal parameter close to the $Λ$CDM limit, with no statistically significant preference for nonlocal deviations.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-14T18:00:03Z</published>
+    <arxiv:comment>18 pages, 6 figures, 3 tables</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Luca Amendola</name>
+    </author>
+    <author>
+      <name>Ismael Ayuso</name>
+    </author>
+    <author>
+      <name>Amlan Chakraborty</name>
+    </author>
+    <author>
+      <name>Javier Rubio</name>
+    </author>
+    <author>
+      <name>Subinoy Das</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.20716v1</id>
+    <title>The unified Bound Dark Energy--Bound Dark Matter model: theory and constraints from DESI DR2</title>
+    <updated>2026-10-14T18:00:02Z</updated>
+    <link href="https://arxiv.org/abs/2610.20716v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.20716v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The unified Bound Dark Energy--Bound Dark Matter (BDE-BDM) model derives both the dark energy and the whole of the dark matter from a single supersymmetric $SU(3)$ gauge group with $N_f=6$ flavors. Gauge-coupling unification predicts the scale at which it condenses, $\Lc=34^{+16}_{-11}$~eV, before any cosmological data are used, so the dark-energy sector adds no parameter to those of \LCDM\ and the dark-matter sector adds only one. Fitting DESI DR2 BAO, Planck CMB, Planck+ACT DR6 CMB lensing, and three supernova compilations (PantheonPlus, Union3.1, DES-Dovekie) gives, for Union3.1, $\Lc=43.67\pm0.13$~eV, inside the predicted range: a high-energy prediction met by a late-time measurement. The equation of state evolves to $w_0=-0.9262\pm0.0005$ and never crosses the phantom divide. Relative to \LCDM\ the model lowers the DESI BAO $χ^2$ by $2.95$--$3.67$ and the supernova $χ^2$ by $2.53$--$4.07$, recovering $57\%$--$71\%$ of the total reduction that \wowa\ obtains by fitting two dark-energy parameters to the same data, and reaching the lower BAO $χ^2$ of the two models for two of the three compilations. Its $Δ\mathrm{DIC}$ against \LCDM\ is strong for every compilation, $-8.28$ to $-7.47$, varying by $0.81$ where that of \wowa\ varies by $4.8$. Because the dark-energy sector adds no parameter to those of \LCDM, the likelihood gain survives the Occam penalty: $\ln B=+4.09$, $+4.12$, and $+4.83$ against \LCDM, where \wowa\ gives $-2.11$, $-0.26$, and $-0.56$. Among six models pairing a cosmological constant, the \wowa\ parametrization or bound dark energy with cold or bound dark matter, BDE-BDM has the largest Bayesian evidence.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-14T18:00:02Z</published>
+    <arxiv:comment>26 pages, 11 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Jose Agustin Lozano Torres</name>
+    </author>
+    <author>
+      <name>Axel de la Macorra</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.20002v1</id>
+    <title>Testing Departures from the $Λ$CDM model in f(T) Gravity with DESI DR2</title>
+    <updated>2026-10-14T11:19:25Z</updated>
+    <link href="https://arxiv.org/abs/2610.20002v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.20002v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent analyses combining DESI baryon acoustic oscillation (BAO) measurements with other cosmological observations have reported indications of departures from the $Λ$CDM model within dynamical dark energy scenarios. We investigate whether such deviations are reproduced consistently in $f(T)$ gravity and whether they persist when different cosmological observations are combined. Using the DESI DR2 BAO measurements, Cosmic Microwave Background (CMB), and Pantheon+ Type Ia Supernovae (SNe Ia) sample, we constrain three representative $f(T)$ models: the power-law, exponential, and hyperbolic-tangent models. We compare the constraints obtained from different combinations of data, distinguishing changes in marginalized parameter distributions from changes in the relative statistical performance of the models. For the power-law model, the mild deviation from the $Λ$CDM model obtained from BAO+CMB disappears after the SNe Ia data are included. In contrast, the exponential model retains a preference for a nonzero deformation parameter in the full analysis, while the allowed parameter space of the hyperbolic-tangent model changes substantially after the CMB distance priors are included. Importantly, the parameter-level deviation found for the exponential model does not lead to a clear statistical preference over the $Λ$CDM model according to the information criteria, whereas the hyperbolic-tangent model shows a poorer statistical performance for the combined data. Despite these differences in the model constraints, the inferred transition redshift $z_T$ remains relatively stable among the three models and data combinations. Our results show that the departures from the $Λ$CDM model indicated by DESI analyses are not a generic feature of $f(T)$ gravity, but depend strongly on the specific modified gravity parameterization and on the combination of cosmological observations.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-14T11:19:25Z</published>
+    <arxiv:comment>18 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Jie Zheng</name>
+    </author>
+    <author>
+      <name>Mingzhi Wang</name>
+    </author>
+    <author>
+      <name>Ming Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.16536v1</id>
+    <title>CosmoAgent: AI Agent for Theoretical Cosmology</title>
+    <updated>2026-10-12T10:23:08Z</updated>
+    <link href="https://arxiv.org/abs/2610.16536v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.16536v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present CosmoAgent, an agentic AI framework using large language models (LLMs) to search for dark-energy and modified-gravity models. We define a covariant grammar that allows LLM agents to explore the space of modified-gravity Lagrangians. An in-house computational pipeline derives the equations of motion, solves the background dynamics, and evaluates the likelihood using late-time expansion data, including the DES 5-year type Ia supernova sample and the DESI Data Release 2 BAO measurements. Theories are ranked by the Akaike Information Criterion (AIC) to balance simplicity and likelihood. We benchmarked 8 frontier LLMs from ChatGPT, Claude, Gemini, Kimi, DeepSeek, and Qwen, and all LLMs are able to find theories with a lower nominal AIC than flat $Λ$CDM, with a best improvement of $Δ$AIC = -3.328. Seven recover quadratic quintessence. Exploratory searches also return induced-gravity and scalar-Gauss-Bonnet structures. The modest AIC improvements do not establish an observational preference for these models over flat $Λ$CDM. The code is publicly available at wsunamoutlook-prog/AI-Modified-Gravity.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-12T10:23:08Z</published>
+    <arxiv:comment>26 pages, 13 figures, 12 tables</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Stephon Alexander</name>
+    </author>
+    <author>
+      <name>Loukas Gouskos</name>
+    </author>
+    <author>
+      <name>Savvas M. Koushiappas</name>
+    </author>
+    <author>
+      <name>Cooper Niu</name>
+    </author>
+    <author>
+      <name>Wenrong Sun</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.14354v1</id>
+    <title>No-Go Theorem for Phantom Crossing in Scalar-Tensor Gravity with Non-Minimal Derivative Coupling and Soft Scale-Invariance Breaking</title>
+    <updated>2026-10-09T21:58:44Z</updated>
+    <link href="https://arxiv.org/abs/2610.14354v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.14354v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent baryon acoustic oscillation measurements from the Dark Energy Spectroscopic Instrument (DESI 2024) reveal a preference for dynamical dark energy with an equation of state parameter crossing the phantom divide ($w &lt; -1$) at low redshifts. We investigate whether this phantom crossing can be realized within scale-invariant scalar-tensor theories featuring non-minimal derivative coupling (NMDC) between the scalar field and the Einstein tensor. Employing the effective field theory of dark energy formalism, we systematically derive the ghost-free and gradient stability conditions, and examine their compatibility with the swampland conjectures from quantum gravity. We establish three rigorous no-go theorems demonstrating that: (i)~phantom crossing necessitates $ξ_{\text{eff}} &lt; 0$, directly violating the no-ghost stability requirement $ξ_{\text{eff}} &gt; 0$; (ii)~the swampland de Sitter and distance conjectures independently obstruct phantom crossing; and (iii)~these theoretical obstructions are mutually reinforcing. Our results show that scale-invariant NMDC models cannot account for the DESI preference for $w &lt; -1$, providing robust theoretical guidance for dark energy model building beyond this class.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-09T21:58:44Z</published>
+    <arxiv:comment>28 pages, 5 figures, essential info</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Reza Baghbani</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.13739v1</id>
+    <title>Relaxation Dark Energy: Compositional Dynamics and the Future of Cosmic Acceleration</title>
+    <updated>2026-10-09T15:33:40Z</updated>
+    <link href="https://arxiv.org/abs/2610.13739v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.13739v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>If cosmic acceleration is driven by a positive cosmological constant, the universe approaches an eternally accelerating de Sitter state, whose interpretation in quantum gravity remains elusive. We develop a framework in which acceleration is instead a transient stage of dark-sector relaxation towards compositional equilibrium: matter and dark energy approach a stationary density ratio, eventually diluting like pressureless matter. Guided by linear response theory and Onsager's near-equilibrium regression hypothesis, we describe this evolution through a composition variable measuring departure from equilibrium. Extending constant fractional relaxation to the full background evolution yields the dark-energy equation of state $w=w_0a^{-n}$, where $n$ is the relaxation rate per e-fold of expansion. This history connects early dark-energy suppression, an upward phantom crossing and a density maximum to a pressureless scaling future. Using DESI DR2 BAO and Planck distance priors, with and without three alternative supernova compilations, we find a nominal $2.6$--$3.6σ$ preference for nonzero relaxation over constant $w$. The composition framework also motivates a constitutive prescription for linear perturbations that remains regular at phantom crossing. Near equilibrium, regular long-wavelength composition disturbances relax at the background rate to leading order, while small-scale fluctuations propagate as damped sound waves. We prove, however, that for separately conserved matter and dark energy, the pointwise constitutive relation cannot sustain a regular, gradient-stable negative-pressure branch throughout its full past evolution. We explore modifications of the pressure response and their consistency with neighbouring homogeneous histories, identifying requirements for extending the near-equilibrium description to the full cosmological evolution.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-09T15:33:40Z</published>
+    <arxiv:comment>26 pages, 6 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Gianmassimo Tasinato</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.13218v1</id>
+    <title>The Population of Type~1 Active Galactic Nuclei in Dark Energy Spectroscopic Instrument. I. Profile-dependent Measurements of the Low-redshift Sample</title>
+    <updated>2026-10-09T08:35:26Z</updated>
+    <link href="https://arxiv.org/abs/2610.13218v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.13218v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present a spectral analysis of a large sample of low-redshift type 1 active galactic nuclei (AGNs) selected from the first data release of the Dark Energy Spectroscopic Instrument (DESI DR1). For objects at $z\le0.9$, we perform spectral fitting and ML-assisted refinement, yielding 114,754 type 1 AGNs. We use two fitting schemes that differ only in the broad-line model: the broad Balmer components are fitted with either a Lorentzian function or a sum of Gaussians. The continuum and [O III] luminosity measurements agree closely between the two schemes, whereas the Gaussians scheme generally yields larger broad-H$β$ full width at half maximum (FWHM) values, larger virial black hole masses, and lower accretion rates. The adopted broad-Balmer profile also changes the decomposition of narrow Balmer emission. Specifically, the anti-correlation between [O III]$\lambda5007$/narrow H$β$ and accretion rate is stronger under the Gaussians scheme with a Spearman rank correlation coefficient $r_{\rm s}=-0.412$, than under the Lorentzian scheme with $r_{\rm s}=-0.206$; the same tendency is observed in the narrow-line Seyfert 1 galaxies (NLS1s) subset ($r_{\rm s}=-0.435$ and $-0.259$ for the Gaussians and Lorentzian schemes, respectively), suggesting that the Gaussians scheme may provide a more self-consistent separation of the broad and narrow H$β$ components. Moreover, the consistent correlations recovered under both profile prescriptions favor a continuous type 1 accretion-state sequence, with NLS1s occupying its high-accretion end rather than constituting a distinct population.</summary>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-09T08:35:26Z</published>
+    <arxiv:comment>24 pages, 14 figures; Accepted for publication in ApJS</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.GA"/>
+    <author>
+      <name>Zhu-Heng Yao</name>
+    </author>
+    <author>
+      <name>Wei-Jian Guo</name>
+    </author>
+    <author>
+      <name>Shuo Zhai</name>
+    </author>
+    <author>
+      <name>Yu-Chang Li</name>
+    </author>
+    <author>
+      <name>Cheng Cheng</name>
+    </author>
+    <author>
+      <name>Jun-Rong Liu</name>
+    </author>
+    <author>
+      <name>Shuang Jin</name>
+    </author>
+    <author>
+      <name>Antonios Katsianis</name>
+    </author>
+    <author>
+      <name>Jing Wang</name>
+    </author>
+    <author>
+      <name>Da-Wei Xu</name>
+    </author>
+    <author>
+      <name>Jian-Yan Wei</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.11616v1</id>
+    <title>Holographic dark energy from generalized entropies and extended infrared cut-offs</title>
+    <updated>2026-10-08T09:57:03Z</updated>
+    <link href="https://arxiv.org/abs/2610.11616v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.11616v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study holographic dark energy models constructed from generalized entropy functionals and local infrared cut-offs. Three entropies (Barrow and the three and five-parameter generalized entropies) are each combined with the Granda-Oliveros (GO) cut-off and two extensions, one adding a $γH^{-2}$ term and one a $γ\ddot{H}/H$ term, the latter raising the dark-energy evolution equation to second order. The nine resulting models are constrained against DESI DR2 BAO, Pantheon+ and a Planck compressed CMB likelihood through an MCMC analysis, and compared using the Akaike and Bayesian information criteria. The Hubble constant is stable across all models. The $H^{-2}$ term is unconstrained in every case, as it becomes relevant only in the far future, and never improves on the GO cut-off. The $\ddot{H}/H$ term, instead, is tightly constrained for Barrow and $S_5$, where it improves the fit substantially, but not for $S_3$. The best fit is obtained for Barrow entropy with the $\ddot{H}/H$ cut-off, yet the Barrow exponent remains compatible with zero in all cases. The data thus favour a higher-order infrared cut-off, while showing no significant evidence for a departure from the Bekenstein-Hawking area law. We also investigate the dark energy equation of state (EoS) of $S_3$ and $S_5$, discovering quintessence-like behavior and phantom crossing.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T09:57:03Z</published>
+    <arxiv:comment>21 pages, 11 figures</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Ke Chen</name>
+    </author>
+    <author>
+      <name>Simone D'Onofrio</name>
+    </author>
+    <author>
+      <name>Sergei D. Odintsov</name>
+    </author>
+    <author>
+      <name>Tanmoy Paul</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.10331v1</id>
+    <title>Changing-look Active Galactic Nuclei from the Dark Energy Spectroscopic Instrument. VII. Testing Disk-Corona Diagnostics with eROSITA</title>
+    <updated>2026-10-07T16:15:02Z</updated>
+    <link href="https://arxiv.org/abs/2610.10331v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.10331v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Changing-look active galactic nuclei (CL-AGN) have been proposed to follow an X-ray-binary-like, V-shaped relation between the optical/ultraviolet-to-X-ray spectral slope, $α_{\rm OX}$, and the Eddington ratio, $λ_{\rm Edd}\equiv L_{\rm bol}/L_{\rm Edd}$. We test this interpretation using CL-AGN selected from the Dark Energy Spectroscopic Instrument (DESI) and control samples matched to the eROSITA all-sky survey (eRASS). We find that the apparent positive correlation between $α_{\rm OX}$ and the optical-continuum-based Eddington ratio, $λ_{\rm Edd,opt}$, is not unique to CL-AGN, but also appears in matched non-changing-look samples. In broad-H$α$ AGN, our main statistical sample, this structure is largely driven by the known dependence of $α_{\rm OX}$ on ultraviolet luminosity and by the covariance between the rest-frame 2500 Angstrom luminosity, $L_{2500}$, the black-hole mass, $M_{\rm BH}$, and $λ_{\rm Edd,opt}$. When an X-ray-based Eddington ratio is used instead, the relation reverses sign because the X-ray luminosity, $L_X$, enters the two axes with opposite signs. An apparent $α_{\rm OX}$-Eddington-ratio V-shape can therefore be induced by the luminosity estimator and is not a standalone accretion-state diagnostic. As a complementary test, we examine the eRASS effective photon index, $Γ_{\rm eff}$, inferred from catalogue band fluxes. In broad-line AGN, it shows a weak positive association with the X-ray-independent optical Eddington ratio. However, the weaker hard-band trend depends on the null model and does not isolate coronal softening. These results motivate further X-ray spectroscopy, combined with independently estimated Eddington ratios, to test for intrinsic changes in the disk-corona system.</summary>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-07T16:15:02Z</published>
+    <arxiv:comment>17 pages, 9 figures. Accepted for publication in MNRAS</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.GA"/>
+    <author>
+      <name>Wei-Jian Guo</name>
+    </author>
+    <author>
+      <name>Shuo Zhai</name>
+    </author>
+    <author>
+      <name>Zhu-Heng Yao</name>
+    </author>
+    <author>
+      <name>Huaqing Cheng</name>
+    </author>
+    <author>
+      <name>Jingwei Hu</name>
+    </author>
+    <author>
+      <name>Jun-Jie Jin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.10585v1</id>
+    <title>Partially Thermalized eV-Scale Sterile Neutrinos in Dynamical Dark Energy and Non-Flat Cosmologies</title>
+    <updated>2026-10-06T08:32:02Z</updated>
+    <link href="https://arxiv.org/abs/2610.10585v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.10585v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We investigate cosmological constraints on a $(3+1)$ neutrino framework containing an additional partially thermalized, eV-scale sterile neutrino alongside the three active species. Rather than assuming full thermalization, we allow the sterile abundance to vary independently through its physical mass $m_s$ and contribution $ΔN_{\rm eff}$ to the effective number of relativistic species. The sterile state is modeled as a thermally distributed non-cold relic with a temperature below that of the active-neutrino background. We consider flat and non-flat $Λ$CDM and $w_0w_a$CDM cosmologies, all including the same $(3+1)ν$ sector. The models are constrained using Planck 2018 CMB data, DESI DR2 BAO, Pantheon+ Type Ia supernovae, a conservative compilation of $fσ_8$ measurements, and the recent H0DN. Oscillation-informed priors are imposed on the active-neutrino mass splittings, while the eV scale sterile-mass range is motivated by short-baseline oscillation searches and global $(3+1)$ analyses. We find that allowing additional freedom in the late-time cosmological background substantially changes the inferred sterile-neutrino sector. The effective sterile mass increases from $m_{s,\rm eff}\sim0.11\pm0.05~{\rm eV}$ in flat $Λ$CDM$+(3+1)ν$ to $\sim0.35\pm0.12~{\rm eV}$ in the non-flat $w_0w_a$CDM$+(3+1)ν$ model. The corresponding sterile abundance shifts from $ΔN_{\rm eff}\lesssim0.1$ to $ΔN_{\rm eff}\simeq0.35\pm0.15$, while remaining well below the fully thermalized limit, $ΔN_{\rm eff}\simeq1$. The non-flat $w_0w_a$CDM models also show $\sim 2.8σ$ preference for open spatial geometry, $Ω_k\simeq0.0045\pm0.0016$, and yield $H_0\simeq70.9\pm0.7~{\rm km\,s^{-1}\,Mpc^{-1}}$ and $S_8\simeq0.785\pm0.015$. These models improve the minimum $χ^2$ by approximately $21$-$25$ relative to flat $Λ$CDM$+(3+1)ν$.</summary>
+    <category term="physics.gen-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-06T08:32:02Z</published>
+    <arxiv:comment>18 pages, 7 caption figures</arxiv:comment>
+    <arxiv:primary_category term="physics.gen-ph"/>
+    <author>
+      <name>Gopal Kashyap</name>
+    </author>
+    <author>
+      <name>Kanhaiya Lal Pandey</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.07069v1</id>
+    <title>Viscous Ghost Dark Energy in $f(Q, L_m)$ Gravity: Observational and Thermodynamic Validity</title>
+    <updated>2026-10-05T08:39:08Z</updated>
+    <link href="https://arxiv.org/abs/2610.07069v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.07069v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We investigate the cosmological implications of viscous ghost dark energy in the framework of modified $f(Q,\mathcal{L}_m)$ gravity by considering the linear functional form $f(Q,\mathcal{L}_m)=αQ+β\mathcal{L}_m$. The non-minimal coupling between geometry and matter together with bulk viscous effects modifies the cosmic dynamics, leading to an analytical solution of the background Friedmann equations. Since the expansion history depends only on effective combinations of the model parameters, the observational analysis is performed in terms of the corresponding effective background parameters. We constrain the model using the latest joint compilation of Pantheon+ including SH0ES Type Ia supernovae, Cosmic Chronometers, and DESI baryon acoustic oscillation measurements. The model provides a satisfactory description of the late-time expansion history and reproduces the observed transition from decelerated to accelerated cosmic expansion. A statistical comparison with the standard $Λ$CDM model is performed using the minimum $χ^2$, Akaike Information Criterion (AIC), and Bayesian Information Criterion (BIC). Furthermore, the thermodynamic viability of the model is examined through the evolution of the total entropy, and the generalized second law of thermodynamics is found to remain valid throughout the cosmic evolution.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-05T08:39:08Z</published>
+    <arxiv:comment>21 papers, 5 figures, 3 tables (submitted version)</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Ajay Kumar</name>
+    </author>
+    <author>
+      <name>Pankaj Kumar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.05729v1</id>
+    <title>Testing $Λ$LTB as an alternative to dynamical dark energy</title>
+    <updated>2026-10-05T03:29:34Z</updated>
+    <link href="https://arxiv.org/abs/2610.05729v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.05729v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A cosmological constant $Λ$ in a universe weakly violating the cosmological principle (CP) can mimic a dynamical dark energy (DDE) in a FRW universe, and therefore challenging the recently reported DDE evidences. We test this scenario in the form of $Λ$LTB cosmology, against two data combinations. (1) DESI DR2 BAO, Planck CMB, together with any of the four SNe Ia compilations (UNION3, Pantheon+, DES SN5YR, and DES Dovekie) show no preference over DDE or $Λ$LTB. (2) The inclusion of the kinematic Sunyaev Zel'dovich (kSZ) effect rules out a large portion of the CP violation parameter space allowed by (1). However, the existence of a $\sim 300$ Mpc$/h$ region with $\sim 10\%$ matter density excess is still allowed by the current data, and therefore remains a viable alternative to DDE. To facilitate further tests, we present analytical expressions of the distance-redshift relation and the kSZ effect in a universe with weak CP violation.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-05T03:29:34Z</published>
+    <arxiv:comment>31 pages, 12 figures, 4 tables</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Yukang Zhang</name>
+    </author>
+    <author>
+      <name>Pengjie Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.01836v1</id>
+    <title>Cosmological inference from a joint DESI DR1 full-shape power spectrum and bispectrum analysis</title>
+    <updated>2026-10-01T15:07:29Z</updated>
+    <link href="https://arxiv.org/abs/2610.01836v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.01836v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The galaxy bispectrum directly probes the non-linear gravitational evolution of large-scale structure (LSS) and can break parameter degeneracies that remain in power-spectrum analyses. We present a joint full-shape cosmological analysis of three luminous red galaxy (LRG) redshift bins and the quasar (QSO) sample from the first Data Release (DR1) of the Dark Energy Spectroscopic Instrument (DESI). We model the redshift-space power spectrum at one loop and the tree-level bispectrum within the Effective Field Theory of LSS. The bispectrum is decomposed in the Tripolar Spherical Harmonics basis, for which the convolution with the survey window function can be formulated as a direct linear transformation of the theoretical multipoles. Our power-spectrum constraints are in good agreement with the official DESI DR1 full-modelling results. We investigate the impact of including the bispectrum in the inference, finding that the monopole substantially improves the constraints on the cold dark matter density and amplitude of matter fluctuations by 9-18% and 8-20%, respectively, in the individual-tracer analyses. The corresponding reductions are 15% and 10% for the combined LRG sample, and 6% and 4% when all tracers are combined. In a restricted test using the first LRG bin, the bispectrum quadrupole changes the marginalised uncertainties by only a few percent. Extending the analysis to $w_0w_a$CDM substantially broadens the cosmological posteriors, while the bispectrum produces only a mild change in the allowed dark-energy parameter region, which remains sensitive to the adopted prior ranges. Our results demonstrate the potential of higher-order clustering statistics to improve cosmological constraints, while providing a framework for incorporating the bispectrum into full-shape analyses of current and future spectroscopic galaxy surveys.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-01T15:07:29Z</published>
+    <arxiv:comment>53 pages, 16 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Caroline Guandalin</name>
+    </author>
+    <author>
+      <name>Prakhar Bansal</name>
+    </author>
+    <author>
+      <name>Pedro Carrilho</name>
+    </author>
+    <author>
+      <name>Alejandro Aviles</name>
+    </author>
+    <author>
+      <name>Mike Shengbo Wang</name>
+    </author>
+    <author>
+      <name>Marcos Pellejero-Ibañez</name>
+    </author>
+    <author>
+      <name>Aaditya Sarma</name>
+    </author>
+    <author>
+      <name>Jaide Swanson</name>
+    </author>
+    <author>
+      <name>Marco Bonici</name>
+    </author>
+    <author>
+      <name>Florian Beutler</name>
+    </author>
+    <author>
+      <name>Arnaud de Mattia</name>
+    </author>
+    <author>
+      <name>Hee-Jong Seo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.01430v1</id>
+    <title>Can structure formation distinguish between holographic dark energy models?</title>
+    <updated>2026-10-01T10:28:27Z</updated>
+    <link href="https://arxiv.org/abs/2610.01430v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.01430v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Structure formation has been used to test the viability of the IR cutoff in the THDE model, and the future event horizon was found to be a viable IR cutoff (Phys. Rev. D {\bf 113}, 123531 (2026)). Motivated by this, in this paper, using the combined Pantheon+ SN Ia, OHD, DESI DR2, and CMB distance prior datasets, we constrain the model parameters for the HDE, THDE, and BHDE models, and use parameter sets from the MCMC samples to analyze the evolution of $fσ_{8}(z)$ and $S_{8}(z)$ for these models. We find that the evolutionary curves of both $fσ_{8}(z)$ and $S_{8}(z)$ for HDE and BHDE are nearly indistinguishable, while the curves for the THDE model lie lowest. The $χ^{2}$ statistic shows that the THDE model yields the lowest $χ^{2}$ value for both $fσ_{8}$ and $S_{8}$ measurements. Finally, we construct the ($fσ_{8}$,$S_{8}$) plane as a diagnostic to analyze the trajectories of these models, and find that the trajectory of the THDE model can achieve the current ($fσ_{8}$,$S_{8}$) data region. These results demonstrate that structure formation can distinguish THDE from HDE and BHDE, and suggest that structure formation can serve as a useful probe for distinguishing HDE models and can be extended to other HDE scenarios.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-01T10:28:27Z</published>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Qihong Huang</name>
+    </author>
+    <author>
+      <name>Bing Xu</name>
+    </author>
+    <author>
+      <name>Kaituo Zhang</name>
+    </author>
+    <author>
+      <name>Hao Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.40176v1</id>
+    <title>Is DESI Seeing Dynamical Dark Energy, or a Cosmic Glitch in Gravity?</title>
+    <updated>2026-09-30T17:02:51Z</updated>
+    <link href="https://arxiv.org/abs/2609.40176v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.40176v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Combined baryon acoustic oscillation and cosmic microwave background data have begun to mildly favor departures from $Λ\mathrm{CDM}$. This is usually framed as 2-parameter dynamical dark energy. However, a 1-parameter "cosmic glitch in gravity" model, whose cosmological gravitational coupling differs from Newton's constant as in Hořava gravity, fits at least as well. $\textit{Planck}$+ACT+SPT and DESI~DR2 give $G_\mathrm{cosmo}/G_\mathrm{N}=0.9920\pm0.0025$, a $3.3\,σ$ preference for weaker cosmological gravity, robust to adding CMB lensing and supernovae. Fitted to the CMB alone, the glitch predicts DESI distances; $w_0w_a$CDM does not.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T17:02:51Z</published>
+    <arxiv:comment>6+8 pages, 9 figures, 4 tables</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Robin Y. Wen</name>
+    </author>
+    <author>
+      <name>Lukas Tobias Hergt</name>
+    </author>
+    <author>
+      <name>Niayesh Afshordi</name>
+    </author>
+    <author>
+      <name>Douglas Scott</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.39039v1</id>
+    <title>Metastable Dark Energy on the Phantom Brane</title>
+    <updated>2026-09-30T05:45:30Z</updated>
+    <link href="https://arxiv.org/abs/2609.39039v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.39039v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent DESI observations hint at a preference for dynamical dark energy with an equation of state (EoS) that crosses the phantom divide at $w=-1$. In this work, we investigate \textit{metastable} dark energy (DE) on the minimal phantom brane. Braneworld effects lead to $w &lt; -1$ at early times, whereas metastable decay of DE results in $w &gt; -1$ at late times. We consider three metastable decay prescriptions on the phantom brane: an exponentially decaying DE component (M1), decay of DE into non-baryonic dark matter (M2), and decay into dark radiation (M3). Using CMB observations, DESI DR2 BAO measurements, and the DES-Dovekie Type Ia supernova sample, we compare these models with $Λ$CDM, the Chevallier--Polarski--Linder (CPL) parametrization, and the minimal phantom-brane model with a non-decaying $Λ$. We find that metastable models on the brane are preferred over $Λ$CDM, their decay rates being $Γ/H_0=0.362\pm0.086$, $0.539\pm0.125$, and $0.483\pm0.112$ for M1, M2, and M3, respectively. Best fits of metastable models improve over $Λ$CDM by $Δχ^2_{\rm MAP}=-17.14$, $-18.76$, and $-18.22$, while the corresponding $Δ{\rm DIC}$ values are $-8.66$, $-9.63$, and $-6.56$. Braneworld screening drives effective phantom behaviour at $z\gtrsim0.4$, while DE decay drives the EoS toward non-phantom values closer to the present epoch, with the phantom divide $w=-1$ being crossed at $z \simeq 0.3$--$0.4$. These results show that the interplay between metastable decay and phantom-brane screening provides a simple physical mechanism for an effective crossing of the phantom divide consistent with DESI observations.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-30T05:45:30Z</published>
+    <arxiv:comment>11 pages, 7 figures. Comments are welcome</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Purba Mukherjee</name>
+    </author>
+    <author>
+      <name>Arman Shafieloo</name>
+    </author>
+    <author>
+      <name>Varun Sahni</name>
+    </author>
+    <author>
+      <name>Yuri Shtanov</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.38422v1</id>
+    <title>AdS - de Sitter transition in interacting dark energy models</title>
+    <updated>2026-09-29T19:13:45Z</updated>
+    <link href="https://arxiv.org/abs/2609.38422v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.38422v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent cosmological results, including the persistent $H_0$ tension and indications of dynamical dark energy, have raised the possibility that the standard $Λ$-Cold Dark Matter ($Λ$CDM) model may be incomplete. At the same time, theoretical developments based on swampland conjectures indicate that the realization of a stable de Sitter vacuum within string theory is challenging. Motivated by these observational and theoretical considerations, we investigate an interacting $Λ$ scenario characterized by a general linear coupling in the dark sector. At the background level, this model naturally allows the dark energy density to evolve from negative to positive values, opening the possibility of a transition from an anti-de Sitter-like phase to the de Sitter-like phase inferred by current observations. We derive the analytic background solutions and perturbation equations, discuss the physically acceptable region of parameter space, and constrain the model with DES-Dovekie type Ia supernovae, DESI BAO and CMB data. Our analysis suggests a parameter space allowing the dark energy density to change sign while maintaining positive dark matter density, motivating further investigation of an interaction-driven anti-de Sitter to de Sitter transition.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T19:13:45Z</published>
+    <arxiv:comment>9 pages, 4 figures, 2 tables, LaTex</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Yifei Zhao</name>
+    </author>
+    <author>
+      <name>Jailson Alcaniz</name>
+    </author>
+    <author>
+      <name>Humberto A. Borges</name>
+    </author>
+    <author>
+      <name>Saulo Carneiro</name>
+    </author>
+    <author>
+      <name>Rodrigo von Marttens</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.38303v1</id>
+    <title>A Strong Cosmologically Coupled Mass Growth Solution in Linearized General Relativity</title>
+    <updated>2026-09-29T18:00:00Z</updated>
+    <link href="https://arxiv.org/abs/2609.38303v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.38303v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>DESI Data Release 2 has heightened interest in cosmologically coupled black holes (CCBHs) as an explanation for accelerating late-time expansion, but known models for CCBHs grow too slowly to drive it. We construct at linear order a solution to General Relativity whose Hernandez-Misner-Sharp mass passively grows $\propto a^κ$ as the universe expands. The constant $κ$ enters all eigenvalues of the Weyl and stress-tensor operators, so growth is unambiguously physical in both free-field and material sectors. The solution is causal over spacetime relevant for stellar collapse compact objects. A cloud of energized vacuum emerges at $κ= 3$, complementing the $a^3$ scaling predicted elsewhere for the masses of energized vacuum black holes. This first step toward $κ\sim 3$ CCBH exact solutions enables observational tests with pulsar binaries.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T18:00:00Z</published>
+    <arxiv:comment>6 pages, no figures</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Kevin S. Croker</name>
+    </author>
+    <author>
+      <name>Joshua Cohon</name>
+    </author>
+    <author>
+      <name>Viktor T. Toth</name>
+    </author>
+    <author>
+      <name>Massimiliano Rinaldi</name>
+    </author>
+    <author>
+      <name>Nicolas Fernandez</name>
+    </author>
+    <author>
+      <name>Joel L. Weiner</name>
+    </author>
+    <author>
+      <name>Duncan Farrah</name>
+    </author>
+    <author>
+      <name>Gregory Tarlé</name>
+    </author>
+    <author>
+      <name>Gustavo Niz</name>
+    </author>
+    <author>
+      <name>Christopher Cain</name>
+    </author>
+    <author>
+      <name>James W. Rohlf</name>
+    </author>
+    <author>
+      <name>Alejandro Aviles</name>
+    </author>
+    <author>
+      <name>Jake Summers</name>
+    </author>
+    <author>
+      <name>Leander Thiele</name>
+    </author>
+    <author>
+      <name>Rogier A. Windhorst</name>
+    </author>
+    <author>
+      <name>Joshua Grumski-Flores</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.37437v1</id>
+    <title>Oscillatory dark energy with phantom crossings in Einstein-Gauss-Bonnet gravity</title>
+    <updated>2026-09-29T12:59:28Z</updated>
+    <link href="https://arxiv.org/abs/2609.37437v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.37437v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent baryon acoustic oscillation measurements from the Dark Energy Spectroscopic Instrument (DESI), combined with supernova observations, show a mild preference for an evolving dark-energy equation of state, in which dark energy remains phantom-like at higher redshift while a transition toward the quintessence regime emerges around $z\lesssim0.5$. Beyond the monotonic evolution of the equation of state, an oscillatory dark-energy scenario provides a potential alternative realization of dynamical dark energy. We study such an oscillatory scenario within the Einstein-scalar-Gauss-Bonnet gravity framework, where a scalar field with a hybrid exponential-quadratic potential couples nonminimally to the Gauss-Bonnet (GB) invariant. We choose a Gaussian GB coupling function localized around the minimum of the potential. During the late-time epoch, the field thereby oscillates around the potential minimum and eventually exits toward a stable de Sitter attractor phase. In the minimally coupled limit, the effective equation of state oscillates in the quintessence regime at low redshift, $z\sim0$, without crossing the phantom divide. The nonminimal coupling amplifies the oscillations and drives the effective equation of state across the phantom divide multiple times. Although a sufficiently strong coupling can induce negative scalar and tensor sound speeds, rendering the perturbation modes unstable. We identify a region of parameter space in which the model undergoes multiple phantom crossings while remaining free of ghost and gradient instabilities and approaching a stable de Sitter attractor in the future.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T12:59:28Z</published>
+    <arxiv:comment>18 pages, 6 figures. All comments and suggestions are welcome</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Saddam Hussain</name>
+    </author>
+    <author>
+      <name>Sandip Biswas</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.37293v1</id>
+    <title>The alternative scalar field dark sector of the Universe: Cosmological inflation, quintessence and ekpyrotic model in the framework of scalar-tensor cosmology</title>
+    <updated>2026-09-29T11:34:06Z</updated>
+    <link href="https://arxiv.org/abs/2609.37293v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.37293v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This dissertation investigates scalar field descriptions of the dark sector (of the Universe), with emphasis on scalar-tensor cosmology, inflationary effective field theory, quintessence, and ekpyrotic/cyclic alternatives to inflation.
+  The thesis first reviews scalar-tensor theories of gravity, starting from Brans-Dicke theory and extending to general non-minimally coupled scalar fields. Particular attention is paid to the interpretation of the scalar field, the relation between the Jordan and Einstein conformal frames, and the role of conformal transformations in cosmology. This provides the theoretical basis for treating scalar fields either as modified matter or as additional gravitational degrees of freedom.
+  The second part discusses cosmological inflation from the viewpoint of effective field theory. The spontaneous breaking of time translations, the Goldstone description of adiabatic perturbations, higher-dimensional operators, radiative corrections and Planck-suppressed terms are analyzed in the context of ultraviolet sensitivity and the eta problem.
+  The third part is devoted to quintessence as the simplest dynamical dark energy model. 'Tracking', 'scaling', 'thawing' and 'freezing' behaviors are discussed, together with observational diagnostics such as the statefinder parameters, the $(ω_φ,ω'_φ)$ plane and the $Om(z)$ diagnostic. The DESI DR2 results are used as motivation for considering time-dependent effective dark energy beyond a strict cosmological constant.
+  The final part studies ekpyrotic and cyclic cosmologies. The ekpyrotic phase is analyzed as a smoothing mechanism based on an ultra-stiff scalar field equation of state. Perturbations, non-Gaussianity, tensor modes, bounce conditions, entropy production, geodesic incompleteness and phase-resolved field-space distance bounds are discussed.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-29T11:34:06Z</published>
+    <arxiv:comment>Doctoral dissertation submitted to the University of Wrocław, 372 pages, 6 chapters, 38 figures, 1 table, comments welcome</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Marcin Postolak</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.35317v1</id>
+    <title>LISA bright sirens as a tiebreaker among cosmologies in tension</title>
+    <updated>2026-09-28T14:49:00Z</updated>
+    <link href="https://arxiv.org/abs/2609.35317v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.35317v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Gravitational waves from massive black hole binaries detected by LISA will deliver luminosity distances without any astrophysical calibration, offering a probe of the expansion history independent of the cosmic distance ladder. Rather than asking how tightly LISA will constrain a single fiducial cosmology, we ask which of several mutually discrepant present-day cosmologies a future LISA dataset would render most self-consistent. We build mock catalogues of LISA bright sirens under three fiducial cosmologies drawn from datasets that participate in the current $H_0$ discrepancy (Planck 2018, Union3 and Pantheon+SH0ES), with a self-consistent error budget from instrumental noise, weak lensing and host peculiar velocities. We compare the posterior from the simulated LISA data alone with that of a real-data combination of Type Ia supernovae, DESI baryon acoustic oscillations, cosmic chronometers and the compressed Planck 2018 CMB, and quantify their internal tension in the $(H_0,Ω_m)$ plane, crossing each fiducial with three SN Ia compilations. The fiducial drives the tension, from $2.08σ$ to well beyond $5σ$, while the supernova compilation changes it by at most $1.2σ$. The discriminating power is strongly asymmetric: a Pantheon+SH0ES universe is inconsistent with every background we test, at a significance far in excess of $5σ$ and still at $3$-$5σ$ for the $10$-$20$ events expected from recent population models, whereas the Planck 2018 and Union3 fiducials, which differ by only $0.24$ km/s/Mpc in $H_0$, cannot be separated by any catalogue size. LISA bright sirens are therefore a sharp arbiter of the Cepheid-calibrated scenario and, on this error budget, silent between the other two.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-28T14:49:00Z</published>
+    <arxiv:comment>28 pages, 9 figures, 5 tables</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>M. F. A. Medeiros</name>
+    </author>
+    <author>
+      <name>F. C. Carvalho</name>
+    </author>
+    <author>
+      <name>L. L. Sales</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.31426v1</id>
+    <title>Kruglov-entropy cosmology from apparent-horizon thermodynamics: background dynamics and observational constraints</title>
+    <updated>2026-09-25T15:47:01Z</updated>
+    <link href="https://arxiv.org/abs/2609.31426v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.31426v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We investigate two late-time cosmological models generated by Kruglov's nonadditive entropy at the apparent horizon. Model I, originally derived by Kruglov, follows the Cai--Kim thermodynamic construction and leads to an implicit modified Friedmann equation, whereas Model II, proposed and derived in this work, is obtained from an entropy-integral prescription and contains an effective vacuum contribution. We formulate both models in terms of the dimensionless Hubble parameter, include radiation, impose exact present-day closure, and evolve the physical branch using analytic derivatives of the implicit Friedmann equations. We constrain the models with DESI DR2 baryon acoustic oscillations and a compressed CMB likelihood, with and without DES-Y5 Type-Ia supernovae. Model I is driven to a markedly lower Hubble constant, $H_0\simeq62.4,\mathrm{km,s^{-1},Mpc^{-1}}$ for the combined data, and remains non-phantom with $w_{\rm DE,0}\simeq-0.814$; it is strongly disfavoured relative to flat $Λ$CDM. Model II stays close to $Λ$CDM in the standard cosmological parameters and gives $w_{\rm DE,0}\simeq-1.003$, while its two entropy-sector parameters remain strongly degenerate. Its best-fit likelihood is comparable to $Λ$CDM, but the additional parameters are not supported by information criteria. These results show that the two thermodynamic realizations of the same nonadditive entropy have sharply different phenomenological consequences at the homogeneous-background level. In summary, the observational plausibility of entropy-based cosmology hinges critically on how the generalized horizon entropy is incorporated into the Friedmann dynamics.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-25T15:47:01Z</published>
+    <arxiv:comment>13 pages, 6 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Candrasyah Muhammad</name>
+    </author>
+    <author>
+      <name>Burin Gumjudpai</name>
+    </author>
+    <author>
+      <name>Nandan Roy</name>
+    </author>
+    <author>
+      <name>Pornrad Srisawad</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.31113v1</id>
+    <title>Observational constraints on scalar-vector-tensor dark energy with phantom-divide crossing</title>
+    <updated>2026-09-25T10:58:19Z</updated>
+    <link href="https://arxiv.org/abs/2609.31113v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.31113v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We constrain a scalar-vector-tensor (SVT) dark-energy model in which the vector sector drives the dark-energy equation of state below $-1$ at earlier times, while a canonical scalar field subsequently drives it across $-1$ toward a present-day value above $-1$. We confront the model with DES Year 5 supernovae, DESI DR2 baryon acoustic oscillations, and compressed cosmic microwave background information, and then include Gold-2017 redshift-space-distortion (RSD) measurements to probe structure growth. The background posterior assigns substantial weight to crossing histories and gives a better best fit than the flat $Λ$-cold-dark-matter ($Λ$CDM) model. The RSD analysis preserves this qualitative background evolution, constrains the clustering amplitude, and increases the posterior support for the directional crossing criterion. Since the growth analysis also imposes additional perturbative support conditions, this increase cannot be attributed to the RSD likelihood alone. Matched PolyChord calculations give Bayes factors larger than unity for SVT relative to $Λ$CDM under both prior-volume conventions considered here. The quantitative Bayes factor depends on the prior normalization assigned to the regular radiation-era branch and is larger in the RSD analysis under either convention. Overall, current expansion and structure-growth data are consistent with a stable dynamical crossing of the phantom divide in the SVT model.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-25T10:58:19Z</published>
+    <arxiv:comment>24 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Nandan Roy</name>
+    </author>
+    <author>
+      <name>Shinji Tsujikawa</name>
+    </author>
+    <author>
+      <name>Ying-li Zhang</name>
+    </author>
+    <author>
+      <name>Zejun Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.31800v1</id>
+    <title>Cosmological Dynamics and Observational Constraints of a Logarithmic Herglotz $f(R,T)$ Gravity</title>
+    <updated>2026-09-25T10:11:13Z</updated>
+    <link href="https://arxiv.org/abs/2609.31800v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.31800v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We investigate the cosmological dynamics and observational viability of a logarithmic Herglotz-type $f(R,T)$ gravity model described by $f(R,T)=R+β\ln(-T/T_0)$. Assuming a spatially flat Friedmann--Lemaître--Robertson--Walker background and pressureless matter, the modified field equations are formulated as a coupled dynamical system involving the Herglotz field and the normalized matter density. A phenomenological closure relation is adopted for the effective Herglotz sector, allowing the background evolution to be determined numerically. The model is constrained using Cosmic Chronometer measurements, the DESI DR2 baryon acoustic oscillation compilation, and the Union3 supernova sample, considering both individual and combined datasets within a Bayesian Markov-chain Monte Carlo framework. The combined analysis provides a statistically consistent description of the background expansion. The reconstructed expansion history yields a present-day effective equation of state $w_{\rm eff,0}\simeq-0.702$ and exhibits the expected transition from accelerated expansion at late times toward decelerated expansion at higher redshifts. We further investigate the $Om(z)$ diagnostic and statefinder parameter. These results indicate that the logarithmic Herglotz model provides a consistent phenomenological description of the homogeneous and isotropic late-time expansion history, while allowing departures from the standard $Λ$CDM background.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-25T10:11:13Z</published>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Vishal M C</name>
+    </author>
+    <author>
+      <name>Sankarsan Tarai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.29303v1</id>
+    <title>Noether Symmetry in a Non-Metricity Theory with a Boundary Term: Exact Solutions and Bayesian Cosmological Constraints</title>
+    <updated>2026-09-24T09:39:32Z</updated>
+    <link href="https://arxiv.org/abs/2609.29303v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.29303v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We investigate the cosmological implications of a power-law $f(Q, B)$ gravity model, where $Q$ denotes the non-metricity scalar and $B$ is the associated boundary term. We employ the Noether symmetry approach to identify the admissible functional form of the gravitational Lagrangian and to obtain the corresponding conserved quantities and exact cosmological solutions. Using the exact solution, we find that for this model parameter condition $α+β&gt;\frac{3}{2}$, the model exhibits the accelerating phase of the Universe. Furthermore, we have also discussed the model with recent observational data using a Bayesian Markov Chain Monte Carlo analysis. We consider different combinations of Cosmic Chronometers (CC), Pantheon+ \&amp; SH0ES, and DESI DR2 observations to constrain the model parameters and the Hubble constant $H_0$. The inferred value of $H_0$ depends on the adopted dataset combination, ranging from a higher value for the CC+Pantheon+ combination to a lower value for CC+DESI DR2, with the latter yielding $H_0=67.5^{+1.4}_{-1.6}\,\mathrm{km\,s^{-1}\, Mpc^{-1}}$, consistent with the Planck 2018 CMB-preferred value within the standard $Λ$CDM framework. The inferred \(H_0\) is strongly dataset dependent, spanning the range between the early-Universe and locally calibrated determinations. We further examine the posterior covariance and correlation matrices to identify parameter degeneracies and assess the robustness of the MCMC constraints. The background evolution also exhibits late-time accelerated expansion and remains compatible with the observational constraints. These results demonstrate that the $f(Q, B)$ model provides a viable alternative description of late-time cosmology.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-24T09:39:32Z</published>
+    <arxiv:comment>33 pages, 8 figures</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Pooja Vishwakarma</name>
+    </author>
+    <author>
+      <name>L K Duchaniya</name>
+    </author>
+    <author>
+      <name>Yu Shi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.28720v1</id>
+    <title>Exploring mutated hilltop inflation in $f(φ, T)$ gravity with latest CMB and DESI observations</title>
+    <updated>2026-09-23T18:59:53Z</updated>
+    <link href="https://arxiv.org/abs/2609.28720v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.28720v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The high-precision observations from the $Planck$ and BICEP/$Keck$ have imposed stringent bounds on the tensor-to-scalar ratio, ruling out many standard inflationary models. The recent bound from Atacama and SPT along with DESI provides a different viable landscape, making it difficult for the inflationary models to sustain. Amid these increasingly stringent and conflicting observational constraints, modified gravity theories offer a compelling avenue to restore the viability of inflationary models. With this motivation, we study mutated hilltop inflation within $f(φ, T)$ gravity, where a scalar field is non-minimally coupled to the trace of the energy-momentum tensor. The scalar spectral index $n_s$, the tensor spectral index $n_t$, and the tensor-to-scalar ratio $r$ are calculated, and their trajectories are presented in the $n_s-r$ plane. The results are then confronted with the latest combined CMB bounds from $Planck$, BICEP/$Keck$, ACT DR6, SPT, and DESI DR2. We report that MHI can predict $r \sim 10^{-3}$ and is compatible with the latest CMB &amp; DESI bound SPA+BK+DESI at $ 1σ$ CL.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-23T18:59:53Z</published>
+    <arxiv:comment>15 Pages, 4 Figures, Accepted version</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Biswajit Deb</name>
+    </author>
+    <author>
+      <name>Atri Deshamukhya</name>
+    </author>
+    <arxiv:doi>10.1016/j.newast.2026.102659</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1016/j.newast.2026.102659" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.26566v1</id>
+    <title>Regular Cosmologies: Three Distinct Routes</title>
+    <updated>2026-09-22T15:17:51Z</updated>
+    <link href="https://arxiv.org/abs/2609.26566v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.26566v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Regular black holes avoid the central singularity by replacing it with a de Sitter core. We ask what cosmology follows if the same idea is brought to the early universe. Regular metrics define a position-dependent cosmological term, $Λ_{\rm eff}(r)=8πG ρ_{\rm MS}(r)$, and there is no unique way to carry it over to the expanding universe. We follow three different prescriptions: a Newtonian one following McCrea and Milne, a running vacuum evaluated at Hubble radius and a quasi-local one based on Misner-Sharp mass. We apply each of them to six regular black hole metrics and explore their consequences. In the Newtonian case the Friedmann equations are solved in closed form for the Hayward metric, and in terms of standard special functions or numerically for the others, and describe a universe that starts in a de Sitter phase and ends as dust (i.e. an inflationary model instead of dark energy). We find that in all three prescriptions a monotonically decreasing core density gives an equation of state that never crosses $w=-1$, and thus the phantom behaviour suggested by DESI would require a density shell which a regular core does not have. The three prescriptions agree on the de Sitter core but differ at late times, and we quantify the difference against the DESI DR2 results. We also point out that a single regularisation length cannot serve as both the inflationary and the dark-energy scale.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-22T15:17:51Z</published>
+    <arxiv:comment>27 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Sergio Bravo Medina</name>
+    </author>
+    <author>
+      <name>Marek Nowakowski</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.26517v2</id>
+    <title>Gravitational-Susceptibility Dip Behind DESI's results: Addressing the Phantom Crossing by Local limit of Nonlocal Gravity</title>
+    <updated>2026-10-08T08:35:59Z</updated>
+    <link href="https://arxiv.org/abs/2609.26517v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.26517v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The second data release of the Dark Energy Spectroscopic Instrument (DESI), based on more than fourteen million galaxies and quasars, prefers a dark energy component whose equation of state is dynamical. In the simplest two-parameter description of this behavior, the Chevallier--Polarski--Linder (CPL) parametrization, the data favor the quadrant $w_0&gt;-1$, $w_a&lt;0$, which implies that the equation of state crosses the phantom divide $w=-1$ at a redshift $z\simeq0.4$. We show that the local limit of nonlocal gravity, a teleparallel extension of general relativity governed by a scalar function called gravitational susceptibility $S(x)$, offers a natural explanation. In this model a cosmological constant is not allowed; dark energy is necessarily dynamical. The phantom crossing seen by an observer is an effective phenomenon generated by the time evolution of $S(z)$. We establish a correspondence: to every general-relativistic dark energy model with equation of state $w(z)$, there corresponds a modified TEGR cosmology with $w=-1$ and a suitable susceptibility $S(z)$ that are indistinguishable at the level of the background expansion. We construct the susceptibility functions that reproduce the CPL behavior favored by DESI data, and we confront the model with the combined CMB,BAO, and SNe data using Boltzmann solver codes. The recovered susceptibility displays a characteristic low-redshift dip with depth $β= -0.025 \pm 0.007$ at $z\simeq 0.4 $, and its derivative changes sign at a redshift equal to the phantom-crossing epoch.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-22T14:43:14Z</published>
+    <arxiv:comment>13 pages, 4 figures, 2 tables. Updated references and minor improvements</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Aria Hemmatian</name>
+    </author>
+    <author>
+      <name>Yahya Mohammadi</name>
+    </author>
+    <author>
+      <name>Javad Tabatabaei</name>
+    </author>
+    <author>
+      <name>Shant Baghram</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.24926v1</id>
+    <title>Observational Features of Nonsingular Rotating Black Holes in the Dark-Energy Dominated Universe</title>
+    <updated>2026-09-21T17:22:18Z</updated>
+    <link href="https://arxiv.org/abs/2609.24926v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.24926v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent DESI baryon acoustic oscillation measurements, combined with cosmic microwave background and type-Ia supernova data, suggest that dark energy may evolve with cosmic time. Along a cosmological background, an evolving dark-energy density can be expressed locally as a function of a monotonic curvature invariant, motivating an effective curvature-dependent cosmological term. Moreover, quantum field theory in curved spacetime and approaches to quantum gravity with running gravitational couplings provide complementary motivations for exploring such a term.
+  Here we study how the phenomenology of nonsingular rotating black holes embedded in a Universe dominated by dark energy can differ substantially from that of the Kerr and Kerr--de Sitter geometries. The problem is directly formulated in phase space using a null geodesic super-Hamiltonian and a Mino-type parameter. The shadows of the black holes are calculated by backward ray tracing from a zero-angular-momentum observer. We define and analyze a comprehensive set of standard shadow observables, characterizing the size, shape, and displacement of the shadow. We show that the area of the shadow and its vertical diameter provide particularly clear signatures of a running cosmological term. In this way, joint analyses of multiple strong-field observables and of several black holes with different masses and spins could provide a realistic route to tightly constraining, or potentially measuring, the effective regularization scale behind the running of the cosmological term and statistically distinguishing the non-singular black hole geometry from Kerr/Kerr-dS solutions.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-21T17:22:18Z</published>
+    <arxiv:comment>24 pages, 3 figures, 3 tables</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Ramon Torres</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.24361v1</id>
+    <title>A novel phenomenological parametrization of dynamical dark energy via matter-gravity coupling</title>
+    <updated>2026-09-21T09:50:41Z</updated>
+    <link href="https://arxiv.org/abs/2609.24361v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.24361v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We develop a new parametrization for generic departures from the $Λ$CDM model based on the Markov-Mukhanov action with non-minimal matter-gravity coupling. In this approach the cosmological constant $Λ$ and the gravitational coupling $G$ become dynamical with their values determined by the explicit form of the matter-gravity coupling. We use the framework to build a simple phenomenological model where dynamical dark energy is naturally obtained as a consequence of the departure of the theory from classical General Relativity at low densities. We show how the model's free parameters can be constrained from observational data and interpret the tentative observations of `phantom crossing' by the DESI collaboration in view of the proposed formalism.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-21T09:50:41Z</published>
+    <arxiv:comment>10 pages, 3 figures</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <author>
+      <name>Hrishikesh Chakrabarty</name>
+    </author>
+    <author>
+      <name>Daniele Malafarina</name>
+    </author>
+  </entry>
+</feed>

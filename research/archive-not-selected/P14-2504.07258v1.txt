@@ -1,0 +1,1345 @@
+
+[PDF page 1]
+Characterising the failure mechanisms of error-corrected quantum logic gates
+Robin Harper, 1 Constance Lain´ e,1, 2 Evan Hockings, 1 Campbell McLauchlan, 1
+Georgia M. Nixon, 1 Benjamin J. Brown, 3, 4 and Stephen D. Bartlett 1, ∗
+1Centre for Engineered Quantum Systems, School of Physics,
+The University of Sydney, Sydney, New South Wales 2006, Australia
+2London Centre for Nanotechnology, University College London, London WC1H 0AH, United Kingdom
+3IBM Quantum, T. J. Watson Research Center, Yorktown Heights, New York 10598, USA
+4IBM Denmark, Sundkrogsgade 11, 2100 Copenhagen, Denmark
+Mid-circuit measurements used in quantum error correction are essential in quantum computer
+architecture, as they read out syndrome data and drive logic gates. Here, we use a heavy-hex code
+prepared on a superconducting qubit array to investigate how different noise sources impact error-
+corrected logic. First, we identify that idling errors occurring during readout periods are highly
+detrimental to a quantum memory. We demonstrate significant improvements to the memory by
+designing and implementing a low-depth syndrome extraction circuit. Second, we perform a stability
+experiment to investigate the type of failures that can occur during logic gates due to readout
+assignment errors. We find that the error rate of the stability experiment improves with additional
+stabilizer readout cycles, revealing a trade-off as additional stability comes at the expense of time over
+which the memory can decay. We corroborate our results using holistic device benchmarking and by
+comparison to numerical simulations. Finally, by varying different parameters in our simulations we
+identify the key noise sources that impact the fidelity of fault-tolerant logic gates, with measurement
+noise playing a dominant role in logical gate performance.
+I. INTRODUCTION
+The logical operations of an error-corrected quantum
+processor are driven by the outcomes of measurements
+performed throughout the execution of a quantum cir-
+cuit. Not only are these mid-circuit measurements used
+as a syndrome for errors acting on logical qubits stored in
+memory [1–5], but the outcomes of these measurements
+are also used to implement logical gates such as lattice
+surgery operations [6–18]. To deal with the fact that er-
+rors may give rise to unreliable measurement outcomes
+that could potentially lead to a corrupted logical gate,
+we design logic gates to be fault tolerant by adding re-
+dundancy, such that the error syndrome can be used to
+identify errors in the measurements themselves.
+A straightforward way to include such redundancy is
+to repeat the measurements we need to complete a logic
+gate multiple times [19]. Increasing the number of repeti-
+tions of mid-circuit measurements can decrease the prob-
+ability of a logical gate failure. However, this leads to
+a trade-off since, by increasing the number of rounds of
+measurements in a logic gate, we increase the period over
+which a memory must store logical quantum information,
+and as such there is an increased chance of logical corrup-
+tion. Ideally, we should optimise our logical operations
+to minimise the probability of both memory corruption
+together with logic gate failure with respect to the under-
+lying hardware. Identifying the bottlenecks under this
+optimisation over logical error rates will show us new
+pathways to improve hardware towards the development
+of a fault-tolerant quantum computer.
+∗Electronic address: stephen.bartlett@sydney.edu.au
+Here we demonstrate this trade-off through experi-
+ments performed by preparing the heavy-hex code on a
+superconducting quantum processor [20]. First, we con-
+duct a memory experiment [2, 3, 21–23] to quantify the
+logical error rate for different numbers of syndrome mea-
+surement rounds. We significantly improve this logical
+error rate for the heavy-hex code by decreasing the circuit
+depth and real-time duration of the stabilizer readout cir-
+cuit with two innovations. Our first innovation is a new
+circuit to learn the syndrome data that has significantly
+smaller circuit depth compared with previous implemen-
+tations of this code. Our new circuit is able to defer the
+readout of one type of check such that both the Pauli- X
+and Pauli-Z type checks are measured in parallel, thereby
+decreasing the number of sequential rounds of measure-
+ments we need to perform to complete a full syndrome
+readout cycle. Given that mid-circuit measurement times
+dominate the syndrome extraction circuit cycle, we find
+this leads to a substantial speedup and corresponding re-
+duction in logical error rate. Our second innovation is to
+replace the reset operation that follows a measurement
+with a classical Pauli frame update [24], eliminating the
+need for reset of ancilla qubits, and yielding a significant
+speed up and further reduction in the logical error rate.
+Altogether these improvements result in a logical qubit
+encoded in a heavy-hex code with a survival probability
+of 96% per round of syndrome extraction.
+We complement our memory experiment with a new
+stability experiment [25, 26] designed for the heavy-hex
+code. A stability experiment benchmarks the perfor-
+mance of a fault-tolerant logic gate implemented with lat-
+tice surgery. A logical error in stability is incurred if an
+unfortunately-located sequence of mid-circuit measure-
+ment failures occurs. We measure the logical gate failure
+rate as a function of measurement rounds. We identify
+arXiv:2504.07258v1  [quant-ph]  9 Apr 2025
+
+[PDF page 2]
+2
+a decay in logical error rate as a function of the num-
+ber of measurement rounds, indicating below-threshold
+behaviour. We compare experiments where we use re-
+sets to experiments where we replace post-measurement
+resets with a Pauli frame update. Notably, in contrast
+to the error models and simulations used in Ref. [24], we
+find very little difference in the two experiments. We at-
+tribute this to the reset mechanism used in the quantum
+device. We support this assertion with simulations.
+We corroborate our error correction results with sup-
+porting benchmarking experiments and numerical simu-
+lations. We use benchmarking circuits to learn the noise
+the device experiences during syndrome readout circuits
+with mid-circuit measurements to determine the extent
+to which the device respects a circuit noise model. Our
+numerical simulations show the dependence of the differ-
+ent parameters, on physical device parameters assuming
+a circuit model, e.g., gate error rate, measurement error
+rate, and idling errors.
+Our experiments and our supporting analysis allow us
+to critique the performance of current quantum hard-
+ware, and how their development should progress in or-
+der for future generations of devices to be able to per-
+form large-scale fault-tolerant logic operations. Investi-
+gating this trade-off reveals that the logical error rate of
+a fault-tolerant logic gate in our studied quantum proces-
+sor is dominated by the logical gate failure rate, rather
+than the logical memory failure rate. Given that mea-
+surement error rates are a dominant contributor to the
+value of sub-threshold performance for all types of log-
+ical failures, our results indicate that, currently, better
+mid-circuit measurements, in terms of both their error
+rates, and measurement times, will significantly improve
+the performance of logic gates.
+II. RESULTS
+A. A heavy-hex code on a quantum chip
+We consider the heavy-hex code [20], realised on the
+IBM Quantum 156-qubit Heron class of quantum pro-
+cessor Marrakesh. This device has a heavy-hex layout,
+displayed in Fig. 1(a). It supports mid-circuit measure-
+ments and high fidelity ( > 99%) two-qubit gates. This
+generation of device, with its size, fidelity, and capabil-
+ities opens up the possibility for in-depth analysis and
+characterization of logical operations on error-corrected
+qubits.
+The heavy-hex code is placed on the quantum proces-
+sor as shown in Fig. 1(a) to maximise performance. De-
+tailed error modelling of the full device, including mid-
+circuit measurements using simultaneous randomised
+benchmarking informed our choice of code placement (see
+Section IV C). Marrakesh supports a sufficiently large
+patch of high-quality qubits to support a d = 3 logical
+qubit. We run two experiments—memory and stability—
+that together help determine the capabilities of the device
+for executing quantum logic via lattice surgery.
+B. Memory experiment
+Performing fault-tolerant logic requires keeping logical
+qubits uncorrupted over many error-correction cycles. A
+memory experiment quantifies how well logical quantum
+information can be stored by a code over time, measured
+in the number of syndrome extraction rounds. Memory
+experiments exploring logical failure rate as a function of
+the number of rounds have been detailed previously in
+superconducting devices for a number of different codes,
+including the heavy-hex code [1], the surface code on
+heavy-hex lattices [29], and the surface code on 4-valent
+lattices [4, 30].
+We run two types of memory experiment. The first
+is based on the standard implementation of the heavy-
+hex code, wherein Z and X checks are measured in two
+separate rounds, with measure qubits measured and then
+reset in each round [20]. This two-round approach results
+in poor memory performance owing to the time taken to
+perform resets and measurements, during which idling
+errors affect all data qubits (see Section IV A).
+We redesign the syndrome extraction circuits to allow
+for all checks (Z and X type) to be measured in the same
+round (see Section IV A 3) and we remove resets from the
+circuits (see Section IV A 4). We present the time savings
+of these new circuits schematically in Figure 1(f).
+Figure 2 details the results of our memory experiments
+on Marrakesh, for both original and improved syndrome
+extraction circuits. We use a standard minimum weight
+perfect matching decoder (PyMatching) [28], populated
+with averaged device calibration data, and we do not
+post-select any data. Using the improved circuits allows
+us to increase the logical fidelity per syndrome extraction
+round, from less than 90% using the original syndrome
+extraction circuit, to 96% and better using the improved
+circuit. Based on our modelling, the main source of logi-
+cal infidelity is the relaxation of qubits while mid-circuit
+measurements are performed (see Section IV C 2).
+C. Stability experiment
+Given that we can store logical qubits, our device re-
+quires additional functionality to perform logic gates. We
+focus on an approach to performing fault-tolerant oper-
+ations via lattice surgery, which is driven by perform-
+ing additional stabilizer measurements. During lattice
+surgery, the value of a product of many stabilizer mea-
+surements must be read out correctly to successfully com-
+plete a logical operation. If errors cause an incorrect sta-
+bilizer measurement outcome, the product will also be
+incorrect, and this will lead to gate failure. This can
+be mitigated by repeating stabilizer measurements for a
+number of rounds t, as in Fig. 1(d). A stability experi-
+ment [25] tests a device’s ability to successfully measure
+
+[PDF page 3]
+3
+11.1μs
+3.2 μs
+R 0
+R +
+U3
+U3
+U2
+R +
+R 0
+{ﬂag}
+U1
+R 0
+Original Circuit
+Improved Circuit Improved Circuit with Resets
+Memory
+Stability
+5.4 μs
+time
+t
+d
+(a)
+(b)
+(c)
+(d)
+(e)
+(f)
+(g) (h)
+FIG. 1: Memory and stability circuits. (a) Heavy-hex layout of the IBM Quantum 156-qubit Heron r2 quantum processors.
+Numbered dots are qubits and lines indicate couplings between qubits. (b) Distance d = 3 memory experiment patch for the
+heavy-hex code. X-type ( Z-type) checks are shown in blue (red). Data qubits are yellow, measure qubits for X check (Z
+check) measurements are blue (red). Other qubits are in grey and those that are unused for the memory experiment are crossed
+(remnant flag qubits are grey un-crossed; see Methods). Data qubits are coupled to blue measure qubits for X check readout
+via the red or grey qubits (see Methods). Logical ¯X and ¯Z operators for the patch are defined along the blue and red strings
+shown, respectively. Stabilizers for this code are formed by multiplying two X checks (opposite Z checks) together in a row
+(square). (c) A stability experiment patch for the heavy-hex code. Each qubit intersects with two blue checks, so that the
+product of all blue checks is even parity. The patch shown has four X stabilizers: two 2-body checks (that are also stabilizers)
+at the top and bottom, and two 5-body operators that are each the product of two X checks. The X stabilizer outcomes are
+all initially random. We perform error correction/decoding using the standard stim [27] and PyMatching [28] libraries, making
+detectors in the standard way. (d) Topological spacetime diagram of lattice surgery. Two logical patches with space-like code
+distance d incur an entangling lattice surgery operation for t rounds. The ‘memory’ part of the experiment is highlighted in
+light green and the ‘stability’ part in light orange. The grey membrane represents the logical operator measured by the lattice
+surgery. In the memory (stability) part, a logical error occurs if a string of errors runs between opposite spatial (temporal)
+boundaries, intersecting the grey membrane, as shown by the dashed horizontal (vertical) line. (e) Diagram of the stability
+experiment over 6 rounds with qubits initially reset in the Z basis. Every round, the same X-type detector, composed of the
+two X-type checks in the row, is afflicted by a measurement error (green cross). This measurement error is not detected and
+flips the logical (product of blue checks). (f) The original heavy-hex syndrome extraction circuit where X and Z stabiliser
+information is collected in separate time-steps and where resets are performed. The total time to implement this circuit is
+11.1µs. The top line represents a measurement qubit used firstly in the X stabiliser measurement and then reused to collect flag
+information when the Z stabiliser is measured. The bottom qubit is used to measure the Z stabiliser only. Data qubits used
+are represented by the four central lines. The operators U1 and U2 represent two different syndrome extraction operations. (g)
+The improved heavy-hex syndrome extraction circuit where X and Z stabilisers can be measured simultaneously, decreasing
+the total circuit runtime to 3 .2µs. The operator U3 has a longer runtime that U1 and U2 in (f). (h) The circuit in (g) with
+resets has a runtime of 5 .4µs.
+
+[PDF page 4]
+4
+0 2 4 6 8 10
+Syndrome Extraction Rounds (t)
+10 1
+100
+Memory Survival
+Original circuit
+< 90% Fidelity
+Improved circuit
+> 96% Fidelity
+Improved Circuit
+Basis Fidelity
+|0⟩ 96%
+|+⟩ 97%
+FIG. 2: Memory experiment using the d = 3 heavy-
+hex code on the IBM Quantum processor Marrakesh. Here
+we compare two syndrome extraction circuits. The original
+circuits are those used to implement the heavy-hex code as
+detailed in Ref. [1], requiring X and Z checks to be measured
+and reset in separate time-steps. The improved circuits are
+introduced in Section IV A. For our new circuits, both X and
+Z checks are measured in the same time-step without post-
+measurement resets. Purple (green) data indicates the system
+is initialised in the |0⟩ (|+⟩) state. There was negligible differ-
+ence in the error rates if the logical qubits were initialised in
+the |1⟩ (|−⟩) state (data not shown). Here we fit the data (the
+logical success probability after t rounds) to Apt + 0.5, where
+A is a SPAM parameter and p is the decay factor. The logical
+fidelity is then (1+ p)/2. We plot memory survival, which is a
+rescaled y-axis, so that we are plotting 2 p − 1. This re-scales
+the survival probability to be from 1 to 0, giving straight lines
+with the semi-log plot.
+0 2 4 6 8 10 12 14
+Syndrome Extraction Rounds (t)
+10 1
+2 × 10 1
+3 × 10 1
+4 × 10 1
+6 × 10 1
+Probability of error
+Stability Experiment, no reset
+Stability Experiment, with reset
+FIG. 3: Stability experiment for the heavy hex code patch
+on the IBM Quantum processor Marrakesh. Here we compare
+reset and no reset syndrome extraction circuits. Increasing
+the number of rounds leads to a decrease in the logical error
+probability, indicating we are below threshold for the class
+of errors detected by this experiment. The first two rounds
+of syndrome extraction do not have full stabilizer information
+and, as indicated by the different symbols, were excluded from
+the fit. The data were fit to a simple exponential decay curve.
+products of stabilizers, and so serves as a proxy for logic
+gate performance.
+In a stability experiment the code is re-designed with
+an over-complete set of stabilizer checks such that the
+product of outcomes of the over-complete checks are con-
+strained to give a fixed +1 outcome. This constraint will
+only be violated due to undetected measurement errors.
+In Fig. 1(c) we show how to modify the heavy-hex code
+to introduce one such constraint.
+We detect measurement errors by comparing repeti-
+tions of stabilizer measurements. A detection event is
+defined where two consecutive readings of the same sta-
+bilizer do not agree. These detection events are fed to
+a decoding algorithm to attempt to recover the correct
+value for logical observables or, in the case of our stability
+experiment, the stabilizer constraint.
+A measurement error produces two concurrent detec-
+tion events. An undetectable failure of the stability ex-
+periment will occur if, say, one specific stabilizer fails at
+every repeated round of syndrome extraction, such that
+no detection events are identified. We decrease the likeli-
+hood of a logical failure by repeating syndrome extraction
+over more rounds. An example of such a logical failure
+in a stability experiment for the heavy-hex code is shown
+in Fig. 1(e).
+We compare the performance of two different syndrome
+extraction circuits using the stability experiment, where
+in one variation we remove the reset from the circuit. As
+discussed in Ref. [24] and in Section IV A 4, this requires
+forming detectors from stabilizer outcomes not in consec-
+utive measurement rounds, but in rounds separated by
+two. The net effect of this change is to reduce the time-
+like distance of the code, but it also reduces the number
+of potential errors (since there are no reset errors). We
+discuss the trade-offs associated with including resets in
+Section IV A 4.
+Figure 3 shows the results of the stability experiment
+implemented using the improved circuits (see Section IV
+for implementation details), with and without resets.
+The stability experiment failure rate as a function of the
+number of measurement rounds can be modelled to lead-
+ing order by a simple exponential Pfail = B(d)Γt where
+B(d) represents an unknown pre-factor polynomial in the
+code distance d, and t is the number of syndrome rounds.
+We fit an exponential to these data in Fig. 3, omitting the
+initial rounds (the small data points in the figure) from
+the fit. We observe only a negligible difference between
+our two syndrome extraction circuits. A likely explana-
+tion is that resets in the Marrakesh device are performed
+via measurements followed by a conditional X-gate. The
+resets, therefore, have similar error rates to the measure-
+ments, and although the circuit with resets has twice the
+time-like distance, we have also substantially increased
+the chance of errors – more or less cancelling out the
+benefit. We note that after more than about 15 rounds
+the experimental data points in Figure 3 appear to flat-
+ten. This does not occur in our simulation and is likely
+indicative of additional noise processes.
+
+[PDF page 5]
+5
+D. Impact of noise parameters on stability and
+memory
+Here we use simulations to examine the impact of vary-
+ing the noise parameters of various constituents of the
+quantum processor on the performance of stability and
+memory circuits. We fit the device noise to a circuit-
+level noise model involving 1- and 2-qubit depolarising
+noise, measurement and reset errors and idling noise (see
+Section IV B). The best-fit parameters for the device are
+included in Fig. 4. We also vary these parameters indi-
+vidually to examine the effect of each noise parameter
+on stability and memory performance and present these
+results in Fig. 4.
+As we see in Fig. 4(c), improving measurement noise is
+predicted from our simulations to have the largest effect
+on stability performance, and is also predicted to improve
+memory performance considerably. This suggests that
+our results are currently limited by measurement noise.
+III. DISCUSSION
+Successful quantum computation will require hardware
+to maintain quantum information in both space and time,
+keeping logical qubits stored in memory alive while logi-
+cal gate operations occur. For lattice surgery operations,
+we require the ability to maintain logical qubits in mem-
+ory over several rounds of syndrome measurement, during
+which time we must successfully read out stabilizer out-
+comes that drive logic gates. These dual challenges are
+characterised by memory and stability experiments, re-
+spectively. In this work, we have presented the results of
+both experiments on a superconducting qubit array, for
+the first time characterising these two aspects of fault-
+tolerant quantum computing performance on the same
+device. We optimise the results of these experiments
+by re-designing syndrome measurement circuits for the
+heavy hex code, removing the need for slow and noisy
+resets, and by positioning the code patches in an optimal
+area, as identified by extensive device benchmarking.
+Ultimately, to maximise the performance of a logical
+entangling operation, one must maximise the combined
+probability of success for both the quantum memory and
+the stabilizer readout (the stability part of Fig. 1(d)).
+This will involve tuning the distance d, quantifying the
+number of errors that the code can correct, and t, the
+number of rounds over which one performs lattice surgery
+measurements. The performance of a stability experi-
+ment will worsen as the size of the patch is increased,
+just as the memory fidelity worsens with increasing num-
+ber of rounds. However, stability (resp. memory) perfor-
+mance is expected to improve exponentially with t (resp.
+d) and only decrease as some polynomial in d (resp. t).
+Hence, one can hope to improve the logical gate fidelity
+by increasing both t and d. For each d, there will be some
+optimal value of t at which the trade-off between memory
+and stability is balanced, and the overall probability of
+FIG. 4: Simulated effect of circuit noise parameters on
+memory (left) and stability (right) experiments. For the mem-
+ory experiment, we calculate the memory survival as 1−2¯pfail
+with ¯pfail the probability of error. With this definition, the
+memory survival is expected to take the form Apt. Experi-
+mentally measured data are fit to this expected scaling be-
+haviour as in Figs. 2 and 3 (thick line). Logical failure rates
+were calculated in Stim [27], with no reset (‘nr’ - diamond)
+and unconditional reset (‘ur’ - circle). Each noise parameter
+is varied independently, improving noise from a value p0
+i de-
+termined by a fit to the experimental data (dark) to up to
+two order magnitude improvement (light) in steps (1/2, 1/10,
+1/100) as shown on the common color scale. (a) Effect of
+two qubit error rates. This benefits both memory and stabil-
+ity circuits up to p2Q ∼ p0
+2Q/10. (b) Effect of idling noise on
+data and measurement qubits (we fixed pidl. = pq.meas). This
+improves both experiments similarly as with two qubit error
+rates, also up to pidl. ∼ p0
+idl./10. (c) Effect of measurement
+noise. Reduction of measurement noise strongly improves the
+stability experiment, which is expected since measurement
+errors are the underlying mechanism causing logical errors
+in stability. It also decreases the logical failure rate of the
+memory, although less dramatically. This parameter has the
+biggest effect on the logical failure probability, suggesting it
+is the dominant source of noise. (d) Effect of reset noise. We
+add reset for both circuits and observe a reduction in logi-
+cal errors only for the stability ‘ur’ circuit. As expected the
+memory experiment was fairly insensitive to the quality of the
+reset operations [24]. Even with the stability circuit, improv-
+ing reset does not allow one to achieve the same level of error
+reduction as one gains by improving measurement.
+
+[PDF page 6]
+6
+success for the logical operation is maximised, and this
+optimum will be dependent on device noise parameters.
+A focus of the next generation of fault-tolerance experi-
+ments should be determining these optimal logical gate
+parameters and, hence, characterising the maximum suc-
+cess probabilities of logical operations.
+It is worth noting that, for the heavy-hex code, we do
+not expect the memory results to improve arbitrarily for
+larger d, since the code does not possess a threshold for
+these experiments. Different codes, such as Floquet codes
+or surface codes adapted to the heavy-hex lattice, could
+provide suitable alternatives while remaining compatible
+with the layout of quantum processors such as these. In-
+cluding resets in memory and stability circuits is likely
+to degrade memory performance with no improvement
+in stability performance in future experiments unless the
+current resets are replaced with resets that cause signifi-
+cantly less noise than the mid-circuit measurements [24].
+In this work, we have identified measurement noise as
+a key limitation on the performance of lattice surgery
+operations in present-day devices, and this needs to be
+improved to reach the logic gate fidelities at which we
+will need to be operating in a large-scale quantum pro-
+cessor. We have shown that, while the device tested is
+showing improving stability performance with the num-
+ber of rounds, improved mid-circuit measurements would
+dramatically enhance stability performance, and hence,
+the success probability of logical operations.
+IV. METHODS
+A. Implementation of the Heavy-Hex Code
+1. Introduction to Heavy-Hex Code
+The heavy-hex code is a subsystem code defined by a
+“gauge group”, which is generated by weight-2 Z checks
+and weight-4 (in the bulk of the code) X checks. These
+are shown in red and blue, respectively, in Fig. 1(b). As
+usual in a subsystem code, the checks we measure directly
+are not the stabilizers of the code. Rather the stabilizers
+are those gauge group elements that commute with all
+measured checks. The product of two vertically opposite
+Z checks forms such a stabilizer, as does the product of all
+X checks along a row. In Fig. 1(b), there are just two Z
+stabilizers and four X stabilizers (two in the bulk and two
+on the top and bottom boundaries). The values of these
+stabilizers are inferred from the measurements of their
+comprising checks. With the boundary conditions shown
+in Fig. 1(b), this code stores a single logical qubit, with
+“bare” X and Z logical operators shown, which commute
+with all the checks.
+In the original formulation of the heavy-hex code, the
+checks are measured in two rounds [20]. In one round, the
+X checks are measured with a syndrome measurement
+circuit that couples the data qubits to the green ancilla
+qubits via the purple qubits, which act as “flag” qubits.
+The green and purple qubits are measured at this point,
+with the flag qubits providing extra information on the
+likelihood of hook errors having occurred, which is fed
+to the decoder [20]. In the next round, the Z checks
+are measured using the purple qubits as ancillas. We
+redesign these circuits so that they can be executed in
+a single round (without flags in the bulk of the patch),
+thereby reducing the overall time required for syndrome
+extraction. We introduce this circuit below.
+2. Need to redesign the code
+A distance-3 heavy-hex code has been previously im-
+plemented on an IBM Quantum processor in Ref. [1].
+This implementation used the 27-qubit quantum proces-
+sor Peekskill, which was a fixed qubit, fixed coupler device
+(like the current Eagle-class processors) and is no longer
+available. In Ref. [1] the authors achieved logical errors
+for a logical qubit in the |0⟩/|1⟩ basis of under 6% and
+in the |+⟩/|−⟩ basis of under 12%. Where they post-
+selected for leakage error the maximum logical error fell
+to under 8.6%.
+IBM’s current flagship quantum processors are of the
+Heron class, which are fixed qubit, tunable coupler de-
+vices. On the r2 devices, two qubit error rates have im-
+proved from a median error rate of approximately 2% on
+current Eagle-class devices to a median error rate of ap-
+proximately 0.35% on Heron-class devices, representing
+nearly an order of magnitude improvement. These error
+rate improvements appear to come at the cost of slightly
+shorter T1/T2 times, which are on the order of 213/120µs
+on the best Heron device. At the same time, the dura-
+tion of a measurement has increased, from a combined
+measurement and reset of 768 ns to between 3000 and
+4000 ns, depending on which device is used. For mid-
+circuit measurements, this is a substantial fraction of the
+T1/T2 time, and leads to worse logical qubit performance
+than that reported on Peekskill, despite the improved
+two-qubit gate operations. The timing problems are fur-
+ther exacerbated by the fact that the original heavy-hex
+code extracted Z-type stabilizers and X-type stabiliz-
+ers in separate syndrome extraction circuits, executed in
+series (one after the other), requiring an idle time on
+non-measured qubits of over 8 µs per round of syndrome
+extraction. We provide details of how we measured the
+noise impact of performing measurements mid-circuit in
+Section IV C 2.
+3. Improved syndrome extraction circuit
+Here we introduce a variant of the syndrome extraction
+circuit for the heavy-hex code, that simultaneously pre-
+pares both the X and Z stabilizer ancillas while avoiding
+the hook errors that would normally require the use of
+flag qubits. The full circuit used is shown in Fig. 5(f).
+
+[PDF page 7]
+7
+Let us give some intuition for the theory behind this
+circuit. Both the heavy-hex code and the surface code
+make weight-four stabilizer parity measurements in their
+syndrome extraction circuit. However, the heavy-hex lat-
+tice was designed to read out the weight-four checks of
+the heavy-hex code using flag qubits to mitigate the ef-
+fect of hook errors. These flag qubits are also used in
+later rounds of measurements to measure other stabilizer
+operators. As these qubits are used for two purposes, the
+complete syndrome readout circuit requires two rounds
+of measurements. Using intuition from the ‘standard’
+surface code readout circuit, we can avoid the need for
+flag qubits on the heavy-hex lattice, such that we can
+measure all checks in the same round of measurements.
+The surface code realised on the square lattice can
+avoid the use of flag qubits with an appropriate choice
+of syndrome readout circuit, see Fig. 5(a). We find
+that adopting this circuit on the heavy-hex lattice us-
+ing next-nearest-neighbour CNOT gates gives us a syn-
+drome extraction circuit on the distance-three code that
+can identify any single error, and measure all types of
+checks simultaneously. See the circuit in Fig. 5(b). Here
+we mimic the surface code stabilizer check using next-
+nearest-neighbour CNOT gates. Figure 5(c) shows the
+circuit identities used [29], which we can adopt here.
+In Fig. 5(d) we show the circuit that measures all the
+checks for the syndrome extraction circuit including a
+weight-four Pauli-Z check and two weight-two Pauli-X
+checks. This circuit is expanded in Fig. 5(e). The total
+circuit uses ten layers of one-and-two qubit unitary gates
+in between qubit reset and readout. This circuit is paral-
+lelizable over all plaquettes due to the fact that qubits on
+opposite corners of the plaquette are never used simul-
+taneously. This means adjacent plaquettes that share a
+corner do not compete to use the same qubit at the same
+time. For instance, qubit 0 is never addressed at the same
+time as qubit 6 and likewise qubit 2 is never addressed
+at the same time as qubit 4.
+4. Eliminating the need for reset
+An additional improvement we can make to the syn-
+drome extraction circuit of the heavy-hex surface code
+is to eliminate resets of the measurement qubits. Here
+we follow the ideas outlined in Ref. [24]. Ordinarily, syn-
+drome extraction circuits measure and then reset qubits.
+Resetting qubits after measurement serves to decorrelate
+errors in the measurement outcome and quantum state
+of the qubits. This otherwise results in time-like corre-
+lated errors that serve to reduce the distance of stability
+experiments [24].
+The Marrakesh device employs conditional reset,
+which consists of a measurement and a Pauli X gate con-
+ditioned on the measurement outcome. As this Pauli X
+gate can be tracked in software, measuring and then re-
+setting qubits is equivalent to simply measuring twice.
+The device is in the regime in which the measurement
+dominates the time needed for a round of syndrome
+extraction and hence, we seek to remove unnecessary
+measurements from the circuit. We can indeed mod-
+ify detectors to accommodate syndrome extraction cir-
+cuits without reset or, equivalently, a second measure-
+ment [24]. The only modifications required are to the
+detectors. During syndrome extraction, detectors must
+compare measurement outcomes with two rounds prior,
+rather than the prior round. Initial and final detectors
+differ from this pattern (final detectors need to take into
+account the state of the previous detector). PyMatching
+can decode the resulting experiments with no apprecia-
+ble loss in decoding power. This modification halves the
+time-like code distance for stability experiments, since
+flipping every second measurement outcome for a single
+check can result in an undetected logical failure. But
+when we compare this to a circuit using reset (imple-
+mented by measurement), it also halves the number of
+measurements and the noise associated with these mea-
+surements.
+B. Using simulation to examine memory/stability
+tradeoff
+We simulate the stability and memory circuits using
+stim [27] to reconstruct a potential noise model for the
+observed data from the device, and to predict the effect
+that improving various aspect of the noise would have on
+each of these experimental tests.
+The noise model we explore is defined as follows. Be-
+fore each qubit operation on the data qubit, we add a
+depolarizing channel with parameter p1Q for single qubit
+operation and p2Q for two qubit operation. Inspired by
+Ref. [24], we separate measurement noise into a quan-
+tum and a classical part. The quantum part corresponds
+to applying a Pauli-X to the measurement qubit before
+measurement with probability pq.meas. The classical part
+accounts for the case where the measurement device out-
+puts a wrong value independently of the state of the mea-
+surement qubit. For example, a classical error would lead
+to a measurement reading 0 even though the measure-
+ment qubit is in state |1⟩. We parameterize this clas-
+sical measurement error with pc.meas. Finally, we con-
+sider idling noise on data qubits when measurement and
+reset operations take place. An initial estimate of the
+idling noise can be made following the methodology of
+Refs. [24, 31] which parametrises idling noise with relax-
+ation time T1, dephasing time T2 and measurement time
+t. On Marrakesh, the quantum device used for our exper-
+iments, we find T1 ≃ T2 and so consider the same level of
+noise for each Pauli channels X, Y , and Z. We therefore
+add a depolarizing channel with parameter pidle on data
+qubits during measurement and reset operations.
+Finally, we define noise on reset by adding a Pauli-X
+on the qubits being reset after each reset operation, with
+probability preset. In Table I we report the noise param-
+eters obtained by numerically minimising the mismatch
+
+[PDF page 8]
+8
+4 6
+0 2
+M ⟨+|M X
+0
+2
+4
+6
+4 5 6
+0 21
+M ⟨+|M X
+v
+v
+v
+v
+0
+2
+1
+3
+4
+6
+v = =
+⟨+|M X ⟨+|M X
+v
+v
+v
+v
+0
+2
+1
+3
+4
+6
+=
+⟨0|1
+⟨+|M
+⟨0|3
+⟨0|M
+⟨0|1
+⟨0|3
+X
+Z
+Z
+Z
+Z
+Z
+v
+v
+v
+v
+HH
+0
+2
+4
+6
+=
+(a) (b)
+(c) (d)
+(e)
+(f)
+FIG. 5: Designing the new syndrome extraction circuits. (a) A circuit to measure a weight-four stabilizer. The ordering
+is chosen to minimise circuit depth and to mitigate the effect of hook errors. Although the circuit can introduce weight-two
+errors on the data qubits, they are aligned such that their effect is relatively benign. (b) A weight-four check on the heavy-hex
+architecture. We measure a weight-four stabilizer on the data qubits (qubits with even index). However, the measurement
+qubit M is separated from the data qubits via an additional qubit designed for use as a flag qubit. We attempt to recover
+the readout strategy shown in (a) using a next-nearest-neighbour controlled-not gate. Where the control and target qubit
+share a neighbouring ‘via’ qubit. We mark the qubit with a v in the circuit diagram to the right. (c) Circuits to realise
+next-nearest-neighbour CNOT gates in terms of four nearest neighbour CNOT gates. (d) The weight-four parity check circuit
+expanded in terms of nearest-neighbour gates. We show the expansion of one next-nearest-neighbour gate explicitly in the
+green box. With an appropriate choice of expansion we find certain physical gates can be cancelled using standard relations
+between gates. Gates that are cancelled are shown in grey. (e) An expanded circuit to measure both a weight-four Pauli-Z
+check and two weight-two Pauli-X checks on a single plaquette. The circuit has depth twelve including qubit initialisation and
+readout and can be applied in parallel on all (even) plaquettes, thereby enabling the extraction of the full syndrome within
+a single round of measurements. (f) Circuit diagram for the new logical heavy-hex code (see Section IV A for details). Data
+qubits are marked in gold and the red/blue measurement qubits are highlighted. The initial part of the circuit (up to the
+dotted line) represent preparation of the blue stabilizers (here X-stabilizers) and after the dotted line the red stabilizers (here
+Z-stabilizers). All measurement qubits are measured in the same time step. The qubits measured each round that are not
+measurement qubits are remnant flag qubits, that can be used to provide further information to the decoder.
+between simulated and experimental data for the memory
+and stability experiments where we have parametrized
+the model such that pq.meas = pidle. This means the
+quantum measurement noise is caused by the measure-
+ment qubit idling during the time of the measurement.
+These parameter choices are in agreement with device
+characterization data presented in Sec. IV C.
+To examine the effect of these noise sources in both the
+memory and stability experiments, we vary in simulation
+the physical error rate of the relevant noise sources; see
+Fig. 4. Overall this analysis highlights the dominant role
+of measurement noise in the stability experiment. Clas-
+sical measurement errors are particularly detrimental for
+stability experiments, while minimising idling noise is
+crucial for both the memory and the logical operation
+on logical qubits. Potentially, the stability experiment
+could be improved by using resets, but the quality of
+resets must be high.
+p1Q 0.02%
+p2Q 0.41%
+pq.meas 1.2%
+pc.meas 4.2%
+pidle 1.2%
+preset 7.5%
+TABLE I: Noise parameters obtained by fitting to experimen-
+tal data. Parameters are found from numerical optimisation
+using the Nelder-Mead method.
+C. Characterising the quantum processor
+To identify the best location for code placement on the
+device, and to inform detailed error models that allow us
+to simulate logical performance of the experiments pre-
+sented here, we undertake extensive characterisation and
+
+[PDF page 9]
+9
+benchmarking of the quantum processor. A range of effi-
+cient characterisation tools have been developed recently
+that allow for the rapid acquisition of rich, detailed noise
+characterisation data for quantum devices consisting of
+hundreds of qubits.
+1. Simultaneous randomised benchmarking
+We can use randomized benchmarking (RB) [32–34] for
+an initial examination of the noise characteristics of the
+device. Here we use simultaneous single qubit Clifford
+twirls; see Fig. 6. RB is made more effective if we use
+a variation of the protocol first suggested by Knill [33]
+and further analysed in Refs. [35] and [36]. In this vari-
+ation, rather than using strictly inverting sequences of
+gates, we further randomize whether an individual qubit
+ideally ends in |0⟩ or |1⟩. By recasting the results as a
+survival probability (i.e., the probability of getting the
+expected result) we gain two immediate benefits: (1) by
+combining the results to obtain an average, we eliminate
+a nuisance parameter in the fitting procedure, increasing
+the accuracy of the results; and (2) by plotting the sur-
+vival probability for each sequence using different colors
+to distinguish sequences where we expect to end in |0⟩
+and where we expect to end in |1⟩ we can immediately
+detect measurement bias as well as potentially detecting
+measurement correlations across the device. The data
+from the experiment can also be analysed to detect cor-
+relations between the operation of the qubits [37] (as dis-
+tinct from purely measurement related correlations). We
+give an example of this below.
+We use the RB protocol highlighted in [37], but for
+ease of reference we summarize it here. Ref. [35] provides
+guidance as to sensible choices for the number of gates m
+and the number of random sequences k for a particular
+m. If we assume an n-qubit device, the exact randomized
+benchmarking variant used here is as follows:
+1. Choose a positive integer m. This represents the
+number of twirling gates that will be performed in
+the sequence.
+2. For each qubit, choose whether:
+• to apply an initial X gate (the sequence for
+that qubit will ideally return to |1⟩) ; or
+• not to apply an initial X gate (the sequence
+will ideally return to |0⟩).
+Note which qubits had an X gate applied ( x).
+3. For each qubit, choose a sequence of m random
+single-qubit Clifford gates and the Clifford gate
+that will invert that entire sequence (excluding any
+initial X gate applied). Apply these gate sequences
+in parallel.
+4. Sample the output of the circuit specified by 2 and
+3 (referred to as s) by taking a number of shots.
+For the protocol described here we don’t need to
+retain the full set of bit patterns (although one
+could use them as described in [37]). Rather, for
+each qubit (q) determine ˆp(q, m, s, x), the observed
+probability that the qubit q for that length ( m)
+and sequence (s) was measured as returning to the
+expected state (determined by x). For each qubit
+this is done by examining the relevant bit of the re-
+turned bit pattern for each shot and averaging the
+number of times the measurement was ‘successful’
+i.e. we measured a 0 if the qubit was supposed to
+return to |0⟩ and we measured a 1 if the qubit was
+supposed to return to |1⟩. We refer to this as the
+survival probability.
+5. Repeat steps 2-4 k number of times to build up
+statistics.
+6. Repeat steps 1-5 for different choices of m.
+The values of m that are chosen will depend on the
+fidelity of the single qubit gates in the device when oper-
+ated simultaneously. Assuming the fidelity of the device
+supports these numbers we want to begin at approxi-
+mately m = 2 or 3 ([38, 39]). Ideally, the final m should
+be chosen to return a ‘survival probability’ of approx 60%
+(and always substantially above the asymptote value of
+50% [35]), with several values in between. However, for
+systems with very high fidelity it might not be practical
+to select such a high final value of m. While this is not
+required, choosing a lower largest value will impact the
+‘relative error’ estimate of the fidelity.
+Under the assumptions of stationary Markovian noise
+with weak gate-dependence, the data marginalized to
+each qubit will yield an exponential decay of the sur-
+vival probability of that qubit when averaged over each
+of the sequences.
+The data from such an experiment allows verification
+that the fidelity of the single qubit Clifford gates are in
+the expected region (e.g. similar to published calibration
+rates). For the sake of completeness the average gate
+fidelity for each qubit is obtained by averaging the results
+for each k sequences ˆp(q, m) = 1
+k
+P ˆp(q, m, s, x), where
+the sum is over each of the sequences for a particular
+length (measured in step 4 above). These averages are
+then separately fit for each qubit to the exponential decay
+curve ˆp(q, m) = Apm
+q + 0.5 to determine an estimate of
+the decay constant p for qubit q. (This is directly related
+to the average gate fidelity. Ref. [40] contains a useful
+table of conversions.)
+Typically, with randomized benchmarking, it is only
+the average of the sequences ˆp(q, m) that is used. There
+is a relationship between the coherence of the noise and
+the variance of the survival rate; see for example [41].
+Certainly, purely depolarizing noise will have small vari-
+ance and purely coherent noise will have wide variations
+in the survival rates of individual sequences. However,
+in both cases the average will, given the assumptions of
+randomized benchmarking, fit the single exponential de-
+cay curve (although, see Refs. [41–43] for examples where
+
+[PDF page 10]
+10
+(a) (b)
+(c) (d)
+FIG. 6: Simultaneous randomised benchmarking. (a) Output from running our protocol for simultaneous RB. Individual
+decay graphs for each qubit are arranged in the same location as in the device layout (the QPU time to gather this information
+is substantially less than a minute). We can use this type of visualization to quickly assess the state of the individual qubits,
+allowing us to identify required blocks of qubits. (b) An example of a block of qubits required to form a logical qubit for
+the heavy-hex code. (c) An example illustrating why it is important to plot the individual sequence runs as well as use a
+protocol that randomises the final state. Here the red dots represent the runs that are returned to the |1⟩ state prior to final
+measurement, blue dots represent return to the |0⟩ state. As can be seen from this example, there is a marked discrepancy
+between the accuracy of the measurements for different states. Also of import is that the fidelity reported by RB is still very
+high as RB is robust to SPAM. While the operation of the qubit is still high fidelity, in this case the SPAM error is so extreme
+that the qubit is probably not usable if it needs to be measured. (d) Another example illustrating extreme behavior. Here the
+qubit appears to read zero, whatever state the qubit is in. Clearly this behavior violates a number of RB assumptions, but a
+simple application of RB might yield high quality but misleading results.
+non-exponential decay might be observed). Here we an-
+alyze the distribution of data from individual sequences,
+keeping track of which sequences were designed to return
+to |0⟩ and those to |1⟩. This provides us with a wealth
+of information, not only about the performance of the
+gates, but also about the bias of the measurement and,
+indeed, potentially correlations between measurements.
+We provide some examples below.
+2. Characterising mid-circuit measurements with
+simultaneous RB
+The simultaneous RB protocol can be supplemented to
+additionally characterise mid-circuit measurements; see
+Fig. 7. While any or all of the qubits can be measured,
+here we are interested in running logical error correcting
+codes, providing a partition of qubits into ‘data’ and ‘an-
+cilla’ qubits. The qubits that will be measured therefore
+correspond to the ancilla qubits of the logical code im-
+plementation of interest, i.e., those that will be measured
+to extract the syndrome information. The experiment
+proceeds as before for a number of rounds with single
+Clifford twirling operations applied each qubit. After a
+number of rounds (in the data presented — 4), the mea-
+surement qubits are returned to their expected final state,
+and measured, with a Z-gate added randomly [44]. This
+‘round’ of four random single Cliffords, measurement and
+optional Z-gate for the measurement qubits (idle time for
+the non-measurement qubits) is then repeated a number
+of times, becoming the ‘ m’ parameter described in Sec-
+tion IV C 1. The average over several different sequences,
+under the usual RB assumption, gives an exponential de-
+cay [45–48]. Here we only look at the results of the final
+measurement and in particular for each qubit the sur-
+vival probability for that qubit at the end of each full set
+of rounds.
+From the data gathered by this protocol it is immedi-
+
+[PDF page 11]
+11
+ately clear that the noise process occurring in the device
+was not a simple stochastic channel. As described in the
+caption of Fig. 7, further variations of the experiments
+confirm that both the measurement qubits and the spec-
+tator qubits are experiencing ‘relaxation’ error during the
+course of the mid-circuit measurements, not as a result
+of the measurements per se , but rather simply as a re-
+sult of the length of time of the measurement. On this
+device, reset takes a similar amount of time as measure-
+ment. Therefore, performing a measurement followed by
+a reset, the total idling error is effectively doubled, with
+a significant effect on the overall fidelity. We believe that
+this is a combination of amplitude damping and thermal
+damping noise, based on the measurement time (about 2
+µs) compared to the T1 and T2 time (which varies from
+qubit to qubit, but has a median of 197.36 µs and 118.43
+µs respectively. The net result on a single qubit twirl for,
+say, qubit 90 (a proposed data (spectator) qubit) is to
+reduce the fidelity from 0.998 to 0.983 per measurement
+cycle.
+It was for this reason it became clear that we needed
+to minimise the number of measurement cycles per cycle
+of syndrome extraction.
+3. Temporal consistency
+We characterize how consistently the qubit perfor-
+mance parameters are maintained over time, specifically
+over the medium term, say 30 minutes, and the longer
+term, say days. Again, RB provides an effective and effi-
+cient tool for probing this temporal consistency of qubits.
+With simultaneous RB, each individual sequence of ran-
+dom Cliffords will pick up different coherent errors. It
+is only when the sequences are averaged will the results
+be the equivalent of a depolarizing channel. If we were
+not concerned with confirming the actual fidelity each
+time we run the protocol then we can select a single ran-
+domization for each sequence of the single Clifford gates
+(or single Pauli gates if we were interested in measur-
+ing the non-averaged stochastic Pauli noise). Then, un-
+less the device parameters have changed, each subsequent
+time we run an ‘experiment’ every sequence should give
+the same result as the previous runs (within ‘shot’ er-
+ror bounds). On the IBM hardware, 30 such sequences
+are shown in Fig. 8 with 512 shots per sequence, taking
+well under 1 minute of QPU time (even less if we con-
+fine our interest to fewer than 156 qubits). Such fast
+sequences are then straightforward to place in-between
+other experiments being conducted, allowing us to moni-
+tor the quality of the single qubit gates and the quality of
+the measurements. This approach should alert us to any
+changes that might occur in the device during our main
+experiment. This is a relatively simple protocol designed
+to confirm temporal consistency, see e.g., Ref. [49] for a
+more complete protocol to allow the tracking of drift.
+4. Cross-talk from mid-circuit measurements on syndrome
+extraction circuits
+Here we analyze the effect of mid-circuit measurements
+on the device, while it is running syndrome extraction
+circuits. See Fig. 9. Using the techniques in Ref. [50],
+the data gathered from the simultaneous RB experiments
+(Section IV C 1) can be used to confirm that is no signifi-
+cant crosstalk issues in the device when only single qubit
+gates, without mid-circuit measurements, and the data
+from Section IV C 2 can be used to check the case with
+mid-circuit measurements added. In neither case were
+any significant cross-talk issues noted. The small amount
+of cross-talk that occurs is consistent with low levels of
+leakage from the mid-circuit measurement, but this is mi-
+nor (we estimate at least an order of magnitude smaller)
+than the idling errors occurring during measurement and
+classical measurement errors.
+Acknowledgments
+We are grateful for helpful conversations with A. Cross,
+O. Dial, R. Gupta, S. Merkel, E. Pritchett, N. Sun-
+daresan and M. Takita. We acknowledge support from
+the Intelligence Advanced Research Projects Activity
+(IARPA), under the Entangled Logical Qubits program
+through Cooperative Agreement Number W911NF-23-2-
+0223. The views and conclusions contained in this doc-
+ument are those of the authors and should not be in-
+terpreted as representing the official policies, either ex-
+pressed or implied, of IARPA, the Army Research Office,
+or the U.S. Government. The U.S. Government is autho-
+rized to reproduce and distribute reprints for Govern-
+ment purposes notwithstanding any copyright notation
+herein. CL acknowledges support from the Engineering
+and Physical Sciences Research Council [Grant Number
+EP/S021582/1].
+[1] N. Sundaresan, T. J. Yoder, Y. Kim, M. Li, E. H.
+Chen, G. Harper, T. Thorbeck, A. W. Cross, A. D.
+C´ orcoles, and M. Takita, Nature Communications 14,
+2852 (2023), URL https://www.nature.com/articles/
+s41467-023-38247-5 .
+[2] C. Ryan-Anderson, J. G. Bohnet, K. Lee, D. Gresh,
+A. Hankin, J. P. Gaebler, D. Francois, A. Chernogu-
+zov, D. Lucchetti, N. C. Brown, et al., Phys. Rev. X
+11, 041058 (2021), URL https://link.aps.org/doi/
+10.1103/PhysRevX.11.041058.
+[3] C. K. Andersen, A. Remm, S. Lazar, S. Krinner,
+N. Lacroix, G. J. Norris, M. Gabureac, C. Eichler, and
+A. Wallraff, Nature Physics 16, 875 (2020), URL https:
+//www.nature.com/articles/s41567-020-0920-y .
+
+[PDF page 12]
+12
+With Dynamic DecouplingNo Dynamic Decoupling
+No Dynamic Decoupling
+No Dynamic Decoupling
+With Dynamic DecouplingNo Dynamic DecouplingT_1 = 6.8µs
+(a)
+(b)
+(c)
+Measured Qubit
+Spectator QubitsFidelity – 0.999Fidelity – 0.987
+FIG. 7: The effect of mid-circuit measurements. (a) An RB experiment using a single Clifford twirling operation, inter-
+leaved with mid-circuit measurements. For this experiment we performed four single Clifford gates between each measurement.
+For each qubit being measured (a measurement qubit ) it was randomly determined if the qubit would be returned to the |0⟩
+state (blue dots) or the |1⟩ state for the final measurement. Leftmost graph here we return to the qubit to the same state as
+the designated final state, prior to each mid-circuit measurement. Only the final measurement is shown. This is clearly not a
+typical RB decay curve. Of most import is that the space between the red dots (return to |1⟩) and the blue dots (return to |0⟩)
+increases with sequence length. Middle plot, this plot combines two different experiments. In the first, we change the protocol
+so that, regardless of the final measurement the qubit, is returned to the |0⟩ state prior to a mid-circuit measurement - blue
+dots. In the second the qubit is returned to the |1⟩ state prior to the mid-circuit measurement - red dots. As can be seen the
+decay plots are mainly impacted by the state of the qubit during the mid-circuit measurement. Rightmost plot, here we repeat
+the first experiment, but instead of mid-circuit measurement we just introduce a delay of the same amount of time required for
+a mid-circuit measurement. This plot is strikingly similar to the left-most one, providing evidence that it is the delay that is
+causing a qubit in the |1⟩ state to decay. (b) Left plot: Here we plot the decay curve of a spectator qubit, while the experiment
+discussed in (a) is being performed. The qubit is returned to the same state it will be measured in at the end, we don’t see the
+same gap as noted in (a), but the fidelity is a lot lower than if no mid-circuit measurements were being performed. Middle plot,
+here we turn off dynamic decoupling on the spectator qubits during mid-circuit measurement and we see a similar pattern to
+that observed before. The dynamic decoupling, by rotating the qubit during measurement, was allowing fidelity decay to occur
+regardless of the state of the qubit prior to measurement commencing. Right plot: two different experiments one where the
+qubit is returned to the |0⟩ before the measurement qubits are measured (blue) and one where it is returned 1 ⟩. The fidelity
+loss occurs when the qubit relaxes during the measurement of the other qubits. The same effect occurs if we use delays instead
+of measurements. (c) A dramatic example of the same effect, but here we look at a qubit with very low T1 time. This provides
+further evidence that what is occurring is a relaxation of the qubit. Right plot, here we randomize the state of the qubit prior
+to the measurement qubits being measured. This plot fits the hypothesis that the loss of fidelity observed is a relaxation of the
+qubit during the time taken for the measurement qubits to be measured.
+
+[PDF page 13]
+13
+96.0% Logical fidelity
+93.7% Logical fidelity95.5% Logical fidelity
+94.8% Logical fidelity
+95.2% Logical fidelity
+96.1% Logical fidelity
+(a)
+(b)
+(c)
+015374466Hours elapsedHours elapsed
+Qubit 125
+FIG. 8: Temporal consistency. (a) Simultanious randomized benchmarking using full single Clifford twirl circuits are
+performed on each qubit, interleaved with other experiments (not shown here). The circuits are as described in Section IV C 1,
+save that only a single randomized sequence is selected for each qubit. Thereafter, the same sequences are used. (b) For each
+qubit, we extract the data for a particular length of sequence; here, 80 single qubit gates are chosen. These data are gathered
+onto the one graph that has as its x-axis the time of execution. Each data-point for a sequence (here the average of 512 shots)
+is connected to the data point for the same sequence, executed at a different time. Each of the lines on the graph should be
+horizontal, subject to shot noise. The black ’average’ line should also be horizontal, with much less shot noise variation. (c)
+Here we show the data for the qubits in the device constituting a logical qubit. These runs were interleaved with memory
+experiment runs, which were executed at staggered intervals over a 70 hour period. Inset we extract the graph for one of the
+qubits (here qubit 125). As can be seen at the 15 hour mark, it appears there was notable change in the ability to correctly
+read the |0⟩ state (the blue lines). This coincided with a reduction in the logical fidelity of the memory circuits. While we have
+labeled each point of the this graph with the logical fidelity measured at the time – at the 44 hour mark the loss of fidelity may
+be more related to instability in some of the other qubits (top right of top graph).
+
+[PDF page 14]
+14
+SimulationNo mid-circuit measurementsWith mid-circuit measurements
+(a)
+(b)
+(c)SimulationDevice
+(d)
+FIG. 9: Cross-talk from mid-circuit measurements on syndrome extraction circuits. (a) Here we adapt the circuit
+used in Ref. [51] for the heavy-hex code with mid-circuit measurements. The channel we measure is a circuit to prepare the X
+stabilizers, followed by the Z stabilizers, followed by a random Pauli. Then we reverse the process and prepare the Z stabilizers
+and the X stabilizers. The result is equivalent to an identity circuit, up to a Pauli operator. We can measure the measurement
+qubits and twirl this block with random single gate Cliffords. This is repeated m times, then a final inverting Clifford is
+applied. Using this circuit we can extract the fidelity of each qubit in the channel as well as all k-body error correlations.
+For the purposes of this work, we focus on two-body errors. (b) Since the syndrome extraction circuits contain two-qubit
+entangling gates, errors will spread between the qubits. As this is a fault-tolerant syndrome extraction circuit, the spread of
+errors is contained if a circuit-level model is being honoured by the device. We can simulate the circuits with Pauli noise and
+determine the error correlations we would expect to see if there were no additional crosstalk in the device. Left: we plot the
+expected correlations between qubits in a Hinton diagram. Each row and column represents a qubit. The correlation between
+qubits is shown by the area of white in the intersecting square, with a full square representing 1. The diagonals are all full
+white because each qubit is fully correlated with itself. The resulting patterns occur because of the one dimensional projection
+of the position of the qubits and the symmetry around the diagonal. Middle: the actual crosstalk pattern from the device in
+the absence of mid-circuit measurements. As can be seen the pattern broadly follows the simulation presented in the left plot,
+indicating little non-circuit model crosstalk, although some discrepancies can be seen. Right: two qubit correlations where
+mid-circuit measurements have been added. As can be seen there is some additional crosstalk between the qubits, but the
+expected circuit-level noise model is broadly replicated. (c) The diagrams shown in (b) are compact but lose the information
+pertaining to the relative position of the qubits. Where we have sparse correlations (as in this case) we can plot the same
+information using the position diagram of the qubits and connecting qubits with a line if they share information. Here we use
+mutual information as the discriminating metric and the color and width of the connecting line indicates the strength of the
+mutual information between the qubits. The actual values of the mutual information will depend on the noise in the system.
+The notable feature here, however, is the existence of mutual information between qubits that are designed to be quarantined
+by the operation of the syndrome extraction circuit. The most worrying type of crosstalk would be between data qubits that
+are designed to only experience independent errors. Left shows a circuit level simulation and Right the data from the device.
+As in (b) the broad features of the simulation can be seen, although there is clearly some additional crosstalk between qubits.
+(d) A Hinton diagram taken from a similar experiment to that shown in (b) Right panel, run on an early Heron r1 device
+in January 2024. At that time mid-circuit measurement of certain qubits caused considerable crosstalk between many qubits,
+which was picked up in the experiment. This was an issue that is mainly resolved on the most recent IBM devices (Heron r2).
+
+[PDF page 15]
+15
+[4] R. Acharya, D. A. Abanin, L. Aghababaie-Beni,
+I. Aleiner, T. I. Andersen, M. Ansmann, F. Arute,
+K. Arya, A. Asfaw, N. Astrakhantsev, et al., Nature638,
+920–926 (2024), ISSN 1476-4687, URL http://dx.doi.
+org/10.1038/s41586-024-08449-y .
+[5] L. Postler, F. Butt, I. Pogorelov, C. D. Marciniak,
+S. Heußen, R. Blatt, P. Schindler, M. Rispler, M. M¨ uller,
+and T. Monz, PRX Quantum 5, 030326 (2024), URL
+https://link.aps.org/doi/10.1103/PRXQuantum.5.
+030326.
+[6] H. Bombin and M. A. Martin-Delgado, Journal of
+Physics A: Mathematical and Theoretical 42, 095302
+(2009), URL https://dx.doi.org/10.1088/1751-8113/
+42/9/095302.
+[7] A. G. Fowler, M. Mariantoni, J. M. Martinis, and A. N.
+Cleland, Phys. Rev. A 86, 032324 (2012), URL https:
+//link.aps.org/doi/10.1103/PhysRevA.86.032324.
+[8] C. Horsman, A. G. Fowler, S. Devitt, and R. V. Meter,
+New Journal of Physics 14, 123011 (2012), URL https:
+//dx.doi.org/10.1088/1367-2630/14/12/123011.
+[9] R. S. Gupta, N. Sundaresan, T. Alexander, C. J. Wood,
+S. T. Merkel, M. B. Healy, M. Hillenbrand, T. Jochym-
+O’Connor, J. R. Wootton, T. J. Yoder, et al., Nature
+625, 259–263 (2024), ISSN 1476-4687, URL http://dx.
+doi.org/10.1038/s41586-023-06846-3 .
+[10] C. Ryan-Anderson, N. C. Brown, C. H. Baldwin, J. M.
+Dreiling, C. Foltz, J. P. Gaebler, T. M. Gatterman,
+N. Hewitt, C. Holliman, C. V. Horst, et al., Science
+385, 1327–1331 (2024), ISSN 1095-9203, URL http:
+//dx.doi.org/10.1126/science.adp6016.
+[11] N. Lacroix, A. Bourassa, F. J. H. Heras, L. M. Zhang,
+J. Bausch, A. W. Senior, T. Edlich, N. Shutty, V. Sivak,
+A. Bengtsson, et al., Scaling and logic in the color code on
+a superconducting quantum processor (2024), 2412.14256,
+URL https://arxiv.org/abs/2412.14256.
+[12] I. Besedin, M. Kerschbaum, J. Knoll, I. Hesner,
+L. B¨ odeker, L. Colmenarez, L. Hofele, N. Lacroix,
+C. Hellings, F. Swiadek, et al., Realizing lattice surgery
+on two distance-three repetition codes with superconduct-
+ing qubits (2025), 2501.04612, URL https://arxiv.org/
+abs/2501.04612.
+[13] R. Raussendorf and J. Harrington, Phys. Rev. Lett.
+98, 190504 (2007), URL https://link.aps.org/doi/
+10.1103/PhysRevLett.98.190504.
+[14] B. J. Brown, K. Laubscher, M. S. Kesselring, and J. R.
+Wootton, Phys. Rev. X 7, 021029 (2017), URL https:
+//link.aps.org/doi/10.1103/PhysRevX.7.021029.
+[15] D. Litinski, Quantum 3, 128 (2019), ISSN 2521-327X,
+URL https://doi.org/10.22331/q-2019-03-05-128 .
+[16] L. Z. Cohen, I. H. Kim, S. D. Bartlett, and B. J. Brown,
+Science Advances 8 (2022), URL https://doi.org/10.
+1126%2Fsciadv.abn1717.
+[17] F. Thomsen, M. S. Kesselring, S. D. Bartlett,
+and B. J. Brown, Phys. Rev. Res. 6, 043125
+(2024), URL https://link.aps.org/doi/10.1103/
+PhysRevResearch.6.043125.
+[18] M. Davydova, A. Bauer, J. C. M. de la Fuente, M. Web-
+ster, D. J. Williamson, and B. J. Brown, Universal fault
+tolerant quantum computation in 2d without getting tied
+in knots (2025), 2503.15751, URL https://arxiv.org/
+abs/2503.15751.
+[19] E. Dennis, A. Kitaev, A. Landahl, and J. Preskill,
+Journal of Mathematical Physics 43, 4452 (2002),
+https://doi.org/10.1063/1.1499754, URL https://doi.
+org/10.1063/1.1499754.
+[20] C. Chamberland, G. Zhu, T. J. Yoder, J. B.
+Hertzberg, and A. W. Cross, Phys. Rev. X 10,
+011022 (2020), URL https://link.aps.org/doi/10.
+1103/PhysRevX.10.011022.
+[21] Google Quantum AI, Z. Chen, K. J. Satzinger, J. Ata-
+laya, A. N. Korotkov, A. Dunsworth, D. Sank,
+C. Quintana, M. McEwen, R. Barends, et al., 595,
+383 (2021), URL https://www.nature.com/articles/
+s41586-021-03588-y .
+[22] Y. Zhao, Y. Ye, H.-L. Huang, Y. Zhang, D. Wu, H. Guan,
+Q. Zhu, Z. Wei, T. He, S. Cao, et al., Phys. Rev. Lett.
+129, 030501 (2022), URL https://link.aps.org/doi/
+10.1103/PhysRevLett.129.030501.
+[23] S. Krinner, N. Lacroix, A. Remm, A. D. Paolo, E. Genois,
+C. Leroux, C. Hellings, S. Lazar, F. Swiadek, J. Her-
+rmann, et al., Nature 605, 669 (2022), URL https:
+//doi.org/10.1038/s41586-022-04566-8 .
+[24] G. P. Geh´ er, M. Jastrzebski, E. T. Campbell, and
+O. Crawford, To reset, or not to reset – that is the ques-
+tion (2024), 2408.00758, URL https://arxiv.org/abs/
+2408.00758.
+[25] C. Gidney, Quantum 6, 786 (2022), ISSN 2521-327X,
+URL https://doi.org/10.22331/q-2022-08-24-786 .
+[26] L. Caune, L. Skoric, N. S. Blunt, A. Ruban, J. McDaniel,
+J. A. Valery, A. D. Patterson, A. V. Gramolin, J. Ma-
+janiemi, K. M. Barnes, et al., Demonstrating real-time
+and low-latency quantum error correction with supercon-
+ducting qubits (2024), arXiv:2410.05202 [quant-ph], URL
+http://arxiv.org/abs/2410.05202.
+[27] C. Gidney, Quantum 5, 497 (2021), ISSN 2521-327X,
+URL https://doi.org/10.22331/q-2021-07-06-497 .
+[28] O. Higgott and C. Gidney, Sparse blossom: correcting
+a million errors per core second with minimum-weight
+matching (2023), 2303.15933, URL https://arxiv.org/
+abs/2303.15933.
+[29] B. Het´ enyi and J. R. Wootton, PRX Quantum 5,
+040334 (2024), URL https://link.aps.org/doi/10.
+1103/PRXQuantum.5.040334.
+[30] R. Acharya, I. Aleiner, R. Allen, T. I. Andersen, M. Ans-
+mann, F. Arute, K. Arya, A. Asfaw, J. Atalaya, R. Bab-
+bush, et al., Nature 614, 676 (2023), URL https://doi.
+org/10.1038/s41586-022-05434-1 .
+[31] B. Rost, B. Jones, M. Vyushkova, A. Ali, C. Cullip,
+A. Vyushkov, and J. Nabrzyski, Simulation of ther-
+mal relaxation in spin chemistry systems on a quan-
+tum computer using inherent qubit decoherence (2020),
+2001.00794, URL https://arxiv.org/abs/2001.00794.
+[32] C. Dankert, R. Cleve, J. Emerson, and E. Livine,
+Phys. Rev. A 80, 012304 (2009), quant-ph/0606161,
+URL http://link.aps.org/doi/10.1103/PhysRevA.
+80.012304.
+[33] E. Knill, D. Leibfried, R. Reichle, J. Britton, R. B.
+Blakestad, J. D. Jost, C. Langer, R. Ozeri, S. Sei-
+delin, and D. J. Wineland, Phys. Rev. A 77, 012307
+(2008), 0707.0963, URL http://link.aps.org/doi/10.
+1103/PhysRevA.77.012307.
+[34] E. Magesan, J. M. Gambetta, and J. Emerson, Phys.
+Rev. Lett. 106, 180504 (2011), URL https://link.aps.
+org/doi/10.1103/PhysRevLett.106.180504.
+[35] R. Harper, I. Hincks, C. Ferrie, S. T. Flammia, and
+J. J. Wallman, Phys. Rev. A 99, 052350 (2019),
+1901.00535, URL http://link.aps.org/doi/10.1103/
+10.1103/PhysRevA.99.052350.
+
+[PDF page 16]
+16
+[36] R. W. Andrews, C. Jones, M. D. Reed, A. M. Jones,
+S. D. Ha, M. P. Jura, J. Kerckhoff, M. Levendorf,
+S. Meenehan, S. T. Merkel, et al., Nature Nanotech-
+nology 14, 747 (2019), URL https://doi.org/10.1038/
+s41565-019-0500-4 .
+[37] R. Harper and S. T. Flammia, Phys. Rev. Lett. 122,
+080504 (2019), URL https://link.aps.org/doi/10.
+1103/PhysRevLett.122.080504.
+[38] J. Wallman, Quantum 2, 47 (2018), 1703.09835, URL
+https://arxiv.org/abs/1703.09835.
+[39] S. T. Merkel, E. J. Pritchett, and B. H. Fong, Quan-
+tum 5, 581 (2021), URL https://doi.org/10.22331/
+q-2021-11-16-581 .
+[40] A. Carignan-Dugas, J. J. Wallman, and J. Emerson, New
+Journal of Physics 21, 053016 (2019), URL https://
+doi.org/10.1088/1367-2630/ab1800.
+[41] H. Ball, T. Stace, S. Flammia, and M. Biercuk, Physical
+Review A 93, 022303 (2016), URL https://doi.org/
+10.1103/PhysRevA.93.022303.
+[42] M. A. Fogarty, M. Veldhorst, R. Harper, C. H. Yang,
+S. D. Bartlett, S. T. Flammia, and A. S. Dzurak, Phys.
+Rev. A 92, 022326 (2015), 1502.05119, URL https://
+doi.org/10.1103/PhysRevA.92.022326.
+[43] B. Fong and S. Merkel, Randomized benchmarking, cor-
+related noise, and Ising models (2017), 1703.09747, URL
+https://arxiv.org/abs/1703.09747.
+[44] S. J. Beale and J. J. Wallman, Randomized compiling
+for subsystem measurements (2023), 2304.06599, URL
+https://arxiv.org/abs/2304.06599.
+[45] D. McLaren, M. A. Graydon, and J. J. Wallman,Stochas-
+tic errors in quantum instruments (2023), 2306.07418,
+URL https://arxiv.org/abs/2306.07418.
+[46] Z. Zhang, S. Chen, Y. Liu, and L. Jiang, PRX Quantum
+6, 010310 (2025), URL https://link.aps.org/doi/10.
+1103/PRXQuantum.6.010310.
+[47] L. C. G. Govia, P. Jurcevic, C. J. Wood, N. Kanazawa,
+S. T. Merkel, and D. C. McKay, New Journal of Physics
+25, 123016 (2023), URL http://dx.doi.org/10.1088/
+1367-2630/ad0e19.
+[48] D. Hothem, J. Hines, C. Baldwin, D. Gresh, R. Blume-
+Kohout, and T. Proctor, Measuring error rates of mid-
+circuit measurements (2024), 2410.16706, URL https:
+//arxiv.org/abs/2410.16706.
+[49] T. Proctor, M. Revelle, E. Nielsen, K. Rudinger, D. Lob-
+ser, P. Maunz, R. Blume-Kohout, and K. Young, Nature
+Communications 11, 5396 (2020), URL https://doi.
+org/10.1038/s41467-020-19074-4 .
+[50] R. Harper, S. T. Flammia, and J. J. Wallman, Na-
+ture Physics 16, 1184 (2020), URL https://doi.org/
+10.1038/s41567-020-0992-8 .
+[51] R. Harper and S. T. Flammia, PRX Quantum 4,
+040311 (2023), URL https://link.aps.org/doi/10.
+1103/PRXQuantum.4.040311.

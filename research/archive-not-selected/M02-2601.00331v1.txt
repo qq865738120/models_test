@@ -1,0 +1,1377 @@
+
+[PDF page 1]
+SHARP NONUNIQUENESS FOR THE FORCED 2D NAVIER-STOKES AND
+DISSIPATIVE SQG EQUATIONS
+FRANCISCO MENGUAL AND MARCOS SOLERA
+Abstract.We prove a sharp nonuniqueness result for the forced generalized SQG equation. First,
+this yields nonunique ˙H s-energy solutions below the Miura–Ju class. In particular, this shows that
+the solutions constructed by Resnick and Marchand for the dissipative SQG equation are not neces-
+sarily unique. Second, this establishes nonuniqueness below the Ladyzhenskaya–Prodi–Serrin class
+for the 2D Navier–Stokes equation, as well as below the Constantin–Wu and Dong–Chen–Zhao–Liu
+classes for the dissipative SQG equation.
+Contents
+1. Introduction and main results 1
+2. Self-similar coordinates 10
+3. Proof of Theorem 1.1 11
+4. Self-similar instability 13
+Appendix A. 16
+References 17
+1.Introduction and main results
+In this paper, we apply Vishik’s approach [65, 66, 3, 13], together with our previous work [14]
+with Castro and Faraco, and Golovkin’s trick [36, 28], to address the nonuniqueness for the forced
+2D Navier–Stokes equation and the forced dissipative Surface Quasi-Geostrophic (SQG) equation.
+Both systems can be written as particular cases of the generalized SQG equation with fractional
+dissipation (with Λ = (−∆) 1/2):
+(1a)∂ tθ+v· ∇θ+ Λ βθ=f,
+posed on [0,∞)×R 2, for some given external forcef(t, x) and initial datumθ ◦(x)
+(1b)θ| t=0 =θ ◦.
+The velocityv(t, x) is recovered fromθ(t, x) through theα-Biot-Savart law
+(1c)v=−∇ ⊥Λα−2θ.
+We refer to the system (1) as the (α, β)-SQG equation, for the range of parameters
+0≤α≤1,0< β <3 +α.
+We note that the 2D Navier–Stokes equation corresponds to the choiceα= 0. In this case, (1c)
+reduces to the standard Biot–Savart law, and thereforeθ=∇ ⊥ ·vrepresents the vorticityω. The
+standard 2D Navier–Stokes equation corresponds toβ= 2, while the regimesβ <2 andβ >2 are
+usually referred to as the hypo-dissipative and hyper-dissipative cases, respectively.
+Date: January 5, 2026.
+1
+arXiv:2601.00331v1  [math.AP]  1 Jan 2026
+
+[PDF page 2]
+2 FRANCISCO MENGUAL AND MARCOS SOLERA
+The dissipative SQG equation corresponds toα= 1. The intermediate range 0< α <1
+interpolates between Navier–Stokes and SQG and is commonly referred to as the generalized SQG
+equation. In addition, we refer to the case without diffusion as theα-SQG equation
+(2)∂ tθ+v· ∇θ=f,
+coupled with the initial condition (1b), and theα–Biot–Savart law (1c). In the absence of diffusion,
+the extreme casesα= 0 andα= 1 correspond to the 2D Euler and SQG equations, respectively.
+In the recent groundbreaking works [65, 66], Vishik successfully established nonuniqueness for
+the forced 2D Euler equation below the Yudovich class (see also the clear exposition in [3], as well
+as [5] for the vanishing viscosity limit). The proof is based on the self-similar instability scenario
+proposed by Jia and ˇSver´ ak for the 3D Navier–Stokes equation [40]. Remarkably, Albritton, Bru` e,
+and Colombo built upon these ideas to construct the first nonunique Leray–Hopf solutions for the
+forced 3D Navier–Stokes equation [2]. Very recently, Hou, Wang, and Yang completed the first
+rigorous (computer-assisted) proof in the unforced case [39].
+In [14], together with Castro and Faraco, we proved nonuniqueness for theα–SQG equation (2).
+To this end, we first simplified Vishik’s proof in [13] by constructing smooth, compactly supported
+unstable vortices, and then carefully adapted the argument to the generalized SQG equation without
+diffusion.
+The aim of the present work is to show that the vortices constructed in [14] can also be used
+to establish nonuniqueness in the diffusive setting. First, we follow Vishik’s spectral argument to
+treat the diffusion as a perturbation. Second, we apply Golovkin’s trick [36], recently rediscovered
+by Dolce and Mescolini [28], to bypass the nonlinear instability step.
+1.1.Main result.We present the main nonuniqueness theorem for the (α, β)–SQG equation (1),
+formulated in the Bochner spacesL p
+t ˙W s,q =L p([0, T], ˙W s,q(R2)). Recall thatθ∈ ˙W s,q means that
+Λsθ∈L q. In this first version (Theorem 1.1), we consider the full range of parameters. In the
+subsequent sections, we derive several interesting corollaries as particular cases, which we divide
+into two groups. See Sections 1.2 and 1.3 for precise definitions and references.
+(1) ˙H s-energy solutions, where the integrability exponents are fixed (p=∞andq= 2) and
+the regularity exponentsvaries:
+•Theorem 1.3 yields nonunique solutionsθ∈C t ˙H s ∩L 2
+t ˙H s+ β
+2 fors+β−α <1. The
+caseα= 1 shows sharpness of the Miura–Ju class:s <2−β.
+•Theorem 1.4 yields nonunique solutionsθ∈C t ˙H
+α−2
+2 ∩L 2
+t ˙H
+α+β−2
+2 forβ <2 + α
+2 .
+–The caseα= 0 recovers the Leray–Hopf nonuniquenessv∈C tL2 ∩L 2
+t ˙H
+β
+2 for the
+hypodissipative 2D Navier–Stokes equation of Albritton and Colombo [4].
+–The caseα= 1 yields nonunique Marchand solutionsθ∈C t ˙H − 1
+2 ∩L 2
+t ˙H
+β−1
+2 for
+the dissipative SQG equation whenβ < 5
+2.
+•Theorem 1.5 yields nonunique solutionsθ∈C tL2 ∩L 2
+t ˙H
+β
+2 forβ <1 +α. The case
+α= 1 shows nonuniqueness of Resnick solutions whenβ <2.
+(2)L p
+t Lq-solutions, where the regularity exponentsis fixed (specifically,s=−1,0,1) and the
+admissible ranges ofpandqare determined:
+•Theorem 1.6 yields nonunique solutionsv∈L p
+t Lq to the 2D Navier–Stokes equation
+(α= 0, β= 2) below the Ladyzhenskaya–Prodi–Serrin class: 2
+p + 2
+q >1.
+•Theorem 1.7 yields nonunique solutionsθ∈L p
+t Lq to the dissipative SQG equation
+(α= 1, β <4) below the Constantin–Wu class: β
+p + 2
+q > β−1.
+•Theorem 1.8 yields nonunique solutions∇θ∈L p
+t Lq to the generalized SQG equation
+(0≤α≤1, β <3 +α) below the Dong–Chen–Zhao–Liu class: β
+p + 2
+q > β−α+ 1.
+
+[PDF page 3]
+SHARP NONUNIQUENESS FOR THE FORCED 2D NAVIER-STOKES AND DISSIPATIVE SQG EQUATIONS 3
+Theorem 1.1.Let0≤α≤1and0< β <3 +α. There exists a forceffor which there are two
+distinct solutionsθ 1 andθ 2 to the(α, β)-SQG equation(1)withθ ◦ = 0. Moreover,
+(3) Λ sθj ∈L p
+t Lq,Λ rf∈L a
+t Lb,
+for allr, s≥ −1and1≤a, b, p, q≤ ∞in the regimes
+(4) β
+p + 2
+q > s+β−α, β
+a + 2
+b > r+ 2β−α.
+Moreover, forp=∞the solutions are continuous in time
+Λsθj ∈C tLq for all 2
+q > s+β−α,
+and belong to the critical space
+Λsθj ∈L ∞
+t L
+2
+s+β−α for alls≤α−β+ 2.
+Remark 1.2.We provide several clarifications and refinements of Theorem 1.1:
+(i) The solutions are global in time. However, the integrability in time degenerates ast→ ∞.
+Thus, equation(3)must be understood asL p([0, T];L q(R2))for allT >0.
+(ii) The solutions are smooth for allt >0. Thus, they satisfy the(α, β)-SQG equation(1)in a
+classical sense. At timet= 0, they satisfy the equation in the weak sense:
+Z ∞
+0
+Z
+R2
+(θ∂tϕ+θv· ∇ϕ−θΛ βϕ+ Λ −1fΛϕ) dxdt=−
+Z
+R2
+θ◦(x)ϕ(0, x) dx,
+for all test functionϕ∈C ∞
+c ([0,∞)×R 2). In our case, the right hand side vanishes since
+θ◦ = 0. We recall that the weak formulation makes sense provided thatθ, θv,Λ −1f∈L 1
+t,x.
+First, Theorem 1.1 directly yieldsθ j,Λ −1f∈L 1
+t,x. Second, we claim thatθ jvj ∈L 1
+t,x. On
+the one hand,
+θj ∈L p
+t Lq for β
+p + 2
+q > β−α.
+On the other hand, sincev j ∼Λ α−1θj, we have
+vj ∈L p′
+t Lq′
+for β
+p′ + 2
+q′ > β−1.
+By imposing 1
+p′ = 1− 1
+p and 1
+q′ = 1− 1
+q , we get the conditionβ−α < β
+p + 2
+q <3,which is
+possible provided thatβ <3 +α.
+(iii) The statement forp=∞follows from the fact thatθ ◦ = 0together with the bound
+∥Λsθj(t)∥Lq ≲t
+1
+β
+
+2
+q −s−β+α
+
+.
+(iv) The behavior in (iii) extends analogously to other functional settings. In general, one obtains
+θj ∈C tYfor any supercritical spaceY, whereasθ j ∈L ∞
+t Y\C tYfor any critical space
+Y. For instance, the two distinct solutions to the forced 2D Navier–Stokes equation in
+Theorem 1.6 satisfy
+vj ∈L ∞
+t BM O−1.
+This does not contradict the global well-posedness for small data established by Koch and
+Tataru[45], since continuity fails and the forcing is too singular att= 0. Remarkably,
+nonuniqueness inBM O −1 has been recently established—for large data without forcing—on
+T3 by Coiculescu and Palasek[21], and onT 2 by Cheskidov, Dai, and Palasek[17].
+
+[PDF page 4]
+4 FRANCISCO MENGUAL AND MARCOS SOLERA
+1.2.Nonuniqueness of energy solutions.In this section, we examine the ranges of parameters
+for which the nonunique solutions from Theorem 1.1 are ˙H s-energy solutions:
+θ∈C t ˙H s ∩L 2
+t ˙H s+ β
+2 .
+That is, these solutions are continuous in ˙H s, corresponding top=∞andq= 2, with an additional
+gain in regularity due to diffusion. The natural space for the forcing term associated with the ˙H s
+energy estimate is
+f∈L 1
+t ˙H s +L 2
+t ˙H s− β
+2 .
+Forα= 1 and 0< β <2, Miura [60] and Ju [41] established local well-posedness for the
+dissipative SQG equation in the critical cases= 2−β:
+θ∈C tH2−β ∩L 2
+t ˙H2− β
+2 .
+This result was extended to global-in-time solutions in the critical caseβ= 1 by Dong and Du [31].
+Earlier, Constantin, C´ ordoba, and Wu [23] proved global existence of solutions withθ∈L∞
+t H1 and
+uniqueness in the classθ∈L ∞
+t H2 for the critical SQG equation with smallL ∞ initial data.
+As a corollary of Theorem 1.1, we deduce nonuniqueness whenevers+β−α <1. In particular,
+forα= 1 this shows the sharpness of theMiura–Ju class, namelys <2−β.
+Theorem 1.3(Nonuniqueness of ˙H s-energy solutions).Let0≤α≤1and0< β <2 +α. There
+exists a forceffor which there are two distinct solutionsθ 1 andθ 2 to the(α, β)-SQG equation(1)
+withθ ◦ = 0such that
+θj ∈C t ˙H s ∩L 2
+t ˙H s+ β
+2 , f∈L 1
+t ˙H s ∩L 2
+t ˙H s− β
+2 ,
+for alls+β−α <1.
+Proof.The nonunique solutions correspond to those constructed in Theorem 1.1 withq=b= 2.
+First, takingp=∞anda= 1, we get
+Λsθj ∈C tL2,Λ sf∈L 1
+t L2,
+provided that β
+∞ + 2
+2 > s+β−αand β
+1 + 2
+2 > s+ 2β−α. Second, takingp=a= 2, we get
+Λs+ β
+2 θj ∈L 2
+t L2,Λ s− β
+2 f∈L 2
+t L2,
+provided that β
+2 + 2
+2 >(s+ β
+2 ) +β−αand β
+2 + 2
+2 >(s− β
+2 ) + 2β−α. All these conditions are
+equivalent tos+β−α <1.□
+Next, we examine the ranges ofαandβfor which the nonunique solutions from Theorem 1.3 are
+of Leray–Hopf type. By this we mean that they satisfy an appropriate form of an energy inequality.
+We distinguish two well-known energies:
+(5)H(t) := 1
+2 ∥θ(t)∥2
+˙H
+α−2
+2
+andE(t) := 1
+2 ∥θ(t)∥2
+L2.
+These correspond, in the inviscid case, to the Hamiltonian and theL 2-Casimir, respectively, since
+they are conserved whenf= 0. In the viscous case, a standard energy estimate shows that classical
+solutions to the (α, β)–SQG equation (1) satisfy, for boths= α−2
+2 ands= 0, the energy identity
+(6) 1
+2 ∥θ(t)∥2
+˙H s +
+Z t
+0
+∥θ∥2
+˙H s+ β
+2
+dt′ = 1
+2 ∥θ◦∥2
+˙H s +
+Z t
+0
+⟨f, θ⟩ ˙H s dt′.
+For weak solutions obtained as limits of suitably regularizing mechanisms, the energy identity holds
+in the form of an inequality.
+
+[PDF page 5]
+SHARP NONUNIQUENESS FOR THE FORCED 2D NAVIER-STOKES AND DISSIPATIVE SQG EQUATIONS 5
+1.2.1. ˙H
+α−2
+2 –energy solutions.We begin by discussing the more familiar case of the 2D Navier–
+Stokes equation. Forα= 0, the vorticityω:=∇ ⊥ ·vplays the role of the temperatureθ, and the
+(divergence-free) velocity fieldvsatisfies the (fractional) Navier–Stokes equation
+(7)∂ tv+v· ∇v+ Λ βv=−∇p+g,
+wherepis the pressure andgan external force. Applying the curl to the momentum equation (7)
+yields the vorticity formulation
+(8)∂ tω+v· ∇ω+ Λ βω=f,
+wheref=∇ ⊥ ·g. Note that (8) is simply (1a) withθreplaced byω. Recall thatvandgare
+recovered fromωandf, respectively, through the Biot–Savart law:v=∇ ⊥∆−1ωandg=∇ ⊥∆−1f.
+In the celebrated work [48], Leray proved the global existence of solutions to the standard
+Navier–Stokes equation (β= 2)
+v∈C tL2 ∩L 2
+t ˙H1,
+by constructing a regularizing sequence for (7) and then passing to the limit using the compactness
+provided by the energy inequality
+(9) 1
+2 ∥v(t)∥2
+L2 +
+Z t
+0
+∥∇v∥2
+L2 dt′ ≤ 1
+2 ∥v◦∥2
+L2 +
+Z t
+0
+⟨g, v⟩L2 dt′.
+These solutions are usually referred to asLeray–Hopf solutions, also recognizing Hopf’s contribution
+in the setting of bounded domains [38]. Observe that (9) corresponds to (6) with an inequality for
+α= 0 ands=−1, since the Hamiltonian can be written as
+H= 1
+2 ∥ω∥2
+˙H −1 = 1
+2 ∥v∥2
+L2.
+Moreover, forβ= 2 the quantity
+E= 1
+2 ∥ω∥2
+L2 = 1
+2 ∥∇v∥2
+L2
+corresponds to the enstrophy, which satisfies (6) with an inequality in two dimensions, namely
+(10) 1
+2 ∥ω(t)∥2
+L2 +
+Z t
+0
+∥∇ω∥2
+L2 dt′ ≤ 1
+2 ∥ω◦∥2
+L2 +
+Z t
+0
+⟨f, ω⟩L2 dt′.
+This control allows one to conclude that the Navier–Stokes equation is globally well posed in the
+Leray–Hopf class forβ= 2. However, as mentioned previously, uniqueness of Leray–Hopf solutions
+(11)v∈C tL2 ∩L 2
+t ˙H
+β
+2 ,
+no longer holds in the hypodissipative caseβ <2, at least in the presence of forcing [4].
+For the dissipative SQG equation, for whichH= 1
+2 ∥θ∥2
+˙H − 1
+2
+, Marchand proved in [54] a natural
+extension of Leray’s existence theorem in the class
+(12)θ∈C t ˙H − 1
+2 ∩L 2
+t ˙H
+β−1
+2 ,
+which we refer to asMarchand solutions.
+As a corollary of Theorem 1.3, we deduce nonuniqueness of ˙H
+α−2
+2 -energy solutions forβ <2+ α
+2 .
+On the one hand, this recovers the result of Albritton and Colombo on nonuniqueness of Leray–Hopf
+solutions (11) for the hypodissipative 2D Navier–Stokes equation [4]. On the other hand, it shows
+that Marchand solutions (12) are not necessarily unique forβ < 5
+2. This exponent coincides with
+the uniqueness threshold introduced by Lions for the 3D Navier–Stokes equation [49], as evidenced
+by the nonuniqueness results of Luo and Titi [53], and of Khor, Miao, and Su [42].
+
+[PDF page 6]
+6 FRANCISCO MENGUAL AND MARCOS SOLERA
+Theorem 1.4(Nonuniqueness of Leray–Hopf and Marchand solutions).Let
+0≤α≤1,0< β <2 + α
+2 .
+There exists a forceffor which there are two distinct solutionsθ 1 andθ 2 to the(α, β)-SQG equation
+(1)withθ ◦ = 0such that
+(13)θ j ∈C t ˙H
+α−2
+2 ∩L 2
+t ˙H
+α+β−2
+2 , f∈L 1
+t ˙H
+α−2
+2 ∩L 2
+t ˙H
+α−β−2
+2 .
+Moreover, they satisfy the energy identity(6)withs= α−2
+2 .
+Proof.The nonunique solutions correspond to those constructed in Theorem 1.3 withs= α−2
+2 .
+Since these solutions are classical fort >0, they satisfy the energy identity (6)
+(14) 1
+2 ∥θj(t)∥2
+˙H
+α−2
+2
++
+Z t
+t0
+∥θj∥2
+˙H
+α+β−2
+2
+dt′ = 1
+2 ∥θj(t0)∥2
+˙H
+α−2
+2
++
+Z t
+t0
+⟨f, θj⟩ ˙H
+α−2
+2
+dt′,
+for all 0< t 0 < t. Lettingt 0 →0 and using (13), we obtain the same identity fort 0 = 0.□
+Nonunique Leray–Hopf solutions to the unforced hypodissipative Navier–Stokes equation onT 3
+were constructed by Colombo, De Lellis, and De Rosa [22] for 0< β < 2
+5, later improved to
+0< β < 2
+3 by De Rosa in [27]. Nonuniqueness for the dissipative SQG equation onT 2 was also
+established—under suitable H¨ older regularity of Λ−1θ—by Buckmaster, Shkoller, and Vicol [9], and
+in the forced case by Dai and Peng [25]. Earlier, Buckmaster and Vicol [10] constructed the first
+nonunique solutionsv∈C tL2 ∩L 2
+t H γ—for some smallγ >0—to the Navier–Stokes equation on
+T3 (see also [52, 53, 11, 8, 57, 43, 37, 63, 20]). These works rely on convex integration, introduced
+in fluid mechanics by De Lellis and Sz´ ekelyhidi for the Euler equation [26]. More recently, Palasek
+and Coiculescu combined this method with dyadic models to establish nonuniqueness for critical
+Navier–Stokes data [21] (see also [17]).
+As mentioned in the introduction, nonuniqueness of Leray–Hopf solutions to the Navier–Stokes
+equation inR 3 has been established by Albritton, Bru` e, and Colombo in the forced case [2], and
+very recently by Hou, Wang, and Yang in the unforced case [39].
+1.2.2.L 2–energy solutions.Prior to Marchand’s existence theorem, Resnick had already applied a
+Leray-type argument—based on the energyErather thanH—to deduce the existence of solutions
+to the dissipative SQG equation
+(15)θ∈C tL2 ∩L 2
+t ˙H
+β
+2 ,
+which we refer to asResnick solutions. In the subcritical regimeβ >1, these solutions become
+instantly smooth, as shown by Constantin and Wu [24]. In the critical caseβ= 1, Caffarelli and
+Vasseur proved that such solutions are at least H¨ older continuous for positive times [12]. It is worth
+emphasizing that these results do not imply uniqueness. For smooth initial data, Kiselev, Nazarov,
+and Volberg [44] proved the existence of a unique global smooth solutionθ∈L ∞
+t W 1,∞.
+As a corollary of Theorem 1.3, we deduce nonuniqueness ofL 2-energy solutions in the regime
+β <1 +α. Forα= 1, this shows that Resnick solutions (15) are not necessarily unique forβ <2.
+Theorem 1.5(Nonuniqueness of Resnick solutions).Let
+0≤α≤1,0< β <1 +α.
+There exists a forceffor which there are two distinct solutionsθ 1 andθ 2 to the(α, β)-SQG equation
+(1)withθ ◦ = 0such that
+θj ∈C tL2 ∩L 2
+t ˙H
+β
+2 , f∈L 1
+t L2 ∩L 2
+t ˙H − β
+2 .
+Moreover, they satisfy the energy identity(6)withs= 0.
+Proof.It follows analogously to the proof of Theorem 1.4 by takings= 0 instead ofs= α−2
+2 .□
+
+[PDF page 7]
+SHARP NONUNIQUENESS FOR THE FORCED 2D NAVIER-STOKES AND DISSIPATIVE SQG EQUATIONS 7
+1.3.Nonuniqueness inL p
+t Lq spaces.In the previous section, we saw that uniqueness need not
+hold within the natural class of energy solutions. For the Navier–Stokes equation, the classical
+works of Prodi [62], Serrin [64], and Ladyzhenskaya [47] showed that uniqueness can be recovered
+by additionally assuming that the solutions belong to suitableL p
+t Lq spaces. Similar criteria were
+later established for the generalized SQG equation.
+In this section, we explain how Theorem 1.1 yields sharp nonuniqueness results for specific
+values ofs. We observe that the complement of the regimes appearing in Theorem 1.1 can be
+interpreted as a generalized Ladyzhenskaya–Prodi–Serrin condition. While such conditions are
+known to guarantee uniqueness for certain parameter ranges (see the references in this section), it
+remains an interesting open question whether uniqueness holds throughout the full range.
+We begin by discussing the more familiar case of the standard 2D Navier–Stokes equation, and
+then turn to the generalized SQG equation.
+1.3.1.The Navier-Stokes case.Forα= 0 andβ= 2, the Navier–Stokes equation (7) reads as
+(16)∂ tv+v· ∇v=−∇p+ ∆v+g.
+The Ladyzhenskaya–Prodi–Serrin (LPS) criterion asserts that if two solutionsv 1 andv 2 of the
+Navier-Stokes equation (16) in dimensiond≥2 satisfy
+vj ∈L p
+t Lq with 2
+p + d
+q ≤1,
+for certain ranges ofqto be discussed below, then necessarilyv 1 =v 2.
+This uniqueness criterion was first proved in [62, 64] under the stronger assumption that thev j
+are Leray solutions (later shown to be smooth in [47]), that is, they satisfy the energy inequality
+(9) in the ranged < q <∞. The extension to the critical endpointq=dandp=∞was
+obtained through the uniqueness result of Kozono and Sohr [46], whose corresponding smoothness
+was established by Escauriaza, Ser¨ egin, andˇSver´ ak in [33].
+Without assuming the Leray condition (9), the same uniqueness criterion ford < q <∞was
+proved by Fabes, Jones, and Rivi` ere [34]. The critical endpointq=dandp=∞turned out to be
+more delicate: one must additionally impose time continuity, namely
+v∈C tLd,
+ford= 2,3, rather than onlyv∈L ∞
+t L2 (see e.g. [35, 56, 61, 50]). Interestingly, for dimensions
+d≥4 this time-continuity assumption is no longer needed [50].
+As a corollary of Theorem 1.1, we deduce nonuniqueness below theLadyzhenskaya–Prodi–Serrin
+classfor the forced 2D Navier-Stokes equation. The extension to the generalized SQG equation
+follows simply by takings=−1 in Theorem 1.1.
+Theorem 1.6(Nonuniqueness below the Ladyzhenskaya–Prodi–Serrin class).There exists a force
+g∈L 1
+t Lb for all1≤b <2,
+for which there are two distinct solutionsv 1 andv 2 to the 2D Navier-Stokes equation(16)with
+initial datumv ◦ = 0such that
+vj ∈L p
+t Lq for all 2
+p + 2
+q >1.
+Moreover, forp=∞it holds
+vj ∈C tLq ∩L ∞
+t L2 for all1≤q <2.
+Proof.Forα= 0,β= 2, we taker=s=−1 anda= 1 in Theorem 1.1. Recall that, by the
+Biot-Savart law, we havev j ∼Λ −1ωj andg∼Λ −1f.□
+
+[PDF page 8]
+8 FRANCISCO MENGUAL AND MARCOS SOLERA
+Observe that the solutions in Theorem 1.6 cannot be Leray–Hopf solutions. On the one hand,
+we haveg /∈L 1
+t L2 andv j /∈CtL2. On the other hand, takingp=q= 2 andγ= 1 +s, we deduce
+thatv j ∈L 2
+t ˙H γ for allγ <1, whilev j /∈L2
+t ˙H1. Similarly,g /∈L 2
+t ˙H −1.
+By adjusting the parameters, the solutions and the forcing term can be described in other func-
+tional spaces. For instance, takings= 0 andp= 1, we obtainω j ∈L 1
+t Lq for allq <∞, so that
+they lie just below the Beale–Kato–Majda class.
+The nonuniqueness below the LPS class for the unforced Navier–Stokes equation inT d was first
+proved by Cheskidov and Luo in the endpoint cases:L p
+t L∞ withp <2 andd≥2 in [18], and in
+CtLq withq <2 andd= 2 in [19] (see also [58, 59]). The caseL 2
+t Lq withq <∞andd≥2 was
+recently established in [17].
+To the best of our knowledge, sharp nonuniqueness below the LPS class remains open in the
+unforced 2D setting forp̸= 2,∞andq̸=∞. Notably, the nonunique Leray-Hopf solutions inR 3
+recently constructed in [39] lie just below the LPS class.
+1.3.2.The generalized SQG case.In subsequent works, similar uniqueness criteria have been es-
+tablished for other values ofα. For the dissipative SQG equation (α= 1), Constantin and Wu [24]
+proved uniqueness of Resnick solutionsθ∈L ∞
+t L2 ∩L 2
+t H
+β
+2 with forcing termf∈L 2
+t H − β
+2 in the
+subcritical regime 1< β≤2, when the solution additionally satisfies the LPS-type condition
+θ∈L p
+t Lq with β
+p + 2
+q =β−1, q≥1.
+The following corollary of Theorem 1.1 shows the sharpness of theConstantin–Wu classfor the
+dissipative SQG equation. Notice that the regime considered in [24] is 0< β≤2, whereas in
+Theorem 1.7 we allow 0< β <4. In addition, for 0< β <2 the solutions constructed here belong
+to the Resnick class.
+We remark that the theorem is stated forα= 1 in order to facilitate comparison with [24]. The
+extension to the generalized SQG equation follows by takings= 0 in Theorem 1.1. Forα= 0, this
+can be interpreted as controlling∇v∈L p
+t Lq, which may be of interest in 3D in view of Beir˜ ao da
+Veiga’s uniqueness criterion [7].
+Theorem 1.7(Nonuniqueness below the Constantin–Wu class).Letα= 1and0< β <4. There
+exists a forceffor which there are two distinct solutionsθ 1 andθ 2 to the(1, β)-SQG equation(1)
+withθ ◦ = 0such that
+θj ∈L p
+t Lq for all β
+p + 2
+q > β−1.
+Moreover, forp=∞it holds
+θj ∈C tLq ∩L ∞
+t L
+2
+β−1 for all 2
+q > β−1.
+Furthermore, ifβ <2, thenθ j ∈L ∞
+t L2 ∩L 2
+t ˙H
+β
+2 andf∈L 1
+t L2 ∩L 2
+t ˙H − β
+2 .
+Proof.Forα= 1, we takes= 0 in Theorem 1.1. Forβ <2, Theorem 1.5 ensures that they are
+L2-energy solutions. □
+Later, in the regime 0< β≤2, Dong and Chen [29, 30] established another uniqueness criterion
+by controlling the gradient, namely under the following LPS-type condition
+∇θ∈L p
+t Lq with β
+p + 2
+q =β, 2
+β < q <∞.
+Regularity of solutions in this class had previously been established by Chae [15].
+
+[PDF page 9]
+SHARP NONUNIQUENESS FOR THE FORCED 2D NAVIER-STOKES AND DISSIPATIVE SQG EQUATIONS 9
+This uniqueness criterion was later extended by Zhao and Liu [67] to the generalized SQG
+equation (0< α≤1) in the regime 0< β <2α. In this case, they assumed
+∇θ∈L p
+t Lq with β
+p + 2
+q = 1 +β−α, 2
+1 +β−α < q <∞.
+The following corollary of Theorem 1.1 shows the sharpness of theDong–Chen–Zhao–Liu class.
+Notice that the regime considered in [29, 30, 67] is 0< β <2α, whereas in Theorem 1.7 we allow
+0< β <3 +α. In addition, for 0< β <1 +αour solutions belong to the Resnick class.
+Theorem 1.8(Nonuniqueness below the Dong–Chen–Zhao–Liu class).Let0≤α≤1and0< β <
+3 +α. There exists a forceffor which there are two distinct solutionsθ 1 andθ 2 to the(α, β)-SQG
+equation(1)withθ ◦ = 0such that
+∇θj ∈L p
+t Lq for all β
+p + 2
+q >1 +β−α.
+Moreover, forp=∞it holds
+∇θj ∈C tLq ∩L ∞
+t L
+2
+1+β−α for all 2
+q >1 +β−α.
+Furthermore, ifβ <1 +α, thenθ j ∈L ∞
+t L2 ∩L 2
+t ˙H
+β
+2 andf∈L 1
+t L2 ∩L 2
+t ˙H − β
+2 .
+Proof.Forα= 1, we takes= 1 in Theorem 1.1. Forβ <1 +α, Theorem 1.5 ensures that they
+areL 2-energy solutions.□
+1.3.3.Other uniqueness criteria.We remark that in [30], Dong and Chen proved uniqueness of
+L2-energy solutions for the dissipative SQG equation in a broader Besov class, namely
+∇θ∈L p
+t B0
+q,∞ with β
+p + 2
+q =β, 2
+β < q <∞.
+Earlier, Abidi and Hmidi [1] proved the existence of a unique global solution for critical SQG
+equation in the Besov classθ∈C t ˙B0
+∞,1 ∩L 1
+t ˙B1
+∞,1.See e.g. [6, 16] for further uniqueness criteria in
+Besov settings.
+Although our nonunique solutions are expected to fall just outside these classes as well, we have
+chosen to state our results in terms of Lebesgue and Sobolev spaces in order to avoid introducing
+additional parameters and notation. The interested reader may compute the scaling of the solutions
+from Theorem 1.1, as in Section 2, and verify the corresponding Besov regimes.
+We conclude by mentioning that several other uniqueness criteria have been introduced for the
+generalized SQG equation. We recall the classical well-posedness result for small data by Koch
+and Tataru [45] for the Navier–Stokes equation in the critical classBMO −1 . As mentioned in
+Remark 1.2(iv), the two distinct solutions to the forced 2D Navier–Stokes equation constructed in
+Theorem 1.6 satisfyv j ∈L ∞
+t BMO −1 . See also the recent works of Coiculescu and Palasek [21],
+and of Cheskidov, Dai, and Palasek [17].
+In this regard, Marchand showed in [55] that solutionsθ∈L 2
+t L2 ∩L ∞
+t ˙H − 1
+2 to the dissipative
+SQG equation are unique provided that they are small inL ∞
+t BMO. Consequently, this smallness
+condition must fail for the nonunique Marchand solutions constructed in Theorem 1.4.
+Moreover, Liu, Jia, and Dong [51] proved that forα= 1 and 0< β <2, solutions with initial
+dataθ ◦ ∈H 2+β satisfyingθ∈L ∞
+t L2 ∩L 2
+t H
+β
+2 are unique provided that, in addition,∇θ∈L 1
+t BMO.
+As a consequence, the solutions constructed in Theorem 1.4 cannot belong to this class.
+
+[PDF page 10]
+10 FRANCISCO MENGUAL AND MARCOS SOLERA
+2.Self-similar coordinates
+We consider the self-similar variables
+(17)X= x
+t1/β , τ= 1
+ν logt,
+in terms of a parameterν >0, to be determined. The choice of the letterνis due to the fact that
+it will appear later in front of the fractional Laplacian, thus representing a sort of viscosity.
+Proposition 2.1.The pair(θ, f)given by the change of variables
+θ(t, x) = t
+α
+β −1
+ν Θ(τ, X),(18a)
+f(t, x) = t
+α
+β −2
+ν2 F(τ, X),(18b)
+is a solution to the(α, β)-SQG equation(1)if and only if the pair(Θ, F)solves theself-similar
+(α, β)-SQG equation
+(19)∂ τΘ +V· ∇Θ +νJΘ =F,
+whereJ=J α,β is given by
+JΘ = Λ βΘ +
+ α
+β −1
+
+Θ− 1
+β X· ∇Θ.
+The corresponding velocities are linked by
+(20)v(t, x) = t
+1
+β −1
+ν V(τ, X),
+that is,(v, V)are recovered from(θ,Θ)through theα-Biot Savart law(1c), respectively.
+Proof.A straightforward computation shows that
+∂tθ= t
+α
+β −2
+ν2
+
+∂τΘ +ν
+ α
+β −1
+
+Θ− ν
+β X· ∇Θ
+
+.
+Moreover, using Lemma A.2, we also obtain (20), as well as
+v· ∇θ= t
+α
+β −2
+ν2 V· ∇Θ,
+and
+Λβθ= t
+α
+β −2
+ν ΛβΘ.
+This concludes the proof.□
+Proposition 2.2.It holds
+∥Λsθ∥Lp
+t Lq = 1
+ν
+Z T
+0
+tp
+
+α−s
+β + 2
+βq −1
+
+∥ΛsΘ(τ)∥ p
+Lq dt
+ 1
+p
+,
+where recallτ= 1
+ν logt.
+Proof.Using Lemma A.2, we compute
+Λsθ= t
+α−s
+β −1
+ν ΛsΘ.
+
+[PDF page 11]
+SHARP NONUNIQUENESS FOR THE FORCED 2D NAVIER-STOKES AND DISSIPATIVE SQG EQUATIONS 11
+Hence, we have
+Z
+R2
+|Λsθ|q dx= tq
+
+α−s
+β −1
+
++ 2
+β
+νq
+Z
+R2
+|ΛsΘ|q dX.
+This concludes the proof.□
+Analogously, we obtain the scaling for the force.
+Proposition 2.3.It holds
+∥Λrf∥ La
+t Lb = 1
+ν2
+Z T
+0
+ta
+
+α−r
+β + 2
+βb −2
+
+∥ΛsF(τ)∥ a
+Lq dt
+ 1
+a
+,
+where recallτ= 1
+ν logt.
+Note that the integrals in Propositions 2.2 and 2.3 are finite provided that
+p
+ α−s
+β + 2
+βq −1
+
+>−1, a
+ α−r
+β + 2
+βb −2
+
+>−1,
+which agree with the regimes (4).
+3.Proof of Theorem 1.1
+We aim to construct a family of distinct solutionsθ ϵ, in terms of a parameterϵ≥0, to the
+(α, β)-SQG equation (1) for some external forcing termf. According to Proposition 2.1, we can
+express these solutions in self-similar coordinates (17) as
+θϵ(t, x) := t
+α
+β −1
+ν Θϵ(τ, X),(21a)
+f(t, x) := t
+α
+β −2
+ν2 F(τ, X),(21b)
+for some solutions Θ ϵ to the self-similar (α, β)-SQG equation (19) with an external forcingF, to
+be determined. We split these solutions as
+(22) Θ ϵ := ¯Θ +ϵ ˜Θ,
+for some temperature ¯Θ independent ofτ, and a deviation ˜Θ, which we require to satisfy
+˜Θ|τ=−∞ = 0.
+The self-similar (α, β)-SQG equation (19) is written in terms of this decomposition (22) as
+(23) ¯V· ∇ ¯Θ +νJ ¯Θ +ϵ(∂ τ −L ν) ˜Θ +ϵ 2 ˜V· ∇ ˜Θ =F,
+where the velocities ¯Vand ˜Vare recovered from ¯Θ and ˜Θ, respectively, through theα-Biot-Savart
+law (1c), andL ν =L α,β,ν, ¯Θ is the linearization of the self-similar (α, β)-SQG equation (19) around
+the steady temperature ¯Θ:
+(24)L νΘ :=− ¯V· ∇Θ−V· ∇ ¯Θ−νJΘ.
+Notice thatL 0 formally corresponds to the linearization of theα-SQG equation (2) (without dis-
+sipation) in the original system of coordinates.
+Our goal is to prove that the forcingFabove can be chosen to be independent ofϵ. We start by
+focusing on the first-order term inϵ, corresponding to the linear evolution equation
+(∂τ −L ν)Θlin = 0.
+By separation of variables, we deduce that
+Θlin(τ, X) =ℜ(e λτ W(X)),
+
+[PDF page 12]
+12 FRANCISCO MENGUAL AND MARCOS SOLERA
+for some eigenpair (λ, W) satisfying
+(25)L νW=λW.
+In Section 4 we prove the existence of aself-similarly unstable vortex ¯Θ, meaning thatL ν, ¯Θ
+admits an eigenpair withℜλ >0. This guarantees that
+Θlin|τ=−∞ = 0.
+To this end, we apply Vishik’s spectral argument [65, 66] to the unstable vortices constructed in
+[14]. The main novelty is that we incorporate the diffusion as a perturbation.
+Theorem 3.1(Self-similar instability).Let0≤α≤1and0< β <3 +α. There exists a vortex
+¯Θ∈C ∞
+c with zero-mean satisfying that, for someν >0, there existsλ ν ∈Cwithℜλ ν >0and
+Wν ∈H k(R2)for allk∈N, solving the eigenvalue problem(25)forL ν =L α,β,ν, ¯Θ given in(24).
+In a recent preprint [28], Dolce and Mescolini revived a clever trick from Golovkin [36] which al-
+lows proving nonuniqueness once self-similar instability is established at the linear level. Golovkin’s
+trick simply consists of taking the deviation as
+˜Θ = Θlin,
+which requires taking the following force
+F= ¯V· ∇ ¯Θ +νJ ¯Θ +V lin · ∇Θlin.
+It is immediate that both (ϵ=±1)
+Θ+ = ¯Θ + Θlin,Θ − = ¯Θ−Θ lin,
+solve the equation (23) for thisF. The smoothness of the solutions allows us to conclude Theorem
+1.1 through the Sobolev scaling (Propositions 2.2 and 2.3).
+Remark 3.2.Alternatively, one can consider Vishik’s forcing
+F= ¯V· ∇ ¯Θ +νJ ¯Θ.
+This requires decomposing the deviation as
+˜Θ = Θlin +ϵΘ cor,
+where the correcting term must satisfy
+(∂τ −L ν)Θcor =− ˜V· ∇ ˜Θ.
+To ensure that the solutions are different one needs to verify that such aΘ cor exists satisfying the
+asymptotics
+Θcor =o(e λτ), τ→ −∞.
+This argument is more involved, but would allow to construct not only two, but infinitely many
+different solutions starting from the same initial datum and with the same radial forcing. The
+last step to complete the Jia– ˇSver´ ak program would be to find a self-similarly unstable ¯Θfor which
+F= 0.
+
+[PDF page 13]
+SHARP NONUNIQUENESS FOR THE FORCED 2D NAVIER-STOKES AND DISSIPATIVE SQG EQUATIONS 13
+4.Self-similar instability
+In this section we prove Theorem 3.1 for any fixed pair (α, β) in the regime 0≤α≤1 and
+0< β <3 +α. We consider the special case of radially symmetric steady temperatures ¯Θ, called
+vortices. In polar coordinatesX=Re iϕ, this corresponds to
+(26) ¯Θ(X) = ¯Θ(R).
+We work in the spaceU 0 of vortices inL 2(R2) with zero-mean,
+(27)U 0 :=
+
+¯Θ∈L 2 : ¯Θ(X) = ¯Θ(R),
+Z ∞
+0
+¯Θ(R)RdR= 0
+
+.
+In this context, given 0̸=n∈Z, it is natural to seek eigenfunctions in the space ofpurelyn-fold
+symmetrictemperatures,
+(28)U n :={W∈L 2 :W(X) =W n(R)einϕ}.
+Note that any element ofU n has zero-mean. SinceU −n =U ∗
+n, we consider without loss of generality
+the casen∈N. It is easy to see that the spaceU n is invariant underL ν (see Lemma A.1).
+Definition 4.1.We say that the vortex ¯Θisunstableif, for somen∈N, there exists0̸=W∈U n
+satisfyingL 0, ¯ΘW=λWwithℜλ >0. Similarly, we say that ¯Θisself-similarly unstableif, for
+somen∈Nandν >0, there exists0̸=W ν ∈U n satisfyingL ν, ¯ΘWν =λ νWν withℜλ ν >0.
+Let us recall [14, Theorem 3.3], which establishes the existence of unstable vortices for theα–SQG
+equation (2) (without dissipation). Note that this is equivalent to being an unstable vortex in the
+sense of Definition 4.1, since the diffusion term dissapears whenν= 0.
+Theorem 4.2.Let0≤α≤1. For everyn≥2, there exists an unstable vortex ¯Θ∈C ∞
+c ∩U 0 such
+that the corresponding eigenfunction satisfiesW∈C ∞
+c ∩U n.
+In order to prove that the unstable vortex ¯Θ from Theorem 4.2 is also self-similarly unstable, we
+follow Vishik’s spectral argument. This requires decomposing the operatorL ν acting onU n, as
+Lν =A ν +C,
+where (Aν) is a family of linear operators that generate contraction semigroups and possess certain
+continuity with respect to the parameterν, andCis compact. By classical operator theory, this
+implies that the spectrumσ(L ν) satisfies that, for anyν≥0 andw >0,
+σ(Lν)∩ {ℜλ > w}
+is finite and consists of isolated eigenvalues. Now, Theorem 4.2 provides an eigenvalueλ 0 with
+positive real part forν= 0. Then, using the continuity with respect to the parameterν, it is
+possible to show that there must also be eigenvaluesλ ν nearλ 0 for sufficiently smallν >0.
+Proposition 4.3.Assume that the following conditions hold:
+(1) Let(A ν)ν≥0 be a family of linear operators on some Hilbert spaceHgenerating contraction
+semigroups. Suppose that for any fixedτ≥0andW∈H, the map
+(29)ν7→e τ Aν W
+is continuous from[0,∞)toH.
+(2) LetCbe a compact operator onH.
+(3) LetL ν =A ν +C. Suppose there existsλ 0 ∈Cwithℜλ 0 >0andW 0 ∈D(L 0)such that
+L0W0 =λ 0W0.
+Then, for everyν 0 >0, there existλ ν ∈Cwithℜλ ν > ℜλ0
+2 andW ν ∈D(L ν)for some0< ν≤ν 0
+such that
+LνWν =λ νWν.
+
+[PDF page 14]
+14 FRANCISCO MENGUAL AND MARCOS SOLERA
+Proof.See [14, Section 6.2] for the proof.□
+In our case, we considerH=U n and decompose the operatorL ν into
+(30)L ν =ν
+ α
+β −1
+
++T ν −νΛ β +K,
+where
+TνΘ =− ¯Vν · ∇Θ with ¯Vν = ¯V− ν
+β X,
+KΘ =−V· ∇ ¯Θ.
+Recall that the velocities (V, ¯V) are recovered from (Θ, ¯Θ), respectively, through theα-Biot-Savart
+law (1c). Note that the domain ofKisD(K) =U n, the domain of Λ β isD(Λ β) =U n ∩H β and
+the domains ofT ν andL ν are
+D(Tν) ={Θ∈U n : div( ¯VνΘ)∈U n}andD(L ν) =D(T ν)∩H β.
+Thus, the operators under consideration are closed and densely defined inU n.
+On the one hand,T ν is a transport operator that satisfies the following lemma.
+Lemma 4.4.The operatorT ν generates a contraction semigroup(e τ Tν)τ≥0 with
+(31)∥e τ Tν ∥L =e − ν
+β τ ,
+for allτ≥0. Furthermore, for anyτ≥0andΘ∈U n, the map
+ν7→e τ TνΘ
+is continuous from[0,∞)toU n.
+Proof.See [14, Lemma 6.1] for the proof.□
+On the other hand,Kis a compact operator for 0≤α <1, while forα= 1 it can be decomposed
+into a skew-adjoint operator and a commutator. See the next subsections for more details.
+4.1.Case0≤α <1.In this section, we prove that ¯Θ is self-similarly unstable for the cases
+0≤α <1. To this end, we will apply Proposition 4.3 to
+Aν =ν
+ α
+β −1
+
++T ν −νΛ β, C=K.
+Note that in [14, Lemma 6.5] we proved thatKis compact onU n for 0≤α <1. Then, it remains
+to check that (A ν)ν≥0 satisfies condition (1) in Proposition 4.3.
+Lemma 4.5.The family of operators(A ν)ν≥0 satisfies condition(1)in Proposition 4.3.
+Proof.SinceA ν is a transport-diffusion operator (up to a time translation given by the multiple of
+the identity), it generates a strongly continuous semigroup. Namely, for any Θ 0 ∈L 2
+n ∩C ∞
+c , there
+exists a unique global solution Θ =e τ AνΘ0 to
+∂τΘ =A νΘ,Θ| τ=0 = Θ0.
+By applying the identities (recall that div( ¯Vν) =−2 ν
+β )
+Z
+R2
+ΘTνΘ dX=− 1
+2
+Z
+R2
+¯Vν · ∇|Θ|2 dX=− ν
+β
+Z
+R2
+|Θ|2 dX,
+and Z
+R2
+ΘΛβΘ dx=
+Z
+R2
+|Λ
+β
+2 Θ|2 dx≥0,
+
+[PDF page 15]
+SHARP NONUNIQUENESS FOR THE FORCED 2D NAVIER-STOKES AND DISSIPATIVE SQG EQUATIONS 15
+the following energy estimate shows thatA ν generates a contraction semigroup
+∂τ
+Z
+R2
+|Θ|2 dX=
+Z
+R2
+ΘAνΘ dX= ν
+β (α−β−1)
+Z
+R2
+|Θ|2 dX≤0.
+We remark that the same inequality is obtained in the full domain by density. The continuity in
+ν≥0 is well known for the transport-diffusion equation.□
+4.2.Caseα= 1.We start by recalling the following decomposition of the operatorKforα= 1.
+Proposition 4.6.It holds that
+K=S+C,
+whereSis a skew-adjoint operator, andCis the commutator
+(32)CΘ = 1
+2[Λ−1∇⊥,∇ ¯Θ]Θ.
+Moreover,Cis compact inU n.
+Proof.See [14, Proposition 6.3 & Lemma 6.6] for the proof.□
+We now apply Proposition 4.3 to
+Aν =ν
+ α
+β −1
+
++T ν −νΛ β +S, C=K−S.
+Firstly, we recall the stability of strongly continuous semigroups under bounded perturbations,
+which can be found in [32, Chapter III, Bounded Perturbation Theorem].
+Proposition 4.7.LetAbe a linear operator on a Hilbert spaceHgenerating a strongly continuous
+semigroup, andB∈ L.Then,A+Bgenerates a strongly continuous semigroup.
+Lemma 4.8.The family of operators(A ν)ν≥0 satisfies condition(1)in Proposition 4.3.
+Proof.By applying Lemma 4.5 and thatS=K−C∈ L, Proposition 4.7 implies thatA ν generates
+a strongly continuous semigroup. Similarly to the proof of Lemma 4.5, but now applying thatSis
+skewadjoint, that is, Z
+R2
+ΘSΘ dx= 0,
+the following energy estimate on Θ =e τ AνΘ0 shows thatA ν generates a contraction semigroup
+∂τ
+Z
+R2
+|Θ|2 dX=
+Z
+R2
+ΘAνΘ dX=
+Z
+R2
+Θ(Aν −S)Θ dX= ν
+β (α−β−1)
+Z
+R2
+|Θ|2 dX≤0.
+The continuity inν≥0 holds as in Lemma 4.5 sinceKdoes not depend onν.□
+We have seen that, for all 0≤α≤1 and 0< β <3 +α, the requirements of Proposition 4.3 are
+satisfied. This guarantees the existence ofν >0 for which the linearizationL ν admits an eigenpair
+(λν, Wν) withℜλ ν >0 andW ν ∈D(L ν). Finally, we check that the eigenfunction is smooth.
+Proposition 4.9.It holds thatW ν ∈H k(R2)for allk∈N.
+Proof.The case without diffusion is treated in [14, Proposition 6.4]. Here, the (fractional) Laplacian
+allows one to deduce the regularity of the eigenfunctions by a standard bootstrapping argument.□
+
+[PDF page 16]
+16 FRANCISCO MENGUAL AND MARCOS SOLERA
+AppendixA.
+Lemma A.1.For everyW=W neinϕ ∈U n, it holds that
+TνW=
+ ν
+β R∂R −in
+¯Vϕ
+R
+
+Wneinϕ,
+KW=−in Vn,α[Wn]
+R ∂R ¯Θeinϕ,
+ΛβW=T n,β[Wn]einϕ,
+being
+Vn,α[Wn](R) =C α
+Z ∞
+0
+In,α
+ R
+S
+
+Wn(S)S 1−α dS,
+Tn,β[Wn](R) =H n[(·)βHn[Wn](·)](R),
+whereC α = 2α
+2π
+Γ(1+ α
+2 )
+Γ(1− α
+2 ) >0,I n,α is the kernel
+In,α(σ) = σ
+n
+Z π
+−π
+sin(β) sin(nβ)
+|σ−e iβ|2+α dβ,
+andH n[f]is the Hankel transform of ordernoff(hereJ n is the Bessel function of ordern):
+Hn[f](R) =
+Z ∞
+0
+f(ρ)J n(ρR)ρ dρ.
+Proof.The first two equations follow as in [14, Corollary 2.3]. For the third one we proceed as
+follows. Using the Fourier transform
+ˆf(ξ) =
+Z
+R2
+f(x)e −ix·ξ dx,
+and writingX= (R, ϕ) andξ= (ρ, φ) in polar coordinates, we compute
+cW(ρ, φ) =
+Z ∞
+0
+Z 2π
+0
+Wn(R)einϕe−iRρcos(ϕ−φ) R dϕ dR.
+Changing variablesψ=ϕ−φwe get
+cW(ρ, φ) =e inφ
+Z ∞
+0
+Wn(R)R
+Z 2π
+0
+einψe−iRρcosψ dψ
+
+dR.
+Using the Jacobi–Anger expansion fore −iRρcosψ we get
+Z 2π
+0
+einψe−iRρcosψ dψ= 2π(−i) nJn(Rρ),
+whereJ n is the Bessel function of ordern. Thus,
+cW(ρ, φ) = 2π(−i) n
+Z ∞
+0
+Wn(R)Jn(Rρ)R dR
+
+einφ = 2π(−i)nHn[Wn](ρ)einφ.
+Since Λβ acts as a Fourier multiplier with symbol|ξ| β =ρ β, we have
+[ΛβW(ρ, φ) =ρ βcW(ρ, φ) =
+ 
+2π(−i)nρβHn[Wn](ρ)
+
+einφ.
+Applying the inverse Fourier transform, which again separates variables, we conclude
+ΛβW(R, ϕ) =
+Z ∞
+0
+ρβHn[Wn](ρ)Jn(Rρ)ρ dρ
+
+einϕ =H n[ρβHn[Wn](ρ)](R)einϕ.
+Hence ΛβWis of the form (radial function)×e inϕ, and therefore Λ β preservesn-fold symmetry.□
+
+[PDF page 17]
+SHARP NONUNIQUENESS FOR THE FORCED 2D NAVIER-STOKES AND DISSIPATIVE SQG EQUATIONS 17
+Lemma A.2.For anys∈R,h∈H s andλ >0we have
+Λs(hλ) =λ s(Λsh)λ
+whereh λ(x) =h(λx).
+Proof.We denote the Fourier transform as before
+ˆf(ξ) =
+Z
+R2
+f(x)e −ix·ξ dx.
+Note that the operator Λ s acts as a Fourier multiplier with symbol|ξ| s:
+dΛsf(ξ) =|ξ| s ˆf(ξ).
+It is easy to check that
+bfλ(ξ) = 1
+λ2
+ˆf
+ ξ
+λ
+
+and, therefore,
+[Λsfλ(ξ) =|ξ| s 1
+λ2
+ˆf
+ ξ
+λ
+
+.
+Finally, we return to the spatial domain using the inverse formula
+Λsfλ(x) = 1
+(2π)2
+Z
+R2
+
+|ξ|s 1
+λ2
+ˆf
+ ξ
+λ
+
+eix·ξ dξ= 1
+(2π)2
+Z
+R2
+λs|η|s 1
+λ2
+ˆf(η)e i(λx)·ηλ2 dη
+=λ s
+ 1
+(2π)2
+Z
+R2
+|η|s ˆf(η)e i(λx)·η dη
+
+=λ s
+ 1
+(2π)2
+Z
+R2
+dΛsf(η)e i(λx)·η dη
+
+=λ s(Λsf)(λx) =λ s(Λsf) λ(x).
+This concludes the proof.□
+Acknowledgments.The authors thank ´Angel Castro and Daniel Faraco for their valuable com-
+ments during the preparation of this work.
+The authors acknowledge support by the Generalitat Valenciana through the call “Subvenciones
+a grupos de investigaci´ on emergentes”, project CIGE/2024/115.
+F.M. acknowledges support from grant RYC2023-045748-I, and from grants PID2024-158418NB-
+I00 and PID2024-158664NB-C2 funded by MCIN/AEI/10.13039/501100011033.
+M.S. acknowledges support from grant PID2022-136589NB-I00 funded by MCIN/AEI/10.13039/
+501100011033 and by ERDF (A way of making Europe).
+References
+[1] H. Abidi and T. Hmidi. On the global well-posedness of the critical quasi-geostrophic equation.SIAM J. Math.
+Anal., 40(1):167–185, 2008.
+[2] D. Albritton, E. Bru´ e, and M. Colombo. Non-uniqueness of Leray solutions of the forced Navier-Stokes equations.
+Ann. of Math. (2), 196(1):415–455, 2022.
+[3] D. Albritton, E. Bru´ e, M. Colombo, C. De Lellis, V. Giri, M. Janisch, and H. Kwon.Instability and non-
+uniqueness for the 2D Euler equations, after M. Vishik. Annals of Mathematics Studies. Princeton University
+Press, Princeton, 2024.
+[4] D. Albritton and M. Colombo. Non-uniqueness of Leray solutions to the hypodissipative Navier-Stokes equations
+in two dimensions.Comm. Math. Phys., 402(1):429–446, 2023.
+[5] D. Albritton, M. Colombo, and G. Mescolini. Vanishing viscosity non-unique solutions to the forced 2D Euler
+equations.arXiv:2507.19257, 2025.
+[6] H. Bahouri, J.-Y. Chemin, and R. Danchin.Fourier analysis and nonlinear partial differential equations, volume
+343 ofGrundlehren der mathematischen Wissenschaften [Fundamental Principles of Mathematical Sciences].
+Springer, Heidelberg, 2011.
+[7] H. Beir˜ ao da Veiga. A new regularity class for the Navier-Stokes equations inR n.Chinese Ann. Math. Ser. B,
+16(4):407–412, 1995. A Chinese summary appears in Chinese Ann. Math. Ser. A16(1995), no. 6, 797.
+
+[PDF page 18]
+18 FRANCISCO MENGUAL AND MARCOS SOLERA
+[8] T. Buckmaster, M. Colombo, and V. Vicol. Wild solutions of the Navier-Stokes equations whose singular sets in
+time have Hausdorff dimension strictly less than 1.J. Eur. Math. Soc. (JEMS), 24(9):3333–3378, 2022.
+[9] T. Buckmaster, S. Shkoller, and V. Vicol. Nonuniqueness of weak solutions to the SQG equation.Comm. Pure
+Appl. Math., 72(9):1809–1874, 2019.
+[10] T. Buckmaster and V. Vicol. Nonuniqueness of weak solutions to the Navier-Stokes equation.Ann. of Math. (2),
+189(1):101–144, 2019.
+[11] J. Burczak, S. Modena, and L. Sz´ ekelyhidi. Non uniqueness of power-law flows.Comm. Math. Phys., 388(1):199–
+243, 2021.
+[12] L. A. Caffarelli and A. Vasseur. Drift diffusion equations with fractional diffusion and the quasi-geostrophic
+equation.Ann. of Math. (2), 171(3):1903–1930, 2010.
+[13] A. Castro, D. Faraco, F. Mengual, and M. Solera. A proof of Vishik’s nonuniqueness theorem for the forced 2D
+Euler equation.Journal f¨ ur die reine und angewandte Mathematik (Crelles Journal), 2025.
+[14] A. Castro, D. Faraco, F. Mengual, and M. Solera. Unstable vortices, sharp non-uniqueness with forcing, and
+global smooth solutions for the SQG equation.arXiv:2502.10274, 2025.
+[15] D. Chae. On the regularity conditions for the dissipative quasi-geostrophic equations.SIAM J. Math. Anal.,
+37(5):1649–1656, 2006.
+[16] D. Chae and J. Lee. Global well-posedness in the super-critical dissipative quasi-geostrophic equations.Comm.
+Math. Phys., 233(2):297–311, 2003.
+[17] A. Cheskidov, M. Dai, and S. Palasek. Instantaneous Type I blow-up and non-uniqueness of smooth solutions
+of the Navier–Stokes equations.arXiv:2511.09556, 2025.
+[18] A. Cheskidov and X. Luo. Sharp nonuniqueness for the Navier-Stokes equations.Invent. Math., 229(3):987–1054,
+2022.
+[19] A. Cheskidov and X. Luo.L 2-critical nonuniqueness for the 2D Navier-Stokes equations.Ann. PDE, 9(2):Paper
+No. 13, 56, 2023.
+[20] A. Cheskidov, Z. Zeng, and D. Zhang. Global dissipative solutions of the 3D Navier–Stokes and MHD equations.
+arXiv preprint arXiv:2503.05692, 2025.
+[21] M. P. Coiculescu and S. Palasek. Non-Uniqueness of Smooth Solutions of the Navier-Stokes Equations from
+Critical Data.arXiv:2503.14699, 2025.
+[22] M. Colombo, C. De Lellis, and L. De Rosa. Ill-posedness of Leray solutions for the hypodissipative Navier-Stokes
+equations.Comm. Math. Phys., 362(2):659–688, 2018.
+[23] P. Constantin, D. Cordoba, and J. Wu. On the critical dissipative quasi-geostrophic equation. volume 50, pages
+97–107. 2001. Dedicated to Professors Ciprian Foias and Roger Temam (Bloomington, IN, 2000).
+[24] P. Constantin and J. Wu. Behavior of solutions of 2d quasi-geostrophic equations.SIAM Journal on Mathematical
+Analysis, 30(5):937–948, 1999.
+[25] M. Dai and Q. Peng. Non unique weak solutions for forced SQG.arXiv:2310.13537, 2023.
+[26] C. De Lellis and L. Sz´ ekelyhidi, Jr. The Euler equations as a differential inclusion.Ann. of Math. (2), 170(3):1417–
+1436, 2009.
+[27] L. De Rosa. Infinitely many Leray-Hopf solutions for the fractional Navier-Stokes equations.Comm. Partial
+Differential Equations, 44(4):335–365, 2019.
+[28] M. Dolce and G. Mescolini. Self-similar instability and forced nonuniqueness: an application to the 2D Euler
+equations.J. Lond. Math. Soc. (2), 112(2):Paper No. e70274, 28, 2025.
+[29] B.-Q. Dong and Z.-M. Chen. Asymptotic stability of the critical and super-critical dissipative quasi-geostrophic
+equation.Nonlinearity, 19(12):2919, nov 2006.
+[30] B.-Q. Dong and Z.-M. Chen. On the weak-strong uniqueness of the dissipative surface quasi-geostrophic equation.
+Nonlinearity, 25(5):1513–1524, 2012.
+[31] H. Dong and D. Du. Global well-posedness and a decay estimate for the critical dissipative quasi-geostrophic
+equation in the whole space.Discrete Contin. Dyn. Syst., 21(4):1095–1101, 2008.
+[32] K.-J. Engel and R. Nagel.One-parameter semigroups for linear evolution equations, volume 194 ofGraduate
+Texts in Mathematics. Springer-Verlag, New York, 2000. With contributions by S. Brendle, M. Campiti, T.
+Hahn, G. Metafune, G. Nickel, D. Pallara, C. Perazzoli, A. Rhandi, S. Romanelli and R. Schnaubelt.
+[33] L. Escauriaza, G. A. Ser¨ egin, and V.ˇSver´ ak.L3,∞-solutions of Navier-Stokes equations and backward uniqueness.
+Uspekhi Mat. Nauk, 58(2(350)):3–44, 2003.
+[34] E. B. Fabes, B. F. Jones, and N. M. Rivi` ere. The initial value problem for the Navier-Stokes equations with data
+inL p.Arch. Rational Mech. Anal., 45:222–240, 1972.
+[35] G. Furioli, P. G. Lemari´ e-Rieusset, and E. Terraneo. Unicit´ e dansL3(R3) et d’autres espaces fonctionnels limites
+pour Navier-Stokes.Rev. Mat. Iberoamericana, 16(3):605–667, 2000.
+[36] K. Golovkin. Nonuniqueness of the solutions of certain boundary problems for the equations of hydromechanics.
+USSR Computational Mathematics and Mathematical Physics, 4(4):212–215, 1964.
+
+[PDF page 19]
+SHARP NONUNIQUENESS FOR THE FORCED 2D NAVIER-STOKES AND DISSIPATIVE SQG EQUATIONS 19
+[37] M. Hofmanov´ a, R. Zhu, and X. Zhu. Non-unique ergodicity for deterministic and stochastic 3D Navier-Stokes
+and Euler equations.Arch. Ration. Mech. Anal., 249(3):Paper No. 33, 54, 2025.
+[38] E. Hopf. ¨ uber die Anfangswertaufgabe f¨ ur die hydrodynamischen Grundgleichungen.Math. Nachr., 4:213–231,
+1951.
+[39] T. Hou, Y. Wang, and C. Yang. Nonuniqueness of Leray-Hopf solutions to the unforced incompressible 3D
+Navier-Stokes Equation.arXiv:2509.25116, 2025.
+[40] H. Jia and V. ˇSver´ ak. Are the incompressible 3d Navier-Stokes equations locally ill-posed in the natural energy
+space?J. Funct. Anal., 268(12):3734–3766, 2015.
+[41] N. Ju. Dissipative 2D quasi-geostrophic equation: local well-posedness, global regularity and similarity solutions.
+Indiana Univ. Math. J., 56(1):187–206, 2007.
+[42] C. Khor, C. Miao, and X. Su. Non-uniqueness of Leray-Hopf solutions to the forced fractional Navier-Stokes
+equations in three dimensions, up to the J. L. Lions exponent.Bull. Lond. Math. Soc., 55(6):2705–2717, 2023.
+[43] K. Kinra and U. Koley. Non-uniqueness of H¨ older continuous solutions for stochastic Euler and Hypodissipative
+Navier-Stokes equations.arXiv:2407.20270, 2025.
+[44] A. Kiselev, F. Nazarov, and A. Volberg. Global well-posedness for the critical 2D dissipative quasi-geostrophic
+equation.Invent. Math., 167(3):445–453, 2007.
+[45] H. Koch and D. Tataru. Well-posedness for the Navier-Stokes equations.Advances in Mathematics, 157(1):22–35,
+2001.
+[46] H. Kozono and H. Sohr. Remark on uniqueness of weak solutions to the Navier-Stokes equations.Analysis,
+16(3):255–271, 1996.
+[47] O. A. Ladyzhenskaya. Uniqueness and smoothness of generalized solutions of Navier-Stokes equations.Zap.
+Nauˇ cn. Sem. Leningrad. Otdel. Mat. Inst. Steklov. (LOMI), 5:169–185, 1967.
+[48] J. Leray. Sur le mouvement d’un liquide visqueux emplissant l’espace.Acta Mathematica, 63(1):193–248, 1934.
+[49] J.-L. Lions.Quelques m´ ethodes de r´ esolution des probl` emes aux limites non lin´ eaires. Dunod, Paris; Gauthier-
+Villars, Paris, 1969.
+[50] P.-L. Lions and N. Masmoudi. Uniqueness of mild solutions of the Navier-Stokes system inL N.Comm. Partial
+Differential Equations, 26(11-12):2211–2226, 2001.
+[51] Q. Liu, Y. Jia, and B.-Q. Dong. Remarks on the weak–strong uniqueness for the 2d quasi-geostrophic equation
+in bmo space.Applied Mathematics Letters, 25(10):1470–1474, 2012.
+[52] T. Luo and P. Qu. Non-uniqueness of weak solutions to 2D hypoviscous Navier-Stokes equations.J. Differential
+Equations, 269(4):2896–2919, 2020.
+[53] T. Luo and E. S. Titi. Non-uniqueness of weak solutions to hyperviscous Navier-Stokes equations: on sharpness
+of J.-L. Lions exponent.Calc. Var. Partial Differential Equations, 59(3):Paper No. 92, 15, 2020.
+[54] F. Marchand. Existence and regularity of weak solutions to the quasi-geostrophic equations in the spacesL p or
+˙H −1/2.Comm. Math. Phys., 277(1):45–67, 2008.
+[55] F. Marchand. Weak-strong uniqueness criteria for the critical quasi-geostrophic equation.Phys. D, 237(10-
+12):1346–1351, 2008.
+[56] Y. Meyer. Wavelets, paraproducts, and Navier-Stokes equations. InCurrent developments in mathematics, 1996
+(Cambridge, MA), pages 105–212. Int. Press, Boston, MA, 1997.
+[57] C. Miao, Y. Nie, and W. Ye. Non-uniqueness of weak solutions to the Navier–Stokes equations inR 3.arXiv
+preprint arXiv:2412.10404, 2024.
+[58] C. Miao, Y. Nie, and W. Ye. Sharp non-uniqueness for the Navier–Stokes equations inR 3.arXiv preprint
+arXiv:2412.09637, 2024.
+[59] C. Miao and Z. Zhao. Nonuniqueness analysis on the Navier–Stokes equation inC tLq space. 2025.
+arXiv:2501.09698.
+[60] H. Miura. Dissipative quasi-geostrophic equation for large initial data in the critical Sobolev space.Comm. Math.
+Phys., 267(1):141–157, 2006.
+[61] S. Monniaux. Uniqueness of mild solutions of the Navier-Stokes equation and maximalL p-regularity.C. R. Acad.
+Sci. Paris S´ er. I Math., 328(8):663–668, 1999.
+[62] G. Prodi. Un teorema di unicit` a per le equazioni di Navier-Stokes.Ann. Mat. Pura Appl. (4), 48:173–182, 1959.
+[63] M. Romito and F. Triggiano. Non-uniqueness of weak solutions for a logarithmically supercritical hyperdissipative
+Navier-Stokes system.J. Funct. Anal., 289(4):Paper No. 110989, 23, 2025.
+[64] J. Serrin. On the interior regularity of weak solutions of the Navier-Stokes equations.Arch. Rational Mech. Anal.,
+9:187–195, 1962.
+[65] M. Vishik. Instability and non-uniqueness in the Cauchy problem for the Euler equations of an ideal incompress-
+ible fluid. Part I.arXiv:1805.09426, 2018.
+[66] M. Vishik. Instability and non-uniqueness in the Cauchy problem for the Euler equations of an ideal incompress-
+ible fluid. Part II.arXiv:1805.09440, 2018.
+
+[PDF page 20]
+20 FRANCISCO MENGUAL AND MARCOS SOLERA
+[67] J. Zhao and Q. Liu. Weak-strong uniqueness criterion for theβ-generalized surface quasi-geostrophic equation.
+Monatsh. Math., 172(3-4):431–440, 2013.
+Francisco Mengual
+Universidad de Sevilla, IMUS
+41012 Sevilla, Spain
+E-mail address:fmengual@us.es
+Marcos Solera
+Departament d’An`alisi Matem`atica, Universitat de Val`encia
+46100 Burjassot, Spain
+E-mail address:marcos.solera@uv.es

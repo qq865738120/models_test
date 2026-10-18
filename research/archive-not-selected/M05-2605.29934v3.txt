@@ -1,0 +1,3215 @@
+
+[PDF page 1]
+Non-uniqueness for the hyperdissipative Navier-Stokes
+equations with arbitrarily small subcritical data
+Zipeng Chen 1 ∗, Song Liu 1 † and Zhaoyang Yin 1‡
+1School of Science,
+Shenzhen Campus of Sun Yat-sen University, Shenzhen 518107, China
+Abstract
+In this paper, we consider the hyperdissipative Navier-Stokes equations with fractional dissi-
+pation (−∆) β withβ >1. We prove that smooth solutions of the hyperdissipative Navier-Stokes
+equations are non-unique with arbitrarily small initial data inB −β−α
+∞,1 (Td) for anyα >0. More-
+over, we show the existence of a solution with arbitrarily small initial data inB −β−α
+∞,1 (Td) (α >0)
+that grows arbitrarily large in ˙B−s
+∞,∞(Td) for alls∈Rin arbitrarily small time. It is worth point-
+ing out thatB −β−α
+∞,1 (Td) lies in the subcritical regime when 0< α < β−1. To the best of our
+knowledge, this is the first non-uniqueness result of the Navier-Stokes equations with initial data
+at the subcritical regularity. To show the sharpness of the above results, we establish the local
+well-posedness of the hyperdissipative Navier-Stokes equations with initial data in ˙B−β−α
+∞,∞ (Td)
+withα <0.
+Keywords:Non-uniqueness, Navier-Stokes equations,
+AMS Subject Classification:35Q30, 76D03
+Contents
+1 Introduction 2
+1.1 Main result . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+1.2 Main idea of the construction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+1.2.1 Non-uniqueness . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+1.2.2 Norm inflation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+2 Preliminaries 9
+2.1 Besov space . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+2.2 Notation and parameters . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.3 Organization of the paper . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+∗Email: chenzp26@mail2.sysu.edu.cn
+†Email: lius37@mail2.sysu.edu.cn
+‡E-mail: mcsyzy@mail.sysu.edu.cn
+1
+arXiv:2605.29934v3  [math.AP]  1 Jul 2026
+
+[PDF page 2]
+1 INTRODUCTION
+3 Construction of the principal part of solutions exhibiting non-uniqueness 11
+3.1 Construction of the initial data . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+3.2 Construction of the principal parts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+3.3 Estimates on the residual . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+4 Construction of the principal part of solutions exhibiting norm inflation 23
+5 Construction of the perturbation 27
+6 Proof of the main results 30
+A Tools from convex integration 34
+B Fractional Leibniz commutator estimate 35
+C Heat estimates for the linear heat semigroup 36
+References 36
+1 Introduction
+In this paper, we consider the followingd-dimensional Navier-Stokes equations with fractional dissi-
+pation onT d: 
+
+
+∂tv+ div(v⊗v) + (−∆) βv+∇p= 0,
+divv= 0,
+(1.1)
+whered≥2,β > 1
+2,T d =R d/Zd is thed-dimensional torus and the fractional dissipation operator
+(−∆)β on the flat torus is defined via the Fourier transform by
+F((−∆) βv)(ξ) =|ξ| 2βF(v)(ξ),∀ξ∈T d
+Here,v= (v 1, . . . , vd)⊤ ∈R d andp=p(t, x)∈Rrepresent the flow velocity and the scalar pressure,
+respectively. The generalized Navier-Stokes equation (1.1) are invariant under the scaling
+v(t, x)7→λ 2β−1v(λ2βt, λx), p(t, x)7→λ 4β−2p(λ2βt, λx).(1.2)
+Accordingly, a function space is called critical for (1.1) if its norm is invariant under the scaling
+transformation (1.2).
+Whenβ= 1, system (1.1) takes the form of the standard incompressible Navier–Stokes equations:
+
+
+
+∂tv+ div(v⊗v)−∆v+∇p= 0,
+divv= 0,
+(1.3)
+In the remarkable paper [34], for any dimensiond≥2, Leray first showed that there exists a weak
+solution inL ∞(R+;L 2(Rd))∩L 2(R+; ˙H1(Rd)) for anyL 2 solenoidal initial data, which satisfies the
+energy inequality
+∥v(t)∥2
+L2 + 2
+ˆ t
+0
+∥∇v(s)∥2
+L2 ds≤ ∥v(0)∥ 2
+L2 ,∀t≥0.
+2
+
+[PDF page 3]
+1 INTRODUCTION
+For smooth bounded domains with Dirichlet boundary conditions, Hopf [26] established an analogous
+result. This class of weak solutions is now known as Leray–Hopf weak solutions. To this day, the
+uniqueness problem for Leray–Hopf weak solutions of the Navier–Stokes equations remains an open
+question in dimensions greater than two. Forβ≥ 5
+4, the Leray-Hopf weak solution class is scaling-
+critical or scaling-subcritical. In this regime, Lions [37] proved the existence and uniqueness of Leray-
+Hopf weak solutions to the initial-value problem.
+Convex integration techniques for the Euler equations have been extensively developed; see, for in-
+stance, [22, 21, 27, 8, 25]. In the breakthrough work [6], Buckmaster-Vicol first showed non-uniqueness
+of finite energy weak solutions to the 3D Navier-Stokes equations using the convex integration frame-
+work. The key ingredient in [6] isL 2
+x-based intermittent spatial building block, which enables control
+of the dissipativity term (−∆)uin the Navier-Stokes equations. Following the convex integration
+constructions developed in [6], the authors of [5] and [38] extend the non-uniqueness results to the
+hyperdissipative Navier–Stokes equations with dissipation exponentβ < 5
+4, below the Lions’ exponent.
+For applications to other models, we refer the reader to [3, 43, 42, 15, 39].
+The weak-strong uniqueness property for (1.3) in critical spaces has also attracted considerable
+attention in the literature. The Ladyˇ zenskaja-Prodi-Serrin criteria [32, 33, 50, 51] states that if a
+Leray-Hopf weak solution belongs to the critical or subcritical regime:
+Lp
+t Lq
+x with 2
+p + d
+q ≤1.
+then uniqueness is guaranteed for Leray–Hopf solutions with the same initial data (more precisely, we
+needC tL∞
+x rather thanL tL∞
+x whenp=∞). For the generalized Navier-Stokes equations, Zhou [59]
+established uniqueness of Leray-Hopf weak solution belonging to the critical or subcritical Serrin class
+Lp
+t Lq
+x with 2β
+p + d
+q ≤2β−1.
+In [16], Cheskidov-Luo employed the intermittent temporal building block to prove the non-
+uniqueness of (1.3) onL p
+t L∞
+x for allp <2. Moreover, Cheskidov-Luo [14] established the non-
+uniqueness on the classL ∞
+t Lq
+x for allq <2 for the 2D Navier-Stokes equations. Both results are
+sharp with respect to the Ladyˇ zenskaja-Prodi-Serrin criteria. For the 3D Navier-Stokes equations
+with hyperviscosity exponentβbeyond the Lion exponent 5
+4, Li-Qu-Zeng-Zhang [36] also showed
+sharp non-uniqueness in some supercritical spaces. For applications to other models, we refer the
+reader to [35, 45, 11].
+By the mild formulation of equations, the global well-posedness for small data and local well-
+posedness for large data for the standard incompressible Navier–Stokes equations have been established
+in certain critical spaces
+˙H
+d
+2 −1 ⊂L d ⊂ ˙B
+−1+ d
+p
+p,∞ ⊂BM O −1 ⊂ ˙B−1
+∞,∞
+whered < p <∞. Fujita-Kato[23] and Kato[30] proved that this holds for initial data in the first two
+spaces, respectively. A corresponding result in Besov spaces ˙B
+−1+ d
+p
+p,∞ (Rd)(d < q <∞) was obtained by
+Cannone [9] and Planchon [49]. Koch-Tataru[31] established that global well-posedness holds for small
+data inBM O −1. For the fractional Navier-Stokes equations withβ∈( 1
+2 ,1), Zhai [58] and Zhai-Yu
+[57] established global well-posedness for small initial data inBM O −(2β−1) and even in the largest
+scaling-invariant space ˙B−(2β−1)
+∞,∞ .
+3
+
+[PDF page 4]
+1 INTRODUCTION
+Nevertheless, ill-posedness will also arise in the critical class or even subcritical space. For the
+largest critical space ˙B−1
+∞,∞, Bourgain-Pavlovi´ c [4] showed that norm inflation is possible in 3D Navier-
+Stokes equations. In other words, the solutions with arbitrarily small data in ˙B−1
+∞,∞ can grow arbitrarily
+large in a short time. On the other hand, Germain [24] proved that the data-to-solution map is not
+C2 in the spacesB −1
+∞,q forq >2 and Yoneda [56] showed that ill-posedness holds in this class. Later
+in [55], Wang showed that norm inflation from small data can occur even in the spacesB −1
+∞,q for
+q∈[1,2], which are continuously embedded inBM O −1. Palasek [46] constructed a family of smooth
+initial data bounded inBM O −1 whose corresponding solutions exhibit arbitrarily large norm growth.
+Cheskidov-Dai [12] established the phenomenon of norm inflation with small data in subcritical space
+˙B−β
+∞,∞ for the generalized Navier–Stokes equations with dissipation exponentβ >1.
+For the non-uniqueness results, Coiculescu-Palasek [18] first constructed two distinct global solu-
+tions of 3D Navier-Stokes equations with identical initial data in critical spaceBM O −1. Subsequently,
+Miao-Nie-Ye [40] established an analogous result in the two-dimensional case. See also [13, 19, 10, 41].
+We also refer to another programme by Jia and ˇSver´ ak [28, 29]. They demonstrated that non-
+uniqueness of Leray–Hopf weak solutions is valid, provided that a suitable spectral condition holds for
+the linearized Navier–Stokes operator. Building on the instability framework of [53, 54], Albritton-
+Bru´ e-Colombo [1] proved non-uniqueness in the Leray-Hopf weak solutions for the forced 3D Navier-
+Stokes equations. See also the related work [2] for the analogous result in the setting of the two-
+dimensional hypodissipative Navier–Stokes equations.
+1.1. Main result
+Our first result concerns the non-uniqueness of solutions to the hyperdissipative Navier–Stokes equa-
+tions arising from subcritical initial data.
+Theorem 1.1(Non-uniqueness).Letd≥2,β >1andα >0. For anyε >0and0< p < 2β
+β+α , there
+exist divergence-free initial dataV 0 ∈B −β−α
+∞,1 (Td)such that∥V 0∥B−β−α
+∞,1 (Td) < εand the hyperdissipative
+Navier-Stokes equation (1.1) admits two distinct solutions
+v(1), v(2) ∈C ∞
+t,x((0,1]×T d)∩C 0([0,1];B −β−α
+∞,1 (Td))
+∩L p([0,1];L ∞(Td)).
+Remark 1.2.Whenα < β−1,B −β−α
+∞,1 (Td)lies in the subcritical regime. To our best knowledge, this
+provides the first non-uniqueness result for the Navier–Stokes equations in subcritical spaces. When
+α < β−1andp∈[ 2β
+2β−1 , 2β
+β+α ), the spaceL p([0,1];L ∞(Td))is subcritical and lies below the classi-
+cal Ladyzhenskaya–Prodi–Serrin threshold. Nevertheless, the initial data belong to the rougher space
+B−β−α
+∞,1 (Td)rather than the energy spaceL 2(Td). Therefore, establishing a non-uniqueness result in
+this setting does not contradict the weak–strong uniqueness theorem.
+The second result establishes the phenomenon of norm inflation in the context of the hyperdissi-
+pative Navier–Stokes equations.
+Theorem 1.3(Norm inflation).Letd≥2,β >1,α >0ands∈R. For anyδ >0, there exists a
+solutionvto the hyperdissipative Navier-Stokes equation (1.1) and0< t < δ, such that
+∥v(0)∥B−β−α
+∞,1 (Td) < δ,
+4
+
+[PDF page 5]
+1 INTRODUCTION
+with
+∥v(t)∥B−s
+∞,∞(Td) > δ −1.
+To demonstrate the sharpness of Theorem 1.1 and Theorem 1.3, we now establish the local well-
+posedness of the generalized Navier–Stokes equations.
+Theorem 1.4(Local well-posedness).Letβ > 1
+2 andα <min{0, β−1}. For any divergence-free
+initial datav 0 ∈ ˙B−β−α
+∞,∞ (Td), there existsT(v 0)>0such that the generalized Navier-Stokes equation
+(1.1) admits a unique solutionv∈L ∞ 
+(0, T(v0)], ˙B−β−α
+∞,∞ (Td)
+
+satisfying
+sup
+t∈(0,T(v 0)]
+t
+β+α
+2β ∥v(t)∥L∞(Td) <∞.
+Theorem 1.5(Well-posedness with small data).Letβ > 1
+2 andα≤β−1withα <0, and letT >0.
+There existsε β >0such that for any divergence-free initial datav 0 ∈ ˙B−β−α
+∞,∞ (Td)satisfying
+∥v0∥ ˙B−β−α
+∞,∞ (Td) ≤ε β,
+the generalized Navier-Stokes equation (1.1) admits a unique solutionv∈L ∞ 
+(0, T], ˙B−β−α
+∞,∞ (Td)
+
+such
+that
+sup
+t∈(0,T]
+t
+β+α
+2β ∥v(t)∥L∞(Td) <∞.
+Moreover, ifβ∈( 1
+2 ,1)andα=β−1, the existence timeTcan be taken to be infinite.
+Remark 1.6.Combing the thresholds in Theorem 1.4 and Theorem 1.5 with the fact thatαis required
+to be positive in Theorem 1.1, naturally leads to a series of interesting questions:
+•Is it possible to construct a non-uniqueness example with arbitrary small initial data in ˙B−β
+∞,∞(Td)
+forβ≥1?
+•Is it possible to construct a non-uniqueness example with large initial data in ˙B−(2β−1)
+∞,∞ (Td)or
+even inBM O −(2β−1) ≜(−∆) − 2β−1
+2 BM Oforβ∈( 1
+2 ,1)?
+Since the solutions in the lower dimensions satisfy the higher-dimensional generalized Navier-Stokes
+equations when zero components are added to the remaining dimensions. Moreover, the embedding
+Ba
+∞,∞ ,→B b
+∞,1 holds for alla > b. Consequently, proving Theorem 1.1 and Theorem 1.3 reduces to
+establishing the following propositions.
+Proposition 1.7.Letd= 2,β >1and0< α <min{ 1
+2 , β−1}. For anyε, ε ′ >0and0< p < 2β
+β+α ,
+there exist divergence-free initial dataV 0 ∈B −β−α
+∞,∞ (T2)such that∥V 0∥B−β−α−ε
+∞,∞ (T2) < ε ′ and the
+hyperdissipative Navier-Stokes equation (1.1) admits two distinct solutions
+v(1), v(2) ∈C ∞
+t,x((0,1]×T 2)∩C 0([0,1];B −β−α−ε
+∞,∞ (T2))
+∩L p([0,1];L ∞(T2)).
+Proposition 1.8.Letd= 2,β >1,0< α <min{ 1
+2 , β−1}ands > β+α. For anyδ >0, there
+exists a solutionvto the hyperdissipative Navier-Stokes equation (1.1) and0< t < δ, such that
+∥v(0)∥B−β−α−ε
+∞,∞ (T2) < δ,
+with
+∥v(t)∥B−s
+∞,∞(T2) > δ −1.
+5
+
+[PDF page 6]
+1 INTRODUCTION
+1.2. Main idea of the construction
+1.2.1 Non-uniqueness
+The non-uniqueness mechanism of the hyperdissipative Navier-Stokes equations follows from the ap-
+proach of [48] and [18]. In this part, we outline the main idea of the proof, omitting certain details for
+the sake of exposition. In our construction, there exist two types of flows:
+•The first is the heat-dominated flow, which is the solution of heat equation with fractional dissipation,
+up to a small error.
+∂tvk + (−∆)βvk =l.o.t.
+wherel.o.tmeans some lower order terms. And the heat-dominated flows satisfy the following expo-
+nential decay in time:
+∥vk∥L∞(T2) ≲N β+α
+k e−N 2β
+k t.
+•The second is the inverse cascade-dominated flow, whose temporal partial derivative annihilates the
+nonlinear self-interactions of the heat-dominated flow.
+∂t¯vk +Pdiv(v k+1 ⊗v k+1) =l.o.t.
+Compared with the heat-dominated flows, the inverse cascade-dominated flows exhibit a faster expo-
+nential temporal decay:
+∥¯vk∥L∞(T2) ≲N β+α
+k e−N 2β
+k+1t.
+The principal part of the solutions to the hyperdissipative Navier-Stokes equations is derived and
+given as follows:
+v(1) ≜
+X
+k≥0even
+vk +
+X
+k≥0odd
+¯vk,
+and
+v(2) ≜
+X
+k≥0odd
+vk +
+X
+k≥0even
+¯vk.
+In the following discussion,idenotes either 1 or 2. As a result of the cancellation between the
+heat-dominated flows and the inverse cascade-dominated flows, we can deduce remaining termsF (i)
+and eF (i) which are defined by
+∂tv(i) + (−∆)βv(i) +Pdiv(v (i) ⊗v (i)) =−PdivF (i) −∆ [β]eF (i),
+are arbitrarily small in some subcritical norms. In other words, we conclude thatv (i) is a solution to
+the hyperdissipative Navier-Stokes equation (1.1) with a small error in divergence form and another
+error in Laplacian form.
+6
+
+[PDF page 7]
+1 INTRODUCTION
+In the final step, we add the perturbationω (i) tov (i) to correct the associated errors, so that
+v(i) +ω (i) is indeed a solution to the hyperdissipative Navier-Stokes equations (1.1). Thenω (i) must
+satisfy
+
+
+
+∂tω(i) + (−∆)βω(i) +Pdiv (v (i) ⊗ω (i) +ω (i) ⊗v (i) +ω (i) ⊗ω (i)) =PdivF (i) + ∆[β]eF (i),
+ω(i)(0,·) = 0.
+Given thatF (i) and eF (i) are small in some certain subcritical spaces, we are able to establish the
+existence ofω (i) and confirm its smallness in appropriate subcritical norms by means of a fixed point
+argument.
+Using the fact that ¯vk(0,·) =v k(0,·) andω (i)(0,·) = 0, we know thatv (1) +ω (1) andv (2) +ω (2)
+have the same initial data inB −β−α
+∞,∞ (T2). However, owing to the distinct temporal decay behaviors of
+vk and ¯vk, we can infer thatv (1) +ω (1) andv (2) +ω (2) are distinct (see details in Section 6).
+In the following, we provide some remarks on the construction.
+(i)For the caseβ= 1, the solutions constructed in [18] satisfy all the conclusions of Theorem
+1.1 whenβ= 1. In the hyperdissipative regimeβ >1, Theorem 1.1 and Theorem 1.3 establish non-
+uniqueness and norm inflation results for arbitrarily small initial data in subcritical spaces. This stems
+from the fact that the exponent required in the method of [18] is strictly below the critical threshold,
+namelyβ <2β−1. Thus, in the arguments of the functions of the Geometric Lemma, we can absorb
+largeness arising from size of the (k−1)-th velocity potential by using the additional factor 1
+N 2α
+k
+(see
+Definition 3.2).
+(ii)For the structure of the principal part, [18] introduced Mikado flows. By the intersection of
+the supports of the Mikado flows, the supports ofv k(0,·) will shrink askincreases. This localization
+property ensures that the initial data lies inBM O −1. However, in the present paper, we are not
+concerned with proving that the initial data belong to spaces such asBM O −(2β−1). Rather, we work
+in a class of Besov spaces. Consequently, it is not necessary to introduce Mikado flows in our main
+part, which simplifies the construction.
+(iii)Suppose that the remaining terms are only written in divergence form as [18]. In order to
+derive the perturbation, we need to ensure that
+ˆ t
+0
+e(t−s)(−∆)β
+PdivF (i)(s)ds
+is well-defined. So it suffices to control the residual errors in divergence form,PdivF (i), in the norm
+∥F (i)∥Y ≜sup
+t∈(0,1]
+t1−τ ∥F (i)(t)∥L∞
+whereτ >0 is a small parameter. However, such an estimate is available only when 1< β <2. More
+precisely, sincev (i) belongs to critical or subcritical spaces, depending on the choice ofα, the dominant
+contribution toF (i) arises from the linear error term. By applying the fractional Leibniz commutator
+estimate, the linear error term can be controlled only for 1< β <2. Nevertheless, whenβ≥2, the
+corresponding estimate is no longer sufficiently subcritical, and consequentlyF (i) /∈Y.
+To overcome this difficulty, we introduce a new structure ∆[β]eF (i). Specifically, we recast the linear
+error term as ∆ [β]eF (i), whereas all other error terms are retained in the formPdivF (i). HereF (i)
+belong toY. We verify that∇ κeF (i) are small inY, whereκ >0 is a small parameter. Therefore, we
+7
+
+[PDF page 8]
+1 INTRODUCTION
+deduce
+∥
+ˆ t
+0
+e(t−s)(−∆)β
+∆[β]eF (i)(s)ds∥L∞ ≲∥∇ κeF (i)∥Y
+ˆ t
+0
+(t−s) − 2[β]−κ
+2β s−1+τ ds≲∥∇ κeF (i)∥Y ,
+which can establishes the existence of the perturbationω (i).
+(iv)In the two-dimensional case, one encounters technical difficulties in controlling the oscillatory
+error, similar to those faced in the approach to 2d Onsager’s conjecture. Specifically, these difficulties
+stem from the overlap of the modes
+{e2πiNkξ·x ¯ξ}ξ∈Λ
+with different orientations in the nonlinear term of the Navier-Stokes equations. To overcome this
+difficulty, we adopt the approach of [40], which allows the excess oscillatory error to be absorbed into
+the pressure term.
+1.2.2 Norm inflation
+The norm inflation mechanism for the hyperdissipative Navier–Stokes equations is inspired by [47]. In
+this part, we sketch the main idea of the proof, omitting certain technical details for clarity.
+The principal perturbation is constructed as the sum of two components with distinct frequency
+scales,
+U=U 1 +U 2,
+whereU 1 satisfies the vanishing self-interaction condition andU 2 is the heat-dominated flow
+div(U1 ⊗U 1) = 0 and (∂ t + (−∆)β)U2 =l.o.t.
+Furthermore, the quadratic self-interaction ofU 2 is designed to balance the evolution ofU 1 up to
+lower-order terms:
+(∂t + (−∆)β)U1 +Pdiv(U 2 ⊗U 2) =l.o.t.
+Hence, by the properties ofU 1 andU 2, the residual errorsGand eG, defined through
+∂tU+ (−∆) βU+Pdiv(U⊗U) =−PdivG−∆ [β]eG,
+can be made arbitrarily small in suitable subcritical norms. Following the strategy of the non-
+uniqueness proof, we construct a perturbationρwith zero initial data that eliminates the remaining
+errors, so thatU+ρis a solution to the hyperdissipative Navier–Stokes equations (1.1).
+For the norm inflation argument,U 1 andU 2 are constructed such that
+U(0,·) =U 2(0,·),
+thus the smallness ofU(0,·) inB −β−α
+∞,∞ follows directly from the corresponding estimate forU 2(0,·).
+SinceU 2 is supported at substantially higher frequencies thanU 1,U 2 decays faster thanU 1. At a
+suitable timet q, we have
+U(t q,·) +ρ(t q,·) =U 1(tq,·) +o(U 1(tq,·)) inB −s
+∞,∞.
+8
+
+[PDF page 9]
+2 PRELIMINARIES
+Meanwhile,∥U 1(tq,·)∥ B−s
+∞,∞
+is designed to be large, and consequently so is∥U(t q,·)∥ B−s
+∞,∞
+.
+In [47], Norm inflation is achieved by combining a family of building blocks{v k}0≤k≤k∗, where
+k∗ <∞is chosen sufficiently large. The largeness ofk ∗ is designed to suppresses the influence of the
+initial data. By contrast, thanks to the structure of our construction and the function space we work
+in, the entire mechanism is reduced to only two building blocks,U 1 andU 2. The former generates the
+norm inflation, while the latter prescribes the initial data.
+2 Preliminaries
+2.1. Besov space
+Letφ, χ∈C ∞
+c (Rd) be nonnegative radial functions taking values in [0,1] such that
+suppφ⊂
+
+ξ∈R d : 3
+4 ≤ |ξ| ≤ 8
+3
+
+, φ≡1 on
+
+ξ∈R d : 6
+7 ≤ |ξ| ≤ 12
+7
+
+,
+suppχ⊂
+
+ξ∈R d :|ξ| ≤ 4
+3
+
+, χ≡1 on
+
+ξ∈R d :|ξ| ≤ 3
+4
+
+,
+and
+χ(ξ) +
+∞X
+j=1
+φ(2−jξ) = 1, ξ∈R d,
+X
+j∈Z
+φ(2−jξ) = 1, ξ∈R d \ {0}.
+LetD(T d) denote the space of infinitely smooth functions onTd andD ′(Td) be defined as its topological
+dual. Every distributionf∈D ′(Td) admits the formal Fourier series
+f(x) =
+X
+l∈Zd
+ˆf(l)e 2πil·x,
+where
+ˆf(l) =
+ 
+Td
+f(x)e −2πix·ldx.
+The nonhomogeneous dyadic blocks{∆ j}j≥−1 are defined by
+∆−1f≜
+X
+l∈Zd
+χ(l)bf(l)e 2πil·x.
+and, for eachj≥0,
+∆jf≜
+X
+l∈Zd
+φ(2−jl)bf(l)e 2πil·x.
+The homogeneous dyadic blocks{ ˙∆j}j∈Z are defined for allj∈Zby
+˙∆jf≜
+X
+l∈Zd
+φ(2−jl)bf(l)e 2πil·x.
+Note that, on the torus, ˙∆jf= 0 wheneverj≤ −2.
+9
+
+[PDF page 10]
+2 PRELIMINARIES
+Definition 2.1.Lets∈Rand1≤p, q≤ ∞. The nonhomogeneous Besov spaceB s
+p,q(Td)consists of
+allT d-periodic functionsu∈D ′(Td)such that
+∥u∥Bs
+p,q(Td) ≜
+
+X
+j≥−1
+ 
+2js∥∆ju∥Lp(Td)
+q
+
+
+1
+q
+<∞,ifq <∞,
+∥u∥Bsp,∞(Td) ≜sup
+j≥−1
+2js∥∆ju∥Lp(Td) <∞,ifq=∞.
+And the homogeneous Besov space ˙Bs
+p,q(Td)consists of allT d-periodic functionsu∈D ′(Td)such that
+∥u∥ ˙Bsp,q(Td) ≜
+
+X
+j∈Z
+ 
+2js∥∆ju∥Lp(Td)
+q
+
+
+1
+q
+<∞,ifq <∞,
+∥u∥ ˙Bsp,∞(Td) ≜sup
+j∈Z
+2js∥∆ju∥Lp(Td) <∞,ifq=∞.
+2.2. Notation and parameters
+Forf∈L 2(Td), we define its Fourier coefficients by
+ˆf(ξ)≜
+ 
+Td
+f(x)e −2πiξ·x ds,∀ξ∈Z d,
+and the inverse Fourier transform is given by
+F −1f(x)≜
+X
+ξ∈Zd
+f(ξ)e 2πiξ·x ,∀x∈Z d.
+We denote byPthe Leray projection onto divergence-free vector fields, namely
+Pf≜F −1((Id− ξ⊗ξ
+|ξ|2 ) ˆf(ξ)),
+for any vector-valued functionf. We also define the fractional heat semigroup by
+e−t(−∆)β
+f≜F −1(e−t|ξ|2β
+ˆf(ξ)).
+We define the convolution onT 2 as follows. For anyf, g∈C ∞(T2;R 2),
+f∗g(x)≜
+ˆ
+T2
+f(x−y)g(y)dy,∀x∈T 2.
+LetS 2×2(R) be the space of real symmetric 2×2 matrices. Forx∈R, we denote by [x] the greatest
+integer less than or equal tox. Fora, b <1, we denote the Beta integral
+I(a, b)≜
+ˆ 1
+0
+(1−s) −as−bds,
+whenever the integral is well-defined.
+Throughout the rest of this paper, we focus on proving Proposition 1.7 and Proposition 1.8. Thus,
+we fixd= 2,β >1, 0< α <min{ 1
+2 , β−1},s > β+αandε, ε ′, δ >0.
+10
+
+[PDF page 11]
+3 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING
+NON-UNIQUENESS
+For the non-uniqueness construction, we measure the amplitudes and frequencies of the building
+blocks by introducing the sequence
+Nk ≜A bk
+, k∈N,
+whereA, b∈N. For the norm inflation construction, we introduce the parameters
+λ=δ −1 andλ q = 2q, q∈R.
+We introduce a parameterγ∈(0,min{ β−1−α
+2 , 1−2α
+4 }], which measures the subcriticality of the remain-
+ing terms. We further choose two parametersϵ 1 >0 andϵ 2 >0, whereϵ 1 depends onϵ 2 and other
+universal constants appearing in the inequalities, and whereϵ 2 ∈(0, 1−2α−γ
+4 ]. We also set a parameter
+τ∈( β+α−1+γ
+2β , β−α−ϵ2
+2β ), which quantifies the subcriticality of the perturbations.
+Finally, the parametersAandqwill be chosen sufficiently large, depending only on the other
+parameters. We use the notationX≲Yto mean thatX≤CYwith some constantsC >0 independent
+of A, but which may depend on other parameters.
+2.3. Organization of the paper
+The organization of the rest of the paper is as follows. In Section 3, we construct the initial data
+and the leading parts of the non-unique solutions, and show that the remaining terms are small in
+suitable subcritical norms. In Section 4, we construct the principal part of the solutions exhibiting
+norm inflation and also prove that the corresponding remaining terms are small in the same subcritical
+norms. In Section 5, we construct the perturbations associated with the vector fields constructed in
+the previous two sections. In Section 6, we complete the proofs of Proposition 1.7 and 1.8, thereby
+establishing the non-uniqueness and norm inflation results. Moreover, we prove the local well-posedness
+results, namely Theorem 1.4 and 1.5. The appendix contains some technical tools used in the paper.
+3 Construction of the principal part of solutions exhibiting
+non-uniqueness
+3.1. Construction of the initial data
+Definition 3.1.We define
+•A differential operatorSthat takes vector fields to the symmetric rank-2 tensor,
+S(f)≜
+ 
+2∂1f1 ∂1f2 +∂ 2f1
+∂1f2 +∂ 2f1 2∂2f2
+!
+,∀f∈C ∞(T2;R 2),
+Moreover, iffis divergence-free, we have
+divS(f) = ∆f.(3.1)
+•A standard mollifierϕ k with length scaleN
+− 1
+2
+k+1N
+− 1
+2
+k is defined by
+ϕk(x) =
+X
+l∈Z2
+eϕk(x+l) with eϕk(x) =N k+1Nkϕ((Nk+1Nk)
+1
+2 x),
+11
+
+[PDF page 12]
+3 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING
+NON-UNIQUENESS
+whereϕ∈C ∞
+x (R2;R)satisfying
+ϕ≥0,suppϕ⊂B 1(0),
+ˆ
+R2
+ϕ(x)dx= 1.
+We construct the vector fields inductively. Recall that the set of vectors{ξ} ξ∈Λ, the associated
+orthonormal vectors{ ¯ξ}ξ∈Λ and the functions{a ξ}ξ∈Λ are introduced in Lemma A.1.
+Definition 3.2.Letξbe a vector inΛ. For the zeroth, we define
+v0
+0(x)≜N β+α
+0 sin(2πN0ξ·x) ¯ξ,(3.2)
+Given a divergence-freev 0
+k−1, we define the vector potential for the k-th case:
+v0
+k(x)≜C βN −2[β]−1+β+α
+k ∆[β]∇⊥
+
+X
+ξ∈Λ
+aξ,ke2πiNkξ·x
+
+ ∗ϕ k(x),(3.3)
+whereC β is a constant anda ξ,k is a function defined as
+Cβ ≜
+√
+2(2π)β−2[β]−1 ,(3.4)
+aξ,k ≜a ξ
+ S(∆−1v0
+k−1)
+N2α
+k
++ Id
+
+.(3.5)
+To verify that{v 0
+k}k∈N are well-defined, it suffices to establish that∥
+S(∆−1v0
+k−1)
+N 2α
+k
+∥L∞(T2) ≤ 1
+7 by
+Lemma A.1.
+Lemma 3.3.For allk∈N, we have
+∥ S(∆−1v0
+k)
+N2α
+k+1
+∥L∞(T2) ≤ 1
+7 ,(3.6)
+provided thatAandbare sufficiently large.
+Proof.With the standard mollifier estimate, it suffices to prove that
+∥ S(∆−1Φ0
+k)
+N2α
+k+1
+∥L∞(T2) ≤ 1
+7 ,
+where Φ0
+k is the part ofv 0
+k before applying the mollifierϕ k:
+Φ0
+k ≜
+
+
+
+v0
+0, k= 0,
+CβN −2[β]−1+β+α
+k ∆[β]∇⊥
+P
+ξ∈Λ aξ,ke2πiNkξ·x
+
+, k≥1.
+(3.7)
+We prove (3.6) by induction. For k=0, it follows from (3.2) and the fact that S is a first-order
+differential operator that
+∥S(∆−1Φ0
+0)∥L∞(T2) ≲N β+α−1
+0 .
+Thus, choosingAandbsufficiently large, we get
+∥ S(∆−1Φ0
+0)
+N2α
+1
+∥L∞(T2) ≲N β+α−1
+0 N −2α
+1 ≲A β+α−1−2bα ≤ 1
+7 .(3.8)
+12
+
+[PDF page 13]
+3 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING
+NON-UNIQUENESS
+Once again from (3.2), it yields that
+∥∇m S(∆−1v0
+0)
+N2α
+1
+∥L∞(T2) ≲N m
+0 ,∀m∈N.(3.9)
+Now, we suppose∥
+S(∆−1Φ0
+k−1)
+N 2α
+k
+∥L∞(T2) ≤ 1
+7. Using the standard mollifier estimate or (3.9), we have
+∥∇m S(∆−1v0
+k−1)
+N2α
+k
+∥L∞(T2) ≲(N k−1Nk)
+m
+2 ,∀m∈N.(3.10)
+By virtue of (3.7), (3.10) and the Leibniz rule, we deduce
+∥S(∆−1Φ0
+k)∥L∞(T2) ≲N −2[β]−1+β+α
+k (N2[β]
+k + (Nk−1Nk)[β])≲N −1+β+α
+k ,
+which immediately implies
+∥ S(∆−1Φ0
+k)
+N2α
+k+1
+∥L∞(T2) ≲N −1+β+α
+k N −2α
+k+1 ≲A bk(β+α−1−2bα) ≤ 1
+7 ,
+ifAandbare sufficiently large.
+Next, we establish some estimates onv 0
+k anda ξ,k.
+Proposition 3.4.For anyk∈N,{v 0
+k}k∈N is divergence-free and satisfies
+∥∇mv0
+k∥L∞(T2) ≲N β+α+m
+k ,∀m∈N.(3.11)
+Moreover, we have
+∥∇maξ,k∥L∞(T2) ≲N m
+k−1,∀m∈N.(3.12)
+Proof.The divergence-free property of{v 0
+k}k∈N is easily derived from Definition 3.2. With Definition
+3.2, Definition 3.5 and (3.10), one can use the Leibniz rule to obtain
+∥∇mv0
+k∥L∞(T2) ≲N −2[β]−1+β+α
+k
+
+N2[β]+1+m
+k + (Nk−1Nk)
+2[β]+1+m
+2
+
+≲N β+α+m
+k ,
+and then applying the chain rule yields
+∥∇maξ,k∥L∞(T2) ≲N m
+k−1,
+for anym∈N.
+Now, we define the initial data in terms of the vector fields introduced above.
+Definition 3.5.We set the initial data by
+V 0 ≜
+X
+k∈N
+v0
+k.
+Before establishing the smallness ofV 0 inB −β−α−ε
+∞,∞ (T2), for anyk≥1, we decomposev 0
+k ≜
+v0,p
+k +v 0,e
+k where
+v0,p
+k ≜(−1) [β]√
+2(2π)βiN β+α
+k
+X
+ξ∈Λ
+aξ,ke2πiNkξ·x ¯ξ,(3.13)
+13
+
+[PDF page 14]
+3 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING
+NON-UNIQUENESS
+v0,e
+k ≜v 0,e,1
+k +v 0,e,2
+k ,
+having defined
+v0,e,1
+k ≜C βN −2[β]−1+β+α
+k ∆[β]∇⊥
+
+X
+ξ∈Λ
+aξ,ke2πiNkξ·x
+
+
+−(−1) [β]√
+2(2π)βiN β+α
+k
+X
+ξ∈Λ
+aξ,ke2πiNkξ·x ¯ξ,(3.14)
+v0,e,2
+k ≜C βN −2[β]−1+β+α
+k ∆[β]∇⊥
+
+X
+ξ∈Λ
+aξ,ke2πiNkξ·x
+
+ ∗(ϕ k −δ).(3.15)
+Actually,v 0,p
+k denotes the component obtained fromv 0
+k by applying all derivatives to the oscillatory
+factore 2πiNkξ·x, while omitting the mollifierϕ k. On the other hand,v 0,e,1
+k denotes the component ofv 0
+k
+in which not all derivatives fall on the oscillatory factore 2πiNkξ·x, again with the mollifierϕ k omitted.
+v0,e,2
+k is the mollification error ofv 0
+k.
+In the following, we establish the smallness of the initial dataV 0 inB −β−α−ε
+∞,∞ (T2).
+Proposition 3.6.Letε, ε ′ >0.V 0 is divergence-free and satisfies
+∥V 0∥B−β−α−ε
+∞,∞ (T2) ≤ε ′.
+Proof.The divergence-free property ofV 0 is inherited from{v 0
+k}k∈N. We therefore omit the proof and
+focus on the estimates forV 0.
+First, we prove∥ P
+k≥1 v0,p
+k ∥B−β−α−ε
+∞,∞ (T2) ≲ε ′. Without loss of generality, fixξ∈Λ. It suffices to
+show∥ P
+k≥1 N β+α
+k aξ,ke2πiNkξ·x∥B−β−α−ε
+∞,∞ (T2) ≲ε ′. Taking a fourier series of{a ξ,k}k≥1, we have
+aξ,k(x) =
+X
+l∈Z2
+ˆaξ,k(l)e2πil·x,
+aξ,k(x)e2πiNkξ·x =
+X
+l∈Z2
+ˆaξ,k(l−N kξ)e2πil·x.(3.16)
+By (3.12) and Parseval’s identity, we obtain
+∥∇maξ,k∥L2(T2) =
+
+X
+l∈Zd
+|l|2m|ˆaξ,k(l)|2
+
+
+1
+2
+≲∥∇ maξ,k∥L∞(T2) ≲N m
+k−1,∀m∈N,
+which immediately implies
+|l|m|ˆaξ,k(l)|≲N m
+k−1,∀(l, m)∈Z 2 ×N.(3.17)
+Recalling the definition ofB −β−α−ε
+∞,∞ (T2) in Definition 2.1 and fixingj≥ −1, we decompose the
+following into two parts:
+∆j
+X
+k∈N
+N β+α
+k aξ,ke2πiNkξ· = ∆j(
+X
+k:|2j −Nk|≥ 3
+4 Nk
++
+X
+k:|2j −Nk|≤ 3
+4 Nk
+)N β+α
+k aξ,ke2πiNkξ·
+≜I 1 +I 2.
+14
+
+[PDF page 15]
+3 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING
+NON-UNIQUENESS
+ConsiderI 1. Ifj≥0, by (3.16) and (3.17),
+2−j(β+α+ε) ∥I1∥L∞(T2) ≲
+X
+k:|2j −Nk|≥ 3
+4 Nk
+2−j(β+α+ε) N β+α
+k ∥∆j(aξ,ke2πiNkξ·)∥L∞(T2)
+≲
+X
+k:|2j −Nk|≥ 3
+4 Nk
+2−j(β+α+ε) N β+α
+k
+X
+3
+4 ·2j ≤|l|≤ 8
+3 ·2j
+|ˆaξ,k(l−N kξ)|
+≲
+X
+k:|2j −Nk|≥ 3
+4 Nk
+2−j(β+α+ε) N β+α
+k
+X
+3
+4 ·2j ≤|l|≤ 8
+3 ·2j
+N β+α+4
+k−1
+|l−N kξ|β+α+4
+≲
+X
+k≥1
+N β+α
+k
+X
+l∈Z2\{0}
+N β+α+4
+k−1
+|l|3N β+α+1
+k
+≲
+X
+k≥1
+N β+α+4
+k−1
+Nk
+X
+l∈Z2\{0}
+1
+|l|3 ≲ε ′,(3.18)
+where we use the fact that|l−N kξ|≳max{|l|, N k}holds provided|2 j −N k| ≥ 3
+4 Nk and 3
+4 ·2 j ≤
+|l| ≤ 8
+3 ·2 j. We also have P
+k≥1
+N β+α+4
+k−1
+Nk
+≲ε ′ if the parametersAandbare chosen sufficiently large.
+Similarly, ifj=−1, we have
+2β+α+ε∥I1∥L∞(T2) ≲
+X
+k:| 1
+2 −Nk|≥ 3
+4 Nk
+2β+α+εN β+α
+k
+X
+|l|≤ 4
+3
+|ˆaξ,k(l−N kξ)|
+≲
+X
+k≥1
+N β+α
+k
+X
+|l|≤ 4
+3
+N β+α+1
+k−1
+|l−N kξ|β+α+1
+≲
+X
+k≥1
+N β+α+1
+k−1
+Nk
+≲ε ′,(3.19)
+where we use the estimate|l−N kξ|≳N k that is satisfied with| 1
+2 −N k| ≥ 3
+4 Nk and|l| ≤ 4
+3.
+We now turn to the estimate ofI 2. Since the bound∥a ξ,ke2πiNkξ·∥L∞(T2) ≲1, we deduce
+2−j(β+α+ε) ∥I2∥L∞(T2) ≲
+X
+k:|2j −Nk|≤ 3
+4 Nk
+2−j(β+α+ε) N β+α
+k ∥∆j(aξ,ke2πiNkξ·)∥L∞(T2)
+≲sup
+m≥1
+1
+N εm
+X
+k:|2j −Nk|≤ 3
+4 Nk
+∥aξ,ke2πiNkξ·∥L∞(T2)
+≲sup
+m≥1
+1
+N εm
+#{K∈N:|2 j −N k| ≤ 3
+4 Nk}.
+With a large enough choice ofAandb, it holds sup m≥1
+1
+N εm
+≤ε ′ and
+#{K∈N:|2 j −N k| ≤ 3
+4 Nk} ≤log Ab
+4·2 j
+4
+7 ·2 j + 1≤2,
+which give the bound
+2−j(β+α+ε) ∥I2∥L∞(T2) ≲ε ′.(3.20)
+Combining (3.18),(3.19) and (3.20) together, we get
+∥
+X
+k≥1
+v0,p
+k ∥B−β−α−ε
+∞,∞ (T2) ≲ε ′.(3.21)
+15
+
+[PDF page 16]
+3 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING
+NON-UNIQUENESS
+By a similar argument, we obtain
+∥v0
+0∥B−β−α−ε
+∞,∞ (T2) ≲ε ′,(3.22)
+∥
+X
+k≥1
+v0,e,1
+k ∥B−β−α−ε
+∞,∞ (T2) ≲ε ′.(3.23)
+Sincev 0,e,1
+k denotes the part where derivatives are not all applied toe 2πiNkξ·x, the sum P
+k≥1 v0,e,1
+k
+indeed enjoys smallness in stronger spaces, such asB −β−α+1−λ
+∞,∞ for any 0< λ <1.
+We finish by estimatingP
+k≥1 v0,e,2
+k . Recall that the length scale of the mollifierϕ k is (Nk+1Nk)
+1
+2 .
+Applying the standard mollifier estimate and (3.12), we have
+∥
+X
+k≥1
+v0,e,2
+k ∥B−β−α−ε
+∞,∞ (T2) ≲
+X
+k≥1
+∥v0,e,2
+k ∥L∞(T2)
+≲
+X
+k≥1
+N −2[β]−1+β+α
+k ∥∆[β]∇⊥
+
+X
+ξ∈Λ
+aξ,ke2πiNkξ·
+
+ ∗(ϕ k −δ)∥ L∞(T2)
+≲
+X
+k≥1
+N −2[β]−1+β+α
+k ∥∇2[β]+2
+
+X
+ξ∈Λ
+aξ,ke2πiNkξ·
+
+ ∥L∞(T2)(Nk+1Nk)− 1
+2
+≲
+X
+k≥1
+N
+1
+2 +β+α
+k
+N
+1
+2
+k+1
+≲ε ′,(3.24)
+whereP
+k≥1
+N
+1
+2 +β+α
+k
+N
+1
+2
+k+1
+≲ε ′ provided the parametersAandbare chosen sufficiently large.
+Combining (3.21)-(3.24)and, without loss of generality, takingε ′ smaller if necessary, we conclude
+that
+∥V 0∥B−β−α−ε
+∞,∞ (T2) ≤ ∥
+X
+k≥1
+v0,p
+k ∥B−β−α−ε
+∞,∞ (T2) +∥v 0
+0∥B−β−α−ε
+∞,∞ (T2)
++∥
+X
+k≥1
+v0,e,1
+k ∥B−β−α−ε
+∞,∞ (T2) +∥
+X
+k≥1
+v0,e,2
+k ∥B−β−α−ε
+∞,∞ (T2)
+≤ε ′.
+3.2. Construction of the principal parts
+Definition 3.7.For anyk∈N, we define
+vk ≜v 0
+ke−(2πNk)2β t,
+¯vk ≜v 0
+ke−2·(2πNk+1)2β t.
+Then we define the principal parts of two solutions of (1.1)
+v(1) ≜
+X
+k≥0even
+vk +
+X
+k≥0odd
+¯vk,(3.25)
+v(2) ≜
+X
+k≥0odd
+vk +
+X
+k≥0even
+¯vk.(3.26)
+16
+
+[PDF page 17]
+3 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING
+NON-UNIQUENESS
+Proposition 3.8.Let0< p < 2β
+β+α . The two vector fieldsv (1) andv (2) are divergence-free, belong to
+Lp([0,1];L ∞(T2))and obey the following bounds
+∥∇mv(i)(t)∥L∞(T2) ≲m t− β+α+m
+2β ,(3.27)
+for allm≥0,t >0. Moreover, given anyϵ 1, ϵ2 >0, there exist sufficiently large constants A and b
+such that
+∥v(i)(t)∥L∞(T2) ≤ϵ 1t− β+α+ϵ2
+2β .(3.28)
+Proof.The divergence-free property ofv (1) andv (2) is inherited fromv 0
+k.
+Using (3.11), we have
+∥∇mv(i)(t)∥L∞(T2) ≲
+X
+k∈N
+N β+α+m
+k e−N 2β
+k t.(3.29)
+We analyze the series function on the right-hand side. AsN k grows rapidly, the series is dominated
+by its largest term. Fort≤N −2β
+0 , the dominant contribution occurs nearN k =t − 1
+2β , so the series is
+bounded byO(t − β+α+m
+2β ). Fort > N −2β
+0 , the summands decrease monotonically, yielding the upper
+boundN β+α+m
+0 e−N 2β
+0 t =O m(t− β+α+m
+2β e−CmN 2β
+0 t). Therefore, it yields (3.27). Similarly,
+∥v(i)(t)∥L∞(T2) ≲
+X
+k∈N
+N β+α
+k e−N 2β
+k t ≲sup
+k∈N
+1
+N ϵ2
+k
+X
+k∈N
+N β+α+ϵ2
+k e−N 2β
+k t ≤ϵ 1t− β+α+ϵ2
+2β .
+Applying (3.11) again and using 0< p < 2β
+β+α , one infers
+∥v(i)∥Lp([0,1];L∞(T2)) ≲
+X
+k∈N
+N β+α
+k ∥e−N 2β
+k t∥Lp([0,1]) ≲
+X
+k∈N
+N
+β+α− 2β
+p
+k ≲1.
+3.3. Estimates on the residual
+Fori∈ {1,2}, we define the residualF (i) ∈C ∞((0,1]×T 2;S 2×2) in divergence form and eF (i) ∈
+C ∞((0,1]×T 2;R 2) in Laplace form, satisfying
+−PdivF (i) −∆ [β]eF (i) =∂ tv(i) + (−∆)βv(i) +Pdiv(v (i) ⊗v (i)).(3.30)
+Before definingF (i) and eF (i), we first splitv k. Recalling (3.13)-(3.15), for anyk≥1, we decompose
+vk =v p
+k +v e
+k where
+vp
+k ≜v 0,p
+k e−(2πNk)2β t,(3.31)
+ve
+k ≜(v 0,e,1
+k +v 0,e,2
+k )e−(2πNk)2β t.(3.32)
+and fork= 0, we let
+vp
+0 =v 0 andv e
+0 = 0.
+We then set the principal part ofv (1) by
+vp ≜
+X
+k≥0,even
+vp
+k,(3.33)
+17
+
+[PDF page 18]
+3 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING
+NON-UNIQUENESS
+and the error part ofv (1) by
+eve ≜
+X
+k≥1odd
+¯vk +
+X
+k≥0even
+ve
+k.(3.34)
+Therefore, we can splitv (1) as
+v(1) =v p +eve,(3.35)
+andv (2) admits a similar decomposition.
+We defineF (1) and eF (1) explicitly. The definitions ofF (2) and eF (2) are similar and will therefore
+be omitted. Recall the differential operatorSin Definition 3.1. For anyk∈N, we define the tensor
+fields
+¯Rk ≜S(∆ −1v0
+k)e−2·(2πNk+1)2β t.
+Thus, by (3.1) and Definition 3.7, it holds
+div ¯Rk = ¯vk.(3.36)
+Let us define the residual termF (1) satisfying
+F (1) ≜F (1)
+1 +F (1)
+2 +F (1)
+3 ,
+where the linear dissipation error of ¯vk:
+F (1)
+1 ≜−
+X
+k≥1,odd
+(−∆)β ¯Rk,
+the oscillation error:
+F (1)
+2 ≜−
+X
+k≥1,odd
+R
+ 
+∂t¯vk +Pdiv(v p
+k+1 ⊗v p
+k+1)
+
+,
+and the corrector error:
+F (1)
+3 ≜−v (1) ⊗v (1) +
+X
+k≥0,even
+vp
+k ⊗v p
+k.
+Here,{∇p k}k≥1 denote some pressure terms, which will be defined later.
+Next, we define the linear error associated withv k, denoted by eF (1)
+eF (1) ≜
+X
+k≥2,even
+CβN −2[β]−1+β+α
+k ∇⊥
+
+X
+ξ∈Λ
+[aξ,k,(−∆) β]e2πiNkξ·x
+
+ ∗ϕ ke−(2πNk)2β t.(3.37)
+Finally, we verify thatF (1) and eF (1), defined above, satisfy (3.30). A direct computation and (3.36)
+show that
+PdivF (1)
+1 =−(−∆) β X
+k≥1odd
+¯vk.(3.38)
+18
+
+[PDF page 19]
+3 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING
+NON-UNIQUENESS
+Since div(v0 ⊗v 0) = 0, we have
+PdivF (1)
+2 =−
+X
+k≥1,odd
+ 
+∂t¯vk +Pdiv(v p
+k+1 ⊗v p
+k+1)
+
+=−∂ t
+X
+k≥1,odd
+¯vk −Pdiv
+
+ X
+k≥0,even
+vp
+k ⊗v p
+k
+
+ ,(3.39)
+and
+PdivF (1)
+3 =−Pdiv(v (1) ⊗v (1)) +Pdiv
+
+ X
+k≥0,even
+vp
+k ⊗v p
+k
+
+ .(3.40)
+Moreover, by Definition 3.2 and Definition 3.7, together with the fact that{e 2πiNkxe−(2πNk)2β t}k≥1
+andv 0 are solutions to the heat equation
+ 
+∂t + (−∆)β
+u= 0,
+It follows that
+∆[β]eF (1) =−
+ 
+∂t + (−∆)β X
+k≥0,even
+vk.(3.41)
+Combining (3.38)-(3.41) and recallingv (1) = P
+k≥0,even vk +P
+k≥1,odd ¯vk, we conclude that (3.30)
+holds.
+Recall the parameterγ∈(0,min{ β−1−α
+2 , 1−2α
+4 }], which are introduced to measure the subcriticality
+of the remaining terms. In the following proposition, we prove that{F i}i∈{0,1} and{ eFi}i∈{0,1} obey
+certain subcritical estimates.
+Proposition 3.9.Letη >0andi∈ {1,2}. For allt∈(0,1],F (i) and eF (i) satisfy
+∥F (i)(t)∥L∞(T2) ≤ηt − 2β+2α−1+γ
+2β ,(3.42)
+and
+∥∇meF (i)(t)∥L∞(T2) ≤ηt − 3β+α−1+γ−2[β]+m
+2β ,∀m∈ {0,1},(3.43)
+provided thatAandbare sufficiently large.
+Proof.Recalling the definition ofF (1) and eF (1) above, we proceed to verify thatF (1) and eF (1) satisfy
+the desired estimates. The arguments forF (2) and eF (2) are analogous and will be omitted.
+Estimate ofF (1)
+1 . Applying Proposition 3.6, we calculate directly
+∥F (1)
+1 (t)∥L∞(T2) ≲
+X
+k≥1odd
+N3β+α−1
+k e−N 2β
+k+1t
+≲
+X
+k∈N
+N
+3β+α−1
+b
+k e−N 2β
+k t.
+Hence, we easily deduce
+∥F (1)
+1 (t)∥L∞(T2) ≲t − 2β+2α−1+γ
+2β sup
+k∈N
+N
+3β+α−1
+b −(2β+2α−1+γ)
+k ≲ηt − 2β+2α−1+γ
+2β ,(3.44)
+19
+
+[PDF page 20]
+3 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING
+NON-UNIQUENESS
+whereAandbare chosen to be large enough.
+Estimate ofF (1)
+2 . Recalling (3.13) and (3.31), we have
+div(vp
+k ⊗v p
+k) =−div
+
+ X
+ξ1,ξ2∈Λ
+aξ1,kaξ2,ke2πiNk(ξ1+ξ2)·x ¯ξ1 ⊗ ¯ξ2
+
+ 2·(2πN k)2βN2α
+k e−2·(2πNk)2β t.(3.45)
+Applying Lemma A.4 and the product rule, we have
+div
+
+ X
+ξ1,ξ2∈Λ
+aξ1,kaξ2,ke2πiNk(ξ1+ξ2)·x ¯ξ1 ⊗ ¯ξ2
+
+
+=−
+X
+ξ∈Λ
+div(a2
+ξ,k ¯ξ⊗ ¯ξ) +
+X
+ξ1̸=−ξ2∈Λ
+div(aξ1,kaξ2,k ¯ξ1 ⊗ ¯ξ2)e2πiNk(ξ1+ξ2)x
+− 1
+2 ∇(|
+X
+ξ∈Λ
+aξ,ke2πiNkξ·x ¯ξ|2 − |
+X
+ξ∈Λ
+aξ,ke2πiNkξ·x|2)
++ 1
+2
+X
+ξ1̸=ξ2∈Λ
+∇(aξ1,kaξ2,k)(¯ξ1 · ¯ξ2 −1)e 2πiNk(ξ1−ξ2)x.(3.46)
+Moreover, using (3.5) and Lemma A.1, we have
+X
+ξ∈Λ
+div(a2
+ξ,k ¯ξ⊗ ¯ξ) = div( S(∆−1v0
+k−1)
+N2α
+k
++ Id) = v0
+k−1
+N2α
+k
+.(3.47)
+Therefore, with Definition 3.7 and (3.47), we have
+∂t¯vk −Pdiv
+
+X
+ξ∈Λ
+a2
+ξ,k+1 ¯ξ⊗ ¯ξ
+
+ ·2(2πN k+1)2βN2α
+k+1e−2·(2πNk+1)2β t = 0.(3.48)
+Combining (3.45)-(3.48) together, we simplifyF (1)
+2 as follows
+F (1)
+2 =−
+X
+k≥1odd
+R
+ 
+∂t¯vk +Pdiv(v p
+k+1 ⊗v p
+k+1)
+
+=RP
+ X
+k≥1odd
+X
+ξ1̸=−ξ2∈Λ
+div(aξ1,k+1aξ2,k+1 ¯ξ1 ⊗ ¯ξ2)e2πiNk+1(ξ1+ξ2)x
++
+X
+k≥1odd
+X
+ξ1̸=ξ2∈Λ
+1
+2 ∇(aξ1,k+1aξ2,k+1)(¯ξ1 · ¯ξ2 −1)e 2πiNk+1(ξ1−ξ2)x
+
+·2(2πN k+1)2βN2α
+k+1e−2·(2πNk+1)2β t,
+where the pressure term is eliminated by the identityP∇p= 0.
+Suppose{b k}k≥1 are smooth functions satisfying∥∇ mbk∥L∞ ≲N m
+k−1 for anym∈Nand Let
+ξ∈Z 2 \ {0}. Without loss of generality, it suffices to show that
+∥
+X
+k≥1
+RP(∇bke2πiNkξ·x)N2β+2α
+k e−(2πNk)2β t∥L∞(T2) ≲ηt − 2β+2α−1+γ
+2β .
+By the boundedness ofPonC µ(T2) forµ∈(0,1) and (A.2), withmchosen sufficiently large, we
+obtain, for anyk≥1,
+∥RP(∇bke2πiNkξ·x)∥Cµ(T2) ≲N −1+µ
+k Nk−1 +N −m+µ
+k N m+1
+k−1 +N −m
+k N m+µ+1
+k−1 ≲N −1+µ
+k Nk−1.
+20
+
+[PDF page 21]
+3 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING
+NON-UNIQUENESS
+Thus, settingµ= γ
+2 and choosingA, bsufficiently large, we arrive at
+∥
+X
+k≥1
+RP(∇bke2πiNkξ·x)N2β+2α
+k e−(2πNk)2β t∥Cµ(T2) ≲
+X
+k≥1
+N2β+2α−1+µ
+k Nk−1e−(Nk)2β t
+≲sup
+k
+N
+1
+b − γ
+2
+k t− 2β+2α−1+γ
+2β
+≲ηt − 2β+2α−1+γ
+2β ,(3.49)
+where we first choosebsufficiently large again so that 1
+b − γ
+2 <0 and then takeAsufficiently large.
+By (3.49), we get the desired result
+∥F (1)
+2 (t)∥L∞(T2) ≲ηt − 2β+2α−1+γ
+2β .(3.50)
+Estimate ofF (1)
+3 . Recall the definition ofv p
+k,v e
+k,v p andeve in (3.31)-(3.34). Using (3.12), the
+standard mollifier estimate and the Leibniz rule, we have
+∥vp
+k∥L∞ (T2 ) ≲N β+α
+k e−N 2β
+k t,(3.51)
+∥ve
+k∥L∞ (T2 ) ≲( Nk−1
+Nk
++ N
+1
+2
+k
+N
+1
+2
+k+1
+)N β+α
+k e−N 2β
+k t,(3.52)
+∥¯vk∥L∞ (T2 ) ≲N β+α
+k e−N 2β
+k+1t,(3.53)
+for allk∈N.
+Due to (3.51), we know thatv p admits the same estimate asv (1),
+∥vp(t)∥L∞(T2) ≲t − β+α
+2β .(3.54)
+(3.52) and (3.53) imply
+∥eve(t)∥L∞(T2) ≲
+X
+k≥1
+( Nk−1
+Nk
++ N
+1
+2
+k
+N
+1
+2
+k+1
+)N β+α
+k e−N 2β
+k t +N β+α
+k e−N 2β
+k+1t
+≲
+X
+k∈N
+
+N1/b−1
+k +N 1/2−b/2
+k +N
+(β+α)( 1
+b −1)
+k
+
+N β+α
+k e−N 2β
+k t
+≲
+X
+k∈N
+N1/b−1
+k N β+α
+k e−N 2β
+k t.
+Therefore, we deduce
+∥eve(t)∥L∞(T2) ≲t − β+α−1+γ
+2β sup
+k∈N
+N1/b−γ
+k ≲ηt − β+α−1+γ
+2β ,(3.55)
+where we first takebsufficiently large such that 1/b−γ <0 and then chooseAlarge enough.
+In view of the decomposition ofv (1) in (3.35), we spiltF (1)
+3 as
+F (1)
+3 =−v (1) ⊗v (1) +
+X
+k≥0even
+vp
+k ⊗v p
+k
+=−
+X
+k̸=j≥0even
+vp
+k ⊗v p
+j −v (1) ⊗eve −eve ⊗v p.
+21
+
+[PDF page 22]
+3 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING
+NON-UNIQUENESS
+Applying (3.51), we obtain
+∥
+X
+k̸=j
+vp
+k ⊗v p
+j ∥L∞(T2) ≲
+X
+k≥1,j<k
+∥(vp
+k ⊗v p
+j )∥L∞(T2)
+≲
+X
+k≥1
+N β+α
+k e−N 2β
+k tX
+j<k
+N β+α
+j
+≲
+X
+k≥1
+N β+α
+k Nk−1e−N 2β
+k t
+≲
+X
+k≥1
+N
+(β+α)( 1
+b +1)
+k e−N 2β
+k t.
+Thus, withA, bchosen large enough, it follows
+∥
+X
+k̸=j
+vp
+k ⊗v p
+j ∥L∞(T2) ≲t − 2β+α−1+γ
+2β sup
+k∈N
+N
+(β+α)( 1
+b +1)−(2β+2α−1+γ)
+k ≲ηt − 2β+2α−1+γ
+2β ,(3.56)
+where we have used the fact thatβ >1. By virtue of (3.27), (3.54) and (3.55), we deduce
+∥v(1) ⊗eve +eve ⊗v p∥L∞(T2) ≲ηt − β+α−1+γ
+2β ·t − β+α
+2β ≲ηt − 2β+2α−1+γ
+2β ,(3.57)
+Finally, (3.56) and (3.57) yield
+∥F (1)
+3 (t)∥L∞(T2) ≲ηt − 2β+2α−1+γ
+2β .(3.58)
+Estimate ofF (1). Combining (3.44), (3.50) and (3.58), and taking a newηsmall enough to
+absorb all constants, we conclude that
+∥F (1)(t)∥L∞(T2) ≤ηt − 2β+2α−1+γ
+2β .
+Estimate of eF (1). Recall the definition of eF (1) in (3.37),
+eF (1) =
+X
+k≥2,even
+CβN −2[β]−1+β+α
+k ∇⊥
+
+X
+ξ∈Λ
+[aξ,k,(−∆) β]e2πiNkξ·x
+
+ ∗ϕ ke−(2πNk)2β t
+Thanks to (3.12), (B.2) and the standard mollifier estimates, form∈ {1,2}, one infers
+∥∇meF (1)(t)∥L∞(T2) ≲
+X
+k≥1
+X
+ξ∈Λ
+N −2[β]−1+β+α
+k ∥∇1+m[(−∆)β, aξ,k]e2πiNkξ·∥L∞(T2)e−(2πNk)2β t
+≲
+X
+k≥1
+N −2[β]−1+β+α
+k (Nk +N k−1)1+m
+
+N2β−1
+k N4
+k−1 +N 2β+3
+k−1
+
+e−N 2β
+k t
+≲
+X
+k∈N
+N
+3β+α−1−2[β]+ 4
+b +m
+k e−N 2β
+k t.
+Therefore, form∈ {1,2}, we obtain
+∥∇meF (1)(t)∥L∞(T2) ≲sup
+k
+N
+4
+b −γ
+k t− 3β+α−1+γ−2[β]+m
+2β ≤ηt − 3β+α−1+γ−2[β]+m
+2β ,
+providedA, bsufficiently large.
+22
+
+[PDF page 23]
+4 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING NORM
+INFLATION
+4 Construction of the principal part of solutions exhibiting
+norm inflation
+Recall thatδ >0 and
+λ=δ −1, λ q = 2q,
+whereq∈R. We define the principal part of the norm inflation solution as follows.
+Definition 4.1.We define the velocity fieldsU 1 andU 2 by:
+U1(x, t)≜Φ 1(1−e −2·(2πλq)2β t),(4.1)
+U2(x, t)≜C βλq
+β+α−2[β]−1∆[β]∇⊥
+
+X
+ξ
+¯aξe2πiλqξ·x
+
+ e−(2πλq)2β t,(4.2)
+with
+Φ1 ≜λ s+1 sin(2πλξ·x) ¯ξe−(2πλ)2β t,
+Cβ ≜
+√
+2(2π)β−2[β]−1 ,
+¯aξ ≜a ξ
+
+− S(∆−1Φ1)
+λ2αq
++ Id
+
+.
+And we define the principal part of the solution by
+U(x, t) =U 1(x, t) +U 2(x, t).
+Proposition 4.2.The vector fieldUis divergence-free. Moreover, provided thatqis sufficiently large,
+for anyn, m∈N, the function¯a ξ satisfies
+∥∂n
+t ∇m¯aξ∥L∞
+t,x(T2) ≲λ 2βn+m
+and the two frequency-localized componentsU 1 andU 2 satisfy
+∥∇mU1(t)∥L∞(T2) ≲λ s+1+me−λ2β t,(4.3)
+∥∇mU2(t)∥L∞(T2) ≲λ β+α+m
+q e−λ2β
+q t.
+Proof.The proof is analogous to that of Proposition 3.8, and is therefore omitted.
+We now define the residualsGand eGthrough the identity,
+−PdivG−∆ [β]eG=∂ tU+ (−∆) βU+Pdiv(U⊗U),(4.4)
+whereG∈C ∞((0,1]×T 2;S 2×2) is a matrix-valued residual in divergence form, while eG∈C ∞((0,1]×
+T2;R 2) is a vector-valued residual in Laplacian form. Before definingGand eG, we first decompose
+U2 =U p
+2 +U e
+2 ,with
+U p
+2 ≜
+√
+2(2π)βλq
+β+αi
+X
+ξ
+¯aξe2πiλqξ·x ¯ξe−(2πλq)2β t,(4.5)
+23
+
+[PDF page 24]
+4 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING NORM
+INFLATION
+U e
+2 ≜C βλq
+β+α−2[β]−1∆[β]∇⊥
+
+X
+ξ
+¯aξe2πiλqξ·x
+
+ e−(2πλq)2β t
+−
+√
+2(2π)βλq
+β+αi
+X
+ξ
+¯aξe2πiλqξ·x ¯ξe−(2πλq)2β t,(4.6)
+We are now in a position to defineGand eG. Let us define the residual termGby decomposing it into
+two parts:
+G≜G 1 +G 2,
+whereG 1 is the oscillation error:
+G1 ≜−R
+ 
+Pdiv(U p
+2 ⊗U p
+2 ) + (∂t + (−∆)β)U1
+
+,
+andG 2 is the corrector error:
+G2 ≜−U e
+2 ⊗U 2 −U p
+2 ⊗U e
+2 .
+Herepdenotes the pressure terms, which will be define later.
+Next, we define the linear error eG,
+eG≜C βλq
+β+α−2[β]−1 ∇⊥
+
+X
+ξ
+[¯aξ,(−∆) β]e2πiλqξ·x
+
+ e−(2πλq)2β t
+−C βλq
+β+α−2[β]−1 ∇⊥
+
+X
+ξ
+∂t¯aξ ·e 2πiλqξ·x
+
+ e−(2πλq)2β t.(4.7)
+Finally, we verify thatGand eG. As divR=Id, we then get
+PdivG=−Pdiv(U⊗U)−(∂ t + (−∆)β)U1.(4.8)
+Moreover, using the fact thate 2πiλqξ·xe−(2πλq)2β t are solutions to the fractional heat equation (∂ t +
+(−∆)β)u= 0, we derive
+∆[β]eG=−(∂ t + (−∆)β)U2.(4.9)
+It follows from (4.8), (4.9) and the identityU=U 1 +U 2 that (4.4) holds.
+Proposition 4.3.Letη >0. For allt∈(0,1]andm∈ {0,1},Gand eGsatisfy
+∥G(t)∥L∞(T2) ≤ηt − 2β+2α−1+γ
+2β ,(4.10)
+and
+∥∇meG(t)∥L∞(T2) ≤ηt − 3β+α−1+γ−2[β]+m
+2β ,(4.11)
+provided thatqis sufficiently large.
+24
+
+[PDF page 25]
+4 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING NORM
+INFLATION
+Proof.Estimate ofG 1. By the definition ofU p
+2 in (4.5), we have
+div
+ 
+U p
+2 ⊗U p
+2
+
+=−div
+
+ X
+ξ1,ξ2∈Λ
+¯aξ1¯aξ2 e2πiλq(ξ1+ξ2)·x ¯ξ1 ⊗ ¯ξ2
+
+ 2·(2π) 2βλq
+2β+2αe−2(2πλq)2β t (4.12)
+Using Lemma A.4 and the product rule, one gets
+div
+
+ X
+ξ1,ξ2∈Λ
+¯aξ1¯aξ2 e2πiλq(ξ1+ξ2)·x ¯ξ1 ⊗ ¯ξ2
+
+
+=−
+X
+ξ∈Λ
+div
+ 
+¯a2
+ξ ¯ξ⊗ ¯ξ
+
++
+X
+ξ1̸=ξ2∈Λ
+div
+
+¯aξ1¯aξ2
+¯ξ1 ⊗ ¯ξ2
+
+e2πiλq(ξ1+ξ2)·x
+− 1
+2 ∇
+
+
+
+X
+ξ∈Λ
+¯aξe2πiλqξ·x ¯ξ
+
+2
+−
+
+X
+ξ∈Λ
+¯aξe2πiλqξ·x
+
+2
+ + 1
+2
+X
+ξ1̸=ξ2∈Λ
+∇(¯aξ1¯aξ2)
+ ¯ξ1 · ¯ξ2 −1
+
+e2πiλq(ξ1−ξ2)·x.
+(4.13)
+where the first term corresponds to the low-frequency contribution. Furthermore, by Lemma A.1, we
+obtain
+X
+ξ∈Λ
+div
+ 
+¯a2
+ξ ¯ξ⊗ ¯ξ
+
+= div
+
+− S(∆−1Φ1)
+λ2αq
++ Id
+
+=− Φ1
+λ2αq
+.
+Therefore, using the fact that Φ 1 is a solution of heat equation, we have
+(∂t + (−∆)β)U1 +Pdiv
+X
+ξ∈Λ
+¯a2
+ξ ¯ξ⊗ ¯ξ·2(2π) 2βλq
+2β+2αe−2(2πλq)2β t = 0.(4.14)
+Combining (4.12)-(4.14) and the fact thatP∇= 0, we may rewriteG 1 as
+G1 =−R
+ 
+Pdiv(U p
+2 ⊗U p
+2 ) + (∂t + (−∆)β)U1
+
+=RP
+ X
+ξ1̸=ξ2∈Λ
+div
+
+¯aξ1¯aξ2
+¯ξ1 ⊗ ¯ξ2
+
+e2πiλq(ξ1+ξ2)·x + 1
+2
+X
+ξ1̸=ξ2∈Λ
+∇(¯aξ1¯aξ2)
+ ¯ξ1 · ¯ξ2 −1
+
+e2πiλq(ξ1−ξ2)·x
+
+·2(2π) 2βλq
+2β+2αe−2(2πλq)2β t,
+Letbis a smooth function with∥∇ mb∥L∞ ≲λ m for anym∈Nand Letξ∈Z 2 \ {0}. Thus, it
+suffices to show that
+∥RP(∇be2πiλqξ·x)λq
+2β+2αe−(2πλq)2β t∥L∞(T2) ≲ηt − 2β+2α−1+γ
+2β .
+By the boundedness ofPonC µ(T2) forµ∈(0,1) and by applying (A.2) withmchosen large enough,
+we obtain
+∥RP(∇be2πiλqξ·x)∥Cµ(T2) ≲λ −1+µ
+q λ+λ −m+µ
+q λm+1 +λ −m
+q λm+µ+1 ≲λ −1+µ
+q λ.
+Then choosingµ= γ
+2 and takingqsufficiently large, we arrive at
+∥RP(∇be2πiλqξ·x)λq
+2β+2αe−(2πλq)2β t∥Cµ(T2) ≲λ 2β+2α−1+µ
+q λe−(2πλq)2β t
+≲λ
+− γ
+2
+q λ2β+2α−1+γ
+q e−(2πλq)2β t
+25
+
+[PDF page 26]
+4 CONSTRUCTION OF THE PRINCIPAL PART OF SOLUTIONS EXHIBITING NORM
+INFLATION
+≲ηt − 2β+2α−1+γ
+2β .(4.15)
+Consequently,
+∥G1∥L∞(T2) ≲ηt − 2β+2α−1+γ
+2β .(4.16)
+Estimate ofG 2. By the definition ofU e
+2 andU p
+2 in (4.5) and (4.6), respectively, together with the
+Leibniz rule, we obtain
+∥U p
+2 ∥L∞(T2) ≲λ β+α
+q e−(2πλq)2β t,
+∥U e
+2 ∥L∞(T2) ≲λλ β+α−1
+q e−(2πλq)2β t.
+providedqis sufficiently large. Hence, for sufficiently largeq, we get
+∥U e
+2 ⊗U p
+2 ∥L∞(T2) ≲λ 2β+2α−1
+q e−2(2πλq)2β t
+≲λ −γ
+q t− 2β+2α−1+γ
+2β
+≲ηt − 2β+2α−1+γ
+2β ,(4.17)
+Similarly, it holds
+∥U e
+2 ⊗U e
+2 ∥L∞(T2) ≲ηt − 2β+2α−1+γ
+2β .(4.18)
+It follows from (4.17), (4.18) and the definition ofG 2 that
+∥G2∥L∞(T2) ≲ηt − 2β+2α−1+γ
+2β .(4.19)
+Estimate ofG. By combining (4.16) and (4.19) and choosing a newηsmall enough to absorb all
+involved constants, one gets
+∥G∥L∞(T2) ≤ηt − 2β+2α−1+γ
+2β .
+Estimate of eG. We split eGas eG= eG1 + eG2 where
+eG1 =C βλq
+β+α−2[β]−1 ∇⊥
+
+X
+ξ
+[(−∆)β,¯aξ]e2πiλqξ·x
+
+ e−(2πλq)2β t,
+eG2 =C βλq
+β+α−2[β]−1 ∇⊥
+
+X
+ξ
+(∂t¯aξ)e2πiλqξ·x
+
+ e−(2πλq)2β t.
+By (B.2), we obtain
+∥∇meG1∥L∞(T2) ≲
+X
+ξ
+λq
+β+α−2[β]−1 ∥∇1+m[(−∆)β,¯aξ]e2πiλqξ·x∥L∞(T2)e−(2πλq)2β t
+≲λ q
+β+α−2[β]+m(λ2β−1
+q λ4 +λ 2β+3)e−(2πλq)2β t
+≲λ −γ
+q ·λ 3β+α−1+γ−2[β]+m
+q e−(2πλq)2β t
+≲ηt − 3β+α−1+γ−2[β]+m
+2β ,(4.20)
+26
+
+[PDF page 27]
+5 CONSTRUCTION OF THE PERTURBATION
+for sufficiently largeq. Using the Proposition 4.2, one derives that
+∥∇meG2∥L∞(T2) ≲λ q
+β+α−2[β]+m λ2βe−(2πλq)2β t
+≲λ 1−2β−γ
+q ·t − 3β+α−1+γ−2[β]+m
+2β
+≲ηt − 3β+α−1+γ−2[β]+m
+2β ,(4.21)
+provided thatqis sufficiently large. Combining (4.20) and (4.21), form= 0,1, we conclude
+∥∇meG∥L∞(T2) ≤ηt − 3β+α−1+γ−2[β]+m
+2β .
+5 Construction of the perturbation
+The vector fields{v (i)}i∈{1,2} constructed in Section 3 andUfrom Section 4 are almost solutions of
+(1.1), whose residual terms are small in some certain subcritical norm. Consequently, we may introduce
+perturbations to these approximate solutions and thereby obtain exact solutions.
+Firstly, we show the existence of{ω (i)}i∈{1,2} such that{v (i) +ω (i)}i∈{1,2} solves (1.1). Recall that
+γ∈(0,min{ β−α−1
+2 , 1−2α
+2 }], ϵ 2 ∈(0,min{ β−α−1
+2 , 1−2α−γ
+2 }],
+and
+τ∈( β+α−1 +γ
+2β , β−α−ϵ 2
+2β ), κ∈(0, 2[β]−β−α+ 1−γ
+2 ].
+Moreover,ϵ 1 is the parameter which depends on other parameters, which will be fixed later. Recall
+I(a, b) is defined as
+I(a, b) =
+ˆ 1
+0
+(1−s) −as−bds,∀a, b <1.
+We define the space for the perturbation{ω (i)}i∈{1,2}:
+X={ω∈C((0,1]×T 2;R 2);∥ω∥ X <∞},
+with norm
+∥ω∥X = sup
+t∈(0,1]
+tτ ∥ω∥L∞ .
+Proposition 5.1.Leti∈ {0,1}.There existη 0 >0such that for allη∈(0, η 0), there existω (i) ∈
+BX(0, η)such thatu (i) =v (i) +ω (i) satisfy(1.1). Moreover,ω (i) →0inB −β
+∞,∞(T2)ast→0.
+Proof.Without loss of generality, we writev,ω,Fand eFto representv (i),ω(i),F (i) and eF (i), respec-
+tively, withi∈ {1,2}.
+In order foru=v+ωto be a solution of (1.1) with initial datav(0), it is necessary that the
+perturbationωsatisfy
+
+
+
+(∂t + (−∆)β)ω+Pdiv (v⊗ω+ω⊗v+ω⊗ω) =PdivF+ ∆ [β]eF ,
+ω(0,·) = 0.
+27
+
+[PDF page 28]
+5 CONSTRUCTION OF THE PERTURBATION
+Applying the Duhamel formula, we seekωas a fixed point of the mapping
+T ω(t) =
+ˆ t
+0
+e(t−s)(−∆)β
+(Pdiv(F−(ω⊗ω+v⊗ω+ω⊗v)) + ∆ [β]eF)ds,(5.1)
+It follows from the definition ofXand (C.1) that
+∥T ω∥X ≲sup
+0<t≤1
+tτ
+ ˆ t
+0
+(t−s) − 1
+2β
+
+∥ω(s)∥2
+L∞ +∥ω(s)∥ L∞ ∥v(s)∥L∞ +∥F(s)∥ L∞
+
+ds
++
+ˆ t
+0
+(t−s) − 2[β]−κ
+2β ∥∇κeF(s)∥ L∞ ds
+!
+≲sup
+0<t≤1
+tτ
+ ˆ t
+0
+(t−s) − 1
+2β
+
+s−2τ ∥ω∥2
+X +s −τ ∥ω∥X ∥v(s)∥L∞ +∥F(s)∥ L∞
+
+ds
++
+ˆ t
+0
+(t−s) − 2[β]−κ
+2β ∥∇κeF(s)∥ L∞ ds
+!
+.
+Applying (3.28) and Proposition 3.9, we obtain
+∥T ω∥X ≲sup
+0<t≤1
+tτ
+ ˆ t
+0
+(t−s) − 1
+2β
+
+s−2τ ∥ω∥2
+X +ϵ 1s−τ s− β+α+ϵ2
+2β ∥ω∥X +ηs − 2β+2α−1+γ
+2β
+
+ds
++
+ˆ t
+0
+(t−s) − 2[β]−κ
+2β ηs− 3β+α−1+γ−2[β]+κ
+2β ds
+!
+Hence, by performing a change of variables, one gets that
+∥T ω∥X ≲I
+ 1
+2β ,2τ
+
+∥ω∥2
+X sup
+0<t≤1
+t1−τ− 1
+2β +ϵ 1I
+ 1
+2β , τ+ β+α+ϵ 2
+2β
+
+∥ω∥X sup
+0<t≤1
+t
+β−α−ϵ2 −1
+2β
++ηI
+ 1
+2β , 2β+ 2α−1 +γ
+2β
+
+sup
+0<t≤1
+tτ− 2α+γ
+2β
++ηI
+2[β]−κ
+2β , 3β+α−1 +γ−2[β] +κ
+2β
+
+sup
+0<t≤1
+tτ− β+α−1+γ
+2β .
+Observe that the Beta integrals appearing above are finite. Indeed, by the assumptions onα, κ, γ, τ
+andϵ 2, we deduce that all the parameters of the Beta integralIlie in (−∞,1):
+1
+2β ,2τ, τ+ β+α+ϵ 2
+2β , 2β+ 2α−1 +γ
+2β , 2[β]−κ
+2β , 3β+α−1 +γ−2[β] +κ
+2β <1.
+Moreover, the exponents oftin the supremum are nonnegative:
+1−τ− 1
+2β , β−α−ϵ 2 −1
+2β , τ− 2α+γ
+2β , τ− β+α−1 +γ
+2β ≥0,
+which implies that the supremum is finite. Therefore, by choosingϵ 1 andηsmall enough, there exists
+a constantC >0 such that
+∥T ω∥X ≤C∥ω∥ 2
+X + 1
+4 ∥ω∥X + η
+2 ,
+By a similar argument, one infers
+∥T ω1 −T ω 2∥X ≤ ∥ω1 −ω 2∥X(C∥ω1∥X +C∥ω 2∥X + 1
+4)
+28
+
+[PDF page 29]
+5 CONSTRUCTION OF THE PERTURBATION
+Choosingη 0 = 1
+8C , it follows thatTis a contraction on the ballB X(0, η) for allη∈(0, η 0). We
+establish the existence ofωby the Banach fixed point theorem.
+Finally, we verify thatωvanishes near the initial time inB −β
+∞,∞(T2). Applying (C.1), (3.27),
+Proposition 3.9, and the bound∥ω∥ X ≤η, we obtain
+∥ω(t)∥B−β
+∞,∞(T2) ≲
+ˆ t
+0
+∥e(t−s)(−∆)β
+(F−(ω⊗ω+v⊗ω+ω⊗v))∥ B1−β
+∞,∞(T2)ds
++
+ˆ t
+0
+∥e(t−s)(−∆)β
+∆[β]∇−βeF∥ L∞(T2)ds
+≲
+ˆ t
+0
+∥(F−ω⊗ω−v⊗ω−ω⊗v)(s)∥ L∞(T2)ds+
+ˆ t
+0
+(t−s) − 2[β]−β
+2β ∥eF(s)∥ L∞(T2)ds
+≲
+ˆ t
+0
+
+s− 2β+2α−1+γ
+2β +s −2τ +s −τ− β+α
+2β + (t−s) − 2[β]−β
+2β s− 3β+α+γ−2[β]−1
+2β
+
+ds
+≲t
+1−2α−γ
+2β +t 1−2τ +t 1−τ− β+α
+2β +I
+2[β]−β
+2β , 3β+α+γ−2[β]−1
+2β
+
+t
+1−α−γ
+2β
+− →
+t→0
+0,
+where we have used that all exponents ofton the right-hand side are strictly positive.
+Similarly, we define the space for the perturbationρofUby
+X
+′
+≜{ρ∈C 0((0, tq]×T 2;R 2);∥ρ∥ X ′ <∞},
+with norm
+∥ρ∥X ′ ≜sup
+t∈(0,tq]
+tτ ∥ρ∥L∞ <∞,
+and the existence time
+tq ≜ 1
+λ2β
+q
+.
+Unlike Proposition 5.1, we only need to establish the existence of the perturbation up to the norm
+inflation timet q.
+Proposition 5.2.There existη 0 >0such that for allη∈(0, η 0), there existρ∈B X(0, η)such that
+u=U+ρsatisfy(1.1). Moreover, for anyϵ >0, one can chooseqsufficiently large such that
+∥ρ∥B−β
+∞,∞(T2) ≤ϵ.
+Proof.In order foru=U+ρto solve (1.1) with initial dataU(0), the perturbationρmust satisfy
+
+
+
+(∂t + (−∆)β)ρ+Pdiv (U⊗ρ+ρ⊗U+ρ⊗ρ) =PdivG+ ∆ [β]eG,
+ρ(0,·) = 0.
+Now by the Duhamel formula, we solveωas a fixed point of the map
+T ′ρ(t) =
+ˆ t
+0
+e(t−s)(−∆)β
+(Pdiv(G−(ρ⊗ρ+U⊗ρ+ρ⊗U)) + ∆ [β]eG)ds.(5.2)
+29
+
+[PDF page 30]
+6 PROOF OF THE MAIN RESULTS
+Similarly to the proof of Proposition 5.1, one gets
+∥T ′ρ∥X ′ ≲sup
+0<t≤tq
+tτ
+ˆ t
+0
+(t−s) − 1
+2β
+
+s−2τ ∥ρ∥2
+X +s −τ ∥ρ∥X ∥U2(s)∥L∞ +∥G(s)∥ L∞
+
+ds
++ sup
+0<t≤tq
+tτ
+ˆ t
+0
+(t−s) − 1
+2β s−τ ∥ρ∥X ∥U1(s)∥L∞ ds+ sup
+0<t≤tq
+ˆ t
+0
+(t−s) − 2[β]−κ
+2β ∥∇κeG(s)∥L∞ ds.
+SinceU 2,Gand eGsatisfy the same estimates asv,Fand eF, respectively, the proof is identical to that
+of Proposition 5.1, except for the treatment of the second term. In fact, using (4.3), we have
+sup
+0<t≤tq
+tτ
+ˆ t
+0
+(t−s) − 1
+2β s−τ ∥ρ∥X ∥U1(s)∥L∞ ds≲λ s+1I( 1
+2β , τ)(t q)1− 1
+2β ∥ρ∥X ≤ 1
+8 ∥ρ∥X .
+provided thatqis chosen to be sufficiently large. Applying Propositions 4.2 and 4.3, and arguing as
+in the proof of Proposition 5.1, we arrive at
+∥T ′ρ∥X ′ ≤C∥ρ∥ 2
+X ′ + 1
+4 ∥ρ∥X ′ + η
+2 ,
+and
+∥T ′ρ1 −T ′ρ2∥X ′ ≤ ∥ρ1 −ρ 2∥X ′(C∥ρ1∥X ′ +C∥ρ 2∥X ′ + 1
+4)
+whereηis chosen sufficiently small andqchosen sufficiently large. Choosingη 0 = 1
+8C , it follows that
+T ′ is a contraction map on theB X(0, η) for allη∈(0, η 0), and we conclude by the Banach fix point
+theorem.
+Finally, we derive the desired estimate forρnear the initial time. By (C.1), (4.3), Proposition 4.2,
+the interpolation inequality, and the fact that|ω| X ≤η 1, we obtain for 0< t < t q
+∥ρ(t)∥B−β
+∞,∞(T2) ≲
+ˆ t
+0
+∥e(t−s)(−∆)β
+(G−(ρ⊗ρ+U 1 ⊗ρ+U 2 ⊗ρ+ρ⊗U 1 +ρ⊗U 2)∥B1−β
+∞,∞(T2)ds
++
+ˆ t
+0
+∥e(t−s)(−∆)β
+∆[β]∇−βeG)∥L∞(T2)ds
+≲
+ˆ t
+0
+∥G(s)∥L∞(T2) +∥ρ(s)∥ 2
+L∞(T2) +∥ρ(s)∥ L∞(T2)∥U2(s)∥L∞(T2)ds
++
+ˆ t
+0
+∥ρ∥L∞(T2)∥U1∥L∞(T2)ds+
+ˆ t
+0
+(t−s) − 2[β]−β
+2β ∥eG(s)∥L∞(T2)ds.
+For the second term, choosingqlarge enough, we deduce
+ˆ t
+0
+∥ρ(s)∥L∞(T2)∥U1(s)∥L∞(T2)ds≲λ s+1∥ρ∥X ′
+ˆ t
+0
+s−τ ds≲(t q)1−τ ≤ 1
+3 ϵ,∀t∈[0, t q].
+While the estimates for the other terms are identical to those in Proposition 5.1, we omit the details.
+6 Proof of the main results
+Proof of Proposition 1.7.Recall from definitions, we can write
+u(1) ≜v (1) +ω (1) =
+X
+k≥0even
+vk +
+X
+k≥0odd
+¯vk +ω (1),
+30
+
+[PDF page 31]
+6 PROOF OF THE MAIN RESULTS
+and
+u(2) ≜v (2) +ω (2) =
+X
+k≥0odd
+vk +
+X
+k≥0even
+¯vk +ω (2).
+In Section 5, we have shown that fori∈ {1,2}, there existω (i) ∈C((0,1]×T 2;R 2) obeying suitable
+equations such that{u (i)}i∈{1,2} obey (1.1). Moreover, by standard regularity theory,{u (i)}i∈{1,2} are
+smooth on (0,1]×T 2.
+Next we argue that both solutions are continuous ont= 0 with respect to the spaceB −β−α−ε′
+∞,∞ (T2).
+As shown in Proposition 5.1,{ω (i)}i∈{0,1} tends to 0 inB −β
+∞,∞(T2) whenttends to 0. Thus,{ω (i)}i∈{0,1}
+belongs toC([0,1];B −β−α−ε′
+∞,∞ (T2)). It remains to show{v (i)}i∈{0,1} ∈C([0,1];B −β−α−ε′
+∞,∞ (T2)). Since
+{v(i)}i∈{0,1} ∈C ∞((0,1]×T 2), it suffice to prove that{v (i)}i∈{0,1} are continuous att= 0 in
+B−β−α−ε′
+∞,∞ (T2). Recalling the definition ofv (i) in Definition 3.7, we have
+∥v(i)(t)−V 0∥B−β−α−ε′
+∞,∞
+≲
+X
+k∈N
+∥v0
+k∥B−β−α−ε′
+∞,∞
+
+(e−(2πNk)2β t −1) + (e −2·(2πNk+1)2β t −1)
+
+.(6.1)
+Following the proof of Proposition 3.6, one can infers that
+∥v0
+k∥B−β−α−ε′
+∞,∞
+≲N −ε′
+k ,∀k∈N.(6.2)
+Substituting (6.2) into (6.1), we arrive at
+∥v(i)(t)−V 0∥B−β−α−ε′
+∞,∞
+≲
+X
+k≤M
+N −ε′
+k
+
+(e−(2πNk)2β t −1) + (e −2·(2πNk+1)2β t −1)
+
++
+X
+k≥M
+N −ε′
+k − →
+t→0
+0,
+where we first select largeMto make the second term small, then fixMand taketsmall to make the
+first term small as well.
+Finally, we prove that these two solutions are distinct by considering a time scale when all but the
+lowest frequency mode should have dissipated away, for examplet0 =N −2β
+0 . By the triangle inequality,
+we get
+∥u(1)(t0)−u (2)(t0)∥L∞(T2) ≥ ∥v0∥L∞(T2) −
+X
+k≥1
+∥vk(t0)∥L∞(T2) −
+X
+k≥0
+∥¯vk(t0)∥L∞(T2)
+− ∥ω(1)(t0)∥L∞(T2) − ∥ω(2)(t0)∥L∞(T2).(6.3)
+By (3.29), one obtains
+X
+k≥1
+∥vk(t0)∥L∞(T2) ≲
+X
+k≥1
+N β+α
+k exp (−N2β
+k N −2β
+0 )≲N β+α
+1 exp (−N2β
+1 N −2β
+0 ),
+and
+X
+k≥0
+∥¯vk(t0)∥L∞(T2) ≲
+X
+k≥0
+N β+α
+k exp (−N2β
+k+1N −2β
+0 )≲N β+α
+0 exp (−N2β
+1 N −2β
+0 ).
+Therefore, we have
+X
+k≥1
+∥vk(t0)∥L∞(T2) +
+X
+k≥0
+∥¯vk(t0)∥L∞(T2) ≤N β
+0 .(6.4)
+31
+
+[PDF page 32]
+6 PROOF OF THE MAIN RESULTS
+For the{ω (i)}i∈{1,2}, we have by Proposition 5.1 and definition ofτ,
+∥ω(i)(t0)∥L∞(T2) ≲ηt −τ
+0 ≲N 2βτ
+0 ≲N β−α
+0 ≤N β
+0 .(6.5)
+Finally, we establish the exact value ofv 0(t0, x) onL ∞(T2). By Definition 3.2 and Definition 3.7, we
+readily obtain
+∥v0(t0,·)∥ L∞(T2) =N β+α
+0 e−(2π)2β
+.(6.6)
+Now together with (6.4)-(6.6), we then have
+∥u(1)(t0)−u (2)(t0)∥L∞(T2) ≳N β+α
+0 e−(2π)2β
+−N β
+0 .
+By takingAsufficiently large, we conclude thatu (1) andu (2) are distinct.
+Proof of Proposition 1.8.By the definition ofU 1 andρ, we have
+u(x,0) =U(x,0) +ρ(x,0) =U 1(x,0) +U 2(x,0) +ρ(x,0) =U 2(x,0).
+From the definition ofU 2 in (4.2) and the proof of Proposition 3.6, it holds
+∥u(·,0)∥ B−β−α−ε
+∞,∞ (T2) ≤ ∥U2(·,0)∥ B−β−α−ε
+∞,∞ (T2)
+≲λ q
+β+α−2[β]−1
+
+∆[β]∇⊥
+
+X
+ξ
+¯aξ(·,0)e 2πiλqξ·
+
+
+
+B−β−α−ε
+∞,∞ (T2)
+≲λ q
+−ε.
+Hence, by takingqsufficiently large, we conclude that
+∥u(·,0)∥ B−β−α−ε
+∞,∞ (T2) < δ.
+We now prove thatUbecomes large as claimed. Recall the norm inflation timet q = 1
+λ2β
+q
+,s > β+α
+andλ=δ −1. We definees≜min{s,2[β] + 1}. Using Definition 4.1 and Proposition 5.1, we arrive at
+∥u(·, tq)∥B−s
+∞,∞(T2) ≥ ∥U1(·, tq)∥B−s
+∞,∞(T2) − ∥U2(·, tq)∥B−s
+∞,∞(T2) − ∥ρ(·, tq)∥B−s
+∞,∞(T2)
+≳∥U 1(·, tq)∥B−s
+∞,∞(T2) − ∥U2(·, tq)∥B−es
+∞,∞(T2) − ∥ρ(·, tq)∥B−β
+∞,∞(T2)
+≳λe −(2πλ)2β tq
+ 
+1−e −2(2πλq)2β tq
+
+−λ β+α−es
+q e−λ2β
+q tq −ϵ
+≥δ −1,
+whichqis chosen to be large enough.
+Proof of Theorem 1.4.Letα <min{0, β−1},β > 1
+2 and the dimensiond≥2. Supposeu 0 ∈
+˙B−β−α
+∞,∞ (T2). For anyT >0, we define
+DT ≜{u∈C((0, T)×T 2;R 2);∇ ·u= 0 and∥u∥ DT <∞},
+with norm
+∥u∥DT ≜sup
+t∈(0,T]
+t
+β+α
+2β ∥u(t)∥L∞(Td).
+32
+
+[PDF page 33]
+6 PROOF OF THE MAIN RESULTS
+The existence timeT(u 0) is defined by
+T(u 0)≜
+
+8C1∥u0∥ ˙B−(β+α)
+∞,∞ (Td)I
+ 1
+2β , β+α
+β
+ 2β
+α+1−β
+,
+whereC 1 is a universal constant appearing in the subsequent estimates. We will use the Banach fixed
+point theorem to prove the existence of solutions onD T(u 0). The mild solution to (1.1) is characterized
+as the fixed point of the operator
+(Au)(t, x) =e −t(−∆)β
+u0(x)−
+ˆ t
+0
+e−(t−s)(−∆)β
+Pdiv(u⊗u)(s, x)ds
+We first estimate∥Au(t)∥ L∞(Td) fort∈(0, T(u 0)],
+∥Au(t)∥L∞(Td) ≤ ∥e −t(−∆)β
+u0∥L∞(Td) +
+ˆ t
+0
+(t−s) − 1
+2β ∥u(s)∥2
+L∞(Td) ds.
+Then, using an equivalent characterization of Besov spaces and a change of variables, we obtain
+∥Au∥DT(u 0 ) ≤sup
+t∈(0,T(u 0)]
+t
+β+α
+2β ∥e−t(−∆)β
+u0∥L∞(Td) + sup
+t∈(0,T(u 0)]
+t
+β+α
+2β
+ˆ t
+0
+(t−s) − 1
+2β ∥u(s)∥2
+L∞(Td) ds
+≤C 1∥u0∥ ˙B−(β+α)
+∞,∞ (Td) +∥u∥ 2
+DT(u 0 ) sup
+t∈(0,T(u 0)]
+t
+β+α
+2β
+ˆ t
+0
+(t−s) − 1
+2β s− β+α
+β ds
+≤C 1∥u0∥ ˙B−(β+α)
+∞,∞ (Td) +I
+ 1
+2β , β+α
+β
+
+∥u∥2
+DT(u 0 ) sup
+t∈(0,T(u 0)]
+t
+β−α−1
+2β .
+Using the facts thatα <min{0, β−1}andβ > 1
+2, we see that both coefficients in the Beta integral
+Iare less than 1, while the exponent of t appearing inside the supremum is strictly positive. Substitute
+the definition ofT(u 0) into the supremum, we obtain
+∥Au∥DT(u 0 ) ≤C 1∥u0∥ ˙B−(β+α)
+∞,∞ (Td) + (8C1∥u0∥ ˙B−(β+α)
+∞,∞ (Td))−1∥u∥2
+DT(u 0 )
+Moreover, by a analogous way, it follows
+∥Au1 −Au 2∥DT(u 0 ) ≤(8C 1∥u0∥ ˙B−(β+α)
+∞,∞ (Td))−1(∥u1∥DT(u 0 ) +∥u 2∥DT(u 0 ))∥u1 −u 2∥DT(u 0 ) .
+Therefore,Ais a contraction mapping inB DT(u 0 )(0, r0) withr 0 = 2C1∥u0∥ ˙B−(β+α)
+∞,∞ (Td). By the Banach
+fixed point theorem, we obtain the existence of a solution with initial datau 0.
+Proof of Theorem 1.5.Letα <0 withα≤β−1,β > 1
+2, the dimensiond≥2 andT >0. Suppose
+u0 ∈ ˙B−β−α
+∞,∞ (T2) satisfying
+∥u0∥ ˙B−β−α
+∞,∞ (Td) ≤ 1
+8C1C2
+.
+whereC 1 is the universal constant appearing in the proof of Theorem 1.4, andC 2 is a constant to be
+specified later. As in Theorem 1.4, it yields the following estimate
+∥Au∥DT ≤C 1∥u0∥ ˙B−(β+α)
+∞,∞ (Td) +I
+ 1
+2β , β+α
+β
+
+∥u∥2
+DT sup
+t∈(0,T]
+t
+β−α−1
+2β
+≤C 1∥u0∥ ˙B−β−α
+∞,∞ (Td) +C 2∥u∥2
+DT .
+33
+
+[PDF page 34]
+A TOOLS FROM CONVEX INTEGRATION
+where we have used the assumptions onαandβ, andC 2 is a constant depending onα,βandT.
+Similarly, it follows that, for anyu 1, u2 ∈D T .
+∥Au1 −Au 2∥DT ≤C 2(∥u1∥DT +∥u 2∥DT )∥u1 −u 2∥DT .
+Since∥u 0∥ ˙B−β−α
+∞,∞ (Td) ≤ 1
+8C1C2
+,Ais a contraction mapping inB DT (0, r0) withr 0 = 2C1∥u0∥ ˙B−β−α
+∞,∞ (Td).
+By the Banach fixed point theorem, we obtain the existence of a solution with initial datau 0.
+Moreover, for the caseβ∈( 1
+2 ,1),α=β−1, the existence timeTcan be taken to be infinite and
+the proof is analogous. Indeed, Sinceα=β−1<0, the required estimate follows from
+I
+ 1
+2β , β+α
+β
+
+sup
+t∈(0,∞]
+t
+β−α−1
+2β ≲1.
+A Tools from convex integration
+In this section, we recall some useful tools which is developed in the convex integration method.
+LetS 1 be the unit circle andQthe set of rational numbers. We denoteB 1
+7
+(Id) is the ball of radius
+1
+7 centered at Id in the space of 2×2 symmetric matrices. The following geometric lemma, originally
+due to [44] and reformulated in [52], will play a key role.
+Lemma A.1.There exists a finite setΛ⊂S 1 ∩Q 2 such thatΛ =−Λand eachξ∈Λis equipped
+with an orthonormal basis(ξ, ¯ξ)satisfying (−ξ) =− ¯ξ. Moreover, there exist smooth positive functions
+aξ :B 1
+7
+(Id)→Rsatisfyinga ξ =a −ξ, such that we have the following identity:
+S=
+X
+ξ∈Λ
+a2
+ξ(S) ¯ξ⊗ ¯ξ,∀S∈B 1
+7
+(Id).(A.1)
+We recall the antidivergence operatorsRthat are introduced in [20].
+Lemma A.2.There exists a linear operatorR:C ∞(T2;R 2)→C ∞(T2;S 2×2)satisfying
+divRf=f−
+ 
+T2
+f,∀f∈C ∞(T2;R 2),
+Variants of the following stationary phase lemma can be found in the works [7, 20].
+Lemma A.3.Letµ >0, for any smooth functionfandm >0, we have
+∥R(f(x)e2πiλkx)∥Cµ ≲µ,m λ−1+µ∥f∥ L∞ +λ −m+µ∥∇mf∥ L∞ +λ −m∥∇mf∥ Cµ ,(A.2)
+The following stationary flow lemma is originally due to [17].
+Lemma A.4.GivenΛ⊆S 1 ∩Q 2 such that−Λ = Λ. Then for anyb k ∈Rwithb k =b −k, the vector
+field
+W(x) =
+X
+ξ∈Λ
+bξi¯ξe2πiξ·x , ξ⊥ ¯ξ,
+is real-valued, divergence-free and satisfies
+divx(W⊗W) = 1
+2 ∇x
+
+|W| 2 − |
+X
+ξ∈Λ
+bξe2πiξ·x |2
+
+ .
+34
+
+[PDF page 35]
+B FRACTIONAL LEIBNIZ COMMUTATOR ESTIMATE
+B Fractional Leibniz commutator estimate
+Lemma B.1.LetP, Q, s >0andξ∈T 2 \ {0}. For any smooth functionsfsatisfying
+∥∇nf∥ L∞ (T2 ) ≲P n,∀n∈N,(B.1)
+we have
+∥∇m[(−∆)s, f]e2πiQξ·x ∥L∞(T2) ≲(Q+P) m(Q2s−1P 4 +P 2s+3),(B.2)
+for anym∈N.
+Proof.Taking the fourier series off,
+f(x) =
+X
+l∈Z2
+ˆf(l)e 2πil·x.
+By (B.1) and Parseval’s identity, we obtain
+∥∇mf∥ L2(T2) =
+ X
+l∈Z2
+|l|2m| ˆf(l)| 2
+! 1
+2
+≲∥∇ mf∥ L∞(T2) ≲P m,∀m∈N,
+which immediately implies
+|l|m| ˆf(l)|≲P m,∀(l, m)∈Z 2 ×N.(B.3)
+we compute
+[(−∆)s, f(x)]e2πiQξ·x = (−∆)s(f(x)e2πiQξ·x)−f(x)(−∆) se2πiQξ·x
+=
+X
+l∈Z2
+(2π)2s 
+|l+Qξ| 2s − |Qξ|2s ˆf(l)e 2πi(l+Qξ)·x
+=
+
+ X
+0<|l|≤|Qξ|
++
+X
+|l|>|Qξ|
+
+ (2π)2s 
+|l+Qξ| 2s − |Qξ|2s ˆf(l)e 2πi(l+Qξ)·x
+≜L 1 +L 2.
+ForL 1, we estimate
+∥L1∥L∞(T2) ≲
+X
+0<|l|≤|Qξ|
+Q2s
+
+| l
+Q +ξ| 2s − |ξ|2s
+
+| ˆf(l)|
+≲
+X
+0<|l|≤|Qξ|
+Q2s · | l
+Q || ˆf(l)|
+≲Q 2s−1 max
+l
+|l|4| ˆf(l)|
+X
+l̸=0
+1
+|l|3
+≲Q 2s−1P 4.(B.4)
+ForL 2, we get
+∥L2∥L∞(T2) ≲
+X
+|l|>|Qξ|
+|l|2s| ˆf(l)|≲max
+l
+|l|2s+3| ˆf(l)|
+X
+l̸=0
+1
+|l|3 ≲P 2s+3.(B.5)
+35
+
+[PDF page 36]
+REFERENCES
+Combining (B.4) and (B.5) together, we obtain (B.2) for the casem= 0. Form≥1, consider the case
+m= 1 as an example, we have
+∇[(−∆)s, f]e2πiQξ·x = [(−∆)s,∇f]e 2πiQξ·x + [(−∆)s, f]∇e2πiQξ·x .
+The desired estimates follow by a similar argument as above, so we omit the details.
+C Heat estimates for the linear heat semigroup
+Now recall the heat estimates.
+Lemma C.1.For allm≥0andf∈L ∞(T2), we have
+∥e−t(−∆)β
+∇mf∥ L∞(T2) ≲m t− m
+2β ∥f∥ L∞(T2),∀t >0.(C.1)
+Moreover, the above estimate holds as well iffon the left-hand side is replaced byPfwithm >0.
+AcknowledgmentsThis work was partially supported by the National Natural Science Foundation
+of China (No.12571261).
+References
+[1] Dallas Albritton, Elia Bru´ e, and Maria Colombo. “Non-uniqueness of Leray solutions of the
+forced Navier-Stokes equations”. In:Ann. of Math. (2)196.1 (2022), pp. 415–455.issn: 0003-
+486X,1939-8980.doi:10.4007/annals.2022.196.1.3.url:https://doi.org/10.4007/
+annals.2022.196.1.3.
+[2] Dallas Albritton and Maria Colombo. “Non-uniqueness of Leray solutions to the hypodissipative
+Navier-Stokes equations in two dimensions”. In:Comm. Math. Phys.402.1 (2023), pp. 429–446.
+issn: 0010-3616,1432-0916.doi:10.1007/s00220-023-04725-6.url:https://doi.org/10.
+1007/s00220-023-04725-6.
+[3] Rajendra Beekie, Tristan Buckmaster, and Vlad Vicol. “Weak solutions of ideal MHD which do
+not conserve magnetic helicity”. In:Ann. PDE6.1 (2020), Paper No. 1, 40.issn: 2524-5317,2199-
+2576.doi:10.1007/s40818- 020- 0076- 1.url:https://doi.org/10.1007/s40818- 020-
+0076-1.
+[4] Jean Bourgain and Nataˇ sa Pavlovi´ c. “Ill-posedness of the Navier-Stokes equations in a critical
+space in 3D”. In:J. Funct. Anal.255.9 (2008), pp. 2233–2247.issn: 0022-1236,1096-0783.doi:
+10.1016/j.jfa.2008.07.008.url:https://doi.org/10.1016/j.jfa.2008.07.008.
+[5] Tristan Buckmaster, Maria Colombo, and Vlad Vicol. “Wild solutions of the Navier-Stokes equa-
+tions whose singular sets in time have Hausdorff dimension strictly less than 1”. In:J. Eur. Math.
+Soc. (JEMS)24.9 (2022), pp. 3333–3378.issn: 1435-9855,1435-9863.doi:10.4171/jems/1162.
+url:https://doi.org/10.4171/jems/1162.
+[6] Tristan Buckmaster and Vlad Vicol. “Nonuniqueness of weak solutions to the Navier-Stokes
+equation”. In:Ann. of Math. (2)189.1 (2019), pp. 101–144.issn: 0003-486X,1939-8980.doi:
+10.4007/annals.2019.189.1.3.url:https://doi.org/10.4007/annals.2019.189.1.3.
+36
+
+[PDF page 37]
+REFERENCES
+[7] Tristan Buckmaster et al. “Anomalous dissipation for 1/5-H¨ older Euler flows”. In:Ann. of Math.
+(2)182.1 (2015), pp. 127–172.issn: 0003-486X,1939-8980.doi:10.4007/annals.2015.182.1.3.
+url:https://doi.org/10.4007/annals.2015.182.1.3.
+[8] Tristan Buckmaster et al. “Onsager’s conjecture for admissible weak solutions”. In:Comm. Pure
+Appl. Math.72.2 (2019), pp. 229–274.issn: 0010-3640,1097-0312.doi:10 . 1002 / cpa . 21781.
+url:https://doi.org/10.1002/cpa.21781.
+[9] Marco Cannone.Ondelettes, paraproduits et Navier-Stokes. With a preface by Yves Meyer.
+Diderot Editeur, Paris, 1995, pp. x+191.isbn: 2-84134-021-X.
+[10] Zipeng Chen, Song Liu, and Zhaoyang Yin.Non-uniqueness of smooth solutions of the 5D magne-
+tohydrodynamic equations from critical data. 2026. arXiv:2603.21800 [math.AP].url:https:
+//arxiv.org/abs/2603.21800.
+[11] Zipeng Chen and Zhaoyang Yin.Sharp non-uniqueness for the Boussinesq equation with frac-
+tional dissipation. 2025. arXiv:2511.22023 [math.AP].url:https://arxiv.org/abs/2511.
+22023.
+[12] Alexey Cheskidov and Mimi Dai. “Norm inflation for generalized Navier-Stokes equations”. In:
+Indiana Univ. Math. J.63.3 (2014), pp. 869–884.issn: 0022-2518,1943-5258.doi:10 . 1512 /
+iumj.2014.63.5249.url:https://doi.org/10.1512/iumj.2014.63.5249.
+[13] Alexey Cheskidov, Mimi Dai, and Stan Palasek.Instantaneous Type I blow-up and non-uniqueness
+of smooth solutions of the Navier-Stokes equations. 2026. arXiv:2511.09556 [math.AP].url:
+https://arxiv.org/abs/2511.09556.
+[14] Alexey Cheskidov and Xiaoyutao Luo. “L 2-critical nonuniqueness for the 2D Navier-Stokes equa-
+tions”. In:Ann. PDE9.2 (2023), Paper No. 13, 56.issn: 2524-5317,2199-2576.doi:10.1007/
+s40818-023-00154-9.url:https://doi.org/10.1007/s40818-023-00154-9.
+[15] Alexey Cheskidov and Xiaoyutao Luo. “Nonuniqueness of weak solutions for the transport equa-
+tion at critical space regularity”. In:Ann. PDE7.1 (2021), Paper No. 2, 45.issn: 2524-5317,2199-
+2576.doi:10.1007/s40818- 020- 00091- x.url:https://doi.org/10.1007/s40818- 020-
+00091-x.
+[16] Alexey Cheskidov and Xiaoyutao Luo. “Sharp nonuniqueness for the Navier-Stokes equations”.
+In:Invent. Math.229.3 (2022), pp. 987–1054.issn: 0020-9910,1432-1297.doi:10.1007/s00222-
+022-01116-x.url:https://doi.org/10.1007/s00222-022-01116-x.
+[17] Antoine Choffrut, Camillo De Lellis, and L´ aszl´ o Sz´ ekelyhidi Jr.Dissipative continuous Euler
+flows in two and three dimensions. 2012. arXiv:1205.1226 [math.AP].url:https://arxiv.
+org/abs/1205.1226.
+[18] Matei P. Coiculescu and Stan Palasek. “Non-uniqueness of smooth solutions of the Navier–Stokes
+equations from critical data”. In:Inventiones Mathematicae(2025).doi:10.1007/s00222-025-
+01396-z.
+[19] Mimi Dai.Instantaneous blowup and non-uniqueness of smooth solutions of MHD. 2026. arXiv:
+2604.08684 [math.AP].url:https://arxiv.org/abs/2604.08684.
+37
+
+[PDF page 38]
+REFERENCES
+[20] Camillo De Lellis and L´ aszl´ o Sz´ ekelyhidi Jr. “Dissipative continuous Euler flows”. In:Invent.
+Math.193.2 (2013), pp. 377–407.issn: 0020-9910,1432-1297.doi:10.1007/s00222-012-0429-
+9.url:https://doi.org/10.1007/s00222-012-0429-9.
+[21] Camillo De Lellis and L´ aszl´ o Sz´ ekelyhidi Jr. “On admissibility criteria for weak solutions of the
+Euler equations”. In:Arch. Ration. Mech. Anal.195.1 (2010), pp. 225–260.issn: 0003-9527,1432-
+0673.doi:10.1007/s00205- 008- 0201- x.url:https://doi.org/10.1007/s00205- 008-
+0201-x.
+[22] Camillo De Lellis and L´ aszl´ o Sz´ ekelyhidi Jr. “The Euler equations as a differential inclusion”.
+In:Ann. of Math. (2)170.3 (2009), pp. 1417–1436.issn: 0003-486X,1939-8980.doi:10.4007/
+annals.2009.170.1417.url:https://doi.org/10.4007/annals.2009.170.1417.
+[23] Hiroshi Fujita and Tosio Kato. “On the Navier-Stokes initial value problem. I”. In:Arch. Rational
+Mech. Anal.16 (1964), pp. 269–315.issn: 0003-9527.doi:10.1007/BF00276188.url:https:
+//doi.org/10.1007/BF00276188.
+[24] Pierre Germain. “The second iterate for the Navier-Stokes equation”. In:J. Funct. Anal.255.9
+(2008), pp. 2248–2264.issn: 0022-1236,1096-0783.doi:10.1016/j.jfa.2008.07.014.url:
+https://doi.org/10.1016/j.jfa.2008.07.014.
+[25] Vikram Giri and R˘ azvan-Octavian Radu. “The Onsager conjecture in 2D: a Newton-Nash iter-
+ation”. In:Invent. Math.238.2 (2024), pp. 691–768.issn: 0020-9910,1432-1297.doi:10.1007/
+s00222-024-01291-z.url:https://doi.org/10.1007/s00222-024-01291-z.
+[26] Eberhard Hopf. “ ¨Uber die Anfangswertaufgabe f¨ ur die hydrodynamischen Grundgleichungen”.
+In:Math. Nachr.4 (1951), pp. 213–231.issn: 0025-584X,1522-2616.doi:10 . 1002 / mana .
+3210040121.url:https://doi.org/10.1002/mana.3210040121.
+[27] Philip Isett. “A proof of Onsager’s conjecture”. In:Ann. of Math. (2)188.3 (2018), pp. 871–963.
+issn: 0003-486X,1939-8980.doi:10.4007/annals.2018.188.3.4.url:https://doi.org/10.
+4007/annals.2018.188.3.4.
+[28] Hao Jia and Vladimir Sverak. “Are the incompressible 3d Navier-Stokes equations locally ill-
+posed in the natural energy space?” In:J. Funct. Anal.268.12 (2015), pp. 3734–3766.issn:
+0022-1236,1096-0783.doi:10.1016/j.jfa.2015.04.006.url:https://doi.org/10.1016/j.
+jfa.2015.04.006.
+[29] Hao Jia and Vladim´ ır ˇSver´ ak. “Local-in-space estimates near initial time for weak solutions of
+the Navier-Stokes equations and forward self-similar solutions”. In:Invent. Math.196.1 (2014),
+pp. 233–265.issn: 0020-9910,1432-1297.doi:10 . 1007 / s00222 - 013 - 0468 - x.url:https :
+//doi.org/10.1007/s00222-013-0468-x.
+[30] Tosio Kato. “StrongL p-solutions of the Navier-Stokes equation inR m, with applications to weak
+solutions”. In:Math. Z.187.4 (1984), pp. 471–480.issn: 0025-5874,1432-1823.doi:10.1007/
+BF01174182.url:https://doi.org/10.1007/BF01174182.
+[31] Herbert Koch and Daniel Tataru. “Well-posedness for the Navier-Stokes equations”. In:Adv.
+Math.157.1 (2001), pp. 22–35.issn: 0001-8708,1090-2082.doi:10.1006/aima.2000.1937.url:
+https://doi.org/10.1006/aima.2000.1937.
+38
+
+[PDF page 39]
+REFERENCES
+[32] Hideo Kozono and Hermann Sohr. “Remark on uniqueness of weak solutions to the Navier-Stokes
+equations”. In:Analysis16.3 (1996), pp. 255–271.issn: 0174-4747.doi:10.1524/anly.1996.
+16.3.255.url:https://doi.org/10.1524/anly.1996.16.3.255.
+[33] O. A. Ladyˇ zenskaja. “Uniqueness and smoothness of generalized solutions of Navier-Stokes equa-
+tions”. In:Zap. Nauˇ cn. Sem. Leningrad. Otdel. Mat. Inst. Steklov. (LOMI)5 (1967), pp. 169–
+185.
+[34] Jean Leray. “Sur le mouvement d’un liquide visqueux emplissant l’espace”. In:Acta Math.63.1
+(1934), pp. 193–248.issn: 0001-5962,1871-2509.doi:10.1007/BF02547354.url:https://doi.
+org/10.1007/BF02547354.
+[35] Yachun Li, Zirong Zeng, and Deng Zhang. “Sharp non-uniqueness of weak solutions to 3D mag-
+netohydrodynamic equations: beyond the Lions exponent”. In:J. Funct. Anal.287.7 (2024),
+Paper No. 110528, 84.issn: 0022-1236,1096-0783.doi:10 . 1016 / j . jfa . 2024 . 110528.url:
+https://doi.org/10.1016/j.jfa.2024.110528.
+[36] Yachun Li et al. “Sharp non-uniqueness for the 3D hyperdissipative Navier-Stokes equations:
+beyond the Lions exponent”. In:J. Math. Pures Appl. (9)190 (2024), Paper No. 103602, 64.
+issn: 0021-7824,1776-3371.doi:10.1016/j.matpur.2024.103602.url:https://doi.org/10.
+1016/j.matpur.2024.103602.
+[37] J.-L. Lions.Quelques m´ ethodes de r´ esolution des probl` emes aux limites non lin´ eaires. Dunod,
+Paris; Gauthier-Villars, Paris, 1969, pp. xx+554.
+[38] Tianwen Luo and Edriss S. Titi. “Non-uniqueness of weak solutions to hyperviscous Navier-Stokes
+equations: on sharpness of J.-L. Lions exponent”. In:Calc. Var. Partial Differential Equations
+59.3 (2020), Paper No. 92, 15.issn: 0944-2669,1432-0835.doi:10.1007/s00526-020-01742-4.
+url:https://doi.org/10.1007/s00526-020-01742-4.
+[39] Xiaoyutao Luo. “Stationary solutions and nonuniqueness of weak solutions for the Navier-Stokes
+equations in high dimensions”. In:Arch. Ration. Mech. Anal.233.2 (2019), pp. 701–747.issn:
+0003-9527,1432-0673.doi:10.1007/s00205-019-01366-9.url:https://doi.org/10.1007/
+s00205-019-01366-9.
+[40] Changxing Miao, Yao Nie, and Weikui Ye.Non-uniqueness of smooth solutions to the Navier-
+Stokes equations on torusT 2. 2026. arXiv:2602.19074 [math.AP].url:https://arxiv.org/
+abs/2602.19074.
+[41] Changxing Miao, Yao Nie, and Weikui Ye.Sharp non-uniqueness of weak solutions to 2D mag-
+netohydrodynamic equations. 2026. arXiv:2605.25097 [math.AP].url:https://arxiv.org/
+abs/2605.25097.
+[42] Stefano Modena and L´ aszl´ o Sz´ ekelyhidi Jr. “Non-renormalized solutions to the continuity equa-
+tion”. In:Calc. Var. Partial Differential Equations58.6 (2019), Paper No. 208, 30.issn: 0944-
+2669,1432-0835.doi:10.1007/s00526-019-1651-8.url:https://doi.org/10.1007/s00526-
+019-1651-8.
+[43] Stefano Modena and L´ aszl´ o Sz´ ekelyhidi Jr. “Non-uniqueness for the transport equation with
+Sobolev vector fields”. In:Ann. PDE4.2 (2018), Paper No. 18, 38.issn: 2524-5317,2199-2576.
+doi:10.1007/s40818-018-0056-x.url:https://doi.org/10.1007/s40818-018-0056-x.
+39
+
+[PDF page 40]
+REFERENCES
+[44] John Nash. “C 1 isometric imbeddings”. In:Ann. of Math. (2)60 (1954), pp. 383–396.issn:
+0003-486X.doi:10.2307/1969840.url:https://doi.org/10.2307/1969840.
+[45] Yao Nie and Weikui Ye. “Sharp and strong nonuniqueness for the magnetohydrodynamic equa-
+tions”. In:J. Nonlinear Sci.35.5 (2025), Paper No. 102, 37.issn: 0938-8974,1432-1467.doi:
+10.1007/s00332-025-10201-3.url:https://doi.org/10.1007/s00332-025-10201-3.
+[46] Stan Palasek.Arbitrary norm growth in the 3D Navier-Stokes equations. 2025. arXiv:2509.18595
+[math.AP].url:https://arxiv.org/abs/2509.18595.
+[47] Stan Palasek.Arbitrary norm growth in the 3D Navier-Stokes equations. 2025. arXiv:2509.18595
+[math.AP].url:https://arxiv.org/abs/2509.18595.
+[48] Stan Palasek. “Non-Uniqueness in the Leray–Hopf Class for a Dyadic Navier–Stokes Model”.
+In:International Mathematics Research Notices2025.22 (2025), rnaf344.doi:10.1093/imrn/
+rnaf344.
+[49] Fabrice Planchon. “Asymptotic behavior of global solutions to the Navier-Stokes equations in
+R3”. In:Rev. Mat. Iberoamericana14.1 (1998), pp. 71–93.issn: 0213-2230.doi:10.4171/RMI/
+235.url:https://doi.org/10.4171/RMI/235.
+[50] Giovanni Prodi. “Un teorema di unicit` a per le equazioni di Navier-Stokes”. In:Ann. Mat. Pura
+Appl. (4)48 (1959), pp. 173–182.issn: 0003-4622.doi:10 . 1007 / BF02410664.url:https :
+//doi.org/10.1007/BF02410664.
+[51] James Serrin. “On the interior regularity of weak solutions of the Navier-Stokes equations”. In:
+Arch. Rational Mech. Anal.9 (1962), pp. 187–195.issn: 0003-9527.doi:10.1007/BF00253344.
+url:https://doi.org/10.1007/BF00253344.
+[52] L´ aszl´ o Sz´ ekelyhidi Jr. “From isometric embeddings to turbulence”. In:HCDTE lecture notes.
+Part II. Nonlinear hyperbolic PDEs, dispersive and transport equations. Vol. 7. AIMS Ser. Appl.
+Math. Am. Inst. Math. Sci. (AIMS), Springfield, MO, 2013, p. 63.isbn: 978-1-60133-015-4;
+1-60133-015-4.
+[53] Misha Vishik.Instability and non-uniqueness in the Cauchy problem for the Euler equations
+of an ideal incompressible fluid. Part I. 2018. arXiv:1805 . 09426 [math.AP].url:https :
+//arxiv.org/abs/1805.09426.
+[54] Misha Vishik.Instability and non-uniqueness in the Cauchy problem for the Euler equations
+of an ideal incompressible fluid. Part II. 2018. arXiv:1805 . 09440 [math.AP].url:https :
+//arxiv.org/abs/1805.09440.
+[55] Baoxiang Wang. “Ill-posedness for the Navier-Stokes equations in critical Besov spaces ˙B−1
+∞,q”.
+In:Adv. Math.268 (2015), pp. 350–372.issn: 0001-8708,1090-2082.doi:10.1016/j.aim.2014.
+09.024.url:https://doi.org/10.1016/j.aim.2014.09.024.
+[56] Tsuyoshi Yoneda. “Ill-posedness of the 3D-Navier-Stokes equations in a generalized Besov space
+near BMO−1”. In:J. Funct. Anal.258.10 (2010), pp. 3376–3387.issn: 0022-1236,1096-0783.doi:
+10.1016/j.jfa.2010.02.005.url:https://doi.org/10.1016/j.jfa.2010.02.005.
+40
+
+[PDF page 41]
+REFERENCES
+[57] Xinwei Yu and Zhichun Zhai. “Well-posedness for fractional Navier-Stokes equations in the
+largest critical spaces ˙B−(2β−1)
+∞,∞ (Rn)”. In:Math. Methods Appl. Sci.35.6 (2012), pp. 676–683.
+issn: 0170-4214,1099-1476.doi:10.1002/mma.1582.url:https://doi.org/10.1002/mma.
+1582.
+[58] Zhichun Zhai. “Well-posedness for fractional Navier-Stokes equations in critical spaces close to
+˙B−(2β−1)
+∞,∞ (Rn)”. In:Dyn. Partial Differ. Equ.7.1 (2010), pp. 25–44.issn: 1548-159X,2163-7873.
+doi:10.4310/DPDE.2010.v7.n1.a2.url:https://doi.org/10.4310/DPDE.2010.v7.n1.a2.
+[59] Yong Zhou. “Regularity criteria for the generalized viscous MHD equations”. In:Ann. Inst.
+H. Poincar´ e C Anal. Non Lin´ eaire24.3 (2007), pp. 491–505.issn: 0294-1449,1873-1430.doi:
+10.1016/j.anihpc.2006.03.014.url:https://doi.org/10.1016/j.anihpc.2006.03.014.
+41

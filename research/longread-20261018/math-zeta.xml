@@ -1,0 +1,535 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/1IIugOIvgKvTlELdxn4lmDkFLsU</id>
+  <title>arXiv Query: search_query=cat:math.NT AND (ti:"zero density" OR ti:"zero-density" OR ti:"zero-free" OR ti:"Riemann zeta" OR ti:"Riemann hypothesis") AND submittedDate:"202501010000 TO 202610182359"&amp;id_list=&amp;start=0&amp;max_results=30</title>
+  <updated>2026-10-18T08:09:39Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=cat:math.NT+AND+((ti:%22zero+density%22+OR+(ti:%22zero-density%22+OR+(ti:%22zero-free%22+OR+(ti:%22Riemann+zeta%22+OR+ti:%22Riemann+hypothesis%22))))+AND+submittedDate:%22202501010000+TO+202610182359%22)&amp;start=0&amp;max_results=30&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>30</opensearch:itemsPerPage>
+  <opensearch:totalResults>96</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2610.22107v1</id>
+    <title>The discrete second moment of the Riemann zeta-function along powers of Gram points</title>
+    <updated>2026-10-15T15:49:33Z</updated>
+    <link href="https://arxiv.org/abs/2610.22107v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.22107v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Let $t_k$ be the Gram points, and let $d\geq1$ be a fixed integer. Put $η_d=1/(2^{d+1}-2)$, $σ_d=1-η_d/d$, and $σ_d^*=7/8$ for $d=2$ and $σ_d^*=σ_d$ otherwise. We prove that, uniformly on compact subsets of $σ_d^*&lt;\Re s&lt;1$, $$ \frac1N\sum_{k=2}^{N}|ζ(s+it_k^d)|^2 \longrightarrow ζ(2\Re s). $$ The underlying result is a mean-square approximation by finite Euler products. For the squares of Gram points, grouping equal frequency ratios and applying the double large sieve improves the general derivative-test boundary $11/12$ to $7/8$. Assuming the Lindelöf hypothesis, both the Euler-product approximation and the second-moment formula hold on every compact subset of $1/2&lt;\Re s&lt;1$, for every fixed $d\geq1$. As an application, we obtain a discrete universality theorem along the same Gram-power shifts, in the same unconditional and conditional regions.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-15T15:49:33Z</published>
+    <arxiv:comment>In Remark 1.1, we note an interesting coincidence related to the constants 7/8 and 11/12</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Marius Dundulis</name>
+    </author>
+    <author>
+      <name>Ramūnas Garunkštis</name>
+    </author>
+    <author>
+      <name>Antanas Laurinčikas</name>
+    </author>
+    <author>
+      <name>Raivydas Šimėnas</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.18491v2</id>
+    <title>Some applications of the quasi-Riemann hypothesis to class groups and small generators of number fields</title>
+    <updated>2026-10-14T15:12:14Z</updated>
+    <link href="https://arxiv.org/abs/2610.18491v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.18491v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove an effective version of the Chebotarev density theorem, conditional on the quasi-Riemann hypothesis for the Dedekind zeta function. Drawing on recent breakthroughs of OpenAI and Cureton--Thorner, we make unconditional the Ellenberg--Venkatesh bounds on $\ell$-torsion in class groups of number fields and extend an averaged result of Lemke Oliver--Smith to arbitrary families of degree-$d$-fields. Further applications are given to the least prime splitting and to small generators in number fields.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-13T14:46:52Z</published>
+    <arxiv:comment>11 pages; comments welcome; added references and fixed minor typos</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Christopher Frei</name>
+    </author>
+    <author>
+      <name>Efthymios Sofos</name>
+    </author>
+    <author>
+      <name>Martin Widmer</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.15989v2</id>
+    <title>Zero density in short strips and short-interval bounds toward Hypothesis S</title>
+    <updated>2026-10-14T19:09:31Z</updated>
+    <link href="https://arxiv.org/abs/2610.15989v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.15989v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We deduce zero-density estimates in short vertical strips from short-interval moments of globally tempered automorphic $L$-functions, by adapting the large-value estimate of Guth and Maynard and the Type II zero argument of Maynard and Pratt to the framework of Ye and Zhang. For the Riemann zeta function, we obtain $N_ζ(σ;T,T+T^a)\ll T^{15a(1-σ)/(3+5σ)+\varepsilon}$ for $2/3\le a\le1$ and $7/10\leσ\le4/5$, improving Ye--Zhang's exponent in the interior of this range. Combining the localized density bound with the recent quasi-Riemann theorems, we estimate smoothed prime-power sums with phase $\exp(2πiαn^β)$ on intervals of length $K^δ$. For $0&lt;β&lt;13/20$, we obtain a power saving whenever $\max\{17/30,1-β\}&lt;δ&lt;1$; in particular the square-root phase admits every $δ&gt;17/30$. A revised transform estimate retains both the stationary spread and the Fourier width $K/L$. For example, the bound at $β=1/2$, $δ=3/5$ is $K^{15/26+\varepsilon}$, uniformly for frequencies $mα$ with $1\le m\le K^{1/10}$. We also retain power savings for certain self-dual $GL(2)$ twists and self-dual $GL(3)$ cusp forms, without assuming Ramanujan. All three applications have explicit frequency dependence.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-11T23:39:47Z</published>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Yangbo Ye</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.15291v2</id>
+    <title>Amplified moments and a refinement of the quasi-Riemann hypothesis</title>
+    <updated>2026-10-15T17:41:22Z</updated>
+    <link href="https://arxiv.org/abs/2610.15291v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.15291v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recently, OpenAI announced a uniform $7/8$ zero-free half-plane for finite-order Hecke $L$-functions over $\mathbb{Q}(\sqrt{-3})$, together with its transfer to Dirichlet $L$-functions. Assuming the analytic inputs of that work, we improve the boundary from $7/8=0.875$ to $8748867/10000000=0.8748867$ for the same families. The improvement combines a relaxed direct estimate with an amplified first moment of the reflected numerator, obtained from the existing fourth-moment estimate. A two-stage parameter argument yields the stated boundary without strengthening the inverse-moment estimate.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-11T02:55:48Z</published>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Yuanda Xu</name>
+    </author>
+    <author>
+      <name>Hejian Sang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.14628v1</id>
+    <title>Examples of Bessel Functions of Order Zero Related to the Functional Equation of the Riemann Zeta Function</title>
+    <updated>2026-10-10T06:23:15Z</updated>
+    <link href="https://arxiv.org/abs/2610.14628v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.14628v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In 2010, M. A. Chaudhry et al. introduced a class of functions Sigma satisfying an L^1-condition. They proved that every function phi in Sigma gives rise to the functional equation for the Riemann zeta function. They also provided an example of a function outside Sigma for which the functional equation still holds. In this paper, we present several examples of Bessel functions of order zero that do not belong to Sigma but nevertheless give rise to the functional equation for the Riemann zeta function. In particular, we show that J_0(a sqrt(x)), J_0(ax), and Y_0(x) exhibit this phenomenon.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-10T06:23:15Z</published>
+    <arxiv:comment>7 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Hideto Iwata</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.12234v2</id>
+    <title>Improved zero-free half-planes for the quasi-Riemann hypothesis</title>
+    <updated>2026-10-12T20:09:44Z</updated>
+    <link href="https://arxiv.org/abs/2610.12234v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.12234v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recently, a uniform $\frac{7}{8}$ zero-free half-plane for finite-order Hecke $L$-functions over $\mathbb Q(\sqrt{-3})$ and its transfer to Dirichlet $L$-functions was given by OpenAI in [Ope26a]. In its proof, there are several parameters $b=\frac{1}{8}, \ell=\frac{1}{6}$, and $κ$. In this paper, via varying $b$, $\ell$, and $κ$, following the same strategy, we slightly improve the bound $\frac{7}{8}=0.875$ to \[
+  B_{\mathrm{new}}=\frac{18ξ_{\mathrm{new}}+7}{18ξ_{\mathrm{new}}+9}
+  =0.874957019420098946\ldots, \] where $ξ_{\mathrm{new}}$ is the unique root in $(0.38858,0.38859)$ of $1188ξ^3-2160ξ^2+171ξ+190=0$. Explicitly, with $\arccos\in[0,π]$, \[
+  ξ_{\mathrm{new}}=\frac{20}{33}+\frac{\sqrt{1391}}{33}
+  \cos\!\left(\frac13\arccos\frac{28470}{1391^{3/2}}
+  -\frac{2π}{3}\right). \] The limiting parameters are \[ \begin{gathered}
+  b_{\mathrm{new}}=\frac{8(3ξ_{\mathrm{new}}-1)(12ξ_{\mathrm{new}}^2-40ξ_{\mathrm{new}}+15)}
+  {9(2ξ_{\mathrm{new}}+1)(24ξ_{\mathrm{new}}^2-20ξ_{\mathrm{new}}+5)},
+  \ell_{\mathrm{new}}=\frac{5-6ξ_{\mathrm{new}}}{9+18ξ_{\mathrm{new}}},\qquad
+  κ_{\mathrm{new}}=\frac{18ξ_{\mathrm{new}}+5}{18ξ_{\mathrm{new}}+9}
+  =2B_{\mathrm{new}}-1. \end{gathered} \] We also prove its optimality within the explicitly specified exponent comparison system. This result has been formalized by Lean [Liu26].</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.RT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-08T16:18:53Z</published>
+    <arxiv:comment>Comments are welcome</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Baiying Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.08965v1</id>
+    <title>More than 83.9% of the zeros of the Riemann zeta function are distinct and more than 67.35% are simple and on the critical line</title>
+    <updated>2026-10-06T18:31:22Z</updated>
+    <link href="https://arxiv.org/abs/2610.08965v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.08965v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Let N(T) count the nontrivial zeros of the Riemann zeta function up to height T with multiplicity, N_d(T) the distinct ones, and N_0^s(T) those that are simple and on the critical line. We prove liminf N_d(T)/N(T) &gt;= 1645064/1960733 = 0.83900...; earlier work proves 0.83699..., and a report we have not verified claims 0.83805.... Hence more than 67.80% are simple. Also liminf N_0^s(T)/N(T) &gt;= 0.67353...; earlier work proves 0.67250..., and reports we have not verified claim 0.673492. Two estimates of Lamzouri are improved: at least 88.93% of the zeros are simple or on the critical line, and the proportions of simple zeros and of zeros on the line average at least 83.67%. By the unconditional form of Montgomery's pair-correlation theorem the energy, a sum of a test function over pairs of zeros, is known asymptotically. A zero of multiplicity d contributes d^2 to it and nearby zeros contribute too, so a lower bound for such pairs leaves less energy for multiple zeros. The proof has three steps. First, for zeros at least a fixed fraction of the mean spacing apart, a large sieve inequality lets their pairs be used in full, with multiplicities. Second, their contribution is bounded below by a computer-assisted inequality for seven or eight consecutive zeros which distinguishes simple and double zeros. Its correction terms telescope, as increments of a storage function. Third, the test function is chosen to make this contribution large, at the cost of more energy. We also prove upper limits for what such inequalities can give with the two main test functions. The lower bounds and these limits are proved in Lean 4, analytic inputs included. The proofs use three axioms beyond those of Mathlib, one per inequality. Each records that a search program returned true; Lean's kernel does not check the run itself. This work is an experiment in AI-assisted mathematical research.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-06T18:31:22Z</published>
+    <arxiv:comment>43 pages, 3 figures, 13 tables. Lean 4 proofs, certificate data and source code are in the ancillary files and at https://github.com/kristianmk/839</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Kristian Muri Knausgård</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.05227v1</id>
+    <title>One-level density of zeros of the Riemann zeta function weighted by its special values</title>
+    <updated>2026-10-04T13:48:23Z</updated>
+    <link href="https://arxiv.org/abs/2610.05227v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.05227v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We consider the one-level density of zeros of the Riemann zeta function weighted by its special values on the line ${\rm Re}(s)=σ$, where $σ$ is a fixed real number such that $1/2\le σ\le1$. We show that the density function for the Riemann zeta function changes if and only if $σ=1/2$.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-04T13:48:23Z</published>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Shingo Sugiyama</name>
+    </author>
+    <author>
+      <name>Ade Irma Suriajaya</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2610.01035v1</id>
+    <title>The sixth moment of the Riemann zeta function</title>
+    <updated>2026-10-01T04:21:57Z</updated>
+    <link href="https://arxiv.org/abs/2610.01035v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2610.01035v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove new large value estimates for the Riemann zeta function on the critical line. For instance, we improve the upper bound on the measure of $t\in [T, 2T]$ with $|ζ(1/2 + it)| \geq T^{1/8}$ for the first time since Hardy-Littlewood (1923). Our results imply improved upper bounds on the $k$-th moment of zeta for every $4 &lt; k \leq 12$. We show in particular that
+  \begin{equation*}
+  \int_{0}^{T} |ζ(\tfrac{1}{2} + it)|^6 \,d t \ll_\varepsilon T^{\frac{5}{4} - \frac{1}{60} + \varepsilon}.
+  \end{equation*}
+  The main ingredient is a new large value estimate for exponential sums with square-root phases, and certain perturbations. Those arise in the expansion of the short second moment of zeta.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-10-01T04:21:57Z</published>
+    <arxiv:comment>19 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Alexandre de Faveri</name>
+    </author>
+    <author>
+      <name>Mayank Pandey</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.33043v2</id>
+    <title>More than 83.69% of the zeros of the Riemann zeta function are distinct</title>
+    <updated>2026-10-07T17:59:09Z</updated>
+    <link href="https://arxiv.org/abs/2609.33043v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.33043v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The lower asymptotic proportion of distinct nontrivial zeros of the Riemann zeta function, relative to the total number counted with multiplicity, is at least $0.8369928814\ldots$. Earlier work proves $0.83625\ldots$, and a report we have not verified claims $0.83672\ldots$. As in the proof of the bound $0.83625$, an unconditional version of Montgomery's pair-correlation theorem gives an asymptotic energy estimate. The new ingredient is a short matrix inequality with a free clipping parameter. It strengthens the lower bound for this energy in terms of the number of distinct zeros. The gain is a nonnegative correction from overlaps between different nearby zeros on the critical line, which is retained even when some of these zeros are double. The matrix inequality, the threshold lemma, the block dichotomy, the counting assembly and the exact arithmetic are proved formally in Lean 4. The constant relies on a computer-assisted local inequality from recent work that has not yet been refereed. That computation was re-run independently, and every imported input is listed. This paper is primarily an experiment in AI-assisted mathematical research (Section 4).</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-27T00:19:21Z</published>
+    <arxiv:comment>6 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Kristian Muri Knausgård</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.27715v1</id>
+    <title>Zero density estimates for $\mathrm{GL}_2$ automorphic $L$-functions</title>
+    <updated>2026-09-23T11:33:11Z</updated>
+    <link href="https://arxiv.org/abs/2609.27715v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.27715v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove zero density estimates for $L$-functions of cuspidal automorphic representations $π$ of $\mathrm{GL}_2(\mathbb{A}_{\mathbb{Q}})$. We show that $N_π(σ, T) \ll T^{\frac{5}{2}(1 - σ) + o(1)}$, where $N_π(σ, T)$ denotes the number of zeros $ρ= β+ iγ$ of $L(s,π)$ with $β\geq σ$ and $|γ| \leq T$. The key input is an extension of the Guth$\unicode{x2013}$Maynard argument to Dirichlet polynomials whose coefficients satisfy a weaker $\ell^q$ bound.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-23T11:33:11Z</published>
+    <arxiv:comment>36 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Catherine Cossaboom</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.26787v1</id>
+    <title>A finite arithmetic form of Robin's inequality and its equivalence to the Riemann hypothesis</title>
+    <updated>2026-09-22T17:58:00Z</updated>
+    <link href="https://arxiv.org/abs/2609.26787v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.26787v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Robin's inequality reformulates the Riemann hypothesis as a bound on the sum-of-divisors function $σ$. We introduce a finite-truncation version of Robin's inequality determined intrinsically by the arithmetic structure of $n$, \[ \frac{σ(n)}{n} &lt;
+e^γ\sum_{j=0}^{ω(n)} \frac{(\ln\ln\ln n)^j}{j!}, \qquad n&gt;5040, \] where $ω(n)$ denotes the number of distinct prime factors of $n$, and $γ$ is the Euler-Mascheroni constant. The resulting bound is pointwise stronger than Robin's inequality and we prove it unconditionally for integers with $ω(n)\le 6$, primorials, odd integers and square-free integers. We also prove that this inequality is equivalent to Robin's inequality, and hence to the Riemann hypothesis. Consequently, the Riemann hypothesis is equivalent to the truncated inequality holding for all colossally abundant numbers. We further show that if the inequality fails, its minimal counterexample must be a superabundant number, placing any obstruction within a rigid extremal class of integers.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-22T17:58:00Z</published>
+    <arxiv:comment>21 pages and 1 figure</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Challenger Mishra</name>
+    </author>
+    <author>
+      <name>Rahul Sarkar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.24167v2</id>
+    <title>Proportions of the non-trivial zeros of the Riemann zeta function</title>
+    <updated>2026-10-06T11:17:43Z</updated>
+    <link href="https://arxiv.org/abs/2609.24167v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.24167v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Let $C_0=\frac32-\frac1{\sqrt2}\cot\big(\frac1{\sqrt2}\big)
+  =0.67250\ldots$ and $C_1=\frac{C_0+1}{2}= 0.83625\ldots$. Recently, it is obatained by Alpöge and Furman that more than 67.25\% of the non-trivial zeros of the Riemann zeta function are simple and on the critical line, and more than 83.62\% are distinct. Later, Lamzouri gave a different and more direct proof. In this article, by refining the method of Lamzouri, we slightly improve the bounds $C_0$ and $C_1$ in these two results to $C_0+δ_0$ and $C_1+\frac{δ_0}2$ with $δ_0=6.66624\ldots\times10^{-8}$, respectively.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-21T06:36:00Z</published>
+    <arxiv:comment>New method is need to obtain good improvement</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Biao Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.22624v1</id>
+    <title>Zero density theorems for short intervals</title>
+    <updated>2026-09-18T22:21:00Z</updated>
+    <link href="https://arxiv.org/abs/2609.22624v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.22624v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We provide explicit bounds on the number of zeros for $ζ$ in short intervals near the edge of the critical strip. Ultimately we show that even in short intervals a positive proportion of zeros will not be near the edge of the critical strip. For example with $h&gt;100$ and $t&gt;10^{100}$ the proportion of zeros of $ζ$ with imaginary part in $[t-h,t+h]$ which have real part in $[\frac{1}{16},\frac{15}{16}]$ is at least $13\%$ and a positive proportion is already obtained at $t&gt;10^{43}$.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-18T22:21:00Z</published>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Andrew Fiori</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.17875v1</id>
+    <title>Zero-Density Concentration for Dirichlet Polynomials</title>
+    <updated>2026-09-15T22:04:33Z</updated>
+    <link href="https://arxiv.org/abs/2609.17875v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.17875v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove that broad families of finite Dirichlet sums exhibit deterministic concentration of normalized vertical zero density on a single line. The main result gives a general criterion under which the normalized Jessen potentials converge locally uniformly to a piecewise-linear convex function with a single corner. The associated normalized measures describing the distribution of real parts of zeros in vertical mean density then converge weakly to a Dirac mass. Thus, for each fixed truncation, zeros may occupy a nontrivial range of real parts, while asymptotically their normalized vertical density concentrates on one line.
+  The proof combines the finite Bohr lift with a translation-uniform anti-concentration estimate for isolated prime coordinates. We apply the criterion to partial sums of the Riemann zeta function, fixed Dirichlet $L$-functions, and primitive holomorphic Hecke eigenforms of fixed level, trivial Dirichlet character, and without complex multiplication. The concentration line is $\operatorname{Re} s=1/2$ in the normalized setting and becomes $\operatorname{Re} s=k/2$ for the classical Fourier coefficients of a form of weight $k$.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-15T22:04:33Z</published>
+    <arxiv:comment>28 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Eric Dubon</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.16048v1</id>
+    <title>The Waring-Goldbach problem in short intervals under the Generalized Riemann Hypothesis</title>
+    <updated>2026-09-12T16:01:54Z</updated>
+    <link href="https://arxiv.org/abs/2609.16048v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.16048v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Let N be a sufficiently large odd integer. We study the representation of a large integer m N^k as a sum of m almost equal k-th powers of primes, where the common distribution scale is at least N^theta. Assuming the Generalized Riemann Hypothesis (GRH), we prove that for any epsilon &gt; 0 one may take theta &gt; 1/2, provided that m &lt; k(k+1)/2 and that m, k are odd integers sufficiently large. This is achieved by employing a new tool closely related to earlier work. For sufficiently large m, by refining the discussion of the minor arcs, we further show that under GRH the equation has a solution provided m &gt; 16k log k + 4k + 2. Moreover, we give an asymptotic formula for the number of solutions, with main term involving N^{2k theta (1 - (1 - 1/k)^{m_1}) + theta(m-1) + 1 - k}, where m_1 = 4k. Under GRH and for sufficiently large m, k, the short-interval Waring-Goldbach problem is essentially settled.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-12T16:01:54Z</published>
+    <arxiv:comment>18 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>YaoJie Guo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.07918v2</id>
+    <title>Simple critical zeros and distinct zeros of the Riemann zeta function in short intervals</title>
+    <updated>2026-10-06T23:49:27Z</updated>
+    <link href="https://arxiv.org/abs/2609.07918v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.07918v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recently, on the non-trivial zeros of the Riemann zeta function, it is obtained by Alpöge and Furman that more than 67.25% of the zeros are simple and on the critical line, and more than 83.62% are distinct. Later, Lamzouri gave a different and more direct proof. In this article, we will use the method of Lamzouri to give lower bounds on the number of the non-trivial zeros of the Riemann zeta function in short intervals. To prove the main result, we establish Montgomery's theorem on the pair correlation of zeros of the zeta function in short intervals by following the approach of Baluyot, Goldston, Suriajaya and Turnage-Butterbaugh, and then use Lamzouri's inequality on any finite multiset of complex numbers which is invariant under complex conjugation.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-07T19:30:23Z</published>
+    <arxiv:comment>17 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Biao Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.02882v2</id>
+    <title>A new proof that more than $2/3$ of the zeros of the Riemann zeta function are simple and on the critical line</title>
+    <updated>2026-09-08T17:55:54Z</updated>
+    <link href="https://arxiv.org/abs/2609.02882v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.02882v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We obtain a new, conceptually simpler, unconditional proof that more than $67.25\%$ of the non-trivial zeros of the Riemann zeta function are simple and on the critical line, and that at least $83.62\%$ of the non-trivial zeros are distinct. Our approach also yields two new unconditional estimates on simple zeros and zeros on the critical line. More precisely, we prove that the proportion of zeros that are simple or lie on the critical line (or both) is at least $88.76\%$, and that the average of the proportions of simple zeros and of zeros on the critical line is at least $83.62\%$. A proof of the bounds for simple zeros on the critical line and for distinct zeros was very recently produced by an internal research version of Claude developed by Anthropic and subsequently verified by two mathematicians at Anthropic, Levent Alpöge and Ralph Furman, whereas our two additional estimates are neither stated nor proved in the Claude paper. The argument produced by Claude is technically intricate, and its main mechanism is not immediately transparent. It combines several ingredients from linear algebra, including a finite-dimensional matrix representation of Weil's Hermitian form and a rank--trace inequality for Hermitian matrices, with a second moment calculation over the zeros using the explicit formula. Our new approach proceeds by replacing the entire finite-dimensional matrix framework by a single Hilbert space inequality, which allows for a direct application of Montgomery's theorem on the pair correlation of zeros of the zeta function, in the unconditional form obtained by Baluyot, Goldston, Suriajaya and Turnage-Butterbaugh.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-02T17:56:49Z</published>
+    <arxiv:comment>17 pages. We establish two new unconditional results: more than 88.76% of zeta zeros are simple or lie on the critical line (or both), and the average of the proportions of simple zeros and of zeros on the critical line is at least 83.62%. We also expand the exposition</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Youness Lamzouri</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.31060v1</id>
+    <title>Large zeta sums and zeros of the Riemann zeta function</title>
+    <updated>2026-08-31T16:38:47Z</updated>
+    <link href="https://arxiv.org/abs/2608.31060v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.31060v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>For real $t$ and $x\ge 1$, set \[ S(x,t)=\sum_{n\le x} n^{\ii t}. \] We prove an unconditional inverse theorem relating large values of $S(x,t)$, with $|t|$ large, to zeros of the Riemann zeta function near height $t$. More precisely, if $T\le |t|\le 2T$, $\exp(\sqrt{\log T})\le x\le \sqrt T$, and $|S(x,t)|=x/N$ with $N\le (\log x)^{1/100}$, then for every $cN^6\le L\le (\log x)/2$ a disk centered at $1+\iiφ$, where $|φ-t|\ll N$, contains at least $L/360$ zeros of $ζ(s)$. As a consequence, a quantitative restriction on zeros in a short family of arbitrarily thin fixed windows to the left of the line $\Ree s=1$ yields $S(x,t)\ll x/(\log x)^{1/100}$ in polynomial ranges of $x$. The proof adapts the zero-forcing mechanism of Granville and Soundararajan for large character sums. In the zeta setting the spectral height is shifted by $t$, and an additional residue from the pole of $ζ(s)$ appears in the Gaussian transform; in the range considered here that residue is exponentially small.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-31T16:38:47Z</published>
+    <arxiv:comment>19 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Zikang Dong</name>
+    </author>
+    <author>
+      <name>Ruihua Wang</name>
+    </author>
+    <author>
+      <name>Weijia Wang</name>
+    </author>
+    <author>
+      <name>Hao Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.27718v1</id>
+    <title>Zero-free columns in character tables of symmetric groups</title>
+    <updated>2026-08-27T21:12:02Z</updated>
+    <link href="https://arxiv.org/abs/2608.27718v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.27718v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rows and columns of the character table of the symmetric group $S_n$ are both naturally indexed by partitions of $n$. Let $D(n)$ denote the number of conjugacy classes of $S_n$ whose column contains no zero entry. The identity column is always zero-free, so $D(n)\geq 1$. It is known that $D(n)\ll n^2$. We prove that $D(n)\ll n^{3/4}$. Second, we prove for almost all positive integers $n$ that $D(n)\ll_B n^{1/2}(\log n)^B$ for every $B&gt;5/6$, with a quantitative bound for the exceptional set, using work of Matomäki and Radziwill. Finally, we offer a heuristic supporting our conjecture that $D(n)\ll_{\varepsilon} n^{\varepsilon}$. AxiomProver formalized the results in this paper in Lean assuming preexisting literature.</summary>
+    <category term="math.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.RT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-27T21:12:02Z</published>
+    <arxiv:comment>Comments welcome!</arxiv:comment>
+    <arxiv:primary_category term="math.CO"/>
+    <author>
+      <name>Colin Defant</name>
+    </author>
+    <author>
+      <name>Sidharth Hariharan</name>
+    </author>
+    <author>
+      <name>Kenny Lau</name>
+    </author>
+    <author>
+      <name>Ken Ono</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.24878v2</id>
+    <title>Oscillation of partial sums of the Möbius function and zeros of Riemann's zeta function</title>
+    <updated>2026-09-01T20:24:35Z</updated>
+    <link href="https://arxiv.org/abs/2608.24878v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.24878v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The oscillation of M(x), the partial sum of the Möbius function has been in the focus of researchers in the theory of primes since the famous conjecture of Mertens in 1905 (formulated in a weaker form by Stieltjes in 1885 in a letter to Hermite). The average order of the modulus of M(x) in an interval of type [0,Y] is clearly in connection with the distribution of primes. The author proved at the beginning of 1980's that this average tends unconditionally to infinity with Y. The present work shows that (similarly to the average order of the error term of the Prime Number Theorem) this average agrees with great accuracy for large values of Y with the largest error term of the Riemann-von Mangoldt prime number formula for the value Y.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-25T17:57:06Z</published>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>János Pintz</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.14852v1</id>
+    <title>Reciprocity for The Short Twisted Second Moment of The Riemann Zeta Function</title>
+    <updated>2026-08-14T19:48:53Z</updated>
+    <link href="https://arxiv.org/abs/2608.14852v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.14852v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We prove a reciprocity formula for a twisted second moment of the Riemann zeta function over a short interval of length $T^δ$, where $δ\in (\frac{1}{2},1)$, centered at height $T$ on the critical line. This result extends Khan's reciprocity formula to the short interval setting and makes explicit the relation between the twisting parameters and the interval length.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-14T19:48:53Z</published>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Ze Sen Tang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.12257v1</id>
+    <title>Power sums and Siegel-type zero-free regions for L-functions</title>
+    <updated>2026-08-12T17:00:49Z</updated>
+    <link href="https://arxiv.org/abs/2608.12257v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.12257v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Let $π$ and $π'$ be unitary cuspidal automorphic representations of $\mathrm{GL}(n)$ and $\mathrm{GL}(n')$ over a number field $F$. Let $\mathfrak{C}_π$ be the analytic conductor of $π$. We develop a new approach to zero-free regions for $L$-functions via lower bounds for power sums, proving for all $\varepsilon&gt;0$ the existence of ineffective constants $c=c_{n,F,\varepsilon}&gt;0$ and $c'=c'_{n,F,π',\varepsilon}&gt;0$ such that the standard $L$-function $L(s,π)$ satisfies \[ |L(σ+it,π)|\geq c(\mathfrak{C}_π(|t|+3))^{-\varepsilon},\qquad σ\geq 1-c(\mathfrak{C}_π(|t|+3))^{-\varepsilon} \] and the Rankin-Selberg $L$-function $L(s,π\timesπ')$ satisfies \[ |L(σ+it,π\timesπ')|\geq c'(\mathfrak{C}_π(|t|+3))^{-\varepsilon},\qquad σ\geq 1-c'(\mathfrak{C}_π(|t|+3))^{-\varepsilon}. \] Applications include improvements to the prime number theorems for these $L$-functions and new generalizations of the Brauer-Siegel theorem.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-12T17:00:49Z</published>
+    <arxiv:comment>21 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Jesse Thorner</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.07399v1</id>
+    <title>Siegel zeros and small gaps between zeros of the Riemann zeta function</title>
+    <updated>2026-08-07T16:42:11Z</updated>
+    <link href="https://arxiv.org/abs/2608.07399v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.07399v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>On assuming the Riemann Hypothesis, we show that Siegel zeros imply the existence of gaps between the zeros of the Riemann zeta function less than 1/2 the normalised length. Specifically, we show that an infinite family of Siegel zeros implies $\liminf_{n\to\infty}(γ_{n+1}-γ_n)\log(γ_n)/2π&lt; 0.4733$ on RH. This refutes the existence of certain strong alternative hypotheses under these assumptions. Our arguments incorporate long Dirichlet polynomials of length $T^{17/14-\varepsilon}$ into the Montgomery--Odlyzko method.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-07T16:42:11Z</published>
+    <arxiv:comment>27 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Andriy Bondarenko</name>
+    </author>
+    <author>
+      <name>Winston Heap</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.25002v2</id>
+    <title>How Random Is the Möbius Function? Smoothing, Probability, and the Riemann Hypothesis</title>
+    <updated>2026-08-14T15:07:34Z</updated>
+    <link href="https://arxiv.org/abs/2607.25002v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.25002v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This article is primarily expository, but it also contains several new observations and reformulations concerning the Möbius function, probabilistic models, dynamical systems, and the Riemann hypothesis. Its starting question is classical: in what sense can the Möbius function be said to behave randomly? We begin with Denjoy's random-walk heuristic and place it in the context of later work on random multiplicative functions, short intervals, and Möbius pseudorandomness. We then develop two smoothing forms of the classical Mertens criterion for the Riemann hypothesis. The first uses the discrete Laplace transform \[ Φ(t)=\sum_{n\geq1}μ(n)e^{-nt} \] and identifies RH with the condition \[ Φ\in L^p(0,\infty) \qquad\text{for every }1\leq p&lt;2. \] The second uses normalized Möbius Fourier polynomials and local moments on arcs of length comparable with \(1/N\). The paper also revisits the author's earlier criterion for RH in terms of discrete measures, as presented in Broughan's account of analytic equivalents of RH. Denjoy's heuristic is made precise in a simple independent coefficient model, and this model is carefully distinguished from the modern theory of random multiplicative functions. The resulting coefficient space also gives a measure--category contrast: the relevant \(L^p\)-property has full measure but is topologically meagre. A further point of the paper is dynamical: the multiplicative semigroup of positive integers acts naturally on the coefficient space, and the Möbius sequence is a distinguished arithmetic point for this action. The aim throughout is explanatory, while keeping these new observations visible: to show how arithmetic, probability, Fourier analysis, Mellin transforms, and dynamics fit together, and to indicate what modern results add to the older random-walk picture.</summary>
+    <category term="math.PR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-27T18:58:35Z</published>
+    <arxiv:comment>Extends and subsumes results of arXiv:2607.25002</arxiv:comment>
+    <arxiv:primary_category term="math.PR"/>
+    <author>
+      <name>Alberto Verjovsky</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.20041v2</id>
+    <title>On the value distribution of the Riemann zeta-function with general shifts</title>
+    <updated>2026-09-17T05:28:05Z</updated>
+    <link href="https://arxiv.org/abs/2607.20041v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.20041v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper studies the value distribution of the Riemann zeta-function under general shifts. We establish discrepancy estimates for the Bohr--Jessen limit theorem for a broad class of shifts. We also prove a universality theorem for logarithmic-power shifts, which are not covered by previous universality results for general shifts. Furthermore, we obtain a quantitative Bohr--Jessen limit theorem for logarithmic-power shifts.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-22T11:36:24Z</published>
+    <arxiv:comment>26 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Keita Nakai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.14515v1</id>
+    <title>Beyond the Riemann Hypothesis bounds: A pair-correlation approach to the least prime in arithmetic progression and the smallest quadratic non-residue</title>
+    <updated>2026-07-16T03:12:02Z</updated>
+    <link href="https://arxiv.org/abs/2607.14515v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.14515v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Generalized Riemann Hypothesis (GRH) has long defined the expected bounds for the smallest prime in an arithmetic progression and the least quadratic non-residue. However, this hypothesis primarily addresses the horizontal location of non-trivial zeros. In this paper, we show that incorporating the vertical spacing--or pair-correlation--of these zeros allows us to surpass these classical bounds. By combining these two zero-distribution perspectives, we establish sharper estimates for both problems under GRH and specific pair-correlation hypotheses, thereby providing a new link between pair-correlation phenomena for Dirichlet L-functions and these two classical problems.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-16T03:12:02Z</published>
+    <arxiv:comment>26 pages</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Neelam Kandhil</name>
+    </author>
+    <author>
+      <name>Alessandro Languasco</name>
+    </author>
+    <author>
+      <name>Pieter Moree</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.18938v1</id>
+    <title>An Omega result for partial sums of the Riemann zeta function</title>
+    <updated>2026-07-13T03:18:40Z</updated>
+    <link href="https://arxiv.org/abs/2609.18938v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.18938v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we establish an Omega result for partial sums of the Riemann zeta function on the \(1\)-line. Our work relies on the long resonance method and an effective asymptotic formula for smooth numbers. For sufficiently long partial sums, our result approaches the work obtained by Aistleitner, Mahatab and Munsch in 2019.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-13T03:18:40Z</published>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Qiyu Yang</name>
+    </author>
+    <author>
+      <name>Shengbo Zhao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.04632v1</id>
+    <title>A decades-long breakthrough in zero-density estimates and primes in short intervals</title>
+    <updated>2026-07-06T03:32:22Z</updated>
+    <link href="https://arxiv.org/abs/2607.04632v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.04632v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Riemann Hypothesis (RH) asserts that every nontrivial zero of the Riemann zeta-function has real part equal to $1/2$. A zero-density theorem provides evidence towards RH by bounding the number of zeros of the zeta-function with real part greater than $1/2$. In 2024, Larry Guth and James Maynard announced a new zero-density theorem which, for a key location in the critical strip, strengthens previous work of Ingham and is the first such improvement in over 80 years. This expository paper places this remarkable achievement in the context of the rich history of zero-density theorems and explores its implications on the distribution of primes in short intervals.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-06T03:32:22Z</published>
+    <arxiv:comment>21 pages, 3 figures; companion article to the author's talk at the 2026 JMM Current Events Bulletin; to appear in the Bulletin of the AMS</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Caroline L. Turnage-Butterbaugh</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.04338v2</id>
+    <title>A proof of Riemann's hypothesis via Hadamard-Weierstrass factorization</title>
+    <updated>2026-07-08T21:20:40Z</updated>
+    <link href="https://arxiv.org/abs/2607.04338v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.04338v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Using the Hadamard-Weierstrass factorization theorem for Riemann's ξ function, we discuss and prove Riemann's hypothesis.</summary>
+    <category term="math.NT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-05T14:37:00Z</published>
+    <arxiv:comment>Mistakes in main approach. Withdrawn</arxiv:comment>
+    <arxiv:primary_category term="math.NT"/>
+    <author>
+      <name>Athanasios Christou Micheas</name>
+    </author>
+  </entry>
+</feed>
