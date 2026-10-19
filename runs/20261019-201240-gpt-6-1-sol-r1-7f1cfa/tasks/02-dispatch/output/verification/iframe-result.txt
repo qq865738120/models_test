@@ -1,0 +1,74 @@
+- banner: 验证宿主：iframe sandbox="allow-scripts"；没有 allow-same-origin；静态服务允许跨来源读取本地资源。
+- iframe [active]:
+  - complementary:
+    - link "鹈鹕配送 PELICAN DISPATCH":
+      - /url: "#"
+      - text: 鹈鹕配送
+      - generic: PELICAN DISPATCH
+    - generic: 工作空间
+    - navigation "主导航":
+      - button "总览" [active]:
+        - generic: 总览
+      - button "订单派送":
+        - generic: 订单派送
+      - button "配送员":
+        - generic: 配送员
+      - button "运行报表":
+        - generic: 运行报表
+      - button "设置":
+        - generic: 设置
+    - text: 本次页面会话
+    - generic: 数据仅保存在当前内存
+  - banner:
+    - generic: 工作台
+    - generic: /
+    - strong: 总览
+    - generic: 派送管理工作台
+    - generic: 管
+    - generic: 评测管理员
+  - main:
+    - heading "总览" [level=1]
+    - paragraph: 从一份清晰的快照，掌握每一单的去向
+    - button "去派单":
+      - text: 去派单
+    - button "全部订单" [disabled]:
+      - generic: 全部订单
+      - strong: 10,000
+      - generic: 本次会话全部订单
+    - button "查看待派单订单":
+      - generic: 待派单
+      - strong: 4,999
+      - generic: 等待安排配送
+      - generic: ↗
+    - button "配送中" [disabled]:
+      - generic: 配送中
+      - strong: 2,501
+      - generic: 正在配送途中
+    - button "已送达" [disabled]:
+      - generic: 已送达
+      - strong: 2,500
+      - generic: 订单已完成
+    - heading "订单状态分布" [level=2]
+    - paragraph: 本次页面会话的当前状态快照
+    - text: 最近读取 2026/10/19 20:38:30
+    - img "待派单4999，配送中2501，已送达2500":
+      - generic: 全部订单
+      - strong: 10,000
+      - generic: 当前状态
+    - generic: 订单状态
+    - generic: 数量 / 占比
+    - strong: 待派单
+    - strong: 4,999
+    - generic: 50.0%
+    - strong: 配送中
+    - strong: 2,501
+    - generic: 25.0%
+    - strong: 已送达
+    - strong: 2,500
+    - generic: 25.0%
+    - heading "下一份快递，等你安排" [level=2]
+    - paragraph: 在待派单列表中选择订单，一次分配给同一位配送员。
+    - button "查看待派单":
+      - text: 查看待派单
+    - generic: 鹈鹕配送 · 把每一单安排妥当
+    - generic: 本地会话 / MEMORY SESSION

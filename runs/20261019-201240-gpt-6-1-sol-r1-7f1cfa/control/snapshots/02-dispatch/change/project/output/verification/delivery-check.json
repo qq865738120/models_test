@@ -1,0 +1,14 @@
+{
+  "entry": "output/index.html",
+  "localResources": [
+    "./assets/index-lYLr0AZz.js",
+    "./assets/index-Cv82Gea3.css"
+  ],
+  "copiedMockAndDataUnchanged": true,
+  "testsPassed": 14,
+  "inputP95ms": 4.100000023841858,
+  "productionFiles": [
+    "assets/index-Cv82Gea3.css",
+    "assets/index-lYLr0AZz.js"
+  ]
+}

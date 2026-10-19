@@ -51,3 +51,14 @@
 @keyframes researchLink{to{stroke-dashoffset:-22}}
 .view-panel[hidden] .task-art *{animation-play-state:paused!important}
 @media(prefers-reduced-motion:reduce){.task-art *{animation:none!important}.platform-parcel{opacity:1}.platform-facing{transform:scaleX(1)}}
+
+/* Detailed rubrics remain within the fixed presentation canvas. */
+.harness-fields{margin:18px 0}.harness-fields>small{display:block;margin:8px 0 16px;line-height:1.6}.table-tools>select{max-width:200px}.deck-left{display:flex;gap:8px;flex-wrap:wrap}.deck-left>select{max-width:240px}
+.detailed-score .dimension-description{font-size:17px;line-height:1.5;margin-top:10px}
+.detailed-score .score-setting{margin-top:12px;height:72px}.detailed-score .score-number input{height:68px;font-size:48px}
+.rubric-scroll{height:265px;margin-top:14px;overflow:auto;overscroll-behavior:contain;padding-right:10px;scrollbar-gutter:stable}
+.rubric-scroll .score-anchors{margin-top:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.rubric-scroll .score-anchors button{min-height:130px;padding:12px;align-items:flex-start}.rubric-scroll .score-anchors button span{font-size:14px;line-height:1.6}.rubric-scroll .score-anchors button strong{font-size:27px}
+.rubric-checks{margin-top:18px;font-size:15px;line-height:1.75;color:#64616a}.rubric-checks h3{font-size:17px}.rubric-checks ol{padding-left:24px}.rubric-checks p{font-size:13px;color:#827982}
+
+.reasoning-field{margin:18px 0}.reasoning-field small{display:block;margin-top:9px;color:var(--muted);font-size:11px;line-height:1.7}.table-tools{flex-wrap:wrap}.history-panel .panel-title{flex-wrap:wrap;gap:16px}.modal{max-height:90vh;overflow-y:auto}

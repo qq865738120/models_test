@@ -1,0 +1,12 @@
+[1019/200345.886865:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200345.887838:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size com.googlecode.crashpad.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200345.887867:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:66] setxattr org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200345.888344:ERROR:third_party/crashpad/crashpad/util/file/file_io.cc:103] ReadExactly: expected 8, observed 0
+[1019/200345.888620:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200345.888642:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size com.googlecode.crashpad.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200345.888658:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:66] setxattr org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+
+DevTools listening on ws://127.0.0.1:54947/devtools/browser/69a8f2dc-6578-46da-99ed-e39db272cb43
+Trying to load the allocator multiple times. This is *not* supported.
+[76913:18534201:1019/200346.214190:ERROR:mojo/public/cpp/bindings/lib/interface_endpoint_client.cc:652] Message 2 rejected by interface blink.mojom.Widget
+[76913:18534201:1019/200346.218662:ERROR:mojo/public/cpp/bindings/lib/interface_endpoint_client.cc:652] Message 520377808 rejected by interface blink.mojom.FrameWidgetHost

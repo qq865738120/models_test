@@ -28,6 +28,13 @@ const order=[];await Promise.all([api.query({q:'a'}).then(()=>order.push('a')),a
 api.control({failNextAssign:true});await assert.rejects(api.assign({ids:['a','b'],courierId:'P01'}));assert.equal((await api.detail('a')).status,'pending');
 const result=await Promise.allSettled([api.assign({ids:['a'],courierId:'P01'}),api.assign({ids:['a','b'],courierId:'P02'})]);assert.equal(result[0].status,'fulfilled');assert.equal(result[1].status,'rejected');assert.equal((await api.detail('b')).status,'pending');
 api.control({reset:true});assert.equal((await api.detail('a')).status,'pending');
+const totals=()=>Promise.all(['all','pending','assigned','delivered'].map(async status=>(await api.query({status,page:1,pageSize:1})).total));
+assert.deepEqual(await totals(),[2,2,0,0]);
+await api.assign({ids:['a'],courierId:'P03'});
+assert.deepEqual(await totals(),[2,1,1,0]);
+for(const pageSize of [20,50,100]) {const page=await api.query({page:1,pageSize});assert.equal(page.items.length,2);assert.equal(page.total,2);assert.equal(page.pageSize,pageSize);}
+assert.equal((await api.detail('a')).courierId,'P03');
+
 '''
             test=Path(folder)/'test.mjs'; test.write_text(script)
             result=subprocess.run(['node',str(test)],capture_output=True,text=True,timeout=10)

@@ -1,0 +1,1236 @@
+
+[PDF page 1]
+Multi-Yoked Surface Codes
+Yuga Hirai 1, 2,∗ and Yasunari Suzuki 2,†
+1Department of Applied Physics and Physico-Informatics, Keio University, Kanagawa, Japan
+2Center for Quantum Computing, RIKEN, Saitama, Japan
+(Dated: October 6, 2026)
+The surface code is the leading candidate for fault-tolerant quantum computation owing to its
+planar nearest-neighbor connectivity, high threshold, and efficient decoding, but its low encoding
+rate demands on the order of a thousand physical qubits per logical qubit in the teraquop regime.
+Yoked surface codes improve the density by a factor of two or three by concatenating a high-density
+parity check code on top of the surface code while retaining planar nearest-neighbor connectivity.
+In this work, we generalize this idea to multiple levels of concatenation and introducemulti-yoked
+surface codes. Our construction rests on two new ingredients. First, we propose a family of outer
+codes calledchain codes, built by chaining copies of aseed codethat detects the block errors of
+the code one level below; the resulting codes use all logical qubits of the lower level and achieve a
+high encoding rate within a few concatenation levels. Second, we design a patch allocation in which
+movable workspaces perform the yoking checks by lattice surgery with a hierarchy of yoking intervals,
+so that lower-level checks are performed frequently while higher-level checks are performed less often,
+which avoids the long yoking intervals that a single large-distance outer code would require. As a
+benchmark, we construct a three-yoked surface code with a [[256,166,8]] outer code and evaluate
+it numerically under the SI1000 noise model using soft information from the surface code decoder.
+The logical error rate is suppressed exponentially in the inner code distance, and in the teraquop
+regime the three-yoked surface code is about 4 to 4.5×denser than the unyoked surface code.
+I. INTRODUCTION
+Quantum computers require error correction during computation as physical qubits are highly susceptible to
+bit-flip and phase-flip errors. The surface code is considered one of the most promising quantum error-correcting
+codes [1–4] because it has several preferable properties: it can be implemented with only nearest-neighbor planar
+connectivity on a square lattice [5, 6], it has a high threshold of∼0.01 [7–9], and its simple structure enables
+efficient decoding with the minimum-weight perfect matching (MWPM) algorithm [2, 10–12] and computation of
+soft information [2, 13, 14]. The surface code has already been demonstrated in real devices, and logical error
+suppression under realistic device noise has also been experimentally confirmed [5, 15]. Despite these advantages,
+the surface code has a serious drawback: a low encoding rate. Executing a quantum algorithm in the teraquop
+regime requires a logical error rate per surface-code patch per round below 10−15 [16]. Assuming 10 −3 physical error
+rates, this means that a single surface-code patch requires on the order of a thousand physical qubits, including
+measurement qubits. Therefore, proposing high-density memory space with reasonable hardware requirements is
+essential for realizing fault-tolerant quantum computation.
+There have been many studies aiming to improve the density of memory space, such as quantum low-density
+parity-check codes and concatenated codes. However, almost all of them impose additional hardware requirements,
+such as non-nearest-neighbor interactions, high-degree connectivity, deeper syndrome-extraction circuits, or more-
+than-two-dimensional embeddings [17–22]. These requirements might incur penalties in physical error rates, device
+scalability, and decoding performance. Thus, methods to improve the density without additional requirements have
+been lacking.
+Recently, yoked surface codes [13] have successfully improved density by 2 to 3×without imposing any additional
+requirements described above. Ref. [23] also improves the density by using a sophisticated arrangement of twist
+defects. A key idea in their improvements is to concatenate a single high-density parity-check code, such as an
+[[n, n−2,2]] iceberg code, over the surface-code qubits. In traditional constructions of general concatenated codes,
+many ancillary code blocks must be allocated for fault-tolerant syndrome extraction, and this overhead undermines
+the advantage of concatenated codes in meaningful regimes. The yoked surface code eliminates this overhead by
+performing syndrome extraction of the concatenated code with a carefully designed lattice-surgery sequence with a
+small workspace.
+In this work, we proposemulti-yoked surface codes, which achieve higher density by concatenating multiple
+high-density parity-check codes over the surface codes. Specifically, we find that a three-level concatenation, i.e.,
+∗ yuga917@keio.jp
+† yasunari.suzuki@riken.jp
+arXiv:2610.04613v1  [quant-ph]  3 Oct 2026
+
+[PDF page 2]
+2
+the yoked-yoked-yoked surface codes illustrated in Fig. 1, yields codes 4 to 4.5×denser than conventional surface
+codes at a logical error rate below 10 −15. It is well known that multi-level concatenation significantly improves
+the encoding rate [24, 25], but designing a high-density implementation is nontrivial for the following two reasons.
+First, the multiple concatenations of high-density parity-check codes introduce complicated correlated errors in
+lower-level code blocks. Therefore, we need to provide a series of high-density parity-check codes that can detect
+problematic correlated errors in inner codes. Second, we need additional workspace for the syndrome extraction of
+outer codes. This overhead might cancel the density improvement by multi-level concatenation. Thus, we need to
+design efficient workspace allocations and syndrome-extraction schedules for outer codes. This work addresses both
+problems.
+We resolve the first problem by proposingchain codes, which generalize the mechanism of theC 4/C6 code [26].
+Here, theC 4 code is a [[4,2,2]] iceberg code, and theC 6 code is a [[6,2,2]] non-iceberg code. Although two logical
+qubits encoded by theC 4 orC 6 code might suffer from correlated errors, theC 6 code can be concatenated over
+threeC 4 orC 6 code blocks because theC 6 code is capable of detecting these correlated errors. In the multi-yoked
+surface codes, we use surface-code qubits instead of physical qubits, and use general [[n, n−2,2]] iceberg codes
+instead ofC 4 codes. To detect correlated errors in the iceberg codes and their underlying inner codes, we propose a
+framework namedchain codes, which can detect all correlated errors in each lower-level code block as theC 6 code
+does. When we want to define chain codes for multiple blocks of a given inner code, we first find a smallseed code
+that can detect all problematic errors in one code block. Then, we construct the chain code by chaining copies of
+the seed code as shown in Fig. 7. We consider up to three-level concatenation for a benchmark in this work; this
+yields an outer code [[128n 2,104n 2 −42,8]], whose encoding ratek/nis∼0.65 forn 2 = 2 and∼0.80 forn 2 = 20.
+For the latter problem, we present an efficient memory-space implementation of the multi-yoked surface code. We
+separate the whole layout into several modules, allocate workspaces for each high-density parity-check code in the
+outer code, and move them to perform syndrome extractions. An example layout is shown in Fig. 10. This layout
+not only enables parity checks for outer codes but also allows fine-tuning of the trade-off between space overhead
+and theyoking interval, that is, the time between two consecutive yoking operations. In the original yoked surface
+code, a space-efficient implementation with a single hallway shown in Fig. 8 was adopted for yoking to minimize
+the space overhead. When the outer code distance becomes larger, however, this design easily lengthens the yoking
+interval, which in turn requires larger surface codes to tolerate idling errors. Thus, it may achieve high density
+only in a regime of logical error rates far lower than those required in practice. In our layout, we adopt both time-
+efficient and space-efficient yoking designs to balance the frequencies of the checks of each level and the number of
+workspaces. This allows us to use the qubits spent on excess suppression to make the code denser. Note that hook
+errors in physical syndrome-extraction circuits for this procedure can be systematically eliminated without losing
+the fault distance by using the technique from our previous work [27].
+We numerically simulated the performance of the multi-yoked surface code with a gap simulation similar to
+Ref. [13], and optimized parameters for target logical error rates. We find that, with an inner code distance of
+dinner = 10, it is about 4 to 4.5×denser than conventional surface codes under the SI1000 noise model, which
+corresponds to a 1.3 to 1.5×density improvement over the yoked surface code. We note that the simulated three-
+yoked surface code is only a prototype; a more elaborate design, or concatenation beyond three levels, may yield
+an even higher density.
+Finally, we note a drawback of our multi-yoked surface codes compared to the original yoked surface code, although
+we believe it can be resolved. In the yoked surface codes, both inner and outer codes are matchable, and they can
+be simultaneously decoded with fast MWPM decoders. In our case, while level-0 and level-1 codes (i.e., surface
+codes and iceberg codes) are matchable, the outer codes (i.e., chain codes) are not. Therefore, we need to decode
+the inner parts with MWPM decoders, and then decode outer codes with other methods. We believe, however,
+that this does not pose a serious problem in the whole architecture. This is because the outer code is small and its
+syndrome-extraction frequency is much lower than that of the inner codes. Thus, we believe its real-time decoding
+would be feasible, for example, with beam-search-based decoders [28]. Architecting such a two-stage decoding in
+realistic systems goes beyond our scope and is left as future work.
+iceberg iceberg iceberg iceberg
+Chain (level 2)
+iceberg iceberg iceberg iceberg
+Chain (level 2)
+Chain (level 3)
+Yoked 
+surface code
+Yoked-yoked 
+surface code
+Yoked-yoked-yoked 
+surface code
+FIG. 1. Concept of multi-yoked surface codes.
+
+[PDF page 3]
+3
+The rest of this paper is organized as follows. In Section II, we review the basics of surface codes and concatenated
+codes. In Section III, we introduce the previous work on yoked surface codes and explain what is new in this work. In
+Section IV, we present the construction of multi-yoked surface codes, including chain codes and the patch allocation.
+In Section V, we show the simulation results of multi-yoked surface codes. Finally, in Section VI, we conclude this
+paper and discuss open questions.
+II. PRELIMINAR Y
+Multi-yoked surface codes are based on a concatenated code whose level-0 code is the surface code. In this section,
+we review the basics of surface codes and concatenated codes, both of which are needed in what follows.
+A. Surface Codes
+The surface code [1–4] is a stabilizer code defined on a square lattice, where the data qubits sit on the vertices,
+and both the Z and the X stabilizers sit on the plaquettes in the checkerboard pattern shown on the left in Fig. 2.
+Each plaquette has its own measurement qubit, which extracts the parity of the neighboring data qubits. We call a
+boundary terminated by X (Z) stabilizers anX boundary(Z boundary), and an X (Z) logical operator is defined as a
+chain of X (Z) operators on the data qubits connecting the two X (Z) boundaries. A single patch therefore encodes
+one logical qubit. The surface code has several attractive properties. First, it requires only planar, nearest-neighbor
+connectivity on a square lattice, which relaxes the demands on the device. Second, it has a high threshold of∼0.01.
+Third, it can be decoded relatively easily by the minimum-weight perfect matching (MWPM) algorithm [10], since
+every error in the decoding graph can be represented by an edge; a hyperedge corresponding to a Y error is
+decomposed into the edges corresponding to X and Z errors without significantly degrading the decoding accuracy.
+We call stabilizer codes with this propertymatchable.
+: X checks
+: Data qubits
+: Z checks
+TIME
+FIG. 2. From left to right: the surface code and the defect diagram.
+During the computation, the Z and X check operators are repeatedly measured using the ancillary qubits placed
+at the center of the check operators. If we assume a circuit-level noise model, i.e., a model in which Pauli errors are
+inserted for each physical gate and idling operation, Pauli errors during parity measurements might propagate to
+multiple data qubits; such errors are called hook errors. With a carefully designed order of CNOT gates, these hook
+errors do not reduce the fault distance [27, 29, 30]. This is another advantage of surface codes, as the concatenated
+codes discussed later require large overheads for fault-tolerant parity checks.
+Since the surface code has a simple structure, it can be expressed by more abstract diagrams. One of them is
+thedefect diagramshown in the right panel of Fig. 2. The red (blue) walls represent the X (Z) boundaries, and
+the empty space enclosed by the walls is the bulk of the surface code, where the stabilizers are defined. The logical
+operators in this diagram are defined in the same way as before: they are chains connecting two disjoint walls of
+the same Pauli type. In short, the diagram represents the spacetime trajectory of a surface code patch, and it
+can describe various operations. When we are restricted to nearest-neighbor interactions, logical operations are
+performed by a technique called lattice surgery [31, 32]. Lattice surgery can be executed by merging two surface-
+code patches into one and then splitting it back into two, as shown in Fig. 3. In this figure, the two patches are
+merged along their X boundaries, so the operation realizes a joint ZZ measurement between them. Patch rotation
+and movement can also be regarded as forms of lattice surgery. As we will see later, all the stabilizer measurements
+of outer codes are realized by this lattice surgery operation on the surface code.
+
+[PDF page 4]
+4
+merge
+split
+FIG. 3. Lattice surgery. The front Z-type wall is made transparent for clarity. Time goes upward.
+When we decode errors in the surface code, we can calculate, as a byproduct, soft information, which quantifies
+how confident the decoder is in its estimate for given syndrome values. One such piece of information is called the
+complementary gap[13, 33, 34], which is defined as the log-likelihood ratio between the minimum-weight matching
+and the minimum-weight matching in the complementary logical class. In the multi-yoked surface code, such a value
+is assigned to each edge of the outer-code decoding graph. Note that the computational complexity of evaluating
+the complementary gap grows exponentially as the number of logical qubits increases. Recently, it has been shown
+that this overhead can be avoided by using a different soft-information measure that is similar to the complementary
+gap [14].
+B. Concatenated Codes andC 4/C6 Codes
+Concatenated codes are codes in which qubits are recursively encoded into quantum error-correcting codes [24–
+26, 35–37]. Here, the concatenation level is counted starting from the physical qubits. One of the best-known
+examples of concatenated codes is theC 4/C6 code introduced by E. Knill [26, 36]. This code consists of two types
+of codes. One is the [[4,2,2]]C 4 code, and the other is the [[6,2,2]]C 6 code. TheC 4/C6 code first encodes physical
+qubits with theC 4 codes, which are recursively encoded withC 6 codes. Fig. 4 shows the code construction.
+In general, encoding more than one logical qubit per block may cause correlated error events at the higher level,
+and the code distance does not necessarily scale asd lowerdhigher, whered lower andd higher are the code distances of
+the lower- and higher-level codes. We call such correlated errorsblock errors. A simple solution to this problem is
+to distribute thei-th-level logical qubits across different code blocks at level-(i+ 1). However, this increases the
+minimum number of physical and logical qubits required to achieve a target logical error rate and is not suitable
+for practical implementation. TheC 4/C6 code resolves this problem by letting theC 6 code detect such block errors
+on a pair of logical qubits, and its code distance does scale asd lowerdhigher. The code distance of theC 4/C6 code
+therefore scales as 2 N, whereNis the number of concatenation levels.
+/u1D4366
+/u1D4364 /u1D4364/u1D4364
+connected to higher-level /u1D4366
+physical qubits
+FIG. 4. A part of theC 4/C6 code. Each box represents a code block. Reading from bottom to top, the lines entering a box
+from below are the qubits that constitute the block, and the lines leaving it from above are its logical qubits.
+Unlike surface codes, a naive implementation of parity measurements of concatenated codes is not fault-tolerant
+due to hook errors, and we need to introduce techniques to fault-tolerantly measure parities. One well-known
+method is Knill’s error correction, which implements parity measurements using the Knill gadget [26, 36]. In this
+gadget, the parity measurements are performed by state teleportation, which consumes logical Bell pairs at each
+
+[PDF page 5]
+5
+level of concatenation. Therefore, we have to prepare verified Bell pairs in advance. Because this generation uses
+error detection and post-selection, it introduces significant spacetime overhead. Other approaches, such as Shor’s
+and Steane’s error correction, also introduce similar overheads.
+Concatenated codes with higher encoding rates than theC4/C6 code have been extensively explored. For example,
+Refs. [24, 25] achieved a constant space overhead in the asymptotic limit of many concatenation levels. However,
+the overheads from syndrome-extraction gadgets might significantly degrade the density in the practical regime.
+Therefore, achieving high-density memory-space on a square-grid qubit array is still challenging. Recently, Ref. [38]
+has proposed concatenating Reed–Solomon codes on top of bivariate bicycle codes, each encoding 12 logical qubits,
+by treating each lower-level block as a qudit. Although this enables simple concatenation that is tolerant to block
+errors, this approach requires the outer code to detect all qudit errors. As we will explain later in Sec. IV A, our
+proposal, the chain code, detects only problematic errors among them.
+III. EXISTING WORK: YOKED SURF ACE CODES
+Multi-yoked surface codes are heavily based on the idea of yoked surface codes by C. Gidneyet al.[13]. In this
+section, we introduce their concept and explain our strategy to further improve the density.
+A. Y oked Surface Codes
+There are many ideas to improve the density of the normal surface code. However, almost all ideas impose
+strong hardware requirements, such as non-nearest-neighbor interactions, high-degree connectivity, and more-than-
+two-dimensional embeddings. Yoked surface codes need none of them; they require only nearest-neighbor planar
+connectivity on a square lattice. This connectivity has already been realized in real devices [5, 15].
+The strategy of the yoked surface codes for densifying the surface codes is to concatenate a high-density code
+on top of them. We refer to the surface code as theinner codeand to the concatenated code as theouter code.
+Yoked surface codes employ iceberg codes or quantum parity check codes as the outer code ford outer = 2 and
+douter = 4, respectively. The left panel of Fig. 5 shows check operators of the [[6,4,2]] iceberg code and logical
+Pauli operators for four logical qubits. The parity measurements of the outer code in the yoked surface codes
+are performed by lattice surgery on the surface codes, as shown in the middle panel of Fig. 5. The probability
+of causing correlated errors across multiple surface codes, which are analogous to hook errors in the conventional
+approaches, is sufficiently suppressed by widening the lattice surgery path. The widened paths are extended along
+the time direction rather than the spatial directions, so as to minimize the workspace needed for the parity checks,
+as shown in the right panel of the figure. The lattice surgeries for the different checks are arranged sequentially
+along the time direction. This construction enables more space-efficient concatenation of high-density parity-check
+codes than syndrome-extraction gadgets in conventional concatenated codes. With this syndrome extraction, both
+inner and outer codes become matchable. Therefore, they can be decoded simultaneously using MWPM decoders
+by assigning the detectors of the outer code to the corresponding boundary detectors of the inner code.
+X
+X
+Z
+0 1 2 3 4 5
+Z Z
+Z Z
+Z Z
+Z Z
+Z Z Z Z Z
+X
+X
+X X
+X X
+X X
+X X X X
+iceberg
+checks
+surface codes
+Q0 
+Q1 
+Q2 
+Q3 
+logical 
+qubits
+Outer code
+(Iceberg code)
+yoking
+/u1D451inner 
+2/u1D451inner 
+TIME
+FIG. 5. From left to right: outer code (iceberg code), the surface-code lattice surgery for the outer Z check, and the defect
+diagram representing the Z- and X-type checks with a patch rotation.
+
+[PDF page 6]
+6
+B. Open Questions W e Address
+To further improve the density of the yoked surface code, we should increase the distance of outer codes with
+high encoding rates and reduce the distance of inner surface codes with low encoding rates. There are two ways to
+increase the outer code distance: one is to use a single code with large distance, and the other is to use a multi-level
+concatenated code.
+Ref. [13] already pursued the former approach by replacingd outer = 2 iceberg codes with ad outer = 4 quantum
+parity check code. However, they did not go beyond distance four because increasing the outer code distance
+does not work straightforwardly for the following reasons. If we increase the code distance of the outer code, the
+number of outer checks increases. This makes the interval between two subsequent parity measurements of the
+outer codes longer. This will eventually increase the idling errors of surface-code qubits and degrade the overall
+performance. Although this can be mitigated by increasing the inner code distance, this contradicts the original
+motivation to decrease the inner code distance. Also, increasing the inner code distance makes the available total
+code distanced innerdouter highly discretized, and typically leads to excessive logical error suppression below what is
+actually required. The qubits spent on this excess suppression could instead be used to make the code denser.
+Therefore, this paper explores the other direction: increasing outer-code distance by further concatenatingd= 2
+high-density parity check codes over the yoked surface codes. This direction is promising because logical error rates
+of qubits encoded with the level-0 (surface) and level-1 (iceberg) codes are suppressed, and the required interval of
+the additional outer-code checks can be much longer than that of the iceberg codes. Thus, further concatenations
+are expected to have little effect on the lower-level check intervals. Our research question is therefore “How much
+can we improve the density of the yoked surface code by increasing the concatenation level?”
+To address this question, we need to resolve two difficulties. First, if we use a concatenated code as the outer code,
+its upper-level codes must manage block errors in lower-level codes. Although theC 6 code satisfies this property,
+it is an open question whether we can satisfy this criterion for a lower-level code encoding more than two logical
+qubits. Second, even if a series of high-density parity check codes exists, it remains open whether they can be
+implemented on a square-grid lattice with modest workspace overhead. We address these two open questions by
+proposing chain codes and memory-space layouts tailored for multi-level concatenated codes.
+IV. MUL TI-YOKED SURF ACE CODES
+We now introduce multi-yoked surface codes, which concatenate additionald= 2 codes on top of the yoked surface
+codes. The multi-yoked surface code is built from two new components: a family of codes called chain codes, and a
+memory-space layout of the surface-code patches. We consider up to 3-level concatenation for multi-yoked surface
+codes. The code thus consists of level-0 surface codes, level-1 iceberg codes, level-2 chain codes, and level-3 chain
+codes. Below, we introduce the framework for chain codes and show a construction of level-2 and level-3 chain codes.
+Then, we show how to allocate surface-code patches to achieve high density and overall memory-space construction.
+A. Chain Codes
+In Subsection II B, we introduced theC 4/C6 code, in which aC 6 block detects the block errors of the three
+C4 blocks one level below. In this subsection, we generalize this concept by constructing a code that can detect
+all single block errors of the iceberg codes one level below, as shown in Fig. 6. We concentrate on distance-two
+CSS codes concatenated on top of the iceberg code. Note that hook errors during parity checks are discussed in
+Sec. IV D, so we ignore the hook errors in this subsection. Also, we assume that Z errors and X errors are estimated
+independently, and that X and Z errors are detected by Z and X checks, respectively. Therefore, without loss of
+generality, we focus on the mechanism of detecting X errors with Z checks.
+Suppose level-1 to level-(i−1) concatenated codes constitute an [[n, k, d]] code, and we want to construct a
+level-icode with distance two that is concatenated overrcopies of them. We call every logical X error that can be
+induced by a weight-(2d−1) undetectable X error on level-0 (i.e., surface-code qubits in the multi-yoked surface
+code) qubits aproblematic errorand denote their set byP prob,X ⊂ {I, X} ⊗k. Next, we list an independent set
+of Pauli Z operators that can detect all the problematic errors. We call this set of Pauli operators aseed code
+Pseed,Z ⊂ {I, Z} ⊗k, which satisfies∀P∈ P prob,X,∃Q∈ P seed,Z,s.t. QP=−P Q. Then, the stabilizer generator
+set of a chain code is constructed as{P ⊗r|P∈ P seed,Z} ∪ {P ⊗r|P∈ P seed,X}. Note that elements of X and Z seed
+codesP seed,X andP seed,Z do not necessarily commute with each other. Even in this case, the chain codes satisfy the
+condition of stabilizer codes if we chooseras an even number. Thus, the chain code encodesrk− |P seed,X| − |Pseed,Z|
+logical qubits withrklower-level qubits, and it is capable of detecting all block errors at the lower-level codes. Its
+encoding rate converges to one in the large-rlimit.
+
+[PDF page 7]
+7
+/u1D4366
+/u1D4364 /u1D4364/u1D4364
+???
+[[n, n-2, 2]] [[n, n-2, 2]]
+generalize
+ɾ ɾ ɾ 
+ɾ ɾ ɾ ɾ ɾ ɾ 
+ɾ ɾ ɾ ɾ ɾ ɾ 
+ɾ ɾ ɾ 
+FIG. 6. From left to right: A part of theC 4/C6 code and the generalized version of it.
+A non-trivial part of the above procedure is finding a seed code. A simple method to find a seed code is to choose
+Pseed,X ={X 0, ..., Xk−1},P seed,Z ={Z 0, ..., Zk−1}, and an evenr. This always detects all problematic errors but
+results in a low encoding rate of the chain code. Thus, we should minimize the number of members in the seed codes.
+Although this minimization might be computationally expensive, we can find the minimum set by brute-force or
+heuristic enumeration as explained below.
+B. Finding a Level-2 Chain Code on the Level-1 Iceberg Code
+Using the chain-code framework, we find a high-rate chain code for iceberg codes. The set of problematic errors
+depends on how we define the logical operators. For the iceberg codes, we definen−2 logical Pauli X/Z operators
+asX L,i =X 0Xi+1 andZ L,i =Z i+1Zk+1. See the left panel of Fig. 5 for an example with [[6,4,2]]. Then, we
+enumerate all the problematic errors in iceberg codes. Let 1≤i, j≤kbe two different integers. To enumerate
+problematic errors, we need to consider Pauli errors on surface-code qubits up to weight three, but the weight-1 and
+weight-3 errors are detected by iceberg codes. Therefore, we need only consider weight-2 errors for enumerating
+problematic errors as undetectable candidates. Any problematic error caused by weight-2 surface-code errors can
+be classified into the following four patterns:
+(i) Single error:X 0Xi corresponds toX L,i−1,
+(ii) Two errors:X iXj corresponds toX L,i−1XL,j−1,
+(iii)k−1 errors:X iXk+1 corresponds to Q
+l̸=i−1,0≤l≤k−1 XL,l up to stabilizer,
+(iv)kerrors:X 0Xk+1 corresponds to Q
+0≤l≤k−1 XL,l up to stabilizer.
+Thus, their union constitutesP prob,X for the iceberg code. Similarly, we can enumerate all the possible problematic
+Z errors.
+Next, we find a small seed code that detects all problematic X and Z errors. Regarding the number of checks of
+a seed code, the following proposition holds:
+Proposition 1.LetP prob,X be the set of problematic X errors for an iceberg code[[n, k=n−2,2]]andc z be the
+size of the Z-check seed codeP seed,Z forP prob,X. Then,c z is lower bounded asc z ≥ ⌈log2 (k+ 1)⌉. The same holds
+for X checks for Z errors.
+Proof.By the above error classification, the Z-check matrix of a seed code must detect all weight-one and weight-two
+errors onklogical qubits. Detecting all weight-one errors requires that the columns of the Z-type check matrix
+be nonzero, and detecting all weight-two errors requires that the columns be pairwise distinct. Therefore, we can
+upper-bound the number of columns as 2 cz −1≥k, and hencec z ≥log 2 (k+ 1). Sincec z is an integer, we obtain
+cz ≥ ⌈log2 (k+ 1)⌉. The same argument applies to X checks.
+We find such minimum sets of checks by hand for several iceberg codes of interest. Here, we show the seed codes
+for the [[8,6,2]] and the [[16,14,2]] iceberg codes. We are interested in them because the [[8,6,2]] and the [[16,14,2]]
+iceberg codes are the highest-rate codes that have a seed code with sizec z = 3 andc z = 4, respectively. The seed
+
+[PDF page 8]
+8
+code for the [[8,6,2]] iceberg code is listed as follows, where each line corresponds to a single check operator.
+Z I I Z Z I
+I Z I Z I Z
+I I Z I Z Z
+I X X I I X
+X I X I X I
+X X I X I I
+(1)
+Note that, as elements in the seed code commute with each other, we can choose an even or odd integerrin this
+case. Then, we horizontally copy this outer-check table, as shown in Fig. 7. We list the logical Pauli operators for
+the chain codes, which can be used to find problematic errors in the upper-level code. We also similarly find a seed
+code for [[16,14,2]] iceberg codes. The list of the check operators is as follows.
+Z I Z Z I Z I I Z I I Z Z I
+I Z I I Z I Z Z Z I I Z Z I
+I I Z I Z Z I Z I Z I Z I Z
+I I I Z I Z Z Z I I Z I Z Z
+X I X X I X I I X I I X X I
+I X I I X I X X X I I X X I
+I I X I X X I X I X I X I X
+I I I X I X X X I I X I X X
+(2)
+C. Finding a Level-3 Chain Code on the Level-2 Chain Code
+Next, we construct a level-3 chain code over level-1 iceberg and level-2 chain codes. We expect the combination
+of level-1 and level-2 codes to tolerate up to three Pauli errors in surface-code qubits. As the size of the level-2 chain
+code is typically large, a brute-force approach does not work. Instead, we employ the following heuristic procedure
+to find a seed code for high-rate level-3 chain codes.
+We assume that the level-1 iceberg code and level-2 chain code constituteklogical qubits per block. Our heuristic
+exploration for the level-3 code runs with a positive input parametercas follows. First, we choose a classical code
+[k, k−c, d] with the largestdfrom a code table [39]. We use this code’s parity-check matrix as the seed code for
+both Z and X errors. Then, we iteratively permute an assignment ofklogical qubits in the level-2 codes to the
+input of the level-3 seed code. In each trial, we compute the distance of the chain code generated from the level-3
+seed code. If the distance reaches eight, the procedure stops and outputs the chain code. If not, the procedure
+aborts. While smallcresults in a high-rate level-3 code, this procedure aborts with high probability if the chosen
+cis too small. Therefore, we start with smallcand iterate to largercuntil we find a solution.
+D. W orkspace Design and Y oking Interval
+As in the yoked surface code, the multi-yoked surface code reserves workspaces in which the lattice surgeries for
+yoking are performed; no logical qubits are encoded there. A workspace admits two designs, a time-efficient one
+and a space-efficient one, both shown in Fig. 8, which depicts the defect diagram during yoking as seen from the
+side. Which version to use for each check depends strongly on the outer code design; we describe our choices in
+Sec. IV F. In the time-efficient version, the CNOT scheduling of the surface code must be designed carefully, because
+this lattice surgery presents vertical and horizontal X (Z) boundaries at the same time, which may give rise to hook
+errors in the surface code. As shown in our previous work [27], however, such hook errors can be avoided in a
+hex-grid implementation.
+The surface-code patches are allocated as shown in Fig. 9. Several workspaces are placed to perform yoking,
+i.e., parity checks for outer codes with lattice surgery. Since most patches are not adjacent to a workspace, the
+workspaces move up and down through the memory-space to reach them. To keep the memory dense, the number
+and size of workspaces should be as small as possible, which means that not all patches can be yoked simultaneously;
+instead, each patch is yoked periodically. If the width of the yoking is too small, a hook error on outer codes can
+occur during the lattice surgery for outer-code checks, which can reduce the fault distance of outer codes. To
+avoid this problem, choosing a yoking width ofd innerdouter is sufficient, as logical errors with weightd innerdouter are
+acceptable regarding the target logical error rates. However, this is only a sufficient condition, and we can further
+reduce the width if the outer codes are designed to tolerate hook errors. In fact, as we will explain in Sec. IV F, we
+
+[PDF page 9]
+9
+0 1 4 5 3 2
+outer
+checks
+outer
+checks
+outer
+logical
+qubits
+outer
+logical
+qubits
+NONE
+Z
+Z
+Z
+X X X
+X X
+X X X
+X
+Z Z
+Z Z
+Z Z
+0 1 4 5 3 2 0 1 4 5 3 2
+inner-code-block 0 inner-code-block 1 
+Z
+Z Z ZQ0 
+Q1 
+Q2 
+Q3 
+Q4 
+Q5 
+X X
+X X X X
+X X X X
+X X X
+X X X
+X X X
+Z Z Z
+Z Z Z
+Z Z
+Z Z
+Z Z
+Z
+Z
+X X X
+X X
+X X X
+X
+Z Z
+Z Z
+Z Z Z
+Z
+Z
+X X X
+X X
+X X X
+X
+Z Z
+Z Z
+Z Z
+chaining 
+seed codes
+ɾ ɾ ɾ 
+ɾ ɾ ɾ 
+ɾ ɾ ɾ 
+ɾ ɾ ɾ 
+Seed code Chain code
+inner logical
+qubits
+inner logical
+qubits
+FIG. 7. From left to right: the seed code and the chain code.
+time-efficient space-efficient
+yoking width
+yoking width
+FIG. 8. The time-efficient and space-efficient versions of yoking designs.
+find a construction in which a width-4d inner workspace is sufficient to maintain the fault distanced innerdouter for
+the obtained chain code whend outer = 8.
+The yoking intervals must also be designed carefully to achieve a small logical error rate while keeping the
+workspaces relatively small. Furthermore, since the workspaces themselves move up and down, the times at which
+two of them meet must also be scheduled carefully, so that their checks do not interfere with each other. At the
+same time, all checks at the same level should share a common yoking interval, because a single check with a long
+yoking interval degrades the logical error rate even when all the other checks at that level have short intervals.
+Since the concatenated code has a hierarchical structure, we can design the multi-yoked surface code so that the
+lower-level checks are performed more frequently and the higher-level ones less frequently. This flexibility in the
+check schedule is key to significantly reducing the logical error rate of multi-yoked surface codes, which in turn
+improves the density.
+E. Y oking W eight Reduction
+The X and Z parity check matrices for concatenated codes designed with the framework of chain codes typically
+have high-weight checks, i.e., each check requires lattice surgery operations acting on many surface-code qubits.
+This is not preferable for two reasons. First, many-body lattice surgery for yoking induces many types of hook
+
+[PDF page 10]
+10
+surface code 
+patch
+move
+up or down
+move
+up or down workspace 
+workspace 
+FIG. 9. Example of the memory-space layout with the working space.
+errors, which can prevent us from setting the workspace width smaller thand innerdouter. Second, many high-weight
+checks typically make the outer-code decoding graph have high-weight hyperedges. This degrades the throughput
+and performance of decoding algorithms compatible with non-matchable decoding graphs, such as Tesseract [28].
+To mitigate these problems, this section introduces a technique to reduce the weight of a given chain code.
+Yoking weight reduction is a technique that heuristically reduces the weight of checks for concatenated codes by
+modifying the check matrix without changing the encoding space. We apply the following mapping at each level:
+H ′
+L1 =H L1,
+H ′
+L2 =AH L2 +BH L1,(3)
+H ′
+L3 =CH L3 +DH L2 +EH L1,
+whereH Li is the check matrix of leveli, the matricesA,B,C,DandEare binary, andAandCare invertible.
+This induces the following mapping on the entire check matrix:
+H ′ =M H=
+
+
+I O O
+B A O
+E D C
+
+
+
+
+HL1
+HL2
+HL3
+
+ ,(4)
+whereIis the identity matrix. SinceI,A, andCare all invertible, the mappingMis invertible as well, and
+applying it therefore leaves the codespace unchanged while potentially reducing the check weights.
+We searched for suchMusing LLM agents, and we numerically verified that the resulting code retains the
+distanced innerdouter with verified codes. As this procedure is complicated, our implementation and its explanation
+are available in a GitHub repository [40].
+F. Overall Design and Parameter Exploration of Multi-Y oked Surface Codes
+Finally, in this subsection we present the overall design of one example of a multi-yoked surface code memory.
+We first fix the allocation of the patches and workspaces together with the number of checks at each level of
+yoking, and then construct a good outer code from these constraints. In this construction, we completely ignore
+the accessibility of the memory, so additional resources are required when loading the logical information. The cost
+for loading operations is discussed in Sec. VI.
+We allocate patches and workspaces as shown in Fig. 10. The memory space is separated intomtypes of modules,
+as shown in the right panel. There are two types of workspaces: narrow workspaces and wide workspaces. Each
+module contains one wide workspace andunarrow workspaces. Each white square in the figure is a surface-code
+patch of distanced inner. All module types share the patch configuration shown in the left panel, but differ in the
+check configurations of the concatenated code. For the outer code, we assume that each level-(ℓ+ 1) block takesn ℓ
+level-ℓblocks as input (ℓ= 0,1,2).
+Level-1 yoking is performed with the space-efficient version using a narrow workspace. We require that hook-
+induced logical errors do not occur at distances belowd hookdinner, whered hook should be determined so as not
+to reduce the fault distance of the outer code. This means each check with space-efficient lattice surgery takes
+(dhook + 1)dinner rounds. Since the level-1 code is an iceberg code, a single level-1 yoking requirest narrow =
+(2dhook + 4)dinner rounds, which consist of 2(dhook + 1)dinner rounds for the two yoking checks and 2dinner rounds of
+patch movement. This process is shown as a diagram at the top of Fig. 11 (ford hook = 4). As shown in this figure,
+each narrow workspace moves down everyt narrow rounds.
+Level-2 and level-3 yokings are performed in the time-efficient version using a wide workspace, whose width is
+dhookdinner. We assume that the wide workspace takesstimes as long as the narrow workspace for the yokings
+
+[PDF page 11]
+11
+ɾ
+ɾ
+ɾ
+ɾ
+ɾ
+ɾ
+module 0
+module 0
+module 1
+module 1
+module 2
+module 2
+width-4 workspace
+width-1 workspace
+FIG. 10. The employed memory-space layout for a good density with parametersm= 3 types of modules,u= 2 narrow
+workspaces per module, width between workspacesv(s+ 1) = 6, and a wide workspace withd hook = 4.
+TIME
+TIME
+0
+0
+5/u1D451inner 
+11/u1D451inner 13/u1D451inner 24/u1D451inner 
+7/u1D451inner 12/u1D451inner 
+ɾ ɾ ɾ 
+ɾ ɾ ɾ 
+ɾ ɾ ɾ 
+ɾ ɾ ɾ 
+ɾ ɾ ɾ 
+ɾ ɾ ɾ 
+level 1
+level 2 and level 3
+FIG. 11. The time evolutions of level-1, level-2 and level-3 checks.
+and the movements, sot wide =st narrow. To synchronize yoking in the wide workspaces with the movement of the
+narrow workspace, we choosesto be an integer. As 2d inner rounds are consumed for patch movement, level-2 and
+level-3 yokings can uset 2,3 =st narrow −2d inner rounds. This process is shown as a diagram at the bottom of Fig. 11
+(ford hook = 4 ands= 2). As shown in this figure, each wide workspace moves up everyt wide rounds.
+Level-2 checks are performed each time a row of surface code patches meets a wide workspace. In contrast, level-3
+checks are shared amongmmodules, i.e., level-3 checks are performedmtimes less frequently than level-2 checks.
+Therefore, if we denote the number of checks for level-2 and level-3 codes byc2 andc 3, respectively, they must satisfy
+c2 +⌈c 3/m⌉ ≤t 2,3/dinner. Once we determine the iceberg code sizen 0 and its block count per level-2 chain code
+n1, the number of level-2 checksc 2 is bounded by Proposition 1. This also boundsc 3 as⌈c 3/m⌉ ≤t 2,3/dinner −c 2.
+The level-3 seed code is explored using the subroutine explained in Sec. IV C withc 3 checks (i.e.,c 3/2 each for X
+and Z) as an input parameter.
+Everyt wide rounds, each narrow workspace moves downsrows, and each wide workspace moves up one row. To
+avoid the narrow workspace moving down during the yoking of the wide workspace, we set the distance between the
+two workspaces tov(s+ 1) rows, wherevis an integer, so that the two types always meet right after exactly one set
+has completed all of its checks. See Fig. 20 for an example of a full yoking schedule. After several cycles, workspaces
+eventually reach the top or bottom of the memory space. Then, we swap the roles of the wide workspace at the top
+and the narrow workspace at the bottom by using free qubits, as shown in Fig. 12.
+With this design, the level-1 yoking is performed everyt1 =v(s+1)t narrow rounds. The level-2 yoking is performed
+everyt 2 =sut 1 rounds, and the level-3 yoking is performed everyt 3 =msut 1 rounds. Thus, the ratio of yoking
+intervals can be tuned with the parameterss,uandm.
+In summary, there are several design parameters as listed in Table I. Although we will sweep these parameters to
+
+[PDF page 12]
+12
+(omitted)
+free qubits
+free qubits
+(omitted)
+FIG. 12. Snapshots of the moment when the workspaces reach the top and bottom ends of the memory-space and their roles
+are swapped using free qubits.
+examine the parameter dependency of the multi-yoked surface codes, we list the best-performing set in the teraquop
+regime: inner-code distanced inner = 10,n 0 = 16,n 1 = 8,n 2 = 2,u= 2,v= 2,s= 2,d hook = 4, andm= 3. Fig. 10
+shows an example with these parameters. These parameters determine the other parameters as follows. As we see
+in Sec. IV B, the minimum and achievable seed-code size for [[16,14,2]] iceberg code isc 2 = 8. Thus, the level-2
+chain code becomes [[112,104,2]]. This requiresc 3 to satisfyc 3 ≤42. We run the subroutine in Sec. IV C with this
+restriction, and the subroutine outputs a [104,83,7] classical code as an X and Z seed code (21 checks for Z and X
+each, and thusc 3 = 42). Thus, the level-3 chain code is [[208,166,2]]. Using our heuristic search combined with
+the yoking weight reduction in Sec. IV E, we found a transformation of codes under which the outer code tolerates
+4dinner-weight hook errors for outer checks. Thus, the choice ofd hook = 4 does not degrade the total fault distance
+of the outer code, even thoughd hook = 4 is smaller thand outer = 8. The final code structure is shown in Fig. 13.
+Symbol Description
+dinner Code distance of level-0 surface codes
+n0 Number of level-0 (surface-code) blocks per level-1 iceberg code [[n 0, n0 −2,2]]
+n1 Number of level-1 code blocks per level-2 chain code
+n2 Number of level-2 code blocks per level-3 chain code
+u Number of narrow workspaces per module
+s Yoking time for wide workspace relative to that for narrow workspace
+v Distance between two workspaces divided by (s+ 1)
+dhook Width of wide workspace divided byd inner
+m Number of module types in memory space
+TABLE I. Design parameters of multi-yoked surface codes
+[[16,14,2]] [[16,14,2]] [[16,14,2]] [[16,14,2]] [[16,14,2]] [[16,14,2]] [[16,14,2]] [[16,14,2]]
+[[112,104,2]]
+[[16,14,2]] [[16,14,2]] [[16,14,2]] [[16,14,2]] [[16,14,2]] [[16,14,2]] [[16,14,2]] [[16,14,2]]
+[[112,104,2]]
+[[208,166,2]]
+FIG. 13. The densest design of multi-yoked surface codes in this work.
+
+[PDF page 13]
+13
+V. NUMERICAL RESUL TS
+A. Evaluation Methods and Approximations
+We have evaluated the performance of the proposed memory-space implementation. The full circuit is too large
+to simulate directly in Stim [41], so we utilized the following evaluation methods and approximations. Hereafter,
+we denote the surface code distance byd.
+The outer codes in the multi-yoked surface codes are not matchable, and we cannot handle the whole decoding
+task with fast MWPM decoders. Thus, the inner and outer codes are simulated separately. We first evaluate the
+logical error events of the idling circuits of the inner surface codes. Then, the outer code simulation is executed
+with gap values pre-sampled from them and decoded with Tesseract [28]. This approximation simplifies decoding
+for the outer codes and is necessary to make the evaluation feasible with our computational resources.
+In the evaluation of outer codes, we ignore the following errors in outer codes that are not expected to contribute
+significantly to the final logical error rates, similar to Ref. [13]. The hook errors occurring in the outer-code
+checks are ignored because we allocate sufficient workspace width and the number of logical error events involving
+such errors is negligible. Since the time-like edges corresponding to the measurement errors did not contribute
+significantly to the logical error rates as discussed in Ref. [13], we assume perfect syndrome extraction for outer
+checks. Spacetime-like edges arising from the different schedules of the lattice surgery operations are ignored in the
+gap simulation. We expect this to have a negligible effect on the final logical error rates, since such error events are
+very rare.
+We utilized Monte Carlo sampling for evaluating logical error rates. As the evaluation for logical error rates in
+the teraquop regime requires massive sampling, we utilized several computational resources in parallel. We used
+a workstation with two Intel Xeon Platinum 8173M CPUs (56 cores, 112 threads, 2.0 GHz base, up to 3.5 GHz)
+with 256 GB memory, and 22 compute nodes of the RIKEN R-CCS Cloud: 14 nodes, each with an AMD EPYC
+9684X CPU (96 cores, 192 threads, 2.55 GHz base, up to 3.7 GHz) and 768 GB memory; 2 nodes, each with two
+Intel Xeon Platinum 8470 CPUs (104 cores, 208 threads, 2.0 GHz base, up to 3.8 GHz) and 2,048 GB memory; 4
+nodes, each with two AMD EPYC 9554 CPUs (128 cores, 256 threads, 3.1 GHz base, up to 3.75 GHz) and 1,536
+GB memory; 1 node with two AMD EPYC 9534 CPUs (128 cores, 256 threads, 2.45 GHz base, up to 3.7 GHz) and
+1,536 GB memory; and 1 node with an Intel Xeon w9-3575X CPU (44 cores, 88 threads, 2.2 GHz base, up to 4.8
+GHz) and 512 GB memory.
+B. Evaluation of Inner Codes
+First, we sampled the surface code data. The syndrome extraction circuit for 12drounds is constructed using the
+hex-grid scheduling of Ref. [27] to avoid all hook errors in it. We applied the noise model SI1000 [13] with physical
+error ratep= 10 −3. The memory circuit does not include errors in reset or measurement operations for data
+qubits, since multiple copies of this circuit are stacked as building blocks to construct the gap simulation circuit.
+We used Stim [41] for generating circuits and detector error models, and errors are decoded by PyMatching [10]
+with two-pass decoding [12]. The gap values are then calculated on the decoding graph updated by the results of
+the first-pass decoding.
+Histograms of sampled gap values are shown in the left panel of Fig. 14 for several inner-code distances. Note
+that a positive gap value means that the decoder’s estimate was correct, and a negative value means that it was
+incorrect. Similar to the results in Ref. [13], we see the distribution becomes smooth as the code distance increases.
+We then calibrated the gap for the outer decoder by fitting the log-likelihood ratio of an inner-decoder logical
+error as an affine function of the gap, Λ aff(g) =αg+β, whereαis the scale andβis the offset, by minimizing the
+log-loss over the samples. Such a fit is dominated by the many low-gap samples, so we sorted the samples by gap,
+cut them into bins each containing a fixed number of observed or affine-predicted logical errors, and in each bin
+shifted the affine line by the shrunk log ratio of observed to predicted errors. The shifted points were monotonized
+and linearly interpolated, and the result was adopted only when it beat the affine fit on held-out log-loss. The
+results are shown in the right panel of Fig. 14. This figure shows the logical error rates for observed unsigned gap
+values and their fit. We see that the gaps are well calibrated.
+C. Evaluation of Y oked Surface Codes
+Next, we evaluated the logical error rate of the yoked surface codes. We simulated two kinds of yoked surface
+codes, concatenated with the [[8,6,2]] and [[16,14,2]] codes, respectively, over 10 outer rounds. The yoking intervals
+
+[PDF page 14]
+14
+−20 −10 0 10 20 30 40
+Signed gap (log-likelihood ratio)
+10−9
+10−8
+10−7
+10−6
+10−5
+10−4
+10−3
+10−2
+10−1
+Probability
+d = 5
+d = 6
+d = 7
+d = 8
+d = 9
+d = 10
+d = 11
+0.0 2.5 5.0 7.5 10.0 12.5 15.0 17.5 20.0
+Gap (log-likelihood ratio)
+10− 8
+10− 7
+10− 6
+10− 5
+10− 4
+10− 3
+10− 2
+10− 1
+100
+P(logical error | gap)
+d = 5
+d = 6
+d = 7
+d = 8
+d = 9
+d = 10
+d = 11
+measured (95% CI)
+fitted calibration
+perfect calibration
+FIG. 14. Left: distributions of the sampled gap values. Right: calibration of the gap values. The samples are taken from
+12drounds memory experiments, with approximately 10 4 logical error events collected for each distanced.
+are chosen from 12d, 24d, 48d, 72d, and 96d. For error estimation, we employed the Tesseract decoder [28]. We used
+the gap values pre-sampled in the previous subsection. Note that the outer code is decoded round by round, as we
+ignored time-like and spacetime-like errors in outer-code decoding as explained in Sec. V A. To improve decoding
+accuracy and throughput, we set itsdet orderto the order in which the detectors are measured in the circuit.
+The evaluation results are shown in Fig. 15. The dashed lines show the performance of inner codes for reference,
+and the solid lines show that of the outer codes. Each color corresponds to an interval value, and the legend lists
+the slopes for the inner and outer codes. We see that longer intervals significantly worsen the logical error rates
+of the outer codes. In contrast, the slope is almost independent of the interval values. The logical error rates are
+exponentially suppressed with the inner code distanced, and the slope of the outer codes is approximately double
+that of the inner code. When we increase the density from [[8,6,2]] to [[16,14,2]], the logical error rates increase.
+This indicates a trade-off between encoding rate and logical error rate.
+D. Evaluation of Two-Y oked Surface Codes
+We evaluated the logical error rates of the two-yoked surface codes over 10 outer rounds. We again focused on two
+iceberg codes, [[8,6,2]] and [[16,14,2]], for the level-1 concatenation. To construct level-2 chain codes, we choose
+the seed codes described in Sec. IV B. When we create chain codes from the seed codes, we repeatr= 6 andr= 8
+iceberg-code blocks, respectively.
+The logical error rates and fitted slopes are shown in Fig. 16. The performance of chain codes with six [[8,6,2]]
+iceberg codes is shown at the top, and that for eight [[16,14,2]] iceberg codes is shown at the bottom. Lett 1 andt 2
+denote the level-1 and level-2 yoking intervals. We swept the level-2 yoking intervalt 2 over 144d, 288d, and 576d,
+which corresponds to the column. In each figure, we sweptt 1. We see that the logical error rates are suppressed
+exponentially with the inner code distance. The two-yoked surface codes suppress the logical error rates more
+strongly than the yoked surface codes do, with slopes approximately quadruple those of the inner code. We also see
+that the shorter the level-2 interval becomes, the more the logical error rate is improved by frequent level-1 yoking.
+We finally conclude that the higher-level interval can be made longer while keeping the logical error rate moderate.
+
+[PDF page 15]
+15
+7 8 9 10 11
+Inner distance (d)
+10−10
+10−9
+10−8
+10−7
+10−6
+10−5
+10−4
+Logical error rate per inner round
+sl: inner / outer
+inner
+outer
+t_1=12d, sl=-0.46 / -0.83
+t_1=24d, sl=-0.46 / -0.82
+t_1=48d, sl=-0.45 / -0.80
+t_1=72d, sl=-0.45 / -0.80
+t_1=96d, sl=-0.45 / -0.80
+7 8 9 10 11
+Inner distance (d)
+10−10
+10−9
+10−8
+10−7
+10−6
+10−5
+10−4
+Logical error rate per inner round
+sl: inner / outer
+inner
+outer
+t_1=12d, sl=-0.46 / -0.84
+t_1=24d, sl=-0.46 / -0.81
+t_1=48d, sl=-0.46 / -0.81
+t_1=72d, sl=-0.46 / -0.79
+t_1=96d, sl=-0.45 / -0.77
+FIG. 15. Logical error rates of the yoked surface code with the iceberg codes [[8,6,2]] (left) and [[16,14,2]] (right).t 1is a
+yoking interval andslis a slope. The logical error rates shown are per logical qubit.
+7 8 9 10
+Inner distance (d)
+10−14
+10−13
+10−12
+10−11
+10−10
+10−9
+10−8
+10−7
+10−6
+10−5
+10−4
+Logical error rate per inner round
+t_2=144d, sl: inner / outer
+inner
+outer
+t_1=72d, sl=-0.44 / -1.50
+t_1=36d, sl=-0.44 / -1.59
+t_1=24d, sl=-0.44 / -1.53
+7 8 9 10 11
+Inner distance (d)
+10−14
+10−13
+10−12
+10−11
+10−10
+10−9
+10−8
+10−7
+10−6
+10−5
+10−4
+Logical error rate per inner round
+t_2=288d, sl: inner / outer
+inner
+outer
+t_1=144d, sl=-0.43 / -1.45
+t_1=72d, sl=-0.44 / -1.47
+t_1=48d, sl=-0.44 / -1.50
+t_1=36d, sl=-0.42 / -1.56
+7 8 9 10 11
+Inner distance (d)
+10−13
+10−12
+10−11
+10−10
+10−9
+10−8
+10−7
+10−6
+10−5
+10−4
+Logical error rate per inner round
+t_2=576d, sl: inner / outer
+inner
+outer
+t_1=288d, sl=-0.41 / -1.35
+t_1=144d, sl=-0.41 / -1.45
+t_1=96d, sl=-0.41 / -1.46
+t_1=72d, sl=-0.41 / -1.49
+8 9 10 11
+Inner distance (d)
+10−13
+10−12
+10−11
+10−10
+10−9
+10−8
+10−7
+10−6
+10−5
+10−4
+Logical error rate per inner round
+t_2=144d, sl: inner / outer
+inner
+outer
+t_1=72d, sl=-0.46 / -1.60
+t_1=36d, sl=-0.45 / -1.62
+t_1=24d, sl=-0.45 / -1.58
+8 9 10 11
+Inner distance (d)
+10−13
+10−12
+10−11
+10−10
+10−9
+10−8
+10−7
+10−6
+10−5
+10−4
+Logical error rate per inner round
+t_2=288d, sl: inner / outer
+inner
+outer
+t_1=144d, sl=-0.45 / -1.50
+t_1=72d, sl=-0.45 / -1.60
+t_1=48d, sl=-0.45 / -1.58
+t_1=36d, sl=-0.45 / -1.58
+8 9 10 11
+Inner distance (d)
+10−12
+10−11
+10−10
+10−9
+10−8
+10−7
+10−6
+10−5
+10−4
+Logical error rate per inner round
+t_2=576d, sl: inner / outer
+inner
+outer
+t_1=288d, sl=-0.43 / -1.43
+t_1=144d, sl=-0.43 / -1.49
+t_1=96d, sl=-0.43 / -1.49
+t_1=72d, sl=-0.44 / -1.55
+FIG. 16. Logical error rates of the two-yoked surface codes for six iceberg codes [[8,6,2]] (top) and for eight iceberg codes
+[[16,14,2]] (bottom).t 1is a level-1 yoking interval,t 2is a level-2 yoking interval andslis a slope. The logical error rates
+shown are per logical qubit.
+E. Evaluation of Three-Y oked Surface Codes
+From the results so far, we design the three-yoked surface code, i.e., the densest code in this work, so that the
+level-2 interval is much longer than the level-1 interval and the level-3 interval is much longer than the level-2
+interval. These code choices depend heavily on the surface-code layout explained in the previous section.
+The results of the three-yoked surface code are shown in the left panel of Fig. 17. We simulated the code shown
+in Fig. 13 over four outer rounds. We see that the three-yoked surface code also suppresses the logical error rates
+exponentially. However, its slope of 2.87 falls short of the ideal value of 0.42×8≃3.4, i.e., eight times the inner-code
+
+[PDF page 16]
+16
+slope expected from the distance-8 outer code. This may be because the simulateddregime has not yet reached
+the regime where the slope is maximal. From this discussion, the data point atd= 10 will most likely lie below the
+fitted line, but we nevertheless use the fitted line to estimate the density in the next paragraph. We also simulated
+the hex-grid surface code with the two-pass decoder (the right panel of Fig. 17) for the density comparison in the
+next subsection.
+8 9 10
+Inner distance (d)
+10− 18
+10− 17
+10− 16
+10− 15
+10− 14
+10− 13
+10− 12
+10− 11
+10− 10
+10− 9
+10− 8
+10− 7
+10− 6
+10− 5
+10− 4
+Logical error rate per inner round
+t_3=864d, r1=12, r2=3, t_2=288d,
+t_1=72d, sl: inner / outer
+inner
+outer
+fit (extrapolated)
+sl=-0.42 / -2.87
+6 7 8 9 10 11 12 13
+Distance (d)
+10−8
+10−7
+10−6
+10−5
+10−4
+Logical error rate per round
+FIG. 17. Left: logical error rates of the three-yoked surface code shown in Fig. 13.t 1is a level-1 yoking interval,t 2is a
+level-2 yoking interval,r1is a value oft 2/t 1andslis a slope. Right: logical error rates of the surface code in the hex-grid
+implementation and decoded by the two-pass decoder. The dashed line is the fitting result. The logical error rates shown
+are per logical qubit.
+F. Density Evaluation
+We finally compare the number of physical qubits in each code, which is shown in Fig. 18. In this evaluation, we
+use the fitted logical error rates logp L =−0.4661d−1.566, logp L =−0.794d+ 0.625, logp L =−1.5664d+ 6.2812,
+and logp L =−2.8747d+ 12.2164 for the unyoked, one-yoked ([[16,14,2]]), two-yoked ([[16,14,2]]→[[112,104,2]]),
+and three-yoked surface codes ([[16,14,2]]→[[112,104,2]]→[[208,166,2]]), respectively. The physical qubit count
+per logical qubit in the above evaluation includes the qubits used for workspaces, and we assumed the memory-space
+layout discussed in Sec. IV F as shown in Fig. 19.
+Before discussing this figure, we note two caveats about this evaluation. First, these memories serve as cold
+storage, and we do not include hallways for load and store operations between the memory and the computational
+space. If load and store functionality were required, the density would decrease slightly from the shown value. We
+nevertheless omit them to focus on the achievable density of storage. We later discuss candidate designs for data
+extraction in Sec. VI. Second, we used the same layouts for two-yoked and three-yoked surface codes. As our patch
+layouts are optimized for the three-yoked surface code, the performance of the two-yoked surface code is likely
+underestimated.
+As can be seen from the figure, the three-yoked surface code significantly reduces the number of physical qubits.
+Suppose that a teraquop regime requires a logical error rate per inner round of less than about 10 −15. Then, our
+three-yoked surface code is about 4 to 4.5×denser than the unyoked one in the teraquop regime.
+VI. DISCUSSION
+In this work, we generalized yoked surface codes to a multi-level concatenated version, which we call multi-yoked
+surface codes. We constructed a new code family, called chain codes, to obtain the high-density parity-check codes
+that fit our multi-yoked construction. The chain codes have the favorable property that they can be concatenated
+over a code while managing correlated errors inside each block. Therefore, they enable a high-density encoding
+even with only a few concatenation levels. We also solved the long-interval problem, which arises when a single
+large-distance code is used as the outer code, by introducing a hierarchy among the yoking intervals at each level.
+By making the higher-level yoking intervals longer, we can keep lower-level yoking frequent. Under the SI1000 noise
+model, we confirmed that our three-yoked surface code shown in Fig. 13 is about 4 to 4.5×denser than the unyoked
+surface code in the teraquop regime. This achieves a higher density than the original yoked surface code.
+
+[PDF page 17]
+17
+10−20 10−19 10−18 10−17 10−16 10−15 10−14 10−13 10−12 10−11 10−10 10−9 10−8 10−7 10−6 10−5
+T arget logical error rate per inner round
+102
+103
+Physical qubits (including workspace and routing)
+per logical qubit
+d=16
+d=23
+d=29
+d=36
+d=13
+d=16
+d=20
+d=24
+d=10
+d=12
+d=14
+d=16
+d=8
+d=9
+d=10
+d=11
+Unyoked
+one-yoked [[16,14,2]]
+two-yoked [[16,14,2]] -> [[112, 104, 2]]
+three-yoked [[16,14,2]] -> [[112, 104, 2]] -> [[208, 166, 2]]
+10−20 10−19 10−18 10−17 10−16 10−15 10−14 10−13 10−12 10−11 10−10 10−9 10−8 10−7 10−6 10−5
+T arget logical error rate per inner round
+1
+2
+3
+4
+5Reduction factor (unyoked / three-yoked)
+FIG. 18. Left: the physical qubits comparison. Right: the reduction factor of the physical qubits of the three-yoked surface
+code from the surface code.
+unyoked multi-yoked one-yoked
+FIG. 19. From left to right: surface-code layouts in the unyoked, one-yoked, and multi-yoked surface codes. The white
+patches hold the logical information. These are cold-storage memories that are not directly accessible, so all workspaces in
+the one-yoked and multi-yoked surface code memory are fully dedicated to yoking.
+There are several future directions to further improve the idea of multi-yoked surface codes. We list our current
+open questions and future perspectives as follows.
+Can we further improve the density by higher-level concatenation?This work considered up to three-
+yoked surface codes because simulating higher-level concatenation requires significant classical computational re-
+sources. With more computational resources, we might see that the density of multi-yoked surface codes improves
+further.
+Can we efficiently evaluate the performance of high-density and teraquop-regime memory?Simulat-
+ing the entire memory is a major bottleneck in designing memory spaces for the teraquop regime, yet these designs
+should be completed before building the actual quantum memory. Exploring more sophisticated and accurate
+methods to evaluate logical-error-rate behavior in the teraquop regime is a vital topic.
+Can the outer decoder really keep up with the outer syndrome extraction?A major drawback of using
+multi-yoked surface codes is that the outer code becomes non-matchable, so we cannot use fast MWPM decoders
+such as PyMatching. We expect this problem can be mitigated by employing two-stage decoders with carefully
+optimized parameters, but this goes beyond the scope of this paper and is left as future work.
+How should we design the timing of data load/store in accordance with both the yoking and the
+computation?This paper focuses on memory operations for the multi-yoked surface code and does not account
+for the workspace needed for load and store operations between the memory and hot storage or the computational
+space. Although data can be transferred to and from external code blocks via state teleportation using lattice
+surgery, the hallway design for this lattice surgery is not obvious, for the following reasons. Supposing the required
+
+[PDF page 18]
+18
+fault distance isd outerdinner, the workspace for lattice surgery should haved outerdinner width andd outerdinner rounds
+of syndrome extraction. Therefore, unlike yoking operations, which tolerate time-like errors during lattice surgery,
+this operation cannot easily use a space-efficient implementation to reduce the workspace width. This problem
+can be resolved by separating a single lattice surgery withd outerdinner rounds into several lattice surgeries with
+fewer rounds, and by employing a space-efficient implementation for each lattice surgery. Errors in the operation
+are estimated using the soft information from the inner decoder. An example design for extracting data while
+preservingd outer = 4 by splitting the extraction into two lattice surgeries is shown in Fig. 21. Optimizing the
+schedule of these separated lattice surgeries would be necessary to combine our ideas with computational space.
+How should such a memory be connected to the hotter memories without incurring significant
+latency?Compared to the original yoked surface code, our multi-yoked surface codes provide colder memory,
+i.e., higher-density memory with longer access latency. This does not conflict with yoked surface codes; instead,
+we envision using them complementarily to form a continuous memory hierarchy. Exploring efficient memory-
+hierarchy designs and latency-hiding techniques would be a promising direction, given progress in modern computer
+architectures.
+Is there an efficient procedure for constructing chain codes for a general level of concatenation?
+Several of our protocols, such as finding seed codes for given problematic errors and optimizing the weight of given
+codes with yoking-weight reduction, rely on heuristic methods. Because we focused on concatenations of small
+high-level codes, we found solutions that we believe are near-optimal. However, it remains open whether better
+search algorithms exist. This exploration might improve the construction and implementation of the multi-yoked
+surface codes.
+CONTRIBUTIONS
+YH proposed the original ideas, improved them, conducted the numerical calculations, and prepared the
+manuscript. YS supervised the project. All authors reviewed, revised, and approved the final manuscript.
+CODE A V AILABILITY
+The source code used for the simulations in this work is available on GitHub athttps://github.com/yugahirai/
+multi_yoked_surface_codes.
+USE OF GENERA TIVE AI
+During preparation of this manuscript, the authors used Claude Fable 5.1 (Anthropic) to assist in language editing
+and developing heuristic optimization codes for the yoking weight reduction in Sec. IV E. The authors independently
+verified the correctness of the numerical results in that section. All generated or revised text was reviewed and
+edited by the authors, who take full responsibility for the content of the manuscript.
+ACKNOWLEDGMENTS
+We thank Shota Ikari and Yosuke Ueno for their comments on this work. This work is supported by MEXT Q-
+LEAP Grant No. JPMXS0120319794 and JPMXS0118068682, MEXT Feasibility Study on the future HPCI, JST
+Moonshot R&D Grant No. JPMJMS2061, JST CREST Grant No. JPMJCR23I4, JPMJCR24I4, and JPMJCR25I4.
+[1] A. Y. Kitaev, Fault-tolerant quantum computation by anyons, Annals of physics303, 2 (2003).
+[2] E. Dennis, A. Kitaev, A. Landahl, and J. Preskill, Topological quantum memory, Journal of Mathematical Physics43,
+4452 (2002).
+[3] A. G. Fowler, M. Mariantoni, J. M. Martinis, and A. N. Cleland, Surface codes: Towards practical large-scale quantum
+computation, Physical Review A—Atomic, Molecular, and Optical Physics86, 032324 (2012).
+[4] D. Litinski, A game of surface codes: Large-scale quantum computing with lattice surgery, Quantum3, 128 (2019).
+[5] Google Quantum AI, Suppressing quantum errors by scaling a surface code logical qubit, Nature614, 676 (2023).
+
+[PDF page 19]
+19
+[6] Google Quantum AI and Collaborators, Quantum error correction below the surface code threshold, Nature638, 920
+(2025).
+[7] A. G. Fowler, A. M. Stephens, and P. Groszkowski, High-threshold universal quantum computation on the surface code,
+Physical Review A—Atomic, Molecular, and Optical Physics80, 052312 (2009).
+[8] D. S. Wang, A. G. Fowler, A. M. Stephens, and L. C. Hollenberg, Threshold error rates for the toric and surface codes,
+arXiv preprint arXiv:0905.0531 (2009).
+[9] A. G. Fowler, Proof of finite surface code threshold for matching, Physical review letters109, 180502 (2012).
+[10] O. Higgott, Pymatching: A python package for decoding quantum codes with minimum-weight perfect matching, ACM
+Transactions on Quantum Computing3, 1 (2022).
+[11] O. Higgott, T. C. Bohdanowicz, A. Kubica, S. T. Flammia, and E. T. Campbell, Improved decoding of circuit noise and
+fragile boundaries of tailored surface codes, Physical Review X13, 031007 (2023).
+[12] A. G. Fowler, Optimal complexity correction of correlated errors in the surface code, arXiv preprint arXiv:1310.0863
+(2013).
+[13] C. Gidney, M. Newman, P. Brooks, and C. Jones, Yoked surface codes, Nature Communications16, 4498 (2025).
+[14] N. Meister, C. A. Pattison, and J. Preskill, Efficient soft-output decoders for the surface code, arXiv preprint
+arXiv:2405.07433 (2024).
+[15] A. Eickbusch, M. McEwen, V. Sivak, A. Bourassa, J. Atalaya, J. Claes, D. Kafri, C. Gidney, C. W. Warren, J. Gross,
+et al., Demonstration of dynamic surface codes, Nature Physics21, 1994 (2025).
+[16] C. Gidney, How to factor 2048 bit rsa integers with less than a million noisy qubits, arXiv preprint arXiv:2505.15917
+(2025).
+[17] C. A. Pattison, A. Krishna, and J. Preskill, Hierarchical memories: Simulating quantum ldpc codes with local gates,
+Quantum9, 1728 (2025).
+[18] S. Bravyi, A. W. Cross, J. M. Gambetta, D. Maslov, P. Rall, and T. J. Yoder, High-threshold and low-overhead fault-
+tolerant quantum memory, Nature627, 778 (2024).
+[19] O. Higgott and N. P. Breuckmann, Constructions and performance of hyperbolic and semi-hyperbolic floquet codes,
+PRX Quantum5, 040327 (2024).
+[20] V. Steffan, S. H. Choe, N. P. Breuckmann, F. R. F. Pereira, and J. N. Eberhardt, Tile codes: High-efficiency quantum
+codes on a lattice with boundary, Physical Review Letters135, 170601 (2025).
+[21] G. P. Geh´ er, D. Byfield, and A. Ruban, Directional codes: a new family of quantum ldpc codes on hexagonal-and
+square-grid connectivity hardware, arXiv preprint arXiv:2507.19430 (2025).
+[22] G. M. Nixon, C. K. McLauchlan, and C. C. van Rest, Vine codes: Low-overhead quantum ldpc codes on a planar square
+grid, arXiv preprint arXiv:2606.20263 (2026).
+[23] G. H. Low, W. J. Huggins, D. W. Berry, T. Khattar, A. F. White, N. C. Rubin, and R. Babbush, A denser planar
+surface code, arXiv preprint arXiv:2605.30455 (2026).
+[24] H. Yamasaki and M. Koashi, Time-efficient constant-space-overhead fault-tolerant quantum computation, Nature Physics
+20, 247 (2024).
+[25] S. Yoshida, S. Tamiya, and H. Yamasaki, Concatenate codes, save qubits, npj Quantum Information11, 88 (2025).
+[26] E. Knill and R. Laflamme, Concatenated quantum codes, arXiv preprint quant-ph/9608012 (1996).
+[27] Y. Hirai, S. Ikari, Y. Ueno, and Y. Suzuki, No more hooks in the surface code: Distance-preserving syndrome extraction
+for arbitrary layouts at minimum depth, arXiv preprint arXiv:2603.01628 (2026).
+[28] L. A. Beni, O. Higgott, and N. Shutty, Tesseract: A search-based decoder for quantum error correction, arXiv preprint
+arXiv:2503.10988 (2025).
+[29] Preserving distance during stabilizer measurements by alternating interaction order from round to round?,https:
+//quantumcomputing.stackexchange.com/questions/41263(2025), Quantum Computing Stack Exchange, answered
+Feb 22, 2025.
+[30] G. Kishony and A. Fowler, Surface code off-the-hook: diagonal syndrome-extraction scheduling, arXiv preprint
+arXiv:2602.09099 (2026).
+[31] D. Horsman, A. G. Fowler, S. Devitt, and R. V. Meter, Surface code quantum computing by lattice surgery, New Journal
+of Physics14, 123011 (2012).
+[32] A. G. Fowler and C. Gidney, Low overhead quantum computation using lattice surgery, arXiv preprint arXiv:1808.06709
+(2018).
+[33] H. Bomb´ ın, M. Pant, S. Roberts, and K. I. Seetharam, Fault-tolerant postselection for low-overhead magic state prepa-
+ration, PRX Quantum5, 010302 (2024).
+[34] A. Hutter, J. R. Wootton, and D. Loss, Efficient markov chain monte carlo algorithm for the surface code, Physical
+Review A89, 022326 (2014).
+[35] D. Aharonov and M. Ben-Or, Fault-tolerant quantum computation with constant error rate, SIAM Journal on Computing
+38, 1207 (2008).
+[36] E. Knill, Quantum computing with realistically noisy devices, Nature434, 39 (2005).
+[37] H. Goto, High-performance fault-tolerant quantum computing with many-hypercube codes, Science Advances10,
+eadp6388 (2024).
+[38] A. Wills, M. E. Beverland, L. S. Bishop, J. M. Gambetta, P. Rall, V. Siddhu, and A. W. Cross, Concatenating algebraic
+codes over high-rate quantum ldpc codes, arXiv preprint arXiv:2605.21898 (2026).
+[39] Code Tables: Bounds on the parameters of various types of codes,https://www.codetables.de/, accessed: 2026-09-29.
+
+[PDF page 20]
+20
+[40] Y. Hirai, multi yoked surface codes: QEC codes, Stim circuits, and heuristic search code for multi-yoked surface codes,
+GitHub repository,https://github.com/yugahirai/multi_yoked_surface_codes(2026).
+[41] C. Gidney, Stim: a fast stabilizer circuit simulator, Quantum5, 497 (2021).
+
+[PDF page 21]
+21
+FIG. 20. Full yoking schedule of the three-yoked surface code, shown as a defect diagram of the memory in Fig. 10 viewed
+from the side. The narrow workspaces perform the level-1 checks, and the wide workspaces perform the level-2 and level-3
+checks.
+
+[PDF page 22]
+22
+multi-yoked surface codes extracted data 
+FIG. 21. Data-extraction circuit with a width-2d inner workspace achieving fault distance 4d inner. The data in the memory
+are measured in the X basis after this step. Weight-2d inner errors can be detected by XORing the measured values of the
+two lattice surgeries between the multi-yoked and unyoked surface codes, and corrected using the soft information from the
+surface code decoder.

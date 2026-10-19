@@ -1,0 +1,2047 @@
+
+[PDF page 1]
+Optimizing quantum error correction through error attribution
+Yuguo Shao1, 2 and Zi-Wen Liu 1
+1Yau Mathematical Sciences Center, Tsinghua University, Beijing 100084, China
+2Yanqi Lake Beijing Institute of Mathematical Sciences and Applications, Beijing 100407, China
+Logical error rate is a standard benchmark for quantum error correction, providing an aggregate measure
+of the overall effect of physical noise. In actual QEC architectures, errors at different circuit locations can
+have markedly different effects on logical failure even when their probabilities are equal. Here we introduce
+an error attribution scheme to quantitatively characterize the influence of individual circuit components on the
+logical error rate and use this refined information to guide targeted intervention and design for improved QEC
+performance. Our attribution estimator computes all component sensitivities jointly from the same Monte Carlo
+samples used to estimate the logical error rate. The resulting sensitivity maps identify hotspots where targeted
+noise reduction can most effectively improve logical performance. We test the scheme in circuit simulations of
+rotated surface code memories and high-rate lifted product codes: halving the noise strength on about 5%–7%
+of physical components selected by sensitivity reduces logical error rates by approximately 15%–25%, roughly
+twice the mean reduction from the same intervention on an equal number of randomly selected components. By
+connecting performance benchmarking to targeted optimization, our scheme provides a practical strategy for
+improving quantum error correction with limited resources.
+I. INTRODUCTION
+Fault-tolerant quantum computation relies on quantum er-
+ror correction (QEC) to protect quantum information against
+physical noise and support reliable computation [1–4]. Clas-
+sical simulation provides a widely used tool to assess the fea-
+sibility and performance of candidate QEC schemes by esti-
+mating logical error rates under specified noise models [5–
+8]. These estimates help determine error thresholds, com-
+pare QEC architectures, and quantify resource requirements,
+thereby guiding the design of codes, circuits, and decoders for
+fault-tolerant computation. However, the logical error rate is
+only an aggregate measure that reveals little about the mecha-
+nisms underlying logical failure and thus offers limited guid-
+ance for improving QEC efficiency.
+Physical errors associated with different circuit components
+can have different effects on the logical error rate, even when
+the component error probabilities are equal. Previous studies
+have examined QEC performance under realistic noise [9–12]
+and shown that tailoring codes and decoders to noise charac-
+teristics can improve performance [13–16]. A complemen-
+tary approach is to improve a given QEC scheme through tar-
+geted reductions in physical noise. Experimental studies have
+used noise models informed by device measurements to esti-
+mate the contributions of different error sources (such as two-
+qubit gate errors, idle decoherence, readout errors, leakage,
+and crosstalk) to logical failure [17, 18]. To assess interven-
+tions on individual circuit components, we need to quantify
+how reducing each component’s noise would affect the over-
+all logical error rate. Efficiently estimating these effects would
+help prioritize components for improvement especially when
+resources for noise reduction are limited.
+In this work, we develop a systematicerror attribution
+framework for improving QEC performance by quantitatively
+mapping the influence of individual circuit components on
+logical failure, as illustrated in Fig. 1. We characterize this
+influence through the sensitivity of the logical error rate to
+each component’s noise strength for fixed QEC circuits and
+decoders. To estimate these sensitivities efficiently, we de-
+(a)  Monte Carlo sampling
+H H M
+Noisy QEC
+Sample
+& decode
+Same samples
+Logical error rate
+PL
+Sensitivity
+Sc
+(b)  Error attribution (c)  Targeted intervention
+Figure 1. Error attribution framework for optimizing quantum er-
+ror correction. (a) The logical error rateP L and its sensitivitiesS c
+to component noise strengths are estimated jointly from the same
+Monte Carlo samples. (b) The resulting sensitivity map identifies
+hotspots (orange), highlighting physical components with large sen-
+sitivity magnitudes and thus a strong influence on the logical error
+rate. (c) These hotspots guide targeted noise reduction to improve
+logical performance under a limited intervention budget.
+velop an attribution estimator that computes all component
+sensitivities jointly from the same Monte Carlo samples used
+to estimate the logical error rate, without separate simulations
+for individual components or differentiation through the de-
+coder. The resulting sensitivity maps identify hotspots where
+changes in component noise have a particularly strong impact
+on the logical error rate, thereby guiding efficient targeted in-
+terventions.
+We demonstrate this approach in circuit simulations of ro-
+tated surface code memories [3, 7] and high-rate lifted prod-
+uct codes [19]. The sensitivity maps reveal substantial varia-
+tion across physical components. In the circuits studied here,
+the selected hotspots predominantly involve data qubit com-
+arXiv:2610.03399v1  [quant-ph]  2 Oct 2026
+
+[PDF page 2]
+2
+ponents in the surface code memories and CNOT couplings
+in the lifted product codes. By halving the noise strengths
+of only about5%–7%of all physical components, these tar-
+geted interventions substantially reduce logical error rates by
+approximately14%–18%in the surface code memories and
+23%–25%in the lifted product codes. These reductions are
+roughly twice the average reductions obtained with the same
+intervention on an equal number of randomly selected com-
+ponents, highlighting the substantial benefits of sensitivity-
+guided interventions for improving QEC performance.
+II. ERROR ATTRIBUTION MAP FRAMEWORK
+Attributing the logical error rate to individual noise compo-
+nents requires a precise description of the underlying circuit-
+level QEC experiment. LetCdenote the circuit implement-
+ing a specified memory or logical operation experiment for a
+chosen code [2–4]. The circuit specifies the data qubits that
+encode the logical state, the ancilla qubits used to measure
+checks, and the scheduled sequence of state preparations or
+resets, one- and two-qubit gates, idle intervals, and measure-
+ments over one or more rounds.
+A noisy QEC experiment is specified by the circuitC, a
+stochastic error model, and a decoderD. The error model as-
+signs parameterized error sources to specific circuit elements
+and spacetime locations, each of which we refer to as anoise
+component. The measurement record from each run is pro-
+cessed to obtain syndrome information and the readout of a
+chosen logical observable. The decoderDuses the syndrome
+information to infer a correction to this readout. For an ob-
+servable with a known ideal outcome, a mismatch between
+the corrected readout and the ideal outcome constitutes a log-
+ical failure. The overall logical failure rate provides an ag-
+gregate measure of the overall effect of physical noise. Our
+error attribution framework is designed to quantify and com-
+pare the sensitivity of the overall logical error to each compo-
+nent’s noise strength microscopically, thus providing a basis
+for optimizing QEC performance through informed prioriti-
+zation, which is especially important with limited calibration
+or design resources.
+We now formalize this error attribution method for a given
+QEC experiment. LetN={1,2, . . . , e}denote the set of
+enoise components associated withC. We parameterize the
+noise model by
+λ= (λ 1, λ2, . . . , λe),(1)
+whereλ α denotes the noise strength of componentα∈ N,
+expressed as an error probability or rate. For a givenλ, each
+run of the noisy circuit yields two binary records: a syndrome
+recordm∈F d
+2, supplied to the decoder, and a final readout
+recordy∈F t
+2, from which the logical readout is obtained.
+We denote their joint distribution byp λ(m,y).
+For the chosen logical observable, letδ D(m)∈F 2 be the
+correction bit inferred byDfrom the syndromem, and let
+g(y)∈F 2 be the uncorrected readout bit. Writingb ideal ∈F 2
+for the known noiseless readout, the logical failure indicator
+is
+L(m,y,D) =1[g(y)⊕δ D(m)̸=b ideal],(2)
+where⊕denotes addition inF 2. More generally, the failure
+indicator can include an incorrect result for any of several log-
+ical observables or a failure of the decoder to return an ac-
+cepted correction. The post-decoding logical error rate is the
+expectation of this indicator overp λ(m,y):
+PL(λ;D) =E λ[L(m,y,D)].(3)
+Inspired by gradient-based noise-bottleneck diagnostics
+and experimentally informed error budgets [17, 18, 20], we
+quantify the influence of each noise component by the partial
+derivative ofP L with respect to its noise strength.
+Definition 1(Noise sensitivity).The sensitivity of noise com-
+ponentαis
+Sα = ∂PL(λ;D)
+∂λα
+.(4)
+For an independent Bernoulli noise component, this deriva-
+tive has a direct interpretation in terms of conditional logical
+failure probabilities. LetE α ∈ {0,1}be the corresponding
+error indicator, withP(E α = 1) =λ α. Conditioning onE α
+gives
+Sα =P(L= 1|E α = 1)−P(L= 1|E α = 0).(5)
+The sensitivityS α describes the local response of the log-
+ical error rate to a small change inλ α. Multiplying this sen-
+sitivity by the component’s current noise strength gives a lin-
+earized measure of its marginal contribution to the logical er-
+ror rate.
+Definition 2(Linearized marginal risk).The linearized
+marginal risk of noise componentαis
+Rα =λ αSα =λ α
+∂PL(λ;D)
+∂λα
+.(6)
+This quantity can be interpreted by comparing the current
+noise model with one in which componentαis removed. Let
+λ(−α) = (λ 1, . . . , λα−1,0, λ α+1, . . . , λe)denote the same
+noise model with componentαremoved. A first-order ex-
+pansion gives
+PL(λ;D)−P L(λ(−α);D)≈R α.(7)
+A physical component, such as a qubit or CNOT coupling,
+can be used repeatedly in the circuit. To assess improvements
+to this componentc, we account for all associated noise com-
+ponents, indexed byN c ⊆ N. If these noise components
+share a common error probabilityp c, so thatλ α =p c for all
+α∈ N c, the chain rule gives
+Sc = ∂PL
+∂pc
+=
+X
+α∈Nc
+Sα.(8)
+
+[PDF page 3]
+3
+The corresponding linearized marginal risk is
+Rc =p cSc =
+X
+α∈Nc
+Rα.(9)
+More generally, noise components can be grouped by gate
+type, syndrome round, or circuit region to assess interventions
+affecting multiple components.
+III. ATTRIBUTION ESTIMATOR
+The central computational task is to estimate the compo-
+nent sensitivitiesS α, from which the linearized marginal risks
+Rα =λ αSα follow directly. We construct an estimator that
+computes all component sensitivities jointly from the same
+circuit-level Monte Carlo samples used to estimateP L, with-
+out separate perturbed simulations or differentiation through
+the decoder. The dominant computational complexity is there-
+fore the same as that of estimatingP L alone. Throughout this
+section, we assume that the outcomes of the elementary noise
+components are mutually independent and that the distribu-
+tion of componentαdepends only on its own noise strength
+λα.
+ConsiderNindependent shots. Shotiproduces records
+(m(i),y (i))and the residual logical failure indicator
+L(i) =L(m (i),y (i),D).(10)
+For shoti, letE (i) = (E (i)
+α )α∈N collect the events sampled
+across all noise components. The entryE (i)
+α records which
+event occurs at componentα, including the no-error event,
+and may take more than two values when several error types
+are possible. For example, for a single-qubit depolarizing
+channel with strengthλ α,E (i)
+α isI,X,Y, orZ:Ioccurs
+with probability1−λ α, while each nonidentity Pauli occurs
+with probabilityλ α/3. Letπ α(eα;λ α) =P λα(Eα =e α)de-
+note the probability of outcomee α at componentα. Under
+the independence assumption, the probability of sampling an
+error configurationefactorizes as
+πλ(e) =P λ(E=e) =
+Y
+β∈N
+πβ(eβ;λ β).(11)
+Conditioning on the sampled error configuration, the sensitiv-
+ity can then be written as
+Sα = ∂
+∂λα
+X
+e
+πλ(e)E
+h
+L(i) |E (i) =e
+i
+=
+X
+e
+πλ(e)E
+h
+L(i) |E (i) =e
+i ∂
+∂λα
+logπ λ(e)
+=
+X
+e
+πλ(e)E
+h
+L(i) |E (i) =e
+i ∂
+∂λα
+logπ α(eα;λ α).
+(12)
+We denote the final logarithmic derivative in Eq. (12) by
+sα(eα)and refer to it as the score of componentα:
+sα(eα) = ∂
+∂λα
+logπ α(eα;λ α), s (i)
+α =s α(E(i)
+α ).(13)
+With this notation, Eq. (12) becomes
+Sα =E λ
+h
+L(i)s(i)
+α
+i
+.(14)
+A standard logical error rate simulation samples
+(m(i),y (i))and appliesDto determineL (i) for each
+shot. Averaging these failure indicators gives
+bPL,N = 1
+N
+NX
+i=1
+L(i).(15)
+To estimate the sensitivities in the same run, we first tabulate
+sα(eα)for every possible outcome of each noise component.
+During shoti, the sampled eventE (i)
+α selects the correspond-
+ing scores (i)
+α . OnceL (i) is known, we addL (i)s(i)
+α to the
+accumulator for componentα. AfterNshots, the estimates
+are
+bSα,N = 1
+N
+NX
+i=1
+L(i)s(i)
+α , bRα,N =λ αbSα,N ,(16)
+where unbiasedness follows directly from Eq. (14):
+Proposition 1(Unbiasedness).For a fixed deterministic de-
+coder, or a randomized decoder whose internal randomness
+is independent ofλ, the estimators in Eq.(16)satisfy
+Eλ[bSα,N] =S α,E λ[bRα,N] =R α.(17)
+Hence, without additional circuit samples or decoder calls,
+the same simulation yields unbiased sensitivity and marginal-
+risk estimators by evaluating and accumulating the component
+scores.
+For a physical componentccomprising elementary compo-
+nentsα∈ N c with a common error probabilityp c, the corre-
+sponding estimates are
+bSc,N =
+X
+α∈Nc
+bSα,N , bRc,N =p cbSc,N .(18)
+By linearity and Proposition 1, these are unbiased estimators
+ofS c andR c. The same aggregation applies to gate types,
+syndrome rounds, qubits, boundaries, and spacetime regions.
+IV . APPLYING ERROR ATTRIBUTION TO ROTATED
+SURFACE CODE MEMORIES
+We now concretely demonstrate the application of error at-
+tribution in the rotated surface code setting [3, 7]. For each
+d∈ {3,5,7}, we simulate a distance-drotated surface code
+memory fordrounds of syndrome extraction and using a uni-
+form circuit-level noise parameterp, as in standard surface
+code benchmarks [7, 8]. Each circuit containsd 2 data qubits,
+d2 −1check ancillas, and4d(d−1)distinct directed CNOT
+couplings. We count each qubit or coupling as a single phys-
+ical component across all syndrome rounds, giving41,129,
+and265components ford= 3,5,7, respectively. Appendix A
+
+[PDF page 4]
+4
+0 1 2 3 4 5 6
+0
+1
+2
+3
+4
+5
+6
+d=3
+0 2 4 6 8 10
+0
+2
+4
+6
+8
+10
+d=5
+0 2 4 6 8 10 12 14
+0
+2
+4
+6
+8
+10
+12
+14
+d=7
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Ac/maxc′ d
+Ac′
+data qubits
+X-check ancillas
+Z-check ancillas
+directed CNOT
+couplings
+Figure 2. Physical component hotspot maps for rotated surface code memories atp= 0.001anddsyndrome rounds. The color of
+each component encodes its within-distance relative sensitivity eA(d)
+c =A c/max c′∈Cd Ac′, whereA c =
+(SX
+c +S Z
+c )/2
+ is the sensitivity
+magnitudes averaged over theX- andZ-memory, andC d is the component set of the distance-dcircuit. The color bar is therefore shared
+across all panels and spans[0,1]. Circles denote data qubits, squaresX-check ancillas, trianglesZ-check ancillas, and links denote directed
+CNOT couplings.
+gives the complete circuit, noise, decoder, and statistical pro-
+tocol. In the analysis below, we focus on the casep= 0.001.
+First observe that increasing the code distance fromd= 3
+tod= 7reduces the logical error rate, although the number
+of noisy syndrome extraction rounds increases withd. For
+the completed-round experiments, the logical error rates av-
+eraged over theX- andZ-memory experiments are
+P
+(3)
+L = 8.17725×10 −4,
+P
+(5)
+L = 1.39429×10 −4,
+P
+(7)
+L = 1.89193×10 −5.
+(19)
+The corresponding sensitivities of the physical components
+are shown in Fig. 2. For all three code distances, the maps
+exhibit pronounced hotspots, with the largest sensitivities con-
+centrated on a small subset of physical components. Atd= 3,
+the three components with the highest sensitivities are the cen-
+tral data qubit component at coordinate(3,3)and the two
+opposite corner data qubit components at(5,1)and(1,5),
+with the central component ranked first. These three loca-
+tions lie along the diagonal running from the lower left to
+the upper right (the “/” diagonal) in the displayed patch. At
+d= 5andd= 7, components with large sensitivities are
+likewise predominantly data qubit components, concentrated
+near the center of the patch and tend to lie along the “/” diago-
+nal. The spatial distributions of the seven and thirteen highest-
+sensitivity components ford= 5andd= 7, respectively, are
+shown in Fig. 3(a). The features of this spatial pattern can
+be understood intuitively. In an ideal model, the boundaries
+limit the ways a local error can combine with other errors to
+cause a logical failure after decoding. Errors near the cen-
+ter can participate in more such combinations, making them
+more likely to cause a logical failure. The diagonal tendency
+follows from the CNOT ordering: data qubits along the “/” di-
+rection may accumulate more propagated errors, making local
+errors at these locations more likely to cause logical failure.
+Appendix A 5 develops these arguments in detail.
+The leading components in Fig. 3(a) carry more linearized
+marginal risk than their number alone would suggest. Specif-
+ically, atd= 3,5,7, the leading sets contain7.32%,5.43%,
+and4.91%of all physical components, respectively, but ac-
+count for15.1%,10.2%, and8.9%of the total linearized
+marginal risk. We also report the distribution of total lin-
+earized marginal risk across component types. Atd= 3,5,7,
+data qubit components constitute22.0%,19.4%, and18.5%
+of all components, but account for39.5%,29.5%, and26.1%
+of the total linearized marginal risk, respectively. At the same
+distances, ancilla-qubit components constitute19.5%,18.6%,
+and18.1%of all components, but account for only7.9%,
+7.5%, and6.9%of the risk. CNOT components constitute the
+remaining58.5%,62.0%, and63.4%of all components and
+account for52.6%,63.0%, and67.0%of the risk. These re-
+sults show that errors associated with different circuit compo-
+nents have markedly unequal effects on logical performance.
+This nonuniformity motivates the targeted intervention, which
+we examine in the next section.
+V . HOTSPOT-GUIDED TARGETED CIRCUIT
+INTERVENTION
+Hotspot information suggests a quantum circuit analogue
+of targeted therapy: when only a limited number of physical
+components can be improved, the intervention can be aimed at
+those with the largest sensitivity instead of spread uniformly
+over the circuit. We demonstrate the practical benefits of this
+strategy in both rotated surface code memories and high-rate
+lifted product code instances of intensive interest in practical
+QEC.
+A. Rotated surface codes
+We first apply this strategy to the rotated surface code mem-
+ories studied in Sec. IV. Based on the attribution results at
+p= 0.001, we select the highest-sensitivity components as
+intervention targets:3of the41total components (7.32%),7
+of the129(5.43%), and13of the265(4.91%) atd= 3,5,7,
+respectively, as shown in Fig. 3(a). For each selected compo-
+
+[PDF page 5]
+5
+(a)
+d = 3 (k = 3)
+ d = 5 (k = 7)
+ d = 7 (k = 13)
+3 5 7
+Code distance d
+0
+5%
+10%
+15%
+20%
+Relative reduction in PL
+7.34% 7.84%
+10.84%
+14.35% 14.92%
+17.57%
+(b) Same-count random Hotspot targeted
+targeted qubit targeted CNOT
+Figure 3. Hotspot-guided targeted intervention atp= 0.001. (a) Thekcomponents with the highest sensitivities on physical layouts. Gray
+marks and links show the qubits and nearest-neighbor coupling graph; marker shapes follow Fig. 2. Orange filled marks denote the components
+with the highest sensitivities. The sets containk= 3(7.32%),7(5.43%), and13(4.91%) components atd= 3,5, and7, respectively. (b)
+Relative logical error rate reduction with respect to the circuit without intervention. Orange bars show the reduction from hotspot-guided
+intervention, while blue hatched bars show the mean reduction from random intervention over 40 sets ofkcomponents chosen uniformly at
+random. The local error rate of each selected component is reduced by a fractionα= 0.5. Error bars indicate 95% bootstrap confidence
+intervals.
+nentℓ, we reduce its local error rate by a fractionα:
+p′
+ℓ = (1−α)p ℓ, α= 0.5,(20)
+The rescaling above is an idealized proxy for component-
+selective improvement. Experimentally, component-selective
+improvements could be pursued through calibration and con-
+trol tailored to the selected component. For superconduct-
+ing qubits, tuning pulse amplitudes, detunings, and shapes
+can reduce single-qubit gate errors and leakage [21], while
+dynamical-decoupling sequences can improve state preser-
+vation during idle periods [22]. For two-qubit operations,
+pulse optimization in tunable-coupler architectures has en-
+abled high-fidelity CZ andZZ-free iSW AP gates [23]. At
+the processor level, qubit-frequency trajectories can be op-
+timized jointly, with selective reoptimization of poorly per-
+forming gates [24].
+After hotspot-guided intervention, the logical error rates av-
+eraged over theX- andZ-memory experiments are
+P
+(3)
+L,t = 7.03120×10 −4,
+P
+(5)
+L,t = 1.18580×10 −4,
+P
+(7)
+L,t = 1.56532×10 −5.
+(21)
+We compare the hotspot-guided intervention against two
+references: the circuit without intervention and an ensemble
+of circuits in which the same intervention is applied to the
+same number of physical components selected uniformly at
+random. The first reference serves as the baseline, while the
+second tests whether hotspot information improves target se-
+lection under a fixed intervention budget.
+Fig. 3 shows the comparison results. Relative to the circuit
+without intervention, the hotspot-guided intervention reduces
+the logical error rates by14.35%,14.92%, and17.57%for
+d= 3,5,7, respectively. For comparison, applying the same
+intervention to the same number of physical components se-
+lected uniformly at random reduces the logical error rates by
+7.34%,7.84%, and10.84%on average ford= 3,5,7, respec-
+tively. The corresponding improvement ratio isI= ∆ t/∆r,
+where∆ t and∆ r denote the targeted and mean random reduc-
+tions, respectively. The estimated ratios are1.95[95% confi-
+dence interval (CI),1.72–2.26] atd= 3,1.90[1.71–2.14] at
+d= 5, and1.62[1.49–1.77] atd= 7. All three confidence in-
+tervals lie entirely above one, indicating a benefit of hotspot-
+informed selection over random selection. In these circuits,
+halving the local error rates of only4.9%–7.3%of the physi-
+cal components reduces logical error rates by14.3%–17.6%.
+The complete selection, sampling, and interval constructions
+are given in Appendix B.
+We also examine how the benefit varies with the interven-
+tion budget. Fig. 4 compares interventions on the most sensi-
+tive components with those on randomly selected components
+across different intervention budgets for thed= 7circuit. As
+the number of selected components increases from1to25,
+the estimated reduction rises from2.55%to29.34%under
+hotspot-guided intervention. For randomly selected compo-
+nents, the mean reduction rises from1.15%to18.76%and
+remains below the targeted estimate at every budget. These
+results demonstrate how sensitivity information helps achieve
+significantly more efficient interventions across the budgets.
+
+[PDF page 6]
+6
+1 5 9 13 17 21 25
+k
+0
+5%
+10%
+15%
+20%
+25%
+30%
+Relative reduction in PL
+Hotspot targeted
+Same-count random
+Figure 4. Relative logical error rate reduction versus intervention
+budget. Thed= 7rotated surface code circuit contains 265 physical
+components and uses seven syndrome rounds atp= 0.001. Orange
+circles show the reduction from hotspot-guided intervention, while
+blue squares show the mean reduction from random intervention over
+40 sets ofkcomponents chosen uniformly at random. The local error
+rate of each selected component is reduced by a fractionα= 0.5.
+Error bars indicate 95% bootstrap confidence intervals.
+B. High-rate lifted product codes
+To test hotspot-guided intervention beyond low-rate, geo-
+metric codes, we study the instances in the recent mitten code
+family [19]:[ [150,30,10] ]overC 5 ×S 3,[ [200,40,12] ]over
+C4 ×D 10, and[ [300,60,14] ]overC 10 ×S 3. These high-rate
+non-Abelian lifted product qLDPC codes have an encoding
+rate1/5and weight-9 stabilizer checks with geometrically
+nonlocal connectivity. We reconstruct the syndrome extrac-
+tion circuits from the published check matrices, following the
+circuit structure described in Ref. [19]. We simulate the three
+codes for10,12, and14syndrome rounds, respectively. At
+p= 0.002, the logical error rates averaged over theX- and
+Z-memory experiments are
+P
+[ [150,30,10] ]
+L = 5.48966×10 −5,
+P
+[ [200,40,12] ]
+L = 4.52000×10 −6,
+P
+[ [300,60,14] ]
+L = 2.27493×10 −6.
+(22)
+Appendix C gives the circuit construction, complete experi-
+mental protocol, and detailed results.
+The syndrome extraction circuits for the three codes con-
+tainN= 1350,1800, and2700physical components, re-
+spectively. These comprise150,200, and300data qubits;
+120,160, and240check ancillas, split equally betweenX
+andZchecks; and1080,1440, and2160directed CNOT cou-
+plings. We use the attribution framework to select components
+with large sensitivity magnitudes for intervention. The se-
+lected sets contain84,112, and168components, respectively,
+each accounting for6.22%of all components in its circuit. Of
+the selected components,77(91.67%),85(75.89%), and132
+(78.57%) are directed CNOT couplings, respectively. The re-
+maining7(8.33%),27(24.11%), and36(21.43%) compo-
+[[150, 30, 10]] [[200, 40, 12]] [[300, 60, 14]]
+Mitten code
+0
+5%
+10%
+15%
+20%
+25%
+30%
+35%
+40%
+Relative reduction in PL
+13.7% 13.4%
+12.5%
+25.2% 23.0% 25.2%
+Same-count random
+Hotspot-targeted
+Figure 5. Relative logical error rate reduction for three high-rate
+lifted product codes atp= 0.002. Each targeted set contains6.22%
+of the physical components in its circuit:k= 84,112, and168
+for the Mitten[ [150,30,10] ],[ [200,40,12] ], and[ [300,60,14] ]codes,
+respectively. Orange bars show the reduction from hotspot-guided
+intervention, while blue hatched bars show the mean reduction from
+random intervention over 40 sets ofkcomponents chosen uniformly
+at random. The local error rate of each selected component is reduced
+by a fractionα= 0.5. Error bars indicate 95% bootstrap confidence
+intervals.
+nents are check ancillas; no data qubits are selected. For each
+selected component, we reduce its local error rate by a fraction
+α= 0.5, as in Eq. (20). Similarly, we compare the hotspot-
+guided intervention with the baseline without intervention and
+with the same intervention on an equal number of components
+selected randomly.
+Fig. 5 compares the targeted and random interventions in all
+three codes. For[ [150,30,10] ], the reduction relative to the cir-
+cuit without intervention is25.16%, compared with13.69%
+for uniform selection; for[ [200,40,12] ], the corresponding re-
+ductions are23.01%and13.42%. For[ [300,60,14] ], they are
+25.17%and12.51%. The corresponding improvement ratios,
+I= ∆ t/∆r, are1.84[95% CI,1.41–2.65],1.71[1.20–2.95],
+and2.01[1.44–3.29], respectively.
+These results further demonstrate the value of hotspot-
+guided intervention for high-rate qLDPC codes underpin-
+ning recent proposals for low-overhead fault-tolerant proces-
+sors [19], with potential to guide ongoing efforts toward their
+implementation on e.g. reconfigurable atom array platforms.
+VI. DISCUSSION
+We introduced the error attribution method that leverages
+classical simulation techniques to identify noise bottlenecks
+in QEC procedures and guide targeted improvements of their
+performance. Our estimator obtains all component sensitiv-
+ities from the same Monte Carlo samples used to estimate
+the logical error rate, without additional decoder evaluations.
+Across the two structurally distinct code families studied here,
+
+[PDF page 7]
+7
+this information improves target selection under a limited
+component budget. The differing hotspot patterns highlight
+the importance of assessing intervention priorities for a given
+circuit, noise model, and decoder, even when the elementary
+error probabilities are uniform.
+Future work could extend the framework to account for
+both achievable noise reductions and calibration costs when
+prioritizing components for intervention. Noise models in-
+ferred from device measurements [17, 18] could be combined
+with estimates of how available calibration controls change
+component error probabilities. Component sensitivities could
+then be used to estimate the logical benefit of feasible control
+changes and compare that benefit with the resources required.
+Further studies could also examine how spatial and temporal
+noise correlations affect intervention priorities. Testing and
+refining the framework on experimental devices could guide
+more effective targeted calibration and accelerate progress to-
+ward practical quantum computing.
+ACKNOWLEDGMENTS
+We thank Zhenyu Chen, Song Cheng, Zhengwei Liu and
+Zhaohui Wei for valuable discussions. YS is supported by
+a startup funding from YMSC, Tsinghua Shuimu Scholar
+Program, and China Postdoctoral Science Foundation (Grant
+No. 2026M793709). ZWL is supported in part by National
+Natural Science Foundation of China (Grant No. 12475023),
+Dushi Program, and a startup funding from the YMSC.
+DATA A V AILABILITY
+The data supporting this study are available from the au-
+thors upon reasonable request. The simulations were per-
+formed using the FaultScope software package [25].
+Appendix A: Rotated surface code benchmark
+1. Code construction and syndrome extraction
+We consider the rotated surface code, which encodes one
+logical qubit in a square array ofd2 data qubits using localX-
+andZ-parity checks [3, 9]. Our benchmarks use the canonical
+memory circuits at distancesd∈ {3,5,7}, withdrounds of
+syndrome extraction [7].
+a. Code layout and logical operators.The data qubits
+are located at the vertices of ad×dsquare grid. Each square
+has anX- orZ-type check acting on the four data qubits at its
+corners. Squares sharing an edge have opposite check types.
+Additional weight-two checks are placed along the boundary;
+the weight of a check is the number of data qubits on which it
+acts. The weight-twoXchecks lie along the top and bottom
+edges, and the weight-twoZchecks lie along the left and right
+edges. Each stabilizer is measured using a separate ancilla
+qubit. For the odd distances considered here, each check type
+has(d−1) 2/2weight-four bulk checks andd−1weight-two
+boundary checks, givingd 2 −1check ancillas in total.
+We place the data qubits at coordinates(2i−1,2j−1), with
+i, j= 1, . . . , d. Each ancilla has even integer coordinates and
+is coupled to four neighboring data qubits for a bulk check or
+two for a boundary check. Letr a denote the coordinate of
+ancillaa. Writeq δx,δy(a)for the neighboring data qubit at
+offset(δ x, δy)froma, there is
+r
+ 
+qδx,δy(a)
+
+=r a +(δ x, δy), δ x, δy ∈ {+1,−1}.(A1)
+LetN(a)be the set of data qubits coupled to ancillaa. For
+anX- orZ-check ancillaa, the measured stabilizer is, respec-
+tively,
+K X
+a =
+Y
+q∈N(a)
+Xq, K Z
+a =
+Y
+q∈N(a)
+Zq.(A2)
+A bulk check acts on all four corners of its cell; a boundary
+check acts on two adjacent data qubits. The two types of sta-
+bilizer commute because anXcheck and aZcheck share
+either zero or two data qubits. The code space is their simul-
+taneous+1eigenspace. There ared 2 −1independent stabi-
+lizer generators ond 2 data qubits, leaving a two-dimensional
+space that encodes one logical qubit. A data qubitXerror
+flips the eigenvalues of the adjacentZchecks, and aZerror
+flips those of the adjacentXchecks; aYerror can flip both
+types. These joint-parity measurements reveal error informa-
+tion without measuring the encoded logical state [3].
+Logical operators commute with every stabilizer but act
+nontrivially on the encoded qubit. In this layout, the logical
+Pauli operators are
+X=
+Y
+q∈γX
+Xq, Z=
+Y
+q∈γZ
+Zq,(A3)
+whereγ X is the leftmost column of data qubits andγ Z is the
+top row. These strings connect opposite edges of the patch
+and intersect at one data qubit, so Xand Zanticommute. The
+shortest nontrivial logical operator has weightd, giving the
+code parameters[ [d2,1, d] ][9, 26].
+b. Syndrome extraction.In each round of the ideal cir-
+cuit, bothX- andZ-type stabilizers are measured using an-
+cillas initialized in|0⟩, which interact with neighboring data
+qubits through CNOT gates and are then measured and reset
+to|0⟩for the next round. The CNOT gates are scheduled in
+four layers, with gates in each layer acting in parallel and no
+two gates in the same layer sharing a qubit.
+For anXcheck, a HadamardH a first prepares the ancilla
+in|+⟩. The ancilla controls a CNOT onto each data qubit in
+the check, and a secondH a followed byZ-basis readout mea-
+sures the ancilla in theXbasis. The resulting measurement
+bitm a corresponds to the stabilizer eigenvalue(−1)ma [3, 9].
+For a bulkXcheck, the CNOT gates in layers1,2,3,4target
+the data qubits at the following coordinate offsets from ancilla
+a, respectively:
+OX =
+ 
+(+1,+1),(−1,+1),(+1,−1),(−1,−1)
+
+.(A4)
+For anXcheck on the top boundary, the ancilla controls two
+CNOTs in layers1and2, targeting the two data qubits below
+
+[PDF page 8]
+8
+a:|0⟩
+q+1,+1(a)
+q−1,+1(a)
+q+1,−1(a)
+q−1,−1(a)
+H H MZ
+1 2 3 4
+Figure 6. Measurement circuit for a bulkXstabilizer in the rotated
+surface code. The ancillaa, initialized in|0⟩, controls four CNOTs
+onto neighboring data qubits. Numbers indicate the CNOT layers,
+following the offset orderO X in Eq. (A4).Hdenotes a Hadamard
+gate, andM Z denotes measurement in theZbasis. AnXcheck
+on the top (bottom) boundary uses only layers1,2(3,4) and the
+corresponding two data qubits, with the same ancilla preparation,
+Hadamard gates, and measurement.
+it. For anXcheck on the bottom boundary, the two CNOTs
+occur in layers3and4. Fig. 6 illustrates this measurement
+circuit.
+For aZcheck, each data qubit is instead the CNOT control
+andais the target. The ancilla is then measured directly in
+theZbasis, so no Hadamard gates are applied to the ancilla
+qubit. For a bulkZcheck, the CNOT gates in layers1,2,3,4
+are controlled by the data qubits at the following coordinates,
+respectively:
+OZ =
+ 
+(+1,+1),(+1,−1),(−1,+1),(−1,−1)
+
+.(A5)
+For aZcheck on the left boundary, the ancilla is the target
+of two CNOTs in layers1and2, controlled by the two data
+qubits to its right. For aZcheck on the right boundary, the
+two CNOTs occur in layers3and4. Fig. 7 shows the CNOT
+ordering forXandZchecks in the bulk and at the boundaries.
+c. Memory experiments.TheX-memory experiment
+initializes every data qubit in|+⟩, performsdrounds of syn-
+drome extraction, and measures every data qubit in theXba-
+sis at the end. TheZ-memory experiment uses the same ex-
+traction circuit, with data initialization in|0⟩and final readout
+in theZbasis. In the absence of errors, the initial states are
++1eigenstates of Xand Z, respectively. In the first round,Z
+checks in theXmemory andXchecks in theZmemory give
+random outcomes. These measurements project the data into
+the corresponding stabilizer eigenspace, so subsequent rounds
+give the same outcomes in the absence of errors.
+Letm a(t)∈F 2 be the measurement result of checkain
+roundt, with0denoting the+1eigenvalue and1denoting
+the−1eigenvalue. Between consecutive rounds, a detection
+event occurs when the same check gives different measure-
+ment outcomes [7, 26]. For each checkaandt≥2, we record
+detection events using the binary variable
+da(t) =m a(t)⊕m a(t−1), t= 2, . . . , d,(A6)
+where⊕denotes addition modulo two, and a detection event
+occurs whend a(t) = 1. For the ideal initial state, everyX
+check in theXmemory and everyZcheck in theZmemory
+has eigenvalue+1. For these checks, the first measurement is
+compared with the expected bit0:
+da(1) =m a(1).(A7)
+The other checks have random first-round outcomes, so no
+such comparison is available.
+The final data readout also determines theX-check out-
+comes in theXmemory and theZ-check outcomes in theZ
+memory. Letb q ∈F 2 be the final measurement result of data
+qubitq. We compare the XOR of the final measurement re-
+sults onN(a)with the outcome of checkain the last round:
+da(d+ 1) =m a(d)⊕
+M
+q∈N(a)
+bq.(A8)
+For the odd distances, thed−1pairs of consecutive rounds
+contribute(d−1)(d 2 −1)detectors; the initial and final com-
+parisons contribute(d 2 −1)/2each, givingd(d 2 −1)detectors
+in total.
+The measured logical result is the XOR of the final data-
+measurement bits along the leftmost column (γ X) in theX
+memory or the top row (γ Z) in theZmemory. The decoder
+then uses the detector record to infer whether this result needs
+to be flipped.
+2. Noise model and decoding
+We use the standard circuit-level depolarizing noise model
+for surface code benchmarks [7, 8]. Each one-qubit Clifford
+gate is followed by a one-qubit depolarizing channel with er-
+ror probabilityp. Each CNOT is followed by a two-qubit
+depolarizing channel acting jointly on its control and target
+qubits, also with total error probabilityp. Independent one-
+qubit depolarizing channels with error probabilitypare also
+applied to all data qubits before each round of syndrome ex-
+traction. Measurement results are flipped with probabilityp.
+A reset error occurs with probabilityp, preparing|1⟩instead
+of|0⟩or|−⟩instead of|+⟩. For ak-qubit depolarizing chan-
+nel,
+Ep(ρ) = (1−p)ρ+ p
+4k −1
+X
+P∈P k\{I}
+P ρP,(A9)
+whereP k ={I, X, Y, Z} ⊗k is the set ofk-qubit Pauli oper-
+ators. For the two-qubit channel (k= 2),I⊗Ioccurs with
+probability1−p, and each of the other15Pauli products oc-
+curs with probabilityp/15.
+We decode the detector record using minimum-weight per-
+fect matching, implemented in PyMatching [8]. For each cir-
+cuit, the decoding graph is derived from its circuit-level noise
+model using Stim [7], with edge weights determined by the
+corresponding error probabilities.
+3. Simulation and statistical analysis
+We simulate the noisy circuits with the Forward simulator
+in FaultScope [25]. Atp= 0.001, we estimate the logical er-
+ror rate and the sensitivities of all physical components from
+
+[PDF page 9]
+9
+(a) BulkXcheck
+aX
+q+,+q−,+
+q+,−q−,−
+12
+34
+aX is the control
+(b) BoundaryXchecks
+aX
+q+,+q−,+
+12
+layers1,2
+aX
+q+,−q−,−
+34
+layers3,4
+(c) BulkZcheck
+aZ
+q+,+q−,+
+q+,−q−,−
+1
+2
+3
+4
+aZ is the target
+(d) BoundaryZchecks
+aZ
+q+,+
+q+,−
+1
+2
+layers1,2
+aZ
+q−,+
+q−,−
+3
+4
+layers3,4
+Figure 7. CNOT ordering for rotated surface code stabilizer measurements. (a,b) Bulk and boundaryXchecks. (c,d) Bulk and boundary
+Zchecks. Circles denote data qubits, squaresX-check ancillas, and trianglesZ-check ancillas. Numbers indicate the four CNOT layers.
+Bulk checks couple to four data qubits, while boundary checks couple to two. Dashed lines mark the patch boundaries. The topXand leftZ
+boundary checks use layers1,2; the bottomXand rightZboundary checks use layers3,4.
+the same Monte Carlo samples. For each memory basis, we
+use a total of4×10 7,4×10 8, and4×10 9 shots atd= 3,5,7,
+respectively. Summed over both bases, the three distances
+therefore use8×10 7,8×10 8, and8×10 9 shots and record
+65,418, 111,543, and 151,354 logical failures.
+Within each memory basis, the logical error rate is esti-
+mated as the total number of logical failures divided by the
+total number of shots. We denote the resultingX- andZ-
+memory estimates byP X
+L andP Z
+L , respectively. The reported
+logical error rate is then obtained by averaging these two esti-
+mates:
+P L = P X
+L +P Z
+L
+2 .(A10)
+We use bootstrap resampling to quantify the statistical un-
+certainty in the reported logical error rate. LetN b denote the
+total number of shots for memory basisb∈ {X, Z}. In each
+bootstrap replicate, we independently generate a failure count
+F ∗
+b for each basis by treating theNb shots as independent sam-
+ples, each with failure probabilityP b
+L:
+F ∗
+b ∼Binomial(N b, P b
+L).(A11)
+We then average the two ratesF ∗
+X /NX andF ∗
+Z/NZ. The
+95% confidence intervals in Table I are given by the 2.5th
+and 97.5th percentiles of these averages over 50,000 bootstrap
+replicates. Table I summarizes the results atp= 0.001.
+4. Hotspot identification
+To calculate the sensitivity of each physical component, we
+group noise components by the physical qubits and directed
+CNOT couplings on which they act. All one-qubit noise chan-
+nels acting on the same physical qubit are assigned to that
+qubit, and all two-qubit noise channels acting on the same di-
+rected CNOT coupling are assigned to that coupling. For each
+physical component, we sum the sensitivities of all associated
+noise components across all syndrome rounds according to
+Eq. (8). TheX- andZ-memory experiments therefore have
+the same set of physical components and the same component
+labels. Table II summarizes the numbers of qubits, detectors,
+and physical components in these circuits.
+We estimate the signed sensitivity of each physical com-
+ponentcusing all Monte Carlo samples within each memory
+basis. We denote these estimates byS X
+c for theXmemory
+andS Z
+c for theZmemory. We identify hotspots using the
+magnitude of the sensitivity averaged over theXandZmem-
+ories:
+Ac =
+
+SX
+c +S Z
+c
+2
+ .(A12)
+Fig. 2 displays the within-distance normalized value
+eA(d)
+c = Ac
+maxc′∈Cd Ac′
+,(A13)
+whereC d is the component set at distanced. This normaliza-
+tion puts all panels on a common0–1scale while preserving
+
+[PDF page 10]
+10
+Table I. Logical error rates for rotated surface code memories atp= 0.001withdsyndrome rounds. Shot and failure counts are summed over
+theX- andZ-memory experiments. P L is the average of theX- andZ-memory logical error rates, as defined in Eq. (A10). Brackets give
+95%bootstrap confidence intervals from50,000replicates.
+dSummed shots Summed failures P L [95% CI]
+380,000,000 65,418 8.17725×10 −4 [8.11412,8.24013]×10 −4
+5800,000,000 111,543 1.39429×10 −4 [1.38624,1.40239]×10 −4
+78,000,000,000 151,354 1.89193×10 −5 [1.88245,1.90149]×10 −5
+Table II. Numbers of qubits, detectors, and physical components in rotated surface code memories withdsyndrome rounds. The counts are
+the same for theXandZmemories. Physical components include the data qubits, check ancillas, and directed CNOT couplings, each counted
+once across all rounds.
+dData Check ancillas Physical qubits Detectors Physical components
+3 9 8 17 24 41
+5 25 24 49 120 129
+7 49 48 97 336 265
+the component ranking at each code distance.
+We calculate the risk shares reported in Sec. IV using the
+relationR c =p cSc. Since all physical components have the
+same error probabilityp, the linearized marginal risk of com-
+ponentcis
+Rc =p SX
+c +S Z
+c
+2 .(A14)
+For a setG⊆ C d, we sum the marginal risks of its components
+and divide by the total over all physical components:
+qG =
+P
+c∈G Rc
+P
+c∈Cd
+Rc
+.(A15)
+TakingGto contain all data qubits, all check ancillas, or all
+directed CNOT couplings gives the corresponding shares.
+Atd= 3,5,7, we select the3,7, and13components
+with the largest sensitivity magnitudesAc, respectively. These
+components make up7.32%,5.43%, and4.91%of all physi-
+cal components in the corresponding circuits. Using each se-
+lected set asGin Eq. (A15), we find that these components
+account for15.12%,10.24%, and8.93%of the total linearized
+marginal risk, respectively.
+5. Hotspot structure
+This subsection analyzes the central concentration and di-
+agonal tendency of the surface code hotspots in Fig. 2. We
+first relate local errors to logical failure, then analyze bound-
+ary effects in an ideal model to explain central concentration,
+and finally examine how CNOT ordering contributes to the
+diagonal tendency.
+a. Local errors and logical failure.A local error can
+cause a logical failure by combining with other errors and the
+decoder’s recovery to change the logical outcome. Letede-
+note a sampled shot with the local errorfabsent. The cor-
+responding syndrome and final readout records arem(e)and
+y(e), respectively, and the logical failure indicator is
+L(e) =L(m(e),y(e),D)
+=g(y(e))⊕δ D(m(e))⊕b ideal. (A16)
+Letd f specify the syndrome bits flipped byf, and leto f in-
+dicate whether it flips the readout bitg(y(e)). Define
+Kf(m) =o f ⊕δ D(m)⊕δ D(m⊕d f).(A17)
+Writee+ffor the error configuration after addingf, with all
+other errors unchanged. Substituting the syndrome and read-
+out flips gives
+L(e+f) =g(y(e))⊕o f
+⊕δ D(m(e)⊕d f)⊕b ideal
+=L(e)⊕K f(m(e)).
+(A18)
+ThusK f(m(e)) = 1means that addingfchanges the de-
+coded logical outcome, introducing or removing a logical fail-
+ure. For an independent Bernoulli error and a fixed decoder,
+Eq. (5) gives
+Sf =E e[L(e+f)− L(e)]
+=E e[(1−2L(e))K f(m(e))]. (A19)
+The expectation is over shots withfabsent.
+b. Boundary effects and central concentration.To ana-
+lyze the central concentration, we count the combinations of
+errors that cause logical failure and examine how the bound-
+aries restrict these combinations. We consider an idealized
+model of a rotated surface code of distanced= 2t+ 1,
+t≥1, with perfect syndrome measurements and minimum-
+Hamming-weight decoding. Only data qubits are noisy, and
+we analyzeXerrors andZerrors separately. For a fixed
+choiceP∈ {X, Z}, each data qubit independently has aP
+error with probabilitypand remains unchanged with proba-
+bility1−p.
+
+[PDF page 11]
+11
+LetEbe the set of data qubits carrying aPerror. We denote
+by∂Ethe set of detectors flipped by an odd number of errors
+inE; an even number of errors that flip the same detector
+leave its outcome unchanged. LetCbe the set of data qubits
+on which the decoder appliesPto correct the errors. After the
+error and recovery, a qubit in bothEandChas undergoneP
+twice, givingP 2 =I, whereas a qubit in only one set has a
+residualPerror. We denote the support of this residual Pauli
+operator byE+C= (E\C)∪(C\E).
+We call an error supportmalignantif it causes a logical fail-
+ure under the specified decoder. Minimum-weight decoding
+corrects every configuration with|E| ≤t, so logical failure
+can first occur at|E|=t+1. To compare locations, leta P (q)
+count the malignant configurations with exactlyt+1errors of
+typeP, including an error at data qubitq. Removing the error
+atqfrom such a configuration leavesterrors that the decoder
+can correct; adding it back causes logical failure. At uniform
+error probabilityp, these configurations withterrors give the
+leading contribution to the ideal model sensitivity:
+S(P)
+q,ideal =a P (q)pt +O(p t+1).(A20)
+HerePlabels the physical error type, not the memory basis.
+To identify the configurations counted bya P (q), we show
+that an error supportEwith|E|=t+ 1is malignant exactly
+when it is contained in the supportΓof a weight-dnontriv-
+ial logical operator of typeP. HereΓis a set of exactlyd
+data qubits. ApplyingPto these qubits leaves all stabilizer
+outcomes unchanged but acts on the encoded qubit as Xfor
+P=Xor ZforP=Z.
+First suppose thatEcauses a logical failure, and letCbe
+the recovery selected by the decoder. The error supportE
+itself is a candidate recovery with the observed syndrome, so
+minimum-weight decoding guarantees|C| ≤ |E|=t+ 1.
+Failure means that the residual operator, supported onE+
+C, is a nontrivial logical Pauli of typeP. Because this code
+encodes one logical qubit, every nontrivial logical operator
+of typePcan be obtained from a weight-dlogical string by
+multiplying stabilizer generators of the same Pauli type. Each
+such generator acts onw= 2or4qubits. If it overlaps the
+current operator onkqubits, multiplication cancels the twoP
+operations on thosekqubits and adds aPoperation on each
+of the otherw−kqubits. The weight therefore changes by
+(w−k)−k=w−2k, which is even. The residual operator
+and the weight-dlogical string therefore have the same weight
+parity. Sinced= 2t+ 1is odd,|E+C|is odd. Using
+|E+C|=|E|+|C| −2|E∩C|,(A21)
+we see that|E|and|C|must have opposite parity. In par-
+ticular,|C|cannot equal|E|=t+ 1, so|C| ≤t. On the
+other hand, any nontrivial logical operator has weight at least
+d. Combining these bounds gives
+d≤ |E+C| ≤ |E|+|C| ≤2t+ 1 =d,(A22)
+Every inequality must therefore be an equality. In particular,
+|C|=tand|E+C|=|E|+|C|, which requiresE∩C=
+∅. ThusΓ =E∪Cis a weight-dnontrivial logical support
+containingE.
+Conversely, suppose thatE⊆Γ, whereΓis a weight-
+dnontrivial logical support. The complementary support
+C0 = Γ\Ehas weightt. Since a logical operator produces
+no detector events,∂Γ = 0, and hence
+∂C0 =∂E, E+C 0 = Γ.(A23)
+ThusC 0 is an admissible recovery of weightt: it has the ob-
+served syndrome, although applying it afterEleaves the logi-
+cal errorΓ. Because the decoder minimizes weight, its chosen
+recoveryCmust satisfy|C| ≤ |C 0|=t.
+SinceCandC 0 have the same syndrome, their symmetric
+differenceC+C 0 has zero syndrome. Its weight satisfies
+|C+C 0| ≤ |C|+|C 0| ≤2t < d.(A24)
+A zero-syndrome Pauli operator is either a stabilizer, which
+acts as the identity on the code space, or a nontrivial logical
+operator. The latter must have weight at leastd, so the opera-
+tor supported onC+C 0 must be a stabilizer.
+The actual residual support can be written as
+E+C= (E+C 0) + (C0 +C) = Γ + (C 0 +C),(A25)
+Thus the actual residual operator is the logical operator sup-
+ported onΓmultiplied by a stabilizer, and therefore has the
+same nontrivial logical action. Every minimum-weight choice
+of recovery therefore causes a logical failure for thisE.
+This criterion reduces the counting problem to finding sets
+of error locations contained in the support of a single weight-
+dnontrivial logical operator of typeP. Label the data qubit
+positions by indices(x, y)∈ {0, . . . ,2t} 2, withxincreasing
+to the right andydownward, as in Fig. 7. The central data
+qubit is at(t, t). ForP=X, letΓ X be the support of a
+weight-dlogicalXoperator. ApplyingZto every data qubit
+in any horizontal row implements a logical Z, which must
+anticommute with the logicalXoperator supported onΓ X.
+Anticommutation therefore requiresΓ X to intersect each row
+in an odd number of qubits. There areddisjoint rows and
+|ΓX |=d, soΓ X contains exactly one qubit in each row. For
+P=Z, every vertical column supports a logical X. The
+same anticommutation argument shows that the supportΓ Z
+of a weight-dlogicalZoperator contains exactly one qubit in
+each column.
+In the layout used here, the bulk check between columns
+x, x+ 1and rowsy, y+ 1is of typeZwhenx+yis even
+and of typeXwhenx+yis odd. Fix a physicalXerror
+at(x, y)and consider a weight-dlogicalXoperator whose
+supportΓ X contains this qubit. The qubit ofΓ X in rowy+ 1
+must be at one of the two positions marked by question marks
+in Fig. 8(a,b). In the bulk, theZcheck immediately below
+(x, y)already overlapsΓ X once in rowy. For the complete
+logicalXoperator to commute with this check,Γ X must also
+contain one of its two corners in rowy+ 1. For evenx+y,
+these corners are(x, y+ 1)and(x+ 1, y+ 1); for oddx+y,
+they are(x−1, y+1)and(x, y+1). The rule above describes
+two adjacent rows, corresponding tog= 1. Applying this rule
+gtimes, withg≥1, gives the allowed positions(x ′, y+g)for
+a secondXerror. The twoXerrors at(x, y)and(x ′, y+g)
+
+[PDF page 12]
+12
+can lie in the support of the same weight-dlogicalXoperator
+if and only if
+x′ ∈
+(
+[x−g+ 1, x+g], x+yeven,
+[x−g, x+g−1], x+yodd. (A26)
+Figure 8(c,d) illustrates this repeated application of the single-
+row rule. Each allowed connection can be extended vertically
+to the top and bottom boundaries to form the support of a
+weight-dlogicalXoperator.
+ForP=Z, applying the same even-overlap requirement to
+theXchecks between adjacent columns gives the condition
+for twoZerrors at(x, y)and(x+g, y ′):
+y′ ∈
+(
+[y−g, y+g−1], x+yeven,
+[y−g+ 1, y+g], x+yodd. (A27)
+All intervals are restricted to integer positions in[0,2t]. Each
+interval contains2gpositions before boundary truncation.
+When the fixedXerror is near the left or right boundary,
+the intervals above can include positions outside these bound-
+aries, which are unavailable; the top and bottom boundaries
+have the same effect forZerrors. This leaves fewer combi-
+nations of the remaining errors that can cause logical failure
+together with the fixed error. When the fixed error is at the
+center, more combinations of the remaining errors lie within
+the code boundaries and cause logical failure together with it;
+the following proposition establishes this comparison along
+the middle row forXerrors and the middle column forZer-
+rors.
+Proposition 2(Transverse central enhancement).In this ideal
+model,a X(q)is strictly largest at the center along the middle
+row, anda Z(q)is strictly largest at the center along the mid-
+dle column:
+aX(x, t)< a X(t, t), x̸=t,
+aZ(t, y)< a Z(t, t), y̸=t. (A28)
+Proof.ForP=X,a X(x, t)counts malignant configurations
+witht+ 1Xerrors, one of which is fixed at(x, t). The re-
+mainingterrors must occupytdistinct rows other thany=t,
+because the support of a weight-dlogicalXoperator contains
+exactly one qubit per row. For each choice of these rows, we
+count the combinations of column positions that allow allt+1
+errors to lie in the support of a single weight-dlogicalXoper-
+ator. Summing over the row choices givesa X(x, t). Without
+the left and right boundaries, each gap ofgrows between con-
+secutive errors gives2gcolumn choices for the next error as
+we count upward or downward from the fixed error, so the
+total count for any fixed choice of rows is independent ofx.
+Atx=t, all these configurations lie within the code bound-
+aries: each error is no farther from the center horizontally than
+vertically, and the vertical distance is at mostt. Thus the cen-
+ter attains the unrestricted count for every choice of occupied
+rows, while other positions can only lose configurations. For
+x < t, place the remainingterrors along the allowed diago-
+nal extending left from(x, t), one in each successive row. The
+last error is at columnx−t <0, outside the left boundary, so
+this configuration is excluded. Forx > t, diagonal steps to-
+wards increasingxgive the corresponding exclusion. At least
+one choice of occupied rows therefore loses a configuration,
+proving the strict inequality fora X.
+ForP=Z,a Z(t, y)counts malignant configurations with
+t+1Zerrors, including one at(t, y). For each choice oftdis-
+tinct columns other thanx=t, we count the combinations of
+row positions that allow allt+ 1errors to lie in the support of
+a single weight-dlogicalZoperator. With the top and bottom
+boundaries removed, each successive column gapgadmits2g
+row choices, so the unrestricted count is independent ofy.
+Aty=t, every such error configuration lies within the code
+boundaries: its vertical displacement from the fixed error on
+either side is bounded by the corresponding horizontal span,
+which is at mostt. Ify < t, choose the horizontal direction
+that permitstconsecutive diagonal steps towards decreasing
+y; the last error lies at rowy−t <0, outside the top boundary,
+so this configuration is excluded. Ify > t, use steps towards
+increasingy. This proves the strict inequality fora Z.
+c. CNOT ordering and diagonal tendency.To analyze
+the diagonal tendency, we examine how errors at different
+CNOT layers propagate to the data qubits. Consider a bulk
+check with data neighborsq 1, . . . , q4 ordered by CNOT layer,
+as shown in Fig. 7(a,c) and specified in Eqs. (A4) and (A5).
+WriteP j for PauliPonq j. A CNOT propagates anXerror
+from the control to the target (X c 7→X cXt) and aZerror
+from the target to the control (Z t 7→Z cZt). Thus an ancilla
+Xerror in anXcheck, or an ancillaZerror in aZcheck,
+spreads to the data qubits involved in the remaining CNOTs.
+Immediately after the layer-jCNOT,P aIqj represents aPer-
+ror on the ancilla alone, whileP aPj representsPerrors on
+both the ancilla andq j. Propagation through the remaining
+CNOTs of the check then produces the data errorsH j and
+PjHj, respectively, where
+Hj =
+4Y
+k=j+1
+Pk.(A29)
+Modulo the measured stabilizerK a =P 1P2P3P4, the two
+representativesEandEK a have complementary data sup-
+ports. Table III lists the resulting classes[E] ={E, EK a}
+and their minimum weights.
+Table III. Data errors produced by Pauli errors propagating through
+the CNOTs following layerjof a bulk stabilizer measurement.
+The columns[H j]and[P jHj]correspond to the errorsP aIqj and
+PaPj, respectively, after propagation through the remaining CNOTs.
+Brackets group errors that differ by the measured stabilizerK a. The
+number in parentheses gives the smallest number of affected data
+qubits in each group.
+j[H j] [P jHj]
+1 [P 1] (1) [I] (0)
+2 [P 3P4] (2) [P 1] (1)
+3 [P 4] (1) [P 3P4] (2)
+4 [I] (0) [P 4] (1)
+
+[PDF page 13]
+13
+(a)g= 1,x+yeven
+aX aZ
+X
+? ?
+(x, y)
+(x, y+ 1) (x+ 1, y+ 1)
+(b)g= 1,x+yodd
+aZ aX
+X
+? ?
+(x, y)
+(x−1, y+ 1) (x, y+ 1)
+(c)g≥1,x+yeven (d)g≥1,x+yodd
+−3 −2 −1 0 1 2 3
+0
+1
+2
+3
+X
+X
+X
+X
+−3 −2 −1 0 1 2 3
+0
+1
+2
+3
+X
+X
+X
+X
+Figure 8. Allowed positions forXerrors in the support of a weight-dlogicalXoperator, withxincreasing to the right andydownward.
+As in Fig. 7, circles denote data qubits, blue squaresX-check ancillas, and red trianglesZ-check ancillas. (a,b) For a fixedXerror at(x, y),
+question marks show the two choices in rowy+ 1that allow the logical operator to commute with theZcheck below. (c,d) Applying the same
+condition overg= 1,2,3rows gives the allowed column offsets for even and oddx+y, respectively.
+Among the errorsP aIqj andP aPj in layersj= 1, . . . ,4,
+only the layer-2errorP aIq2 and the layer-3errorP aP3 yield
+weight-two supports irreducible moduloK a. For both check
+types, the CNOTs in layers2and3connect the ancilla to the
+pair of data qubits at offsets(−1,+1)and(+1,−1), while
+those in layers1and4connect it to the pair at(+1,+1)
+and(−1,−1). In the matrix-style coordinates of Fig. 7, these
+coupling pairs lie on the displayed/and\diagonals, respec-
+tively. For the two Pauli error types considered here, errors af-
+ter the/-oriented CNOTs can propagate into irreducible two-
+qubit data errors, whereas those after the\-oriented CNOTs
+produce data errors of minimum weight zero or one. In-
+tuitively, CNOT propagation may make local errors on data
+qubits along the/direction more likely to combine with other
+errors and cause logical failure, giving rise to the observed
+hotspots.
+Appendix B: Hotspot-guided targeted intervention simulations
+1. Intervention setup and sampling
+Atp= 0.001, we compare circuits without intervention
+with circuits subject to either hotspot-guided or random inter-
+vention. For the interventions in Fig. 3, we use the hotspot
+sets identified in Appendix A 4. The local error rate of each
+selected physical component is reduced according to Eq. (20);
+all other component error rates remain unchanged.
+At code distanced, letk d denote the number of compo-
+nents in the hotspot set andN d the total number of physical
+components in the circuit. For comparison, we generate 40
+distinct random sets, each containingk d components chosen
+uniformly at random from allN d components. For each ran-
+dom set, we halve the local error rate of every selected com-
+ponent (α= 0.5), as in the hotspot-guided intervention.
+The decoder is constructed from the detector error model
+of the circuit being evaluated, so its edge weights reflect the
+noise probabilities after intervention.
+For each code distance, we simulate the circuit before and
+after hotspot-guided intervention in both theXandZmemory
+bases. Atd= 3, we use6.48×10 7 shots for theXmemory
+and7.02×10 7 for theZmemory both before and after in-
+tervention, totaling1.35×10 8 shots in each case. Atd= 5,
+the corresponding numbers are3.726×10 8 and4.104×10 8,
+totaling7.83×10 8 shots in each case. Atd= 7, they are
+2.6784×10 9 and3.0618×10 9, totaling5.7402×10 9 shots
+in each case.
+For the random intervention, each of the 40 component sets
+uses1.2×10 6 shots for theXmemory and1.3×10 6 for
+theZmemory atd= 3. The corresponding numbers per
+set are6.9×10 6 and7.6×10 6 atd= 5, and4.96×10 7
+and5.67×10 7 atd= 7. The random intervention therefore
+uses1.0×10 8,5.8×10 8, and4.252×10 9 shots in total at
+d= 3,5,7, respectively.
+
+[PDF page 14]
+14
+2. Statistical analysis
+We use the same statistical analysis for the surface code
+and mitten code intervention simulations. We uses= 0,s=
+target, ands= randomto denote no intervention, hotspot-
+guided intervention, and intervention on a fixed random com-
+ponent set, respectively. For memory basisb∈ {X, Z}, let
+F (s)
+b andN (s)
+b denote the total numbers of logical failures and
+shots for circuits, respectively. We estimate the logical error
+rate in each basis asF (s)
+b /N(s)
+b and average the two estimates:
+P (s)
+L = 1
+2
+ 
+F (s)
+X
+N (s)
+X
++ F (s)
+Z
+N (s)
+Z
+!
+.(B1)
+For random component setj= 1, . . . ,40, we write its
+logical error rate averaged over the two memory bases as
+P (random)
+L,j . The reported random-intervention rate is the av-
+erage over the 40 sets:
+P
+(random)
+L = 1
+40
+40X
+j=1
+P (random)
+L,j .(B2)
+This estimates the mean performance of uniform random
+component selection. Relative to the circuit without interven-
+tion, the reduction in logical error rate from hotspot-guided
+intervention and the mean reduction from random interven-
+tion are given by
+∆t = 1− P (target)
+L
+P (0)
+L
+,
+∆r = 1− P
+(random)
+L
+P (0)
+L
+.
+(B3)
+We use bootstrap resampling to quantify the statistical un-
+certainty in the logical error rates and their reductions. In each
+bootstrap replicate, we independently generate a failure count
+F (s)∗
+b for each memory basis in the simulations before and af-
+ter hotspot-guided intervention. We treat theN (s)
+b shots as in-
+dependent samples, each with failure probabilityF (s)
+b /N(s)
+b :
+F (s)∗
+b ∼Binomial
+ 
+N (s)
+b , F (s)
+b
+N (s)
+b
+!
+, s∈ {0,target}.
+(B4)
+We then average the two ratesF (s)∗
+X /N(s)
+X andF (s)∗
+Z /N(s)
+Z for
+each case.
+For random intervention, the 40 simulated component sets
+give 40 logical error rate estimatesP (random)
+L,j , each averaged
+over theXandZmemories. In each bootstrap replicate, we
+sample 40 of these estimates independently with replacement
+and average them to obtain the random-intervention logical
+error rate.
+In each bootstrap replicate, we use the same resampled rate
+for the circuit without intervention to calculate the reductions
+from hotspot-guided and random intervention. We obtain dif-
+ferences in logical error rate by subtracting the corresponding
+logical error rates from that replicate. The 95% confidence in-
+tervals for the logical error rates, reductions, and differences
+in logical error rate are given by the 2.5th and 97.5th per-
+centiles of the corresponding estimates over 50,000 bootstrap
+replicates.
+The improvement ratio reported in Sec. V is
+I= ∆t
+∆r
+= 1−P (target)
+L /P (0)
+L
+1− P
+(random)
+L /P (0)
+L
+.(B5)
+We use the same Fieller method [27] to calculate the confi-
+dence intervals for the improvement ratios in the surface code
+and mitten code simulations. Fieller intervals are used be-
+cause the denominator is the reduction under random inter-
+vention, which may not be distinguishable from zero. Let
+A=P (0)
+L −P (target)
+L andB=P (0)
+L − P
+(random)
+L , so that
+I=A/B. We denote the estimates from the simulation data
+by bAand bB, and their values in each bootstrap replicate byA∗
+andB ∗. In each replicate, we use the same bootstrap estimate
+of the baseline rate,P (0)∗
+L , to calculate bothA ∗ andB ∗.
+We approximate the joint sampling distribution ofbAand bB
+by a normal distribution. For a candidate improvement ratio
+r, we check whetherA−rBis consistent with zero. The95%
+confidence set contains all valuesrsatisfying
+(bA−r bB)2 ≤z 2
+0.975dVar∗(A∗ −rB ∗).(B6)
+Herez 0.975 ≈1.96is the 97.5th percentile of the standard
+normal distribution. The variance on the right-hand side is
+the sample variance ofA ∗ −rB ∗ across the 50,000 bootstrap
+replicates.
+Table IV summarizes the surface code intervention results.
+3. Intervention performance across budgets
+In Fig. 4, we compare intervention performance across
+budgets for thed= 7surface code, using seven syn-
+drome rounds,p= 0.001, andα= 0.5. For eachk∈
+{1,5,9,13,17,21,25}, we select the topkcomponents from
+the same sensitivity ranking obtained during hotspot identi-
+fication. For comparison, we generate 40 distinct random
+sets for eachk, each containingkdifferent components cho-
+sen uniformly at random from the 265 physical components.
+Each circuit is decoded by its own reoptimized PyMatching
+decoder.
+For the circuit without intervention, we use2.6784×10 9
+shots for theXmemory and3.0618×10 9 for theZmemory,
+totaling5.7402×10 9 shots. For hotspot-guided intervention,
+we use the same numbers of shots for each value ofk. The
+baseline data are shared across all values ofk.
+For random intervention, each of the 40 component sets
+uses4.96×10 7 shots for theXmemory and5.67×10 7
+for theZmemory. The random intervention therefore uses
+4.252×10 9 shots in total for each value ofk. Including the
+shared baseline once, the simulations across all seven values
+ofkuse7.56856×10 10 shots in total.
+
+[PDF page 15]
+15
+Table IV . Logical error rates and relative reductions for rotated surface code interventions atp= 0.001andα= 0.5, corresponding to Fig. 3.
+kd andN d denote the numbers of selected and total physical components. All rates average theX- andZ-memory results.P (0)
+L andP (t)
+L are
+the rates without intervention and after hotspot-guided intervention. P
+(r)
+L is the mean rate over 40 sets ofk d components chosen uniformly at
+random.∆ t and∆ r give the corresponding relative reductions toP (0)
+L , andI= ∆ t/∆r is their ratio. Brackets give95%confidence intervals:
+bootstrap percentile intervals for the reductions and Fieller intervals forI.
+d k d/Nd P (0)
+L P
+(r)
+L P (t)
+L ∆r ∆t I= ∆ t/∆r
+33/41 8.20881×10 −4 7.60632×10 −4 7.03120×10 −4 7.34 [6.26,8.38]% 14.35 [13.60,15.08]% 1.95 [1.72,2.26]
+57/129 1.39376×10 −4 1.28452×10 −4 1.18580×10 −4 7.84 [6.89,8.79]% 14.92 [14.17,15.66]% 1.90 [1.71,2.14]
+713/265 1.89902×10 −5 1.69319×10 −5 1.56532×10 −5 10.84 [9.83,11.83]% 17.57 [16.84,18.30]% 1.62 [1.49,1.77]
+Thek= 13comparison uses the same simulation data as
+thed= 7comparison in Fig. 3.
+Logical error rates and relative reductions are calculated us-
+ing the statistical procedure in Appendix B 2. Table V reports
+the relative reductions and their pointwise95%confidence in-
+tervals.
+Appendix C: High-rate lifted product intervention simulations
+1. Code construction and syndrome extraction
+The[ [150,30,10] ],[ [200,40,12] ], and[ [300,60,14] ]codes
+are mitten codes of Ref. [19]. They are constructed using the
+lifted productLP(A, B)of the base matricesA=
+
+a0 a1
+
+andB=
+
+b0 b1
+
+overF 2[G], withG=C 5 ×S 3,|G|= 30;
+G=C 4 ×D 10,|G|= 40; andG=C 10 ×S 3,|G|= 60,
+respectively. HereC n denotes the cyclic group of ordern,S 3
+the symmetric group on three elements (of order6), andD 10
+the dihedral group of order10. Fora= P
+g∈G αgg∈F 2[G],
+we define the involutiona ∗ =P
+g∈G αgg−1. Lete h denote
+the standard basis vector indexed byh∈G. The left and
+right regular representations are defined byL(g)e h =e gh
+andR(g)e h =e hg−1 forg, h∈G, and extended linearly
+toF 2[G]. With these conventions,L(a ∗) =L(a) ⊤ and
+R(a∗) =R(a) ⊤. TheX- andZ-check matrices of all three
+codes are
+HX =
+ 
+L(a0) 0L(a 1) 0R(b ∗
+0)
+0L(a 0) 0L(a 1)R(b ∗
+1)
+!
+,
+HZ =
+ 
+R(b0)R(b 1) 0 0L(a ∗
+0)
+0 0R(b 0)R(b 1)L(a ∗
+1)
+!
+.
+(C1)
+Since the left and right regular representations commute, the
+check matrices satisfyH X H⊤
+Z = 0. Each code has5|G|data
+qubits,2|G|independentXchecks, and2|G|independentZ
+checks. Every check acts on9data qubits. Each code there-
+fore encodesk= 5|G| −4|G|=|G|logical qubits, giving
+k= 30,40,60, respectively, and an encoding rate of1/5.
+The syndrome extraction circuit is organized according to
+the block structure ofH X andH Z. The five block columns
+in Eq. (C1) correspond to data qubit blocksD 1, . . . , D5. The
+two block rows ofH X andH Z correspond to ancilla blocks
+X0, X1 andZ 0, Z1, respectively. Each block contains|G|
+qubits, labelled byh∈G. We writeD i(h),X i(h), andZ i(h)
+for the qubits labelledhin their respective blocks. Each of
+a0, a1, b0, b1 is a sum of three group elements. For each check
+type, the qubit pairs associated with the same group-element
+term of a base entry are coupled in one CNOT layer. For ex-
+ample, a group elementgina 0 gives anX-check layer con-
+taining the CNOT gates
+X0(h)→D 1(g−1h), X 1(h)→D 2(g−1h),(C2)
+for allh∈G, with all gates applied in parallel. The three
+group elements ina 0 give three such layers. The other layers
+follow in the same way from the blocks ofH X andH Z in
+Eq. (C1). The ancillas are the CNOT controls forXchecks
+and the targets forZchecks. Each check type uses12CNOT
+layers, three for each of the four base entries, giving24layers
+per syndrome round.
+We reconstruct the syndrome extraction schedules within
+the family described in Ref. [19]. Each schedule consists of
+four sections,XL,XR,ZL, andZR, where the first let-
+ter specifies the check type and the second the left- or right-
+regular action. The scheduling choices are the order of these
+sections and the order of the six CNOT layers within each sec-
+tion. The schedules used in our simulations may differ from
+those used in the original study.
+For the[ [150,30,10] ],[ [200,40,12] ], and[ [300,60,14] ]
+codes, the circuits contain150,200, and300data qubits and
+120,160, and240check ancillas, respectively. The check an-
+cillas are divided equally betweenXandZchecks. The cor-
+responding numbers of directed CNOT couplings are1080,
+1440, and2160. Counting each qubit and each directed CNOT
+coupling once across all syndrome rounds gives1350,1800,
+and2700physical components, respectively.
+2. Noise model and decoding
+For the Mitten-code experiment, we use the same circuit-
+level depolarizing model as Ref. [19]. All noisy operations
+share a single error probabilityp. Each qubit initialization is
+followed by a one-qubit depolarizing channel, and the same
+channel is applied immediately before each qubit measure-
+ment. Each CNOT is followed by a two-qubit depolarizing
+channel acting jointly on its control and target qubits. Both
+
+[PDF page 16]
+16
+Table V . Relative logical error rate reduction versus the numberkof selected components for thed= 7rotated surface code atp= 0.001and
+α= 0.5, corresponding to Fig. 4. Hotspot-guided intervention selects thekcomponents with the highest sensitivities; random intervention
+averages the results over 40 sets ofkcomponents chosen uniformly at random. Brackets give95%bootstrap percentile confidence intervals
+for individual comparisons.
+kSelected components (%) Targeted reduction (%) Mean random reduction (%)
+10.38 2.55 [1.73,3.37] 1.15 [0.23,2.04]
+51.89 7.85 [7.05,8.64] 4.16 [3.25,5.08]
+93.40 13.12 [12.36,13.87] 7.52 [6.66,8.36]
+134.91 17.57 [16.84,18.30] 10.84 [9.83,11.83]
+176.42 21.88 [21.17,22.58] 13.35 [12.47,14.23]
+217.92 25.81 [25.12,26.48] 16.12 [15.25,16.98]
+259.43 29.34 [28.68,29.99] 18.76 [17.88,19.63]
+channels are defined by Eq. (A9), withk= 1andk= 2, re-
+spectively. For data qubits, the one-qubit channel is applied
+after initial preparation and before final measurement. For an-
+cillas, it is applied after preparation and before measurement
+in every syndrome round. No noise is applied during idle pe-
+riods.
+We simulate theX- andZ-memory experiments atp=
+0.002. The circuits for the[ [150,30,10] ],[ [200,40,12] ], and
+[ [300,60,14] ]codes use10,12, and14rounds of syndrome
+extraction, respectively.
+We use the published telescoping-decoder implementation
+of Ref. [19], with its final integer-programming stage S4 dis-
+abled. For each shot, we first attempt decoding with GPU
+layered belief propagation (S1). If this stage does not return
+an accepted correction, the shot proceeds to GPU relay be-
+lief propagation (S2) and, if needed, the CPU serial belief-
+propagation stages (S3-A/B/C). Decoding stops at the first
+stage that returns a correction satisfying its acceptance cri-
+teria. We use the acceptance criteria of Ref. [19]. For each
+code, we keep the decoder parameters fixed across the base-
+line, hotspot-guided intervention, and random intervention ex-
+periments. We construct the decoder from the detector error
+model of the circuit being simulated. For the hotspot-guided
+and random interventions, this model includes the reduced er-
+ror probabilities of the selected components.
+If none of stages S1–S3 returns an accepted correction, the
+shot is recorded as a decoder failure. For shots with an ac-
+cepted correction, we compare the predicted outcome for each
+of theklogical qubits with its corresponding simulator out-
+come in the chosen memory basis. If any outcome disagrees,
+the shot is counted as one logical failure. The reported logical
+error rate is the fraction of shots with either type of failure.
+3. Hotspot identification
+To identify hotspots, we estimate component sensitivities
+from five independent runs with different random seeds for
+each code and memory basis. Summed over all runs in both
+theXandZmemory bases, the[ [150,30,10] ]experiment uses
+8.15×10 7 shots and records4,434logical failures. The corre-
+sponding totals are4.00×10 8 shots and1,884logical failures
+for[ [200,40,12] ], and1.775×109 shots and4,038logical fail-
+ures for[ [300,60,14] ].
+Fig. 9 shows the sensitivity of each directed CNOT cou-
+pling. The couplings are arranged by the data qubit blocks, an-
+cilla blocks, and group-element labels introduced above. For
+each component, we average the signed sensitivities from the
+X- andZ-memory runs with the same random seed and take
+the absolute value. We then average these values over the five
+seeds:
+Ac = 1
+5
+X
+s
+
+SX
+c,s +S Z
+c,s
+2
+ , eAc = Ac
+maxc′ Ac′
+.(C3)
+For each code, we normalize the scores by the maximum
+over all physical components and display them on a0–1color
+scale.
+4. Intervention setup and sampling
+The hotspot-guided interventions target84,112, and168
+physical components in the[ [150,30,10] ],[ [200,40,12] ], and
+[ [300,60,14] ]codes, respectively, corresponding to6.22%of
+the components in each circuit. These sets contain no data
+qubits. For[ [150,30,10] ], the selected components comprise
+7check ancillas and77directed CNOT couplings, accounting
+for8.33%and91.67%of the hotspot set, respectively. The
+corresponding counts are27ancillas (24.11%) and85cou-
+plings (75.89%) for[ [200,40,12] ], and36ancillas (21.43%)
+and132couplings (78.57%) for[ [300,60,14] ].
+The selected CNOT couplings are concentrated in the
+L(a0)andL(a 1)blocks ofH X and theR(b 0)andR(b 1)
+blocks ofH Z. These blocks comprise two thirds of all CNOT
+couplings but contain75of77,77of85, and107of132se-
+lected couplings in the three codes, respectively. Specifically,
+for[ [150,30,10] ], the two blocks connectingZ1 toD 3 andD 4
+contain55of the77selected couplings (71.4%), while com-
+prising only16.7%of all CNOT couplings. For[ [200,40,12] ],
+33of the85selected couplings (38.8%) connect toD 1:22
+couple it toX 0 and11toZ 0. These two blocks comprise
+16.7%of all CNOT couplings. For[ [300,60,14] ],50of the
+132selected couplings (37.9%) connectX 0 toD 1 orD 3, in
+
+[PDF page 17]
+17
+1 10 20 30
+Group element of C5 × S3
+X0-D1  L(a0)
+X0-D3  L(a1)
+X0-D5  R(b*
+0)
+X1-D2  L(a0)
+X1-D4  L(a1)
+X1-D5  R(b*
+1)
+Z0-D1  R(b0)
+Z0-D2  R(b1)
+Z0-D5  L(a*
+0)
+Z1-D3  R(b0)
+Z1-D4  R(b1)
+Z1-D5  L(a*
+1)
+(a) [[150, 30, 10]]  (k = 84)
+1 10 20 30 40
+Group element of C4 × D10
+X0-D1  L(a0)
+X0-D3  L(a1)
+X0-D5  R(b*
+0)
+X1-D2  L(a0)
+X1-D4  L(a1)
+X1-D5  R(b*
+1)
+Z0-D1  R(b0)
+Z0-D2  R(b1)
+Z0-D5  L(a*
+0)
+Z1-D3  R(b0)
+Z1-D4  R(b1)
+Z1-D5  L(a*
+1)
+(b) [[200, 40, 12]]  (k = 112)
+1 10 20 30 40 50 60
+Group element of C10 × S3
+X0-D1  L(a0)
+X0-D3  L(a1)
+X0-D5  R(b*
+0)
+X1-D2  L(a0)
+X1-D4  L(a1)
+X1-D5  R(b*
+1)
+Z0-D1  R(b0)
+Z0-D2  R(b1)
+Z0-D5  L(a*
+0)
+Z1-D3  R(b0)
+Z1-D4  R(b1)
+Z1-D5  L(a*
+1)
+(c) [[300, 60, 14]]  (k = 168)
+0.0 0.2 0.4 0.6 0.8 1.0
+Within-code normalized score ̃Ac
+Figure 9. Sensitivity maps of directed CNOT couplings for the (a)
+[ [150,30,10] ], (b)[ [200,40,12] ], and (c)[ [300,60,14] ]mitten codes
+atp= 0.002. Colors show the relative sensitivities eAc defined
+in Eq. (C3), normalized separately for each code. Each cell repre-
+sents one CNOT coupling. Rows follow the blocks ofH X andH Z
+in Eq. (C1), with three rows for the three group-element terms in
+each nonzero block. Columns index the group elements labelling the
+check ancillas inC 5 ×S3,C 4 ×D10, andC 10 ×S3, respectively. The
+panels contain all1080,1440, and2160couplings. Orange outlines
+mark the77,85, and132couplings selected for intervention. The
+selected sets also contain7,27, and36check ancillas, which are not
+shown, givingk= 84,112, and168selected components in total.
+theL(a 0)andL(a 1)blocks ofH X. These two blocks com-
+prise16.7%of all CNOT couplings. Within them, the two
+group-element rows with the most hotspots, one in each block,
+contain33selected couplings (25.0%), while comprising only
+5.56%of all CNOT couplings.
+For codei, we denote the selected hotspot set byH i and fix
+it before intervention sampling. The local error rate of each
+physical componentc∈H i is reduced according to Eq. (20)
+withα= 0.5. For comparison, we simulate random interven-
+tions on40component sets for each code. Each set contains
+the same number of physical components asH i:84,112, and
+168for the three codes, respectively. As in the hotspot-guided
+intervention, the local error rate of each selected component
+is halved.
+All shot counts are totals over theXandZmemory bases,
+with half of the shots in each basis. For[ [150,30,10] ], the
+simulations without intervention and after hotspot-guided in-
+tervention each use5.8×10 7 shots. For[ [200,40,12] ], we use
+3.0×10 8 shots in each case. For[ [300,60,14] ], the hotspot-
+guided intervention uses1.0556×10 9 shots. For its baseline,
+we reuse the1.775×10 9 samples used to estimate component
+sensitivities.
+For random intervention, each of the40component sets
+uses1.45×10 6,7.5×10 6, and2.639×10 7 shots for the
+three codes, respectively. Summed over the40sets, the cor-
+responding totals are5.8×10 7,3.0×10 8, and1.0556×10 9
+shots, matching the hotspot-guided intervention for each code.
+5. Statistical analysis
+We calculate the logical error rates and confidence intervals
+using the procedure in Appendix B 2. Within each memory
+basis, the logical error rate is the total number of logical fail-
+ures divided by the total number of shots. We report the av-
+erage of theX- andZ-memory estimates. For random inter-
+vention, we then average these results over the40component
+sets.
+We use50,000bootstrap replicates to quantify the statis-
+tical uncertainty. For the simulations without intervention
+and after hotspot-guided intervention, each replicate indepen-
+dently generates failure counts for each memory basis accord-
+ing to Eq. (B4). For random intervention, we draw40values
+at random from the logical error rate estimates of the40com-
+ponent sets. We average these40sampled estimates to obtain
+the logical error rate under random intervention for that boot-
+strap replicate. In each replicate, we use the same resampled
+baseline rate to calculate the reductions from hotspot-guided
+and random intervention. The95%confidence intervals for
+the logical error rates and their reductions are given by the
+2.5th and 97.5th percentiles of the bootstrap estimates. The
+confidence intervals for the improvement ratios are calculated
+using the Fieller method in Eq. (B6).
+Table VI summarizes the mitten code intervention results.
+
+[PDF page 18]
+18
+Table VI. Logical error rates and relative reductions for the mitten codes atp= 0.002andα= 0.5, corresponding to Fig. 5.kis the number
+of selected components, andFandNare the total numbers of logical failures and shots over both memory bases. For random intervention,
+these counts also sum over all 40 component sets.P L averages theX- andZ-memory rates and, for random intervention, also averages over
+the 40 sets.∆ t and∆ r are relative reductions to the circuit without intervention;Iis their ratio. Brackets give95%confidence intervals from
+the50,000-replicate procedure in Appendix B 2: bootstrap percentile intervals for reductions and Fieller intervals forI.
+StrategyF N P L Relative reduction[95% CI]
+[ [150,30,10] ]:k= 84
+No intervention3,184 5.8×10 7 5.48966×10 −5 —
+Uniform (40sets)2,748 5.8×10 7 4.73793×10 −5 ∆r = 13.69 [9.03,18.17]%
+Targeted (k= 84)2,383 5.8×10 7 4.10862×10 −5 ∆t = 25.16 [21.12,29.03]%
+Improvement ratioI= ∆ t/∆r = 1.84 [1.41,2.65]
+[ [200,40,12] ]:k= 112
+No intervention1,356 3.0×10 8 4.52000×10 −6 —
+Uniform (40sets)1,174 3.0×10 8 3.91333×10 −6 ∆r = 13.42 [7.02,19.33]%
+Targeted (k= 112)1,044 3.0×10 8 3.48000×10 −6 ∆t = 23.01 [16.53,29.00]%
+Improvement ratioI= ∆ t/∆r = 1.71 [1.20,2.95]
+[ [300,60,14] ]:k= 168
+No intervention4,038 1.775×10 9 2.27493×10 −6 —
+Uniform (40sets)2,101 1.0556×10 9 1.99034×10 −6 ∆r = 12.51 [7.39,17.44]%
+Targeted (k= 168)1,797 1.0556×10 9 1.70235×10 −6 ∆t = 25.17 [20.92,29.25]%
+Improvement ratioI= ∆ t/∆r = 2.01 [1.44,3.29]
+
+[PDF page 19]
+19
+[1] A. Y . Kitaev, Quantum computations: algorithms and error cor-
+rection, Russian Mathematical Surveys52, 1191 (1997).
+[2] D. Gottesman, The Heisenberg representation of quantum com-
+puters, arXiv preprint quant-ph/9807006 (1998).
+[3] A. G. Fowler, M. Mariantoni, J. M. Martinis, and A. N. Cleland,
+Surface codes: Towards practical large-scale quantum compu-
+tation, Physical Review A86, 032324 (2012).
+[4] D. Litinski, A game of surface codes: Large-scale quantum
+computing with lattice surgery, Quantum3, 128 (2019).
+[5] S. Aaronson and D. Gottesman, Improved simulation of stabi-
+lizer circuits, Physical Review A70, 052328 (2004).
+[6] S. Bravyi and D. Gosset, Improved classical simulation of quan-
+tum circuits dominated by Clifford gates, Physical Review Let-
+ters116, 250501 (2016).
+[7] C. Gidney, Stim: a fast stabilizer circuit simulator, Quantum5,
+497 (2021).
+[8] O. Higgott and C. Gidney, Sparse Blossom: correcting a million
+errors per core second with minimum-weight matching, Quan-
+tum9, 1600 (2025).
+[9] Y . Tomita and K. M. Svore, Low-distance surface codes under
+realistic quantum noise, Physical Review A90, 062320 (2014).
+[10] M. Gutiérrez, C. Smith, L. Lulushi, S. Janardan, and K. R.
+Brown, Errors and pseudothresholds for incoherent and coher-
+ent noise, Physical Review A94, 042338 (2016).
+[11] A. S. Darmawan and D. Poulin, Tensor-network simulations of
+the surface code under realistic noise, Physical Review Letters
+119, 040502 (2017).
+[12] A. deMarti iOlius, J. Etxezarreta Martinez, P. Fuentes, P. M.
+Crespo, and J. Garcia-Frias, Performance of surface codes in
+realistic quantum hardware, Physical Review A106, 062428
+(2022).
+[13] K. Tiurev, P.-J. H. S. Derks, J. Roffe, J. Eisert, and J.-M. Reiner,
+Correcting non-independent and non-identically distributed er-
+rors with surface codes, Quantum7, 1123 (2023).
+[14] O. Higgott, T. C. Bohdanowicz, A. Kubica, S. T. Flammia, and
+E. T. Campbell, Improved decoding of circuit noise and fragile
+boundaries of tailored surface codes, Physical Review X13,
+031007 (2023).
+[15] D. K. Tuckett, A. S. Darmawan, C. T. Chubb, S. Bravyi, S. D.
+Bartlett, and S. T. Flammia, Tailoring surface codes for highly
+biased noise, Physical Review X9, 041031 (2019).
+[16] J. P. Bonilla Ataides, D. K. Tuckett, S. D. Bartlett, S. T. Flam-
+mia, and B. J. Brown, The XZZX surface code, Nature Com-
+munications12, 2172 (2021).
+[17] Google Quantum AI, Suppressing quantum errors by scaling a
+surface code logical qubit, Nature614, 676 (2023).
+[18] Google Quantum AI and Collaborators, Quantum error correc-
+tion below the surface code threshold, Nature638, 920 (2025).
+[19] A. Bhardwaj, M. Ma, N. Meister, R. King, D. Bluvstein,
+J. Preskill, M. Cain, Q. Xu, and H.-Y . Huang, High-
+rate qLDPC processors, arXiv preprint arXiv:2607.28795
+10.48550/arXiv.2607.28795 (2026).
+[20] Y . Shao, Z. Chen, Z. Wei, and Z. Liu, Diagnosing quantum cir-
+cuits: Noise robustness, trainability, and expressibility, arXiv
+preprint arXiv:2509.11307 (2025).
+[21] Z. Chen, J. Kelly, C. Quintana, R. Barends, B. Campbell,
+Y . Chen, B. Chiaro, A. Dunsworth, A. G. Fowler, E. Lucero,
+et al., Measuring and suppressing quantum state leakage in a
+superconducting qubit, Physical Review Letters116, 020501
+(2016).
+[22] B. Pokharel, N. Anand, B. Fortman, and D. A. Lidar, Demon-
+stration of fidelity improvement using dynamical decoupling
+with superconducting qubits, Physical Review Letters121,
+220502 (2018).
+[23] Y . Sung, L. Ding, J. Braumüller, A. Vepsäläinen, B. Kannan,
+M. Kjaergaard, A. Greene, G. O. Samach, C. McNally, D. Kim,
+A. Melville, B. M. Niedzielski, M. E. Schwartz, J. L. Yoder,
+T. P. Orlando, S. Gustavsson, and W. D. Oliver, Realization of
+high-fidelity CZ andZZ-free iSW AP gates with a tunable cou-
+pler, Physical Review X11, 021058 (2021).
+[24] P. V . Klimov, A. Bengtsson, C. Quintana, A. Bourassa, S. Hong,
+A. Dunsworth, K. J. Satzinger, W. P. Livingston, V . Sivak, M. Y .
+Niu, T. I. Andersen, Y . Zhang, D. Chik, Z. Chen, C. Neill,
+C. Erickson, A. Grajales Dau, A. Megrant, P. Roushan, A. N.
+Korotkov, J. Kelly, V . Smelyanskiy, Y . Chen, and H. Neven,
+Optimizing quantum gates towards the scale of logical qubits,
+Nature Communications15, 2442 (2024).
+[25] FaultScope, arXiv, coming soon.
+[26] A. R. O’Rourke and S. Devitt, Compare the pair: Rotated ver-
+sus unrotated surface codes at equal logical error rates, Physical
+Review Research7, 033074 (2025).
+[27] E. C. Fieller, Some problems in interval estimation, Journal of
+the Royal Statistical Society: Series B16, 175 (1954).

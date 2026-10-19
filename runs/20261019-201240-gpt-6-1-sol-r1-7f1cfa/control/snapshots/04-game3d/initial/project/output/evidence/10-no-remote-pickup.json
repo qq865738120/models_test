@@ -1,0 +1,100 @@
+{
+  "environment": {
+    "width": 1280,
+    "height": 720,
+    "dpr": 2,
+    "renderDpr": 1,
+    "canvasWidth": 1280,
+    "canvasHeight": 720,
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+  },
+  "state": "paused",
+  "remaining": 119.1,
+  "speed": 0,
+  "vehicle": {
+    "x": 0,
+    "z": 7,
+    "yaw": 3.142,
+    "width": 1.4
+  },
+  "forkHeight": 0.75,
+  "carried": null,
+  "crates": [
+    {
+      "id": "red",
+      "x": -5,
+      "y": 0.6,
+      "z": 3,
+      "yaw": 0,
+      "delivered": false,
+      "stable": 0,
+      "velocity": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "metrics": {
+        "longitudinal": 3.9999999999999996,
+        "lateral": 5.000000000000001,
+        "angle": 0,
+        "penetration": 0,
+        "vertical": 0.7099999761581428,
+        "eligible": false
+      }
+    },
+    {
+      "id": "blue",
+      "x": 0,
+      "y": 0.6,
+      "z": 3,
+      "yaw": 0,
+      "delivered": false,
+      "stable": 0,
+      "velocity": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "metrics": {
+        "longitudinal": 4,
+        "lateral": 4.898587196589413e-16,
+        "angle": 0,
+        "penetration": 0,
+        "vertical": 0.7099999761581428,
+        "eligible": false
+      }
+    },
+    {
+      "id": "yellow",
+      "x": 5,
+      "y": 0.6,
+      "z": 3,
+      "yaw": 0,
+      "delivered": false,
+      "stable": 0,
+      "velocity": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "metrics": {
+        "longitudinal": 4.000000000000001,
+        "lateral": -4.999999999999999,
+        "angle": 0,
+        "penetration": 0,
+        "vertical": 0.7099999761581428,
+        "eligible": false
+      }
+    }
+  ],
+  "log": [
+    {
+      "t": 0,
+      "type": "start"
+    },
+    {
+      "t": 0.9,
+      "type": "pause"
+    }
+  ]
+}

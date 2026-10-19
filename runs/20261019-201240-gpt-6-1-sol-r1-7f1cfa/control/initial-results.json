@@ -1,0 +1,139 @@
+{
+  "runId": "20261019-201240-gpt-6-1-sol-r1-7f1cfa",
+  "completedAt": "2026-10-19T13:45:48.530589+00:00",
+  "status": "all_five_initial_stages_completed",
+  "model": "GPT 6.1 Sol",
+  "configuredModel": "gpt-6.1-sol",
+  "reasoningEffort": "high",
+  "harness": "codex",
+  "allowedPhases": [
+    "initial"
+  ],
+  "excludedHistoricalPhases": [
+    {
+      "taskId": "01-svg",
+      "phase": "change",
+      "reason": "用户明确要求默认提示词，不计入本次结果；历史快照保留"
+    },
+    {
+      "taskId": "02-dispatch",
+      "phase": "change",
+      "reason": "用户明确要求默认提示词，不计入本次结果；历史快照保留"
+    }
+  ],
+  "materialVersion": "pelican-v1.0-pages-20261019",
+  "bundleSha256": "d6c7e6b848dfe0b9adc9c1358eee70dbe1016364cafde91c79ccf5364e8fee78",
+  "rubricVersion": "pelican-rubric-4",
+  "enforcement": "rules-only",
+  "calibrated": false,
+  "environment": {
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "python": "3.9.6",
+    "node": "v24.21.0",
+    "npm": "11.19.0",
+    "browser": "Chromium 155.0.0.0（IAB；来源为第2题冻结性能记录中的 userAgent）",
+    "agentClient": "Codex desktop（应用内置会话工具；版本未核验）",
+    "reasoning": "high（高），会话创建参数已指定",
+    "reasoningLevel": "3",
+    "temperature": null,
+    "hardware": "Mac17,9 / Apple M5 Pro / 48 GiB RAM"
+  },
+  "parallelExecution": {
+    "recordedAt": "2026-10-19T13:04:40.580870+00:00",
+    "tasks": [
+      "03-game2d",
+      "04-game3d",
+      "05-memory"
+    ],
+    "reason": "用户要求并行第4/5题，第三题收尾仍在进行",
+    "resourceIsolation": "同一宿主机，无CPU/GPU资源强制隔离"
+  },
+  "scoring": "本次没有自动评分；已有人工评分按成果版本保留。材料校验不代表功能或学术结论正确。",
+  "records": [
+    {
+      "taskId": "01-svg",
+      "phase": "initial",
+      "threadId": "01a15419-6f91-7f52-8b5e-ad37235a2a21",
+      "modelDurationMs": 370633,
+      "modelDuration": "6:11",
+      "snapshot": "/Users/zhengwenjun/大模型测试/runs/20261019-201240-gpt-6-1-sol-r1-7f1cfa/control/snapshots/01-svg/initial",
+      "snapshotCreatedAt": "2026-10-19T12:24:54.608130+00:00",
+      "sourceSha256": "75a4ec67cf27e12e7bf681af2bb57060d73574d17b4595f8292659d204e09b3c",
+      "artifactId": "49f244757b6a4943ba04c64e248c7e7d",
+      "artifactSha256": "c6522f8f9024443ac451289b0176d64b59c360fc1157a7abd08e87852a65cdfb",
+      "url": "http://127.0.0.1:8788/artifacts/49f244757b6a4943ba04c64e248c7e7d/index.html",
+      "integrityPassed": true,
+      "hasIndex": true,
+      "hasDelivery": true,
+      "existingScoreTotal": null
+    },
+    {
+      "taskId": "02-dispatch",
+      "phase": "initial",
+      "threadId": "01a15421-7cd4-7fb3-8669-56d63139d039",
+      "modelDurationMs": 832308,
+      "modelDuration": "13:52",
+      "snapshot": "/Users/zhengwenjun/大模型测试/runs/20261019-201240-gpt-6-1-sol-r1-7f1cfa/control/snapshots/02-dispatch/initial",
+      "snapshotCreatedAt": "2026-10-19T12:41:37.035174+00:00",
+      "sourceSha256": "dc1de98cd366f8eb4e9811fc8a95c36910f15b68e932234f055e0f07f4b58f40",
+      "artifactId": "d9ce0d1c8da14640acea90f92e3f8fd2",
+      "artifactSha256": "a922eb91bc4b5f0a8ae03f6e8caf6771e297bdd11772857dc2aadb4bbf08d535",
+      "url": "http://127.0.0.1:8788/artifacts/d9ce0d1c8da14640acea90f92e3f8fd2/index.html",
+      "integrityPassed": true,
+      "hasIndex": true,
+      "hasDelivery": true,
+      "existingScoreTotal": null
+    },
+    {
+      "taskId": "03-game2d",
+      "phase": "initial",
+      "threadId": "01a15433-1145-76f0-9eaf-ab31dc61b623",
+      "modelDurationMs": 1254796,
+      "modelDuration": "20:55",
+      "snapshot": "/Users/zhengwenjun/大模型测试/runs/20261019-201240-gpt-6-1-sol-r1-7f1cfa/control/snapshots/03-game2d/initial",
+      "snapshotCreatedAt": "2026-10-19T13:08:02.178313+00:00",
+      "sourceSha256": "0da24866752e6650f99a16da94ab9e31fc537d5baa25f6812ca15cb1c27386fe",
+      "artifactId": "4989ff766bdb48868deacbaf26b53fa4",
+      "artifactSha256": "ad9ea4e6763ae27a8a0233d3739b13ff7273eac54b3938ce1969bc31bbc5f363",
+      "url": "http://127.0.0.1:8788/artifacts/4989ff766bdb48868deacbaf26b53fa4/index.html",
+      "integrityPassed": true,
+      "hasIndex": true,
+      "hasDelivery": true,
+      "existingScoreTotal": null
+    },
+    {
+      "taskId": "04-game3d",
+      "phase": "initial",
+      "threadId": "01a15443-3d2d-78e0-b94b-6aff2572eec8",
+      "modelDurationMs": 1498713,
+      "modelDuration": "24:59",
+      "snapshot": "/Users/zhengwenjun/大模型测试/runs/20261019-201240-gpt-6-1-sol-r1-7f1cfa/control/snapshots/04-game3d/initial",
+      "snapshotCreatedAt": "2026-10-19T13:29:42.369776+00:00",
+      "sourceSha256": "8079abde965807323d0b2cba89585c75bb37d253394a85732e118cf22566781c",
+      "artifactId": "16f573de5a694383a81e6642ea781511",
+      "artifactSha256": "4692b2c180f1359e0ace96355edaaed36658b91d5f5d6f7c37ce0bd334c96374",
+      "url": "http://127.0.0.1:8788/artifacts/16f573de5a694383a81e6642ea781511/index.html",
+      "integrityPassed": true,
+      "hasIndex": true,
+      "hasDelivery": true,
+      "existingScoreTotal": null
+    },
+    {
+      "taskId": "05-memory",
+      "phase": "initial",
+      "threadId": "01a15443-41bd-7fc1-8e5e-094fa444353c",
+      "modelDurationMs": 2314738,
+      "modelDuration": "38:35",
+      "snapshot": "/Users/zhengwenjun/大模型测试/runs/20261019-201240-gpt-6-1-sol-r1-7f1cfa/control/snapshots/05-memory/initial",
+      "snapshotCreatedAt": "2026-10-19T13:43:26.938989+00:00",
+      "sourceSha256": "90d870ac9255993dec9d02ed553ae625f6c11dd5939e47fb2f8daa705af8febc",
+      "artifactId": "65081b8305f44546864e52cc8dba11af",
+      "artifactSha256": "066880e1a6d9229c2033739e546fcf0ba97f2ad590317fc6744c0f5f6ff9d593",
+      "url": "http://127.0.0.1:8788/artifacts/65081b8305f44546864e52cc8dba11af/index.html",
+      "integrityPassed": true,
+      "hasIndex": true,
+      "hasDelivery": true,
+      "existingScoreTotal": null
+    }
+  ]
+}

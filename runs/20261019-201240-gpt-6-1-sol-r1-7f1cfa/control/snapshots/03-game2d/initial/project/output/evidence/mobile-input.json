@@ -1,0 +1,316 @@
+{
+  "viewport": "390x844 iframe; display scale .75",
+  "touchReleased": {
+    "mode": "playing",
+    "lives": 3,
+    "elapsed": 0.6774999999999998,
+    "invulnerable": 0,
+    "collected": [],
+    "player": {
+      "x": 220,
+      "y": 660,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "body": {
+        "x": 204,
+        "y": 608,
+        "width": 32,
+        "height": 52
+      }
+    },
+    "movers": [
+      {
+        "x": 1380,
+        "y": 490,
+        "width": 180,
+        "height": 24
+      }
+    ],
+    "robots": [
+      {
+        "x": 766.6666666666652,
+        "y": 630
+      },
+      {
+        "x": 1990,
+        "y": 630
+      }
+    ],
+    "counts": {
+      "children": 39,
+      "bodies": 7,
+      "staticBodies": 8,
+      "colliders": 9
+    },
+    "jumps": 0,
+    "runs": 2,
+    "events": [
+      {
+        "type": "reset",
+        "run": 1
+      },
+      {
+        "type": "reset",
+        "run": 2
+      },
+      {
+        "type": "start"
+      }
+    ]
+  },
+  "touchStopped": {
+    "mode": "playing",
+    "lives": 3,
+    "elapsed": 1.07772,
+    "invulnerable": 0,
+    "collected": [],
+    "player": {
+      "x": 220,
+      "y": 660,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "body": {
+        "x": 204,
+        "y": 608,
+        "width": 32,
+        "height": 52
+      }
+    },
+    "movers": [
+      {
+        "x": 1416,
+        "y": 490,
+        "width": 180,
+        "height": 24
+      }
+    ],
+    "robots": [
+      {
+        "x": 794.6666666666642,
+        "y": 630
+      },
+      {
+        "x": 2026,
+        "y": 630
+      }
+    ],
+    "counts": {
+      "children": 39,
+      "bodies": 7,
+      "staticBodies": 8,
+      "colliders": 9
+    },
+    "jumps": 0,
+    "runs": 2,
+    "events": [
+      {
+        "type": "reset",
+        "run": 1
+      },
+      {
+        "type": "reset",
+        "run": 2
+      },
+      {
+        "type": "start"
+      }
+    ]
+  },
+  "touchJump": {
+    "mode": "playing",
+    "lives": 3,
+    "elapsed": 1.2776000000000014,
+    "invulnerable": 0,
+    "collected": [],
+    "player": {
+      "x": 220,
+      "y": 599.25,
+      "vx": 0,
+      "vy": -345,
+      "grounded": false,
+      "body": {
+        "x": 204,
+        "y": 547.25,
+        "width": 32,
+        "height": 52
+      }
+    },
+    "movers": [
+      {
+        "x": 1434,
+        "y": 490,
+        "width": 180,
+        "height": 24
+      }
+    ],
+    "robots": [
+      {
+        "x": 808.6666666666638,
+        "y": 630
+      },
+      {
+        "x": 2044,
+        "y": 630
+      }
+    ],
+    "counts": {
+      "children": 47,
+      "bodies": 7,
+      "staticBodies": 8,
+      "colliders": 9
+    },
+    "jumps": 1,
+    "runs": 2,
+    "events": [
+      {
+        "type": "reset",
+        "run": 1
+      },
+      {
+        "type": "reset",
+        "run": 2
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "jump",
+        "x": 220,
+        "y": 660,
+        "elapsed": 1.1191499999999999
+      }
+    ]
+  },
+  "dragReleased": {
+    "mode": "playing",
+    "lives": 3,
+    "elapsed": 1.577560000000001,
+    "invulnerable": 0,
+    "collected": [],
+    "player": {
+      "x": 224,
+      "y": 538.5,
+      "vx": 0,
+      "vy": -75,
+      "grounded": false,
+      "body": {
+        "x": 208,
+        "y": 486.5,
+        "width": 32,
+        "height": 52
+      }
+    },
+    "movers": [
+      {
+        "x": 1461,
+        "y": 490,
+        "width": 180,
+        "height": 24
+      }
+    ],
+    "robots": [
+      {
+        "x": 829.6666666666631,
+        "y": 630
+      },
+      {
+        "x": 2071,
+        "y": 630
+      }
+    ],
+    "counts": {
+      "children": 39,
+      "bodies": 7,
+      "staticBodies": 8,
+      "colliders": 9
+    },
+    "jumps": 1,
+    "runs": 2,
+    "events": [
+      {
+        "type": "reset",
+        "run": 1
+      },
+      {
+        "type": "reset",
+        "run": 2
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "jump",
+        "x": 220,
+        "y": 660,
+        "elapsed": 1.1191499999999999
+      }
+    ]
+  },
+  "dragStopped": {
+    "mode": "playing",
+    "lives": 3,
+    "elapsed": 2.0774000000000026,
+    "invulnerable": 0,
+    "collected": [],
+    "player": {
+      "x": 224,
+      "y": 617.25,
+      "vx": 0,
+      "vy": 375,
+      "grounded": false,
+      "body": {
+        "x": 208,
+        "y": 565.25,
+        "width": 32,
+        "height": 52
+      }
+    },
+    "movers": [
+      {
+        "x": 1506,
+        "y": 490,
+        "width": 180,
+        "height": 24
+      }
+    ],
+    "robots": [
+      {
+        "x": 864.666666666662,
+        "y": 630
+      },
+      {
+        "x": 2116,
+        "y": 630
+      }
+    ],
+    "counts": {
+      "children": 39,
+      "bodies": 7,
+      "staticBodies": 8,
+      "colliders": 9
+    },
+    "jumps": 1,
+    "runs": 2,
+    "events": [
+      {
+        "type": "reset",
+        "run": 1
+      },
+      {
+        "type": "reset",
+        "run": 2
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "jump",
+        "x": 220,
+        "y": 660,
+        "elapsed": 1.1191499999999999
+      }
+    ]
+  }
+}

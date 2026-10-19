@@ -1,0 +1,78 @@
+{
+  "activeBundle": "index-YvO6M_Lv.js",
+  "assetsAllIdentical": true,
+  "files": [
+    {
+      "path": "output/materials/level.json",
+      "identical": true,
+      "sha256": "e9649b08862c846ee75bd06c5af44cd184670a6c32c837605bc8c6be00451beb"
+    },
+    {
+      "path": "output/materials/sprites/parcel.svg",
+      "identical": true,
+      "sha256": "aec61e956367ccefd00b4e472520ccc06cc9d68365ebe3344f949cac0c292e48"
+    },
+    {
+      "path": "output/materials/sprites/platform.svg",
+      "identical": true,
+      "sha256": "79e886f1e6221786a7ee9d4217389391c5a3a11acaf9937d3a958b083dcdc529"
+    },
+    {
+      "path": "output/materials/sprites/hazard.svg",
+      "identical": true,
+      "sha256": "11e82bc0efcc2e685cc590a45583b87ecf065699f7eb8d6343deb21e218bb780"
+    },
+    {
+      "path": "output/materials/sprites/pelican-walk-0.svg",
+      "identical": true,
+      "sha256": "424a23db6f8acbc537fd4be2290b6bdbf9473cc289411b7989a50aca1f17f976"
+    },
+    {
+      "path": "output/materials/sprites/pelican-walk-1.svg",
+      "identical": true,
+      "sha256": "44fe5dfc2bacb62004a61293f581e6bea301f8119522151eed651e0bb49f5be6"
+    },
+    {
+      "path": "output/materials/sprites/pelican-walk-3.svg",
+      "identical": true,
+      "sha256": "44fe5dfc2bacb62004a61293f581e6bea301f8119522151eed651e0bb49f5be6"
+    },
+    {
+      "path": "output/materials/sprites/pelican-walk-2.svg",
+      "identical": true,
+      "sha256": "33a55fe59bae56cbc61fd855c42ef5e237d8f65f0474c4f38593800107798c13"
+    },
+    {
+      "path": "output/materials/sprites/pelican-idle.svg",
+      "identical": true,
+      "sha256": "424a23db6f8acbc537fd4be2290b6bdbf9473cc289411b7989a50aca1f17f976"
+    },
+    {
+      "path": "output/materials/sprites/pelican-hurt.svg",
+      "identical": true,
+      "sha256": "89f9fd917bbac6df3eacc5d22a5c73bf9ca88fd6a29bd36acd1fd4c6fd668d57"
+    },
+    {
+      "path": "output/materials/sprites/robot.svg",
+      "identical": true,
+      "sha256": "ee41971a712683f492b39a8c9e86cd488d082ad774e561c9ac7899b8620014a5"
+    },
+    {
+      "path": "output/materials/sprites/pause.svg",
+      "identical": true,
+      "sha256": "85222e89e567da220d827381fe236419f7bfd55832ccbc288d199e1aef14bcd1"
+    },
+    {
+      "path": "output/materials/sprites/pelican-jump.svg",
+      "identical": true,
+      "sha256": "1cc47f7262206d31b524ddb231c9b61a569b02a7adb8ecf09fdec69454ff069a"
+    },
+    {
+      "path": "output/materials/sprites/heart.svg",
+      "identical": true,
+      "sha256": "eca4ddeb69948146844299c31eddcd79ee5ced0ded042c690256f1ccb7a33c0d"
+    }
+  ],
+  "entryRelativeScript": "./assets/index-YvO6M_Lv.js",
+  "storageUsed": false
+}

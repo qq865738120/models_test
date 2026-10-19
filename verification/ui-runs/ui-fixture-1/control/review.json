@@ -1,0 +1,187 @@
+{
+  "revision": 13,
+  "artifacts": {
+    "01-svg": {
+      "initial": [
+        {
+          "id": "50669cade1c649b487ff32adfc89d8f7",
+          "createdAt": "2026-10-18T07:00:23.906599+00:00",
+          "entry": "index.html",
+          "sha256": "829f13b3b62c9adae621ed03be2f8e962fdb5e22ac6f6305887d21026a89442e",
+          "fileCount": 3,
+          "integrityPassed": true,
+          "issues": [],
+          "url": "http://127.0.0.1:8798/artifacts/50669cade1c649b487ff32adfc89d8f7/index.html"
+        },
+        {
+          "id": "f1af910960af42bc841f29c97e72a114",
+          "createdAt": "2026-10-18T08:31:33.036766+00:00",
+          "entry": "index.html",
+          "sha256": "829f13b3b62c9adae621ed03be2f8e962fdb5e22ac6f6305887d21026a89442e",
+          "fileCount": 3,
+          "integrityPassed": true,
+          "issues": [],
+          "url": "http://127.0.0.1:8798/artifacts/f1af910960af42bc841f29c97e72a114/index.html"
+        }
+      ]
+    },
+    "02-dispatch": {
+      "initial": [
+        {
+          "id": "b741024e62bd4d0bb7d511a0db9b190d",
+          "createdAt": "2026-10-18T07:00:23.963875+00:00",
+          "entry": "index.html",
+          "sha256": "3afb7e4bc55e990cac6e9a52c739e915bba85ea0ea3159132859af0c5d648cec",
+          "fileCount": 3,
+          "integrityPassed": true,
+          "issues": [],
+          "url": "http://127.0.0.1:8798/artifacts/b741024e62bd4d0bb7d511a0db9b190d/index.html"
+        }
+      ]
+    },
+    "03-game2d": {
+      "initial": [
+        {
+          "id": "2c8dd3179c7c404a8bbfcf495a3383d2",
+          "createdAt": "2026-10-18T07:00:24.194032+00:00",
+          "entry": "index.html",
+          "sha256": "76f306bebe7a9d213252ecaecc757d93e08513d2b11acf95023deeb5dedc0e9d",
+          "fileCount": 3,
+          "integrityPassed": true,
+          "issues": [],
+          "url": "http://127.0.0.1:8798/artifacts/2c8dd3179c7c404a8bbfcf495a3383d2/index.html"
+        }
+      ]
+    },
+    "04-game3d": {
+      "initial": [
+        {
+          "id": "1e6be5dd11ae475291286e998ae2c83a",
+          "createdAt": "2026-10-18T07:00:24.372916+00:00",
+          "entry": "index.html",
+          "sha256": "89892d6fc15aef9fd52b232ce957c76e0b6d76f8fe5856db14c8ceacf13b2d58",
+          "fileCount": 3,
+          "integrityPassed": true,
+          "issues": [],
+          "url": "http://127.0.0.1:8798/artifacts/1e6be5dd11ae475291286e998ae2c83a/index.html"
+        }
+      ]
+    },
+    "05-memory": {
+      "initial": [
+        {
+          "id": "bf57b046d38741b6b7a67d013a571afb",
+          "createdAt": "2026-10-18T07:00:24.382133+00:00",
+          "entry": "index.html",
+          "sha256": "9a36b62d472c39777a44127b689b5b20ecfc7b59451b2de1eb43aafed392c622",
+          "fileCount": 3,
+          "integrityPassed": true,
+          "issues": [],
+          "url": "http://127.0.0.1:8798/artifacts/bf57b046d38741b6b7a67d013a571afb/index.html"
+        }
+      ]
+    }
+  },
+  "scores": {
+    "b741024e62bd4d0bb7d511a0db9b190d": {
+      "artifactId": "b741024e62bd4d0bb7d511a0db9b190d",
+      "values": {
+        "workflow": 7,
+        "async": 7,
+        "visual": 7,
+        "access": 7,
+        "quality": 7
+      },
+      "total": 70.0,
+      "notes": "仅界面测试，不代表任何模型成绩。",
+      "savedAt": "2026-10-18T07:00:23.965251+00:00",
+      "rubricVersion": "pelican-rubric-1"
+    },
+    "2c8dd3179c7c404a8bbfcf495a3383d2": {
+      "artifactId": "2c8dd3179c7c404a8bbfcf495a3383d2",
+      "values": {
+        "loop": 6,
+        "physics": 6,
+        "stability": 6,
+        "feel": 6,
+        "delivery": 6
+      },
+      "total": 60.0,
+      "notes": "仅界面测试，不代表任何模型成绩。",
+      "savedAt": "2026-10-18T07:00:24.195332+00:00",
+      "rubricVersion": "pelican-rubric-1"
+    },
+    "1e6be5dd11ae475291286e998ae2c83a": {
+      "artifactId": "1e6be5dd11ae475291286e998ae2c83a",
+      "values": {
+        "model": 7,
+        "linkage": 7,
+        "gameplay": 7,
+        "robustness": 7,
+        "presentation": 7
+      },
+      "total": 70.0,
+      "notes": "仅界面测试，不代表任何模型成绩。",
+      "savedAt": "2026-10-18T07:00:24.374421+00:00",
+      "rubricVersion": "pelican-rubric-1"
+    },
+    "bf57b046d38741b6b7a67d013a571afb": {
+      "artifactId": "bf57b046d38741b6b7a67d013a571afb",
+      "values": {
+        "method": 6,
+        "audit": 6,
+        "repro": 6,
+        "analysis": 6,
+        "report": 6
+      },
+      "total": 60.0,
+      "notes": "仅界面测试，不代表任何模型成绩。",
+      "savedAt": "2026-10-18T07:00:24.383643+00:00",
+      "rubricVersion": "pelican-rubric-1"
+    },
+    "50669cade1c649b487ff32adfc89d8f7": {
+      "artifactId": "50669cade1c649b487ff32adfc89d8f7",
+      "values": {
+        "structure": 8.5,
+        "timing": 7,
+        "continuity": 9,
+        "evidence": 6,
+        "expression": 8
+      },
+      "total": 78.75,
+      "notes": "",
+      "savedAt": "2026-10-18T07:30:34.102808+00:00",
+      "rubricVersion": "pelican-rubric-1"
+    },
+    "f1af910960af42bc841f29c97e72a114": {
+      "artifactId": "f1af910960af42bc841f29c97e72a114",
+      "values": {
+        "structure": 8,
+        "timing": 8,
+        "continuity": 8,
+        "evidence": 8,
+        "expression": 8
+      },
+      "total": 80.0,
+      "notes": "",
+      "savedAt": "2026-10-18T08:32:09.695112+00:00",
+      "rubricVersion": "pelican-rubric-1"
+    }
+  },
+  "scoreHistory": [
+    {
+      "artifactId": "50669cade1c649b487ff32adfc89d8f7",
+      "values": {
+        "structure": 8,
+        "timing": 7,
+        "continuity": 9,
+        "evidence": 6,
+        "expression": 8
+      },
+      "total": 77.5,
+      "notes": "",
+      "savedAt": "2026-10-18T07:01:07.417349+00:00",
+      "rubricVersion": "pelican-rubric-1"
+    }
+  ]
+}

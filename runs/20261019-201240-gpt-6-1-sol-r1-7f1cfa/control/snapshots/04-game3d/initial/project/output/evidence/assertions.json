@@ -1,0 +1,38 @@
+{
+  "three_deliveries": true,
+  "game_time_seconds": 43.766999999999996,
+  "settled_delivery_events": [
+    [
+      "blue",
+      -9.536743161842054e-08,
+      0,
+      0.5166666666666666
+    ],
+    [
+      "red",
+      -9.536743161842054e-08,
+      0,
+      0.5166666666666666
+    ],
+    [
+      "yellow",
+      -9.536743161842054e-08,
+      0,
+      0.5166666666666666
+    ]
+  ],
+  "after_win_vehicle_frozen": true,
+  "after_win_time_frozen": true,
+  "after_win_crates_frozen": true,
+  "wrong_blue_fully_inside_red": true,
+  "wrong_blue_on_ground": true,
+  "wrong_blue_not_delivered": true,
+  "sampler_unchanged": true,
+  "final_build_iframe_three_deliveries": true,
+  "final_build_iframe_game_time": 39.833,
+  "final_win_frozen": true,
+  "stable_pause_value": 0.233,
+  "stable_pause_frozen": true,
+  "natural_timeout": true,
+  "timeout_frozen": true
+}

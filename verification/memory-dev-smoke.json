@@ -1,0 +1,43 @@
+{
+  "metrics": [
+    {
+      "recallAt5": {
+        "value": 1.0,
+        "n": 15
+      },
+      "staleFraction": {
+        "value": 0.5,
+        "n": 10
+      },
+      "abstainError": {
+        "value": 1.0,
+        "n": 5
+      }
+    },
+    {
+      "recallAt5": {
+        "value": 0.16666666666666666,
+        "n": 15
+      },
+      "staleFraction": {
+        "value": 0.19999999999999998,
+        "n": 10
+      },
+      "abstainError": {
+        "value": 1.0,
+        "n": 5
+      }
+    }
+  ],
+  "candidateMinusBaseline": {
+    "difference": -0.8333333333333334,
+    "ci95": [
+      -0.9333333333333333,
+      -0.7
+    ],
+    "groups": 15,
+    "queries": 15,
+    "seed": 20261018,
+    "repeats": 2000
+  }
+}

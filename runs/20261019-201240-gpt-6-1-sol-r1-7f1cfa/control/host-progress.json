@@ -1,0 +1,211 @@
+{
+  "runId": "20261019-201240-gpt-6-1-sol-r1-7f1cfa",
+  "model": "gpt-6.1-sol",
+  "thinking": "high",
+  "monitorAutomationId": "gpt-6-1-sol-2",
+  "sessions": {
+    "01-svg": {
+      "threadId": "01a15419-6f91-7f52-8b5e-ad37235a2a21",
+      "hostId": "local",
+      "projectId": "eac5bc50-38b7-457e-a9b9-155adc025010",
+      "phase": "complete",
+      "startedAt": "2026-10-19T12:25:12.699106+00:00",
+      "deadlineAt": "2026-10-19T12:30:12.699318+00:00",
+      "initialResult": {
+        "status": "completed",
+        "durationMs": 370633,
+        "completedAtUnix": 1792412686
+      },
+      "initialArtifactId": "49f244757b6a4943ba04c64e248c7e7d",
+      "changeResult": {
+        "status": "completed",
+        "durationMs": 115586,
+        "completedAtUnix": 1792412828
+      },
+      "changeArtifactId": "884abea489084ce98e124e2cf0a14145"
+    },
+    "02-dispatch": {
+      "threadId": "01a15421-7cd4-7fb3-8669-56d63139d039",
+      "hostId": "local",
+      "projectId": "a2397bcd-4649-463b-bdad-988b8751c986",
+      "phase": "complete",
+      "startedAt": "2026-10-19T12:41:37.539643+00:00",
+      "deadlineAt": "2026-10-19T12:51:37.539794+00:00",
+      "initialResult": {
+        "id": "01a15421-7e0f-7040-95f9-4f37d73d2b13",
+        "status": "completed",
+        "error": null,
+        "startedAt": 1792412843,
+        "completedAt": 1792413675,
+        "durationMs": 832308
+      },
+      "initialArtifactId": "d9ce0d1c8da14640acea90f92e3f8fd2",
+      "changeResult": {
+        "id": "01a1542e-8668-7150-b31b-062334dca5c8",
+        "status": "completed",
+        "error": null,
+        "startedAt": 1792413697,
+        "completedAt": 1792413974,
+        "durationMs": 276687
+      },
+      "changeArtifactId": "4946b4dc2484450ba7591a5a0e04735d"
+    },
+    "03-game2d": {
+      "threadId": "01a15433-1145-76f0-9eaf-ab31dc61b623",
+      "hostId": "local",
+      "projectId": "ebf2f9b8-47d6-4f3d-8ebc-97892a16617f",
+      "phase": "complete",
+      "startedAt": "2026-10-19T12:46:35.233391+00:00",
+      "deadlineAt": "2026-10-19T13:31:35.233552+00:00",
+      "initialResult": {
+        "id": "01a15433-12d9-7da0-87b7-2a5f7ff202bc",
+        "status": "completed",
+        "error": null,
+        "startedAt": 1792413995,
+        "completedAt": 1792415250,
+        "durationMs": 1254796
+      },
+      "initialArtifactId": "4989ff766bdb48868deacbaf26b53fa4"
+    },
+    "04-game3d": {
+      "threadId": "01a15443-3d2d-78e0-b94b-6aff2572eec8",
+      "hostId": "local",
+      "projectId": "f3519c33-6d0d-473b-9aac-488bcc2ecad6",
+      "phase": "complete",
+      "startedAt": "2026-10-19T13:04:15.004698+00:00",
+      "deadlineAt": "2026-10-19T14:04:15.005674+00:00",
+      "initialResult": {
+        "id": "01a15443-3fcf-7640-9609-bb5ed69b5a75",
+        "status": "completed",
+        "error": null,
+        "startedAt": 1792415055,
+        "completedAt": 1792416554,
+        "durationMs": 1498713
+      },
+      "initialArtifactId": "16f573de5a694383a81e6642ea781511"
+    },
+    "05-memory": {
+      "threadId": "01a15443-41bd-7fc1-8e5e-094fa444353c",
+      "hostId": "local",
+      "projectId": "8a13b6f0-514f-4959-ac5e-9206afd2e1c7",
+      "phase": "complete",
+      "startedAt": "2026-10-19T13:04:16.158502+00:00",
+      "deadlineAt": "2026-10-19T15:04:16.158852+00:00",
+      "initialResult": {
+        "id": "01a15443-4404-7392-bba9-db24d588f66c",
+        "status": "completed",
+        "error": null,
+        "startedAt": 1792415056,
+        "completedAt": 1792417371,
+        "durationMs": 2314738
+      },
+      "initialArtifactId": "65081b8305f44546864e52cc8dba11af"
+    }
+  },
+  "projects": {
+    "01-svg": "eac5bc50-38b7-457e-a9b9-155adc025010",
+    "02-dispatch": "a2397bcd-4649-463b-bdad-988b8751c986",
+    "03-game2d": "ebf2f9b8-47d6-4f3d-8ebc-97892a16617f",
+    "04-game3d": "f3519c33-6d0d-473b-9aac-488bcc2ecad6",
+    "05-memory": "8a13b6f0-514f-4959-ac5e-9206afd2e1c7"
+  },
+  "serviceCleanup": [
+    {
+      "at": "2026-10-19T12:50:49.528791+00:00",
+      "events": [
+        {
+          "pid": 80712,
+          "port": 5173,
+          "cwd": "/Users/zhengwenjun/大模型测试/runs/20261019-201240-gpt-6-1-sol-r1-7f1cfa/tasks/01-svg",
+          "action": "SIGTERM",
+          "reason": "已完成题目遗留静态预览服务"
+        },
+        {
+          "pid": 82126,
+          "port": 5187,
+          "cwd": "/Users/zhengwenjun/大模型测试/runs/20261019-201240-gpt-6-1-sol-r1-7f1cfa/tasks/02-dispatch",
+          "action": "SIGTERM",
+          "reason": "已完成题目遗留静态预览服务"
+        },
+        {
+          "pid": 82366,
+          "port": 5189,
+          "cwd": "/Users/zhengwenjun/大模型测试/runs/20261019-201240-gpt-6-1-sol-r1-7f1cfa/tasks/02-dispatch",
+          "action": "SIGTERM",
+          "reason": "已完成题目遗留静态预览服务"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-19T13:08:26.042852+00:00",
+      "events": [
+        {
+          "pid": 84063,
+          "cwd": "/Users/zhengwenjun/大模型测试/runs/20261019-201240-gpt-6-1-sol-r1-7f1cfa/tasks/03-game2d",
+          "action": "SIGTERM",
+          "reason": "第三题初始阶段已冻结，停止遗留静态服务"
+        },
+        {
+          "pid": 84383,
+          "cwd": "/Users/zhengwenjun/大模型测试/runs/20261019-201240-gpt-6-1-sol-r1-7f1cfa/tasks/03-game2d",
+          "action": "SIGTERM",
+          "reason": "第三题初始阶段已冻结，停止遗留静态服务"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-19T13:30:23.290192+00:00",
+      "events": [
+        {
+          "pid": 87966,
+          "cwd": "/Users/zhengwenjun/大模型测试/runs/20261019-201240-gpt-6-1-sol-r1-7f1cfa/tasks/04-game3d",
+          "action": "SIGTERM",
+          "reason": "第四题初始阶段已冻结，停止遗留静态服务"
+        },
+        {
+          "pid": 88600,
+          "cwd": "/Users/zhengwenjun/大模型测试/runs/20261019-201240-gpt-6-1-sol-r1-7f1cfa/tasks/04-game3d",
+          "action": "SIGTERM",
+          "reason": "第四题初始阶段已冻结，停止遗留静态服务"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-19T13:45:48.415744+00:00",
+      "events": [
+        {
+          "pid": 89199,
+          "cwd": "/Users/zhengwenjun/大模型测试/runs/20261019-201240-gpt-6-1-sol-r1-7f1cfa/tasks/05-memory",
+          "action": "SIGTERM",
+          "reason": "第五题初始阶段已冻结，停止遗留静态服务"
+        }
+      ]
+    }
+  ],
+  "evaluationPolicy": {
+    "updatedAt": "2026-10-19T13:03:04.644118+00:00",
+    "allowedPhases": [
+      "initial"
+    ],
+    "prompts": "仅 bench.py prompt 默认初始提示词，不发送额外解题消息",
+    "excludedChangeTasks": [
+      "01-svg",
+      "02-dispatch"
+    ],
+    "reason": "用户明确要求不要追加；既有快照保留不覆盖"
+  },
+  "parallelExecution": {
+    "recordedAt": "2026-10-19T13:04:40.580870+00:00",
+    "tasks": [
+      "03-game2d",
+      "04-game3d",
+      "05-memory"
+    ],
+    "reason": "用户要求并行第4/5题，第三题收尾仍在进行",
+    "resourceIsolation": "同一宿主机，无CPU/GPU资源强制隔离"
+  },
+  "initialExecutionCompletedAt": "2026-10-19T13:45:48.530589+00:00",
+  "initialResultsFile": "/Users/zhengwenjun/大模型测试/runs/20261019-201240-gpt-6-1-sol-r1-7f1cfa/control/initial-results.json",
+  "monitorStatus": "PAUSED",
+  "monitorPauseReason": "五题默认初始阶段全部交付、冻结、导入并完成主持人基础核验"
+}

@@ -14,7 +14,7 @@ export default function DeckFrame(p:Props){
   function key(e:KeyboardEvent){
    if(document.fullscreenElement?.classList.contains('result-stage'))return
    if(p.keyboardBlocked||e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||e.repeat)return
-   if((e.target as HTMLElement)?.closest('.core-prompt'))return
+   if((e.target as HTMLElement)?.closest('.core-prompt,.rubric-scroll'))return
    if((e.target as HTMLElement)?.closest('input,textarea,select,[contenteditable="true"],[role="dialog"]'))return
    if(e.key===' '&&(e.target as HTMLElement)?.closest('button,a'))return
    if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();p.onMove(1)}

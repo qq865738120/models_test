@@ -1,0 +1,19 @@
+{
+  "runId": "ui-fixture-2",
+  "taskId": "02-dispatch",
+  "phase": "initial",
+  "files": {
+    ".keep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executable": false
+    },
+    "app.js": {
+      "sha256": "8fa137333d0a81946ec43e6a5797fc02058131adfef54430567c8e3cfde893a9",
+      "executable": false
+    },
+    "index.html": {
+      "sha256": "afa6e5b06e3ee3eb756363ba069c779f7c84a534cbfc1a7256909527fa83bb87",
+      "executable": false
+    }
+  }
+}

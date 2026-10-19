@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-19T13:45:02.660251+00:00",
+  "artifactId": "65081b8305f44546864e52cc8dba11af",
+  "scope": "主持人独立浏览器页面基础检查；学术结论、推理与引用准确性未做专家评分",
+  "observations": {
+    "homepageVisible": true,
+    "sixQuestionsNavigationVisible": true,
+    "question5NavigationWorked": true,
+    "citationOpened": "N011-P0015–0020",
+    "sourcePanelShowed": "N011-P0013至0022；被引0015–0020范围及相邻上下文可见",
+    "searchTerm": "程心",
+    "searchHitCount": 26,
+    "returnToGuideWorked": true
+  },
+  "note": "没有改动报告或源材料，没有向被测模型发送任何追加提示。"
+}

@@ -1,0 +1,71 @@
+{
+  "phase": "change",
+  "createdAt": "2026-10-19T12:27:22.797067+00:00",
+  "sourceSha256": "d43bdad18836048d8300800389077a3dc382a2e8235242d62c690c66648b3e4d",
+  "files": {
+    ".gitignore": {
+      "sha256": "aa1abe30fa41667b3b615ad6b74d0c633e16e80fda986234c203544ef207529c",
+      "executable": false
+    },
+    "AGENTS.md": {
+      "sha256": "c0d4eedbc0ec41080feb8838462748510f297238beef1de4b74b2a6dfa97af9e",
+      "executable": false
+    },
+    "CLAUDE.md": {
+      "sha256": "c0d4eedbc0ec41080feb8838462748510f297238beef1de4b74b2a6dfa97af9e",
+      "executable": false
+    },
+    "COMMON_RULES.md": {
+      "sha256": "c0d4eedbc0ec41080feb8838462748510f297238beef1de4b74b2a6dfa97af9e",
+      "executable": false
+    },
+    "TASK.md": {
+      "sha256": "60a452fde390e5e283e8967138f8c4324a723cbd1809459f8affec4de906effa",
+      "executable": false
+    },
+    "materials/CHANGE.md": {
+      "sha256": "3631ab9dcb8bc8d0aff6949988a8e148313ec67af36ec950d639504d4389abf5",
+      "executable": false
+    },
+    "materials/README.md": {
+      "sha256": "7b8c03e2ec5ced8f11efa83f1299968c52e537db448a906fe199198e3d097794",
+      "executable": false
+    },
+    "materials/START.md": {
+      "sha256": "489e55a44b4ebae92b2639d157b29f68c24b8ee0a56a57e7625cdab9bd98fed7",
+      "executable": false
+    },
+    "output/.keep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executable": false
+    },
+    "output/DELIVERY.md": {
+      "sha256": "ab2ae13029914b4d26d46033a31033901ffe88d5d81e6db1e4d39fa6f83ed4b9",
+      "executable": false
+    },
+    "output/animation.svg": {
+      "sha256": "dd50fe793f1e6cb761f58cd637e6311d36cdf39b0575889bcb4c7e08010b5f30",
+      "executable": false
+    },
+    "output/index.html": {
+      "sha256": "b546f5955291f5e35a8eb17d6fe80598022a4293de40ea7d4a98ed673dbfcf65",
+      "executable": false
+    },
+    "solution/.keep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executable": false
+    },
+    "solution/animation.svg": {
+      "sha256": "dd50fe793f1e6cb761f58cd637e6311d36cdf39b0575889bcb4c7e08010b5f30",
+      "executable": false
+    },
+    "tools/svg-viewer.html": {
+      "sha256": "4f3f62bc7c18dc1fc137fc7a631401a4f3fa7c1196b594e3242337052f48856e",
+      "executable": false
+    }
+  },
+  "integrityPassed": true,
+  "issues": [],
+  "bundleSha256": "d6c7e6b848dfe0b9adc9c1358eee70dbe1016364cafde91c79ccf5364e8fee78",
+  "note": "node_modules按锁文件与材料哈希记录，不复制；dist可从归档源码构建。功能和人工分数未自动判定。"
+}

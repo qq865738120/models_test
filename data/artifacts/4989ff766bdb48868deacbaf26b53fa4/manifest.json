@@ -1,0 +1,183 @@
+{
+  "runId": "20261019-201240-gpt-6-1-sol-r1-7f1cfa",
+  "taskId": "03-game2d",
+  "phase": "initial",
+  "files": {
+    ".keep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executable": false
+    },
+    "DELIVERY.md": {
+      "sha256": "2e7df9b5b3dae7e02fe1929e74539736d8cf633dc0210632a667be70e48e42d4",
+      "executable": false
+    },
+    "assets/index-YvO6M_Lv.js": {
+      "sha256": "6c68f0dd3689cd779c2befd71c7f8d932c04d4a9ecb54f77b49fa2ce1278b42e",
+      "executable": false
+    },
+    "evidence/air-jump.json": {
+      "sha256": "ef79945ed77e0917239bc5927c9ec8e8d75a037d792693ea7b03dbd8a42c3a69",
+      "executable": false
+    },
+    "evidence/console.json": {
+      "sha256": "106ab53e3e88afe5405f3f854e7f967f340908f9cdb57226e792c8677a8c6f71",
+      "executable": false
+    },
+    "evidence/desktop-life-loss.jpg": {
+      "sha256": "014365dca679d3199ff00e5b4a5ebb6f102bf9af6d8626a7e17c9df8a1005a53",
+      "executable": false
+    },
+    "evidence/desktop-locked-exit.jpg": {
+      "sha256": "c594343cd6f75e2dcd12bd63edd93db6bd378e8ab071692379128b429e21c405",
+      "executable": false
+    },
+    "evidence/desktop-pause.jpg": {
+      "sha256": "08a23f15e348ecb8fdb02a2d7dcaa0ff0615f5448474b3977460692f7e14b01f",
+      "executable": false
+    },
+    "evidence/desktop-playing.jpg": {
+      "sha256": "f139d730f7efe5945eea32e05f23aef3965973fc48a0879f8de524c26b34cb15",
+      "executable": false
+    },
+    "evidence/desktop-start.jpg": {
+      "sha256": "66efc9e1867a07a8b3f5c210a9e30050230630bc468c92820c94acb9183ea812",
+      "executable": false
+    },
+    "evidence/desktop-timeout.jpg": {
+      "sha256": "1e611ee02323b75d5995855ce63ecf9e64e4c499f1c2ac410115af38545fca61",
+      "executable": false
+    },
+    "evidence/desktop-win.jpg": {
+      "sha256": "f40caac6956fed5671df15a67f5d8e6d1545bcecc4b3d0dae28567313b8f1c3d",
+      "executable": false
+    },
+    "evidence/fall.json": {
+      "sha256": "067ed2d2c3d66294e2e34e05cfba38178064a766a6fd16f91d983bc77a0d8342",
+      "executable": false
+    },
+    "evidence/finished-input.json": {
+      "sha256": "246b69d5fa46f5d5e3b812becb5db4dbe8555c297bd8c24e0ea8853b34c878f4",
+      "executable": false
+    },
+    "evidence/keyboard.json": {
+      "sha256": "f7ad27c042c7c6b2a242c1e98a66f56a826aed2117432d4671b095a0187e8390",
+      "executable": false
+    },
+    "evidence/locked-exit.json": {
+      "sha256": "28af884492ace741a5d009f287026a474aed5f81784c8f225eae5a952d2ebe6b",
+      "executable": false
+    },
+    "evidence/mobile-input.json": {
+      "sha256": "fc5c039df253197feb30a31972087c050957165dd3aebdbb55baa6b4299b58e7",
+      "executable": false
+    },
+    "evidence/mobile-paused.jpg": {
+      "sha256": "4a0df9c52cbbe78b1b01d69e928aa11a1b99402a4aaece60b0c48f8a0d7c8101",
+      "executable": false
+    },
+    "evidence/mobile-playing.jpg": {
+      "sha256": "ff0505ed8a33982ee2c25f4b8d2d3eeb8e0a1e7fd15bca2365067da0e12eb5aa",
+      "executable": false
+    },
+    "evidence/mobile-start.jpg": {
+      "sha256": "8e3e948429beeb56df94d479f32fd48eaeded748a34a1009d0a8df77257ea1be",
+      "executable": false
+    },
+    "evidence/moving-platform.json": {
+      "sha256": "5c10fe29fae77e985130f06713809b7f1b44f3f91906e760b42b2b74c5b030ed",
+      "executable": false
+    },
+    "evidence/normal-win.json": {
+      "sha256": "df43e904c91b78f23888762b00cfea9ce719a572767653c1ec503ad7dc874708",
+      "executable": false
+    },
+    "evidence/packaging.json": {
+      "sha256": "c9db0cb677cee4b912dbd42e31e864c9028d4e0041bcecf1b3a364bf57669c19",
+      "executable": false
+    },
+    "evidence/pause-10s.json": {
+      "sha256": "e7c86b58d0921b89160ef0f53659ca8c18446d61326d77fa209aed9a662b65eb",
+      "executable": false
+    },
+    "evidence/restart-10.json": {
+      "sha256": "1070fb4a751631860e408dd20eb08bdbf103913bdb1f20c1f40fc55ff1e46c18",
+      "executable": false
+    },
+    "evidence/restart-rate-input.json": {
+      "sha256": "d8ba65a6cbdd3623f13e010a3e8a1ddbaca87dcf812c138904c4202323cfba60",
+      "executable": false
+    },
+    "evidence/robot-life-loss.json": {
+      "sha256": "dd9231b5459bcc8c55d882b39b2d07ef0a48d87ea109ca6fb6c8fb9b4db73084",
+      "executable": false
+    },
+    "evidence/timeout-final.json": {
+      "sha256": "519839a52bb947aa4f8143ea5fec557c6420ed230f183985771cefad8d7c1e42",
+      "executable": false
+    },
+    "evidence/timeout-progress.json": {
+      "sha256": "d27476c2c630be924e8a1a0a425efedb43b025c9fee6ec19d8022baaff765afe",
+      "executable": false
+    },
+    "index.html": {
+      "sha256": "a559601f60a076593911b2e3e3254c19ed030edba729ca008a124413f634c7b6",
+      "executable": false
+    },
+    "materials/level.json": {
+      "sha256": "e9649b08862c846ee75bd06c5af44cd184670a6c32c837605bc8c6be00451beb",
+      "executable": false
+    },
+    "materials/sprites/hazard.svg": {
+      "sha256": "11e82bc0efcc2e685cc590a45583b87ecf065699f7eb8d6343deb21e218bb780",
+      "executable": false
+    },
+    "materials/sprites/heart.svg": {
+      "sha256": "eca4ddeb69948146844299c31eddcd79ee5ced0ded042c690256f1ccb7a33c0d",
+      "executable": false
+    },
+    "materials/sprites/parcel.svg": {
+      "sha256": "aec61e956367ccefd00b4e472520ccc06cc9d68365ebe3344f949cac0c292e48",
+      "executable": false
+    },
+    "materials/sprites/pause.svg": {
+      "sha256": "85222e89e567da220d827381fe236419f7bfd55832ccbc288d199e1aef14bcd1",
+      "executable": false
+    },
+    "materials/sprites/pelican-hurt.svg": {
+      "sha256": "89f9fd917bbac6df3eacc5d22a5c73bf9ca88fd6a29bd36acd1fd4c6fd668d57",
+      "executable": false
+    },
+    "materials/sprites/pelican-idle.svg": {
+      "sha256": "424a23db6f8acbc537fd4be2290b6bdbf9473cc289411b7989a50aca1f17f976",
+      "executable": false
+    },
+    "materials/sprites/pelican-jump.svg": {
+      "sha256": "1cc47f7262206d31b524ddb231c9b61a569b02a7adb8ecf09fdec69454ff069a",
+      "executable": false
+    },
+    "materials/sprites/pelican-walk-0.svg": {
+      "sha256": "424a23db6f8acbc537fd4be2290b6bdbf9473cc289411b7989a50aca1f17f976",
+      "executable": false
+    },
+    "materials/sprites/pelican-walk-1.svg": {
+      "sha256": "44fe5dfc2bacb62004a61293f581e6bea301f8119522151eed651e0bb49f5be6",
+      "executable": false
+    },
+    "materials/sprites/pelican-walk-2.svg": {
+      "sha256": "33a55fe59bae56cbc61fd855c42ef5e237d8f65f0474c4f38593800107798c13",
+      "executable": false
+    },
+    "materials/sprites/pelican-walk-3.svg": {
+      "sha256": "44fe5dfc2bacb62004a61293f581e6bea301f8119522151eed651e0bb49f5be6",
+      "executable": false
+    },
+    "materials/sprites/platform.svg": {
+      "sha256": "79e886f1e6221786a7ee9d4217389391c5a3a11acaf9937d3a958b083dcdc529",
+      "executable": false
+    },
+    "materials/sprites/robot.svg": {
+      "sha256": "ee41971a712683f492b39a8c9e86cd488d082ad774e561c9ac7899b8620014a5",
+      "executable": false
+    }
+  }
+}

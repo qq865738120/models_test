@@ -1,0 +1,25 @@
+[1019/200508.516576:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200508.517715:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size com.googlecode.crashpad.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200508.517741:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:66] setxattr org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200508.518418:ERROR:third_party/crashpad/crashpad/util/file/file_io.cc:103] ReadExactly: expected 8, observed 0
+[1019/200508.518754:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200508.518782:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size com.googlecode.crashpad.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200508.518807:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:66] setxattr org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+
+DevTools listening on ws://127.0.0.1:54983/devtools/browser/14d24df8-a756-43c6-9fb5-d5e75e5a85ef
+Trying to load the allocator multiple times. This is *not* supported.
+[77031:18536114:1019/200508.876628:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77031:18536114:1019/200508.878879:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77031:18536114:1019/200508.882514:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77031:18536114:1019/200508.882628:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77031:18536114:1019/200508.882737:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77031:18536114:1019/200508.882841:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77031:18536114:1019/200510.921788:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77031:18536114:1019/200510.989147:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77031:18536114:1019/200511.013285:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77031:18536114:1019/200511.051550:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77031:18536114:1019/200511.072286:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77031:18536114:1019/200511.115372:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77031:18536114:1019/200511.138245:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77083:18536723:1019/200528.907754:ERROR:base/apple/mach_port_rendezvous_mac.cc:256] bootstrap_look_up com.google.Chrome.MachPortRendezvousServer.1: Unknown service name (1102)
+[77083:18536723:1019/200528.907964:ERROR:base/memory/shared_memory_switch.cc:261] No rendezvous client, terminating process (parent died?)

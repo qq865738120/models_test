@@ -1,0 +1,635 @@
+{
+  "version": "pelican-rubric-1",
+  "tasks": [
+    {
+      "id": "01-svg",
+      "number": "01",
+      "title": "鹈鹕骑车送布丁",
+      "shortTitle": "SVG 动画",
+      "category": "CREATIVE CODING",
+      "level": "入门",
+      "minutes": 10,
+      "changeMinutes": 5,
+      "color": "#e9a86b",
+      "icon": "bike",
+      "description": "一只鹈鹕、一辆自行车、一份摇摇欲坠的布丁。用六秒钟，讲清楚一个有趣的故事。",
+      "capabilities": [
+        "空间关系",
+        "动画时序",
+        "指令遵循",
+        "视觉表达"
+      ],
+      "brief": [
+        "制作有完整骑乘关系的侧视 SVG 动画，内联在 HTML 中。",
+        "按固定时间线颠起布丁、回头查看，并连续循环。",
+        "双脚与踏板同步，布丁回到托盘，主体完整可见。"
+      ],
+      "rubric": [
+        {
+          "id": "structure",
+          "name": "形体与空间关系",
+          "weight": 25,
+          "description": "检查角色、自行车和布丁的结构与连接。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "主体可辨，握持或骑乘关系存在错误。"
+            },
+            {
+              "score": 10,
+              "text": "结构完整，握持、骑乘和脚踏关系准确。"
+            }
+          ]
+        },
+        {
+          "id": "timing",
+          "name": "动作与时间线",
+          "weight": 25,
+          "description": "核对四段事件的时长、先后和部件同步。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "事件大致正确，时序或同步有明显偏差。"
+            },
+            {
+              "score": 10,
+              "text": "时间线准确，脚踏、颠动和回头协调。"
+            }
+          ]
+        },
+        {
+          "id": "continuity",
+          "name": "连续性与稳定性",
+          "weight": 20,
+          "description": "检查三个循环、运动极值和落点。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "可以循环，仍有跳变、穿模或落点问题。"
+            },
+            {
+              "score": 10,
+              "text": "三次循环连续，无明显穿模、漂移和出画。"
+            }
+          ]
+        },
+        {
+          "id": "evidence",
+          "name": "验证与交付",
+          "weight": 10,
+          "description": "HTML、源码和关键时刻的验证记录。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "可打开，但验证与说明不完整。"
+            },
+            {
+              "score": 10,
+              "text": "交付完整，关键时刻与限制有真实验证。"
+            }
+          ]
+        },
+        {
+          "id": "expression",
+          "name": "画面与表现力",
+          "weight": 20,
+          "description": "构图、辨识、动势和喜剧节奏。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "画面可读，动作或节奏较生硬。"
+            },
+            {
+              "score": 10,
+              "text": "主体清楚，动作生动，喜剧节奏自然。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "02-dispatch",
+      "number": "02",
+      "title": "一万只鹈鹕的派单后台",
+      "shortTitle": "前端交互",
+      "category": "FRONTEND ENGINEERING",
+      "level": "中级",
+      "minutes": 25,
+      "changeMinutes": 10,
+      "color": "#78bbb4",
+      "icon": "layout",
+      "description": "从漂亮的首屏到可靠的每一次操作。让一万条订单在快速查询与故障中保持井然有序。",
+      "capabilities": [
+        "视觉还原",
+        "交互状态",
+        "异步并发",
+        "前端性能"
+      ],
+      "brief": [
+        "使用 React 与 TypeScript，参考原创设计完成派单后台。",
+        "实现查询、筛选、分页、批量派单和详情抽屉。",
+        "浏览器内 Mock 保证归档的 HTML 也能独立演示交互。"
+      ],
+      "rubric": [
+        {
+          "id": "workflow",
+          "name": "业务流程",
+          "weight": 30,
+          "description": "查询、详情、当前页选择和批量派单。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "主流程可用，存在缺项或数据不一致。"
+            },
+            {
+              "score": 10,
+              "text": "全部操作准确，选择语义和数据状态一致。"
+            }
+          ]
+        },
+        {
+          "id": "async",
+          "name": "异步与失败处理",
+          "weight": 25,
+          "description": "乱序响应、回滚、重试和空态。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "处理部分异常，仍有边界缺陷。"
+            },
+            {
+              "score": 10,
+              "text": "旧响应不会覆盖新查询，失败、重试和空结果正确。"
+            }
+          ]
+        },
+        {
+          "id": "visual",
+          "name": "视觉与布局",
+          "weight": 20,
+          "description": "对照参考图的结构、间距和层级。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "主要布局接近，细节和层级有缺陷。"
+            },
+            {
+              "score": 10,
+              "text": "结构还原准确，排版与层级清楚。"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "name": "移动端与可操作性",
+          "weight": 15,
+          "description": "390px宽度、键盘路径和交互反馈。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "基本可用，有溢出、焦点或反馈问题。"
+            },
+            {
+              "score": 10,
+              "text": "移动端不溢出，关键操作和键盘路径完整。"
+            }
+          ]
+        },
+        {
+          "id": "quality",
+          "name": "性能与验证",
+          "weight": 10,
+          "description": "真实性能记录和离线HTML。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "可运行，但性能或验证证据不足。"
+            },
+            {
+              "score": 10,
+              "text": "交付可复现，性能符合要求并有充分原始记录。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03-game2d",
+      "number": "03",
+      "title": "鹈鹕快递大作战",
+      "shortTitle": "2D 游戏",
+      "category": "GAME DEVELOPMENT",
+      "level": "进阶",
+      "minutes": 45,
+      "changeMinutes": 15,
+      "color": "#a2b7df",
+      "icon": "gamepad",
+      "description": "穿越办公室平台、躲开巡逻机器人，把三份快递安全送到出口。手感和规则，都要经得起实玩。",
+      "capabilities": [
+        "游戏状态",
+        "物理碰撞",
+        "输入控制",
+        "移动端适配"
+      ],
+      "brief": [
+        "用 Phaser 3 与统一素材制作可实际操作的横版游戏。",
+        "收集快递，处理生命、倒计时、暂停、失败与重开。",
+        "移动平台稳定承载，同时支持键盘和手机触屏。"
+      ],
+      "rubric": [
+        {
+          "id": "loop",
+          "name": "完整游戏流程",
+          "weight": 30,
+          "description": "收集、出口、生命、计时和胜负。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "主流程可玩，部分规则或状态有错误。"
+            },
+            {
+              "score": 10,
+              "text": "能实际通关，两类失败与所有状态转换正确。"
+            }
+          ]
+        },
+        {
+          "id": "physics",
+          "name": "控制与物理",
+          "weight": 25,
+          "description": "跳跃、碰撞、移动平台、无敌与掉落。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "基本控制成立，平台或受伤机制有问题。"
+            },
+            {
+              "score": 10,
+              "text": "控制可靠，跳跃、平台、无敌与复位准确。"
+            }
+          ]
+        },
+        {
+          "id": "stability",
+          "name": "暂停与重开",
+          "weight": 20,
+          "description": "暂停冻结及连续十次重开。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "基本有效，仍有状态或计时器残留。"
+            },
+            {
+              "score": 10,
+              "text": "暂停完整冻结，重开无状态或计时器累积。"
+            }
+          ]
+        },
+        {
+          "id": "feel",
+          "name": "操作与视觉反馈",
+          "weight": 15,
+          "description": "HUD、手感、反馈和触屏。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "可操作，但手感、提示或移动端有缺陷。"
+            },
+            {
+              "score": 10,
+              "text": "反馈清楚，HUD可读，键盘和触屏体验完整。"
+            }
+          ]
+        },
+        {
+          "id": "delivery",
+          "name": "交付与实测证据",
+          "weight": 10,
+          "description": "离线HTML与真实操作记录。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "可玩，但通关或边界证据不足。"
+            },
+            {
+              "score": 10,
+              "text": "HTML可玩，通关、失败和边界均有实际记录。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "04-game3d",
+      "number": "04",
+      "title": "鹈鹕叉车驾校",
+      "shortTitle": "3D 建模与游戏",
+      "category": "SPATIAL INTELLIGENCE",
+      "level": "高级",
+      "minutes": 60,
+      "changeMinutes": 20,
+      "color": "#b39cd8",
+      "icon": "box",
+      "description": "从一组几何体开始，造出一辆真正能工作的叉车。建模、联动与搬运，在同一个仓库里接受检验。",
+      "capabilities": [
+        "程序化建模",
+        "部件层级",
+        "3D 物理",
+        "交互闭环"
+      ],
+      "brief": [
+        "通过 Three.js 程序化创建叉车、鹈鹕驾驶员和仓库。",
+        "用 enable3d 完成驾驶、托举、搬运和颜色交付。",
+        "提供跟随镜头、模型检查、暂停、胜负与重开。"
+      ],
+      "rubric": [
+        {
+          "id": "model",
+          "name": "建模结构",
+          "weight": 25,
+          "description": "指定部件、驾驶员、比例与层级。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "模型可辨，但部件、比例或层级不完整。"
+            },
+            {
+              "score": 10,
+              "text": "全部部件可辨，层级合理，多视角结构完整。"
+            }
+          ]
+        },
+        {
+          "id": "linkage",
+          "name": "部件联动",
+          "weight": 20,
+          "description": "车轮、转向、货叉和驾驶员运动。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "部分联动正确，仍有错位或不同步。"
+            },
+            {
+              "score": 10,
+              "text": "联动正确，模型参数与碰撞体协调。"
+            }
+          ]
+        },
+        {
+          "id": "gameplay",
+          "name": "驾驶与搬运",
+          "weight": 25,
+          "description": "实际拾放、碰撞、颜色交付与胜负。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "可以搬运，碰撞或判定有明显缺陷。"
+            },
+            {
+              "score": 10,
+              "text": "三箱可真实交付，无隔空计分或重复交付。"
+            }
+          ]
+        },
+        {
+          "id": "robustness",
+          "name": "运行稳定性",
+          "weight": 20,
+          "description": "镜头、暂停、重开、性能与资源。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "基本可用，仍有状态、遮挡或性能问题。"
+            },
+            {
+              "score": 10,
+              "text": "镜头可用，状态准确，性能与资源有合格记录。"
+            }
+          ]
+        },
+        {
+          "id": "presentation",
+          "name": "视觉与交付",
+          "weight": 10,
+          "description": "灯光、材质、引导和多视角证据。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "可运行，视觉、引导或说明粗糙。"
+            },
+            {
+              "score": 10,
+              "text": "场景清楚，任务引导完整，HTML和证据齐全。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "05-memory",
+      "number": "05",
+      "title": "NPC 真的记住你了吗",
+      "shortTitle": "研究与证据",
+      "category": "RESEARCH & REASONING",
+      "level": "挑战",
+      "minutes": 90,
+      "changeMinutes": 30,
+      "color": "#d1ae71",
+      "icon": "brain",
+      "description": "玩家早已改口，记忆却停留在昨天。用可复现的实验，判断“记住了”是否经得起证据审查。",
+      "capabilities": [
+        "论文理解",
+        "实验设计",
+        "泄漏审计",
+        "证据推理"
+      ],
+      "brief": [
+        "阅读论文、NPC对话与日志，审计候选检索方法。",
+        "公平比较基线与候选，分析时间与实体边界。",
+        "以 HTML 报告呈现实验方法、数据图、误差和结论。"
+      ],
+      "rubric": [
+        {
+          "id": "method",
+          "name": "问题理解与方法",
+          "weight": 25,
+          "description": "论文主张、本次范围和控制变量。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "理解大致正确，实验范围或控制不足。"
+            },
+            {
+              "score": 10,
+              "text": "主张准确，比较公平，方法能回答当前问题。"
+            }
+          ]
+        },
+        {
+          "id": "audit",
+          "name": "数据与泄漏审计",
+          "weight": 25,
+          "description": "未来信息、时间截断和实体隔离。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "发现部分问题，仍有未隔离的污染。"
+            },
+            {
+              "score": 10,
+              "text": "识别并隔离污染，时间和实体边界准确。"
+            }
+          ]
+        },
+        {
+          "id": "repro",
+          "name": "复现与原始证据",
+          "weight": 20,
+          "description": "日志、分母、种子和配对区间。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "部分指标可复现，统计或日志不完整。"
+            },
+            {
+              "score": 10,
+              "text": "两种方法可复现，指标、分组区间可复算。"
+            }
+          ]
+        },
+        {
+          "id": "analysis",
+          "name": "消融与结论",
+          "weight": 20,
+          "description": "消融、误差分析和适用范围。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "有分析，但无法区分主要解释。"
+            },
+            {
+              "score": 10,
+              "text": "消融有针对性，结论有证据支持且说明局限。"
+            }
+          ]
+        },
+        {
+          "id": "report",
+          "name": "报告表达",
+          "weight": 10,
+          "description": "HTML结构、图表与证据索引。",
+          "anchors": [
+            {
+              "score": 0,
+              "text": "未实现、无法使用，或没有可信证据。"
+            },
+            {
+              "score": 5,
+              "text": "报告可读，图表或证据索引不充分。"
+            },
+            {
+              "score": 10,
+              "text": "报告清楚，图表准确，原始证据可定位。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

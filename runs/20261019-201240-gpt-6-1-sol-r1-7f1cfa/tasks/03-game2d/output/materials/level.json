@@ -1,0 +1,119 @@
+{
+  "version": "pelican-v1.0-pages-20261019",
+  "width": 2400,
+  "height": 720,
+  "spawn": {
+    "x": 100,
+    "y": 610
+  },
+  "exit": {
+    "x": 2290,
+    "y": 590,
+    "width": 60,
+    "height": 70
+  },
+  "platforms": [
+    {
+      "x": 0,
+      "y": 660,
+      "width": 960,
+      "height": 60
+    },
+    {
+      "x": 1160,
+      "y": 660,
+      "width": 1240,
+      "height": 60
+    },
+    {
+      "x": 320,
+      "y": 560,
+      "width": 240,
+      "height": 24
+    },
+    {
+      "x": 1160,
+      "y": 580,
+      "width": 180,
+      "height": 24
+    },
+    {
+      "x": 1660,
+      "y": 480,
+      "width": 200,
+      "height": 24
+    },
+    {
+      "x": 1990,
+      "y": 560,
+      "width": 190,
+      "height": 24
+    }
+  ],
+  "movingPlatforms": [
+    {
+      "id": "m1",
+      "x": 1320,
+      "y": 490,
+      "width": 180,
+      "height": 24,
+      "toX": 1590,
+      "toY": 490,
+      "durationMs": 3000,
+      "yoyo": true
+    }
+  ],
+  "packages": [
+    {
+      "id": "c1",
+      "x": 440,
+      "y": 538
+    },
+    {
+      "id": "c2",
+      "x": 1760,
+      "y": 458
+    },
+    {
+      "id": "c3",
+      "x": 2080,
+      "y": 538
+    }
+  ],
+  "robots": [
+    {
+      "id": "r1",
+      "x": 720,
+      "y": 630,
+      "minX": 610,
+      "maxX": 890,
+      "speed": 70
+    },
+    {
+      "id": "r2",
+      "x": 1930,
+      "y": 630,
+      "minX": 1880,
+      "maxX": 2210,
+      "speed": 90
+    }
+  ],
+  "hazards": [
+    {
+      "x": 840,
+      "y": 640,
+      "width": 70,
+      "height": 20
+    }
+  ],
+  "physics": {
+    "gravity": 900,
+    "moveSpeed": 240,
+    "jumpSpeed": 480,
+    "playerBodyWidth": 32,
+    "playerBodyHeight": 52,
+    "lives": 3,
+    "invulnerabilityMs": 800,
+    "durationSeconds": 120
+  }
+}

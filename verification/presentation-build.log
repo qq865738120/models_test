@@ -1,0 +1,14 @@
+
+> pelican-evaluation-studio@1.0.0 build
+> tsc --noEmit && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 2205 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.50 kB │ gzip:   0.36 kB
+dist/assets/index-DDg3dK1L.css   22.93 kB │ gzip:   5.85 kB
+dist/assets/index-Bdl4NU0M.js   226.06 kB │ gzip:  71.66 kB
+dist/assets/charts-Z78wRuns.js  422.83 kB │ gzip: 114.47 kB
+✓ built in 1.06s

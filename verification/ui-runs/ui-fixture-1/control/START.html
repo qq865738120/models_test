@@ -1,0 +1,160 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>评测提示词</title><style>
+body{margin:0;background:#f3f6fb;color:#1a2b42;font:16px/1.7 system-ui,sans-serif}main{max-width:1024px;margin:40px auto;padding:0 24px}section{background:white;border:1px solid #dfe5ef;border-radius:14px;padding:28px;margin:24px 0}h1{font-size:30px}h2{font-size:22px}code{display:block;overflow-wrap:anywhere;background:#eff3fa;padding:12px}textarea{box-sizing:border-box;width:100%;height:300px;font:14px/1.6 system-ui;border:1px solid #d2dbe8;padding:16px;margin-top:12px;resize:vertical}button{background:#2767cf;color:white;border:0;border-radius:8px;padding:10px 18px;font:inherit;cursor:pointer}.muted{color:#6b788e}#status{min-height:26px}</style></head><body><main>
+<h1>大模型评测 · 复制提示词</h1><p>模型：界面验收样例 1（非模型成绩） · 重复 1 · pelican-v1.0-html</p>
+<p>请在智能体中只打开下面的单题目录。此管理页面留给主持人；每题独立新会话。当前限制方式：规则约束，尚未强制隔离。</p><p id="status" aria-live="polite"></p><section><h2>01-svg · 鹈鹕骑车送布丁</h2><p>智能体项目根目录</p><code>/Users/zhengwenjun/大模型测试/verification/ui-runs/ui-fixture-1/tasks/01-svg</code><p>当前阶段：初始阶段</p><h3>初始阶段</h3><button data-copy="01-svg-initial">复制提示词</button><textarea id="01-svg-initial" readonly>你正在参加同一条件下的开发与研究能力评测。本次授权范围仅为当前单题项目。
+先读取当前项目 COMMON_RULES.md、TASK.md、materials/START.md。不要读取项目父目录或评测管理目录。
+已预装依赖；正式测试禁止联网安装。实现并自测，最终交付 output/index.html 与 output/DELIVERY.md。
+
+# 统一任务规则
+
+1. 仅在本次单题项目根目录内读取、编写和运行任务文件。不得读取父目录、其他项目、其他轮次成果、用户主目录、全局记忆、客户端历史、全局skills、私人连接器、凭据或未提供的数据。不得借助绝对路径、符号链接、硬链接、挂载或插件绕过边界。
+2. 允许执行环境提供的Node、Python、浏览器、编译器及必要系统运行库；启动工具所需的运行库加载不构成越界。不得借此搜索系统配置、历史或个人资料。依赖文档从本项目读取。
+3. 仅使用公开的本地终端、文件编辑器和本地浏览器。禁止外网搜索、下载素材、联网安装依赖、调用额外模型、生成图片或3D资产、启动额外智能体、任务委托和私人连接器。被测模型本身的推理由客户端负责。
+4. 不得修改、删除或替换 materials/、public/materials/、vendor/、public/vendor/、tools/、node_modules/、规则文件、TASK.md、依赖清单、锁文件及既有环境配置。可以编辑 src/、index.html、solution/、research/，新增实现文件，并写入 output/、dist/、.runtime/。不得改变既有依赖版本。
+5. 实现真实可运行的功能。不得伪造记录、截图、实验数据或结论，不得删除困难数据、改变指标分母、把答案写入输入，也不得用演示动画替代实际交互。未运行的检查须明确写明。
+6. 只根据当前任务、已提供材料与主持人正式发送的后续需求工作。不要猜测未来任务，不请求解题提示或额外权限。歧义采用符合明文要求的最小假设并记录；材料缺失或运行环境故障如实说明。
+7. 遵守当前阶段时间预算，提交或到时后停止修改。最终交付 output/index.html 及其本地相对路径资源，并提交 output/DELIVERY.md。页面必须能在本地静态服务和iframe中运行，不依赖外网或额外后端。
+
+
+# 鹈鹕骑车送布丁
+
+本阶段预算：10分钟。
+
+制作一段明亮幽默的侧视SVG动画：一只白色鹈鹕骑一辆完整自行车送布丁。
+在HTML中内联一个SVG，viewBox=&quot;0 0 640 480&quot;，不使用JavaScript、外链或位图。只有一只鹈鹕、一辆两轮自行车和一份布丁。鹈鹕有长喙、明显喉囊与蹼足；双翅扶住车把，双脚随踏板转动。布丁放在后货架固定托盘上。
+一个周期6秒：0至2秒平稳骑行；2至3秒经过减速带、车身轻颠；3至4秒布丁离开托盘后落回原处；4至6秒鹈鹕回头看一眼后恢复骑行。鹈鹕始终坐在车上，布丁不能穿过托盘。
+地面移动表现前进，主体全程完整可见；周期衔接自然。使用SMIL或CSS动画。提交HTML、SVG源码及简短时序说明，说明实际如何验证。
+
+## HTML 交付约定
+最终入口必须为 `output/index.html`。图片、脚本、样式、数据与物理运行资源全部存于 `output/` 内并使用相对路径引用。页面应能通过普通本地静态HTTP服务打开，也能在iframe中运行；不依赖外网、宿主父页面、固定端口、外部API或额外后端进程。允许使用多个本地资源文件。
+React/Phaser/Three.js项目执行 `npm run build` 生成该入口，已有构建配置使用相对资源路径。研究题制作含方法、图表、原始结果链接与结论的HTML报告；SVG题在HTML中内联动画，SVG内部仍不得使用JavaScript。
+交付前用本地静态服务检查实际功能。另写 `output/DELIVERY.md`，说明成果路径、启动方式、已运行检查、未运行检查和已知缺陷。不要以占位页或原始起始页代替成果。
+
+</textarea><p class="muted">追加提示词未释放：先冻结初始成果，再在评测管理终端使用 prompt --phase change。</p></section><section><h2>02-dispatch · 一万只鹈鹕的派单后台</h2><p>智能体项目根目录</p><code>/Users/zhengwenjun/大模型测试/verification/ui-runs/ui-fixture-1/tasks/02-dispatch</code><p>当前阶段：初始阶段</p><h3>初始阶段</h3><button data-copy="02-dispatch-initial">复制提示词</button><textarea id="02-dispatch-initial" readonly>你正在参加同一条件下的开发与研究能力评测。本次授权范围仅为当前单题项目。
+先读取当前项目 COMMON_RULES.md、TASK.md、materials/START.md。不要读取项目父目录或评测管理目录。
+已预装依赖；正式测试禁止联网安装。实现并自测，最终交付 output/index.html 与 output/DELIVERY.md。
+
+# 统一任务规则
+
+1. 仅在本次单题项目根目录内读取、编写和运行任务文件。不得读取父目录、其他项目、其他轮次成果、用户主目录、全局记忆、客户端历史、全局skills、私人连接器、凭据或未提供的数据。不得借助绝对路径、符号链接、硬链接、挂载或插件绕过边界。
+2. 允许执行环境提供的Node、Python、浏览器、编译器及必要系统运行库；启动工具所需的运行库加载不构成越界。不得借此搜索系统配置、历史或个人资料。依赖文档从本项目读取。
+3. 仅使用公开的本地终端、文件编辑器和本地浏览器。禁止外网搜索、下载素材、联网安装依赖、调用额外模型、生成图片或3D资产、启动额外智能体、任务委托和私人连接器。被测模型本身的推理由客户端负责。
+4. 不得修改、删除或替换 materials/、public/materials/、vendor/、public/vendor/、tools/、node_modules/、规则文件、TASK.md、依赖清单、锁文件及既有环境配置。可以编辑 src/、index.html、solution/、research/，新增实现文件，并写入 output/、dist/、.runtime/。不得改变既有依赖版本。
+5. 实现真实可运行的功能。不得伪造记录、截图、实验数据或结论，不得删除困难数据、改变指标分母、把答案写入输入，也不得用演示动画替代实际交互。未运行的检查须明确写明。
+6. 只根据当前任务、已提供材料与主持人正式发送的后续需求工作。不要猜测未来任务，不请求解题提示或额外权限。歧义采用符合明文要求的最小假设并记录；材料缺失或运行环境故障如实说明。
+7. 遵守当前阶段时间预算，提交或到时后停止修改。最终交付 output/index.html 及其本地相对路径资源，并提交 output/DELIVERY.md。页面必须能在本地静态服务和iframe中运行，不依赖外网或额外后端。
+
+
+# 一万只鹈鹕的派单后台
+
+本阶段预算：25分钟。
+
+依据参考图完成鹈鹕配送派单后台，使用所附React与TypeScript项目。
+实现搜索、状态筛选、分页、当前页批量选择和派单、订单详情抽屉。搜索、筛选、分页由提供的浏览器内Mock接口处理；筛选变化回到第一页并清空选择，切页清空选择。
+以1440×900参考图为桌面视觉目标；390×844手机宽度不得出现整页横向溢出，主要操作保持可达。
+处理加载、空结果、接口失败和重试。快速切换条件时只能显示最后一次查询的结果。批量派单失败要恢复原状态并显示错误，成功后页面与服务端一致。
+在指定设备、生产构建和固定采样脚本下，搜索输入到下一次可见反馈的P95不超过100ms，不含请求等待；整页不得一次渲染10,000条记录。验收脚本和阈值已附。
+提交代码、启动命令、验证结果与已知问题。
+使用 public/materials/mock-api.js 的 createMockApi()；接口见 materials/API.md。每个页面独立持有Mock状态，不连接固定端口服务。
+
+## HTML 交付约定
+最终入口必须为 `output/index.html`。图片、脚本、样式、数据与物理运行资源全部存于 `output/` 内并使用相对路径引用。页面应能通过普通本地静态HTTP服务打开，也能在iframe中运行；不依赖外网、宿主父页面、固定端口、外部API或额外后端进程。允许使用多个本地资源文件。
+React/Phaser/Three.js项目执行 `npm run build` 生成该入口，已有构建配置使用相对资源路径。研究题制作含方法、图表、原始结果链接与结论的HTML报告；SVG题在HTML中内联动画，SVG内部仍不得使用JavaScript。
+交付前用本地静态服务检查实际功能。另写 `output/DELIVERY.md`，说明成果路径、启动方式、已运行检查、未运行检查和已知缺陷。不要以占位页或原始起始页代替成果。
+
+</textarea><p class="muted">追加提示词未释放：先冻结初始成果，再在评测管理终端使用 prompt --phase change。</p></section><section><h2>03-game2d · 鹈鹕快递大作战</h2><p>智能体项目根目录</p><code>/Users/zhengwenjun/大模型测试/verification/ui-runs/ui-fixture-1/tasks/03-game2d</code><p>当前阶段：初始阶段</p><h3>初始阶段</h3><button data-copy="03-game2d-initial">复制提示词</button><textarea id="03-game2d-initial" readonly>你正在参加同一条件下的开发与研究能力评测。本次授权范围仅为当前单题项目。
+先读取当前项目 COMMON_RULES.md、TASK.md、materials/START.md。不要读取项目父目录或评测管理目录。
+已预装依赖；正式测试禁止联网安装。实现并自测，最终交付 output/index.html 与 output/DELIVERY.md。
+
+# 统一任务规则
+
+1. 仅在本次单题项目根目录内读取、编写和运行任务文件。不得读取父目录、其他项目、其他轮次成果、用户主目录、全局记忆、客户端历史、全局skills、私人连接器、凭据或未提供的数据。不得借助绝对路径、符号链接、硬链接、挂载或插件绕过边界。
+2. 允许执行环境提供的Node、Python、浏览器、编译器及必要系统运行库；启动工具所需的运行库加载不构成越界。不得借此搜索系统配置、历史或个人资料。依赖文档从本项目读取。
+3. 仅使用公开的本地终端、文件编辑器和本地浏览器。禁止外网搜索、下载素材、联网安装依赖、调用额外模型、生成图片或3D资产、启动额外智能体、任务委托和私人连接器。被测模型本身的推理由客户端负责。
+4. 不得修改、删除或替换 materials/、public/materials/、vendor/、public/vendor/、tools/、node_modules/、规则文件、TASK.md、依赖清单、锁文件及既有环境配置。可以编辑 src/、index.html、solution/、research/，新增实现文件，并写入 output/、dist/、.runtime/。不得改变既有依赖版本。
+5. 实现真实可运行的功能。不得伪造记录、截图、实验数据或结论，不得删除困难数据、改变指标分母、把答案写入输入，也不得用演示动画替代实际交互。未运行的检查须明确写明。
+6. 只根据当前任务、已提供材料与主持人正式发送的后续需求工作。不要猜测未来任务，不请求解题提示或额外权限。歧义采用符合明文要求的最小假设并记录；材料缺失或运行环境故障如实说明。
+7. 遵守当前阶段时间预算，提交或到时后停止修改。最终交付 output/index.html 及其本地相对路径资源，并提交 output/DELIVERY.md。页面必须能在本地静态服务和iframe中运行，不依赖外网或额外后端。
+
+
+# 鹈鹕快递大作战
+
+本阶段预算：45分钟。
+
+使用所附Phaser 3项目，从空场景制作可玩的2D横版平台游戏《鹈鹕快递大作战》。
+读取给定关卡布局与素材。方向键或A/D移动，空格跳跃，P暂停；手机提供左右与跳跃按钮。角色落地后才能再次跳跃，移动平台应能稳定承载角色，不能穿过实体平台。
+本局限时120秒，角色3点生命；收齐三份快递后到达出口胜利。接触机器人或危险区域扣1点生命，并给予0.8秒受伤无敌；掉出地图扣1点生命后回到起点，保留快递收集进度与剩余时间。生命为0或时间耗尽时失败。
+包括开始、游玩、暂停、胜利、失败与重新开始。暂停时角色、敌人、平台和倒计时全部冻结，恢复后继续；重新开始必须完整重置状态。胜负结算后停止接受移动输入。
+收集、跳跃、受击与通关有清楚的动画或视觉反馈；HUD显示生命、快递数量与剩余时间。视野随角色移动且不越出地图边界。适配1280×720和390×844画布容器，关键操作及HUD可见。
+提交完整项目、启动命令、实际测试记录和已知问题。必须能够真实操作通关，不能只制作演示动画。
+
+## HTML 交付约定
+最终入口必须为 `output/index.html`。图片、脚本、样式、数据与物理运行资源全部存于 `output/` 内并使用相对路径引用。页面应能通过普通本地静态HTTP服务打开，也能在iframe中运行；不依赖外网、宿主父页面、固定端口、外部API或额外后端进程。允许使用多个本地资源文件。
+React/Phaser/Three.js项目执行 `npm run build` 生成该入口，已有构建配置使用相对资源路径。研究题制作含方法、图表、原始结果链接与结论的HTML报告；SVG题在HTML中内联动画，SVG内部仍不得使用JavaScript。
+交付前用本地静态服务检查实际功能。另写 `output/DELIVERY.md`，说明成果路径、启动方式、已运行检查、未运行检查和已知缺陷。不要以占位页或原始起始页代替成果。
+
+</textarea><p class="muted">追加提示词未释放：先冻结初始成果，再在评测管理终端使用 prompt --phase change。</p></section><section><h2>04-game3d · 鹈鹕叉车驾校</h2><p>智能体项目根目录</p><code>/Users/zhengwenjun/大模型测试/verification/ui-runs/ui-fixture-1/tasks/04-game3d</code><p>当前阶段：初始阶段</p><h3>初始阶段</h3><button data-copy="04-game3d-initial">复制提示词</button><textarea id="04-game3d-initial" readonly>你正在参加同一条件下的开发与研究能力评测。本次授权范围仅为当前单题项目。
+先读取当前项目 COMMON_RULES.md、TASK.md、materials/START.md。不要读取项目父目录或评测管理目录。
+已预装依赖；正式测试禁止联网安装。实现并自测，最终交付 output/index.html 与 output/DELIVERY.md。
+
+# 统一任务规则
+
+1. 仅在本次单题项目根目录内读取、编写和运行任务文件。不得读取父目录、其他项目、其他轮次成果、用户主目录、全局记忆、客户端历史、全局skills、私人连接器、凭据或未提供的数据。不得借助绝对路径、符号链接、硬链接、挂载或插件绕过边界。
+2. 允许执行环境提供的Node、Python、浏览器、编译器及必要系统运行库；启动工具所需的运行库加载不构成越界。不得借此搜索系统配置、历史或个人资料。依赖文档从本项目读取。
+3. 仅使用公开的本地终端、文件编辑器和本地浏览器。禁止外网搜索、下载素材、联网安装依赖、调用额外模型、生成图片或3D资产、启动额外智能体、任务委托和私人连接器。被测模型本身的推理由客户端负责。
+4. 不得修改、删除或替换 materials/、public/materials/、vendor/、public/vendor/、tools/、node_modules/、规则文件、TASK.md、依赖清单、锁文件及既有环境配置。可以编辑 src/、index.html、solution/、research/，新增实现文件，并写入 output/、dist/、.runtime/。不得改变既有依赖版本。
+5. 实现真实可运行的功能。不得伪造记录、截图、实验数据或结论，不得删除困难数据、改变指标分母、把答案写入输入，也不得用演示动画替代实际交互。未运行的检查须明确写明。
+6. 只根据当前任务、已提供材料与主持人正式发送的后续需求工作。不要猜测未来任务，不请求解题提示或额外权限。歧义采用符合明文要求的最小假设并记录；材料缺失或运行环境故障如实说明。
+7. 遵守当前阶段时间预算，提交或到时后停止修改。最终交付 output/index.html 及其本地相对路径资源，并提交 output/DELIVERY.md。页面必须能在本地静态服务和iframe中运行，不依赖外网或额外后端。
+
+
+# 鹈鹕叉车驾校
+
+本阶段预算：60分钟。
+
+使用所附Three.js与enable3d项目，从空场景制作可玩的3D游戏《鹈鹕叉车驾校》。
+通过Three.js程序化建模创建一辆叉车、一只坐在驾驶位的鹈鹕，以及仓库地面、货架、路障、三个不同颜色的货箱和对应交付区。
+叉车必须可辨认出车身、驾驶室、座椅、四个车轮、门架与两根货叉；鹈鹕有白色身体、长喙和喉囊。建立清楚的父子层级：车轮随行进滚动，转向轮随转向偏转，货叉沿门架升降，驾驶员随整车运动。车宽参数应集中管理，供后续修改。
+W/S前后驾驶，A/D转向，Q/E升降货叉，空格制动，P暂停。禁止用自动寻路或脚本代替驾驶。
+货叉降到拾取高度、进入箱底且对齐后，升起可托起一个货箱；允许使用明确的吸附辅助。落下货叉释放后，货箱位于对应颜色交付区并稳定落地才计交付，每箱只计一次。驶过区域或按按钮不能直接加分。车、货箱与墙、地面应有合理碰撞，不要求真实液压或精确车辆动力学。
+限时120秒，把三个货箱送到对应区域即胜利；时间耗尽失败。提供开始、暂停、胜负结算和重新开始，重开恢复全部货箱、车体、计时与分数。
+默认第三人称跟随镜头，行驶目标清晰；镜头接近货架或墙时应避免严重遮挡。提供暂停下的模型检查模式，可从前、侧、后及斜上方观察模型，退出后恢复原状态。
+以1280×720、设备像素比1运行。按给定脚本预热10秒后采样60秒，帧间隔P95不超过33.3ms；不能降低规定分辨率或移除任务物体。提供建模源码、启动命令、实际通关或失败记录及性能原始数据。
+
+## HTML 交付约定
+最终入口必须为 `output/index.html`。图片、脚本、样式、数据与物理运行资源全部存于 `output/` 内并使用相对路径引用。页面应能通过普通本地静态HTTP服务打开，也能在iframe中运行；不依赖外网、宿主父页面、固定端口、外部API或额外后端进程。允许使用多个本地资源文件。
+React/Phaser/Three.js项目执行 `npm run build` 生成该入口，已有构建配置使用相对资源路径。研究题制作含方法、图表、原始结果链接与结论的HTML报告；SVG题在HTML中内联动画，SVG内部仍不得使用JavaScript。
+交付前用本地静态服务检查实际功能。另写 `output/DELIVERY.md`，说明成果路径、启动方式、已运行检查、未运行检查和已知缺陷。不要以占位页或原始起始页代替成果。
+
+</textarea><p class="muted">追加提示词未释放：先冻结初始成果，再在评测管理终端使用 prompt --phase change。</p></section><section><h2>05-memory · NPC真的记住你了吗</h2><p>智能体项目根目录</p><code>/Users/zhengwenjun/大模型测试/verification/ui-runs/ui-fixture-1/tasks/05-memory</code><p>当前阶段：初始阶段</p><h3>初始阶段</h3><button data-copy="05-memory-initial">复制提示词</button><textarea id="05-memory-initial" readonly>你正在参加同一条件下的开发与研究能力评测。本次授权范围仅为当前单题项目。
+先读取当前项目 COMMON_RULES.md、TASK.md、materials/START.md。不要读取项目父目录或评测管理目录。
+已预装依赖；正式测试禁止联网安装。实现并自测，最终交付 output/index.html 与 output/DELIVERY.md。
+
+# 统一任务规则
+
+1. 仅在本次单题项目根目录内读取、编写和运行任务文件。不得读取父目录、其他项目、其他轮次成果、用户主目录、全局记忆、客户端历史、全局skills、私人连接器、凭据或未提供的数据。不得借助绝对路径、符号链接、硬链接、挂载或插件绕过边界。
+2. 允许执行环境提供的Node、Python、浏览器、编译器及必要系统运行库；启动工具所需的运行库加载不构成越界。不得借此搜索系统配置、历史或个人资料。依赖文档从本项目读取。
+3. 仅使用公开的本地终端、文件编辑器和本地浏览器。禁止外网搜索、下载素材、联网安装依赖、调用额外模型、生成图片或3D资产、启动额外智能体、任务委托和私人连接器。被测模型本身的推理由客户端负责。
+4. 不得修改、删除或替换 materials/、public/materials/、vendor/、public/vendor/、tools/、node_modules/、规则文件、TASK.md、依赖清单、锁文件及既有环境配置。可以编辑 src/、index.html、solution/、research/，新增实现文件，并写入 output/、dist/、.runtime/。不得改变既有依赖版本。
+5. 实现真实可运行的功能。不得伪造记录、截图、实验数据或结论，不得删除困难数据、改变指标分母、把答案写入输入，也不得用演示动画替代实际交互。未运行的检查须明确写明。
+6. 只根据当前任务、已提供材料与主持人正式发送的后续需求工作。不要猜测未来任务，不请求解题提示或额外权限。歧义采用符合明文要求的最小假设并记录；材料缺失或运行环境故障如实说明。
+7. 遵守当前阶段时间预算，提交或到时后停止修改。最终交付 output/index.html 及其本地相对路径资源，并提交 output/DELIVERY.md。页面必须能在本地静态服务和iframe中运行，不依赖外网或额外后端。
+
+
+# NPC 真的记住你了吗
+
+本阶段预算：90分钟。
+
+阅读所附论文指定章节、NPC记忆实验说明、代码与演示日志，检验以下主张：所提供的记忆方法，比BM25更能找回提问时刻仍然有效的玩家信息。
+明确论文主张、当前小实验能检验的主张及二者差别。修复实验流程中的问题，使用开发集实现并验证基线与候选方法。
+统一检索语料、时间截断、top-k和上下文预算；不得检索提问时刻之后的信息或把评测答案写入记忆。输出原始结果、配置、代码和复现命令。
+报告有效证据Recall@5，以及知识已更新时取回过期证据的比例；对无法作答样本另报错误提供证据的比例。按角色或对话分组，使用固定种子进行配对重采样，报告差值区间与样本数。
+至少做一项针对候选方法关键组件的消融。给出支持、反驳或证据不足的判断，并说明样本限制与下一步验证。不能把检索指标当作NPC最终回答正确率。没有跑出的结果请明确标注。
+
+## HTML 交付约定
+最终入口必须为 `output/index.html`。图片、脚本、样式、数据与物理运行资源全部存于 `output/` 内并使用相对路径引用。页面应能通过普通本地静态HTTP服务打开，也能在iframe中运行；不依赖外网、宿主父页面、固定端口、外部API或额外后端进程。允许使用多个本地资源文件。
+React/Phaser/Three.js项目执行 `npm run build` 生成该入口，已有构建配置使用相对资源路径。研究题制作含方法、图表、原始结果链接与结论的HTML报告；SVG题在HTML中内联动画，SVG内部仍不得使用JavaScript。
+交付前用本地静态服务检查实际功能。另写 `output/DELIVERY.md`，说明成果路径、启动方式、已运行检查、未运行检查和已知缺陷。不要以占位页或原始起始页代替成果。
+
+</textarea><p class="muted">追加提示词未释放：先冻结初始成果，再在评测管理终端使用 prompt --phase change。</p></section></main><script>
+document.querySelectorAll('[data-copy]').forEach(button=>button.addEventListener('click',async()=>{const box=document.getElementById(button.dataset.copy);box.focus();box.select();try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(box.value);else if(!document.execCommand('copy'))throw Error('clipboard');document.getElementById('status').textContent='提示词已复制'}catch(e){document.getElementById('status').textContent='已选中文本，请按 Command+C 或 Ctrl+C 复制'}}));</script></body></html>

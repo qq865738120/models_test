@@ -3,7 +3,7 @@ import copy
 
 SUITE_ID='pelican-v1.0'
 SUITE_NAME='鹈鹕测评 v1.0'
-RUBRIC_VERSION='pelican-rubric-2'
+RUBRIC_VERSION='pelican-rubric-4'
 
 def d(key,name,weight,description,mid,full):
     return {'id':key,'name':name,'weight':weight,'description':description,'anchors':[
@@ -24,11 +24,11 @@ CATALOG=[
  {'id':'02-dispatch','number':'02','title':'一万只鹈鹕的派单后台','shortTitle':'前端交互','category':'前端开发','level':'中级','minutes':25,'changeMinutes':10,'color':'#78bbb4','icon':'layout',
   'description':'从漂亮的首屏到可靠的每一次操作。让一万条订单在快速查询与故障中保持井然有序。',
   'capabilities':['界面设计能力','视觉审美能力','交互理解能力'],
-  'brief':['使用 React 与 TypeScript，参考原创设计完成派单后台。','实现查询、筛选、分页、批量派单和详情抽屉。','浏览器内 Mock 保证归档的 HTML 也能独立演示交互。'],
+  'brief':['使用 React 与 TypeScript，完成总览、订单派送、配送员、运行报表和设置五页。','统一美观布局，实现查询、筛选、分页、派单确认和详情抽屉。','浏览器内 Mock 保证归档的 HTML 也能独立演示交互。'],
   'rubric':[
-   d('workflow','业务流程',30,'查询、详情、当前页选择和批量派单。','主流程可用，存在缺项或数据不一致。','全部操作准确，选择语义和数据状态一致。'),
+   d('workflow','业务流程',30,'五页完整性、跨页联动、详情、选择与确认派单。','主流程可用，存在缺项或数据不一致。','全部操作准确，选择语义和数据状态一致。'),
    d('async','异步与失败处理',25,'乱序响应、回滚、重试和空态。','处理部分异常，仍有边界缺陷。','旧响应不会覆盖新查询，失败、重试和空结果正确。'),
-   d('visual','视觉与布局',20,'对照参考图的结构、间距和层级。','主要布局接近，细节和层级有缺陷。','结构还原准确，排版与层级清楚。'),
+   d('visual','视觉与布局',20,'五页与弹层的统一美感、参考布局、排版和状态层级。','主要布局接近，细节和层级有缺陷。','结构还原准确，排版与层级清楚。'),
    d('access','移动端与可操作性',15,'390px宽度、键盘路径和交互反馈。','基本可用，有溢出、焦点或反馈问题。','移动端不溢出，关键操作和键盘路径完整。'),
    d('quality','性能与验证',10,'真实性能记录和离线HTML。','可运行，但性能或验证证据不足。','交付可复现，性能符合要求并有充分原始记录。')]},
  {'id':'03-game2d','number':'03','title':'鹈鹕快递大作战','shortTitle':'2D 游戏','category':'游戏开发','level':'进阶','minutes':45,'changeMinutes':15,'color':'#a2b7df','icon':'gamepad',
@@ -64,6 +64,10 @@ CATALOG=[
 
 ]
 
+from .prompt_revision import INITIAL, CHANGE, PROMPT_VERSION, enrich_rubrics
+
+enrich_rubrics(CATALOG)
+
 DELIVERY='''
 ## HTML 交付约定
 最终入口必须为 `output/index.html`。图片、脚本、样式、数据与物理运行资源全部存于 `output/` 内并使用相对路径引用。页面应能通过普通本地静态HTTP服务打开，也能在iframe中运行；不依赖外网、宿主父页面、固定端口、外部API或额外后端进程。允许使用多个本地资源文件。
@@ -80,9 +84,17 @@ def candidate_task(key, standard):
         from pathlib import Path
         from .longread import CORPUS
         prompt=(Path(__file__).resolve().parents[1]/'research'/CORPUS/'TASK-CORE.md').read_text(encoding='utf-8')
-    else: prompt=standard.prompts['task'+str(int(task['number']))][0]
+    else: prompt=INITIAL.get(key, standard.prompts['task'+str(int(task['number']))][0])
     if key=='01-svg': prompt=prompt.replace('输出单文件SVG，','在HTML中内联一个SVG，').replace('提交SVG及简短时序说明','提交HTML、SVG源码及简短时序说明')
-    if key=='02-dispatch':
-        prompt=prompt.replace('搜索、筛选、分页由Mock接口处理','搜索、筛选、分页由提供的浏览器内Mock接口处理')
-        prompt+='\n使用 public/materials/mock-api.js 的 createMockApi()；接口见 materials/API.md。每个页面独立持有Mock状态，不连接固定端口服务。'
-    return f"# {task['title']}\n\n本阶段预算：{task['minutes']}分钟。\n\n{prompt}\n{DELIVERY}"
+    return f"# {task['title']}\n\n提示词版本：{PROMPT_VERSION}。本阶段预算：{task['minutes']}分钟。\n\n{prompt}\n{DELIVERY}"
+
+
+def candidate_change(key, standard):
+    """Return only the authorized change-stage prompt; retain it in admin until release."""
+    task = next(t for t in CATALOG if t['id'] == key)
+    if key == '05-memory':
+        from .longread import CHANGE as longread_change
+        prompt = longread_change
+    else:
+        prompt = CHANGE.get(key, standard.prompts['task' + str(int(task['number']))][1])
+    return f"提示词版本：{PROMPT_VERSION}。\n\n{prompt}\n"

@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-19T12:30:55.362501+00:00",
+  "task": "01-svg",
+  "scope": "主持人静态结构与预览HTTP检查；不代替运动和视觉评分",
+  "checks": {
+    "initial": {
+      "hasIndex": true,
+      "inlineSvgCount": 1,
+      "viewBox": "0 0 640 480",
+      "htmlScriptCount": 0,
+      "forbiddenSvgTags": [],
+      "remoteHtmlRefs": [],
+      "deliveryExists": true,
+      "animationSha256": "714fe651a015c5b56d0835899fb8a74cc69ab241d107f246e635da438c3cec2c",
+      "previewHttpStatus": 200
+    },
+    "change": {
+      "hasIndex": true,
+      "inlineSvgCount": 1,
+      "viewBox": "0 0 640 480",
+      "htmlScriptCount": 0,
+      "forbiddenSvgTags": [],
+      "remoteHtmlRefs": [],
+      "deliveryExists": true,
+      "animationSha256": "dd50fe793f1e6cb761f58cd637e6311d36cdf39b0575889bcb4c7e08010b5f30",
+      "previewHttpStatus": 200
+    }
+  }
+}

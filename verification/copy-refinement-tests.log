@@ -1,0 +1,46 @@
+test_change_requires_freeze_and_does_not_rewrite_snapshot (test_lifecycle.LifecycleTests) ... ok
+test_export_omits_future_and_admin_material (test_lifecycle.LifecycleTests) ... ok
+test_export_refuses_implementation_changes (test_lifecycle.LifecycleTests) ... ok
+test_external_directory_symlink_is_rejected (test_lifecycle.LifecycleTests) ... ok
+test_external_file_symlink_is_rejected (test_lifecycle.LifecycleTests) ... ok
+test_external_hardlink_is_rejected (test_lifecycle.LifecycleTests) ... ok
+test_future_prompt_and_holdout_not_in_task (test_lifecycle.LifecycleTests) ... ok
+test_generated_game_and_research_contracts_are_deterministic (test_lifecycle.LifecycleTests) ... ok
+test_memory_change_materials_only_released_after_freeze (test_lifecycle.LifecycleTests) ... ok
+test_modification_after_initial_freeze_blocks_change (test_lifecycle.LifecycleTests) ... ok
+test_modified_frozen_snapshot_blocks_change (test_lifecycle.LifecycleTests) ... ok
+test_new_protected_file_and_removed_input_detected (test_lifecycle.LifecycleTests) ... ok
+test_path_traversal_and_foreign_run_rejected (test_lifecycle.LifecycleTests) ... ok
+test_protected_edit_detected_and_invalid_snapshot_kept (test_lifecycle.LifecycleTests) ... ok
+test_repeat_init_refuses_overwrite (test_lifecycle.LifecycleTests) ... ok
+test_sandbox_command_has_no_host_root_or_network (test_lifecycle.LifecycleTests) ... ok
+test_sandbox_profile_rejects_mac_dependencies (test_lifecycle.LifecycleTests) ... ok
+test_snapshot_cannot_be_overwritten (test_lifecycle.LifecycleTests) ... ok
+test_solution_edit_and_runtime_cache_are_allowed (test_lifecycle.LifecycleTests) ... ok
+test_tampered_prepared_bundle_prevents_new_runs (test_lifecycle.LifecycleTests) ... ok
+test_two_runs_have_identical_input_and_independent_files (test_lifecycle.LifecycleTests) ... ok
+test_distribution_excludes_host_reference_and_legacy_answers (test_longread.CorpusTests) ... ok
+test_frozen_corpus_dates_integrity_and_novel_anchors (test_longread.CorpusTests) ... ok
+test_six_questions_with_separate_host_rubric (test_longread.CorpusTests) ... ok
+test_new_research_change_needs_no_legacy_npc_files (test_longread.HistoryTests) ... ok
+test_pinned_old_title_and_timer_survive_catalog_changes (test_longread.HistoryTests) ... ok
+test_prepared_catalog_version_is_pinned (test_longread.HistoryTests) ... ok
+test_empty_answers_have_separate_denominator (test_metrics.MetricsTests) ... ok
+test_grouped_pairing_is_reproducible_and_rejects_mismatches (test_metrics.MetricsTests) ... ok
+test_failure_is_atomic_and_next_request_succeeds (test_mock.MockTests) ... ok
+test_query_filter_pagination_detail_and_invalid_input (test_mock.MockTests) ... ok
+test_response_order_and_query_failure_are_controllable (test_mock.MockTests) ... ok
+test_browser_mock_atomic_failure_and_response_race (test_studio.ScoreTests) ... ok
+test_rejects_invalid_scores (test_studio.ScoreTests) ... ok
+test_rubrics_and_prompt_separation (test_studio.ScoreTests) ... ok
+test_score_zero_missing_and_weighting (test_studio.ScoreTests) ... ok
+test_frozen_source_and_invalid_integrity (test_studio.StudioTests) ... ok
+test_http_boundaries_and_preview (test_studio.StudioTests) ... ok
+test_immutable_versions_score_binding_and_persistence (test_studio.StudioTests) ... ok
+test_model_edits_archive_and_export (test_studio.StudioTests) ... ok
+test_rejects_traversal_symlinks_and_non_html (test_studio.StudioTests) ... ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 9.086s
+
+OK

@@ -1,0 +1,70 @@
+{
+  "hardware": {
+    "model": "Mac17,9",
+    "cpu": "Apple M5 Pro",
+    "ramBytes": 51539607552,
+    "os": "Darwin 27.0.0 arm64"
+  },
+  "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "build": "assets/index-DK7wFgA0.js",
+  "conditions": {
+    "production": true,
+    "width": 1280,
+    "height": 720,
+    "dpr": 1,
+    "renderDpr": 1,
+    "warmupSeconds": 10,
+    "sampleSeconds": 60,
+    "objects": "完整仓库、四轮叉车与驾驶员、三箱、三交付区均保留；游玩状态，无输入，未暂停"
+  },
+  "frames": {
+    "count": 7200,
+    "p95Ms": 10.100000000034925,
+    "minMs": 6.2000000000116415,
+    "maxMs": 10.400000000023283,
+    "meanMs": 8.333416666666668,
+    "p95LimitMs": 33.3,
+    "passes": true
+  },
+  "resourceCounts": {
+    "rawFile": "resources-10-restarts.json",
+    "allGeometries": [
+      28,
+      28,
+      28,
+      28,
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "allTextures": [
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "allPrograms": [
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+    ],
+    "growth": false
+  },
+  "samplingToolSha256": "45f4219b18b747f2d8038ecaab5e74a52aef41ad550b1c40c28ffb61278c148b"
+}

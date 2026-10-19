@@ -18,7 +18,9 @@ from pathlib import Path
 
 from .assets import TASKS, VERSION, SEED, generate, write, dump
 from .standard import read_standard
-from .catalog import SUITE_ID, SUITE_NAME, RUBRIC_VERSION, catalog, candidate_task
+from .reasoning import normalize_reasoning, set_reasoning
+from .harnesses import normalize_harness, HARNESS_OPTIONS
+from .catalog import SUITE_ID, SUITE_NAME, RUBRIC_VERSION, catalog, candidate_task, candidate_change
 
 ROOT = Path(__file__).resolve().parents[1]
 PREPARED = ROOT / '.prepared'
@@ -148,8 +150,8 @@ def prepare(args):
             write(project / 'materials/START.md', start_instructions(key))
         for n, key in enumerate(TASKS, 1):
             if key=='05-memory': continue
-            write(root_staging / 'admin' / key / 'change.txt', standard.prompts[f'task{n}'][1] + '\n')
-            write(root_staging / 'admin' / key / 'rubric.txt', standard.sections[f'task{n}'] + '\n')
+            write(root_staging / 'admin' / key / 'change.txt', candidate_change(key, standard) + '\n')
+            write(root_staging / 'admin' / key / 'rubric.txt', json.dumps(next(t for t in catalog() if t['id']==key),ensure_ascii=False,indent=2) + '\n')
         dump(root_staging/'rubric.json', {'version':RUBRIC_VERSION,'tasks':catalog()})
         entries = manifest(root_staging)
         meta = {'suiteId':SUITE_ID,'version':VERSION,'seed':SEED,'preparedAt':now(),'standardSha256':sha(ROOT/'llm-evaluation-standard.html'),
@@ -168,6 +170,50 @@ def prepare(args):
         print('材料准备完成：' + meta['bundleSha256'] + '\n状态：试运行；正式比较前需按预跑清单校准。')
     finally:
         if root_staging.exists(): shutil.rmtree(root_staging)
+
+
+def revise_prepared(args):
+    """Offline revision: verify and copy the old bundle before making a new version."""
+    if PREPARED.is_symlink(): fail('准备目录不得是符号链接')
+    meta = load(PREPARED/'bundle.json')
+    if meta.get('version') == VERSION: fail('当前材料已经是新版，拒绝重复修订')
+    if meta.get('version') not in ('pelican-v1.0-longread-20261018','pelican-v1.0-prompts-20261019') or meta.get('suiteId') != SUITE_ID:
+        fail('仅支持从长文本版或提示词第3版材料离线修订；其他版本请 prepare --rebuild')
+    entries = manifest(PREPARED, skip=('bundle.json','approval.json'))
+    if digest(entries) != meta['bundleSha256']: fail('旧材料完整性校验失败，拒绝修订')
+    staging = Path(tempfile.mkdtemp(prefix='.prepare-',dir=ROOT))
+    try:
+        shutil.copytree(PREPARED,staging,dirs_exist_ok=True,symlinks=True)
+        (staging/'approval.json').unlink(missing_ok=True)
+        standard = read_standard(ROOT/'llm-evaluation-standard.html')
+        for key in TASKS:
+            if key != '05-memory':
+                write(staging/'tasks'/key/'TASK.md',candidate_task(key,standard)+'\n')
+                write(staging/'admin'/key/'change.txt',candidate_change(key,standard)+'\n')
+            write(staging/'admin'/key/'rubric.txt',json.dumps(next(t for t in catalog() if t['id']==key),ensure_ascii=False,indent=2)+'\n')
+        for rel in ('materials/level.json','public/materials/level.json'):
+            path=staging/'tasks/03-game2d'/rel
+            value=load(path); value.pop('fragilePackageId',None); value['version']=VERSION; dump(path,value)
+        for rel in ('materials/warehouse.json','public/materials/warehouse.json'):
+            path=staging/'tasks/04-game3d'/rel; value=load(path); value['version']=VERSION; dump(path,value)
+        contract=staging/'tasks/04-game3d/materials/CONTRACT.md'
+        write(contract,contract.read_text().replace('车宽原始值1.4，追加增加20%是1.68，不能重复累乘。','车宽原始值1.4。').replace('理论容纳1.68米加宽车','理论容纳规定车体'))
+        dump(staging/'rubric.json',{'version':RUBRIC_VERSION,'tasks':catalog()})
+        entries=manifest(staging,skip=('bundle.json','approval.json'))
+        updated={**meta,'version':VERSION,'preparedAt':now(),'files':entries,'bundleSha256':digest(entries),
+                 'previousBundleSha256':meta['bundleSha256'],'status':'pilot-unverified','manualCalibration':None}
+        dump(staging/'bundle.json',updated)
+        # Detect concurrent changes before swapping; never overwrite an existing backup.
+        if digest(manifest(PREPARED,skip=('bundle.json','approval.json'))) != meta['bundleSha256']:
+            fail('修订期间原材料变化，拒绝替换')
+        backup=ROOT/('.prepared-backup-'+uuid.uuid4().hex)
+        PREPARED.rename(backup)
+        try: staging.rename(PREPARED)
+        except Exception:
+            backup.rename(PREPARED); raise
+        print('新版材料已离线修订：'+updated['bundleSha256']+'\n旧材料备份：'+str(backup))
+    finally:
+        if staging.exists(): shutil.rmtree(staging)
 
 
 def version(command):
@@ -235,6 +281,8 @@ def safe_id(value):
 
 
 def init_run(args):
+    harness = normalize_harness(getattr(args,"harness",None),getattr(args,"harness_custom",""))
+    reasoning = normalize_reasoning(getattr(args,"reasoning_level",None))
     bundle = ensure_prepared(args.profile)
     if args.profile=='sandbox' and not bundle['platform'].startswith('Linux'):
         fail('sandbox模式需要Linux准备材料。先用运行镜像在Linux环境 prepare --rebuild，再在宿主机 init --profile sandbox。')
@@ -263,12 +311,12 @@ def init_run(args):
         dump(temp/'control/baseline.json', baselines)
         pinned=load(PREPARED/'rubric.json') if (PREPARED/'rubric.json').exists() else {'version':RUBRIC_VERSION,'tasks':catalog()}
         dump(temp/'control/rubric.json', pinned)
-        dump(temp/'control/run.json', {'id':run_id,'suiteId':SUITE_ID,'suiteName':SUITE_NAME,'rubricVersion':pinned['version'],'model':args.model,'repeat':args.repeat,'createdAt':now(),
+        dump(temp/'control/run.json', {**harness,'id':run_id,'suiteId':SUITE_ID,'suiteName':SUITE_NAME,'rubricVersion':pinned['version'],'model':args.model,'repeat':args.repeat,'createdAt':now(),
             'bundleSha256':bundle['bundleSha256'],'materialVersion':bundle['version'],'rulesSha256':bundle['rulesSha256'],
             'preparedEnvironment':{name:bundle[name] for name in ('platform','architecture','node','npm')},
             'profile':args.profile,'enforcement':'rules-only' if args.profile=='local' else 'sandbox-planned-unverified',
             'toolPolicy':'offline; no extra models/agents/connectors; single task root',
-            'environment':{'platform':platform.platform(),'python':platform.python_version(),'node':version('node'),'npm':version('npm'),'browser':None,'agentClient':None,'reasoning':None,'temperature':None,'hardware':None},
+            'environment':{'platform':platform.platform(),'python':platform.python_version(),'node':version('node'),'npm':version('npm'),'browser':None,'agentClient':None,'reasoning':None,'reasoningLevel':reasoning,'temperature':None,'hardware':None},
             'calibration':approval,'tasks':meta_tasks,'manualInterventions':[], 'cost':{'tokens':None,'amount':None,'unit':None,'source':None},'results':{}})
         temp.rename(destination)
         render_page(destination)
@@ -522,6 +570,8 @@ def record(args):
     for name in ('agentClient','browser','reasoning','temperature','hardware'):
         value=getattr(args,name)
         if value is not None: metadata['environment'][name]=value
+    if getattr(args,'reasoning_level',None) is not None:
+        set_reasoning(metadata,args.reasoning_level,now())
     if args.intervention:
         metadata['manualInterventions'].append({'at':now(),'note':args.intervention})
     atomic_json(run/'control/run.json',metadata)
@@ -592,13 +642,15 @@ def main(argv=None):
     sub=parser.add_subparsers(dest='command',required=True)
     p=sub.add_parser('serve',help='启动鹈鹕测评工作台'); p.add_argument('--port',type=int,default=8787); p.add_argument('--open',action='store_true'); p.set_defaults(func=serve)
     p=sub.add_parser('prepare',help='联网准备一次材料与依赖，不启动模型'); p.add_argument('--rebuild',action='store_true'); p.set_defaults(func=prepare)
-    p=sub.add_parser('init',help='离线初始化一个新的模型运行'); p.add_argument('--model',required=True); p.add_argument('--task',default='all'); p.add_argument('--repeat',type=int,default=1); p.add_argument('--run-id'); p.add_argument('--profile',choices=['local','sandbox'],default='local'); p.set_defaults(func=init_run)
+    p=sub.add_parser('revise-prepared',help='离线复制兼容的旧版材料并应用新版提示词与评分，保留旧包'); p.set_defaults(func=revise_prepared)
+    p=sub.add_parser('init',help='离线初始化一个新的模型运行'); p.add_argument('--model',required=True); p.add_argument('--task',default='all'); p.add_argument('--repeat',type=int,default=1); p.add_argument('--run-id'); p.add_argument('--profile',choices=['local','sandbox'],default='local'); p.add_argument('--harness',choices=[i for i,_,_ in HARNESS_OPTIONS]); p.add_argument('--harness-custom',default=''); p.add_argument('--reasoning-level',choices=['1','2','3','4','5','unsupported'],help='归一化思考强度1至5档；不支持调整选unsupported'); p.set_defaults(func=init_run)
     p=sub.add_parser('doctor',help='检查本机环境'); p.set_defaults(func=doctor)
     p=sub.add_parser('wizard',help='交互式一键初始化'); p.set_defaults(func=wizard)
     p=sub.add_parser('calibrate',help='记录主持人的真实预跑证据声明'); p.add_argument('--note',required=True); p.set_defaults(func=calibrate)
     p=sub.add_parser('status',help='查看阶段、环境与提示词路径'); p.add_argument('--run',required=True); p.set_defaults(func=status)
     p=sub.add_parser('record',help='记录客户端、浏览器、设置和人工介入'); p.add_argument('--run',required=True)
     for name in ('agentClient','browser','reasoning','temperature','hardware'): p.add_argument('--'+name)
+    p.add_argument('--reasoning-level',choices=['1','2','3','4','5','unsupported'])
     p.add_argument('--intervention'); p.set_defaults(func=record)
     for command,func in [('prompt',prompt),('check',check),('snapshot',snapshot),('export',export_project),('start',mark_start),('sandbox',sandbox)]:
         p=sub.add_parser(command)

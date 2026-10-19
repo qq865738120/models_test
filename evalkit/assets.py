@@ -11,7 +11,7 @@ TASKS = {
     '04-game3d': ('鹈鹕叉车驾校', 60, 20),
     '05-memory': ('五十篇论文，一部长篇', 120, 30),
 }
-VERSION = 'pelican-v1.0-longread-20261018'
+VERSION = 'pelican-v1.0-pages-20261019'
 SEED = 20261018
 
 
@@ -108,8 +108,7 @@ def generate(root, target, longread=False):
             {'id':'r2','x':1930,'y':630,'minX':1880,'maxX':2210,'speed':90}],
         'hazards': [{'x':840,'y':640,'width':70,'height':20}],
         'physics': {'gravity':900,'moveSpeed':240,'jumpSpeed':480,'playerBodyWidth':32,'playerBodyHeight':52,
-            'lives':3,'invulnerabilityMs':800,'durationSeconds':120},
-        'fragilePackageId': 'c2'})
+            'lives':3,'invulnerabilityMs':800,'durationSeconds':120}})
     write(three / 'materials/CONTRACT.md', '''# 2D素材与物理契约
 读取 materials/level.json 或同字节的 public/materials/level.json。平台和危险区坐标为左上角；角色、机器人、快递坐标为底部中心。移动平台位置是初始左上角，沿两端线性往返，不暂停时反复运动。
 碰撞：固定平台与移动平台均为实体碰撞；机器人、危险区是接触受伤；快递为重叠收集；出口需三份快递齐全。掉出地图指角色完全离开世界下边界。跳跃仅站在实体平台上允许。机器人不阻挡角色但造成接触伤害。
@@ -130,11 +129,11 @@ def generate(root, target, longread=False):
             for c,v,x in [('red','#ec615c',-5),('blue','#4e8fe4',0),('yellow','#e6b744',5)]],
         'deliveryZones': [{'boxId':c,'x':x,'z':-6,'width':3,'depth':3} for c,x in [('red',-5),('blue',0),('yellow',5)]]})
     write(four / 'materials/CONTRACT.md', '''# 3D控制、拾放与验收契约
-单位为米，Y向上，layout物体坐标为中心。车宽原始值1.4，追加增加20%是1.68，不能重复累乘。仓库24×20；边界墙必须阻挡车体。箱子尺寸1.2不随车宽改变。
+单位为米，Y向上，layout物体坐标为中心。车宽原始值1.4。仓库24×20；边界墙必须阻挡车体。箱子尺寸1.2不随车宽改变。
 指定enable3d 0.26.1，其three-wrapper依赖Three.js 0.171.0；物理资源 vendor/ammo/ 只从本地加载。无需精确车辆动力学，但车体及箱子必须与静态场景合理碰撞。
 可使用拾取吸附：货叉在箱底，车头与箱子朝向夹角≤15°、叉中心横向偏差≤0.25米、叉与箱底高度差≤0.15米、货叉水平伸入箱底≥0.3米时，升叉可托起一箱；不能按按钮隔空拾取。降叉使箱底接近地面（≤0.1米）后释放。
 交付：释放后箱子水平投影完全进入同色区域、箱底距地≤0.05米且水平速度≤0.1米/秒连续0.5秒计一次；错误颜色或仅驾驶经过均不计分。实现可进行合理容差处理并记录。
-车、驾驶员、叉车部件、仓库均须自行程序化建模，不提供模型或贴图。标准地图通道至少3米，理论容纳1.68米加宽车；正式基准前仍须主持人真实搬运预跑。
+车、驾驶员、叉车部件、仓库均须自行程序化建模，不提供模型或贴图。标准地图通道至少3米，理论容纳规定车体；正式基准前仍须主持人真实搬运预跑。
 性能：1280×720、DPR1、预热10秒+采样60秒，tools/performance.js frames；按实际生产构建采样P95≤33.3ms。resources(renderer)连续十次重开后检查稳定增长趋势，保留原始值。硬件与浏览器必须在同榜中一致。
 ''')
     five = tasks / '05-memory'

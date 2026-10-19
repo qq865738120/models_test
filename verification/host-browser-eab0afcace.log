@@ -1,0 +1,11 @@
+[1019/200309.096402:ERROR:third_party/crashpad/crashpad/client/crash_report_database_mac.mm:90] stat /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200309.097776:ERROR:third_party/crashpad/crashpad/util/file/file_io.cc:103] ReadExactly: expected 8, observed 0
+[1019/200309.098081:ERROR:third_party/crashpad/crashpad/client/crash_report_database_mac.mm:90] stat /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[76835:18533660:1019/200309.110820:ERROR:chrome/browser/process_singleton_posix.cc:474] readlink failed: Operation not permitted (1)
+[76835:18533660:1019/200309.111006:ERROR:chrome/common/process_singleton_lock_posix.cc:22] readlink(/Users/zhengwenjun/Library/Application Support/Google/Chrome/SingletonLock) failed: Operation not permitted (1)
+[76835:18533660:1019/200309.111076:ERROR:chrome/browser/process_singleton_posix.cc:323] readlink(/Users/zhengwenjun/Library/Application Support/Google/Chrome/SingletonLock) failed: Operation not permitted (1)
+[76835:18533660:1019/200309.111083:ERROR:chrome/browser/process_singleton_posix.cc:347] Failed to create /Users/zhengwenjun/Library/Application Support/Google/Chrome/SingletonLock: Operation not permitted (1)
+[76835:18533660:1019/200309.111116:ERROR:chrome/browser/process_singleton_posix.cc:487] Could not open singleton lock: Operation not permitted (1)
+[76835:18533660:1019/200309.111129:ERROR:chrome/browser/process_singleton_posix.cc:474] readlink failed: Operation not permitted (1)
+[76835:18533660:1019/200309.111137:ERROR:chrome/common/process_singleton_lock_posix.cc:22] readlink(/Users/zhengwenjun/Library/Application Support/Google/Chrome/SingletonLock) failed: Operation not permitted (1)
+[76835:18533660:1019/200309.111153:ERROR:chrome/app/chrome_main_delegate.cc:569] Failed to create a ProcessSingleton for your profile directory. This means that running multiple instances would start multiple browser processes rather than opening a new window in the existing process. Aborting now to avoid profile corruption.

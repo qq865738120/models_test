@@ -1,0 +1,17 @@
+HTTP server ready { address: '127.0.0.1', family: 'IPv4', port: 55054 }
+CDP version ready
+SERVER_REQUEST /
+SELF_HTTP <!doctype html><title>Local se
+CDP socket ready
+create target
+CDP request Target.createTarget
+CDP request Target.attachToTarget
+CDP request Page.enable
+CDP request Page.navigate
+SERVER_REQUEST /
+CDP request Runtime.evaluate
+CDP request Runtime.evaluate
+SERVER_REQUEST /favicon.ico
+CDP request Page.captureScreenshot
+{"title":"Local self-test","click":"clicked","webgl":true,"wasm":true,"externalBlocked":true,"screenshotBytes":4052,"navigateError":null}
+CDP request Target.closeTarget

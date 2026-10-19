@@ -1,0 +1,104 @@
+{
+  "state": "paused",
+  "remaining": 117.8,
+  "speed": 0,
+  "vehicle": {
+    "x": 0,
+    "z": 4.937,
+    "yaw": 3.142,
+    "width": 1.4
+  },
+  "forkHeight": 0.68,
+  "carried": "blue",
+  "crates": [
+    {
+      "id": "red",
+      "x": -5,
+      "y": 0.6,
+      "z": 3,
+      "yaw": 0,
+      "delivered": false,
+      "stable": 0,
+      "velocity": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "metrics": {
+        "longitudinal": 1.9372222222222233,
+        "lateral": 5,
+        "angle": 0,
+        "penetration": 1.1999999999999997,
+        "vertical": 0.6399999761581425,
+        "eligible": false
+      }
+    },
+    {
+      "id": "blue",
+      "x": 0,
+      "y": 1.24,
+      "z": 2.997,
+      "yaw": 3.142,
+      "delivered": false,
+      "stable": 0,
+      "velocity": {
+        "x": 0,
+        "y": 0.6999992728233337,
+        "z": 0
+      },
+      "metrics": {
+        "longitudinal": 1.94,
+        "lateral": -4.930380657631324e-32,
+        "angle": 0,
+        "penetration": 1.2000000000000002,
+        "vertical": 2.220446049250313e-16,
+        "eligible": true
+      }
+    },
+    {
+      "id": "yellow",
+      "x": 5,
+      "y": 0.6,
+      "z": 3,
+      "yaw": 0,
+      "delivered": false,
+      "stable": 0,
+      "velocity": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "metrics": {
+        "longitudinal": 1.9372222222222246,
+        "lateral": -5,
+        "angle": 0,
+        "penetration": 1.1999999999999997,
+        "vertical": 0.6399999761581425,
+        "eligible": false
+      }
+    }
+  ],
+  "log": [
+    {
+      "t": 0,
+      "type": "start"
+    },
+    {
+      "t": 1.417,
+      "type": "pickup",
+      "id": "blue",
+      "metrics": {
+        "longitudinal": 1.937222222222224,
+        "lateral": 4.898587196589414e-16,
+        "angle": 0,
+        "penetration": 1.2000000000000002,
+        "vertical": 0.07999997615814206,
+        "eligible": true
+      }
+    },
+    {
+      "t": 2.2,
+      "type": "pause"
+    }
+  ]
+}

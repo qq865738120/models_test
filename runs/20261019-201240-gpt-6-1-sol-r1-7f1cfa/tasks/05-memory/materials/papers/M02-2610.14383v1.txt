@@ -1,0 +1,2529 @@
+
+[PDF page 1]
+UNIQUENESS AND STABILITY OF ENTROPY WAVES AMONG VANISHING
+DISSIPATION LIMITS FROM THE NAVIER–STOKES–FOURIER SYSTEM
+COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+Abstract. In this paper, we establish the stability of general entropy wave solutions of the
+compressible Euler equations (that is, profiles with constant velocity and pressure) in the class
+of vanishing dissipation limits from the Navier–Stokes–Fourier system. If the initial data of our
+sequence of solutions to the Navier–Stokes–Fourier system converges to the initial data of the
+entropy wave solution, we further have convergence of the solutions to the entropy wave. This gives
+uniqueness and stability of the entropy wave in this class. The proof is based on the a-contraction
+theory.
+1.Introduction
+Consider the compressible Euler system,
+(1.1)
+
+
+
+ρt + div(ρu) = 0,
+(ρu)t + div(ρu⊗u) +∇p M(ρ, ϑ) = 0,1
+2 ρ|u|2 +ρe M
+
+t
++ div
+1
+2 ρ|u|2 +ρe M
+
+u+p M(ρ, ϑ)u
+
+= 0,
+for density ρ, velocity u, temperature ϑ, specific internal energyeM, and pressure pM of a compressible
+gas. This system possesses a special family of solutions calledentropy waves. These solutions are
+characterized by the pressure pM and velocity u being constant within the fluid. The density ρ and
+entropy ρsM of the fluid may be non-constant and are simply transported by the constant velocity
+u. Generically solutions to (1.1) form singularities in finite time, and it is possible for an entropy
+wave to possess discontinuities (for instance, the planar contact discontinuity without shear). As a
+result, we must consider weak solutions where the system (1.1) holds in some weaker sense.
+This class of distributional solutions is too broad to provide uniqueness or stability of these
+solutions. One way to address this issue is by selecting admissible solutions which satisfy an entropy
+inequality,
+(1.2) (ρs M)t + div(ρsM u)≥0.
+Indeed, it is known by the work of Dafermos [Daf79] and DiPerna [DiP79] that any bounded Lipschitz
+solution to the Euler system (1.1) is unique within the class of bounded weak solutions satisfying
+the entropy inequality (1.2). However, the stability of discontinuous solutions is much more delicate.
+In dimensions two and greater the entropy inequality (1.2) is known to be an insufficient criterion to
+select a unique solution for certain initial data (see [DS10], [GK22], [CDK15], and [Mar21] for such
+constructions via convex integration). Furthermore, there is currently no global existence theory for
+distributional weak solutions satisfying the entropy inequality in the multi-d setting. Another more
+Date: October 14, 2026.
+2020Mathematics Subject Classification. Primary: 35Q31, Secondary: 35Q30, 35L67, 35B35.
+Key words and phrases. Compressible Euler system, Navier Stokes Fourier system, Uniqueness, Stability, Vanishing
+dissipation limit, Entropy wave.
+Acknowledgment.This work was partially supported through the National Science Foundation grants DMS-
+2306852, DMS-1840314 and a joint NSF-EPSRC grant DMS-EPSRC-2219434. The second and third authors are
+grateful to the IHES for their hospitality and support during their visit in Spring 2026.
+1
+arXiv:2610.14383v1  [math.AP]  9 Oct 2026
+
+[PDF page 2]
+2 COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+stringent admissibility criterion is to select solutions that may be obtained as a limit of solutions to
+a more physical system. In this case, we consider vanishing dissipation limits from the following
+Navier–Stokes–Fourier system,
+(1.3)
+
+
+
+ρt + div(ρu) = 0,
+(ρu)t + div(ρu⊗u) +∇p(ρ, ϑ) =νdiv(S(ϑ,∇u)),1
+2 ρ|u|2 +ρe
+
+t
++ div
+1
+2 ρ|u|2 +ρe
+
+u−νSu+pu+κq
+
+= 0.
+Following Feireisl and Novotn´ y [FN17], the pressure in the above system takes the formp = pM +apR,
+where pR is a radiative pressure depending solely on the temperature ϑ and the parameter a > 0
+modulates the strength of this pressure. The internal energy takes a similar form, e = eM + aeR.
+We additionally have the viscous stress tensor S(ϑ,∇u ) and heat fluxq( ϑ,∇ϑ ), which introduce a
+dissipation in u and ϑ that is not present in the Euler system (1.1). Additionally, the strengths
+of the dissipative terms S andqare modulated by the parameters ν and κ > 0, respectively. A
+complete discussion of these constitutive relations for the system (1.3) is in Section 2.1. We now
+define the vanishing dissipation solutions; while they may not be distributional solutions to the
+Euler system (1.1) they are a broad class of objects which represent the dynamics of a compressible
+inviscid fluid.
+Definition 1.1.Avanishing dissipation solutionto the system (1.1) with initial data U0 = (ρ0, u0, ϑ0)
+is a triple U = (ρ, m,E )obtained by respective weak limits from solutions to the Navier–Stokes–
+Fourier system (1.3) (see Definition 2.1) in the following sense: for all κ, a, ν > 0let U κ,a,ν =
+(ρκ,a,ν, mκ,a,ν,E κ,a,ν) = (ρκ,a,ν, ρκ,a,νuκ,a,ν, |mκ,a,ν |2
+2ρκ,a,ν + ρκ,a,ν(eM(ρκ,a,ν, ϑκ,a,ν) + aeR(ρκ,a,ν, ϑκ,a,ν))be
+an admissible solution to the Navier–Stokes–Fourier system with these respective parameters taking
+the fixed initial data U 0. Then, sequentially taking the limits κ→ 0, a→ 0, and ν→ 0along a
+subsequence we attain the limitUfor allT >0in the following weak topologies:
+ρκ,a,ν ∗⇀ ρweakly−∗inL ∞(0, T;L 2(T3)),
+mκ,a,ν ∗⇀ mweakly−∗inL ∞(0, T;L 4/3(T3)),
+E κ,a,ν ∗⇀Eweakly−∗inL ∞(0, T;M(T 3)),
+whereMdenotes the space of Radon measures onT 3.
+There have been several works on the uniqueness of entropy waves and related solutions to the
+Euler equations (1.1). The case of planar contact discontinuities without shear among vanishing
+dissipation limits from a Navier–Stokes–Fourier system via the method of a-contraction was first
+established by the third author and Wang in the 1-d case [VW15] and later Kang, the third author,
+and Wang proved in the 3-d case [KVW21]. We note that the existence of weak solutions to the
+Navier–Stokes–Fourier system for the constitutive relations considered in [KVW21] remains open.
+Wang, Zhang, and Zhao proved the nonlinear stability of entropy waves under the Taylor sign
+condition. Specifically, they describe the evolution of the boundary of an interface of discontinuity,
+and show stability provided the Taylor sign condition holds [WZZ24]. In this work, we study waves
+with pM ≡const , so we are outside the scope of [WZZ24]. We note that due to the constant velocity
+assumption, our result does not apply to vortex sheets or contact discontinuities with shear. These
+structures are well known to exhibit Kelvin–Helmholtz instability and can admit infinitely many
+weak solutions. For such examples, see [KS25] where the authors study 2-d compressible Euler
+with a particular pressure and [MS23] where the authors show non-uniqueness of vortex sheets
+for 2-d incompressible Euler. In the setting of smooth solutions, Feireisl proved stability under
+vanishing dissipation limits from the Navier–Stokes–Fourier system, with a specific relation between
+the radiative coefficientaand dissipation coefficientsνandκ[Fei16].
+
+[PDF page 3]
+STABILITY OF ENTROPY WAVES 3
+Compared with previous work [KVW21], we focus on establishing stability in the regime of
+constitutive relations of the system (1.3) for which there is an established existence theory. For
+this purpose, the theory developed by Feireisl and Novotn´ y [FN17] provides the existence of weak
+solutions of (1.3) for a large family of perturbations of our entropy wave. Additionally, we establish
+stability of a much more general family of profiles.
+1.1.Main results.We begin by stating an existence theorem for the vanishing dissipation solutions
+Definition 1.1 which holds for a general class of initial data. First, we must mention that our
+molecular pressure is assumed to satisfy
+pM(ρ, ϑ)∼ρ γ forϑ≪ρ
+for some γ > 2. The specific form of this pressure will be made precise in Section 2.1. We now state
+the existence theorem.
+Theorem 1.1.IfU 0 = (ρ0, u0, ϑ0)satisfies that
+ρ0 ≥0,
+Z
+T 3
+ρ0 dx >0,
+Z
+T3
+ρ0
+|u0|2
+2 +ρ 0eM(ρ0, ϑ0) +ρ 0|sM(ρ0, ϑ0)|+ϑ 4
+0 dx <∞,
+ϑ0 >0a.e. inT 3
+then there exists a vanishing dissipation solutionUto the system(1.1)with initial dataU 0.
+We now discuss the stability of the entropy wave. Without loss of generality, we may assume by
+Galilean invariance that any entropy wave is stationary. In this frame, we fix an entropy wave with
+density ¯ρ0 and a temperature ¯ϑ0 which we suppose are both bounded above and below away from
+zero. This wave can be expressed in conservative variables as
+(1.4)V(t, x) = (¯ρ 0(x),0, ¯E),
+where ¯E= ¯ρ0(x)eM(¯ρ0(x), ¯ϑ0(x)). We now state the stability theorem for this wave.
+Theorem 1.2.LetU n
+0 = (ρn
+0 , un
+0 , ϑn
+0)be a sequence of initial data satisfying
+(1.5)
+sup
+n∈N
+ 
+∥ρn
+0 ∥Lγ(T3) +
+ρn
+0
+|un
+0 |2
+2 +ρ n
+0 eM(ρn
+0 , ϑn
+0)
+
+L1(T3)
++∥ϑ n
+0 ∥L4(T3)
+!
+<∞
+
+ρn
+0 , ρn
+0 un
+0 , ρn
+0
+|un
+0 |2
+2 +ρ n
+0 eM(ρn
+0 , ϑn
+0)
+
+→
+ 
+¯ρ0,0, ¯E
+
+inL 2(T3),
+where ¯ρ0, ¯E are conservative coordinates of the entropy wave (1.4). If Un = (ρn, mn,E n)is a sequence
+of vanishing dissipation solutions to the system (1.1) with the corresponding initial data U n
+0 in the
+sense of Definition 1.1 then we have
+(1.6)
+ρn ∗⇀¯ρweakly-∗inL ∞(0, T;L 2(T3)),
+mn →0inL ∞(0, T;L 4/3(T3;R 3)),
+E n → ¯EinL ∞(0, T;M(T 3)).
+1.2.Remarks on Theorem 1.2.
+• Contrary to [KVW21], we take constitutive relations which allow us to establish the existence
+of vanishing dissipation limits for the Euler system. In [KVW21] the pressure was taken to
+be of the form p(ρ, ϑ) = Rρϑ + Cργ for some fixed constants R, C > 0 and γ > 2. Notably,
+this pressure does not provide an a priori estimate on the integrability of the temperature ϑ
+which leads to difficulties in constructing solutions (in the sense of admissible weak solutions
+
+[PDF page 4]
+4 COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+Definition 2.1) due to the presence of temperature dependent viscosity. The existence
+of solutions to the Navier–Stokes–Fourier system without such a radiative pressure term
+is an outstanding open problem [CF25; JJN13]. In this paper our pressure satisfies the
+assumptions that are included in the Feireisl existence theory [FN17; JJN13].
+• When the underlying entropy wave obtains just two values (as in the case of a planar
+contact discontinuity) the weak convergence of density in (1.6) can be improved to a strong
+convergence in Lq(0, T; Lp(T3)) for all q <∞ and p < γ . See Remark 3.1 for further details.
+• In this paper we suppose that our molecular pressure satisfies pM(ρ, ϑ) ∼ρ γ when ϑ≪ρ
+for some constant γ > 2. Note that it is known that solutions to the Navier–Stokes–Fourier
+system (1.3) exist for any γ > 3
+2 [FN17]. Here the hypothesis γ > 2 is due to a technical
+step in the vanishing dissipation limit requiring an estimate of ρ and ρs in L∞(0, T, L2(T3))
+that is uniform in κ > 0. Our argument for this estimate requires that γ > 2 (see Lemma 2.1
+for more details). Of course, it would be interesting to investigate lower values of γ and, in
+particular, the physical case of a monoatomic gas γ = 5/3 which is included in the existence
+theory. But at the moment that does not seem possible with the method developed here.
+1.3.Proof strategy.The proof of Theorem 1.1 follows quickly after proving a priori estimates on
+admissible Navier–Stokes–Fourier solutions.
+To prove Theorem 1.2 we use a strategy based on the relative entropy method of Dafermos and
+DiPerna [Daf79; DiP79]. Given a convex entropy η(U) (for the Euler system η(U) = −ρsM) and a
+fixed stateVwe define the relative entropy
+(1.7)η(U|V) :=η(U)−η(V)−η ′(V)(U−V)
+where the derivative η′ is taken in the conservative variables (for instance, ( ρ, m,E ) in the case of
+the system (1.1)). Before proving Theorem 1.2 we must first define two convex functions,
+G(x) :=
+(
+|x|2 |x|<1
+2|x| −1|x| ≥1,(1.8)
+F(ρ) :=
+(
+min(G(ρ−ρ ∗),G(ρ−ρ ∗))ρ /∈[ρ ∗, ρ∗]
+0 otherwise,(1.9)
+where
+(1.10)ρ ∗ := ess inf
+x∈T3
+(¯ρ0(x)) andρ ∗ := ess sup
+x∈T3
+(¯ρ0(x))
+are the extreme densities achieved by the entropy wave V . To prove Theorem 1.2 we will actually
+prove the following more general proposition.
+Proposition 1.If an initial dataU 0 satisfies
+(1.11)
+ 
+∥ρ0∥Lγ(T3) +
+ρ0
+|u0|2
+2 +ρ 0eM(ρ0, ϑ0)
+
+L1(T3)
++∥ϑ 0∥L4(T3)
+!
+<∞
+then any vanishing dissipation solutionU= (ρ, m,E)corresponding to this initial data satisfies
+(1.12) ess sup
+t∈[0,T]
+Z
+T3
+G(m) +F(ρ)dx+
+E − ¯E
+
+L∞(0,T;M(T 3))
+≤C
+sZ
+T3
+(−ρsM)(U0|V)dx+C
+Z
+T3
+(−ρsM)(U0|V)dx.
+
+[PDF page 5]
+STABILITY OF ENTROPY WAVES 5
+Additionally, if we have a sequence of initial data{U n
+0 }∞
+n=1 such that
+(1.13)
+Z
+T3
+(−ρsM)(U n
+0 |V)dx→0
+then for any sequence of vanishing dissipation limits{(ρ n, mn,E n)}satisfying(1.12)we have that
+(1.14)
+ρn ∗⇀¯ρweakly-∗inL ∞(0, T;L γ(T3)),
+mn →0inL ∞(0, T;L q(T3;R 3))for allq <2 γ
+γ+1 ,
+E n → ¯EinL ∞(0, T;M(T 3)),
+establishing the uniqueness of the entropy wave of the Euler system (1.1) among vanishing dissipation
+limits from the Navier–Stokes–Fourier system(1.3).
+The proof of Proposition 1 is based on the method of a-contraction with shifts, which was
+pioneered by the third author and his collaborators in the inviscid case [LV11; KV16]. This is a
+robust and fully non-perturbative stability method for conservation laws to handle singular patterns,
+able to handle perturbations of both initial data and the system. It has successfully been used to
+obtain uniform in the viscosity stability estimates of viscous shocks [KV21a], perform the inviscid
+limit from Navier–Stokes to Euler in 1-d [CKV24; KV21b], take the inviscid limit in 3-d for contact
+discontinuities [KVW21], and establish the time asymptotic stability of the Riemann problem for
+the Navier–Stokes–Fourier system [KVW25].
+We now discuss the proof. The relative entropy η(·|V ) for a fixed state V is another entropy
+of our system (1.1) and due to the strict convexity of η in the conservative variables it (locally)
+satisfies the quadratic estimate η(U|V ) ∼ |U−V| 2, where a∼b is understood to mean that there
+existsC >0 such thatC −1b≤a≤Cb. In the 1-d case for a single discontinuity, we let
+V(t, x) =
+(
+VL x < h(t)
+VR x > h(t)
+be a discontinuity shifted by h. It follows that for all bounded functions U and constant weights
+aL, aR >0 we have
+(1.15)∥U(t,·)−V(t,·)∥ 2
+L2 ∼
+Z h(t)
+−∞
+aLη(U|V L)dx+
+Z ∞
+h(t)
+aRη(U|V R)dx
+and, provided that we can produce weights aL, aR and a shift h such that the right of (1.15) is
+decreasing for all perturbations U in some class, we can establish that the discontinuity VL, VR is
+stable up to a shift in L2 within this class. When VLR are the states of a contact discontinuity
+of the full Euler system with entropy η(U) = −(ρsM)(U) we have this stability when aLR = ϑLR
+(the temperatures associated to the states VLR) and the shift satisfies ˙h(t) = u(t, h(t)), the velocity
+associated to the weak solution U (provided that u is sufficiently regular; see [SV16, Section 4] and
+[SV14, Corollary 6.2] for further details).
+In analogy with this, one would anticipate that in the case of multi-dimensional entropy waves
+we could simply solve the transport equation
+(1.16)
+(
+∂t ¯V+u· ∇ ¯V= 0
+¯V(0,·) =V(0,·)
+where V is the entropy wave (1.4) to get a satisfactory notion of shift. From this we would hope to
+show that the quantity
+(1.17)
+Z
+T3
+ϑ( ¯V(t, x))(−ρs)(U| ¯V)dx
+
+[PDF page 6]
+6 COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+is decreasing in time. However, this cannot be done at the level of the inviscid Euler system
+for d≥ 2. Indeed, as previously mentioned there is no general existence theory for global in
+time weak solutions to (1.1) and, additionally, we would need that the associated velocity field
+is at least Sobolev to ensure the above transport equation possesses a solution. These issues are
+alleviated by instead considering weak solutions to the Navier–Stokes–Fourier system (1.3), for
+which u∈L 2(0, T; H1(T3)). Formally, solutions to the Navier–Stokes–Fourier system converge to
+those of the full Euler system (1.1) in the vanishing dissipation limit, so by taking κ, a, ν→ 0 we
+may hope to establish stability among the class of vanishing dissipation solutions.
+To realize the above strategy, we fix a vanishing dissipation solution U and let U κ,a,ν be the
+sequence of Navier–Stokes–Fourier solutions converging to U in the sense of Definition 1.1. We
+then first prove a stability bound between each solution U κ,a,ν and our entropy wave V . Note we
+now stand to gain weighted relative entropy due our entropy wave V solving the Euler system (1.1)
+while U κ,a,ν solves the system (1.3) with a different pressure and dissipative terms. To compute the
+change of the weighted relative entropy (1.17), we modify it by replacing the shifted entropy wave V
+with a smoothed version which we denote ¯Vϵ. This turns our attention to the regularized quantity
+(1.18)F ϵ(t) :=
+Z
+T3
+¯ϑϵ(−ρs)(U κ,a,ν|V a
+ϵ )dx,
+where ¯ϑϵ is the temperature of our regularized shifted front Vϵ. By doing this, we are now multiplying
+the relative entropy by a smooth function. In Lemma 3.3 we use the weak form of the entropy
+inequality and continuity equation to obtain a bound resembling
+(1.19)
+Fϵ(t)−F ϵ(0) +
+Z t
+0
+Z
+T3
+κ1 +ϑ 3
+ϑ2 |∇ϑ|2 +ν|∇u| 2 dx dτ
+≤Cκ
+Z t
+0
+Z
+T3
+1 +ϑ 3
+ϑ |∇ϑ||∇¯ϑδ,ϵ|dx dτ+Ca
++C
+
+Z t
+0
+Z
+T3
+ρ[∂t ¯V a
+ϵ +u· ∇ ¯V a
+ϵ ]dx dτ
+
++C
+
+Z t
+0
+Z
+T3
+(−ρs)[∂t ¯V a
+ϵ +u· ∇ ¯V a
+ϵ ]dx dτ
+ ,
+where ϑ and u are primitive variables associated to the Navier–Stokes–Fourier solution U a,κ,ν.
+From this we deduce the bound (1.12) after showing that the right side of (1.19) vanishes as
+κ, a, and ν converge to zero along a sequence of solutions U κ,a,ν →U as in Definition 1.1 and
+proving that Fϵ(t) is coercive to the quantities on the left side of (1.12) (see Lemma 3.2). We
+note that due to the mollification of V , the function ¯Vϵ does not solve the transport equation
+with velocity u. As a result, this term appears as a commutator and, since u∈L 2(0, T; H1(T3)),
+converges to zero in L2(0, T; L2(T3)). From this, the final integral converges to zero provided that
+ρ, ρs∈L 2(0, T; L2(T3)). This is given by the constitutive relations we select in Section 2.1 and
+Lemma 2.1, provided that γ > 2. For further discussion of this limit and some explanation behind
+why we sequentially take κ→ 0, a→ 0, then ν→ 0 in our vanishing dissipation limit, see the
+discussion in Section 3.3.
+To determine the uniqueness of the entropy wave we appeal to the estimate (1.12).
+Since ¯E and ¯u= 0 are constants, we immediately obtain strong convergence of mn → 0 and
+E n → ¯E in appropriate norms. For the density we note that F is not coercive. This is because,
+unlike the energy and momentum, the entropy wave may have non-constant density. Alone, it only
+shows that the weak limit ρ takes values a.e. in an interval [ ρ∗, ρ∗]. However, since mn → 0 and
+each ρn, mn distributionally satisfy the continuity equation, we can conclude that the weak limit ρ
+satisfies
+∂tρ= 0.
+
+[PDF page 7]
+STABILITY OF ENTROPY WAVES 7
+Additionally, we can conclude by the convergence of the initial data in relative entropy (1.13) that
+ρ(0) = ¯ρ(0). Hence, the weak limitρin fact coincides with the density of the entropy wave ¯ρ.
+The remainder of the paper is organized as follows. In Section 2 we give details about the
+assumptions on the constitutive relations for the Navier–Stokes–Fourier system (1.3), define our
+notion of admissible solutions for the Navier–Stokes–Fourier system, prove several a priori bounds
+verified by these solutions, and prove Theorem 1.1. Section 3 is dedicated to the proof of Proposition 1
+where we construct the shift, find the form and coercive quantities of the relative entropy, and take
+the vanishing dissipation limit.
+2.Preliminaries
+In this section, we give our assumptions on the constitutive relations of the Navier–Stokes–Fourier
+system, state an associated existence theorem for the Navier–Stokes–Fourier system, prove a priori
+bounds associated to these solutions, and establish Theorem 1.1. For a physical motivation behind
+these constitutive relations, we refer the reader to [FN17, Section 1.3].
+2.1.Constitutive relations.In the following Λ > 0 denotes some positive constant. We suppose
+that our viscous stress tensor satisfies Newton’s rheological law, giving the form
+S=µ(ϑ)
+
+∇u+∇ T u− 2
+3 div(u)I
+
++λ(ϑ) div(u)I,
+where µ, λ∈C 1([0,∞ ))the shear and bulk viscosities, respectively. We assume that they are globally
+Lipschitz and satisfy the bounds
+(2.1) 1 +ϑ
+Λ ≤µ(ϑ)≤Λ(1 +ϑ) and 0≤λ(ϑ)≤Λ(1 +ϑ).
+Further, we suppose that our heat fluxqsatisfies Fourier’s law,
+(2.2)q(ϑ,∇ϑ) =−K(ϑ)∇ϑ,
+where the heat conductivity coefficientK∈C 1([0,∞)) enjoys the bounds
+(2.3) 1
+Λ(1 +ϑ 3)≤K(ϑ)≤Λ(1 +ϑ 3).
+As mentioned in the introduction, the pressure we consider takes the form p = pM + apR with the
+molecular and radiative pressures defined by
+(2.4)p(ρ, ϑ) =ϑ
+γ
+γ−1 P
+ ρ
+ϑ
+1
+γ−1
+
++ a
+3 ϑ4 =:p M(ρ, ϑ) +ap R(ϑ),
+where a > 0, γ > 2, and P∈C 1([0,∞ )) is an increasing function satisfying P (0) = 0. We further
+suppose that there exists a constantZ >0 such thatP(Z) =Zfor allZ∈[0, Z ].
+The associated specific internal energy has the form
+(2.5)e(ρ, ϑ) = 1
+γ−1
+ϑ
+γ
+γ−1
+ρ P
+ ρ
+ϑ
+1
+γ−1
+
++a ϑ4
+ρ =:e M +ae R,
+and the associated specific entropy is
+(2.6)s(ρ, ϑ) =S
+ ρ
+ϑ
+1
+γ−1
+
++ 4a
+3
+ϑ3
+ρ =:s M +as R,
+whereSsatisfies
+(2.7)S ′(Z) =− 1
+γ−1
+γP(Z)−P ′(Z)Z
+Z2 <0.
+
+[PDF page 8]
+8 COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+These equations of state satisfy the Gibbs relation,
+(2.8)ϑ ds=de− p
+ρ2 dρ.
+Let us assume thatssatisfies the third law of thermodynamics, which amounts to requiring that
+(2.9) lim
+Z→∞
+S(Z) = 0.
+We additionally assume that these functions satisfy the hypotheses of thermodynamic stability,
+(2.10) ∂p
+∂ρ >0, ∂e
+∂ϑ >0 for allρ, ϑ >0.
+From the hypotheses of thermodynamic stability and taking that the molecular component of the
+specific heat at constant volume (c v,M = ∂eM
+∂ϑ ) is uniformly bounded, we have for allZ >0
+0< γP(Z)−P ′(Z)Z
+Z < C.
+This inequality shows thatP(Z)/Z γ is decreasing. Finally, our last assumption is that
+(2.11) 0<lim
+Z→∞
+P(Z)
+Zγ =:P ∞.
+Note that from (2.7) since P (Z) = Z for all Z≤Z the specific molecular entropy sM takes the
+form, for some constantC,
+(2.12)s M(Z) =C−ln (Z),for allZ <Z .
+2.2.Admissible solutions to the Navier–Stokes–Fourier system.In this section we state a
+notion of admissible solutions to the system (1.3) and an associated existence theorem associated to
+our constitutive relations in Section 2.1. These results are from [JJN13; FN17].We first define a
+notion of weak solution to the system (1.3).
+Definition 2.1.A trio(ρ, u, ϑ)is a weak solution to the Navier–Stokes–Fourier system(1.3)if
+(1) The density and temperature satisfy ρ(t, x) ≥ 0, ϑ (t, x) > 0a.e. in(0 , T) ×T 3, ρ∈
+L∞(0, T;L γ(T3)),ρu∈L ∞(0, T;L
+2γ
+γ+1 (T3;R 3)),ρ|u| 2 ∈L ∞(0, T;L 1(T3)),ϑ∈
+L∞(0, T;L 4(T3))∩L 2(0, T;H 1(T3)),∇log(ϑ)∈L 2(0, T;L 2(T3;R 3)), and
+u∈L 2(0, T;H 1(T3)).
+(2)ρ∈C weak([0, T];L γ(T3))and weakly satisfies the continuity equation,
+(2.13)
+Z
+T3
+ρφ dx
+
+τ
+0
+=
+Z τ
+0
+Z
+T3
+ρ∂tφ+ρu· ∇φ dx dt
+for allτ∈[0, T]withφ∈C 1([0, T]×T 3).
+(3)ρu∈C weak([0, T];L
+2γ
+γ+1 (T3;R 3))and weakly satisfies the momentum equation,
+(2.14)
+Z
+T3
+ρu·φ dx
+
+τ
+0
+=
+Z τ
+0
+Z
+T3
+ρu∂tφ+ρu⊗u· ∇φ dx dt
++
+Z τ
+0
+Z
+T3
+p(ρ, ϑ) div(φ)−νS(ϑ,∇u) :∇φ dx dt
+for allτ∈[0, T]withφ∈C 1([0, T]×T 3;R 3).
+(4) We have a distributional entropy inequality
+(2.15)
+−
+Z
+T3
+ρs(ρ, ϑ)φ dx
+
+τ
+0
++
+Z τ
+0
+Z
+T3
+φ
+ϑ
+
+νS(ϑ,∇u) :∇u−κ q(ϑ,∇ϑ)· ∇ϑ
+ϑ
+
+dx dt
+≤ −
+Z τ
+0
+Z
+T3
+ρs(ρ, ϑ)∂tφ+ρs(ρ, ϑ)u· ∇φ+κ q(ϑ,∇ϑ)· ∇φ
+ϑ dx dt
+
+[PDF page 9]
+STABILITY OF ENTROPY WAVES 9
+for a.e.τ∈[0, T]withφ∈C 1([0, T]×T 3), φ≥0.
+(5) We have conservation of energy,
+(2.16)
+Z
+T3
+1
+2 ρ|u|2 +ρe(ρ, ϑ)
+
+(τ)dx=
+Z
+T3
+1
+2 ρ|u|2 +ρe(ρ, ϑ)
+
+(0)dx
+for a.e.τ∈[0, T].
+Proposition 2([FN17; JJN13]).Fix the system (1.3) satisfying the constitutive relations of
+Section 2.1 and an initial data U0 = ( ρ0, m0,E 0)for which there exists ϑ0 where E0 = |m0|2
+2ρ0
++
+ρ0e(ρ0, ϑ0). IfU 0 satisfies that
+ρ0 ≥0, ρ 0 ∈L γ(T3),
+Z
+ρ0 dx >0,
+m0 = 0a.e. on the set{x∈T 3 |ρ 0(x) = 0}
+ϑ0 >0a.e. inT 3, ρ 0s(ρ0, ϑ0)∈L 1(T3),
+Z
+E0 dx=
+Z |m0|2
+2ρ0
++ρ 0e(ρ0, ϑ0)dx <∞,
+then there exists a solution( ρ, u, ϑ)to the Navier–Stokes–Fourier system (1.3) with this initial data
+in the sense of Definition 2.1.
+2.3.A priori bounds on admissible solutions.Suppose ( ρ, u, ϑ) is an admissible solution to
+the system (1.3) in the sense of Definition 2.1 for times 0 ≤t≤T . In this section, we are interested
+in finding a priori bounds which allow us to take terms on the right side of inequality (1.19) to zero
+in the vanishing dissipation limit. In addition to this, these bounds will be used to obtain uniform
+(inκ, ν, a) bounds ofρ,m, andEto provide the weak limits of solutions (ρ, m,E).
+We first note that by thermodynamic stability (2.10) and (2.11) we have
+(2.17)
+ρeM(ρ, ϑ) = 1
+γ−1 ϑγ/(γ−1) P(ρ/ϑ 1/(γ−1))
+≥lim
+ϑ→0
+1
+γ−1 ϑγ/(γ−1) P(ρ/ϑ 1/(γ−1)) = 1
+γ−1 P∞ργ.
+Furthermore, from the conservation of energy (2.16) and constitutive relations (2.5) we find
+(2.18)a∥ϑ∥ 4
+L∞(0,T;L 4(T3)) + 1
+γ−1 ∥pM ∥L∞(0,T;L 1(T3)) + 1
+2
+ρ|u|2
+L∞(0,T;L 1(T3))
+≤C
+Z
+T3
+1
+2 ρ(x,0)|u(x,0)| 2 + (ρe)(x,0)dx
+for some C > 0, independent of a, κ, and ν. In particular, combining this with (2.17) and
+ρeM = 1
+γ−1 pM we have
+(2.19)∥ρ∥ γ
+L∞(0,T;L γ(T3)) ≤C
+Z
+T3
+1
+2 ρ(x,0)|u(x,0)| 2 + (ρe)(x,0)dx.
+Next, testing our entropy inequality (2.15) with the constant functionφ= 1 we find that
+(2.20)
+Z T
+0
+Z
+T3
+1
+ϑ
+
+νS(ϑ,∇u) :∇u−κ q(ϑ,∇ϑ)· ∇ϑ
+ϑ
+
+dx dt
+≤
+Z
+T3
+ρs(ρ, ϑ)dx
+
+t=T
+−
+Z
+T3
+ρs(ρ, ϑ)dx
+
+t=0
+.
+
+[PDF page 10]
+10 COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+To bound the right hand side, we note that ρsR ∈L ∞(0, T; L4/3(T3)) by (2.18). For the molecular
+entropy we find a bound based on the integrability of ρ. Next, we show that the form of our pressure
+pM and the third law of thermodynamics (2.9) provide a bound onρs M inL ∞(0, T;L 2(T3)).
+Lemma 2.1.Suppose( ρ, u, ϑ)is an admissible solution (Definition 2.1) to a Navier–Stokes–Fourier
+system satisfying the constitutive relations of Section 2.1. We then have the bound
+(2.21)∥ρs M(ρ, ϑ)∥L∞(0,T;L 2(T3)) ≤C,
+whereCdepends on the initial total energy
+ 1
+2 ρ0|u0|2 +ρ 0e(ρ0, ϑ0)
+
+L1(T3) andγ.
+Proof. Fixing a t∈ [0, T] we define A1 = {x|ρ (t, x) >Z ϑ(t, x)1/(γ−1)} and A2 = T3 \A 1, where
+Z is as defined in Section 2.1. We recall that since sM = S(ρ/ϑ1/(γ−1)) satisfies the third law of
+thermodynamics (2.9), there exists aC >0 such that
+(2.22) sup
+x∈A1
+|sM(ρ, ϑ)| ≤sup
+Z>Z
+S(Z)< C.
+Integrating (ρsM)2 and using (2.22) we find
+(2.23)
+Z
+T3
+(ρsM)2 dx=
+Z
+A1
+(ρsM)2 dx+
+Z
+A2
+(ρsM)2 dx≤C 2
+Z
+A1
+ρ2 dx+
+Z
+A2
+(ρsM)2 dx,
+where we recall that the first term is bounded by (2.19). Substituting (2.12) into the second term
+of (2.23) we have by Young’s inequality,Z
+A2
+(ρsM)2 dx≤C
+Z
+A2
+ρ2
+log
+ ρ
+ϑ1/(γ−1)
+
+2
+dx+C
+Z
+A2
+ρ2 dx.
+To handle the first term of the above expression we use the identity |ln (z)| ≤Cz −α for all z≤ ¯Z
+and H¨ older inequality to obtain
+Z
+A2
+ρ2
+log
+ ρ
+ϑ
+1
+γ−1
+
+2
+dx≤C
+Z
+A2
+ρ2(1−α)ϑ2 α
+γ−1 dx
+=C
+Z
+A2
+ρ2
+
+1− γα
+γ−1
+
+(ρϑ)2 α
+γ−1 dx
+≤C
+Z
+A2
+ρϑ dx
+2 α
+γ−1
+Z
+A2
+ρ2
+
+1− γα
+γ−1
+
+/
+
+1−2 α
+γ−1
+
+dx
+1−2 α
+γ−1
+.(2.24)
+Now, by the form of our pressure (2.4) we have
+pM(ρ, ϑ) =ρϑfor allx∈A 2
+allowing us to bound the first integral by (2.18). For the second integral, we note that if α, γ satisfy
+the inequality
+(2.25) 2
+1− γα
+γ−1
+1−2 α
+γ−1
+≤γ
+then we can use the bound (2.19), as T3 has finite measure. We note that as α→ 0 the left side
+of (2.25) converges to 2. Therefore, since γ > 2 there exists α sufficiently small such that the
+inequality (2.25) is satisfied and (2.24) is bounded by constants depending on γ and the initial
+data. □
+Now that ρs is bounded, recalling (2.20) and our assumptions on the viscosity coefficients (2.1)
+we have the bound
+(2.26) C≥ν
+∇u+∇ T u− 2
+3 div(u)I
+
+2
+L2(0,T;L 2(T3))
++κ
+
+p
+K(ϑ)
+ϑ ∇ϑ
+
+2
+L2(0,T;L 2(T3))
+,
+
+[PDF page 11]
+STABILITY OF ENTROPY WAVES 11
+whereCdepends only on our constitutive relations and initial data.
+To deduce a bound onufrom (2.26) we recall the generalized Korn–Poincar´ e inequality.
+Lemma 2.2([FN17, Proposition 2.1]).Suppose that r is a non-negative function such that there
+existsC >1for which
+1
+C ≤
+Z
+T3
+r dxand
+Z
+T3
+rγ dx≤C,
+whereγ >1. Then for anyv∈W 1,p(T3)withp >1there exists aK >0giving the bound
+∥v∥W 1,p(T3) ≤K
+ ∇v+∇ T v− 2
+3div(v)I
+
+Lp(T3;R3×3)
++
+Z
+T3
+r|v|dx
+!
+where the constantKonly depends onp,γ, andC.
+Since ρ satisfies conservation of mass, using conservation of energy (2.18), and the dissipation
+bound (2.26) we can apply Lemma 2.2 with v = u, r = ρ, p = 2, and the same γ as in our pressure
+to deduce that
+(2.27)∥u∥ 2
+L2(0,T;H 1(T3)) ≤C
+1
+ν + 1
+
+for someC >0, independent ofa,κ, andν.
+2.4.Proof of Theorem 1.1.In this section we establish Theorem 1.1 using the a priori bounds
+deduced in this section and the existence result for the Navier–Stokes–Fourier system Proposition 2.
+We note that ρ0 ∈L γ(T3) by the bound (2.17). This in addition to the other assumptions
+of Theorem 1.1 allows us to apply Proposition 2 for any κ, a, ν > 0 to obtain a weak solution
+(ρκ,a,ν, uκ,a,ν, ϑκ,a,ν) in the sense of Definition 2.1. Next, noting that by H¨ older’s inequality
+∥ρu∥L∞(0,T;L 2γ/(γ+1) ≤ ∥√ρ∥L∞(0,T;L 2γ(T3)) ∥√ρu∥L∞(0,T;L 2(T3))
+and the estimates (2.18) and (2.19) we have
+∥ρ∥L∞(0,T;L γ(T3)) +∥ √ρu∥L∞(0,T;L 2(T3)) ≤C(1 +a∥ϑ 0∥4
+L4(T3))
+where C depends on the initial data and constitutive relations of Section 2.1. Furthermore, by the
+conservation of energy (2.16) we find
+∥E∥ L∞(0,T;L 1(T3)) ≤C(1 +a∥ϑ 0∥4),
+where C is again independent of κ, a, and ν. Given these bounds, we can pass to the limit in κ to
+find a subsequence along which
+ρκ,a,ν ∗⇀ ρ a,ν weakly−∗inL ∞(0, T;L γ(T3)),
+ρκ,a,νuκ,a,ν ∗⇀ m a,ν weakly−∗inL ∞(0, T;L 2γ/(γ+1)(T3)),
+E κ,a,ν ∗⇀E a,ν weakly−∗inL ∞(0, T;M(T 3)),
+by Banach Alaoglu. The above bounds are maintained in this limit, so we may repeat this process
+to obtainU= (ρ, m,E) which is a vanishing dissipation solution in the sense of Definition 1.1.
+3.Proof of Proposition 1
+In this section we prove Proposition 1. It is organized by first defining a notion of shift, mirroring
+the considerations made for conservation laws in 1-d. This is followed by computing the form of
+the relative entropy and its coercive quantities. Finally, we compute the weighted relative entropy
+inequality and take the vanishing dissipation limit to deduce the desired bound (1.12) on vanishing
+dissipation limits and the uniqueness result.
+
+[PDF page 12]
+12 COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+3.1.Constructing the shift.We fix an admissible solution ( ρ, u, ϑ) in the sense of Definition 2.1
+to the Navier–Stokes–Fourier system. Recall by the assumption (1.4), our entropy wave takes the
+form V (x) = (¯ρ(x), 0, ¯ϑ(x)) in state variables with ¯ρ0 and ¯ϑ0 both bounded above and below. To
+construct our shifted profile relative to a Navier–Stokes–Fourier solution ( ρ, u, ϑ) we mollify the
+velocity field. Let us then introduceu δ, which, for a givenδ∈(0,1), is defined by
+uδ :=u∗φ δ,
+where φ∈C ∞(R3), φ≥ 0,
+R
+φ dx = 1, supp(φ) ⊂B 1(0) (where B1(0) is the open unit ball centered
+at 0), and
+(3.1)φ δ(x) =
+(
+1
+δ3 φ
+  x
+δ
+
+|x| ≤δ
+0|x| ≥δ
+over the cube [−1,1] 3 and periodically extended so thatφ δ ∈C ∞(T3).
+We now let ¯ϑδ solve the following transport equation with velocityu δ,
+(3.2)
+(
+∂t ¯ϑδ +u δ · ∇ ¯ϑδ = 0,
+¯ϑδ(0,·) = ¯ϑ0,
+where the initial data ¯ϑ0 corresponds to the temperature of the entropy wave V(1.4) . We note that
+since uδ is smooth, the above problem admits a unique weak solution by the method of characteristics.
+To ensure that these solutions are sufficiently regular, we add the additional mollification forϵ∈ (0, 1)
+¯ϑδ,ϵ := ¯ϑδ ∗φ ϵ,
+which we will take to be our shifted temperature. To define our shifted density ρδ,ϵ we recall that
+along the entropy wave
+pM(¯ρ,¯ϑ)≡¯p
+for some positive constant ¯p. Using the hypothesis of thermodynamic stability (2.10) we know that
+∂ρpM(ρ, ϑ) > 0 and additionally for any fixed ϑ > 0 the range of pM(·, ϑ) is all of [0 ,∞ ). This
+allows us to deduce a unique shifted density ¯ρδ,ϵ such that ¯ρδ,ϵ and ¯ϑδ,ϵ satisfy
+pM(¯ρδ,ϵ, ¯ϑδ,ϵ) = ¯p.
+Ensuring that this identity is maintained at the level of the smoothed density and temperature will
+be helpful in the future analysis.
+We now denote our shifted entropy wave in conservative variables by
+Vδ,ϵ(t, x) = (¯ρδ,ϵ(t, x),0,¯ρδ,ϵ(t, x)eM(¯ρδ,ϵ, ¯ϑδ,ϵ)),
+where ¯ρδ is defined analogously to ¯ρδ,ϵ. We will also need a “lift” of this wave to account for the
+dependence of our pressure p of the Navier–Stokes–Fourier system on the parameter a > 0. We
+define
+V a
+δ,ϵ(t, x) =V δ,ϵ(t, x) + (0,0, a¯ρδ,ϵ(t, x)eR(¯ρδ,ϵ(t, x), ¯ϑδ,ϵ)).
+Finally, we note that since ¯ρ0, ¯ϑ0 ∈L ∞(T3) our shifted primitive variables have the uniform
+bounds
+(3.3)C −1 ≤ ¯ϑδ, ¯ϑδ,ϵ,¯ρδ,¯ρδ,ϵ ≤C
+for someC >0. Additionally, due to smoothness ofp M and (3.3) we similarly have
+(3.4)|V δ,ϵ| ≤C,|V a
+δ,ϵ| ≤C(1 +a)
+for some C > 0, where in this case | · | is Euclidean distance in R5 and Vδ,ϵ, V a
+δ,ϵ are written in the
+conservative coordinates.
+
+[PDF page 13]
+STABILITY OF ENTROPY WAVES 13
+3.2.Weighted relative entropy inequality.In this section we establish the form of the relative
+entropy.
+Lemma 3.1.Consider two constant states U = (ρ, m,E ), V = (¯ρ,0, ¯E)where the internal energy
+of both are determined via the relation e = eM + aeR (without confusion, we will continue to
+disambiguate the other thermodynamic variables by the use of the bar for those corresponding to the
+stateVand no bar for those corresponding toU). The relative entropy has the form
+¯ϑ(−ρs)(U|V) =E+ ¯p− ¯ϑρs−ρ¯c,
+where¯c= ¯e− ¯ϑ¯s+p(¯ρ,¯ϑ)/¯ρ.
+Proof.Using (1.7) withη(U) = (−ρs)(U),we have
+(3.5) (−ρs)(U|V) = (−ρs)(U)−(−ρs)(V)−d(−ρs)(V)(U−V).
+Using the Gibbs relation (2.8) and that
+e= E
+ρ − |u|2
+2 ,
+we obtain
+(3.6) ¯ϑ d(−ρs)(V) =
+
+¯ϑ(−s)(V) + p(¯ρ,¯ϑ) + ¯E
+¯ρ
+
+dρ−dE.
+Using (3.5) we find the relation
+¯ϑ(−ρs)(U|V) = ¯ϑ(−ρs)(U)− ¯ϑ(−ρs)(V)− ¯ϑ d(−ρs)(V)(U−V)
+=− ¯ϑρs+ ¯ϑ¯ρ¯s−
+
+−¯ϑ¯s+p(¯ρ,¯ϑ) + ¯E
+¯ρ
+
+(ρ−¯ρ) + (E − ¯E)
+=− ¯ϑρs−
+
+−¯ϑ¯s+p(¯ρ,¯ϑ)
+¯ρ + ¯e
+
+ρ+p(¯ρ, ¯ϑ) +E.
+This completes the proof.
+□
+In the future, we will compare to the shifted waveV a
+δ,ϵ rather than to a constant stateV . In this case,
+we denote by ¯ϑδ,ϵ(t, x) the temperature of the stateV a
+δ,ϵ(t, x), ¯cδ,ϵ(t, x) = ¯eδ,ϵ− ¯ϑδ,ϵ¯sδ,ϵ+p(¯ρδ,ϵ, ¯ϑδ,ϵ)/¯ρδ,ϵ,
+and ¯pδ,ϵ = p(ρδ,ϵ, ϑδ,ϵ), where ¯eδ,ϵ, ¯ϑδ,ϵ,¯sδ,ϵ,¯ρδ,ϵ are again values of the thermodynamic quantities at
+the stateV a
+δ,ϵ(t, x).
+We now show that several quantities are coercive to the relative entropy. This bound follows
+from the hypothesis of thermodynamic stability (2.10), which grants that both ( −ρs) is a convex
+function of the conservative variables (ρ, m,E) [Luk+25].
+Lemma 3.2.There exists a C > 0such that the following holds. For any state in phase space
+U= (ρ, m,E)anda∈[0,1]the relative entropy controls the following quantities,
+(3.7)G(m) +F(ρ) +G(E − ¯E a)≤C ¯ϑ(Vδ,ϵ(t, x))(−ρs)(U|V a
+δ,ϵ(t, x))for allt≥0, x∈T 3,
+where ¯E a = ¯ρeM(¯ρ,¯ϑ) + a¯ρeR(¯ρ,¯ϑ)is the total energy of the shifted state V a
+δ,ϵ. In particular, the
+constantCisuniformin the parametersκ, a,andν.
+To clarify notation, in the following proof we denote the partial derivative ∂xf(x, y) = ∂f
+∂x (x, y)
+as the derivative obtained by varying x while keeping the value of y fixed. In particular, this
+distinguishes∂ vs(v, e) from∂ vs(v, ϑ).
+
+[PDF page 14]
+14 COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+Proof. Following the steps of [Luk+25, Section 5], we will begin by showing that −s = −(sM + asR)
+has strictly positive definite hessian in the variables ( v, e), where v = 1
+ρ is the specific volume and
+0 < v and P∞
+γ−1 v1−γ < e, the natural bounds away from vacuum and ϑ = 0 (see (2.17)). From this,
+the strict convexity of −ρs in the conservative variables (ρ, m,E ) follows via a change of coordinates
+(see [Luk+25, Section 6] for further details).
+To begin, we note that by Sylvester’s criterion
+(3.8)∂ 2
+e s(v, e)<0 and (∂ 2
+v s(v, e))(∂2
+e s(v, e))−(∂ v∂es(v, e))2 >0
+is equivalent to the negative definiteness of the hessian of s. By the Gibbs relation (2.8) we know
+that 1
+ϑ(v,e) = ∂s
+∂e (v, e) and by differentiating ineand using (2.10) we find
+(3.9) ∂2s
+∂e2 (v, e) =− 1
+ϑ2
+∂ϑ
+∂e (v, e)<0.
+Next, we write ϑ(v, ϑ) = ϑ(v, e(v, ϑ)) and differentiating inv we find 0 = ∂vϑ(v, e)+∂eϑ(v, e)∂ve(v, ϑ).
+By the relationϑ(v, e) −1 = ∂s
+∂e (v, e) this is equivalent to
+∂e
+∂v (v, ϑ) =− ∂vϑ(v, e)
+∂eϑ(v, e) =− ∂e∂vs(v, e)
+∂2e s(v, e) .
+Using again (2.10) andp=ϑ ds
+dv we compute
+0> ∂p
+∂v (v, ϑ) =∂ v
+
+ϑ ∂s
+∂v (v, e(v, ϑ))
+
+=ϑ
+ ∂2s
+∂v2 (v, e) + ∂2s
+∂v∂e (v, e) ∂e
+∂v (v, ϑ)
+
+=ϑ
+"
+∂2s
+∂v2 (v, e)−
+ ∂2s
+∂v∂e (v, e)
+2 ∂2s
+∂e (v, e)
+−1#
+.
+Using the negativity (3.9) and ϑ > 0 we see the above bound establishes the determinant condition
+of Sylvester’s criterion (3.8), and hence also the negative definiteness of the hessian ofs.
+Now that we have established the strict convexity of the entropy, we prove the coercivity
+bound (3.7). Define the set
+W= [ρ ∗, ρ∗]× {0} ×
+
+inf
+x∈T3
+¯ρeM(¯ρ,¯ϑ),sup
+x∈T3
+¯ρeM(¯ρ,¯ϑ) + sup
+x∈T3
+¯ϑ4
+
+,
+where ρ∗, ρ∗ are defined in (1.10). This is a bounded set away from vacuum containing all states
+attained byV a
+δ,ϵ fora∈[0,1]. Note that there existsr >0 such that
+(3.10)K={U:d(U, W)≤r} ⊂⊂ P:=
+
+(ρ, m,E)
+ ρ >0 andE − |m|2
+2ρ > P∞
+γ−1 ργ
+
+,
+where P∞ is as in Equation (2.17) and P is the conservative phase space corresponding to the
+constitutive relations of Section 2.1. Considering the compact set K× [0, 1] and recalling that
+s=s M +as R, the map
+(V, a)7→min{λ∈R:λis an eigenvalue of∇ 2(−ρs)(V)}
+is continuous on the compact set K× [0, 1]. Since ∇2(−ρs) is positive definite everywhere on K
+this map has a strictly positive minimum on the set. So, there existsc >0 such that
+∇2(−ρs)(V)ξ·ξ≥cξ·ξ∀ξ∈R 5, V∈K, a∈[0,1],
+establishing a uniform convexity in a neighborhood of ¯W.
+
+[PDF page 15]
+STABILITY OF ENTROPY WAVES 15
+Now, following the steps of [KVW21, Lemma 2.2], we fix a≥ 0 and use this uniform convexity
+to establish the inequality (3.7). Fixing V∈W and a direction ξ∈R 5 with |ξ| = 1 we use the
+relative entropy (1.7) with η = −ρs to define the convex function f(t) = η(V + tξ|V ) for t∈ [0, T),
+where T is the largest value for which when t < T we have V + tξ∈ P . We note that P is a convex
+open set, so any state U∈ P can be reached by such a ray. Computing the derivatives, we find
+f ′(t) = (∇η(V + tξ) − ∇η(V )) ·ξ which is zero at t = 0. Furthermore, f ′′(t) = ∇2η(V + tξ)ξ·ξ and
+for allt≤rwe haveV+tξ∈K, hence
+f ′′(t)≥c∀t∈[0, r].
+Integrating this, we find
+f(t) =
+Z t
+0
+Z s
+0
+∇2η(V+qξ)ξ·ξ dq ds≥ 1
+2 ct2 ∀t∈[0, r].
+Thanks to ∇2η being positive definite over P, we have f ′′ > 0 for t∈ [0, T). This indicates that f ′
+is an increasing function for all V and ξ. In particular, since f ′(0) = 0 we must have f ′(r/2) > 0
+and, furthermore, sinceK×[0,1] is compact there existsc >0 such that
+f ′(r/2)> c∀V∈W,|ξ|= 1, a∈[0,1].
+We then observe
+f(t) =
+Z t
+0
+f ′(s)ds=
+Z t
+r/2
+f ′(s)ds+f(r/2)≥c(t−r/2)≥ c
+2 t∀t∈[r, T).
+Next, we define the set
+¯P={U∈R 5 | ∃{U n} ⊂ PwithU n →uand lim sup
+n→∞
+η(Un)<∞}
+which includes the vacuum states. On this set we extendηsuch that it lower semicontinuous;
+η(U) = lim inf
+V→U
+η(V),
+where the V in the liminf are taken to reside within P. It is known that this extension is convex
+(see Lemma 2 of [Vas08]). We have thus shown that for someC >0 we have the bound
+min
+ 
+|U−V|,|U−V| 2
+≤C(−ρs)(U|V)∀V∈W, U∈ ¯P, a∈[0,1].
+Next, noting that for allx, y, z∈Rwe have the simple inequality
+min
+ 
+|x|2,|x|
+
++ min
+ 
+|y|2,|y|
+
++ min
+ 
+|z|2,|z|
+
+≤2 min
+
+|x|2 +|y| 2 +|z| 2,
+p
+|x|2 +|y| 2 +|z| 2
+
+,
+that ¯ϑ = ¯ϑ(V ) is bounded above and below for all V∈W , and the definitions (1.8), (1.9) we arrive
+at
+C
+ 
+F(ρ) +G(m) +G(E − ¯E a)
+
+≤ ¯ϑ(−ρs)(U|V).
+The constantC >0 is independent of the value ofV∈W, so this completes the proof.□
+Now that we have established the form of the relative entropy, we use the shifted primitives
+¯ρδ,ϵ, ¯ϑδ,ϵ and compute the change in the relative entropy in time. To begin, we define
+(3.11)F δ,ϵ(t, x) = ¯ϑδ,ϵ(−ρs)(U(x, t)|V a
+δ,ϵ)
+to be our relative entropy.
+
+[PDF page 16]
+16 COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+Lemma 3.3.Let U = (ρ, m,E )be an admissible solution of the Navier–Stokes–Fourier system (1.3)
+with parameters κ, ν > 0and a∈ (0, 1)written in conservative variables. Let V a
+δ,ϵ be the shifted
+profile of the entropy wave V constructed in Section 3.1. Then, the weighted relative entropy satisfies
+(3.12)
+Z
+T3
+Fδ,ϵ(t, x)dx+
+Z t
+0
+Z
+T3
+¯ϑδ,ϵ
+
+−κq(ϑ,∇ϑ)· ∇ϑ
+ϑ2 +ν S(ϑ,∇u) :∇u
+ϑ
+
+dx dτ
+≤κ
+Z t
+0
+Z
+T3
+K(ϑ) ∇ϑ
+ϑ · ∇ ¯ϑδ,ϵ dx dτ
+−
+Z t
+0
+Z
+T3
+ρs
+ 
+∂t ¯ϑδ,ϵ +u· ∇ ¯ϑδ,ϵ
+
+dx dτ
+−
+Z t
+0
+Z
+T3
+ρ(∂ t¯cδ,ϵ +u· ∇¯cδ,ϵ)dx dτ
++
+Z
+T3
+Fδ,ϵ(0, x)dx+Ca,
+where ¯ϑδ,ϵ(t, x)is the temperature at state Vδ,ϵ(t, x)and ¯cδ,ϵ(t, x) = ¯eδ,ϵ − ¯ϑδ,ϵ¯sδ,ϵ + ¯pδ,ϵ/¯ρδ,ϵ, with
+¯pδ,ϵ = ¯pM + a
+3
+¯ϑ4
+δ,ϵ. Again, all thermodynamic quantities correspond to the stateV a
+δ,ϵ(t, x).
+Proof. We note that by Lemma 3.1, the molecular pressure associated to the states of Vδ,ϵ having
+constant value pM, and conservation of energy (2.16) that
+(3.13)
+Z
+T3
+Fδ,ϵ(·, x)dx
+
+t
+0
+=
+Z
+T3
+E(t, x) + pδ,ϵ(·, x)− ϑδ,ϵ(·, x)(ρs)(·, x)−ρ(·, x) cδ,ϵ(·, x)dx
+
+t
+0
+=−
+Z
+T3
+ϑδ,ϵ(·, x)(ρs)(·, x)dx
+
+t
+0
+−
+Z
+ρ(·, x)cδ,ϵ(·, x)dx
+
+t
+0
++ a
+3
+Z
+T3
+¯ϑδ,ϵ(·, x)4 dx
+
+t
+0
+.
+for almost every t. Since ( ρ, m,E ) is an admissible solution to the Navier–Stokes–Fourier system
+we wish to use ¯cδ,ϵ, ¯ϑδ,ϵ as test functions in equations (2.13) and (2.15). We note that as defined,
+¯cδ,ϵ, ¯ϑδ,ϵ are not in C1([0, T] ×T 3), but we have that ¯cδ,ϵ, ¯ϑδ,ϵ ∈L 2(0, T; H k(T3)) and ∂t¯cδ,ϵ, ∂t ¯ϑδ,ϵ ∈
+L2(0, T; L4(T3)) for all k≥ 0 by the ϵ mollification. Since we have ( −ρs), ρ∈L ∞([0, T]; L4/3(T3))
+thanks to the estimates (2.19), Lemma 2.1, and γ > 2 we can establish equations (2.13) and (2.15)
+with ¯cδ,ϵ, ¯ϑδ,ϵ as test functions via an approximation argument. For the first term,
+−
+Z
+T3
+ϑδ,ϵ(·, x)(ρs)(·, x)dx
+
+t
+0
+≤ −
+Z t
+0
+Z
+T3
+ρs
+ 
+∂t ¯ϑδ,ϵ +u· ∇ ¯ϑδ,ϵ
+
++κ q(ϑ,∇ϑ)· ∇ ¯ϑδ,ϵ
+ϑ dx dτ
+−
+Z t
+0
+Z
+T3
+¯ϑδ,ϵ
+ϑ
+
+νS(ϑ,∇u) :∇u−κ q(ϑ,∇ϑ)· ∇ϑ
+ϑ
+
+dx dτ.
+For the second, we find
+Z
+ρ(·, x)cδ,ϵ(·, x)dx
+
+t
+0
+=
+Z t
+0
+Z
+T3
+ρ(∂ t¯cδ,ϵ +u· ∇¯cδ,ϵ)dx dτ.
+The final term of (3.13) can be easily bounded thanks to T3 being a finite measure space and the
+bound (3.3). Substituting these into (3.13) and recalling (2.2) we arrive at the bound (3.12).□
+We now simplify the bound attained in Lemma 3.3. Combining (2.1) and (2.3) with Lemma 2.2
+we find the bounds
+κ
+Z t
+0
+Z
+T3
+−q(ϑ,∇ϑ)· ∇ϑ
+ϑ2 dx dt≥Cκ
+Z t
+0
+Z
+T3
+1 +ϑ 3
+ϑ2 |∇ϑ|2 dx dt,
+
+[PDF page 17]
+STABILITY OF ENTROPY WAVES 17
+while the viscous dissipation term is non-negative.
+Next, since G is Lipschitz, using our constitutive relation for the radiative energy (2.5), we have
+the bound
+G(E − ¯E)≤ G(E − ¯E a) + 2a¯ϑ4
+δ,ϵ.
+From this, Lemma 3.2, and ¯ϑδ,ϵ being bounded above there exists C > 0 such that for all T > 0
+the following bound holds,
+(3.14)
+ess sup
+t∈[0,T]
+Z
+T3
+G(m) +F(ρ) +G(E − ¯E)dx
+
++
+Z T
+0
+Z
+T3
+κ1 +ϑ 3
+ϑ2 |∇ϑ|2 dx dτ
+≤Cκ
+Z T
+0
+Z
+T3
+1 +ϑ 3
+ϑ |∇ϑ||∇¯ϑδ,ϵ|dx dτ
++Cess sup
+t∈[0,T]
+
+Z t
+0
+Z
+T3
+ρ[∂t¯cδ,ϵ +u· ∇¯cδ,ϵ]dx dτ
+
++Cess sup
+t∈[0,T]
+
+Z t
+0
+Z
+T3
+ρs[∂t ¯ϑδ,ϵ +u· ∇ ¯ϑδ,ϵ]dx dτ
+
++C
+Z
+T3
+Fδ,ϵ(0, x)dx+Ca.
+3.3.Vanishing dissipation limit.Since the coercive quantities are convex we can use weak
+lower semi-continuity to gain bounds on the weak limits of ρ, m, and E when the dissipation
+parameters, a, and the mollification parameters tend to zero. We choose to take our limits in the
+order κ→ 0, a→ 0, δ→ 0, ϵ→ 0, and finally ν→ 0. This order can be quickly justified by
+examining the terms appearing on the right hand side of the inequality (3.14),
+• The limit κ→ 0 is performed prior to a→ 0 to maintain higher integrability of ϑ. Further-
+more, it is completed prior to δ, ϵ→ 0 to take advantage of having a uniform estimate on
+|∇¯ϑδ,ϵ|from the mollification.
+• We perform the limit a→ 0 prior to δ→ 0 and ϵ→ 0 because the radiative entropy term
+ρsR = 4
+3 ϑ3 is merely L4/3, which causes difficulty as the transport terms do not converge to
+zero weakly in Lp for p > 2 when δ, ϵ→ 0. In the limit a→ 0 we observe that ρs→ρs M,
+which allows us to conclude that our weak limit has a higher degree of integrability by
+Lemma 2.1.
+• Finally, δ→ 0, ϵ→ 0 is performed prior to ν→ 0 because we wish to use the uniform L2
+bounds of divuto help control the terms arising from our mollified transport equation.
+Furthermore, in the preceding sections, our solutions depended on fixed constants κ, a, ν > 0,
+where we neglected to denote the dependence of our solutions on these constants. For clarity,
+in this section we further notate our quantities with superscripts κ, a, ν to keep track of this
+dependence. After each limit, we will drop the associated superscript. Additionally, when mentioning
+the entropy, we will write ( ρs)κ,a,ν rather than ρκ,a,νsκ,a,ν. This is done because there are no a
+priori estimates allowing us to gain strong limits of eitherρors, so we instead obtain weak limits
+such as (ρs) κ,a,ν ⇀(ρs) a,ν where (ρs)a,ν may not be equal to the product of weak limitsρ a,νsa,ν.
+3.3.1.Heat conductivity limit ( κ→ 0).The goal of this subsection is to perform the heat conductivity
+limit, κ→ 0, in (3.14). This is accomplished by studying (3.14) term by term, using the a priori
+estimates obtained in Section 2.3, the Aubin–Lions lemma, and results about commutators.
+
+[PDF page 18]
+18 COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+We begin by noting that Young’s inequality gives the bound
+(3.15)
+Cκ
+Z T
+0
+Z
+T3
+1 + (ϑκ,a,ν)3
+ϑκ,a,ν |∇ϑκ,a,ν||∇¯ϑκ,a,ν
+δ,ϵ |dx dτ≤ κ
+2
+Z T
+0
+Z
+T3
+1 + (ϑκ,a,ν)3
+(ϑκ,a,ν)2 |∇ϑκ,a,ν|2 dx dτ
++Cκ
+Z T
+0
+Z
+T3
+(1 + (ϑκ,a,ν)3)|∇¯ϑκ,a,ν
+δ,ϵ |2 dx dτ.
+This allows us to rewrite (3.14) as
+(3.16)
+ess sup
+t∈[0,T]
+Z
+T3
+G(mκ,a,ν) +F(ρ κ,a,ν) +G(E κ,a,ν − ¯E)dx
+
++
+Z T
+0
+Z
+T3
+κ1 + (ϑκ,a,ν)3
+2(ϑκ,a,ν)2 |∇ϑκ,a,ν|2 dx dτ
+≤C
+ Z
+T3
+F a
+ϵ (0, x)dx+Ca+J 1 + sup
+t∈[0,T]
+|J2|+ sup
+t∈[0,T]
+|J3|
+!
+,
+where
+(3.17)
+J1 =κ
+Z T
+0
+Z
+T3
+(1 + (ϑκ,a,ν)3)|∇¯ϑκ,a,ν
+δ,ϵ |2 dx dτ,
+J2 =
+Z t
+0
+Z
+T3
+ρκ,a,νh′(¯ϑκ,a,ν
+δ,ϵ )
+h
+∂t ¯ϑκ,a,ν
+δ,ϵ +u κ,a,ν · ∇ ¯ϑκ,a,ν
+δ,ϵ
+i
+dx dτ,
+J3 =
+Z t
+0
+Z
+T3
+(ρs)κ,a,ν
+h
+∂t ¯ϑκ,a,ν
+δ,ϵ +u κ,a,ν · ∇ ¯ϑκ,a,ν
+δ,ϵ
+i
+dx dτ,
+and h is the C1 function satisfying h(¯ϑκ,a,ν
+δ,ϵ ) = ¯cκ,a,ν
+δ,ϵ . Note that since ¯ϑκ,a,ν
+δ,ϵ = ¯ϑκ,a,ν
+δ ∗φ ϵ and ¯ϑκ,a,ν
+δ
+is bounded (3.3) we have the bound
+Z T
+0
+Z
+T3
+(1 + (ϑκ,a,ν)3)|∇¯ϑκ,a,ν
+δ,ϵ |2 dx dτ≤C(ϵ, T)
+
+1 +∥ϑ κ,a,ν∥3
+L∞(0,T;L 4(T3))
+
+.
+Additionally, by conservation of energy (2.18) we have a uniform in κ bound on ∥ϑκ,a,ν∥L∞(0,T;L 4(T3)).
+Therefore,
+J1 →0 asκ→0.
+To begin examining J2 and J3, we define the transport defect, which, as we will see later,
+corresponds to a commutator,
+Rκ,a,ν
+δ,ϵ :=∂ t ¯ϑκ,a,ν
+δ,ϵ +u κ,a,ν · ∇ ¯ϑκ,a,ν
+δ,ϵ ,(3.18)
+givingJ 2 andJ 3 the form
+J2 =
+Z t
+0
+Z
+T3
+ρκ,a,νh′(¯ϑκ,a,ν
+δ,ϵ )Rκ,a,ν
+δ,ϵ dx dτ,
+J3 =
+Z t
+0
+Z
+T3
+(ρs)κ,a,νRκ,a,ν
+δ,ϵ dx dτ.
+To take the limits ofJ 2 andJ 3 we will show
+ρκ,a,ν →ρ a,ν,(ρs) κ,a,ν →(ρs) a,ν inL 2(0, T;H −1(T3)) asκ→0,
+Rκ,a,ν
+δ,ϵ ⇀ R a,ν
+δ,ϵ weakly inL 2(0, T;H 1(T3)) asκ→0,
+and ¯ϑκ,a,ν
+δ,ϵ → ¯ϑa,ν
+δ,ϵ in L∞([0, T] ×T 3). To obtain the strong convergence of ρκ,a,ν and (ρs)κ,a,ν we
+will make use of the following variant of the Aubin–Lions Lemma.
+
+[PDF page 19]
+STABILITY OF ENTROPY WAVES 19
+Lemma 3.4([Fei04, Lemma 6.3]).Let {vn}∞
+n=1 be a sequence of functions such that the vn are
+uniformly bounded inL 2(0, T;L q(T3))∩L ∞(0, T;L 1(T3))whereq > 6
+5. Additionally, suppose
+∂tvn ≥g n inD ′((0, T)×T 3)
+with
+(3.19)g n uniformly bounded inL 1(0, T;W −m,r(T3))form≥1, r >1.
+Then there exists a subsequence of{v n}∞
+n=1 such that
+vn →vinL 2(0, T;H −1(T3)).
+To begin, we note that by Lemma 2.1 (ρsM)κ,a,ν is bounded in L2(0, T; L2(T3))∩L ∞(0, T; L1(T3)).
+For the radiative component we note that by conservation of energy (2.18), ∥ϑκ,a,ν∥L∞(0,T;L 4(T3)) is
+uniformly bounded with respect toκ. Hence, by the definition ofs R (2.6), we have
+(3.20)a(ρs R)κ,a,ν is bounded inL ∞(0, T;L 4/3(T3)),
+and thanks toL p nesting we have
+(3.21) (ρs) κ,a,ν is bounded inL 2(0, T;L 4/3(T3))∩L ∞(0, T;L 1(T3)),
+where we note that q = 4
+3 > 6
+5. Next, by the entropy inequality (2.15) we know that ( ρs)κ,a,ν
+distributionally satisfies
+(3.22)
+∂t(ρs)κ,a,ν ≥ −div((ρs) κ,a,νuκ,a,ν)−κdiv
+q(ϑκ,a,ν,∇ϑ κ,a,ν)
+ϑκ,a,ν
+
++ 1
+ϑκ,a,ν
+
+νS(ϑ κ,a,ν,∇u κ,a,ν) :∇u κ,a,ν −κ q(ϑκ,a,ν,∇ϑ κ,a,ν)
+ϑκ,a,ν · ∇ϑκ,a,ν
+
+=:
+4X
+i=1
+gκ
+i .
+Forg κ
+1 we note that
+∥(ρs)κ,a,νuκ,a,ν∥L2(0,T;L 12/11(T3)) ≤ ∥(ρs) κ,a,ν∥L∞(0,T;L 4/3(T3)) ∥uκ,a,ν∥L2(0,T;L 6(T3))
+yielding an upper bound in L2(0, T; W −1,12/11(T3)) uniform in κ and a due to Lemma 2.1, the
+bound (2.27) and equation (3.20).
+Next, thanks again to the H¨ older inequality, we observe that forg κ
+2
+(3.23)
+κq(ϑκ,a,ν,∇ϑ κ,a,ν)
+ϑκ,a,ν
+
+L2(0,T;L 8/7(T3))
+≤κ
+
+p
+K(ϑ κ,a,ν)
+
+L∞(0,T;L 8/3(T3))
+×
+
+p
+K(ϑ κ,a,ν)
+ϑκ,a,ν ∇ϑκ,a,ν
+
+L2(0,T;L 2(T3))
+≤Cκ
+
+1 +∥ϑ∥ 3/2
+L∞(0,T;L 4(T3))
+
+×
+
+p
+K(ϑ κ,a,ν)
+ϑκ,a,ν ∇ϑκ,a,ν
+
+L2(0,T;L 2(T3))
+,
+where the right is uniformly bounded for κ∈ (0, 1) and a fixed due to (2.18) and (2.26) giving a
+uniform bound on gκ
+2 ∈L 2(0, T; W −1,8/7 (T3)). We note that both g3, g4 ≥ 0. This establishes by
+Lemma 3.4 that
+(ρs)κ,a,ν →(ρs) a,ν inL 2(0, T;H −1(T3)) asκ→0.
+
+[PDF page 20]
+20 COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+For the density, we recall that ρκ,a,ν is uniformly bounded in L∞(0, T; Lγ(T3)) by energy conser-
+vation and our constitutive relation (2.19). Additionally, the continuity equation gives us that
+∂tρκ,a,ν =−div(u κ,a,νρκ,a,ν)
+from which, thanks to H¨ older’s inequality,
+∥uκ,a,νρκ,a,ν∥L1(0,T;L q(T3)) ≤ ∥u κ,a,ν∥L2(0,T;L 6(T3)) ∥ρκ,a,ν∥L2(0,T;L γ(T3)) ,
+with q = 6γ
+γ+6 > 1 since γ > 2. Using equations (2.27) and (2.19), the right hand side is uniformly
+bounded with respect toκanda. This shows, again using Lemma 3.4, that
+ρκ,a,ν →ρ a,ν inL 2(0, T;H −1(T3)) asκ→0
+as desired.
+For the transport term Rκ,a,ν
+δ,ϵ we first note that, by mollifying the transport equation (3.2) by φϵ
+as defined in (3.1), we have
+∂t ¯ϑκ,a,ν
+δ,ϵ =−
+ 
+uκ,a,ν
+δ · ∇ ¯ϑκ,a,ν
+δ
+
+∗φ ϵ =−div
+ 
+[uκ,a,ν
+δ
+¯ϑκ,a,ν
+δ ]ϵ
+
++ [div(uκ,a,ν
+δ )¯ϑκ,a,ν
+δ ]ϵ.
+Using this we rewriteR κ,a,ν
+δ,ϵ as
+Rκ,a,ν
+δ,ϵ =u κ,a,ν · ∇ ¯ϑκ,a,ν
+δ,ϵ −div([u κ,a,ν
+δ
+¯ϑκ,a,ν
+δ ]ϵ) + [div(uκ,a,ν
+δ )¯ϑκ,a,ν
+δ ]ϵ.
+Let us now show that
+(3.24)R κ,a,ν
+δ,ϵ ⇀ R a,ν
+δ,ϵ inL 2(0, T;H 1(T3)).
+Observe that ¯ϑκ,a,ν
+δ,ϵ is uniformly bounded in L∞(0, T; H2(T3)) as |¯ϑκ,a,ν
+δ | ≤C by (3.3) and the
+mollification inϵ. By definition, it further satisfies
+(3.25)∂ t ¯ϑκ,a,ν
+δ =−u κ,a,ν
+δ · ∇ ¯ϑκ,a,ν
+δ ,
+where equation (2.27) and mollification by δ give that the right side is bounded in L2(0, T; H −1(T3))
+uniformly with respect to the parameters κ and a. Combining this with the bound (3.3) we can
+apply the Aubin–Lions lemma to deduce that
+(3.26) ¯ϑκ,a,ν
+δ → ¯ϑa,ν
+δ inL 2(0, T;H −1(T3)) asκ→0.
+Next, we note that mollification by δ gives us
+uκ,ν
+δ
+
+L2(0,T;H 2(T3)) ≤C where C is uniform with
+respect toκanda.
+Now that we are in possession of the strong limit of ¯ϑκ,a,ν
+δ,ϵ , we introduce the following lemma to
+obtain weak limits for terms inR κ,a,ν
+δ,ϵ .
+Lemma 3.5(Lemma 3.5 of [KVW21]).Assume that {un}∞
+n=1 and {ψn}∞
+n=1 satisfy one of the
+following:
+(1)u n →uinL 2(0, T;H 1(T3))andψ n
+∗⇀ ψinL ∞((0, T))×T 3),
+(2)ψ n →ψinL 2(0, T;H −1(T3))and
+∥ψn∥L∞((0,T)×T 3) +∥u n∥L2(0,T;H 1(T3)) +∥∇divu n∥L2(0,T;L 2(T3)) < C,
+withCindependent ofn.
+There, for anyϵ >0there exists a subsequence such that
+(div(unψn))ϵ ⇀(div(uψ)) ϵ weakly inL 2(0, T;H 1(T3)),
+(div(un)ψn)ϵ ⇀(div(u)ψ) ϵ weakly inL 2(0, T;H 1(T3))
+whereusatisfies thatu n ⇀ uinL 2(0, T;H 1(T3)).
+
+[PDF page 21]
+STABILITY OF ENTROPY WAVES 21
+Using Lemma 3.5, we find that
+(div(uκ,a,ν
+δ
+¯ϑκ,a,ν
+δ ))ϵ ⇀(div(u a,ν
+δ
+¯ϑa,ν
+δ ))ϵ weakly inL 2(0, T;H 1(T3)) asκ→0,
+(div(uκ,a,ν
+δ )¯ϑκ,a,ν
+δ )ϵ ⇀(div(u a,ν
+δ )¯ϑa,ν
+δ )ϵ weakly inL 2(0, T;H 1(T3)) asκ→0.
+This proves the weak convergence for the two rightmost terms of Rκ,a,ν
+δ,ϵ . For the remaining term, we
+note that, by mollification byϵand the bound (2.27), we have
+uκ,a,ν∇¯ϑκ,a,ν
+δ,ϵ
+
+L2(0,T;H 1(T3))
+≤ ∥u κ,a,ν∥L2(0,T;H 1(T3))
+∇¯ϑκ,a,ν
+δ,ϵ
+
+L∞(0,T;W 1,∞(T3))
+which is uniform with respect to κ and a. This establishes that the product uκ,a,ν∇¯ϑκ,a,ν
+δ,ϵ has a
+weak limit inL 2(0, T;H 1(T3)). We can then conclude that this weak limit is equal to the product
+of weak limits, since due to convergence (3.26) and mollification
+∇¯ϑκ,a,ν
+δ,ϵ → ∇ ¯ϑa,ν
+δ,ϵ inL 2(0, T;H −1(T3)) asκ→0.
+This concludes the proof of (3.24).
+Finally, since ¯ϑκ,a,ν
+δ,ϵ is uniformly bounded in L∞(0, T; W 2,∞(T3)) and satisfies the mollified version
+of (3.25), we note that, by the classical Aubin–Lions–Simon Lemma and the smoothness ofh,
+h′(¯ϑκ,a,ν
+δ,ϵ )→h ′(¯ϑa,ν
+δ,ϵ ) inC(0, T;W 1,∞(T3)) asκ→0.
+This establishes the desired weak limit
+h′(¯ϑκ,a,ν
+δ,ϵ )Rκ,a,ν
+δ,ϵ ⇀ h ′(¯ϑa,ν
+δ,ϵ )Ra,ν
+δ,ϵ inL 2(0, T;H 1(T3)) asκ→0,
+which allows us to take the limit ofJ 2 asκ→0.
+To complete our study of ( ρs)a,ν, we note that the norm ∥(ρsM)κ,a,ν∥L∞(0,T;L 2(T3)) is uniformly
+bounded with respect to κ and a, by the conservation of energy (2.18) and Lemma 2.1. Furthermore,
+by (2.6) the radiative entropy satisfies the bound
+(3.27)
+∥(ρsR)κ,a,ν∥L∞(0,T;L 4/3(T3)) = 4
+3
+(ϑκ,a,ν)3
+L∞(0,T;L 4/3(T3))
+= 4
+3
+(ϑκ,a,ν)43/4
+L∞(0,T;L 1(T3))
+≤ 4
+3 a−3/4 ∥E0∥3/4
+L1(T3)
+where the final line is due to (2.18). As a result, up to a subsequence we have the limits
+(3.28)
+(ρsM)κ,a,ν ⇀(ρs M)a,ν weakly-∗inL ∞(0, T;L 2(T3)) asκ→0,
+(ρsR)κ,a,ν ⇀(ρs R)a,ν weakly-∗inL ∞(0, T;L 4/3(T3)) asκ→0.
+Then, we can identify the weak limit of the entropy as the sum of the weak limits of the corresponding
+molecular entropy and radiative entropy,
+(ρs)a,ν = (ρsM)a,ν +a(ρs R)a,ν.
+To summarize this section, by the bounds (2.16) and (2.18) we have the weak limits
+ρκ,a,ν ⇀ ρ a,ν weakly-∗inL ∞(0, T;L γ(T3)) asκ→0,
+E κ,a,ν ⇀E a,ν weakly-∗inL ∞(0, T;M(T 3)) asκ→0.
+Furthermore, we note that from the bound (2.18) we control the kinetic energy,
+
+mκ,a,ν
+2√ρκ,a,ν
+
+2
+L∞(0,T;L 2(T3))
+≤ ∥E0∥L1(T3) .
+
+[PDF page 22]
+22 COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+Combining this with our uniform bound ofρ κ,a,ν ∈L ∞(0, T;L γ(T3)) from (2.19) yields
+(3.29)
+∥mκ,a,ν∥L∞(0,T;L 2γ/(γ+1) (T3;R3)) =
+
+√ρκ,a,ν mκ,a,ν
+√ρκ,a,ν
+
+L∞(0,T;L 2γ/(γ+1) (T3;R3))
+≤ ∥ρ κ,a,ν∥1/2
+L∞(0,T;L γ(T3))
+
+mκ,a,ν
+√ρκ,a,ν
+
+L∞(0,T;L 2(T3;R3))
+.
+We note that the above bound only depends on E0 and is uniform in all parameters κ, a, and ν.
+This uniform bound allows us to conclude that
+mκ,a,ν ⇀ m a,ν weakly-∗inL ∞(0, T;L
+2γ
+γ+1 (T3;R 3)) asκ→0
+Taking the limit asκ→0 of the bound (3.16) we see that the weak limitsρ a,ν andm a,ν satisfy
+(3.30)
+ess sup
+t∈[0,T]
+Z
+T3
+G(ma,ν(t, x)) +F(ρ a,ν(t, x))dx≤Cess sup
+t∈[0,T]
+
+Z t
+0
+Z
+T3
+ρa,νh′(¯ϑa,ν
+δ,ϵ )Ra,ν
+δ,ϵ dx dτ
+
++Cess sup
+t∈[0,T]
+
+Z t
+0
+Z
+T3
+(ρs)a,νRa,ν
+δ,ϵ dx dτ
+
++C
+Z
+F a
+ϵ (0, x)dx+Ca.
+Since the energy converges in L∞(0, T; M(T3)) rather than in an Lp space we handle it differently.
+We note thatGbounds theL 1 distance like so:
+(3.31)
+Z
+T3
+|f|dx=
+Z
+|f|<1
+|f|dx+
+Z
+|f|≥1
+|f|dx≤
+sZ
+G(f)dx+
+Z
+G(f)dx.
+From this and (3.16) we arrive at the following inequality,
+ess sup
+t∈[0,T]
+Z
+T3
+G(ma,ν) +F(ρ a,ν)dx+
+E a,ν − ¯E
+
+L∞(0,T;M(T 3)) ≤C
+q
+Aa,ν
+δ,ϵ +A a,ν
+δ,ϵ
+
+,(3.32)
+where
+Aa,ν
+δ,ϵ :=
+Z
+T3
+F a
+ϵ (0, x)dx+a+ ess sup
+t∈[0,T]
+
+Z t
+0
+Z
+T3
+ρa,νh′(¯ϑa,ν
+δ,ϵ )Ra,ν
+δ,ϵ dx dτ
+
++ ess sup
+t∈[0,T]
+
+Z t
+0
+Z
+T3
+(ρs)a,νRa,ν
+δ,ϵ dx dτ
+ .
+Finally, we note that by taking the limit κ→ 0 of the continuity equation (2.13) yields that the
+limitsρ a,ν andm a,ν satisfy the equation,
+(3.33)∂ tρa,ν + div(ma,ν) = 0 inD ′(R≥0 ×R 3).
+Similarly, taking the limit of the entropy inequality (2.15) yields that (ρs) a,ν satisfies
+(3.34)∂ t(ρs)a,ν ≥ g1 inD ′(R≥0 ×R 3),
+where ¯g1 is the weak limit g1 ⇀¯g1 as identified in the inequality (3.22). There is no contribution
+in the limit from the g2 terms, as they converge to zero by (3.23). In particular, since the g1 are
+bounded uniformly in a, κ in the space L2(0, T; W −1,12/11 (T3)) the weak limit ¯g1 is bounded in the
+same space, uniformly ina.
+
+[PDF page 23]
+STABILITY OF ENTROPY WAVES 23
+3.3.2.Radiative pressure limit ( a→ 0).To take the radiative pressure term to zero we first note
+that (ρs)a,ν and ρa,ν both meet the same hypotheses as in the last section to apply Lemma 3.4 (see
+equations (3.33), (3.34), and the surrounding discussion). This gives us the strong limits
+ρa,ν →ρ ν,(ρs) a,ν →(ρs) ν inL 2(0, T;H −1(T3)) asa→0.(3.35)
+Similarly, the bounds used to deduce the weak limit Rκ,a,ν
+α ⇀ R a,ν
+α in L2(0, T; H1(T3)) in the
+previous section are uniform ina, so by the same argument as before we have
+(3.36)R a,ν
+δ,ϵ ⇀ R ν
+δ,ϵ :=u ν · ∇ ¯ϑν
+δ,ϵ −div([u ν
+δ ¯ϑν
+δ]ϵ) + [div(uν
+δ)¯ϑν
+δ]ϵ weakly inL 2(0, T;H 1(T3)).
+and for theJ 2 term we can still establish
+h′(¯ϑa,ν
+δ,ϵ )Ra,ν
+δ,ϵ ⇀ h ′(¯ϑν
+δ,ϵ)Rν
+δ,ϵ weakly inL 2(0, T;H 1(T3)).
+At this point, we again consider the structure of the strong limit (ρs)ν. Recalling the bound (3.27),
+∥a(ρsR)a,ν∥L∞(0,T;L 4/3(T3)) ≤ 4
+3 a1/4 ∥E0∥3/4
+L1(T3) ,
+by Sobolev embedding this bound controls the norm of (ρs R)a,ν in the space inL 2(0, T;H −1(T3)).
+In particular, whena→0 we find the weak limit
+a(ρsR)a,ν ⇀0 inL 2(0, T;H −1(T3)) asa→0.
+Moreover, since ∥(ρsM)a,ν∥L2((0,T)×T 3) is uniformly bounded independently of a, we obtain that our
+entropy has the form
+(ρs)ν = (ρsM)ν.
+In particular, thanks to the limits (3.28), the conservation of energy (2.18), and Lemma 2.1 we have
+theL 2 bound
+(3.37)∥(ρs) ν∥L∞(0,T;L 2(T3)) < C,
+for some C > 0 depending on the initial data ( ρ0, u0, ϑ0) and γ. This increase in integrability will
+be important later, as it will allow us to consider weak limits of Rν
+δ,ϵ in weaker topologies when we
+take our mollification parametersδ, ϵto zero.
+This then gives that
+J2 →
+Z t
+0
+Z
+T3
+ρνh′(¯ϑν
+δ,ϵ)
+
+∂t ¯ϑν
+δ,ϵ +u ν · ∇ ¯ϑν
+δ,ϵ
+
+dx dτasa→0,
+J3 →
+Z t
+0
+Z
+T3
+(ρs)ν
+∂t ¯ϑν
+δ,ϵ +u ν · ∇ ¯ϑν
+δ,ϵ
+
+dx dτasa→0.
+To complete the limit of (3.32) we note that the term containing F a
+ϵ (0,· ) depends on a
+due to (3.11) and (2.6) containing a radiative component. In this case, it is easy to see that
+(−ρs)a(U0) → (−ρsM)(U0), (−ρs)a(V a
+δ,ϵ) → (−ρsM)(Vδ,ϵ) in L1(T3). For the affine term, we use that
+d(−ρs)a(V a
+δ,ϵ) = d(−ρsM)(Vδ,ϵ) for all a; this follows from (3.6) and observing that the radiative
+components of s, p, e all cancel for any state V . Finally, we note that in conservative coordinates
+(which we denote here as U a
+0 ; while U0 is constant in a when written in primitive variables here we
+emphasize the dependence of the energy on the parametera)
+U a
+0 −V a =
+
+ρ0 −¯ρ, ρ0u0, ρ0
+|u0|2
+2 +ρ 0eM(ρ0, ϑ0)−¯ρeM(¯ρ,¯ϑ)
+
++a(0,0, ϑ 4
+0 − ¯ϑ4)→U 0
+0 −V
+in L1(T3) as a→ 0, where we are setting ¯ρ= ¯ρν
+δ,ϵ(0,· ) and ¯ϑ = ¯ϑν
+δ,ϵ(0,· ). This establishes
+F a
+ϵ (0,·)→F ϵ(0,·) inL 1(T3), giving convergence of these integrals.
+
+[PDF page 24]
+24 COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+We also have weak limits of ρa,ν, ma,ν, and E a,ν due to our a priori bounds identical to in the
+κ→0 limit,
+ρa,ν ⇀ ρ ν weakly-∗inL ∞(0, T;L γ(T3)) asa→0,
+ma,ν ⇀ m ν weakly-∗inL ∞(0, T;L 2γ/(γ+1)(T3;R 3)) asa→0,
+E a,ν ⇀E ν weakly-∗inL ∞(0, T;M(T 3)) asa→0.
+These limits enjoy the bound
+(3.38) ess sup
+t∈[0,T]
+Z
+T3
+G(mν) +F(ρ ν)dx+
+E ν − ¯E
+
+L∞(0,T;M(T 3)) ≤C
+q
+Aν
+δ,ϵ +A ν
+δ,ϵ
+
+,
+where
+Aν
+δ,ϵ :=
+Z
+T3
+Fϵ(0, x)dx+ ess sup
+t∈[0,T]
+
+Z t
+0
+Z
+T3
+ρνh′(¯ϑν
+δ,ϵ)Rν
+δ,ϵ dx dτ
+ + ess sup
+t∈[0,T]
+
+Z t
+0
+Z
+T3
+(−ρsM)νRν
+δ,ϵ dx dτ
+ .
+3.3.3.Mollification in δ limit ( δ→ 0).The only terms depending on δ within (3.38) are Rν
+δ,ϵ and
+h′(¯ϑν
+δ,ϵ), so the next two sections will only concern these terms. First, we recall
+Rν
+δ,ϵ =u ν · ∇ ¯ϑν
+δ,ϵ −div([u ν
+δ ¯ϑν
+δ]ϵ) + [div(uν
+δ)¯ϑν
+δ]ϵ.
+Due to the uniform bound of ¯ϑν
+δ in L∞((0, T)×T3) from equation (3.3) there exists ¯ϑν ∈L ∞((0, T)×
+T3) such that
+¯ϑν
+δ ⇀ ¯ϑν weak-∗inL ∞((0, T)×T 3) asδ→0.
+From this we also have the convergence of the mollified shifted temperature,
+(3.39) ¯ϑν
+δ,ϵ ⇀ ¯ϑν
+ϵ := ¯ϑν ∗φ ϵ weak−∗inL ∞((0, T)×T 3) asδ→0.
+Next, due to mollification in ϵ, the ¯ϑν
+δ,ϵ are uniformly bounded in L∞(0, T; W 1,∞(T3)), which yields
+uν∇¯ϑν
+δ,ϵ ⇀ u ν∇¯ϑν
+ϵ weakly inL 2(0, T;L 2(T3)) asδ→0.
+For the remaining two terms we note that since uν ∈L 2(0, T; H1(T3)) by standard properties of
+mollifiers we have the strong convergence
+uν
+δ →u ν inL 2(0, T;H 1(T3)) asδ→0.
+This combined with the weak convergence of ¯ϑν
+δ,ϵ (3.39) and Lemma 3.5 gives, up to a subsequence,
+the weak limits
+(div(uν
+δ ¯ϑν
+δ))ϵ ⇀(div(u ν ¯ϑν))ϵ inL 2(0, T;H 1(T3)) asδ→0,
+(div(uν
+δ)¯ϑν
+δ)ϵ ⇀(div(u ν)¯ϑν)ϵ inL 2(0, T;H 1(T3)) asδ→0.
+We next note, via Aubin–Lions–Simon and theϵmollification, that we have the convergence
+¯ϑν
+δ,ϵ → ¯ϑν
+ϵ inC([0, T];W k,∞(T3)),
+for anyk∈N. In particular, this gives the strong convergence
+h′(¯ϑν
+δ,ϵ)→h ′(¯ϑν
+ϵ ) inL ∞([0, T]×T 3).
+We have shown that
+Rν
+δ,ϵ ⇀ R ν
+ϵ inL 2(0, T;H 1(T3)) asδ→0,
+where
+Rν
+ϵ :=u ν · ∇ ¯ϑν
+ϵ −div([u ν ¯ϑν]ϵ) + [div(uν)¯ϑν]ϵ.
+
+[PDF page 25]
+STABILITY OF ENTROPY WAVES 25
+By (2.17) and (3.37) we haveρ ν,(ρs) ν ∈L 2(0, T;L 2(T3)) which gives us that
+Aν
+δ,ϵ →A ν
+ϵ :=
+Z
+T3
+Fϵ(0, x)dx+ ess sup
+t∈[0,T]
+
+Z t
+0
+Z
+T3
+ρνh′(¯ϑν
+ϵ )Rν
+ϵ dx dτ
+
++ ess sup
+t∈[0,T]
+
+Z t
+0
+Z
+T3
+(ρsM)νRν
+ϵ dx dτ
+ asδ→0.
+Therefore, passing to the limitδ→0 in the bound (3.38) we have
+(3.40) ess sup
+t∈[0,T]
+Z
+T3
+G(mν) +F(ρ ν)dx+
+E ν − ¯E
+
+L∞(0,T;M(T 3)) ≤C
+p
+Aνϵ +A ν
+ϵ
+
+.
+3.3.4.Mollification inϵlimit.To begin, we note that we can write
+Rν
+ϵ =u ν · ∇ ¯ϑν
+ϵ −[u ν · ∇ ¯ϑν]ϵ.
+We now recall a commutator lemma due to DiPerna and Lions.
+Lemma 3.6(Lemma II.1 of [DL89]).Let1 ≤p≤ ∞ and1 ≤γ <∞ . If u∈L γ(0, T; W 1,α(T3)),
+for anα > p ′, andψ∈L ∞([0, T];L p(T3))then
+u· ∇ψ ϵ −[u· ∇ψ] ϵ →0inL γ([0, T];L β(T3))asϵ→0,
+where 1
+β = 1
+α + 1
+p when eitherα <∞orp <∞.
+Applying Lemma 3.6 withγ=α=β= 2 andp=∞we can immediately deduce that
+Rν
+ϵ →0 inL 2([0, T];L 2(T3)) asϵ→0.
+Sinceρ ν and (−ρsM)ν are uniformly bounded inL 2(0, T;L 2(T3)) we can conclude that
+J2, J3 →0.
+To take the limit of (3.40), it remains to show that the initial value term Fϵ(0,· ) converges. This
+follows from the fact that f∗φ ϵ →f a.e. for f∈L ∞(T3) and by using the definition (1.7) to bound
+the integrand. We then conclude by the dominated convergence theorem.
+Therefore, taking the limit asϵ→0 of (3.38) we find
+(3.41)
+ess sup
+t∈[0,T]
+Z
+T3
+G(mν) +F(ρ ν)dx+
+E ν − ¯E
+
+L∞(0,T;M(T 3))
+≤C
+ sZ
+T3
+(−ρsM)(U0|V)dx+
+Z
+T3
+(−ρsM)(U0|V)dx
+!
+.
+3.3.5.Viscosity limit ( ν→ 0).We begin by recalling that ∥ρν∥L∞(0,T;L γ(T3)) < C by (2.18) where
+Cis independent ofν. As a result, there exists a functionρsuch that
+(3.42)ρ ν ⇀ ρweakly-∗inL ∞(0, T;L γ(T3)) asν→0.
+Next, we recall that by (3.29) we have a uniform bound of mν in L∞(0, T; L2γ/(γ+1)). As a result,
+there existsmsuch that
+mν ⇀ mweakly-∗inL ∞(0, T;L 2γ/(γ+1)(T3)) asν→0.
+Finally, we note (3.41) gives a uniform bound
+E ν − ¯E
+
+L∞(0,T;M(T 3)) , hence we have a E such that
+E ν ⇀Eweakly-∗inL ∞(0, T;M(T 3)) asν→0.
+
+[PDF page 26]
+26 COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+Therefore, taking the limit of (3.41) asν→0 we find
+ess sup
+t∈[0,T]
+Z
+T3
+G(m) +F(ρ)dx+
+E − ¯E
+
+L∞(0,T;M(T 3))
+≤C
+ sZ
+T3
+(−ρsM)(U0|V)dx+
+Z
+T3
+(−ρsM)(U0|V)dx
+!
+,
+for someC >0, which is exactly the expression (1.12).
+3.4.Uniqueness of vanishing dissipation limits.Consider a sequence of initial data {U n
+0 }∞
+n=1
+such that
+(3.43) lim
+n→∞
+Z
+T3
+(−ρsM)(U n
+0 |V0)dx= 0,
+where V is the entropy wave (1.4). We note that this convergence is implied by (1.5). Then by the
+estimate (1.12) the vanishing dissipation limits (ρ n, mn,E n) with initial dataU n
+0 satisfy
+(3.44) lim
+n→∞
+"
+ess sup
+t∈[0,T]
+Z
+T3
+G(mn) +F(ρ n)dx+
+E n − ¯E
+
+L∞(0,T;M(T 3))
+#
+= 0.
+We note that by (3.44) we have convergence of total energy,
+E n → ¯EinL ∞(0, T;M(T 3)) asn→ ∞.
+Furthermore, from equation (3.43) and Lemma 3.2 we have the uniform bound
+∥E n
+0 ∥L1(T3) < C.
+Since ρn and mn are obtained as weak limits from bounds depending on the ∥E n
+0 ∥L1(T3), we similarly
+have
+(3.45)∥ρ n∥L∞(0,T;L γ(T3)) +∥m n∥L∞(0,T;L 2γ/(γ+1) (T3)) < C.
+In particular, up to a subsequence we have aρsuch that
+ρn ⇀ ρweakly−∗inL ∞(0, T;L γ(T3)) asn→ ∞.
+Form, we note that from the bound (3.31) we have
+∥mn∥L∞(0,T;L 1(T3)) ≤Cess sup
+t∈[0,T]
+ Z
+T3
+G(m)dx+
+sZ
+T3
+G(m)dx
+!
+→0 asn→ ∞.
+Interpolating this limit with the momentum bound (3.45) we see
+m→0 inL ∞(0, T;L q(T3)) for anyq < 2γ
+γ+ 1 .
+To deduce that the weak limit ρ is in fact ¯ρwe first note that since ρn and mn are weak limits
+from the Navier–Stokes–Fourier system they satisfy the continuity equation,
+(3.46)∂ tρn + div(mn) = 0 inD ′([0, T]×T 3).
+To begin, we test the continuity equation (3.46) against a test function of the form Φ( x)χβ(s) for
+any Φ∈C ∞(T3) and
+(3.47)χ β(t) = 1−
+Z t
+0
+φβ(T−s)ds,
+whereφ β is a suitable 1-d mollifier, similar to what was defined in Section 3.1. This yields
+Z ∞
+0
+Z
+T3
+Φ(x)χ′
+β(s)ρn(s, x)dx ds+
+Z ∞
+0
+Z
+T3
+χβ(s)∇Φ(x)·m n(s, x)dx ds=−
+Z
+T 3
+Φ(x)ρn(0, x)dx.
+
+[PDF page 27]
+STABILITY OF ENTROPY WAVES 27
+We next note that since ρn ∈L ∞(0, T; Lγ(T3)), ∂tρn ∈L ∞(0, T; W −1,2γ/(γ+1)(T3)) for a γ > 2 we
+have the sequence of embeddings Lγ(T3) ,→,→H−1(T3) ,→W −1,2γ/(γ+1). By Aubin-Lions we can
+then conclude ρn ∈C ([0, T]; H −1(T3)) and there is a subsequence that converges strongly to some
+ρin this space. First, passing to the limitn→ ∞we findZ ∞
+0
+Z
+T3
+Φ(x)χ′
+β(s)ρ(t, x)dx ds=−
+Z
+T 3
+Φ(x)ρ(0, x)dx
+due to mn → 0 in L∞(0, T; Lq(T3)) for some q > 1. We now remark that due to (3.43) we have
+ρn
+0 →¯ρdistributionally, becauseZ
+T3
+Φ(x)(ρ0
+n −¯ρ)dx=
+Z
+T3
+Φ(x)(ρ0
+n −¯ρ)(1 {|ρ0n−¯ρ|<1}+1 {|ρ0n−¯ρ|≥1})dx
+≤ ∥Φ∥ L∞
+Z
+{|ρ0n−¯ρ|≥1}
+|ρ0
+n −¯ρ|dx+∥Φ∥ L2
+ Z
+{|ρ0n−¯ρ|<1}
+|ρ0
+n −¯ρ|2 dx
+!1/2
+≲Φ
+Z
+T3
+G(ρn
+0 −¯ρ)dx+
+sZ
+T3
+G(ρn
+0 −¯ρ)dx
+≤C(−ρs)(U n
+0 | ¯U) +C
+q
+(−ρs)(U n
+0 | ¯U)→0.
+Now usingρ n
+0 →¯ρand the time continuity, we pass to the limit innandβto reveal thatZ
+T3
+Φ(x)ρ(t, x)dx=
+Z
+T3
+Φ(x)¯ρ(x)dx.
+We concludeρ(t,·) = ¯ρa.e. inT 3 for allt∈[0, T].
+Remark3.1.Suppose that our entropy wave takes just two states,
+V(t, x) = (ρ ∗,0, ϑ ∗)1 Ω + (ρ∗,0, ϑ ∗)1 T3\Ω
+on some measurable set Ω. In this case, we can establish ρn →ρ in L∞(0, T; L1(T3)). In light of
+our uniform bounds on ρn, this allows us to conclude ρn →ρ in L∞(0, T; Lp(T3)) for all 1 ≤p < γ
+by interpolation.
+Indeed, restricting to Ω where ¯ρ=ρ ∗ and using thatρ n, ρ∈C(0, T;H −1(T3)) we findZ
+Ω
+|ρn(t, x)−ρ ∗|dx=
+Z
+Ω
+(ρn(t, x)−ρ ∗)+ + (ρn(t, x)−ρ ∗)− dx
+=
+Z
+Ω
+((ρn(t, x)−ρ ∗)− −(ρ n(t, x)−ρ ∗)+) + 2(ρn(t, x)−ρ ∗)+ dx
+=−
+Z
+Ω
+(ρn(t, x)−ρ ∗)dx+
+Z
+Ω
+2(ρn(t, x)−ρ ∗)+ dx→0
+where the first integral converges to zero via the weak convergenceρn ⇀ ρ weak-∗ in L∞(0, T; Lγ(T3))
+while the second converges to zero due to the controlZ
+Ω
+(ρn(t, x)−ρ ∗)+ dx=
+Z
+Ω
+(ρn(t, x)−ρ ∗)+(1 {|ρn(t,x)−ρ∗|>1}(x) +1 {|ρn(t,x)−ρ∗|≤1}(x))dx
+≤
+Z
+Ω
+(ρn(t, x)−ρ ∗)+1 |ρn(t,x)−ρ∗|>1(x)dx
++
+Z
+Ω
+(ρn(t, x)−ρ ∗)2
++1 |ρn(t,x)−ρ∗|≤1 dx
+1/2
+≤
+Z
+T3
+F(ρ n)dx+
+Z
+T3
+F(ρ n)dx
+1/2
+→0
+
+[PDF page 28]
+28 COOPER FAILE, INGRID LACROIX-VIOLET, AND ALEXIS F. VASSEUR
+where the last limit is due to equation (3.44). We can do the same within Ω c showing the desired
+convergenceρ n →¯ρinL ∞(0, T;L 1(T3)).
+4.AI Use Disclosure
+Generative AI was used to assist with the final editing and proofreading of this manuscript. All
+results, arguments, and proofs are made by the authors.
+References
+[CDK15] Elisabetta Chiodaroli, Camillo De Lellis, and Ondˇ rej Kreml. “Global ill-posedness of
+the isentropic system of gas dynamics”. In:Communications on Pure and Applied
+Mathematics68.7 (2015), pp. 1157–1190.
+[CF25] Elisabetta Chiodaroli and Eduard Feireisl. “On the long-time behavior of solutions to
+the Navier–Stokes–Fourier system on unbounded domains”. In:Journal of the London
+Mathematical Society111.1 (2025), e70067.
+[CKV24] Geng Chen, Moon-Jin Kang, and Alexis F. Vasseur. “From Navier-Stokes to BV solutions
+of the barotropic Euler equations”. In:Preprint on Arxiv(Jan. 2024).doi: 10.48550/
+arXiv.2401.09305.url:https://doi.org/10.48550/arXiv.2401.09305.
+[Daf79] Constantine M. Dafermos. “The second law of thermodynamics and stability”. In:
+Arch. Rational Mech. Anal.70.2 (1979), pp. 167–179.issn: 0003-9527.doi: 10.1007/
+BF00250353.url:https://doi.org/10.1007/BF00250353.
+[DiP79] Ronald J. DiPerna. “Uniqueness of solutions to hyperbolic conservation laws”. In:Indiana
+Univ. Math. J.28.1 (1979), pp. 137–188.issn: 0022-2518,1943-5258.doi: 10.1512/iumj.
+1979.28.28011.url:https://doi.org/10.1512/iumj.1979.28.28011.
+[DL89] Ronald J DiPerna and Pierre-Louis Lions. “Ordinary differential equations, transport
+theory and Sobolev spaces”. In:Inventiones mathematicae98.3 (1989), pp. 511–547.
+[DS10] Camillo De Lellis and L´ aszl´ o Sz´ ekelyhidi Jr. “On admissibility criteria for weak solutions
+of the Euler equations”. In:Archive for rational mechanics and analysis195.1 (2010),
+pp. 225–260.
+[Fei04] Eduard Feireisl.Dynamics of viscous compressible fluids. Vol. 26. Oxford University
+Press, 2004.
+[Fei16] Eduard Feireisl. “Vanishing dissipation limit for the Navier-Stokes-Fourier system”. In:
+Commun. Math. Sci.14.6 (2016), pp. 1535–1551.issn: 1539-6746,1945-0796.doi: 10.
+4310/CMS.2016.v14.n6.a4.url:https://doi.org/10.4310/CMS.2016.v14.n6.a4.
+[FN17] Eduard Feireisl and Antonin Novotny.Singular Limits in Thermodynamics of Viscous
+Fluids. Birkh¨ auser, 2017.
+[GK22] Vikram Giri and Hyunju Kwon. “On Non-uniqueness of Continuous Entropy Solutions
+to the Isentropic Compressible Euler Equations”. In:Archive for Rational Mechanics
+and Analysis245.2 (2022), pp. 1213–1283.
+[JJN13] Didier Jessl´ e, Bum Ja Jin, and Antonin Novotny. “Navier–Stokes–Fourier system on
+unbounded domains: Weak solutions, relative entropies, weak-strong uniqueness”. In:
+SIAM Journal on Mathematical Analysis45.3 (2013), pp. 1907–1951.
+[KS25] Sam G Krupa and L´ aszl´ o Sz´ ekelyhidi Jr. “Contact discontinuities for 2-D isentropic
+Euler are unique in 1-D but wildly non-unique otherwise”. In:Communications in
+Mathematical Physics406.5 (2025), p. 109.
+[KV16] Moon-Jin Kang and Alexis F Vasseur. “Criteria on contractions for entropic discontinu-
+ities of systems of conservation laws”. In:Archive for Rational Mechanics and Analysis
+222.1 (2016), pp. 343–391.
+
+[PDF page 29]
+REFERENCES 29
+[KV21a] Moon-Jin Kang and Alexis F Vasseur. “Contraction property for large perturbations of
+shocks of the barotropic Navier–Stokes system”. In:Journal of the European Mathematical
+Society23.2 (2021), pp. 585–638.
+[KV21b] Moon-Jin Kang and Alexis F Vasseur. “Uniqueness and stability of entropy shocks to the
+isentropic Euler system in a class of inviscid limits from a large family of Navier–Stokes
+systems”. In:Inventiones mathematicae224.1 (2021), pp. 55–146.
+[KVW21] Moon-Jin Kang, Alexis F Vasseur, and Yi Wang. “Uniqueness of a planar contact
+discontinuity for 3D compressible Euler system in a class of zero dissipation limits from
+Navier–Stokes–Fourier system”. In:Communications in Mathematical Physics384.3
+(2021), pp. 1751–1782.
+[KVW25] Moon-Jin Kang, Alexis F Vasseur, and Yi Wang. “Time-asymptotic stability of generic
+Riemann solutions for compressible Navier–Stokes–Fourier equations”. In:Archive for
+Rational Mechanics and Analysis249.4 (2025), p. 42.
+[Luk+25] M´ aria Luk´ aˇ cov´ a-Medvid’ov´ a et al.A note on relations between convexity and concavity
+of thermodynamic functions. 2025. arXiv: 2510.24440 [math.AP].url: https://arxiv.
+org/abs/2510.24440.
+[LV11] Nicholas Leger and Alexis Vasseur. “Relative entropy and the stability of shocks and
+contact discontinuities for systems of conservation laws with non-BV perturbations”. In:
+Arch. Ration. Mech. Anal.201.1 (2011), pp. 271–302.issn: 0003-9527,1432-0673.doi:
+10.1007/s00205-011-0431-1.url: https://doi.org/10.1007/s00205-011-0431-1.
+[Mar21] Simon Markfelder.Convex integration applied to the multi-dimensional compressible
+Euler equations. Springer, 2021.
+[MS23] Francisco Mengual and L´ aszl´ o Sz´ ekelyhidi Jr. “Dissipative Euler flows for vortex sheet
+initial data without distinguished sign”. In:Communications on Pure and Applied
+Mathematics76.1 (2023), pp. 163–221.
+[SV14] Denis Serre and Alexis F Vasseur. “ L2-type contraction for systems of conservation
+laws”. In:Journal de l’ ´Ecole polytechnique—Math´ ematiques1 (2014), pp. 1–28.
+[SV16] Denis Serre and Alexis F Vasseur. “About the relative entropy method for hyperbolic
+systems of conservation laws”. In: 658 (2016), pp. 237–248.
+[Vas08] Alexis F. Vasseur. “Recent Results on Hydrodynamic Limits”. In:Handbook of Dif-
+ferential Equations: Evolutionary Equations4 (2008), pp. 323–376.issn: 1874-5717.
+doi: http://dx.doi.org/10.1016/S1874- 5717(08)00007- 8 .url: http://www.
+sciencedirect.com/science/article/pii/S1874571708000078.
+[VW15] Alexis Vasseur and Yi Wang. “The inviscid limit to a contact discontinuity for the
+compressible Navier–Stokes–Fourier system using the relative entropy method”. In:
+SIAM Journal on Mathematical Analysis47.6 (2015), pp. 4350–4359.
+[WZZ24] Wei Wang, Zhifei Zhang, and Wenbin Zhao. “Nonlinear stability of entropy waves for
+the Euler equations”. In:Mathematische Annalen390.4 (2024), pp. 4861–4888.
+
+[PDF page 30]
+30 REFERENCES
+(Cooper Faile)
+Department of Mathematics
+The University of Texas at Austin,
+2515 Speedway, Austin, TX 78712
+USA
+Email address:jcfaile@utexas.edu
+(Ingrid Lacroix-Violet)
+Universit´e de Lorraine, CNRS, IECL,
+F-54000 Nancy,
+France
+Email address:ingrid.violet@univ-lorraine.fr
+(Alexis F. Vasseur)
+Department of Mathematics
+The University of Texas at Austin,
+2515 Speedway, Austin, TX 78712
+USA
+Email address:vasseur@math.utexas.edu

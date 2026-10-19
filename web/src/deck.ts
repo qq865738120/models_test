@@ -5,6 +5,7 @@ export function corePrompt(text:string,title:string):string {
  core=core.split('## HTML 交付约定')[0]
  core=core.replace(/^# [^\n]+\n*/,'').replace(/^本阶段预算：[^\n]+\n*/,'')
  core=core.replace(/^初始阶段已冻结。[^\n]+\n*/,'')
+ core=core.replace(/^提示词版本：[^\n]+\n*/,'')
  return core.trim()
 }
 

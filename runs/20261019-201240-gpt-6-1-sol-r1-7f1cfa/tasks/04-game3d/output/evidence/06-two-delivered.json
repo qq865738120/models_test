@@ -1,0 +1,197 @@
+{
+  "state": "paused",
+  "remaining": 92.5,
+  "speed": 0,
+  "vehicle": {
+    "x": -5.305,
+    "z": -3.568,
+    "yaw": 3.163,
+    "width": 1.4
+  },
+  "forkHeight": 0.12,
+  "carried": null,
+  "crates": [
+    {
+      "id": "red",
+      "x": -5.355,
+      "y": 0.6,
+      "z": -5.914,
+      "yaw": -0.021,
+      "delivered": true,
+      "stable": 0,
+      "velocity": {
+        "x": 0,
+        "y": 0.00000286102294921875,
+        "z": 0
+      },
+      "metrics": {
+        "longitudinal": 2.3463080353255807,
+        "lateral": -4.022772144562925e-8,
+        "angle": 0.042388889204955316,
+        "penetration": 0.8536919646744194,
+        "vertical": 0.0800000953674316,
+        "eligible": true
+      }
+    },
+    {
+      "id": "blue",
+      "x": 0,
+      "y": 0.6,
+      "z": -5.869,
+      "yaw": 0,
+      "delivered": true,
+      "stable": 0,
+      "velocity": {
+        "x": 0,
+        "y": 0.00000286102294921875,
+        "z": 0
+      },
+      "metrics": {
+        "longitudinal": 2.1886294791641814,
+        "lateral": -5.352537728280994,
+        "angle": 0.021194444444440297,
+        "penetration": 1.0113705208358188,
+        "vertical": 0.0800000953674316,
+        "eligible": false
+      }
+    },
+    {
+      "id": "yellow",
+      "x": 5,
+      "y": 0.6,
+      "z": 3,
+      "yaw": 0,
+      "delivered": false,
+      "stable": 0,
+      "velocity": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "metrics": {
+        "longitudinal": -6.784787157158059,
+        "lateral": -10.163445886652491,
+        "angle": 0.021194444444440297,
+        "penetration": 0,
+        "vertical": 0.07999997615814206,
+        "eligible": false
+      }
+    }
+  ],
+  "log": [
+    {
+      "t": 0,
+      "type": "start"
+    },
+    {
+      "t": 1.417,
+      "type": "pickup",
+      "id": "blue",
+      "metrics": {
+        "longitudinal": 1.937222222222224,
+        "lateral": 4.898587196589414e-16,
+        "angle": 0,
+        "penetration": 1.2000000000000002,
+        "vertical": 0.07999997615814206,
+        "eligible": true
+      }
+    },
+    {
+      "t": 2.2,
+      "type": "pause"
+    },
+    {
+      "t": 2.2,
+      "type": "resume"
+    },
+    {
+      "t": 5.433,
+      "type": "pause"
+    },
+    {
+      "t": 5.433,
+      "type": "resume"
+    },
+    {
+      "t": 6.217,
+      "type": "release",
+      "id": "blue",
+      "x": 1.5760523945693573e-15,
+      "y": 0.6916666666666668,
+      "z": -5.869444444444444
+    },
+    {
+      "t": 6.8,
+      "type": "delivery",
+      "id": "blue",
+      "bottom": -9.536743161842054e-8,
+      "speed": 0,
+      "stable": 0.5166666666666666
+    },
+    {
+      "t": 7.333,
+      "type": "pause"
+    },
+    {
+      "t": 7.333,
+      "type": "resume"
+    },
+    {
+      "t": 10.967,
+      "type": "pause"
+    },
+    {
+      "t": 10.967,
+      "type": "resume"
+    },
+    {
+      "t": 12.883,
+      "type": "pause"
+    },
+    {
+      "t": 12.883,
+      "type": "resume"
+    },
+    {
+      "t": 21.533,
+      "type": "pause"
+    },
+    {
+      "t": 21.533,
+      "type": "resume"
+    },
+    {
+      "t": 21.55,
+      "type": "pickup",
+      "id": "red",
+      "metrics": {
+        "longitudinal": 2.3463080865772405,
+        "lateral": -0.1656918249533602,
+        "angle": 0.021194444444440297,
+        "penetration": 0.8536919134227596,
+        "vertical": 0.07999997615814206,
+        "eligible": true
+      }
+    },
+    {
+      "t": 26.367,
+      "type": "release",
+      "id": "red",
+      "x": -5.354677241622238,
+      "y": 0.6916666666666668,
+      "z": -5.913651993594396
+    },
+    {
+      "t": 26.95,
+      "type": "delivery",
+      "id": "red",
+      "bottom": -9.536743161842054e-8,
+      "speed": 0,
+      "stable": 0.5166666666666666
+    },
+    {
+      "t": 27.5,
+      "type": "pause"
+    }
+  ]
+}

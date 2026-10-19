@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-10-19T13:09:26.327909+00:00",
+  "artifactId": "4989ff766bdb48868deacbaf26b53fa4",
+  "scope": "主持人独立浏览器基础操作检查；完整通关等另见模型提交证据，尚未专家评分",
+  "observations": {
+    "staticPreviewLoaded": true,
+    "startScreenVisible": true,
+    "startButtonWorked": true,
+    "heldD450ms": "角色从起点向右移动，未修改状态",
+    "pressedP": "显示暂停面板与剩余01:56，含继续与重新开始入口"
+  },
+  "note": "仅操作冻结成果的浏览器内存状态；没有向模型反馈任何解题信息或发送追加。"
+}

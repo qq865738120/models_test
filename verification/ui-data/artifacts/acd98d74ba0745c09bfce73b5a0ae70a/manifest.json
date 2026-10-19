@@ -1,0 +1,35 @@
+{
+  "runId": "ui-fixture-2",
+  "taskId": "04-game3d",
+  "phase": "initial",
+  "files": {
+    ".keep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executable": false
+    },
+    "app.js": {
+      "sha256": "8fa137333d0a81946ec43e6a5797fc02058131adfef54430567c8e3cfde893a9",
+      "executable": false
+    },
+    "assets/index-BeO-VeEt.js": {
+      "sha256": "ad2520a61d1f18154a84362f7b961ac1c72d01f50d99f04e02a38474af9a82d5",
+      "executable": false
+    },
+    "index.html": {
+      "sha256": "3fb8cfd1166e8e4e92e1a4626183aa719c780a0c84d35835b738e91d3aab4c9a",
+      "executable": false
+    },
+    "materials/warehouse.json": {
+      "sha256": "4e44998cde395609570668fc9d1d6afe07c97470cb7834079354a544d33802dc",
+      "executable": false
+    },
+    "vendor/ammo/ammo.wasm.js": {
+      "sha256": "3fa63c584d4732f72b954c5ea105f1faca99559c95c57ce7bb738d3497f98228",
+      "executable": false
+    },
+    "vendor/ammo/ammo.wasm.wasm": {
+      "sha256": "16be07b989963bddebfef66eab28a4387536eb37014d9df1531dab380bd96a93",
+      "executable": false
+    }
+  }
+}

@@ -3,13 +3,10 @@
 .prepare-*/
 .cache/
 .nges/
-runs/
 __pycache__/
 *.pyc
 node_modules/
 dist/
-verification/
-data/
 
 # Local system files and credentials
 .DS_Store
@@ -23,4 +20,3 @@ data/
 # User-provided novel text and source are local-only (see README)
 /research/longread-20261018/novel/*.txt
 /research/longread-20261018/novel/*.epub
-

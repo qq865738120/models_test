@@ -1,0 +1,83 @@
+{
+  "id": "ui-fixture-1",
+  "suiteId": "pelican-v1.0",
+  "suiteName": "鹈鹕测评 v1.0",
+  "rubricVersion": "pelican-rubric-1",
+  "model": "界面验收样例 1（非模型成绩）",
+  "repeat": 1,
+  "createdAt": "2026-10-18T07:00:23.832140+00:00",
+  "bundleSha256": "6ec4ffec5d2a5ab62a5ad3746908fc96185621bf48b2a54cf12849bfd612b0f2",
+  "materialVersion": "pelican-v1.0-html",
+  "rulesSha256": "c0d4eedbc0ec41080feb8838462748510f297238beef1de4b74b2a6dfa97af9e",
+  "preparedEnvironment": {
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "architecture": "arm64",
+    "node": "v24.21.0",
+    "npm": "11.19.0"
+  },
+  "profile": "local",
+  "enforcement": "rules-only",
+  "toolPolicy": "offline; no extra models/agents/connectors; single task root",
+  "environment": {
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "python": "3.9.6",
+    "node": "v24.21.0",
+    "npm": "11.19.0",
+    "browser": null,
+    "agentClient": null,
+    "reasoning": null,
+    "temperature": null,
+    "hardware": null
+  },
+  "calibration": null,
+  "tasks": {
+    "01-svg": {
+      "phase": "initial",
+      "initialSnapshot": null,
+      "changeSnapshot": null,
+      "changeReleasedAt": null,
+      "startedAt": null,
+      "finishedAt": null
+    },
+    "02-dispatch": {
+      "phase": "initial",
+      "initialSnapshot": null,
+      "changeSnapshot": null,
+      "changeReleasedAt": null,
+      "startedAt": null,
+      "finishedAt": null
+    },
+    "03-game2d": {
+      "phase": "initial",
+      "initialSnapshot": null,
+      "changeSnapshot": null,
+      "changeReleasedAt": null,
+      "startedAt": null,
+      "finishedAt": null
+    },
+    "04-game3d": {
+      "phase": "initial",
+      "initialSnapshot": null,
+      "changeSnapshot": null,
+      "changeReleasedAt": null,
+      "startedAt": null,
+      "finishedAt": null
+    },
+    "05-memory": {
+      "phase": "initial",
+      "initialSnapshot": null,
+      "changeSnapshot": null,
+      "changeReleasedAt": null,
+      "startedAt": null,
+      "finishedAt": null
+    }
+  },
+  "manualInterventions": [],
+  "cost": {
+    "tokens": null,
+    "amount": null,
+    "unit": null,
+    "source": null
+  },
+  "results": {}
+}

@@ -1,0 +1,12 @@
+(version 1)
+(allow default)
+(deny network*)
+(allow network-inbound (local ip "localhost:*"))
+(allow network-outbound (remote ip "localhost:*"))
+(allow network-bind (local ip "localhost:*"))
+(deny file-write*)
+(allow file-write* (subpath "/Users/zhengwenjun/大模型测试/verification/chrome-local") (subpath "/private/tmp") (subpath "/private/var/folders") (literal "/dev/null"))
+
+(allow network-bind (local unix-socket (subpath "/private/var/folders")))
+(allow network-outbound (remote unix-socket (subpath "/private/var/folders")))
+(allow network-inbound (local unix-socket (subpath "/private/var/folders")))

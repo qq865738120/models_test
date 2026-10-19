@@ -1,0 +1,29 @@
+{
+  "notice": "主持人编写的故障演示日志，故意含污染，不是真实模型成绩",
+  "query": {
+    "id": "q-000",
+    "entityId": "npc-000",
+    "group": "npc-000",
+    "category": "update",
+    "at": 50,
+    "query": "npc-000在提问时刻喜欢哪种口味的布丁？",
+    "validEvidenceIds": [
+      "m-000-b"
+    ],
+    "staleEvidenceIds": [
+      "m-000-a"
+    ]
+  },
+  "config": {
+    "cutoff": null,
+    "topK": 5,
+    "budgetChars": 1200
+  },
+  "candidateRetrieved": [
+    "m-000-future",
+    "m-000-b",
+    "m-000-a"
+  ],
+  "leakedAnswerIncludedInIndex": true,
+  "reportedRecall": 1.0
+}

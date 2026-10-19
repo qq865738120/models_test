@@ -1,0 +1,23 @@
+[1019/200536.747595:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200536.748635:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size com.googlecode.crashpad.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200536.748669:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:66] setxattr org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200536.749227:ERROR:third_party/crashpad/crashpad/util/file/file_io.cc:103] ReadExactly: expected 8, observed 0
+[1019/200536.749537:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200536.749562:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size com.googlecode.crashpad.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200536.749579:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:66] setxattr org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+
+DevTools listening on ws://127.0.0.1:55008/devtools/browser/f895428d-2183-4546-8b3c-8e4aa8cd2d28
+Trying to load the allocator multiple times. This is *not* supported.
+[77109:18537121:1019/200537.107634:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77109:18537121:1019/200537.108000:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77109:18537121:1019/200537.108138:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77109:18537121:1019/200537.108200:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77109:18537121:1019/200537.108264:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77109:18537121:1019/200537.108317:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77109:18537121:1019/200539.122544:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77109:18537121:1019/200539.191472:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77109:18537121:1019/200539.216113:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77109:18537121:1019/200539.254969:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77109:18537121:1019/200539.276366:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77109:18537121:1019/200539.320624:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77109:18537121:1019/200539.342685:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670

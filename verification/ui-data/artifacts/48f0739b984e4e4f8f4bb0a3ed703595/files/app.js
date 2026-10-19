@@ -1,0 +1,1 @@
+let n=0;document.getElementById('play').onclick=()=>document.getElementById('play').textContent='点击测试交互：'+(++n);document.getElementById('module').textContent='相对路径 ES module 已加载';

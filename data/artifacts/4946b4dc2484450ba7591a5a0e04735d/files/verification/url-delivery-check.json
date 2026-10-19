@@ -1,0 +1,11 @@
+{
+  "stage": "URL synchronization",
+  "resources": [
+    "./assets/index-tn6OrJuD.js",
+    "./assets/index-Cv82Gea3.css"
+  ],
+  "businessRegressionPassed": 14,
+  "historyRaceChecksPassed": 2,
+  "inputP95ms": 4.600000023841858,
+  "navigationRecords": 15
+}

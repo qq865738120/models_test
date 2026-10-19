@@ -1,0 +1,19 @@
+{
+  "runId": "ui-fixture-1",
+  "taskId": "01-svg",
+  "phase": "initial",
+  "files": {
+    ".keep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executable": false
+    },
+    "app.js": {
+      "sha256": "8fa137333d0a81946ec43e6a5797fc02058131adfef54430567c8e3cfde893a9",
+      "executable": false
+    },
+    "index.html": {
+      "sha256": "e90c1d4b0973a0cf735d244264d290c742ed1a577fa354195529bb5ef27c9a83",
+      "executable": false
+    }
+  }
+}

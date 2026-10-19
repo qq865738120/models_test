@@ -1,0 +1,1609 @@
+
+[PDF page 1]
+Stitched surface codes: planar concatenation through GHZ corridors
+Mohamed A. Shalby, 1, 2,∗ Alexandre Bourassa, 1 Amir Karamlou, 1 Leigh Martin, 1
+Alexis Morvan, 1 Nicholas Noll, 1 Craig Gidney, 1 and Leonid P. Pryadko 1
+1Google Quantum AI, Santa Barbara, CA 93117, USA
+2Department of Physics and Astronomy, University of California, Riverside, CA 92507, USA
+(Dated: October 16, 2026)
+We present a fault-tolerant quantum-memory architecture that concatenates four distance-tro-
+tated surface-code patches with the [[4,2,2]] outer code, encoding two logical qubits at code distance
+d= 2tin a physical footprint ofN <2(2t+1) 2 qubits on a square lattice with nearest-neighbor con-
+nectivity. The outer-code stabilizer generators XXXXand ZZZZ, each of physical weight 4t, are
+measuredin situvia verified Greenberger–Horne–Zeilinger (GHZ) ancillae distributed through nar-
+row corridors between adjacent patches, without lattice surgery or long-range gates. The outer-code
+gadgets introduce hyperedge fault mechanisms, but by design each decomposes into graphlike com-
+ponents, so the complete syndrome is decoded by a single minimum-weight-perfect-matching pass.
+Circuit-level simulations show logical error rates that scale as∼p t, consistent with distance-2t
+protection. Finally, we implement the construction experimentally on a 105-qubit Willow supercon-
+ducting processor in both theZZandXXmemory bases. With the correlated-matching decoder,
+increasing the code distance fromd= 4 tod= 6 reduces the block logical error rate by a factor
+of 1.52. The construction thus provides a near-term testbed for concatenated architectures beyond
+the standard surface code.
+I. INTRODUCTION
+Rotated surface codes are the leading quantum
+error-correcting code (QECC) family for superconduct-
+ing hardware, owing to their two-dimensional nearest-
+neighbor (2D nn) connectivity on a square lattice and
+high thresholds [1–3]. In the standard architecture, each
+patch of distancedencodes a single logical qubit,k= 1,
+inn surf =d 2 data qubits usingd 2 −1 ancillae, for a total
+ofN surf = 2d2 −1 physical qubits. Stabilizer generators
+are measured by depth-four circuits (counting two-qubit
+gates only), and the logical Clifford group is realized, e.g.,
+by lattice surgery between adjacent patches [4–7]. Single-
+patch surface-code memory has now been realized below
+threshold on superconducting hardware, with exponen-
+tial suppression up to distance seven [8, 9] (also see ear-
+lier distance-three demonstrations on independent plat-
+forms [10, 11] and surface-code logical qubits on neutral-
+atom arrays [12]).
+Beyond surface codes, two large families of fault-
+tolerant QECCs are known. First, quantum low-density
+parity-check (qLDPC) codes sacrifice the locality in 2D
+but may encodek >1 logical qubits per physical block,
+in particular, they may have finite asymptotic ratesk/n.
+For fault tolerance, it is sufficient that the distance scales
+as a logarithm ofnor higher [13, 14]; many families of
+such codes are known [15–18], including asymptotically
+good families with finite relative distancesd/n[19–21].
+Second, concatenated codes, historically the first route
+to fault tolerance [22–24], encode each qubit of an outer
+code as a logical qubit of an inner code, and also can at-
+tain asymptotically constant overhead in a fault-tolerant
+∗ mshal007@ucr.edu
+FIG. 1. Stabilizer structure for thet= 3 stitched code, with
+four rotated surface-code patches connected by the vertical
+and horizontal GHZ corridors for the outer-code generators.
+Filled and open circles, respectively, represent data and an-
+cillary qubits.
+setting [25]. Neither construction suits hardware with
+limited, fixed qubit connectivity, such as superconducting
+qubits. In particular, bivariate bicycle codes [26] require
+bilayer connectivity graphs with at least two non-local
+edges per qubit node.
+A hybrid line of recent work pairs inner surface-code
+patches with outer codes to raise the encoding rate with-
+out abandoning the inner code’s hardware-friendly struc-
+ture. Yoked surface codes [27] measure the stabilizer gen-
+erators of a high-rate outer code via lattice surgery to
+ancillary “workspace” patches; the qubit savings (nearly
+3×in their reported regime) scale with the outer-block
+size and only materialize once the outer dimension is
+large enough to amortize the workspace overhead. Sim-
+ilarly, hierarchical memories [28] concatenate qLDPC
+outer codes with surface-code inner blocks via surgery-
+style measurements. Unfortunately, these constructions,
+designed for the large-scale fault-tolerant regime, require
+too many physical qubits to demonstrate non-trivial dis-
+tance scaling and/or an advantage over surface codes on
+existing or near-term superconducting devices [27, 28].
+The goal of this work is to demonstrate a similar con-
+catenated construction (see Fig. 1), both theoretically
+arXiv:2610.21357v1  [quant-ph]  15 Oct 2026
+
+[PDF page 2]
+2
+and experimentally, but suitable for existing devices. We
+concatenate four distance-trotated surface-code patches
+with the smallest non-trivial error-detecting CSS code,
+[[4,2,2]] [29–31], obtaining a [[4t 2,2,2t]] code of distance
+d= 2tthat encodesk= 2 logical qubits in a footprint
+ofN= 2d 2 + 4d−3 physical qubits on a square lattice
+with nn connectivity, see Fig. 1. The two outer-code sta-
+bilizer generatorsG X = XXXXandG Z = ZZZZ, each
+of weight 4t, are measured sequentially by verified GHZ
+resource states prepared on narrowcorridorsof ancillary
+qubits between adjacent patches. The corridors thread
+between patches using only nearest-neighbor gates and
+are operated alongside the standard surface-code stabi-
+lizer cycles, so the inner patches’ bulk stabilizer groups
+remain intact throughout outer-code extraction. The
+corridor overhead, 8t+ 1 qubits, grows only linearly with
+the patch distancet.
+The GHZ corridors introduce a potential structural
+complication for decoding. A single circuit-level fault
+inside the corridor can simultaneously trigger detec-
+tors in the corridor itself and in two or more adjacent
+patches, producing hyperedge fault mechanisms in the
+detector error model [32]. Decoders that natively han-
+dle hyperedges—e.g., belief propagation with ordered
+statistics (BP+OSD) [33, 34] and search-based decoders
+such as Tesseract [35]—can handle these mechanisms
+more accurately than minimum-weight perfect matching
+(MWPM), but at substantially greater runtime, which
+limits their use at scale and at real-time hardware cy-
+cle times. Here we construct the corridor checks and
+verifiers to ensure that every such mechanism decom-
+poses into graphlike components, so that the complete
+syndrome, including the outer-code detectors, is decoded
+by a single MWPM pass [36], optionally with correlated
+reweighting [37].
+The remainder of the paper is organized as follows.
+Section II reviews the relevant background: surface-code
+preliminaries, the concatenation framework, the [[4,2,2]]
+outer code, and standard schemes for outer-stabilizer
+measurement. Section III specifies our architecture: the
+four-patch layout, the GHZ corridor preparation and ver-
+ification protocol, and the scheduling that interleaves
+outer-code rounds with inner-patch cycles. Section IV
+describes how the complete syndrome is decoded by
+matching. Section V presents circuit-level simulation re-
+sults under the SI1000 error model [38], including the
+verification-depth tradeoff, distance scaling, and foot-
+print comparisons. Section VI reports a hardware imple-
+mentation on a 105-qubit superconducting Willow pro-
+cessor in two memory bases. Specifically, we implement
+d= 4 andd= 6 stitched codes, and demonstrate robust
+below-threshold scaling of the logical error rates. Sec-
+tion VII closes with the discussion of geometric and mod-
+ular advantages, experimental considerations, and open
+problems. Additional theoretical and experimental de-
+tails are presented in the Appendices.
+II. PRELIMINARIES
+A. Rotated surface codes
+The rotated surface code of distancetencodes one log-
+ical qubit inn=t 2 data qubits, orN surf = 2t2 −1 phys-
+ical qubits including syndrome ancillae, arranged on a
+square lattice with open boundaries [4, 7, 39]. The code
+is a CSS code whose stabilizer generators are weight-four
+X-type plaquettes and weight-fourZ-type plaquettes in
+the bulk, together with weight-two operators on opposite
+pairs of boundaries, see Fig. 1 (left). Minimal-weight log-
+ical operators Xand Zare strings of weighttconnect-
+ing the two pairs of boundaries. A single round of syn-
+drome extraction interleaves theX- andZ-type measure-
+ments in a depth-four circuit (depth-six if basis-change
+layers are counted) between data and adjacent syndrome
+qubits [1, 2].
+B. Concatenated quantum codes
+The concatenation of an outer codeQ o = [[no, ko, do]]
+with an inner codeQ i = [[n i, ki, di]] encodes each qubit
+ofQ o as a logical qubit ofQ i [23, 31], which gives a code
+Qo ⋆Q i with parameters
+[[noni, k oki, d]], d≥d o di.(1)
+The distance-product bound is due to the fact that an
+outer logical operator must have support on at leastd o
+inner blocks, and each nontrivial inner logical represen-
+tative has weight at leastd i. For stochastic circuit-level
+noise this code-distance statement translates into logical-
+failure scaling governed by the minimum number of phys-
+ical faults needed to realize such a representative.
+C. The outer code and full code construction
+The outer [[4,2,2]] code is the smallest CSS code with
+a non-trivial distanced o = 2; the codedetectsany single-
+qubit error but may not be able to correct it. There are
+two stabilizer generators,
+GX =X 1X2X3X4, G Z =Z 1Z2Z3Z4,(2)
+which givesk o = 2 logical qubits. The logical operators
+can be chosen as
+X 1 =X 1X2, X 2 =X 1X3,(3)
+Z 1 =Z 1Z3, Z 2 =Z 1Z2.(4)
+While not used in this work, we notice that logi-
+cal Clifford gates on the encoded pair are accessible
+through transversal CNOT between two [[4,2,2]] blocks,
+a transversal Hadamard (H ⊗4, which performs H 1 ⊗ H 2
+composed with a swap of the two encoded qubits),
+
+[PDF page 3]
+3
+physical-qubit permutations that realize CNOT12 within
+a single block, and the transversal phase gateS⊗S † ⊗
+S† ⊗S, which realizes CZ12 [40]; this transversal-Clifford
+structure makes the [[4,2,2]] code a standard first level
+of concatenation in fault-tolerance demonstrations [31].
+For the inner code we use the rotated surface code
+with parameters [[t 2,1, t]]. The concatenated stabilizer
+code has lengthn= 4t 2, dimensionk= 2, and distance
+d= 2twhich saturates the bound in Eq. (1). The logical
+operators are obtained by composing the outer-code logi-
+cals of Eqs. (3) and (4) with the inner-code logical strings
+of weightt: e.g. X 1 = X
+(1)
+⊗X
+(2)
+, where X
+(j)
+acts on the
+inner surface-code patchj. The minimum-weight logical
+of the concatenated code therefore has weight 2t, which
+gives the code distance.
+D. Outer-stabilizer measurement
+Three standard schemes measure a weight-wstabi-
+lizer generator fault-tolerantly with the help of ancillary
+qubits: Shor-style cat ancilla [22, 41], Steane-style en-
+coded ancilla [23, 42], and Knill-style ancilla teleporta-
+tion [31]. All three reduce the syndrome-extraction cir-
+cuit to transversal CNOT gates between an ancilla reg-
+ister and the data qubits supporting the operator being
+measured. Steane and Knill schemes scale ancilla over-
+head with the size of an encoded block and are well-suited
+when the data block is itself encoded. Shor-style cat an-
+cillae use a single GHZ-type resource state and incur the
+lowest overhead. For weight-wstabilizer measurement, a
+Shor-style scheme prepares aw-qubit GHZ state
+|GHZw⟩= 1√
+2
+ 
+|0⟩⊗w +|1⟩ ⊗w
+,(5)
+applies transversal CNOTs from ancilla to data (for an
+X-type measurement; CNOTs from data to ancilla forZ-
+type), and measures the ancilla in theXbasis to read out
+the jointX ⊗w eigenvalue. The dangerous fault channel is
+anXerror on the GHZ ancilla, which propagates into the
+data through the transversal CNOT and can grow into a
+weight-2 or higher error on the supported data qubits (a
+hookerror [2]).Zerrors on the ancilla commute with the
+subsequent CNOTs and merely flip the readout, behaving
+as classical measurement errors.
+Suppressing the dangerousXerrors is accomplished by
+addingr v rounds ofZZ-parityverificationbetween ad-
+jacent GHZ qubits before the transversal CNOTs into
+data [43]. Unitary preparation of large GHZ states
+on superconducting processors has reached 60 and 120
+qubits [44, 45], the latter usingZZparity checks to
+detect preparation errors. Measurement-based prepa-
+ration with mid-circuit measurement and feedforward
+Pauli corrections [46] can instead produce GHZ resources
+in constant depth, eliminating the need for unitary
+CNOT-tree preparation circuits. Our corridor prepara-
+tion (Sec. III B) is measurement-based and, before ver-
+ification, constant-depth, adapted to the planar super-
+conducting setting and to repeated extraction; its Pauli
+corrections are absorbed into the detector frame rather
+than applied by feedforward.
+III. ARCHITECTURE
+A. Circuit layout and qubit count
+The full syndrome extraction circuit is parameterized
+by the inner-code distancet, the number of GHZ-state
+verification roundsr v, the number of full outer-code syn-
+drome measurement roundsr o, and the circuit basis (X
+orZ). Figure 1 shows the stabilizer structure of our
+construction att= 3: four rotated surface-code patches
+occupy the four quadrants of a square arrangement, with
+N= 93 physical qubits,k= 2 logical qubits, and code
+distanced= 2t= 6. Two overlapping narrow ancillacor-
+ridorsof length 4tthread between the four patches. They
+are used to sequentially measure the outer-code stabilizer
+generatorsG X = XXXXandG Z = ZZZZ. Each cor-
+ridor carries a 4t-qubit GHZ resource state, and the cor-
+ridor qubits next to the patches also serve as boundary
+measure qubits of the patches (Sec. III C).
+In aZ-basis circuit, the initial reset is followed by a
+single round of inner-codes’ syndrome measurements and
+aG X measurement. This preparation round is followed
+byr o outer-code rounds, each including oneG Z and one
+GX measurement, followed by a final measurement of all
+data qubits in theZbasis. Each outer-code generator
+measurement consists of a single preparation round and
+rv verification rounds, each of the same depth and done
+concurrently with a round of the inner-code syndrome
+measurement, see Figs. 2 and 3. Thus, preparation round
+ends atτ 0 =r v + 2, and the subsequent outer-code gen-
+erators are measured atτ 1 = 2rv + 3,τ 2 = 3rv + 4, etc.,
+with intervals ofr v + 1. The firstZ-detector is placed at
+τ1, and the firstX-detector atτ 2; subsequent detectors
+are placed after each outer-code cycle of duration 2rv +2.
+TheX-basis circuits are constructed similarly, up to
+the basis for initial preparation / final measurements,
+and the order of outer-code generator measurements.
+Namely, after the initial round of surface code measure-
+ments, inner-code measurements are combined withG Z,
+GX,G Z, etc., done in this order, with the detectors
+placed atτ 1,τ 2, etc. While the two circuits are not iden-
+tical, they have the same repeat blocks in the bulk. This
+choice is made to reduce the initial state preparation and
+measurement (SPAM) errors. Indeed, if we were to mea-
+sureG X first in theX-basis circuit, the first complete
+set of outer-code detectors would result only atτ 2.
+Combining four surface code patches withN surf =
+2t2−1 physical qubits each with the 8t+1 shared ancillary
+qubits required to measure the outer stabilizer generators
+(Sec. III C) gives the physical footprint
+N= 4(2t 2 −1) + 8t+ 1 = 2d 2 + 4d−3, d= 2t.(6)
+In comparison, two independent distance-drotated
+surface-code patches use 2(2d 2 −1) qubits, so at equal
+
+[PDF page 4]
+4
+H
+H
+H
+H
+H
+M
+M
+M
+M
+M
+FIG. 2. A single GHZ preparation round for patch distancet= 3, in six time steps (a)–(f). Neighboring corridor qubits are
+clustered into small GHZ states, intermediate qubits are measured, and the outcomes are absorbed virtually into the detector
+frame to align the GHZ branches.
+R
+R
+R
+R
+R
+R
+RR
+R
+M
+M
+M
+M
+M
+M
+M
+MM
+FIG. 3. A single GHZ verification round for patch distancet= 3, in six time steps (a)–(f). PairwiseZZparities along the
+corridor are measured by short-depth CNOT circuits using the ancillae on the corridor’s center line, detectingXerrors on the
+GHZ resource state before the transversal CNOT gates couple it to the surface-code patches.
+distance the stitched layout saves 2d 2 −4d+ 1 qubits.
+The asymptotic encoding density,
+k d2
+N = 2(2t)2
+8t2 + 8t−3
+t→∞
+− − − →1,(7)
+is twice the single-patch ratio 1
+2.
+B. GHZ corridor preparation and verification
+A single GHZ preparation round (Fig. 2) constructs the
+resource state|GHZ 4t⟩on the 4tcorridor qubits using
+mid-circuit measurements [46]. The protocol prepares
+clusters of corridor qubits in smaller GHZ states, mea-
+sures intermediate qubits in the appropriate fusion bases
+to form a GHZ line, and absorbs the resulting Pauli cor-
+rections virtually as detector-frame updates. The prepa-
+ration circuit has constant depth, independent oft.
+Preparation alone is not fault-tolerant: a single fault
+during preparation can leave a multi-qubitXerror on
+the corridor, which would propagate as a hook error of
+weight greater than one through the subsequent transver-
+sal CNOTs into data. We follow each preparation byr v
+rounds of verification. A verification round (Fig. 3) mea-
+sures pairwiseZZparities along the corridor by short-
+depth CNOTs into the ancillae on the corridor’s center
+line;Xerrors that arose during preparation or earlier
+verification rounds flip these parities, whileZerrors com-
+mute through the subsequent transversal CNOTs and
+contribute only to the readout. On the Z-corridor the
+roles ofXandZare exchanged: the verification rounds
+measure pairwiseXXparities, which detect theZerrors
+that would propagate into the data.
+Afterr v verification rounds, the GHZ ancilla interacts
+transversally with the supporting data qubits of the four
+patches: CNOTs from corridor to data for the X-corridor
+
+[PDF page 5]
+5
+extraction, data to corridor for the Z-corridor extraction.
+The corridor is then measured in the appropriate Pauli
+basis to read out the joint outer-stabilizer eigenvalue.
+The verification depth sets a lower bound on the cir-
+cuit distance. For the circuits constructed with patch
+distancest≤10 andr v ≥2 verification rounds, the dis-
+tances computed by Stim [32] satisfy the empirical ex-
+pression
+dcirc = min(2t, r v + 3).(8)
+While the algorithm in Stim only guarantees the circuit
+distance for graph-like DEMs, we also usedist m4ri[47]
+to calculate the distances. Ford circ ≤7 Stim results are
+confirmed exactly with exhaustive cluster enumeration,
+while upper bounds for larger distances also agree with
+Eq. (8), see Appendix A and Table III. We conclude that
+the design circuit distance 2tis reached atr v = 2t−3. For
+smallerr v, the shortest logical error is a time-like fault
+chain on the corridor: it repeats through ther v verifica-
+tion rounds at a single corridor site and is closed by three
+two-qubit-gate faults near the corridor intersection. Be-
+ing confined to a few corridor locations, this failure mode
+has a much smaller combinatorial weight than the spatial
+logical strings of the patches. The optimal choice ofr v
+is therefore set by the operating physical error rate: it
+suffices that the corridor contribution be well below the
+logical error rate of the bulk, as studied numerically in
+Sec. V B (Fig. 4).
+C. Reuse of boundary ancillae and scheduling
+The corridor qubits adjacent to each patch’s boundary
+serve a dual role. During the surface-code stabilizer cycle
+they participate as weight-two boundary syndrome ancil-
+lae for the inner patch; during the corridor cycle they
+participate as edge qubits of the GHZ resource state.
+We schedule the two roles so that boundary stabilizer
+generators are temporarily disabled during the rounds
+in which the corresponding ancilla qubits are committed
+to the corridor, and re-enabled afterward. This dual-
+use scheduling avoids a separate set of boundary ancillae
+along the corridors and keeps the total ancilla overhead
+at 8t+ 1.
+Overall, each outer-generator measurement occupies
+rv+1 inner cycles, which includes GHZ-state preparation,
+ther v verification rounds, transversal extraction, and the
+corridor readout. A full outer-code measurement cycle—
+one round each ofG X andG Z measurements—occupies
+2(rv + 1) inner-code cycles.
+IV. DECODING
+The decoder operates on the circuit-level detector error
+model (DEM) extracted by Stim [32] and uses minimum-
+weight perfect matching (MWPM) [2, 36], which requires
+every fault mechanism to flip at most two detectors or to
+decompose into components that do.
+The GHZ corridors add fault mechanisms that flip
+more than two detectors. A fault on a corridor qubit dur-
+ing transversal extraction can spread onto the data qubits
+of adjacent patches; it then flips detectors in the corri-
+dor and in several patches, and, when the spread reaches
+a logical representative, a logical observable. The corri-
+dor checks and verifier detectors are declared such that
+Stim decomposes every such mechanism into components
+that each flip at most two detectors. The GHZ prepara-
+tion outcomes define known Pauli frames on the corridor
+(Sec. III B); rather than being applied as measurement-
+conditioned corrections, these frame bits are included di-
+rectly in the detector declarations. The resulting DEM
+is decoded by a single PyMatching call over all four
+patches [36, 48]. The outer-code detectors are nodes of
+the same matching graph, so error chains that cross patch
+boundaries are matched through them, and no separate
+outer-code decoding step is needed. In the early stages
+of this work, before the circuits were made matchable,
+we validated them with the search-based decoder Tesser-
+act [35], which is slow for large distances.
+Decomposition assigns independent weights to the
+components of a mechanism and therefore ignores their
+correlation. Correlated matching in PyMatching (avail-
+able since v2.3 [48]) uses these correlations to reweight
+the matching graph after a first pass and then matches
+again [37]. We report both plain MWPM and corre-
+lated matching (Corr-MWPM) for the hardware data in
+Sec. VI.
+V. NUMERICAL RESULTS
+A. Simulation setup
+We simulate a memory experiment: the encoded state
+is initialized in a logical eigenstate,τsurface-code stabi-
+lizer rounds are executed, and at the end the data qubits
+are measured destructively in the corresponding basis.
+For stitched code,τcorresponds to one full round of the
+outer code,τ= 3r v + 4, and we chooseτ= 3dfor the
+surface code. The MWPM decoder of Sec. IV predicts
+the logical observables from the syndrome. Since ourX-
+andZ-basis circuits have very similar structure, with uni-
+form depolarizing noise the corresponding error rates are
+nearly identical (data not shown). Thus, all simulations
+are done forZ-basis circuits.
+With two logical observables in the stitched code, a de-
+coder reports the error probabilitiesp F,0(τ) andp F,1(τ)
+of each logical channel, and the block error probabil-
+ityp F,any(τ) corresponding to an error in either channel.
+Empirically, the errors in the two logical channels have
+significant correlations. To account for such correlations,
+we model the logical errors by a continuous-time sta-
+tionary Markov chain model with states{00,01,10,11},
+where a non-zero bit corresponds to an error in the cor-
+
+[PDF page 6]
+6
+responding channel, with bit-flip error ratesµ 01,µ 10,
+andµ 11. The time is measured in the units of surface-
+code cycle duration, thus, e.g., the combined error rate
+µtot =µ 01+µ 10+µ 11 is approximately equal to the block
+error probability per round,ε L, see Appendix B for the
+details. With numerical data, we ignore the SPAM er-
+rors by setting initial polarizations in Eqs. (B3), (B4),
+and (B5) to 1, and use the three measured valuesp F,0(τ),
+pF,1(τ), andp F,any(τ) to compute the three error rates.
+This overestimates the error rates slightly but is sufficient
+to compare the error rates with those of the two logical
+qubits from two independent surface code patches.
+The full circuit is simulated in Stim [32] under
+two noise models: the SI1000 superconducting-inspired
+model of Gidneyet al.[38] (two-qubit depolarizing chan-
+nel with probabilityp 2 =pafter a two-qubit gate, single-
+qubit depolarizing channel with probabilityp 1 =p/10 af-
+ter a single-qubit gate and on idle qubits, Pauli-Xchan-
+nel with probabilityp meas = 5pbefore any measurement,
+and with probabilityp reset = 2pafter any reset, and
+additional depolarization with probabilityp ′
+1 = 2pon
+qubits idling during measurement or reset), and a uni-
+form circuit-level depolarizing model withp 2 =p 1 =
+pmeas =p reset =pandp ′
+1 = 0. Monte Carlo sampling
+uses the sinter harness with up to 4×10 9 shots per data
+point, and each point in Figs. 5, 6, 11, and 12 has at
+least 10 3 logical errors, except four low-ppoints limited
+by the 4×10 9-shot cap; uncertainties are 95% Wilson
+score intervals, shown as shaded bands. All shots are de-
+coded; no postselection is applied. We track both logical
+observablesL 0 andL 1; the figures show the block error
+rateµ tot.
+B. Effect of verification depth
+The verification depthr v controls a competition be-
+tween hook suppression and costs of a longer outer-code
+round. Increasingr v suppressesXhook errors on the
+GHZ ancilla, raising the circuit distance toward its de-
+sign value 2t[see Eq. (8) and Table III]. Decreasing
+rv shortens the outer-code round, limiting (i) the num-
+ber of inner-cycleZerrors accumulated on the active
+GHZ ancilla, which add measurement noise to the read-
+out; (ii) the duration over which the boundary weight-2
+surface-code detectors are disabled; and (iii) the inner-
+cycle latency between consecutive measurements of the
+other outer stabilizer. The optimalr v therefore depends
+ontand on the physical error ratep.
+Aspdecreases, the optimalr v increases (Fig. 4): at
+t= 7 it moves fromr v = 2–3 atp= 4×10 −3 tor v = 4
+atp= 10 −3, where the larger circuit distance pays off.
+At intermediate and largep, smallerr v wins because the
+prefactor is reduced. For every data point in our subse-
+quent scaling figures we chooser v to minimize the joint
+logical error rate, requiring that the choice be simultane-
+ously optimal (or near-optimal) for both logical qubits.
+1 2 3 4
+Physical error rate, p (×10 3
+)
+10 10
+10 9
+10 8
+10 7
+10 6
+10 5
+10 4
+10 3
+10 2
+10 1
+Logical error rate per cycle, tot
+∝ p3
+∝ p5
+∝ p7
+rv = 2
+rv = 3
+rv = 4
+rv = 5
+rv = 6
+errors everywhere
+errors on corridor only
+FIG. 4. Logical error rateµ tot per surface-code cycle
+(Sec. V A) versus physical error ratepfor patch distance
+t= 7 under SI1000 noise, withr v = 2–6 GHZ verification
+rounds (Sec. III B). Solid curves: errors present on all oper-
+ations (p bulk =p GHZ). Dashed curves: errors present on the
+GHZ corridor only (p bulk = 0). Dotted lines are guides to the
+eye∝p 3,p 5,p 7. Bands are 95% Wilson intervals.
+C. Distance scaling
+Figure 5 compares the logical error rate of the
+stitched code against two independent rotated surface-
+code patches of varying distance under SI1000; Fig. 11 in
+Appendix C repeats the comparison under the uniform
+depolarizing model. In both models the stitched code’s
+logical error rate scales asp t (slopeton log-log axes),
+consistent with code distanced= 2t.
+D. Footprint comparison
+At equal distance, the stitched layout uses fewer qubits
+(Sec. III A), but the more relevant figure of merit in prac-
+tice is the number of physical qubits needed to reach a
+target logical error rate per round,ε L, at fixedp.
+Under SI1000 noise (Fig. 6), the stitched code reaches a
+givenε L with fewer qubits than two surface-code patches
+once the codes are sufficiently large: the crossover occurs
+atN≈157 forp= 10 −4,N≈237 forp= 5×10 −4, and
+N≈333 forp= 10 −3. Atp= (2–3)×10 −3, by contrast,
+its logical error rate atN≈10 3 remains 10–14% higher
+than that of two surface-code patches.
+The same comparison under the uniform depolarizing
+model is given in Appendix C.
+The footprint advantage is therefore not universal but
+depends onpand on the target error rate. Asymp-
+totically the stitched code uses half as many physi-
+
+[PDF page 7]
+7
+0.1 0.25 0.5 1 2 3
+Physical error rate, p (×10 3
+)
+10 8
+10 7
+10 6
+10 5
+10 4
+10 3
+10 2
+10 1
+Logical error rate per cycle, tot
+Stitched code (d = 2t)
+Two surface codes (d)
+FIG. 5. Logical error rateµ tot per surface-code cycle versus
+physical error ratepunder the SI1000 noise model, for the
+stitched code of distanced= 2t(filled circles, solid lines)
+and two independent rotated surface-code patches of distance
+d(open squares, dashed lines); numbers on the curves give
+d. Shown ared= 4,6,8,10,14 for the stitched code and
+d= 3,5,7,9,13 for the surface code. At each stitched point
+rv is the value with the lowest joint logical error rate, choosing
+among statistically tied values the one with the most similar
+L0 andL 1 rates (Sec. V B). Dotted lines are guides to the eye
+∝p t.
+cal qubits per logical qubit as two independent surface
+patches of matched code distance [Eq. (7)]; this advan-
+tage is realized in the footprint comparison oncetis large
+enough that the corridor-noise prefactor is amortized.
+The crossover lies at physical error rates within reach of
+near-term superconducting hardware. The physical error
+rates of the experiment reported in Sec. VI (Fig. 8) lie
+above this crossover.
+VI. EXPERIMENTAL RESULTS
+In the experiment we executed the full stitched-code
+circuits of two sizes, including repeated GHZ-corridor ex-
+traction, on a superconducting quantum processor, and
+verified that the logical error rate decreases as the code
+distance increases. We used a 105-qubit Willow super-
+conducting processor, the device from the family used for
+the below-threshold surface-code memory experiments of
+Ref. [9], using reinforcement-learning-based calibration
+methods similar to those used in Ref. [49]. The hardware
+circuits apply data-qubit leakage removal (DQLR) [50]
+at the boundaries of each GHZ block. The device em-
+bedding used for the stitched layout and the calibrated
+physical error distributions are shown in Figs. 7 and 8.
+3 5 7 9 11 13 15 17√
+N/2k
+10 8
+10 7
+10 6
+10 5
+10 4
+10 3
+10 2
+10 1
+Logical error rate per cycle, tot
+p = 2 × 10 3
+p = 10 3
+p = 5 × 10 4
+p = 10 4
+Stitched code (d = 2t)
+Two surface codes (d)
+FIG. 6. Logical error rateµ tot per surface-code cycle versusp
+N/2kunder the SI1000 noise model, whereNis the total
+number of qubits andk= 2 the number of logical qubits, for
+the stitched code (filled circles, solid lines) and two surface-
+code patches (open squares, dashed lines) at the physical error
+ratespwritten next to the curves; a surface code of distance
+dsits at
+p
+N/2k≈d. Data of Fig. 5, all simulated distances.
+The stitched-code layout differs in one important re-
+spect from the native layout used in standard rotated
+surface-code memory experiments [1, 9]. In the native
+layout, data and syndrome qubits form a bipartite pat-
+tern: the syndrome-qubit sublattice is optimized for re-
+peated measurement and reset, while the data-qubit sub-
+lattice is optimized for coherent storage followed by a sin-
+gle final readout [9]. In the stitched circuits, by contrast,
+some qubits that would ordinarily serve as data qubits
+are repurposed as corridor ancillae and must therefore be
+measured and reset in every outer-code extraction round.
+This makes the hardware implementation more demand-
+ing than a native surface-code memory experiment: al-
+though the circuit uses the same processor primitives, it
+requires repeated measurement and reset on qubits that
+are not optimized for these operations.
+A. Experimental setup
+We ran two code sizes, with the verification depth cho-
+sen for the lowest logical error rate at the hardware op-
+erating point (Sec. V B). The first code withd= 4 uses
+patch distancet= 2 andr v = 1 verification round, re-
+quiring four inner surface-code cycles per full outer-code
+measurement cycle. The second code withd= 6 uses
+patch distancet= 3 andr v = 2 verification rounds, re-
+quiring six inner cycles per full outer-code cycle. Notice
+that the circuit distance for the latter code isd circ = 5,
+
+[PDF page 8]
+8
+Data
+qubit
+Measure
+qubit
+GHZ 
+qubit
+FIG. 7. Layout of the stitched-code experiments on the 105-qubit Willow processor,d= 4 (t= 2, left) andd= 6 (t= 3,
+right), drawn to the same scale. Each measure qubit (blue) is associated with an inner-patch stabilizer (blue tile). Red outlines
+indicate the four rotated surface-code patches, containing 16 and 36 data qubits in total (gold). GHZ overhead qubits (green)
+are located in the corridors between the patches and are used to measure the outer-code stabilizer generators across the four
+patches. Qubits colored gray are not used.
+10 4
+10 3
+10 2
+10 1
+Error probability
+0.0
+0.5
+1.0Cumulative distribution
+0.041% 0.26% 0.69%
+1Q
+CZ
+Meas.
+mean
+FIG. 8. Cumulative distributions of physical error probabili-
+ties measured on the processor during the experiment: red de-
+notes single-qubit gate Pauli errors, black CZ Pauli errors, and
+blue measurement-identification error; dashed vertical lines
+mark the means, whose values are given above the panel.
+smaller than the code distanced= 6.
+For each code, we ran memory experiments in two
+bases: in theZZ-basis experiment both logical qubits are
+prepared and measured in theZbasis, and in theXX-
+basis experiment both are prepared and measured in the
+Xbasis. For each instance and basis, we executed cir-
+cuits withr o ∈ {1, . . . ,8}full outer-code rounds. These
+correspond toτ∈ {7,11, . . . ,35}inner surface-code cy-
+cles fort= 2 andτ∈ {10,16, . . . ,52}fort= 3.
+As discussed in Sec. IV, we use the PyMatching de-
+coder with the detector error model constructed for each
+circuit with SI1000 error model priors atp= 10 −3
+(Sec. V A). We used both regular MWPM and corre-
+lated matching (Corr-MWPM), applied to the same sets
+of measured data. For each data set, the latter decoder
+shows better accuracy. Thus, all the plots show only the
+Corr-MWPM data.
+For each round, the decoder returns two bits corre-
+sponding to the error status in each observable. Thus,
+for each set of measurements, four probabilities are cal-
+culated, consistent with the number of the outcomes. We
+report the marginal error probabilities for the logical vari-
+ables,p F,0 =P 01+P11 andp F,1 =P 10+P11, as well as the
+block error probabilityp F,any =P 01 +P 10 +P 11. These
+results are shown in Fig. 9 with symbols, separately for
+each distance and circuit basis. The left and center pan-
+els are for the two logical observables,pF,0 andp F,1, while
+the right panel shows the block error ratep F,any. Each
+circuit was sampled with 200,000 shots. The statistical
+errors are smaller than the symbol size.
+B. Modeling of error rates
+Unlike the reference model of two surface code patches,
+the errors for the two logical qubits in the stitched code
+are not independent. While a single error rate can be
+used to fit the data for either of the logical observables
+separately (as is commonly done for the surface code),
+this fails for the block error ratep F,any. To analyze
+the data in Fig. 9, we used a continuous-time four-state
+Markov chain model with three distinct error rates: in-
+dependent flip ratesµ 01,µ 10 of each logical observable,
+andµ 11, the rate of correlated flips of both, see Appendix
+B. Since the initial preparation time and the outer-code
+cycle both take several inner-code cycles (see Sec. III A),
+such a model is not expected to be accurate at a scale
+of a single cycle. In particular, the initial polarizations
+atτ= 0 in Eqs. (B3), (B4), (B5) are considered as free
+parameters, and are even allowed to take nonphysical val-
+ues in such a fit. Indeed, while a continuous-time Markov
+chain is equivalent to a discrete model for a periodic pro-
+cess like a measurement cycle, the state preparation part
+of the circuit warrants a transition matrix different from
+
+[PDF page 9]
+9
+20 40
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+pF, 0
+XX
+ZZ
+20 40
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+pF, 1
+20 40
+0.0
+0.2
+0.4
+0.6
+0.8
+pF, any
+d = 4: filled
+d = 6: empty
+Surface-code cycles, 
+FIG. 9. Experimental logical error probabilities (using correlated matching for decoding) as a function of the number of surface-
+code cyclesτin the circuit:p F,0 (left),p F,1 (middle), and the block error probabilityp F,any (right). Squares (circles) show
+results forXX(ZZ) memory experiments; filled markers and solid lines for thed= 4 code, empty markers and dashed lines
+for thed= 6 code. Lines show the corresponding values from the Markov chain model using three initial values and three
+error rates as fitting parameters, see App. B. Data from each experiment were fitted separately, see Tab. II. Error bars are 95%
+Wilson intervals of the shot counts and are smaller than the symbols.
+that in the rest of the circuit. Further, the initial polar-
+izationsS 0(0),S 1(0), andS parity(0) include the SPAM
+errors which are not guaranteed to be identical.
+Thus, for each set of average probabilitiesP F,0(τ),
+PF,1(τ), andP F,any(τ), we used Eqs. (B3), (B4), (B5)
+to fit the observable flip probabilities in Fig. 9 (and sim-
+ilar data from regular MWPM decoder), using the three
+flip rates and three initial polarizations as independent
+free parameters. The data from each experiment com-
+puted with each decoder were used for separate fits. The
+corresponding process rates are shown in Table I. The fit-
+ted curves are shown in Fig. 9 as solid and dashed lines
+ford= 4 andd= 6, respectively.
+Decoder Dist Basisµ 01 µ10 µ11
+MWPMd= 4ZZ2.065(14) 2.032(14) 2.123(14)
+MWPMd= 4XX2.933(23) 2.605(23) 2.610(23)
+MWPMd= 6ZZ1.328(9) 1.420(9) 1.354(9)
+MWPMd= 6XX1.432(10) 1.636(10) 1.495(10)
+Corr-MWPMd= 4ZZ1.686(11) 1.667(11) 2.029(12)
+Corr-MWPMd= 4XX2.384(16) 2.132(16) 2.261(16)
+Corr-MWPMd= 6ZZ1.221(7) 1.305(8) 1.275(8)
+Corr-MWPMd= 6XX1.285(8) 1.496(9) 1.323(8)
+TABLE I. Rates (percent per surface code cycle) of the four-
+state Markov model used to fit the data in Fig. 9, see Ap-
+pendix B. The parametersµ 01,µ 10 are independent flip rates
+of each logical observable, whileµ 11 is the rate of correlated
+flips of both. The data for different distances and different
+circuit bases are fitted separately. Parenthetical uncertainties
+are one-standard-deviation uncertainties in the last quoted
+digits.
+As an additional finite-duration diagnostic, we also
+Decoder Errord= 4d= 6 Λ 4→6
+MWPM
+L0 4.632(15)% 2.727(8)% 1.699(7)
+L1 4.469(14)% 2.866(8)% 1.559(7)
+Any 6.845(15)% 4.209(8)% 1.626(5)
+Corr-MWPM
+L0 4.008(12)% 2.488(6)% 1.611(6)
+L1 3.884(11)% 2.628(7)% 1.478(6)
+Any 5.836(12)% 3.850(7)% 1.516(4)
+TABLE II. Hardware logical error probabilities per surface-
+code cycle. The columns use the stitched-code distance
+d= 2t, with patch distancest= 2 andt= 3 correspond-
+ing tod= 4 andd= 6, respectively. All entries use the
+Markov-chain fit described in Sec. VI B, averaged over the
+ZZandXXexperiments; parenthetical uncertainties are one-
+standard-deviation sampling uncertainties in the last quoted
+digits, from the likelihood curvature of the fit. Rows labeled
+L0 andL 1 give the per-cycle error probabilitiesε 0 andε 1 of
+the two logical observables, and “Any” the per-cycle block er-
+ror probabilityε L, computed from the fitted rates of Table I
+(Appendix B).
+computed single-point rate estimates from the same data.
+Namely, for eachτ, we used Eqs. (B3), (B4), (B5) (with
+the initial polarization values from the overall fit) to
+compute the ratesµ 0,µ 1, andµ 2 from the three values
+pF,0(τ),p F,1(τ), andp F,any(τ). The results are shown
+in Fig. 10. The single-point rates thus computed do not
+show a significant change withτ, i.e., the observed log-
+ical error rates remain more or less constant up to the
+maximum duration of the experiment,τ max = 52 surface
+code cycles.
+
+[PDF page 10]
+10
+10 20 30 40 50
+0
+1
+2
+3
+4F, 0 (%)
+XX
+ZZ
+10 20 30 40 50
+0
+1
+2
+3
+4F, 1 (%)
+10 20 30 40 50
+0
+1
+2
+3
+4
+5
+6
+F, any (%)
+d = 4: filled
+d = 6: empty
+Multi-cycle Markov fit
+Surface-code cycles, 
+FIG. 10. Single-point Markov-chain estimates of the per-cycle logical error probabilitiesε 0,ε 1, andε L (Appendix B) for the
+Corr-MWPM data at every measured depthτ, with the fitted initial polarizations of Fig. 9 used as the reference atτ= 0.
+Squares show the data forXXand circlesZZmemory experiments; filled markers and solid lines correspond tod= 4, empty
+markers and dashed lines tod= 6. The dotted lines show the corresponding values computed from six-parameter Markov-chain
+fits of each experiment (also listed in Table I). Error bars at 95% Wilson intervals are smaller than the symbol size.
+C. Logical error probabilities per cycle
+For quantum memory based on surface codes, a de
+facto standard measure used to compare experiments of
+different duration is the average logical error probability
+per cycle,ε[9, 51].
+With two logical qubits, there are three related prob-
+abilities (per surface-code cycle) that can be computed
+for each experiment: the marginal error probability in
+each logical channel,ε 0 andε 1, and the block error prob-
+ability,ε L. Since we use the duration of the surface code
+cycle as the time unit, to linear order in small error rates,
+these probabilities are numerically close to the respective
+marginal error ratesµ 0 =µ 01 +µ 11,µ 1 =µ 10 +µ 11, and
+the total error rateµ tot =µ 01 +µ 10 +µ 11. The full ex-
+pressions for the three probabilities are given in Eq. (B6).
+We used these equations to compute per-cycle logical
+error probabilities. The resulting basis-averaged quanti-
+ties are shown in Table II, along with the corresponding
+improvement factors Λ 4→6 ≡ε (d=4)/ε(d=6). In particu-
+lar, for plain MWPM, increasing the code distance from
+d= 4 tod= 6 reduces the block error probability per
+cycleε L from 6.845(15)% to 4.209(8)%, corresponding
+to an improvement factor Λ 4→6 = 1.626(5). Correlated
+matching lowers the error probability by 15% atd= 4,
+to 5.836(12)%, and by 9% atd= 6, to 3.850(7)%, which
+results in a smaller Λ 4→6 = 1.516(4).
+D. Differences with surface code experiments
+One immediate observation from the experimental
+plots in Figs. 9 and 10 is that theX-basis circuits have
+higher logical error rates than theZ-basis circuits, with
+the difference most pronounced atd= 4. This is con-
+firmed by the per-basis fitted rates listed in Table I.
+Given that theX- andZ-basis circuits are nearly iden-
+tical, we explain this asymmetry by low-frequency phase
+noise which cannot be entirely eliminated by the device
+calibration. We mention in passing that phase noise was
+also present in the surface-code memory experiment done
+on a similar Willow device [9]. The basis asymmetry was
+suppressed by using anXZZXversion of the surface
+codes [52], unlike the CSS codes we use in this work.
+Another important observation is that the outer-code
+detectors, even though they are not used frequently, are
+absolutely essential to achieve the small error rates for
+stitched codes. These detectors show much higher firing
+rates than the regular surface-code detectors [see Fig. 13
+and Appendix D 1], as would be expected from the large
+physical weight 4tof the outer-code stabilizer generators.
+Indeed, in thed= 6 hardware experiment they fire with
+probability close to 1/2, yet flipping the value of any one
+of the primary-basis outer-code detectors changes a de-
+coded logical in about 80% of the shots, and in these shots
+it is the measured value, rather than its flip, that gives
+the correct logical outcome 95% of the time (as computed
+for the experiment withr o = 1, where each outer-code
+detector is present only once, see Appendix D 2).
+The high firing rate of the outer-code detectors also
+delimits the role of the corridor GHZ gadgets. A mem-
+ory experiment can afford such a rate: the outer code
+only has to catch the rare logical failures of individual
+patches, and it has no deadline, so each further outer-
+code round makes such a failure easier to tell from a mis-
+read. In contrast, a parity measurement between patches
+must settle the eigenvalue of an outer-code generator by
+a given time. Here, one outer-code round per 2(r v + 1)
+surface-code cycles is way too slow for most applications.
+Such a sparsity of undetectable time-like outer-code er-
+
+[PDF page 11]
+11
+ror chains is quantified in Appendix E with a stability
+circuit simulation [53]: atp= 10 −3, the stitched code
+witht= 3 needs about 80 cycles to determineG X with
+an error probability of 10 −3, while a surface code of the
+same distance about 5 cycles. For extracting parities,
+GHZ corridors are thus far slower than lattice surgery;
+logical operations on stitched codes should leave the cor-
+ridors aside and instead go through patch boundaries or
+use code automorphisms.
+VII. OUTLOOK AND CONCLUSION
+We have introduced a stitched concatenated memory
+that combines four rotated surface-code patches with
+the [[4,2,2]] outer detection code in a strictly planar
+nearest-neighbor layout. The construction encodes two
+logical qubits at code distanced= 2twhile using a
+physical footprintN= 2d 2 + 4d−3, and its verified
+GHZ corridors measure the two weight-4touter stabi-
+lizer generators without lattice surgery, long-range gates,
+or workspace patches. Circuit-level simulations show the
+expected distance-2tscaling (Figs. 5 and 11), and the
+hardware experiment on a 105-qubit Willow processor
+shows that the same architecture can be executed on a
+present superconducting device, with the logical error per
+cycle decreasing fromd= 4 tod= 6 in both memory
+bases (Table II).
+The main practical tradeoff is the corridor prefactor:
+the asymptotic factor-of-two gain in qubits per logical
+qubit is realized below a crossover physical error rate
+that lies within reach of near-term superconducting hard-
+ware. The stitched layout also packs both logical qubits
+into a single, nearly square region, whereas two indepen-
+dent patches of comparable distance form a rectangle. In
+situations where availability, processor tiles, packaging,
+control wiring, or modular interconnects favor square re-
+gions, this geometry is an advantage independent of qubit
+count.
+Several directions remain open. Hardware-specific op-
+timization of the corridor readout/reset path, leakage-
+removal scheduling, and calibration of the dual-use
+boundary ancillae should reduce the corridor prefactor.
+More broadly, the GHZ-corridor gadget is not specific to
+the [[4,2,2]] code: it suggests a way to realize other small
+outer codes whose stabilizer generators can be routed
+through planar corridors. Identifying such codes, com-
+paring their layout and decoder tradeoffs, and developing
+logical operations on and between stitched blocks given
+their slower accumulation of time-like distance, are natu-
+ral next steps toward using compact concatenated mod-
+ules as building blocks for larger fault-tolerant architec-
+tures.
+ACKNOWLEDGMENTS
+We thank Adam Zalcman for reviewing the
+manuscript, Vlad Sivak for help setting up RL cal-
+ibration, and Kaavya Sahay and Junichi Haruna for
+conversations on decoding. We also thank Oscar Hig-
+gott, Bryce Kobrin, Fengyi Li, Matt McEwen, Michael
+Newman, and Kevin Satzinger for useful conversations.
+We thank Agustin Di Paolo and Dvir Kafri for their
+mentorship and support of M.A.S. at Google Quantum
+AI. We thank Google Quantum AI for providing the
+research environment that made this work possible.
+DATA AVAILABILITY
+The circuit generator, the simulation data under the
+SI1000 and uniform depolarizing noise models (stitched
+code and surface-code baseline, every simulated verifica-
+tion depth, and the verification-depth scan of thet= 7
+code), and the per-circuit logical-outcome counts of the
+hardware experiment are available athttps://github.
+com/QEC-pages/Stitched-Surface-Code. The raw de-
+tection events and measured observables of all 32 hard-
+ware circuits, with the detector error models and decoder
+outputs used in the analysis, are provided as a release as-
+set of the same repository.
+AUTHOR CONTRIBUTIONS
+M.A.S. led the project in close collaboration with
+L.P.P., who supervised it throughout. C.G. contributed
+ideas and constructive criticism in early discussions, later
+suggested the footprint comparison, and made a strong
+case for redefining the detectors so that the circuits can
+be decoded by standard matching, which proved cor-
+rect. A.B. helped set up the initial experiment. A.K.
+and A.M. contributed to the state-of-the-art calibration
+of the device. N.N. advised on fitting and data taking.
+L.M. helped adapt the hardware circuits to mitigate low-
+frequency noise.
+[1] A. G. Fowler, M. Mariantoni, J. M. Martinis, and A. N.
+Cleland, Surface codes: Towards practical large-scale
+quantum computation, Phys. Rev. A86, 032324 (2012),
+arXiv:1208.0928.
+[2] E. Dennis, A. Kitaev, A. Landahl, and J. Preskill, Topo-
+logical quantum memory, J. Math. Phys.43, 4452 (2002),
+arXiv:quant-ph/0110143.
+[3] A. Y. Kitaev, Fault-tolerant quantum computation
+by anyons, Ann. Phys.303, 2 (2003), arXiv:quant-
+ph/9707021.
+[4] C. Horsman, A. G. Fowler, S. Devitt, and R. Van Meter,
+Surface code quantum computing by lattice surgery, New
+
+[PDF page 12]
+12
+J. Phys.14, 123011 (2012), arXiv:1111.4022.
+[5] A. G. Fowler and C. Gidney, Low overhead quantum com-
+putation using lattice surgery, arXiv:1808.06709 (2018).
+[6] D. Litinski and F. von Oppen, Lattice surgery with a
+twist: Simplifying Clifford gates of surface codes, Quan-
+tum2, 62 (2018), arXiv:1709.02318.
+[7] D. Litinski, A game of surface codes: Large-scale quan-
+tum computing with lattice surgery, Quantum3, 128
+(2019), arXiv:1808.02892.
+[8] Google Quantum AI, Suppressing quantum errors by
+scaling a surface code logical qubit, Nature614, 676
+(2023), arXiv:2207.06431.
+[9] Google Quantum AI and Collaborators, Quantum error
+correction below the surface code threshold, Nature638,
+920 (2025), arXiv:2408.13687.
+[10] S. Krinner, N. Lacroix, A. Remm,et al., Realizing re-
+peated quantum error correction in a distance-three sur-
+face code, Nature605, 669 (2022), arXiv:2112.03708.
+[11] Y. Zhao, Y. Ye, H.-L. Huang,et al., Realization
+of an error-correcting surface code with supercon-
+ducting qubits, Phys. Rev. Lett.129, 030501 (2022),
+arXiv:2112.13505.
+[12] D. Bluvstein, S. J. Evered, A. A. Geim,et al., Logical
+quantum processor based on reconfigurable atom arrays,
+Nature626, 58 (2024), arXiv:2312.03982.
+[13] A. A. Kovalev and L. P. Pryadko, Fault tolerance of
+quantum low-density parity check codes with sublin-
+ear distance scaling, Phys. Rev. A87, 020304 (2013),
+arXiv:1208.2317.
+[14] I. Dumer, A. A. Kovalev, and L. P. Pryadko, Thresh-
+olds for correcting errors, erasures, and faulty syndrome
+measurements in degenerate quantum codes, Phys. Rev.
+Lett.115, 050502 (2015), arXiv:1412.6172.
+[15] M. Freedman, D. Meyer, and F. Luo,Z 2-systolic freedom
+and quantum codes, inMathematics of Quantum Com-
+putation(Chapman and Hall/CRC, 2002).
+[16] N. P. Breuckmann and B. M. Terhal, Constructions and
+noise threshold of hyperbolic surface codes, IEEE Trans.
+Inf. Theory62, 3731 (2016), arXiv:1506.04029.
+[17] N. P. Breuckmann, C. Vuillot, E. Campbell, A. Krishna,
+and B. M. Terhal, Hyperbolic and semi-hyperbolic sur-
+face codes for quantum storage, Quantum Sci. Technol.
+2, 035007 (2017), arXiv:1703.00590.
+[18] J.-P. Tillich and G. Z´ emor, Quantum LDPC codes with
+positive rate and minimum distance proportional to the
+square root of the blocklength, IEEE Trans. Inf. Theory
+60, 1193 (2014), arXiv:0903.0566.
+[19] P. Panteleev and G. Kalachev, Asymptotically good
+quantum and locally testable classical LDPC codes, in
+Proceedings of the 54th Annual ACM SIGACT Sympo-
+sium on Theory of Computing(ACM, 2022) pp. 375–388,
+arXiv:2111.03654.
+[20] A. Leverrier and G. Z´ emor, Quantum Tanner codes, in
+2022 IEEE 63rd Annual Symposium on Foundations of
+Computer Science (FOCS)(IEEE, 2022) pp. 872–883,
+arXiv:2202.13641.
+[21] I. Dinur, M.-H. Hsieh, T.-C. Lin, and T. Vidick,
+Good quantum LDPC codes with linear time decoders,
+inProceedings of the 55th Annual ACM Symposium
+on Theory of Computing(ACM, 2023) pp. 905–918,
+arXiv:2206.07750.
+[22] P. W. Shor, Fault-tolerant quantum computation, inPro-
+ceedings of 37th Conference on Foundations of Com-
+puter Science(IEEE, 1996) pp. 56–65, arXiv:quant-
+ph/9605011.
+[23] E. Knill and R. Laflamme, Concatenated quantum codes,
+arXiv:quant-ph/9608012 (1996).
+[24] D. Aharonov and M. Ben-Or, Fault-tolerant quantum
+computation with constant error rate, SIAM J. Comput.
+38, 1207 (2008), arXiv:quant-ph/9906129.
+[25] S. Yoshida, S. Tamiya, and H. Yamasaki, Concatenate
+codes, save qubits, npj Quantum Inf.11, 88 (2025),
+arXiv:2402.09606.
+[26] S. Bravyi, A. W. Cross, J. M. Gambetta, D. Maslov,
+P. Rall, and T. J. Yoder, High-threshold and low-
+overhead fault-tolerant quantum memory, Nature627,
+778 (2024), arXiv:2308.07915.
+[27] C. Gidney, M. Newman, P. Brooks, and C. Jones,
+Yoked surface codes, Nat. Commun.16, 4498 (2025),
+arXiv:2312.04522.
+[28] C. A. Pattison, A. Krishna, and J. Preskill, Hierarchical
+memories: Simulating quantum LDPC codes with local
+gates, Quantum9, 1728 (2025), arXiv:2303.04798.
+[29] L. Vaidman, L. Goldenberg, and S. Wiesner, Error pre-
+vention scheme with four particles, Phys. Rev. A54,
+R1745 (1996), arXiv:quant-ph/9603031.
+[30] M. Grassl, T. Beth, and T. Pellizzari, Codes for the
+quantum erasure channel, Phys. Rev. A56, 33 (1997),
+arXiv:quant-ph/9610042.
+[31] E. Knill, Quantum computing with realistically noisy de-
+vices, Nature434, 39 (2005), arXiv:quant-ph/0410199.
+[32] C. Gidney, Stim: A fast stabilizer circuit simulator,
+Quantum5, 497 (2021), arXiv:2103.02202.
+[33] P. Panteleev and G. Kalachev, Degenerate quantum
+LDPC codes with good finite length performance, Quan-
+tum5, 585 (2021), arXiv:1904.02703.
+[34] J. Roffe, D. R. White, S. Burton, and E. Camp-
+bell, Decoding across the quantum low-density parity-
+check code landscape, Phys. Rev. Res.2, 043423 (2020),
+arXiv:2005.07016.
+[35] L. Aghababaie Beni, O. Higgott, and N. Shutty, Tesser-
+act: a search-based decoder for quantum error correction,
+arXiv:2503.10988 (2025).
+[36] O. Higgott and C. Gidney, Sparse blossom: correcting
+a million errors per core second with minimum-weight
+matching, Quantum9, 1600 (2025), arXiv:2303.15933.
+[37] A. G. Fowler, Optimal complexity correction of corre-
+lated errors in the surface code, arXiv:1310.0863 (2013).
+[38] C. Gidney, M. Newman, A. Fowler, and M. Broughton,
+A fault-tolerant honeycomb memory, Quantum5, 605
+(2021), arXiv:2108.10457.
+[39] H. Bombin and M. A. Martin-Delgado, Optimal re-
+sources for topological two-dimensional stabilizer codes:
+Comparative study, Phys. Rev. A76, 012305 (2007),
+arXiv:quant-ph/0703272.
+[40] D. Gottesman, Quantum fault tolerance in small experi-
+ments, arXiv:1610.03507 (2016).
+[41] P. Aliferis, D. Gottesman, and J. Preskill, Accuracy
+threshold for postselected quantum computation, Quant.
+Inf. Comput.8, 181 (2008), arXiv:quant-ph/0703264.
+[42] A. M. Steane, Active stabilization, quantum computa-
+tion, and quantum state synthesis, Phys. Rev. Lett.78,
+2252 (1997), arXiv:quant-ph/9611027.
+[43] D. P. DiVincenzo and P. Aliferis, Effective fault-tolerant
+quantum computation with slow measurements, Phys.
+Rev. Lett.98, 020501 (2007), arXiv:quant-ph/0607047.
+[44] Z. Bao, S. Xu, Z. Song,et al., Creating and control-
+ling global Greenberger-Horne-Zeilinger entanglement on
+
+[PDF page 13]
+13
+quantum processors, Nat. Commun.15, 8823 (2024),
+arXiv:2401.08284.
+[45] A. Javadi-Abhari, S. Martiel, A. Seif, M. Takita, and
+K. X. Wei, Big cats: entanglement in 120 qubits and
+beyond, arXiv:2510.09520 (2025).
+[46] E. B¨ aumer, V. Tripathi, D. S. Wang, P. Rall, E. H. Chen,
+S. Majumder, A. Seif, and Z. K. Minev, Efficient long-
+range entanglement using dynamic circuits, PRX Quan-
+tum5, 030339 (2024), arXiv:2308.13065.
+[47] L. P. Pryadko and W. Zeng, dist-m4ri: distance of a clas-
+sical or quantum CSS code (2024), version 0.9.0.
+[48] O. Higgott, PyMatching: A Python package for de-
+coding quantum codes with minimum-weight perfect
+matching, ACM Trans. Quantum Comput.3, 16 (2022),
+arXiv:2105.13082.
+[49] V. Sivak, A. Morvan, M. Broughton,et al., Reinforce-
+ment learning control of quantum error correction, Na-
+ture655, 879 (2026), arXiv:2511.08493.
+[50] K. C. Miao, M. McEwen, J. Atalaya,et al., Overcoming
+leakage in quantum error correction, Nat. Phys.19, 1780
+(2023), arXiv:2211.04728.
+[51] Google Quantum AI, Exponential suppression of bit or
+phase errors with cyclic error correction, Nature595, 383
+(2021), arXiv:2102.06132.
+[52] J. P. Bonilla Ataides, D. K. Tuckett, S. D. Bartlett, S. T.
+Flammia, and B. J. Brown, The XZZX surface code, Nat.
+Commun.12, 2172 (2021), arXiv:2009.07851.
+[53] C. Gidney, Stability experiments: The overlooked
+dual of memory experiments, Quantum6, 786 (2022),
+arXiv:2204.13834.
+[54] M. Grassl and M. Roetteler, Leveraging automorphisms
+of quantum codes for fault-tolerant quantum computa-
+tion, in2013 IEEE International Symposium on Informa-
+tion Theory(IEEE, 2013) pp. 534–538, arXiv:1302.1035.
+[55] N. P. Breuckmann and S. Burton, Fold-transversal Clif-
+ford gates for quantum codes, Quantum8, 1372 (2024),
+arXiv:2202.06647.
+[56] H. Sayginel, S. Koutsioumpas, M. Webster, A. Rajput,
+and D. E. Browne, Fault-tolerant logical Clifford gates
+from code automorphisms, PRX Quantum6, 030343
+(2025), arXiv:2409.18175.
+Appendix A: Circuit distance and verification depthr v
+We compute the circuit distance with Stim’sshortest graphlike error[32] on the CZ-compiled memory circuits
+with SI1000 fault locations [38], for both memory bases (ZZandXX) and for one to three outer-code periods
+(ro = 1–3); the result is the same in all six cases. The graphlike search ignores fault mechanisms that flip more than
+two detectors and therefore returns an upper bound. An exhaustive connected-cluster search with dist-m4ri [47] on
+the full detector error model, including such faults, confirms every entry of Table III up to 7 exactly; the larger entries
+are upper bounds. Table III lists representative results. Every computed value withr v ≥2 equals min(2t, r v + 3); at
+rv = 1 the distance is 4 for eventand 3 for oddt. We checked the saturation pointr v = 2t−3 for alltfrom 3 to 10:
+att= 10, for example,d circ = 19 atr v = 16 and 20 atr v = 17.
+Below saturation, the minimum-weight logical error sits at the corridor intersection. It consists of a time-like chain
+ofr v faults that repeats through the verification rounds at a single corridor site, together with three two-qubit-gate
+faults that close the chain onto a logical representative; each additional verification round lengthens the chain by one.
+At saturation, the minimum-weight error becomes a spatial logical string of weighttin each of two patches.
+rv
+t2t1 2 3 4 5 6 7 8 9
+2 4 4 4 4 4 4 4 4 4 4
+3 6 3 5 6 6 6 6 6 6 6
+4 8 4 5 6 7≤8≤8≤8≤8≤8
+5 10 3 5 6 7≤8≤9≤10≤10≤10
+6 12 4 5 6 7≤8≤9≤10≤11≤12
+TABLE III. Circuit distanced circ of the stitched memory circuit versus verification depthr v, from Stim’s graphlike distance
+search under SI1000 fault locations; the values are the same for theZZandXXmemory circuits and forr o = 1–3. Entries up
+to 7 are exact (dist-m4ri); larger entries are upper bounds. Forr v ≥2 the entries follow min(2t, r v + 3).
+Appendix B: Markov chain model for logical errors
+We approximate the error dynamics for the two logical qubits with a stationary continuous-time four-state Markov
+chain, with the states labeled{00,01,10,11}, where a non-zero bit corresponds to a logical error in the corresponding
+channel. We ignore anyYerrors (which are expected to be strongly suppressed), and consider a symmetric model
+where two identical errors cancel each other (or, equivalently, the rates 0→1 and 1→0 are equal, as would be
+expected for a Pauli channel). Denoting the three error rates asµ 01,µ 10,µ 11, and their sum asµ tot, the dynamics of
+
+[PDF page 14]
+14
+the state probabilities is described by a symmetric rate matrix,
+Q=
+
+
+−µtot µ01 µ10 µ11
+µ01 −µtot µ11 µ10
+µ10 µ11 −µtot µ01
+µ11 µ10 µ01 −µtot
+
+ , µ tot =µ 01 +µ 10 +µ 11.(B1)
+The dynamics dramatically simplifies if we consider marginal fail and success complementary probabilities,
+pF,0 =p 01 +p 11, p S,0 =p 00 +p 10, p F,1 =p 10 +p 11, p S,1 =p 00 +p 01,
+as well as the fixed-parity complementary probabilities,
+podd =p 01 +p 10, p even =p 00 +p 11.
+The corresponding two-state stochastic matrices are also symmetrical, of the form
+Q(2)(µ) =
+ 
+−µ µ
+µ−µ
+!
+,
+and have the expected marginal error rates for the two logical bits (µ 0 andµ 1) and for the third parity bit (µ 2):
+µ0 =µ 01 +µ 11, µ 1 =µ 10 +µ 11,andµ 2 =µ 10 +µ 01.(B2)
+In other words, the correspondingpolarizations(the probability differences) have simple exponential evolution, e.g.,
+S0(τ)≡p S,0(τ)−p F,0(τ) =S 0(0)e −2µ0τ .
+With the total probability constant, we get
+pF,0(τ) = 1
+2
+
+1−S 0(0)e −2µ0τ
+,(B3)
+pF,1(τ) = 1
+2
+
+1−S 1(0)e −2µ1τ
+,(B4)
+pF,any(τ) = 3
+4 − 1
+4
+
+S0(0)e −2µ0τ +S 1(0)e −2µ1τ +S 2(0)e −2µ2τ
+.(B5)
+Evidently, each of the two marginal error probabilities for the logical observables relaxes as a single exponential, but
+not the net block error probability. These equations give the following expressions for the error probabilities over the
+duration of a single surface-code cycle:
+ε0 = 1−e −2µ0
+2 , ε 1 = 1−e −2µ1
+2 , ε L = 3−e −2µ0 −e −2µ1 −e −2µ2
+4 .(B6)
+Indeed, these expressions are just the above probabilities atτ= 1 (cycle duration in the chosen time units), conditioned
+on the absence of errors at the start of the cycle, which is equivalent toS i(0) = 1.
+Eqs. (B3), (B4), and (B5) are used:
+•To extract the net error rateµ tot for the numerical data in Sec. V. Here for each set of parameters we only had
+a single data point withr o = 1, i.e., the three probabilitiesp F,0,p F,1, andp F,any atτ= 3r v + 4. Thus, instead
+of the actual fitting, we set the initial polarizationsS i(0) = 1,i= 0,1,2, and solved for the ratesµ i.
+•To fit the experimental data in Sec. VI. Here for each experiment we had 8 probability values for circuit variants
+with 1≤r o ≤8; we fitted these data using six parameters, the three error rates and the initial polarizations.
+•To obtain single-point error probability estimates in Fig. 10. Here, for each experiment and for eachτwe
+extracted the rates from each data point (fixing the initial polarizations to the values from the full fit in item
+2), and used these results to compute the single-cycle error probabilities (B6).
+Appendix C: Numerical results with the uniform depolarizing noise model
+Figures 11 and 12 repeat the comparisons of Figs. 5 and 6 under the uniform depolarizing model of Sec. V A. Under
+this model the stitched code is ahead fromN≈157 atp= 10 −4 and fromN≈445 atp= 5×10 −4; atp≥10 −3 it
+requires more qubits, with the gap shrinking asNgrows.
+
+[PDF page 15]
+15
+0.1 0.25 0.5 1 2 3
+Physical error rate, p (×10 3
+)
+10 8
+10 7
+10 6
+10 5
+10 4
+10 3
+10 2
+10 1
+Logical error rate per cycle, tot
+Stitched code (d = 2t)
+Two surface codes (d)
+FIG. 11. Same comparison as Fig. 5 under the
+uniform depolarizing model.
+3 5 7 9 11 13 15 17√
+N/2k
+10 8
+10 7
+10 6
+10 5
+10 4
+10 3
+10 2
+10 1
+100
+Logical error rate per cycle, tot
+p = 2 × 10 3
+p = 10 3
+p = 5 × 10 4
+p = 10 4
+Stitched code (d = 2t)
+Two surface codes (d)
+FIG. 12. Same as Fig. 6 under the uniform depo-
+larizing model; data of Fig. 11.
+Appendix D: Detector-level diagnostics
+This appendix collects diagnostics of the hardware analysis: finite-duration single-point checks of the per-cycle
+rates, a comparison of detector statistics with a noisy circuit-level simulation, and the decoding role of the outer-code
+detectors.
+1. Detector probabilities and correlations
+Figures 13–15 compare thed= 6,r o = 6ZZhardware data with a simulation of the same executed circuit,
+including its single-qubit echo pulses, each withN shot = 200,000 shots. The simulation uses a distributed noise model
+built from the per-qubit and per-pair calibration of the device (Fig. 8): each single-qubit gate and CZ gate is followed
+by depolarizing noise with its measured Pauli error, each measurement outcome is flipped with the measured readout
+error of its qubit, and each idle qubit receives Pauli-twirled amplitude and phase damping set by itsT 1 andT ϕ over
+the duration of the layer. Layer durations follow Ref. [9]. The simulation reproduces the grouped structure of the
+detection-event fractions, including the saturated outer-code detectors and the periodic peaks on the corridor-adjacent
+patch detectors [Fig. 13]. Across all 1,384 detectors, the hardware and simulated fire probabilities have a Pearson
+correlation of 0.93, with means of 8.0% and 6.3%, respectively [Fig. 14, left]. For detector pairs, we treat a squared
+Pearson correlationR 2 as resolved when it exceeds 25/N shot, that is, when the correlation exceeds five standard
+deviations of its shot noise. Of the 11,455 pairs resolved in either data set, 6,505 are resolved in both, and their logR 2
+values have a correlation of 0.89 [Fig. 14, right]. Of the others, 4,522 are resolved only in the hardware data and 428
+only in the simulation; together with the lower simulated mean fire probability, this indicates hardware noise, such as
+leakage and crosstalk, beyond the calibrated gate, readout, and idle errors. The full correlation matrices in Fig. 15
+show the same local structure in both data sets.
+2. Decoding role of the outer-code detectors
+Atd= 6 every outer-code detector fires with probability within about 0.01 of 1/2 [Fig. 13, left], so in isolation it
+cannot be distinguished from a random bit. Its value to the decoder is conditional on the rest of the syndrome. To
+measure it, we decode every shot twice with correlated matching: once with the measured value of a given outer-code
+detector and once with that value flipped, keeping all other detectors fixed. We call a shot decisive for the detector
+when the two decoded logicals differ.
+For thed= 6,r o = 1ZZdata, each ZZZZouter-code detector is decisive in 81% of the shots. In these shots
+the measured value gives the correct logical outcome in 82.7% of cases and the flipped value in 4.7%, so whenever
+exactly one of the two is correct, the measured value is the correct one 95% of the time. TheXXdata give 78%
+decisive shots and 93% for the same ratio. Replacing the outer-code detectors by independent random bits with the
+
+[PDF page 16]
+16
+0 10 20 30 40
+Quantum error correction cycle, 
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6Detector probability
+0 10 20 30 40
+Quantum error correction cycle, 
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6Detector probability
+FIG. 13. Left: Grouped detection-event fractions for thed= 6,r o = 6ZZhardware experiment. Right: same, but from a sim-
+ulation of the same circuit under the distributed noise model of Appendix D 1 with 200,000 shots. The high-fire-fraction traces
+are from the outer-code detectors, whose physical weight 4t= 12 makes them sensitive to many localized fault mechanisms.
+0% 10% 20% 30% 40% 50%
+Simulated detector probability 
+(distributed noise model)
+0%
+10%
+20%
+30%
+40%
+50%Experimental detector probability
+y = x
+10 5
+10 4
+10 3
+10 2
+10 1
+100
+Simulated R2
+ 
+(distributed noise model)
+10 5
+10 4
+10 3
+10 2
+10 1
+100
+Experimental R2
+Resolved in either data set
+Below floor in both
+y = x
+FIG. 14. Measured detector statistics vs. the simulated values. Left: Single-detector fire probabilities from Fig. 13. Right:
+Squared Pearson correlationR 2 of every detector pair; points in the gray region, with both valuesR 2 <25/N shot, do not have
+sufficient statistics to be relevant for comparison.
+same fire probability leaves the decisive fraction near 80% but makes the two outcomes equally likely to be correct.
+The XXXXdetectors of aZZexperiment, and vice versa, are decisive in at most 11% of the shots, since they do
+not act on the measured observables.
+The decoding value of the outer-code detectors is seen directly by decoding the same shots with the same correlated-
+matching decoder but without them (their detection events are ignored and the corresponding error mechanisms
+become unmatched). Atd= 6 the logical error rate per cycle, from the Markov fit of Sec. VI B, rises from 3.80% to
+4.65% (ZZ) and from 4.10% to 5.19% (XX); atd= 4 the block error probability after a single outer-code period
+rises from 0.19 (ZZ) and 0.22 (XX) to 0.48, close to its saturation value of 3/4. Replacing the outer-code detectors
+by independent random bits is worse still, since the decoder then matches spurious events.
+
+[PDF page 17]
+17
+(0, 4)
+(2, 8)
+(4, 6)
+(6, 2)
+(7, 7)*
+(8, 12)
+(10, 10)
+(12, 10)
+Detector coordinates
+(0, 4)
+(2, 8)
+(4, 6)
+(6, 2)
+(7, 7)*
+(8, 12)
+(10, 10)
+(12, 10)
+Detector coordinates
+0.03
+0.02
+0.01
+0.00
+0.01
+0.02
+0.03
+(0, 4)
+(2, 8)
+(4, 6)
+(6, 2)
+(7, 7)*
+(8, 12)
+(10, 10)
+(12, 10)
+Detector coordinates
+(0, 4)
+(2, 8)
+(4, 6)
+(6, 2)
+(7, 7)*
+(8, 12)
+(10, 10)
+(12, 10)
+Detector coordinates
+0.03
+0.02
+0.01
+0.00
+0.01
+0.02
+0.03
+FIG. 15. Pearson correlation matrices of all detectors for the measured data (left) and the simulated values (right). Detectors
+are grouped by site (x, y) and ordered by time within each site; the outer-code detectors at the corridor intersection form their
+own block located near the center (coordinates labeled with “*”). Diagonal elements are set to zero.
+Appendix E: Stability experiment
+ro 1 2 3 4 5
+dtime 2 3 4 5 6
+surface-code cyclesτ
+rv = 1 7 11 15 19 23
+rv = 2 10 16 22 28 34
+rv = 3 13 21 29 37 45
+TABLE IV. Time-like distanced time of the stitched code
+fort= 3 (exact, dist-m4ri [47]; the same forr v = 1, 2, 3)
+and circuit durationτ; for the surface code,d time =τ[53].
+A memory experiment tests the ability to move logical ob-
+servables through time; a stability experiment [53] tests the
+ability to move them through space, that is, to determine
+the value of a product of stabilizer generators, as needed, for
+example, by measurement-based logical operations such as
+lattice surgery [4, 5, 7]. Following Ref. [53], we construct a
+stability experiment for the outer-code generatorG X of the
+stitched code (Fig. 16, left): the patches haveX-type bound-
+aries on the three sides that do not face the X-corridor, so
+that theirX-type generators multiply toG X. To keep the
+circuit faithful,G Z and theZ-type generators are still mea-
+sured, although the observable does not depend on them.
+SinceG Z may flip fourX-type generators, one per patch, by a common random sign, we track these generators in
+pairs at the two ends of the Z-corridor, so that every fault mechanism decomposes into graphlike components. The
+time-like distance is then the number ofG X outcomes,d time =r o + 1 (Table IV).
+We compare it with the surface-code stability circuit of Ref. [53] at distance 2t, using SI1000 noise [38] and Corr-
+MWPM decoding for both. Fort= 3, each outer-code round lowers the failure probabilityp F,stab by a factor of
+1.5, 2.0, and 4.5 atp= 10 −3, 5×10 −4, and 10 −4 (Fig. 16, middle): the outer code is fault tolerant in time. This
+protection comes at a cost in time, since one unit ofd time takes 2(r v + 1) surface-code cycles instead of one. At
+p= 10 −3, reachingp F,stab = 10−3 takes about 80 cycles, compared with about 5 for the surface code (Fig. 16, right).
+Since the optimalr v depends ontandp(Sec. V B), the number of cycles needed to reach a givenp F,stab requires a
+careful analysis in each case, but in all cases we studied (t= 3, 5) it is much larger than for the surface code.
+Thus GHZ corridors serve memory well, since only changes of the outer-code generators matter there, but any logical
+operation that relies on corridor outcomes inherits their slow accumulation of time-like distance, and we do not expect
+GHZ corridors to be a competitive replacement for lattice surgery in computation. Logical operations on stitched
+codes can instead avoid relying on corridor outcomes, for example through lattice surgery on the patch boundaries
+that do not face the corridors, or through code automorphisms [54–56], such as the physical-qubit permutations of
+the [[4,2,2]] code (Sec. II C). We leave logical operations on stitched codes, and stitched codes with other small outer
+codes, to future work.
+
+[PDF page 18]
+18
+4 8 12 16 20
+Time-like distance, dtime
+10 7
+10 6
+10 5
+10 4
+10 3
+10 2
+10 1
+Failure probability, pF, stab
+p = 10 3
+p = 5 × 10 4
+p = 10 4
+0 40 80 120
+Surface-code cycles, 
+stitched code, t = 3
+surface code, d = 6
+FIG. 16. Left: stitched stability circuit fort= 3 (colors as in Fig. 1): patch generators andG X (vertical band) as Stim
+detector slices [32], andG Z (horizontal band, underG X) on the data qubits that the Z-corridor couples to; circles: single-qubit
+generators of the two corner qubits on these rows. Middle and right: stability failure probabilityp F,stab of the stitched code
+(t= 3,r v = 2; filled circles) and the surface code of distance 6 (open squares) versusd time and versusτ, at thepwritten next
+to the curves; SI1000 noise, Corr-MWPM decoding; bands: 95% Wilson intervals.

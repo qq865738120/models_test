@@ -1,0 +1,184 @@
+{
+  "mode": "playing",
+  "lives": 2,
+  "elapsed": 10.925050000000002,
+  "invulnerable": 0,
+  "collected": [
+    "c1"
+  ],
+  "player": {
+    "x": 2320,
+    "y": 660,
+    "vx": 0,
+    "vy": 0,
+    "grounded": true,
+    "body": {
+      "x": 2304,
+      "y": 608,
+      "width": 32,
+      "height": 52
+    }
+  },
+  "movers": [
+    {
+      "x": 1420.5,
+      "y": 490,
+      "width": 180,
+      "height": 24
+    }
+  ],
+  "robots": [
+    {
+      "x": 858.500000000001,
+      "y": 630
+    },
+    {
+      "x": 2168,
+      "y": 630
+    }
+  ],
+  "counts": {
+    "children": 39,
+    "bodies": 7,
+    "staticBodies": 8,
+    "colliders": 9
+  },
+  "jumps": 3,
+  "runs": 3,
+  "events": [
+    {
+      "type": "reset",
+      "run": 1
+    },
+    {
+      "type": "reset",
+      "run": 2
+    },
+    {
+      "type": "start"
+    },
+    {
+      "type": "jump",
+      "x": 224,
+      "y": 660,
+      "elapsed": 0.552763333333335
+    },
+    {
+      "type": "collect",
+      "id": "c1",
+      "elapsed": 1.7107433333333368,
+      "x": 408,
+      "y": 560
+    },
+    {
+      "type": "pause",
+      "elapsed": 3.1941633333333352,
+      "x": 764,
+      "y": 660
+    },
+    {
+      "type": "resume",
+      "elapsed": 3.1941633333333352,
+      "x": 764,
+      "y": 660
+    },
+    {
+      "type": "jump",
+      "x": 764,
+      "y": 660,
+      "elapsed": 3.2190833333333355
+    },
+    {
+      "type": "damage",
+      "cause": "机器人",
+      "lives": 2,
+      "elapsed": 3.327323333333335
+    },
+    {
+      "type": "pause",
+      "elapsed": 4.377453333333336,
+      "x": 944,
+      "y": 660
+    },
+    {
+      "type": "resume",
+      "elapsed": 4.377453333333336,
+      "x": 944,
+      "y": 660
+    },
+    {
+      "type": "damage",
+      "cause": "掉落",
+      "lives": 1,
+      "elapsed": 15.411183333333447
+    },
+    {
+      "type": "pause",
+      "elapsed": 16.060943333333455,
+      "x": 100,
+      "y": 660
+    },
+    {
+      "type": "reset",
+      "run": 3
+    },
+    {
+      "type": "start"
+    },
+    {
+      "type": "jump",
+      "x": 224,
+      "y": 660,
+      "elapsed": 0.5332500000000011
+    },
+    {
+      "type": "collect",
+      "id": "c1",
+      "elapsed": 1.2999600000000031,
+      "x": 408,
+      "y": 560
+    },
+    {
+      "type": "pause",
+      "elapsed": 2.799960000000011,
+      "x": 768,
+      "y": 660
+    },
+    {
+      "type": "resume",
+      "elapsed": 2.799960000000011,
+      "x": 768,
+      "y": 660
+    },
+    {
+      "type": "jump",
+      "x": 768,
+      "y": 660,
+      "elapsed": 2.8165700000000116
+    },
+    {
+      "type": "jump",
+      "x": 948,
+      "y": 660,
+      "elapsed": 3.966730000000015
+    },
+    {
+      "type": "damage",
+      "cause": "机器人",
+      "lives": 2,
+      "elapsed": 8.258499999999996
+    },
+    {
+      "type": "pause",
+      "elapsed": 9.69999,
+      "x": 2320,
+      "y": 660
+    },
+    {
+      "type": "resume",
+      "elapsed": 9.69999,
+      "x": 2320,
+      "y": 660
+    }
+  ]
+}

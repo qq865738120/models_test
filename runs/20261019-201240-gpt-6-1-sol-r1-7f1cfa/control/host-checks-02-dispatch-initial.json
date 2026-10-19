@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-19T12:43:47.380594+00:00",
+  "artifactId": "d9ce0d1c8da14640acea90f92e3f8fd2",
+  "scope": "主持人独立浏览器UI核验；不代表全维度评分",
+  "observations": {
+    "initialTotal": 10000,
+    "initialPending": 5000,
+    "initialAssigned": 2500,
+    "selectedOrder": "PD-00001",
+    "chosenCourier": "P01",
+    "afterPending": 4999,
+    "afterAssigned": 2501,
+    "orderCourierAfter": "鹈鹕一号",
+    "orderCheckboxAfter": "disabled"
+  },
+  "note": "使用冻结成果的独立浏览器内存会话，未修改源码或数据文件。"
+}

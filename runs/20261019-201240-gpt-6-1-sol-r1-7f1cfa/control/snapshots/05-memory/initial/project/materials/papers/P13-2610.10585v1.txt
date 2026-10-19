@@ -1,0 +1,1981 @@
+
+[PDF page 1]
+Partially Thermalized eV-Scale Sterile Neutrinos in Dynamical Dark Energy and
+Non-Flat Cosmologies
+Gopal Kashyap 1,∗ and Kanhaiya Lal Pandey 1,†
+1Department of Physics, School of Advanced Sciences,
+Vellore Institute of Technology, Vellore 632014, Tamil Nadu, India
+(Dated: October 9, 2026)
+We investigate cosmological constraints on a (3 + 1) neutrino framework containing an additional
+partially thermalized, eV-scale sterile neutrino alongside the three active species. Rather than
+assuming full thermalization, we allow the sterile abundance to vary independently through its
+physical massm s and contribution ∆Neff to the effective number of relativistic species. The active-
+neutrino sector is analyzed separately for normal and inverted mass ordering, while the sterile state
+is modeled as a thermally distributed non-cold relic with a temperature below that of the active-
+neutrino background. We consider flat and non-flat ΛCDM andw0waCDM cosmologies, all including
+the same (3+1)νsector. The models are constrained using Planck 2018 CMB data, DESI DR2 BAO,
+Pantheon+ Type Ia supernovae, a conservative compilation off σ 8 measurements, and the recent
+Hubble Distance Network constraint,H 0 = 73.50±0.81 km s −1 Mpc−1. Oscillation-informed priors
+are imposed on the active-neutrino mass splittings, while the eV scale sterile-mass range is motivated
+by short-baseline oscillation searches and global (3 + 1) analyses. We find that allowing additional
+freedom in the late-time cosmological background substantially changes the inferred sterile-neutrino
+sector. The effective sterile mass increases fromm s,eff ∼0.11±0.05 eV in flat ΛCDM+(3 + 1)νto
+∼0.35±0.12 eV in the non-flatw 0waCDM+(3 + 1)νmodel. The corresponding sterile abundance
+shifts from ∆N eff ≲0.1 to ∆N eff ≃0.35±0.15, while remaining well below the fully thermalized
+limit, ∆N eff ≃1. A direct comparison with the induced prior onm s,eff shows that the posterior
+displacement toward larger effective sterile masses is not solely a consequence of transformed prior
+volume. The non-flatw 0waCDM models also show∼2.8σpreference for open spatial geometry,
+Ωk ≃0.0045±0.0016, and yieldH 0 ≃70.9±0.7 km s −1 Mpc−1 andS 8 ≃0.785±0.015. These
+models improve the minimumχ2 by approximately 21-25 relative to flat ΛCDM+(3+1)ν. Our results
+therefore show that the cosmological viability of a partially thermalized eV-scale sterile neutrino is
+strongly correlated with assumptions about spatial curvature and the late-time dark-energy sector.
+I. INTRODUCTION
+Neutrino oscillation experiments have established that
+neutrinos are massive and that the three active flavor
+states are mixtures of mass eigenstates, providing one
+of the clearest indications of physics beyond the min-
+imal Standard Model [1–3]. The possibility of addi-
+tional sterile neutrino states, which do not participate
+directly in standard weak interactions, has been ex-
+tensively investigated in connection with anomalies re-
+ported by short-baseline (SBL) experiments, including
+LSND and MiniBooNE [4, 5]. Reactor, accelerator, and
+other disappearance measurements, such as, Daya Bay,
+MINOS/MINOS+, and IceCube have subsequently pro-
+vided important constraints on the corresponding ac-
+tive–sterile mixing parameters, while also highlighting
+persistent tensions among different experimental datasets
+[6–8]. Neutrinos provide an important link between par-
+ticle physics and cosmology, with their masses and rel-
+ativistic energy density leaving characteristic imprints
+on the expansion history, cosmic microwave background
+(CMB), and large-scale structure [9–12]. A sterile neu-
+trino with a mass at the eV scale is particularly inter-
+∗ gopal.hari@vit.ac.in
+† kanhaiyalal.pandey@vit.ac.in
+esting cosmologically because, if sufficiently populated in
+the early Universe, it contributes to the relativistic en-
+ergy density around recombination and later behaves as
+a component of hot dark matter. Cosmological observa-
+tions therefore provide a complementary probe of light
+sterile-neutrino scenarios, sensitive to both their abun-
+dance and their impact on the expansion history and
+growth of cosmic structure.
+The cosmological implications of sterile neutrinos de-
+pend crucially on their production history and phase-
+space distribution. In the simplest scenario, a fully ther-
+malized sterile neutrino contributes approximately one
+additional effective neutrino species, ∆Neff ≃1, while its
+non-relativistic energy density is determined by its phys-
+ical mass. Such a scenario is strongly constrained by
+combinations of cosmic microwave background (CMB)
+and large-scale-structure observations [13–15]. In partic-
+ular, the Planck 2018 analysis found stringent constraints
+on both the effective number of relativistic species and
+the effective mass of an additional sterile relic, strongly
+disfavoring a fully thermalized eV-scale sterile neutrino
+when combined with baryon acoustic oscillation (BAO)
+data [13]. These constraints, however, should not be in-
+terpreted as model-independent exclusions of sterile neu-
+trinos, since the cosmological abundance of a sterile state
+need not correspond to complete thermalization. Mecha-
+nisms such as suppressed production, non-standard neu-
+trino interactions, or a modified thermal history can
+arXiv:2610.10585v1  [physics.gen-ph]  6 Oct 2026
+
+[PDF page 2]
+2
+lead to a reduced sterile abundance and consequently to
+∆Neff <1 [9, 14–16].
+An important recent development in this direction is
+the systematic comparison of different sterile-neutrino
+production scenarios. Ladeira et al. [17] considered
+fully thermalized, different-temperature thermal relic,
+and Dodelson–Widrow-like realizations and showed that
+current cosmological data place substantially stronger
+constraints on the effective sterile abundance than on its
+physical mass when the sterile population is suppressed.
+In particular, their different-temperature sterile scenario
+remains considerably less constrained than the fully ther-
+malized case, emphasizing the importance of distinguish-
+ing the physical sterile mass from its cosmological abun-
+dance. This result is consistent with the broader pic-
+ture in which cosmological observations constrain the en-
+ergy density and free-streaming effects of relic neutrinos
+rather than directly measuring their microscopic produc-
+tion mechanism. The distinction between physical and
+effective sterile-neutrino masses has also been incorpo-
+rated in earlier Planck analyses of massive sterile relics
+[13]. Thus, a meaningful assessment of eV-scale sterile
+neutrinos requires the thermalization level and the phys-
+ical mass to be treated as separate quantities.
+The interpretation of neutrino cosmology is further
+complicated by degeneracies with the late-time expan-
+sion history. Massive neutrinos alter the background
+evolution and suppress the growth of matter perturba-
+tions through free streaming, while changes in the dark-
+energy equation of state can partially compensate these
+effects in cosmological observables [18–24]. More recent
+analyses using DESI BAO data have likewise emphasized
+the sensitivity of neutrino-mass constraints to assump-
+tions about the dark-energy sector, with evolving dark
+energy providing additional freedom in accommodating
+the cosmological neutrino-mass scale [25–28]. This is-
+sue is particularly relevant in light of the DESI BAO
+measurements, which have provided indications of depar-
+tures from a cosmological constant when combined with
+complementary distance measurements [29–31]. Con-
+sequently, sterile-neutrino constraints obtained within
+ΛCDM may not fully characterize the allowed parameter
+space when the expansion history is generalized [28, 32].
+The increasing precision of late-time cosmological ob-
+servations makes it possible to investigate these effects
+using complementary probes. The Planck CMB mea-
+surements tightly constrain the early-Universe radia-
+tion content and neutrino-induced changes to the CMB
+anisotropies [13], while BAO measurements provide pre-
+cise information about the distance-redshift relation and
+the expansion history. The recent DESI DR2 BAO mea-
+surements have substantially improved the precision of
+cosmological constraints and have also highlighted the
+interplay between neutrino masses and dynamical dark
+energy [31]. Type Ia supernovae provide an independent
+probe of the late-time expansion history, while redshift-
+space-distortion measurements constrain the growth of
+structure throughf σ 8. Combining these probes is
+therefore particularly useful for separating the effects
+of sterile-neutrino abundance, neutrino free streaming,
+dark-energy dynamics, and spatial curvature. In addi-
+tion, local measurements of the Hubble constant provide
+a complementary constraint on the late-time expansion
+rate and can alter the allowed degeneracies betweenN eff,
+neutrino masses, and dark energy.
+In this work, we investigate a (3 + 1) neutrino frame-
+work containing three active neutrinos and an additional
+partially thermalized, eV-scale sterile neutrino. The ster-
+ile sector is characterized independently by its physical
+mass and its contribution ∆N eff to the effective num-
+ber of relativistic species, and is modeled as a thermal
+non-cold relic with a temperature lower than that of
+the active-neutrino background. This allows us to ex-
+plore the sterile-neutrino parameter space continuously
+between strongly suppressed and fully populated regimes
+while consistently accounting for the transition of the
+sterile state from relativistic to non-relativistic behav-
+ior. We consider both normal and inverted ordering
+(hereafter NO and IO) of the active-neutrino masses
+and investigate a sequence of cosmological models rang-
+ing from flat ΛCDM to flatw 0waCDM and spatially
+curvedw 0waCDM, the latter two models are studied in-
+dependently for NO and IO both. Our analysis com-
+bines Planck 2018 CMB data, DESI DR2 BAO mea-
+surements, Pantheon+ Type Ia supernovae, conservative
+f σ8 measurements, and a GaussianH 0 prior from the
+recent Hubble Distance Network measurement. We ad-
+ditionally incorporate neutrino-oscillation adapted from
+recent JUNO [33], and earlier short-baseline (SBL) ex-
+periments [34]. Within this framework, we quantify the
+joint constraints on the sterile-neutrino mass and ther-
+malization level and examine their degeneracies with the
+active-neutrino mass sector, dark-energy dynamics, and
+spatial curvature. This enables us to assess whether the
+cosmological viability of an eV-scale sterile neutrino re-
+mains substantially altered once partial thermalization
+and extensions of the late-time cosmological model are
+simultaneously taken into account.
+The paper is organized as follows. Section II introduces
+the cosmological and neutrino framework, including the
+active-neutrino mass ordering, the sterile-neutrino sector,
+the background cosmology, and the growth of structure.
+Section III describes the observational data sets used in
+the analysis. The statistical methodology, including the
+parameter priors, numerical implementation, and model-
+comparison criteria, is presented in Sec. IV. The resulting
+cosmological constraints are discussed in Sec. V, and our
+main conclusions are summarized in Sec. VI.
+
+[PDF page 3]
+3
+II. COSMOLOGICAL AND NEUTRINO
+FRAMEWORK
+A. Active-neutrino masses and ordering
+We parameterize the active-neutrino sector through
+the lightest massm 1 ≡m lightest for the normal order-
+ing, and,
+m2 =
+q
+m2
+1 + ∆m2
+21, m 3 =
+q
+m2
+1 + ∆m2
+31,(1)
+where ∆m 2
+31 >0. For the inverted ordering,m 3 ≡
+mlightest with the NuFIT convention in which ∆m 2
+32 =
+m2
+3 −m 2
+2 <0, and,
+m2 =
+q
+m2
+3 +|∆m 2
+32|, m 1 =
+q
+m2
+2 −∆m 2
+21.(2)
+The active-neutrino mass sum is
+X
+mν,active ≡m 1 +m 2 +m 3.(3)
+The different ordering-dependent mass floors in Eq. (3)
+provide the principal direct cosmological distinction be-
+tween NO and IO.
+We implement all three active neutrinos as mas-
+sive species, in the publicly availableCLASS(Cosmic
+Linear Anisotropy Solving System) Boltzmann code
+[35]. For the three active species we useT active/Tγ =
+0.71611, consistent with a more accurate treatment
+of non-instantaneous neutrino decoupling and finite-
+temperature QED corrections [36]. A residual ultra-
+relativistic contribution,N ur = 0.00441 is included to
+recover the standard value ofN SM
+eff ≃3.044 for the active-
+neutrino sector.
+B. The eV-scale sterile neutrino
+The fourth neutrino state is modeled as a thermally
+distributed non-cold relic. Unlike the fully thermalized
+limit, in which the sterile state attains the same ther-
+mal abundance and temperature as the active neutrino
+background, we allow for incomplete thermalization of
+the sterile species. The sterile sector is therefore char-
+acterized by a suppressed contribution to the relativis-
+tic energy density, parameterized by (∆N eff), and by its
+physical mass (m s). The total effective number of rela-
+tivistic species can be written as
+Neff =N SM
+eff + ∆Neff,where, N SM
+eff = 3.044 (4)
+denotes the Standard Model prediction for the three ac-
+tive neutrinos. Thus, in the partially thermalized sce-
+nario, 0<∆N eff <1,with the limiting case (∆N eff = 1)
+corresponding to a fully thermalized neutrino species.
+For a thermally distributed sterile neutrino with temper-
+atureT s, its relativistic energy density is proportional to
+T 4
+s . Hence, its contribution to the radiation density is
+related to its temperature by,
+Ts
+Tν,active
+= (∆Neff)1/4,where, Tν,active
+Tγ
+≃
+ 4
+11
+1/3
+.
+(5)
+We assume a Fermi–Dirac phase-space distribution for
+the sterile neutrino. Since the number density scales
+asT 3
+s , partial thermalization also reduces the late-time
+abundance of the sterile species. In the non-relativistic
+regime, its cosmological density can therefore be ex-
+pressed in terms of an effective mass,
+ms,eff =m s(∆Neff)3/4.(6)
+Thus, for a given physical massm s, the cosmological
+impact of the sterile neutrino is suppressed when ∆N eff
+is below unity.
+C. The background cosmology
+We consider a Friedmann-Lemaitre-Robertson-Walker
+background with matter, radiation, dark energy, and spa-
+tial curvature. The Friedmann equation for this model
+can be written as,
+H2(a)
+H2
+0
+= Ωγa−4 + (Ωc + Ωb)a−3 + Ωka−2
++ Ωdefde(a) + Ων(a),(7)
+where Ω γ, Ω c, Ω b, Ω k, Ω de, and Ω ν,0 ≡Ω ν(a= 1) de-
+note the present-day density parameters for photons, cold
+dark matter, baryons, curvature, dark energy, and to-
+tal neutrinos (active and sterile), respectively, satisfying
+Ωγ + Ωc + Ωb + Ωk + Ωde + Ων,0 = 1. For dynamical dark
+energy we adopt the Chevallier-Polarski-Linder (CPL)
+form [37, 38],
+w(a) =w 0 +w a(1−a),(8)
+The corresponding dark-energy density evolves as
+fde(a) =a −3(1+w0+wa) exp [−3wa(1−a)].(9)
+The spatial-curvature parameter is defined using the
+standard convention
+Ωk =− k
+a2
+0H2
+0
+.(10)
+Thus Ω k >0 corresponds to an open universe, while
+Ωk <0 corresponds to a closed universe.
+For the neutrino sector, the total neutrino energy den-
+sity contains contributions from all three active neutrinos
+and the partially thermalized sterile species. In our anal-
+ysis, all four neutrino species are treated explicitly as
+
+[PDF page 4]
+4
+non-cold relics, allowing their effects on both the back-
+ground expansion and the evolution of cosmological per-
+turbations to be consistently included. The combined
+energy density parameter can be given as,
+Ων(a) =
+P ρν,active(a) +ρ s(a)
+ρc,0
+.
+The total neutrino energy density does not obey a sin-
+gle power-law scaling throughout cosmic evolution. At
+sufficiently high redshift, when the neutrino species are
+relativistic, their energy densities scale approximately as
+(1+z) 4, contributing to the radiation sector. As the Uni-
+verse expands and individual massive neutrino species
+become non-relativistic, their energy densities gradually
+approach the matter-like scaling (1 +z) 3. Since the
+active and sterile neutrinos can have different masses
+and temperature distributions, their relativistic-to-non-
+relativistic transitions occur at different redshifts.
+The redshift evolution of the total neutrino energy den-
+sity is calculated directly from the corresponding phase-
+space distributions, with the evolution implemented by
+adapting theCLASScode, as detailed in II A and II B.
+D. Growth of structure
+Massive neutrinos suppress clustering on scales smaller
+than their free-streaming length. The observable com-
+monly reported by redshift-space-distortion surveys is
+f σ8(z), defined as the product of the growth ratef(z)
+and the rms matter fluctuation amplitudeσ8(z). In terms
+of the scale factora, this quantity is computed as,
+f σ8(a) =a δ′
+m(a)
+δm(1) σ8,0,(11)
+where
+f(a) = dlnD(a)
+dlna (12)
+is the logarithmic linear growth rate,D(a) denotes the
+linear growth factor, and the prime denotes differentia-
+tion with respect to the scale factora.
+Rather than imposing a scale-independent analytic
+growth approximation, we evaluate the corresponding
+quantity directly fromCLASSfor every sampled cosmol-
+ogy. This is particularly important in the presence of
+massive active and sterile neutrinos.
+III. OBSERVATIONAL DATA
+A. Neutrino-oscillation data
+Recent results from the Jiangmen Underground Neu-
+trino Observatory (JUNO) [33] have opened a new era
+of precision neutrino-oscillation measurements. With
+its long-baseline reactor configuration and high energy
+resolution, JUNO is designed to measure the neutrino
+mass-squared splittings and mixing parameters with un-
+precedented precision, while providing an important av-
+enue toward determining the neutrino mass ordering. In
+our analysis, we incorporate this improved oscillation in-
+formation through priors on the active-neutrino mass-
+squared splittings motivated by the recent JUNO mea-
+surements.
+TABLE I: Neutrino mass-squared differences adopted in
+our analysis.
+Parameter Value Mass ordering
+∆m2
+21 7.49×10 −5 eV2 -
+∆m2
+31 2.513×10 −3 eV2 NO
+∆m2
+32 −2.483×10 −3 eV2 IO
+The precise values of these splittings have a negligible
+impact on the cosmological constraints compared with
+the uncertainty in the absolute mass scale.
+For the sterile-neutrino sector, we adopt priors moti-
+vated by short-baseline (SBL) oscillation phenomenology
+within the (3+1) framework. In the (3+1) framework,
+the relevant mass-squared splitting is ∆m 2
+41 =m 2
+4 −m 2
+1,
+wherem 4 ≡m s denotes the sterile mass eigenstate. Since
+the active-neutrino masses considered in this work are
+sub-eV,m 2
+1 ≪m 2
+s over the parameter region of inter-
+est, and hencem s ≃
+p
+∆m2
+41. The global analysis of
+Gariazzo et al. [34] finds an allowed eV-scale region in
+the mass-squared splitting ∆m 2
+41, with a best-fit value
+near 1.7 eV2 and an allowed region extending to approx-
+imately 1.3 eV 2 at 2σ. We therefore restrict the physi-
+cal sterile-neutrino mass to 0.5≤m s/eV≤1.5, thereby
+focusing on the eV-scale region suggested by SBL oscil-
+lation data rather than allowing an unrestricted sterile-
+mass range. The adopted mass prior should therefore
+be understood as an oscillation-motivated prior on the
+physical sterile-neutrino mass, rather than as a model-
+independent search for sterile states over arbitrary mass
+scales.
+B. Cosmological data
+We constrain the cosmological models considered in
+this work using a complementary combination of early-
+and late-time observations, including the cosmic mi-
+crowave background (CMB), baryon acoustic oscillations
+(BAO), Type Ia supernovae (SNe Ia), redshift-space
+distortions (RSD), and the Hubble Distance Network
+(H0DN) determination of the Hubble constant. The in-
+dividual data sets are described below.
+1.Cosmic Microwave Background (CMB).We
+use the Planck 2018 temperature and polarization
+likelihoods together with the reconstructed CMB
+lensing potential [39, 40]. At low multipoles,
+
+[PDF page 5]
+5
+we include the temperature andE-mode polar-
+ization likelihoods,planck 2018 lowl.TTand
+planck 2018 lowl.EE. At high multipoles, we
+adopt the Planck 2018 CamSpecT T T EEElike-
+lihood,planck 2018 highl CamSpec.TTTEEE,
+including theT T,T E, andEEpower
+spectra [41]. We also include the Planck
+2018 lensing-potential reconstruction through
+planck 2018 lensing.clik[40]. The inclusion
+of CMB lensing is particularly relevant here,
+since massive neutrinos, spatial curvature, and
+dynamical dark energy all affect the late-time
+growth of structure and the lensing potential,
+while BAO and SNe help break the associated
+geometric degeneracies. We refer to this complete
+combination asCMBand use it consistently for all
+cosmological models and neutrino mass orderings.
+2.Baryon Acoustic Oscillations (DESI DR2).
+We use the DESI DR2 baryon acoustic oscillation
+measurements [42, 43], spanning the effective red-
+shift range 0.295≤z≤2.330. The cosmological
+likelihood contains seven effective redshift bins and
+a total of 13 BAO distance measurements. The
+lowest-redshift BGS bin provides the isotropic con-
+straintD V /rd, while the remaining galaxy, quasar,
+and Lyαbins provide anisotropic measurements of
+DM /rd andD H /rd, whereD M andD H =c/H(z)
+are the transverse comoving and Hubble distances,
+respectively, andr d is the sound horizon at the
+baryon-drag epoch. The full covariance informa-
+tion supplied with the DESI DR2 measurements is
+included in the likelihood. We denote this dataset
+byBAO.
+3.Type Ia Supernovae (SNe Ia).Our fiducial su-
+pernova analysis uses the Pantheon+ compilation
+[44], containing 1701 light-curve measurements cor-
+responding to 1550 distinct Type Ia supernovae ex-
+tending toz≃2.26. We use the publicly available
+Pantheon+ likelihood implemented inCobaya1 [45],
+including the published statistical and systematic
+covariance information.
+As a limited robustness check, we repeat the anal-
+ysis of the CPL+Ω k+(3 + 1)νmodel using Union3
+[46] in place of Pantheon+, the resulting con-
+straints are presented in Appendix A 3.
+4.Redshift-space distortions (RSD).To comple-
+ment the geometrical probes with information on
+the growth of large-scale structure, we use a conser-
+vative compilation of redshift-space-distortion mea-
+surements off σ 8(z), spanning 0.067≤z≤1.52.
+Nine measurements, listed in Table II, are treated
+as statistically independent. In addition, the three
+1 https://github.com/CobayaSampler/sn_data
+TABLE II: Redshift-space-distortion measurements
+entering thef σ 8 likelihood and treated as statistically
+independent. The three correlated WiggleZ
+measurements included separately using their published
+covariance matrix.
+Surveyz f σ 8(z) Reference
+6dFGS 0.067 0.4230±0.0550 [50]
+2dFGRS 0.170 0.5100±0.0600 [51]
+BOSS LOWZ 0.320 0.3840±0.0950 [52]
+SDSS-II LRG 0.370 0.4602±0.0378 [53]
+BOSS CMASS 0.570 0.4260±0.0290 [48]
+VVDS 0.770 0.4900±0.1800 [51, 54]
+VIPERS PDR2 0.860 0.4000±0.1100 [55]
+FastSound 1.400 0.4820±0.1160 [56]
+eBOSS DR14 QSO 1.520 0.3960±0.0790 [49]
+WiggleZ measurements atz= 0.44, 0.60, and 0.73
+are included with their published covariance matrix
+[47].
+For each model, the theoreticalf σ 8(z) values are
+obtained directly fromCLASS, with the active and
+sterile neutrino sectors included self-consistently in
+the linear perturbation evolution. We use the pub-
+lished marginalizedf σ 8 measurements without ap-
+plying an additional Alcock-Paczynski (AP) rescal-
+ing. Several measurements in the compilation were
+obtained from analyses that varied growth and AP
+parameters jointly [47–49]. Applying an a poste-
+riori AP correction to such compressed measure-
+ments would therefore be only approximate and
+would not reproduce the full covariance between
+growth and geometrical parameters. We conse-
+quently treat the publishedf σ 8 constraints as an
+effective compressed growth likelihood. Since the
+RSD contribution is subdominant to the CMB,
+BAO, and SNe Ia likelihoods in the present analy-
+sis, we retain the published measurements directly
+and regard any residual dependence on the survey
+fiducial cosmology as a limitation of the compressed
+RSD treatment.
+The WiggleZ measurements are collected into the
+data vector
+dobs
+W = (0.413,0.390,0.437) T , z= (0.44,0.60,0.73),
+(13)
+with the covariance matrix
+CW = 10−3
+
+
+6.400 2.570 0
+2.570 3.969 2.540
+0 2.540 5.184
+
+ .(14)
+The total growth likelihood is then written as
+−2 lnLf σ8 =χ 2
+ind +χ 2
+W,(15)
+where
+χ2
+ind =
+X
+i
+
+f σobs
+8,i −f σ th
+8,i
+2
+σ 2
+f σ8,i
+,(16)
+
+[PDF page 6]
+6
+andχ 2
+W = ∆d T
+WC−1
+W ∆dW,with ∆d W =d obs
+W −dth
+W.
+5.Hubble Distance Network (H0DN).
+We include the recent Hubble Constant Distance
+Network (H0DN) determination as an external con-
+straint on the late-time absolute expansion scale
+[57]. The H0DN analysis combines multiple inde-
+pendent distance indicators and finds an internally
+consistent determination that is robust against the
+removal of individual calibrators. We adopt
+HH0DN
+0 = 73.50±0.81 km s −1 Mpc−1,(17)
+and implement it through the Gaussian likelihood
+−2 lnLH0 = (H0 −73.50) 2
+0.812 .(18)
+The H0DN constraint is particularly relevant for
+the extended cosmologies considered here, since
+the inferred value ofH 0 can be correlated with
+the sterile-neutrino abundance and mass sector,
+the dynamical dark-energy parameters, and spa-
+tial curvature. It therefore provides complementary
+absolute-scale
+For the fiducial analysis, we adopt the combined data
+set
+DPP = CMB+BAODESI DR2+PP+RSD+H H0DN
+0 ,(19)
+where PP denotes the Pantheon+ SNe Ia compilation.
+Unless stated otherwise, all results presented in the main
+text are obtained usingD PP.
+IV. STATISTICAL ANALYSIS
+A. Model space and parameter priors
+We consider four cosmological model classes, summa-
+rized in Table III, each analyzed separately for normal
+and inverted ordering of the three active-neutrino masses.
+All models share the same (3+1)νsector, while the late-
+time background is varied through the dark-energy and
+spatial-curvature sectors.
+The flat ΛCDM+(3 + 1)νmodel serves as the refer-
+ence cosmology, withw=−1 and Ω k = 0. We then
+consider the flat CPL+(3 + 1)νextension, in which the
+dark-energy equation of state is allowed to evolve, and
+the ΛCDM+Ωk + (3 + 1)νmodel, which retainsw=−1
+while allowing spatial curvature to vary. Finally, we con-
+sider the CPL+Ω k + (3 + 1)νmodel, in which both dy-
+namical dark energy and spatial curvature are free. The
+ΛCDM+Ωk+(3+1)νcase provides a useful control model
+for isolating the effect of curvature from that of CPL dy-
+namics.
+The principal sampling priors are listed in Table IV.
+All priors are uniform within the quoted ranges, and iden-
+tical priors are adopted for NO and IO. The same prior
+TABLE III: Cosmological model classes considered in
+this work. Each model is analysed independently for
+normal and inverted ordering of the active-neutrino
+masses.
+Model Geometry Dark energy Neutrino sector
+ΛCDM + (3 + 1)νflatw=−1 (3 + 1)ν, NO/IO
+CPL + (3 + 1)νflat CPL (3 + 1)ν, NO/IO
+ΛCDM + Ωk + (3 + 1)νnon-flatw=−1 (3 + 1)ν, NO/IO
+CPL + Ωk + (3 + 1)νnon-flat CPL (3 + 1)ν, NO/IO
+TABLE IV: Uniform sampling priors adopted in the
+cosmological analysis. The curvature parameter Ω k is
+varied only in the non-flat models.
+Parameter Prior
+mlightest [eV]U[0.001,0.20]
+ms [eV]U[0.50,1.50]
+∆Neff U[0.01,0.80]
+w0 U[−2.0,−0.4]
+wa U[−2.0,1.0]
+Ωk U[−0.05,0.05]
+H0 [km/s/Mpc]U[60,80]
+ωb U[0.019,0.025]
+ωc U[0.09,0.16]
+τreio U[0.01,0.15]
+ns U[0.90,1.05]
+ln(1010As)U[1.61,3.91]
+choices are retained for the different observational data
+combinations considered in Sec. III. This allows the shifts
+in the posterior distributions to be attributed directly to
+changes in the data rather than to changes in prior vol-
+ume.
+The sterile-neutrino mass prior, 0.5≤m s/eV≤1.5,
+is chosen to target the eV-scale sterile-neutrino region
+motivated by short-baseline oscillation phenomenology,
+as discussed in Sec III A. The sterile abundance is var-
+ied independently through ∆N eff (see Sec II B). We re-
+strict the analysis to 0.01≤∆N eff ≤0.80. This range
+restricts the analysis to partially thermalized sterile-
+neutrino scenarios, excluding both the exactly unpop-
+ulated limit, ∆N eff = 0, and the fully thermalized case,
+∆Neff = 1. Our analysis should therefore be interpreted
+as a cosmological test of an oscillation-motivated par-
+tially thermalized eV-scale sterile state, rather than as a
+model-independent search over arbitrary sterile-neutrino
+masses.
+Sincem s,eff is a derived parameter, the uniform priors
+onm s and ∆Neff induce a non-uniform prior onm s,eff.
+We obtain this prior from
+π(ms,eff) =
+Z
+dms d(∆Neff)π(m s,∆N eff)
+×δ D
+h
+ms,eff −m s(∆Neff)3/4
+i
+,(20)
+and normalize it to unit integral before comparing it
+with the marginalized posterior distributions discussed
+
+[PDF page 7]
+7
+in Sec. V B.
+B. Numerical implementation and likelihood
+The background evolution and linear perturbations are
+calculated usingCLASS. A customCLASS-Cobayainter-
+face maps (m lightest, m s,∆N eff,ordering) onto the four
+physical non-cold relic masses and temperatures before
+each Boltzmann evaluation.
+Posterior sampling is performed withCobayausing
+multiple parallel Markov chains and adaptive proposal
+learning. Each cosmological model and active-neutrino
+mass ordering is sampled independently. Convergence
+is monitored using the Gelman-Rubin statistic, and the
+final chains are required to satisfyR−1≲0.03. For
+the fiducial Pantheon+ data combinationD PP defined in
+Eq. (19), the total log-likelihood is
+lnL tot = lnL CMB + lnL BAO + lnL PP
++ lnL f σ8 + lnL H0 .(21)
+Marginalized posterior distributions and credible in-
+tervals are obtained from the converged chains using
+GetDist[58]. The quoted two-sided uncertainties corre-
+spond to 68% marginalized credible intervals, while one-
+sided upper bounds are reported at 95% confidence.
+C. Goodness of fit and model comparison
+We compare each extended model with the correspond-
+ing flat ΛCDM+(3+1)νreference model having the same
+active-neutrino mass ordering. Thus, NO and IO models
+are assessed independently, allowing the effects of dark-
+energy and curvature freedom to be separated from those
+associated with the mass ordering.
+The improvement in the best-fit likelihood is quantified
+by
+∆χ2
+min ≡χ 2
+min,i −χ 2
+min,ref ,(22)
+whereχ 2
+min =−2 lnL max and ’ref’ denotes the ordering-
+matched flat ΛCDM+(3 + 1)νmodel. With this con-
+vention, ∆χ 2
+min <0 indicates that the extended model
+provides a better maximum-likelihood fit than its corre-
+sponding reference cosmology.
+To account for model complexity, we use the Akaike
+and Bayesian information criteria,
+AIC =χ 2
+min + 2k,BIC =χ 2
+min +klnN,(23)
+wherekis the number of fitted parameters andNis the
+total number of data points. Their differences are defined
+as
+∆IC = ICi −IC ref ,IC∈ {AIC,BIC}.(24)
+Negative values favor the extended model, while positive
+values favor the ordering-matched reference model.
+As a complementary model-selection statistic, we com-
+pute the Bayesian evidence usingMCEvidence[59, 60].
+For a modelMwith parametersθ, the Bayesian evi-
+dence is
+ZM ≡(D|M) =
+Z
+L(D|θ,M)π(θ|M)dθ,(25)
+whereLis the likelihood andπdenotes the prior density.
+We report the logarithmic evidence, lnZ, and the Bayes
+factor of an extended modelM i relative to the ordering-
+matched reference model
+Bi,ref = Zi
+Zref
+,(26)
+or equivalently
+lnB i,ref = lnZ i −lnZ ref .(27)
+With this convention, lnB i,ref >0 favors the extended
+model, whereas lnB i,ref <0 favors the ordering-matched
+reference model.
+These statistics probe complementary aspects of model
+performance. While ∆χ 2
+min measures the best-fit im-
+provement, AIC and BIC penalize additional parameters,
+and the Bayesian evidence averages over the full prior
+volume. Hence, improved fit quality does not necessarily
+imply comparable Bayesian support.
+Since the flat CPL+(3 + 1)νmodel is nested within
+its non-flat extension at Ω k = 0, we additionally use
+the Savage-Dickley density ratio as a nested-model cross-
+check of the Bayesian evidence for spatial curvature
+[61, 62]. Provided that the priors for all parameters com-
+mon to the two models are identical, the Bayes factor for
+the flat model relative to the non-flat model is
+BSD
+flat,nonflat = p(Ωk = 0|D,M nonflat)
+π(Ωk = 0| M nonflat) .(28)
+Thus,B SD
+flat,nonflat >1 favors the flat reference model,
+whereasB SD
+flat,nonflat <1 favors the non-flat extension. We
+evaluate this quantity separately for NO and IO, always
+comparing the flat and non-flat realizations of the same
+CPL+(3 + 1)νframework.
+An analogous nested comparison is performed for the
+dark-energy sector. The non-flat Λ + (3 + 1)νmodel
+is recovered from the non-flat CPL+(3 + 1)νmodel at
+(w0, wa) = (−1,0). In this case the relevant Savage-
+Dickery ratio involves the joint marginalized density,
+BSD
+Λ,CPL = p(w0 =−1, w a = 0|D,M CPL)
+π(w0 =−1, w a = 0| M CPL) .(29)
+We do not use the Savage-Dickey ratio to compare
+the full extended model directly with ΛCDM. In partic-
+ular, the no-sterile limit is not a regular nested point
+of the adopted parameterization, since the prior im-
+poses ∆Neff >0 and the sterile-mass parameter becomes
+unidentified as the sterile abundance vanishes.
+
+[PDF page 8]
+8
+V. RESULTS AND DISCUSSION
+We now present the posterior constraints for the four
+model classes defined in Table III, using the fiducial data
+combinationD PP. Each model is analyzed independently
+for NO and IO. Marginalized uncertainties correspond to
+68% credible intervals, while one-sided upper limits are
+quoted at 95% credibility. We first examine the progres-
+sion from the flat ΛCDM+(3 + 1)νreference model to
+the CPL and CPL+Ω k extensions, and subsequently use
+the ΛCDM+Ωk model to disentangle the effects of spatial
+curvature from those of dynamical dark energy.
+A. Cosmological parameter constraints
+The marginalized limits are summarized in Table V
+and principal posterior constraints are shown in Fig. 1.
+Panel (a) displays the late-time parametersH 0, Ωm,σ 8,
+andS 8, while panel (b) focuses on the sterile-neutrino,
+dark-energy, and curvature sectors.
+For the flat ΛCDM+(3 + 1)νreference model we
+obtainH 0 = 69.06 +0.31
+−0.40 km s−1 Mpc−1 (NO), H0 =
+68.85+0.27
+−0.38 km s−1 Mpc−1 (IO) . Allowing a dynamical
+CPL equation of state shifts these values upward to
+70.30+0.60
+−0.68 and 70.10+0.58
+−0.67 km s−1 Mpc−1 for NO and IO,
+respectively. When spatial curvature is additionally var-
+ied, the posterior moves further to 70.93±0.65 and
+70.88±0.67 km s −1 Mpc−1. Thus, the dominant shift
+in the inferred expansion rate is associated with the ad-
+ditional background freedom rather than with the choice
+of neutrino mass ordering.
+The matter density is comparatively insensitive to the
+introduction of CPL dynamics, both the ΛCDM+(3+1)ν
+and CPL+(3 + 1)νmodels give Ω m ≃0.297. Allowing
+curvature instead shifts the CPL+Ω k models to Ω m ≃
+0.304. The clustering amplitude remains similarly sta-
+ble. We findS 8 = 0.782±0.010 and 0.7789±0.0099 for
+the ΛCDM+(3 + 1)νNO and IO models, 0.789±0.012
+and 0.787±0.012 for the corresponding CPL models,
+and 0.785 +0.015
+−0.012 and 0.783 +0.015
+−0.012 when curvature is also
+included. The strong overlap of the NO and IO poste-
+riors across these model classes shows that the late-time
+cosmological constraints depend much more strongly on
+the assumed background dynamics and geometry than
+on the active-neutrino mass ordering.
+The same hierarchy is reflected in the sterile sec-
+tor. The effective sterile contribution increases from
+ms,eff = 0.106+0.030
+−0.075 eV (NO) and 0.090 +0.022
+−0.064 eV (IO) in
+the ΛCDM+(3+1)νreference model to 0.226±0.090 and
+0.192+0.080
+−0.098 eV in the CPL extension, and to 0.361 +0.095
+−0.130
+and 0.350+0.100
+−0.140 eV in the CPL+Ωk model. A correspond-
+ing broadening toward larger ∆N eff accompanies these
+shifts. This progression already indicates that the in-
+ferred sterile-neutrino properties are correlated with the
+freedom allowed in the late-time background, an inter-
+play examined in more detail in the following subsection.
+B. Interplay of spatial curvature, dark energy, and
+the sterile sector
+The model hierarchy introduced above allows the ef-
+fects of spatial curvature and dynamical dark energy to
+be separated. In particular, the ΛCDM+Ω k+(3 + 1)ν
+model provides a useful control for the CPL+Ωk+(3+1)ν
+model, the two share the same curvature and neu-
+trino sectors, while the former is obtained by fixing
+(w0, wa) = (−1,0). The marginalized constraints for
+the ΛCDM+Ωk+(3 + 1)νmodels are summarized in Ta-
+ble VI, and the corresponding joint posterior comparison
+is shown in Fig. 2.
+At fixed curved geometry, allowing CPL dynamics pro-
+duces a correlated shift in the expansion rate and spa-
+tial curvature. For NO, the ΛCDM+Ω k+(3 + 1)νmodel
+givesH 0 = 70.26+0.62
+−0.71 km s−1 Mpc−1,Ω k = 0.0056±
+0.0015,whereas the CPL+Ω k+(3 + 1)νmodel gives
+H0 = 70.93±0.65 km s −1 Mpc−1,Ω k = 0.0045±
+0.0016.For IO, the corresponding change is fromH 0 =
+70.08+0.60
+−0.72 km s−1 Mpc−1,Ω k = 0.0060±0.0015,to
+H0 = 70.88±0.67 km s −1 Mpc−1,Ω k = 0.0049±
+0.0016.Thus, once curvature is allowed, introducing CPL
+freedom shifts the posterior toward slightly largerH0 and
+smaller positive Ω k. The similar behaviour for NO and
+IO indicates that this shift is primarily associated with
+the late-time background parameterization rather than
+with the active-neutrino mass ordering.
+The sterile sector changes coherently with the back-
+ground geometry. For the ΛCDM+Ω k models we obtain
+∆Neff = 0.32+0.16
+−0.19, m s,eff = 0.269±0.096 eV for NO,
+and ∆N eff = 0.30 +0.14
+−0.20, m s,eff = 0.255±0.098 eV
+for IO. Allowing CPL dynamics shifts these constraints
+to ∆N eff = 0.36 +0.14
+−0.16, m s,eff = 0.361 +0.095
+−0.130 eV for
+NO and ∆N eff = 0.34+0.13
+−0.17, m s,eff = 0.350+0.100
+−0.140 eV
+for IO. The CPL+Ω k models therefore accommodate a
+somewhat larger effective sterile contribution than their
+ΛCDM+Ωk counterparts. Together with the curvature
+shift above, this indicates a joint degeneracy among the
+expansion history, spatial geometry, and the cosmological
+sterile-neutrino abundance. These correlations are visible
+directly in Fig. 2, where the ΛCDM+Ω k and CPL+Ω k
+posteriors are compared for both mass orderings.
+Since the adopted uniform priors onm s and ∆Neff in-
+duce a non-uniform prior on the derived quantitym s,eff,
+we compare the unit-normalized marginal posterior den-
+sities with the corresponding priors in Fig. 3. The
+lower 2.5th percentile of the inducedm s,eff prior, de-
+fined from Eq. (20), isq prior
+0.025(ms,eff)≃0.064 eV. For the
+CPL+Ωk+(3 + 1)νmodel, the corresponding posterior
+2.5th percentiles are 0.144 eV and 0.126 eV for NO and
+IO, respectively. Moreover, 99.7% (99.6%) of the poste-
+rior probability lies aboveq prior
+0.025(ms,eff) for NO (IO). This
+indicates that the displacement of the posterior toward
+larger effective sterile masses is not solely a consequence
+of the transformed prior volume. A similar behavior is
+found for ∆N eff. Its uniform prior has a lower 2.5th
+
+[PDF page 9]
+9
+68 70 72 74
+H0
+0.74
+0.76
+0.78
+0.80
+0.82
+S8
+0.725
+0.750
+0.775
+0.800
+0.825
+8
+0.29
+0.30
+0.31
+0.32
+m
+0.30 0.32
+m
+0.75 0.80
+8
+0.75 0.80
+S8
+CDM+(3 + 1)  
+CPL+(3 + 1)  
+CPL+ k+(3 + 1)
+(a)
+0.2 0.5 0.8
+ms, eff
+0.000
+0.005
+0.010
+k
+1.5
+1.0
+0.5
+0.0
+wa
+1.1
+1.0
+0.9
+0.8
+w0
+0.2
+0.4
+0.6
+Neff
+0.2 0.4 0.6
+Neff
+1.0
+ 0.8
+w0
+1
+ 0
+wa
+0.002 0.008
+k
+CDM+(3 + 1)
+CPL+(3 + 1)
+CPL+ k+(3 + 1)
+ (b)
+FIG. 1: Marginalized one- and two-dimensional posterior distributions for the cosmological models considered in this
+work.(a)Constraints in the (H 0,Ω m, σ8, S8) subspace for the flat ΛCDM+(3 + 1)ν, flat CPL+(3 + 1)ν, and
+CPL+Ωk+(3 + 1)νmodels, each analyzed for normal and inverted mass ordering. The shaded vertical band in the
+H0 panels shows the 68% H0DN constraint,H 0 = 73.50±0.81 km s −1 Mpc−1, which is included in the fiducial
+likelihood and is displayed here only as a visual reference to the adopted late-time expansion constraint. The shaded
+horizontal band in theS 8 panels denotes the 68% DES Y6 constraint,S 8 = 0.789±0.012 [63], this measurement is
+not included in the likelihood and is shown only as an external reference.(b)Joint constraints in the
+(ms,eff,∆N eff, w0, wa,Ω k) subspace, illustrating correlations among the sterile-neutrino sector, dynamical dark
+energy, and spatial curvature. Panels involving Ω k apply only to the non-flat CPL+Ω k extensions. Inner and outer
+contours denote the 68% and 95% credible regions, respectively.
+percentileq prior
+0.025(∆Neff) = 0.0298, whereas the corre-
+sponding posterior percentiles for the CPL+Ω k+(3+1)ν
+model are 0.102 and 0.082 for NO and IO, respectively.
+These prior–posterior comparisons quantify the displace-
+ment of the sterile-sector constraints away from the low-
+prior region. They should not, however, be interpreted
+as a formal exclusion of a vanishing sterile contribution,
+since the adopted priors impose hard lower boundaries,
+mmin
+s,eff ≃0.0158 eV and ∆N min
+eff = 0.01, by construction.
+The same trend is summarized more directly in Fig. 4,
+which shows the marginalizedm s,eff distributions for the
+four cosmological model classes. For both NO and IO,
+the posterior shifts systematically toward larger effective
+sterile masses as CPL dynamics and spatial curvature
+are introduced. The largest displacement occurs for the
+CPL+Ωk+(3+1)νmodels, consistent with the lower lim-
+its identified from the equal-tail posterior intervals and
+with the prior-posterior comparison of Fig. 3.
+A complementary view is shown in Fig. 5, where the
+H0-S8 posterior samples for all four cosmological models
+are colour-coded by ∆N eff. The same colour normaliza-
+tion is used in all panels, allowing the sterile-neutrino
+abundance to be compared directly across models and
+mass orderings. The colour gradient reveals a clear corre-
+lation betweenH 0 and ∆Neff, with larger ∆Neff generally
+associated with largerH 0. Allowing dynamical dark en-
+ergy and spatial curvature also broadens and shifts the
+jointH 0-S8 posterior toward larger sterile-sector abun-
+dances, while the overall behaviour remains similar for
+normal and inverted mass ordering.
+An important feature of the extended models is their
+behavior in theH 0-S8 plane. Allowing additional free-
+dom in the late-time background tends to shift the in-
+ferred expansion rate toward larger values, while the
+clustering amplitude remains close toS 8 ≃0.78–0.79.
+In particular, the CPL+Ω k+(3 + 1)νmodel givesH 0 =
+70.93±0.65 km s −1 Mpc−1 andS 8 = 0.785+0.015
+−0.012 for NO,
+with a very similar result for IO. The inferredS 8 is con-
+sistent with the DES Y6 constraint,S 8 = 0.789±0.012,
+which is not included in our likelihood. Thus, the up-
+ward shift inH 0 occurs without a comparably large shift
+inS 8. Since the H0DN prior is included in the fiducial
+data combination, this should not be interpreted as an
+independent resolution of the Hubble tension. Rather, it
+shows that the extended models can accommodate the
+adopted high-H 0 information while retaining a cluster-
+
+[PDF page 10]
+10
+TABLE V: Marginalized constraints from the fiducial data combinationD PP = CMB + BAO + PP + RSD + H0DN.
+Quoted uncertainties correspond to 68% credible intervals, while one-sided upper limits are given at 95% credibility.
+H0 is in km s−1 Mpc−1 and neutrino masses are in eV. The limits on the physical sterile-neutrino massm s are
+conditional on the adopted prior 0.5≤m 4/eV≤1.5. For the ΛCDM models, (w 0, wa) = (−1,0) are fixed, while
+Ωk = 0 is fixed in all flat models.
+ΛCDM+(3 + 1)νCPL+(3 + 1)νCPL+Ω k+(3 + 1)ν
+Parameter NO IO NO IO NO IO
+H0 69.06+0.31
+−0.40 68.85+0.27
+−0.38 70.30+0.60
+−0.68 70.10+0.58
+−0.67 70.93±0.65 70.88±0.67
+ωb 0.02268±0.00015 0.02270±0.00015 0.02259 +0.00015
+−0.00018 0.02256±0.00017 0.02244±0.00017 0.02241±0.00017
+ωc 0.11685+0.00066
+−0.0012 0.11628+0.00062
+−0.0011 0.1211+0.0017
+−0.0028 0.1203+0.0014
+−0.0025 0.1256+0.0025
+−0.0029 0.1253+0.0025
+−0.0031
+τreio 0.0660+0.0079
+−0.0093 0.0687+0.0080
+−0.0095 0.0593+0.0073
+−0.0085 0.0601+0.0072
+−0.0088 0.0585+0.0070
+−0.0086 0.0589+0.0072
+−0.0088
+ns 0.9762+0.0038
+−0.0049 0.9767+0.0036
+−0.0047 0.9749+0.0055
+−0.0069 0.9739+0.0047
+−0.0068 0.9706+0.0060
+−0.0070 0.9694+0.0060
+−0.0069
+ln(1010As) 3.062 +0.016
+−0.020 3.067+0.016
+−0.019 3.057+0.016
+−0.019 3.057+0.015
+−0.019 3.066+0.016
+−0.018 3.066+0.016
+−0.019
+mlightest <0.00880<0.0101<0.0133<0.0156<0.0232<0.0253
+ms <0.891<0.932<0.782<0.807<0.889<0.924
+∆Neff <0.0956<0.0672 0.243 +0.075
+−0.210 <0.244 0.36 +0.14
+−0.16 0.34+0.13
+−0.17
+w0 −1 (fixed)−1 (fixed)−0.902±0.056−0.900±0.055−0.917±0.059−0.921±0.058
+wa 0 (fixed) 0 (fixed)−0.67 +0.25
+−0.22 −0.71+0.25
+−0.22 −0.60+0.28
+−0.24 −0.61+0.27
+−0.24
+Ωk 0 (fixed) 0 (fixed) 0 (fixed) 0 (fixed) 0.0045±0.0016 0.0049±0.0016P mν,active 0.0707+0.0016
+−0.011 0.1097+0.0017
+−0.0097 0.0780+0.0036
+−0.0180 0.1169+0.0040
+−0.0170 0.0982+0.0059
+−0.0390 0.1315+0.0064
+−0.0320
+ms,eff 0.106+0.030
+−0.075 0.090+0.022
+−0.064 0.226±0.090 0.192 +0.080
+−0.098 0.361+0.095
+−0.130 0.350+0.100
+−0.140
+Ωm 0.2965±0.0036 0.2977±0.0036 0.2972±0.0051 0.2974±0.0049 0.3039±0.0056 0.3041±0.0055
+σ8 0.787+0.011
+−0.0093 0.782+0.010
+−0.0084 0.792+0.013
+−0.015 0.791±0.013 0.780 +0.017
+−0.013 0.778+0.017
+−0.014
+S8 0.782±0.010 0.7789±0.0099 0.789±0.012 0.787±0.012 0.785 +0.015
+−0.012 0.783+0.015
+−0.012
+χ2
+min 13349.7 13355.0 13336.12 13339.20 13328.59 13330.24
+TABLE VI: Marginalized constraints for the
+Λ + Ωk + (3 + 1)νmodels for NO and IO usingD PP.
+The dark-energy parameters are fixed to
+(w0, wa) = (−1,0).
+Parameter NO IO
+H0 70.26+0.62
+−0.71 70.08+0.60
+−0.72
+ωb 0.02251±0.00017 0.02249±0.00017
+ωc 0.1241±0.0029 0.1239±0.0029
+τreio 0.0634+0.0079
+−0.0093 0.0644+0.0079
+−0.0094
+ns 0.9727±0.0064 0.9718 +0.0059
+−0.0066
+ln(1010As) 3.073 +0.018
+−0.021 3.075+0.018
+−0.021
+mlightest <0.0137<0.0149
+ms <0.707<0.713
+∆Neff 0.32+0.16
+−0.19 0.30+0.14
+−0.20
+Ωk 0.0056±0.0015 0.0060±0.0015P mν,active 0.0789+0.0035
+−0.019 0.1162+0.0026
+−0.016
+ms,eff 0.269±0.096 0.255±0.098
+Ωm 0.3045±0.0043 0.3061±0.0045
+σ8 0.778±0.012 0.774±0.013
+S8 0.784+0.012
+−0.011 0.781+0.013
+−0.011
+χ2
+min 13336.0 13338.8
+ing amplitude consistent with the independent DES Y6
+determination.
+Overall, this shows that spatial curvature, dark-energy
+dynamics, and the sterile-neutrino contribution cannot
+be interpreted independently within the present param-
+eter space. Allowing CPL evolution redistributes part of
+the late-time background freedom between Ω k and the
+sterile sector, whereas the active mass ordering has only
+0.1 0.5 0.9
+ms, eff
+0.000
+0.005
+0.010
+k
+69
+70
+71
+72
+73
+H0
+0.2
+0.4
+0.6
+Neff
+0.2 0.4 0.6
+Neff
+69 70 71 72 73
+H0
+0.005 0.010
+k
+CDM+ k + (3 + 1)
+CPL+ k+(3 + 1)
+FIG. 2: Marginalized posterior distributions for the
+non-flat CPL+(3 + 1)νand non-flat Λ + (3 + 1)νmodels
+under normal and inverted ordering, usingD PP. The
+comparison isolates the effect of fixing the dark-energy
+sector to (w 0, wa) = (−1,0) while retaining spatial
+curvature and the same neutrino-sector assumptions.
+a secondary effect on these correlations. Whether these
+additional degrees of freedom are statistically supported
+by the data is examined in the following subsection.
+
+[PDF page 11]
+11
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8
+ms, eff [eV]
+0
+2
+4
+6
+8
+10Probability density [eV 1]
+NO
+IO
+Prior
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8
+Neff
+0
+2
+4
+6
+8
+10Probability density
+CDM peak extends above range
+CDM+(3 + 1)
+ CPL+(3 + 1)
+ CDM+ k + (3 + 1)
+ CPL+ k + (3 + 1)
+FIG. 3: Marginalized posterior densities of the effective sterile-neutrino massm s,eff (left)and the extra relativistic
+energy density ∆Neff (right)for the different cosmological models. Colors distinguish the cosmological model, while
+solid and dashed curves denote normal and inverted mass ordering, respectively. The dotted curves show the
+corresponding priors, and all densities are normalized to unit integral. The vertical dotted lines indicate the absolute
+lower boundary of the prior.
+CDM
+(NO)
+CDM
+(IO)
+CPL
+(NO)
+CPL
+(IO)
++ k
+(NO)
++ k
+(IO)
+CPL+ k
+(NO)
+CPL+ k
+(IO)
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+ms, eff [eV]
+ Median, Thick: 68%, Thin: 95%
+FIG. 4: Marginalized posterior distributions of the
+effective sterile-neutrino massm s,eff for the four
+cosmological model classes. The distributions show a
+systematic migration toward largerm s,eff when
+dynamical dark energy and spatial curvature are
+introduced, with the largest shift occurring in the
+CPL+Ωk+(3 + 1)νmodels. The violin widths represent
+the normalized marginal posterior densities, markers
+and horizontal intervals indicate the posterior median
+and the 68% and 95% credible intervals, respectively.
+C. Relative performance of the cosmological
+models
+The relative statistical performance of the models is
+summarized in Table VII. To avoid confusing the effects
+of the active-neutrino mass ordering with those of the
+cosmological extensions, each model is compared with
+TABLE VII: Model-comparison statistics relative to the
+corresponding flat ΛCDM+(3 + 1)νreference model.
+The NO extensions are compared with the NO baseline,
+and the IO extensions with the IO baseline. Negative
+∆χ2
+min, ∆AIC, and ∆BIC favor the extended model in
+the corresponding criterion, while positive lnBfavors
+the extension relative to its ordering-matched reference.
+Model ∆χ 2
+min ∆AIC ∆BIC lnB
+Normal ordering (NO)
+CPL+(3 + 1)ν−13.58−9.58 +3.12 +1.0
+CPL+Ωk+(3 + 1)ν−21.10−15.10 +3.95 +4.9
+ΛCDM+Ωk+(3 + 1)ν−13.70−11.70−5.35 +6.1
+Inverted ordering (IO)
+CPL+(3 + 1)ν−15.80−11.80 +0.90 +3.0
+CPL+Ωk+(3 + 1)ν−24.76−18.76 +0.29 +7.6
+ΛCDM+Ωk+(3 + 1)ν−16.20−14.20−7.85 +8.2
+the corresponding flat ΛCDM+(3 + 1)νreference model
+having the same ordering. Thus, the NO and IO sectors
+are assessed independently.
+All six extensions improve the maximum likelihood rel-
+ative to their ordering-matched reference models. For
+the flat CPL+(3 + 1)νmodels, we obtain ∆χ 2
+min =
+−13.58 for NO and−15.80 for IO. After accounting
+for the two additional CPL parameters, these corre-
+spond to ∆AIC =−9.58 and−11.80, respectively.
+Allowing both CPL dynamics and spatial curvature
+produces the largest maximum-likelihood improvement,
+∆χ2
+min =−21.10 (NO),−24.76 (IO),with corre-
+sponding ∆AIC =−15.10 and−18.76. Hence, according
+to the AIC, the CPL+Ω k+(3 + 1)νmodels provide the
+strongest improvement among the extensions considered.
+The curvature-only ΛCDM+Ω k+(3 + 1)νmodels also
+
+[PDF page 12]
+12
+0.74
+0.76
+0.78
+0.80
+0.82
+0.84S8
+NO
+CDM+(3 + 1)
+ CPL+(3 + 1)
+ CDM+ k + (3 + 1)
+ CPL+ k + (3 + 1)
+68 70 72 74
+H0
+0.74
+0.76
+0.78
+0.80
+0.82
+0.84S8
+IO
+68 70 72 74
+H0
+68 70 72 74
+H0
+68 70 72 74
+H0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+Neff
+FIG. 5: Posterior distributions in theH 0–S8 plane for the four cosmological models considered in this work,
+obtained with the fiducialD PP data combination. The upper and lower rows correspond to normal inverted mass
+ordering, respectively, while the columns show the different late-time cosmological backgrounds. Posterior samples
+are colour-coded by ∆N eff using a common colour normalization across all panels, allowing the sterile-neutrino
+abundance to be compared directly between models and mass orderings. The solid contours denote the marginalized
+68% and 95% credible regions.
+provide a substantial improvement, with ∆χ 2
+min =
+−13.70 and−16.20 for NO and IO, respectively. Since
+only one additional cosmological parameter, Ω k, is intro-
+duced relative to the corresponding reference model, the
+AIC penalties are smaller, giving ∆AIC =−11.70 for NO
+and−14.20 for IO. The BIC emphasises this economy of
+parameters even more strongly, the curvature-only mod-
+els give ∆BIC =−5.35 and−7.85, whereas the CPL
+and CPL+Ωk extensions retain slightly positive BIC dif-
+ferences. Thus, the information criteria distinguish be-
+tween the largest improvement in best-fit likelihood and
+the most economical extension.
+The Bayesian evidence gives a consistent but more
+global assessment. With the convention lnB=
+ln(Zi/Zref), positive values favour the extension relative
+to its ordering-matched ΛCDM+(3 + 1)νreference. We
+find lnB= 1.0 and 3.0 for the flat CPL models un-
+der NO and IO, respectively. Including curvature in-
+creases the evidence to lnB= 4.9 for NO and 7.6 for
+IO in the CPL+Ω k models. The largest evidence ra-
+tios are obtained for the simpler ΛCDM+Ω k extensions,
+with lnB= 6.1 for NO and 8.2 for IO. The Bayesian
+comparison therefore indicates that much of the statisti-
+cal improvement can be captured by introducing spatial
+curvature alone, without requiring the additional CPL
+degrees of freedom.
+The different ordering of the models under AIC, BIC,
+and Bayesian evidence reflects the distinct manner in
+which these quantities penalize model complexity. The
+CPL+Ωk models achieve the lowestχ 2
+min and the most
+negative ∆AIC, showing that the combined dark-energy
+and curvature freedom provides the best maximum-
+likelihood fit. In contrast, both the BIC and the Bayesian
+evidence favor the more economical ΛCDM+Ω k exten-
+sion, which achieves a substantial fit improvement with
+only one additional background parameter. The evidence
+values should nevertheless be interpreted conditional on
+the adopted parameter priors.
+The improvement in fit quality should also be under-
+stood as a property of the joint data combination rather
+than as an independent preference of every constituent
+likelihood. The additional degrees of freedom allow the
+combined early- and late-time constraints to be accom-
+modated more flexibly, while individual data sets need
+not separately favor the corresponding extension.
+As a nested-model cross-check, we evaluate the Savage-
+Dickney density ratio for the flat limit, Ω k = 0, of the
+CPL+Ωk+(3 + 1)νmodel, as described in Sec. IV C. For
+ease of interpretation, we quote the inverse Bayes factor,
+BSD
+nonflat,flat ≡(B SD
+flat,nonflat)−1, obtainingB SD
+nonflat,flat ≃
+2.6 (NO), B SD
+nonflat,flat ≃6.8 (IO).Both esti-
+mates remain stable when the one-dimensional density-
+smoothing scale is varied over 0.3≤smooth scale 1D≤
+0.6. Thus, within the CPL+(3 + 1)νsector, the nested-
+model comparison favors the non-flat realization for both
+mass orderings, with stronger support for IO.
+Similarly, for the dynamical dark-energy extension we
+obtainB SD
+CPL,Λ ≃0.86 (NO), B SD
+CPL,Λ ≃1.95 (IO),
+
+[PDF page 13]
+13
+whereB SD
+CPL,Λ >1 favors the CPL extension over the
+cosmological-constant limit. For NO, the Bayes factor
+is close to unity and therefore provides little discrimina-
+tion between the two models. For IO, the ratio modestly
+favors the CPL extension. The Savage-Dickey tests indi-
+cate that the nested-model support for spatial curvature
+is stronger than that for the additional CPL dark-energy
+freedom, particularly for IO.
+Taken together, the posterior constraints and model-
+comparison statistics indicate that the main shifts in the
+inferred cosmology are driven by the combined freedom
+in the sterile-neutrino, dark-energy, and curvature sec-
+tors. The neutrino mass ordering primarily affects the
+active-neutrino mass spectrum, while its impact on the
+late-time cosmological parameters and on the relative
+statistical performance of the extended models remains
+comparatively small. By contrast, allowing spatial curva-
+ture and dynamical dark energy produces more apprecia-
+ble changes inH 0, Ωk, and the sterile-sector parameters,
+withS 8 remaining relatively stable across the model vari-
+ants considered.
+VI. SUMMARY AND OUTLOOK
+We have investigated a partially thermalized sterile-
+neutrino scenario in a 3+1 framework, allowing simul-
+taneously for dynamical dark energy and spatial curva-
+ture. We considered both normal and inverted ordering
+of the three active neutrinos and combined CMB, BAO,
+Type-Ia supernovae, redshift-space distortion, and local
+Hubble-distance measurements. Our results demonstrate
+that the cosmological inference of sterile-neutrino proper-
+ties depends strongly on both the sterile-neutrino abun-
+dance and the assumed late-time expansion history.
+A central result of this work is that allowing partial
+thermalization permits an eV-scale sterile-neutrino sec-
+tor to remain compatible with the cosmological data con-
+sidered here. Rather than assuming a fully thermalized
+fourth species, we allow its relativistic contribution ∆Neff
+and physical mass to vary independently, thereby ac-
+counting for a suppressed sterile abundance. We find
+∆Neff ≃0.24 in the flat CPL models and≃0.34-0.36 in
+the non-flat CPL models, substantially below the fully
+thermalized limit ∆N eff ≃1. Correspondingly, the ef-
+fective sterile mass increases fromm s,eff ≃0.09-0.11 eV
+in flat ΛCDM to 0.19-0.23 eV in flat CPL and≃0.35
+eV in the non-flat CPL models. Thus, the extended cos-
+mologies permit a substantially larger sterile contribution
+while retaining a subthermal sterile abundance.
+This result is particularly relevant in light of the recent
+analysis of Ladeira et al., [17] which explicitly examined
+whether cosmological data exclude sterile neutrinos in
+general or primarily the fully thermalized scenario. Using
+Planck, DESI DR2 BAO and supernova data, they found
+that the fully thermalized sterile scenario is strongly dis-
+favored, whereas partially populated sterile-neutrino re-
+alizations remain viable, their different-temperature ster-
+ile relic provided the least cosmological tension among
+the cases considered. They further showed that cos-
+mological data constrain the effective sterile abundance
+much more strongly than the physical sterile mass [17].
+Our results are consistent with this broader picture, but
+extend it by allowing the sterile abundance to vary con-
+tinuously within a (3+1) model while simultaneously
+varying both dark-energy dynamics and spatial curva-
+ture. In particular, our non-flat CPL models accommo-
+datem s,eff ≃0.35 eV with ∆N eff ≃0.35, illustrating
+explicitly how a moderately populated sterile species can
+leave a larger effective mass signature without approach-
+ing the fully thermalized limit.
+Our results agree with recent DESI DR2 analyses
+showing that the inclusion of additional radiation can
+substantially weaken cosmological constraints on sterile-
+neutrino masses, allowing partially thermalized sub-eV
+sterile neutrinos to remain viable when combined with
+a localH 0 measurement [64]. Our results also agree
+qualitatively with other recent DESI analyses. For ex-
+ample, Du et al. found that aw 0waCDM model with
+a sterile neutrino can accommodate a nonzero effec-
+tive sterile mass at approximately the 2σlevel, obtain-
+ingm s,eff = 0.50 +0.33
+−0.27 eV, whereas their corresponding
+ΛCDM and constant-w models did not provide evidence
+for a massive sterile neutrino [65]. Our inferred values
+are somewhat lower,m s,eff ≃0.35 eV in the non-flat CPL
+models, but exhibit the same qualitative dependence on
+the freedom in the late-time expansion history. The dif-
+ference in the numerical constraints is expected given the
+different datasets, treatment of the sterile distribution,
+active-neutrino sector, and inclusion of spatial curvature.
+Allowing extensions of the late-time cosmology also re-
+laxes the active-neutrino mass constraints. The total
+active mass increases from 0.0707 +0.0016
+−0.0011 eV (NO) and
+0.1097+0.0017
+−0.0097 eV (IO) in flat ΛCDM to 0.0982 +0.0059
+−0.0039 eV
+and 0.1315 +0.0064
+−0.0032 eV, respectively, in the non-flat CPL
+models. At the same time,H 0 increases from∼69
+km/s/Mpc in flat ΛCDM to∼70.9 km/s/Mpc in the
+non-flat CPL models. These shifts illustrate the strong
+degeneracy between neutrino masses, the sterile abun-
+dance, and the late-time expansion history. They are
+also consistent with the broader DESI BAO finding that
+neutrino-mass constraints can be substantially modified
+when the assumption of a cosmological constant is re-
+laxed [27, 31, 66, 67]. Our results further demonstrate
+that this behavior persists in an enlarged (3+1) neutrino
+sector, where the active-neutrino mass budget is accom-
+panied by a partially thermalized sterile component.
+The model-comparison statistics further demonstrate
+the impact of these extensions. Relative to flat
+ΛCDM(3+1)ν, the CPL models improve the minimum
+χ2 by 13.6-15.8, while the non-flat CPL models improve
+it by 21.1-24.8. The corresponding AIC differences are
+negative, ∆AIC=-9.6 to -18.8, and the Bayesian evidence
+increases, with lnB=+1.0 to +8.2. The BIC provides a
+more conservative assessment, particularly for the CPL
+models. Thus, while the extended models substantially
+
+[PDF page 14]
+14
+improve the fit, the statistical evidence depends on the
+adopted complexity penalty and does not independently
+establish the necessity of curvature or dynamical dark
+energy.
+The comparison between the normal and inverted
+active-neutrino orderings reveals a non-negligible depen-
+dence of the cosmological fit on the assumed mass hier-
+archy. In our analysis, the inverted-ordering models con-
+sistently yield larger improvements in the minimumχ 2,
+as well as more favorable AIC values and larger Bayesian
+evidence ratios, than their normal-ordering counterparts.
+This trend is seen across both the flat and non-flat
+dynamical-dark-energy models. This hierarchy depen-
+dence is noteworthy in light of recent cosmological anal-
+yses showing that the inferred neutrino-mass constraints
+and ordering preference can depend appreciably on the
+assumed hierarchy, data combination, and cosmologi-
+cal model [68, 69]. At the same time, recent DESI-
+based analyses within the standard three-neutrino frame-
+work have reported a preference for the normal ordering
+[66, 70], while global oscillation analyses provide an in-
+dependent, although not yet overwhelming, sensitivity to
+the mass ordering [71]. However, our BIC results, provide
+a more nuanced picture, although the inverted-ordering
+models have smaller BIC differences than the correspond-
+ing normal-ordering models, the positive ∆BIC values
+for the CPL extensions indicate that the additional de-
+grees of freedom are not uniformly favored once the BIC
+penalty is taken into account. Thus, the apparent pref-
+erence for the inverted ordering in our extended models
+should not be interpreted as an independent cosmolog-
+ical determination of the mass hierarchy, but rather as
+a model-dependent outcome of the combined fit and the
+adopted model-selection criterion.
+Finally, our results are relevant to the recent discus-
+sion of an apparent cosmological preference for an effec-
+tive neutrino mass below the physical lower bound [72–
+75]. Recent analyses have shown that this preference can
+be sensitive to CMB lensing and to the assumed late-
+time cosmology, with dynamical dark energy shifting the
+inferred effective mass toward physically allowed values
+[74, 76–79]. Our analysis instead keeps all physical neu-
+trino masses non-negative and explores how additional
+freedom in (w 0, wa,Ω k), together with a partially pop-
+ulated sterile sector, modifies the cosmological neutrino
+constraints. Overall, our results indicate that current
+cosmological data do not generically exclude the presence
+of an eV-scale sterile neutrino, but instead place strong
+constraints on its degree of thermalization and effective
+cosmological abundance. Future CMB-lensing, BAO, su-
+pernova, and large-scale-structure measurements will be
+crucial for determining whether the present indications
+for a nonzero sterile contribution persist and for disentan-
+gling sterile-neutrino physics from dark-energy dynamics
+and spatial curvature.
+ACKNOWLEDGMENTS
+GK acknowledges financial support from Vellore In-
+stitute of Technology through its Seed Grant (No.
+SG20230035, 2023). KP acknowledges financial support
+from Vellore Institute of Technology through its Seed
+Grant (No. SG20230039, 2023). The authors also thank
+the Centre for Technical Support at VIT Vellore for pro-
+viding the required computational facilities.
+Appendix A: Supplementary constraints and
+robustness tests
+1. Full posterior distributions
+Figure A.1 presents the marginalized one- and two-
+dimensional posterior distributions of the main cosmo-
+logical and sterile-neutrino parameters for all models us-
+ing the fiducial Pantheon+ data combination. The figure
+provides a compact view of the parameter correlations
+and degeneracies underlying the marginalized constraints
+discussed in the main text.
+2. Baseline cosmological parameters
+As a supplementary consistency check, Fig. A.2 sum-
+marizes the constraints on the six standard ΛCDM pa-
+rameters for the data combinations considered in this
+work. The forest representation provides a compact com-
+parison of the posterior central values and uncertainties
+and serves as a baseline reference for the extended cos-
+mological models discussed in the main text.
+3. Dependence on the SNe Ia compilation
+To assess the sensitivity of the inferred constraints to
+the adopted supernova compilation, we repeat the anal-
+ysis of the CPL+Ω k+(3 + 1)νmodel using Union3 [46]
+in place of Pantheon+, while keeping all other likelihood
+components unchanged. Table A.1 compares the result-
+ing marginalized constraints. The overall agreement be-
+tween the two analyses indicates that the main conclu-
+sions for this model are robust to the choice of SNe Ia
+compilation.
+
+[PDF page 15]
+15
+0.2 0.4 0.6
+Neff
+0.1
+0.5
+0.9
+ms, eff
+0.75
+0.80
+8
+0.96
+0.97
+0.98
+0.99
+ns
+0.04
+0.06
+0.08
+0.10
+reio
+0.12
+0.13
+c
+0.0220
+0.0225
+0.0230
+b
+70
+72
+H0
+0.000
+0.005
+0.010
+k
+1
+0
+wa
+1.0
+0.8
+w0
+1.0
+ 0.8
+w0
+1
+ 0
+wa
+0.002 0.008
+k
+70 72
+H0
+0.023
+b
+0.12 0.13
+c
+0.05 0.09
+reio
+0.96 0.98
+ns
+0.75 0.80
+8
+0.2 0.5 0.8
+ms, eff
+CDM+(3 + 1)  (NO)
+CDM+(3 + 1)  (IO)
+CPL+(3 + 1)  (NO)
+CPL+(3 + 1)  (IO)
+CDM+ k + (3 + 1)  (NO)
+CDM+ k + (3 + 1)   (IO)
+CPL+ k+(3 + 1)  (NO)
+CPL+ k+(3 + 1)  (IO)
+FIG. A.1: Marginalized one- and two-dimensional posterior distributions of the cosmological and sterile-neutrino
+parameters for the models considered in this work using the fiducial Pantheon+ data combination. Contours
+indicate the 68% credible regions.
+
+[PDF page 16]
+16
+69 70 71 72
+H0
+CDM
+CDM+(3 + 1)
+CPL+(3 + 1)
+CDM+ k+(3 + 1)
+CPL+ k+(3 + 1)
+0.0222 0.0224 0.0226 0.0228 0.0230
+b
+0.115 0.120 0.125 0.130
+c
+0.05 0.06 0.07 0.08
+CDM
+CDM+(3 + 1)
+CPL+(3 + 1)
+CDM+ k+(3 + 1)
+CPL+ k+(3 + 1)
+0.96 0.97 0.98 0.99
+ns
+3.02 3.04 3.06 3.08 3.10
+ln(1010As)
+FIG. A.2: Forest plot showing the marginalized constraints on the six standard cosmological parameters using
+fiducial Pantheon+ data combination for the different cosmological models considered in this work. Thick and thin
+horizontal bars denote the 68% and 95% credible intervals, respectively, while the markers indicate the posterior
+medians. Circles and squares correspond to normal and inverted ordering, respectively. The standard ΛCDM result
+is shown separately as the reference cosmology. The comparison illustrates the shifts and changes in the parameter
+uncertainties induced by the sterile-neutrino sector, dynamical dark energy, and spatial curvature.
+TABLE A.1: Marginalized constraints on the parameters of the CPL+Ω k + (3 + 1)νmodel for normal and inverted
+ordering, using Union3 and Pantheon+ supernova data.
+Parameter Union3 Pantheon+
+NO IO NO IO
+mlightest [eV]<0.0232<0.0249<0.0234<0.0252
+mphys
+s [eV]<0.895<0.901<0.895<0.914
+∆Neff 0.39+0.15
+−0.19 0.35+0.14
+−0.18 0.36+0.14
+−0.16 0.34+0.13
+−0.17
+w0 −0.908±0.082−0.912±0.081−0.918±0.059−0.920±0.058
+wa −0.63+0.34
+−0.30 −0.65+0.33
+−0.30 −0.60+0.28
+−0.24 −0.61±0.26
+Ωk 0.0045+0.0015
+−0.0017 0.0049±0.0016 0.0045±0.0016 0.0049±0.0016
+H0 [km s−1 Mpc−1] 70.96±0.73 70.90±0.68 70.93±0.66 70.87±0.67
+ωb 0.02245±0.00017 0.02241±0.00017 0.02244±0.00017 0.02241±0.00017
+ωc 0.1258+0.0028
+−0.0033 0.1256+0.0027
+−0.0031 0.1255+0.0026
+−0.0029 0.1253+0.0025
+−0.0030
+τreio 0.0585+0.0075
+−0.0085 0.0585+0.0071
+−0.0084 0.0586+0.0070
+−0.0087 0.0588+0.0071
+−0.0087
+ns 0.9712+0.0063
+−0.0073 0.9697+0.0060
+−0.0072 0.9705+0.0060
+−0.0070 0.9694+0.0060
+−0.0069
+ln(1010As) 3.066±0.018 3.066 +0.016
+−0.018 3.066+0.016
+−0.018 3.066+0.016
+−0.019
+Ωm 0.3044±0.0069 0.3045±0.0069 0.3038±0.0056 0.3041±0.0055
+σ8 0.779+0.017
+−0.014 0.777+0.017
+−0.014 0.780+0.017
+−0.013 0.778+0.016
+−0.013
+S8 0.784+0.016
+−0.013 0.783+0.015
+−0.012 0.785+0.015
+−0.012 0.783+0.015
+−0.012P mν,active [eV] 0.0964 +0.0084
+−0.037 0.1317+0.0047
+−0.032 0.0987+0.0058
+−0.039 0.1315+0.0061
+−0.032
+ms,eff [eV] 0.37 +0.10
+−0.14 0.35+0.10
+−0.13 0.360+0.096
+−0.14 0.345+0.098
+−0.14
+
+[PDF page 17]
+17
+[1] Y. Fukudaet al., Phys. Rev. Lett.81, 1562 (1998).
+[2] Q. R. Ahmadet al., Phys. Rev. Lett.89, 011301 (2002).
+[3] R. L. Workmanet al., Progress of Theoretical and Ex-
+perimental Physics2022, 083C01 (2022).
+[4] A. Aguilaret al., Phys. Rev. D64, 112007 (2001).
+[5] A. A. Aguilar-Arevaloet al., Phys. Rev. Lett.121,
+221801 (2018).
+[6] S. Gariazzo, C. Giunti, M. Laveder, Y. F. Li, and
+E. M. Zavanin, Journal of Physics G Nuclear Physics43,
+033001 (2015).
+[7] M. Dentler, ´A. Hern´ andez-Cabezudo, J. Kopp,
+P. Machado, M. Maltoni, I. Martinez-Soler, and
+T. Schwetz, Journal of High Energy Physics2018, 10
+(2018).
+[8] I. Alekseevet al., Physics Letters B787, 56 (2018).
+[9] J. Lesgourgues and S. Pastor, Phys. Rep.429, 307
+(2006).
+[10] S. Hannestad, Annual Review of Nuclear and Particle
+Science56, 137 (2006).
+[11] R. Allison, P. Caucal, E. Calabrese, J. Dunkley, and
+T. Louis, Phys. Rev. D92, 123535 (2015).
+[12] E. Di Valentino, S. Gariazzo, and O. Mena, arXiv e-prints
+, arXiv:2404.19322 (2024).
+[13] Planck Collaborationet al., Astron. Astrophys.641, A6
+(2020).
+[14] S. Hannestad, I. Tamborra, and T. Tram, Journal of Cos-
+mology and Astroparticle Physics2012(7), 025.
+[15] M. Archidiacono, S. Hannestad, R. S. Hansen, and
+T. Tram, Phys. Rev. D91, 065021 (2015).
+[16] P. F. de Salas, M. Lattanzi, G. Mangano, G. Miele,
+S. Pastor, and O. Pisanti, Phys. Rev. D92, 123534
+(2015).
+[17] A. Ladeira, R. C. Nunes, E. Di Valentino, and S. Gari-
+azzo, Phys. Rev. D114, 043511 (2026).
+[18] J. Lesgourgues and S. Pastor, arXiv e-prints ,
+arXiv:1212.6154 (2012).
+[19] A. Smith, M. Archidiacono, A. Cooray, F. De Bernardis,
+A. Melchiorri, and J. Smidt, Phys. Rev. D85, 123521
+(2012).
+[20] M. Archidiacono, T. Brinckmann, J. Lesgourgues, and
+V. Poulin, Journal of Cosmology and Astroparticle
+Physics2017(2), 052.
+[21] V. Poulin, K. K. Boddy, S. Bird, and M. Kamionkowski,
+Phys. Rev. D97, 123504 (2018).
+[22] R. K. Sharma, K. L. Pandey, and S. Das, Astrophys. J.
+934, 113 (2022).
+[23] E. Di Valentino, S. Gariazzo, and O. Mena, Phys. Rev.
+D106, 043540 (2022).
+[24] E. Di Valentino, S. Gariazzo, W. Giar` e, and O. Mena,
+Phys. Rev. D108, 083509 (2023).
+[25] W. Giar` e, D. H. Lee, and E. D. Valentino, New Astron.
+Rev.103, 101759 (2026).
+[26] H. Pulido-Hern´ andez and J. L. Cervantes-Cota, Phys.
+Rev. D114, 043543 (2026).
+[27] A. Chudaykin, M. M. Ivanov, and O. H. E. Philcox, Phys.
+Rev. D113, 123506 (2026).
+[28] A. Ladeira, R. C. Nunes, S. Pan, and W. Yang, Phys.
+Rev. D113, 083503 (2026).
+[29] K. Lodhaet al., Phys. Rev. D111, 023532 (2025).
+[30] W. Elberset al., Phys. Rev. D112, 083513 (2025).
+[31] A. G. Adameet al., Journal of Cosmology and Astropar-
+ticle Physics2025(2), 021.
+[32] E. Di Valentino, A. Melchiorri, and O. Mena, Journal of
+Cosmology and Astroparticle Physics2013(11), 018.
+[33] JUNO Collaborationet al., Nature (London)654, 343
+(2026).
+[34] S. Gariazzo, C. Giunti, M. Laveder, and Y. F. Li, Journal
+of High Energy Physics2017, 135 (2017).
+[35] D. Blas, J. Lesgourgues, and T. Tram, J. Cosmol. As-
+tropart. Phys.07, 034.
+[36] J. J. Bennett, G. Buldgen, P. F. de Salas, M. Drewes,
+S. Gariazzo, S. Pastor, and Y. Y. Y. Wong, Journal of
+Cosmology and Astroparticle Physics2021(4), 073.
+[37] M. Chevallier and D. Polarski, Int. J. Mod. Phys. D10,
+213 (2001).
+[38] E. V. Linder, Phys. Rev. Lett.90, 091301 (2003).
+[39] Planck Collaboration, Astronomy & Astrophysics641,
+A5 (2020).
+[40] Planck Collaboration, Astronomy & Astrophysics641,
+A8 (2020).
+[41] G. Efstathiou and S. Gratton, The Open Journal of As-
+trophysics4, 10.21105/astro.1910.00483 (2021).
+[42] M. Abdul Karimet al., Phys. Rev. D112, 083515 (2025).
+[43] M. Abdul Karimet al., Phys. Rev. D112, 083514 (2025).
+[44] D. Broutet al., Astrophys. J.938, 110 (2022).
+[45] J. Torrado and A. Lewis, J. Cosmol. Astropart. Phys.05,
+057.
+[46] D. Rubinet al., Astrophys. J.986, 231 (2025).
+[47] C. Blakeet al., Mon. Not. Roy. Astron. Soc.425, 405
+(2012).
+[48] H. Gil-Mar´ ın, W. J. Percival, L. Verde, J. R. Brownstein,
+C.-H. Chuang,et al., Mon. Not. Roy. Astron. Soc.465,
+1757 (2017).
+[49] J. Hou, A. G. S´ anchez, R. Scoccimarro, S. Salazar-
+Albornoz, E. Burtin,et al., Mon. Not. Roy. Astron. Soc.
+480, 2521 (2018).
+[50] F. Beutler, C. Blake, M. Colless, D. H. Jones, L. Staveley-
+Smith,et al., Mon. Not. Roy. Astron. Soc.423, 3430
+(2012).
+[51] Y.-S. Song and W. J. Percival, J. Cosmol. Astropart.
+Phys.10, 004.
+[52] C.-H. Chuang, F. Prada, F. Beutler, D. J. Eisenstein,
+S. Escoffier,et al., Mon. Not. R. Astron. Soc.461, 3781
+(2016), arXiv:1312.4889 [astro-ph.CO].
+[53] L. Samushia, W. J. Percival, and A. Raccanelli, Mon.
+Not. Roy. Astron. Soc.420, 2102 (2012).
+[54] L. Guzzo, M. Pierleoni, B. Meneux, E. Branchini,
+O. Le F` evre,et al., Nature451, 541 (2008).
+[55] A. Pezzotta, S. de la Torre, J. Bel, B. R. Granett,
+L. Guzzo,et al., Astron. Astrophys.604, A33 (2017).
+[56] T. Okumura, C. Hikage, T. Totani, M. Tonegawa,
+H. Okada,et al., Publ. Astron. Soc. Jap.68, 38 (2016).
+[57] S. Casertanoet al., Astron. Astrophys.708, A166 (2026).
+[58] A. Lewis, J. Cosmol. Astropart. Phys.08, 025.
+[59] A. Heavens, Y. Fantaye, A. Mootoovaloo, H. Eggers,
+Z. Hosenie, S. Kroon, and E. Sellentin, arXiv e-prints
+, arXiv:1704.03472 (2017), arXiv:1704.03472 [stat.CO].
+[60] Y. Fantaye, MCEvidence: A python package im-
+plementing the Marginal Likelihoods from Monte
+Carlo Markov Chains algorithm,https://github.com/
+yabebalFantaye/MCEvidence(2026), gitHub repository,
+
+[PDF page 18]
+18
+accessed 2026.
+[61] I. Verdinelli and L. Wasserman, Journal of the American
+Statistical Association90, 614 (1995).
+[62] R. Trotta, Mon. Not. Roy. Astron. Soc.378, 72 (2007).
+[63] DES Collaborationet al., arXiv e-prints ,
+arXiv:2601.14559 (2026), arXiv:2601.14559 [astro-
+ph.CO].
+[64] H. G. Escudero and K. N. Abazajian, Phys. Rev. D113,
+023508 (2026).
+[65] G.-H. Du, T.-N. Li, P.-J. Wu, L. Feng, S.-H. Zhou, J.-F.
+Zhang, and X. Zhang, Eur. Phys. J. C86, 110 (2026).
+[66] M. M. Ivanov, J. M. Sullivan, R. de Belsunce, S.-F. Chen,
+A. Chudaykin, M. Maus, and O. H. E. Philcox, Phys.
+Rev. D114, 063526 (2026), arXiv:2601.16165 [astro-
+ph.CO].
+[67] S. Barua and S. Desai, Physics of the Dark Universe51,
+102229 (2026).
+[68] L. Herold and M. Kamionkowski, Phys. Rev. D111,
+083518 (2025).
+[69] I. J. Allali and A. Notari, Journal of Cosmology and As-
+troparticle Physics2024(12), 020.
+[70] J.-Q. Jiang, W. Giar` e, S. Gariazzo, M. G. Dainotti,
+E. Di Valentino, O. Mena, D. Pedrotti, S. S. da Costa,
+and S. Vagnozzi, Journal of Cosmology and Astroparticle
+Physics01, 153.
+[71] I. Esteban, M. C. Gonzalez-Garcia, M. Maltoni,
+I. Martinez-Soler, J. P. Pinheiro, and T. Schwetz, JHEP
+12, 216.
+[72] D. Green and J. Meyers, Phys. Rev. D111, 083507
+(2025).
+[73] W. Elberset al., Phys. Rev. D112, 083513 (2025).
+[74] W. Elbers, C. S. Frenk, A. Jenkins, B. Li, and S. Pascoli,
+Phys. Rev. D111, 063534 (2025).
+[75] D. Naredo-Tuero, M. Escudero, Enrique Fernandez-
+Martinez, X. Marcano, and V. Poulin, Phys. Rev. D110,
+123537 (2024).
+[76] T. Jhaveri, T. Karwal, and W. Hu, Phys. Rev. D112,
+043541 (2025).
+[77] N. Craig, D. Green, J. Meyers, and S. Rajendran, Journal
+of High Energy Physics2024, 97 (2024).
+[78] H. G. Escudero and K. N. Abazajian, Phys. Rev. D111,
+043520 (2025).
+[79] P. W. Graham, D. Green, and J. Meyers, Phys. Rev. D
+113, 043514 (2026).

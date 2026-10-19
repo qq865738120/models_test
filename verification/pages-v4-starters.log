@@ -1,0 +1,50 @@
+VERIFY 02-dispatch
+
+> llm-bench-02-dispatch@1.0.0 build
+> tsc --noEmit && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 22 modules transformed.
+rendering chunks...
+computing gzip size...
+output/index.html                  0.32 kB │ gzip:  0.27 kB
+output/assets/index-8AVUwzw4.js  185.69 kB │ gzip: 58.77 kB
+✓ built in 289ms
+VERIFY 03-game2d
+
+> llm-bench-03-game2d@1.0.0 build
+> tsc --noEmit && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 7 modules transformed.
+rendering chunks...
+computing gzip size...
+output/index.html                    0.32 kB │ gzip:   0.27 kB
+output/assets/index-D0LPSyRt.js  1,482.93 kB │ gzip: 340.50 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.62s
+VERIFY 04-game3d
+
+> llm-bench-04-game3d@1.0.0 build
+> tsc --noEmit && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 113 modules transformed.
+rendering chunks...
+computing gzip size...
+output/index.html                  0.32 kB │ gzip:   0.27 kB
+output/assets/index-BeO-VeEt.js  989.20 kB │ gzip: 266.78 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 803ms
+Three affected blank starters build offline successfully.

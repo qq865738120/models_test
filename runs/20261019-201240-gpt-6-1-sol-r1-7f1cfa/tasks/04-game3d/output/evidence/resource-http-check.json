@@ -1,0 +1,44 @@
+[
+  {
+    "resource": "./assets/index-DK7wFgA0.js",
+    "status": 200,
+    "contentType": "text/javascript",
+    "cors": "*",
+    "bytes": 617209
+  },
+  {
+    "resource": "./assets/index-Cngxc5A9.css",
+    "status": 200,
+    "contentType": "text/css",
+    "cors": "*",
+    "bytes": 7393
+  },
+  {
+    "resource": "./vendor/ammo/ammo.wasm.js",
+    "status": 200,
+    "contentType": "text/javascript",
+    "cors": "*",
+    "bytes": 393768
+  },
+  {
+    "resource": "./vendor/ammo/ammo.wasm.wasm",
+    "status": 200,
+    "contentType": "application/wasm",
+    "cors": "*",
+    "bytes": 651386
+  },
+  {
+    "resource": "./performance.js",
+    "status": 200,
+    "contentType": "text/javascript",
+    "cors": "*",
+    "bytes": 2226
+  },
+  {
+    "resource": "./materials/warehouse.json",
+    "status": 200,
+    "contentType": "application/json",
+    "cors": "*",
+    "bytes": 1679
+  }
+]

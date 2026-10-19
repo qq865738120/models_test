@@ -1,0 +1,19 @@
+{
+  "runId": "ui-fixture-2",
+  "taskId": "04-game3d",
+  "phase": "initial",
+  "files": {
+    ".keep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executable": false
+    },
+    "app.js": {
+      "sha256": "8fa137333d0a81946ec43e6a5797fc02058131adfef54430567c8e3cfde893a9",
+      "executable": false
+    },
+    "index.html": {
+      "sha256": "62a45d66000759ddb8316615b96b691a46d92987ce99a99605fb6ee733cb9d4b",
+      "executable": false
+    }
+  }
+}

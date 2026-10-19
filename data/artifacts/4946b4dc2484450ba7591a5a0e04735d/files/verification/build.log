@@ -1,0 +1,13 @@
+
+> llm-bench-02-dispatch@1.0.0 build
+> tsc --noEmit && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 28 modules transformed.
+rendering chunks...
+computing gzip size...
+output/index.html                   0.42 kB │ gzip:  0.32 kB
+output/assets/index-Cv82Gea3.css   26.02 kB │ gzip:  6.49 kB
+output/assets/index-lYLr0AZz.js   212.15 kB │ gzip: 66.97 kB
+✓ built in 347ms

@@ -1,0 +1,267 @@
+[
+  {
+    "id": "q-000",
+    "entityId": "npc-000",
+    "group": "npc-000",
+    "category": "update",
+    "at": 50,
+    "query": "npc-000在提问时刻喜欢哪种口味的布丁？",
+    "validEvidenceIds": [
+      "m-000-b"
+    ],
+    "staleEvidenceIds": [
+      "m-000-a"
+    ]
+  },
+  {
+    "id": "q-001",
+    "entityId": "npc-001",
+    "group": "npc-001",
+    "category": "association",
+    "at": 50,
+    "query": "npc-001此刻应收到哪种口味布丁、送到哪处仓库？",
+    "validEvidenceIds": [
+      "m-001-b",
+      "m-001-c"
+    ],
+    "staleEvidenceIds": [
+      "m-001-a"
+    ]
+  },
+  {
+    "id": "q-002",
+    "entityId": "npc-002",
+    "group": "npc-002",
+    "category": "entity",
+    "at": 50,
+    "query": "npc-002在提问时刻喜欢哪种口味的布丁？",
+    "validEvidenceIds": [
+      "m-002-b"
+    ],
+    "staleEvidenceIds": [
+      "m-002-a"
+    ]
+  },
+  {
+    "id": "q-003",
+    "entityId": "npc-003",
+    "group": "npc-003",
+    "category": "abstain",
+    "at": 50,
+    "query": "npc-003的生日是几月几日？",
+    "validEvidenceIds": [],
+    "staleEvidenceIds": []
+  },
+  {
+    "id": "q-004",
+    "entityId": "npc-004",
+    "group": "npc-004",
+    "category": "update",
+    "at": 50,
+    "query": "npc-004在提问时刻喜欢哪种口味的布丁？",
+    "validEvidenceIds": [
+      "m-004-b"
+    ],
+    "staleEvidenceIds": [
+      "m-004-a"
+    ]
+  },
+  {
+    "id": "q-005",
+    "entityId": "npc-005",
+    "group": "npc-005",
+    "category": "association",
+    "at": 50,
+    "query": "npc-005此刻应收到哪种口味布丁、送到哪处仓库？",
+    "validEvidenceIds": [
+      "m-005-b",
+      "m-005-c"
+    ],
+    "staleEvidenceIds": [
+      "m-005-a"
+    ]
+  },
+  {
+    "id": "q-006",
+    "entityId": "npc-006",
+    "group": "npc-006",
+    "category": "entity",
+    "at": 50,
+    "query": "npc-006在提问时刻喜欢哪种口味的布丁？",
+    "validEvidenceIds": [
+      "m-006-b"
+    ],
+    "staleEvidenceIds": [
+      "m-006-a"
+    ]
+  },
+  {
+    "id": "q-007",
+    "entityId": "npc-007",
+    "group": "npc-007",
+    "category": "abstain",
+    "at": 50,
+    "query": "npc-007的生日是几月几日？",
+    "validEvidenceIds": [],
+    "staleEvidenceIds": []
+  },
+  {
+    "id": "q-008",
+    "entityId": "npc-008",
+    "group": "npc-008",
+    "category": "update",
+    "at": 50,
+    "query": "npc-008在提问时刻喜欢哪种口味的布丁？",
+    "validEvidenceIds": [
+      "m-008-b"
+    ],
+    "staleEvidenceIds": [
+      "m-008-a"
+    ]
+  },
+  {
+    "id": "q-009",
+    "entityId": "npc-009",
+    "group": "npc-009",
+    "category": "association",
+    "at": 50,
+    "query": "npc-009此刻应收到哪种口味布丁、送到哪处仓库？",
+    "validEvidenceIds": [
+      "m-009-b",
+      "m-009-c"
+    ],
+    "staleEvidenceIds": [
+      "m-009-a"
+    ]
+  },
+  {
+    "id": "q-010",
+    "entityId": "npc-010",
+    "group": "npc-010",
+    "category": "entity",
+    "at": 50,
+    "query": "npc-010在提问时刻喜欢哪种口味的布丁？",
+    "validEvidenceIds": [
+      "m-010-b"
+    ],
+    "staleEvidenceIds": [
+      "m-010-a"
+    ]
+  },
+  {
+    "id": "q-011",
+    "entityId": "npc-011",
+    "group": "npc-011",
+    "category": "abstain",
+    "at": 50,
+    "query": "npc-011的生日是几月几日？",
+    "validEvidenceIds": [],
+    "staleEvidenceIds": []
+  },
+  {
+    "id": "q-012",
+    "entityId": "npc-012",
+    "group": "npc-012",
+    "category": "update",
+    "at": 50,
+    "query": "npc-012在提问时刻喜欢哪种口味的布丁？",
+    "validEvidenceIds": [
+      "m-012-b"
+    ],
+    "staleEvidenceIds": [
+      "m-012-a"
+    ]
+  },
+  {
+    "id": "q-013",
+    "entityId": "npc-013",
+    "group": "npc-013",
+    "category": "association",
+    "at": 50,
+    "query": "npc-013此刻应收到哪种口味布丁、送到哪处仓库？",
+    "validEvidenceIds": [
+      "m-013-b",
+      "m-013-c"
+    ],
+    "staleEvidenceIds": [
+      "m-013-a"
+    ]
+  },
+  {
+    "id": "q-014",
+    "entityId": "npc-014",
+    "group": "npc-014",
+    "category": "entity",
+    "at": 50,
+    "query": "npc-014在提问时刻喜欢哪种口味的布丁？",
+    "validEvidenceIds": [
+      "m-014-b"
+    ],
+    "staleEvidenceIds": [
+      "m-014-a"
+    ]
+  },
+  {
+    "id": "q-015",
+    "entityId": "npc-015",
+    "group": "npc-015",
+    "category": "abstain",
+    "at": 50,
+    "query": "npc-015的生日是几月几日？",
+    "validEvidenceIds": [],
+    "staleEvidenceIds": []
+  },
+  {
+    "id": "q-016",
+    "entityId": "npc-016",
+    "group": "npc-016",
+    "category": "update",
+    "at": 50,
+    "query": "npc-016在提问时刻喜欢哪种口味的布丁？",
+    "validEvidenceIds": [
+      "m-016-b"
+    ],
+    "staleEvidenceIds": [
+      "m-016-a"
+    ]
+  },
+  {
+    "id": "q-017",
+    "entityId": "npc-017",
+    "group": "npc-017",
+    "category": "association",
+    "at": 50,
+    "query": "npc-017此刻应收到哪种口味布丁、送到哪处仓库？",
+    "validEvidenceIds": [
+      "m-017-b",
+      "m-017-c"
+    ],
+    "staleEvidenceIds": [
+      "m-017-a"
+    ]
+  },
+  {
+    "id": "q-018",
+    "entityId": "npc-018",
+    "group": "npc-018",
+    "category": "entity",
+    "at": 50,
+    "query": "npc-018在提问时刻喜欢哪种口味的布丁？",
+    "validEvidenceIds": [
+      "m-018-b"
+    ],
+    "staleEvidenceIds": [
+      "m-018-a"
+    ]
+  },
+  {
+    "id": "q-019",
+    "entityId": "npc-019",
+    "group": "npc-019",
+    "category": "abstain",
+    "at": 50,
+    "query": "npc-019的生日是几月几日？",
+    "validEvidenceIds": [],
+    "staleEvidenceIds": []
+  }
+]

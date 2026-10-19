@@ -1,0 +1,1094 @@
+{
+  "rateBefore": {
+    "mode": "playing",
+    "lives": 3,
+    "elapsed": 0.3000799999999988,
+    "invulnerable": 0,
+    "collected": [],
+    "player": {
+      "x": 100,
+      "y": 652.75,
+      "vx": 0,
+      "vy": 270,
+      "grounded": false,
+      "body": {
+        "x": 84,
+        "y": 600.75,
+        "width": 32,
+        "height": 52
+      }
+    },
+    "movers": [
+      {
+        "x": 1347,
+        "y": 490,
+        "width": 180,
+        "height": 24
+      }
+    ],
+    "robots": [
+      {
+        "x": 740.9999999999993,
+        "y": 630
+      },
+      {
+        "x": 1957,
+        "y": 630
+      }
+    ],
+    "counts": {
+      "children": 39,
+      "bodies": 7,
+      "staticBodies": 8,
+      "colliders": 9
+    },
+    "jumps": 0,
+    "runs": 14,
+    "events": [
+      {
+        "type": "reset",
+        "run": 1
+      },
+      {
+        "type": "reset",
+        "run": 2
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "jump",
+        "x": 224,
+        "y": 660,
+        "elapsed": 0.5467300000000002
+      },
+      {
+        "type": "collect",
+        "id": "c1",
+        "elapsed": 1.3134300000000003,
+        "x": 408,
+        "y": 560
+      },
+      {
+        "type": "pause",
+        "elapsed": 2.7798799999999972,
+        "x": 756,
+        "y": 660
+      },
+      {
+        "type": "resume",
+        "elapsed": 2.7798799999999972,
+        "x": 756,
+        "y": 660
+      },
+      {
+        "type": "jump",
+        "x": 756,
+        "y": 660,
+        "elapsed": 2.804879999999997
+      },
+      {
+        "type": "jump",
+        "x": 944,
+        "y": 660,
+        "elapsed": 3.9881399999999942
+      },
+      {
+        "type": "pause",
+        "elapsed": 5.063229999999987,
+        "x": 1196,
+        "y": 580
+      },
+      {
+        "type": "resume",
+        "elapsed": 5.063229999999987,
+        "x": 1196,
+        "y": 580
+      },
+      {
+        "type": "jump",
+        "x": 1196,
+        "y": 580,
+        "elapsed": 5.079869999999987
+      },
+      {
+        "type": "pause",
+        "elapsed": 6.354929999999997,
+        "x": 1435.5,
+        "y": 490
+      },
+      {
+        "type": "resume",
+        "elapsed": 6.354929999999997,
+        "x": 1435.5,
+        "y": 490
+      },
+      {
+        "type": "pause",
+        "elapsed": 7.8883300000000025,
+        "x": 1573.5,
+        "y": 490
+      },
+      {
+        "type": "resume",
+        "elapsed": 7.8883300000000025,
+        "x": 1573.5,
+        "y": 490
+      },
+      {
+        "type": "jump",
+        "x": 1573.5,
+        "y": 490,
+        "elapsed": 7.904980000000002
+      },
+      {
+        "type": "collect",
+        "id": "c2",
+        "elapsed": 8.796579999999977,
+        "x": 1763,
+        "y": 423.75
+      },
+      {
+        "type": "jump",
+        "x": 1831,
+        "y": 480,
+        "elapsed": 9.44656999999996
+      },
+      {
+        "type": "collect",
+        "id": "c3",
+        "elapsed": 10.546509999999936,
+        "x": 2083,
+        "y": 504.75
+      },
+      {
+        "type": "pause",
+        "elapsed": 10.904689999999933,
+        "x": 2083,
+        "y": 560
+      },
+      {
+        "type": "resume",
+        "elapsed": 10.904689999999933,
+        "x": 2083,
+        "y": 560
+      },
+      {
+        "type": "win",
+        "reason": "",
+        "elapsed": 11.912679999999941,
+        "collected": 3
+      },
+      {
+        "type": "reset",
+        "run": 3
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "damage",
+        "cause": "机器人",
+        "lives": 2,
+        "elapsed": 4.299930000000007
+      },
+      {
+        "type": "pause",
+        "elapsed": 4.425010000000009,
+        "x": 724,
+        "y": 660
+      },
+      {
+        "type": "resume",
+        "elapsed": 4.425010000000009,
+        "x": 724,
+        "y": 660
+      },
+      {
+        "type": "damage",
+        "cause": "机器人",
+        "lives": 1,
+        "elapsed": 5.108490000000006
+      },
+      {
+        "type": "damage",
+        "cause": "机器人",
+        "lives": 0,
+        "elapsed": 7.558339999999993
+      },
+      {
+        "type": "lose",
+        "reason": "生命耗尽",
+        "elapsed": 7.558339999999993,
+        "collected": 0
+      },
+      {
+        "type": "reset",
+        "run": 4
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.1832800000000017,
+        "x": 100,
+        "y": 623.75
+      },
+      {
+        "type": "reset",
+        "run": 5
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.35005,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 6
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.35021999999999825,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 7
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3666599999999991,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 8
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.34173000000000014,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 9
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3417299999999989,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 10
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3416800000000017,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 11
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3417299999999988,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 12
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3499300000000017,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 13
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.35012000000000265,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 14
+      },
+      {
+        "type": "start"
+      }
+    ]
+  },
+  "rateAfter": {
+    "mode": "playing",
+    "lives": 3,
+    "elapsed": 2.299920000000002,
+    "invulnerable": 0,
+    "collected": [],
+    "player": {
+      "x": 100,
+      "y": 660,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "body": {
+        "x": 84,
+        "y": 608,
+        "width": 32,
+        "height": 52
+      }
+    },
+    "movers": [
+      {
+        "x": 1525.5,
+        "y": 490,
+        "width": 180,
+        "height": 24
+      }
+    ],
+    "robots": [
+      {
+        "x": 879.8333333333281,
+        "y": 630
+      },
+      {
+        "x": 2135.5,
+        "y": 630
+      }
+    ],
+    "counts": {
+      "children": 39,
+      "bodies": 7,
+      "staticBodies": 8,
+      "colliders": 9
+    },
+    "jumps": 0,
+    "runs": 14,
+    "events": [
+      {
+        "type": "reset",
+        "run": 1
+      },
+      {
+        "type": "reset",
+        "run": 2
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "jump",
+        "x": 224,
+        "y": 660,
+        "elapsed": 0.5467300000000002
+      },
+      {
+        "type": "collect",
+        "id": "c1",
+        "elapsed": 1.3134300000000003,
+        "x": 408,
+        "y": 560
+      },
+      {
+        "type": "pause",
+        "elapsed": 2.7798799999999972,
+        "x": 756,
+        "y": 660
+      },
+      {
+        "type": "resume",
+        "elapsed": 2.7798799999999972,
+        "x": 756,
+        "y": 660
+      },
+      {
+        "type": "jump",
+        "x": 756,
+        "y": 660,
+        "elapsed": 2.804879999999997
+      },
+      {
+        "type": "jump",
+        "x": 944,
+        "y": 660,
+        "elapsed": 3.9881399999999942
+      },
+      {
+        "type": "pause",
+        "elapsed": 5.063229999999987,
+        "x": 1196,
+        "y": 580
+      },
+      {
+        "type": "resume",
+        "elapsed": 5.063229999999987,
+        "x": 1196,
+        "y": 580
+      },
+      {
+        "type": "jump",
+        "x": 1196,
+        "y": 580,
+        "elapsed": 5.079869999999987
+      },
+      {
+        "type": "pause",
+        "elapsed": 6.354929999999997,
+        "x": 1435.5,
+        "y": 490
+      },
+      {
+        "type": "resume",
+        "elapsed": 6.354929999999997,
+        "x": 1435.5,
+        "y": 490
+      },
+      {
+        "type": "pause",
+        "elapsed": 7.8883300000000025,
+        "x": 1573.5,
+        "y": 490
+      },
+      {
+        "type": "resume",
+        "elapsed": 7.8883300000000025,
+        "x": 1573.5,
+        "y": 490
+      },
+      {
+        "type": "jump",
+        "x": 1573.5,
+        "y": 490,
+        "elapsed": 7.904980000000002
+      },
+      {
+        "type": "collect",
+        "id": "c2",
+        "elapsed": 8.796579999999977,
+        "x": 1763,
+        "y": 423.75
+      },
+      {
+        "type": "jump",
+        "x": 1831,
+        "y": 480,
+        "elapsed": 9.44656999999996
+      },
+      {
+        "type": "collect",
+        "id": "c3",
+        "elapsed": 10.546509999999936,
+        "x": 2083,
+        "y": 504.75
+      },
+      {
+        "type": "pause",
+        "elapsed": 10.904689999999933,
+        "x": 2083,
+        "y": 560
+      },
+      {
+        "type": "resume",
+        "elapsed": 10.904689999999933,
+        "x": 2083,
+        "y": 560
+      },
+      {
+        "type": "win",
+        "reason": "",
+        "elapsed": 11.912679999999941,
+        "collected": 3
+      },
+      {
+        "type": "reset",
+        "run": 3
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "damage",
+        "cause": "机器人",
+        "lives": 2,
+        "elapsed": 4.299930000000007
+      },
+      {
+        "type": "pause",
+        "elapsed": 4.425010000000009,
+        "x": 724,
+        "y": 660
+      },
+      {
+        "type": "resume",
+        "elapsed": 4.425010000000009,
+        "x": 724,
+        "y": 660
+      },
+      {
+        "type": "damage",
+        "cause": "机器人",
+        "lives": 1,
+        "elapsed": 5.108490000000006
+      },
+      {
+        "type": "damage",
+        "cause": "机器人",
+        "lives": 0,
+        "elapsed": 7.558339999999993
+      },
+      {
+        "type": "lose",
+        "reason": "生命耗尽",
+        "elapsed": 7.558339999999993,
+        "collected": 0
+      },
+      {
+        "type": "reset",
+        "run": 4
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.1832800000000017,
+        "x": 100,
+        "y": 623.75
+      },
+      {
+        "type": "reset",
+        "run": 5
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.35005,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 6
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.35021999999999825,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 7
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3666599999999991,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 8
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.34173000000000014,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 9
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3417299999999989,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 10
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3416800000000017,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 11
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3417299999999988,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 12
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3499300000000017,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 13
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.35012000000000265,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 14
+      },
+      {
+        "type": "start"
+      }
+    ]
+  },
+  "afterInput": {
+    "mode": "paused",
+    "lives": 3,
+    "elapsed": 2.875020000000003,
+    "invulnerable": 0,
+    "collected": [],
+    "player": {
+      "x": 220,
+      "y": 660,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "body": {
+        "x": 204,
+        "y": 608,
+        "width": 32,
+        "height": 52
+      }
+    },
+    "movers": [
+      {
+        "x": 1578,
+        "y": 490,
+        "width": 180,
+        "height": 24
+      }
+    ],
+    "robots": [
+      {
+        "x": 859.6666666666677,
+        "y": 630
+      },
+      {
+        "x": 2188,
+        "y": 630
+      }
+    ],
+    "counts": {
+      "children": 39,
+      "bodies": 7,
+      "staticBodies": 8,
+      "colliders": 9
+    },
+    "jumps": 0,
+    "runs": 14,
+    "events": [
+      {
+        "type": "reset",
+        "run": 1
+      },
+      {
+        "type": "reset",
+        "run": 2
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "jump",
+        "x": 224,
+        "y": 660,
+        "elapsed": 0.5467300000000002
+      },
+      {
+        "type": "collect",
+        "id": "c1",
+        "elapsed": 1.3134300000000003,
+        "x": 408,
+        "y": 560
+      },
+      {
+        "type": "pause",
+        "elapsed": 2.7798799999999972,
+        "x": 756,
+        "y": 660
+      },
+      {
+        "type": "resume",
+        "elapsed": 2.7798799999999972,
+        "x": 756,
+        "y": 660
+      },
+      {
+        "type": "jump",
+        "x": 756,
+        "y": 660,
+        "elapsed": 2.804879999999997
+      },
+      {
+        "type": "jump",
+        "x": 944,
+        "y": 660,
+        "elapsed": 3.9881399999999942
+      },
+      {
+        "type": "pause",
+        "elapsed": 5.063229999999987,
+        "x": 1196,
+        "y": 580
+      },
+      {
+        "type": "resume",
+        "elapsed": 5.063229999999987,
+        "x": 1196,
+        "y": 580
+      },
+      {
+        "type": "jump",
+        "x": 1196,
+        "y": 580,
+        "elapsed": 5.079869999999987
+      },
+      {
+        "type": "pause",
+        "elapsed": 6.354929999999997,
+        "x": 1435.5,
+        "y": 490
+      },
+      {
+        "type": "resume",
+        "elapsed": 6.354929999999997,
+        "x": 1435.5,
+        "y": 490
+      },
+      {
+        "type": "pause",
+        "elapsed": 7.8883300000000025,
+        "x": 1573.5,
+        "y": 490
+      },
+      {
+        "type": "resume",
+        "elapsed": 7.8883300000000025,
+        "x": 1573.5,
+        "y": 490
+      },
+      {
+        "type": "jump",
+        "x": 1573.5,
+        "y": 490,
+        "elapsed": 7.904980000000002
+      },
+      {
+        "type": "collect",
+        "id": "c2",
+        "elapsed": 8.796579999999977,
+        "x": 1763,
+        "y": 423.75
+      },
+      {
+        "type": "jump",
+        "x": 1831,
+        "y": 480,
+        "elapsed": 9.44656999999996
+      },
+      {
+        "type": "collect",
+        "id": "c3",
+        "elapsed": 10.546509999999936,
+        "x": 2083,
+        "y": 504.75
+      },
+      {
+        "type": "pause",
+        "elapsed": 10.904689999999933,
+        "x": 2083,
+        "y": 560
+      },
+      {
+        "type": "resume",
+        "elapsed": 10.904689999999933,
+        "x": 2083,
+        "y": 560
+      },
+      {
+        "type": "win",
+        "reason": "",
+        "elapsed": 11.912679999999941,
+        "collected": 3
+      },
+      {
+        "type": "reset",
+        "run": 3
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "damage",
+        "cause": "机器人",
+        "lives": 2,
+        "elapsed": 4.299930000000007
+      },
+      {
+        "type": "pause",
+        "elapsed": 4.425010000000009,
+        "x": 724,
+        "y": 660
+      },
+      {
+        "type": "resume",
+        "elapsed": 4.425010000000009,
+        "x": 724,
+        "y": 660
+      },
+      {
+        "type": "damage",
+        "cause": "机器人",
+        "lives": 1,
+        "elapsed": 5.108490000000006
+      },
+      {
+        "type": "damage",
+        "cause": "机器人",
+        "lives": 0,
+        "elapsed": 7.558339999999993
+      },
+      {
+        "type": "lose",
+        "reason": "生命耗尽",
+        "elapsed": 7.558339999999993,
+        "collected": 0
+      },
+      {
+        "type": "reset",
+        "run": 4
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.1832800000000017,
+        "x": 100,
+        "y": 623.75
+      },
+      {
+        "type": "reset",
+        "run": 5
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.35005,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 6
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.35021999999999825,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 7
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3666599999999991,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 8
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.34173000000000014,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 9
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3417299999999989,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 10
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3416800000000017,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 11
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3417299999999988,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 12
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.3499300000000017,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 13
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 0.35012000000000265,
+        "x": 100,
+        "y": 660
+      },
+      {
+        "type": "reset",
+        "run": 14
+      },
+      {
+        "type": "start"
+      },
+      {
+        "type": "pause",
+        "elapsed": 2.875020000000003,
+        "x": 220,
+        "y": 660
+      }
+    ]
+  }
+}

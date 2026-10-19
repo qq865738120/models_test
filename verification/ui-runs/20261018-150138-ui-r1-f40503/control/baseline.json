@@ -1,0 +1,44 @@
+{
+  "01-svg": {
+    ".gitignore": {
+      "sha256": "aa1abe30fa41667b3b615ad6b74d0c633e16e80fda986234c203544ef207529c",
+      "executable": false
+    },
+    "AGENTS.md": {
+      "sha256": "c0d4eedbc0ec41080feb8838462748510f297238beef1de4b74b2a6dfa97af9e",
+      "executable": false
+    },
+    "CLAUDE.md": {
+      "sha256": "c0d4eedbc0ec41080feb8838462748510f297238beef1de4b74b2a6dfa97af9e",
+      "executable": false
+    },
+    "COMMON_RULES.md": {
+      "sha256": "c0d4eedbc0ec41080feb8838462748510f297238beef1de4b74b2a6dfa97af9e",
+      "executable": false
+    },
+    "TASK.md": {
+      "sha256": "24c219438e6fc4ed770b21e7b93f7730b4360aa540e1ae679390d7dde69765eb",
+      "executable": false
+    },
+    "materials/README.md": {
+      "sha256": "7b8c03e2ec5ced8f11efa83f1299968c52e537db448a906fe199198e3d097794",
+      "executable": false
+    },
+    "materials/START.md": {
+      "sha256": "489e55a44b4ebae92b2639d157b29f68c24b8ee0a56a57e7625cdab9bd98fed7",
+      "executable": false
+    },
+    "output/.keep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executable": false
+    },
+    "solution/.keep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executable": false
+    },
+    "tools/svg-viewer.html": {
+      "sha256": "4f3f62bc7c18dc1fc137fc7a631401a4f3fa7c1196b594e3242337052f48856e",
+      "executable": false
+    }
+  }
+}

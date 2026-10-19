@@ -1,0 +1,24 @@
+[1019/200636.508573:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200636.509495:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size com.googlecode.crashpad.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200636.509524:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:66] setxattr org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200636.510035:ERROR:third_party/crashpad/crashpad/util/file/file_io.cc:103] ReadExactly: expected 8, observed 0
+[1019/200636.510319:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200636.510342:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:41] getxattr size com.googlecode.crashpad.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+[1019/200636.510360:ERROR:third_party/crashpad/crashpad/util/mac/xattr.cc:66] setxattr org.chromium.crashpad.database.initialized on file /Users/zhengwenjun/Library/Application Support/Google/Chrome/Crashpad: Operation not permitted (1)
+
+DevTools listening on ws://127.0.0.1:55050/devtools/browser/915c4029-e228-4119-b2f4-bb59b4c48f1a
+Trying to load the allocator multiple times. This is *not* supported.
+[77250:18539743:1019/200636.942833:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77250:18539743:1019/200636.943247:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77250:18539743:1019/200636.945304:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77250:18539743:1019/200636.945430:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77250:18539743:1019/200636.945516:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77250:18539743:1019/200636.945584:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77250:18539436:1019/200636.987294:ERROR:gpu/command_buffer/service/gl_utils.cc:431] [.WebGL-0x114000c9600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+[77250:18539743:1019/200638.880717:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77250:18539743:1019/200638.946160:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77250:18539743:1019/200638.970694:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77250:18539743:1019/200639.009832:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77250:18539743:1019/200639.030679:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77250:18539743:1019/200639.075072:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77250:18539743:1019/200639.097709:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670

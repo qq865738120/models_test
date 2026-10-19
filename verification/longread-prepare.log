@@ -1,0 +1,61 @@
+准备：02-dispatch / npm ci --ignore-scripts
+
+added 21 packages in 325ms
+准备：02-dispatch / npm run build
+
+> llm-bench-02-dispatch@1.0.0 build
+> tsc --noEmit && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 22 modules transformed.
+rendering chunks...
+computing gzip size...
+output/index.html                  0.32 kB │ gzip:  0.27 kB
+output/assets/index-8AVUwzw4.js  185.69 kB │ gzip: 58.77 kB
+✓ built in 262ms
+准备：03-game2d / npm ci --ignore-scripts
+
+added 17 packages in 709ms
+准备：03-game2d / npm run build
+
+> llm-bench-03-game2d@1.0.0 build
+> tsc --noEmit && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 7 modules transformed.
+rendering chunks...
+computing gzip size...
+output/index.html                    0.32 kB │ gzip:   0.27 kB
+output/assets/index-D0LPSyRt.js  1,482.93 kB │ gzip: 340.50 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 1.51s
+准备：04-game3d / npm ci --ignore-scripts
+
+added 35 packages in 473ms
+准备：04-game3d / npm run build
+
+> llm-bench-04-game3d@1.0.0 build
+> tsc --noEmit && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 113 modules transformed.
+rendering chunks...
+computing gzip size...
+output/index.html                  0.32 kB │ gzip:   0.27 kB
+output/assets/index-BeO-VeEt.js  989.20 kB │ gzip: 266.78 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 758ms
+旧材料备份：/Users/zhengwenjun/大模型测试/.prepared-backup-d9932b6f
+材料准备完成：d898505cc406f4399676625e7b076421fb416fee5cd8fca9aa063b9d2e7821d6
+状态：试运行；正式比较前需按预跑清单校准。

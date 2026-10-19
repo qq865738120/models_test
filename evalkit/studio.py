@@ -19,6 +19,8 @@ from pathlib import Path
 from urllib.parse import unquote, urlparse
 
 from . import manager as m
+from .reasoning import normalize_reasoning, reasoning_options, set_reasoning
+from .harnesses import normalize_harness, harness_options
 from .catalog import SUITE_ID, SUITE_NAME, RUBRIC_VERSION, catalog
 
 
@@ -115,7 +117,9 @@ class Studio:
                 task_scores[key][phase]={'score':score['total'] if score else None,
                     'artifactId':artifact['id'] if artifact else None,
                     'eligible':bool(artifact and artifact.get('integrityPassed'))}
-        return {k:meta.get(k) for k in ('id','suiteId','suiteName','model','repeat','createdAt','bundleSha256','materialVersion','rubricVersion','archived','notes')}|{
+        return {k:meta.get(k) for k in ('id','suiteId','suiteName','model','repeat','createdAt','bundleSha256','materialVersion','rubricVersion','archived','notes','harness','harnessCustom')}|{
+            'reasoningLevel':meta.get('environment',{}).get('reasoningLevel'),
+            'reasoningOriginal':meta.get('environment',{}).get('reasoning'),
             'taskCatalog':m.load(run/'control/rubric.json')['tasks'] if (run/'control/rubric.json').exists() else catalog(),
             'legacy':meta.get('suiteId')!=SUITE_ID,'taskScores':task_scores,'artifactCount':artifact_count,'taskIds':list(meta['tasks'])}
 
@@ -148,13 +152,15 @@ class Studio:
 
     def create_run(self,body):
         model=clean_text(body.get('model'),'模型名称',120)
+        harness=normalize_harness(body.get('harness'),body.get('harnessCustom',''))
+        reasoning=normalize_reasoning(body.get('reasoningLevel'))
         repeat=body.get('repeat',1)
         if isinstance(repeat,bool) or not isinstance(repeat,int) or not 1<=repeat<=1000: raise StudioError('重复编号需为1到1000的整数')
         task=body.get('task','all')
         if not isinstance(task,str): raise StudioError('题号无效')
         m.task_keys(task)
         def operation():
-            run=m.init_run(argparse.Namespace(model=model,repeat=repeat,task=task,profile='local',run_id=None))
+            run=m.init_run(argparse.Namespace(model=model,repeat=repeat,task=task,profile='local',run_id=None,harness=harness['harness'],harness_custom=harness['harnessCustom'],reasoning_level=reasoning))
             return {'runId':run.name}
         return self.submit('初始化测评项目',operation)
 
@@ -162,6 +168,12 @@ class Studio:
         with self.lock:
             run=self.run(run_id); meta=m.load(run/'control/run.json')
             if 'model' in body: meta['model']=clean_text(body['model'],'模型名称',120)
+            if any(k in body for k in ('harness','harnessCustom')):
+                updated=normalize_harness(body.get('harness',meta.get('harness')),body.get('harnessCustom',meta.get('harnessCustom','')))
+                if any(meta.get(k)!=v for k,v in updated.items()):
+                    meta.setdefault('harnessHistory',[]).append({'at':m.now(),'before':{k:meta.get(k) for k in updated},'after':updated})
+                meta.update(updated)
+            if 'reasoningLevel' in body: set_reasoning(meta,body['reasoningLevel'],m.now())
             if 'notes' in body:
                 if not isinstance(body['notes'],str) or len(body['notes'])>4000: raise StudioError('备注过长')
                 meta['notes']=body['notes']
@@ -222,7 +234,8 @@ class Studio:
             if body.get('revision')!=review['revision']: raise StudioError('记录已更新，请刷新后再保存评分',409)
             artifact_id=body.get('artifactId')
             if artifact_id not in [a['id'] for a in review['artifacts'].get(key,{}).get(phase,[])]: raise StudioError('请先导入该阶段的HTML成果')
-            rubric=next(t['rubric'] for t in m.load(run/'control/rubric.json')['tasks'] if t['id']==key)
+            task_rubric=next(t for t in m.load(run/'control/rubric.json')['tasks'] if t['id']==key)
+            rubric=task_rubric.get('rubricChange',task_rubric['rubric']) if phase=='change' else task_rubric['rubric']
             values,total=score_values(rubric,body.get('values'))
             notes=body.get('notes','')
             if not isinstance(notes,str) or len(notes)>10000: raise StudioError('评语过长')
@@ -257,7 +270,7 @@ class Studio:
             records.append({'run':run,'review':self.review(path)})
         if kind=='json': return json.dumps({'suite':SUITE_NAME,'exportedAt':m.now(),'records':records},ensure_ascii=False,indent=2).encode(),'application/json; charset=utf-8'
         out=io.StringIO(); writer=csv.writer(out)
-        writer.writerow(['model','run_id','repeat','suite','material_hash','task','phase','artifact','dimension','score_0_10','total_100','saved_at'])
+        writer.writerow(['model','harness','harness_custom','reasoning_level','reasoning_original','rubric_version','run_id','repeat','suite','material_hash','task','phase','artifact','dimension','score_0_10','total_100','saved_at'])
         # Prefix formula-like user text for safe spreadsheet opening.
         cell=lambda s: "'"+s if isinstance(s,str) and s.startswith(('=','+','-','@','\t','\r')) else s
         for item in records:
@@ -268,7 +281,7 @@ class Studio:
                         score=review['scores'].get(artifact['id'])
                         if not score: continue
                         for dimension,value in score['values'].items():
-                            writer.writerow([cell(run['model']),run['id'],run['repeat'],run['suiteId'],run['bundleSha256'],key,phase,artifact['id'],dimension,value,score['total'],score['savedAt']])
+                            writer.writerow([cell(run['model']),run.get('harness') or '',cell(run.get('harnessCustom') or ''),cell(run.get('reasoningLevel') or ''),cell(run.get('reasoningOriginal') or ''),run['rubricVersion'],run['id'],run['repeat'],run['suiteId'],run['bundleSha256'],key,phase,artifact['id'],dimension,value,score['total'],score['savedAt']])
         return ('\ufeff'+out.getvalue()).encode(),'text/csv; charset=utf-8'
 
 
@@ -321,7 +334,7 @@ class Handler(BaseHTTPRequestHandler):
                 if (m.PREPARED/'bundle.json').exists():
                     meta=m.load(m.PREPARED/'bundle.json')
                     prepared={'ready':meta.get('suiteId')==SUITE_ID and meta.get('version')==m.VERSION,'hash':meta['bundleSha256'],'version':meta['version']}
-                return self.send({'suiteId':SUITE_ID,'suiteName':SUITE_NAME,'tasks':catalog(),'runs':studio.runs(),
+                return self.send({'suiteId':SUITE_ID,'suiteName':SUITE_NAME,'harnessOptions':harness_options(),'reasoningOptions':reasoning_options(),'tasks':catalog(),'runs':studio.runs(),
                     'token':studio.token,'prepared':prepared,'storage':str(studio.data),'runsPath':str(m.RUNS),'previewOrigin':studio.preview_origin})
             if parts==['api','runs']:
                 if method=='GET': return self.send(studio.runs())

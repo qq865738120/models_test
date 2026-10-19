@@ -1,0 +1,11 @@
+{
+  "license": "本评测项目原创；所有模型使用相同字节",
+  "frames": [
+    "pelican-walk-0.svg",
+    "pelican-walk-1.svg",
+    "pelican-walk-2.svg",
+    "pelican-walk-3.svg"
+  ],
+  "frameRate": 8,
+  "root": "/materials/sprites/"
+}

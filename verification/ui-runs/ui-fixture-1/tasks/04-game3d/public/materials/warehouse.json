@@ -1,0 +1,110 @@
+{
+  "version": "pelican-v1.0-html",
+  "units": "meters",
+  "floor": {
+    "width": 24,
+    "depth": 20
+  },
+  "vehicle": {
+    "width": 1.4,
+    "length": 2.6,
+    "height": 2.2,
+    "start": {
+      "x": 0,
+      "z": 7,
+      "yaw": 3.141592653589793
+    },
+    "maxSpeed": 4,
+    "acceleration": 3,
+    "turnSpeed": 1.3,
+    "brakeDeceleration": 8,
+    "forkMin": 0.12,
+    "forkMax": 2,
+    "forkLiftSpeed": 0.7
+  },
+  "physics": {
+    "gravity": -9.81,
+    "boxMass": 20,
+    "vehicleMass": 350
+  },
+  "racks": [
+    {
+      "x": -8,
+      "z": 0,
+      "width": 2,
+      "depth": 10,
+      "height": 3
+    },
+    {
+      "x": 8,
+      "z": 0,
+      "width": 2,
+      "depth": 10,
+      "height": 3
+    }
+  ],
+  "barriers": [
+    {
+      "x": -3,
+      "z": 0,
+      "width": 1,
+      "depth": 3,
+      "height": 0.6
+    }
+  ],
+  "boxes": [
+    {
+      "id": "red",
+      "color": "#ec615c",
+      "x": -5,
+      "y": 0.6,
+      "z": 3,
+      "width": 1.2,
+      "height": 1.2,
+      "depth": 1.2
+    },
+    {
+      "id": "blue",
+      "color": "#4e8fe4",
+      "x": 0,
+      "y": 0.6,
+      "z": 3,
+      "width": 1.2,
+      "height": 1.2,
+      "depth": 1.2
+    },
+    {
+      "id": "yellow",
+      "color": "#e6b744",
+      "x": 5,
+      "y": 0.6,
+      "z": 3,
+      "width": 1.2,
+      "height": 1.2,
+      "depth": 1.2
+    }
+  ],
+  "deliveryZones": [
+    {
+      "boxId": "red",
+      "x": -5,
+      "z": -6,
+      "width": 3,
+      "depth": 3
+    },
+    {
+      "boxId": "blue",
+      "x": 0,
+      "z": -6,
+      "width": 3,
+      "depth": 3
+    },
+    {
+      "boxId": "yellow",
+      "x": 5,
+      "z": -6,
+      "width": 3,
+      "depth": 3
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+{
+  "results": [
+    {
+      "name": "初始列表与独立统计",
+      "expected": "20条记录、10,000总单、5,000待派",
+      "actual": {
+        "rows": 20,
+        "stats": {
+          "all": 10000,
+          "pending": 5000,
+          "assigned": 2500,
+          "delivered": 2500
+        }
+      },
+      "pass": true
+    },
+    {
+      "name": "总览→待派单→取消确认",
+      "expected": "进入pending、取消不更改订单且保留选择",
+      "actual": {
+        "id": "PD-00001",
+        "status": "pending"
+      },
+      "pass": true
+    },
+    {
+      "name": "派单成功→列表详情→跨页统计",
+      "expected": "P01派出1单、pending减少1、assigned增加1",
+      "actual": {
+        "id": "PD-00001",
+        "stats": {
+          "all": 10000,
+          "pending": 4999,
+          "assigned": 2501,
+          "delivered": 2500
+        }
+      },
+      "pass": true
+    },
+    {
+      "name": "配送员预选→派单",
+      "expected": "P02预选并成功派出，不因切页重置",
+      "actual": {
+        "stats": {
+          "all": 10000,
+          "pending": 4998,
+          "assigned": 2502,
+          "delivered": 2500
+        },
+        "firstAssigned": "assigned"
+      },
+      "pass": true
+    },
+    {
+      "name": "设置未保存与保存50→恢复20",
+      "expected": "未保存无影响、保存回第一页、恢复不撤销订单",
+      "actual": {
+        "rows": 20,
+        "orderStatus": "assigned"
+      },
+      "pass": true
+    },
+    {
+      "name": "选择清空与普通导航保留条件",
+      "expected": "搜索、筛选、翻页清空；菜单往返保留搜索/筛选/页码",
+      "actual": {
+        "q": "科技园",
+        "page": "2/125 页"
+      },
+      "pass": true
+    },
+    {
+      "name": "空结果",
+      "expected": "零结果空态、总数0",
+      "actual": "没有找到匹配的订单试试其他关键词，或调整订单状态。清空筛选",
+      "pass": true
+    },
+    {
+      "name": "查询失败→重试",
+      "expected": "错误原因可见、重试恢复",
+      "actual": "模拟查询失败 → 重试成功",
+      "pass": true
+    },
+    {
+      "name": "详情失败→重试",
+      "expected": "独立错误及重试恢复真实详情（自测包装detail一次）",
+      "actual": "包装一次detail失败，已还原",
+      "pass": true
+    },
+    {
+      "name": "派单整批失败→重试",
+      "expected": "失败保留选择与配送员，Mock无变化，重试成功",
+      "actual": {
+        "ids": [
+          "PD-00005",
+          "PD-00008"
+        ],
+        "statuses": [
+          "assigned",
+          "assigned"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "统计失败与重试",
+      "expected": "保留上次值及时间、失败说明、重试成功",
+      "actual": {
+        "stats": {
+          "all": 10000,
+          "pending": 4996,
+          "assigned": 2504,
+          "delivered": 2500
+        },
+        "at": "最近读取 2026/10/19 20:39:01"
+      },
+      "pass": true
+    },
+    {
+      "name": "慢成功→快成功查询竞态",
+      "expected": "先发慢a、后发快b，最终仅显示b",
+      "actual": {
+        "q": "大学城",
+        "rows": 20,
+        "first": "大学城3栋3层"
+      },
+      "pass": true
+    },
+    {
+      "name": "慢失败→快成功查询竞态",
+      "expected": "过期失败不覆盖最新列表/加载/错误",
+      "actual": "最新大学城条件保留，旧失败已忽略",
+      "pass": true
+    },
+    {
+      "name": "性能采样（生产构建）",
+      "expected": "1440×900/DPR1；预热10s；30次输入；间隔500ms；P95≤100ms",
+      "actual": {
+        "p95": 4.100000023841858,
+        "samples": 30,
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "pass": true
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-10-19T12:38:55.227Z",
+      "name": "初始列表与独立统计",
+      "result": {
+        "name": "初始列表与独立统计",
+        "expected": "20条记录、10,000总单、5,000待派",
+        "actual": {
+          "rows": 20,
+          "stats": {
+            "all": 10000,
+            "pending": 5000,
+            "assigned": 2500,
+            "delivered": 2500
+          }
+        },
+        "pass": true
+      }
+    },
+    {
+      "at": "2026-10-19T12:38:55.586Z",
+      "name": "总览→待派单→取消确认",
+      "result": {
+        "name": "总览→待派单→取消确认",
+        "expected": "进入pending、取消不更改订单且保留选择",
+        "actual": {
+          "id": "PD-00001",
+          "status": "pending"
+        },
+        "pass": true
+      }
+    },
+    {
+      "at": "2026-10-19T12:38:56.547Z",
+      "name": "派单成功→列表详情→跨页统计",
+      "result": {
+        "name": "派单成功→列表详情→跨页统计",
+        "expected": "P01派出1单、pending减少1、assigned增加1",
+        "actual": {
+          "id": "PD-00001",
+          "stats": {
+            "all": 10000,
+            "pending": 4999,
+            "assigned": 2501,
+            "delivered": 2500
+          }
+        },
+        "pass": true
+      }
+    },
+    {
+      "at": "2026-10-19T12:38:57.413Z",
+      "name": "配送员预选→派单",
+      "result": {
+        "name": "配送员预选→派单",
+        "expected": "P02预选并成功派出，不因切页重置",
+        "actual": {
+          "stats": {
+            "all": 10000,
+            "pending": 4998,
+            "assigned": 2502,
+            "delivered": 2500
+          },
+          "firstAssigned": "assigned"
+        },
+        "pass": true
+      }
+    },
+    {
+      "at": "2026-10-19T12:38:58.004Z",
+      "name": "设置未保存与保存50→恢复20",
+      "result": {
+        "name": "设置未保存与保存50→恢复20",
+        "expected": "未保存无影响、保存回第一页、恢复不撤销订单",
+        "actual": {
+          "rows": 20,
+          "orderStatus": "assigned"
+        },
+        "pass": true
+      }
+    },
+    {
+      "at": "2026-10-19T12:38:58.774Z",
+      "name": "选择清空与普通导航保留条件",
+      "result": {
+        "name": "选择清空与普通导航保留条件",
+        "expected": "搜索、筛选、翻页清空；菜单往返保留搜索/筛选/页码",
+        "actual": {
+          "q": "科技园",
+          "page": "2/125 页"
+        },
+        "pass": true
+      }
+    },
+    {
+      "at": "2026-10-19T12:38:58.969Z",
+      "name": "空结果",
+      "result": {
+        "name": "空结果",
+        "expected": "零结果空态、总数0",
+        "actual": "没有找到匹配的订单试试其他关键词，或调整订单状态。清空筛选",
+        "pass": true
+      }
+    },
+    {
+      "at": "2026-10-19T12:38:59.353Z",
+      "name": "查询失败→重试",
+      "result": {
+        "name": "查询失败→重试",
+        "expected": "错误原因可见、重试恢复",
+        "actual": "模拟查询失败 → 重试成功",
+        "pass": true
+      }
+    },
+    {
+      "at": "2026-10-19T12:38:59.430Z",
+      "name": "详情失败→重试",
+      "result": {
+        "name": "详情失败→重试",
+        "expected": "独立错误及重试恢复真实详情（自测包装detail一次）",
+        "actual": "包装一次detail失败，已还原",
+        "pass": true
+      }
+    },
+    {
+      "at": "2026-10-19T12:39:00.700Z",
+      "name": "派单整批失败→重试",
+      "result": {
+        "name": "派单整批失败→重试",
+        "expected": "失败保留选择与配送员，Mock无变化，重试成功",
+        "actual": {
+          "ids": [
+            "PD-00005",
+            "PD-00008"
+          ],
+          "statuses": [
+            "assigned",
+            "assigned"
+          ]
+        },
+        "pass": true
+      }
+    },
+    {
+      "at": "2026-10-19T12:39:01.141Z",
+      "name": "统计失败与重试",
+      "result": {
+        "name": "统计失败与重试",
+        "expected": "保留上次值及时间、失败说明、重试成功",
+        "actual": {
+          "stats": {
+            "all": 10000,
+            "pending": 4996,
+            "assigned": 2504,
+            "delivered": 2500
+          },
+          "at": "最近读取 2026/10/19 20:39:01"
+        },
+        "pass": true
+      }
+    },
+    {
+      "at": "2026-10-19T12:39:02.506Z",
+      "name": "慢成功→快成功查询竞态",
+      "result": {
+        "name": "慢成功→快成功查询竞态",
+        "expected": "先发慢a、后发快b，最终仅显示b",
+        "actual": {
+          "q": "大学城",
+          "rows": 20,
+          "first": "大学城3栋3层"
+        },
+        "pass": true
+      }
+    },
+    {
+      "at": "2026-10-19T12:39:03.645Z",
+      "name": "慢失败→快成功查询竞态",
+      "result": {
+        "name": "慢失败→快成功查询竞态",
+        "expected": "过期失败不覆盖最新列表/加载/错误",
+        "actual": "最新大学城条件保留，旧失败已忽略",
+        "pass": true
+      }
+    },
+    {
+      "at": "2026-10-19T12:39:29.013Z",
+      "name": "性能采样（生产构建）",
+      "result": {
+        "name": "性能采样（生产构建）",
+        "expected": "1440×900/DPR1；预热10s；30次输入；间隔500ms；P95≤100ms",
+        "actual": {
+          "p95": 4.100000023841858,
+          "samples": 30,
+          "width": 1440,
+          "height": 900,
+          "dpr": 1
+        },
+        "pass": true
+      }
+    }
+  ],
+  "performance": {
+    "raw": [
+      4.100000023841858,
+      3.299999952316284,
+      3.5,
+      3.899999976158142,
+      3.600000023841858,
+      3.6999999284744263,
+      3.5,
+      4,
+      3.799999952316284,
+      3.4000000953674316,
+      3.700000047683716,
+      3.700000047683716,
+      4.100000023841858,
+      3.600000023841858,
+      3.700000047683716,
+      3.299999952316284,
+      3.799999952316284,
+      3.5,
+      3.299999952316284,
+      3.5999999046325684,
+      3.6999999284744263,
+      3.5,
+      3.5,
+      3.5,
+      3.5999999046325684,
+      4,
+      3.700000047683716,
+      3.5,
+      3.5,
+      3.200000047683716
+    ],
+    "p95": 4.100000023841858,
+    "note": "近似测量输入到下一次绘制机会；主持人须同时确认真实可见反馈，不能仅以此代替交互验收。",
+    "width": 1440,
+    "height": 900,
+    "dpr": 1,
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "warmupSeconds": 10,
+    "count": 30,
+    "settleMs": 500,
+    "visibleFeedback": "搜索输入本身即时更新，同时显示正在查询当前搜索词；接口等待约180ms不计入输入反馈"
+  },
+  "environment": {
+    "at": "2026-10-19T12:39:29.209Z",
+    "url": "http://127.0.0.1:5187/selftest.html?selftest=1",
+    "width": 1440,
+    "height": 900,
+    "dpr": 1,
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+  }
+}

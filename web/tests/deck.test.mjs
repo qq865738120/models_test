@@ -14,3 +14,8 @@ test('追加阶段移除主持流程前缀，保留全部任务要求',()=>{
  assert.equal(corePrompt('初始阶段已冻结。现在开始固定追加阶段，预算30分钟。继续遵守COMMON_RULES.md。\n\n核对论证。','长文本'),'核对论证。')
  assert.equal(corePrompt('','长文本'),'')
 })
+
+test('新版提示词保留正文且移除版本与预算元数据',()=>{
+ assert.equal(corePrompt('# 标题\n\n提示词版本：pelican-prompts-3。本阶段预算：25分钟。\n\n## 材料\n任务正文','标题'),'## 材料\n任务正文')
+ assert.equal(corePrompt('初始阶段已冻结。现在开始固定追加阶段。\n\n提示词版本：pelican-prompts-3。\n\n追加正文','标题'),'追加正文')
+})

@@ -1,0 +1,2234 @@
+
+[PDF page 1]
+Prepared for submission to JCAP
+Cosmological inference from a joint
+DESI DR1 full-shape power spectrum
+and bispectrum analysis
+Caroline Guandalin 1 Prakhar Bansal 2,3 Pedro Carrilho 4
+Alejandro Aviles 5 Mike (Shengbo) Wang 1 Marcos
+Pellejero-Iba˜ nez1 Aaditya Sarma 6 Jaide Swanson 7
+Marco Bonici 8 Florian Beutler 1 Arnaud de Mattia 9
+Hee-Jong Seo 7
+1Institute for Astronomy, University of Edinburgh, Royal Observatory, Blackford Hill,
+Edinburgh EH9 3HJ, UK
+2Leinweber Center for Theoretical Physics, University of Michigan, 450 Church Street,
+Ann Arbor, Michigan 48109-1040, USA
+3University of Michigan, 500 S. State Street, Ann Arbor, MI 48109, USA
+4Centre for Astrophysics Research, University of Hertfordshire, UK
+5Instituto de Ciencias F´ ısicas, Universidad Nacional Aut´ onoma de M´ exico, Av. Uni-
+versidad s/n, Cuernavaca, Morelos, C. P. 62210, M´ exico
+6Astronomy Centre, University of Sussex, Falmer, Brighton BN1 9QH, UK
+7Department of Physics & Astronomy, Ohio University, Athens, OH 45701, USA
+8Waterloo Centre for Astrophysics, University of Waterloo, Canada
+9IRFU, CEA, Universit´ e Paris-Saclay, F-91191 Gif-sur-Yvette, France
+E-mail: caroline.guandalin@roe.ac.uk
+Abstract.The galaxy bispectrum directly probes the non-linear gravitational evolu-
+tion of large-scale structure (LSS) and can break parameter degeneracies that remain
+in power-spectrum analyses. We present a joint full-shape cosmological analysis of
+three luminous red galaxy (LRG) redshift bins and the quasar (QSO) sample from
+the first Data Release (DR1) of the Dark Energy Spectroscopic Instrument (DESI).
+We model the redshift-space power spectrum at one loop and the tree-level bispec-
+trum within the Effective Field Theory of LSS. The bispectrum is decomposed in the
+Tripolar Spherical Harmonics basis, for which the convolution with the survey window
+function can be formulated as a direct linear transformation of the theoretical multi-
+poles. Our power-spectrum constraints are in good agreement with the official DESI
+DR1 full-modelling results. We investigate the impact of including the bispectrum
+arXiv:2610.01836v1  [astro-ph.CO]  1 Oct 2026
+
+[PDF page 2]
+in the inference, finding that the monopole substantially improves the constraints on
+the cold dark matter density and amplitude of matter fluctuations by 9-18% and 8-
+20%, respectively, in the individual-tracer analyses. The corresponding reductions are
+15% and 10% for the combined LRG sample, and 6% and 4% when all tracers are
+combined. In a restricted test using the first LRG bin, the bispectrum quadrupole
+changes the marginalised uncertainties by only a few percent. Extending the analysis
+tow 0waCDM substantially broadens the cosmological posteriors, while the bispectrum
+produces only a mild change in the allowed dark-energy parameter region, which re-
+mains sensitive to the adopted prior ranges. Our results demonstrate the potential of
+higher-order clustering statistics to improve cosmological constraints, while providing
+a framework for incorporating the bispectrum into full-shape analyses of current and
+future spectroscopic galaxy surveys.
+
+[PDF page 3]
+Contents
+1 Introduction 2
+2 Modelling 4
+2.1 Power spectrum 6
+2.1.1 Legendre decomposition 7
+2.2 Bispectrum 7
+2.2.1 Tripolar spherical harmonics decomposition 8
+2.3 Alcock–Paczy´ nski effect 9
+2.4 Window convolution 9
+3 DESI DR1 data 10
+3.1 Power spectrum measurements 13
+3.2 Bispectrum measurements 15
+4 Simulations 16
+4.1N-body simulations 16
+4.2 Covariance 17
+5 Methodology 17
+5.1 Bayesian inference 17
+5.1.1 Likelihood 19
+5.1.2 Priors 19
+5.1.3 Analytical marginalisation 20
+5.1.4 Sampler 22
+5.2 Emulators 23
+6 Results 23
+6.1 Power-spectrum-only analysis 24
+6.2 Impact of the bispectrum 26
+6.3w 0waCDM constraints 32
+7 Conclusions 32
+A Bispectrum window convolution 36
+A.1 Convolution series 36
+A.2 Convolution test 39
+B Validation on mocks 39
+B.1 Impact of reparametrisation 39
+B.2 Choice of maximum scale 39
+C Extra figures 42
+– 1 –
+
+[PDF page 4]
+1 Introduction
+Galaxy redshift surveys measure the three-dimensional distribution of biased tracers
+and provide one of the main probes of cosmic expansion and the growth of structure.
+While baryon acoustic oscillation (BAO) measurements provide a robust standard
+ruler, full-shape analyses use the scale dependence of the clustering power spectrum
+and its redshift-space anisotropies to extract additional information on the matter
+density, the amplitude of fluctuations, the growth rate, and galaxy bias [1, 2]. Much of
+this additional information can be obtained from the scales where the density field is
+no longer in the linear regime, making an accurate description of non-linear structure
+formation essential.
+Non-linear gravitational collapse of matter is responsible for the interaction of
+different scales, which in Fourier space is manifested through the coupling of different
+modesk i. At late times, these interactions generate non-negligible deviations from
+the nearly Gaussian statistics expected from the linear evolution of the initial condi-
+tions [3]. Quantifying the agreement of such gravitationally induced non-Gaussianities
+with theoretical predictions is essential for testing the assumptions and validity of our
+cosmological models.
+We can study how these non-Gaussianities are generated analytically by describing
+the non-linear gravitational evolution through a convolution ofnFourier modes of the
+initial (linear) density fieldδ (1), weighted by a kernelF n that describes the mode
+coupling induced by gravity at ordernin standard perturbation theory (SPT) [4–6].
+With the two-point function in Fourier space (namely, the power spectrum), 1
+⟨δ(k1)δ(k2)⟩= (2π) 3δD(k1 +k 2)P(k 1),(1.1)
+deviations from the linear prediction are already present due to loop corrections that
+come from the higher-order terms in the SPT expansion, such asδ(2) andδ (3). However,
+since a Gaussian random field is fully characterised by its two-point function, with all
+connected higher-order moments vanishing identically [7], the three-point function, or
+bispectrum in Fourier space,
+⟨δ(k1)δ(k2)δ(k3)⟩= (2π) 3δD(k1 +k 2 +k 3)B(k 1,k 2,k 3),(1.2)
+is the lowest-order statistic sensitive to the non-Gaussian features, thus providing a
+direct probe of the non-linear gravitational interactions responsible for mode coupling
+in the late-time matter distribution. Therefore, in this work we consider a joint analysis
+of the galaxy bispectrumB(k 1,k 2,k 3) and power spectrumP(k 1).
+In addition to providing us with a better description of the distribution of galaxies,
+the bispectrum also helps us to constrain the galaxy bias expansion, which captures
+the galaxy formation process by a set of unknown bias parameters. Because of that, we
+are able to constrain non-linear bias contributions that lift degeneracies present in the
+linear theory, such as the linear bias and amplitude degeneracy in the power spectrum
+[8, 9], and high-order biases [10, 11]. This is one of the main motivations for joint
+1Here, and in what follows,δ D(x) is the three-dimensional Dirac delta.
+– 2 –
+
+[PDF page 5]
+power-spectrum and bispectrum analyses in perturbative models of galaxy clustering
+[12–14].
+One of the main goals of modern full-shape analyses of the power spectrum and
+bispectrum is to extend the modelling to the quasi-linear regime, while maintaining an
+accuracy compatible with the statistical precision of current galaxy redshift surveys.
+These scales contain a large fraction of the observable Fourier modes, which reduces the
+statistical uncertainties due to an improved sampling of the underlying density field.
+The primary advantage of current spectroscopic surveys, such as the Dark Energy
+Spectroscopic Instrument (DESI), is their large effective volume and broad redshift
+coverage, which reduce sample variance and provide several galaxy and quasar samples
+with complementary bias and redshift dependence. The number density of each sample
+then controls the balance between shot noise and sample variance on the scales included
+in the analysis [2, 15, 16].
+However, the accurate modelling of the quasi-linear regime remains challenging.
+The loop corrections arising in the SPT receive contributions from small, non-linear
+scales where the perturbation expansion breaks down. The Effective Field Theory
+(EFT) of Large-Scale Structure (LSS) provides a physically motivated way of account-
+ing for their impact on long-wavelength modes: unresolved short-distance dynamics
+is absorbed into counterterms and stochastic contributions consistent with the sym-
+metries of the problem, making the perturbative description predictive on mildly non-
+linear scales [17–22].
+Our primary goal in this work is to constrain the ΛCDM model and the galaxy
+bias parameters by conducting the first full-shape analysis of the joint galaxy power
+spectrum and bispectrum with DESI Year 1 data [16], accounting for the effects of
+survey geometry in a consistent way via the Tripolar Spherical Harmonics (TripoSH)
+decomposition of the redshift-space bispectrum, and within the framework of EFT.
+We also consider the extension to a time-dependent dark-energy equation of state
+described by the Chevallier-Polarski-Linder (CPL) parametrisation,w(a) =w 0+wa(1−
+a) [23, 24].
+We structure this manuscript as follows. In Section 2, we describe our modelling
+choice, which is based on the EFT of LSS, for both the power spectrum and bispectrum.
+We also discuss the TripoSH decomposition in Section 2.2.1, and we give a general
+overview of the window function convolution in Section 2.4, leaving the specific details
+of the DESI DR1 power spectrum window treatment to Section 3.1. We provide a
+full description of the bispectrum window function in Appendix A. Sections 3 and
+4 introduce the main data catalogues and simulations employed in our analysis. In
+Section 5, we present the methodology chosen: the Bayesian inference formalism, the
+likelihood and priors assumed, and the sampler and emulators chosen. Finally, the
+results are presented in Section 6, and we conclude in Section 7. The validity of the
+pipeline, tested againstN-body simulations, is left for Appendix B.
+– 3 –
+
+[PDF page 6]
+2 Modelling
+The statistical power of galaxy surveys increases rapidly as smaller scales are included,
+since the number of independent Fourier modes grows approximately ask 2 dk. The
+challenge is that these same scales are progressively affected by non-linear gravitational
+evolution, galaxy bias, and redshift-space distortions. Standard perturbation theory
+is controlled only while the long-wavelength density fluctuations remain small, and it
+breaks down as the wavenumber approaches the non-linear scalek NL, defined schemat-
+ically byδ(k NL)∼ O(1). A central goal of modern large-scale-structure modelling is
+therefore to extend the range of scales that can be used in a controlled way, without
+attempting to describe the fully non-linear short-distance dynamics explicitly.
+The EFT of LSS provides a systematic framework for this purpose. In this context,
+EFT means a long-wavelength description obtained after coarse-graining over short-
+scale modes. The long-wavelength dark-matter fields are described as an effective fluid
+coupled to gravity, while the impact of unresolved short-distance physics is absorbed
+into counterterms and stochastic contributions that supplement the perturbative ex-
+pansion with all counterterms allowed by the symmetries of the problem: equivalence
+principle, rotational invariance, and mass and momentum conservation [17–22, 25]; see
+[26, 27] for reviews. This makes the perturbative description renormalised and predic-
+tive on mildly non-linear scales, with an accuracy controlled by ratios such ask/k NL
+and by the perturbative order used in the calculation.
+In this work, we use this framework for the redshift-space galaxy power spectrum
+at one loop and for the galaxy bispectrum at tree level. Our implementation follows
+theFOLPSperturbative solver [28–30], which provides fast loop calculations and can
+include kernels beyond the Einstein–de Sitter approximation when required. Infrared
+(IR) resummation is used to account for the large-scale bulk displacements that smooth
+the baryon acoustic oscillation feature [31–33].
+For biased tracers, the small-scale physics of galaxy formation is absorbed into a
+set of bias coefficients multiplying all operators allowed by the symmetries [20, 25, 26,
+34, 35]. At fixed timeτ, the galaxy overdensity in real space can be written as
+δg(r, τ) = ng(r, τ)
+¯ng(τ) −1 =
+X
+O
+bO(τ) [O](r, τ) +ϵ(r, τ) +
+X
+O
+ϵO(r, τ) [O](r, τ).(2.1)
+Hererdenotes the comoving real-space position, ¯ng is the mean galaxy number density,
+bO are bias parameters, and [O] denotes renormalised composite operators built from
+second spatial derivatives of the gravitational and velocity potentials. The fieldsϵand
+ϵO describe stochastic,noisecontributions sourced by short-scale physics and tracer
+discreteness.
+At leading order in spatial derivatives, and for the power spectrum at one loop
+and the bispectrum at tree level, a convenient operator basis is
+O ∈
+
+δ, δ2, K2, Otd
+	
+,(2.2)
+with corresponding bias parameters
+{b1, b2, bK2, btd}.(2.3)
+– 4 –
+
+[PDF page 7]
+The tidal operator is defined byK 2 ≡K ijK ij, where
+Kij =
+ ∂i∂j
+∇2 − 1
+3 δij
+
+δ,(2.4)
+while
+Otd = 8
+21 Kij
+ ∂i∂j
+∇2 − 1
+3 δij
+
+δ2 − 3
+2 KklKkl
+
+.(2.5)
+Higher-derivative operators, such as∇ 2δ, and stochastic terms are included separately
+when required by the perturbative order and by the precision of the data.
+Equation (2.1) is written in real-space coordinates. In redshift surveys, however,
+the observed radial position is shifted by the line-of-sight component of the peculiar
+velocity. In the plane-parallel approximation, the mapping from real-space positionr
+to redshift-space positionsis
+s=r+ ˆz v(r)· ˆz
+H ,(2.6)
+whereH=aHis the conformal Hubble rate,ais the scale factor,vis the peculiar
+velocity field, and ˆzdenotes the fixed line-of-sight direction. Number conservation
+under this mapping determines the redshift-space density contrast. In Fourier space,
+δ(s)
+g (k) =
+Z
+d3re −ik·r [1 +δ g(r)] exp
+
+−ikz
+vz(r)
+H
+
+−(2π) 3δD(k),(2.7)
+wherev z ≡v· ˆzandk z ≡k· ˆz.
+Expanding this expression perturbatively gives the standard redshift-space kernels
+Zn [6, 9, 36],
+δ(s)
+g (k) =Z 1(k)δ(1)(k) +
+Z
+d3q1 d3q2 δD(k−q 12)Z2(q1,q 2)δ (1)(q1)δ (1)(q2) (2.8)
++
+Z
+d3q1 d3q2 d3q3 δD(k−q 123)Z3(q1,q 2,q 3)δ (1)(q1)δ (1)(q2)δ (1)(q3),
+whereZ 1(k, ˆn),Z 2(k1,k 2, ˆn), andZ 3(k1,k 2,k 3, ˆn) are the first-, second-, and third-
+order redshift-space kernels. At linear order, the mapping to redshift space gives the
+Kaiser formula,
+Z1(k, ˆn)≡Z 1(µ) =b 1 +f µ 2,(2.9)
+whereb 1 is the linear galaxy bias,fis the logarithmic growth rate, andµ= ˆk· ˆn
+is the cosine of the angle between the Fourier mode and the line of sight [36]. This
+term describes the coherent large-scale velocity contribution to redshift-space clustering
+and sets the leading anisotropic dependence of the power spectrum. The higher-order
+kernelsZ 2 andZ 3 generalise this result beyond linear theory: they include the mode
+coupling generated by non-linear density and velocity evolution, together with the bias
+operators required for galaxies. The tree-level bispectrum depends only onZ 1 andZ 2,
+whereas the one-loop redshift-space power spectrum also requiresZ 3.
+– 5 –
+
+[PDF page 8]
+2.1 Power spectrum
+We consider the power spectrum at 1-loop in perturbation theory [30]:
+PEFT(k, µ) =P tree(k, µ) +P 1-loop(k, µ) +P LO
+c.t. (k, µ) +P ϵϵ(k, µ),(2.10)
+where
+Ptree(k, µ) =Z 2
+1(µ)Plin(k) (2.11)
+is the standard redshift-space distortions term,
+P LO
+c.t. (k, µ) = (c0 +c 2µ2 +c 4µ4)k 2 Plin(k) (2.12)
+is the leading-order EFT counterterm, which emerges from the integration of modes
+above the EFT cut-off limit,
+Pϵϵ(k, µ) = 1
+¯n(α0 +α 2k2µ2) (2.13)
+accounts for the stochastic nature of small-scale modes and of the initial conditions,
+and
+P1-loop(k, µ) =
+4X
+m=0
+mX
+n=0
+f mµ2nInm(k) (2.14)
+is the one-loop correction. Here, the dependence on the growth ratefand on the
+line-of-sight angleµhas been made explicit. The functionsI mn(k) arek-dependent
+functions, loop contributions, multiplying the corresponding powers offandµ 2. They
+include, for example, terms associated with the usualP 22- andP 13-type loop integrals,
+together with the additional redshift-space and bias contributions that enter at the
+same perturbative order. We evaluate these loop functions using FFTLog methods
+[37–39]: the linear power spectrum is approximated by a sum of complex power laws,
+Plin(k)≃ P
+a cakνa, which allows the loop integrals to be recast as sums over power-
+law contributions. In this representation, the dependence on the input linear spectrum
+is encoded in the FFT coefficientsc a, while the remaining kernel-dependent part is
+stored in precomputed matricesM. The evaluation ofI mn(k) is then reduced to matrix
+contractions and sums over FFT modes. We refer the reader to Section 3 of [29, 40]
+for further details in theFOLPSimplementation.
+We account for the effects of non-linear evolution of modes close to the baryon
+acoustic oscillations (BAO) scaleℓ BAO ∼104 Mpc/hvia the IR-resummed power spec-
+trum [21, 29, 33]:
+P IR-res
+EFT (k, µ) =D(k, µ)P EFT(k, µ)+[1− D(k, µ)]P nw
+EFT(k, µ)+k2 Σ2
+tot(k, µ)D(k, µ)P w(k),
+(2.15)
+whereD(k, µ)≡e −k2Σ2
+tot(k,µ),
+Σ2
+tot(k, µ) =
+
+1 +f µ2 
+2 +f
+
+Σ2 +f 2µ2(µ2 −1)δΣ 2,(2.16)
+Σ2 = 1
+6π2
+Z kIR
+0
+dp Pnw(p) [1−j 0 (p ℓBAO) + 2j2 (p ℓBAO)],(2.17)
+– 6 –
+
+[PDF page 9]
+δΣ2 = 1
+2π2
+Z kIR
+0
+dp Pnw(p)j 2 (p ℓBAO),(2.18)
+kIR ∼0.4h/Mpc is the scale separating the modes that should be resummed (respon-
+sible for the BAO broadening), from those that have no impact on the BAO feature,
+j0 andj 2 are the spherical Bessel functions,P w(k) is the BAO feature, such that
+Plin(k) =P nw(k) +P w(k), andP nw
+EFT(k, µ) is obtained via Equation (2.10), but using
+the smooth power spectrumP nw instead of the linear one.
+2.1.1 Legendre decomposition
+In order to describe the anisotropies along the line of sight introduced by the redshift-
+space distortions, we decompose the galaxy power spectrum in redshift-space in terms
+of Legendre polynomials:
+P (s)
+g (k, µ) =
+∞X
+ℓ=0
+P (s)
+ℓ (k)Lℓ(µ),(2.19)
+where
+P (s)
+ℓ (k) = 2ℓ+ 1
+2
+Z 1
+−1
+dµ P (s)
+g (k, µ)L ℓ(µ) (2.20)
+are the coefficients of the expansion.
+2.2 Bispectrum
+We model the galaxy bispectrum as proposed in [27]:
+B(k1,k 2,k 3) =
+
+2Z2(k1,k 2)ZFoG
+1 (k1)ZFoG
+1 (k2)P IR-res
+lin (k1)P IR-res
+lin (k2) (2.21)
++Bshot
+
+b1 + 2 Pshot
+Bshot
+f µ2
+
+Z1(k1)P IR-res
+lin (k1) + perms.
+
++ ˜P 2
+shot
+While this keeps the overall structure of the tree-level bispectrum, this model includes
+the leading-order effects of bulk flows through the IR-resummationP IR-res
+lin (k, µ)≡
+Pnw(k)+D(k, µ)P w(k), whereP nw is the smooth component of the linear matter power
+spectrum. It also includes the Fingers-of-God (FoG) damping associated with the small-
+scale velocity dispersion via the kernel
+ZFoG
+1 (k) =b 1 +f µ 2 −c 1µ2
+ k
+kIR
+2
+,(2.22)
+wherec 1 is a counterterm.
+– 7 –
+
+[PDF page 10]
+2.2.1 Tripolar spherical harmonics decomposition
+Because the redshift-space bispectrum depends on the directions ˆk1, ˆk2, and ˆn, we
+decomposeB(k 1,k 2, ˆn) in the tripolar spherical harmonics (“TripoSH”) basis, which
+form a complete orthonormal basis for functions depending on three directions [41, 42]:
+Bℓ1ℓ2L(k1, k2) =N ℓ1ℓ2L Hℓ1ℓ2L
+Z d cosωdϕ
+4π
+Z d cosθ12
+2 ×
+×
+X
+M
+ℓ1 ℓ2 L
+0−M M
+
+Y ∗
+ℓ2 −M(θ12,0)Y ∗
+LM(ω,0)B(k 1, k2, θ12, ω, ϕ),
+(2.23)
+whereY ℓm ≡
+p
+4π/(2ℓ+ 1)Y ℓm are the quasi-normalised spherical harmonics. In the
+following, we adopt the coordinate system in whichk 1 is aligned along thez-axis, and
+k2 lies in thex-zplane:
+k1 = (0,0, k 1) (2.24)
+k2 =
+
+−k2
+q
+1−µ 2
+2,0, k 2 µ2
+
+(2.25)
+k3 = (−kx
+1 −k x
+2 ,−k y
+1 −k y
+2,−k z
+1 −k z
+2) (2.26)
+ˆn=
+p
+1−µ 2 cosϕ,
+p
+1−µ 2 sinϕ, µ
+
+,(2.27)
+where cosθ 12 ≡µ 2 and cosω≡µ. Here,B ℓ1ℓ2L(k1, k2) are the bispectrum multipoles
+in the TripoSH basis, which are symmetric under the (ℓ 1, k1)↔(ℓ 2, k2) exchange.
+We opt for this decomposition primarily because of its properties under global
+rotations: by coupling the angular dependenceℓ 1,ℓ 2 andLof ˆk1, ˆk2 and ˆn, respec-
+tively, in states of total angular momentum [(ℓ 1 ⊗ℓ 2)ℓ12 ⊗L] Ltot, a rotation operator
+becomes a block-diagonal WignerD-matrixD (Ltot)
+M M′ , acting only on the magnetic index
+M[41]. Rotational invariance implies that the bispectrum transforms as a scalar un-
+der simultaneous rotations of ˆk1, ˆk2, and ˆn, so only theL tot = 0 contributes. Finally,
+parity symmetryB(−k 1,−k 2,− ˆn) =B(k 1,k 2, ˆn) is also straightforward to impose,
+since the basis has a defined parity of (−1) ℓ1+ℓ2+L, such that the only contributions
+come from modes with evenℓ 1 +ℓ 2 +L.
+We reinforce this choice, as discussed in [43] and summarised in Section 2.4, be-
+cause it leads to a particularly simple treatment with the window function, as opposed
+to a convolution in the so-called “Scoccimarro” basis [44]: in the latter, the bispectrum
+is projected into the Legendre multipolesB L(k1, k2, k3), while the window convolution
+requires additional multipoles that must be summed over [for example, see 45]. In con-
+trast, the survey window function, the 3PCF and the bispectrum are all expanded in
+the same irreducible TripoSH basis. As a result, the window convolution only couples
+TripoSH multipoles among themselves, allowing the full operation to be expressed as
+a mixing matrix acting directly on the vector of coefficients (ℓ 1ℓ2L) [42, 43].
+An additional advantage of working in this basis is related to the dimensionality
+reduction of the observed data vector [43]: the bispectrum multipoles in the TripoSH
+basis are obtained after integrating over the angular dependence of the triangle and the
+– 8 –
+
+[PDF page 11]
+line-of-sight configuration, compressing the bispectrum into a two-dimensional statistic
+Bℓ1ℓ2L(k1, k2). This decreases the size of the data vector and its covariance matrix,
+reducing the number of simulations required for the covariance matrix estimation.
+2.3 Alcock–Paczy´ nski effect
+Finally, our modelling includes the so-called Alcock–Paczy´ nski (AP) effect [46], which
+appears as geometric distortions in the mapping of observed redshift and angles into
+comoving distances under the assumption of a given fiducial cosmological model and
+parametersθ fid. The mismatch between the quantities computed at the fiducial values
+and the parameters being sampledθ test, can be described by two “AP” parameters,
+q∥ = H(θfid, z)
+H(θtest, z)
+htest
+hfid
+andq ⊥ = DA(θtest, z)
+DA(θfid, z)
+htest
+hfid
+.(2.28)
+The wave vectorkfid, which we take in units of Mpc/h, is defined through the map-
+ping from observables (redshift and angles) using the fiducial cosmological model. For
+the alternative parameter set (and/or model), the same observations can be mapped
+into a new coordinate system “distorted” as
+ktest =
+kfid
+∥
+q∥
++ kfid
+⊥
+q⊥
+,(2.29)
+wherek fid
+∥ = (kfid · ˆn) ˆn, andk fid
+⊥ =k fid −k fid
+∥ . When changing between cosmological
+parameters, the volume element changes as
+d3ktest
+d3kfid
+= 1
+q2
+⊥q∥
+,(2.30)
+such that the power spectrum multipoles get shifted by (q 2
+⊥q∥)−1, and the bispectrum
+multipoles by (q 2
+⊥q∥)−2.
+2.4 Window convolution
+Consider the density fieldδ(x) defined in Equation (2.1). We define the corresponding
+“windowed” field
+ˆδ(x) =W(x)δ(x) (2.31)
+through the so-called “window function”W(x), which characterises the survey ge-
+ometry and selection function. In configuration space, this map acts locally through
+pointwise multiplication. However, in Fourier space, this local operation induces a
+convolution,
+ˆδ(k) =
+Z d3q
+(2π)3 W(k−q)δ(q),(2.32)
+which couples different Fourier modes and angular multipoles: if the window were
+isotropic, i.e.,W(q) =W(|q|), the convolution would preserve angular momentum and
+– 9 –
+
+[PDF page 12]
+each Legendre multipole would evolve independently. However, the anisotropic sur-
+vey footprint breaks global rotational invariance, such that the convolution inevitably
+mixes different angular modes.
+The convolved power spectrum ˆPℓ(k) can be defined through the integral operator
+WP :
+(WP P) ℓ(k)≡
+X
+ℓ′
+Z
+dq W ℓℓ′(k, q)Pℓ′(q),(2.33)
+whereW ℓℓ′ is the kernel that couples different multipoles due to anisotropies in the
+survey geometry. Similarly, the convolved bispectrum ˆBλ, whereλ≡(ℓ 1, ℓ2, L) in the
+TripoSH basis, can be defined viaW B:
+(WBB)λ (k1, k2)≡
+X
+λ′
+Z
+dq1 dq2 W B
+λλ′(k1, k2;q 1, q2)B λ′(q1, q2),(2.34)
+The operator kernelW λλ′ is similar to what the authors in [45] would call a “mixing
+matrix” (see their Equation 3.8).
+The approach we take was developed in references [42, 43], which closely resembles
+the one adopted in power-spectrum studies [47–49]. We can summarise the convolution
+operatorW B as the set of linear transformations
+B
+T1
+− →ζ
+C
+− →ˆζ
+T2
+− →ˆB,(2.35)
+whereT 1 is a double spherical Bessel transform,Cis the configuration-space window
+coupling, andT 2 is a Fourier transform taking the windowed 3PCF to the convolved
+bispectrum.
+Since each of these operators acts on a finite dimensional space (fixed by the
+multipoles and bins of the data vector), we can recast the whole transformation in
+terms of matricesTandC, such that
+ˆB= (T 2 ◦C◦T 1)B≡W B B,(2.36)
+where the whole process has been defined in terms of a window matrixW:B→ ˆB.
+This linear algebra formulation was also developed in [45], but their result is given in
+terms of a mixing matrix which is a continuous linear operator.
+We describe the specific details for the convolution of the DESI DR1 power spec-
+trum measurements in Section 3.1. Since the bispectrum was not an “official” by-
+product of DR1, we give a detailed description of the bispectrum convolution series in
+Appendix A.
+3 DESI DR1 data
+In this work, we use the public DESI Data Release 1 (DR1) dataset [16], resulting
+from the DESI observations conducted between May 14 (2021) and June 14 (2022) on
+the Mayall Telescope at Kitt Peak, Arizona. We focus on the targets detected by the
+– 10 –
+
+[PDF page 13]
+Table 1: Samples considered in this work. In our likelihood analysis, we fix the
+comoving number density of galaxies and quasars to ¯n(z) = 10−4 (h/Mpc)3 .
+Sample RedshiftN g zeff
+LRG1 0.4< z <0.6 506 905 0.510
+LRG2 0.6< z <0.8 771 875 0.706
+LRG3 0.8< z <1.1 859 824 0.919
+QSO 0.8< z <2.1 856 652 1.491
+so-called “dark-time programme”, namely the luminous red galaxies (LRGs, [50]) and
+quasars (QSOs, [51]). 2
+Three-dimensional redshift catalogues are constructed from the targets’ angular
+positions (RA, Dec) and the spectroscopic redshiftszmeasured with DESI’s pipeline
+[52]. For clustering analyses, DESI provides random Poissonian cataloguesn r(x)∼
+Pois[ν= ¯n(z)] that match the survey angular mask (uniform distribution in the angular
+coordinates) and the empirical radial selection function ¯n(z) of each tracer sample.
+They are generated withα −1 =N r/Ng ≳100, that is,≳100 times denser than the
+data catalogue in order to minimise shot-noise contributions from the random field. 3
+The random catalogues are used to estimate the survey selection function, and
+they isolate the intrinsic galaxy fluctuations in the weighted overdensity field that
+enters the power spectrum and bispectrum estimators,
+F(x) =w(x)[n g(x)−α n r(x)],(3.1)
+wheren g(x) andn r(x) denote the data and random number-density fields, respectively,
+andw(x) =w tot(x)w FKP(x) [53] is the total clustering weight applied to the cata-
+logues,w tot accounts for observational systematics, fibre-assignment completeness, and
+redshift failures, andw FKP is the FKP weight which optimises the balance between shot
+noise and sample variance for a specific scale in the power-spectrum estimation [54].
+The random catalogues are also used to determine the window function of the
+survey required to convolve theoretical predictions before they are compared with
+the observations (see section 2.4). For further details on the specific data collection
+methodology employed by DESI, we refer the interested reader to [2] and references
+therein.
+For our main analysis, we consider the monopole and quadrupole of the power
+spectrum, and the monopole of the bispectrum, in the basis described in Sections 2.1.1
+and 2.2.1, respectively. As we discuss in Section 6.2, the bispectrum quadrupole does
+not add significant statistical gains and is therefore omitted from the analysis.
+2In our analysis, we neglect the emission line galaxies (ELGs) for simplicity.
+3Here,N r andN g are the total number of random and data points, respectively.
+– 11 –
+
+[PDF page 14]
+Figure 1: Power spectrum (‘θ-cut+rotated+RIC+AIC’) and bispectrum measure-
+ments used in our full-shape analysis of the DESI DR1 LRG and QSO samples. The
+upper panels show the power spectrum monopoleP 0 (solid lines) and quadrupoleP 2
+(dashed lines), while the lower panels show the diagonal bispectrum multipolesB 000
+(solid lines) andB 202 (dashed lines). Left panels correspond to the three LRG redshift
+bins, 0.4< z <0.6 (LRG1), 0.6< z <0.8 (LRG2), and 0.8< z <1.1 (LRG3),
+shown in different colours, and the right panels show the QSO sample in the range
+0.8< z <2.1. Notice that these are the “GC-combined” statistics (Eq. 3.2).
+As described in [53], the measurements are performed in the South (SGC) and
+North Galactic Cap (NGC). We employ the same convention as in [2] and combine the
+power spectrum and bispectrum measurements into a weighted average:
+SGC-comb
+a =
+P
+GC IGC
+p SGC
+aP
+GC IGC
+p
+,(3.2)
+where GC∈ {SGC,NGC}, andS a =P ℓ(k) orS a =B ℓ1ℓ2L(k1, k2). The normalisation
+factors are given by
+Ip =α
+X
+i∈R
+np−1
+z,i wtot,i wp
+FKP,i,(3.3)
+withn z,i being the unweighted expected number density at the particle position,p= 2
+for the power spectrum, andp= 3 for the bispectrum.
+Due to the linear property of the window matrices, for both the power spectrum
+and bispectrum, as described in Section 2.4, the same weighted average is performed on
+– 12 –
+
+[PDF page 15]
+the final window matrices, such that we compute a single theory vector which is then
+automatically converted into the GC-combined theory via the window convolution. We
+combine the windows in the way described by Equation (3.2), withS a ∈ {W P ,W B}.
+3.1 Power spectrum measurements
+We use the official DESI DR1 ‘θ-cut+rotated+RIC+AIC’ power spectrum measure-
+ments (see top panels of Figure 1). These are obtained from aθ-cut estimator,
+ˆP cut
+ℓ ≡ ˆPℓ −∆P θcut
+ℓ , that removes the contributions ∆Pθcut
+ℓ to the power spectrum com-
+ing from pairs whose angular separation is below the fibre-collision scaleθ < θcut = 0.05
+deg, offering an alternative to a forward modelling approach that would instead try to
+model the DESI fibre assignment [55]. These measurements also include corrections
+for the radial and angular integral constraints (RIC and AIC). For more details, see
+[53].
+The restriction of the angular domain imposed by theθ-cut estimator directly
+impacts the window function. In configuration space,W cut ∼W raw Θ(θ−θ cut), where
+Θ(x) is the Heaviside step function. In Fourier space, this angular cut will lead to
+sinc-like oscillations that decay slowly and thus pick up high-k theory modes. That is,
+without theθ-cut, the window function would be compact in the theory modes, such
+that a truncation atk max could be safely done.
+To mitigate this effect, a “compactification” ink-space is applied to the power
+spectrum window matrix, such that most of its contributions are obtained fromk obs ≈
+ktheory. For that, the authors of [55] considered the invertible linear transformation
+M:R Mobs →R Mobs, which gives combinations of the observed multipoles that are less
+sensitive to high-ktheory modes.4 Thus,Mis such that
+W→ ˜W=M W
+is nearly diagonal. Because this transformation acts on the data space, asd→ ˜d=
+Md,W→ ˜W=M W,and ˜C= (M C M T), it is important to require invariance of the
+likelihood. It is straightforward to check that this is achieved ifMhas an inverse.
+Since the compactified window matrix ˜Wis obtained by truncating the response to
+high-ktheory modes, the convolved prediction will be affected by a residual uncertainty
+associated with the missing part of the theory vector. In [55], this residual contribution
+is modelled as a correction to the window matrix,W→W−m omT
+t , wherem t describes
+the characteristic pattern of the missing high-k theory modes andm o specifies how this
+missing signal projects onto the observed data vector. Marginalising over an unknown
+amplitudesof this residual contribution is equivalent to treating it as an additional
+source of uncertainty, since the amplitude of this contribution, which depends on the
+part of the theory vector beyond the adoptedk max, cannot be predicted once those
+modes are truncated. This induces an extra covariance term,C s ≡s 2momT
+o , which is
+accounted for in the final covariance matrix.
+4They called this transformationMa rotation, hence the name of the official DR1 power spectrum
+measurements.
+– 13 –
+
+[PDF page 16]
+Figure 2: Example of correlation matrices obtained from the LRG1 and LRG2 co-
+variances, for the monopole and quadrupole of both power spectrum and bispectrum,
+within the range of scales considered in this work (0.02< k <0.2h/Mpc).C P B are
+the raw covariances obtained from the mock measurements (as described in Section
+4.2), ˜CP B =M C P B MT are the covariances with the linear transformation applied, and
+Cs =P
+i s2
+imo,imT
+o,i corresponds to the contributions coming from the marginalisation
+over the unknown amplitudesused for the high-k theory modes removal.
+This contribution, however, should not be interpreted as an additional indepen-
+dent noise in each Fourier mode: the same nuisance amplitudesshifts all bins simul-
+taneously according tom o. As a result, the covariance between two observed bins
+iandjreceives a contribution (C s)ij =s 2(mo)i(mo)j. Since the template is largest
+at the high-kmodes affected by the window truncation, these modes acquire strong
+correlations after the marginalisation overs. Notice that in theP+Bcovariance, this
+additional term modifies only the power-spectrum block: theP-Bcross-covariance is
+left unchanged.
+In Figure 2, we show the successive impact of these operations on the joint power-
+spectrum and bispectrum covariances for the LRG1 and LRG2 bins. The left panels
+show the correlation measured directly from the covariance of the mocks described
+in Section 4.2, while the middle panels show the effect of the linear transformation
+matrixM, which mainly redistributes the correlations of the power-spectrum modes.
+Its effect on the bispectrum is given by the identity matrix1≡diag(1,1, . . . ,1). The
+right panels additionally include the covariance contributionC s associated with the
+– 14 –
+
+[PDF page 17]
+marginalisation over thesm o template. TheP-Bcovariances are left unchanged by
+this additional term: the corresponding correlation coefficients are reduced because
+the power-spectrum variances entering their normalisation are increased byC s.
+3.2 Bispectrum measurements
+Our bispectrum measurements are obtained with theTriumviratepackage [42, 56–
+58], using its FFT-based estimator for the TripoSH multipoles (see bottom panels of
+Figure 1).5 Particles are painted onto the FFT mesh using the Piecewise Cubic Spline
+(PCS) mass-assignment scheme (MAS).6 The aliasing introduced by the MAS is treated
+inTriumvirateby compensating the Fourier-space field with the PCS window [59]
+WPCS(k) =
+
+sinc
+ kx ∆
+2
+
+sinc
+ ky ∆
+2
+
+sinc
+ kz ∆
+2
+4
+,(3.4)
+where ∆ is the grid spacing, and by applying the TSC aliasing correction to the shot-
+noise:
+CPCS(k) =
+Y
+i=x,y,z
+
+1− 4
+3 sin2
+ ki ∆
+2
+
++ 2
+5 sin4
+ ki ∆
+2
+
+− 4
+315 sin6
+ ki ∆
+2
+
+.(3.5)
+For each tracer, the catalogue is restricted to the chosen redshift interval (see
+Table 1) and converted from (RA, DEC,z) to Cartesian coordinates using the DESI
+fiducial cosmology (see Section 4.1). The bispectrum is measured, for each galactic
+cap, over the diagonal configurationsk 1 =k 2 =kin the range 0.005< k <0.3h/Mpc,
+with 60 equally-spaced bins with width ∆k= 0.005h/Mpc. Throughout this work,
+we restrict the analysis to the lowest-order even-parity multipoles, namelyB 000 and
+B202, as motivated by [42], who have shown thatB 202 has the largest quadrupole
+amplitude compared toB 112; however, its signal-to-noise is much lower thanB 000.
+As we demonstrate in Section 6.2, the quadrupole did not improve the cosmological
+constraints for our analysis set-up, when considering the LRG1 bin and the scale cut
+kmax = 0.08h/Mpc.
+Unlike the power-spectrum measurements, our estimators do not employ theθ-cut
+procedure described in [55]. As we show in Appendix A, the residual differences be-
+tween the window-convolved predictions and the mock measurements used to assess the
+accuracy of our approach are small over the scales used in our analysis. Therefore, we
+do not introduce an additionalθ-cut-like approach to the bispectrum measurements. 7
+Finally, the integral constraints are included in the bispectrum window matrices, if
+they have a non-negligible impact. For our samples, this was only the case for the
+quasars quadrupole (see Appendix A).
+5https://triumvirate.readthedocs.io/
+6The FFT mesh had the same dimensions 896×1792×896 for all of our tracers; for this reason,
+the cell size is a tracer- and region-dependent quantity, varying from≈1.7 to≈5.8 Mpc/h.
+7Readers interested in aθ-cut approach to the bispectrum are invited to see [60].
+– 15 –
+
+[PDF page 18]
+4 Simulations
+4.1N-body simulations
+We consider theAbacusSummitsimulation suite [61] and adopt the baseline ΛCDM
+cosmology as the reference case for consistency checks. The parameters are set to
+the mean of the full temperature, polarisation, and lensing (TT, TE, EE + lowE +
+lensing) data obtained from the Planck 2018Plikresults [62]:ω b = 0.02237,ω cdm =
+0.12,h= 0.6736,A s = 2.0830×10 −9,n s = 0.9649,N ur = 2.0328,N ncdm = 1,
+ωncdm = 6.442×10 −4.
+We use 25 independent realisations of this baseline cosmology generated in boxes
+of sideL= 2 Gpc/h, with a particle mass of 2.1×10 9 M⊙/h. These simulations were
+built to generate mock catalogues reproducing the clustering of many DESI tracers,
+but we will only consider LRGs and QSOs: for the former, 50 snapshots have been
+generated (25 atz= 0.5, 25 atz= 0.8), while for the latter, we have 25 snapshots at
+z= 1.4.
+From these snapshots, cubic mock catalogues were created to replicate the cluster-
+ing of LRGs at redshiftsz= 0.5 (LRG1),z= 0.8 (LRG2) andz= 1.1 (LRG3) and of
+QSOs atz= 1.4. These are part of the so-called “Second Generation” of mocks, which
+were created by populating the dark matter halos with the halo occupation distribution
+(HOD) model of [63], fitted to the final DESI early data release [64]. The final periodic
+mocks reproduced the clustering of LRGs at 0.4< z <0.6 (LRG1), 0.6< z <0.8
+(LRG2), and 0.8< z <1.1 (LRG3), and quasars (QSO) between 0.8< z <2.1. When
+constructing the redshift-space catalogues, the HOD accounted for an incompleteness
+factor 0< f ic ≤1, and velocity-bias parameters for central and satellite galaxies [65].
+The number densities, in units ofh 3/Mpc3, are ¯nLRG1 = 0.00070, ¯nLRG2 = 0.00085,
+¯nLRG3 = 0.00081, and ¯nQSO = 0.00017. In what follows, we refer to these cubic mocks
+simply as “boxes”.
+Finally, two other sets of mocks were created, in order to reproduce the actual
+DESI observations: the “complete” and “alternate Merged Target Ledgers” (altMTL)
+mocks. From boxes described above, the complete catalogues were created by convert-
+ing the Cartesian coordinates into the corresponding right ascension, declination and
+“observed” redshifts (we only consider those in redshift space), followed by the DESI
+footprint “cut”: the angular positions were selected according to the area of obser-
+vations, and the radial selection was applied in order to match the observed number
+densityn(z) of tracers. Because of that, we stress that these mocks are not proper
+light cones, in the sense that they do not carry any redshift evolution of the tracers.
+Finally, by applying fibre assignment of DESI observations to the complete mocks, the
+altMTL catalogues were generated with the same incompleteness as the real data, due
+to the fibre collisions.
+Figure 3 shows an example of the power spectrum and bispectrum multipoles of
+these different sets of mocks for the second LRG bin (0.6< z <0.8) in the SGC
+region. From these mock measurements, we can assess the impact of fibre collisions
+on the different statistics: it is most evident in the small-scale amplitude of the power
+spectrum monopole and the bispectrum. The “complete” case (dotted), which does
+– 16 –
+
+[PDF page 19]
+not include any fibre assignment, has a systematically higher amplitude of small-scale
+fluctuations because pairs with angular separation smaller thanθ cut = 0.05 deg are
+not observed due to fibre collisions. As mentioned in Section 3.1, aθ-cut window is
+applied to the power-spectrum theory vector in order to account for the effect of fibre
+collisions.
+4.2 Covariance
+The covariance matrixCis estimated from 1000 realisations of a periodic box of side
+Lbox = 6 Gpc/h, obtained via theEZmockscode [66]. This code employs the Zel’dovich
+approximation to generate the dark matter density field, with an effective bias to
+describe the stochastic, non-local and non-linear contributions. These are calibrated
+to theAbacusSummitmocks to describe the galaxy field of interest.
+In order to obtain realistic covariance matrices, the EZmocks were post-processed
+with an emulator that mimics the effect of fibre collisions: because applying the DESI
+fibre assignment algorithm to the 1000 mocks for each tracer and redshift bin was very
+time consuming, there are no “altMTL” catalogues for the EZmocks used to construct
+the covariance matrices. Instead, the incomplete set of EZmocks has been generated
+with the “fast-fibre assignment” (FFA) emulator described in [67].
+As shown in Figure 3, the FFA algorithm does not capture the effects of the
+realistic altMTL fibre assignment. However, the variances are all consistent if one
+accounts for fibre assignment. Therefore, for the purposes of our analysis, we use the
+covariances obtained from the 1000 FFA EZmocks.
+5 Methodology
+5.1 Bayesian inference
+In this work, we adopt the Bayesian framework to infer a set ofN p parametersθ=
+(θ1, . . . , θp) from a data vectord∈R Nd containingN d observations of the clustering
+statistics. We will decomposeθinto a set of parameters of interestθ ∗ (e.g., the
+cosmological ones) and a set of nuisance parametersψ(such as EFT counterterms and
+higher-order biases). Within this framework,θis treated as a random variable, such
+that we can assign it a probability density functionp(θ|D, M), called the posterior
+distribution, in contrast with the frequentist approach. 8 We stress the fact that the
+distributionsp(·|·, M) are always conditioned by the modelMbeing tested.
+From Bayes’ theorem,
+p(θ|D, M) = p(D|θ, M)p(θ, M)
+p(D, M) ,(5.1)
+8For a discussion on frequentist parameter inference in cosmology see, for example, [68, 69] and
+references therein.
+– 17 –
+
+[PDF page 20]
+Figure 3: Comparison between different mocks for the LRG sample between 0.6<
+z <0.8, for the SGC region. Green solid lines show the mean of 1000 EZmocks
+for the cut-sky case, with the fast-fibre assignment (FFA) applied, and the light-
+green shaded region shows their 1-σstandard deviation. Magenta lines show the
+mean of 25AbacusSummitcut-sky mocks for the “complete” (dotted) sample
+(i.e., no fibre assignment), and the “FFA” (dashed) and “altMTL” (solid) assign-
+ments. We compare these mocks with the DESI DR1 data (black points) which we
+fit in this work. Top panels: MonopoleP 0(k) (left) and quadrupoleP 2(k) (right)
+of the power spectrum. Bottom panels: Diagonal bispectrum monopoleB 000(k, k)
+(left) and quadrupoleB 202(k, k) (right). In the subpanels, the relative differences
+with respect to the AbacusSummit altMTL reference standard deviation are shown:
+∆X/XaltMTL = (X−X altMTL)/XaltMTL, whereX={σ 0, σ2, σ000, σ202}. Shaded bands
+indicate the 0.5-σ(dark) and 1-σ(light) differences.
+– 18 –
+
+[PDF page 21]
+the posterior distributionp(θ|d, M) for the observed realisationdof the random data
+vectorDcan then be estimated via some sampling algorithm. 9 Once the observed
+realisationdis fixed, the conditional probability densityp(D=d|θ, M) is regarded
+as a function of the parameters, and is called thelikelihoodfunctionL:
+L(θ;d, M)≡p(d|θ, M).(5.2)
+In what follows, we will suppress the semicolon notation that emphasizes the depen-
+dence of the functionL(θ) on the fixeddandM.
+5.1.1 Likelihood
+We assume the likelihood of observing a data setdgiven our power spectrum and
+bispectrum models,M(θ), to be described by a multivariate Gaussian function
+L(θ)∝exp
+
+−1
+2[d−M(θ)] i ˆC−1
+ij [d−M(θ)] j
+
+,(5.3)
+where the inverse covariance matrix ˆC−1 (see Section 4.2 for the construction ofC) is
+unbiased by using the correction derived from inverse-Wishart statistics [see 70, and
+references therein]:
+ˆC−1 = Ns −N d −2
+Ns −1 C−1,(5.4)
+whereN s = 1000 is the total number of samples used to estimateC, andN d = 72 for
+theP 0 +P 2, andN d = 108 when includingB 000 (each statistic has 36k-bins over the
+scales we considered).
+5.1.2 Priors
+A key aspect of Bayesian analysis is the possibility of includingpriorknowledge about
+θin the estimation process. For that, we must assume a prior probability distribution
+functionπ(θ)≡p(θ, M). To obtain the final posterior for the parameters of interest
+θ∗, one needs to perform a marginalisation over the set of nuisance parametersψ∈R n:
+p(θ∗|d, M) =
+Z
+dnψL(θ)π(θ ∗,ψ).(5.5)
+For illustrative purposes, let us consider the simplified case in which the priors
+are separated into contributions from the parameters of interest and the nuisance
+parameters,π(θ ∗,ψ) =π(θ ∗)π(ψ), assuming a singleψand flat priors.
+Suppose that the likelihood depends onψonly through its combination with
+a cosmology-dependent amplitudeA(θ ∗) (which is the case of many EFT and bias
+9We distinguish between the random data vectorD, representing an ensemble of possible observa-
+tions generated by some stochastic process, and its observed realisationd, which corresponds to the
+measured data set used in the analysis.
+– 19 –
+
+[PDF page 22]
+parameters), that is,L(θ)≡ L(ψ A). Through the change of variablesx≡ψ A(θ ∗),
+the marginalised posterior becomes
+p(θ∗|d, M)∝ π(θ∗)
+A(θ∗)
+Z
+dxL(x).(5.6)
+Although the data constrain only the combinationx=ψ A, a flat prior onψ
+implies that the total prior space leading to the same preferredxis larger for smaller
+A. In other words, this leads to a spurious preference in the marginalised posterior for
+small values ofAthat is not driven by the data, but by the chosen parametrisation of
+the nuisance parameters.
+To mitigate these effects, the authors of [71, 72] proposed a reparametrisation
+of the nuisance parameters such that the priors are over ˜ψ=ψ A(θ ∗), where the
+amplitudes areσ 8, and the Alcock–Paczy´ nski factorAAP ≡(q ∥q2
+⊥)−1. With this new
+set of nuisance parameters, the volume of the ˜ψ-space that fits the data does not change
+as we varyθ ∗.
+As an example, sinceP (s)
+g (k, µ)∝A AP b2
+1 Plin(k), andP lin ∼σ 2
+8 (or equivalently
+As), instead of sampling directly overb 1, we consider the reparametrised linear bias
+˜b1 =b 1σ8
+√AAP. In what follows, we will adopt this reparametrisation for the biases
+and counterterms. In Appendix B, we present the effect of this reparametrisation on
+the posterior distribution obtained from the mean of 25 LRG mocks, quantifying its
+impact on the parameter constraints.
+We quote the priors adopted in this work in Table 2, with the explicit connec-
+tion between the reparametrised nuisance parameters and the theoretical ones. For
+the tidal and third-order biases, we have chosen Gaussian priors centred at their re-
+spective co-evolution relations [11]. For that, we fixb ref
+1 (zeff) using the DESI DR1
+parametrisation of the linear bias evolution,b 1(z) =a(1 +z) 2 +b, where the co-
+efficientsaandbare calibrated from the unblinded DESI samples [73]. This gives
+bref
+1 (zeff) = (1.891,2.023,2.184,2.233) for the LRG1, LRG2, LRG3, and QSO samples,
+respectively.
+We adopt broad Gaussian priors for the counterterms, and slightly more modest
+Gaussian priors for the shot-noise amplitudes. As shall be discussed next, in Sec-
+tion 5.1.3, the choice of Gaussian priors allows for the analytical marginalisation of
+nuisance parameters, which reduces the dimensionality of the sampled parameter space
+and improves the efficiency and convergence of the sampler. This is particularly useful
+in the joint analyses where multiple tracers are combined and the number of sampled
+parameters increases.
+5.1.3 Analytical marginalisation
+To improve the efficiency of posterior sampling, especially in the multiple-tracer analy-
+ses, we consider the approach proposed in [74] and perform analytical marginalisation
+of nuisance parametersψ lin entering linearly in the EFT power-spectrum model. For
+that, we consider the theory as
+P(k;θ ∗,ψ) =P 0(k;θ ∗,ψ nl) +
+X
+i
+ψlin,i Pi(k;θ ∗,ψ nl),(5.7)
+– 20 –
+
+[PDF page 23]
+Table 2: Priors adopted in this work. “Reference” priors are used for the results with
+DESI DR1 data, whereas the “FolpsD-inspired” priors are used only in mock tests to
+assess the robustness of the inferred constraints to the prior choices. We adopt two
+standard distributions for the priors:U [a,b] ≡ U(a, b) is the uniform distribution with
+bounds defined by the closed support [a, b], andN(µ, σ 2) is the Gaussian distribution
+centred atµwith varianceσ 2. For the co-evolution relations ofb s andb 3, we fixedb ref
+1 =
+(1.891,2.023,2.184,2.233) for the LRG1, LRG2, LRG3, and QSO samples, respectively.
+The power-spectrum counterterms (c 0, c 2, c 4) are related to thefolpsDcounterterms
+(α0, α 2, α 4) via the relationsα 0 =b 2
+1 c0, α 2 =f b 1(c0 +c 2), α 4 =f 2 c2 +f b 1 c4. Shot-
+noise amplitudes are in units of ¯n−1
+g .
+Parameter Priors
+Reference FolpsD-inspired
+Cosmological parameters
+ωcdm U(0.05,0.2)
+ωb N(0.02218,0.00055 2)
+hU(0.5,0.9)
+ns N(0.9649,0.042 2)
+ln(1010As)U(2,4)
+Galaxy bias parameters
+˜b1 =b 1 σ8
+√AAP U(0.1,4)
+˜b2 =b 2 σ2
+8
+√AAP N(0,5 2)
+˜bK2 =b K2 σ2
+8
+√AAP N
+ 
+− 2
+7(bref
+1 −1),20 2
+˜btd =b td σ4
+8 AAP N
+  23
+42(bref
+1 −1),1 2
+Power spectrum counterterms
+˜c0 =c 0 σ2
+8 AAP N(0,50 2)N(0,12.5 2)
+˜c2 =c 2 σ2
+8 AAP N(0,50 2)N(0,12.5 2)
+˜c4 =c 4 σ2
+8 AAP N(0,50 2)N(0,12.5 2)
+˜a0 =a 0 AAP N(0,2 2)
+˜a2 =a 2 AAP/(fsatσ2
+v)N(0,5 2)
+Bispectrum counterterms
+˜c1 =c 1 σ2
+8 AAP N(0,20 2)
+˜Pshot =P shot AAP N(0,1 2)
+˜Bshot =B shot AAP N(0,1 2)
+– 21 –
+
+[PDF page 24]
+whereP 0(θ∗,ψ nl) =P(θ ∗,ψ nl,ψ lin = 0) is the constant part of the theory (i.e., inde-
+pendent ofψ lin), and
+Pi(θ∗,ψ nl)≡ ∂P(θ ∗,ψ)
+∂ψlin,i
+(5.8)
+is the response of the theory to thei-th linear nuisance parameter. For simplicity,
+we suppressed the multipole index of the EFT power spectrumℓ, and in what follows
+we will also suppress thek-mode dependence. In Equation (5.7), we separateψ=
+(ψlin,ψ nl) into the nuisance parameters that enter the model linearly and non-linearly.
+If the priors onψ lin,i are all GaussiansN(µ i, σ2
+i ), then the likelihood in Equa-
+tion (5.3) can be analytically integrated over those priors:
+lnL marg(θ) =− 1
+2 F (0) + 1
+2 F (1)
+i
+
+F (2)
+ij
+−1
+F (1)
+j − 1
+2 ln
+ 
+detF (2)
+,(5.9)
+where
+F0 = ∆a ˆC−1
+ab ∆b +
+X
+i
+µ2
+i
+σ2
+i
+, F 1,i =−P i,a ˆC−1
+ab ∆b + µi
+σ2
+i
+, F 2,ij =P i,a ˆC−1
+ab Pj,b + δij
+σ2
+i
+,
+and∆are the residuals betweenP 0 and the data.
+We marginalise over the set of power spectrum counterterms{˜c 0,˜c2,˜c4,˜a0,˜a2}
+for the multi-tracer cases, where the number of sampled parameters grows from 14
+and 17 for theP 0 +P 2 andP 0 +P 2 +B 000, to 41 and 53, respectively. For the single-
+tracer analyses, however, we do not perform any analytical marginalisation and directly
+sample over the full set of parameters.
+5.1.4 Sampler
+We sample our posterior distribution with thepocoMCsampler [75]: it implements the
+Preconditioned Monte Carlo (PMC) algorithm that combines the Sequential Monte
+Carlo (SMC) method with Normalising Flows (NF). The latter is used to map the
+posterior distribution in the parameter spaceθinto a new coordinate systemu=f −1(θ)
+in which the posterior geometry is simplified (more Gaussian and less correlated),
+making the sampling more efficient [76].
+SMC uses a set of particles that evolve through a sequence of distributions, from
+the prior to the posterior, as
+pt(θ)∝π(θ)L(θ) βt,(5.10)
+whereβ t ∈[0,1]. Whenβ= 1, the full posterior is sampled. The sampler stops when
+β >0.9999 and the “Effective Sample Size” (ESS) is ESS≥n tot, wheren tot is the
+total number of particles chosen to sample the posterior. Unless otherwise stated, we
+setn tot = 2×10 4 in this work.
+– 22 –
+
+[PDF page 25]
+5.2 Emulators
+A major computational bottleneck in modern cosmological inference is the repeated
+evaluation of accurate but expensive forward models within likelihood and sampling
+pipelines. Emulators address this problem by learning a fast surrogate of the target
+observable from a training set of high-fidelity calculations, thereby enabling orders-of-
+magnitude speed-ups while retaining sufficient accuracy for parameter estimation. This
+approach is now widely used in cosmology, from early CMB and likelihood emulation
+to recent emulators for cosmological power spectra, galaxy clustering, and EFT-based
+large-scale-structure predictions [77–83].
+For all of our ΛCDM analyses, we compute the linear matter power spectrum
+using thebaccoemuemulator [80], which predicts the linear power spectrum with sub-
+percent accuracy over the scales relevant for LSS analyses.
+To explore models beyond ΛCDM, in particular thew 0wa analysis presented
+in Section 6.3, we employ instead theMapse.jlemulator, as it was trained on a
+larger parameter space thanbaccoemu. It belongs to the same family asCapse.jl
+andEffort.jl, sharing the neural-network infrastructure implemented inAbstract-
+CosmologicalEmulators.jl[79, 83, 84]. In this work we use its JAX implementation,
+jaxmapse,10 which provides the version adopted in ourw 0wa analysis. To reach an ac-
+curacy of about 0.1% over a widew 0waMνCDM parameter space,Mapse.jlemulates
+only the transfer function, treats ln(1010As) andn s analytically, factors out the leading
+redshift dependence through division byD 2(z), removes additional smooth structure
+through a symbolic approximation obtained by genetic programming, and finally com-
+presses the target space via principal component analysis before the regression stage
+[84]. By doing this,jaxmapsereaches submillisecond performance when computing
+the linear power spectrum for a single redshift.
+As a consistency test, we repeated the same ΛCDM inference withjaxmapseand
+baccoemuemulators. The shifts in the posterior centres are much smaller than the
+corresponding 1-σuncertainties for all parameters. The posterior widths also agree at
+the few-percent level, with the largest difference being an approximately 6% tighter
+constraint onω cdm, when usingbaccoemu. At the precision of the present analysis, the
+two implementations therefore lead to statistically consistent cosmological constraints.
+6 Results
+In this section, we present the cosmological constraints obtained from the DESI DR1
+LRG and QSO clustering measurements. We keep the maximum wavenumberk max =
+0.2h/Mpc fixed in the mainP 0 +P 2 +B 000 analyses, for all tracers and redshift bins.
+This choice is motivated by the validation presented in [30] and by the cut-sky tests
+discussed in Appendix B. For LRGs, [30] found that the joint one-loop EFT power
+spectrum and tree-level bispectrum analysis remains unbiased up tokmax ≃0.20h/Mpc
+even in the absence of phenomenological damping. Interestingly, the extended reach
+at 0.20h/Mpc does not appear to be primarily associated with the damping. The
+10The code is publicly available athttps://github.com/CosmologicalEmulators/jaxmapse.
+– 23 –
+
+[PDF page 26]
+power-spectrum and bispectrum monopoles become strongly correlated towards smaller
+scales, with theP 0-B000 correlation reaching values≳0.5 aroundk∼0.1h/Mpc [30].
+This suggests that the additional bispectrum bins at these scales do not provide fully
+independent information and can therefore have a comparatively limited leverage on
+the joint cosmological posterior. For QSOs, the EFT tests of [30] favoured a somewhat
+more conservative scale,k 000
+max ≃0.16h/Mpc, making the cut-sky validation presented
+in Appendix B particularly important for assessing the use ofk max = 0.2h/Mpc in the
+present analysis.
+The median of all of our marginalised posteriors with the 1-σconfidence intervals
+can be found in Table 4. For completeness, in Appendix C we present the posteriors
+on the cosmological parameters for each individual tracer.
+6.1 Power-spectrum-only analysis
+Before we discuss the role of the bispectrum monopole in the analysis, we start by
+validating the statistical consistency of our power-spectrum-only analyses (P0+P2) with
+the DESI DR1 “full-modelling” results for the same individual tracers [2]. Since both
+analyses use the same measurements and covariance matrices, the posterior estimates
+can be correlated, so we do not assign a formal significance to shifts in the posteriors.
+Instead, we compare the constraints directly (see Table 4 for numerical results), finding
+good agreement for all four tracers.
+The largest differences with respect to the DESI 2024 power-spectrum-only con-
+straints are observed for the LRG1 and QSO samples, where the posterior centres of
+ωcdm are shifted to higher values. In Figure 4, we compare the DESI 2024 full-modelling
+results with our reference choice of reparametrisation and priors (see Table 2), but we
+also show results obtained by removing theA AP scaling and reparametrising only the
+biases withσ 8, as done in [2] (“DESI repar.” in the figure), first retaining our broad
+power-spectrum counterterms priors and then imposing the tighter DESI priors (“full
+DESI priors” in the figure). As we show in Appendix B, under the ΛCDM model our
+reparametrisation affectsω cdm more strongly than the other cosmological parameters
+and can broaden its marginalised posterior. Tests on the mean mock measurements
+nevertheless recover the fiducial cosmology within the expected uncertainties. The dis-
+placement observed in the data should therefore be interpreted as the combined effect
+of the realised data vector and the nuisance-parameter prior geometry, rather than as
+evidence for a systematic bias of the pipeline.
+For the DR1 LRG1 bin, we find the 1-σuncertainty on Ωm to beσ≃0.025 for the
+reference analysis andσ≃0.023 when adopting the full DESI priors. These correspond
+to uncertainties that are 22% and 10% larger than those of [2], respectively. For the
+QSOs, we obtainedσ≃0.047 (reference),σ≃0.039 (full DESI priors), larger than
+the results in [2] by 31% and 9%, respectively. We find the width of theω cdm posterior
+to be affected by the prior adopted for the power-spectrum monopolec 0 counterterm:
+broader priors lead to broader posteriors forω cdm, while the remaining cosmological
+parameters are only weakly affected. Broader priors onc 0 therefore allowω cdm greater
+freedom to shift towards higher values.
+– 24 –
+
+[PDF page 27]
+Figure 4: Comparison ofP(k)-only constraints obtained in this work with different
+choices of nuisance-parameter priors and reparametrisation, and with the DESI DR1
+results [2]. The points show the posterior medians for the LRG1 (squares) and QSO
+(circles) samples, with horizontal error bars indicating the marginalised 1-σerrors. For
+guidance, the shaded bands show the corresponding DESI 2024 1-σintervals for both
+tracers.
+Still, our results are statistically compatible with those presented in the official
+DESI power-spectrum-only analysis. We stress the fact that we do not expect our
+results to be numerically identical to those of [2], since we use independent pipelines,
+with different modelling choices, nuisance parameters and reparametrisation.
+While the single tracer analyses probe different survey volumes, redshift ranges
+and galaxy populations, each characterised by different bias parameters and degeneracy
+directions, combining them increases the statistical power not only through a larger
+effective volume, but also by helping to break parameter degeneracies present in the
+individual analyses. The different degeneracy directions of the LRG and QSO samples
+allow the multi-tracer analysis to break parameter degeneracies that remain in the
+individual fits, leading to tighter cosmological constraints.
+Combining the three LRG redshift bins strengthens the power-spectrum-only con-
+straints relative to those obtained from each bin separately: the uncertainty onh
+decreases from 0.017-0.022 in the individual bins to±0.012 in the combined fit, corre-
+sponding to an improvement of about 30-50%. Similarly, the uncertainties onω cdm are
+reduced by 30-45%, while the constraint on ln(10 10As) improves by∼40%. On the
+other hand, we only obtain a 7-10% gain inn s, with its uncertainty decreasing from
+0.038-0.039 to 0.035.
+In Figure 5, we further compared the joint LRG+QSO constraints on Ω m andH 0
+with (i) the DESI DR1 Baryon Acoustic Oscillations (BAO) + Big Bang Nucleosyn-
+thesis (BBN) priors [1], which are the same ones assumed in our analysis, and (ii) the
+DESI full-shape results. Even though the individual LRG1 and QSO samples favour
+slightly higher Ωm values, as previously discussed, the combined constraints are mostly
+– 25 –
+
+[PDF page 28]
+Figure 5: Comparison of the joint constraints on Ωm andH 0 obtained in this work with
+previous DESI DR1 analyses. Dashed and solid black contours show the constraints
+obtained from our joint LRG+QSO analysis using the power-spectrum monopole and
+quadrupole,P 0 +P 2, and after additionally including the bispectrum monopole,B 000,
+respectively. We compare these to the DESI DR1 BAO+BBN constraints (solid con-
+tour) and the DESI “full-modelling” using all tracers available in that analysis (Bright
+Galaxy Sample and Emission Line Galaxies in addition to the three LRG bins and
+QSOs we considered).
+driven by the LRG3 sample, which provides the tightest cosmological constraints.
+Finally, LRGs and QSOs are complementary not only in terms of different param-
+eter degeneracies: although QSOs have a larger covariance matrix than the individual
+LRG bins owing to their lower number density and correspondingly larger shot noise,
+they probe higher redshifts (0.8< z <2.1), providing complementary information on
+the growth of structure. While the QSO sample yields weaker constraints than the
+LRGs for most parameters, it provides competitive constraints on ln(10 10As), with
+σ≃0.19 compared toσ≃0.25 for the individual LRG bins. This can be understood
+from thef σ 8 combination probed by the redshift-space power-spectrum multipoles:
+sincef(z) approaches its matter-dominated limit,f(z)→1, over the QSO redshift
+range, the degeneracy between the growth rate andσ 8 is reduced, allowing the clus-
+tering amplitude, and consequentlyA s, to be more directly constrained by the power
+spectrum alone.
+6.2 Impact of the bispectrum
+We now compare the impact of adding the bispectrum to the analyses with the power-
+spectrum-only cases. The role of the bispectrumquadrupolewas extensively discussed
+in [30] (see their Appendix A for the case of the LRG2 mocks). However, for complete-
+– 26 –
+
+[PDF page 29]
+Figure 6: Marginalised posterior distributions for Ω m, ln(10 10As), and the growth
+ratef, obtained from the individual LRG1, LRG2, LRG3, and QSO samples. Dashed
+contours show the constraints from the power-spectrum monopole and quadrupole,
+P0+P2, while solid contours include the bispectrum monopole,P0+P2+B000. The filled
+regions indicate the corresponding 1- and 2-σintervals. The comparison highlights
+the complementary information provided byB 000, as well as the different parameter
+degeneracies probed by the low-redshift LRG samples and the higher-redshift QSO
+sample.
+ness, we provide a similar discussion with the DR1 data, focusing on the LRG1 bin as
+a proof of concept, and fixingk max = 0.08h/Mpc for the quadrupoleB 202. As one can
+see in the direct comparison between theP 0 +P 2 +B 000 andP 0 +P 2 +B 000 +B 202 cases
+(see Table 4),B 202 provides only marginal gains, changing the marginalised uncertain-
+ties by only a few percent, while leaving the posterior medians essentially unchanged.
+Therefore, we conclude that for the parameters, configurations, and scales considered
+here,B 202 provides little information beyondP 0 +P 2 +B 000, and we omit it from the
+remaining analyses.
+– 27 –
+
+[PDF page 30]
+In Figure 7, we show the bispectrum measurements with the maximum-likelihood
+model predictions. These were obtained separately for each tracer, from the parameter
+vector ˆθMLE ≡arg max θ L(d|θ) that maximises the corresponding single-tracerP 0 +
+P2 +B 000 likelihood (see the individual tracer constraints in Table 4). The model
+provided a good description of the four samples considered in this work, as can be seen
+by the reducedχ 2 values.
+Figure 7:B 000 measurements and best-fitting predictions for the LRG1, LRG2, LRG3,
+and QSO samples. The upper panels showk 2B000(k), with coloured points represent-
+ing the DESI DR1 measurements and black curves showing the window-convolved
+maximum-likelihood predictionsB MLE
+000 ≡B 000( ˆθMLE) obtained separately from the
+corresponding single-tracerP 0 +P 2 +B 000 analyses. Error bars are derived from the
+diagonal of the bispectrum covariance. The lower panels show the residuals between
+the measurements and predictions, normalised by the corresponding standard devia-
+tionσ 000; dotted horizontal lines indicate the±1-σinterval. The reducedχ 2 for each
+bispectrum fit is reported in the upper-right corner.
+Table 3 shows the change in the 1-σerrors between theP 0 +P 2 (σP ) and the
+P0 +P 2 +B 000 (σB) fits, relative toσ P . AddingB 000 improves the constraints onω cdm
+– 28 –
+
+[PDF page 31]
+and ln(10 10As) by 9-18% and 8-20%, respectively, in the single-tracer analyses. The
+corresponding reductions are 15% and 10% for the combined LRG sample.
+For comparison, [85] reports an approximately 26% reduction in the uncertainty
+onσ 8 when including the LRG bispectrum in their joint DR1 clustering and DR2 BAO
+analysis, accompanied by an upward 1.1σshift in the posterior mean. Our combined
+LRG analysis yields a more modest, 5% reduction in theσ 8 uncertainty. However,
+these gains are not directly comparable: their results include DR2 BAO information
+and employ the ShapeFit compression, a different bispectrum model, and determin-
+istic coevolution relations for the tidal and third-order non-local biases. They also
+use a larger set of triangle shapes, whereas we only use the diagonal TripoSH con-
+figurationsB 000(k, k). Furthermore, their P+B analysis includes the power-spectrum
+hexadecapoleP 4 and changes the scale cuts and binning relative to theirP-only base-
+line analysis. Their quoted improvement therefore does not isolate the contribution of
+the bispectrum with theP-only data vector held fixed.
+Table 3: Percentage change in the 1-σuncertainties when adding the bispectrum
+monopoleB 000 to the analysis: negative values indicate a reduction in the uncertainty,
+while positive values indicate an increase.
+Parameter LRG1 LRG2 LRG3 QSO LRG (combined) All tracers
+h−8%−14%−9% +10% +4% 0%
+ωcdm −18%−14%−17%−9% −15%−6%
+ln(1010As)−8%−14%−20%−13% −10%−4%
+ns 0%−4%−3% 0% +4% +8%
+Ωm −12%−9%−17% +9% −3%−4%
+σ8 −2%−12%−14% +1% −5%−1%
+The different degeneracy directions probed by the individual tracers, and the
+corresponding tracer-dependent impact ofB 000, are illustrated in Figure 6 for Ω m,
+ln(1010As), andf. The impact of addingB 000 differs not only among the individual
+tracers, but also between the individual and combined analyses. This is not unex-
+pected: as shown in [30], an important part of the additional information provided by
+the bispectrum comes from its ability to better constrain the second-order bias param-
+etersb 2 andb s, thereby modifying the degeneracies between galaxy bias and cosmology.
+For an individual tracer, these degeneracies can be relatively strong, so adding the bis-
+pectrum can lead to a sizeable improvement in several cosmological parameters. When
+different redshift bins and tracers are combined, however, the power spectra them-
+selves already provide complementary information because the samples have different
+biases, redshifts, number densities and cosmological degeneracy directions. Part of
+the information provided by the bispectrum, for a single tracer, can therefore become
+– 29 –
+
+[PDF page 32]
+redundant in the combined analysis, and the relative gain from addingB 000 need not
+follow the pattern seen for the individual samples.
+Figure 8 summarises the resultingP 0 +P 2 +B 000 constraints from the combined
+LRG sample, the QSO sample, and their joint analysis. Although the jointn s posterior
+is shifted towards slightly higher values than the individual-tracer posteriors, it remains
+within the 1-σregion of the adopted Gaussian prior (see Table 2), which is shown in the
+shaded beige region of Figure 8. The joint posterior, which givesn s = 0.988±0.035,
+is displaced from the prior mean by≲0.7σ. By addingB 000, the posterior median is
+shifted by less than 0.1σ. We therefore find no statistically significant preference for a
+different value ofn s, and do not assign a physical interpretation to this shift.
+Figure 8: Posterior constraints on the cosmological parameters obtained from the
+DESI DR1 data, usingP 0,P 2 andB 000. The joint constraint from all three LRG
+redshift bins and the QSO sample is shown in black. The 1-σvalues are quoted in
+Table 4.
+– 30 –
+
+[PDF page 33]
+Table 4: Median of the marginalised posteriors, with 1-σconstraints. We do not quote
+ωb values, as they are prior dominated. DESI 2024 constraints were obtained directly
+from the chains of [2]. For the LRG1 analysis, we also show the results obtained by
+includingB 202 (see discussion in Section 6.2).
+LRG1
+h ω cdm ln(1010As)n s Ωm σ8
+P0 +P 2 (DESI 2024) 0.696 +0.021
+−0.019 0.121+0.012
+−0.012 3.08+0.23
+−0.23 0.968+0.040
+−0.040 0.297+0.021
+−0.020 0.842+0.089
+−0.087
+P0 +P 2 0.701+0.020
+−0.019 0.131+0.017
+−0.016 3.08+0.25
+−0.24 0.958+0.037
+−0.038 0.313+0.026
+−0.025 0.885+0.084
+−0.080
+P0 +P 2 +B 000 0.700+0.019
+−0.017 0.129+0.014
+−0.013 3.13+0.23
+−0.22 0.966+0.037
+−0.038 0.308+0.023
+−0.022 0.898+0.082
+−0.079
+P0 +P 2 +B 000 +B 202 0.698+0.019
+−0.017 0.127+0.015
+−0.014 3.11+0.24
+−0.23 0.961+0.039
+−0.037 0.307+0.024
+−0.023 0.881+0.082
+−0.075
+LRG2
+h ω cdm ln(1010As)n s Ωm σ8
+P0 +P 2 (DESI 2024) 0.731 +0.022
+−0.021 0.127+0.013
+−0.013 3.09+0.23
+−0.21 0.979+0.040
+−0.040 0.279+0.021
+−0.020 0.884+0.080
+−0.073
+P0 +P 2 0.738+0.022
+−0.022 0.129+0.019
+−0.017 3.16+0.26
+−0.25 0.970+0.039
+−0.040 0.279+0.023
+−0.024 0.926+0.082
+−0.076
+P0 +P 2 +B 000 0.747+0.020
+−0.018 0.130+0.016
+−0.015 3.16+0.22
+−0.22 0.964+0.039
+−0.037 0.272+0.022
+−0.021 0.925+0.072
+−0.067
+LRG3
+h ω cdm ln(1010As)n s Ωm σ8
+P0 +P 2 (DESI 2024) 0.679 +0.018
+−0.017 0.113+0.012
+−0.012 3.10+0.24
+−0.22 0.975+0.038
+−0.038 0.293+0.025
+−0.024 0.809+0.077
+−0.072
+P0 +P 2 0.681+0.017
+−0.017 0.114+0.015
+−0.014 3.24+0.26
+−0.24 0.964+0.039
+−0.039 0.296+0.031
+−0.029 0.877+0.084
+−0.078
+P0 +P 2 +B 000 0.686+0.016
+−0.015 0.115+0.013
+−0.011 3.18+0.20
+−0.20 0.965+0.038
+−0.038 0.292+0.026
+−0.024 0.856+0.071
+−0.068
+QSO
+h ω cdm ln(1010As)n s Ωm σ8
+P0 +P 2 (DESI 2024) 0.700 +0.034
+−0.034 0.127+0.013
+−0.011 3.24+0.19
+−0.19 0.976+0.037
+−0.037 0.307+0.039
+−0.032 0.946+0.078
+−0.073
+P0 +P 2 0.692+0.033
+−0.034 0.147+0.017
+−0.015 3.22+0.19
+−0.19 0.973+0.038
+−0.037 0.354+0.051
+−0.043 1.010+0.085
+−0.072
+P0 +P 2 +B 000 0.670+0.039
+−0.035 0.146+0.015
+−0.014 3.32+0.17
+−0.16 0.973+0.038
+−0.037 0.375+0.054
+−0.048 1.053+0.084
+−0.075
+LRG (combined)
+h ω cdm ln(1010As)n s Ωm σ8
+P0 +P 2 0.700+0.012
+−0.011 0.121+0.010
+−0.010 3.22+0.15
+−0.14 0.970+0.035
+−0.035 0.294+0.016
+−0.015 0.908+0.049
+−0.045
+P0 +P 2 +B 000 0.709+0.012
+−0.012 0.124+0.009
+−0.008 3.11+0.13
+−0.13 0.964+0.036
+−0.037 0.293+0.015
+−0.015 0.874+0.045
+−0.044
+All tracers
+h ω cdm ln(1010As)n s Ωm σ8
+P0 +P 2 0.703+0.011
+−0.011 0.125+0.008
+−0.008 3.24+0.12
+−0.11 0.985+0.032
+−0.033 0.300+0.014
+−0.014 0.943+0.040
+−0.038
+P0 +P 2 +B 000 0.707+0.011
+−0.011 0.125+0.008
+−0.007 3.24+0.11
+−0.11 0.988+0.035
+−0.035 0.297+0.013
+−0.014 0.944+0.039
+−0.038
+– 31 –
+
+[PDF page 34]
+6.3w 0waCDM constraints
+We extended the ΛCDM analysis by allowing a time-evolving dark-energy equation
+of statew(a) =w 0 +w a(1−a) [23, 24]. As mentioned in Section 5.2, we employed
+jaxmapsefor thew 0waCDM analysis to allow for the priorw 0 ∼ U(−3,1),w a ∼
+U(−3,2), with the constraintw 0 +w a <0, which is broader than the one available
+withbaccoemu.
+Figure 9 shows the effect of extending the dark-energy sector beyond a cosmo-
+logical constant. Allowing the dark-energy equation of state to vary broadens the
+cosmological posteriors relative to the ΛCDM case, as expected from the additional
+freedom and the strongw 0-wa degeneracy. From the joint power-spectrum-only anal-
+ysis we obtain
+w0 =−0.73 +0.36
+−0.44, w a =−1.25 +1.37
+−1.11,(6.1)
+while the addition ofB 000 gives
+w0 =−0.74 +0.34
+−0.43, w a =−1.40 +1.30
+−1.00.(6.2)
+The shifts are small compared with the marginalised uncertainties, and the bispec-
+trum monopole does not significantly reduce the allowedw0-wa region. The constraints
+remain compatible with a cosmological constant. For the data vector and scale cuts
+considered here, the main contribution ofB000 is therefore to the ΛCDM matter-density
+and amplitude parameters rather than to the time evolution of dark energy.
+7 Conclusions
+In this work, we have presented a joint full-shape analysis of the DESI DR1 power spec-
+trum and bispectrum for three LRG redshift bins and the QSO sample. We combined
+a one-loop EFT description of the power spectrum with the tree-level bispectrum,
+decomposed in the TripoSH basis, and consistently propagated the DESI survey ge-
+ometry through the window convolution of both statistics. Building on the TripoSH
+window formalism of [43], the bispectrum convolution can be implemented as a linear
+transformation of the theoretical multipoles, which makes its repeated evaluation in
+the likelihood inexpensive. We have tested this procedure on cut-sky mocks and find
+that it reproduces the measured bispectrum multipoles over the range of scales used in
+the analysis (Figure 10). Our power-spectrum-only constraints are in good agreement
+with both the DESI full-shape analysis and the independent BAO+BBN constraints
+(Figure 5). The largest differences are found forω cdm in the individual LRG1 and QSO
+fits, where the posterior is particularly sensitive to the counterterm priors and to the
+nuisance-parameter reparametrisation. Tests on the mean cut-sky mocks nevertheless
+recover the fiducial cosmology within the expected uncertainties.
+Adding the bispectrum monopole changes the constraints in a way that depends
+strongly on the tracer and on the cosmological parameter. The largest and most persis-
+tent gains are found forω cdm and ln(1010As), with reductions of up to 18% and 20% in
+the marginalised constraints, respectively, in the single-tracer analysis. The improve-
+ment varies across the individual redshift bins and becomes different once the samples
+– 32 –
+
+[PDF page 35]
+Figure 9: Posterior constraints obtained from a joint analysis of all DESI DR1
+LRG bins and QSOs, assuming ΛCDM (blue) andw 0waCDM (coral) models. Con-
+straints were obtained using the power-spectrum monopole and quadrupole,P 0 +P 2
+(dashed), and additionally including the bispectrum monopoleB 000 (solid). Within
+thew 0waCDM model, the posterior distributions are broader than in the ΛCDM case
+due to the additional freedom introduced byw 0 andw a.
+are combined (see Table 3). This behaviour is consistent with the picture found in [30]:
+the bispectrum, decomposed into TripoSH multipoles, constrains the second-order bias
+parametersb 2 andb s, which are only weakly constrained by the power spectrum, and
+therefore breaks part of the degeneracy between galaxy bias and cosmology. For an
+individual tracer, this can translate into a sizeable improvement in several cosmologi-
+cal parameters. When different redshift bins and tracers are combined, however, their
+power spectra already carry complementary information through their different bi-
+ases, redshifts, number densities and parameter degeneracies, so the relative gain from
+addingB 000 need not follow the pattern found for the individual samples. We have also
+– 33 –
+
+[PDF page 36]
+tested the bispectrum quadrupoleB 202 for the LRG1 sample andk max = 0.08h/Mpc,
+finding that it only produces marginal changes in the cosmological constraints, and
+we therefore find that most of the additional bispectrum information in the present
+analysis is already contained inB 000. However, this does not exclude possible gains
+from adding theB 202 quadrupole, or other possible multipoles in this basis [86].
+We have further explored whether the additional information from the bispectrum
+translates into stronger constraints when the dark-energy equation of state is allowed
+to evolve. In thew 0waCDM model, the extra freedom substantially broadens the cos-
+mological posteriors, and the addition ofB 000 produces only a mild change in the
+allowedw 0-wa region. The resulting posteriors remain compatible with a cosmological
+constant, although the posterior reaches the prior boundaries in the dark-energy pa-
+rameter space. Thus, with the present data vector and scale cuts, the main benefit of
+the bispectrum is in the determination of the matter-sector and clustering-amplitude
+parameters rather than in constraining the time evolution of dark energy.
+An important aspect of the analysis is the use of the bispectrum monopole up
+tok max = 0.2h/Mpc despite employing a tree-level model. For LRGs, this choice is
+supported by the periodic-box tests of [30], where the joint one-loop EFT power spec-
+trum and tree-level bispectrum analysis remained unbiased up to approximately this
+scale even without phenomenological damping. That work also found that the cross-
+correlation betweenP 0 andB 000 becomes large towards smaller scales, suggesting that
+the additional bispectrum bins are not providing completely independent information
+to the joint likelihood. The cut-sky tests presented here provide the corresponding val-
+idation in the presence of the DESI survey geometry and are particularly relevant for
+the QSO sample. This empirical scale reach should not be interpreted as a statement
+that the perturbative accuracy of the tree-level bispectrum itself extends to arbitrarily
+small scales. The present analysis is restricted to diagonal bispectrum configurations
+and to the LRG and QSO samples, with the bispectrum model kept at tree level.
+Extending the analysis to a larger set of triangle configurations, additional tracers, in
+particular ELGs, and higher-order bispectrum modelling will be important for deter-
+mining how much more information can be extracted from the higher-order clustering
+of future DESI data.
+Data Availability
+The data used in this work are available from the corresponding author upon reasonable
+request.
+Acknowledgements
+CG would like to thank Guilherme Brando and Henrique Rubira for useful discussions
+on all sorts of topics and, for numerous helpful conversations during the initial stages of
+this work, Thiago Mergulh˜ ao and Richard Neveux. Many thanks to Minas Karamanis
+for all the helpful comments and guidance withpocoMC, Eduardo Vitral for plotting
+inspiration and feedback and, finally,cheersto Danny Horta for the encouragement
+– 34 –
+
+[PDF page 37]
+during the final stages of this work. AA acknowledges financial support from SE-
+CIHTI grants CBF2023-2024-162 and CBF-2025-I-2795, and grant DGAPA-PAPIIT
+IA101825. CG and FB acknowledge the support of the Royal Society through the
+University Research Fellowship.
+We made extensive use of theCLASScode [87], and the following Python packages and
+libraries:numpy[88],scipy[89],matplotlib[90], andGetDist[91]. The AI technolo-
+giesChatGPTandDSeekwere used to improve readability of the manuscript and
+the main pipeline used for analysis (including debugging and enhancing its efficiency).
+The authors take full responsibility for the accuracy and interpretation of the results,
+and the information presented in the text.
+This research used data obtained with the Dark Energy Spectroscopic Instrument
+(DESI). DESI construction and operations is managed by the Lawrence Berkeley Na-
+tional Laboratory. This material is based upon work supported by the U.S. Depart-
+ment of Energy, Office of Science, Office of High-Energy Physics, under Contract No.
+DE–AC02–05CH11231, and by the National Energy Research Scientific Computing
+Center, a DOE Office of Science User Facility under the same contract. Additional
+support for DESI was provided by the U.S. National Science Foundation (NSF), Di-
+vision of Astronomical Sciences, under Contract No. AST-0950945 to the NSF’s Na-
+tional Optical-Infrared Astronomy Research Laboratory; the Science and Technology
+Facilities Council of the United Kingdom; the Gordon and Betty Moore Foundation;
+the Heising-Simons Foundation; the French Alternative Energies and Atomic Energy
+Commission (CEA); the National Council of Humanities, Science and Technology of
+Mexico (CONAHCYT); the Ministry of Science and Innovation of Spain (MICINN),
+and by the DESI Member Institutions: www.desi.lbl.gov/collaborating-institutions.
+The DESI collaboration is honored to be permitted to conduct scientific research on
+I’oligam Du’ag (Kitt Peak), a mountain with particular significance to the Tohono
+O’odham Nation. Any opinions, findings, and conclusions or recommendations ex-
+pressed in this material are those of the authors and do not necessarily reflect the
+views of the U.S. National Science Foundation, the U.S. Department of Energy, or any
+of the listed funding agencies.
+This work used the DiRAC@Durham facility managed by the Institute for Computa-
+tional Cosmology on behalf of the STFC DiRAC HPC Facility (www.dirac.ac.uk). The
+equipment was funded by BEIS capital funding via STFC capital grants ST/P002293/1,
+ST/R002371/1 and ST/S002502/1, Durham University and STFC operations grant
+ST/R000832/1. DiRAC is part of the National e-Infrastructure.
+– 35 –
+
+[PDF page 38]
+A Bispectrum window convolution
+In this section, we outline the approximations and truncation criteria employed for
+the window-convolution series of the TripoSH bispectrum multipoles. We also assess
+the residual impact of fibre assignment after applying the window convolution in Sec-
+tion A.2.
+A.1 Convolution series
+The convergence of the window series depends on the specific footprint and scales.
+To determine which terms are the most relevant for the different tracers and bins we
+consider in this work, we adopt the weight function defined in [43] (their Equation 4.3),
+γℓ1ℓ2L(Λ) = χ2
+ℓ1ℓ2L(Λ, β)−χ 2
+ℓ1ℓ2L(Λref, β)
+χ2
+ℓ1ℓ2L(Λ0, β)−χ 2
+ℓ1ℓ2L(Λref, β) .(A.1)
+The weight function quantifies the difference between theχ 2 of a convolution
+series Λ that removes a single, specific contributionQ ℓ′′
+1 ℓ′′
+2 L′′ζℓ′
+1ℓ′
+2L′ from some reference
+case Λref. We stick to the choice presented in [43] for Λ ref:
+ˆζ000 =Q 000ζ000
++ 1
+3 Q110ζ110 + 1
+5 Q220ζ220
++ 1
+5 (Q022ζ022 +Q 202ζ202) + 1
+6 Q112ζ112 + 1
+9 (Q132ζ132 +Q 312ζ312)
+−Q 000¯ζ,(A.2)
+ˆζ202 =Q 000ζ202
++Q 202ζ000
++ 1
+3 (Q112ζ110 +Q 312ζ110 +Q 110ζ112 +Q 110ζ312) + 1
+5 (Q022ζ220 +Q 220ζ022)
++ 2
+7 Q202ζ202 + 1
+6 (Q112ζ112 +Q 132ζ132) + 8
+63 Q312ζ312 + 1
+21 (Q312ζ112 +Q 112ζ312)
+−Q 202¯ζ.(A.3)
+We follow [43], and keep only the terms such that|γ 000|,|γ 202|<4×10 −4. These
+are summarised in Tab. 5. As an example, for the SGC of the first LRG bin, the
+convolution series can be simplified as
+ˆζ000 =Q 000ζ000 + 1
+3 Q110ζ110 + 1
+5 Q022ζ022 + 1
+5 Q202ζ202 (A.4)
+and
+ˆζ202 =Q 202ζ000 + 1
+5 Q112ζ110 + 1
+5 Q022ζ220 + 1
+5 Q110ζ112 +
+
+Q000 + 2
+7 Q202
+
+ζ202.(A.5)
+Given our metric, terms such as theQ220ζ220 are irrelevant for the monopole convolution
+of this particular tracer and region of the sky.
+– 36 –
+
+[PDF page 39]
+Table 5: Coefficients in the convolution of the monopoleB 000 for each tracer and sky
+region. The window coefficientsQ ℓ′
+1ℓ′
+2L′ multiply each 3PCF termζ ℓ′′
+1 ℓ′′
+2 L′′ which are
+then summed in the window convolution series.
+Sample Regionζ 000 ζ110 ζ220 ζ022 ζ202
+LRG1 SGCQ 000
+1
+3 Q110 – 1
+5 Q022
+1
+5 Q202
+NGCQ 000
+1
+3 Q110
+1
+5 Q220 – –
+LRG2 SGCQ 000
+1
+3 Q110
+1
+5 Q220 – –
+NGCQ 000
+1
+3 Q110
+1
+5 Q220 – –
+LRG3 SGCQ 000
+1
+3 Q110
+1
+5 Q220 – –
+NGCQ 000 – – – –
+QSO SGCQ 000 – 1
+5 Q220
+1
+5 Q022
+1
+5 Q202
+NGCQ 000 – – – –
+Table 6: Same as Table 5, but for the quadrupoleB 202. The integral-constraint
+contribution is omitted for brevity, as it is relevant only for the QSO sample, where it
+enters the convolution series as−ζ icQ202.
+Sample Regionζ 000 ζ110 ζ220 ζ112 ζ022 ζ202 ζ312
+LRG1 SGCQ 202 1
+5 Q112 1
+5 Q022 1
+5 Q110 –Q 000 + 2
+7 Q202 –
+NGCQ 202 – – – –Q 000 –
+LRG2 SGCQ 202 1
+3(Q112 +Q 312) 1
+5 Q022 1
+3 Q110 –Q 000 + 2
+7 Q202 1
+3 Q110
+NGCQ 202 – – – –Q 000 + 2
+7 Q202 1
+3 Q110
+LRG3 SGCQ 202 – 1
+5 Q022 – –Q 000 –
+NGCQ 202 – – 1
+3 Q110 –Q 000 –
+QSO SGCQ 202 1
+3(Q112 +Q 312) 1
+5 Q022 1
+3 Q110 1
+5 Q220 Q000 1
+3 Q110
+NGCQ 202 1
+3(Q112 +Q 312) 1
+5 Q022 1
+3 Q110 1
+5 Q220 Q000 + 2
+7 Q202 1
+3 Q110
+Window matrixIn practice, the window-convolution operatorW B =T 2 C T1, intro-
+duced in Section 2.4, is constructed withTriumvirate. The operatorW B is evaluated
+on the canonical basise λ ⊗e ij of the finite-dimensional vector space spanned by the
+input bispectrum multipolesλ≡(ℓ 1, ℓ2, L) and the (k i, kj) bins. The resulting con-
+volved vectors define the corresponding window-convolution matrixW B in this basis,
+such that any theory vector can then be convolved as ˆB=W B B(see [43] for more
+details).
+– 37 –
+
+[PDF page 40]
+Figure 10: Validation of the bispectrum window convolution using the mean of 25
+altMTL mocks (black points; errorbars show the standard deviation of the measure-
+ments). The left (right) panels show the diagonal bispectrum monopole (quadrupole)
+for the GC-combined bins. Dashed curves show the mean bispectrum measured from
+the corresponding 25 boxes, used as a proxy for the theory. Bottom panels show the
+residuals between the measurements and the convolved prediction, normalised by the
+standard deviation of the 25 altMTL mocks, with (solid) and without (dotted) the con-
+stant offset included for the LRG1 and LRG2 bins. Shaded bands indicate the±0.5σ
+(light) and±1σ(dark) regions. Bispectrum units are omitted for clarity.
+– 38 –
+
+[PDF page 41]
+A.2 Convolution test
+We validate the bispectrum window convolution using the mean of the 25 altMTL
+mocks (see Section 4.1), for all tracers considered in this analysis, as shown in Figure 10.
+To assess the accuracy of the window convolution, the theory vectorBis obtained from
+the mean of the 25 boxes from which the cut-sky mocks were generated, as they come
+from the same realisations.
+For this test, we considered the GC-combined data vectors and window matrices,
+as described in Section 3. These are shown in Figure 10 as the black dots. The error
+bars were obtained from the standard deviationσof the 25 measurements. We can
+see that both bispectrum multipoles are accurately reproduced through the window
+convolution procedure over the whole range of scales we consider in this work (k max =
+0.2h/Mpc), as can be seen in the residuals ∆B ℓ1ℓ2L/σ.
+For the first two LRG bins, we found the remaining monopole mismatch to be
+mostly scale independent. In order to check for that, we have added a single con-
+stant offset to the convolution of the cubic-box measurements of these bins. The
+results are within the 1-σregion, indicating that this shot-noise-like contribution can
+be used to bypass residuals of the window convolution. The constantP shot parame-
+ter (Equation 2.21), varied in our fits, should absorb the amplitude offset at scales
+k <0.12h/Mpc for these two redshift bins. In Appendix B, however, we show
+for the most extreme case (LRG1) that the posterior constraints are robust up to
+kmax = 0.2h/Mpc.
+B Validation on mocks
+In this Appendix, we summarise the main validation tests carried out on the mean of
+the 25 cut-skyAbacusSummitmocks.
+B.1 Impact of reparametrisation
+In Figure 11 we show the impact of the reparametrisation adopted in this work, using
+the mean of the 25 LRG1 cut-sky mocks. As discussed in Section 5.1.2, the reparametri-
+sation is applied to reduce prior-volume effects arising from cosmology-dependent am-
+plitudes in the biases and EFT parameters.
+We used the LRG1 sample as it corresponds to the largest differences inωcdm with
+respect to the DESI 2024 power-spectrum-only constraints. As already pointed out in
+[72], prior-volume effects favour lowerA AP. Hence, by removing such effects we would
+expect largerA AP which is directly related to a higherω cdm, for a well-constrained
+Hubble factorh. This is observed in the posteriors shown in Figure 11.
+B.2 Choice of maximum scale
+To test the dependence of the cosmological constraints on the maximum bispectrum
+monopole scalek 000
+max, we have fixed the power-spectrum monopole and quadrupole
+cut-off tok (0,2)
+max = 0.20h/Mpc and variedk 000
+max between 0.14 and 0.20h/Mpc. All
+cosmological parameters remained within approximately 1.3σof their fiducial values,
+– 39 –
+
+[PDF page 42]
+Figure 11: Constraints on the cosmological parameters obtained from the mean of 25
+cut-skyAbacusSummitaltMTL mock realisations, in the redshift range 0.4< z <
+0.6. The left panel shows the constraints derived by considering the power-spectrum
+monopoleP 0 and quadrupoleP 2 only, whilst the right panel additionally includes the
+bispectrum monopoleB 000 in the data vector. Solid and dashed contours correspond
+to analyses performed with and without the nuisance-parameter reparametrisation
+described in Section 5.1.2, respectively. The crosses indicate the fiducial cosmology of
+the mocks.
+and their variation across the different scale cuts was smaller than 0.4σ. The largest
+displacement occurred for ln(10 10As) in LRG3 and QSO, with an average of∼1.2σ
+shift towards higher values compared to the fiducial ln(10 10As) = 3.036. However, it
+did not increase as smaller scales were included. We therefore found no evidence for a
+scale-dependent parameter shift over the range considered.
+We have found that the information gained from extending the bispectrum anal-
+ysis tok max = 0.20h/Mpc is concentrated primarily inω cdm, whose uncertainty de-
+creased by approximately 12%, 12%, 8% and 7% for LRG1, LRG2, LRG3, and QSO
+respectively, relative tok000
+max = 0.14h/Mpc. Changes in the remaining cosmological un-
+certainties are generally below 7% and are not consistently strengthened (or weakened)
+by increasing (or decreasing) the cut-off scale. These tests therefore show no evidence
+of a scale-dependent parameter bias and support the choice ofk 000
+max = 0.20h/Mpc,
+while also showing that most of the additional constraining power is associated with
+– 40 –
+
+[PDF page 43]
+the determination ofω cdm.
+Figure 12: Figure of Bias (FoB) and Figure of Merit (FoM) as a function of the
+bispectrum monopole maximum scalek 000
+max for the QSO cut-sky mocks. The power
+spectrum monopole and quadrupolek (0,2)
+max = 0.2h/Mpc were fixed. The solid blue line
+shows the FoB for the reference priors of Table 2, whilst the dashed line shows the same
+analysis considering the priors used in Bansal et al. (2026) [30]. The same applies to
+the rescaled FoM.
+Finally, we have computed the figure of bias (FoB) and figure of merit (FoM),
+defined as [92]
+FoM≡
+
+det ˜Cθα,θβ
+−1/2
+,and FoB≡
+"X
+α,β
+(¯θα −θ fid
+α )C−1
+θα,θβ (¯θβ −θ fid
+β )
+#1/2
+,(B.1)
+where ˜Cθα,θβ ≡C θα,θβ /θfid
+α θfid
+β is the normalised covariance of the parametersθ α, for the
+priors shown in Table 2. For FolpsD-inspired priors, the priors on the power-spectrum
+counterterms are tighter.
+– 41 –
+
+[PDF page 44]
+C Extra figures
+For completeness, in this Appendix we gather the figures showing the posterior dis-
+tributions obtained from the single-tracer analyses. The 1-σconstraints are quoted in
+Table 4.
+Figure 13: Posterior constraints obtained from the DR1 LRG1 bin (0.4< z <0.6).
+Dashed contours show the constraints obtained from the power-spectrum-only analysis,
+while the shaded ones include the bispectrum monopole.
+– 42 –
+
+[PDF page 45]
+Figure 14: Posterior constraints obtained from the DR1 LRG2 bin (0.6< z <0.8).
+Dashed contours show the constraints obtained from the power-spectrum-only analysis,
+while the shaded ones include the bispectrum monopole.
+– 43 –
+
+[PDF page 46]
+Figure 15: Posterior constraints obtained from the DR1 LRG3 bin (0.8< z <1.1).
+Dashed contours show the constraints obtained from the power-spectrum-only analysis,
+while the shaded ones include the bispectrum monopole.
+– 44 –
+
+[PDF page 47]
+Figure 16: Posterior constraints obtained from the DR1 QSO bin (0.8< z <2.1).
+Dashed contours show the constraints obtained from the power-spectrum-only analysis,
+while the shaded ones include the bispectrum monopole.
+– 45 –
+
+[PDF page 48]
+References
+[1] A. Adame, J. Aguilar, S. Ahlen, S. Alam, D. Alexander, M. Alvarez et al.,DESI 2024
+VI: cosmological constraints from the measurements of baryon acoustic oscillations,
+JCAP02(2025) 021 [2404.03002].
+[2] A. Adame, J. Aguilar, S. Ahlen, S. Alam, D. Alexander, M. Alvarez et al.,DESI 2024
+V: Full-Shape galaxy clustering from galaxies and quasars,JCAP09(2025) 008
+[2411.12021].
+[3] Y. Akrami, F. Arroja, M. Ashdown, J. Aumont, C. Baccigalupi, M. Ballardini et al.,
+Planck 2018 results-IX. Constraints on primordial non-Gaussianity,Astron.
+Astrophys.641(2020) A9 [1905.05697].
+[4] J.N. Fry,The galaxy correlation hierarchy in perturbation theory,Astrophys. J.279
+(1984) 499.
+[5] M. Goroff, B. Grinstein, S.-J. Rey and M.B. Wise,Coupling of modes of cosmological
+mass density fluctuations,Astrophys. J.311(1986) 6.
+[6] F. Bernardeau, S. Colombi, E. Gaztanaga and R. Scoccimarro,Large-scale structure of
+the Universe and cosmological perturbation theory,Phys. Rept.367(2002) 1
+[astro-ph/0112551].
+[7] L. Isserlis,On a formula for the product-moment coefficient of any order of a normal
+frequency distribution in any number of variables,Biometrika12(1918) 134.
+[8] S. Matarrese, L. Verde and A. Heavens,Large-scale bias in the universe: bispectrum
+method,Mon. Not. Roy. Astron. Soc.290(1997) 651 [astro-ph/9706059].
+[9] R. Scoccimarro, H. Couchman and J.A. Frieman,The bispectrum as a signature of
+gravitational instability in redshift space,Astrophys. J.517(1999) 531
+[astro-ph/9808305].
+[10] E. Sefusatti and E. Komatsu,Bispectrum of galaxies from high-redshift galaxy surveys:
+Primordial non-Gaussianity and nonlinear galaxy bias,Phys. Rev. D76(2007) 083004
+[astro-ph/0702694].
+[11] A. Moradinezhad Dizgah, M. Biagetti, E. Sefusatti, V. Desjacques and J. Nore˜ na,
+Primordial non-Gaussianity from biased tracers: likelihood analysis of real-space power
+spectrum and bispectrum,JCAP05(2021) 015 [2010.14523].
+[12] H. Gil-Mar´ ın, J. Norena, L. Verde, W.J. Percival, C. Wagner, M. Manera et al.,The
+power spectrum and bispectrum of SDSS DR11 BOSS galaxies–I. Bias and gravity,
+Mon. Not. Roy. Astron. Soc.451(2015) 539 [1407.5668].
+[13] A. Eggemeier, R. Scoccimarro, R.E. Smith, M. Crocce, A. Pezzotta and A.G. S´ anchez,
+Testing one-loop galaxy bias: Joint analysis of power spectrum and bispectrum,Phys.
+Rev. D103(2021) 123550 [2102.06902].
+[14] O.H. Philcox and M.M. Ivanov,BOSS DR12 full-shape cosmology:ΛCDM constraints
+from the large-scale galaxy power spectrum and bispectrum monopole,Phys. Rev. D
+105(2022) 043517 [2112.04515].
+[15] DESI Collaboration, B. Abareshi, J. Aguilar, S. Ahlen, S. Alam, D.M. Alexander
+– 46 –
+
+[PDF page 49]
+et al.,Overview of the instrumentation for the dark energy spectroscopic instrument,
+Astron. J.164(2022) 207 [2205.10939].
+[16] DESI Collaboration, M. Abdul Karim, A. Adame, D. Aguado, J. Aguilar, S. Ahlen
+et al.,Data release 1 of the dark energy spectroscopic instrument,Astron. J.171
+(2026) 285 [2503.14745].
+[17] D. Baumann, A. Nicolis, L. Senatore and M. Zaldarriaga,Cosmological non-linearities
+as an effective fluid,JCAP07(2012) 051 [1004.2488].
+[18] J.J.M. Carrasco, M.P. Hertzberg and L. Senatore,The effective field theory of
+cosmological large scale structures,JHEP09(2012) 082 [1206.2926].
+[19] E. Pajer and M. Zaldarriaga,On the renormalization of the effective field theory of
+large scale structures,JCAP08(2013) 037 [1301.7182].
+[20] V. Assassi, D. Baumann, D. Green and M. Zaldarriaga,Renormalized halo bias,JCAP
+08(2014) 056 [1402.5916].
+[21] T. Baldauf, M. Mirbabayi, M. Simonovi´ c and M. Zaldarriaga,Equivalence principle
+and the baryon acoustic peak,Phys. Rev. D92(2015) 043514 [1504.04366].
+[22] Z. Vlah, M. White and A. Aviles,A Lagrangian effective field theory,JCAP09(2015)
+014 [1506.05264].
+[23] M. Chevallier and D. Polarski,Accelerating universes with scaling dark matter,Int. J.
+Mod. Phys. D10(2001) 213 [gr-qc/0009008].
+[24] E.V. Linder,Exploring the Expansion History of the Universe,Phys. Rev. Lett.90
+(2003) 091301 [astro-ph/0208512].
+[25] P. McDonald and A. Roy,Clustering of dark matter tracers: generalizing bias for the
+coming era of precision LSS,JCAP08(2009) 020 [0902.0991].
+[26] V. Desjacques, D. Jeong and F. Schmidt,Large-scale galaxy bias,Phys. Rept.733
+(2018) 1 [1611.09787].
+[27] M.M. Ivanov, O.H. Philcox, T. Nishimichi, M. Simonovi´ c, M. Takada and
+M. Zaldarriaga,Precision analysis of the redshift-space galaxy bispectrum,Phys. Rev.
+D105(2022) 063512 [2110.10161].
+[28] A. Aviles, A. Banerjee, G. Niz and Z. Slepian,Clustering in massive neutrino
+cosmologies via Eulerian Perturbation Theory,JCAP11(2021) 028 [2106.13771].
+[29] H.E. Noriega, A. Aviles, S. Fromenteau and M. Vargas-Maga˜ na,Fast computation of
+non-linear power spectrum in cosmologies with massive neutrinos,JCAP11(2022)
+038 [2208.02791].
+[30] P. Bansal, A. Aviles, H.E. Noriega, C. Guandalin, I. Garzon, G. Niz et al.,FolpsD:
+combining EFT and phenomenological approaches for joint power spectrum and
+bispectrum analyses,2604.08895.
+[31] L. Senatore and M. Zaldarriaga,The IR-resummed Effective Field Theory of Large
+Scale Structures,JCAP02(2015) 013 [1404.5954].
+[32] Z. Vlah, U. Seljak, M.Y. Chu and Y. Feng,Perturbation theory, effective field theory,
+and oscillations in the power spectrum,JCAP03(2016) 057 [1509.02120].
+– 47 –
+
+[PDF page 50]
+[33] M.M. Ivanov and S. Sibiryakov,Infrared resummation for biased tracers in redshift
+space,JCAP07(2018) 053 [1804.05080].
+[34] P. McDonald,Clustering of dark matter tracers: Renormalizing the bias parameters,
+Phys. Rev. D74(2006) 103512 [astro-ph/0609413].
+[35] T. Mergulh˜ ao, H. Rubira, R. Voivodic and L.R. Abramo,The effective field theory of
+large-scale structure and multi-tracer,JCAP04(2022) 021 [2108.11363].
+[36] N. Kaiser,Clustering in real space and in redshift space,Mon. Not. Roy. Astron. Soc.
+227(1987) 1.
+[37] J.D. Talman,Numerical fourier and bessel transforms in logarithmic variables,J.
+Comput. Phys.29(1978) 35.
+[38] A. Hamilton,Uncorrelated modes of the non-linear power spectrum,Mon. Not. Roy.
+Astron. Soc.312(2000) 257 [astro-ph/9905191].
+[39] M. Simonovi´ c, T. Baldauf, M. Zaldarriaga, J.J. Carrasco and J.A. Kollmeier,
+Cosmological perturbation theory using the FFTLog: formalism and connection to
+QFT loop integrals,JCAP04(2018) 030 [1708.08130].
+[40] A. Aviles and A. Banerjee,A Lagrangian Perturbation Theory in the presence of
+massive neutrinos,JCAP10(2020) 034 [2007.06508].
+[41] D.A. Varshalovich, A.N. Moskalev and V.K. Khersonskii,Quantum theory of angular
+momentum, World Scientific (1988), 10.1142/0270.
+[42] N.S. Sugiyama, S. Saito, F. Beutler and H.-J. Seo,A complete FFT-based
+decomposition formalism for the redshift-space bispectrum,Mon. Not. Roy. Astron.
+Soc.484(2019) 364 [1803.02132].
+[43] M.S. Wang, F. Beutler, J. Aguilar, S. Ahlen, D. Bianchi, D. Brooks et al.,Window
+convolution of the galaxy clustering bispectrum,JCAP06(2025) 031 [2411.14947].
+[44] R. Scoccimarro,Fast estimators for redshift-space clustering,Phys. Rev. D92(2015)
+083532 [1506.02729].
+[45] K. Pardede, F. Rizzo, M. Biagetti, E. Castorina, E. Sefusatti and P. Monaco,
+Bispectrum-window convolution via Hankel transform,JCAP10(2022) 066
+[2203.04174].
+[46] C. Alcock and B. Paczy´ nski,An evolution free test for non-zero cosmological constant,
+Nature281(1979) 358.
+[47] M.J. Wilson, J.A. Peacock, A.N. Taylor and S. de la Torre,Rapid modelling of the
+redshift-space power spectrum multipoles for a masked density field,Mon. Not. Roy.
+Astron. Soc.464(2017) 3121 [1511.07799].
+[48] F. Beutler, H.-J. Seo, S. Saito, C.-H. Chuang, A.J. Cuesta, D.J. Eisenstein et al.,The
+clustering of galaxies in the completed SDSS-III Baryon Oscillation Spectroscopic
+Survey: anisotropic galaxy clustering in Fourier space,Mon. Not. Roy. Astron. Soc.
+466(2017) 2242 [1607.03150].
+[49] F. Beutler and P. McDonald,Unified galaxy power spectrum measurements from
+6dFGS, BOSS, and eBOSS,JCAP11(2021) 031 [2106.06324].
+– 48 –
+
+[PDF page 51]
+[50] R. Zhou, B. Dey, J.A. Newman, D.J. Eisenstein, K. Dawson, S. Bailey et al.,Target
+selection and validation of DESI luminous red galaxies,Astron. J.165(2023) 58
+[2208.08515].
+[51] E. Chaussidon, C. Yeche, N. Palanque-Delabrouille, D.M. Alexander, J. Yang,
+S. Ahlen et al.,Target selection and validation of DESI quasars,Astrophys. J.944
+(2023) 107 [2208.08511].
+[52] J. Guy, S. Bailey, A. Kremin, S. Alam, D. Alexander, C. Allende Prieto et al.,The
+spectroscopic data processing pipeline for the Dark Energy Spectroscopic Instrument,
+Astron. J.165(2023) 144 [2209.14482].
+[53] A. Adame, J. Aguilar, S. Ahlen, S. Alam, D. Alexander, M. Alvarez et al.,DESI 2024
+II: sample definitions, characteristics, and two-point clustering statistics,JCAP07
+(2025) 017 [2411.12020].
+[54] H.A. Feldman, N. Kaiser and J.A. Peacock,Power-spectrum analysis of
+three-dimensional redshift surveys,Astrophys. J.426(1994) 23 [astro-ph/9304022].
+[55] M. Pinon, A. de Mattia, P. McDonald, E. Burtin, V. Ruhlmann-Kleider, M. White
+et al.,Mitigation of DESI fiber assignment incompleteness effect on two-point
+clustering with small angular scale truncated estimators,JCAP01(2025) 131
+[2406.04804].
+[56] N.S. Sugiyama, M. Shiraishi and T. Okumura,Limits on statistical anisotropy from
+BOSS DR12 galaxies using bipolar spherical harmonics,Mon. Not. Roy. Astron. Soc.
+473(2018) 2737 [1704.02868].
+[57] M.S. Wang, F. Beutler and N.S. Sugiyama,Triumvirate: A Python/C++ package for
+three-point clustering measurements,J. Open Source Softw.8(2023) 5571
+[2304.03643].
+[58] M.S. Wang, F. Beutler and N.S. Sugiyama,Triumvirate: A Python/C++ package for
+three-point clustering measurements, 2023. 10.5281/zenodo.10072128.
+[59] R.W. Hockney and J.W. Eastwood,Computer simulation using particles, CRC Press
+(2021), 10.1201/9780367806934.
+[60] A. Chudaykin, M.M. Ivanov and O.H. Philcox,Reanalyzing DESI DR1. I.ΛCDM
+constraints from the power spectrum and bispectrum,Phys. Rev. D113(2026) 063502
+[2507.13433].
+[61] N.A. Maksimova, L.H. Garrison, D.J. Eisenstein, B. Hadzhiyska, S. Bose and
+T.P. Satterthwaite,AbacusSummit: a massive set of high-accuracy, high-resolution
+N-body simulations,Mon. Not. Roy. Astron. Soc.508(2021) 4017 [2110.11398].
+[62] N. Aghanim, Y. Akrami, M. Ashdown, J. Aumont, C. Baccigalupi, M. Ballardini
+et al.,Planck 2018 results. VI. Cosmological parameters,Astron. Astrophys.641
+(2020) A6 [1807.06209].
+[63] Z. Zheng, A.L. Coil and I. Zehavi,Galaxy evolution from halo occupation distribution
+modeling of DEEP2 and SDSS galaxy clustering,Astrophys. J.667(2007) 760
+[astro-ph/0703457].
+[64] DESI Collaboration, A. Adame, J. Aguilar, S. Ahlen, S. Alam, G. Aldering et al.,The
+– 49 –
+
+[PDF page 52]
+early data release of the dark energy spectroscopic instrument,Astron. J.168(2024)
+58 [2306.06308].
+[65] S. Yuan, H. Zhang, A.J. Ross, J. Donald-McCann, B. Hadzhiyska, R.H. Wechsler
+et al.,The DESI one-per cent survey: exploring the halo occupation distribution of
+luminous red galaxies and quasi-stellar objects with AbacusSummit,Mon. Not. Roy.
+Astron. Soc.530(2024) 947 [2306.06314].
+[66] C.-H. Chuang, F.-S. Kitaura, F. Prada, C. Zhao and G. Yepes,EZmocks: extending
+the Zel’dovich approximation to generate mock galaxy catalogues with accurate
+clustering statistics,Mon. Not. Roy. Astron. Soc.446(2014) 2621 [1409.1124].
+[67] D. Bianchi, M.M.S. Hanif, A. Carnero Rosell, J. Lasker, A.J. Ross, M. Pinon et al.,
+Characterization of DESI fiber assignment incompleteness effect on 2-point clustering
+and mitigation methods for DR1 analysis,JCAP04(2025) 074 [2411.12025].
+[68] E.B. Holm, L. Herold, T. Simon, E.G. Ferreira, S. Hannestad, V. Poulin et al.,
+Bayesian and frequentist investigation of prior effects in EFT of LSS analyses of
+full-shape BOSS and eBOSS data,Phys. Rev. D108(2023) 123514 [2309.04468].
+[69] L. Herold, E.G. Ferreira and L. Heinrich,Profile likelihoods in cosmology: When, why,
+and how illustrated withΛCDM, massive neutrinos, and dark energy,Phys. Rev. D
+111(2025) 083504 [2408.07700].
+[70] J. Hartlap, P. Simon and P. Schneider,Why your model parameter confidences might
+be too optimistic. Unbiased estimation of the inverse covariance matrix,Astron.
+Astrophys.464(2006) 399 [astro-ph/0608064].
+[71] M. Maus, S. Chen, M. White, J. Aguilar, S. Ahlen, A. Aviles et al.,An analysis of
+parameter compression and Full-Modeling techniques with Velocileptors for DESI 2024
+and beyond,JCAP01(2025) 138 [2404.07312].
+[72] M. Tsedrik, P. Carrilho and C. Moretti,The simple way to measure evolving dark
+energy without prior-volume effects,JCAP04(2026) 030 [2509.09562].
+[73] E. Chaussidon, C. Y` eche, A. De Mattia, C. Payerne, P. McDonald, A. Ross et al.,
+Constraining primordial non-Gaussianity with DESI 2024 LRG and QSO samples,
+JCAP06(2025) 029 [2411.17623].
+[74] G. d’Amico, J. Gleyzes, N. Kokron, K. Markovic, L. Senatore, P. Zhang et al.,The
+cosmological analysis of the SDSS/BOSS data from the Effective Field Theory of
+Large-Scale Structure,JCAP05(2020) 005 [1909.05271].
+[75] M. Karamanis, D. Nabergoj, F. Beutler, J.A. Peacock and U. Seljak,pocoMC: A
+Python package for accelerated Bayesian inference in astronomy and cosmology,J.
+Open Source Softw.7(2022) 4634 [2207.05660].
+[76] M. Karamanis, F. Beutler, J.A. Peacock, D. Nabergoj and U. Seljak,Accelerating
+astronomical and cosmological inference with preconditioned Monte Carlo,Mon. Not.
+Roy. Astron. Soc.516(2022) 1644 [2207.05652].
+[77] W.A. Fendt and B.D. Wandelt,Pico: Parameters for the Impatient Cosmologist,
+Astrophys. J.654(2006) 2 [astro-ph/0606709].
+[78] A. Spurio Mancini, D. Piras, J. Alsing, B. Joachimi and M.P. Hobson,CosmoPower:
+– 50 –
+
+[PDF page 53]
+emulating cosmological power spectra for accelerated Bayesian inference from
+next-generation surveys,Mon. Not. Roy. Astron. Soc.511(2022) 1771 [2106.03846].
+[79] M. Bonici, F. Bianchini and J. Ruiz-Zapatero,Capse.jl: efficient and
+auto-differentiable CMB power spectra emulation,2307.14339.
+[80] G. Aric` o, R.E. Angulo and M. Zennaro,Accelerating Large-Scale-Structure data
+analyses by emulating Boltzmann solvers and Lagrangian Perturbation Theory,Open
+Res. Eur.1(2021) 152 [2104.14568].
+[81] A. Mootoovaloo, A.H. Jaffe, A.F. Heavens and F. Leclercq,Kernel-based emulator for
+the 3D matter power spectrum from CLASS,Astron. Comput.38(2022) 100508
+[2105.02256].
+[82] J. Donald-McCann, F. Beutler, K. Koyama and M. Karamanis,matryoshka: halo
+model emulator for the galaxy power spectrum,Mon. Not. Roy. Astron. Soc.511
+(2022) 3768 [2109.15236].
+[83] M. Bonici, G. D’Amico, J. Bel and C. Carbone,Effort.jl: a fast and differentiable
+emulator for the Effective Field Theory of the Large Scale Structure of the Universe,
+JCAP09(2025) 044 [2501.04639].
+[84] M. Bonici et al. 2026.
+[85] D. Forero-S´ anchez, S. Novell-Masot, H. Gil-Mar´ ın, L. Verde, J. Aguilar, S. Ahlen
+et al.,Cosmological constraints from the DESI DR1 Bispectrum Full-Shape and DR2
+BAO,2606.23936.
+[86] J. Byun and E. Krause,Modal compression of the redshift-space galaxy bispectrum,
+Monthly Notices of the Royal Astronomical Society525(2023) 4854–4870
+[2205.04579].
+[87] D. Blas, J. Lesgourgues and T. Tram,The Cosmic Linear Anisotropy Solving System
+(CLASS). Part II: Approximation schemes,JCAP2011(2011) 034–034 [1104.2933].
+[88] C.R. Harris, K.J. Millman, S.J. van der Walt, R. Gommers, P. Virtanen,
+D. Cournapeau et al.,Array programming with NumPy,Nature585(2020) 357.
+[89] P. Virtanen, R. Gommers, T.E. Oliphant, M. Haberland, T. Reddy, D. Cournapeau
+et al.,SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python,Nature
+Methods17(2020) 261.
+[90] J.D. Hunter,Matplotlib: A 2d graphics environment,Computing in Science &
+Engineering9(2007) 90.
+[91] A. Lewis,GetDist: a Python package for analysing Monte Carlo samples,JCAP08
+(2025) 025 [1910.13970].
+[92] A. Eggemeier, R. Scoccimarro, M. Crocce, A. Pezzotta and A.G. S´ anchez,Testing
+one-loop galaxy bias: Power spectrum,Physical Review D102(2020) [2006.09729].
+– 51 –
