@@ -1,0 +1,123 @@
+{
+  "runId": "20261021-131937-gpt-6-astro-r1-191ecd",
+  "taskId": "05-game3d",
+  "phase": "initial",
+  "files": {
+    ".keep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executable": false
+    },
+    "DELIVERY.md": {
+      "sha256": "795a51ef73362268b3bbdae559b6db863fc8e02ee1c78f30b761ecd1cfd7f631",
+      "executable": false
+    },
+    "PARAMETERS.md": {
+      "sha256": "4ee77b17a184d2719b5cb5bf002d30cdc498e4d7143a5806bcd39af59976239b",
+      "executable": false
+    },
+    "assets/index-595qulrL.css": {
+      "sha256": "822bd0b73f65799c6fbdf501fa73cdef8d5496c14ce1f54dcd6b34899e6c26ba",
+      "executable": false
+    },
+    "assets/index-qsOl13Hd.js": {
+      "sha256": "e2536256eb7fa16b0251712222e038107052b94d949f5a66a3a5ac4764544520",
+      "executable": false
+    },
+    "index.html": {
+      "sha256": "5f8ce9ffec6ba932ca7634573be7e47d4c1a1508116048ca52dbd01dc923bcbe",
+      "executable": false
+    },
+    "materials/warehouse.json": {
+      "sha256": "8f380e9ad3b7e426e512e65eaf962445f96a0e455eb4470c396cff017164e343",
+      "executable": false
+    },
+    "qa/TEST_STEPS.md": {
+      "sha256": "cc553f3f9b08a6bc84a9a61ca94b379b4685a3f358288ec934cd9147c9a89812",
+      "executable": false
+    },
+    "qa/browser-checks.json": {
+      "sha256": "9fa7a83c7cf8f57f8ad31520418c6d7b9b68df836a5360d65b2c9364dbfc1deb",
+      "executable": false
+    },
+    "qa/build-manifest.json": {
+      "sha256": "e698e0c5428624dcc141114ce0a319a4996d5b4af0a1baf47639f53d4fbbca69",
+      "executable": false
+    },
+    "qa/final-preview.png": {
+      "sha256": "70607a82e81fcf86a1ce20797f350acf8977d3798c71294f03003e28cf031b8c",
+      "executable": false
+    },
+    "qa/gameplay-carry.png": {
+      "sha256": "5587a530d47794abe084f76c476d9bfb22376cfedd10d1481c645b05d592f880",
+      "executable": false
+    },
+    "qa/gameplay-checks.json": {
+      "sha256": "0ff5f17a4ab866c915a4f308f241611018e0c4fd3c6b744885359ed71b22334f",
+      "executable": false
+    },
+    "qa/iframe-check.html": {
+      "sha256": "9d0b42420c0a14a8312416e817140a28872959d355623aa98019e3fddbf4f382",
+      "executable": false
+    },
+    "qa/iframe.png": {
+      "sha256": "ecf2ae176e403acdf0117fd6993a560e23e952523687f15fe7737349793a41d7",
+      "executable": false
+    },
+    "qa/model-front.png": {
+      "sha256": "a146dc52068215b7c66ee4b613a3603ada29641d0aa3a76bcbbda45cc57bd7e9",
+      "executable": false
+    },
+    "qa/model-rear.png": {
+      "sha256": "92d56c10d7e89b226c1cbcb250d253e16f9194a172e95229763312495afbc346",
+      "executable": false
+    },
+    "qa/model-side.png": {
+      "sha256": "ed8809cdae23ba535a150e2ea66283f1d8246631b69b48401c1cbba7884289c2",
+      "executable": false
+    },
+    "qa/model-top.png": {
+      "sha256": "d812a134c539bebb5e4c31acb6b8025017fbb9139d435f96f01dca29e1d32344",
+      "executable": false
+    },
+    "qa/performance-before-state-polish.json": {
+      "sha256": "47583702fdfd0d3f7fd89201a8ed7dbd8ed084e737743d8775888adaa3b2a379",
+      "executable": false
+    },
+    "qa/performance-summary.json": {
+      "sha256": "b1ca8c41d8995cd15c986f187001ca8ee2d80b587b214e7169d273909cb62c31",
+      "executable": false
+    },
+    "qa/performance.json": {
+      "sha256": "7b66bb51ab79607bc0217f647d05b39914984ccdb234614ef704d078887178a1",
+      "executable": false
+    },
+    "qa/restarts-10.json": {
+      "sha256": "5542e5ced01b4573de989a34551aa353fa2691c1b05e7fcce514d6dc124dde30",
+      "executable": false
+    },
+    "qa/start-screen.png": {
+      "sha256": "c900f1450507f080557952bb1cc0c4824fe415f4ded05c31816c7c2de3407352",
+      "executable": false
+    },
+    "qa/timeout.png": {
+      "sha256": "42490660c455c0d78d7ba61ccd52588207efa522923654e242be90b5dc09a9eb",
+      "executable": false
+    },
+    "qa/victory.png": {
+      "sha256": "53eb1f46a158bf20275e196512447d81f0c2b7df43b64da246ff94b1f315d547",
+      "executable": false
+    },
+    "qa/wrong-color.png": {
+      "sha256": "b6a094bb3e102785e324ae174f2b89d0abdb24a6f5bb4dc6dcfc902ec50b68ee",
+      "executable": false
+    },
+    "vendor/ammo/ammo.wasm.js": {
+      "sha256": "3fa63c584d4732f72b954c5ea105f1faca99559c95c57ce7bb738d3497f98228",
+      "executable": false
+    },
+    "vendor/ammo/ammo.wasm.wasm": {
+      "sha256": "16be07b989963bddebfef66eab28a4387536eb37014d9df1531dab380bd96a93",
+      "executable": false
+    }
+  }
+}

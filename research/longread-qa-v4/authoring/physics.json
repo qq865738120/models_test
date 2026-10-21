@@ -1,0 +1,541 @@
+{
+  "version": "longread-qa-v4",
+  "questions": {
+    "initial": [
+      {
+        "id": "P01",
+        "domain": "physics",
+        "question": "仅作合成的低红移背景计算：使用资料中热分布、较低温度的 sterile relic 定义，将其非相对论有效质量按 Ωs=ms,eff/(1 eV) 计入物质；其余物质 Ωb 固定，Ωm=Ωb+Ωs。忽略辐射，真实 Ωde=1−Ωm。采用时变 gravitational susceptibility 模型的归一化背景式，令 (1+S(z))/(1+S(0))=1+bz。使用资料定义的 Om(z)，所有密度均为该背景式的真密度。此合成记账不声称是原论文联合拟合。 取 Ωb=1/8、ms=1 eV。实验仪的温度比仅可能为 n/10（整数1≤n≤9），b仅可能为 j/100（整数0≤j≤25）。两次测量给 Om(1)=3203/11449、Om(2)=10708/42237。同时满足二者时，求 n、j、ΔNeff；必须用同一组隐参数同时解释两红移。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "n",
+            "kind": "integer"
+          },
+          {
+            "name": "j",
+            "kind": "integer"
+          },
+          {
+            "name": "DeltaNeff",
+            "kind": "rational"
+          }
+        ],
+        "weight": 6,
+        "scoring": "exact"
+      },
+      {
+        "id": "P02",
+        "domain": "physics",
+        "question": "仅作合成的低红移背景计算：使用资料中热分布、较低温度的 sterile relic 定义，将其非相对论有效质量按 Ωs=ms,eff/(1 eV) 计入物质；其余物质 Ωb 固定，Ωm=Ωb+Ωs。忽略辐射，真实 Ωde=1−Ωm。采用时变 gravitational susceptibility 模型的归一化背景式，令 (1+S(z))/(1+S(0))=1+bz。使用资料定义的 Om(z)，所有密度均为该背景式的真密度。此合成记账不声称是原论文联合拟合。 取 Ωb=1/10、ms=1 eV，温度比=n/10（1≤n≤9的整数），b=j/100（0≤j≤25的整数）。要求 Ωm<1、[d(H²/H0²)/dz]0>0、1/5≤Om(1)≤1/4、1/6≤Om(2)≤1/5。最大化 sterile 有效质量；如并列，取最小 b。求 n、j、该方案 Om(2)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "n",
+            "kind": "integer"
+          },
+          {
+            "name": "j",
+            "kind": "integer"
+          },
+          {
+            "name": "Om(2)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 6,
+        "scoring": "exact"
+      },
+      {
+        "id": "P03",
+        "domain": "physics",
+        "question": "采用资料中 cosmic glitch 的定义与有效暗能量重写，并使用另一资料的热 sterile 定义和 Om 诊断。以下均为合成平直背景：r=Gcosmo/GN>0；m、a、lambda 分别是以 3H0²/(8πGN) 为单位的今日非相对论物质、辐射、常数项密度。非暗能量密度为 m(1+z)³+a(1+z)⁴。今日 E(0)=1 决定 lambda。sterile 已非相对论，其物质贡献为 ms,eff/(1 eV)，其余物质 m_b 另给。取原资料 cosmic glitch 有效暗能量密度为本题 rhoDE，同样以该今日临界密度为单位；不要求 rhoDE 在所有红移为正。 取 a=1/100、m_b=1/5、ms=1 eV。未知 r 与温度比 u=Ts/Tν。测得 Om(1)=873/2800，Om(2)=333/1040。求 r、ΔNeff、rhoDE(2)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "r",
+            "kind": "rational"
+          },
+          {
+            "name": "DeltaNeff",
+            "kind": "rational"
+          },
+          {
+            "name": "rhoDE(2)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 6,
+        "scoring": "exact"
+      },
+      {
+        "id": "P04",
+        "domain": "physics",
+        "question": "采用资料中 cosmic glitch 的定义与有效暗能量重写，并使用另一资料的热 sterile 定义和 Om 诊断。以下均为合成平直背景：r=Gcosmo/GN>0；m、a、lambda 分别是以 3H0²/(8πGN) 为单位的今日非相对论物质、辐射、常数项密度。非暗能量密度为 m(1+z)³+a(1+z)⁴。今日 E(0)=1 决定 lambda。sterile 已非相对论，其物质贡献为 ms,eff/(1 eV)，其余物质 m_b 另给。取原资料 cosmic glitch 有效暗能量密度为本题 rhoDE，同样以该今日临界密度为单位；不要求 rhoDE 在所有红移为正。 取 m_b=1/4、ms=2 eV、ΔNeff=1/16、a=1/162。调节 r，使 rhoDE 恰在 z=2 为零；r 不得等于零。求 r、Omega_g、Om(2)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "r",
+            "kind": "rational"
+          },
+          {
+            "name": "Omega_g",
+            "kind": "rational"
+          },
+          {
+            "name": "Om(2)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 6,
+        "scoring": "exact"
+      },
+      {
+        "id": "P05",
+        "domain": "physics",
+        "question": "在一个合成的两位置 code-capacity 噪声实验中，固定代码和解码器，把每个 Pauli 写作 X^a Z^b（忽略相位）。位置1、2独立，各自 pI=1−p，且 pX=pY；偏置定义 η=pZ/(pX+pY)。仅可施加 I 或 H 的 Clifford deformation，按资料的 Schrödinger picture 处理；不得把它当作 circuit-level 等价性。变形后的误差位为(a,b)、(c,d)，记录 syndrome=(a xor c,b xor d)；已固定的 residual logical failure 位 L=a xor d xor (c AND b)。置信分数对 syndrome 00、10、01、11依次为3、2、1、0，按资料的阈值规则接受。本题直接求 post-selected LER 对原始 p1 或 p2 的数学偏导；求导时，阈值、偏置、变形和解码器均保持不变，必须包括接受概率的变化。 取(p1,p2)=(1/5,1/4)，(η1,η2)=(3,2)。任选两位置 I/H 变形及整数阈值 τ∈{1,2,3}，要求 yield≥3/5，最小化条件 LER。若并列，先按 II<IH<HI<HH 排列，再选最小 τ。求两字母变形代码、τ、条件 LER 对 p2 的导数。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "deformation",
+            "kind": "code"
+          },
+          {
+            "name": "tau",
+            "kind": "integer"
+          },
+          {
+            "name": "derivative p2",
+            "kind": "rational"
+          }
+        ],
+        "weight": 5,
+        "scoring": "exact"
+      },
+      {
+        "id": "P06",
+        "domain": "physics",
+        "question": "设计合成的 stitched-block memory bank：每个底层块由四个距离t的 rotated patches 按资料的 stitched 结构构成，总 footprint 必须包含 corridor 和测量 ancilla。把 r 个底层块的两个逻辑比特全部用于一次 chain-code 拼接。对底层 [[4,2,2]] outer code，分别选能区分全部单逻辑位及两逻辑位错误的最小独立 X/Z seed；按资料 chain 规则取允许的偶数r。此次只做资源与后选择记账，不宣称额外门操作已实现：chain 检查控制器另需每个独立 chain generator 恰 t 个物理 qubit。每个块独立出现可见 flag 的概率 e=1/(t+1)²；接受置信分数为负 flag 数，阈值−1。已接受时若无 flag 则永不失败；恰一个 flag 时以 f=1/(t+1) 的条件概率失败。一个 accepted shot 保留全部 K 个 chain 逻辑比特。定义有效产出 T=K·yield；失败率用资料的 conditional LER。r∈{4,6,8,10,12}、t∈{3,4,5,6,7}。 现在并行两个独立 bank；只有两者都接受才保留整次 shot，只要任一 bank 失败即整体失败。两 bank 的(r,t)按字典序从小到大记为A、B。总N≤6500、整体 conditional LER≤1/15。最大化(KA+KB)·整体yield；并列先最小总N，再按(rA,tA,rB,tB)字典序。求rA、tA、rB、tB、总N。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "rA",
+            "kind": "integer"
+          },
+          {
+            "name": "tA",
+            "kind": "integer"
+          },
+          {
+            "name": "rB",
+            "kind": "integer"
+          },
+          {
+            "name": "tB",
+            "kind": "integer"
+          },
+          {
+            "name": "total N",
+            "kind": "integer"
+          }
+        ],
+        "weight": 5,
+        "scoring": "exact"
+      }
+    ],
+    "change": [
+      {
+        "id": "XP01",
+        "domain": "physics",
+        "question": "仅作合成的低红移背景计算：使用资料中热分布、较低温度的 sterile relic 定义，将其非相对论有效质量按 Ωs=ms,eff/(1 eV) 计入物质；其余物质 Ωb 固定，Ωm=Ωb+Ωs。忽略辐射，真实 Ωde=1−Ωm。采用时变 gravitational susceptibility 模型的归一化背景式，令 (1+S(z))/(1+S(0))=1+bz+cz²。使用资料定义的 Om(z)，所有密度均为该背景式的真密度。此合成记账不声称是原论文联合拟合。 改为二次 susceptibility，Ωb=1/5，Ts/Tν=2/3，b=1/7。未知 ms 与 c；测得 E²′(0)=32/35、E²″(0)=394/245，E=H/H0。求 ms/eV、c、Om(1)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "ms/eV",
+            "kind": "rational"
+          },
+          {
+            "name": "c",
+            "kind": "rational"
+          },
+          {
+            "name": "Om(1)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 17,
+        "scoring": "exact"
+      },
+      {
+        "id": "XP02",
+        "domain": "physics",
+        "question": "设计合成的 stitched-block memory bank：每个底层块由四个距离t的 rotated patches 按资料的 stitched 结构构成，总 footprint 必须包含 corridor 和测量 ancilla。把 r 个底层块的两个逻辑比特全部用于一次 chain-code 拼接。对底层 [[4,2,2]] outer code，分别选能区分全部单逻辑位及两逻辑位错误的最小独立 X/Z seed；按资料 chain 规则取允许的偶数r。此次只做资源与后选择记账，不宣称额外门操作已实现：chain 检查控制器另需每个独立 chain generator 恰 t 个物理 qubit。每个块独立出现可见 flag 的概率 e=1/(t+1)²；接受置信分数为负 flag 数，阈值−1。已接受时若无 flag 则永不失败；恰一个 flag 时以 f=1/(t+1) 的条件概率失败。一个 accepted shot 保留全部 K 个 chain 逻辑比特。定义有效产出 T=K·yield；失败率用资料的 conditional LER。r∈{4,6,8,10,12}、t∈{3,4,5,6,7}。 本题替换后选择规则：置信分数为1当且仅当 flag 数是0或2，否则为0，阈值1。无flag永不失败；恰2个flag时，各flag独立以f触发失败，至少一个触发即失败。其余结构不变。要求N≤3500、conditional LER≤1/100，最大化K·yield/N；并列先最小N，再最小r、t。求r、t、N、conditional LER。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "r",
+            "kind": "integer"
+          },
+          {
+            "name": "t",
+            "kind": "integer"
+          },
+          {
+            "name": "N",
+            "kind": "integer"
+          },
+          {
+            "name": "conditional LER",
+            "kind": "rational"
+          }
+        ],
+        "weight": 17,
+        "scoring": "exact"
+      }
+    ]
+  },
+  "answers": {
+    "initial": [
+      {
+        "id": "P01",
+        "answer": "6;7;81/625",
+        "evidence": [
+          {
+            "source": "P13",
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.txt",
+            "locator": "PDF page 3",
+            "quote": "For a thermally distributed sterile neutrino with temper-\natureT s, its relativistic energy density is proportional to\nT 4\ns . Hence, its contribution to the radiation density is\nrelated to its temperature by,\nTs\nTν,active\n= (∆Neff)1/4,where, Tν,active\nTγ\n≃\n\u0012 4\n11\n\u00131/3\n.\n(5)\nWe assume a Fermi–Dirac phase-space distribution for\nthe sterile neutrino. Since the number density scales\nasT 3\ns , partial thermalization also reduces the late-time\nabundance of the sterile species. In the non-relativistic\nregime, its cosmological density can therefore be ex-\npressed in terms of an effective mass,\nms,eff =m s(∆Neff)3/4.(6)"
+          },
+          {
+            "source": "P02",
+            "path": "research/longread-20261018/papers/P02-2609.26517v2.txt",
+            "locator": "PDF page 5",
+            "quote": "H2(z) =H 2\n0\n\u00141 +S(0)\n1 +S(z)\n\u00152\u0002\n(1 +z) 3Ωm0 + Ωde0\n\u0003\n,(30)\nwhere we have usedH 2"
+          },
+          {
+            "source": "P04",
+            "path": "research/longread-20261018/papers/P04-2608.19883v2.txt",
+            "locator": "PDF page 2",
+            "quote": "Om(z)≡ E(z)2 −1\n(1+z) 3 −1 = Ωm +(1−Ω m) X(z)−1\n(1+z) 3 −1 ,(4)\nwhereE(z) :=H(z)/H 0"
+          }
+        ],
+        "derivation": "枚举234组而非独立拟合两个点；每组 m=1/8+(n/10)³；两个 Om 联合筛选仅 (6, 7)；ΔN=(3/5)^4=81/625。第二方法代入两个有理多项式并交叉相乘核验，两者同时为零。",
+        "dependencies": [
+          {
+            "source": "P13",
+            "contribution": "温度四次方与有效质量三次方的不同映射"
+          },
+          {
+            "source": "P02",
+            "contribution": "H² 中归一化 susceptibility 的平方而非一次方"
+          },
+          {
+            "source": "P04",
+            "contribution": "Om 的 H0 归一化与红移分母"
+          }
+        ],
+        "ablation": "去掉P13后不能确定温度四次方与有效质量三次方的不同映射；去掉P02后不能确定H² 中归一化 susceptibility 的平方而非一次方；去掉P04后不能确定Om 的 H0 归一化与红移分母。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "离散合成参数反演，非真实观测约束。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P02",
+        "answer": "7;23;12983/69277",
+        "evidence": [
+          {
+            "source": "P13",
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.txt",
+            "locator": "PDF page 3",
+            "quote": "For a thermally distributed sterile neutrino with temper-\natureT s, its relativistic energy density is proportional to\nT 4\ns . Hence, its contribution to the radiation density is\nrelated to its temperature by,\nTs\nTν,active\n= (∆Neff)1/4,where, Tν,active\nTγ\n≃\n\u0012 4\n11\n\u00131/3\n.\n(5)\nWe assume a Fermi–Dirac phase-space distribution for\nthe sterile neutrino. Since the number density scales\nasT 3\ns , partial thermalization also reduces the late-time\nabundance of the sterile species. In the non-relativistic\nregime, its cosmological density can therefore be ex-\npressed in terms of an effective mass,\nms,eff =m s(∆Neff)3/4.(6)"
+          },
+          {
+            "source": "P02",
+            "path": "research/longread-20261018/papers/P02-2609.26517v2.txt",
+            "locator": "PDF page 5",
+            "quote": "H2(z) =H 2\n0\n\u00141 +S(0)\n1 +S(z)\n\u00152\u0002\n(1 +z) 3Ωm0 + Ωde0\n\u0003\n,(30)\nwhere we have usedH 2"
+          },
+          {
+            "source": "P04",
+            "path": "research/longread-20261018/papers/P04-2608.19883v2.txt",
+            "locator": "PDF page 2",
+            "quote": "Om(z)≡ E(z)2 −1\n(1+z) 3 −1 = Ωm +(1−Ω m) X(z)−1\n(1+z) 3 −1 ,(4)\nwhereE(z) :=H(z)/H 0"
+          }
+        ],
+        "derivation": "共9可行格点。按 ms,eff=(n/10)^3 的严格单调性先最大 n，再最小 j。最优 n=7,j=23,m=443/1000,Om1=8627/35301,Om2=12983/69277。逐点 Fraction 与 展开多项式 导数一致；反序排序再筛选给同一结果。",
+        "dependencies": [
+          {
+            "source": "P13",
+            "contribution": "温度四次方与有效质量三次方的不同映射"
+          },
+          {
+            "source": "P02",
+            "contribution": "H² 中归一化 susceptibility 的平方而非一次方"
+          },
+          {
+            "source": "P04",
+            "contribution": "Om 的 H0 归一化与红移分母"
+          }
+        ],
+        "ablation": "去掉P13后不能确定温度四次方与有效质量三次方的不同映射；去掉P02后不能确定H² 中归一化 susceptibility 的平方而非一次方；去掉P04后不能确定Om 的 H0 归一化与红移分母。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "有限设计优化；闭区间边界按精确分数比较。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P03",
+        "answer": "9/10;1/16;-13/50",
+        "evidence": [
+          {
+            "source": "P13",
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.txt",
+            "locator": "PDF page 3",
+            "quote": "For a thermally distributed sterile neutrino with temper-\natureT s, its relativistic energy density is proportional to\nT 4\ns . Hence, its contribution to the radiation density is\nrelated to its temperature by,\nTs\nTν,active\n= (∆Neff)1/4,where, Tν,active\nTγ\n≃\n\u0012 4\n11\n\u00131/3\n.\n(5)\nWe assume a Fermi–Dirac phase-space distribution for\nthe sterile neutrino. Since the number density scales\nasT 3\ns , partial thermalization also reduces the late-time\nabundance of the sterile species. In the non-relativistic\nregime, its cosmological density can therefore be ex-\npressed in terms of an effective mass,\nms,eff =m s(∆Neff)3/4.(6)"
+          },
+          {
+            "source": "P05",
+            "path": "research/longread-20261018/papers/P05-2609.40176v1.txt",
+            "locator": "PDF page 1",
+            "quote": "Ωg ≡1− GN\nGcosmo\n,(1)\nwhereG N is the locally measured Newtonian coupling\nandG cosmo is the coupling entering the Friedmann equa-\ntion. In a flat universe this background evolution corre-\nsponds to an effective dark-energy density\nρDE = ΩgρnonDE +ρ Λ\n1−Ω g\n,(2)\nwhereρ nonDE contains matter, radiation, and neutri-"
+          },
+          {
+            "source": "P04",
+            "path": "research/longread-20261018/papers/P04-2608.19883v2.txt",
+            "locator": "PDF page 2",
+            "quote": "Om(z)≡ E(z)2 −1\n(1+z) 3 −1 = Ωm +(1−Ω m) X(z)−1\n(1+z) 3 −1 ,(4)\nwhereE(z) :=H(z)/H 0"
+          }
+        ],
+        "derivation": "归一化 lambda=1/r-m-a。Om(z)=r[m+a((1+z)^4-1)/((1+z)^3-1)]。先两点作差 r=9/10，回代 m=13/40，u³=m-1/5=1/8，所以 ΔN=u⁴=1/16。lambda=1397/1800;rhoDE2=-13/50。直接修改 Friedmann 与有效密度相加两法一致。",
+        "dependencies": [
+          {
+            "source": "P13",
+            "contribution": "由热温度比推有效质量后进入非暗部门"
+          },
+          {
+            "source": "P05",
+            "contribution": "G 比值与 glitch 参数互为非线性倒数及有效密度重写"
+          },
+          {
+            "source": "P04",
+            "contribution": "从含辐射的 E² 归一化构造 Om，而非直接等同 m"
+          }
+        ],
+        "ablation": "去掉P13后不能确定由热温度比推有效质量后进入非暗部门；去掉P05后不能确定G 比值与 glitch 参数互为非线性倒数及有效密度重写；去掉P04后不能确定从含辐射的 E² 归一化构造 Om，而非直接等同 m。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "cosmic glitch 为独立背景模型，不与 susceptibility 混同。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P04",
+        "answer": "1053/1093;-40/1053;1/2",
+        "evidence": [
+          {
+            "source": "P13",
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.txt",
+            "locator": "PDF page 3",
+            "quote": "For a thermally distributed sterile neutrino with temper-\natureT s, its relativistic energy density is proportional to\nT 4\ns . Hence, its contribution to the radiation density is\nrelated to its temperature by,\nTs\nTν,active\n= (∆Neff)1/4,where, Tν,active\nTγ\n≃\n\u0012 4\n11\n\u00131/3\n.\n(5)\nWe assume a Fermi–Dirac phase-space distribution for\nthe sterile neutrino. Since the number density scales\nasT 3\ns , partial thermalization also reduces the late-time\nabundance of the sterile species. In the non-relativistic\nregime, its cosmological density can therefore be ex-\npressed in terms of an effective mass,\nms,eff =m s(∆Neff)3/4.(6)"
+          },
+          {
+            "source": "P05",
+            "path": "research/longread-20261018/papers/P05-2609.40176v1.txt",
+            "locator": "PDF page 1",
+            "quote": "Ωg ≡1− GN\nGcosmo\n,(1)\nwhereG N is the locally measured Newtonian coupling\nandG cosmo is the coupling entering the Friedmann equa-\ntion. In a flat universe this background evolution corre-\nsponds to an effective dark-energy density\nρDE = ΩgρnonDE +ρ Λ\n1−Ω g\n,(2)\nwhereρ nonDE contains matter, radiation, and neutri-"
+          },
+          {
+            "source": "P04",
+            "path": "research/longread-20261018/papers/P04-2608.19883v2.txt",
+            "locator": "PDF page 2",
+            "quote": "Om(z)≡ E(z)2 −1\n(1+z) 3 −1 = Ωm +(1−Ω m) X(z)−1\n(1+z) 3 −1 ,(4)\nwhereE(z) :=H(z)/H 0"
+          }
+        ],
+        "derivation": "u=1/2,ms,eff=1/4,m=1/2。z2非暗密度=14，用 lambda=1/r-m-a 代入 rhoDE=0，r=(nd-1)/(nd-m-a)=1053/1093。g=-40/1053;Om2=1/2。有效密度公式与 E²-nd 独立核验为零。",
+        "dependencies": [
+          {
+            "source": "P13",
+            "contribution": "由热温度比推有效质量后进入非暗部门"
+          },
+          {
+            "source": "P05",
+            "contribution": "G 比值与 glitch 参数互为非线性倒数及有效密度重写"
+          },
+          {
+            "source": "P04",
+            "contribution": "从含辐射的 E² 归一化构造 Om，而非直接等同 m"
+          }
+        ],
+        "ablation": "去掉P13后不能确定由热温度比推有效质量后进入非暗部门；去掉P05后不能确定G 比值与 glitch 参数互为非线性倒数及有效密度重写；去掉P04后不能确定从含辐射的 E² 归一化构造 Om，而非直接等同 m。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "零点是有效暗能量密度零点，不称为 w=-1 crossing。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P05",
+        "answer": "IH;3;33792/344569",
+        "evidence": [
+          {
+            "source": "P15",
+            "path": "research/longread-20261018/papers/P15-2610.13589v1.txt",
+            "locator": "PDF page 3",
+            "quote": "2.The Schr¨ odinger picture:The stabilizers stay\nthe same, but the noise on the qubit (p X , pY , pZ)\nis permuted. The HadamardHdeformation would\ngive (pZ, pY , pX) swapping the Pauli-X and Z prob-\nabilities.\nWe note in passing that when circuit-level noise is\nconsidered, the Schr¨ odinger-picture analog formally\nbreaks down. There exist 6 possible deformations\nper qubit, including no deformationI/(p X , pY , pZ),\nH/(pZ, pY , pX),\n√\nZ/(p Y , pX , pZ),H\n√\nZ/(p Y , pZ, pX),√\nZH/(p Z, pX , pY ), andH\n√\nZH/(p X , pZ, pY ) withIthe"
+          },
+          {
+            "source": "P21",
+            "path": "research/longread-20261018/papers/P21-2610.00504v1.txt",
+            "locator": "PDF page 3",
+            "quote": "Given a confidence scores(x)∈Rfor each shot, and\nthresholdτ∈R, the rule accepts a shot iffs(x)≥τ.\nLarger scores indicate greater confidence in decoder suc-\ncess. The performance of the post-selector is charac-\nterised by two quantities:\nYield(τ) =P(s(x)≥τ),(1)\nLER(τ) =P(Ac(σ)̸=Ae|s(x)≥τ),(2)\nwhereAis the logical action matrix of Section II A. In\npractice the yield is the fraction of retained shots and the\nconditional LER is defined when the yield is non-zero."
+          }
+        ],
+        "derivation": "枚举12设计，12满足yield限制。最优IH,tau=3,Y=587/960,Q=11/587,Q2′=33792/344569。每个设计以两种独立导数方法核验，IH/HI 在 τ=3 时精确并列；用显式 cd_order 排序选 IH，不能用 Python 字符串自然序。反向枚举及显式顺序扫描独立核验。",
+        "dependencies": [
+          {
+            "source": "P15",
+            "contribution": "仅 code-capacity 下 H 对 X/Z 概率的置换"
+          },
+          {
+            "source": "P21",
+            "contribution": "阈值包括等号、LER 条件化而非联合失败概率"
+          }
+        ],
+        "ablation": "去掉P15后不能确定仅 code-capacity 下 H 对 X/Z 概率的置换；去掉P21后不能确定阈值包括等号、LER 条件化而非联合失败概率。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "最优值是精确枚举结果；并不外推到 circuit-level 最佳变形。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P06",
+        "answer": "10;5;12;6;6410",
+        "evidence": [
+          {
+            "source": "P14",
+            "path": "research/longread-20261018/papers/P14-2610.21357v1.txt",
+            "locator": "PDF page 2",
+            "quote": "concatenate four distance-trotated surface-code patches\nwith the smallest non-trivial error-detecting CSS code,\n[[4,2,2]] [29–31], obtaining a [[4t 2,2,2t]] code of distance\nd= 2tthat encodesk= 2 logical qubits in a footprint\nofN= 2d 2 + 4d−3 physical qubits on a square lattice\nwith nn connectivity, see Fig. 1."
+          },
+          {
+            "source": "P23",
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.txt",
+            "locator": "PDF page 6",
+            "quote": "Suppose level-1 to level-(i−1) concatenated codes constitute an [[n, k, d]] code, and we want to construct a\nlevel-icode with distance two that is concatenated overrcopies of them. We call every logical X error that can be\ninduced by a weight-(2d−1) undetectable X error on level-0 (i.e., surface-code qubits in the multi-yoked surface\ncode) qubits aproblematic errorand denote their set byP prob,X ⊂ {I, X} ⊗k. Next, we list an independent set\nof Pauli Z operators that can detect all the problematic errors. We call this set of Pauli operators aseed code\nPseed,Z ⊂ {I, Z} ⊗k, which satisfies∀P∈ P prob,X,∃Q∈ P seed,Z,s.t. QP=−P Q. Then, the stabilizer generator\nset of a chain code is constructed as{P ⊗r|P∈ P seed,Z} ∪ {P ⊗r|P∈ P seed,X}. Note that elements of X and Z seed\ncodesP seed,X andP seed,Z do not necessarily commute with each other. Even in this case, the chain codes satisfy the\ncondition of stabilizer codes if we chooseras an even number. Thus, the chain code encodesrk− |P seed,X| − |Pseed,Z|\nlogical qubits withrklower-level qubits, and it is capable of detecting all block errors at the lower-level codes. Its\nencoding rate converges to one in the large-rlimit."
+          },
+          {
+            "source": "P23",
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.txt",
+            "locator": "PDF page 7",
+            "quote": "Proposition 1.LetP prob,X be the set of problematic X errors for an iceberg code[[n, k=n−2,2]]andc z be the\nsize of the Z-check seed codeP seed,Z forP prob,X. Then,c z is lower bounded asc z ≥ ⌈log2 (k+ 1)⌉. The same holds\nfor X checks for Z errors."
+          },
+          {
+            "source": "P21",
+            "path": "research/longread-20261018/papers/P21-2610.00504v1.txt",
+            "locator": "PDF page 3",
+            "quote": "Given a confidence scores(x)∈Rfor each shot, and\nthresholdτ∈R, the rule accepts a shot iffs(x)≥τ.\nLarger scores indicate greater confidence in decoder suc-\ncess. The performance of the post-selector is charac-\nterised by two quantities:\nYield(τ) =P(s(x)≥τ),(1)\nLER(τ) =P(Ac(σ)̸=Ae|s(x)≥τ),(2)\nwhereAis the logical action matrix of Section II A. In\npractice the yield is the fraction of retained shots and the\nconditional LER is defined when the yield is non-zero."
+          }
+        ],
+        "derivation": "每bank由前述编码结构求K,N,Y,Q。独立性给YAB=YA YB及QAB=1−(1−QA)(1−QB)。枚举325无序对，122可行。最优(10, 5, 12, 6),N=6410,T=13107200000000000/384552482305383,Y=3276800000000000/3460972340748447,Q=61/945。块级flag全枚举验证单bank，乘法及失败事件互斥分解验证联合。",
+        "dependencies": [
+          {
+            "source": "P14",
+            "contribution": "由 inner t 到完整 footprint 8t²+8t−3，且每块编码两个逻辑比特"
+          },
+          {
+            "source": "P23",
+            "contribution": "seed 最小大小及偶数 r chain 编码数，决定 K 和附加检查控制器"
+          },
+          {
+            "source": "P21",
+            "contribution": "由置信阈值计算保留率与条件逻辑失败，再计算产出"
+          }
+        ],
+        "ablation": "去掉P14后不能确定由 inner t 到完整 footprint 8t²+8t−3，且每块编码两个逻辑比特；去掉P23后不能确定seed 最小大小及偶数 r chain 编码数，决定 K 和附加检查控制器；去掉P21后不能确定由置信阈值计算保留率与条件逻辑失败，再计算产出。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "联合接受与联合失败规则由题设明确，不能把两个yield相加。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      }
+    ],
+    "change": [
+      {
+        "id": "XP01",
+        "answer": "27/40;2/35;59/252",
+        "evidence": [
+          {
+            "source": "P13",
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.txt",
+            "locator": "PDF page 3",
+            "quote": "For a thermally distributed sterile neutrino with temper-\natureT s, its relativistic energy density is proportional to\nT 4\ns . Hence, its contribution to the radiation density is\nrelated to its temperature by,\nTs\nTν,active\n= (∆Neff)1/4,where, Tν,active\nTγ\n≃\n\u0012 4\n11\n\u00131/3\n.\n(5)\nWe assume a Fermi–Dirac phase-space distribution for\nthe sterile neutrino. Since the number density scales\nasT 3\ns , partial thermalization also reduces the late-time\nabundance of the sterile species. In the non-relativistic\nregime, its cosmological density can therefore be ex-\npressed in terms of an effective mass,\nms,eff =m s(∆Neff)3/4.(6)"
+          },
+          {
+            "source": "P02",
+            "path": "research/longread-20261018/papers/P02-2609.26517v2.txt",
+            "locator": "PDF page 5",
+            "quote": "H2(z) =H 2\n0\n\u00141 +S(0)\n1 +S(z)\n\u00152\u0002\n(1 +z) 3Ωm0 + Ωde0\n\u0003\n,(30)\nwhere we have usedH 2"
+          },
+          {
+            "source": "P04",
+            "path": "research/longread-20261018/papers/P04-2608.19883v2.txt",
+            "locator": "PDF page 2",
+            "quote": "Om(z)≡ E(z)2 −1\n(1+z) 3 −1 = Ωm +(1−Ω m) X(z)−1\n(1+z) 3 −1 ,(4)\nwhereE(z) :=H(z)/H 0"
+          }
+        ],
+        "derivation": "E²′=3m-2b; E²″=6m-12mb+6b²-4c。先 m=2/5 后 ms=27/40，再 c=2/35，最终 Om1=59/252。二阶展开与解析展开交叉验证。",
+        "dependencies": [
+          {
+            "source": "P13",
+            "contribution": "温度四次方与有效质量三次方的不同映射"
+          },
+          {
+            "source": "P02",
+            "contribution": "H² 中归一化 susceptibility 的平方而非一次方"
+          },
+          {
+            "source": "P04",
+            "contribution": "Om 的 H0 归一化与红移分母"
+          }
+        ],
+        "ablation": "去掉P13后不能确定温度四次方与有效质量三次方的不同映射；去掉P02后不能确定H² 中归一化 susceptibility 的平方而非一次方；去掉P04后不能确定Om 的 H0 归一化与红移分母。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "新增二次形状参数仅为题设，不套用线性近似。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "XP02",
+        "answer": "6;4;958;9/985",
+        "evidence": [
+          {
+            "source": "P14",
+            "path": "research/longread-20261018/papers/P14-2610.21357v1.txt",
+            "locator": "PDF page 2",
+            "quote": "concatenate four distance-trotated surface-code patches\nwith the smallest non-trivial error-detecting CSS code,\n[[4,2,2]] [29–31], obtaining a [[4t 2,2,2t]] code of distance\nd= 2tthat encodesk= 2 logical qubits in a footprint\nofN= 2d 2 + 4d−3 physical qubits on a square lattice\nwith nn connectivity, see Fig. 1."
+          },
+          {
+            "source": "P23",
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.txt",
+            "locator": "PDF page 6",
+            "quote": "Suppose level-1 to level-(i−1) concatenated codes constitute an [[n, k, d]] code, and we want to construct a\nlevel-icode with distance two that is concatenated overrcopies of them. We call every logical X error that can be\ninduced by a weight-(2d−1) undetectable X error on level-0 (i.e., surface-code qubits in the multi-yoked surface\ncode) qubits aproblematic errorand denote their set byP prob,X ⊂ {I, X} ⊗k. Next, we list an independent set\nof Pauli Z operators that can detect all the problematic errors. We call this set of Pauli operators aseed code\nPseed,Z ⊂ {I, Z} ⊗k, which satisfies∀P∈ P prob,X,∃Q∈ P seed,Z,s.t. QP=−P Q. Then, the stabilizer generator\nset of a chain code is constructed as{P ⊗r|P∈ P seed,Z} ∪ {P ⊗r|P∈ P seed,X}. Note that elements of X and Z seed\ncodesP seed,X andP seed,Z do not necessarily commute with each other. Even in this case, the chain codes satisfy the\ncondition of stabilizer codes if we chooseras an even number. Thus, the chain code encodesrk− |P seed,X| − |Pseed,Z|\nlogical qubits withrklower-level qubits, and it is capable of detecting all block errors at the lower-level codes. Its\nencoding rate converges to one in the large-rlimit."
+          },
+          {
+            "source": "P23",
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.txt",
+            "locator": "PDF page 7",
+            "quote": "Proposition 1.LetP prob,X be the set of problematic X errors for an iceberg code[[n, k=n−2,2]]andc z be the\nsize of the Z-check seed codeP seed,Z forP prob,X. Then,c z is lower bounded asc z ≥ ⌈log2 (k+ 1)⌉. The same holds\nfor X checks for Z errors."
+          },
+          {
+            "source": "P21",
+            "path": "research/longread-20261018/papers/P21-2610.00504v1.txt",
+            "locator": "PDF page 3",
+            "quote": "Given a confidence scores(x)∈Rfor each shot, and\nthresholdτ∈R, the rule accepts a shot iffs(x)≥τ.\nLarger scores indicate greater confidence in decoder suc-\ncess. The performance of the post-selector is charac-\nterised by two quantities:\nYield(τ) =P(s(x)≥τ),(1)\nLER(τ) =P(Ac(σ)̸=Ae|s(x)≥τ),(2)\nwhereAis the logical action matrix of Section II A. In\npractice the yield is the fraction of retained shots and the\nconditional LER is defined when the yield is non-zero."
+          }
+        ],
+        "derivation": "Y=(1−e)^r+C(r,2)e²(1−e)^(r−2)；J=C(r,2)e²(1−e)^(r−2)[1−(1−f)²]，Q=J/Y。11可行设计，最优r=6,t=4,N=958,Q=9/985,Y=196079616/244140625,density=784318464/116943359375。二项式概率与独立两flag触发事件展开核验。",
+        "dependencies": [
+          {
+            "source": "P14",
+            "contribution": "由 inner t 到完整 footprint 8t²+8t−3，且每块编码两个逻辑比特"
+          },
+          {
+            "source": "P23",
+            "contribution": "seed 最小大小及偶数 r chain 编码数，决定 K 和附加检查控制器"
+          },
+          {
+            "source": "P21",
+            "contribution": "由置信阈值计算保留率与条件逻辑失败，再计算产出"
+          }
+        ],
+        "ablation": "去掉P14后不能确定由 inner t 到完整 footprint 8t²+8t−3，且每块编码两个逻辑比特；去掉P23后不能确定seed 最小大小及偶数 r chain 编码数，决定 K 和附加检查控制器；去掉P21后不能确定由置信阈值计算保留率与条件逻辑失败，再计算产出。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "替代规则完全由题设定义；其余资料结构不变。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      }
+    ]
+  }
+}

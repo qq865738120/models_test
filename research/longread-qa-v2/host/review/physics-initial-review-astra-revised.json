@@ -1,0 +1,263 @@
+{
+  "model": "gpt-6-astra",
+  "blind": true,
+  "questionFile": ".runtime/longread-v2-authoring/blind/physics-initial-questions-revised.json",
+  "scope": "仅定向复审 P04/P06/P07/P10/P11/P12；未重评其余十题。最终公开题面包含 P04/A=2.97 与 P10/C 最新输入族措辞。",
+  "phases": {
+    "initial": [
+      {
+        "id": "P04",
+        "answer": "D",
+        "creditByAnswer": {
+          "A": 0,
+          "B": 0.5,
+          "C": 0,
+          "D": 1,
+          "E": 0,
+          "F": 0
+        },
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "issues": [],
+        "reason": "题干要求自身原约定下的证据倍率及后验含义。RSD 正则支持重新归一给 1/0.41102=2.4329716，不改变条件于该分支的后验；Union3.1 冷速度限制给 exp(2.05−4.12)=0.1261858，并使 σ8 从 0.782 变为 0.797。D 同时满足。",
+        "optionAnalysis": {
+          "A": "0：其余与 D 相同，但 2.97 使用了不适用于题设 RSD 情形的支持量；实质数值错误。",
+          "B": "0.5：两倍率和不能构造跨研究赔率均正确；缺少题干明确要求的后验含义，即分支条件后验不变与速度截断改变 σ8 的区别。并非因为表述短而扣分。",
+          "C": "0：7.77=exp(2.05) 是冷限制模型相对参照模型的 Bayes 因子，不是相对自身原先验的倍率。",
+          "D": "1：倍率、条件后验、速度截断和 σ8 变化均有原文支持。",
+          "E": "0：把加入 RSD 的后验改变错归于固定 RSD 似然下的支持归一；93.2745% 不能被本次归一操作解释。",
+          "F": "0：低速度限制后 σ8 为 0.797，并非保持 0.782；筛选有后验质量的区间并非仅改整体常数。"
+        },
+        "crossSourceCheck": "最终 A 与 D 只差 RSD 证据倍率，必须查 P09 才能区分；C、F 的冷速度限制效果必须查 P11。其他公开题未给出本题 RSD 支持量与 Union3.1 冷限制组合，不能靠常识完成。此前 A 的方向性干扰不足问题已由当前数值替换修复。",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P09-2609.31113v1.pdf",
+            "locator": "PDF 第19页，式(4.23)及其前后归一约定",
+            "quote": "0.41102 ± 0.00220"
+          },
+          {
+            "path": "research/longread-20261018/papers/P11-2610.20716v1.pdf",
+            "locator": "PDF 第17页，Table III 及限制 v_c<0.1 的段落",
+            "quote": "−1.30, −2.07, and −2.18"
+          }
+        ]
+      },
+      {
+        "id": "P06",
+        "answer": "C",
+        "creditByAnswer": {
+          "A": 0,
+          "B": 0,
+          "C": 1,
+          "D": 0,
+          "E": 0.5,
+          "F": 0
+        },
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "issues": [],
+        "reason": "Pantheon+ 基线剖面的 log Bayes 因子为 0.65→−0.58；ΔAIC 为 −3.90→−2.61，没有翻正。保持 Planck r_d 的 Union3 注入列在有无压缩 CMB 时张力为 3.24σ、3.23σ，汽笛后验冻结且仍保留绝对标尺。",
+        "optionAnalysis": {
+          "A": "0：首半正确；仅移除压缩 CMB、保留 r_d 时 H0 误差是 0.49，而非 3.87。3.87 对应另一个移除 r_d 的组合。",
+          "B": "0：ΔAIC 的终值为 −2.61，并非 +2.61；AIC 排序翻转结论错误，不能因张力数值正确给半分。",
+          "C": "1：两组数字、kSZ 新约束、冻结汽笛后验及残留绝对标尺均正确，回答题干机制区分。",
+          "D": "0：同时移除压缩 CMB 与 r_d 时该列张力为 0.14σ，并非 3.23σ；超新星未提供同等绝对校准。",
+          "E": "0.5：符号和阈值判断全部正确，但没有说明题干要求区分的新增物理约束与其他绝对标尺/冻结后验条件。",
+          "F": "0：0.82 来自加 kSZ 后的 Union3 行，不是指定 Pantheon+ 行；配对错误。"
+        },
+        "crossSourceCheck": "P07 的数据集行与约束前后表必要于辨别 B/F；P10 的 r_d/CMB 控制表必要于辨别 A/D。保留标尺的常识只能判断机制，无法确定具体错误率/张力配对。其他公开题未披露本题新组合。",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P07-2610.05729v1.pdf",
+            "locator": "PDF 第9页 Table 2；第16页 Table 3；Pantheon+ 行",
+            "quote": "−3.90"
+          },
+          {
+            "path": "research/longread-20261018/papers/P10-2609.35317v1.pdf",
+            "locator": "PDF 第22页 Table 5，Union3 注入列；冻结后验说明",
+            "quote": "147.09 ± 0.26"
+          }
+        ]
+      },
+      {
+        "id": "P07",
+        "answer": [
+          "A",
+          "C",
+          "E"
+        ],
+        "difficulty": "medium",
+        "crossSourceNecessary": true,
+        "issues": [],
+        "reason": "独立计算三种干预集合 CNOT 比例为 77/84=91.67%、85/112=75.89%、132/168=78.57%；三个指定 patch 的配对相对降幅分别为 47.31%、51.54%、34.56%。",
+        "optionAnalysis": {
+          "A": "正确：77/84；(2.79−1.47)/2.79。",
+          "B": "错误：第一项正确，d=3 q85 应为 51.54%，而非 q36 的 47.31%。",
+          "C": "正确：132/168；(3.79−2.48)/3.79。",
+          "D": "错误：第一项应为 91.67%，不是 75.89%；第二项正确。",
+          "E": "正确：85/112；(2.60−1.26)/2.60。",
+          "F": "错误：第一项应为 78.57%，不是 91.67%；第二项正确。"
+        },
+        "crossSourceCheck": "P19 决定干预集合分子分母，P20 决定 IBM patch 配对错误率；只读任一材料不能确定全选答案。选项内无足够重复结构可推出哪组数字属于哪一 code/patch，其他公开题也未提供这些新数值。",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P19-2610.03399v1.pdf",
+            "locator": "PDF 第16页，Appendix C.4，三个组件集合的组成",
+            "quote": "77"
+          },
+          {
+            "path": "research/longread-20261018/papers/P20-2610.03869v1.pdf",
+            "locator": "PDF 第6页，Section IV.A.1，三个 IBM patch 的逐轮错误率",
+            "quote": "2.79%"
+          }
+        ]
+      },
+      {
+        "id": "P10",
+        "answer": [
+          "B",
+          "D",
+          "F"
+        ],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "issues": [],
+        "reason": "Δ₁q=2+4g (mod 8)，2g=2x₁+2x₂x₃−4x₁x₂x₃ 是合格加权三阶相位多项式。两测量结果概率均为 1/2、支持均为八点全空间，相位更新 q−2(−1)^μg（忽略整体相位）。混合噪声定理的可编程输入族与逐点相对误差口径不能直接扩展为空间均匀角和固定 TV 误差。",
+        "optionAnalysis": {
+          "A": "错误：测量兼容且正结果支持是全空间仿射集；困难性半句不修复前半错误。",
+          "B": "正确：测量结果与 Theorem 1 的奇码距、离散角、有效图每点至多四个非零耦合、逐点相对误差 ε<1 条件相符。",
+          "C": "错误：兼容性正确，但定理不证明空间均匀角输入族或固定总变差误差下仅由 PH 不塌缩得到的困难性。删去‘所有’不改变这个越界。",
+          "D": "正确：负号更新式成立；纯 ZZ 的高效算法与混合可编程噪声的困难性范围不同，能够并存。",
+          "E": "错误：正号更新式不符合原闭包公式及直接八维投影；后半误差口径说明正确不能抵消它。",
+          "F": "正确：导数和 2g 闭包检查成立；单一实例不能替代整个可编程噪声输入族的采样问题；通常困难性表述以 PH 不塌缩为条件。"
+        },
+        "crossSourceCheck": "P24 的闭包规则与相位符号用于区分 A/D/E；P18 的输入族和误差口径用于区分 B/C。新 q 不复用原 CCZ 例子；其他公开题不提供该状态投影或此次定理限定的完整组合。仅凭复杂度常识不能决定新的三阶相位计算。",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P24-2610.06811v1.pdf",
+            "locator": "PDF 第26页 Appendix B Theorem 1，case 2b；第27页证明",
+            "quote": "q − 2(−1)^μg"
+          },
+          {
+            "path": "research/longread-20261018/papers/P18-2609.40279v1.pdf",
+            "locator": "PDF 第2页主要结果与第12页 Theorem 1；纯 ZZ 高效采样和混合噪声范围",
+            "quote": "0 ≤ ε < 1"
+          }
+        ],
+        "numericalVerification": {
+          "method": "Python 标准库直接构造八维投影并同闭包相位态比较，允许整体相位。",
+          "mu0Probability": 0.4999999999999999,
+          "mu1Probability": 0.4999999999999999,
+          "supportSizes": [
+            8,
+            8
+          ],
+          "maxPhaseAlignedError": 8.326672684688674e-17
+        }
+      },
+      {
+        "id": "P11",
+        "answer": [
+          "A",
+          "C",
+          "E"
+        ],
+        "difficulty": "medium",
+        "crossSourceNecessary": true,
+        "issues": [],
+        "reason": "按指定保守构造计入 memory 数据及测量位和一套 extractor：14400+3180=17580，8400+1880=10280，3600+1040=4640。两次格点手术提取示例的走廊宽度为 2d_inner、保持故障距离为 4d_inner。",
+        "optionAnalysis": {
+          "A": "正确：17580；2×5=10；4×5=20。",
+          "B": "错误：9580=6400+3180，只计 memory 数据位而漏测量位。",
+          "C": "正确：10280；2×7=14；4×7=28。",
+          "D": "错误：W 应为 14，不是 28；不能把故障距离当走廊宽度。",
+          "E": "正确：4640；2×9=18；4×9=36。",
+          "F": "错误：2640=1600+1040，漏 memory 测量位。"
+        },
+        "crossSourceCheck": "P22 的 memory+extractor 资源是 A/B、E/F 的判别依据；P23 的走廊宽度与距离关系是 C/D 的判别依据。原公开题的冷存储密度与通用边界不提供这一新显式构造总数和走廊公式。题干明确指定保守构造，避免把其当优化下界。",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P22-2610.03682v1.pdf",
+            "locator": "PDF 第16页 Methods L，三种分块的 memory 和 extractor 资源；第15页定义",
+            "quote": "14,400"
+          },
+          {
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.pdf",
+            "locator": "PDF 第22页 Figure 21 图注；两次 lattice surgery 提取示例",
+            "quote": "4dinner"
+          }
+        ]
+      },
+      {
+        "id": "P12",
+        "answer": [
+          "B",
+          "D",
+          "F"
+        ],
+        "difficulty": "medium",
+        "crossSourceNecessary": true,
+        "issues": [],
+        "reason": "完整六元变形集的逐位重抽包含原标签，所以实际改变概率为 5M/6，而非 M。拼接码数据位数 n=4t²，期望改变位数 n×5M/6；稳定完整外码周期含一次 GX 和一次 GZ，长度 2(r_v+1)。三组结果为 (6,6)、(8,8)、(10,10)。",
+        "optionAnalysis": {
+          "A": "错误：7.2 是被重抽位数期望 nM，未扣除重抽到原标签的概率。",
+          "B": "正确：36×0.20×5/6=6；2×(2+1)=6。",
+          "C": "错误：期望 8 正确，但 4 轮只对应一个外生成元，完整周期为 8。",
+          "D": "正确：64×0.15×5/6=8；2×(3+1)=8。",
+          "E": "错误：12 是重抽位数，实际标签改变期望为 10；周期 10 正确。",
+          "F": "正确：100×0.12×5/6=10；2×(4+1)=10。"
+        },
+        "crossSourceCheck": "P15 必须用于确认均匀重抽包括原标签，不能擅自假设非恒等突变；P14 必须用于数据位数和完整外码周期，不能把半周期或首次启动代入。其他公开题未给出逐位提议和稳定周期的联合规则。第一次提议、不做拒绝重试已消除采样条件歧义。",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P15-2610.13589v1.pdf",
+            "locator": "PDF 第3页末至第4页，逐位 mutation 算法与完整变形集",
+            "quote": "uniformly"
+          },
+          {
+            "path": "research/longread-20261018/papers/P14-2610.21357v1.pdf",
+            "locator": "PDF 第2页码参数；第5页 Section III.C 稳定外生成元测量周期",
+            "quote": "2(rv + 1)"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "reviewedQuestions": 6,
+    "reviewedOptions": 36,
+    "answers": {
+      "P04": "D",
+      "P06": "C",
+      "P07": [
+        "A",
+        "C",
+        "E"
+      ],
+      "P10": [
+        "B",
+        "D",
+        "F"
+      ],
+      "P11": [
+        "A",
+        "C",
+        "E"
+      ],
+      "P12": [
+        "B",
+        "D",
+        "F"
+      ]
+    },
+    "mustRewrite": [],
+    "crossSourceNecessaryCount": 6,
+    "verdict": "当前六题可接受。最终 P04 的 A/D 数值对照修复了此前单源排除路径；P10 最新 C 仍为实质错误干扰项。",
+    "tierPolicy": "实质错误选项均为 0；P04/B 与 P06/E 的所有陈述正确，但分别缺少题干明确请求的后验作用、物理约束/绝对标尺与冻结后验机制，故 0.5。未仅因短、谨慎或少列数字扣分；未发现同样满足全部任务而被压低的第二个结论。",
+    "optionalClarity": "如需在正式题库进一步明示分档，可注明 P04 满分须同时覆盖倍率与后验作用，P06 满分须覆盖数值判断及控制变量机制；目前题干已有相应要求，不构成必须重写。",
+    "verification": "计算采用独立 Python 复算；关键表格、闭包公式、组件组成、资源构造及周期均已核原始 PDF 页面。未把论文报告外推为独立确证物理事实，也未引入候选不可见的外部事实扣分。",
+    "accessBoundary": "仅读公开题面、P*.pdf/.txt 和本人原独立盲审；未读取 author/answers/revisions、保留材料、其他组答案或运行成果。",
+    "independence": "最终答案按原材料与独立计算确定，不以作者的候选答案或转述一致性为依据。"
+  },
+  "questionFileSha256": "e729a93ee4111a801fd7319ef0157ad68ed6493c0d6f51288f9160ab99ffedbd"
+}

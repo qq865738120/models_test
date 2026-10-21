@@ -6,7 +6,16 @@
 __pycache__/
 *.pyc
 node_modules/
-dist/
+.runtime/
+.trash/
+# Build the workbench locally; archived submission assets must stay in Git.
+/web/dist/
+/templates/*/dist/
+**/tasks/*/dist/
+/data/jobs/
+/verification/chrome-local/
+/verification/host-browser-*.log
+/verification/host-browser-*.sb
 
 # Local system files and credentials
 .DS_Store

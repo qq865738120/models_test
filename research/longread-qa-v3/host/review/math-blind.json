@@ -1,0 +1,742 @@
+{
+  "model": "gpt-6-astra",
+  "questionsSha256": "4d82a5026115ffd9d4c66ba88fb6fcc3716064068753600066559318eb3a24a2",
+  "phases": {
+    "initial": [
+      {
+        "id": "M01",
+        "answer": "ADEF",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "M01",
+          "M09"
+        ],
+        "reason": "M01 p1 固定 p=ρ^γ、γ>1；p3 Thm1.1 允许 ρ₀≥0 但总质量正并有动量/相场相容条件。M09 p1 (1.2) 仅 P∈C¹([0,∞))、P(0)=0，不要求单调凸；p3 Thm1.2 另限定解类。ρ²、ρ^(3/2) 在零点导数连续且 γ>1，故 A、D 真；ρ 的 γ=1 不在 M01 范围，C 假；ρ²−2ρ 属 M09 而非 M01 固定律，E 真；F 必须保留，B 假。"
+      },
+      {
+        "id": "M02",
+        "answer": "AD",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "M01",
+          "M09"
+        ],
+        "reason": "M01 p4 Remarks1.1–1.2 明说 ρ₀φₜ(0)=ρ₀φ₁,₀ 在真空上不能反解，却仍在整个 Ω 唯一；p4–5 正密度近似保存相场相容性。M09 p3 Thm1.2/Remark1.1(ii) 要求两解 div u∈L¹_loc L∞、其中一解有(1.12)，并不排除真空。故 A、D 真；B 反解除零且混移化学势，C 把指定类误作全部有限能量弱解，E/F 分别错称排除真空和任意长强解存在。"
+      },
+      {
+        "id": "M03",
+        "answer": "BEF",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "M02",
+          "M10"
+        ],
+        "reason": "M02 p1 要求熵波速度、压力都常数。M10 p1–2 (1.2),(1.3) 固定 p=ρ^γ、1<γ≤2、μ=ρ、λ=0。正密度上 p′=γρ^(γ−1)>0，故不同密度不能等压，B真、D假；γ=1本就不在所证范围且其压力仍严格单调，A假。μ′=1，所以2(ρμ′−μ)=0，但剪切项2νρDu仍存在，E真、C假。M02的初值收敛与M10的近平面及方向扰动条件是不同选择类条件，F真。"
+      },
+      {
+        "id": "M04",
+        "answer": "ABC",
+        "optionVerdicts": {
+          "A": true,
+          "B": true,
+          "C": true,
+          "D": false,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "M02",
+          "M10"
+        ],
+        "reason": "M10 p1 BD关系给 μ′=aρ^(a−1)，λ=2(a−1)ρ^a，μ+λ=(2a−1)ρ^a。ρ>0时μ>0；a=1/2得和为0，a=1得λ=0，a=1/4得和=−ρ^(1/4)/2<0，故A/C真、E假。M10 p2实际固定μ=ρ而非任意代数合格族，D假。M02 p1要求常压；同一纯密度严格递增压力律下非恒正密度不可能常压，B真。两文都把唯一性限制在特定耗散极限类，熵不等式不自动提供该类成员资格，F假。"
+      },
+      {
+        "id": "M05",
+        "answer": "ACF",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": false,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "M03",
+          "M08"
+        ],
+        "reason": "M08 p3 Thm1.1/(1.8) 在RH、Lax3、小ε及归一化后给端态偏差≤Cεe^(−cε|ξ|)、导数≤Cε²e^(−cε|ξ|)，A真。D中的斜率O(ε)单独确是较弱可成立界，但其端态偏差O(ε²)不成立：归一化中心v与任一端态差恰ε/2，故D合取假。M03 p5–6粗版Thm1.1要求非Chaplygin正声速与压缩开集、α₀>0小尾，p1明许零初速；相反尾符号对应另一光滑分支，C/F真、B假。剖面唯一不提供Euler奇性面之后经典唯一延拓，E假。"
+      },
+      {
+        "id": "M06",
+        "answer": "ABF",
+        "optionVerdicts": {
+          "A": true,
+          "B": true,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "M03",
+          "M08"
+        ],
+        "reason": "M08 p3 (1.8) 归一化是ṽ(0)=(v₋+v₊)/2，所以C假。代|ξ|=ε⁻¹入e^(−cε|ξ|)得e^(−c)，偏差和导数公式分别给Cεe^(−c)、Cε²e^(−c)，B/F真；没有从指数多得一ε。M03 p5–6的声速、非Chaplygin、压缩数据要求与M08的RH/Lax/小振幅不同，A真。M03尾改号在另一光滑分支设定，非把NSFK空间反射且保留爆破，D假；E没有跨方程延拓依据。"
+      },
+      {
+        "id": "M07",
+        "answer": "BCDE",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": true,
+          "D": true,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "M04",
+          "M07"
+        ],
+        "reason": "M04 p2 (1.3a,b)、p3 Thm1.1研究二维受非退化加性噪声驱动的线性化涡度/被动标量联合射影Markov过程平稳测度；p4要求Malliavin非退化与被动标量泛型处处非一维。M07 p1、p3 Thm1.1则为三维非线性速度在Lᵖ_t(tilde L^{3,∞})∩C_tB^{-1,∞}_∞、p>2的唯一性，tilde是Schwartz闭包。B/C/D/E真；平稳测度唯一不是A所称逐样本速度初值问题唯一，也不是F的行波平移唯一。"
+      },
+      {
+        "id": "M08",
+        "answer": "BE",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "M04",
+          "M07"
+        ],
+        "reason": "M07 p3 Thm1.1 先假定解属于指定类，再得 (0,T]×R³ 上 C∞，不承诺任意弱 L³ 初值的无条件存在。M04 p1、p4 说明射影 Malliavin 非退化依赖被动标量泛型 nowhere one-dimensional，使用 Cameron–Martin 解析性；不能由别的确定性三维方程光滑性替代。B/E 真；A 还把 nowhere one-dimensional 颠倒；C 去掉噪声，D 混移 Lorentz 指数，F 把条件正则化变成无条件存在。"
+      },
+      {
+        "id": "M09",
+        "answer": "BCDE",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": true,
+          "D": true,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "M05",
+          "M12"
+        ],
+        "reason": "M05 p4(1.8),(1.9)、p5唯一性定理与拉格朗日解释保留熵、动能界及初始质量有限二阶矩、v₀∈L²(ρ₀)。M12 p2 Thm1.1为有界紧支初始涡量且点涡附近(1.3) α>2的全局唯一，紧支可按随后说明放宽为L¹∩L∞。修订D及题干已保留这些条件，B/C/D/E真；A对调两类条件，F误加Lipschitz初速。"
+      },
+      {
+        "id": "M10",
+        "answer": "DF",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "M05",
+          "M12"
+        ],
+        "reason": "M12 p2(1.3)/Thm1.1要求存在α>2使涡量差O(r^α)；r²无法提升成更高阶，r³则合格。M05 p4–5要求熵与动能界联合，去熵不能援引原定理。故D/F真；A混同机制、B混同时间与空间、C错用大O、E删条件。F只表示削弱条件不再保证适用，并非声称每个O(r²)函数都不可能兼有更高平坦性。",
+        "issues": [],
+        "difficultyObservations": [
+          "题干和D仍较直观地提示严格指数边界，跨源推导主要是并列核对；此为难度观察，不影响真值。"
+        ]
+      },
+      {
+        "id": "M11",
+        "answer": "ACDEF",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": true,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "M06",
+          "M13"
+        ],
+        "reason": "M13 p3–4 Thm1.1给W=6Fx₃(1−x₃)e、u−W=v∈H¹。实际积分∫₀¹6F(z−z²)dz=F；∫₀¹36F²(1−2z)²dz=12F²，水平面积无限故非零F的背景Dirichlet积分发散，A/C真。另∫₀¹|W|²dz=6F²/5>0，故W非全板层L²；若u也L²则W=u−v∈L²矛盾，F真、B假。F=0时u=v∈H¹，但M06 p1的R² L²/小dot H⁻²反例仍有不同域、边界与力范数，D/E真。"
+      },
+      {
+        "id": "M12",
+        "answer": "BCD",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": true,
+          "D": true,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "M06",
+          "M13"
+        ],
+        "reason": "M13 p3–4背景积分为πR²·36F²∫₀¹(z²−2z³+z⁴)dz=(6/5)πF²R²，C真、A假。Thm1.1(i)衰减对象是u−W，按其所列版本另设f紧支；(ii)再加小V′力求唯一，D真（Remark1.1说明紧支可改为适当远场衰减）。M06 p1二维L²反例不提供板层通量或无滑移，常数沿x₃延拓边界上通常非零，B真、E假。u−W→0意味u→W而非0，F假。"
+      },
+      {
+        "id": "M13",
+        "answer": "AEF",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "M08",
+          "M10"
+        ],
+        "reason": "M08 p1压力Rθ/v，M10 p1–2为ρ^γ=v^(−γ)、1<γ≤2。逐端态等压给θ=v^(1−γ)/R，其导数(1−γ)v^(−γ)/R<0，因此v₊>v₋⇒θ₊<θ₋，A真、B假。M08 p3(1.8)单调3激波ṽξ>0、θ̃ξ<0，与该方向相符，但M10无黏极限类不同，E真。γ=3/2且v比4时θ比4^(−1/2)=1/2，F真。端态压强代数匹配不能推出三条RH、Lax及小振幅，C假；5/2超过M10上端2，D假。"
+      },
+      {
+        "id": "M14",
+        "answer": "ACE",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": false,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "M08",
+          "M10"
+        ],
+        "reason": "M08 p4定义σ₋=√(γp₋/v₋)，代γ=2,p₋=4,v₋=2得√4=2；(1.11)给|ũξ+2ṽξ|≤Cε|ṽξ|，E真，B把σ₋错算为4。估计仍以前页RH、Lax3、小ε剖面存在为条件，A真。M10 p2所证γ∈(1,2]、μ=ρ、λ=0；M08 p1是γ>1、正μ/导热α/毛细κ，因此C真、F混同不同系数。M10 p1的任意大方向扰动不删除近平面及选择类条件，D假。"
+      },
+      {
+        "id": "M15",
+        "answer": "DEF",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "M11",
+          "M12"
+        ],
+        "reason": "M11 p4–5 Thms1.2–1.4给平移唯一完整范围κ∈(0,κ*+δ*]∪[κ**,∞)，含显式Lamb分支；相应个别行进波轨道稳定。M12 p2则在有界紧支等初始条件与α>2平坦性下给含Dirac点涡的涡旋波系统全局唯一。D/E/F准确；A对调参数，B错误覆盖中间所有冲量，C把另一系统改成小冲量局部结论。"
+      },
+      {
+        "id": "M16",
+        "answer": "ACF",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": false,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "M11",
+          "M12"
+        ],
+        "reason": "M11 p4(1.13) κ<κ*质量不饱和，κ=κ*恰饱和，κ>κ*为活跃饱和区；右侧near-Lamb区间κ*<κ≤κ*+δ*已饱和，A真。p5 Thm1.3覆盖(0,κ*+δ*]和大冲量区，p6图示中间区仍open；M12 p2指数严格α>2，因此C/F真。B把α=2纳入且混移区间，D双重反向，E否认现有唯一结论，均假。"
+      },
+      {
+        "id": "M17",
+        "answer": "ABE",
+        "optionVerdicts": {
+          "A": true,
+          "B": true,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "M14",
+          "M24"
+        ],
+        "reason": "M14 p2–3 C₀=3/2−cot(1/√2)/√2=0.672500703679 为无条件全高度 liminf。M24 p2 Thm1.1 c(θ)=2−θ/2−cot(θ/√2)/√2，根数算 θ₀=0.550193964744；c(3/4)=0.419075012975。因此 A/B/E 真，1/2<θ₀ 所以 D 假；全高度分母 N(T) 与短区间 N(T,T^θ) 不同，不能推出每个短区间同一比例或当误差相减，C/F 假。"
+      },
+      {
+        "id": "M18",
+        "answer": "BCE",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": true,
+          "D": false,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "M14",
+          "M24"
+        ],
+        "reason": "M14 p2 定义简单且临界为交集，简单或临界为并集，p3 的 C₂=0.887620008173 不能替换 C₀=0.672500703679；不同零点每个位置计一次也不意味着单零。M24 p3 Thm1.2 对 0<θ<1 有 D(Cθ)>0，而 p2 简单临界仅 θ>θ₀。数算 θ=1/4 时 Cθ=4.083246268618，q=4，D=(9−Cθ)/20=0.245837686569。故 B/C/E 真，A/D/F 均错误。"
+      },
+      {
+        "id": "M19",
+        "answer": "ADEF",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "M15",
+          "M16"
+        ],
+        "reason": "题干已明确注明旧界者按旧界判断。M15 p1记载旧六次矩指数5/4；M16 p2(2)记载旧零密度指数(8/3)(1−σ)，在σ=3/4得2/3，所以A真。M15 p1 Thm1.1的新六次矩指数5/4−1/60=37/30，T≥1、任意ε>0；M16 p2 Thm1.1一致于1/2≤σ≤1的新指数(5/2)(1−σ)，在3/4和4/5分别5/8、1/2，D/E/F真。不同计数量不形成相减的精确等式，B假；σ本身不是T幂指数，C假。"
+      },
+      {
+        "id": "M20",
+        "answer": "ACD",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": true,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "M15",
+          "M16"
+        ],
+        "reason": "M16 p2 Thm1.2 的三项是 N²V⁻²、N^(18/5)V⁻⁴、TN^(12/5)V⁻⁴。N=T^(1/2)、V=T^(3/8) 给指数 1/4、3/10、7/10，故 C/D，B 错。M15 p2 Thm1.3 范围 7/60≤1/8≤5/38，指数 24/17−(128/17)(1/8)=8/17；E 错。前者 W 与后者 ζ 大值最大 1-分离集 N(T,V) 不是同一对象且均为上界而非等式，A 真、F 假。"
+      },
+      {
+        "id": "M21",
+        "answer": "BEF",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "M16",
+          "M19"
+        ],
+        "reason": "M19 p2 Remark的带为σ≥1−w(t)，w(t)=c₅(Cπ(|t|+3))^(−ε)。要覆盖0.9须0.9≥1−w，即w≥0.1，B真；w<0.1只说该点在明示带外，不说有零，A假。固定π/ε/c₅后w(t)→0，E真，ε改成1/4也不能消掉t，D假。M16 p2指数(5/2)(1−0.9)=1/4，F真；上界不蕴含正下界，C假。"
+      },
+      {
+        "id": "M22",
+        "answer": "ADE",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "M16",
+          "M19"
+        ],
+        "reason": "记w_T=c₅Q_T^(−ε)>0。M19 p2给t=T无零阈值1−w_T；σ_out=1−2w_T更靠左，在明示带外且不等于有零，A真、B假。若|t|≤T，则Q_t≤Q_T，w(t)≥w_T>w_T/2，故σ_in=1−w_T/2以及全部更右σ均在带内，整个计数矩形无零，E真；σ_in实际趋1，C假。M16 p2一致于σ的指数给out处(5/2)·2w_T=5w_T，in处(5/2)·w_T/2=5w_T/4；这些上界即使为T^o(1)也不单独推出零，D真、F假。"
+      },
+      {
+        "id": "M23",
+        "answer": "CDF",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": true,
+          "D": true,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "M17",
+          "M21"
+        ],
+        "reason": "M21 p2 Thm1.1 有 N≤(log x)^(1/100)、cN⁶≤L≤(log x)/2、半径 LlogT/(logx)²。取给定参数得 N⁶=(logT)^(3/100)，L=(logT)^(1/10)，logx=(logT)/3，因此区间条件最终成立、半径 9(logT)^(−9/10)<1/16，重数下界 L/360，C/D 真。中心漂移 O((logT)^(1/200)) 小于 h=(logT)^(1/5)，且 h<t^(2/3)、h>100 与 t>10^100 最终满足 M17 p1 Cor1/p2 Table1，故 F 真。A 指数反号，B/E 把比例下界错误升级为无零/大部分和条件。"
+      },
+      {
+        "id": "M24",
+        "answer": "ABC",
+        "optionVerdicts": {
+          "A": true,
+          "B": true,
+          "C": true,
+          "D": false,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "M17",
+          "M21"
+        ],
+        "reason": "修订题干明确M17 p1 Cor1/p2 Table1要求的100<h<t^(2/3)、t>10^100及中央带。M21 p2 Thm1.1中心漂移O(N)、半径LlogT/(logx)²，若窗口覆盖且仍保留上界，两项可各自适用，A真。x=T^(1/3)充分大时处于[exp√logT,√T]，B真。两者按重数计（M17边界半权），比例/个数归一化不同，C真。L≤(logx)/2不可删，h>100不自动盖任意N,L，且两定理都无条件，D/E/F假。"
+      }
+    ],
+    "change": [
+      {
+        "id": "XM01",
+        "answer": "BDF",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": false,
+          "D": true,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "M18",
+          "M20"
+        ],
+        "reason": "M18 p1–2 在 GRH 下给短区间 Waring–Goldbach 结果，未证明 Siegel 零存在。M20 p1 Definition1 为二次本原 Dirichlet L 的实零 β=1−1/(Elogq)、E≥3；p2 Thm1 需 RH 与 qj→∞ 且 inf Ej 足够大的例外序列。q大时 β>1/2 与相关 Dirichlet GRH 冲突，而 ζ 的 RH 本身不包括那些 L 函数。故 B/D/F 真；A β值错，C 相容性与无条件结论均错，E 无出处。",
+        "issues": [],
+        "difficultyObservations": [
+          "题干已解释 GRH 所含函数与 Siegel 零的公式，B/F 的主要逻辑可不读 M18 直接完成；跨源贡献主要是补足 M20 的质量条件。"
+        ]
+      },
+      {
+        "id": "XM02",
+        "answer": "CEF",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": true,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "M18",
+          "M20",
+          "M25"
+        ],
+        "reason": "M25 p4 §1.3(iii) 把全体 n>5040 的 ω 截断不等式与 RH 等价；这不等价所有 Dirichlet L 的 GRH。GRH 含 ζ，故 GRH⇒RH⇒截断准则，E 真，D 假。M18 p1–2 的 m,k 足够大、奇数/同余与区间 θ 条件不能由 RH 单独满足，C 真。M20 p2 Thm1 仍需质量足够大例外序列，F 真；A 与 GRH 排除 q大实部>1/2 实零冲突，B 把定理并列假设误作蕴含。"
+      },
+      {
+        "id": "XM03",
+        "answer": "BCE",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": true,
+          "D": false,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "M15",
+          "M16",
+          "M23"
+        ],
+        "reason": "M15 p1 六次矩经 Markov 得测度≤T^(37/30−6/10+ε)=T^(19/30+ε)；M16 p2 密度指数 (5/2)(1−7/10)=3/4。M23 p4 Thm1.2 α_σ=σ/(2σ+1)，σ=1/2 得1/4，要求 Fourier 支集包含于严格开区间，闭 [−1/4,1/4] 不满足。B/C/E 真；A 第二指数错，D 应减阈值六次幂，F 算错 α 并误收端点。"
+      },
+      {
+        "id": "XM04",
+        "answer": "BDE",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "M22",
+          "M23"
+        ],
+        "reason": "M22 p2 Thm1 要 1/2<δ<1，δ=13/20 合格；对偶长度 T/H=T^(7/20)，H²/max{p,q}≈T^(2·13/20−1/5)=T^(11/10)。式(1.7) 的严格幂余量可取固定0<ε<1/10，等号 ε=1/10 无严格幂余量（常数不能保证所写严格不等式）。M23 p4 α_(3/4)=(3/4)/(5/2)=3/10。故 B/D/E 真，A/C/F 假。"
+      },
+      {
+        "id": "XM05",
+        "answer": "ACD",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": true,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "M14",
+          "M24",
+          "M25"
+        ],
+        "reason": "M25 p4 全称截断准则等价 RH，而 p1/p4 已无条件处理奇数子类，不能把只在奇数成立当 RH。RH 只限制实部、不强制简单。M24 p3 对 θ=1/4 无条件给不同零点比例 D(Cθ)=0.245837686569；M14 p3 全高度简单临界 C₀ 与不同零点 C₁ 使用不同计数，不能直接搬至每一短窗或相加。A/C/D 真，B/E/F 假。"
+      },
+      {
+        "id": "XM06",
+        "answer": "EF",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "M14",
+          "M17",
+          "M24"
+        ],
+        "reason": "M24 p2算得c(3/4)=0.419075012975，简单临界零点属于中央带，故无需直接套M17即可得同窗中央带比例>41.9%，E/F真。M17 p1 Cor1/p2 Table1要求h<t^(2/3)，当前h/t^(2/3)∼T^(1/12)/2→∞，所以修订D关于“全部门槛”的断言仍为假，现已作为有效错误选项。M14 p3全高度0.6725007不能逐短窗迁移，C假；两集合有包含关系而非不交，A/B假。题干现已处理端点O(logT)差。"
+      },
+      {
+        "id": "XM07",
+        "answer": "ABCD",
+        "optionVerdicts": {
+          "A": true,
+          "B": true,
+          "C": true,
+          "D": true,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "M15",
+          "M23"
+        ],
+        "reason": "题干现明确仅判断上界成立而不要求最优。M15 p1六次矩直接Markov给|E_T|≤T^(37/30−6/8+ε)=T^(29/60+ε)，D真；因119/60=37/30+3/4>29/60，其更弱上界同样成立，A真。另∫_E|ζ|²≤T^(−4/8)∫|ζ|⁶≤T^(11/15+ε)，但加权密度删除E还须控制∫_E|ζ|²D_T，B真。M23 p4 Thm1.2在Schwartz及Fourier严格支集条件下适用，σ=1/2时ασ=1/4，分母为∫|ζ|²，C真。M23 p3(1.5)的临界权重密度1−(sinπx/(πx))²不同于σ>1/2时的1，E假；|E|/T→0单独不控制带D_T的相关加权积分，F假。"
+      },
+      {
+        "id": "XM08",
+        "answer": "ADE",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "M19",
+          "M20"
+        ],
+        "reason": "M19 p2 Thm1.1/Remark 的近1无零宽度为 cQ^(−ε)，常数依ε等固定参数，未证明实零存在。固定有限 E 且 Q≈q 时，(cQ^(−ε))/(1/(Elogq))≈cE(logq)q^(−ε)→0，故该β在这条窄带之外，D/E 的尺度可并存正确；E随q增大须重比，A 真、F 反向。M20 p2 Thm1 还须 RH 与 inf Ej 足够大例外序列，故 B/C 假。"
+      }
+    ]
+  },
+  "limitations": [
+    "独立复核仅依据当前/此前公开题面与指定M01–M25论文。为逐字段比对，另读取明确授权的上一版公开题面历史副本；未读authoring、host key、作者答案、其他评审或候选run答案，未联网。",
+    "本审查核对论文命题陈述、适用条件和题目计算，并不替代对25篇论文全体证明的同行评审。",
+    "当前32题的实质歧义均已澄清；仍保留个别题的难度/题干提示程度观察（M10、XM01），不影响布尔判定。",
+    "此前及本轮全部涉及的数值已用自己的辅助脚本实际计算；报告保留每题六项布尔判定、排序答案、至少两篇来源和推导。"
+  ],
+  "revisionReview": {
+    "previousQuestionsSha256": "a9edae7ce566519bcb2c31cc3bc25600f9a1a37d0ae9653741a63ad7468f9b0d",
+    "currentQuestionsSha256": "4d82a5026115ffd9d4c66ba88fb6fcc3716064068753600066559318eb3a24a2",
+    "changedQuestionIds": [
+      "M03",
+      "M04",
+      "M05",
+      "M06",
+      "M11",
+      "M12",
+      "M13",
+      "M14",
+      "M19",
+      "M21",
+      "M22",
+      "XM07"
+    ],
+    "unchangedQuestionIds": [
+      "M01",
+      "M02",
+      "M07",
+      "M08",
+      "M09",
+      "M10",
+      "M15",
+      "M16",
+      "M17",
+      "M18",
+      "M20",
+      "M23",
+      "M24",
+      "XM01",
+      "XM02",
+      "XM03",
+      "XM04",
+      "XM05",
+      "XM06",
+      "XM08"
+    ],
+    "reviewedQuestionIds": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06",
+      "M07",
+      "M08",
+      "M09",
+      "M10",
+      "M11",
+      "M12",
+      "M13",
+      "M14",
+      "M15",
+      "M16",
+      "M17",
+      "M18",
+      "M19",
+      "M20",
+      "M21",
+      "M22",
+      "M23",
+      "M24",
+      "XM01",
+      "XM02",
+      "XM03",
+      "XM04",
+      "XM05",
+      "XM06",
+      "XM07",
+      "XM08"
+    ],
+    "changedFieldCount": 42,
+    "fieldComparison": "递归比较全部JSON字段：只有2个题干澄清和40个选项措辞替换；按指定数学对象名替换、M05“其(1.8)”改“其剖面估计”及两处题干插入后，与当前JSON深度全等。题号、顺序、权重、选项标签、公式及其余条件无意外变动。",
+    "publicHistoryCompared": "research/longread-qa-v3/host/review/history/math-before-final-clarification-questions.json（仅明确授权的上一版公开题面副本；SHA与上一轮输入一致）",
+    "scope": "复读全部32道当前题，逐项核对12道变化的数学指代与原文命题；重新读取M15 p1、M16 p2、M23 p4核验旧界、新界和加权密度条件。其余20题与上轮全字段一致，保持此前独立核算与判定。",
+    "resolvedFindings": [
+      "M19.A旧界来源现明确，判true无歧义；答案ADEF。",
+      "XM07.A允许更弱上界现明确，判true无歧义；答案ABCD。",
+      "论文编号替换为数学对象名称指代准确，题干和选项中未残留Mxx论文编号。"
+    ],
+    "answerChangesFromPreviousReview": [],
+    "remainingSubstantiveIssues": [],
+    "previousRound": {
+      "previousQuestionsSha256": "34bf29027d1504be9a2e833fac12b865129f5e8f49ecae6533d9838d60ebdb06",
+      "currentQuestionsSha256": "a9edae7ce566519bcb2c31cc3bc25600f9a1a37d0ae9653741a63ad7468f9b0d",
+      "changedQuestionIds": [
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M09",
+        "M10",
+        "M11",
+        "M12",
+        "M13",
+        "M14",
+        "M15",
+        "M16",
+        "M21",
+        "M22",
+        "M24",
+        "XM06",
+        "XM07"
+      ],
+      "unchangedQuestionIds": [
+        "M01",
+        "M02",
+        "M08",
+        "M17",
+        "M18",
+        "M19",
+        "M20",
+        "M23",
+        "XM01",
+        "XM02",
+        "XM03",
+        "XM04",
+        "XM05",
+        "XM08"
+      ],
+      "reviewedQuestionIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M09",
+        "M10",
+        "M11",
+        "M12",
+        "M13",
+        "M14",
+        "M15",
+        "M16",
+        "M17",
+        "M18",
+        "M19",
+        "M20",
+        "M21",
+        "M22",
+        "M23",
+        "M24",
+        "XM01",
+        "XM02",
+        "XM03",
+        "XM04",
+        "XM05",
+        "XM06",
+        "XM07",
+        "XM08"
+      ],
+      "scope": "重新读取当前全部32道公开题；依据上轮已读公开题面会话记录识别18道改题，逐项核对改题及14道未改题。重读M03 pp3–8、M08 pp3–4、M10 p2等新增公式原文，实算积分/指数/声速/比率；未读取作者答案、authoring、其他评审或历史host文件。",
+      "newOrCorrectedFindings": [
+        "M19.A虽然题面未改，但旧界在原文确实成立，首次盲审漏判；当前字面改为true。",
+        "XM07.A为合法更弱上界，首次盲审漏判；当前字面改为true。",
+        "M05.D不因较弱斜率O(ε)判假，而因归一化中心端态偏差ε/2反驳其O(ε²)部分。"
+      ],
+      "calculations": [
+        ".runtime/longread-v3-authoring/math-blind-calculations.py",
+        ".runtime/longread-v3-authoring/math-blind-revision-calculations.py"
+      ]
+    },
+    "difficultyClassification": "M10和XM01的原issues逐字移至各题difficultyObservations；两题无事实错误、答案歧义或唯一判分障碍。其余答案、推导和输入哈希不变。"
+  }
+}

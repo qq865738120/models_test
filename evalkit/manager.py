@@ -146,12 +146,16 @@ def prepare(args):
                 shutil.rmtree(project / '.runtime', ignore_errors=True)
                 shutil.copy(project / 'package-lock.json', lock)
                 local_docs(project)
-            if key == '04-game3d': copy_ammo(project)
+            if key == '05-game3d': copy_ammo(project)
+            if key == '06-memory':
+                from .longread import prepare_pdf_renderer
+                prepare_pdf_renderer(ROOT, project)
             write(project / 'materials/START.md', start_instructions(key))
         for n, key in enumerate(TASKS, 1):
-            if key=='05-memory': continue
             write(root_staging / 'admin' / key / 'change.txt', candidate_change(key, standard) + '\n')
             write(root_staging / 'admin' / key / 'rubric.txt', json.dumps(next(t for t in catalog() if t['id']==key),ensure_ascii=False,indent=2) + '\n')
+            if key=='06-memory':
+                dump(root_staging/'admin'/key/'rubric.json', next(t for t in catalog() if t['id']==key))
         dump(root_staging/'rubric.json', {'version':RUBRIC_VERSION,'tasks':catalog()})
         entries = manifest(root_staging)
         meta = {'suiteId':SUITE_ID,'version':VERSION,'seed':SEED,'preparedAt':now(),'standardSha256':sha(ROOT/'llm-evaluation-standard.html'),
@@ -177,30 +181,64 @@ def revise_prepared(args):
     if PREPARED.is_symlink(): fail('准备目录不得是符号链接')
     meta = load(PREPARED/'bundle.json')
     if meta.get('version') == VERSION: fail('当前材料已经是新版，拒绝重复修订')
-    if meta.get('version') not in ('pelican-v1.0-longread-20261018','pelican-v1.0-prompts-20261019') or meta.get('suiteId') != SUITE_ID:
-        fail('仅支持从长文本版或提示词第3版材料离线修订；其他版本请 prepare --rebuild')
+    if meta.get('version') not in ('pelican-v1.0-longread-20261018','pelican-v1.0-prompts-20261019','pelican-v1.0-pages-20261019','pelican-v1.0-objective-20261020','pelican-v1.0-six-tasks-20261020','pelican-v1.0-hybrid-20261020','pelican-v1.0-longread-v2-20261020','pelican-v1.0-manual-review-20261020','pelican-v1.0-review-r11-20261020','pelican-v1.0-longread-v3-20261021','pelican-v1.0-creative-20261021','pelican-v1.0-longread-v4-20261021','pelican-v1.0-project-rules-20261021') or meta.get('suiteId') != SUITE_ID:
+        fail('仅支持从兼容的五题或六题材料包离线修订；其他版本请 prepare --rebuild')
     entries = manifest(PREPARED, skip=('bundle.json','approval.json'))
     if digest(entries) != meta['bundleSha256']: fail('旧材料完整性校验失败，拒绝修订')
     staging = Path(tempfile.mkdtemp(prefix='.prepare-',dir=ROOT))
     try:
         shutil.copytree(PREPARED,staging,dirs_exist_ok=True,symlinks=True)
         (staging/'approval.json').unlink(missing_ok=True)
-        standard = read_standard(ROOT/'llm-evaluation-standard.html')
+        # This is the only conversion boundary for pre-r8 material IDs. Runtime
+        # task selection accepts canonical IDs, never a numeric-prefix alias.
+        previous_ids={'02-dispatch':'03-dispatch','03-game2d':'04-game2d',
+                      '04-game3d':'05-game3d','05-memory':'06-memory'}
+        for area in ('tasks','admin'):
+            for previous,current in previous_ids.items():
+                source=staging/area/previous
+                if not source.exists(): continue
+                destination=staging/area/current
+                if destination.exists(): fail('新旧题目目录同时存在，拒绝覆盖：'+current)
+                source.rename(destination)
         for key in TASKS:
-            if key != '05-memory':
-                write(staging/'tasks'/key/'TASK.md',candidate_task(key,standard)+'\n')
-                write(staging/'admin'/key/'change.txt',candidate_change(key,standard)+'\n')
+            project=staging/'tasks'/key
+            for filename in ('package.json','package-lock.json'):
+                path=project/filename
+                if not path.exists(): continue
+                value=load(path)
+                value['name']='llm-bench-'+key
+                if filename=='package-lock.json' and '' in value.get('packages',{}):
+                    value['packages']['']['name']=value['name']
+                dump(path,value)
+        standard = read_standard(ROOT/'llm-evaluation-standard.html')
+        from .objective import install as install_objective
+        install_objective(staging)
+        static_project=staging/'tasks/02-static'
+        shutil.copytree(ROOT/'templates/02-static',static_project,dirs_exist_ok=True)
+        write(static_project/'output/.keep','')
+        write(static_project/'.gitignore','__pycache__/\n.runtime/\n')
+        from .dispatch import install as install_dispatch
+        install_dispatch(staging/'tasks/03-dispatch', ROOT/'templates')
+        from .automation_contract import install as install_automation_contract
+        for key in TASKS:
+            if key != '06-memory':
+                install_automation_contract(staging/'tasks'/key, key)
+            write(staging/'tasks'/key/'TASK.md',candidate_task(key,standard)+'\n')
+            write(staging/'admin'/key/'change.txt',candidate_change(key,standard)+'\n')
             write(staging/'admin'/key/'rubric.txt',json.dumps(next(t for t in catalog() if t['id']==key),ensure_ascii=False,indent=2)+'\n')
-        for rel in ('materials/level.json','public/materials/level.json'):
-            path=staging/'tasks/03-game2d'/rel
-            value=load(path); value.pop('fragilePackageId',None); value['version']=VERSION; dump(path,value)
-        for rel in ('materials/warehouse.json','public/materials/warehouse.json'):
-            path=staging/'tasks/04-game3d'/rel; value=load(path); value['version']=VERSION; dump(path,value)
-        contract=staging/'tasks/04-game3d/materials/CONTRACT.md'
-        write(contract,contract.read_text().replace('车宽原始值1.4，追加增加20%是1.68，不能重复累乘。','车宽原始值1.4。').replace('理论容纳1.68米加宽车','理论容纳规定车体'))
+            for name in RULE_NAMES[:3]:
+                write(staging/'tasks'/key/name,(ROOT/'rules/COMMON_RULES.md').read_text())
+            write(staging/'tasks'/key/'materials/START.md',start_instructions(key))
+            if key == '06-memory':
+                dump(staging/'admin'/key/'rubric.json',next(t for t in catalog() if t['id']==key))
+        from .assets import install_game_materials
+        for key in ('04-game2d', '05-game3d'):
+            install_game_materials(staging/'tasks'/key, key)
+        dump(staging/'catalog.json',{key:{'title':v[0],'initialMinutes':v[1],'changeMinutes':v[2]} for key,v in TASKS.items()})
         dump(staging/'rubric.json',{'version':RUBRIC_VERSION,'tasks':catalog()})
         entries=manifest(staging,skip=('bundle.json','approval.json'))
         updated={**meta,'version':VERSION,'preparedAt':now(),'files':entries,'bundleSha256':digest(entries),
+                 'rulesSha256':sha(ROOT/'rules/COMMON_RULES.md'),
                  'previousBundleSha256':meta['bundleSha256'],'status':'pilot-unverified','manualCalibration':None}
         dump(staging/'bundle.json',updated)
         # Detect concurrent changes before swapping; never overwrite an existing backup.
@@ -245,7 +283,11 @@ def copy_ammo(project):
 
 def start_instructions(key):
     if key == '01-svg': return '将SVG内联到output/index.html。运行 python3 -m http.server 5173 --bind 127.0.0.1 --directory output，打开 http://127.0.0.1:5173/。\n'
-    if key == '05-memory': return '先阅读materials/INDEX.md和materials/novel/INDEX.md。论文有PDF及按PDF页码提取的TXT；小说有完整TXT与58个原书标题分节，引用使用Nxxx-Pxxxx编号。完整材料在单题目录内，按需检索与交叉阅读，不要求一次塞入上下文。允许编辑research，禁止改写materials。制作output/index.html，用本地静态服务自测。\n'
+    if key == '02-static': return (ROOT / 'templates/02-static/materials/START.md').read_text(encoding='utf-8')
+    if key == '03-dispatch':
+        from .dispatch import START_TEXT
+        return START_TEXT
+    if key == '06-memory': return '先阅读TASK.md、materials/INDEX.md和materials/novel/INDEX.md。论文有PDF和按PDF页码提取的TXT，小说有完整TXT及58个分节。按需检索和交叉阅读。只将各题答案写入output/answers.json，可参考materials/answer-template.json的题号；无需HTML、报告、解释或引用。禁止修改materials。\n'
     return 'npm run dev\n构建 npm run build，最终入口output/index.html；生产预览 npm run preview。依赖已在项目内安装，所有资源使用相对路径。\n性能采样：控制台粘贴tools/performance.js原文，使用window.bench。\n'
 
 
@@ -266,8 +308,9 @@ def ensure_prepared(profile='local'):
 def task_keys(value):
     if value == 'all': return list(TASKS)
     if value in TASKS: return [value]
-    try: return [list(TASKS)[int(value)-1]] if 1 <= int(value) <= 5 else fail('题号必须为1–5或all')
-    except (ValueError, IndexError): fail('未知题号；使用1–5、all或题目目录名称')
+    count=len(TASKS)
+    try: return [list(TASKS)[int(value)-1]] if 1 <= int(value) <= count else fail(f'题号必须为1–{count}或all')
+    except (ValueError, IndexError, TypeError): fail(f'未知题号；使用1–{count}、all或题目目录名称')
 
 
 def slug(value):
@@ -332,9 +375,12 @@ def init_run(args):
 
 def initial_prompt(key):
     source = PREPARED/'tasks'/key
+    objective = key == '06-memory' and (source/'materials/questions.json').exists()
+    delivery = ('阅读材料并作答，最终只交付output/answers.json，不需要HTML或DELIVERY.md。\n\n' if objective
+                else '已预装依赖；正式测试禁止联网安装。实现并自测，最终交付 output/index.html 与 output/DELIVERY.md。\n\n')
     return ('你正在参加同一条件下的开发与研究能力评测。本次授权范围仅为当前单题项目。\n'
         '先读取当前项目 COMMON_RULES.md、TASK.md、materials/START.md。不要读取项目父目录或评测管理目录。\n'
-        '已预装依赖；正式测试禁止联网安装。实现并自测，最终交付 output/index.html 与 output/DELIVERY.md。\n\n'
+        + delivery
         + (source/'COMMON_RULES.md').read_text() + '\n\n' + (source/'TASK.md').read_text())
 
 
@@ -350,10 +396,22 @@ def get_run(value):
 
 
 def get_task(run, value):
-    keys=task_keys(value)
-    if len(keys)!=1: fail('该操作每次处理一道题，不能使用all')
-    key=keys[0]
-    if key not in load(run/'control/run.json')['tasks']: fail('本次运行未初始化该题')
+    if value=='all': fail('该操作每次处理一道题，不能使用all')
+    available=load(run/'control/run.json')['tasks']
+    if value in available:
+        key=value
+    else:
+        # A task's displayed number belongs to its pinned run, not today's suite.
+        # Pre-catalog runs retain the numeric prefix of their original IDs.
+        pinned=run/'control/rubric.json'
+        definitions=(load(pinned)['tasks'] if pinned.exists()
+                     else [{'id':key,'number':key.split('-',1)[0]} for key in available])
+        try: number=int(value)
+        except (TypeError,ValueError): fail('本次运行未初始化该题')
+        matches=[item['id'] for item in definitions
+                 if item['id'] in available and int(item.get('number',item['id'].split('-',1)[0]))==number]
+        if len(matches)!=1: fail('本次运行未初始化该题，或固定题号不唯一；请使用题目目录名称')
+        key=matches[0]
     project = run/'tasks'/key
     if project.is_symlink() or not inside(project, run/'tasks'): fail('任务目录越界')
     return key,project
@@ -443,12 +501,12 @@ def release_change(run,key,project):
     if digest(manifest(project,skip=('node_modules','dist','.git','__pycache__','.runtime')))!=freeze['sourceSha256']:
         fail('当前成果与冻结的初始成果不同，不能悄悄带入额外修改')
     if integrity(run,key): fail('受保护文件变化，不能释放追加阶段')
-    if key=='05-memory' and (run/'control/private/05-memory/change-corpus.json').exists():
+    if key=='06-memory' and (run/'control/private/06-memory/change-corpus.json').exists() and not (run/'control/private/06-memory/answer-key.json').exists():
         dest=project/'materials/change'
         if dest.exists(): fail('第二阶段资料路径已存在，拒绝覆盖')
         dest.mkdir()
-        shutil.copy(run/'control/private/05-memory/change-corpus.json',dest/'corpus.json')
-        shutil.copy(run/'control/private/05-memory/change-dev.json',dest/'dev.json')
+        shutil.copy(run/'control/private/06-memory/change-corpus.json',dest/'corpus.json')
+        shutil.copy(run/'control/private/06-memory/change-dev.json',dest/'dev.json')
         baselines=load(run/'control/baseline.json')
         for rel,info in manifest(project).items():
             if rel.startswith('materials/change/'): baselines[key][rel]=info
@@ -539,7 +597,7 @@ def pinned_task(run,key):
     if path.exists():
         return next(t for t in load(path)['tasks'] if t['id']==key)
     title,minutes,change=TASKS[key]
-    if key=='05-memory': title,minutes='NPC真的记住你了吗',90
+    if key=='06-memory': title,minutes='NPC真的记住你了吗',90
     return {'title':title,'minutes':minutes,'changeMinutes':change}
 
 
@@ -630,7 +688,7 @@ def wizard(args):
     model=input('模型完整名称（例如模型+客户端版本）：').strip()
     if not model: fail('模型名称不能为空')
     print('\n'.join(f'{i}. {value[0]}' for i,value in enumerate(TASKS.values(),1)))
-    task=input('题号1–5，或all（回车默认all）：').strip() or 'all'
+    task=input(f'题号1–{len(TASKS)}，或all（回车默认all）：').strip() or 'all'
     repeat=int(input('独立重复编号（回车默认1）：').strip() or '1')
     path=init_run(argparse.Namespace(model=model,task=task,repeat=repeat,profile='local',run_id=None))
     if sys.platform=='darwin': subprocess.run(['open',str(path/'control/START.html')],check=True)
@@ -638,11 +696,29 @@ def wizard(args):
 
 def main(argv=None):
     from .studio import serve
+    from .history import verify_history
+    from .launcher import launch
+    from .objective import grade_run
+    from .automation import auto_grade_cli, prepare_checks
+    from .fullstack import preview_api
     parser=argparse.ArgumentParser(description='多模型评测：材料准备、单题初始化、提示词和两阶段留档')
     sub=parser.add_subparsers(dest='command',required=True)
+    p=sub.add_parser('launch',help='校验历史作品，安装/构建工作台后启动；不安装题目依赖'); p.add_argument('--port',type=int,default=8787); p.add_argument('--open',action='store_true'); p.set_defaults(func=launch)
+    p=sub.add_parser('verify-history',help='只读校验历史作品、资源清单与轮次关联，不检查题目依赖'); p.add_argument('--tracked',action='store_true',help='同时检查历史展示所需文件均已纳入Git'); p.set_defaults(func=verify_history)
     p=sub.add_parser('serve',help='启动鹈鹕测评工作台'); p.add_argument('--port',type=int,default=8787); p.add_argument('--open',action='store_true'); p.set_defaults(func=serve)
     p=sub.add_parser('prepare',help='联网准备一次材料与依赖，不启动模型'); p.add_argument('--rebuild',action='store_true'); p.set_defaults(func=prepare)
     p=sub.add_parser('revise-prepared',help='离线复制兼容的旧版材料并应用新版提示词与评分，保留旧包'); p.set_defaults(func=revise_prepared)
+    p=sub.add_parser('prepare-checks',help='准备主持人的自动验收依赖；仅准备阶段联网'); p.set_defaults(func=prepare_checks)
+    p=sub.add_parser('preview-api',help='显式启动一份归档独享的离线Node接口，Ctrl+C停止')
+    p.add_argument('--artifact',required=True); p.set_defaults(func=preview_api)
+    p=sub.add_parser('auto-grade',help='仅对第3题归档运行离线HTTP接口评分，保存接口分并保留人工分')
+    p.add_argument('--run',required=True); p.add_argument('--task',required=True)
+    p.add_argument('--phase',choices=['initial','change'],default='initial')
+    p.add_argument('--artifact',help='默认使用该阶段最新归档版本'); p.add_argument('--output',help='另存接口评分JSON报告，拒绝覆盖'); p.set_defaults(func=auto_grade_cli)
+    p=sub.add_parser('grade',help='按本轮固定标准答案自动评分长文本题（新版第6题），只读答案并输出报告')
+    p.add_argument('--run',required=True); p.add_argument('--phase',choices=['initial','change'],default='initial')
+    p.add_argument('--answers',help='可选UTF-8答案JSON；默认读取本阶段快照，未冻结时读工作区')
+    p.add_argument('--output',help='保存JSON评分报告，拒绝覆盖已有文件'); p.set_defaults(func=grade_run)
     p=sub.add_parser('init',help='离线初始化一个新的模型运行'); p.add_argument('--model',required=True); p.add_argument('--task',default='all'); p.add_argument('--repeat',type=int,default=1); p.add_argument('--run-id'); p.add_argument('--profile',choices=['local','sandbox'],default='local'); p.add_argument('--harness',choices=[i for i,_,_ in HARNESS_OPTIONS]); p.add_argument('--harness-custom',default=''); p.add_argument('--reasoning-level',choices=['1','2','3','4','5','unsupported'],help='归一化思考强度1至5档；不支持调整选unsupported'); p.set_defaults(func=init_run)
     p=sub.add_parser('doctor',help='检查本机环境'); p.set_defaults(func=doctor)
     p=sub.add_parser('wizard',help='交互式一键初始化'); p.set_defaults(func=wizard)

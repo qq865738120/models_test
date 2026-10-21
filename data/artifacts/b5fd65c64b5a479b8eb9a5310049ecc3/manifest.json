@@ -1,0 +1,107 @@
+{
+  "runId": "20261021-131937-gpt-6-astro-r1-191ecd",
+  "taskId": "04-game2d",
+  "phase": "initial",
+  "files": {
+    ".keep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executable": false
+    },
+    "DELIVERY.md": {
+      "sha256": "38b5efc582db1c82fb6b37951be2893de60a3244a245d309e3b63d3265ce1443",
+      "executable": false
+    },
+    "assets/index-DAViq1Tb.js": {
+      "sha256": "3e503dfcddf5562b828d7991533835ab8377b5a70ce009481074e9a112afce8f",
+      "executable": false
+    },
+    "assets/index-Da_xfF-Z.css": {
+      "sha256": "51a234a3381511a1f1704be7e4ee78ff3ea4b4077acd35f6f7c98dab4ab7febf",
+      "executable": false
+    },
+    "evidence/desktop.png": {
+      "sha256": "5b4fcc15df14fed9b3a77d1bb8bccd0ae84de93bfb47daa5074ed8a24c6dbfad",
+      "executable": false
+    },
+    "evidence/life-failure.png": {
+      "sha256": "ca343a41888fccef004661511a24322a226cd899d540d29ee0e8e221d80d0e94",
+      "executable": false
+    },
+    "evidence/mobile.png": {
+      "sha256": "3accbbb5375f5d9f4187ecc83d79c10e18f8b3265d9796e70946a25873033744",
+      "executable": false
+    },
+    "evidence/timeout.png": {
+      "sha256": "209fd9b68345c436799d39eb040e6bc38e541672a135a13aaf285acc316da52a",
+      "executable": false
+    },
+    "evidence/victory.png": {
+      "sha256": "28f8a9d92fb092847f0bd25fab8ad67be6a370223d5ed1c375aff2da1c491f23",
+      "executable": false
+    },
+    "index.html": {
+      "sha256": "99d7528201c2a50f0a9b51774d78078a952b3f6645a941257d09fb2f066c75a6",
+      "executable": false
+    },
+    "materials/assets.json": {
+      "sha256": "8307c9d09d49b09957937e44d388044ef2d8b16814cd5f3c3b197bda00cbd67b",
+      "executable": false
+    },
+    "materials/level.json": {
+      "sha256": "cac08212c269d63c410644905c41dea7403a4ef7056d69f7859ddc825284e45a",
+      "executable": false
+    },
+    "materials/sprites/hazard.svg": {
+      "sha256": "11e82bc0efcc2e685cc590a45583b87ecf065699f7eb8d6343deb21e218bb780",
+      "executable": false
+    },
+    "materials/sprites/heart.svg": {
+      "sha256": "eca4ddeb69948146844299c31eddcd79ee5ced0ded042c690256f1ccb7a33c0d",
+      "executable": false
+    },
+    "materials/sprites/parcel.svg": {
+      "sha256": "aec61e956367ccefd00b4e472520ccc06cc9d68365ebe3344f949cac0c292e48",
+      "executable": false
+    },
+    "materials/sprites/pause.svg": {
+      "sha256": "85222e89e567da220d827381fe236419f7bfd55832ccbc288d199e1aef14bcd1",
+      "executable": false
+    },
+    "materials/sprites/pelican-hurt.svg": {
+      "sha256": "89f9fd917bbac6df3eacc5d22a5c73bf9ca88fd6a29bd36acd1fd4c6fd668d57",
+      "executable": false
+    },
+    "materials/sprites/pelican-idle.svg": {
+      "sha256": "424a23db6f8acbc537fd4be2290b6bdbf9473cc289411b7989a50aca1f17f976",
+      "executable": false
+    },
+    "materials/sprites/pelican-jump.svg": {
+      "sha256": "1cc47f7262206d31b524ddb231c9b61a569b02a7adb8ecf09fdec69454ff069a",
+      "executable": false
+    },
+    "materials/sprites/pelican-walk-0.svg": {
+      "sha256": "424a23db6f8acbc537fd4be2290b6bdbf9473cc289411b7989a50aca1f17f976",
+      "executable": false
+    },
+    "materials/sprites/pelican-walk-1.svg": {
+      "sha256": "44fe5dfc2bacb62004a61293f581e6bea301f8119522151eed651e0bb49f5be6",
+      "executable": false
+    },
+    "materials/sprites/pelican-walk-2.svg": {
+      "sha256": "33a55fe59bae56cbc61fd855c42ef5e237d8f65f0474c4f38593800107798c13",
+      "executable": false
+    },
+    "materials/sprites/pelican-walk-3.svg": {
+      "sha256": "44fe5dfc2bacb62004a61293f581e6bea301f8119522151eed651e0bb49f5be6",
+      "executable": false
+    },
+    "materials/sprites/platform.svg": {
+      "sha256": "79e886f1e6221786a7ee9d4217389391c5a3a11acaf9937d3a958b083dcdc529",
+      "executable": false
+    },
+    "materials/sprites/robot.svg": {
+      "sha256": "ee41971a712683f492b39a8c9e86cd488d082ad774e561c9ac7899b8620014a5",
+      "executable": false
+    }
+  }
+}

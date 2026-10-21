@@ -1,0 +1,357 @@
+{
+  "version": "longread-qa-v2",
+  "status": "frozen-before-candidate",
+  "frozenAt": "2026-10-20T15:18:18.624209+00:00",
+  "questionCount": {
+    "initial": 36,
+    "change": 12
+  },
+  "reviewModels": [
+    "gpt-6-sol",
+    "gpt-6-astra"
+  ],
+  "method": "Independent blind solving followed by source/PDF checks, numerical recomputation and explicit adjudication; original rejected-draft reviews retained.",
+  "adjudications": [
+    {
+      "id": "XP02",
+      "resolution": "Rewritten using matched Appendix Table IV baseline; main-text attribution batch must not be mixed with intervention batch."
+    },
+    {
+      "id": "XM01",
+      "resolution": "Original author A retained; blind reviewer corrected missed sigma factor after original PDF inspection. b=9/2."
+    },
+    {
+      "id": "N04",
+      "resolution": "Unsupported surgery timing removed; original only establishes hospital exterior."
+    },
+    {
+      "id": "N08",
+      "resolution": "Stem no longer provides initial countdown; paired distractors prevent cancellation shortcut."
+    },
+    {
+      "ids": [
+        "P04",
+        "P06",
+        "P07",
+        "P10",
+        "P11",
+        "P12",
+        "XP03",
+        "XP04",
+        "N06",
+        "N12",
+        "XN04"
+      ],
+      "resolution": "Revised to require independent facts/conditions from multiple sources; re-reviewed before freeze."
+    }
+  ],
+  "items": [
+    {
+      "id": "P01",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "P02",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "P03",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "P04",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "P05",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "P06",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "P07",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "P08",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "P09",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "P10",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "P11",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "P12",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "M01",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "M02",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "M03",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "M04",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "M05",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "M06",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "M07",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "M08",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "M09",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "M10",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "M11",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "M12",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "N01",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "N02",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "N03",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "N04",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "N05",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "N06",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "N07",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "N08",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "N09",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "N10",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "N11",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "N12",
+      "phase": "initial",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "XP01",
+      "phase": "change",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "XP02",
+      "phase": "change",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "XP03",
+      "phase": "change",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "XP04",
+      "phase": "change",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "XM01",
+      "phase": "change",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "XM02",
+      "phase": "change",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "XM03",
+      "phase": "change",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "XM04",
+      "phase": "change",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "XN01",
+      "phase": "change",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "XN02",
+      "phase": "change",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "XN03",
+      "phase": "change",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    },
+    {
+      "id": "XN04",
+      "phase": "change",
+      "independentAnswerAgrees": true,
+      "crossSourceReviewed": true
+    }
+  ],
+  "limitations": [
+    "Agreement and quotation checks do not prove every preprint claim; questions explicitly condition on local reports and distinguish inference from established fact.",
+    "Difficulty is a design property until empirically calibrated; no target score is imposed."
+  ],
+  "sha256": {
+    "research/longread-qa-v2/questions.json": "67ea0bee96cb060b4fa3c77348061028ea85dcf5ccce33a669aff5dd6fb702d4",
+    "research/longread-qa-v2/host/answer-key.json": "1e75883de7cc95c26b401849f4f236fcb181ae17d58ad9331b1f24f2063ac10d",
+    "research/longread-qa-v2/host/review/external-verification.json": "31200a6620a66e09b2f757fd2fb05a790491179ab8cf95e612de4b2ca869a2eb",
+    "research/longread-qa-v2/host/review/math-review-sol-correction.json": "b622250e4ac3ca324033143322a205a155168fa4777a2c9b7a0888133eb6bda7",
+    "research/longread-qa-v2/host/review/math-review-sol.json": "8273efddf924d14e4c9413fa45d7f55eb237c9525ea6d6491b182765d5cc7759",
+    "research/longread-qa-v2/host/review/math-revision-notes.json": "ab3b4586c14a5e4dda2e909ea0e17368cd59fc1be6a3349dbd6c27c354000ae8",
+    "research/longread-qa-v2/host/review/novel-review-astra-revised.json": "4491385d587fee89a931db1fb224e494adbf6b8e265d9484fcde846f74673c4f",
+    "research/longread-qa-v2/host/review/novel-review-astra.json": "4e778b8f2bd8ad29f67b04cf178ce93bab6bfe06be04563b5d9327af10a311c8",
+    "research/longread-qa-v2/host/review/physics-change-review-sol-revised.json": "302d12134b487a679703477d4f4a3c349f05854178e81a03bb92c44eed056c9b",
+    "research/longread-qa-v2/host/review/physics-initial-review-astra-revised.json": "42fa87399c3cf258ff8647addad018d0252f0ed6f509e1296ab7ca196d851d59",
+    "research/longread-qa-v2/host/review/physics-review-astra.json": "1aaebb65a27170c018903d96deba6568d1256e33a28c4b728dbe081aac124fa0",
+    "research/longread-qa-v2/host/review/revision-notes-final.json": "2ada29a672f6b1d066a6fcf5277d548abc71e59c9be519d7f7a3e41837c1f758",
+    "research/longread-qa-v2/host/review/runner-review.json": "5d5f1ce7fb4a29ee593d50579026fe7d1f2e7fcf8859edd079899d066881f528"
+  }
+}

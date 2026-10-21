@@ -39,7 +39,7 @@ class ReasoningPersistenceTests(unittest.TestCase):
         m.write(run/'tasks/01-svg/output/index.html','<!doctype html><title>test</title>')
         detail=s.import_artifact(run.name,'01-svg','initial');a=detail['tasks']['01-svg']['artifacts']['initial'][0]
         from evalkit.catalog import catalog
-        s.save_score(run.name,'01-svg','initial',{'revision':detail['review']['revision'],'artifactId':a['id'],'values':{d['id']:5 for d in catalog()[0]['rubric']}})
+        s.save_score(run.name,'01-svg','initial',{'revision':detail['review']['revision'],'artifactId':a['id'],'values':{d['id']:None if d.get('scoring')=='auto' else 5 for d in catalog()[0]['rubric']}})
         rows=list(csv.DictReader(io.StringIO(s.export('csv')[0].decode('utf-8-sig'))))
         self.assertTrue(rows);self.assertEqual(rows[0]['reasoning_level'],'5')
         self.assertEqual(json.loads(s.export('json')[0])['records'][0]['run']['reasoningLevel'],'5')

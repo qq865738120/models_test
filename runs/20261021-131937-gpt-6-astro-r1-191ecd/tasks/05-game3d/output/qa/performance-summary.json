@@ -1,0 +1,23 @@
+{
+  "build": "./assets/index-qsOl13Hd.js",
+  "sample_count": 7200,
+  "sample_interval_total_ms": 60000.0,
+  "mean_ms": 8.333333333333334,
+  "median_ms": 8.30000000000291,
+  "p95_ms": 9.299999999995634,
+  "p99_ms": 10.299999999995634,
+  "max_ms": 10.400000000008731,
+  "over_33_3_ms": 0,
+  "viewport": [
+    1280,
+    720
+  ],
+  "canvas_buffer": [
+    1280,
+    720
+  ],
+  "dpr": 1,
+  "scenario": "1280x720 DPR1; production; full warehouse, active physics, stationary vehicle; 10s warmup + 60s sample",
+  "start_state": "playing",
+  "end_state": "playing"
+}

@@ -1,0 +1,60 @@
+{
+  "runId": "20261021-131937-gpt-6-astro-r1-191ecd",
+  "taskId": "03-dispatch",
+  "phase": "initial",
+  "files": {
+    "DELIVERY.md": {
+      "sha256": "e4fc26f6e0fb7304744710aee8fc8e9d49ba84b360ddefb9db0ae1a9789c8390",
+      "executable": false
+    },
+    "assets/index-6M3-xOg8.js": {
+      "sha256": "5da1811b8c7e9e8f9bb65a9ce87d8b65dc58e086d94488ac61f9daf0e7407dd1",
+      "executable": false
+    },
+    "assets/index-DCTXV95W.css": {
+      "sha256": "00dbfbfa97b792fa22b5cb73dc23c95d53e8c04f9a9e91ae49e5d3b15fc2d438",
+      "executable": false
+    },
+    "index.html": {
+      "sha256": "2bcf304f96b3355db3c910e59673f74e23e858e0b586803a9e6aee425363d010",
+      "executable": false
+    },
+    "materials/icon-search.svg": {
+      "sha256": "95c6167a4f47a5c81ff301d23212a87200b93d847b821c5095a47431c0d226a5",
+      "executable": false
+    },
+    "materials/reference.svg": {
+      "sha256": "96c827a2f85a41d295c5b980fcb77551610059d8127864568e1783e7039dbb3c",
+      "executable": false
+    },
+    "server/data/orders.json": {
+      "sha256": "74a993f59fddf8e2eacb2711648c46a8dc684d097360562bc147448a8f6fa4b5",
+      "executable": false
+    },
+    "server/index.mjs": {
+      "sha256": "3d952dd182afb11785f8610f62372753bb32809f97fc76c732be3ef876e27f3b",
+      "executable": false
+    },
+    "verification/api-results.json": {
+      "sha256": "daeea7067fef2fff56adc0c5b4c7914442524bcdb1c36cac7f8b5f2242425785",
+      "executable": false
+    },
+    "verification/desktop.png": {
+      "sha256": "db86e5f2d54b57ce1a6609505bb565a031dac0b9f6aa70ac4861082e6508f4db",
+      "executable": false
+    },
+    "verification/mobile.png": {
+      "sha256": "8614c94abcfab066f826e4c4b7bc3a030f3d346345ca70810aa239630fafca8c",
+      "executable": false
+    },
+    "verification/performance-100.json": {
+      "sha256": "2e06f6e9e77164e2f24808c4c829c6c596a2f8a6a09ed258cdde0b1eaffe30c1",
+      "executable": false
+    },
+    "verification/performance-20.json": {
+      "sha256": "feec048e310f57105e8138e3ca0bbb62eae39201a97ec04543c099f91ddae411",
+      "executable": false
+    }
+  },
+  "delivery": "fullstack-node"
+}

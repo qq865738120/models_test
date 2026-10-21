@@ -1,0 +1,7 @@
+{
+  "changedItems": [
+    "P21"
+  ],
+  "source": "P11 PDF page 1 abstract and page 18",
+  "action": "明确采用摘要显示精度的lnB作为计算输入，避免正文另外报告值的0.01舍入差异。选项与标准答案未变化，须复核新题面。"
+}

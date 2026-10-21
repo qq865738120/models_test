@@ -1,0 +1,382 @@
+{
+  "version": "longread-qa-v4",
+  "domain": "physics",
+  "phases": {
+    "initial": [
+      {
+        "id": "P01",
+        "domain": "physics",
+        "question": "仅作合成的低红移背景计算：使用资料中热分布、较低温度的 sterile relic 定义，将其非相对论有效质量按 Ωs=ms,eff/(1 eV) 计入物质；其余物质 Ωb 固定，Ωm=Ωb+Ωs。忽略辐射，真实 Ωde=1−Ωm。采用时变 gravitational susceptibility 模型的归一化背景式，令 (1+S(z))/(1+S(0))=1+bz。使用资料定义的 Om(z)，所有密度均为该背景式的真密度。此合成记账不声称是原论文联合拟合。 取 Ωb=1/6，Ts/Tν=1/2，b=1/10。未知物理质量 ms 由 [d(H²/H0²)/dz]z=0=3/5 确定。求 ms（以 eV 计）、Om(1)、Om′(1)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "ms/eV",
+            "kind": "rational"
+          },
+          {
+            "name": "Om(1)",
+            "kind": "rational"
+          },
+          {
+            "name": "Om prime(1)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P02",
+        "domain": "physics",
+        "question": "仅作合成的低红移背景计算：使用资料中热分布、较低温度的 sterile relic 定义，将其非相对论有效质量按 Ωs=ms,eff/(1 eV) 计入物质；其余物质 Ωb 固定，Ωm=Ωb+Ωs。忽略辐射，真实 Ωde=1−Ωm。采用时变 gravitational susceptibility 模型的归一化背景式，令 (1+S(z))/(1+S(0))=1+bz。使用资料定义的 Om(z)，所有密度均为该背景式的真密度。此合成记账不声称是原论文联合拟合。 取 Ωb=1/8、ms=1 eV。实验仪的温度比仅可能为 n/10（整数1≤n≤9），b仅可能为 j/100（整数0≤j≤25）。两次测量给 Om(1)=3203/11449、Om(2)=10708/42237。同时满足二者时，求 n、j、ΔNeff；必须用同一组隐参数同时解释两红移。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "n",
+            "kind": "integer"
+          },
+          {
+            "name": "j",
+            "kind": "integer"
+          },
+          {
+            "name": "DeltaNeff",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P03",
+        "domain": "physics",
+        "question": "仅作合成的低红移背景计算：使用资料中热分布、较低温度的 sterile relic 定义，将其非相对论有效质量按 Ωs=ms,eff/(1 eV) 计入物质；其余物质 Ωb 固定，Ωm=Ωb+Ωs。忽略辐射，真实 Ωde=1−Ωm。采用时变 gravitational susceptibility 模型的归一化背景式，令 (1+S(z))/(1+S(0))=1+bz。使用资料定义的 Om(z)，所有密度均为该背景式的真密度。此合成记账不声称是原论文联合拟合。 取 Ωb=1/10、ms=1 eV，温度比=n/10（1≤n≤9的整数），b=j/100（0≤j≤25的整数）。要求 Ωm<1、[d(H²/H0²)/dz]0>0、1/5≤Om(1)≤1/4、1/6≤Om(2)≤1/5。最大化 sterile 有效质量；如并列，取最小 b。求 n、j、该方案 Om(2)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "n",
+            "kind": "integer"
+          },
+          {
+            "name": "j",
+            "kind": "integer"
+          },
+          {
+            "name": "Om(2)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P04",
+        "domain": "physics",
+        "question": "采用资料中 cosmic glitch 的定义与有效暗能量重写，并使用另一资料的热 sterile 定义和 Om 诊断。以下均为合成平直背景：r=Gcosmo/GN>0；m、a、lambda 分别是以 3H0²/(8πGN) 为单位的今日非相对论物质、辐射、常数项密度。非暗能量密度为 m(1+z)³+a(1+z)⁴。今日 E(0)=1 决定 lambda。sterile 已非相对论，其物质贡献为 ms,eff/(1 eV)，其余物质 m_b 另给。取原资料 cosmic glitch 有效暗能量密度为本题 rhoDE，同样以该今日临界密度为单位；不要求 rhoDE 在所有红移为正。 取 a=1/100、m_b=1/5、ms=1 eV。未知 r 与温度比 u=Ts/Tν。测得 Om(1)=873/2800，Om(2)=333/1040。求 r、ΔNeff、rhoDE(2)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "r",
+            "kind": "rational"
+          },
+          {
+            "name": "DeltaNeff",
+            "kind": "rational"
+          },
+          {
+            "name": "rhoDE(2)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P05",
+        "domain": "physics",
+        "question": "采用资料中 cosmic glitch 的定义与有效暗能量重写，并使用另一资料的热 sterile 定义和 Om 诊断。以下均为合成平直背景：r=Gcosmo/GN>0；m、a、lambda 分别是以 3H0²/(8πGN) 为单位的今日非相对论物质、辐射、常数项密度。非暗能量密度为 m(1+z)³+a(1+z)⁴。今日 E(0)=1 决定 lambda。sterile 已非相对论，其物质贡献为 ms,eff/(1 eV)，其余物质 m_b 另给。取原资料 cosmic glitch 有效暗能量密度为本题 rhoDE，同样以该今日临界密度为单位；不要求 rhoDE 在所有红移为正。 取 m_b=1/4、ms=2 eV、ΔNeff=1/16、a=1/162。调节 r，使 rhoDE 恰在 z=2 为零；r 不得等于零。求 r、Omega_g、Om(2)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "r",
+            "kind": "rational"
+          },
+          {
+            "name": "Omega_g",
+            "kind": "rational"
+          },
+          {
+            "name": "Om(2)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P06",
+        "domain": "physics",
+        "question": "采用资料中 cosmic glitch 的定义与有效暗能量重写，并使用另一资料的热 sterile 定义和 Om 诊断。以下均为合成平直背景：r=Gcosmo/GN>0；m、a、lambda 分别是以 3H0²/(8πGN) 为单位的今日非相对论物质、辐射、常数项密度。非暗能量密度为 m(1+z)³+a(1+z)⁴。今日 E(0)=1 决定 lambda。sterile 已非相对论，其物质贡献为 ms,eff/(1 eV)，其余物质 m_b 另给。取原资料 cosmic glitch 有效暗能量密度为本题 rhoDE，同样以该今日临界密度为单位；不要求 rhoDE 在所有红移为正。 固定 m_b=1/10、ms=1 eV、a=1/200。温度比=n/10，整数1≤n≤9；r=j/100，整数80≤j≤100。要求 lambda>0、rhoDE(2)≥0、1/4≤Om(2)≤1/3。最大化 sterile 有效质量；并列时选最小 r。求 n、j、rhoDE(2)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "n",
+            "kind": "integer"
+          },
+          {
+            "name": "j",
+            "kind": "integer"
+          },
+          {
+            "name": "rhoDE(2)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P07",
+        "domain": "physics",
+        "question": "在一个合成的两位置 code-capacity 噪声实验中，固定代码和解码器，把每个 Pauli 写作 X^a Z^b（忽略相位）。位置1、2独立，各自 pI=1−p，且 pX=pY；偏置定义 η=pZ/(pX+pY)。仅可施加 I 或 H 的 Clifford deformation，按资料的 Schrödinger picture 处理；不得把它当作 circuit-level 等价性。变形后的误差位为(a,b)、(c,d)，记录 syndrome=(a xor c,b xor d)；已固定的 residual logical failure 位 L=a xor d xor (c AND b)。置信分数对 syndrome 00、10、01、11依次为3、2、1、0，按资料的阈值规则接受。用资料的 noise sensitivity 定义，计算 post-selected LER 对原始 p1 或 p2 的导数时，阈值、偏置、变形和解码器均保持不变，必须包括接受概率的变化。 取(p1,p2)=(1/5,1/4)，(η1,η2)=(3,2)，变形为位置1用H、位置2用I，阈值τ=2。求 yield、条件 LER、条件 LER 对 p1 的导数。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "yield",
+            "kind": "rational"
+          },
+          {
+            "name": "conditional LER",
+            "kind": "rational"
+          },
+          {
+            "name": "derivative p1",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P08",
+        "domain": "physics",
+        "question": "在一个合成的两位置 code-capacity 噪声实验中，固定代码和解码器，把每个 Pauli 写作 X^a Z^b（忽略相位）。位置1、2独立，各自 pI=1−p，且 pX=pY；偏置定义 η=pZ/(pX+pY)。仅可施加 I 或 H 的 Clifford deformation，按资料的 Schrödinger picture 处理；不得把它当作 circuit-level 等价性。变形后的误差位为(a,b)、(c,d)，记录 syndrome=(a xor c,b xor d)；已固定的 residual logical failure 位 L=a xor d xor (c AND b)。置信分数对 syndrome 00、10、01、11依次为3、2、1、0，按资料的阈值规则接受。用资料的 noise sensitivity 定义，计算 post-selected LER 对原始 p1 或 p2 的导数时，阈值、偏置、变形和解码器均保持不变，必须包括接受概率的变化。 取(p1,p2)=(1/5,1/4)，(η1,η2)=(3,2)。任选两位置 I/H 变形及整数阈值 τ∈{1,2,3}，要求 yield≥3/5，最小化条件 LER。若并列，先按 II<IH<HI<HH 排列，再选最小 τ。求两字母变形代码、τ、条件 LER 对 p2 的导数。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "deformation",
+            "kind": "code"
+          },
+          {
+            "name": "tau",
+            "kind": "integer"
+          },
+          {
+            "name": "derivative p2",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P09",
+        "domain": "physics",
+        "question": "在一个合成的两位置 code-capacity 噪声实验中，固定代码和解码器，把每个 Pauli 写作 X^a Z^b（忽略相位）。位置1、2独立，各自 pI=1−p，且 pX=pY；偏置定义 η=pZ/(pX+pY)。仅可施加 I 或 H 的 Clifford deformation，按资料的 Schrödinger picture 处理；不得把它当作 circuit-level 等价性。变形后的误差位为(a,b)、(c,d)，记录 syndrome=(a xor c,b xor d)；已固定的 residual logical failure 位 L=a xor d xor (c AND b)。置信分数对 syndrome 00、10、01、11依次为3、2、1、0，按资料的阈值规则接受。用资料的 noise sensitivity 定义，计算 post-selected LER 对原始 p1 或 p2 的导数时，阈值、偏置、变形和解码器均保持不变，必须包括接受概率的变化。 取(p1,p2)=(1/5,1/4)，(η1,η2)=(3,2)，固定τ=2。可选 I/H 变形，须使干预前 yield≥3/5；随后只改一个位置：花无穷小预算 ε，位置1可令p1乘(1−ε/2)，位置2可令p2乘(1−ε)。最大化条件 LER 的一阶下降量除以 ε；并列按 II<IH<HI<HH，再选较小位置编号。求变形代码、位置编号、该一阶下降系数。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "deformation",
+            "kind": "code"
+          },
+          {
+            "name": "position",
+            "kind": "integer"
+          },
+          {
+            "name": "improvement coefficient",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P10",
+        "domain": "physics",
+        "question": "设计合成的 stitched-block memory bank：每个底层块由四个距离t的 rotated patches 按资料的 stitched 结构构成，总 footprint 必须包含 corridor 和测量 ancilla。把 r 个底层块的两个逻辑比特全部用于一次 chain-code 拼接。对底层 [[4,2,2]] outer code，分别选能区分全部单逻辑位及两逻辑位错误的最小独立 X/Z seed；按资料 chain 规则取允许的偶数r。此次只做资源与后选择记账，不宣称额外门操作已实现：chain 检查控制器另需每个独立 chain generator 恰 t 个物理 qubit。每个块独立出现可见 flag 的概率 e=1/(t+1)²；接受置信分数为负 flag 数，阈值−1。已接受时若无 flag 则永不失败；恰一个 flag 时以 f=1/(t+1) 的条件概率失败。一个 accepted shot 保留全部 K 个 chain 逻辑比特。定义有效产出 T=K·yield；失败率用资料的 conditional LER。r∈{4,6,8,10,12}、t∈{3,4,5,6,7}。 单 bank 要求 N≤3500、conditional LER≤1/20。最大化 T/N；并列先最小N，再最小r，再最小t。求 r、t、N、T/N。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "r",
+            "kind": "integer"
+          },
+          {
+            "name": "t",
+            "kind": "integer"
+          },
+          {
+            "name": "N",
+            "kind": "integer"
+          },
+          {
+            "name": "T/N",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P11",
+        "domain": "physics",
+        "question": "设计合成的 stitched-block memory bank：每个底层块由四个距离t的 rotated patches 按资料的 stitched 结构构成，总 footprint 必须包含 corridor 和测量 ancilla。把 r 个底层块的两个逻辑比特全部用于一次 chain-code 拼接。对底层 [[4,2,2]] outer code，分别选能区分全部单逻辑位及两逻辑位错误的最小独立 X/Z seed；按资料 chain 规则取允许的偶数r。此次只做资源与后选择记账，不宣称额外门操作已实现：chain 检查控制器另需每个独立 chain generator 恰 t 个物理 qubit。每个块独立出现可见 flag 的概率 e=1/(t+1)²；接受置信分数为负 flag 数，阈值−1。已接受时若无 flag 则永不失败；恰一个 flag 时以 f=1/(t+1) 的条件概率失败。一个 accepted shot 保留全部 K 个 chain 逻辑比特。定义有效产出 T=K·yield；失败率用资料的 conditional LER。r∈{4,6,8,10,12}、t∈{3,4,5,6,7}。 单 bank 要求 T≥12、conditional LER≤1/25。最小化N；并列先最小r，再最小t。求 r、t、N、conditional LER。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "r",
+            "kind": "integer"
+          },
+          {
+            "name": "t",
+            "kind": "integer"
+          },
+          {
+            "name": "N",
+            "kind": "integer"
+          },
+          {
+            "name": "conditional LER",
+            "kind": "rational"
+          }
+        ],
+        "weight": 2,
+        "scoring": "exact"
+      },
+      {
+        "id": "P12",
+        "domain": "physics",
+        "question": "设计合成的 stitched-block memory bank：每个底层块由四个距离t的 rotated patches 按资料的 stitched 结构构成，总 footprint 必须包含 corridor 和测量 ancilla。把 r 个底层块的两个逻辑比特全部用于一次 chain-code 拼接。对底层 [[4,2,2]] outer code，分别选能区分全部单逻辑位及两逻辑位错误的最小独立 X/Z seed；按资料 chain 规则取允许的偶数r。此次只做资源与后选择记账，不宣称额外门操作已实现：chain 检查控制器另需每个独立 chain generator 恰 t 个物理 qubit。每个块独立出现可见 flag 的概率 e=1/(t+1)²；接受置信分数为负 flag 数，阈值−1。已接受时若无 flag 则永不失败；恰一个 flag 时以 f=1/(t+1) 的条件概率失败。一个 accepted shot 保留全部 K 个 chain 逻辑比特。定义有效产出 T=K·yield；失败率用资料的 conditional LER。r∈{4,6,8,10,12}、t∈{3,4,5,6,7}。 现在并行两个独立 bank；只有两者都接受才保留整次 shot，只要任一 bank 失败即整体失败。两 bank 的(r,t)按字典序从小到大记为A、B。总N≤6500、整体 conditional LER≤1/15。最大化(KA+KB)·整体yield；并列先最小总N，再按(rA,tA,rB,tB)字典序。求rA、tA、rB、tB、总N。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "rA",
+            "kind": "integer"
+          },
+          {
+            "name": "tA",
+            "kind": "integer"
+          },
+          {
+            "name": "rB",
+            "kind": "integer"
+          },
+          {
+            "name": "tB",
+            "kind": "integer"
+          },
+          {
+            "name": "total N",
+            "kind": "integer"
+          }
+        ],
+        "weight": 2,
+        "scoring": "exact"
+      }
+    ],
+    "change": [
+      {
+        "id": "XP01",
+        "domain": "physics",
+        "question": "仅作合成的低红移背景计算：使用资料中热分布、较低温度的 sterile relic 定义，将其非相对论有效质量按 Ωs=ms,eff/(1 eV) 计入物质；其余物质 Ωb 固定，Ωm=Ωb+Ωs。忽略辐射，真实 Ωde=1−Ωm。采用时变 gravitational susceptibility 模型的归一化背景式，令 (1+S(z))/(1+S(0))=1+bz+cz²。使用资料定义的 Om(z)，所有密度均为该背景式的真密度。此合成记账不声称是原论文联合拟合。 改为二次 susceptibility，Ωb=1/5，Ts/Tν=2/3，b=1/7。未知 ms 与 c；测得 E²′(0)=32/35、E²″(0)=394/245，E=H/H0。求 ms/eV、c、Om(1)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "ms/eV",
+            "kind": "rational"
+          },
+          {
+            "name": "c",
+            "kind": "rational"
+          },
+          {
+            "name": "Om(1)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 9,
+        "scoring": "exact"
+      },
+      {
+        "id": "XP02",
+        "domain": "physics",
+        "question": "采用资料中 cosmic glitch 的定义与有效暗能量重写，并使用另一资料的热 sterile 定义和 Om 诊断。以下均为合成平直背景：r=Gcosmo/GN>0；m、a、lambda 分别是以 3H0²/(8πGN) 为单位的今日非相对论物质、辐射、常数项密度。非暗能量密度为 m(1+z)³+a(1+z)⁴。今日 E(0)=1 决定 lambda。sterile 已非相对论，其物质贡献为 ms,eff/(1 eV)，其余物质 m_b 另给。取原资料 cosmic glitch 有效暗能量密度为本题 rhoDE，同样以该今日临界密度为单位；不要求 rhoDE 在所有红移为正。 固定 r=19/20、m_b=1/8、ms=3/2 eV。现有未知辐射 a 及温度比 u，给 Om(1)=27949/50400、Om(2)=52459/93600。求 a、ΔNeff、lambda。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "a",
+            "kind": "rational"
+          },
+          {
+            "name": "DeltaNeff",
+            "kind": "rational"
+          },
+          {
+            "name": "lambda",
+            "kind": "rational"
+          }
+        ],
+        "weight": 9,
+        "scoring": "exact"
+      },
+      {
+        "id": "XP03",
+        "domain": "physics",
+        "question": "在一个合成的两位置 code-capacity 噪声实验中，固定代码和解码器，把每个 Pauli 写作 X^a Z^b（忽略相位）。位置1、2独立，各自 pI=1−p，且 pX=pY；偏置定义 η=pZ/(pX+pY)。仅可施加 I 或 H 的 Clifford deformation，按资料的 Schrödinger picture 处理；不得把它当作 circuit-level 等价性。变形后的误差位为(a,b)、(c,d)，记录 syndrome=(a xor c,b xor d)；已固定的 residual logical failure 位 L=a xor d xor (c AND b)。置信分数对 syndrome 00、10、01、11依次为3、2、1、0，按资料的阈值规则接受。用资料的 noise sensitivity 定义，计算 post-selected LER 对原始 p1 或 p2 的导数时，阈值、偏置、变形和解码器均保持不变，必须包括接受概率的变化。 变更为(p1,p2)=(1/6,1/3)，(η1,η2)=(4,3)，变形IH，τ=1。两位置同时乘(1−ε)，偏置保持固定。求未干预 yield、条件 LER、一阶下降系数 −[d LER/dε]ε=0。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "yield",
+            "kind": "rational"
+          },
+          {
+            "name": "conditional LER",
+            "kind": "rational"
+          },
+          {
+            "name": "improvement coefficient",
+            "kind": "rational"
+          }
+        ],
+        "weight": 8,
+        "scoring": "exact"
+      },
+      {
+        "id": "XP04",
+        "domain": "physics",
+        "question": "设计合成的 stitched-block memory bank：每个底层块由四个距离t的 rotated patches 按资料的 stitched 结构构成，总 footprint 必须包含 corridor 和测量 ancilla。把 r 个底层块的两个逻辑比特全部用于一次 chain-code 拼接。对底层 [[4,2,2]] outer code，分别选能区分全部单逻辑位及两逻辑位错误的最小独立 X/Z seed；按资料 chain 规则取允许的偶数r。此次只做资源与后选择记账，不宣称额外门操作已实现：chain 检查控制器另需每个独立 chain generator 恰 t 个物理 qubit。每个块独立出现可见 flag 的概率 e=1/(t+1)²；接受置信分数为负 flag 数，阈值−1。已接受时若无 flag 则永不失败；恰一个 flag 时以 f=1/(t+1) 的条件概率失败。一个 accepted shot 保留全部 K 个 chain 逻辑比特。定义有效产出 T=K·yield；失败率用资料的 conditional LER。r∈{4,6,8,10,12}、t∈{3,4,5,6,7}。 本题替换后选择规则：置信分数为1当且仅当 flag 数是0或2，否则为0，阈值1。无flag永不失败；恰2个flag时，各flag独立以f触发失败，至少一个触发即失败。其余结构不变。要求N≤3500、conditional LER≤1/100，最大化K·yield/N；并列先最小N，再最小r、t。求r、t、N、conditional LER。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "r",
+            "kind": "integer"
+          },
+          {
+            "name": "t",
+            "kind": "integer"
+          },
+          {
+            "name": "N",
+            "kind": "integer"
+          },
+          {
+            "name": "conditional LER",
+            "kind": "rational"
+          }
+        ],
+        "weight": 8,
+        "scoring": "exact"
+      }
+    ]
+  }
+}

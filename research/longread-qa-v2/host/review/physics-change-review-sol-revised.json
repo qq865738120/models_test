@@ -1,0 +1,139 @@
+{
+  "model": "gpt-6-sol",
+  "blind": true,
+  "phases": {
+    "change": [
+      {
+        "id": "XP02",
+        "answer": "B",
+        "creditByAnswer": {
+          "A": 0.5,
+          "B": 1,
+          "C": 0,
+          "D": 0.5,
+          "E": 0,
+          "F": 1
+        },
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P19-2610.03399v1.pdf",
+            "locator": "PDF p.9, Appendix A, baseline sampling",
+            "quote": "At d=7 the two bases sum to 8×10^9 shots; within each basis failures/shots is computed first, then P_L=(P_L^X+P_L^Z)/2."
+          },
+          {
+            "path": "research/longread-20261018/papers/P19-2610.03399v1.pdf",
+            "locator": "PDF p.13, Appendix B.1, intervention sampling",
+            "quote": "At d=7: 2.6784×10^9 X-memory and 3.0618×10^9 Z-memory shots, totaling 5.7402×10^9 in each of the before/after cases."
+          },
+          {
+            "path": "research/longread-20261018/papers/P19-2610.03399v1.pdf",
+            "locator": "PDF p.14, Appendix B.2, (B1)–(B3)",
+            "quote": "P_L^(s)=1/2(F_X^(s)/N_X^(s)+F_Z^(s)/N_Z^(s)); P_L^(random)=1/40 Σ_{j=1}^{40} P_{L,j}^(random); Δ_t=1−P_L^(target)/P_L^(0)."
+          },
+          {
+            "path": "research/longread-20261018/papers/P19-2610.03399v1.pdf",
+            "locator": "PDF p.15, Table V, d=7 row",
+            "quote": "d=7, k/N_d=13/265: P_L^(0)=1.89902×10^−5, P_L^(t)=1.56532×10^−5, Δ_t=17.57%."
+          },
+          {
+            "path": "research/longread-20261018/papers/P20-2610.03869v1.pdf",
+            "locator": "PDF p.7, hardware dataset and capacity discussion",
+            "quote": "Each duration has 50,000 shots per patch and basis, split 80/10/10 into training/validation/test; d=7 default ε_7≈0.215%, wide GRU ε_7≈0.179%, AlphaQubit ε_7=0.130%."
+          }
+        ],
+        "calculation": {
+          "interventionReduction": "(1.89902−1.56532)/1.89902 = 16685/94951 = 17.57222%",
+          "neuralGapClosed": "(.215−.179)/(.215−.130) = 36/85 = 42.35294%",
+          "testShotsPerDurationPatchBasis": "50,000×10%=5,000"
+        },
+        "reason": "B states the separate cohorts, before/after pairing, X/Z rate-first equal weighting, separate 40-set random mean, correct distinct improvement denominators, and independent 5,000 test shots per hardware setting. F expresses the same facts in a compressed form: its .130% “original gap” is .215−.130, and its 50,000×10% test budget is read per duration/patch/basis from the stated paper setup. A has correct two improvements and mechanisms but omits cohort pairing, aggregation, and sample budget (0.5). D has correct cohorts, test budget, and mechanisms but omits aggregation and quantitative improvement denominators (0.5). C falsely labels 10,000 as independent test shots; 10,000 is validation plus test. E pools unequal X/Z denominators contrary to (B1). Both incorrect assertions receive 0.",
+        "issues": [
+          "F does not repeat “per duration, patch, basis” explicitly. It earns full credit only when its 50,000→5,000 statement is read under the question’s per-setting context; B is the unambiguous preferred answer.",
+          "The 8×10^9 baseline used for attribution and 5.7402×10^9 per before/after intervention case are different simulation batches; they must not be numerically paired."
+        ]
+      },
+      {
+        "id": "XP03",
+        "answer": [
+          "A",
+          "D"
+        ],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P15-2610.13589v1.pdf",
+            "locator": "PDF p.5, Table II, random-search shots per Clifford deformation",
+            "quote": "p_search=0.001: d=3 1,000,000, d=5 10,000,000; 0.0025: d=3 400,000, d=5 4,000,000; 0.005: d=3 200,000, d=5 2,000,000."
+          },
+          {
+            "path": "research/longread-20261018/papers/P21-2610.00504v1.pdf",
+            "locator": "PDF p.8, runtime paragraph and Table V setting",
+            "quote": "At 10% rejection, the 144-qubit BB FMPNN pipeline takes 11.40 ms per attempted shot; GPU inference is 0.584 ms of that total."
+          }
+        ],
+        "calculation": {
+          "R": "4,000,000/200,000=20",
+          "K": "10,000,000/2,000,000=5",
+          "T": "1,000/(0.90)×0.01140 s=38/3 s≈12.667 s",
+          "G": "0.584/11.40=73/1425≈5.123%"
+        },
+        "reason": "Only A pairs R=20 with the expected complete pipeline time, and D pairs K=5 with GPU share of the 11.40 ms attempted-shot total. The 0.584 ms GPU component is already inside 11.40 ms. B and F use wrong search ratios; C confuses GPU-only time with the full pipeline; E uses a wrong G denominator.",
+        "issues": []
+      },
+      {
+        "id": "XP04",
+        "answer": "D",
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P14-2610.21357v1.pdf",
+            "locator": "PDF p.3, equation (6), shared ancilla footprint",
+            "quote": "N=4(2t²−1)+8t+1=2d²+4d−3, d=2t; the 8t+1 corridor ancillae are shared."
+          },
+          {
+            "path": "research/longread-20261018/papers/P14-2610.21357v1.pdf",
+            "locator": "PDF p.5, equation (8), verified empirical circuit distance",
+            "quote": "For patch distances t≤10 and verification rounds r_v≥2, d_circ=min(2t,r_v+3)."
+          },
+          {
+            "path": "research/longread-20261018/papers/P17-2610.06059v1.pdf",
+            "locator": "PDF p.7, Fig. 4, η=100 circuit-level biased baseline",
+            "quote": "Without spatio-temporal correlations at η=100, the circuit-level thresholds are XZZX≈0.89% and rotated≈0.71%."
+          },
+          {
+            "path": "research/longread-20261018/papers/P17-2610.06059v1.pdf",
+            "locator": "PDF p.8, Fig. 6, η=100 circuit-level spatio-temporal noise",
+            "quote": "With spatio-temporal correlations at η=100, the circuit-level thresholds are XZZX≈0.70% and rotated≈0.36%."
+          }
+        ],
+        "calculation": {
+          "N": "4(2×4²−1)+8×4+1=157",
+          "dCirc": "min(2×4,3+3)=6",
+          "XZZXRetention": "0.70/0.89=70/89≈78.65%",
+          "rotatedRetention": "0.36/0.71=36/71≈50.70%"
+        },
+        "reason": "t=4 and r_v=3 lie within the source’s verified range. Include 8t+1 shared ancillae in N; the empirical distance is limited by verification depth. Compare circuit-level correlated thresholds to same-code circuit-level uncorrelated baselines, in XZZX then rotated order. This yields D.",
+        "issues": [
+          "P17 also compares phenomenological thresholds elsewhere; those are different noise models and are not the requested denominators."
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "answers": {
+      "XP02": "B (F also full credit)",
+      "XP03": [
+        "A",
+        "D"
+      ],
+      "XP04": "D"
+    },
+    "crossSourceNecessaryAll": true,
+    "fractionChecks": "Independent Python Fraction calculations for all reductions, ratios, runtime, overhead, and threshold retention.",
+    "sourceScope": "Only the revised physics change questions and P-series local papers were read; original PDFs were checked for key tables and formulas."
+  }
+}

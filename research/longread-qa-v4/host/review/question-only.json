@@ -1,0 +1,203 @@
+{
+  "model": "gpt-6.1-sol",
+  "questionsSha256": "77b01179579ae86a55676d825d1df0afd1c5b7c1fe0d637eb5b11a5047b7f555",
+  "corpusAccessed": false,
+  "blockingIssues": [],
+  "warnings": [
+    {
+      "ids": [
+        "N01",
+        "N03",
+        "N04",
+        "N05",
+        "N06",
+        "XN01",
+        "XN02"
+      ],
+      "issue": "小说选项和反事实约束存在语义排除提示，XN01四类后者均明显更适合任务；这影响可猜性，但尚不构成答案直接泄露或唯一性阻塞。"
+    },
+    {
+      "ids": [
+        "M03",
+        "N06",
+        "XN02"
+      ],
+      "issue": "部分子答案可凭一般推理获得：奇整数端点差、取消利润来源后不能援引同一利润、局部质量比例不能保证整体宇宙结局。属公开逻辑而非原文泄露。"
+    }
+  ],
+  "limitations": [
+    "只读取指定questions.json；未读取语料、参考答案或其他文件，未联网。",
+    "低置信答案明确是猜测；缺资料的题未虚构完成。",
+    "P01—P04与XP01的可解性依赖已有标准定义和熟悉的背景式，不主张题面自给全部公式；P05除阈值约定外已基本自给。"
+  ],
+  "items": [
+    {
+      "id": "P01",
+      "answerAttempt": "6;7;81/625",
+      "confidence": "medium",
+      "informationMissing": "用已有知识补全m_eff=u³m、DeltaNeff=u⁴、Om定义及susceptibility平方分母；题干未直接给这些公式。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "P02",
+      "answerAttempt": "7;23;12983/69277",
+      "confidence": "medium",
+      "informationMissing": "同P01标准定义及背景式；用精确有理数枚举候选。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "P03",
+      "answerAttempt": "9/10;1/16;-13/50",
+      "confidence": "high",
+      "informationMissing": "用已有知识补全E²=r(nonDE+lambda)、rhoDE=E²-nonDE及热sterile定义。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "P04",
+      "answerAttempt": "1053/1093;-40/1053;1/2",
+      "confidence": "high",
+      "informationMissing": "同P03并采用Omega_g=1-1/r的已知约定。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "P05",
+      "answerAttempt": "未计算最终最优方案；可枚举",
+      "confidence": "low",
+      "informationMissing": "需确认资料的阈值≥约定；其余概率与布尔函数题面自给，H交换X/Z属已有知识。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "P06",
+      "answerAttempt": "未能解出",
+      "confidence": "low",
+      "informationMissing": "缺stitched footprint、chain逻辑维数及独立generator数。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "M01",
+      "answerAttempt": "4;9/4;3/2",
+      "confidence": "medium",
+      "informationMissing": "以已有气体知识采用低Z支p=ρθ、Rankine–Hugoniot关系、归一化p=ρ²，未确认资料特定常数。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "M02",
+      "answerAttempt": "11809/13504;44521/58081;241/211;A",
+      "confidence": "medium",
+      "informationMissing": "同M01的标准公式补全。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "M03",
+      "answerAttempt": "2;Y;N;Y",
+      "confidence": "medium",
+      "informationMissing": "2由题干奇偶性直接推得；后三项需核对论文具体量词和RH/GRH门槛，属猜测。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "M04",
+      "answerAttempt": "猜B；计数主幂未定；1/4",
+      "confidence": "low",
+      "informationMissing": "缺V适用范围、计数上界和c(delta)。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "M05",
+      "answerAttempt": "未能选出",
+      "confidence": "low",
+      "informationMissing": "缺许可支集半宽及ζ大值定理条件和指数。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "M06",
+      "answerAttempt": "D不满足形式条件；最优方案未定",
+      "confidence": "low",
+      "informationMissing": "缺Dirichlet三项上界和ζ上界；D的排除可由题面计算。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "N01",
+      "answerAttempt": "FCDAEH;A",
+      "confidence": "medium",
+      "informationMissing": "凭原著记忆；需确认出版节点是否必要。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "N02",
+      "answerAttempt": "3;2;0",
+      "confidence": "medium",
+      "informationMissing": "凭原著记忆，编号和试航时序仍需确认。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "N03",
+      "answerAttempt": "ABDC;G",
+      "confidence": "high",
+      "informationMissing": "熟悉原著即可答。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "N04",
+      "answerAttempt": "BDG;3",
+      "confidence": "medium",
+      "informationMissing": "凭程心、关一帆、智子同行的原著记忆。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "N05",
+      "answerAttempt": "AEC;F",
+      "confidence": "high",
+      "informationMissing": "凭原著维度情节与几何知识。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "N06",
+      "answerAttempt": "BDFG;J;0",
+      "confidence": "medium",
+      "informationMissing": "凭原著记忆，免费能量安排需确认。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "XP01",
+      "answerAttempt": "27/40;2/35;59/252",
+      "confidence": "medium",
+      "informationMissing": "同P01，补全已知背景式后可直接微分解出。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "XP02",
+      "answerAttempt": "未能解出",
+      "confidence": "low",
+      "informationMissing": "同P06，缺资源及chain定义。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "XM01",
+      "answerAttempt": "猜CE;1/4;11/16",
+      "confidence": "low",
+      "informationMissing": "缺中央带表格α门槛及简单临界零点正比例条件。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "XM02",
+      "answerAttempt": "未能解出",
+      "confidence": "low",
+      "informationMissing": "缺GL2无零带精确指数、零密度定理。已核对题干明确有理数域。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "XN01",
+      "answerAttempt": "2222;分钟数未知",
+      "confidence": "medium",
+      "informationMissing": "选项语义及原著知识支持2222；缺启动屏幕精确分钟数。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    },
+    {
+      "id": "XN02",
+      "answerAttempt": "0;B;0",
+      "confidence": "high",
+      "informationMissing": "凭原著记忆生态球5kg；题面允许留下总质量0.5kg，瓶占0.4kg。",
+      "cueAssessment": "未见答案字段提供参考答案或目标论文编号。已知数学/物理定义或原著记忆可解不属于泄露。"
+    }
+  ]
+}

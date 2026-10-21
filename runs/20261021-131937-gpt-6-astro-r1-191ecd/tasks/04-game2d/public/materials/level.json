@@ -1,0 +1,6 @@
+{
+  "version": "pelican-v1.0-project-rules-v2-20261021",
+  "purpose": "resource-information",
+  "requirements": "TASK.md",
+  "notice": "保留此文件名供已有题目引用；本文件不预设关卡布局或游戏参数，具体内容以当前 TASK.md 为准。"
+}

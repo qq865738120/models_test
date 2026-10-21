@@ -13,8 +13,13 @@ from unittest.mock import patch
 from evalkit import manager as m
 from evalkit.assets import TASKS, generate, write, dump
 from evalkit.standard import read_standard
+from evalkit.catalog import candidate_task, candidate_change
 
 SOURCE=m.ROOT
+ORIGINAL_SECTIONS = {
+    '01-svg': 'task1', '03-dispatch': 'task2', '04-game2d': 'task3',
+    '05-game3d': 'task4', '06-memory': 'task5',
+}
 
 
 class LifecycleTests(unittest.TestCase):
@@ -27,12 +32,14 @@ class LifecycleTests(unittest.TestCase):
         self.prepared=self.root/'.prepared'
         generate(self.root,self.prepared)
         standard=read_standard(self.root/'llm-evaluation-standard.html')
-        for n,key in enumerate(TASKS,1):
+        for key in TASKS:
             project=self.prepared/'tasks'/key
             for name in m.RULE_NAMES[:3]: shutil.copy(self.root/'rules/COMMON_RULES.md',project/name)
-            write(project/'TASK.md',standard.prompts[f'task{n}'][0])
+            # Legacy source sections stay fixed when the current catalog inserts a task.
+            source=standard.prompts.get(ORIGINAL_SECTIONS.get(key))
+            write(project/'TASK.md',candidate_task(key,standard) if key=='02-static' else source[0])
             write(project/'materials/START.md','本测试用的空环境；未联网。')
-            write(self.prepared/'admin'/key/'change.txt',standard.prompts[f'task{n}'][1])
+            write(self.prepared/'admin'/key/'change.txt',candidate_change(key,standard) if key=='02-static' else source[1])
             write(project/'node_modules/local-library.txt','固定依赖样本')
         entries=m.manifest(self.prepared)
         dump(self.prepared/'bundle.json',{'suiteId':m.SUITE_ID,'version':m.VERSION,'seed':20261018,'bundleSha256':m.digest(entries),
@@ -72,9 +79,9 @@ class LifecycleTests(unittest.TestCase):
             self.assertFalse((task/'materials/CHANGE.md').exists())
             self.assertFalse((run/'control/prompts'/f'{key}-change.txt').exists())
             self.assertNotIn('把叉车车宽增加20%',(task/'TASK.md').read_text())
-        self.assertFalse((run/'tasks/05-memory/materials/holdout.json').exists())
-        self.assertEqual(len(m.load(run/'tasks/05-memory/materials/dev.json')),20)
-        self.assertEqual(len(m.load(run/'control/private/05-memory/holdout.json')),60)
+        self.assertFalse((run/'tasks/06-memory/materials/holdout.json').exists())
+        self.assertEqual(len(m.load(run/'tasks/06-memory/materials/dev.json')),20)
+        self.assertEqual(len(m.load(run/'control/private/06-memory/holdout.json')),60)
 
     def test_protected_edit_detected_and_invalid_snapshot_kept(self):
         run=self.init(); rules=run/'tasks/01-svg/COMMON_RULES.md'; write(rules,'伪造规则')
@@ -149,9 +156,9 @@ class LifecycleTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'变化'): self.init()
 
     def test_export_omits_future_and_admin_material(self):
-        run=self.init(task='5')
-        m.export_project(argparse.Namespace(run=str(run),task='5'))
-        with zipfile.ZipFile(run/'control/exports/05-memory.zip') as archive:
+        run=self.init(task='6')
+        m.export_project(argparse.Namespace(run=str(run),task='6'))
+        with zipfile.ZipFile(run/'control/exports/06-memory.zip') as archive:
             names=archive.namelist()
         self.assertTrue(any(name.endswith('materials/dev.json') for name in names))
         self.assertFalse(any('holdout' in name or 'change' in name or 'node_modules' in name for name in names))
@@ -161,14 +168,14 @@ class LifecycleTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'实现变更'): m.export_project(self.args(run))
 
     def test_memory_change_materials_only_released_after_freeze(self):
-        run=self.init(task='5'); project=run/'tasks/05-memory'
+        run=self.init(task='6'); project=run/'tasks/06-memory'
         self.assertFalse((project/'materials/change').exists())
-        m.snapshot(argparse.Namespace(run=str(run),task='5',phase='initial',allow_invalid=False))
-        m.release_change(run,'05-memory',project)
+        m.snapshot(argparse.Namespace(run=str(run),task='6',phase='initial',allow_invalid=False))
+        m.release_change(run,'06-memory',project)
         self.assertEqual(len(m.load(project/'materials/change/dev.json')),24)
-        self.assertEqual(m.integrity(run,'05-memory'),[])
+        self.assertEqual(m.integrity(run,'06-memory'),[])
         write(project/'materials/change/dev.json','[]')
-        self.assertTrue(m.integrity(run,'05-memory'))
+        self.assertTrue(m.integrity(run,'06-memory'))
 
     def test_sandbox_command_has_no_host_root_or_network(self):
         run=self.init(); project=run/'tasks/01-svg'
@@ -186,10 +193,10 @@ class LifecycleTests(unittest.TestCase):
 
     def test_generated_game_and_research_contracts_are_deterministic(self):
         other=self.root/'regenerated'; generate(self.root,other)
-        for key,filename in [('03-game2d','level.json'),('04-game3d','warehouse.json'),('05-memory','corpus.json')]:
+        for key,filename in [('04-game2d','level.json'),('05-game3d','warehouse.json'),('06-memory','corpus.json')]:
             self.assertEqual((self.prepared/'tasks'/key/'materials'/filename).read_bytes(),(other/'tasks'/key/'materials'/filename).read_bytes())
-        dev=m.load(self.prepared/'tasks/05-memory/materials/dev.json')
-        holdout=m.load(self.prepared/'admin/05-memory/holdout.json')
+        dev=m.load(self.prepared/'tasks/06-memory/materials/dev.json')
+        holdout=m.load(self.prepared/'admin/06-memory/holdout.json')
         self.assertFalse({q['group'] for q in dev}&{q['group'] for q in holdout})
 
 

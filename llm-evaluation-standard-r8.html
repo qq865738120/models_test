@@ -1,0 +1,1187 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>鹈鹕测评 · 六题标准 r8</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f1ec;color:#30383d;font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif}
+main{max-width:1160px;margin:0 auto;padding:48px 28px}h1{font-size:40px;line-height:1.25}h2{font-size:28px}h3{font-size:21px}
+header,section{background:#fffdf8;padding:32px;border-radius:14px;margin-bottom:24px}h1,h2,h3,p{margin-top:0}
+nav{display:flex;flex-wrap:wrap;gap:12px}a{color:#975128}small,.note{color:#6c7379}
+table{width:100%;border-collapse:collapse}th,td{padding:12px;text-align:left;border-bottom:1px solid #e3ded4;vertical-align:top}th{background:#f5f0e7}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.85 system-ui;background:#f6f3ed;padding:20px;border-radius:8px}
+details{margin:20px 0}summary{cursor:pointer;color:#975128;font-weight:600}article{padding:18px 0;border-top:1px solid #e3ded4}
+.weight{float:right;font-size:18px;color:#975128}li{margin-bottom:6px}.table-wrap{overflow-x:auto}
+figure{margin:22px 0;padding:16px;background:#f5f3ed;border-radius:12px}figure img{width:100%;height:auto;display:block;margin:12px 0}figcaption{font-weight:700}.reference-labels{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center;margin:8px 0}.reference-labels svg{max-height:150px;width:100%;display:block}figure small{display:block;margin-top:10px}
+@media(max-width:700px){main{padding:20px 12px}header,section{padding:20px}h1{font-size:29px}.weight{float:none;display:block}th,td{padding:8px}}
+@media print{body{background:white}main{padding:0}header,section{padding:12px;break-inside:auto}details{display:block}pre{font-size:11px}nav{display:none}}
+</style><main><header><p class="note">主持人版本 · 含追加要求，请勿分发到初始测试工作区</p>
+<h1>鹈鹕测评<br>六道题，各有重点。</h1>
+<p>评分版本 <b>pelican-rubric-8</b> · 创作题提示词 <b>pelican-prompts-7</b> · 长文本题 <b>longread-qa-v1</b></p>
+<p>本版统一六题的显示编号、任务ID与工作区目录：01-svg、02-static、03-dispatch、04-game2d、05-game3d、06-memory。按目录名排序即为题目顺序。原始、r6与r7标准保留不改写。</p>
+<p>每阶段独立满分100。前五题使用自动功能检查与主观人工评分；第六题逐小题判对错。自动检查每项只有通过/失败，通过获得其权重；环境不可用保留待核验。视觉、表达和手感按图例与实际体验评价。完整新版轮次按六题等权平均；不同材料或标准版本分榜。</p><nav>
+<a href="#01-svg">01 SVG 动画</a>
+<a href="#02-static">02 静态网页</a>
+<a href="#03-dispatch">03 全栈派单</a>
+<a href="#04-game2d">04 2D 游戏</a>
+<a href="#05-game3d">05 3D 建模与游戏</a>
+<a href="#06-memory">06 长文本推理</a>
+</nav></header><section><h2>本版的调整依据</h2><p>派单题采用React前端与真实Node.js接口，内存存储，统一HTTP、错误码与可观察控件。游戏用实际引擎对象和正常按键重放核验规则；不接收作品自报的通过或分数。每题的公开EVAL规范随材料分发，未来阶段要求仍只在追加时开放。</p><p>静态页视觉55分、内容25分；派单视觉与交互各15分；2D画面20分、手感10分；3D建模25分、画面20分。视觉主观项用统一三档图示，详细文字折叠。第六题为30道初始题和10道追加题，只提交答案。</p><p class="note">自动验收覆盖下列公开检查，不能证明未观察行为或艺术质量。当前仍为试运行材料，预算及性能阈值需在固定设备预跑；标准重写不等于完成基准校准。</p></section>
+<section id="01-svg"><p class="note">01 / SVG 动画</p>
+<h2>鹈鹕骑车送布丁</h2><p>一只鹈鹕、一辆自行车、一份摇摇欲坠的布丁。用六秒钟讲清楚故事，也让每个部件真正连在一起。</p>
+<p>考察：平面空间关系 / 多部件动画同步 / 动作叙事与循环<br>初始 10 分钟 · 追加 5 分钟</p>
+<details><summary>初始提示词 · 点击展开</summary><pre># 鹈鹕骑车送布丁
+
+提示词版本：pelican-prompts-7。本阶段预算：10分钟。
+
+制作一段明亮、幽默的侧视SVG动画《鹈鹕骑车送布丁》，重点让角色真的骑在车上，动作与事件有清楚的先后。
+
+在HTML中内联SVG，viewBox=&quot;0 0 640 480&quot;。SVG只用SMIL或CSS动画，不使用JavaScript、外链或位图。画面只有一只白色鹈鹕、一辆完整的两轮自行车和一份布丁；长喙、喉囊与蹼足可辨，托盘固定在后货架。双翅扶住车把，身体始终坐在车上，双脚各自跟随相反相位的踏板，不能用脚在附近摆动代替接触。
+
+一个周期6秒：0–2秒平稳骑行；2–3秒驶过减速带，车身轻颠；3–4秒布丁离开托盘再落回原位；4–6秒鹈鹕回头查看并恢复骑行姿态。轮转和地面运动表达前进。布丁不能穿过托盘，角色与车的连接不能因颠动或回头断开。
+
+主体在所有运动极值都完整入画。连续三个周期无漂移，循环交界无突跳。自由设计配色、造型与背景，让颠簸、布丁腾空、回头三个事件一眼可读。交付前检查踏板四个相位、各事件边界及三个连续周期；简要记录实际检查和未完成部分。
+
+必须遵守materials/EVAL.md的公开自动验收规范，提供其中规定的实际元素标识、接口或游戏观测与输入重放；不要自行报告通过或分数。
+
+## HTML 交付约定
+最终入口为 `output/index.html`，脚本、样式、图片、数据与运行资源都在 `output/` 内，使用相对路径。本地静态HTTP和iframe均可使用，不依赖外网、父页面、固定端口或额外后端。已有构建工程用 `npm run build` 生成入口。
+展示iframe只允许脚本、不提供同源身份；状态使用内存，不能依赖localStorage、IndexedDB或Service Worker。资源与ES模块由预览服务支持跨来源读取。
+交付前用本地静态服务检查实际成果。`output/DELIVERY.md`简要列出入口、启动方式、已检查与未检查项目和已知缺陷；不要求长报告，不能用占位页代替成果。
+</pre></details>
+<h3>初始评分 · 6项 · 100分</h3><div class="table-wrap"><table><thead><tr><th>项目</th><th>权重</th><th>考察重点</th></tr></thead><tbody>
+<tr><td>角色与自行车空间关系 · 自动</td><td>20</td><td>主体、坐姿、扶把与托盘的空间关系全程成立。</td></tr>
+<tr><td>双脚与踏板同步 · 自动</td><td>20</td><td>两脚分别跟随相反相位踏板，轮转与前进方向一致。</td></tr>
+<tr><td>四段事件与时间线 · 自动</td><td>20</td><td>6秒内按0–2/2–3/3–4/4–6秒完成四段事件。</td></tr>
+<tr><td>落点、边界与循环 · 自动</td><td>15</td><td>布丁落回同一托盘，主体不出画，三个周期接缝连续。</td></tr>
+<tr><td>构图与动作表现 · 人工</td><td>20</td><td>侧视主体鲜明、画面明亮有趣，三个关键事件有生动而清楚的视觉表达。</td></tr>
+<tr><td>SVG与本地交付 · 自动</td><td>5</td><td>HTML内联指定viewBox的SVG，离线可播放且遵守技术限制。</td></tr>
+</tbody></table></div>
+
+
+
+
+<figure><figcaption>构图与动作表现 · 0 / 5 / 10分参考</figcaption><img loading="lazy" src="web/public/rubric-references/r7/svg-expression.png" alt="构图与动作表现由低至高三档示意"><div class="reference-labels"><span>0 · 严重不足</span><span>5 · 基础完成</span><span>10 · 精细成熟</span></div><small>AI生成的完成度示意，不是参赛作品；不要求复刻风格、配色或布局。动作与多视角仍需实际查看。</small></figure>
+
+<details><summary>核验步骤与判分锚点</summary>
+<article><h3>角色与自行车空间关系 <span class="weight">20分</span></h3><ol>
+<li>检查长喙、喉囊、白色身体、蹼足及完整两轮车；主体数量符合要求。</li>
+<li>在静止、颠动、回头三个状态检查坐姿与双翅扶把，托盘始终连在后货架。</li>
+</ol>
+</article>
+<article><h3>双脚与踏板同步 <span class="weight">20分</span></h3><ol>
+<li>在一圈的0°/90°/180°/270°观察两脚与各自踏板接触，腿不脱节。</li>
+<li>颠动时车、人、踏板共同位移；检查多个周期，而非只看首帧。</li>
+</ol>
+</article>
+<article><h3>四段事件与时间线 <span class="weight">20分</span></h3><ol>
+<li>采样0、2、2.5、3.5、4、5.9秒：平稳→颠簸→布丁腾空落回→回头恢复。</li>
+<li>动作幅度足以辨识，回头发生在布丁事件后，不以文字提示代替实际动作。</li>
+</ol>
+</article>
+<article><h3>落点、边界与循环 <span class="weight">15分</span></h3><ol>
+<li>观察离盘最高点与落点：不穿透托盘、不漂移到另一位置。</li>
+<li>检查6秒交界和三个完整循环：坐姿、头部及运动基线无突跳或累计偏移。</li>
+</ol>
+</article>
+<article><h3>构图与动作表现 <span class="weight">20分</span></h3><ol>
+<li>角色/车/布丁有清楚主次；背景不抢走主体，地面运动能解释前进。</li>
+<li>颠簸、布丁弹落、回头的幅度与停顿有节奏；造型、线条、色彩协调。</li>
+</ol>
+<p><b>0/10：</b>主体与关键动作难以读懂。</p>
+<p><b>5/10：</b>内容可读但姿态僵硬、构图平淡或关键动作缺少表现力。</p>
+<p><b>10/10：</b>以下检查全部成立：侧视主体鲜明、画面明亮有趣，三个关键事件有生动而清楚的视觉表达。</p>
+</article>
+<article><h3>SVG与本地交付 <span class="weight">5分</span></h3><ol>
+<li>本地静态服务/iframe打开output/index.html，资源无缺失。</li>
+<li>SVG内无JavaScript、外链或位图；SMIL/CSS实现，可查看源码。</li>
+</ol>
+</article>
+</details>
+<details><summary>追加提示词 · 点击展开</summary><pre>提示词版本：pelican-prompts-7。
+
+将已冻结动画的周期改成8秒：只把平稳骑行延长为0–4秒；颠动4–5秒、布丁离盘落回5–6秒、回头并恢复6–8秒。不能整体慢放原动画。保持双脚与踏板、车轮和地面的同步，布丁仍落回同一托盘，骑乘关系与画面不退化。检查三个8秒循环及关键时刻，更新output/index.html与简短验证说明。
+</pre></details>
+<h3>追加评分 · 5项 · 100分</h3><div class="table-wrap"><table><thead><tr><th>项目</th><th>权重</th><th>考察重点</th></tr></thead><tbody>
+<tr><td>8秒事件重排 · 自动</td><td>40</td><td>周期8秒，平稳0–4、颠动4–5、腾空落回5–6、回头恢复6–8秒。</td></tr>
+<tr><td>脚踏与骑乘同步 · 自动</td><td>20</td><td>四相位双脚仍与踏板接触，轮转/地面/颠动同步。</td></tr>
+<tr><td>落点与循环连续 · 自动</td><td>25</td><td>布丁回同一托盘，三个8秒周期无漂移/接缝跳变。</td></tr>
+<tr><td>画面与节奏回归 · 人工</td><td>10</td><td>主体、构图及关键动作清晰，延长平稳段不破坏视觉表达。</td></tr>
+<tr><td>变更交付 · 自动</td><td>5</td><td>新HTML可本地播放并遵守原SVG技术限制，能核验8秒成果。</td></tr>
+</tbody></table></div>
+
+
+
+<figure><figcaption>画面与节奏回归 · 0 / 5 / 10分参考</figcaption><img loading="lazy" src="web/public/rubric-references/r7/svg-expression.png" alt="画面与节奏回归由低至高三档示意"><div class="reference-labels"><span>0 · 严重不足</span><span>5 · 基础完成</span><span>10 · 精细成熟</span></div><small>AI生成的完成度示意，不是参赛作品；不要求复刻风格、配色或布局。动作与多视角仍需实际查看。</small></figure>
+
+<details><summary>核验步骤与判分锚点</summary>
+<article><h3>8秒事件重排 <span class="weight">40分</span></h3><ol>
+<li>周期8秒，平稳0–4、颠动4–5、腾空落回5–6、回头恢复6–8秒。</li>
+<li>核对关键时刻，后三段各自时长保持，不能整体慢放。</li>
+</ol>
+</article>
+<article><h3>脚踏与骑乘同步 <span class="weight">20分</span></h3><ol>
+<li>四相位双脚仍与踏板接触，轮转/地面/颠动同步。</li>
+<li>检查延长后的平稳段及后三段，坐姿与扶把不脱离。</li>
+</ol>
+</article>
+<article><h3>落点与循环连续 <span class="weight">25分</span></h3><ol>
+<li>布丁回同一托盘，三个8秒周期无漂移/接缝跳变。</li>
+<li>各运动极值仍完整入画，无穿盘。</li>
+</ol>
+</article>
+<article><h3>画面与节奏回归 <span class="weight">10分</span></h3><ol>
+<li>主体、构图及关键动作清晰，延长平稳段不破坏视觉表达。</li>
+</ol>
+<p><b>0/10：</b>核心事件已无法辨识。</p>
+<p><b>5/10：</b>功能保留但节奏和动作表达明显退化。</p>
+<p><b>10/10：</b>以下检查全部成立：主体、构图及关键动作清晰，延长平稳段不破坏视觉表达。</p>
+</article>
+<article><h3>变更交付 <span class="weight">5分</span></h3><ol>
+<li>新HTML可本地播放并遵守原SVG技术限制，能核验8秒成果。</li>
+</ol>
+</article>
+</details>
+<p class="note">客观功能由公开规范对应的自动检查判分，检查项通过才取得其等分权重；不能人工改写自动分。执行环境缺失或工具错误标待核验，不按作品失败计0；未完成自动核验时不生成完整总分。主观维度按0–10分评价美感、表达与体验，并记录依据。自动化观测不等于证明语义、造型或艺术质量。一项缺陷按直接检查点归类；初始和追加分别留档，新版本不重算旧轮次。</p></section>
+<section id="02-static"><p class="note">02 / 静态网页</p>
+<h2>鹈鹕：不止一张大嘴</h2><p>把鹈鹕的外形、生活与生态故事，做成一眼惊艳、值得读完的科普网页。</p>
+<p>考察：视觉创意与审美 / 信息组织与科普表达 / 响应式静态页面<br>初始 20 分钟 · 追加 8 分钟</p>
+<details><summary>初始提示词 · 点击展开</summary><pre># 鹈鹕：不止一张大嘴
+
+提示词版本：pelican-prompts-7。本阶段预算：20分钟。
+
+做一个介绍鹈鹕这种动物的酷炫科普网页。页面要美观、有强烈的视觉冲击力，让人眼前一亮；介绍要全面、准确，桌面和手机都容易阅读。整体风格、布局、图形与适量动效由你自由发挥。
+
+使用纯前端HTML、CSS和可选JavaScript，提交output/index.html及本地资源，不依赖外网或后端。可参考materials/PELICAN.md中的事实；围绕外形、分布与栖息地、捕食、生活习性、繁殖、物种差异和保护展开，不必照搬资料顺序。不规定配色或特效类型。页面入口支持键盘操作，图片提供适当替代说明；若使用强动效，应能停止或尊重减少动态偏好。
+
+必须遵守materials/EVAL.md的公开自动验收规范，提供其中规定的实际元素标识、接口或游戏观测与输入重放；不要自行报告通过或分数。
+
+## HTML 交付约定
+最终入口为 `output/index.html`，脚本、样式、图片、数据与运行资源都在 `output/` 内，使用相对路径。本地静态HTTP和iframe均可使用，不依赖外网、父页面、固定端口或额外后端。已有构建工程用 `npm run build` 生成入口。
+展示iframe只允许脚本、不提供同源身份；状态使用内存，不能依赖localStorage、IndexedDB或Service Worker。资源与ES模块由预览服务支持跨来源读取。
+交付前用本地静态服务检查实际成果。`output/DELIVERY.md`简要列出入口、启动方式、已检查与未检查项目和已知缺陷；不要求长报告，不能用占位页代替成果。
+</pre></details>
+<h3>初始评分 · 5项 · 100分</h3><div class="table-wrap"><table><thead><tr><th>项目</th><th>权重</th><th>考察重点</th></tr></thead><tbody>
+<tr><td>首屏视觉冲击与创意 · 人工</td><td>30</td><td>首屏具有围绕鹈鹕的鲜明主视觉与独特构思，第一眼能形成记忆点。</td></tr>
+<tr><td>全页视觉完成度 · 人工</td><td>25</td><td>从首屏到结尾，排版、色彩、图形和留白形成统一且有变化的设计。</td></tr>
+<tr><td>科普全面性与准确性 · 人工</td><td>25</td><td>全面介绍主要知识面，解释清楚且不混淆物种或传播错误。</td></tr>
+<tr><td>桌面、手机与阅读体验 · 自动</td><td>15</td><td>完整内容在桌面和手机均易读，导航与动效不妨碍浏览。</td></tr>
+<tr><td>纯前端静态交付 · 自动</td><td>5</td><td>页面与资源完整本地交付，静态HTTP及iframe可用。</td></tr>
+</tbody></table></div>
+<figure><figcaption>首屏视觉冲击与创意 · 0 / 5 / 10分参考</figcaption><img loading="lazy" src="web/public/rubric-references/r7/static-visual.png" alt="首屏视觉冲击与创意由低至高三档示意"><div class="reference-labels"><span>0 · 严重不足</span><span>5 · 基础完成</span><span>10 · 精细成熟</span></div><small>AI生成的完成度示意，不是参赛作品；不要求复刻风格、配色或布局。动作与多视角仍需实际查看。</small></figure>
+<figure><figcaption>全页视觉完成度 · 0 / 5 / 10分参考</figcaption><img loading="lazy" src="web/public/rubric-references/r7/static-visual.png" alt="全页视觉完成度由低至高三档示意"><div class="reference-labels"><span>0 · 严重不足</span><span>5 · 基础完成</span><span>10 · 精细成熟</span></div><small>AI生成的完成度示意，不是参赛作品；不要求复刻风格、配色或布局。动作与多视角仍需实际查看。</small></figure>
+
+
+
+<details><summary>核验步骤与判分锚点</summary>
+<article><h3>首屏视觉冲击与创意 <span class="weight">30分</span></h3><ol>
+<li>在1440×900首次打开：能迅速认出主题、主视觉与阅读入口；主次关系明确。</li>
+<li>主视觉、字体、构图共同表达鹈鹕主题；不按是否3D、粒子、视频或特效数量评分。</li>
+</ol>
+<p><b>0/10：</b>无可辨主题或主视觉，画面严重混乱。</p>
+<p><b>5/10：</b>主题明确，但主要是通用模板、普通卡片堆叠，视觉记忆点弱。</p>
+<p><b>10/10：</b>以下检查全部成立：首屏具有围绕鹈鹕的鲜明主视觉与独特构思，第一眼能形成记忆点。</p>
+</article>
+<article><h3>全页视觉完成度 <span class="weight">25分</span></h3><ol>
+<li>滚动检查全页：章节衔接有节奏，正文/数据/图形层次分明，非首屏区域同样完成。</li>
+<li>无明显重叠、拉伸图、低清拼贴、空洞占位或堆叠装饰；动效若存在应服务阅读。</li>
+</ol>
+<p><b>0/10：</b>大量区域未完成、重叠或无法阅读。</p>
+<p><b>5/10：</b>首屏较好，但后续章节重复、排版或视觉细节明显粗糙。</p>
+<p><b>10/10：</b>以下检查全部成立：从首屏到结尾，排版、色彩、图形和留白形成统一且有变化的设计。</p>
+</article>
+<article><h3>科普全面性与准确性 <span class="weight">25分</span></h3><ol>
+<li>覆盖外形及适应性、分布/栖息地、食性/捕食、群居/飞行、繁殖育雏、物种差异、保护；每项有实质内容，不只放标题。</li>
+<li>依据材料核对喉囊用途和物种习性；如涉及褐鹈鹕/美洲白鹈鹕，核对俯冲与水面捕食区别，也允许其他准确的物种对比。</li>
+<li>数值标明物种和单位，不把单一物种、保护状态或极值推广到全体。内容有组织，不靠重复堆字凑全面；引用格式不单独计分。</li>
+</ol>
+<p><b>0/10：</b>几乎无科普内容，或核心知识普遍错误。</p>
+<p><b>5/10：</b>约一半知识面有实质内容，或虽全面但有重要事实/物种混淆。</p>
+<p><b>10/10：</b>以下检查全部成立：全面介绍主要知识面，解释清楚且不混淆物种或传播错误。</p>
+</article>
+<article><h3>桌面、手机与阅读体验 <span class="weight">15分</span></h3><ol>
+<li>1440×900及390×844全页阅读：文字清楚、无整页横向溢出、图文重排合理。</li>
+<li>所有显示为可点击的入口有作用；键盘焦点可见，图像有适当替代说明，重要信息不只靠悬停或动画。</li>
+<li>若有强动效，尊重减少动态偏好或提供停止方式；无动效不扣分。</li>
+</ol>
+</article>
+<article><h3>纯前端静态交付 <span class="weight">5分</span></h3><ol>
+<li>断网后通过本地静态HTTP打开output/index.html，无需后端、CDN、远程字体或图片。</li>
+<li>页面无阻断错误；资源相对路径，加载失败不留下破图或永久遮罩。</li>
+</ol>
+</article>
+</details>
+<details><summary>追加提示词 · 点击展开</summary><pre>提示词版本：pelican-prompts-7。
+
+在原网页中增加一个面向儿童的“30秒认识鹈鹕”信息区，并提供清楚的页内入口。用不超过180字（标点计入、空白不计，标题和来源不计）的通俗短句，配合图形讲清三个方面：长喙与喉囊的用途、怎样捕食、在水域食物网中的角色。不得把喉囊说成长期储鱼袋，也不得把某一物种的习性说成所有鹈鹕都如此。
+新区域应延续原页面的视觉风格，手机也能完整阅读；保留原来的全面介绍与可用导航。资源仍全部本地交付，不依赖外网或后端。
+自动验收：新增信息区标记data-testid=&quot;kids-card&quot;，其正文标记kids-copy；页内入口标记kids-link。标题、来源须放在kids-copy外。原main中的介绍正文句子保留原文，可调整布局和断行；用于对照初始归档核验内容保留。
+</pre></details>
+<h3>追加评分 · 5项 · 100分</h3><div class="table-wrap"><table><thead><tr><th>项目</th><th>权重</th><th>考察重点</th></tr></thead><tbody>
+<tr><td>儿童内容与准确性 · 人工</td><td>30</td><td>新增“30秒认识鹈鹕”信息区，正文≤180字（标点计入、空白不计，标题和来源不计），覆盖外形用途、捕食、食物网角色。</td></tr>
+<tr><td>视觉融入与图形解释 · 人工</td><td>30</td><td>新增区块延续原设计，图形帮助理解三个知识点，视觉主次清楚。</td></tr>
+<tr><td>入口与手机阅读 · 自动</td><td>25</td><td>页内入口清楚且能到达该区块，手机390px可完整阅读。</td></tr>
+<tr><td>原有内容保留 · 自动</td><td>10</td><td>原全面介绍、导航及主视觉仍可用，无删除旧内容凑新区域。</td></tr>
+<tr><td>静态交付 · 自动</td><td>5</td><td>全部资源本地，静态HTTP和iframe可用，无外网/后端依赖。</td></tr>
+</tbody></table></div>
+
+<figure><figcaption>视觉融入与图形解释 · 0 / 5 / 10分参考</figcaption><img loading="lazy" src="web/public/rubric-references/r7/static-visual.png" alt="视觉融入与图形解释由低至高三档示意"><div class="reference-labels"><span>0 · 严重不足</span><span>5 · 基础完成</span><span>10 · 精细成熟</span></div><small>AI生成的完成度示意，不是参赛作品；不要求复刻风格、配色或布局。动作与多视角仍需实际查看。</small></figure>
+
+
+
+<details><summary>核验步骤与判分锚点</summary>
+<article><h3>儿童内容与准确性 <span class="weight">30分</span></h3><ol>
+<li>新增“30秒认识鹈鹕”信息区，正文≤180字（标点计入、空白不计，标题和来源不计），覆盖外形用途、捕食、食物网角色。</li>
+<li>短句易懂，喉囊用途与物种区别准确；不得依赖专业术语或长段正文解释。</li>
+</ol>
+<p><b>0/10：</b>没有新增实质内容或存在核心误导。</p>
+<p><b>5/10：</b>三方面仅完成部分，或长度/用语不适合儿童。</p>
+<p><b>10/10：</b>以下检查全部成立：新增“30秒认识鹈鹕”信息区，正文≤180字（标点计入、空白不计，标题和来源不计），覆盖外形用途、捕食、食物网角色。</p>
+</article>
+<article><h3>视觉融入与图形解释 <span class="weight">30分</span></h3><ol>
+<li>新增区块延续原设计，图形帮助理解三个知识点，视觉主次清楚。</li>
+<li>不只是拼入默认卡片，新增区域与全页节奏协调。</li>
+</ol>
+<p><b>0/10：</b>新增区域严重破坏布局或不可读。</p>
+<p><b>5/10：</b>内容存在但风格割裂或图形纯装饰。</p>
+<p><b>10/10：</b>以下检查全部成立：新增区块延续原设计，图形帮助理解三个知识点，视觉主次清楚。</p>
+</article>
+<article><h3>入口与手机阅读 <span class="weight">25分</span></h3><ol>
+<li>页内入口清楚且能到达该区块，手机390px可完整阅读。</li>
+<li>键盘导航可用，正文不因动效/遮挡隐藏。</li>
+</ol>
+</article>
+<article><h3>原有内容保留 <span class="weight">10分</span></h3><ol>
+<li>原全面介绍、导航及主视觉仍可用，无删除旧内容凑新区域。</li>
+</ol>
+</article>
+<article><h3>静态交付 <span class="weight">5分</span></h3><ol>
+<li>全部资源本地，静态HTTP和iframe可用，无外网/后端依赖。</li>
+</ol>
+</article>
+</details>
+<p class="note">客观功能由公开规范对应的自动检查判分，检查项通过才取得其等分权重；不能人工改写自动分。执行环境缺失或工具错误标待核验，不按作品失败计0；未完成自动核验时不生成完整总分。主观维度按0–10分评价美感、表达与体验，并记录依据。自动化观测不等于证明语义、造型或艺术质量。一项缺陷按直接检查点归类；初始和追加分别留档，新版本不重算旧轮次。</p></section>
+<section id="03-dispatch"><p class="note">03 / 全栈派单</p>
+<h2>一万只鹈鹕的派单后台</h2><p>用React与真实Node.js接口完成美观、友好的派单产品。订单在服务端内存中共享，校验、并发和错误处理都要可靠。</p>
+<p>考察：前后端接口与一致性 / 并发、校验与恢复 / 产品视觉与交互体验<br>初始 45 分钟 · 追加 15 分钟</p>
+<details><summary>初始提示词 · 点击展开</summary><pre># 一万只鹈鹕的派单后台
+
+提示词版本：pelican-prompts-7。本阶段预算：45分钟。
+
+使用所附React + TypeScript前端与Node.js后端起始工程，制作《一万只鹈鹕的派单后台》。这是一道前后端分离项目题：前端通过真实HTTP接口查询和派单，Node.js进程内存是唯一订单数据源，不要求数据库。完成有成熟产品质感的五个页面，视觉美观、交互友好。
+
+## 统一接口与数据规范
+先阅读materials/API.md、HARNESS.md、EVAL.md和参考图。必须实现规定的GET /health、/api/orders、/api/orders/:id、/api/couriers、/api/stats与POST /api/assign。路径、方法、字段、错误结构和状态码按契约，不能另起一套不兼容接口。
+仅使用已提供依赖和Node内置模块。服务入口server/index.mjs，绑定127.0.0.1并读取PORT；固定10,000条种子位于materials/orders.json，不修改种子，不把种子复制到浏览器或用Mock代替后端。前端以相对api/...地址fetch。模型自行实现查询、分页、内存状态、校验和派单业务；起始501仅是空骨架。
+后端独立校验类型、范围、空批次、重复ID、配送员、订单存在性与pending状态。非法参数400、未知订单404、状态冲突409，错误统一为{error:{code,message}}；不得返回200伪装失败。一次最多100单，整批校验后原子提交；包含一条无效订单也不能部分修改。两个请求同时派同一订单，只能一个成功，另一个冲突；没有被成功派出的其他订单保持原状。
+同一服务供多个页面共享数据。页面刷新保留已派订单；只有Node服务重启才恢复固定种子。设置仅保存在页面会话内，页面刷新恢复默认20条。无需登录、权限管理或数据库。
+
+## 五页业务
+默认进入订单派送。五页共享导航、标题、内容区与统一样式。参考图定义深色侧栏、浅底、白卡、蓝色主操作与信息层级；1440×900下侧栏220px、顶栏72px、内容内边距32px、行高56px，窄屏可重排。
+订单页：搜索编号/客户/地址，筛选四状态，默认每页20条，仅渲染当前页。总数、页码和总页数真实，边界翻页禁用。提交搜索或改变状态回第一页并清选择，翻页也清选择。只选择当前页pending订单，全选不包含其他状态。表格包含选择、编号、客户、地址、状态、配送员和详情。
+批量派单：确认弹窗展示数量并选择三名配送员；未选人不可确认，空批次不可打开，提交期间不能重复提交。取消保留选择；失败保留可重试上下文；成功关闭弹窗、清选择，重新读取列表、详情和统计。不能只修改前端状态冒充服务端提交。
+详情：右侧抽屉展示真实编号、客户、地址、状态、配送员、优先级、创建时间、contents与note，无值有明确占位；独立加载、关闭和失败重试。
+总览：四张真实统计卡及状态分布图，点击待派单进入pending第一页并清选择。统计使用GET /api/stats的同一状态快照，不用多次查询拼出可能不一致的计数。
+配送员：通过/api/couriers取得三名固定配送员；“为TA派单”进入pending第一页并预选此人，仍需选订单确认，不虚构运力或绩效。
+报表：真实状态数量、比例、快照时间，支持刷新；分母是全部订单，不随搜索变化。派单后再展示前刷新统计；加载不能假装0，失败不伪造更新时间。
+设置：20/50/100条每页，保存后回订单第一页并清选择，未保存不生效；恢复默认只恢复20条，不撤销派单。普通菜单切换保留已提交查询/状态/页码，清选择并关弹层。五页不能用同一表格换标题代替。
+
+## 视觉与交互
+五页、抽屉、弹窗与所有状态精修为同一款成熟商业产品：字体层级、字号行高、8px间距节奏、留白、圆角、图标、按钮与反馈一致。统计数字、标签、表格与长地址稳定对齐，主操作突出。色彩、阴影和轻量过渡服务任务，不用装饰掩盖缺失内容。
+首次使用无需猜测：条件可清除、选择数量明确、禁用原因可理解，确认说明给谁派多少。取消/关闭不丢合理上下文；输入、悬停、焦点、禁用、加载、提交、成功和错误可区分。等待不跳版，空态可恢复、错误可就近重试，不使用alert。强动效尊重减少动态偏好。
+390×844下导航、筛选、分页、派单、详情和设置可用；表格可内部横滚，整页不溢出。键盘可完成主要流程；焦点进入/返回、Esc关闭和背景防误操作有效，触控目标约40px。
+
+## 实际请求与验证
+先发慢A、后发快B时，A的成功或失败不得覆盖B的列表、加载或错误状态。公开验收会通过请求代理延迟/失败响应，不要求你开发作弊控制接口。
+使用EVAL.md规定的实际控件标识，走通查询→选择→确认/取消→失败重试→详情→统计；验证多个页面共享订单、刷新保留、服务重启复位。生产前端不渲染全量10,000条DOM；按采样器验证输入反馈P95≤100ms（不含接口等待）。
+`npm run build`打包前端及server目录，交付output/index.html、output/server/index.mjs及固定种子。生产预览由主持人启动该份归档自己的Node服务，再代理相对API地址；不能依赖开发服务器或其他模型的后端。简要说明实际验证和未完成项目。
+
+
+必须遵守materials/EVAL.md的公开自动验收规范，提供其中规定的实际元素标识、接口或游戏观测与输入重放；不要自行报告通过或分数。
+## 全栈交付约定
+交付前端output/index.html和后端output/server/index.mjs，附带构建生成的固定种子与本地资源。后端仅使用Node内置模块，不要求数据库；按materials/HARNESS.md在独立回环端口运行。前端通过主持人预览代理调用同一成果的真实HTTP接口。iframe不提供同源身份，不能依赖浏览器持久存储。简要记录启动、已核验和未完成项目到output/DELIVERY.md。
+</pre></details>
+<h3>初始评分 · 9项 · 100分</h3><div class="table-wrap"><table><thead><tr><th>项目</th><th>权重</th><th>考察重点</th></tr></thead><tbody>
+<tr><td>真实HTTP与前后端分离 · 自动</td><td>10</td><td>前端通过真实HTTP读写独立Node服务，服务端内存是唯一订单源。</td></tr>
+<tr><td>查询、分页与详情接口 · 自动</td><td>10</td><td>真实筛选、分页、详情及配送员响应符合统一API契约。</td></tr>
+<tr><td>原子派单与并发冲突 · 自动</td><td>20</td><td>整批成功或整批失败，并发派相同订单仅一个成功。</td></tr>
+<tr><td>服务端校验与错误契约 · 自动</td><td>10</td><td>类型、范围、重复/未知ID及状态错误由服务端正确拒绝。</td></tr>
+<tr><td>五页与共享数据一致性 · 自动</td><td>10</td><td>页面、统计、详情和设置对同一服务状态保持一致。</td></tr>
+<tr><td>前端竞态与失败恢复 · 自动</td><td>5</td><td>延迟或失败的旧请求不覆盖新状态，失败后可以恢复。</td></tr>
+<tr><td>视觉美观与产品完成度 · 人工</td><td>15</td><td>五页和弹层达到成熟业务产品的精修程度，清晰、协调且有专业美感。</td></tr>
+<tr><td>交互友好度与操作体验 · 人工</td><td>15</td><td>首次使用也能理解并顺畅完成核心流程，反馈及时、上下文稳定，手机和键盘可用。</td></tr>
+<tr><td>构建、启动与本地交付 · 自动</td><td>5</td><td>前后端归档完整，用固定命令和回环端口启动，无外网依赖。</td></tr>
+</tbody></table></div>
+
+
+
+
+
+
+<figure><figcaption>视觉美观与产品完成度 · 0 / 5 / 10分参考</figcaption><img loading="lazy" src="web/public/rubric-references/r7/dispatch-visual.png" alt="视觉美观与产品完成度由低至高三档示意"><div class="reference-labels"><span>0 · 严重不足</span><span>5 · 基础完成</span><span>10 · 精细成熟</span></div><small>AI生成的完成度示意，不是参赛作品；不要求复刻风格、配色或布局。动作与多视角仍需实际查看。</small></figure>
+<figure><figcaption>实际操作参照</figcaption><div class="reference-labels"><div><svg viewBox="0 0 110 80" role="img" aria-label="断裂 · 迟滞"><rect width="110" height="80" fill="#f5f3ec" rx="6"/><path d="M15 50l20-15 18 30 20-30 22 15" fill="none" stroke="#38746c" stroke-width="3"/><circle cx="15" cy="50" r="6" fill="#e99a57"/><circle cx="95" cy="50" r="6" fill="#38746c"/></svg><b>0 · 断裂 · 迟滞</b></div><div><svg viewBox="0 0 110 80" role="img" aria-label="基本可用"><rect width="110" height="80" fill="#f5f3ec" rx="6"/><path d="M15 50Q55 10 95 50" fill="none" stroke="#38746c" stroke-width="3"/><circle cx="15" cy="50" r="6" fill="#e99a57"/><circle cx="95" cy="50" r="6" fill="#38746c"/></svg><b>5 · 基本可用</b></div><div><svg viewBox="0 0 110 80" role="img" aria-label="连贯 · 反馈清楚"><rect width="110" height="80" fill="#f5f3ec" rx="6"/><path d="M15 50Q55 10 95 50" fill="none" stroke="#38746c" stroke-width="3"/><circle cx="15" cy="50" r="6" fill="#e99a57"/><circle cx="95" cy="50" r="6" fill="#38746c"/></svg><b>10 · 连贯 · 反馈清楚</b></div></div><small>图示只帮助理解连贯性；必须实际测试输入、反馈、取消和恢复，不能凭图判断手感。</small></figure>
+
+<details><summary>核验步骤与判分锚点</summary>
+<article><h3>真实HTTP与前后端分离 <span class="weight">10分</span></h3><ol>
+<li>检查Node健康接口、前端网络请求、跨页面读取一致性与浏览器刷新保留。</li>
+<li>前端不能直接读取种子或导入Mock；结束服务后不得仍完成真实派单。</li>
+</ol>
+</article>
+<article><h3>查询、分页与详情接口 <span class="weight">10分</span></h3><ol>
+<li>对照固定种子验证三个搜索字段、状态组合、边界页及完整详情。</li>
+</ol>
+</article>
+<article><h3>原子派单与并发冲突 <span class="weight">20分</span></h3><ol>
+<li>真实POST后重新GET核对列表、详情和统计；检查混合无效批次。</li>
+<li>同时发送两个相交批次，核对成功/409及未被成功批次选中的订单不变。</li>
+</ol>
+</article>
+<article><h3>服务端校验与错误契约 <span class="weight">10分</span></h3><ol>
+<li>绕过页面直接请求空/重复/超量ID、错误配送员、非法JSON和参数。</li>
+<li>核对400/404/409和统一error.code/message；失败不改任何订单。</li>
+</ol>
+</article>
+<article><h3>五页与共享数据一致性 <span class="weight">10分</span></h3><ol>
+<li>用真实控件操作五页与批量派单，核对同一服务另一个页面、刷新、统计快照。</li>
+</ol>
+</article>
+<article><h3>前端竞态与失败恢复 <span class="weight">5分</span></h3><ol>
+<li>代理延迟旧查询并让新查询先完成；分别检查旧成功和旧失败。</li>
+</ol>
+</article>
+<article><h3>视觉美观与产品完成度 <span class="weight">15分</span></h3><ol>
+<li>桌面对照导航/顶栏/统计/工具栏/表格/分页：保留参考结构，形成清楚的信息与主次操作层级；全部是真实组件。</li>
+<li>字体、行高、间距、留白、图标、圆角和状态配色统一；数字/标签/长地址对齐，复杂数据下布局稳定。</li>
+<li>检查全部五页及加载/空态/错误/弹层，非首屏同样精修，无占位、粗糙默认控件、低对比小字或虚假装饰指标。</li>
+</ol>
+<p><b>0/10：</b>页面混乱、主要信息不可读或没有整体设计。</p>
+<p><b>5/10：</b>信息结构可用，但仍像线框或控件拼装，排版细节、辅助页和状态设计缺少完成度。</p>
+<p><b>10/10：</b>以下检查全部成立：五页和弹层达到成熟业务产品的精修程度，清晰、协调且有专业美感。</p>
+</article>
+<article><h3>交互友好度与操作体验 <span class="weight">15分</span></h3><ol>
+<li>实走搜索→清除/筛选→选择→确认/取消→详情→重试：入口/含义/已选数量清楚，主操作易找到，禁用原因可理解，无不必要跳转。</li>
+<li>默认/悬停/焦点/禁用/加载/提交/成功/错误反馈一致；等待不跳版，空态可恢复、错误就近重试，不用alert，不意外丢失操作上下文。</li>
+<li>390×844整页不溢出，导航与弹层按钮可达，约40px触控目标；键盘焦点进入/返回、Esc、背景隔离正确，过渡不拖慢操作。</li>
+</ol>
+<p><b>0/10：</b>核心流程难以发现或操作，被弹层、导航或输入问题阻断。</p>
+<p><b>5/10：</b>功能大致能做，但需猜操作、反馈迟钝或突兀，手机/焦点路径明显不顺畅。</p>
+<p><b>10/10：</b>以下检查全部成立：首次使用也能理解并顺畅完成核心流程，反馈及时、上下文稳定，手机和键盘可用。</p>
+</article>
+<article><h3>构建、启动与本地交付 <span class="weight">5分</span></h3><ol>
+<li>独立归档启动Node服务和页面；结束/重新启动后按固定种子恢复。</li>
+</ol>
+</article>
+</details>
+<details><summary>追加提示词 · 点击展开</summary><pre>提示词版本：pelican-prompts-7。
+
+在现有真实Node.js接口项目上增加URL查询状态：把已提交的关键词q、状态status、页码page写入浏览器URL。首次打开、复制链接、页面刷新、前进与后退均恢复控件及真实请求结果。使用正确的URL编码；非法status回all，非正整数page回1，畸形编码不崩溃；超出有效页范围回到有效页并同步URL。
+提交新搜索或状态回第一页并清选择，翻页清选择；浏览器导航也清选择、关闭弹层。不要把每次键入都写成无意义的历史项，不制造popstate循环；慢旧请求的成功或错误不能覆盖新URL的状态。
+页面刷新不得重置Node中的已派订单。直接向API提交非法参数仍由后端返回400，不能因为前端URL回退就省略服务端校验。原五页、原子派单/冲突、统计、设置、手机和键盘操作全部保持；修改后的视觉与交互仍按成品要求评价。
+继续使用原API/EVAL规范，构建并交付前后端完整成果。
+</pre></details>
+<h3>追加评分 · 8项 · 100分</h3><div class="table-wrap"><table><thead><tr><th>项目</th><th>权重</th><th>考察重点</th></tr></thead><tbody>
+<tr><td>URL写入与首次恢复 · 自动</td><td>20</td><td>q/status/page正确编码，首次与刷新恢复控件和真实请求。</td></tr>
+<tr><td>前进后退恢复 · 自动</td><td>15</td><td>前进/后退恢复对应查询，不制造循环和多余历史项。</td></tr>
+<tr><td>参数边界与选择清理 · 自动</td><td>10</td><td>非法URL回退、超范围页校正，导航清选择/弹层；API非法参数仍400。</td></tr>
+<tr><td>真实请求竞态 · 自动</td><td>10</td><td>旧请求成功/失败不得覆盖新URL对应的列表、加载和错误。</td></tr>
+<tr><td>服务端与原业务回归 · 自动</td><td>10</td><td>接口查询/校验/原子派单仍正确，刷新保留服务端订单。</td></tr>
+<tr><td>视觉美观与产品完成度 · 人工</td><td>15</td><td>五页和弹层达到成熟业务产品的精修程度，清晰、协调且有专业美感。</td></tr>
+<tr><td>交互友好度与操作体验 · 人工</td><td>15</td><td>首次使用也能理解并顺畅完成核心流程，反馈及时、上下文稳定，手机和键盘可用。</td></tr>
+<tr><td>前后端交付 · 自动</td><td>5</td><td>归档前端和Node服务都可独立启动，固定种子不变。</td></tr>
+</tbody></table></div>
+
+
+
+
+
+<figure><figcaption>视觉美观与产品完成度 · 0 / 5 / 10分参考</figcaption><img loading="lazy" src="web/public/rubric-references/r7/dispatch-visual.png" alt="视觉美观与产品完成度由低至高三档示意"><div class="reference-labels"><span>0 · 严重不足</span><span>5 · 基础完成</span><span>10 · 精细成熟</span></div><small>AI生成的完成度示意，不是参赛作品；不要求复刻风格、配色或布局。动作与多视角仍需实际查看。</small></figure>
+<figure><figcaption>实际操作参照</figcaption><div class="reference-labels"><div><svg viewBox="0 0 110 80" role="img" aria-label="断裂 · 迟滞"><rect width="110" height="80" fill="#f5f3ec" rx="6"/><path d="M15 50l20-15 18 30 20-30 22 15" fill="none" stroke="#38746c" stroke-width="3"/><circle cx="15" cy="50" r="6" fill="#e99a57"/><circle cx="95" cy="50" r="6" fill="#38746c"/></svg><b>0 · 断裂 · 迟滞</b></div><div><svg viewBox="0 0 110 80" role="img" aria-label="基本可用"><rect width="110" height="80" fill="#f5f3ec" rx="6"/><path d="M15 50Q55 10 95 50" fill="none" stroke="#38746c" stroke-width="3"/><circle cx="15" cy="50" r="6" fill="#e99a57"/><circle cx="95" cy="50" r="6" fill="#38746c"/></svg><b>5 · 基本可用</b></div><div><svg viewBox="0 0 110 80" role="img" aria-label="连贯 · 反馈清楚"><rect width="110" height="80" fill="#f5f3ec" rx="6"/><path d="M15 50Q55 10 95 50" fill="none" stroke="#38746c" stroke-width="3"/><circle cx="15" cy="50" r="6" fill="#e99a57"/><circle cx="95" cy="50" r="6" fill="#38746c"/></svg><b>10 · 连贯 · 反馈清楚</b></div></div><small>图示只帮助理解连贯性；必须实际测试输入、反馈、取消和恢复，不能凭图判断手感。</small></figure>
+
+<details><summary>核验步骤与判分锚点</summary>
+<article><h3>URL写入与首次恢复 <span class="weight">20分</span></h3><ol>
+<li>q/status/page正确编码，首次与刷新恢复控件和真实请求。</li>
+</ol>
+</article>
+<article><h3>前进后退恢复 <span class="weight">15分</span></h3><ol>
+<li>前进/后退恢复对应查询，不制造循环和多余历史项。</li>
+</ol>
+</article>
+<article><h3>参数边界与选择清理 <span class="weight">10分</span></h3><ol>
+<li>非法URL回退、超范围页校正，导航清选择/弹层；API非法参数仍400。</li>
+</ol>
+</article>
+<article><h3>真实请求竞态 <span class="weight">10分</span></h3><ol>
+<li>旧请求成功/失败不得覆盖新URL对应的列表、加载和错误。</li>
+</ol>
+</article>
+<article><h3>服务端与原业务回归 <span class="weight">10分</span></h3><ol>
+<li>接口查询/校验/原子派单仍正确，刷新保留服务端订单。</li>
+</ol>
+</article>
+<article><h3>视觉美观与产品完成度 <span class="weight">15分</span></h3><ol>
+<li>桌面对照导航/顶栏/统计/工具栏/表格/分页：保留参考结构，形成清楚的信息与主次操作层级；全部是真实组件。</li>
+<li>字体、行高、间距、留白、图标、圆角和状态配色统一；数字/标签/长地址对齐，复杂数据下布局稳定。</li>
+<li>检查全部五页及加载/空态/错误/弹层，非首屏同样精修，无占位、粗糙默认控件、低对比小字或虚假装饰指标。</li>
+</ol>
+<p><b>0/10：</b>页面混乱、主要信息不可读或没有整体设计。</p>
+<p><b>5/10：</b>信息结构可用，但仍像线框或控件拼装，排版细节、辅助页和状态设计缺少完成度。</p>
+<p><b>10/10：</b>以下检查全部成立：五页和弹层达到成熟业务产品的精修程度，清晰、协调且有专业美感。</p>
+</article>
+<article><h3>交互友好度与操作体验 <span class="weight">15分</span></h3><ol>
+<li>实走搜索→清除/筛选→选择→确认/取消→详情→重试：入口/含义/已选数量清楚，主操作易找到，禁用原因可理解，无不必要跳转。</li>
+<li>默认/悬停/焦点/禁用/加载/提交/成功/错误反馈一致；等待不跳版，空态可恢复、错误就近重试，不用alert，不意外丢失操作上下文。</li>
+<li>390×844整页不溢出，导航与弹层按钮可达，约40px触控目标；键盘焦点进入/返回、Esc、背景隔离正确，过渡不拖慢操作。</li>
+</ol>
+<p><b>0/10：</b>核心流程难以发现或操作，被弹层、导航或输入问题阻断。</p>
+<p><b>5/10：</b>功能大致能做，但需猜操作、反馈迟钝或突兀，手机/焦点路径明显不顺畅。</p>
+<p><b>10/10：</b>以下检查全部成立：首次使用也能理解并顺畅完成核心流程，反馈及时、上下文稳定，手机和键盘可用。</p>
+</article>
+<article><h3>前后端交付 <span class="weight">5分</span></h3><ol>
+<li>归档前端和Node服务都可独立启动，固定种子不变。</li>
+</ol>
+</article>
+</details>
+<p class="note">客观功能由公开规范对应的自动检查判分，检查项通过才取得其等分权重；不能人工改写自动分。执行环境缺失或工具错误标待核验，不按作品失败计0；未完成自动核验时不生成完整总分。主观维度按0–10分评价美感、表达与体验，并记录依据。自动化观测不等于证明语义、造型或艺术质量。一项缺陷按直接检查点归类；初始和追加分别留档，新版本不重算旧轮次。</p></section>
+<section id="04-game2d"><p class="note">04 / 2D 游戏</p>
+<h2>鹈鹕快递大作战</h2><p>用有层次的画面和利落的动作反馈，带鹈鹕穿越平台送快递。好看、好操作，也要真正通关。</p>
+<p>考察：精致2D画面与操作手感 / 平台碰撞与一局规则 / 键盘和触屏体验<br>初始 45 分钟 · 追加 15 分钟</p>
+<details><summary>初始提示词 · 点击展开</summary><pre># 鹈鹕快递大作战
+
+提示词版本：pelican-prompts-7。本阶段预算：45分钟。
+
+使用所附Phaser 3起始工程，制作能正常操作并通关的《鹈鹕快递大作战》。使用统一关卡和SVG素材，重点是控制、碰撞、规则和完整的一局。
+
+## 关卡与操作
+阅读materials/START.md、CONTRACT.md、level.json、assets.json。用Phaser Scene、GameObject和物理实现游戏，不用视频或DOM演出代替。平台坐标为左上角，角色/机器人/快递为底部中心。不得移动快递、删障碍或改物理参数来降低难度。
+方向键/A、D左右移动，空格跳跃，P暂停；手机提供左右、跳跃按钮。只在实体平台上允许跳跃，不可空中连跳。固定与移动平台都应实体碰撞；站在移动平台上随它往返，不能穿入平台。机器人按材料巡逻，不阻挡角色但接触受伤。用提供的待机、8帧/秒行走、跳跃和受伤素材反馈动作。
+
+## 一局规则
+开始后120秒、3点生命；重叠拾取三份快递，每份仅计一次。未集齐进入出口不能赢，集齐后进入出口胜利。机器人或危险区有效接触扣1命，随后0.8秒无敌，不能每帧扣血。角色完全越过世界下边界才算掉落，扣1命并回起点，普通快递进度和剩余时间保留。生命归零或时间归零分别失败。
+开始前不计时；暂停冻结角色、机器人、移动平台、倒计时和无敌计时，恢复后连续。胜负结算后不再接受移动、收集或伤害；重开恢复起点、生命、120秒、全部快递及场景对象，不累积回调、输入或计时器。
+
+## 界面与实玩
+提供开始、游玩、暂停、胜利、失败界面；暂停可继续/重开，结算解释成功或失败原因并可重试。HUD准确显示生命、收集数、时间，操作与出口条件清楚。背景、可站平台、危险和快递可区分，使用统一卡通风格，收集/受伤有清楚反馈。
+适配1280×720和390×844；允许保持画幅留白，HUD和手机按钮可读可达，触屏释放/移出按钮不粘键。镜头跟随且不越出地图。
+用正常输入完成一次通关，分别检查生命失败与超时失败；实际测试空中连跳、平台往返承载、持续碰撞、掉落保留、未收齐出口、暂停10秒及连续重开10次。记录结果和未完成项，不能直接设置胜利来冒充通关。
+
+## 更高的视觉完成度与操作手感
+目标是一款精致、明快、动作反馈明确的2D小游戏。不能只把角色和平台摆在纯色背景上。围绕“鹈鹕快递”统一设计场景与HUD：前中后景有空间层次，背景可用适量视差；平台、危险、快递与出口有清楚轮廓和对比，灯光/投影、环境小细节及界面排版协调。提供的角色/关卡素材仍须使用，允许用程序绘制背景、装饰、光影与本地特效来精修，但不更改碰撞地图或固定物理参数。
+角色行走、起跳、落地、受伤、拾取和胜利要有对应反馈；可用短促的落地压缩、弹性、粒子和镜头反馈增强力度，但不遮挡危险或误导碰撞位置。完整关卡各处、开始/暂停/结算页都保持设计完成度；不只精修首屏。
+手感以即时、稳定、可预期为目标：按下即响应，松开/切出触控按钮不粘键，连续移动和跳跃流畅，镜头平滑且不甩动，关键动作看得清。可做不改变跳跃物理的落地输入缓冲；不能增加空中连跳或改变速度/重力来取巧。手机双指可同时移动与跳跃，按钮不遮挡路径。
+视觉效果和手感分别人工评价；物理、规则与输入契约由自动脚本核验。精细特效不能牺牲可读性或让实际操作延迟。
+
+必须遵守materials/EVAL.md的公开自动验收规范，提供其中规定的实际元素标识、接口或游戏观测与输入重放；不要自行报告通过或分数。
+
+## HTML 交付约定
+最终入口为 `output/index.html`，脚本、样式、图片、数据与运行资源都在 `output/` 内，使用相对路径。本地静态HTTP和iframe均可使用，不依赖外网、父页面、固定端口或额外后端。已有构建工程用 `npm run build` 生成入口。
+展示iframe只允许脚本、不提供同源身份；状态使用内存，不能依赖localStorage、IndexedDB或Service Worker。资源与ES模块由预览服务支持跨来源读取。
+交付前用本地静态服务检查实际成果。`output/DELIVERY.md`简要列出入口、启动方式、已检查与未检查项目和已知缺陷；不要求长报告，不能用占位页代替成果。
+</pre></details>
+<h3>初始评分 · 9项 · 100分</h3><div class="table-wrap"><table><thead><tr><th>项目</th><th>权重</th><th>考察重点</th></tr></thead><tbody>
+<tr><td>移动与落地跳跃 · 自动</td><td>10</td><td>键盘可靠控制角色，只有落在实体平台上才能跳跃。</td></tr>
+<tr><td>固定与移动平台碰撞 · 自动</td><td>10</td><td>平台实体碰撞可靠，移动平台往返稳定承载角色。</td></tr>
+<tr><td>伤害、无敌与掉落 · 自动</td><td>10</td><td>有效碰撞扣一命、0.8秒无敌和掉落保留规则准确。</td></tr>
+<tr><td>快递收集与出口判定 · 自动</td><td>15</td><td>正常操作可收齐三份到出口获胜，未集齐不能提前胜利。</td></tr>
+<tr><td>开始、暂停、结算与重开 · 自动</td><td>10</td><td>一局状态完整且暂停/重开不会遗留计时、对象或输入。</td></tr>
+<tr><td>HUD与键盘、触屏输入 · 自动</td><td>10</td><td>真实HUD与引擎状态一致，两种输入可靠且不粘键。</td></tr>
+<tr><td>场景、角色与界面视觉 · 人工</td><td>20</td><td>前中后景、角色、动作特效与HUD形成精致统一的游戏画面。</td></tr>
+<tr><td>操作手感与动作反馈 · 人工</td><td>10</td><td>移动跳跃即时稳定，镜头和动作反馈让操作清楚、有力度且不拖沓。</td></tr>
+<tr><td>引擎与本地交付 · 自动</td><td>5</td><td>归档HTML用指定Phaser主体与本地素材，可独立游玩。</td></tr>
+</tbody></table></div>
+
+
+
+
+
+
+<figure><figcaption>场景、角色与界面视觉 · 0 / 5 / 10分参考</figcaption><img loading="lazy" src="web/public/rubric-references/r7/game2d-visual.png" alt="场景、角色与界面视觉由低至高三档示意"><div class="reference-labels"><span>0 · 严重不足</span><span>5 · 基础完成</span><span>10 · 精细成熟</span></div><small>AI生成的完成度示意，不是参赛作品；不要求复刻风格、配色或布局。动作与多视角仍需实际查看。</small></figure>
+<figure><figcaption>实际操作参照</figcaption><div class="reference-labels"><div><svg viewBox="0 0 110 80" role="img" aria-label="断裂 · 迟滞"><rect width="110" height="80" fill="#f5f3ec" rx="6"/><path d="M15 50l20-15 18 30 20-30 22 15" fill="none" stroke="#38746c" stroke-width="3"/><circle cx="15" cy="50" r="6" fill="#e99a57"/><circle cx="95" cy="50" r="6" fill="#38746c"/></svg><b>0 · 断裂 · 迟滞</b></div><div><svg viewBox="0 0 110 80" role="img" aria-label="基本可用"><rect width="110" height="80" fill="#f5f3ec" rx="6"/><path d="M15 50Q55 10 95 50" fill="none" stroke="#38746c" stroke-width="3"/><circle cx="15" cy="50" r="6" fill="#e99a57"/><circle cx="95" cy="50" r="6" fill="#38746c"/></svg><b>5 · 基本可用</b></div><div><svg viewBox="0 0 110 80" role="img" aria-label="连贯 · 反馈清楚"><rect width="110" height="80" fill="#f5f3ec" rx="6"/><path d="M15 50Q55 10 95 50" fill="none" stroke="#38746c" stroke-width="3"/><circle cx="15" cy="50" r="6" fill="#e99a57"/><circle cx="95" cy="50" r="6" fill="#38746c"/></svg><b>10 · 连贯 · 反馈清楚</b></div></div><small>图示只帮助理解连贯性；必须实际测试输入、反馈、取消和恢复，不能凭图判断手感。</small></figure>
+
+<details><summary>核验步骤与判分锚点</summary>
+<article><h3>移动与落地跳跃 <span class="weight">10分</span></h3><ol>
+<li>左右、起跳、松键反应正确；重复空中按跳跃不能连跳。</li>
+<li>速度/重力/跳跃参数遵守材料，未删改布局降低难度。</li>
+</ol>
+</article>
+<article><h3>固定与移动平台碰撞 <span class="weight">10分</span></h3><ol>
+<li>从上方落到固定/移动平台均可站立，不能穿入平台或在空中当作着地。</li>
+<li>在移动平台完整往返中随平台移动，再起跳离开；无异常甩落或卡入。</li>
+</ol>
+</article>
+<article><h3>伤害、无敌与掉落 <span class="weight">10分</span></h3><ol>
+<li>持续接触机器人/危险区不每帧扣血，0.8秒后恢复可伤害。</li>
+<li>完全越过底边才扣命复位；普通快递和时间保留，生命耗尽不继续复位游玩。</li>
+</ol>
+</article>
+<article><h3>快递收集与出口判定 <span class="weight">15分</span></h3><ol>
+<li>每份仅计一次，未集齐进入出口无胜利；不通过调试设置或移除障碍证明通关。</li>
+<li>正常输入从起点到三份快递及出口可达；胜利只触发一次。</li>
+</ol>
+</article>
+<article><h3>开始、暂停、结算与重开 <span class="weight">10分</span></h3><ol>
+<li>开始前不扣时，生命归零与超时分别失败；结算后不能移动、收集或受伤。</li>
+<li>暂停10秒后角色、敌人、平台、倒计时/无敌计时保持；连续重开10次恢复初值且无累积。</li>
+</ol>
+</article>
+<article><h3>HUD与键盘、触屏输入 <span class="weight">10分</span></h3><ol>
+<li>核对生命、快递、时间与状态；键盘/触屏移动跳跃共用生产控制逻辑。</li>
+<li>手机双指组合与松开、移出按钮后归零，不遮挡主要操作。</li>
+</ol>
+</article>
+<article><h3>场景、角色与界面视觉 <span class="weight">20分</span></h3><ol>
+<li>按三档参考图检查全关卡的层次、造型、配色与界面完成度。</li>
+<li>画面丰富且平台、危险、快递和出口一眼可辨；各状态页同样完成。</li>
+</ol>
+<p><b>0/10：</b>画面混乱、关键对象难辨或大量未完成。</p>
+<p><b>5/10：</b>功能元素清楚，但背景单薄、视觉粗糙或界面风格不统一。</p>
+<p><b>10/10：</b>以下检查全部成立：前中后景、角色、动作特效与HUD形成精致统一的游戏画面。</p>
+</article>
+<article><h3>操作手感与动作反馈 <span class="weight">10分</span></h3><ol>
+<li>亲自用键盘与手机连续移动跳跃；观察起跳、落地、收集、受伤的反馈。</li>
+<li>参考图只示意反馈节奏，必须实际试玩，不凭截图推断手感。</li>
+</ol>
+<p><b>0/10：</b>操作迟滞、失控或反馈严重干扰操作。</p>
+<p><b>5/10：</b>可以操作，但动作僵硬、反馈弱或镜头不够顺畅。</p>
+<p><b>10/10：</b>以下检查全部成立：移动跳跃即时稳定，镜头和动作反馈让操作清楚、有力度且不拖沓。</p>
+</article>
+<article><h3>引擎与本地交付 <span class="weight">5分</span></h3><ol>
+<li>静态HTTP/iframe启动，所有依赖本地完整。</li>
+<li>Phaser场景/物理实际承担游戏，不以视频、DOM演出或作弊入口代替。</li>
+</ol>
+</article>
+</details>
+<details><summary>追加提示词 · 点击展开</summary><pre>提示词版本：pelican-prompts-7。
+
+将c2替换为易碎快递，总数仍为三，不改地图。携带时速度为基础的75%，跳跃参数不变；受一次有效伤害或掉出地图时，c2回初始位置并从数量中扣除，普通快递保留，速度恢复基础值。无敌期无效接触不能重复丢失；重新拾取仍是基础75%，不累乘。
+HUD清楚表示持有/丢失；丢失后未集齐不能通关，重新拾取可正常通关。暂停冻结新状态，失败后停止操作，重开恢复快递、基础速度、生命与时间。实测首次拾取、有效/无效伤害、再拾取、携带掉落、暂停和重开，保留原平台/控制/触屏行为，更新HTML及简短验证说明。
+自动验收：增加hurt-with-parcel场景，先用生产拾取流程收取c1、c2，再与危险区接触，不预填丢失结论。保留完整正常按键通关replay.json。
+修改后仍须保持高质量场景、角色、HUD和动作反馈。新增快递状态清楚可辨，减速有明确提示但不造成输入迟滞；视觉完成度与手感分别评价。
+</pre></details>
+<h3>追加评分 · 8项 · 100分</h3><div class="table-wrap"><table><thead><tr><th>项目</th><th>权重</th><th>考察重点</th></tr></thead><tbody>
+<tr><td>易碎快递拾取与归位 · 自动</td><td>25</td><td>只替换c2，总数三；有效伤害/掉落后回初始位置并扣收集数，普通快递保留。</td></tr>
+<tr><td>75%速度与恢复 · 自动</td><td>20</td><td>持有速度为基础75%，丢失恢复基础，重复拾取不累乘，跳跃参数不变。</td></tr>
+<tr><td>有效伤害与无敌边界 · 自动</td><td>10</td><td>一次有效伤害只触发一次丢失；无敌期无效碰撞不重复触发，掉落也正确归位。</td></tr>
+<tr><td>暂停、失败与重开 · 自动</td><td>10</td><td>新状态随暂停冻结，失败停止；重开恢复全部快递/基础速度/生命/时间。</td></tr>
+<tr><td>HUD与原通关规则 · 自动</td><td>10</td><td>HUD持有/丢失和总数准确，丢失后不能误判集齐，再拾可通关。</td></tr>
+<tr><td>变更交付 · 自动</td><td>5</td><td>归档HTML可本地游玩新增规则，依赖和素材齐全。</td></tr>
+<tr><td>场景、角色与界面视觉 · 人工</td><td>15</td><td>前中后景、角色、动作特效与HUD形成精致统一的游戏画面。</td></tr>
+<tr><td>操作手感与动作反馈 · 人工</td><td>5</td><td>移动跳跃即时稳定，镜头和动作反馈让操作清楚、有力度且不拖沓。</td></tr>
+</tbody></table></div>
+
+
+
+
+
+
+<figure><figcaption>场景、角色与界面视觉 · 0 / 5 / 10分参考</figcaption><img loading="lazy" src="web/public/rubric-references/r7/game2d-visual.png" alt="场景、角色与界面视觉由低至高三档示意"><div class="reference-labels"><span>0 · 严重不足</span><span>5 · 基础完成</span><span>10 · 精细成熟</span></div><small>AI生成的完成度示意，不是参赛作品；不要求复刻风格、配色或布局。动作与多视角仍需实际查看。</small></figure>
+<figure><figcaption>实际操作参照</figcaption><div class="reference-labels"><div><svg viewBox="0 0 110 80" role="img" aria-label="断裂 · 迟滞"><rect width="110" height="80" fill="#f5f3ec" rx="6"/><path d="M15 50l20-15 18 30 20-30 22 15" fill="none" stroke="#38746c" stroke-width="3"/><circle cx="15" cy="50" r="6" fill="#e99a57"/><circle cx="95" cy="50" r="6" fill="#38746c"/></svg><b>0 · 断裂 · 迟滞</b></div><div><svg viewBox="0 0 110 80" role="img" aria-label="基本可用"><rect width="110" height="80" fill="#f5f3ec" rx="6"/><path d="M15 50Q55 10 95 50" fill="none" stroke="#38746c" stroke-width="3"/><circle cx="15" cy="50" r="6" fill="#e99a57"/><circle cx="95" cy="50" r="6" fill="#38746c"/></svg><b>5 · 基本可用</b></div><div><svg viewBox="0 0 110 80" role="img" aria-label="连贯 · 反馈清楚"><rect width="110" height="80" fill="#f5f3ec" rx="6"/><path d="M15 50Q55 10 95 50" fill="none" stroke="#38746c" stroke-width="3"/><circle cx="15" cy="50" r="6" fill="#e99a57"/><circle cx="95" cy="50" r="6" fill="#38746c"/></svg><b>10 · 连贯 · 反馈清楚</b></div></div><small>图示只帮助理解连贯性；必须实际测试输入、反馈、取消和恢复，不能凭图判断手感。</small></figure>
+<details><summary>核验步骤与判分锚点</summary>
+<article><h3>易碎快递拾取与归位 <span class="weight">25分</span></h3><ol>
+<li>只替换c2，总数三；有效伤害/掉落后回初始位置并扣收集数，普通快递保留。</li>
+<li>可重新拾取且不生成多个c2。</li>
+</ol>
+</article>
+<article><h3>75%速度与恢复 <span class="weight">20分</span></h3><ol>
+<li>持有速度为基础75%，丢失恢复基础，重复拾取不累乘，跳跃参数不变。</li>
+</ol>
+</article>
+<article><h3>有效伤害与无敌边界 <span class="weight">10分</span></h3><ol>
+<li>一次有效伤害只触发一次丢失；无敌期无效碰撞不重复触发，掉落也正确归位。</li>
+</ol>
+</article>
+<article><h3>暂停、失败与重开 <span class="weight">10分</span></h3><ol>
+<li>新状态随暂停冻结，失败停止；重开恢复全部快递/基础速度/生命/时间。</li>
+<li>连续重开不累积对象或计时。</li>
+</ol>
+</article>
+<article><h3>HUD与原通关规则 <span class="weight">10分</span></h3><ol>
+<li>HUD持有/丢失和总数准确，丢失后不能误判集齐，再拾可通关。</li>
+<li>原平台承载、键盘/触屏及镜头不回归。</li>
+</ol>
+</article>
+<article><h3>变更交付 <span class="weight">5分</span></h3><ol>
+<li>归档HTML可本地游玩新增规则，依赖和素材齐全。</li>
+</ol>
+</article>
+<article><h3>场景、角色与界面视觉 <span class="weight">15分</span></h3><ol>
+<li>按三档参考图检查全关卡的层次、造型、配色与界面完成度。</li>
+<li>画面丰富且平台、危险、快递和出口一眼可辨；各状态页同样完成。</li>
+</ol>
+<p><b>0/10：</b>画面混乱、关键对象难辨或大量未完成。</p>
+<p><b>5/10：</b>功能元素清楚，但背景单薄、视觉粗糙或界面风格不统一。</p>
+<p><b>10/10：</b>以下检查全部成立：前中后景、角色、动作特效与HUD形成精致统一的游戏画面。</p>
+</article>
+<article><h3>操作手感与动作反馈 <span class="weight">5分</span></h3><ol>
+<li>亲自用键盘与手机连续移动跳跃；观察起跳、落地、收集、受伤的反馈。</li>
+<li>参考图只示意反馈节奏，必须实际试玩，不凭截图推断手感。</li>
+</ol>
+<p><b>0/10：</b>操作迟滞、失控或反馈严重干扰操作。</p>
+<p><b>5/10：</b>可以操作，但动作僵硬、反馈弱或镜头不够顺畅。</p>
+<p><b>10/10：</b>以下检查全部成立：移动跳跃即时稳定，镜头和动作反馈让操作清楚、有力度且不拖沓。</p>
+</article>
+</details>
+<p class="note">客观功能由公开规范对应的自动检查判分，检查项通过才取得其等分权重；不能人工改写自动分。执行环境缺失或工具错误标待核验，不按作品失败计0；未完成自动核验时不生成完整总分。主观维度按0–10分评价美感、表达与体验，并记录依据。自动化观测不等于证明语义、造型或艺术质量。一项缺陷按直接检查点归类；初始和追加分别留档，新版本不重算旧轮次。</p></section>
+<section id="05-game3d"><p class="note">05 / 3D 建模与游戏</p>
+<h2>鹈鹕叉车驾校</h2><p>精雕叉车的机械结构和鹈鹕驾驶员，用材质、灯光与阴影打造高画质仓库，再真正完成三箱搬运。</p>
+<p>考察：精细程序化建模 / 材质灯光与画面审美 / 空间交互与真实搬运<br>初始 60 分钟 · 追加 20 分钟</p>
+<details><summary>初始提示词 · 点击展开</summary><pre># 鹈鹕叉车驾校
+
+提示词版本：pelican-prompts-7。本阶段预算：60分钟。
+
+使用所附Three.js + enable3d及本地Ammo资源，制作高画质的《鹈鹕叉车驾校》。目标是一款有精细模型、成熟材质灯光和完整视觉设计的实时3D小游戏，不能停留在几个方块、圆柱和球体拼成的功能演示。程序化建模后，由玩家真实驾驶、托起、运输和交付三个货箱。按materials/warehouse.json与CONTRACT.md的米制尺寸、Y向上坐标和布局实现，不导入外部模型/贴图，不改地图或货箱以简化任务。
+
+## 精细建模与机械结构
+可以选择写实或精致风格化的美术方向，但要有统一的设计和足够的几何层次。叉车从前、侧、后、斜上方观察都应成立，驾驶视角也应能看到实质细节：
+- 车身有自然过渡的轮廓、分件面板与配重结构；补充格栅、灯具等工业细节，避免用一整块长方体代替全部车身。
+- 四轮有真实厚度、胎面/侧壁层次、轮毂与轴心，不能只用无厚度圆片；驾驶室有立柱、顶架、座椅、方向盘和仪表区域，比例允许驾驶员实际坐入。
+- 门架表现导轨、横梁、升降托架及液压/链条等可见机械关系；双货叉有厚度、叉根连接与前端形状，不能悬浮。非玩法要求的细部不必做完整机械仿真。
+- 鹈鹕有身体体块、弯曲颈部、长喙、立体喉囊、眼部、翅膀/羽片层次与脚部，姿态自然；不能用“白球加黄三角”代替角色设计。身体与驾驶室、方向盘、座位无明显穿插。
+- 仓库的货架有立柱/横梁/层板和结构层次，货箱有边缘、接缝/包装细节，地面有合理的安全线与区域标识。细节应服务尺度感和空间辨识，不增加阻挡原路径的障碍；原箱尺寸、货架与地图布局保持。
+允许用自定义几何、倒角/曲面、程序化纹理或Canvas/SVG生成的本地纹理提高细节。不要通过重复堆小零件、无意义增加面数冒充精细；碰撞可用合理的简化刚体。
+建立父子层级：轮子随前进/倒退滚动、转向轮偏转、货叉沿门架升降，驾驶员随车运动。用统一车宽参数协调可见部件和碰撞体；不要求精确悬挂或液压模拟。
+
+## 材质、灯光与画面效果
+车漆、金属货叉/门架、橡胶轮胎、座椅、羽毛和仓库地面应有可辨的表面差异；合理使用粗糙度、金属度与颜色层次，不把所有部件涂成同一种平面色。玻璃若采用，透明度与遮挡应正确。
+设计有方向的主光、适当环境/补光与稳定阴影，让轮胎接地、货叉托举、货箱落地的空间关系清楚，避免悬浮感、阴影痤疮、全黑或过曝。正确处理颜色、曝光与抗锯齿，近看检查时不出现明显锯齿、闪烁或低清贴花。
+整局保持统一的色彩、材质、场景尺度与UI风格；镜头有清楚构图和前后层次，能展示精细模型又不遮挡驾驶目标。可选雾效或后处理，但不以炫光、景深、特效数量替代扎实建模和清晰画面。高画质仍须在指定分辨率与性能条件下可操作。
+
+## 驾驶与真实搬运
+W/S前后，A/D转向，Q/E升降，空格制动，P暂停。由玩家控制，不能用自动路线/预录动画代替。车与箱子同地面、墙和障碍合理碰撞。
+按契约允许辅助吸附，但必须先对齐、插入箱底再升叉：朝向夹角≤15°、横向偏差≤0.25米、高度差≤0.15米、水平伸入≥0.3米，一次只托一箱。降叉至箱底距地≤0.1米释放，箱子不能穿地；合理容差需记录。
+释放后箱子水平投影完全进入同色区、箱底距地≤0.05米、水平速度≤0.1米/秒连续0.5秒才计一次交付。错色、悬空、仅驶过或重复交付不计。120秒内三箱都交付获胜，超时失败。
+
+## 状态与可观察性
+开始前不计时；开始、游玩、暂停、胜负和重开都有明确界面。HUD给出时间、数量、当前货箱与操作提示，不遮挡货叉。暂停冻结物理、时间和稳定交付计时；结算后不再驾驶或计分。重开恢复车辆、三箱、计时和分数。
+默认第三人称跟随镜头，靠近墙/架时不严重遮挡。在暂停中提供前、侧、后、斜上方模型检查；退出检查仍保持暂停，且不改变游戏世界状态。灯光、材质、比例和界面统一，交付区同时用颜色与文字标明，不要求手机驾驶。
+
+## 实际验证
+真实驾驶检查制动/碰撞/对齐托举/落地释放，验证错色、悬空、驶过及重复不计分，并实际搬运三箱通关；未完成如实说明。保留多视角、参数位置和实测步骤。
+1280×720、DPR1生产构建，预热10秒+采样60秒，tools/performance.js帧间隔P95≤33.3ms。连续重开10次记录资源原始值，稳定后不持续增长。不得删物或降分辨率通过测试；本地Ammo及所有资源需随HTML交付。
+
+必须遵守materials/EVAL.md的公开自动验收规范，提供其中规定的实际元素标识、接口或游戏观测与输入重放；不要自行报告通过或分数。
+
+## HTML 交付约定
+最终入口为 `output/index.html`，脚本、样式、图片、数据与运行资源都在 `output/` 内，使用相对路径。本地静态HTTP和iframe均可使用，不依赖外网、父页面、固定端口或额外后端。已有构建工程用 `npm run build` 生成入口。
+展示iframe只允许脚本、不提供同源身份；状态使用内存，不能依赖localStorage、IndexedDB或Service Worker。资源与ES模块由预览服务支持跨来源读取。
+交付前用本地静态服务检查实际成果。`output/DELIVERY.md`简要列出入口、启动方式、已检查与未检查项目和已知缺陷；不要求长报告，不能用占位页代替成果。
+</pre></details>
+<h3>初始评分 · 8项 · 100分</h3><div class="table-wrap"><table><thead><tr><th>项目</th><th>权重</th><th>考察重点</th></tr></thead><tbody>
+<tr><td>精细建模与机械结构 · 人工</td><td>25</td><td>模型达到精致3D展示的完成度，多视角下比例、连接、曲面/边缘及细部均细腻可信。</td></tr>
+<tr><td>材质、灯光与画面效果 · 人工</td><td>20</td><td>最终画面具有成熟的表面质感、光照塑形、空间层次和整体美术一致性。</td></tr>
+<tr><td>部件层级与运动联动 · 自动</td><td>10</td><td>车轮、转向、升降及驾驶员随层级正确运动。</td></tr>
+<tr><td>驾驶、制动与障碍碰撞 · 自动</td><td>5</td><td>玩家能驾驶制动，车与箱/地面/墙/障碍合理碰撞。</td></tr>
+<tr><td>对齐托举与接地释放 · 自动</td><td>20</td><td>玩家依空间条件托起、搬运和释放一箱，不能隔空拾取。</td></tr>
+<tr><td>同色稳定交付与胜负 · 自动</td><td>10</td><td>满足同色/全入区/落地稳定条件才计分，可完成三箱通关。</td></tr>
+<tr><td>状态、镜头与引导 · 自动</td><td>5</td><td>暂停/检查/恢复/重开准确，镜头和HUD支持实际驾驶。</td></tr>
+<tr><td>本地物理、性能与资源 · 自动</td><td>5</td><td>本地Ammo独立启动，固定条件性能与连续重开资源稳定。</td></tr>
+</tbody></table></div>
+<figure><figcaption>精细建模与机械结构 · 0 / 5 / 10分参考</figcaption><img loading="lazy" src="web/public/rubric-references/r7/game3d-visual.png" alt="精细建模与机械结构由低至高三档示意"><div class="reference-labels"><span>0 · 严重不足</span><span>5 · 基础完成</span><span>10 · 精细成熟</span></div><small>AI生成的完成度示意，不是参赛作品；不要求复刻风格、配色或布局。动作与多视角仍需实际查看。</small></figure>
+<figure><figcaption>材质、灯光与画面效果 · 0 / 5 / 10分参考</figcaption><img loading="lazy" src="web/public/rubric-references/r7/game3d-visual.png" alt="材质、灯光与画面效果由低至高三档示意"><div class="reference-labels"><span>0 · 严重不足</span><span>5 · 基础完成</span><span>10 · 精细成熟</span></div><small>AI生成的完成度示意，不是参赛作品；不要求复刻风格、配色或布局。动作与多视角仍需实际查看。</small></figure>
+
+
+
+
+
+
+<details><summary>核验步骤与判分锚点</summary>
+<article><h3>精细建模与机械结构 <span class="weight">25分</span></h3><ol>
+<li>在规定分辨率及前/侧/后/斜上检查：车身分件/配重、驾驶室立柱/座椅/方向盘/仪表，门架导轨/托架/机械细节、双叉根部和前端均有真实结构层次。</li>
+<li>轮胎有厚度、胎面/侧壁与轮毂；鹈鹕颈部、喙、立体喉囊、翅膀羽片与脚部构成自然坐姿，不能仅白球加三角。</li>
+<li>仓库货架/货箱/地面细节统一，尺度和连接合理，无明显穿插或悬浮。只评价可见且服务造型的细节，不按面数或零件数量加分；外部模型/贴图不能代替程序化成果。</li>
+</ol>
+<p><b>0/10：</b>大部分指定模型缺失，或粗糙块体无法表达主要结构。</p>
+<p><b>5/10：</b>主要部件齐全且可辨，但仍是粗糙基础几何体拼装，边缘、机械细部或角色造型缺少精修。</p>
+<p><b>10/10：</b>以下检查全部成立：模型达到精致3D展示的完成度，多视角下比例、连接、曲面/边缘及细部均细腻可信。</p>
+</article>
+<article><h3>材质、灯光与画面效果 <span class="weight">20分</span></h3><ol>
+<li>车漆/金属/橡胶/座椅/羽毛/地面有可见质感差异，粗糙度、反射或风格化着色与对象匹配；不以平面色堆砌所有材料。</li>
+<li>主光与补光塑造体块，车轮/货叉/货箱接触阴影可信，无大面积过曝、死黑、阴影伪影、明显锯齿或闪烁。</li>
+<li>驾驶与检查视角中构图、色彩、景深层次和场景细节共同形成精致画面；卡通/写实均可，不按后处理技术或特效数量给分。</li>
+</ol>
+<p><b>0/10：</b>画面严重不可读，普遍黑屏/过曝/材质错误或缺乏基本视觉呈现。</p>
+<p><b>5/10：</b>场景清楚可玩，但主要依靠默认光照和平涂色，材质、阴影或构图只达到基础演示水平。</p>
+<p><b>10/10：</b>以下检查全部成立：最终画面具有成熟的表面质感、光照塑形、空间层次和整体美术一致性。</p>
+</article>
+<article><h3>部件层级与运动联动 <span class="weight">10分</span></h3><ol>
+<li>前进/倒退轮转方向正确，转向轮偏转；货叉沿门架升降且不脱离。</li>
+<li>驾驶员随车，统一车宽参数协调可见模型/部件位置，不靠整段预录动画。</li>
+</ol>
+</article>
+<article><h3>驾驶、制动与障碍碰撞 <span class="weight">5分</span></h3><ol>
+<li>W/S、A/D、空格在给定参数下生效，车体不能穿越墙或路障。</li>
+<li>箱子落地不穿地，仓库通道仍可通行，未改变地图/箱尺寸。</li>
+</ol>
+</article>
+<article><h3>对齐托举与接地释放 <span class="weight">20分</span></h3><ol>
+<li>按契约角度/横向/高度/伸入条件对齐后升叉；不对齐应失败，一次最多一箱。</li>
+<li>载箱随叉稳定移动，降至接地范围才释放，解除后不悬浮/穿地。</li>
+</ol>
+</article>
+<article><h3>同色稳定交付与胜负 <span class="weight">10分</span></h3><ol>
+<li>错色、悬空、部分入区、仅驶过、重复交付均不计；稳定0.5秒后只计一次。</li>
+<li>正常玩家操作三箱交付胜利；120秒超时失败，结算后不再计分。</li>
+</ol>
+</article>
+<article><h3>状态、镜头与引导 <span class="weight">5分</span></h3><ol>
+<li>暂停冻结物理及交付稳定计时，四向检查返回仍暂停且世界状态不变，重开恢复所有初值。</li>
+<li>跟随镜头不长期遮挡车/叉，开始/暂停/结算入口可达；HUD准确，区域有颜色和文字双标记。</li>
+</ol>
+</article>
+<article><h3>本地物理、性能与资源 <span class="weight">5分</span></h3><ol>
+<li>静态HTTP/iframe运行所有本地资源，未删物或降低采样分辨率。</li>
+<li>1280×720/DPR1预热10秒采样60秒，帧间隔P95≤33.3ms；10次重开资源稳定后无持续增长。</li>
+</ol>
+</article>
+</details>
+<details><summary>追加提示词 · 点击展开</summary><pre>提示词版本：pelican-prompts-7。
+
+把叉车宽度从原始1.4米改为1.68米，车长2.6米、高2.2米、货箱和地图尺寸不变。由统一宽度参数协调轮距、驾驶室、门架、双货叉横向间距与车体碰撞体；驾驶员仍坐在室内，不能只拉宽车壳。
+重开/初始化不能再次乘1.2。轮转、转向、升降与拾放仍正确，较宽车体碰撞不能按旧宽度穿墙。在原仓库真实完成三箱搬运与原交付判定。修改后的模型仍应精细：车身分件、轮组、门架、驾驶室和角色细节不能简单拉伸变形，材质、灯光与接地阴影仍达到原高画质目标。跟随/检查镜头、暂停、胜负、重开及性能/资源要求不回归。记录参数位置、尺寸、多视角、碰撞与真实搬运检查，更新HTML。
+</pre></details>
+<h3>追加评分 · 6项 · 100分</h3><div class="table-wrap"><table><thead><tr><th>项目</th><th>权重</th><th>考察重点</th></tr></thead><tbody>
+<tr><td>准确尺寸与范围 · 自动</td><td>20</td><td>宽度1.4→1.68米，长2.6、高2.2、地图和货箱不变。</td></tr>
+<tr><td>部件与碰撞体同步 · 自动</td><td>20</td><td>轮距、驾驶室、门架/双叉间距及车体碰撞体同步，驾驶员在室内。</td></tr>
+<tr><td>原仓库搬运与交付 · 自动</td><td>25</td><td>较宽车辆仍在原仓库真实对齐托举/释放并完成三箱。</td></tr>
+<tr><td>精细造型与画面质量 · 人工</td><td>15</td><td>新尺寸下车身分件、门架/轮组/驾驶室细节和鹈鹕造型仍精细，非简单拉伸造成变形。</td></tr>
+<tr><td>重开、镜头与运行回归 · 自动</td><td>15</td><td>连续10次重开宽度不累乘，世界状态正确，检查/跟随镜头仍可用。</td></tr>
+<tr><td>变更交付 · 自动</td><td>5</td><td>新HTML/本地物理资源可用，可核验参数位置与修改后尺寸。</td></tr>
+</tbody></table></div>
+
+
+
+<figure><figcaption>精细造型与画面质量 · 0 / 5 / 10分参考</figcaption><img loading="lazy" src="web/public/rubric-references/r7/game3d-visual.png" alt="精细造型与画面质量由低至高三档示意"><div class="reference-labels"><span>0 · 严重不足</span><span>5 · 基础完成</span><span>10 · 精细成熟</span></div><small>AI生成的完成度示意，不是参赛作品；不要求复刻风格、配色或布局。动作与多视角仍需实际查看。</small></figure>
+
+
+<details><summary>核验步骤与判分锚点</summary>
+<article><h3>准确尺寸与范围 <span class="weight">20分</span></h3><ol>
+<li>宽度1.4→1.68米，长2.6、高2.2、地图和货箱不变。</li>
+<li>检查统一参数和多视角，不用整场景缩放冒充加宽。</li>
+</ol>
+</article>
+<article><h3>部件与碰撞体同步 <span class="weight">20分</span></h3><ol>
+<li>轮距、驾驶室、门架/双叉间距及车体碰撞体同步，驾驶员在室内。</li>
+<li>轮转/转向/升降仍连贯；以可见宽度碰撞而非旧窄碰撞体。</li>
+</ol>
+</article>
+<article><h3>原仓库搬运与交付 <span class="weight">25分</span></h3><ol>
+<li>较宽车辆仍在原仓库真实对齐托举/释放并完成三箱。</li>
+<li>错色/悬空/驶过/重复和稳定落地判定不回归，不改箱/地图逃避碰撞。</li>
+</ol>
+</article>
+<article><h3>精细造型与画面质量 <span class="weight">15分</span></h3><ol>
+<li>新尺寸下车身分件、门架/轮组/驾驶室细节和鹈鹕造型仍精细，非简单拉伸造成变形。</li>
+<li>以修改后的最终画面评价材质层次、接地阴影、曝光与多视角完成度；不能用“原来就简单”作为高分依据。</li>
+</ol>
+<p><b>0/10：</b>严重变形、穿插、不可辨或画面无法阅读。</p>
+<p><b>5/10：</b>能辨认加宽模型，但细节粗糙、被拉伸或材质灯光仅为基础演示。</p>
+<p><b>10/10：</b>以下检查全部成立：新尺寸下车身分件、门架/轮组/驾驶室细节和鹈鹕造型仍精细，非简单拉伸造成变形。</p>
+</article>
+<article><h3>重开、镜头与运行回归 <span class="weight">15分</span></h3><ol>
+<li>连续10次重开宽度不累乘，世界状态正确，检查/跟随镜头仍可用。</li>
+<li>原性能采样与资源稳定要求保持。</li>
+</ol>
+</article>
+<article><h3>变更交付 <span class="weight">5分</span></h3><ol>
+<li>新HTML/本地物理资源可用，可核验参数位置与修改后尺寸。</li>
+</ol>
+</article>
+</details>
+<p class="note">客观功能由公开规范对应的自动检查判分，检查项通过才取得其等分权重；不能人工改写自动分。执行环境缺失或工具错误标待核验，不按作品失败计0；未完成自动核验时不生成完整总分。主观维度按0–10分评价美感、表达与体验，并记录依据。自动化观测不等于证明语义、造型或艺术质量。一项缺陷按直接检查点归类；初始和追加分别留档，新版本不重算旧轮次。</p></section>
+<section id="06-memory"><p class="note">06 / 长文本推理</p>
+<h2>五十篇论文，一部长篇</h2><p>阅读五十篇论文与《三体Ⅲ：死神永生》，回答30道有标准答案的选择题，只提交答案。</p>
+<p>考察：精确检索与条件辨析 / 跨论文关系判断 / 跨章节因果对应<br>初始 120 分钟 · 追加 30 分钟</p>
+<details><summary>初始提示词 · 点击展开</summary><pre># 五十篇论文，一部长篇
+
+本阶段预算：120分钟。
+
+# 长文本客观题 · longread-qa-v1
+
+本阶段共30题。只根据本题提供的50篇论文及《三体Ⅲ：死神永生》全文作答。
+先阅读materials/INDEX.md及materials/novel/INDEX.md；论文公式以PDF为准，TXT可用于检索。材料中的推测或条件性结论不等于已证明的事实。
+
+## 答案提交
+
+只需将答案写入output/answers.json，一个JSON对象，题号为键、选项字母为字符串值。
+格式示例（示例题号非本题）：{&quot;X01&quot;:&quot;B&quot;,&quot;X02&quot;:&quot;AC&quot;}。不需要解释、推理过程、引用、HTML页面或DELIVERY.md。
+单选填写一个字母；多选填写所有选项字母。允许大小写、字母间空白和多选顺序差异；重复字母、无效选项、漏选、多选均判错。
+每题只有正确和错误两种结果：正确得全部权重分，错误或漏答得0分；多选必须全对，满分100，不给部分分。重复题号该题判错；无法解析的JSON整份判0分；额外题号不计分并报告。
+材料不足时可以留空字符串，此项记0分。最终消息只需说明答案文件路径。
+
+### P01 · 单选 · 3分
+【单选】依据论文 P01 的 CPL 映射与总结，在固定标准宇宙学参数后，非局域参数对应的 (w0, wa) 具有什么结构？
+A. 两个参数仍可独立覆盖整个 CPL 平面。
+B. 受到动力学约束，落在一维轨迹上。
+C. 对所有非局域参数都严格固定为 (-1, 0)。
+D. 每个参数只确定 wa，w0 完全不受限制。
+
+### P02 · 多选 · 3分
+【多选；须选出全部正确项，多选或漏选均不得分】依据论文 P02 的 MTEGR 构造，关于引力易感性 S(x)，哪些表述与正文一致？
+A. S=0 时恢复 TEGR，从而恢复广义相对论。
+B. 吸引性引力要求 1+S&lt;0。
+C. 正文给出了一个独立的 S(x) 场方程，由它唯一确定 S。
+D. 吸引性引力要求 1+S&gt;0；正文说明 S(x) 没有自己的场方程，需由观测确定。
+
+### P03 · 单选 · 3分
+【单选】同时核对论文 P03 的作用量与 P08 的 Theorem 1。为什么 P03 的幻影分界穿越结果不能仅凭“发生穿越”就被判为 P08 的反例？
+A. P03 的穿越仅由背景数值曲线定义，没有检验扰动层面的无鬼或梯度稳定性，因此可直接忽略其结果。
+B. P08 的 Theorem 1 只排除恰好位于 w=-1 的静态解，并未涉及慢滚下 w&lt;-1 的演化。
+C. 两篇只要都含一个标量场，便已满足完全相同的定理假设，无需比较曲率耦合与导数耦合。
+D. P03 含标量与 Gauss–Bonnet 不变量的耦合；P08 的定理限定特定 NMDC 作用量、慢滚和无鬼稳定条件，反例必须先满足这些假设。
+
+### P04 · 单选 · 3分
+【单选】论文 P01 对 Planck+DESI DR2+Pantheon+ 的比较报告 Δχ²min=-2.654、ΔAIC=-0.654。论文对这一结果的判断是什么？
+A. 已达到足以确认唯一微观机制的证据强度。
+B. AIC 已完全排除该非局域模型。
+C. 最优拟合有所改善，但 AIC 差异太小，不构成支持该非局域模型的有意义统计证据。
+D. ΔAIC 与 Δχ²min 必须数值相等，因此这两个数不能同时出现。
+
+### P05 · 单选 · 3分
+【单选】论文 P21 在保留 90% shots 时报告的约 3700 倍与 740 倍逻辑错误率改善，正确对应哪种表述？
+A. 分别针对 [[72,12,6]] 与 [[144,12,12]] BB 码，在各自给定物理噪声条件下的后选择错误率改善。
+B. 分别表示两个码的物理量子比特数减少 3700 倍与 740 倍。
+C. 表示保留全部 shots 后，任意量子电路的无条件错误率改善。
+D. 表示在一台设备上把两个因子相乘即可获得实时解码吞吐率。
+
+### P06 · 单选 · 3分
+【单选】论文 P14 的实验部分使用什么平台执行完整 stitched-code 电路（包括重复 GHZ-corridor 提取）？
+A. SI1000 噪声模型中的经典模拟器；所谓实验部分没有使用实体处理器。
+B. 105 量子比特的 Willow 超导处理器。
+C. 105 量子比特的 Willow 超导处理器，但重复 GHZ-corridor 提取只在模拟中执行。
+D. 105 量子比特的 Willow 超导处理器，只执行两块独立表面码的基线电路。
+
+### P07 · 单选 · 3分
+【单选】论文 P15 在 distance-3、HBD 噪声、psearch=0.5% 的比较中，约 1100 倍的优势衡量什么？
+A. 最终逻辑错误率比任意其他码低 1100 倍。
+B. 量子处理器的物理时钟频率提高 1100 倍。
+C. 物理量子比特数减少 1100 倍。
+D. EBBI 搜索找到最优 Clifford deformation 所需 shots 相对随机搜索的减少倍数。
+
+### P08 · 单选 · 4分
+【单选】核对论文 P16 的数值比较，77.8% 与 35.5% 这两个相对改善数字分别对应什么？
+A. 77.8% 是物理量子比特减少，35.5% 是经典内存减少。
+B. 两者都来自同一六 CNOT 电路，且都相对同一 LOM 基线。
+C. 77.8% 是 Middle-out color-code memory 中相对 Chromobius 的一个测试点；35.5% 是六 CNOT 电路失败概率相对 LOM 的减少。
+D. 77.8% 是硬件时钟加速，35.5% 是噪声完全消失的概率。
+
+### P09 · 单选 · 4分
+【单选】论文 P17 在 η=100 的强 Z 偏置、电路级时空相关噪声与 MWPF 解码设置下，报告的近似阈值配对是哪一项？
+A. XZZX 约 0.70%，rotated surface code 约 0.36%。
+B. XZZX 约 0.36%，rotated surface code 约 0.70%。
+C. XZZX 约 7.40%，rotated surface code 约 2.70%；这正是该电路级相关噪声设置。
+D. 两个码都约 50%。
+
+### P10 · 多选 · 4分
+【多选；须选出全部正确项，多选或漏选均不得分】依据论文 P18 对计算复杂度的论述，哪些说法正确？
+A. 只要各噪声部分单独可高效模拟，把它们组合后也必然可高效模拟。
+B. 对文中奇数码距 rotated surface code，仅近邻相干 ZZ 串扰可进行多项式时间 syndrome 采样。
+C. 同时含单比特相干 Z 旋转与近邻 ZZ 串扰时，若能对所有允许角度按文中乘法误差保证高效采样，将导致多项式层级坍缩。
+D. 文中已经无条件证明所有经典算法都不能模拟任何单比特相干噪声。
+
+### M01 · 单选 · 3分
+【单选】论文 M01 的 Theorem 1.1 给出的存在唯一性结论属于哪一种？
+A. 任意三维不可压 Navier–Stokes 初值的全时空光滑解。
+B. 有界光滑三维区域内，可含初始真空、满足所列正则性与兼容条件的可压 Navier–Stokes/Cahn–Hilliard 系统的局部强解。
+C. 任意区域中的二维无外力定常 Euler 弱解。
+D. 不需要任何初值条件的 Navier–Stokes 概率平稳测度。
+
+### M02 · 单选 · 3分
+【单选】依据论文 M03 的 Theorem 1.1 粗述及 MGHD 定义，“唯一最大整体双曲发展”与“在整个 R^(1+3) 上光滑”有何关系？
+A. 不能等同；其 MGHD 可以是整个时空的真子集，边界可出现流体变量梯度爆破。
+B. 二者定义完全相同，因此 MGHD 边界不存在。
+C. MGHD 唯一性表示所有密度与速度在任意时刻都等于零。
+D. 有梯度爆破就必定否定论文在 MGHD 内的经典解唯一性。
+
+### M03 · 单选 · 3分
+【单选】论文 M04 的 Theorem 1.1 直接断言哪个对象唯一？
+A. 每个确定性三维 Navier–Stokes 问题的全局光滑解。
+B. 所有可能的随机噪声实现。
+C. 整个空间中每个速度场的流线。
+D. 满足 Assumption 2.1 时，联合 Markov 过程 zt=(wt,πt) 的平稳概率测度。
+
+### M04 · 单选 · 3分
+【单选】比较论文 M06 与 M09。哪项正确说明其非唯一性与唯一性为何不构成直接矛盾？
+A. 二者讨论完全相同的问题及解类，只是定理名称不同。
+B. M06 证明了 M09 的所有初值均有两个解。
+C. M06 构造二维全平面有特定外力的定常问题在相应 Besov 类中的不同解；M09 比较二维环面上同初值、同压力律的可压流两解，且一解满足额外正则性。
+D. M09 完全没有关于初值或解正则性的假设。
+
+### M05 · 单选 · 3分
+【单选】论文 M07 的 Theorem 1.1 在指定 Lorentz/Besov 交空间中给出唯一性。对时间可积指数 p，定理明确要求什么？
+A. p&gt;2。
+B. p≥2，包括不需补充条件的端点 p=2。
+C. 1≤p≤2，并排除所有 p&gt;2。
+D. 只要求 p&gt;1，端点 2 在定理中没有特殊限制。
+
+### M06 · 单选 · 3分
+【单选】论文 M14 的 Theorem 1.1 对临界线上单零点比例给出约 0.67250 的下极限下界。仅这一结果可以推出什么？
+A. 每个有限高度以下的零点都恰有 67.250% 在临界线上。
+B. 所有非平凡零点都已被证明在临界线上。
+C. 相应渐近比例至少达到给出的下界；该下界小于 1，本身不能推出全部零点在临界线上。
+D. 恰有 32.750% 的零点已经被证明在临界线外。
+
+### M07 · 单选 · 3分
+【单选】把论文 M15 的 Theorem 1.1 中 5/4−1/60 化简后，其六次矩结果的正确表述是哪项？
+A. 给出 T^(37/30+ε) 的完整渐近等式，主项系数为 1。
+B. 给出 T^(1+ε) 的上界，因而论文已证明 Lindelöf 假设。
+C. 给出 T^(5/4+1/60+ε) 的下界。
+D. 对每个 ε&gt;0，给出六次矩为 Oε(T^(37/30+ε)) 的上界。
+
+### M08 · 单选 · 4分
+【单选】结合论文 M14 的全高度比例与 M24 的短区间 Theorem 1.1，哪一项忠实反映 M24 对 θ=3/4 的数值示例？
+A. 任意大小 T 都恰有 67.25% 零点为临界线上单零点。
+B. 对充分大 T，在 (T,T+T^(3/4)] 内，超过 41.9% 的零点（分母按重数计）为临界线上单零点。
+C. 对任意 0&lt;θ&lt;1，M24 的临界线上单零点下界都固定为 67.25%。
+D. M24 在该区间证明所有零点在临界线上。
+
+### M09 · 多选 · 4分
+【多选；须选出全部正确项，多选或漏选均不得分】关于论文 M18 与 M20 的额外假设，哪些判断正确？
+A. M18 的所述 Waring–Goldbach 进展以 GRH 为前提。
+B. M18 以其结果为前提，无条件证明了 GRH。
+C. M20 的 Theorem 1 同时假定 RH，以及质量参数下界足够大的 Siegel 零点 exceptional sequence。
+D. M20 的 Theorem 1 证明上述 exceptional sequence 必然存在。
+
+### M10 · 单选 · 4分
+【单选】论文 M19 的 Theorems 1.1–1.2 将相关常数称为 ineffective。关于这些结论的使用，哪项正确？
+A. 只要固定 ε，ineffective 常数就自动成为可计算的显式常数。
+B. 定理断言相应常数存在，但不因此提供可直接计算的统一数值常数。
+C. 它表示结论只对有限个 L 函数成立，不能用于渐近论述。
+D. 定理已给出 n、F、ε 的显式公式，直接代入即可得到统一数值界。
+
+### N01 · 单选 · 3分
+【单选】把阶梯计划发射故障与后来云天明再次出现的叙述合起来，哪项与原文一致？
+A. 发射阶段从未发生偏航，截获过程也被完整公开。
+B. 发射偏航已经证明云天明永远不可能被三体世界截获。
+C. 飞行器因帆索故障推测及后续加速偏航而丢失；后来云天明出现，但飞行器如何被截获仍被叙述为谜。
+D. 小说后来明确说云天明从未离开地球。
+
+### N02 · 单选 · 3分
+【单选】关于“维德如果成为执剑者，和平将继续”及其威慑度为 100% 的那段话，原文如何呈现？
+A. 这是智子在对程心讲话时提出的人格分析结果与反事实判断。
+B. 这是已经发生的另一条时间线的实测记录。
+C. 这是维德本人向全体人类作出的正式承诺。
+D. 这是回归运动广播公布的宇宙定律。
+
+### N03 · 单选 · 3分
+【单选】关于两艘飞船上的全民公决及后续广播，哪项正确？
+A. 由程心在地球直接投出唯一决定票，且广播太阳系坐标。
+B. 两舰总人数 1415 人，赞成达到或超过 944 人即启动广播；公布的是三体星系坐标，实际广播由“万有引力”号发出。
+C. 投票要求两舰所有人一致同意，弃权算赞成。
+D. “蓝色空间”号的舰长在投票前已经宣布永不启动广播。
+
+### N04 · 单选 · 3分
+【单选】按照童话情报解读部分的“双层隐喻”，公主的小船、香皂与饕餮海先共同指向什么，再指向什么？
+A. 先指向香皂降低海水黏度，再指向制造低光速黑域。
+B. 先指向香皂激起传播的海浪，再指向引力波宇宙广播。
+C. 先指向纸船不受风浪损坏，再指向强互作用力材料。
+D. 先指向肥皂驱动的纸船，再指向空间曲率驱动。
+
+### N05 · 多选 · 3分
+【多选；须选出全部正确项，多选或漏选均不得分】关于掩体计划的来源与适用边界，哪些表述得到文本支持？
+A. 它是地球世界自己的计划，云天明的情报没有提出这个选择。
+B. 它承诺能抵挡任意维度、任意类型的黑暗森林打击，且后来兑现。
+C. 太阳系后来的二维化包含巨行星，因此不能把巨行星后方的掩体当成应对二维打击的可靠保证。
+D. 它与黑域计划在原文中是同一个计划的两个名称。
+
+### N06 · 单选 · 3分
+【单选】仅根据本地文本的纪年与事件顺序，关于歌者投出的二向箔和人类探测到的投射物，应作哪项判断？
+A. 章节排在后面就证明人类发现发生在歌者投射之后，且必是同一片。
+B. 原文直接给出了另一个攻击者的姓名，因此可确定不是歌者。
+C. 歌者章标为掩体纪元 67 年，人类探测章标为 66 年且追述苏醒前一年；不能仅凭叙述排列证明两次事件同一。
+D. 两个章节都没有给出任何纪年。
+
+### N07 · 单选 · 4分
+【单选】结合太阳系二维跌落警报与“星环”号的揭示，哪项正确？
+A. 逃逸速度只需达到光速的百分之一；“星环”号利用与阶梯计划相同的核爆辐射帆逃离。
+B. 逃逸速度虽接近光速但严格小于光速；“星环”号依靠常规聚变引擎即可达到。
+C. 逃逸速度为光速；“星环”号只有常规聚变引擎，罗辑确认它也没有逃离能力。
+D. 已证实逃逸速度为光速；“星环”号安装空间曲率驱动引擎，能够以光速航行。
+
+### N08 · 单选 · 4分
+【单选】把星环城停止抵抗的场景与后来罗辑的说明合起来，哪项正确？
+A. 程心要求继续用反物质攻击，维德拒绝后立刻完成全部光速引擎。
+B. 程心要求停止抵抗、交出反物质；维德死后仍有残余力量在水星秘密研究，最终恢复曲率驱动研发。
+C. 星环城交出反物质后，原文明确所有曲率驱动知识永久消失。
+D. 水星基地建成时，禁止光速飞船研究的法律已由程心宣布废除。
+
+### N09 · 单选 · 4分
+【单选】程心与关一帆在 DX3906 的低光速经历之后，穿梭机显示的“地球年”数值是多少？
+A. 18,903,729 年。
+B. 18,903 年。
+C. 189 年。
+D. 18.9 年。
+
+### N10 · 多选 · 4分
+【多选；须选出全部正确项，多选或漏选均不得分】对于结尾五公斤生态球与大宇宙命运，哪些说法与文本呈现一致？
+A. 结尾记录了大宇宙已经坍缩成功的观测结果。
+B. 关一帆口头安慰说五公斤不会阻止坍缩，同时有未说出口的不确定想法。
+C. 叙述者已证明生态球必定单独导致宇宙毁灭。
+D. 最终小宇宙留下漂流瓶与生态球；结尾没有给出大宇宙最终坍缩成功的实测结果。
+</pre></details>
+<h3>初始评分 · 30项 · 100分</h3><div class="table-wrap"><table><thead><tr><th>项目</th><th>权重</th><th>考察重点</th></tr></thead><tbody>
+<tr><td>P01 · 【单选】依据论文 P01 的 CPL 映射与总结，在固定标准宇宙学参数后，非局域参数对应的 (w0, wa) 具有什么结构？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>P02 · 【多选；须选出全部正确项，多选或漏选均不得分】依据论文 P02 的 MTEGR 构造，关于引力易感性 S(x)，哪些表述与正文一致？ · 自动</td><td>3</td><td>多选，全对得分。</td></tr>
+<tr><td>P03 · 【单选】同时核对论文 P03 的作用量与 P08 的 Theorem 1。为什么 P03 的幻影分界穿越结果不能仅凭“发生穿越”就被判为 P08 的反例？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>P04 · 【单选】论文 P01 对 Planck+DESI DR2+Pantheon+ 的比较报告 Δχ²min=-2.654、ΔAIC=-0.654。论文对这一结果的判断是什么？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>P05 · 【单选】论文 P21 在保留 90% shots 时报告的约 3700 倍与 740 倍逻辑错误率改善，正确对应哪种表述？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>P06 · 【单选】论文 P14 的实验部分使用什么平台执行完整 stitched-code 电路（包括重复 GHZ-corridor 提取）？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>P07 · 【单选】论文 P15 在 distance-3、HBD 噪声、psearch=0.5% 的比较中，约 1100 倍的优势衡量什么？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>P08 · 【单选】核对论文 P16 的数值比较，77.8% 与 35.5% 这两个相对改善数字分别对应什么？ · 自动</td><td>4</td><td>单选。</td></tr>
+<tr><td>P09 · 【单选】论文 P17 在 η=100 的强 Z 偏置、电路级时空相关噪声与 MWPF 解码设置下，报告的近似阈值配对是哪一项？ · 自动</td><td>4</td><td>单选。</td></tr>
+<tr><td>P10 · 【多选；须选出全部正确项，多选或漏选均不得分】依据论文 P18 对计算复杂度的论述，哪些说法正确？ · 自动</td><td>4</td><td>多选，全对得分。</td></tr>
+<tr><td>M01 · 【单选】论文 M01 的 Theorem 1.1 给出的存在唯一性结论属于哪一种？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>M02 · 【单选】依据论文 M03 的 Theorem 1.1 粗述及 MGHD 定义，“唯一最大整体双曲发展”与“在整个 R^(1+3) 上光滑”有何关系？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>M03 · 【单选】论文 M04 的 Theorem 1.1 直接断言哪个对象唯一？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>M04 · 【单选】比较论文 M06 与 M09。哪项正确说明其非唯一性与唯一性为何不构成直接矛盾？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>M05 · 【单选】论文 M07 的 Theorem 1.1 在指定 Lorentz/Besov 交空间中给出唯一性。对时间可积指数 p，定理明确要求什么？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>M06 · 【单选】论文 M14 的 Theorem 1.1 对临界线上单零点比例给出约 0.67250 的下极限下界。仅这一结果可以推出什么？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>M07 · 【单选】把论文 M15 的 Theorem 1.1 中 5/4−1/60 化简后，其六次矩结果的正确表述是哪项？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>M08 · 【单选】结合论文 M14 的全高度比例与 M24 的短区间 Theorem 1.1，哪一项忠实反映 M24 对 θ=3/4 的数值示例？ · 自动</td><td>4</td><td>单选。</td></tr>
+<tr><td>M09 · 【多选；须选出全部正确项，多选或漏选均不得分】关于论文 M18 与 M20 的额外假设，哪些判断正确？ · 自动</td><td>4</td><td>多选，全对得分。</td></tr>
+<tr><td>M10 · 【单选】论文 M19 的 Theorems 1.1–1.2 将相关常数称为 ineffective。关于这些结论的使用，哪项正确？ · 自动</td><td>4</td><td>单选。</td></tr>
+<tr><td>N01 · 【单选】把阶梯计划发射故障与后来云天明再次出现的叙述合起来，哪项与原文一致？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>N02 · 【单选】关于“维德如果成为执剑者，和平将继续”及其威慑度为 100% 的那段话，原文如何呈现？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>N03 · 【单选】关于两艘飞船上的全民公决及后续广播，哪项正确？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>N04 · 【单选】按照童话情报解读部分的“双层隐喻”，公主的小船、香皂与饕餮海先共同指向什么，再指向什么？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>N05 · 【多选；须选出全部正确项，多选或漏选均不得分】关于掩体计划的来源与适用边界，哪些表述得到文本支持？ · 自动</td><td>3</td><td>多选，全对得分。</td></tr>
+<tr><td>N06 · 【单选】仅根据本地文本的纪年与事件顺序，关于歌者投出的二向箔和人类探测到的投射物，应作哪项判断？ · 自动</td><td>3</td><td>单选。</td></tr>
+<tr><td>N07 · 【单选】结合太阳系二维跌落警报与“星环”号的揭示，哪项正确？ · 自动</td><td>4</td><td>单选。</td></tr>
+<tr><td>N08 · 【单选】把星环城停止抵抗的场景与后来罗辑的说明合起来，哪项正确？ · 自动</td><td>4</td><td>单选。</td></tr>
+<tr><td>N09 · 【单选】程心与关一帆在 DX3906 的低光速经历之后，穿梭机显示的“地球年”数值是多少？ · 自动</td><td>4</td><td>单选。</td></tr>
+<tr><td>N10 · 【多选；须选出全部正确项，多选或漏选均不得分】对于结尾五公斤生态球与大宇宙命运，哪些说法与文本呈现一致？ · 自动</td><td>4</td><td>多选，全对得分。</td></tr>
+</tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details><summary>追加提示词 · 点击展开</summary><pre># 长文本追加客观题 · longread-qa-v1
+
+本阶段共10题。只根据本题提供的50篇论文及《三体Ⅲ：死神永生》全文作答。
+先阅读materials/INDEX.md及materials/novel/INDEX.md；论文公式以PDF为准，TXT可用于检索。材料中的推测或条件性结论不等于已证明的事实。
+
+## 答案提交
+
+只需将答案写入output/answers.json，一个JSON对象，题号为键、选项字母为字符串值。
+格式示例（示例题号非本题）：{&quot;X01&quot;:&quot;B&quot;,&quot;X02&quot;:&quot;AC&quot;}。不需要解释、推理过程、引用、HTML页面或DELIVERY.md。
+单选填写一个字母；多选填写所有选项字母。允许大小写、字母间空白和多选顺序差异；重复字母、无效选项、漏选、多选均判错。
+每题只有正确和错误两种结果：正确得全部权重分，错误或漏答得0分；多选必须全对，满分100，不给部分分。重复题号该题判错；无法解析的JSON整份判0分；额外题号不计分并报告。
+材料不足时可以留空字符串，此项记0分。最终消息只需说明答案文件路径。
+初始答案已冻结。本阶段用下面题号的答案替换output/answers.json，不修改初始快照。
+
+### C01 · 单选 · 10分
+【单选】论文 P05 定义 Ωg=1−GN/Gcosmo。依该定义与正文，Ωg&lt;0 对应哪项关系？
+A. Gcosmo&gt;GN，宇宙学引力强于本地测量。
+B. Gcosmo=GN，与 Ωg 是否为零无关。
+C. Gcosmo&lt;GN，宇宙学引力较弱。
+D. GN 与 Gcosmo 的比值在模型中未被定义。
+
+### C02 · 单选 · 10分
+【单选】论文 P01 讨论 path B 的 weff 与 wDE 时，哪一项保留了二者区别？
+A. 二者是同一量，任何时候必须相等。
+B. path B 的 weff 必定小于 -1，且 wDE 必定大于 -1。
+C. path B 的 weff 趋于 1/3，就证明真实辐射密度占比趋于 1。
+D. path B 中 weff 不进入幻影区，但有效暗能量的 wDE 仍可能小于 -1；两者描述不同量。
+
+### C03 · 单选 · 10分
+【单选】论文 P14 实验的第二种 stitched code 标称 d=6。正文对其 patch distance t、verification rounds rv 和 circuit distance dcirc 的配对是什么？
+A. (t, rv, dcirc)=(6, 2, 6)。
+B. (t, rv, dcirc)=(3, 2, 5)。
+C. (t, rv, dcirc)=(2, 1, 4)。
+D. (t, rv, dcirc)=(3, 6, 12)。
+
+### C04 · 单选 · 10分
+【单选】沿用论文 P21 的后选择定义。假设每次独立尝试被接受的概率 a=0.9，被接受条件下逻辑失败概率 q=0.02，且每次尝试成本相同。哪组“每次尝试成功且被接受的概率；得到一个被接受结果的平均尝试次数”正确？
+A. 0.882；10/9。
+B. 0.98；1。
+C. 0.018；50。
+D. 0.9；1/0.882。
+
+### C05 · 单选 · 10分
+【单选】论文 M02 所述熵波的唯一性与稳定性是在哪个解类中建立的？
+A. 任意所有满足分布方程的 Euler 弱解，不需其他限制。
+B. 任意不可压三维定常解。
+C. Navier–Stokes–Fourier 系统的消散消失极限解类，并使用文中初值收敛等条件。
+D. 仅指 Fourier 级数系数的唯一分解。
+
+### C06 · 多选 · 10分
+【多选；须选出全部正确项，多选或漏选均不得分】论文 M16 的 Theorem 1.1 给出 Nπ(σ,T) 的零密度上界。关于其对象与结论，哪些表述正确？
+A. π 是具有 unitary central character 的 GL2(AQ) 尖点自守表示，研究其标准 L 函数。
+B. 该定理的研究对象是所有次数为 1 的 Dirichlet L 函数，不包括 GL2 尖点表示。
+C. 同一个上界在 0≤σ≤1 的整个区间内统一成立，定理不设 σ≥1/2 的限制。
+D. 在 1/2≤σ≤1 内，上界指数为 (5/2)(1−σ)+o(1)，不是零点总数恒等于零。
+
+### C07 · 单选 · 10分
+【单选】论文 M24 在 Theorem 1.2 之后给出 θ=1/4 的示例 Nd(T,T^(1/4))&gt;0.2458 N(T,T^(1/4))（充分大 T）。其中 Nd 所计数的对象是什么？
+A. 只计临界线上且已证明为单零点的零点。
+B. 位于临界线外的不同零点，临界线上的零点被排除。
+C. 全部非平凡零点按各自重数累加，二重零点计两次。
+D. 该高度区间内的不同零点；不要求它们均为单零点或均在临界线上。
+
+### C08 · 单选 · 10分
+【单选】四维碎块中的“魔戒”在与探险队对话时，用哪组比喻描述它所处的空间及变化？
+A. 海仍完整存在；眼前的水洼是永久通往其他四维海洋的稳定入口。
+B. 海已干涸，现在是水洼；水洼也在干涸，鱼将消失。
+C. 海已干涸，但水洼大小将保持不变，聚集其中的飞船不再面临维度变化。
+D. 海已干涸，聚集在水洼中的正是把海弄干的全部“鱼”，没有任何一条提前离开。
+
+### C09 · 单选 · 10分
+【单选】智子说明 647 号小宇宙与大宇宙的通信能力时，哪项符合她的说法？
+A. 小宇宙不能向大宇宙传递信息，但有可能接收到大宇宙耗费巨大能量发出的广播。
+B. 小宇宙可随意向大宇宙广播，而绝不可能接收。
+C. 两者完全不能交换任何信息，所以后来从未收到广播。
+D. 只要打开普通无线电，双向通信无需能量成本。
+
+### C10 · 单选 · 10分
+【单选】回归运动广播列出的语言包括地球与三体语言。文本对“某文明语言出现在广播中”的解释是什么？
+A. 足以证明该文明此刻一定仍然存在。
+B. 足以证明该文明此刻一定已经灭绝。
+C. 它可能仍存在，也可能曾存在相当长时间、文化留下永久印记；仅凭入列不能判定当前存亡。
+D. 说明文明必定还保留与古代完全相同的文字，毫无变化。
+</pre></details>
+<h3>追加评分 · 10项 · 100分</h3><div class="table-wrap"><table><thead><tr><th>项目</th><th>权重</th><th>考察重点</th></tr></thead><tbody>
+<tr><td>C01 · 【单选】论文 P05 定义 Ωg=1−GN/Gcosmo。依该定义与正文，Ωg&lt;0 对应哪项关系？ · 自动</td><td>10</td><td>单选。</td></tr>
+<tr><td>C02 · 【单选】论文 P01 讨论 path B 的 weff 与 wDE 时，哪一项保留了二者区别？ · 自动</td><td>10</td><td>单选。</td></tr>
+<tr><td>C03 · 【单选】论文 P14 实验的第二种 stitched code 标称 d=6。正文对其 patch distance t、verification rounds rv 和 circuit distance dcirc 的配对是什么？ · 自动</td><td>10</td><td>单选。</td></tr>
+<tr><td>C04 · 【单选】沿用论文 P21 的后选择定义。假设每次独立尝试被接受的概率 a=0.9，被接受条件下逻辑失败概率 q=0.02，且每次尝试成本相同。哪组“每次尝试成功且被接受的概率；得到一个被接受结果的平均尝试次数”正确？ · 自动</td><td>10</td><td>单选。</td></tr>
+<tr><td>C05 · 【单选】论文 M02 所述熵波的唯一性与稳定性是在哪个解类中建立的？ · 自动</td><td>10</td><td>单选。</td></tr>
+<tr><td>C06 · 【多选；须选出全部正确项，多选或漏选均不得分】论文 M16 的 Theorem 1.1 给出 Nπ(σ,T) 的零密度上界。关于其对象与结论，哪些表述正确？ · 自动</td><td>10</td><td>多选，全对得分。</td></tr>
+<tr><td>C07 · 【单选】论文 M24 在 Theorem 1.2 之后给出 θ=1/4 的示例 Nd(T,T^(1/4))&gt;0.2458 N(T,T^(1/4))（充分大 T）。其中 Nd 所计数的对象是什么？ · 自动</td><td>10</td><td>单选。</td></tr>
+<tr><td>C08 · 【单选】四维碎块中的“魔戒”在与探险队对话时，用哪组比喻描述它所处的空间及变化？ · 自动</td><td>10</td><td>单选。</td></tr>
+<tr><td>C09 · 【单选】智子说明 647 号小宇宙与大宇宙的通信能力时，哪项符合她的说法？ · 自动</td><td>10</td><td>单选。</td></tr>
+<tr><td>C10 · 【单选】回归运动广播列出的语言包括地球与三体语言。文本对“某文明语言出现在广播中”的解释是什么？ · 自动</td><td>10</td><td>单选。</td></tr>
+</tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+<p class="note">每题只有对（1）与错（0）。总分为正确题的权重之和，满分100。多选必须全部匹配，不给部分分。答案由脚本判定，不评价文风、篇幅、引用或页面。</p></section>
+<section><h2>材料与实现</h2><p>科普事实：<a href="templates/02-static/materials/PELICAN.md">鹈鹕资料卡与来源</a>。参考图使用内置image_gen统一生成，<a href="web/public/rubric-references/r7/prompts.md">提示词与生成说明</a>保留在主持人目录，不分发给被测模型。自动验收规范由<code>evalkit/automation_contract.py</code>生成。</p><p><a href="llm-evaluation-standard.html">原始五题标准</a> · <a href="llm-evaluation-standard-r6.html">保留的r6</a> · <a href="llm-evaluation-standard-r7.html">保留的r7</a> · <a href="README.md">运行与评分说明</a></p></section></main></html>

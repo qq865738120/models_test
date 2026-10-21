@@ -1,0 +1,1157 @@
+{
+  "revision": 13,
+  "artifacts": {
+    "04-game2d": {
+      "initial": [
+        {
+          "id": "b5fd65c64b5a479b8eb9a5310049ecc3",
+          "createdAt": "2026-10-21T12:51:40.882285+00:00",
+          "entry": "index.html",
+          "sha256": "e0e695fe0efd64ec380b0a57642cce6ddc39b7b6d4ab305e1cc015381c727507",
+          "fileCount": 25,
+          "integrityPassed": true,
+          "issues": [],
+          "url": "http://127.0.0.1:8788/artifacts/b5fd65c64b5a479b8eb9a5310049ecc3/index.html"
+        }
+      ]
+    },
+    "05-game3d": {
+      "initial": [
+        {
+          "id": "7c8cc840e553496ca1557a920887c22f",
+          "createdAt": "2026-10-21T12:52:44.117195+00:00",
+          "entry": "index.html",
+          "sha256": "55733ffdac68884b5220f067871c014ab629a043e6b3afb921f38e85379fc690",
+          "fileCount": 29,
+          "integrityPassed": true,
+          "issues": [],
+          "url": "http://127.0.0.1:8788/artifacts/7c8cc840e553496ca1557a920887c22f/index.html"
+        }
+      ]
+    },
+    "01-svg": {
+      "initial": [
+        {
+          "id": "3876c40c5f93470597660ca4b16bd71c",
+          "createdAt": "2026-10-21T12:52:53.225559+00:00",
+          "entry": "index.html",
+          "sha256": "86c6b4303d8e4429160ac71101dc175c2bfb276ad7eaaa65a803de2e4b5a822a",
+          "fileCount": 3,
+          "integrityPassed": true,
+          "issues": [],
+          "url": "http://127.0.0.1:8788/artifacts/3876c40c5f93470597660ca4b16bd71c/index.html"
+        }
+      ]
+    },
+    "02-static": {
+      "initial": [
+        {
+          "id": "e6f7b917c4f340c3a1c2dc64f44a6907",
+          "createdAt": "2026-10-21T12:53:14.998163+00:00",
+          "entry": "index.html",
+          "sha256": "6eaee31c8b34a99767eaae0bdf906eee6b5562b48c4ca93e32fbdcf51ad37a9a",
+          "fileCount": 6,
+          "integrityPassed": true,
+          "issues": [],
+          "url": "http://127.0.0.1:8788/artifacts/e6f7b917c4f340c3a1c2dc64f44a6907/index.html"
+        }
+      ]
+    },
+    "03-dispatch": {
+      "initial": [
+        {
+          "id": "26e5c334c15f4bc9a62d1aec258de719",
+          "createdAt": "2026-10-21T12:54:16.421218+00:00",
+          "entry": "index.html",
+          "sha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+          "fileCount": 13,
+          "integrityPassed": true,
+          "issues": [],
+          "url": "http://127.0.0.1:8788/artifacts/26e5c334c15f4bc9a62d1aec258de719/index.html",
+          "delivery": "fullstack-node"
+        }
+      ]
+    },
+    "06-memory": {
+      "initial": [
+        {
+          "id": "0e771094faca4967a0f81d77f306cd68",
+          "createdAt": "2026-10-21T12:59:49.707324+00:00",
+          "entry": "answers.json",
+          "sha256": "fe3ca14946dee6b7438ed60d2cc75300da8a648ed0763a257eebd45779d67a82",
+          "fileCount": 2,
+          "integrityPassed": true,
+          "issues": [],
+          "delivery": "answers-json",
+          "answerSha256": "82ac9f9407d3c6ccec66d484487c814bd961839ab2a828a15a0c5810c82264f9",
+          "answerKeySha256": "93f770c546b16fd1ae17c8747b4357f11e156210c2e84cd1ce69cbd3d7e02de6",
+          "questionVersion": "longread-qa-v4",
+          "url": "http://127.0.0.1:8788/artifacts/0e771094faca4967a0f81d77f306cd68/index.html"
+        }
+      ]
+    }
+  },
+  "scores": {
+    "0e771094faca4967a0f81d77f306cd68": {
+      "artifactId": "0e771094faca4967a0f81d77f306cd68",
+      "values": {
+        "P01": 1,
+        "P02": 1,
+        "P03": 1,
+        "P04": 1,
+        "P05": 1,
+        "P06": 1,
+        "M01": 1,
+        "M02": 1,
+        "M03": 1,
+        "M04": 1,
+        "M05": 1,
+        "M06": 1,
+        "N01": 1,
+        "N02": 1,
+        "N03": 1,
+        "N04": 1,
+        "N05": 1,
+        "N06": 1
+      },
+      "total": 100.0,
+      "notes": "",
+      "savedAt": "2026-10-21T12:59:49.707341+00:00",
+      "rubricVersion": "pelican-rubric-14",
+      "scoringMode": "objective",
+      "questionVersion": "longread-qa-v4",
+      "answerSha256": "82ac9f9407d3c6ccec66d484487c814bd961839ab2a828a15a0c5810c82264f9",
+      "answerKeySha256": "93f770c546b16fd1ae17c8747b4357f11e156210c2e84cd1ce69cbd3d7e02de6",
+      "autoGrade": {
+        "version": "longread-qa-v4",
+        "phase": "initial",
+        "correct": 18,
+        "totalQuestions": 18,
+        "partial": 0,
+        "total": 100,
+        "values": {
+          "P01": 1,
+          "P02": 1,
+          "P03": 1,
+          "P04": 1,
+          "P05": 1,
+          "P06": 1,
+          "M01": 1,
+          "M02": 1,
+          "M03": 1,
+          "M04": 1,
+          "M05": 1,
+          "M06": 1,
+          "N01": 1,
+          "N02": 1,
+          "N03": 1,
+          "N04": 1,
+          "N05": 1,
+          "N06": 1
+        },
+        "items": [
+          {
+            "id": "P01",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 6,
+            "earned": 6,
+            "answer": "6;7;81/625",
+            "expected": "6;7;81/625"
+          },
+          {
+            "id": "P02",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 6,
+            "earned": 6,
+            "answer": "7;23;12983/69277",
+            "expected": "7;23;12983/69277"
+          },
+          {
+            "id": "P03",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 6,
+            "earned": 6,
+            "answer": "9/10;1/16;-13/50",
+            "expected": "9/10;1/16;-13/50"
+          },
+          {
+            "id": "P04",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 6,
+            "earned": 6,
+            "answer": "1053/1093;-40/1053;1/2",
+            "expected": "1053/1093;-40/1053;1/2"
+          },
+          {
+            "id": "P05",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 5,
+            "earned": 5,
+            "answer": "IH;3;33792/344569",
+            "expected": "IH;3;33792/344569"
+          },
+          {
+            "id": "P06",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 5,
+            "earned": 5,
+            "answer": "10;5;12;6;6410",
+            "expected": "10;5;12;6;6410"
+          },
+          {
+            "id": "M01",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 6,
+            "earned": 6,
+            "answer": "4;9/4;3/2",
+            "expected": "4;9/4;3/2"
+          },
+          {
+            "id": "M02",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 6,
+            "earned": 6,
+            "answer": "11809/13504;44521/58081;241/211;A",
+            "expected": "11809/13504;44521/58081;241/211;A"
+          },
+          {
+            "id": "M03",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 6,
+            "earned": 6,
+            "answer": "2;Y;N;Y",
+            "expected": "2;Y;N;Y"
+          },
+          {
+            "id": "M04",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 5,
+            "earned": 5,
+            "answer": "B;8/17;1/4",
+            "expected": "B;8/17;1/4"
+          },
+          {
+            "id": "M05",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 5,
+            "earned": 5,
+            "answer": "B;9/275;216/425",
+            "expected": "B;9/275;216/425"
+          },
+          {
+            "id": "M06",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 5,
+            "earned": 5,
+            "answer": "C;1;3",
+            "expected": "C;1;3"
+          },
+          {
+            "id": "N01",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 6,
+            "earned": 6,
+            "answer": "FCDAEH;A",
+            "expected": "FCDAEH;A"
+          },
+          {
+            "id": "N02",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 6,
+            "earned": 6,
+            "answer": "1;2;0",
+            "expected": "1;2;0"
+          },
+          {
+            "id": "N03",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 6,
+            "earned": 6,
+            "answer": "ABDC;G",
+            "expected": "ABDC;G"
+          },
+          {
+            "id": "N04",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 5,
+            "earned": 5,
+            "answer": "BDG;3",
+            "expected": "BDG;3"
+          },
+          {
+            "id": "N05",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 5,
+            "earned": 5,
+            "answer": "AEC;F",
+            "expected": "AEC;F"
+          },
+          {
+            "id": "N06",
+            "correct": true,
+            "credit": 1,
+            "scoring": "exact",
+            "weight": 5,
+            "earned": 5,
+            "answer": "BDFG;J;0",
+            "expected": "BDFG;J;0"
+          }
+        ],
+        "errors": []
+      }
+    },
+    "3876c40c5f93470597660ca4b16bd71c": {
+      "artifactId": "3876c40c5f93470597660ca4b16bd71c",
+      "values": {
+        "anatomy": 9,
+        "pedals": 10,
+        "expression": 6
+      },
+      "total": 81.0,
+      "notes": "",
+      "savedAt": "2026-10-21T13:02:32.285555+00:00",
+      "rubricVersion": "pelican-rubric-14",
+      "scoringMode": "manual",
+      "sourceRubricVersion": "pelican-rubric-14"
+    },
+    "26e5c334c15f4bc9a62d1aec258de719": {
+      "artifactId": "26e5c334c15f4bc9a62d1aec258de719",
+      "values": {
+        "architecture": 10,
+        "query": 1,
+        "assignment": 1,
+        "validation": 1,
+        "pages": 10,
+        "async": 10,
+        "visual": 7,
+        "interaction": 7
+      },
+      "total": 91.0,
+      "notes": "",
+      "savedAt": "2026-10-21T13:10:57.494185+00:00",
+      "rubricVersion": "pelican-rubric-14",
+      "scoringMode": "hybrid",
+      "sourceRubricVersion": "pelican-rubric-14",
+      "automation": {
+        "version": "pelican-api-checks-1",
+        "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+        "startedAt": "2026-10-21T13:09:44.543937+00:00",
+        "checkedAt": "2026-10-21T13:09:44.886093+00:00",
+        "checks": [
+          {
+            "id": "http:health",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "真实HTTP健康接口返回200和ok=true",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:couriers",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "配送员HTTP接口包含固定三名配送员及非空名称",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:initial_stats",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "新实例统计与10000条固定种子一致",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:default_page",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:pagination",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:out_of_range",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:filter_pending",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:filter_assigned",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:filter_delivered",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:search_id",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:search_customer",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:search_address",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:empty_query",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:detail",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "详情通过HTTP读取完整固定订单字段",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:unknown_detail",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "未知详情返回404及结构化错误",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:invalid_query",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "非法/非安全整数/重复/未知查询参数均返回400及结构化错误",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:assign_batch",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "真实POST整批派单返回两条已更新订单",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:assigned_conflict",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "已派订单再次派送返回409，不覆盖已有配送员",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:read_after_write",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "新HTTP连接重新读取详情仍保持同一服务端状态",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:mixed_atomicity",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "待派＋已派混合批次整批409，待派订单保持原样",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:unknown_assignment",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "含未知ID的批次返回404，已存在的订单不被部分修改",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:invalid_assignment",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "空、重复、超100、非法配送员、非数组、非字符串ID及额外字段均返回400",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:malformed_json",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "无效JSON返回400和结构化错误",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:invalid_content_type",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "非JSON Content-Type返回400结构化错误",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:concurrent_assignment",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "两次并发派送同单仅一次成功，最终归属与成功请求一致",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:concurrent_batch_atomicity",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "相交并发批次中，失败批次独有订单保持原样；成功批次所有订单统一提交",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:stats_after_assignment",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "有效更新、失败和并发操作后的全局状态总数保持一致",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:list_detail_consistency",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "重新HTTP查询列表与已经更新的详情一致",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          }
+        ]
+      }
+    },
+    "b5fd65c64b5a479b8eb9a5310049ecc3": {
+      "artifactId": "b5fd65c64b5a479b8eb9a5310049ecc3",
+      "values": {
+        "control": 10,
+        "platform": 10,
+        "damage": 10,
+        "goal": 10,
+        "states": 10,
+        "visual": 7.5,
+        "feel": 5
+      },
+      "total": 86.25,
+      "notes": "",
+      "savedAt": "2026-10-21T13:16:09.357968+00:00",
+      "rubricVersion": "pelican-rubric-14",
+      "scoringMode": "manual",
+      "sourceRubricVersion": "pelican-rubric-14"
+    },
+    "7c8cc840e553496ca1557a920887c22f": {
+      "artifactId": "7c8cc840e553496ca1557a920887c22f",
+      "values": {
+        "model": 6.5,
+        "rendering": 6,
+        "linkage": 7.5,
+        "driving": 7,
+        "handling": 6,
+        "delivery_rule": 10,
+        "experience": 10
+      },
+      "total": 69.25,
+      "notes": "",
+      "savedAt": "2026-10-21T13:26:13.066701+00:00",
+      "rubricVersion": "pelican-rubric-14",
+      "scoringMode": "manual",
+      "sourceRubricVersion": "pelican-rubric-14"
+    },
+    "e6f7b917c4f340c3a1c2dc64f44a6907": {
+      "artifactId": "e6f7b917c4f340c3a1c2dc64f44a6907",
+      "values": {
+        "impact": 8,
+        "craft": 6,
+        "content": 8.5
+      },
+      "total": 75.5,
+      "notes": "",
+      "savedAt": "2026-10-21T13:50:58.868981+00:00",
+      "rubricVersion": "pelican-rubric-14",
+      "scoringMode": "manual",
+      "sourceRubricVersion": "pelican-rubric-14"
+    }
+  },
+  "scoreHistory": [
+    {
+      "artifactId": "26e5c334c15f4bc9a62d1aec258de719",
+      "values": {
+        "architecture": null,
+        "query": 1,
+        "assignment": 1,
+        "validation": 1,
+        "pages": null,
+        "async": null,
+        "visual": null,
+        "interaction": null
+      },
+      "total": null,
+      "notes": "",
+      "savedAt": "2026-10-21T13:09:36.699287+00:00",
+      "rubricVersion": "pelican-rubric-14",
+      "sourceRubricVersion": "pelican-rubric-14",
+      "scoringMode": "hybrid",
+      "automation": {
+        "version": "pelican-api-checks-1",
+        "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+        "startedAt": "2026-10-21T13:09:36.353923+00:00",
+        "checkedAt": "2026-10-21T13:09:36.699287+00:00",
+        "checks": [
+          {
+            "id": "http:health",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "真实HTTP健康接口返回200和ok=true",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:couriers",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "配送员HTTP接口包含固定三名配送员及非空名称",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:initial_stats",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "新实例统计与10000条固定种子一致",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:default_page",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:pagination",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:out_of_range",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:filter_pending",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:filter_assigned",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:filter_delivered",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:search_id",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:search_customer",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:search_address",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:empty_query",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:detail",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "详情通过HTTP读取完整固定订单字段",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:unknown_detail",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "未知详情返回404及结构化错误",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:invalid_query",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "非法/非安全整数/重复/未知查询参数均返回400及结构化错误",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:assign_batch",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "真实POST整批派单返回两条已更新订单",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:assigned_conflict",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "已派订单再次派送返回409，不覆盖已有配送员",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:read_after_write",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "新HTTP连接重新读取详情仍保持同一服务端状态",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:mixed_atomicity",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "待派＋已派混合批次整批409，待派订单保持原样",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:unknown_assignment",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "含未知ID的批次返回404，已存在的订单不被部分修改",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:invalid_assignment",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "空、重复、超100、非法配送员、非数组、非字符串ID及额外字段均返回400",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:malformed_json",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "无效JSON返回400和结构化错误",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:invalid_content_type",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "非JSON Content-Type返回400结构化错误",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:concurrent_assignment",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "两次并发派送同单仅一次成功，最终归属与成功请求一致",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:concurrent_batch_atomicity",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "相交并发批次中，失败批次独有订单保持原样；成功批次所有订单统一提交",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:stats_after_assignment",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "有效更新、失败和并发操作后的全局状态总数保持一致",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          },
+          {
+            "id": "http:list_detail_consistency",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "重新HTTP查询列表与已经更新的详情一致",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:36.699287+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "artifactId": "26e5c334c15f4bc9a62d1aec258de719",
+      "values": {
+        "architecture": null,
+        "query": 1,
+        "assignment": 1,
+        "validation": 1,
+        "pages": null,
+        "async": null,
+        "visual": null,
+        "interaction": null
+      },
+      "total": null,
+      "notes": "",
+      "savedAt": "2026-10-21T13:09:44.886093+00:00",
+      "rubricVersion": "pelican-rubric-14",
+      "sourceRubricVersion": "pelican-rubric-14",
+      "scoringMode": "hybrid",
+      "automation": {
+        "version": "pelican-api-checks-1",
+        "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+        "startedAt": "2026-10-21T13:09:44.543937+00:00",
+        "checkedAt": "2026-10-21T13:09:44.886093+00:00",
+        "checks": [
+          {
+            "id": "http:health",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "真实HTTP健康接口返回200和ok=true",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:couriers",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "配送员HTTP接口包含固定三名配送员及非空名称",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:initial_stats",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "新实例统计与10000条固定种子一致",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:default_page",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:pagination",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:out_of_range",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:filter_pending",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:filter_assigned",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:filter_delivered",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:search_id",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:search_customer",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:search_address",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:empty_query",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "查询、总数、页码和返回订单与固定数据逐字段核对",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:detail",
+            "dimensionId": "query",
+            "passed": true,
+            "message": "详情通过HTTP读取完整固定订单字段",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:unknown_detail",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "未知详情返回404及结构化错误",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:invalid_query",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "非法/非安全整数/重复/未知查询参数均返回400及结构化错误",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:assign_batch",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "真实POST整批派单返回两条已更新订单",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:assigned_conflict",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "已派订单再次派送返回409，不覆盖已有配送员",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:read_after_write",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "新HTTP连接重新读取详情仍保持同一服务端状态",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:mixed_atomicity",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "待派＋已派混合批次整批409，待派订单保持原样",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:unknown_assignment",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "含未知ID的批次返回404，已存在的订单不被部分修改",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:invalid_assignment",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "空、重复、超100、非法配送员、非数组、非字符串ID及额外字段均返回400",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:malformed_json",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "无效JSON返回400和结构化错误",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:invalid_content_type",
+            "dimensionId": "validation",
+            "passed": true,
+            "message": "非JSON Content-Type返回400结构化错误",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:concurrent_assignment",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "两次并发派送同单仅一次成功，最终归属与成功请求一致",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:concurrent_batch_atomicity",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "相交并发批次中，失败批次独有订单保持原样；成功批次所有订单统一提交",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:stats_after_assignment",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "有效更新、失败和并发操作后的全局状态总数保持一致",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          },
+          {
+            "id": "http:list_detail_consistency",
+            "dimensionId": "assignment",
+            "passed": true,
+            "message": "重新HTTP查询列表与已经更新的详情一致",
+            "sourceSha256": "1919ee8ddc73720335e50075048ac748ff0f267cea580f061f0f8793452f0704",
+            "checkedAt": "2026-10-21T13:09:44.886093+00:00"
+          }
+        ]
+      }
+    }
+  ]
+}

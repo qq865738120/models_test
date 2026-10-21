@@ -1,0 +1,101 @@
+{
+  "status": "revised and author-verified after blind review; ready; not frozen",
+  "initialMechanisms": {
+    "P01": "两红移离散联合反演",
+    "P02": "热丰度最大化与双红移区间约束",
+    "P03": "差分消去物质后识别G比与温度",
+    "P04": "有效密度零点及今日归一化联立",
+    "P05": "变形与接受阈值联合优化",
+    "P06": "双bank联合接受及任一失败约束"
+  },
+  "pdfVisualChecks": [
+    {
+      "source": "P13",
+      "page": 3,
+      "image": "physics-pdf-checks/P13.png"
+    },
+    {
+      "source": "P02",
+      "page": 5,
+      "image": "physics-pdf-checks/P02.png"
+    },
+    {
+      "source": "P04",
+      "page": 2,
+      "image": "physics-pdf-checks/P04.png"
+    },
+    {
+      "source": "P05",
+      "page": 1,
+      "image": "physics-pdf-checks/P05.png"
+    },
+    {
+      "source": "P15",
+      "page": 3,
+      "image": "physics-pdf-checks/P15.png"
+    },
+    {
+      "source": "P19",
+      "page": 2,
+      "image": "physics-pdf-checks/P19.png"
+    },
+    {
+      "source": "P21",
+      "page": 3,
+      "image": "physics-pdf-checks/P21.png"
+    },
+    {
+      "source": "P14",
+      "page": 2,
+      "image": "physics-pdf-checks/P14.png"
+    },
+    {
+      "source": "P23",
+      "page": 7,
+      "image": "physics-pdf-checks/P23.png"
+    }
+  ],
+  "verification": "python3 research/longread-qa-v4/authoring/physics_calculations.py --check",
+  "methods": [
+    "Fraction direct formulas versus independently expanded polynomial quotient and derivative",
+    "Pauli likelihood-score derivatives versus channel endpoint derivative",
+    "closed binomial acceptance versus exhaustive flag bitmask sums",
+    "cosmic-glitch effective-density reconstruction versus direct modified Friedmann equation"
+  ],
+  "materialIssue": "P02 Eq34 and Eq36-37 are algebraically inconsistent for general S(0). Questions use only Eq30 background expression; do not use those effective-density formulas. Verified on original PDF page5.",
+  "reviewRisks": [
+    "Reduced to 6+2: retain two inverse/optimization susceptibility items, two glitch inversion/zero-point items, one deformation-selection item, one joint-bank item; changes introduce second-order shape and alternative acceptance event.",
+    "P05 (old P08) is intentionally two-source: sensitivity is explicit mathematics, not an indispensable third paper."
+  ],
+  "immutableCorpus": "unchanged",
+  "historicalBanksAndRuns": "unchanged",
+  "revision": {
+    "retainedOldToNew": {
+      "P02": "P01",
+      "P03": "P02",
+      "P04": "P03",
+      "P05": "P04",
+      "P08": "P05",
+      "P12": "P06",
+      "XP01": "XP01",
+      "XP04": "XP02"
+    },
+    "initialWeights": [
+      6,
+      6,
+      6,
+      6,
+      5,
+      5
+    ],
+    "changeWeights": [
+      17,
+      17
+    ],
+    "blindAnswerComparison": "All 8 retained revised answers agree with independent blind review.",
+    "tieBreakRootCause": "旧P08的12个设计通过精确枚举，IH/HI在tau=3时同得yield=587/960，conditional LER=11/587，偏导33792/344569。旧脚本min(vals)在目标并列后比较字符串，Python自然序H<I使HI排在IH前，与题面II<IH<HI<HH相反。因此仅变形代码错，数值与求导没有错。",
+    "fix": "显式cd_order映射参与key；确认两项精确并列；增加自然序反例、反向候选列表和独立显式顺序扫描回归。",
+    "sourceCorrection": "新P05只保留P15、P21；删除P19证据与依赖，题面直接要求条件LER数学偏导。",
+    "authorNoteCorrection": "离散反演候选数由笔误225改为9×26=234，答案未变。"
+  }
+}

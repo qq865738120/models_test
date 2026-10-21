@@ -1,0 +1,504 @@
+{
+  "version": "longread-qa-v1",
+  "phases": {
+    "initial": [
+      {
+        "id": "P01",
+        "answer": "B",
+        "evidence": [
+          {
+            "source": "P01",
+            "locator": "PDF p.13, Section V",
+            "note": "总结明确说固定标准宇宙学参数后为 one-dimensional trajectory，w0 与 wa 不能独立变化。"
+          }
+        ]
+      },
+      {
+        "id": "P02",
+        "answer": "AD",
+        "evidence": [
+          {
+            "source": "P02",
+            "locator": "PDF p.3, Section II A, Eqs. (11)–(12) 后",
+            "note": "原文明确 S=0 恢复 TEGR/GR、1+S>0、没有 S 的场方程。"
+          }
+        ]
+      },
+      {
+        "id": "P03",
+        "answer": "D",
+        "evidence": [
+          {
+            "source": "P03",
+            "locator": "PDF p.3, Eq. (2.1) 与其前正文",
+            "note": "作用量含 f(φ)G，正文讨论一定参数范围内无鬼及无梯度不稳定。"
+          },
+          {
+            "source": "P08",
+            "locator": "PDF p.16, Section 6.1, Theorem 1",
+            "note": "定理明确限定 action (33)、non-minimal derivative coupling、ghost-free stability 与 slow-roll regime。"
+          }
+        ]
+      },
+      {
+        "id": "P04",
+        "answer": "C",
+        "evidence": [
+          {
+            "source": "P01",
+            "locator": "PDF p.13, Section V 与 Table III",
+            "note": "总结给出这两个数，并明确 AIC difference too small to constitute meaningful statistical evidence。"
+          }
+        ]
+      },
+      {
+        "id": "P05",
+        "answer": "A",
+        "evidence": [
+          {
+            "source": "P21",
+            "locator": "PDF p.1 摘要；PDF p.2 Table I；PDF p.8 Fig. 4",
+            "note": "保留 90% shots 的 BB 码后选择结果；Fig.4 分别采用 p=0.001 与 p=0.003，纵轴是 post-selected LER per cycle。"
+          }
+        ]
+      },
+      {
+        "id": "P06",
+        "answer": "B",
+        "evidence": [
+          {
+            "source": "P14",
+            "locator": "PDF p.7, Section VI Experimental Results",
+            "note": "正文说在 105-qubit Willow superconducting processor 执行完整 stitched-code circuits。"
+          }
+        ]
+      },
+      {
+        "id": "P07",
+        "answer": "D",
+        "evidence": [
+          {
+            "source": "P15",
+            "locator": "PDF p.5, Section IV B Performance",
+            "note": "先说明约 450× fewer shots，随后提高 psearch 到 0.5% 将该搜索 shots 差距扩大到约 1100×。"
+          }
+        ]
+      },
+      {
+        "id": "P08",
+        "answer": "C",
+        "evidence": [
+          {
+            "source": "P16",
+            "locator": "PDF p.10, Section IV B, Table II",
+            "note": "相同电路及样本比较 Chromobius；p=0.001,d=13,Z 基的相对减少为 77.8%。"
+          },
+          {
+            "source": "P16",
+            "locator": "PDF p.13, Section V 结果；PDF p.1 摘要",
+            "note": "六 CNOT 电路失败概率从 0.535% 降至 0.345%，相对 LOM 减少 35.5%。"
+          }
+        ]
+      },
+      {
+        "id": "P09",
+        "answer": "A",
+        "evidence": [
+          {
+            "source": "P17",
+            "locator": "PDF p.1 摘要；PDF pp.6–8, Figs.3–5 附近",
+            "note": "摘要明确给出相关电路噪声下 0.70%/0.36%；7.40%/2.70% 属于无时空相关的 phenomenological biased baseline，不能替换。"
+          }
+        ]
+      },
+      {
+        "id": "P10",
+        "answer": "BC",
+        "evidence": [
+          {
+            "source": "P18",
+            "locator": "PDF p.2, Section II Our Contribution, Eq. (2)",
+            "note": "正文区分三种计算情形；近邻 ZZ 单独可高效模拟，组合噪声的通用采样难度带 PH 不坍缩条件和指定乘法误差保证。"
+          }
+        ]
+      },
+      {
+        "id": "M01",
+        "answer": "B",
+        "evidence": [
+          {
+            "source": "M01",
+            "locator": "PDF p.3, Theorem 1.1",
+            "note": "定理指定 Ω⊂R³、有界光滑连通、3<q<6、初值与兼容条件，存在 T0>0 的唯一强解。"
+          }
+        ]
+      },
+      {
+        "id": "M02",
+        "answer": "A",
+        "evidence": [
+          {
+            "source": "M03",
+            "locator": "PDF pp.5–6, Section 1.2.1, Theorem 1.1",
+            "note": "MMax 是 R^(1+3) 真子集；边界有梯度爆破，而区域及其内解仍由初值唯一确定。"
+          }
+        ]
+      },
+      {
+        "id": "M03",
+        "answer": "D",
+        "evidence": [
+          {
+            "source": "M04",
+            "locator": "PDF p.3, Theorem 1.1",
+            "note": "定理说联合 Markov 过程至多一个 stationary probability measure，并结合既有存在性得到唯一。"
+          }
+        ]
+      },
+      {
+        "id": "M04",
+        "answer": "C",
+        "evidence": [
+          {
+            "source": "M06",
+            "locator": "PDF p.2, Theorem 1.1",
+            "note": "n=2,q>1，构造 divergence-free external force 及 R² 上两个不同解。"
+          },
+          {
+            "source": "M09",
+            "locator": "PDF p.3, Theorem 1.2",
+            "note": "同初值同压力律、Definition1.1 解类，其中一解满足 (1.12)，结论在 [0,∞)×T²。"
+          }
+        ]
+      },
+      {
+        "id": "M05",
+        "answer": "A",
+        "evidence": [
+          {
+            "source": "M07",
+            "locator": "PDF p.3, Theorem 1.1",
+            "note": "开头明确 T>0 and p>2；唯一性在其随后指定的 Lp∩C 交空间内。"
+          }
+        ]
+      },
+      {
+        "id": "M06",
+        "answer": "C",
+        "evidence": [
+          {
+            "source": "M14",
+            "locator": "PDF p.3, Theorem 1.1",
+            "note": "结论是 lim inf Ns0(T)/N(T) ≥ C0=0.67250…，是下界，不是精确比例或所有零点结论。"
+          }
+        ]
+      },
+      {
+        "id": "M07",
+        "answer": "D",
+        "evidence": [
+          {
+            "source": "M15",
+            "locator": "PDF p.1, Theorem 1.1",
+            "note": "定理是 ≪ε T^(5/4−1/60+ε)；75/60−1/60=74/60=37/30，符号为上界。"
+          }
+        ]
+      },
+      {
+        "id": "M08",
+        "answer": "B",
+        "evidence": [
+          {
+            "source": "M24",
+            "locator": "PDF p.2, Theorem 1.1 及紧随其后的 θ=3/4 示例",
+            "note": "范围 θ0<θ<1；θ0≈0.5501；示例为 sufficiently large T, more than 41.9%。"
+          },
+          {
+            "source": "M14",
+            "locator": "PDF p.3, Theorem 1.1",
+            "note": "0.67250 是全高度计数比例下界，不是 M24 任意短区间的固定比例。"
+          }
+        ]
+      },
+      {
+        "id": "M09",
+        "answer": "AC",
+        "evidence": [
+          {
+            "source": "M18",
+            "locator": "PDF p.2, Theorem 1.1 后正文",
+            "note": "明确说该改进 under GRH。"
+          },
+          {
+            "source": "M20",
+            "locator": "PDF p.2, Theorem 1",
+            "note": "Assume RH and ... exceptional sequence ... E=inf Ej sufficiently large，结论 μ<0.4733。"
+          }
+        ]
+      },
+      {
+        "id": "M10",
+        "answer": "B",
+        "evidence": [
+          {
+            "source": "M19",
+            "locator": "PDF pp.2–3, Theorems 1.1–1.2",
+            "note": "原文多处明确 there exists an ineffective constant，不能把存在性直接替换为有效数值界。"
+          }
+        ]
+      },
+      {
+        "id": "N01",
+        "answer": "C",
+        "evidence": [
+          {
+            "source": "N012",
+            "locator": "N012-P0097",
+            "note": "帆卷曲、推测帆索断裂、后续核爆造成错误速度分量并丢失轨道。"
+          },
+          {
+            "source": "N038",
+            "locator": "N038-P0003；N038-P0008",
+            "note": "叙述确认其在三体第一舰队，具体截获过程可能永远是谜。"
+          }
+        ]
+      },
+      {
+        "id": "N02",
+        "answer": "A",
+        "evidence": [
+          {
+            "source": "N025",
+            "locator": "N025-P0037",
+            "note": "该段带引号，由智子说出，包含人格分析系统威慑度与“如果他成为执剑者”的条件判断。"
+          }
+        ]
+      },
+      {
+        "id": "N03",
+        "answer": "B",
+        "evidence": [
+          {
+            "source": "N029",
+            "locator": "N029-P0090；N029-P0096",
+            "note": "禇岩说明只公布三体星系坐标；公决总人数 1415，阈值 944，反对或弃权不按按钮。"
+          },
+          {
+            "source": "N030",
+            "locator": "N030-P0009",
+            "note": "原文宣布“万有引力”号启动了引力波广播。"
+          }
+        ]
+      },
+      {
+        "id": "N04",
+        "answer": "D",
+        "evidence": [
+          {
+            "source": "N041",
+            "locator": "N041-P0027；N041-P0028",
+            "note": "解释双层隐喻为故事事物→肥皂驱动纸船→空间曲率驱动。"
+          }
+        ]
+      },
+      {
+        "id": "N05",
+        "answer": "AC",
+        "evidence": [
+          {
+            "source": "N043",
+            "locator": "N043-P0001 至 N043-P0007",
+            "note": "三个路线分列；P0003 明确掩体是地球自己计划，云天明情报没有提到。"
+          },
+          {
+            "source": "N054",
+            "locator": "N054-P0005；N054-P0120",
+            "note": "描述巨行星二维化和太阳系绝大部分二维化，掩体屏障并未阻止。"
+          }
+        ]
+      },
+      {
+        "id": "N06",
+        "answer": "C",
+        "evidence": [
+          {
+            "source": "N050",
+            "locator": "N050 章节标题；N050-P0074",
+            "note": "歌者章节标题为掩体纪元67年，末尾投出二向箔。"
+          },
+          {
+            "source": "N052",
+            "locator": "N052 章节标题；N052-P0001",
+            "note": "标题为掩体纪元66年，正文起始追述程心苏醒前一年探测到飞船。题目只考明示时间与连接证据不足，不断言真实攻击者身份。"
+          }
+        ]
+      },
+      {
+        "id": "N07",
+        "answer": "D",
+        "evidence": [
+          {
+            "source": "N053",
+            "locator": "N053-P0030",
+            "note": "明确脱离跌落区域的逃逸速度为光速。"
+          },
+          {
+            "source": "N054",
+            "locator": "N054-P0130",
+            "note": "罗辑揭示“星环”号可光速航行，装有空间曲率驱动引擎。"
+          }
+        ]
+      },
+      {
+        "id": "N08",
+        "answer": "B",
+        "evidence": [
+          {
+            "source": "N049",
+            "locator": "N049-P0073；N049-P0077；N049-P0081",
+            "note": "停止抵抗、交出反物质的命令及维德收集子弹。"
+          },
+          {
+            "source": "N054",
+            "locator": "N054-P0132 至 N054-P0136",
+            "note": "残余力量建设水星基地，维德死后35年研究恢复；罗辑回答禁令并未废除。"
+          }
+        ]
+      },
+      {
+        "id": "N09",
+        "answer": "A",
+        "evidence": [
+          {
+            "source": "N056",
+            "locator": "N056-P0043；N056-P0044；N056-P0047",
+            "note": "显示“地球年：18903729”，后文以一千八百九十万年概述。"
+          }
+        ]
+      },
+      {
+        "id": "N10",
+        "answer": "BD",
+        "evidence": [
+          {
+            "source": "N058",
+            "locator": "N058-P0037；N058-P0038；N058-P0043",
+            "note": "请求留下五公斤；关一帆说法与未说出口的想法并列；最后画面为漂流瓶和生态球，而非大宇宙命运的观测结论。"
+          }
+        ]
+      }
+    ],
+    "change": [
+      {
+        "id": "C01",
+        "answer": "C",
+        "evidence": [
+          {
+            "source": "P05",
+            "locator": "PDF p.1, Eqs. (1)–(3) 后正文",
+            "note": "正文明确 negative Ωg means Gcosmo<GN。"
+          }
+        ]
+      },
+      {
+        "id": "C02",
+        "answer": "D",
+        "evidence": [
+          {
+            "source": "P01",
+            "locator": "PDF p.6, Section III",
+            "note": "明确 weff does not enter a phantom regime along path B, although ... wDE<−1；同页说辐射样吸引子处 Ωr→0。"
+          }
+        ]
+      },
+      {
+        "id": "C03",
+        "answer": "B",
+        "evidence": [
+          {
+            "source": "P14",
+            "locator": "PDF p.7, Section VI A Experimental setup",
+            "note": "第二种代码 d=6,t=3,rv=2，六个内层周期；正文随后明确 dcirc=5。"
+          }
+        ]
+      },
+      {
+        "id": "C04",
+        "answer": "A",
+        "evidence": [
+          {
+            "source": "P21",
+            "locator": "PDF p.1 摘要；PDF p.8 Fig.4",
+            "note": "论文区分保留率与 post-selected LER。a(1−q)=0.9×0.98=0.882；独立重复直到接受为几何分布，平均次数1/a=10/9。q=0.02为题设假设，非论文测量值。"
+          }
+        ]
+      },
+      {
+        "id": "C05",
+        "answer": "C",
+        "evidence": [
+          {
+            "source": "M02",
+            "locator": "PDF p.1 摘要与 Introduction",
+            "note": "明确 in the class of vanishing dissipation limits from NSF，初值序列收敛到熵波初值时解收敛；正文指出仅分布解类过宽。"
+          }
+        ]
+      },
+      {
+        "id": "C06",
+        "answer": "AD",
+        "evidence": [
+          {
+            "source": "M16",
+            "locator": "PDF p.2, Theorem 1.1",
+            "note": "指定 GL2 尖点自守表示及 unitary central character，Nπ≪T^((5/2)(1−σ)+o(1))。"
+          }
+        ]
+      },
+      {
+        "id": "C07",
+        "answer": "D",
+        "evidence": [
+          {
+            "source": "M24",
+            "locator": "PDF pp.1–2 计数定义；PDF p.3 Theorem1.2 后示例",
+            "note": "Nd 计 distinct zeros，p.2 明示 regardless of multiplicity or real part；p.3 给 θ=1/4 的 0.2458 示例。"
+          }
+        ]
+      },
+      {
+        "id": "C08",
+        "answer": "B",
+        "evidence": [
+          {
+            "source": "N031",
+            "locator": "N031-P0122；N031-P0124；N031-P0135",
+            "note": "“魔戒”将空间比作干海留下且继续干涸的水洼，并建议离开。题目只问该角色的实际言语。"
+          }
+        ]
+      },
+      {
+        "id": "C09",
+        "answer": "A",
+        "evidence": [
+          {
+            "source": "N057",
+            "locator": "N057-P0081",
+            "note": "智子明确区分不能向大宇宙发信与有可能接收大宇宙超膜广播，并说明能量代价。"
+          }
+        ]
+      },
+      {
+        "id": "C10",
+        "answer": "C",
+        "evidence": [
+          {
+            "source": "N057",
+            "locator": "N057-P0112；N057-P0116 至 N057-P0121",
+            "note": "P0112列出仍存在/曾长期存在两种可能；后文确认两种语言入列并说明古文字显示目的。"
+          }
+        ]
+      }
+    ]
+  }
+}

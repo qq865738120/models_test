@@ -1,0 +1,68 @@
+{
+  "build": "index-qsOl13Hd.js",
+  "sandbox": "allow-scripts",
+  "world": {
+    "state": "paused",
+    "remaining": 118.74166666666567,
+    "delivered": 0,
+    "lift": 0.08,
+    "speed": 0,
+    "carried": null,
+    "vehicle": {
+      "x": 1.4049952548299814e-16,
+      "z": 4.852733612060547,
+      "yaw": 3.141592653589793
+    },
+    "crates": [
+      {
+        "index": 0,
+        "x": -5,
+        "y": -1.4305114748314196e-7,
+        "z": 0,
+        "yaw": 0,
+        "done": false,
+        "stable": 0,
+        "velocity": {
+          "x": 0,
+          "y": 0.00000286102294921875,
+          "z": 0
+        }
+      },
+      {
+        "index": 1,
+        "x": 0,
+        "y": -1.4305114748314196e-7,
+        "z": 0,
+        "yaw": 0,
+        "done": false,
+        "stable": 0,
+        "velocity": {
+          "x": 0,
+          "y": 0.00000286102294921875,
+          "z": 0
+        }
+      },
+      {
+        "index": 2,
+        "x": 5,
+        "y": -1.4305114748314196e-7,
+        "z": 0,
+        "yaw": 0,
+        "done": false,
+        "stable": 0,
+        "velocity": {
+          "x": 0,
+          "y": 0.00000286102294921875,
+          "z": 0
+        }
+      }
+    ],
+    "resources": {
+      "geometries": 106,
+      "textures": 32,
+      "programs": 4
+    },
+    "physicsBodies": 11
+  },
+  "consoleErrors": []
+}

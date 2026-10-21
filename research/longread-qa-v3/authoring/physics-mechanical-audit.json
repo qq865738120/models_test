@@ -1,0 +1,336 @@
+{
+  "passed": true,
+  "errors": [],
+  "questions": [
+    {
+      "id": "P01",
+      "phase": "initial",
+      "sources": [
+        "P02",
+        "P03",
+        "P08",
+        "P11"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P02",
+      "phase": "initial",
+      "sources": [
+        "P02",
+        "P07",
+        "P09"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P03",
+      "phase": "initial",
+      "sources": [
+        "P01",
+        "P11",
+        "P12"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P04",
+      "phase": "initial",
+      "sources": [
+        "P14",
+        "P15",
+        "P17"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P05",
+      "phase": "initial",
+      "sources": [
+        "P18",
+        "P24"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P06",
+      "phase": "initial",
+      "sources": [
+        "P14",
+        "P24",
+        "P25"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P07",
+      "phase": "initial",
+      "sources": [
+        "P19",
+        "P21"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P08",
+      "phase": "initial",
+      "sources": [
+        "P14",
+        "P22",
+        "P23"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P09",
+      "phase": "initial",
+      "sources": [
+        "P05",
+        "P13"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P10",
+      "phase": "initial",
+      "sources": [
+        "P04",
+        "P06"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P11",
+      "phase": "initial",
+      "sources": [
+        "P02",
+        "P04"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P12",
+      "phase": "initial",
+      "sources": [
+        "P16",
+        "P17",
+        "P21"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P13",
+      "phase": "initial",
+      "sources": [
+        "P09",
+        "P12",
+        "P13"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P14",
+      "phase": "initial",
+      "sources": [
+        "P10",
+        "P13"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P15",
+      "phase": "initial",
+      "sources": [
+        "P11",
+        "P13"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P16",
+      "phase": "initial",
+      "sources": [
+        "P19",
+        "P21"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P17",
+      "phase": "initial",
+      "sources": [
+        "P15",
+        "P19"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P18",
+      "phase": "initial",
+      "sources": [
+        "P18",
+        "P21",
+        "P24"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P19",
+      "phase": "initial",
+      "sources": [
+        "P14",
+        "P22"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P20",
+      "phase": "initial",
+      "sources": [
+        "P14",
+        "P15",
+        "P24"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P21",
+      "phase": "initial",
+      "sources": [
+        "P11",
+        "P12"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P22",
+      "phase": "initial",
+      "sources": [
+        "P02",
+        "P09"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P23",
+      "phase": "initial",
+      "sources": [
+        "P16",
+        "P19",
+        "P21"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "P24",
+      "phase": "initial",
+      "sources": [
+        "P15",
+        "P20"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XP01",
+      "phase": "change",
+      "sources": [
+        "P19",
+        "P21"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XP02",
+      "phase": "change",
+      "sources": [
+        "P14",
+        "P24",
+        "P25"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XP03",
+      "phase": "change",
+      "sources": [
+        "P01",
+        "P09"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XP04",
+      "phase": "change",
+      "sources": [
+        "P15",
+        "P19"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XP05",
+      "phase": "change",
+      "sources": [
+        "P10",
+        "P13"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XP06",
+      "phase": "change",
+      "sources": [
+        "P06",
+        "P10"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XP07",
+      "phase": "change",
+      "sources": [
+        "P24",
+        "P25"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XP08",
+      "phase": "change",
+      "sources": [
+        "P05",
+        "P13"
+      ],
+      "scoring": "exact"
+    }
+  ],
+  "quotesChecked": 585,
+  "sourceSha256": {
+    "research/longread-20261018/papers/P03-2609.37437v1.txt": "803660e0bb9505313ad89d359273908bb8a6525b76d20535f58ab8c3010b8fce",
+    "research/longread-20261018/papers/P02-2609.26517v2.txt": "13ec3efff2b3b2d7a6709acdf387bd0acd0315cd0934b92515e3ac7ac639cc6a",
+    "research/longread-20261018/papers/P11-2610.20716v1.txt": "160c30052d55f2b96e8b723289f5582b54d3f525394ba9bc7e1636ad36353c04",
+    "research/longread-20261018/papers/P08-2610.14354v1.txt": "43514ee7049f5b3cda0a25d94915bfe3ac3927d30f2333103fd961ee7532ad66",
+    "research/longread-20261018/papers/P07-2610.05729v1.txt": "02e13a05775c3851b710c6670a492b8cd1e48b98b04f95cdf95a53c0d62d613a",
+    "research/longread-20261018/papers/P09-2609.31113v1.txt": "5d0440423c0f1641ae915ecda4d330c21e3f74d5212cfbaca754eef7a13cb570",
+    "research/longread-20261018/papers/P01-2610.20720v1.txt": "a8d4c9bb3fc45a01eb1226e69abb87cda6085f5a12f8cef8ccca3c154e646ee8",
+    "research/longread-20261018/papers/P12-2610.20002v1.txt": "78297645269a1d3da4087940fc9515657e229651584c1f6ec53695dd237662fd",
+    "research/longread-20261018/papers/P17-2610.06059v1.txt": "0cca9051bd365e29b06f8e7e7ad54c79b40b1c127cb769bd265721d1a104c25c",
+    "research/longread-20261018/papers/P14-2610.21357v1.txt": "a531f5c7bfa6a029e54b28dc7a916580549a00fb5334e8a475c725663f5e9d11",
+    "research/longread-20261018/papers/P15-2610.13589v1.txt": "482ef3cd95b886a256aa4d4f7a0904da916a62ad5ebac78408016716474fdd86",
+    "research/longread-20261018/papers/P18-2609.40279v1.txt": "19b7b3dca21b5dbc7541139f813e81be0ccbc810280ef2e6a799e296d3cedc45",
+    "research/longread-20261018/papers/P24-2610.06811v1.txt": "a9b0110cc4058b57ac13c8412a3e764ec8d106c8dc1f3d8ad608903ffc3c0646",
+    "research/longread-20261018/papers/P25-2610.17612v1.txt": "d6510762f3b3c749ad57f8ba7b84390779ee1eb8d1e08adada2502b3c996030e",
+    "research/longread-20261018/papers/P21-2610.00504v1.txt": "23167c248c4ff9bee650af6e0132b609c564e1a25c2df69a1e1f2ab247281bf8",
+    "research/longread-20261018/papers/P19-2610.03399v1.txt": "a93b7f9bbc58a588c9bd086cb40394ddc7fdeb37a330bb45fe87ed7b0829c88d",
+    "research/longread-20261018/papers/P23-2610.04613v1.txt": "c4870d6c4bc690eccb77e63c67add81d527fc40edc34cf2c4c73f76a206c959a",
+    "research/longread-20261018/papers/P22-2610.03682v1.txt": "5db35a48889ac949698eff311e8560dd94e3e5e21c87de72e90ef7b4641e2b45",
+    "research/longread-20261018/papers/P13-2610.10585v1.txt": "dcdf95bb213f1b8da183c6bfec81162e1bb4de0eefc2a718b601189d58318e6d",
+    "research/longread-20261018/papers/P05-2609.40176v1.txt": "776c151ad4ca63dde28baa1a5c4d4a7dcda0709576ddd7595d4adc1d2ab9ab8b",
+    "research/longread-20261018/papers/P06-2610.01836v1.txt": "8a3d2e85e360fc5eed1c0e6eb2000ae399091bb7b9722efd9f333103692a478c",
+    "research/longread-20261018/papers/P04-2608.19883v2.txt": "9763c21c0c1f74d26f5728700bb3bee0f6cc83ea8ed6d8d1595ea9a9ecac7ab1",
+    "research/longread-20261018/papers/P16-2610.02734v1.txt": "d0c8a8df6711d56b0298dedcfd8b325f66a15dd200ef850bd2afcb8e9edb8c11",
+    "research/longread-20261018/papers/P10-2609.35317v1.txt": "07b73f2ef5cafbcdd4ab3c4e576b2fa250a13e6473630a4fa48c29450531c063",
+    "research/longread-20261018/papers/P20-2610.03869v1.txt": "0c7cbb01fdd73f3b077a569e30e69dc41e3a6d54adc4ad37da0226d2d78e3c2d"
+  },
+  "scope": "字段、来源定位、引用子串与答案档位一致性；科学有效性和跨材料必要性须另行独立复核。"
+}

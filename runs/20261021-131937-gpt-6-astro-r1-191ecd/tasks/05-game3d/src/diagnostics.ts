@@ -1,0 +1,12 @@
+import benchSource from '../tools/performance.js?raw'
+import type {WebGLRenderer} from 'three'
+export function diagnostics(renderer:WebGLRenderer,read:()=>unknown){
+ new Function(benchSource)();
+ const panel=document.createElement('aside');panel.id='diagnostics';panel.style.cssText='display:none;position:fixed;z-index:20;right:25px;top:85px;width:370px;background:#f6f1df;color:#193b49;padding:20px;border-radius:10px;box-shadow:0 10px 60px #1236;font:12px sans-serif';panel.innerHTML='<b>本地画面诊断 · F3</b><p>使用 tools/performance.js 原文。预热 10 秒，采样 60 秒。采样期间正常驾驶。</p><button id="sample" style="padding:10px">采样 70 秒</button> <button id="resource" style="padding:10px">记录资源</button> <button id="closediag" style="padding:10px">关闭</button><p id="diag-status">尚未采样</p><textarea id="diag-output" readonly style="width:100%;height:220px;font:10px monospace"></textarea><p>重开自动追加几何体、纹理、程序和刚体数量；不会重建场景。</p>';document.body.appendChild(panel);
+ const telemetry=document.createElement('output');telemetry.id='telemetry';telemetry.hidden=true;document.body.appendChild(telemetry);
+ const records:{resources:unknown[],frames:unknown|null}={resources:[],frames:null};const output=panel.querySelector('textarea')!;const render=()=>{output.value=JSON.stringify(records);output.textContent=output.value};const bench=(window as any).bench;
+ panel.querySelector('#sample')!.addEventListener('click',async()=>{const b=panel.querySelector('#sample') as HTMLButtonElement;b.disabled=true;panel.querySelector('#diag-status')!.textContent='预热 / 采样中，可关闭面板继续驾驶';const start=read();try{const frames=await bench.frames({warmupSeconds:10,sampleSeconds:60});records.frames={...frames,start,end:read()};render();panel.querySelector('#diag-status')!.textContent=`完成：P95 ${frames.p95.toFixed(2)} ms · ${frames.width}×${frames.height} · DPR ${frames.dpr}`;}catch(e){panel.querySelector('#diag-status')!.textContent=String(e)}b.disabled=false});
+ function resource(){records.resources.push({...bench.resources(renderer),world:read()});render()}
+ panel.querySelector('#resource')!.addEventListener('click',resource);panel.querySelector('#closediag')!.addEventListener('click',()=>panel.style.display='none');addEventListener('keydown',e=>{if(e.code==='F3'){e.preventDefault();panel.style.display=panel.style.display==='none'?'block':'none'}});
+ return {publish:()=>telemetry.textContent=JSON.stringify(read()),resource:()=>requestAnimationFrame(()=>requestAnimationFrame(resource))}
+}

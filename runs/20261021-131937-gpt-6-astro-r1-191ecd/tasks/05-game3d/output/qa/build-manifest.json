@@ -1,0 +1,27 @@
+[
+  {
+    "file": "assets/index-595qulrL.css",
+    "bytes": 8703,
+    "sha256": "822bd0b73f65799c6fbdf501fa73cdef8d5496c14ce1f54dcd6b34899e6c26ba"
+  },
+  {
+    "file": "assets/index-qsOl13Hd.js",
+    "bytes": 640764,
+    "sha256": "e2536256eb7fa16b0251712222e038107052b94d949f5a66a3a5ac4764544520"
+  },
+  {
+    "file": "index.html",
+    "bytes": 440,
+    "sha256": "5f8ce9ffec6ba932ca7634573be7e47d4c1a1508116048ca52dbd01dc923bcbe"
+  },
+  {
+    "file": "vendor/ammo/ammo.wasm.js",
+    "bytes": 393768,
+    "sha256": "3fa63c584d4732f72b954c5ea105f1faca99559c95c57ce7bb738d3497f98228"
+  },
+  {
+    "file": "vendor/ammo/ammo.wasm.wasm",
+    "bytes": 651386,
+    "sha256": "16be07b989963bddebfef66eab28a4387536eb37014d9df1531dab380bd96a93"
+  }
+]

@@ -1,0 +1,171 @@
+<!doctype html>
+<!-- Host-only browser-check regression fixture. Never distribute to candidates. -->
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTTP browser regression fixture</title>
+<style>
+body{font:16px sans-serif;margin:24px;color:#203c35}button,input,select{font:inherit;padding:8px;margin:3px}
+nav{display:flex;gap:8px}table{border-collapse:collapse;width:100%}td,th{padding:5px;border-bottom:1px solid #ddd}
+[hidden]{display:none!important}.panel{background:#faf8f0;border:1px solid #bdcdbd;padding:24px;position:fixed;inset:80px 15%;overflow:auto}
+.stats{display:flex;gap:24px;padding:20px}main{max-width:1200px}
+</style>
+<nav>
+  <button data-testid="nav-overview">总览</button><button data-testid="nav-orders">订单</button>
+  <button data-testid="nav-couriers">配送员</button><button data-testid="nav-reports">报表</button>
+  <button data-testid="nav-settings">设置</button>
+</nav>
+<main>
+  <section id="overview" hidden><h1>总览</h1><div class="stats" data-stats></div><button id="go-pending">去派单</button></section>
+  <section id="orders">
+    <h1>订单派送</h1>
+    <form id="query-form">
+      <input data-testid="order-search" aria-label="搜索订单">
+      <select data-testid="status-filter" aria-label="订单状态"><option value="all">全部</option><option value="pending">待派单</option><option value="assigned">配送中</option><option value="delivered">已送达</option></select>
+      <button data-testid="search-submit">查询</button><button type="button" data-testid="clear-filters">清除</button>
+      <button type="button" data-testid="assign-open" disabled>派单</button>
+    </form>
+    <div data-testid="orders-loading" hidden>加载中</div>
+    <div data-testid="orders-error" hidden></div><button data-testid="orders-retry" hidden>重试</button>
+    <div data-testid="orders-empty" hidden>无结果，请清除条件</div>
+    <table data-testid="orders-table"><thead><tr><th><input type="checkbox" data-testid="select-all" aria-label="全选本页"></th><th>订单</th><th>客户</th><th>地址</th><th>状态</th><th>详情</th></tr></thead><tbody></tbody></table>
+    <div>总数 <span data-testid="total-count">0</span>；页码 <span data-testid="page-number">1</span></div>
+    <button data-testid="page-prev" disabled>上一页</button><button data-testid="page-next" disabled>下一页</button>
+  </section>
+  <section id="couriers" hidden><h1>配送员</h1><div id="courier-list"></div></section>
+  <section id="reports" hidden><h1>报表</h1><div class="stats" data-stats></div></section>
+  <section id="settings" hidden><h1>设置</h1><select data-testid="page-size" aria-label="每页条数"><option>20</option><option>50</option><option>100</option></select><button data-testid="settings-save">保存</button><button data-testid="settings-reset">恢复默认</button></section>
+</main>
+<section role="dialog" aria-label="派单确认" data-testid="assign-dialog" class="panel" hidden>
+  <h2>确认派单</h2><span id="selected-count"></span>
+  <select data-testid="courier-select" aria-label="配送员"><option value="">请选择</option><option value="P01">鹈鹕一号</option><option value="P02">鹈鹕二号</option><option value="P03">鹈鹕三号</option></select>
+  <button data-testid="assign-confirm" disabled>确认</button><button data-testid="assign-cancel">取消</button><p id="assign-error"></p>
+</section>
+<section role="dialog" aria-label="订单详情" data-testid="detail-drawer" class="panel" hidden><h2>详情</h2><div id="detail-content"></div><button data-testid="detail-close">关闭</button></section>
+<script>
+const FAULT = '__TEST_FAULT__'
+const UI_DELAY_MS = 60
+const by = id => document.querySelector(`[data-testid="${id}"]`)
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+const state = {view:'orders',q:'',status:'all',page:1,size:20,rows:[],total:0,selected:new Set(),request:0,detail:0,courier:''}
+let listController
+function queryUrl() {
+  const url = new URL('api/orders', document.baseURI)
+  for (const [key,value] of Object.entries({q:state.q,status:state.status,page:state.page,pageSize:state.size})) url.searchParams.set(key,String(value))
+  return url
+}
+async function api(route, body) {
+  const response = await fetch(new URL(route, document.baseURI), body ? {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)} : {})
+  const data = await response.json()
+  if (!response.ok) throw new Error(data.error.message)
+  return data
+}
+function readUrl() {
+  const url = new URL(location.href), status = url.searchParams.get('status')
+  state.q = url.searchParams.get('q') || ''
+  state.status = ['all','pending','assigned','delivered'].includes(status) ? status : 'all'
+  const raw = url.searchParams.get('page')
+  state.page = raw && /^[1-9]\d*$/.test(raw) && Number.isSafeInteger(Number(raw)) ? Number(raw) : 1
+  by('order-search').value=state.q;by('status-filter').value=state.status
+}
+function writeUrl(replace=false) {
+  const url = new URL(location.href)
+  url.searchParams.set('q',state.q);url.searchParams.set('status',state.status);url.searchParams.set('page',String(state.page))
+  if (url.href!==location.href) history[replace?'replaceState':'pushState']({},'',url)
+}
+function clearSelection() {state.selected.clear();by('assign-open').disabled=true;by('select-all').checked=false}
+function renderRows() {
+  const body=by('orders-table').querySelector('tbody');body.replaceChildren()
+  for (const row of state.rows) {
+    const tr=document.createElement('tr');tr.dataset.testid='order-row';tr.dataset.orderId=row.id
+    const cell=document.createElement('td'), checkbox=document.createElement('input')
+    checkbox.type='checkbox';checkbox.dataset.testid='order-select';checkbox.setAttribute('aria-label','选择'+row.id)
+    checkbox.disabled=row.status!=='pending';checkbox.checked=state.selected.has(row.id)
+    checkbox.onchange=()=>{checkbox.checked?state.selected.add(row.id):state.selected.delete(row.id);by('assign-open').disabled=!state.selected.size}
+    cell.append(checkbox);tr.append(cell)
+    for(const key of ['id','customer','address','status']){const td=document.createElement('td');td.textContent=row[key];tr.append(td)}
+    const td=document.createElement('td'),button=document.createElement('button')
+    button.dataset.testid='order-detail';button.textContent='详情';button.onclick=()=>openDetail(row.id);td.append(button);tr.append(td);body.append(tr)
+  }
+  by('total-count').textContent=String(state.total);by('page-number').textContent=String(state.page)
+  by('orders-empty').hidden=!!state.rows.length
+  by('page-prev').disabled=state.page<=1;by('page-next').disabled=state.page*state.size>=state.total
+}
+async function loadOrders() {
+  const token=++state.request
+  if(FAULT==='abort-stale')listController?.abort()
+  listController=new AbortController()
+  by('orders-loading').hidden=false;by('orders-error').hidden=true;by('orders-retry').hidden=true
+  try {
+    const response=await fetch(queryUrl(),{signal:listController.signal}),data=await response.json()
+    await sleep(UI_DELAY_MS)
+    if (FAULT!=='stale' && token!==state.request) return
+    if (!response.ok) throw new Error(data.error.message)
+    const last=Math.max(1,Math.ceil(data.total/state.size))
+    if(state.page>last){state.page=last;writeUrl(true);await loadOrders();return}
+    state.rows=data.items;state.total=data.total;renderRows()
+  } catch(error) {
+    if(FAULT!=='stale' && token!==state.request)return
+    by('orders-error').textContent=error.message;by('orders-error').hidden=false;by('orders-retry').hidden=false
+  } finally {
+    if(FAULT==='stale'||token===state.request)by('orders-loading').hidden=true
+  }
+}
+async function openDetail(id) {
+  const token=++state.detail
+  by('detail-drawer').hidden=false;document.querySelector('#detail-content').textContent='加载中'
+  const data=await api('api/orders/'+encodeURIComponent(id))
+  await sleep(UI_DELAY_MS)
+  if(token!==state.detail)return
+  document.querySelector('#detail-content').textContent=Object.values(data).map(v=>v??'未分配').join(' / ')
+}
+async function loadStats(view) {
+  const host=document.querySelector('#'+view+' [data-stats]')
+  host.replaceChildren()
+  for(const name of ['all','pending','assigned','delivered']){const span=document.createElement('span');span.dataset.testid='stats-'+name;span.textContent='读取中';host.append(span)}
+  const stats=await api('api/stats');await sleep(UI_DELAY_MS)
+  for(const name of ['all','pending','assigned','delivered'])host.querySelector(`[data-testid="stats-${name}"]`).textContent=String(stats[name])
+}
+async function navigate(view) {
+  clearSelection();by('assign-dialog').hidden=true;by('detail-drawer').hidden=true;state.detail++
+  state.view=view
+  document.querySelectorAll('main>section').forEach(section=>{section.hidden=section.id!==view})
+  // Each mounted page has its own stats. Unmount old stats to keep test IDs unique.
+  document.querySelectorAll('[data-stats]').forEach(host=>host.replaceChildren())
+  if(view==='orders')await loadOrders()
+  if(view==='overview'||view==='reports')await loadStats(view)
+  if(view==='couriers'){
+    const data=await api('api/couriers'),host=document.querySelector('#courier-list');host.replaceChildren()
+    for(const courier of data.items){
+      const button=document.createElement('button');button.dataset.testid='courier-assign';button.dataset.courierId=courier.id
+      button.textContent=courier.name+'：为TA派单';button.onclick=()=>{state.courier=courier.id;state.status='pending';state.page=1;by('status-filter').value='pending';writeUrl();navigate('orders')};host.append(button)
+    }
+  }
+  if(view==='settings')by('page-size').value=String(state.size)
+}
+for(const view of ['overview','orders','couriers','reports','settings'])by('nav-'+view).onclick=()=>navigate(view)
+document.querySelector('#query-form').onsubmit=event=>{event.preventDefault();state.q=by('order-search').value;state.page=1;clearSelection();writeUrl();loadOrders()}
+by('status-filter').onchange=()=>{state.status=by('status-filter').value;state.page=1;clearSelection();writeUrl();loadOrders()}
+by('clear-filters').onclick=()=>{state.q='';state.status='all';state.page=1;by('order-search').value='';by('status-filter').value='all';clearSelection();writeUrl();loadOrders()}
+by('page-prev').onclick=()=>{state.page--;clearSelection();writeUrl();loadOrders()}
+by('page-next').onclick=()=>{state.page++;clearSelection();writeUrl();loadOrders()}
+by('orders-retry').onclick=loadOrders
+by('detail-close').onclick=()=>{state.detail++;by('detail-drawer').hidden=true}
+by('select-all').onchange=()=>{state.selected=new Set(by('select-all').checked?state.rows.filter(r=>r.status==='pending').map(r=>r.id):[]);renderRows();by('assign-open').disabled=!state.selected.size}
+by('assign-open').onclick=()=>{by('assign-dialog').hidden=false;by('courier-select').value=state.courier;by('assign-confirm').disabled=!state.courier;document.querySelector('#selected-count').textContent=String(state.selected.size);document.querySelector('#assign-error').textContent=''}
+by('assign-cancel').onclick=()=>{by('assign-dialog').hidden=true}
+by('courier-select').onchange=()=>{by('assign-confirm').disabled=!by('courier-select').value}
+by('assign-confirm').onclick=async()=>{
+  by('assign-confirm').disabled=true
+  try{
+    if(FAULT!=='fake-assignment')await api('api/assign',{ids:[...state.selected],courierId:by('courier-select').value})
+    by('assign-dialog').hidden=true;clearSelection();await loadOrders()
+  }catch(error){document.querySelector('#assign-error').textContent=error.message;by('assign-confirm').disabled=false}
+}
+by('settings-save').onclick=()=>{state.size=Number(by('page-size').value);state.page=1;clearSelection();writeUrl()}
+by('settings-reset').onclick=()=>{state.size=20;state.page=1;by('page-size').value='20';clearSelection();writeUrl()}
+document.querySelector('#go-pending').onclick=()=>{state.status='pending';state.page=1;by('status-filter').value='pending';writeUrl();navigate('orders')}
+addEventListener('popstate',()=>{readUrl();clearSelection();navigate('orders')})
+readUrl();writeUrl(true);loadOrders()
+</script>
+</html>

@@ -1,0 +1,3106 @@
+{
+  "version": "longread-qa-v4",
+  "phases": {
+    "initial": [
+      {
+        "id": "P01",
+        "answer": "4/5;71/363;-76/3993",
+        "evidence": [
+          {
+            "source": "P13",
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.txt",
+            "locator": "PDF page 3",
+            "quote": "For a thermally distributed sterile neutrino with temper-\natureT s, its relativistic energy density is proportional to\nT 4\ns . Hence, its contribution to the radiation density is\nrelated to its temperature by,\nTs\nTν,active\n= (∆Neff)1/4,where, Tν,active\nTγ\n≃\n\u0012 4\n11\n\u00131/3\n.\n(5)\nWe assume a Fermi–Dirac phase-space distribution for\nthe sterile neutrino. Since the number density scales\nasT 3\ns , partial thermalization also reduces the late-time\nabundance of the sterile species. In the non-relativistic\nregime, its cosmological density can therefore be ex-\npressed in terms of an effective mass,\nms,eff =m s(∆Neff)3/4.(6)"
+          },
+          {
+            "source": "P02",
+            "path": "research/longread-20261018/papers/P02-2609.26517v2.txt",
+            "locator": "PDF page 5",
+            "quote": "H2(z) =H 2\n0\n\u00141 +S(0)\n1 +S(z)\n\u00152\u0002\n(1 +z) 3Ωm0 + Ωde0\n\u0003\n,(30)\nwhere we have usedH 2"
+          },
+          {
+            "source": "P04",
+            "path": "research/longread-20261018/papers/P04-2608.19883v2.txt",
+            "locator": "PDF page 2",
+            "quote": "Om(z)≡ E(z)2 −1\n(1+z) 3 −1 = Ωm +(1−Ω m) X(z)−1\n(1+z) 3 −1 ,(4)\nwhereE(z) :=H(z)/H 0"
+          }
+        ],
+        "derivation": "温度比 u=1/2，ms,eff=ms*u³；m=1/6+ms/8。E²=(m(1+z)³+1-m)/(1+bz)²；E²′(0)=3m-2b=3/5，解 m=4/15,ms=4/5。z=1 时 E²=860/363; Om=71/363; 商法则 Om′=-76/3993。Fraction 与 展开多项式 独立求导一致。",
+        "dependencies": [
+          {
+            "source": "P13",
+            "contribution": "温度四次方与有效质量三次方的不同映射"
+          },
+          {
+            "source": "P02",
+            "contribution": "H² 中归一化 susceptibility 的平方而非一次方"
+          },
+          {
+            "source": "P04",
+            "contribution": "Om 的 H0 归一化与红移分母"
+          }
+        ],
+        "ablation": "去掉P13后不能确定温度四次方与有效质量三次方的不同映射；去掉P02后不能确定H² 中归一化 susceptibility 的平方而非一次方；去掉P04后不能确定Om 的 H0 归一化与红移分母。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "仅使用背景式和诊断量，不使用该 susceptibility 文中相互不一致的 effective-density 后续式。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P02",
+        "answer": "6;7;81/625",
+        "evidence": [
+          {
+            "source": "P13",
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.txt",
+            "locator": "PDF page 3",
+            "quote": "For a thermally distributed sterile neutrino with temper-\natureT s, its relativistic energy density is proportional to\nT 4\ns . Hence, its contribution to the radiation density is\nrelated to its temperature by,\nTs\nTν,active\n= (∆Neff)1/4,where, Tν,active\nTγ\n≃\n\u0012 4\n11\n\u00131/3\n.\n(5)\nWe assume a Fermi–Dirac phase-space distribution for\nthe sterile neutrino. Since the number density scales\nasT 3\ns , partial thermalization also reduces the late-time\nabundance of the sterile species. In the non-relativistic\nregime, its cosmological density can therefore be ex-\npressed in terms of an effective mass,\nms,eff =m s(∆Neff)3/4.(6)"
+          },
+          {
+            "source": "P02",
+            "path": "research/longread-20261018/papers/P02-2609.26517v2.txt",
+            "locator": "PDF page 5",
+            "quote": "H2(z) =H 2\n0\n\u00141 +S(0)\n1 +S(z)\n\u00152\u0002\n(1 +z) 3Ωm0 + Ωde0\n\u0003\n,(30)\nwhere we have usedH 2"
+          },
+          {
+            "source": "P04",
+            "path": "research/longread-20261018/papers/P04-2608.19883v2.txt",
+            "locator": "PDF page 2",
+            "quote": "Om(z)≡ E(z)2 −1\n(1+z) 3 −1 = Ωm +(1−Ω m) X(z)−1\n(1+z) 3 −1 ,(4)\nwhereE(z) :=H(z)/H 0"
+          }
+        ],
+        "derivation": "枚举225组而非独立拟合两个点；每组 m=1/8+(n/10)³；两个 Om 联合筛选仅 (6, 7)；ΔN=(3/5)^4=81/625。第二方法代入两个有理多项式并交叉相乘核验，两者同时为零。",
+        "dependencies": [
+          {
+            "source": "P13",
+            "contribution": "温度四次方与有效质量三次方的不同映射"
+          },
+          {
+            "source": "P02",
+            "contribution": "H² 中归一化 susceptibility 的平方而非一次方"
+          },
+          {
+            "source": "P04",
+            "contribution": "Om 的 H0 归一化与红移分母"
+          }
+        ],
+        "ablation": "去掉P13后不能确定温度四次方与有效质量三次方的不同映射；去掉P02后不能确定H² 中归一化 susceptibility 的平方而非一次方；去掉P04后不能确定Om 的 H0 归一化与红移分母。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "离散合成参数反演，非真实观测约束。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P03",
+        "answer": "7;23;12983/69277",
+        "evidence": [
+          {
+            "source": "P13",
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.txt",
+            "locator": "PDF page 3",
+            "quote": "For a thermally distributed sterile neutrino with temper-\natureT s, its relativistic energy density is proportional to\nT 4\ns . Hence, its contribution to the radiation density is\nrelated to its temperature by,\nTs\nTν,active\n= (∆Neff)1/4,where, Tν,active\nTγ\n≃\n\u0012 4\n11\n\u00131/3\n.\n(5)\nWe assume a Fermi–Dirac phase-space distribution for\nthe sterile neutrino. Since the number density scales\nasT 3\ns , partial thermalization also reduces the late-time\nabundance of the sterile species. In the non-relativistic\nregime, its cosmological density can therefore be ex-\npressed in terms of an effective mass,\nms,eff =m s(∆Neff)3/4.(6)"
+          },
+          {
+            "source": "P02",
+            "path": "research/longread-20261018/papers/P02-2609.26517v2.txt",
+            "locator": "PDF page 5",
+            "quote": "H2(z) =H 2\n0\n\u00141 +S(0)\n1 +S(z)\n\u00152\u0002\n(1 +z) 3Ωm0 + Ωde0\n\u0003\n,(30)\nwhere we have usedH 2"
+          },
+          {
+            "source": "P04",
+            "path": "research/longread-20261018/papers/P04-2608.19883v2.txt",
+            "locator": "PDF page 2",
+            "quote": "Om(z)≡ E(z)2 −1\n(1+z) 3 −1 = Ωm +(1−Ω m) X(z)−1\n(1+z) 3 −1 ,(4)\nwhereE(z) :=H(z)/H 0"
+          }
+        ],
+        "derivation": "共9可行格点。按 ms,eff=(n/10)^3 的严格单调性先最大 n，再最小 j。最优 n=7,j=23,m=443/1000,Om1=8627/35301,Om2=12983/69277。逐点 Fraction 与 展开多项式 导数一致；反序排序再筛选给同一结果。",
+        "dependencies": [
+          {
+            "source": "P13",
+            "contribution": "温度四次方与有效质量三次方的不同映射"
+          },
+          {
+            "source": "P02",
+            "contribution": "H² 中归一化 susceptibility 的平方而非一次方"
+          },
+          {
+            "source": "P04",
+            "contribution": "Om 的 H0 归一化与红移分母"
+          }
+        ],
+        "ablation": "去掉P13后不能确定温度四次方与有效质量三次方的不同映射；去掉P02后不能确定H² 中归一化 susceptibility 的平方而非一次方；去掉P04后不能确定Om 的 H0 归一化与红移分母。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "有限设计优化；闭区间边界按精确分数比较。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P04",
+        "answer": "9/10;1/16;-13/50",
+        "evidence": [
+          {
+            "source": "P13",
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.txt",
+            "locator": "PDF page 3",
+            "quote": "For a thermally distributed sterile neutrino with temper-\natureT s, its relativistic energy density is proportional to\nT 4\ns . Hence, its contribution to the radiation density is\nrelated to its temperature by,\nTs\nTν,active\n= (∆Neff)1/4,where, Tν,active\nTγ\n≃\n\u0012 4\n11\n\u00131/3\n.\n(5)\nWe assume a Fermi–Dirac phase-space distribution for\nthe sterile neutrino. Since the number density scales\nasT 3\ns , partial thermalization also reduces the late-time\nabundance of the sterile species. In the non-relativistic\nregime, its cosmological density can therefore be ex-\npressed in terms of an effective mass,\nms,eff =m s(∆Neff)3/4.(6)"
+          },
+          {
+            "source": "P05",
+            "path": "research/longread-20261018/papers/P05-2609.40176v1.txt",
+            "locator": "PDF page 1",
+            "quote": "Ωg ≡1− GN\nGcosmo\n,(1)\nwhereG N is the locally measured Newtonian coupling\nandG cosmo is the coupling entering the Friedmann equa-\ntion. In a flat universe this background evolution corre-\nsponds to an effective dark-energy density\nρDE = ΩgρnonDE +ρ Λ\n1−Ω g\n,(2)\nwhereρ nonDE contains matter, radiation, and neutri-"
+          },
+          {
+            "source": "P04",
+            "path": "research/longread-20261018/papers/P04-2608.19883v2.txt",
+            "locator": "PDF page 2",
+            "quote": "Om(z)≡ E(z)2 −1\n(1+z) 3 −1 = Ωm +(1−Ω m) X(z)−1\n(1+z) 3 −1 ,(4)\nwhereE(z) :=H(z)/H 0"
+          }
+        ],
+        "derivation": "归一化 lambda=1/r-m-a。Om(z)=r[m+a((1+z)^4-1)/((1+z)^3-1)]。先两点作差 r=9/10，回代 m=13/40，u³=m-1/5=1/8，所以 ΔN=u⁴=1/16。lambda=1397/1800;rhoDE2=-13/50。直接修改 Friedmann 与有效密度相加两法一致。",
+        "dependencies": [
+          {
+            "source": "P13",
+            "contribution": "由热温度比推有效质量后进入非暗部门"
+          },
+          {
+            "source": "P05",
+            "contribution": "G 比值与 glitch 参数互为非线性倒数及有效密度重写"
+          },
+          {
+            "source": "P04",
+            "contribution": "从含辐射的 E² 归一化构造 Om，而非直接等同 m"
+          }
+        ],
+        "ablation": "去掉P13后不能确定由热温度比推有效质量后进入非暗部门；去掉P05后不能确定G 比值与 glitch 参数互为非线性倒数及有效密度重写；去掉P04后不能确定从含辐射的 E² 归一化构造 Om，而非直接等同 m。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "cosmic glitch 为独立背景模型，不与 susceptibility 混同。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P05",
+        "answer": "1053/1093;-40/1053;1/2",
+        "evidence": [
+          {
+            "source": "P13",
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.txt",
+            "locator": "PDF page 3",
+            "quote": "For a thermally distributed sterile neutrino with temper-\natureT s, its relativistic energy density is proportional to\nT 4\ns . Hence, its contribution to the radiation density is\nrelated to its temperature by,\nTs\nTν,active\n= (∆Neff)1/4,where, Tν,active\nTγ\n≃\n\u0012 4\n11\n\u00131/3\n.\n(5)\nWe assume a Fermi–Dirac phase-space distribution for\nthe sterile neutrino. Since the number density scales\nasT 3\ns , partial thermalization also reduces the late-time\nabundance of the sterile species. In the non-relativistic\nregime, its cosmological density can therefore be ex-\npressed in terms of an effective mass,\nms,eff =m s(∆Neff)3/4.(6)"
+          },
+          {
+            "source": "P05",
+            "path": "research/longread-20261018/papers/P05-2609.40176v1.txt",
+            "locator": "PDF page 1",
+            "quote": "Ωg ≡1− GN\nGcosmo\n,(1)\nwhereG N is the locally measured Newtonian coupling\nandG cosmo is the coupling entering the Friedmann equa-\ntion. In a flat universe this background evolution corre-\nsponds to an effective dark-energy density\nρDE = ΩgρnonDE +ρ Λ\n1−Ω g\n,(2)\nwhereρ nonDE contains matter, radiation, and neutri-"
+          },
+          {
+            "source": "P04",
+            "path": "research/longread-20261018/papers/P04-2608.19883v2.txt",
+            "locator": "PDF page 2",
+            "quote": "Om(z)≡ E(z)2 −1\n(1+z) 3 −1 = Ωm +(1−Ω m) X(z)−1\n(1+z) 3 −1 ,(4)\nwhereE(z) :=H(z)/H 0"
+          }
+        ],
+        "derivation": "u=1/2,ms,eff=1/4,m=1/2。z2非暗密度=14，用 lambda=1/r-m-a 代入 rhoDE=0，r=(nd-1)/(nd-m-a)=1053/1093。g=-40/1053;Om2=1/2。有效密度公式与 E²-nd 独立核验为零。",
+        "dependencies": [
+          {
+            "source": "P13",
+            "contribution": "由热温度比推有效质量后进入非暗部门"
+          },
+          {
+            "source": "P05",
+            "contribution": "G 比值与 glitch 参数互为非线性倒数及有效密度重写"
+          },
+          {
+            "source": "P04",
+            "contribution": "从含辐射的 E² 归一化构造 Om，而非直接等同 m"
+          }
+        ],
+        "ablation": "去掉P13后不能确定由热温度比推有效质量后进入非暗部门；去掉P05后不能确定G 比值与 glitch 参数互为非线性倒数及有效密度重写；去掉P04后不能确定从含辐射的 E² 归一化构造 Om，而非直接等同 m。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "零点是有效暗能量密度零点，不称为 w=-1 crossing。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P06",
+        "answer": "6;93;1897/25000",
+        "evidence": [
+          {
+            "source": "P13",
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.txt",
+            "locator": "PDF page 3",
+            "quote": "For a thermally distributed sterile neutrino with temper-\natureT s, its relativistic energy density is proportional to\nT 4\ns . Hence, its contribution to the radiation density is\nrelated to its temperature by,\nTs\nTν,active\n= (∆Neff)1/4,where, Tν,active\nTγ\n≃\n\u0012 4\n11\n\u00131/3\n.\n(5)\nWe assume a Fermi–Dirac phase-space distribution for\nthe sterile neutrino. Since the number density scales\nasT 3\ns , partial thermalization also reduces the late-time\nabundance of the sterile species. In the non-relativistic\nregime, its cosmological density can therefore be ex-\npressed in terms of an effective mass,\nms,eff =m s(∆Neff)3/4.(6)"
+          },
+          {
+            "source": "P05",
+            "path": "research/longread-20261018/papers/P05-2609.40176v1.txt",
+            "locator": "PDF page 1",
+            "quote": "Ωg ≡1− GN\nGcosmo\n,(1)\nwhereG N is the locally measured Newtonian coupling\nandG cosmo is the coupling entering the Friedmann equa-\ntion. In a flat universe this background evolution corre-\nsponds to an effective dark-energy density\nρDE = ΩgρnonDE +ρ Λ\n1−Ω g\n,(2)\nwhereρ nonDE contains matter, radiation, and neutri-"
+          },
+          {
+            "source": "P04",
+            "path": "research/longread-20261018/papers/P04-2608.19883v2.txt",
+            "locator": "PDF page 2",
+            "quote": "Om(z)≡ E(z)2 −1\n(1+z) 3 −1 = Ωm +(1−Ω m) X(z)−1\n(1+z) 3 −1 ,(4)\nwhereE(z) :=H(z)/H 0"
+          }
+        ],
+        "derivation": "每个格点先 m=1/10+(n/10)^3，再 lambda=1/r-m-a，再算 rhoDE 与 Om。8可行点；最优 n=6,j=93,Om2=100161/325000,rhoDE2=1897/25000。用 E²-非暗密度独立核验所有格点。",
+        "dependencies": [
+          {
+            "source": "P13",
+            "contribution": "由热温度比推有效质量后进入非暗部门"
+          },
+          {
+            "source": "P05",
+            "contribution": "G 比值与 glitch 参数互为非线性倒数及有效密度重写"
+          },
+          {
+            "source": "P04",
+            "contribution": "从含辐射的 E² 归一化构造 Om，而非直接等同 m"
+          }
+        ],
+        "ablation": "去掉P13后不能确定由热温度比推有效质量后进入非暗部门；去掉P05后不能确定G 比值与 glitch 参数互为非线性倒数及有效密度重写；去掉P04后不能确定从含辐射的 E² 归一化构造 Om，而非直接等同 m。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "有限参数设计，非来自原论文 posterior。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P07",
+        "answer": "61/80;119/732;56525/66978",
+        "evidence": [
+          {
+            "source": "P15",
+            "path": "research/longread-20261018/papers/P15-2610.13589v1.txt",
+            "locator": "PDF page 3",
+            "quote": "2.The Schr¨ odinger picture:The stabilizers stay\nthe same, but the noise on the qubit (p X , pY , pZ)\nis permuted. The HadamardHdeformation would\ngive (pZ, pY , pX) swapping the Pauli-X and Z prob-\nabilities.\nWe note in passing that when circuit-level noise is\nconsidered, the Schr¨ odinger-picture analog formally\nbreaks down. There exist 6 possible deformations\nper qubit, including no deformationI/(p X , pY , pZ),\nH/(pZ, pY , pX),\n√\nZ/(p Y , pX , pZ),H\n√\nZ/(p Y , pZ, pX),√\nZH/(p Z, pX , pY ), andH\n√\nZH/(p X , pZ, pY ) withIthe"
+          },
+          {
+            "source": "P19",
+            "path": "research/longread-20261018/papers/P19-2610.03399v1.txt",
+            "locator": "PDF page 2",
+            "quote": "Definition 1(Noise sensitivity).The sensitivity of noise com-\nponentαis\nSα = ∂PL(λ;D)\n∂λα\n.(4)\nFor an independent Bernoulli noise component, this deriva-\ntive has a direct interpretation in terms of conditional logical\nfailure probabilities. LetE α ∈ {0,1}be the corresponding\nerror indicator, withP(E α = 1) =λ α. Conditioning onE α\ngives\nSα =P(L= 1|E α = 1)−P(L= 1|E α = 0).(5)\nThe sensitivityS α describes the local response of the log-\nical error rate to a small change inλ α. Multiplying this sen-\nsitivity by the component’s current noise strength gives a lin-\nearized measure of its marginal contribution to the logical er-\nror rate.\nDefinition 2(Linearized marginal risk).The linearized\nmarginal risk of noise componentαis\nRα =λ αSα =λ α\n∂PL(λ;D)\n∂λα\n.(6)"
+          },
+          {
+            "source": "P21",
+            "path": "research/longread-20261018/papers/P21-2610.00504v1.txt",
+            "locator": "PDF page 3",
+            "quote": "Given a confidence scores(x)∈Rfor each shot, and\nthresholdτ∈R, the rule accepts a shot iffs(x)≥τ.\nLarger scores indicate greater confidence in decoder suc-\ncess. The performance of the post-selector is charac-\nterised by two quantities:\nYield(τ) =P(s(x)≥τ),(1)\nLER(τ) =P(Ac(σ)̸=Ae|s(x)≥τ),(2)\nwhereAis the logical action matrix of Section II A. In\npractice the yield is the fraction of retained shots and the\nconditional LER is defined when the yield is non-zero."
+          }
+        ],
+        "derivation": "16个 Pauli 对先置换再构造 syndrome/L。Y=61/80,J=P(A且L)=119/960,Q=J/Y=119/732。商法则 Q1′=56525/66978；score-function 累加与通道 p=0,1 端点差分给相同 dJ,dY。",
+        "dependencies": [
+          {
+            "source": "P15",
+            "contribution": "仅 code-capacity 下 H 对 X/Z 概率的置换"
+          },
+          {
+            "source": "P19",
+            "contribution": "固定 decoder 的概率敏感度和分量求导"
+          },
+          {
+            "source": "P21",
+            "contribution": "阈值包括等号、LER 条件化而非联合失败概率"
+          }
+        ],
+        "ablation": "去掉P15后不能确定仅 code-capacity 下 H 对 X/Z 概率的置换；去掉P19后不能确定固定 decoder 的概率敏感度和分量求导；去掉P21后不能确定阈值包括等号、LER 条件化而非联合失败概率。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "合成固定码容量实验，未声称这张玩具真值表是某原论文代码。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P08",
+        "answer": "HI;3;33792/344569",
+        "evidence": [
+          {
+            "source": "P15",
+            "path": "research/longread-20261018/papers/P15-2610.13589v1.txt",
+            "locator": "PDF page 3",
+            "quote": "2.The Schr¨ odinger picture:The stabilizers stay\nthe same, but the noise on the qubit (p X , pY , pZ)\nis permuted. The HadamardHdeformation would\ngive (pZ, pY , pX) swapping the Pauli-X and Z prob-\nabilities.\nWe note in passing that when circuit-level noise is\nconsidered, the Schr¨ odinger-picture analog formally\nbreaks down. There exist 6 possible deformations\nper qubit, including no deformationI/(p X , pY , pZ),\nH/(pZ, pY , pX),\n√\nZ/(p Y , pX , pZ),H\n√\nZ/(p Y , pZ, pX),√\nZH/(p Z, pX , pY ), andH\n√\nZH/(p X , pZ, pY ) withIthe"
+          },
+          {
+            "source": "P19",
+            "path": "research/longread-20261018/papers/P19-2610.03399v1.txt",
+            "locator": "PDF page 2",
+            "quote": "Definition 1(Noise sensitivity).The sensitivity of noise com-\nponentαis\nSα = ∂PL(λ;D)\n∂λα\n.(4)\nFor an independent Bernoulli noise component, this deriva-\ntive has a direct interpretation in terms of conditional logical\nfailure probabilities. LetE α ∈ {0,1}be the corresponding\nerror indicator, withP(E α = 1) =λ α. Conditioning onE α\ngives\nSα =P(L= 1|E α = 1)−P(L= 1|E α = 0).(5)\nThe sensitivityS α describes the local response of the log-\nical error rate to a small change inλ α. Multiplying this sen-\nsitivity by the component’s current noise strength gives a lin-\nearized measure of its marginal contribution to the logical er-\nror rate.\nDefinition 2(Linearized marginal risk).The linearized\nmarginal risk of noise componentαis\nRα =λ αSα =λ α\n∂PL(λ;D)\n∂λα\n.(6)"
+          },
+          {
+            "source": "P21",
+            "path": "research/longread-20261018/papers/P21-2610.00504v1.txt",
+            "locator": "PDF page 3",
+            "quote": "Given a confidence scores(x)∈Rfor each shot, and\nthresholdτ∈R, the rule accepts a shot iffs(x)≥τ.\nLarger scores indicate greater confidence in decoder suc-\ncess. The performance of the post-selector is charac-\nterised by two quantities:\nYield(τ) =P(s(x)≥τ),(1)\nLER(τ) =P(Ac(σ)̸=Ae|s(x)≥τ),(2)\nwhereAis the logical action matrix of Section II A. In\npractice the yield is the fraction of retained shots and the\nconditional LER is defined when the yield is non-zero."
+          }
+        ],
+        "derivation": "枚举12设计，12满足yield限制。最优HI,tau=3,Y=587/960,Q=11/587,Q2′=33792/344569。每个设计以两种独立导数方法核验，按完整目标元组排序。",
+        "dependencies": [
+          {
+            "source": "P15",
+            "contribution": "仅 code-capacity 下 H 对 X/Z 概率的置换"
+          },
+          {
+            "source": "P19",
+            "contribution": "固定 decoder 的概率敏感度和分量求导"
+          },
+          {
+            "source": "P21",
+            "contribution": "阈值包括等号、LER 条件化而非联合失败概率"
+          }
+        ],
+        "ablation": "去掉P15后不能确定仅 code-capacity 下 H 对 X/Z 概率的置换；去掉P19后不能确定固定 decoder 的概率敏感度和分量求导；去掉P21后不能确定阈值包括等号、LER 条件化而非联合失败概率。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "最优值是精确枚举结果；并不外推到 circuit-level 最佳变形。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P09",
+        "answer": "HI;1;11305/133956",
+        "evidence": [
+          {
+            "source": "P15",
+            "path": "research/longread-20261018/papers/P15-2610.13589v1.txt",
+            "locator": "PDF page 3",
+            "quote": "2.The Schr¨ odinger picture:The stabilizers stay\nthe same, but the noise on the qubit (p X , pY , pZ)\nis permuted. The HadamardHdeformation would\ngive (pZ, pY , pX) swapping the Pauli-X and Z prob-\nabilities.\nWe note in passing that when circuit-level noise is\nconsidered, the Schr¨ odinger-picture analog formally\nbreaks down. There exist 6 possible deformations\nper qubit, including no deformationI/(p X , pY , pZ),\nH/(pZ, pY , pX),\n√\nZ/(p Y , pX , pZ),H\n√\nZ/(p Y , pZ, pX),√\nZH/(p Z, pX , pY ), andH\n√\nZH/(p X , pZ, pY ) withIthe"
+          },
+          {
+            "source": "P19",
+            "path": "research/longread-20261018/papers/P19-2610.03399v1.txt",
+            "locator": "PDF page 2",
+            "quote": "Definition 1(Noise sensitivity).The sensitivity of noise com-\nponentαis\nSα = ∂PL(λ;D)\n∂λα\n.(4)\nFor an independent Bernoulli noise component, this deriva-\ntive has a direct interpretation in terms of conditional logical\nfailure probabilities. LetE α ∈ {0,1}be the corresponding\nerror indicator, withP(E α = 1) =λ α. Conditioning onE α\ngives\nSα =P(L= 1|E α = 1)−P(L= 1|E α = 0).(5)\nThe sensitivityS α describes the local response of the log-\nical error rate to a small change inλ α. Multiplying this sen-\nsitivity by the component’s current noise strength gives a lin-\nearized measure of its marginal contribution to the logical er-\nror rate.\nDefinition 2(Linearized marginal risk).The linearized\nmarginal risk of noise componentαis\nRα =λ αSα =λ α\n∂PL(λ;D)\n∂λα\n.(6)"
+          },
+          {
+            "source": "P21",
+            "path": "research/longread-20261018/papers/P21-2610.00504v1.txt",
+            "locator": "PDF page 3",
+            "quote": "Given a confidence scores(x)∈Rfor each shot, and\nthresholdτ∈R, the rule accepts a shot iffs(x)≥τ.\nLarger scores indicate greater confidence in decoder suc-\ncess. The performance of the post-selector is charac-\nterised by two quantities:\nYield(τ) =P(s(x)≥τ),(1)\nLER(τ) =P(Ac(σ)̸=Ae|s(x)≥τ),(2)\nwhereAis the logical action matrix of Section II A. In\npractice the yield is the fraction of retained shots and the\nconditional LER is defined when the yield is non-zero."
+          }
+        ],
+        "derivation": "先求每设计 Q 的商法则梯度；预算收益 B_h=p_h Q_h′/cost_h，而非 raw failure sensitivity。候选排序得HI,h=1,B=11305/133956,Y=61/80,Q=119/732。所有16态概率和与端点导数独立一致。",
+        "dependencies": [
+          {
+            "source": "P15",
+            "contribution": "仅 code-capacity 下 H 对 X/Z 概率的置换"
+          },
+          {
+            "source": "P19",
+            "contribution": "固定 decoder 的概率敏感度和分量求导"
+          },
+          {
+            "source": "P21",
+            "contribution": "阈值包括等号、LER 条件化而非联合失败概率"
+          }
+        ],
+        "ablation": "去掉P15后不能确定仅 code-capacity 下 H 对 X/Z 概率的置换；去掉P19后不能确定固定 decoder 的概率敏感度和分量求导；去掉P21后不能确定阈值包括等号、LER 条件化而非联合失败概率。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "只问无穷小干预；不可将局部线性效应冒充有限减半结果。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P10",
+        "answer": "8;4;1272;73383542784/8087158203125",
+        "evidence": [
+          {
+            "source": "P14",
+            "path": "research/longread-20261018/papers/P14-2610.21357v1.txt",
+            "locator": "PDF page 2",
+            "quote": "concatenate four distance-trotated surface-code patches\nwith the smallest non-trivial error-detecting CSS code,\n[[4,2,2]] [29–31], obtaining a [[4t 2,2,2t]] code of distance\nd= 2tthat encodesk= 2 logical qubits in a footprint\nofN= 2d 2 + 4d−3 physical qubits on a square lattice\nwith nn connectivity, see Fig. 1."
+          },
+          {
+            "source": "P23",
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.txt",
+            "locator": "PDF page 6",
+            "quote": "Suppose level-1 to level-(i−1) concatenated codes constitute an [[n, k, d]] code, and we want to construct a\nlevel-icode with distance two that is concatenated overrcopies of them. We call every logical X error that can be\ninduced by a weight-(2d−1) undetectable X error on level-0 (i.e., surface-code qubits in the multi-yoked surface\ncode) qubits aproblematic errorand denote their set byP prob,X ⊂ {I, X} ⊗k. Next, we list an independent set\nof Pauli Z operators that can detect all the problematic errors. We call this set of Pauli operators aseed code\nPseed,Z ⊂ {I, Z} ⊗k, which satisfies∀P∈ P prob,X,∃Q∈ P seed,Z,s.t. QP=−P Q. Then, the stabilizer generator\nset of a chain code is constructed as{P ⊗r|P∈ P seed,Z} ∪ {P ⊗r|P∈ P seed,X}. Note that elements of X and Z seed\ncodesP seed,X andP seed,Z do not necessarily commute with each other. Even in this case, the chain codes satisfy the\ncondition of stabilizer codes if we chooseras an even number. Thus, the chain code encodesrk− |P seed,X| − |Pseed,Z|\nlogical qubits withrklower-level qubits, and it is capable of detecting all block errors at the lower-level codes. Its\nencoding rate converges to one in the large-rlimit."
+          },
+          {
+            "source": "P23",
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.txt",
+            "locator": "PDF page 7",
+            "quote": "Proposition 1.LetP prob,X be the set of problematic X errors for an iceberg code[[n, k=n−2,2]]andc z be the\nsize of the Z-check seed codeP seed,Z forP prob,X. Then,c z is lower bounded asc z ≥ ⌈log2 (k+ 1)⌉. The same holds\nfor X checks for Z errors."
+          },
+          {
+            "source": "P21",
+            "path": "research/longread-20261018/papers/P21-2610.00504v1.txt",
+            "locator": "PDF page 3",
+            "quote": "Given a confidence scores(x)∈Rfor each shot, and\nthresholdτ∈R, the rule accepts a shot iffs(x)≥τ.\nLarger scores indicate greater confidence in decoder suc-\ncess. The performance of the post-selector is charac-\nterised by two quantities:\nYield(τ) =P(s(x)≥τ),(1)\nLER(τ) =P(Ac(σ)̸=Ae|s(x)≥τ),(2)\nwhereAis the logical action matrix of Section II A. In\npractice the yield is the fraction of retained shots and the\nconditional LER is defined when the yield is non-zero."
+          }
+        ],
+        "derivation": "k=2，非零互异列要求每类型seed最小2个，总4独立检查；K=2r−4；N=r(8t²+8t−3)+4t。Y=(1-e)^r+r e(1-e)^(r-1),Q=r e f/(1-e+r e)。14可行设计；最优r=8,t=4,N=1272,K=12,Y=146767085568/152587890625,Q=1/20,T/N=73383542784/8087158203125。封闭二项式与逐flag位串枚举一致。",
+        "dependencies": [
+          {
+            "source": "P14",
+            "contribution": "由 inner t 到完整 footprint 8t²+8t−3，且每块编码两个逻辑比特"
+          },
+          {
+            "source": "P23",
+            "contribution": "seed 最小大小及偶数 r chain 编码数，决定 K 和附加检查控制器"
+          },
+          {
+            "source": "P21",
+            "contribution": "由置信阈值计算保留率与条件逻辑失败，再计算产出"
+          }
+        ],
+        "ablation": "去掉P14后不能确定由 inner t 到完整 footprint 8t²+8t−3，且每块编码两个逻辑比特；去掉P23后不能确定seed 最小大小及偶数 r chain 编码数，决定 K 和附加检查控制器；去掉P21后不能确定由置信阈值计算保留率与条件逻辑失败，再计算产出。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "显式指定附加控制器资源及 flag 模型，不把它们归于原论文性能。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P11",
+        "answer": "10;5;2390;1/27",
+        "evidence": [
+          {
+            "source": "P14",
+            "path": "research/longread-20261018/papers/P14-2610.21357v1.txt",
+            "locator": "PDF page 2",
+            "quote": "concatenate four distance-trotated surface-code patches\nwith the smallest non-trivial error-detecting CSS code,\n[[4,2,2]] [29–31], obtaining a [[4t 2,2,2t]] code of distance\nd= 2tthat encodesk= 2 logical qubits in a footprint\nofN= 2d 2 + 4d−3 physical qubits on a square lattice\nwith nn connectivity, see Fig. 1."
+          },
+          {
+            "source": "P23",
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.txt",
+            "locator": "PDF page 6",
+            "quote": "Suppose level-1 to level-(i−1) concatenated codes constitute an [[n, k, d]] code, and we want to construct a\nlevel-icode with distance two that is concatenated overrcopies of them. We call every logical X error that can be\ninduced by a weight-(2d−1) undetectable X error on level-0 (i.e., surface-code qubits in the multi-yoked surface\ncode) qubits aproblematic errorand denote their set byP prob,X ⊂ {I, X} ⊗k. Next, we list an independent set\nof Pauli Z operators that can detect all the problematic errors. We call this set of Pauli operators aseed code\nPseed,Z ⊂ {I, Z} ⊗k, which satisfies∀P∈ P prob,X,∃Q∈ P seed,Z,s.t. QP=−P Q. Then, the stabilizer generator\nset of a chain code is constructed as{P ⊗r|P∈ P seed,Z} ∪ {P ⊗r|P∈ P seed,X}. Note that elements of X and Z seed\ncodesP seed,X andP seed,Z do not necessarily commute with each other. Even in this case, the chain codes satisfy the\ncondition of stabilizer codes if we chooseras an even number. Thus, the chain code encodesrk− |P seed,X| − |Pseed,Z|\nlogical qubits withrklower-level qubits, and it is capable of detecting all block errors at the lower-level codes. Its\nencoding rate converges to one in the large-rlimit."
+          },
+          {
+            "source": "P23",
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.txt",
+            "locator": "PDF page 7",
+            "quote": "Proposition 1.LetP prob,X be the set of problematic X errors for an iceberg code[[n, k=n−2,2]]andc z be the\nsize of the Z-check seed codeP seed,Z forP prob,X. Then,c z is lower bounded asc z ≥ ⌈log2 (k+ 1)⌉. The same holds\nfor X checks for Z errors."
+          },
+          {
+            "source": "P21",
+            "path": "research/longread-20261018/papers/P21-2610.00504v1.txt",
+            "locator": "PDF page 3",
+            "quote": "Given a confidence scores(x)∈Rfor each shot, and\nthresholdτ∈R, the rule accepts a shot iffs(x)≥τ.\nLarger scores indicate greater confidence in decoder suc-\ncess. The performance of the post-selector is charac-\nterised by two quantities:\nYield(τ) =P(s(x)≥τ),(1)\nLER(τ) =P(Ac(σ)̸=Ae|s(x)≥τ),(2)\nwhereAis the logical action matrix of Section II A. In\npractice the yield is the fraction of retained shots and the\nconditional LER is defined when the yield is non-zero."
+          }
+        ],
+        "derivation": "同样先推K=2r−4及N。逐设计计算二项保留率；5满足产出及条件失败率。最优r=10,t=5,N=2390,K=16,T=394078193359375/25389989167104,Q=1/27。直接flag枚举核验接受概率。",
+        "dependencies": [
+          {
+            "source": "P14",
+            "contribution": "由 inner t 到完整 footprint 8t²+8t−3，且每块编码两个逻辑比特"
+          },
+          {
+            "source": "P23",
+            "contribution": "seed 最小大小及偶数 r chain 编码数，决定 K 和附加检查控制器"
+          },
+          {
+            "source": "P21",
+            "contribution": "由置信阈值计算保留率与条件逻辑失败，再计算产出"
+          }
+        ],
+        "ablation": "去掉P14后不能确定由 inner t 到完整 footprint 8t²+8t−3，且每块编码两个逻辑比特；去掉P23后不能确定seed 最小大小及偶数 r chain 编码数，决定 K 和附加检查控制器；去掉P21后不能确定由置信阈值计算保留率与条件逻辑失败，再计算产出。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "约束是 retained logical throughput，不能以K代替T。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "P12",
+        "answer": "10;5;12;6;6410",
+        "evidence": [
+          {
+            "source": "P14",
+            "path": "research/longread-20261018/papers/P14-2610.21357v1.txt",
+            "locator": "PDF page 2",
+            "quote": "concatenate four distance-trotated surface-code patches\nwith the smallest non-trivial error-detecting CSS code,\n[[4,2,2]] [29–31], obtaining a [[4t 2,2,2t]] code of distance\nd= 2tthat encodesk= 2 logical qubits in a footprint\nofN= 2d 2 + 4d−3 physical qubits on a square lattice\nwith nn connectivity, see Fig. 1."
+          },
+          {
+            "source": "P23",
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.txt",
+            "locator": "PDF page 6",
+            "quote": "Suppose level-1 to level-(i−1) concatenated codes constitute an [[n, k, d]] code, and we want to construct a\nlevel-icode with distance two that is concatenated overrcopies of them. We call every logical X error that can be\ninduced by a weight-(2d−1) undetectable X error on level-0 (i.e., surface-code qubits in the multi-yoked surface\ncode) qubits aproblematic errorand denote their set byP prob,X ⊂ {I, X} ⊗k. Next, we list an independent set\nof Pauli Z operators that can detect all the problematic errors. We call this set of Pauli operators aseed code\nPseed,Z ⊂ {I, Z} ⊗k, which satisfies∀P∈ P prob,X,∃Q∈ P seed,Z,s.t. QP=−P Q. Then, the stabilizer generator\nset of a chain code is constructed as{P ⊗r|P∈ P seed,Z} ∪ {P ⊗r|P∈ P seed,X}. Note that elements of X and Z seed\ncodesP seed,X andP seed,Z do not necessarily commute with each other. Even in this case, the chain codes satisfy the\ncondition of stabilizer codes if we chooseras an even number. Thus, the chain code encodesrk− |P seed,X| − |Pseed,Z|\nlogical qubits withrklower-level qubits, and it is capable of detecting all block errors at the lower-level codes. Its\nencoding rate converges to one in the large-rlimit."
+          },
+          {
+            "source": "P23",
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.txt",
+            "locator": "PDF page 7",
+            "quote": "Proposition 1.LetP prob,X be the set of problematic X errors for an iceberg code[[n, k=n−2,2]]andc z be the\nsize of the Z-check seed codeP seed,Z forP prob,X. Then,c z is lower bounded asc z ≥ ⌈log2 (k+ 1)⌉. The same holds\nfor X checks for Z errors."
+          },
+          {
+            "source": "P21",
+            "path": "research/longread-20261018/papers/P21-2610.00504v1.txt",
+            "locator": "PDF page 3",
+            "quote": "Given a confidence scores(x)∈Rfor each shot, and\nthresholdτ∈R, the rule accepts a shot iffs(x)≥τ.\nLarger scores indicate greater confidence in decoder suc-\ncess. The performance of the post-selector is charac-\nterised by two quantities:\nYield(τ) =P(s(x)≥τ),(1)\nLER(τ) =P(Ac(σ)̸=Ae|s(x)≥τ),(2)\nwhereAis the logical action matrix of Section II A. In\npractice the yield is the fraction of retained shots and the\nconditional LER is defined when the yield is non-zero."
+          }
+        ],
+        "derivation": "每bank由前述编码结构求K,N,Y,Q。独立性给YAB=YA YB及QAB=1−(1−QA)(1−QB)。枚举325无序对，122可行。最优(10, 5, 12, 6),N=6410,T=13107200000000000/384552482305383,Y=3276800000000000/3460972340748447,Q=61/945。块级flag全枚举验证单bank，乘法及失败事件互斥分解验证联合。",
+        "dependencies": [
+          {
+            "source": "P14",
+            "contribution": "由 inner t 到完整 footprint 8t²+8t−3，且每块编码两个逻辑比特"
+          },
+          {
+            "source": "P23",
+            "contribution": "seed 最小大小及偶数 r chain 编码数，决定 K 和附加检查控制器"
+          },
+          {
+            "source": "P21",
+            "contribution": "由置信阈值计算保留率与条件逻辑失败，再计算产出"
+          }
+        ],
+        "ablation": "去掉P14后不能确定由 inner t 到完整 footprint 8t²+8t−3，且每块编码两个逻辑比特；去掉P23后不能确定seed 最小大小及偶数 r chain 编码数，决定 K 和附加检查控制器；去掉P21后不能确定由置信阈值计算保留率与条件逻辑失败，再计算产出。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "联合接受与联合失败规则由题设明确，不能把两个yield相加。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "M01",
+        "answer": "81/100;9/10;10/9",
+        "evidence": [
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF p.1, (1.2)",
+            "quote": "For an ideal polytropic gas, the pressure is given by\np(v, θ) = Rθ\nv ,(1.2)\nwhereR >0 is the gas constant."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF p.3, (1.4)",
+            "quote": "The end states and the shock speed satisfy the Rankine–Hugoniot condition:\n\n\n\n−σ(v+ −v −)−(u + −u −) = 0,\n−σ(u+ −u −) + (p+ −p −) = 0,\n−σ(E+ −E −) + (p+u+ −p −u−) = 0.\n(1.4)"
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF pp.6–7, Lemma 2.3, (2.5)–(2.6)",
+            "quote": "Lemma 2.3.Let(v −, u−, θ−)∈R + ×R×R + be a left end state, and define\nσ(ε) :=\ns\nγp−\nv− + γ+1\n2 ε\n,|ε|< v−\nγ+ 1 .(2.5)\nThen the following holds.\n\n[PDF page 7]\nVISCOUS-DISPERSIVE SHOCKS FOR THE NSFK SYSTEM 7\n(i) Let a right end state(v +, u+, θ+)∈R + ×R×R + and a shock speedσ∈Rsatisfy the Rankine–\nHugoniot condition(1.4)and the Lax 3-shock condition in(1.5), and letε:=v + −v − < v−\nγ+1 .\nThenε >0and\np+ −p − =− γp−ε\nv− + γ+1\n2 ε\n, σ=σ(ε).(2.6)"
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "PDF p.1, pressure law",
+            "quote": "We adopt the polytropic pressure lawp(ρ) =bργ, forb >0andγ >1being fluid constants. Without loss\nof generality, we normalize the coefficientb= 1in the sequel."
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "PDF p.2, (1.3)",
+            "quote": "µ(ρ) =ρ, λ(ρ)≡0, γ∈(1,2],(1.3)"
+          },
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "PDF p.1, entropy-wave definition",
+            "quote": "These solutions are\ncharacterized by the pressure pM and velocity u being constant within the fluid. The density ρ and\nentropy ρsM of the fluid may be non-constant and are simply transported by the constant velocity\nu."
+          },
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "PDF p.8, (2.4) and ideal branch",
+            "quote": "(2.4)p(ρ, ϑ) =ϑ\nγ\nγ−1 P\n\u0012 ρ\nϑ\n1\nγ−1\n\u0013\n+ a\n3 ϑ4 =:p M(ρ, ϑ) +ap R(ϑ),\nwhere a > 0, γ > 2, and P∈C 1([0,∞ )) is an increasing function satisfying P (0) = 0. We further\nsuppose that there exists a constantZ >0 such thatP(Z) =Zfor allZ∈[0, Z ]."
+          }
+        ],
+        "derivation": "M08 的 RH 消元给 p₊/p₋=[1−(γ−1)(v₊−v₋)/(2v₋)]/[1+(γ+1)(v₊−v₋)/(2v₋)]。γ=2、v₋=p₋=1、Δv=38/343，所以 p₊=81/100，且压强下降。M10 的归一化 p=ρ²，取正根得 ρ*=9/10。M02 的低 Z 支由 (2.4) 和 P(Z)=Z 化为 p_M=ρθ；常压目标为 p₋=1，故 θ*=1/ρ*=10/9。这是数值映射，不将 γ=2 与 γ=3 的定理互相套用。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M08"
+            ],
+            "contribution": "从完整气体的 Rankine–Hugoniot 三式及其消元式恢复压力跳跃，而非把压强误作等熵常量。"
+          },
+          {
+            "sourceIds": [
+              "M10"
+            ],
+            "contribution": "恢复本论文的归一化 p=ρ^γ 和证明中 1<γ≤2 的范围。"
+          },
+          {
+            "sourceIds": [
+              "M02"
+            ],
+            "contribution": "恢复分子压强的低 Z 理想支 p_M=ρθ 及熵波的常压约束，同时识别其 γ>2 与另一文不同。"
+          }
+        ],
+        "ablation": "删去 M08 则起始压强跳跃不确定；删去 M10 则不能把该压强转成唯一正密度；删去 M02 则不能由常压与理想支求温度。",
+        "claimScope": "仅按题面定义把三个不同 PDE 的状态量作代数映射；M08 的消元公式在满足其 RH 端态的代数层面使用，不声称给定有限跳跃落入未知 ε0 的存在性定理；M02 取 γ=3 的低 Z 分支，M10 取 γ=2。",
+        "difficultyRationale": "必须先从完整气体的能量 RH 恢复非等熵压强，再跨归一化压强律取正根，最后在不同 γ 的接触波支计算温度；三个步骤有方向依赖。"
+      },
+      {
+        "id": "M02",
+        "answer": "4;9/4;3/2",
+        "evidence": [
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "PDF p.1, entropy-wave definition",
+            "quote": "These solutions are\ncharacterized by the pressure pM and velocity u being constant within the fluid. The density ρ and\nentropy ρsM of the fluid may be non-constant and are simply transported by the constant velocity\nu."
+          },
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "PDF p.8, (2.4) and ideal branch",
+            "quote": "(2.4)p(ρ, ϑ) =ϑ\nγ\nγ−1 P\n\u0012 ρ\nϑ\n1\nγ−1\n\u0013\n+ a\n3 ϑ4 =:p M(ρ, ϑ) +ap R(ϑ),\nwhere a > 0, γ > 2, and P∈C 1([0,∞ )) is an increasing function satisfying P (0) = 0. We further\nsuppose that there exists a constantZ >0 such thatP(Z) =Zfor allZ∈[0, Z ]."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF p.1, (1.2)",
+            "quote": "For an ideal polytropic gas, the pressure is given by\np(v, θ) = Rθ\nv ,(1.2)\nwhereR >0 is the gas constant."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF p.3, (1.4)",
+            "quote": "The end states and the shock speed satisfy the Rankine–Hugoniot condition:\n\n\n\n−σ(v+ −v −)−(u + −u −) = 0,\n−σ(u+ −u −) + (p+ −p −) = 0,\n−σ(E+ −E −) + (p+u+ −p −u−) = 0.\n(1.4)"
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF pp.6–7, Lemma 2.3, (2.5)–(2.6)",
+            "quote": "Lemma 2.3.Let(v −, u−, θ−)∈R + ×R×R + be a left end state, and define\nσ(ε) :=\ns\nγp−\nv− + γ+1\n2 ε\n,|ε|< v−\nγ+ 1 .(2.5)\nThen the following holds.\n\n[PDF page 7]\nVISCOUS-DISPERSIVE SHOCKS FOR THE NSFK SYSTEM 7\n(i) Let a right end state(v +, u+, θ+)∈R + ×R×R + and a shock speedσ∈Rsatisfy the Rankine–\nHugoniot condition(1.4)and the Lax 3-shock condition in(1.5), and letε:=v + −v − < v−\nγ+1 .\nThenε >0and\np+ −p − =− γp−ε\nv− + γ+1\n2 ε\n, σ=σ(ε).(2.6)"
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "PDF p.1, pressure law",
+            "quote": "We adopt the polytropic pressure lawp(ρ) =bργ, forb >0andγ >1being fluid constants. Without loss\nof generality, we normalize the coefficientb= 1in the sequel."
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "PDF p.2, (1.3)",
+            "quote": "µ(ρ) =ρ, λ(ρ)≡0, γ∈(1,2],(1.3)"
+          }
+        ],
+        "derivation": "M02 在 γ=3 的低 Z 支有 p_M=ρθ，故左端 p₋=2×2=4。M08 取 Δv=14/43，由能量、动量和质量 RH 的消元式得 p₊=p₋(1−Δv/2)/(1+3Δv/2)=9/4。M10 在 γ=2 时 p=ρ²，正密度唯一为 3/2。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M02"
+            ],
+            "contribution": "恢复分子压强的低 Z 理想支 p_M=ρθ 及熵波的常压约束，同时识别其 γ>2 与另一文不同。"
+          },
+          {
+            "sourceIds": [
+              "M08"
+            ],
+            "contribution": "从完整气体的 Rankine–Hugoniot 三式及其消元式恢复压力跳跃，而非把压强误作等熵常量。"
+          },
+          {
+            "sourceIds": [
+              "M10"
+            ],
+            "contribution": "恢复本论文的归一化 p=ρ^γ 和证明中 1<γ≤2 的范围。"
+          }
+        ],
+        "ablation": "删去 M02 不能得到输入压强；删去 M08 不能由体积跳跃推出下游压强；删去 M10 不能从下游压强反求密度。",
+        "claimScope": "仅按题面定义把三个不同 PDE 的状态量作代数映射；M08 的消元公式在满足其 RH 端态的代数层面使用，不声称给定有限跳跃落入未知 ε0 的存在性定理；M02 取 γ=3 的低 Z 分支，M10 取 γ=2。",
+        "difficultyRationale": "以一个模型的状态压强作为下一代数计算的输入，再经完整气体 RH 消元及另一归一化方程反求密度，三文的 γ 范围必须分开处理。"
+      },
+      {
+        "id": "M03",
+        "answer": "11809/13504;44521/58081;241/211;A",
+        "evidence": [
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF p.1, (1.2)",
+            "quote": "For an ideal polytropic gas, the pressure is given by\np(v, θ) = Rθ\nv ,(1.2)\nwhereR >0 is the gas constant."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF p.3, (1.4)",
+            "quote": "The end states and the shock speed satisfy the Rankine–Hugoniot condition:\n\n\n\n−σ(v+ −v −)−(u + −u −) = 0,\n−σ(u+ −u −) + (p+ −p −) = 0,\n−σ(E+ −E −) + (p+u+ −p −u−) = 0.\n(1.4)"
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF pp.6–7, Lemma 2.3, (2.5)–(2.6)",
+            "quote": "Lemma 2.3.Let(v −, u−, θ−)∈R + ×R×R + be a left end state, and define\nσ(ε) :=\ns\nγp−\nv− + γ+1\n2 ε\n,|ε|< v−\nγ+ 1 .(2.5)\nThen the following holds.\n\n[PDF page 7]\nVISCOUS-DISPERSIVE SHOCKS FOR THE NSFK SYSTEM 7\n(i) Let a right end state(v +, u+, θ+)∈R + ×R×R + and a shock speedσ∈Rsatisfy the Rankine–\nHugoniot condition(1.4)and the Lax 3-shock condition in(1.5), and letε:=v + −v − < v−\nγ+1 .\nThenε >0and\np+ −p − =− γp−ε\nv− + γ+1\n2 ε\n, σ=σ(ε).(2.6)"
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "PDF p.1, pressure law",
+            "quote": "We adopt the polytropic pressure lawp(ρ) =bργ, forb >0andγ >1being fluid constants. Without loss\nof generality, we normalize the coefficientb= 1in the sequel."
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "PDF p.2, (1.3)",
+            "quote": "µ(ρ) =ρ, λ(ρ)≡0, γ∈(1,2],(1.3)"
+          },
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "PDF p.1, entropy-wave definition",
+            "quote": "These solutions are\ncharacterized by the pressure pM and velocity u being constant within the fluid. The density ρ and\nentropy ρsM of the fluid may be non-constant and are simply transported by the constant velocity\nu."
+          },
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "PDF p.8, (2.4) and ideal branch",
+            "quote": "(2.4)p(ρ, ϑ) =ϑ\nγ\nγ−1 P\n\u0012 ρ\nϑ\n1\nγ−1\n\u0013\n+ a\n3 ϑ4 =:p M(ρ, ϑ) +ap R(ϑ),\nwhere a > 0, γ > 2, and P∈C 1([0,∞ )) is an increasing function satisfying P (0) = 0. We further\nsuppose that there exists a constantZ >0 such thatP(Z) =Zfor allZ∈[0, Z ]."
+          }
+        ],
+        "derivation": "M08 的 RH 给 p_shock=(1−x/2)/(1+3x/2)=49/64，其中 x=30/211；其 p=Rθ/v，故 θ_shock=v₊p_shock=11809/13504。M10 归一化 γ=2，ρ₊=1/v₊=211/241，所以 p_bar=ρ₊²=44521/58081。M02 低 Z 支 p_M=ρθ，常压目标 1 令 θ_contact=1/ρ₊=v₊=241/211。精确差 p_shock−p_bar=-3375/3717184<0 且 θ_contact−θ_shock=3615/13504>0，故 A。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M08"
+            ],
+            "contribution": "从完整气体的 Rankine–Hugoniot 三式及其消元式恢复压力跳跃，而非把压强误作等熵常量。"
+          },
+          {
+            "sourceIds": [
+              "M10"
+            ],
+            "contribution": "恢复本论文的归一化 p=ρ^γ 和证明中 1<γ≤2 的范围。"
+          },
+          {
+            "sourceIds": [
+              "M02"
+            ],
+            "contribution": "恢复分子压强的低 Z 理想支 p_M=ρθ 及熵波的常压约束，同时识别其 γ>2 与另一文不同。"
+          }
+        ],
+        "ablation": "无 M08 不知下游非等熵压强与温度；无 M10 不知归一化比较压强；无 M02 不知常压接触温度与比较码。",
+        "claimScope": "仅按题面定义把三个不同 PDE 的状态量作代数映射；M08 的消元公式在满足其 RH 端态的代数层面使用，不声称给定有限跳跃落入未知 ε0 的存在性定理；M02 取 γ=3 的低 Z 分支，M10 取 γ=2。",
+        "difficultyRationale": "相同体积数据在完整气体、等熵归一化律和分子接触支给不同精确值；需辨认完整气体的熵变，不能直接套用 ρ² 到其端态。"
+      },
+      {
+        "id": "M04",
+        "answer": "6/5;9/4;1;NZ",
+        "evidence": [
+          {
+            "source": "M13",
+            "path": "research/longread-20261018/papers/M13-2608.29138v1.txt",
+            "locator": "PDF p.3, (5) and flux identity",
+            "quote": "(5) W (x3) = 6 F x3(1 − x3)e(α), with FW =\n∫ 1\n0\nW (x3) ·e(α) dx3 = F."
+          },
+          {
+            "source": "M06",
+            "path": "research/longread-20261018/papers/M06-2608.17456v1.txt",
+            "locator": "PDF p.1, abstract",
+            "quote": "We prove that, for a suitable small external force in ˙H −2(R2), the\nstationary Navier–Stokes equations onR2 admit multiple solutions inL2(R2)."
+          },
+          {
+            "source": "M07",
+            "path": "research/longread-20261018/papers/M07-2609.14688v1.txt",
+            "locator": "PDF p.1, abstract",
+            "quote": "Abstract.We prove uniqueness of solutions to the Navier-Stokes equations in the space\nLp\u0000\n[0, T],eL3,∞(R3)\n\u0001\n∩C\n\u0000\n[0, T], B −1,∞\n∞ (R3)\n\u0001\n, p >2,"
+          }
+        ],
+        "derivation": "板层公式 W=6x₃(1−x₃)e。水平区域面积=1πR²，且 ∫₀¹x²(1−x)²dx=1/30，故 36×1/30×1=6/5。中面值 W(1/2)=3e/2，截面平方归一化为 (9/4)×1=9/4。对幅值阈值 τ，三维截断的分布函数等于水平面积乘一个只依 τ 而不依 R 的正垂直厚度；弱 L³ 准范数 sup_τ τ·measure{|W_R|>τ}^{1/3} 因而按 R^{2/3} 增长。平面 L² 范数按 R 增长，所以两个范数共同有界的最小 β=max(1,2/3)=1；此时平面 L² 范数保有有限非零常数，弱 L³ 范数按 R^{-1/3} 趋零，码为 NZ。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M13"
+            ],
+            "contribution": "给出有非零横向无限背景的精确抛物型剖面和流量归一化。"
+          },
+          {
+            "sourceIds": [
+              "M06"
+            ],
+            "contribution": "确认待比较的全平面定常解类是 L²(R²)。"
+          },
+          {
+            "sourceIds": [
+              "M07"
+            ],
+            "contribution": "确认三维演化唯一性类别涉及 L^{3,∞}(R³)，从而需要分布函数而非 L² 积分。"
+          }
+        ],
+        "ablation": "无板层剖面无法积分或得到分布函数；无全平面论文不知第一种空间门槛；无 Lorentz 论文不知第二种空间门槛与要优化的弱范数。",
+        "claimScope": "只比较显式函数的积分和解类，不转移三篇论文的唯一性定理；F=1 仅作为剖面的数值归一化。",
+        "difficultyRationale": "需从非紧水平背景重建截断面积、垂直 beta 积分、水平截面以及弱 Lorentz 分布函数的不同 R 缩放。"
+      },
+      {
+        "id": "M05",
+        "answer": "25/36;5/6;6/5",
+        "evidence": [
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF p.1, (1.2)",
+            "quote": "For an ideal polytropic gas, the pressure is given by\np(v, θ) = Rθ\nv ,(1.2)\nwhereR >0 is the gas constant."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF p.3, (1.4)",
+            "quote": "The end states and the shock speed satisfy the Rankine–Hugoniot condition:\n\n\n\n−σ(v+ −v −)−(u + −u −) = 0,\n−σ(u+ −u −) + (p+ −p −) = 0,\n−σ(E+ −E −) + (p+u+ −p −u−) = 0.\n(1.4)"
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF pp.6–7, Lemma 2.3, (2.5)–(2.6)",
+            "quote": "Lemma 2.3.Let(v −, u−, θ−)∈R + ×R×R + be a left end state, and define\nσ(ε) :=\ns\nγp−\nv− + γ+1\n2 ε\n,|ε|< v−\nγ+ 1 .(2.5)\nThen the following holds.\n\n[PDF page 7]\nVISCOUS-DISPERSIVE SHOCKS FOR THE NSFK SYSTEM 7\n(i) Let a right end state(v +, u+, θ+)∈R + ×R×R + and a shock speedσ∈Rsatisfy the Rankine–\nHugoniot condition(1.4)and the Lax 3-shock condition in(1.5), and letε:=v + −v − < v−\nγ+1 .\nThenε >0and\np+ −p − =− γp−ε\nv− + γ+1\n2 ε\n, σ=σ(ε).(2.6)"
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "PDF p.1, pressure law",
+            "quote": "We adopt the polytropic pressure lawp(ρ) =bργ, forb >0andγ >1being fluid constants. Without loss\nof generality, we normalize the coefficientb= 1in the sequel."
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "PDF p.2, (1.3)",
+            "quote": "µ(ρ) =ρ, λ(ρ)≡0, γ∈(1,2],(1.3)"
+          },
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "PDF p.1, entropy-wave definition",
+            "quote": "These solutions are\ncharacterized by the pressure pM and velocity u being constant within the fluid. The density ρ and\nentropy ρsM of the fluid may be non-constant and are simply transported by the constant velocity\nu."
+          },
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "PDF p.8, (2.4) and ideal branch",
+            "quote": "(2.4)p(ρ, ϑ) =ϑ\nγ\nγ−1 P\n\u0012 ρ\nϑ\n1\nγ−1\n\u0013\n+ a\n3 ϑ4 =:p M(ρ, ϑ) +ap R(ϑ),\nwhere a > 0, γ > 2, and P∈C 1([0,∞ )) is an increasing function satisfying P (0) = 0. We further\nsuppose that there exists a constantZ >0 such thatP(Z) =Zfor allZ∈[0, Z ]."
+          }
+        ],
+        "derivation": "M08 的 RH 消元给 p₊/p₋=[1−(γ−1)(v₊−v₋)/(2v₋)]/[1+(γ+1)(v₊−v₋)/(2v₋)]。γ=2、v₋=p₋=1、Δv=22/111，所以 p₊=25/36，且压强下降。M10 的归一化 p=ρ²，取正根得 ρ*=5/6。M02 的低 Z 支由 (2.4) 和 P(Z)=Z 化为 p_M=ρθ；常压目标为 p₋=1，故 θ*=1/ρ*=6/5。这是数值映射，不将 γ=2 与 γ=3 的定理互相套用。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M08"
+            ],
+            "contribution": "从完整气体的 Rankine–Hugoniot 三式及其消元式恢复压力跳跃，而非把压强误作等熵常量。"
+          },
+          {
+            "sourceIds": [
+              "M10"
+            ],
+            "contribution": "恢复本论文的归一化 p=ρ^γ 和证明中 1<γ≤2 的范围。"
+          },
+          {
+            "sourceIds": [
+              "M02"
+            ],
+            "contribution": "恢复分子压强的低 Z 理想支 p_M=ρθ 及熵波的常压约束，同时识别其 γ>2 与另一文不同。"
+          }
+        ],
+        "ablation": "删去 M08 则起始压强跳跃不确定；删去 M10 则不能把该压强转成唯一正密度；删去 M02 则不能由常压与理想支求温度。",
+        "claimScope": "仅按题面定义把三个不同 PDE 的状态量作代数映射；M08 的消元公式在满足其 RH 端态的代数层面使用，不声称给定有限跳跃落入未知 ε0 的存在性定理；M02 取 γ=3 的低 Z 分支，M10 取 γ=2。",
+        "difficultyRationale": "必须先从完整气体的能量 RH 恢复非等熵压强，再跨归一化压强律取正根，最后在不同 γ 的接触波支计算温度；三个步骤有方向依赖。"
+      },
+      {
+        "id": "M06",
+        "answer": "2;Y;N;Y",
+        "evidence": [
+          {
+            "source": "M25",
+            "path": "research/longread-20261018/papers/M25-2609.26787v1.txt",
+            "locator": "PDF p.1, abstract, finite criterion",
+            "quote": "We introduce a finite-truncation version of Robin’s inequality determined\nintrinsically by the arithmetic structure ofn,\nσ(n)\nn < e γ\nω(n)X\nj=0\n(ln ln lnn)j\nj! , n >5040,"
+          },
+          {
+            "source": "M25",
+            "path": "research/longread-20261018/papers/M25-2609.26787v1.txt",
+            "locator": "PDF p.1, abstract",
+            "quote": "We also prove that this inequality is equivalent to Robin’s inequality, and hence to the Riemann\nhypothesis."
+          },
+          {
+            "source": "M20",
+            "path": "research/longread-20261018/papers/M20-2608.07399v1.txt",
+            "locator": "PDF p.1, abstract",
+            "quote": "Specifically, we show that an infinite family of\nSiegel zeros implies lim inf n→∞(γn+1 −γ n) log(γn)/2π <0.4733 on RH."
+          },
+          {
+            "source": "M20",
+            "path": "research/longread-20261018/papers/M20-2608.07399v1.txt",
+            "locator": "PDF pp.1–2, Definition 1",
+            "quote": "Definition 1(Siegel zero).ASiegel zerois a real numberβassociated to a primitive\nquadratic Dirichlet characterχmoduloqsuch thatL(β, χ) = 0 and\nβ= 1− 1\nElogq\n1\narXiv:2608.07399v1  [math.NT]  7 Aug 2026\n\n[PDF page 2]\nSIEGEL ZEROS AND SMALL GAPS 2\nwithE⩾3."
+          },
+          {
+            "source": "M18",
+            "path": "research/longread-20261018/papers/M18-2609.16048v1.txt",
+            "locator": "PDF p.1, abstract, first theorem range",
+            "quote": "Assuming the Generalized Riemann Hypothesis (GRH), we prove that for any\nϵ >0, one may takeθ >1/2, provided thatm < k(k+ 1)/2 and thatm, kare odd integers\nsufficiently large."
+          }
+        ],
+        "derivation": "设 k=4r+1。k(k+1)/2 的奇偶性是 奇，故严格小于该数的最大奇 m 与其差 2。M25 的对所有 n>5040 的有限准则等价 RH；因此两个世界均有 RH。M20 在 RH 加上趋于无穷的 Siegel 零序列时给 μ<0.4733，所以甲第二字段 Y。Siegel 零是二次 Dirichlet L 函数的实零 1−1/(E log q)，q→∞、E≥3 时最终 >1/2，故甲不能同时满足相关 Dirichlet GRH，不能援引 M18 的 GRH 定理。乙给出所需 GRH；题设 m,k 均足够大且 m 严格小于 k(k+1)/2、二者为奇数，故可援引首项表示定理。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M25"
+            ],
+            "contribution": "把全称有限除数和准则转成 RH，注意单个 n 的已证类不够。"
+          },
+          {
+            "sourceIds": [
+              "M20"
+            ],
+            "contribution": "RH 与趋于无穷的 Siegel 零序列联合给规范化间距严格上界，并给 Siegel 零定义。"
+          },
+          {
+            "sourceIds": [
+              "M18"
+            ],
+            "contribution": "素数幂表示首定理的 GRH、奇整数、充分大和严格 m 阈值条件。"
+          }
+        ],
+        "ablation": "无有限准则等价结果不能由甲、乙共同假设得到 RH；无小间距论文不能得甲的间距码；无 Waring–Goldbach 论文不能判两世界表示定理的 GRH 和严格 m 范围。",
+        "claimScope": "只在各自世界的明示假设下判断可援引性，不宣称 RH、GRH 或 Siegel 零序列实际成立；固定 k 的“充分大”未给阈值，故题目把它作为假设。",
+        "difficultyRationale": "有全称量词到 RH 的转换、例外零与 Dirichlet GRH 的冲突、严格整数奇偶端点以及两种条件定理的不同前提。"
+      },
+      {
+        "id": "M07",
+        "answer": "B;8/17;1/4",
+        "evidence": [
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, Theorem 1 range",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have"
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, text after (1.6)",
+            "quote": "the integral\nin the dual moment is essentially supported on an interval of length T\nH ."
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, (1.7)",
+            "quote": "(1.7) H2\nmax{p, q} > T 1+ϵ,\nwhich follows naturally from requiring the main term to dominate the error term."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "PDF p.2, definition of N(T,V)",
+            "quote": "LetN(T, V) be the\nsize of the largest 1-spaced subset of{t∈[T,2T] :|ζ( 1\n2 +it)|⩾V}."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "PDF p.2, Theorem 1.3",
+            "quote": "Theorem 1.3(Large value estimate).LetT⩾1. For anyV∈[T 7/60, T5/38]andε >0, we have\nN(T, V)≪ ε T\n24\n17 +εV − 128\n17 ."
+          },
+          {
+            "source": "M24",
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "PDF p.2, c(theta) and positivity threshold",
+            "quote": "Let\nc(θ) = 2−θ\n2−1√\n2 cot\n( θ√\n2\n)\n,0<θ<1.\nSince c′(θ) = 1\n2 cot2(θ/\n√\n2)> 0, the functionc is strictly increasing on(0, 1). It has a unique\nzero in this interval given by\nθ0 = 0.5501...."
+          },
+          {
+            "source": "M24",
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "PDF p.2, Theorem 1.1",
+            "quote": "Theorem 1.1.For every fixedθ0<θ<1, we have\n(1.7)lim inf\nT→∞\nNs\n0(T,T θ)\nN(T,T θ) ≥c(θ)>0."
+          }
+        ],
+        "derivation": "M22 的对偶长度 D=T/H=T^(1−δ)，且 max(p,q)≈T^a，主项条件变为 2δ−a>1。阈值 V=D^1/2=T^[1/2(1−δ)]；M15 的有效范围为 7/60≤v≤5/38，计数主幂 E=24/17−128v/17。M24 的 c 严格递增，要求 c(δ)≥c(3/4) 即 δ≥3/4。A:δ=11/16,v=5/32, c门槛=False, 大值区间=False, 主项条件=False, 可行=False；B:δ=3/4,v=1/8, c门槛=True, 大值区间=True, 主项条件=True, 可行=True；C:δ=19/25,v=3/25, c门槛=True, 大值区间=True, 主项条件=True, 可行=True；D:δ=4/5,v=1/10, c门槛=True, 大值区间=False, 主项条件=True, 可行=False。在可行者中 E 随 δ 严格增加，最小 δ 是 B 的 3/4；v=1/8，E=8/17，对偶幂 1−δ=1/4。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M22"
+            ],
+            "contribution": "H=T^δ 的对偶长度 T/H，且主项占优需 H²/max(p,q)>T^(1+ε)。"
+          },
+          {
+            "sourceIds": [
+              "M15"
+            ],
+            "contribution": "1-separated zeta 大值计数的 V 适用闭区间及指数 24/17−(128/17)v。"
+          },
+          {
+            "sourceIds": [
+              "M24"
+            ],
+            "contribution": "短区间简单临界零点的 c(δ) 下界、正性阈值与严格递增性。"
+          }
+        ],
+        "ablation": "无 M22 不能从 H 得到 D 或 twist 的严格条件；无 M15 不能判定 V 范围和目标指数；无 M24 不能筛除低于 c 基准的 δ。",
+        "claimScope": "合成参数预算：三文分别用于其自己的 zeta 大值集、短区间零点比例和互易公式；共享 T,δ,V 的数值设计不意味着一个结论证明另一个。忽略 T^ε/o(1) 时只报告主幂；主项占优条件保留严格不等式。",
+        "difficultyRationale": "需恢复对偶尺度、主项严格范围、大值阈值闭区间及零点比例保证函数的单调性，然后做离散精确优化；题面未提供这些公式。"
+      },
+      {
+        "id": "M08",
+        "answer": "B;9/275;216/425",
+        "evidence": [
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, Theorem 1 range",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have"
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, text after (1.6)",
+            "quote": "the integral\nin the dual moment is essentially supported on an interval of length T\nH ."
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, (1.7)",
+            "quote": "(1.7) H2\nmax{p, q} > T 1+ϵ,\nwhich follows naturally from requiring the main term to dominate the error term."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "PDF p.2, definition of N(T,V)",
+            "quote": "LetN(T, V) be the\nsize of the largest 1-spaced subset of{t∈[T,2T] :|ζ( 1\n2 +it)|⩾V}."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "PDF p.2, Theorem 1.3",
+            "quote": "Theorem 1.3(Large value estimate).LetT⩾1. For anyV∈[T 7/60, T5/38]andε >0, we have\nN(T, V)≪ ε T\n24\n17 +εV − 128\n17 ."
+          },
+          {
+            "source": "M23",
+            "path": "research/longread-20261018/papers/M23-2610.05227v1.txt",
+            "locator": "PDF p.4, Theorem 1.2",
+            "quote": "Theorem 1.2.Letσbe a real number satisfying1/2⩽σ⩽1, and set\nασ := σ\n2σ+ 1 .\nThen for any Schwartz functionϕonRwithsupp( bϕ)⊂(−α σ, ασ)"
+          }
+        ],
+        "derivation": "M22 给 D=T^(1−δ) 与严格 2δ−a>1；因此 M15 阈值指数 v=b(1−δ)，须在 [7/60,5/38]，上界指数 E=24/17−128v/17。M23 给 α_σ=σ/(2σ+1)，闭支集 [-2v,2v] 包含在开区间 (-α_σ,α_σ) 的充要条件是 2v<α_σ。A:v=1/8, 2v=1/4, α_σ=1/4, 主项=True, 大值范围=True, Fourier严格支集=False；B:v=3/25, 2v=6/25, α_σ=3/11, 主项=True, 大值范围=True, Fourier严格支集=True；C:v=3/25, 2v=6/25, α_σ=2/7, 主项=True, 大值范围=True, Fourier严格支集=True；D:v=1/8, 2v=1/4, α_σ=3/10, 主项=False, 大值范围=True, Fourier严格支集=True。可行者按 (σ,δ) 字典序最小是 B，余量 α_σ−2v=9/275，E=216/425。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M22"
+            ],
+            "contribution": "对偶尺度 D=T/H 和主项严格指数条件。"
+          },
+          {
+            "sourceIds": [
+              "M15"
+            ],
+            "contribution": "1-分离大值阈值适用带与其上界幂。"
+          },
+          {
+            "sourceIds": [
+              "M23"
+            ],
+            "contribution": "加权密度的横线依赖 Fourier 开支集半宽 α_σ。"
+          }
+        ],
+        "ablation": "无互易论文则 D 与 twist 筛选未知；无大值论文则阈值范围和目标指数未知；无加权密度论文则 σ 的严格支集条件与最优方案未知。",
+        "claimScope": "只作同一预算参数下三个独立定理的合法性审计，不将大值计数代入加权密度的证明。",
+        "difficultyRationale": "必须处理三个不同形状的边界：主项严格号、大值闭阈值带与 Fourier 开支集；优化是两级字典序。"
+      },
+      {
+        "id": "M09",
+        "answer": "C;1;3",
+        "evidence": [
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, Theorem 1 range",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have"
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, text after (1.6)",
+            "quote": "the integral\nin the dual moment is essentially supported on an interval of length T\nH ."
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, (1.7)",
+            "quote": "(1.7) H2\nmax{p, q} > T 1+ϵ,\nwhich follows naturally from requiring the main term to dominate the error term."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "PDF p.2, definition of N(T,V)",
+            "quote": "LetN(T, V) be the\nsize of the largest 1-spaced subset of{t∈[T,2T] :|ζ( 1\n2 +it)|⩾V}."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "PDF p.2, Theorem 1.3",
+            "quote": "Theorem 1.3(Large value estimate).LetT⩾1. For anyV∈[T 7/60, T5/38]andε >0, we have\nN(T, V)≪ ε T\n24\n17 +εV − 128\n17 ."
+          },
+          {
+            "source": "M16",
+            "path": "research/longread-20261018/papers/M16-2609.27715v1.txt",
+            "locator": "PDF p.2, Theorem 1.2",
+            "quote": "Theorem 1.2.Letq≥8/3and letN, T≥2. Let(c n)n∈N ⊂Cand suppose that\nX\nN <n≤2N\n|cn|q ≪N 1+o(1).\nLetW⊂[0, T]be a1-separated set such that\n\f\f\f\f\f\f\nX\nN <n≤2N\ncnnit\n\f\f\f\f\f\f\n≥V\nfor everyt∈W. Then, we have\n|W| ≤(N T) o(1)\n\u0010\nN 2V −2 +N 18/5V −4 +T N 12/5V −4"
+          }
+        ],
+        "derivation": "M22 给 N=D=T^(1−δ)，并要求 2δ−a>1。M15 的 ζ 大值定理要求 7/60≤v≤5/38，其幂为 24/17−128v/17。M16 在 q=8/3 下三项 N²V^-2、N^(18/5)V^-4、T N^(12/5)V^-4，代入 N=T^n,V=T^v 得 2n−2v、18n/5−4v、1+12n/5−4v。A:n=1/4,v=1/8, 主项=True, ζ范围=True, Dirichlet三项=1/4,2/5,11/10, 联合预算=11/10；B:n=6/25,v=3/25, 主项=True, ζ范围=True, Dirichlet三项=6/25,48/125,137/125, 联合预算=137/125；C:n=1/5,v=3/25, 主项=True, ζ范围=True, Dirichlet三项=4/25,6/25,1, 联合预算=1；D:n=3/8,v=1/8, 主项=True, ζ范围=True, Dirichlet三项=1/2,17/20,7/5, 联合预算=7/5。最小预算在 C，值 1；多项式主导项编号 3。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M22"
+            ],
+            "contribution": "把原区间长转为多项式长 D 并筛选主项条件。"
+          },
+          {
+            "sourceIds": [
+              "M15"
+            ],
+            "contribution": "提供 ζ 实验的阈值带与计数指数。"
+          },
+          {
+            "sourceIds": [
+              "M16"
+            ],
+            "contribution": "提供系数 q=8/3 时三个竞争的大值上界项。"
+          }
+        ],
+        "ablation": "无 M22 不知多项式长度；无 M15 不知 ζ 预算及其有效区间；无 M16 不知三个相互竞争的多项式幂与联合最大值。",
+        "claimScope": "两个大值实验各按自己的对象与假设独立计数，联合预算仅是题目定义的资源上界。",
+        "difficultyRationale": "必须拆出 Dirichlet 上界三项的分段包络，再与 ζ 改进大值幂相交，最后离散优化。"
+      },
+      {
+        "id": "M10",
+        "answer": "B;984/2125;21/100",
+        "evidence": [
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, Theorem 1 range",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have"
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, text after (1.6)",
+            "quote": "the integral\nin the dual moment is essentially supported on an interval of length T\nH ."
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, (1.7)",
+            "quote": "(1.7) H2\nmax{p, q} > T 1+ϵ,\nwhich follows naturally from requiring the main term to dominate the error term."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "PDF p.2, definition of N(T,V)",
+            "quote": "LetN(T, V) be the\nsize of the largest 1-spaced subset of{t∈[T,2T] :|ζ( 1\n2 +it)|⩾V}."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "PDF p.2, Theorem 1.3",
+            "quote": "Theorem 1.3(Large value estimate).LetT⩾1. For anyV∈[T 7/60, T5/38]andε >0, we have\nN(T, V)≪ ε T\n24\n17 +εV − 128\n17 ."
+          },
+          {
+            "source": "M24",
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "PDF p.2, c(theta) and positivity threshold",
+            "quote": "Let\nc(θ) = 2−θ\n2−1√\n2 cot\n( θ√\n2\n)\n,0<θ<1.\nSince c′(θ) = 1\n2 cot2(θ/\n√\n2)> 0, the functionc is strictly increasing on(0, 1). It has a unique\nzero in this interval given by\nθ0 = 0.5501...."
+          },
+          {
+            "source": "M24",
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "PDF p.2, Theorem 1.1",
+            "quote": "Theorem 1.1.For every fixedθ0<θ<1, we have\n(1.7)lim inf\nT→∞\nNs\n0(T,T θ)\nN(T,T θ) ≥c(θ)>0."
+          }
+        ],
+        "derivation": "M22 的对偶长度 D=T/H=T^(1−δ)，且 max(p,q)≈T^a，主项条件变为 2δ−a>1。阈值 V=D^3/5=T^[3/5(1−δ)]；M15 的有效范围为 7/60≤v≤5/38，计数主幂 E=24/17−128v/17。M24 的 c 严格递增，要求 c(δ)≥c(79/100) 即 δ≥79/100。A:δ=3/4,v=3/20, c门槛=False, 大值区间=False, 主项条件=False, 可行=False；B:δ=79/100,v=63/500, c门槛=True, 大值区间=True, 主项条件=True, 可行=True；C:δ=4/5,v=3/25, c门槛=True, 大值区间=True, 主项条件=True, 可行=True；D:δ=81/100,v=57/500, c门槛=True, 大值区间=False, 主项条件=True, 可行=False。在可行者中 E 随 δ 严格增加，最小 δ 是 B 的 79/100；v=63/500，E=984/2125，对偶幂 1−δ=21/100。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M22"
+            ],
+            "contribution": "H=T^δ 的对偶长度 T/H，且主项占优需 H²/max(p,q)>T^(1+ε)。"
+          },
+          {
+            "sourceIds": [
+              "M15"
+            ],
+            "contribution": "1-separated zeta 大值计数的 V 适用闭区间及指数 24/17−(128/17)v。"
+          },
+          {
+            "sourceIds": [
+              "M24"
+            ],
+            "contribution": "短区间简单临界零点的 c(δ) 下界、正性阈值与严格递增性。"
+          }
+        ],
+        "ablation": "无 M22 不能从 H 得到 D 或 twist 的严格条件；无 M15 不能判定 V 范围和目标指数；无 M24 不能筛除低于 c 基准的 δ。",
+        "claimScope": "合成参数预算：三文分别用于其自己的 zeta 大值集、短区间零点比例和互易公式；共享 T,δ,V 的数值设计不意味着一个结论证明另一个。忽略 T^ε/o(1) 时只报告主幂；主项占优条件保留严格不等式。",
+        "difficultyRationale": "需恢复对偶尺度、主项严格范围、大值阈值闭区间及零点比例保证函数的单调性，然后做离散精确优化；题面未提供这些公式。"
+      },
+      {
+        "id": "M11",
+        "answer": "BC;1/5;5/8",
+        "evidence": [
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, Theorem 1 range",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have"
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, text after (1.6)",
+            "quote": "the integral\nin the dual moment is essentially supported on an interval of length T\nH ."
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, (1.7)",
+            "quote": "(1.7) H2\nmax{p, q} > T 1+ϵ,\nwhich follows naturally from requiring the main term to dominate the error term."
+          },
+          {
+            "source": "M17",
+            "path": "research/longread-20261018/papers/M17-2609.22624v1.txt",
+            "locator": "PDF p.1, Corollary 1",
+            "quote": "Corollary 1.Suppose0< α <1/6. Forh 0 andt 0 sufficiently large, and for all\nt > t 0 andt 2/3 > h > h 0, the proportion of zerosρofζ(s)withℑ(ρ)∈[t−h, t+h]\nfor whichℜ(ρ)∈[α,1−α]is bounded below by an explicitly computable positive\nconstant. That is\n1− 2N(t−h, t+h, α)\nN(t+h)−N(t−h) > C α,h0,t0 >0."
+          },
+          {
+            "source": "M17",
+            "path": "research/longread-20261018/papers/M17-2609.22624v1.txt",
+            "locator": "PDF p.2, Table 1",
+            "quote": "1/16 100 10 100 L0.1374"
+          },
+          {
+            "source": "M24",
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "PDF p.2, c(theta) and positivity threshold",
+            "quote": "Let\nc(θ) = 2−θ\n2−1√\n2 cot\n( θ√\n2\n)\n,0<θ<1.\nSince c′(θ) = 1\n2 cot2(θ/\n√\n2)> 0, the functionc is strictly increasing on(0, 1). It has a unique\nzero in this interval given by\nθ0 = 0.5501...."
+          },
+          {
+            "source": "M24",
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "PDF p.2, Theorem 1.1",
+            "quote": "Theorem 1.1.For every fixedθ0<θ<1, we have\n(1.7)lim inf\nT→∞\nNs\n0(T,T θ)\nN(T,T θ) ≥c(θ)>0."
+          }
+        ],
+        "derivation": "M22 的主项条件 H²/max(p,q)>T^(1+ε) 在固定指数下等价于 a<2δ−1，严格号不能变等号。M17 取 t=T+H/2、h=H/2，h>100 与 t>10^100 最终成立；h<t^(2/3) 对固定 δ<2/3 成立，δ=2/3 因 1/2 因子仍成立，δ>2/3 失败。M17 表格 α=1/16,h0=100,t0=10^100 给 0.1374；M24 正的 c(δ) 需 δ>θ0≈0.5501。A:δ=1/2,a=1/20, Fiori半宽=True, Wang正界=False, Tang主项=False, 合格=False；B:δ=9/16,a=1/10, Fiori半宽=True, Wang正界=True, Tang主项=True, 合格=True；C:δ=5/8,a=1/5, Fiori半宽=True, Wang正界=True, Tang主项=True, 合格=True；D:δ=2/3,a=1/3, Fiori半宽=True, Wang正界=True, Tang主项=False, 合格=False；E:δ=11/16,a=1/4, Fiori半宽=False, Wang正界=True, Tang主项=True, 合格=False。可行码为 BC，其中最大 a=1/5，对应 δ=5/8。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M22"
+            ],
+            "contribution": "互易公式主项条件把 twist 指数 a 与短区间长度指数 δ 耦合为 a<2δ−1。"
+          },
+          {
+            "sourceIds": [
+              "M17"
+            ],
+            "contribution": "显式中央带比例需要 t^(2/3)>h>100，t>10^100，且 α=1/16 时表中保守保证为 0.1374。"
+          },
+          {
+            "sourceIds": [
+              "M24"
+            ],
+            "contribution": "简单临界零点比例 c(δ)>0 仅在 δ>θ0≈0.5501 可由 Theorem 1.1 认证。"
+          }
+        ],
+        "ablation": "无 M22 不能筛主项条件；无 M17 不能判半宽上限与表列显式比例；无 M24 不能筛掉简单临界零点保证函数非正的 δ。",
+        "claimScope": "只审计各文条件与计数比例，不推断三个比例的交集人数，也不把全高度结论误用于单个短窗。",
+        "difficultyRationale": "需将同一窗口从起点长度参数改写为中心半宽，注意 δ=2/3 边界的常数因子，再解严格指数不等式与短区间简单零点阈值。"
+      },
+      {
+        "id": "M12",
+        "answer": "BD;7/25;13/20",
+        "evidence": [
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, Theorem 1 range",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have"
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, text after (1.6)",
+            "quote": "the integral\nin the dual moment is essentially supported on an interval of length T\nH ."
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, (1.7)",
+            "quote": "(1.7) H2\nmax{p, q} > T 1+ϵ,\nwhich follows naturally from requiring the main term to dominate the error term."
+          },
+          {
+            "source": "M17",
+            "path": "research/longread-20261018/papers/M17-2609.22624v1.txt",
+            "locator": "PDF p.1, Corollary 1",
+            "quote": "Corollary 1.Suppose0< α <1/6. Forh 0 andt 0 sufficiently large, and for all\nt > t 0 andt 2/3 > h > h 0, the proportion of zerosρofζ(s)withℑ(ρ)∈[t−h, t+h]\nfor whichℜ(ρ)∈[α,1−α]is bounded below by an explicitly computable positive\nconstant. That is\n1− 2N(t−h, t+h, α)\nN(t+h)−N(t−h) > C α,h0,t0 >0."
+          },
+          {
+            "source": "M17",
+            "path": "research/longread-20261018/papers/M17-2609.22624v1.txt",
+            "locator": "PDF p.2, Table 1",
+            "quote": "1/16 100 10 100 L0.1374"
+          },
+          {
+            "source": "M24",
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "PDF p.2, c(theta) and positivity threshold",
+            "quote": "Let\nc(θ) = 2−θ\n2−1√\n2 cot\n( θ√\n2\n)\n,0<θ<1.\nSince c′(θ) = 1\n2 cot2(θ/\n√\n2)> 0, the functionc is strictly increasing on(0, 1). It has a unique\nzero in this interval given by\nθ0 = 0.5501...."
+          },
+          {
+            "source": "M24",
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "PDF p.2, Theorem 1.1",
+            "quote": "Theorem 1.1.For every fixedθ0<θ<1, we have\n(1.7)lim inf\nT→∞\nNs\n0(T,T θ)\nN(T,T θ) ≥c(θ)>0."
+          }
+        ],
+        "derivation": "M22 的主项条件 H²/max(p,q)>T^(1+ε) 在固定指数下等价于 a<2δ−1，严格号不能变等号。M17 取 t=T+H/2、h=H/2，h>100 与 t>10^100 最终成立；h<t^(2/3) 对固定 δ<2/3 成立，δ=2/3 因 1/2 因子仍成立，δ>2/3 失败。M17 表格 α=1/16,h0=100,t0=10^100 给 0.1374；M24 正的 c(δ) 需 δ>θ0≈0.5501。A:δ=11/20,a=1/20, Fiori半宽=True, Wang正界=False, Tang主项=True, 合格=False；B:δ=3/5,a=1/6, Fiori半宽=True, Wang正界=True, Tang主项=True, 合格=True；C:δ=5/8,a=1/4, Fiori半宽=True, Wang正界=True, Tang主项=False, 合格=False；D:δ=13/20,a=7/25, Fiori半宽=True, Wang正界=True, Tang主项=True, 合格=True；E:δ=3/4,a=2/5, Fiori半宽=False, Wang正界=True, Tang主项=True, 合格=False。可行码为 BD，其中最大 a=7/25，对应 δ=13/20。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M22"
+            ],
+            "contribution": "互易公式主项条件把 twist 指数 a 与短区间长度指数 δ 耦合为 a<2δ−1。"
+          },
+          {
+            "sourceIds": [
+              "M17"
+            ],
+            "contribution": "显式中央带比例需要 t^(2/3)>h>100，t>10^100，且 α=1/16 时表中保守保证为 0.1374。"
+          },
+          {
+            "sourceIds": [
+              "M24"
+            ],
+            "contribution": "简单临界零点比例 c(δ)>0 仅在 δ>θ0≈0.5501 可由 Theorem 1.1 认证。"
+          }
+        ],
+        "ablation": "无 M22 不能筛主项条件；无 M17 不能判半宽上限与表列显式比例；无 M24 不能筛掉简单临界零点保证函数非正的 δ。",
+        "claimScope": "只审计各文条件与计数比例，不推断三个比例的交集人数，也不把全高度结论误用于单个短窗。",
+        "difficultyRationale": "需将同一窗口从起点长度参数改写为中心半宽，注意 δ=2/3 边界的常数因子，再解严格指数不等式与短区间简单零点阈值。"
+      },
+      {
+        "id": "N01",
+        "answer": "CEBDA;32",
+        "evidence": [
+          {
+            "source": "N015",
+            "path": "research/longread-20261018/novel/N015.txt",
+            "locator": "N015-P0087",
+            "quote": "对于地球发出的返航诱饵，“蓝色空间”号本来就比“青铜世纪”号多了一些犹豫和怀疑，它只进行低功率减速，直至收到“青铜世纪”号的警报时，还保持着离开太阳系的正速度。收到警报后，它立刻由减速转换为全功率加速，继续逃离太阳系。"
+          },
+          {
+            "source": "N020",
+            "path": "research/longread-20261018/novel/N020.txt",
+            "locator": "N020-P0006",
+            "quote": "智子进入盲区对“万有引力”号的使命并没有致命的影响，但却使任务复杂了许多。之前，潜入“蓝色空间”号内部的智子，使“万有引力”号一直能够掌握目标飞船内部的情况，现在“蓝色空间”号开始对“万有引力”号呈现黑箱状态。其次，水滴失去了三体世界的实时控制，其行为完全由内置的A.I.所控制，可能会发生意想不到的情况。"
+          },
+          {
+            "source": "N031",
+            "path": "research/longread-20261018/novel/N031.txt",
+            "locator": "N031-P0044",
+            "quote": "“从三维空间看不到四维，但从四维空间能够看到三维世界的一切并且能对它产生作用。我们就是在四维的高度伏击了水滴。不管强互作用力探测器有多强大，它仍然是一个三维物体。现在看来，三维本身就意味着脆弱，从四维看去，它不过是一张展开的图纸而已，毫无防御能力，可以从四维接近它，不需要知道它的原理，只需在它的内部，哦，对四维来说全是外部，随意破坏就行。”"
+          },
+          {
+            "source": "N029",
+            "path": "research/longread-20261018/novel/N029.txt",
+            "locator": "N029-P0096",
+            "quote": "“我说过，我们是一个完整的世界，这个世界中的所有人都是普通人，但命运把我们推到了对两个世界做出最后审判的位置上。最后的决定必须做出，但不能由某个人或某些人做出，这将是这个世界的决定，我们举行全民公决。现在，赞同对三体星系的坐标进行引力波宇宙广播的人，请按动这个红色按钮；反对或弃权的什么都不要做。各位，目前‘蓝色空间’号和‘万有引力’号上的人员总数，包括在场的和正在值勤岗位的，共1415人，如果赞成人数达到或超过总人数的三分之二，即944人，宇宙广播将立刻启动；否则，将直到天线失效，永不启动。下面，全民公决开始。”"
+          }
+        ],
+        "derivation": [
+          "史耐德警报先于继续全功率外逃：C→E。",
+          "追击进入盲区之后，目标内部失去智子监视：E→B；四维伏击利用三维水滴无法防御的方向，获得广播载体：B→D。",
+          "夺取载体之后才能让两舰作为共同世界投票：D→A。",
+          "总人数1415-17=1398；门槛ceil(1398×2/3)=932；还需932-900=32。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N015"
+            ],
+            "contribution": "无法确定警报如何使逃亡舰保留外逃路径"
+          },
+          {
+            "sources": [
+              "N020"
+            ],
+            "contribution": "无法确定监视失效后目标成为黑箱"
+          },
+          {
+            "sources": [
+              "N031"
+            ],
+            "contribution": "无法确定水滴防御被绕过的机制"
+          },
+          {
+            "sources": [
+              "N029"
+            ],
+            "contribution": "无法取得公决基数及比例门槛"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N015-P0087的事实则无法确定警报如何使逃亡舰保留外逃路径；去掉N020-P0006的事实则无法确定监视失效后目标成为黑箱；去掉N031-P0044的事实则无法确定水滴防御被绕过的机制；去掉N029-P0096的事实则无法取得公决基数及比例门槛。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      },
+      {
+        "id": "N02",
+        "answer": "FCDAEH;A",
+        "evidence": [
+          {
+            "source": "N012",
+            "path": "research/longread-20261018/novel/N012.txt",
+            "locator": "N012-P0054",
+            "quote": "云天明当选为阶梯计划的使命执行人。"
+          },
+          {
+            "source": "N038",
+            "path": "research/longread-20261018/novel/N038.txt",
+            "locator": "N038-P0057",
+            "quote": "“除了谈话内容，还有一种因素可能亮红灯：智子发现太空艇中有记录设备，或者有信息转发设备。但这个请你放心，绝对不会发生，太空艇是反复检查过的，没有任何记录设备，通信设备也全部拆除，连航行的日志功能都消除了，全部航行都是由艇内的A.I.自主进行，在返回前不会与外界进行任何形式的通信。程博士，你明白这意味着什么吗？”"
+          },
+          {
+            "source": "N039",
+            "path": "research/longread-20261018/novel/N039.txt",
+            "locator": "N039-P0014",
+            "quote": "“首先我们得知，为了这次情报传递，云天明做了长期大量的准备工作，他创作了上百个童话故事，包含情报的三个故事就混杂在这些故事中。他通过讲述和出版选集的方式使三体世界熟悉这些故事，这是一个漫长的过程，很不容易，如果在这个过程中那三个故事隐含的信息没有被识破，以后敌人也会认为这些故事是安全的。但即使这样，他还是给三个故事加上了另一道保险。”"
+          },
+          {
+            "source": "N039",
+            "path": "research/longread-20261018/novel/N039.txt",
+            "locator": "N039-P0002",
+            "quote": "目前对公众发布的，只是云天明与程心的对话，而云天明传递的情报主体——那三个童话故事，仍处于绝对保密状态。在透明的现代社会，从舰队国际和联合国层面上对如此重大的信息向全世界保密，是一件很难做到的事，但各国还是很快就此达成了一致。如果情报主体被公布，可能出现全世界的解读热潮，这可能危及到云天明的安全。云天明的安全如此重要，并不仅仅是为他个人考虑，目前，他仍然是唯一一个身处外星社会并深入星际的人，未来，他的重要性不可取代。"
+          },
+          {
+            "source": "N041",
+            "path": "research/longread-20261018/novel/N041.txt",
+            "locator": "N041-P0025",
+            "quote": "云天明告诉地球世界：三体光速飞船采用空间曲率驱动。"
+          }
+        ],
+        "derivation": [
+          "阶梯飞行器送出云天明，之后才有他在三体社会长期讲述并出版故事：F→C。",
+          "预先建立故事安全表象后，使用智子会面讲述；艇无记录和转发设备，只能经程心记忆返回：C→D→A。",
+          "故事主体未公开，进入IDC保密解读，再由香皂纸船机制识别曲率推进：A→E→H。",
+          "失去形成长期记忆的能力切断A，G和B都不是原著成功通路。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N012"
+            ],
+            "contribution": "无法确定阶梯载体与后来讲述者为同一使命执行人"
+          },
+          {
+            "sources": [
+              "N038"
+            ],
+            "contribution": "无法排除艇上录像或即时转发作为记忆的替代"
+          },
+          {
+            "sources": [
+              "N039"
+            ],
+            "contribution": "无法确定故事在会面前已被三体接受的先决步骤"
+          },
+          {
+            "sources": [
+              "N039"
+            ],
+            "contribution": "无法排除公众解读替代保密解读"
+          },
+          {
+            "sources": [
+              "N041"
+            ],
+            "contribution": "无法确定链条终点是曲率驱动情报"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N012-P0054的事实则无法确定阶梯载体与后来讲述者为同一使命执行人；去掉N038-P0057的事实则无法排除艇上录像或即时转发作为记忆的替代；去掉N039-P0014的事实则无法确定故事在会面前已被三体接受的先决步骤；去掉N039-P0002的事实则无法排除公众解读替代保密解读；去掉N041-P0025的事实则无法确定链条终点是曲率驱动情报。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      },
+      {
+        "id": "N03",
+        "answer": "1;2;0",
+        "evidence": [
+          {
+            "source": "N040",
+            "path": "research/longread-20261018/novel/N040.txt",
+            "locator": "N040-P0009",
+            "quote": "可以确定，太阳系的四颗巨行星：木星、土星、天王星和海王星在黑暗森林打击后将保持完好。"
+          },
+          {
+            "source": "N050",
+            "path": "research/longread-20261018/novel/N050.txt",
+            "locator": "N050-P0050",
+            "quote": "剩下的事就是清理了，歌者再次从仓库中取出那个质量点。他突然想到清理弹星者是不能用质量点的，这个星系的结构与前面已死的那个星系不同，有死角，用质量点可能清理不干净，甚至白费力气，这要用二向箔才行。可是歌者没有从仓库里取二向箔的权限，要向长老申请。"
+          },
+          {
+            "source": "N053",
+            "path": "research/longread-20261018/novel/N053.txt",
+            "locator": "N053-P0030",
+            "quote": "已经证实，脱离跌落区域的逃逸速度为光速。"
+          },
+          {
+            "source": "N054",
+            "path": "research/longread-20261018/novel/N054.txt",
+            "locator": "N054-P0136",
+            "quote": "“没有，政府与我们合作是因为……”罗辑用拐杖敲击着地面，发出均匀的嗒嗒声——他在犹豫，“这个，暂时还是不说吧。一年前，三套曲率引擎制造完成，共进行了三次无人光速试航，第一次是一号引擎，它在距太阳一百五十天文单位的太空进入光速，以光速航行一段后返回，对于引擎本身来说，试航时间只有十分钟左右，但对我们来说，它们在三年后才返回。第二次试航是二号和三号引擎同时进行，现在，那两套引擎已经在奥尔特星云之外，预计返回太阳系要在六年后了。安装在‘星环’号上的是经过第一次试航的一号引擎。”"
+          },
+          {
+            "source": "N054",
+            "path": "research/longread-20261018/novel/N054.txt",
+            "locator": "N054-P0217",
+            "quote": "“星环”号仍在向二维平面跌落，它已经达到的高速度只是减缓了跌落的进程，飞船仍未达到二维跌落区的逃逸速度。这时，“星环”号是太阳系唯一还处于二维空间之外的人造物体，程心和AA是仅有的画外人。“星环”号距二维平面已经很近了，从这个角度看去，二维太阳已经变得很扁平，像从海岸看大海一样，它那不再发光的暗红色平面无边无际。刚刚二维化的冥王星这时变得很大，且以肉眼能够觉察的速度继续变大。程心看着二维冥王星那精致的“年轮”，想从中找出博物馆的痕迹，但没找到，它毕竟太小了。三维空间向二维跌落的洪流似乎不可抗拒，程心这时有些怀疑，曲率引擎是否真的能使飞船进入光速，她真的希望一切就此终结，但这时，飞船A.I.说话了："
+          }
+        ],
+        "derivation": [
+          "原模型预测四巨行星完好，依靠太阳光粒打击的空间死角；歌者因此改用二向箔。",
+          "二维跌落逃逸速度是光速，普通躲在巨行星后方不满足。",
+          "一号已试航返回并装于星环号；二、三号在奥尔特云外且六年后才返回。",
+          "故只有编号1，三批缺2套；原巨行星的遮挡不保护任何一颗免于二维化，结果0。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N040"
+            ],
+            "contribution": "无法确定掩体模型所要保护的巨行星集合"
+          },
+          {
+            "sources": [
+              "N050"
+            ],
+            "contribution": "无法确定死角为何令质量点方案失效并转向维度攻击"
+          },
+          {
+            "sources": [
+              "N053"
+            ],
+            "contribution": "无法把二维逃逸条件转为光速引擎需求"
+          },
+          {
+            "sources": [
+              "N054"
+            ],
+            "contribution": "无法确定三套引擎中哪套已返回并可用"
+          },
+          {
+            "sources": [
+              "N054"
+            ],
+            "contribution": "无法验证遮挡没有保住原掩体体系"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N040-P0009的事实则无法确定掩体模型所要保护的巨行星集合；去掉N050-P0050的事实则无法确定死角为何令质量点方案失效并转向维度攻击；去掉N053-P0030的事实则无法把二维逃逸条件转为光速引擎需求；去掉N054-P0136的事实则无法确定三套引擎中哪套已返回并可用；去掉N054-P0217的事实则无法验证遮挡没有保住原掩体体系。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      },
+      {
+        "id": "N04",
+        "answer": "FBDE;1503/100",
+        "evidence": [
+          {
+            "source": "N036",
+            "path": "research/longread-20261018/novel/N036.txt",
+            "locator": "N036-P0011",
+            "quote": "智子指出，黑暗森林打击的一个重要特点就是随意性，打击的发起者不对目标进行近距离探测。在已经提出的所有方案中，人类只是在表演着没有观众的行为艺术，不管做得多么诚心，除自己外没人能看到。退一万步说，即使真有某些慈父般的文明对地球进行近距离探测，甚至在地球和太阳系中安装类似于智子的长期监视系统，它们也只占宇宙中亿万文明的极小一部分。在大多数宇宙文明的眼中，太阳只是无数光年外一个暗弱的光点，没有任何细节特征，这是宇宙黑暗森林状态的基本数学结构。"
+          },
+          {
+            "source": "N041",
+            "path": "research/longread-20261018/novel/N041.txt",
+            "locator": "N041-P0156",
+            "quote": "如果太阳系的真空光速降到每秒十六点七千米以下，光将无法逃脱太阳的引力，太阳系将变成一个黑洞〔原书注：当真空光速低于太阳系的逃逸速度时，太阳系的半径小于其史瓦西半径。史瓦西半径是任何具重力的质量之临界半径，当一个天体的半径小于史瓦西半径时，光无法从半径内的引力场逃脱，便会成为黑洞。史瓦西半径的公式，其实是从物体逃逸速度的公式衍生而来，它将物体的逃逸速度设为光速，配合万有引力常数及天体质量，便能得出其史瓦西半径。〕。"
+          },
+          {
+            "source": "N048",
+            "path": "research/longread-20261018/novel/N048.txt",
+            "locator": "N048-P0017",
+            "quote": "在介质中降低光速并不是难事，早在公元2008年，就能够在实验室中把介质光速降低到令人难以置信的每秒十七米，但这与降低真空光速在本质上是不同的。前者只是通过介质原子对光子的吸收和再发射实现的，这中间光子的传播速度仍是标准真空光速，对黑域计划没有意义。"
+          },
+          {
+            "source": "N048",
+            "path": "research/longread-20261018/novel/N048.txt",
+            "locator": "N048-P0023",
+            "quote": "“黑洞项目是在掩体纪元元年开始的，历时十一年。其实，项目的规划者们并没有对此抱什么希望，无论是理论计算还是天文观测都表明，黑洞也不可能改变光速，这些宇宙中的魔鬼也只能用自己的引力场改变光线的路径和频率，对真空光速没有丝毫影响。但要使黑域计划的研究进行下去，就要有超高密度引力场的实验环境，这只能借助黑洞。还有一个理由：黑域本质上是一个大型低光速黑洞，对一个微型标准光速黑洞进行近距离研究，也许能得到什么意外的启示。"
+          },
+          {
+            "source": "N054",
+            "path": "research/longread-20261018/novel/N054.txt",
+            "locator": "N054-P0181",
+            "quote": "“是的，但这点知道得很晚。在曲率驱动的研究中，实验是领先于理论的，你知道，这也是维德的风格。很多实验中的发现在理论上无法解释，没有理论指导，也就很难有意识地去注意一些现象。在研究初期，就是驱动你头发的那个阶段，曲率驱动产生的尾迹很少很淡薄，没有被注意到。其实当时有很多迹象，比如那些尾迹扩散后，低光速曾使附近一些计算机的量子集成电路出现故障，但还是没人往这方面想。后来随着实验规模增大，人们才发现了曲率驱动尾迹的秘密。也正是因为这个原因，联邦政府才同意与我们合作。这时，可以说他们对这个事业是倾尽全力的，政府投入了巨大的力量研制光速飞船，但时间已经来不及了……”罗辑摇头叹息一声，没有再说下去。"
+          },
+          {
+            "source": "N054",
+            "path": "research/longread-20261018/novel/N054.txt",
+            "locator": "N054-P0178",
+            "quote": "“这就是黑域。”罗辑说，“当然，要产生容纳一个恒星系的黑域，一艘飞船是远远不够的。据计算，生成容纳太阳系的黑域需要一千多艘曲率驱动飞船，这些飞船以太阳为中心，放射状地朝各个不同的方向加速到光速，它们产生的航迹在扩散中连成一体，形成一个笼罩整个太阳系的球体，这个球体中的光速为每秒16.7千米，这就是低光速黑洞，就是黑域。”"
+          }
+        ],
+        "derivation": [
+          "远程可信声明要求F排除近距离行为展示。",
+          "童话解读给出光也不能逸出的低光速黑洞，形成B。",
+          "介质减速A与真空不同，标准黑洞C不改光速，因此需要D。",
+          "单条尾迹不包围太阳系，需E使多条尾迹扩散连接。",
+          "原阈值16.7乘9/10=15.03=1503/100。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N036"
+            ],
+            "contribution": "无法排除只供近距离观看的安全表演"
+          },
+          {
+            "sources": [
+              "N041"
+            ],
+            "contribution": "无法从安全要求推出低光速黑洞及第三宇宙速度约束"
+          },
+          {
+            "sources": [
+              "N048"
+            ],
+            "contribution": "无法排除介质减速作为真空减速的替代"
+          },
+          {
+            "sources": [
+              "N048"
+            ],
+            "contribution": "无法排除标准黑洞直接改变光速"
+          },
+          {
+            "sources": [
+              "N054"
+            ],
+            "contribution": "无法确定曲率尾迹才是实际突破"
+          },
+          {
+            "sources": [
+              "N054"
+            ],
+            "contribution": "无法从单条尾迹推至覆盖恒星系的实施方式"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N036-P0011的事实则无法排除只供近距离观看的安全表演；去掉N041-P0156的事实则无法从安全要求推出低光速黑洞及第三宇宙速度约束；去掉N048-P0017的事实则无法排除介质减速作为真空减速的替代；去掉N048-P0023的事实则无法排除标准黑洞直接改变光速；去掉N054-P0181的事实则无法确定曲率尾迹才是实际突破；去掉N054-P0178的事实则无法从单条尾迹推至覆盖恒星系的实施方式。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      },
+      {
+        "id": "N05",
+        "answer": "ABDC;G",
+        "evidence": [
+          {
+            "source": "N040",
+            "path": "research/longread-20261018/novel/N040.txt",
+            "locator": "N040-P0059",
+            "quote": "程心立刻明白了原理：香皂在水中溶解后，降低了小船后方水面的张力，但船前方水面的张力不变，小船就被前方水面的张力拉过去了〔原书注：这个试验的效果与水的硬度与清洁度有关，最好在小船后部加一个舵，否则船可能不走直线。〕。但这个想法转瞬即逝，程心的思想随即被一道闪电照亮！在她的眼中，浴缸中平静的水面变成了漆黑的太空，白色的小纸船在这无际的虚空中以光速航行……"
+          },
+          {
+            "source": "N041",
+            "path": "research/longread-20261018/novel/N041.txt",
+            "locator": "N041-P0029",
+            "quote": "二维隐喻：这种模式是用于解决文学语言所产生的信息不确定性的问题。在一个双层隐喻完成后，附加一个单层隐喻，用来固定双层隐喻的含义。在此例中，用雪浪纸的卷曲和熨平暗示曲率驱动中的空间形态，把肥皂船的隐喻确定下来。如果把故事看做一个二维平面，双层隐喻只为真实含义提供了一个坐标，附加的单层隐喻则相当于第二个坐标，把含义在平面上的位置固定下来，所以这个单层隐喻又被称为含义坐标。含义坐标单独拿出来看是没有意义的，但与双层隐喻结合，就解决了文学语言含义模糊的问题。"
+          },
+          {
+            "source": "N043",
+            "path": "research/longread-20261018/novel/N043.txt",
+            "locator": "N043-P0010",
+            "quote": "曲率驱动技术在理论上未知，但实现难度明显低于黑域技术。"
+          },
+          {
+            "source": "N043",
+            "path": "research/longread-20261018/novel/N043.txt",
+            "locator": "N043-P0011",
+            "quote": "光速飞船几乎无法为地球文明提供任何安全保障，这一技术只能用于星际逃亡。这是三个选择中未知因素最多的一个，即使实现，进入茫茫外太空的人类前途也凶险莫测。同时，由于逃亡主义的危险性，这一计划的实现在政治上充满障碍和陷阱。"
+          },
+          {
+            "source": "N054",
+            "path": "research/longread-20261018/novel/N054.txt",
+            "locator": "N054-P0181",
+            "quote": "“是的，但这点知道得很晚。在曲率驱动的研究中，实验是领先于理论的，你知道，这也是维德的风格。很多实验中的发现在理论上无法解释，没有理论指导，也就很难有意识地去注意一些现象。在研究初期，就是驱动你头发的那个阶段，曲率驱动产生的尾迹很少很淡薄，没有被注意到。其实当时有很多迹象，比如那些尾迹扩散后，低光速曾使附近一些计算机的量子集成电路出现故障，但还是没人往这方面想。后来随着实验规模增大，人们才发现了曲率驱动尾迹的秘密。也正是因为这个原因，联邦政府才同意与我们合作。这时，可以说他们对这个事业是倾尽全力的，政府投入了巨大的力量研制光速飞船，但时间已经来不及了……”罗辑摇头叹息一声，没有再说下去。"
+          }
+        ],
+        "derivation": [
+          "肥皂船先通过A建立推进图景。",
+          "单有推进图景不足确定空间机制，B是固定双层隐喻含义的第二坐标。",
+          "最初三条生路把黑域和光速飞船分别规划为不同实现难度，故D。",
+          "后续才发现C，把曲率工程与制造黑域关联。",
+          "删除C不删除AB所得的飞船方向，因此仍可直接论证G，而不能从剩余证据推出H。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N040"
+            ],
+            "contribution": "无法确定肥皂船的中间物理对象是船后张力变化"
+          },
+          {
+            "sources": [
+              "N041"
+            ],
+            "contribution": "无法确定熨平纸卷如何固定隐喻含义"
+          },
+          {
+            "sources": [
+              "N043"
+            ],
+            "contribution": "无法确定最初规划如何分开两类实现难度"
+          },
+          {
+            "sources": [
+              "N043"
+            ],
+            "contribution": "无法确定删除尾迹关联后仍获支持的工程用途"
+          },
+          {
+            "sources": [
+              "N054"
+            ],
+            "contribution": "无法确定使两类计划取得制造关联的后续发现"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N040-P0059的事实则无法确定肥皂船的中间物理对象是船后张力变化；去掉N041-P0029的事实则无法确定熨平纸卷如何固定隐喻含义；去掉N043-P0010的事实则无法确定最初规划如何分开两类实现难度；去掉N043-P0011的事实则无法确定删除尾迹关联后仍获支持的工程用途；去掉N054-P0181的事实则无法确定使两类计划取得制造关联的后续发现。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      },
+      {
+        "id": "N06",
+        "answer": "BCE;3728",
+        "evidence": [
+          {
+            "source": "N049",
+            "path": "research/longread-20261018/novel/N049.txt",
+            "locator": "N049-P0055",
+            "quote": "“这是城市自卫队。”维德对着武装的人群挥了一下手，“是我们保卫星环城和光速飞船理想的全部力量，几乎是全部了，外面还有一些人，还会有更多的人加入，但总人数不会超过一百。至于他们的装备……”维德从一名战士身上拿下步枪，哗啦一声拉动枪栓，“你没看错，古代武器，用现代材料制造，子弹的发射药也不是火药，比真正的古代步枪射程要远一些，精度要高一些。在太空中，这些枪可以在两千千米外击中一艘大型战舰，但也仅此而已，很原始的玩意儿。你一定觉得这很可笑，我也有这种感觉，除了一点——”他把枪还给那名战士，又从他胸前的弹链上抽出一发子弹，“我说过，基本上是古代的子弹，但弹头是新的，对现在而言也是未来的技术。这个弹头是一个超导容器，内部高度真空，用磁场把一粒小球悬浮在正中，避免它与外壳接触，这粒小球是反物质。”"
+          },
+          {
+            "source": "N043",
+            "path": "research/longread-20261018/novel/N043.txt",
+            "locator": "N043-P0008",
+            "quote": "但地球文明将为此付出巨大的代价，太阳系将与宇宙的其余部分完全隔绝，相当于人类把自己置身的宇宙直径从一百六十亿光年缩小至五十个天文单位。在光速为每秒16.7千米的世界里生活是什么样子现在还不得而知，但可以肯定的是，那个世界中的电子计算机和量子计算机只能以极低的速度运行，人类可能退回到低技术社会，这是比智子更强的技术锁死。所以，黑域安全声明除了自我隔绝外，还有技术自残的一面，这也就意味着人类将永远没有力量飞出自造的低光速陷阱了。"
+          },
+          {
+            "source": "N055",
+            "path": "research/longread-20261018/novel/N055.txt",
+            "locator": "N055-P0297",
+            "quote": "“神经元计算机，能够在低光速下运行的计算机。穿梭机和飞船都有两套控制系统，其中一套就是神经元模式的。”"
+          },
+          {
+            "source": "N055",
+            "path": "research/longread-20261018/novel/N055.txt",
+            "locator": "N055-P0304",
+            "quote": "引导部分剩余时间68小时43分（跳动的秒数），总体剩余时间297小时52分（跳动的秒数）。"
+          },
+          {
+            "source": "N055",
+            "path": "research/longread-20261018/novel/N055.txt",
+            "locator": "N055-P0310",
+            "quote": "关一帆又从刚才拿出金属氧气瓶的存储柜中，取出了一个小盒，他打开小盒让程心看放在里面的胶囊。“这是短期冬眠药物，与以前的不同，不需要体外循环维持装置。冬眠后呼吸会降到极慢，耗氧很少。一粒可以冬眠十五天左右。”"
+          },
+          {
+            "source": "N056",
+            "path": "research/longread-20261018/novel/N056.txt",
+            "locator": "N056-P0011",
+            "quote": "“当然不能用了，低光速下的核聚变功率太低，我们要启动备用的反物质发动机。”"
+          }
+        ],
+        "derivation": [
+          "低光速使常规控制不可用，冬眠舱依赖电脑，选择药物B跨过等待期。",
+          "神经元电脑C恢复控制后，因低光速下聚变功率不足，选择专用反物质发动机E。",
+          "星环城反物质子弹不是低光速备用发动机，不能作为替代。",
+          "十五天21600分钟，297小时52分=17872分钟，余量3728。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N049"
+            ],
+            "contribution": "无法区分武器储存容器与后来专用低光速动力系统"
+          },
+          {
+            "sources": [
+              "N043"
+            ],
+            "contribution": "无法确定低光速首先影响计算机这一约束"
+          },
+          {
+            "sources": [
+              "N055"
+            ],
+            "contribution": "无法确定恢复控制的神经元备用系统"
+          },
+          {
+            "sources": [
+              "N055"
+            ],
+            "contribution": "无法确定需要跨过的启动等待时间"
+          },
+          {
+            "sources": [
+              "N055"
+            ],
+            "contribution": "无法确定可用的无体外循环冬眠方式及期限"
+          },
+          {
+            "sources": [
+              "N056"
+            ],
+            "contribution": "无法排除原聚变动力并确定最后的动力替换"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N049-P0055的事实则无法区分武器储存容器与后来专用低光速动力系统；去掉N043-P0008的事实则无法确定低光速首先影响计算机这一约束；去掉N055-P0297的事实则无法确定恢复控制的神经元备用系统；去掉N055-P0304的事实则无法确定需要跨过的启动等待时间；去掉N055-P0310的事实则无法确定可用的无体外循环冬眠方式及期限；去掉N056-P0011的事实则无法排除原聚变动力并确定最后的动力替换。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      },
+      {
+        "id": "N07",
+        "answer": "BACDE;2",
+        "evidence": [
+          {
+            "source": "N053",
+            "path": "research/longread-20261018/novel/N053.txt",
+            "locator": "N053-P0080",
+            "quote": "“研究继续进行，但没有什么进展，科学家们显然已经有了一些结论，但在我面前总是欲言又止。我对他们说，没什么，不管你们得出的结果多么离奇或离谱，没有其他的结果，我们就应该接受。我向他们保证，不会有什么东西比我的经历更离奇和离谱的，我不会笑话他们。于是他们告诉我，基于现代科学在各个学科最先进的理论和技术，根据大量的理论研究和实验的结果，通过对大量方案的综合分析和比较，他们已经得出了把信息保存一亿年左右的方法，他们强调，这是目前已知的唯一可行的方法，它就是——”罗辑把拐杖高举过头，白发长须舞动着，看上去像分开红海的摩西，庄严地喊道，“把字刻在石头上！”"
+          },
+          {
+            "source": "N055",
+            "path": "research/longread-20261018/novel/N055.txt",
+            "locator": "N055-P0292",
+            "quote": "程心想到了云天明和艾AA，他们在地面上，应该是安全的，但现在双方已经无法联系，她甚至都没能和他说上一句话。"
+          },
+          {
+            "source": "N056",
+            "path": "research/longread-20261018/novel/N056.txt",
+            "locator": "N056-P0035",
+            "quote": "接下来，程心和关一帆只能开始做一件让他们深感恐惧、却又不得不做的事：确定现在的年代。低光速下的年代测定有一种特殊的方法，一些在正常光速的世界中不发生衰变的元素，在低光速下会出现不同速率的衰变，可由此精确测定低光速持续的时间。作为科学考察飞行器，穿梭机中有测定元素衰变的仪器，但它是一个独立的设备，没有神经元计算机控制系统，只有一个与穿梭机神经元主机的接口，关一帆费了很大周折，才使设备能够正常使用。他们让仪器依次测定从不同区域采集的十份岩石样本，以便于将结果进行对比。这个过程需要半个小时。"
+          },
+          {
+            "source": "N056",
+            "path": "research/longread-20261018/novel/N056.txt",
+            "locator": "N056-P0063",
+            "quote": "关一帆点点头同意了，显然只是为了满足程心的愿望。他和程心起身回到穿梭机中，就这样一段短短的路，他们仍然紧紧依偎着，仿佛担心一旦分开就被岁月隔开。关一帆对轨道上的“亨特”号飞船发出指令，让它对这个坐标点周围半径三千米区域的地层进行深度遥感探测，探测深度为五米至十米之间，重点识别文字和其他有意义的符号。"
+          },
+          {
+            "source": "N056",
+            "path": "research/longread-20261018/novel/N056.txt",
+            "locator": "N056-P0065",
+            "quote": "关一帆再次指令飞船在地层中十米至二十米的深度范围探测。这又花费了一个多小时，大部分时间是等待飞船再次飞越上空，也没有任何发现。在这个深度已经没有土壤，只有密实的岩石。"
+          },
+          {
+            "source": "N056",
+            "path": "research/longread-20261018/novel/N056.txt",
+            "locator": "N056-P0087",
+            "quote": "但这次他错了，这东西确实存放了一千八百九十万年，如果需要，还可以存放到宇宙末日，因为它在时间之外。最初它被放置在刻字的岩石旁边，还有一个实体的金属框架，但仅五十万年后金属就化为尘土。而这东西一直是崭新的，它不惧怕时间，因为它自己的时间还没有开始。本来它处在地层三十米深处，仍然在那块岩石旁，但它检测到了地面上的人，于是它升上地面，它与地层不发生作用，就像一个幻影。在地面上，它确认这两个人是它所等待的对象。"
+          },
+          {
+            "source": "N057",
+            "path": "research/longread-20261018/novel/N057.txt",
+            "locator": "N057-P0053",
+            "quote": "“我不知道蓝星是什么，如果是一颗行星的话，他不可能把647号带到那里，因为647号本身是一个独立的宇宙，不在大宇宙内部，他只能把647号的入口带到那里。”"
+          }
+        ],
+        "derivation": [
+          "低光速衰变测年B使实时等人不再可行。",
+          "AA知道石刻长期保存方法，所以选A，深入搜索后得C。",
+          "入口识别等待对象后显现，进入D，再由管理者解释E。",
+          "先5—10米失败，再10—20米失败，随后找到23—28米处文字，共2层。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N053"
+            ],
+            "contribution": "无法解释为何从没有人类踪迹转向石刻"
+          },
+          {
+            "sources": [
+              "N055"
+            ],
+            "contribution": "无法采用地面人物实时通话替代留存信息"
+          },
+          {
+            "sources": [
+              "N056"
+            ],
+            "contribution": "无法建立已经历漫长低光速年代的证据"
+          },
+          {
+            "sources": [
+              "N056"
+            ],
+            "contribution": "无法确定第一次地层搜索范围"
+          },
+          {
+            "sources": [
+              "N056"
+            ],
+            "contribution": "无法确定第二次失败及搜索加深"
+          },
+          {
+            "sources": [
+              "N056"
+            ],
+            "contribution": "无法确定入口如何等待并识别到来者"
+          },
+          {
+            "sources": [
+              "N057"
+            ],
+            "contribution": "无法解释最终进入的对象与大宇宙位置的关系"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N053-P0080的事实则无法解释为何从没有人类踪迹转向石刻；去掉N055-P0292的事实则无法采用地面人物实时通话替代留存信息；去掉N056-P0035的事实则无法建立已经历漫长低光速年代的证据；去掉N056-P0063的事实则无法确定第一次地层搜索范围；去掉N056-P0065的事实则无法确定第二次失败及搜索加深；去掉N056-P0087的事实则无法确定入口如何等待并识别到来者；去掉N057-P0053的事实则无法解释最终进入的对象与大宇宙位置的关系。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      },
+      {
+        "id": "N08",
+        "answer": "BDG;3",
+        "evidence": [
+          {
+            "source": "N020",
+            "path": "research/longread-20261018/novel/N020.txt",
+            "locator": "N020-P0002",
+            "quote": "智子间的量子联结是一次性的，一旦中断不可能恢复，那些进入盲区的智子都永远迷失在了太空中。"
+          },
+          {
+            "source": "N038",
+            "path": "research/longread-20261018/novel/N038.txt",
+            "locator": "N038-P0057",
+            "quote": "“除了谈话内容，还有一种因素可能亮红灯：智子发现太空艇中有记录设备，或者有信息转发设备。但这个请你放心，绝对不会发生，太空艇是反复检查过的，没有任何记录设备，通信设备也全部拆除，连航行的日志功能都消除了，全部航行都是由艇内的A.I.自主进行，在返回前不会与外界进行任何形式的通信。程博士，你明白这意味着什么吗？”"
+          },
+          {
+            "source": "N039",
+            "path": "research/longread-20261018/novel/N039.txt",
+            "locator": "N039-P0006",
+            "quote": "所有人都穿着连体的高压防护服，因为屏蔽室的金属墙壁都带电，需要防止内部人员意外触碰。特别是要求人们戴防护手套，以防有人习惯性地点击墙壁试图激活信息窗口。在屏蔽力场中，任何电子设备都不能运行，所以室内没有任何信息窗口。为保持力场的均匀，这里的陈设尽可能减少，主要就是人们的座椅，连会议桌都没有。与会者们穿的防护服原是电业工人高压作业时穿的，在简陋的金属房间中，这一群人像是古代的工厂车间在开班前会。"
+          },
+          {
+            "source": "N057",
+            "path": "research/longread-20261018/novel/N057.txt",
+            "locator": "N057-P0081",
+            "quote": "当然，他们最关心的是：小宇宙可以和大宇宙通信吗？智子告诉他们，小宇宙绝无可能向大宇宙传递信息，但接收到大宇宙的信息广播却是有可能的。她说，所有的宇宙都是一个超膜上的空泡（这涉及三体物理学和宇宙学中最基本的理论图景，对此她也无法进一步解释），大宇宙有足够的能量把信息在超膜上传播。但这很困难，需要难以想象的巨大能量，如果大宇宙这么做，可能需要把相当于一个银河系的质量化为纯能。其实，647号宇宙中的监测系统经常收到超膜上其他大宇宙的信息，有些是自然产生的，有些是无法解读的智慧信息，但从未收到他们所来的那个大宇宙的信息。"
+          },
+          {
+            "source": "N058",
+            "path": "research/longread-20261018/novel/N058.txt",
+            "locator": "N058-P0040",
+            "quote": "程心和关一帆进入了飞船，智子最后也进来了。她早就不再穿那身华丽的和服了，她现在身着迷彩服，再次成为一名轻捷精悍的战士，她的身上佩带着许多武器和生存装备，最引人注目的是那把插在背后的武士刀。"
+          }
+        ],
+        "derivation": [
+          "会面无转发设备只能B；智子一次性联结不能靠E恢复。",
+          "IDC屏蔽场中电子设备不能运行，故秘密解读必须D而非C。",
+          "小宇宙只能接收大宇宙广播，答复要G随人穿门。",
+          "结尾程心、关一帆、智子同行，共3，不是只数两位生物人。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N020"
+            ],
+            "contribution": "无法排除已断智子联结恢复这条捷径"
+          },
+          {
+            "sources": [
+              "N038"
+            ],
+            "contribution": "无法排除会面即时转播"
+          },
+          {
+            "sources": [
+              "N039"
+            ],
+            "contribution": "无法判断屏蔽条件与电子演示不兼容"
+          },
+          {
+            "sources": [
+              "N057"
+            ],
+            "contribution": "无法排除小宇宙直接发信"
+          },
+          {
+            "sources": [
+              "N058"
+            ],
+            "contribution": "无法确定通过门的实际同行载体数"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N020-P0002的事实则无法排除已断智子联结恢复这条捷径；去掉N038-P0057的事实则无法排除会面即时转播；去掉N039-P0006的事实则无法判断屏蔽条件与电子演示不兼容；去掉N057-P0081的事实则无法排除小宇宙直接发信；去掉N058-P0040的事实则无法确定通过门的实际同行载体数。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      },
+      {
+        "id": "N09",
+        "answer": "BCD;99999999/100000000",
+        "evidence": [
+          {
+            "source": "N053",
+            "path": "research/longread-20261018/novel/N053.txt",
+            "locator": "N053-P0080",
+            "quote": "“研究继续进行，但没有什么进展，科学家们显然已经有了一些结论，但在我面前总是欲言又止。我对他们说，没什么，不管你们得出的结果多么离奇或离谱，没有其他的结果，我们就应该接受。我向他们保证，不会有什么东西比我的经历更离奇和离谱的，我不会笑话他们。于是他们告诉我，基于现代科学在各个学科最先进的理论和技术，根据大量的理论研究和实验的结果，通过对大量方案的综合分析和比较，他们已经得出了把信息保存一亿年左右的方法，他们强调，这是目前已知的唯一可行的方法，它就是——”罗辑把拐杖高举过头，白发长须舞动着，看上去像分开红海的摩西，庄严地喊道，“把字刻在石头上！”"
+          },
+          {
+            "source": "N056",
+            "path": "research/longread-20261018/novel/N056.txt",
+            "locator": "N056-P0076",
+            "quote": "飞船A.I.调用地质专家系统对探测结果进行了判读，从中可以知道：这些大字最初是刻在一块很大的山岩上，这是一块水成岩，刻字的一面面积约为一百三十平方米。在千万年漫长的地壳变动中，这块山岩所在的山峰下沉，这块巨岩也随之沉到现在地层中所在的位置。刻在岩面上的文字不止四行，但岩石在下沉过程中底部破碎，那些文字丢失了，现存刻字面的一角也破碎了，造成现有字迹的后三行都有残缺。"
+          },
+          {
+            "source": "N056",
+            "path": "research/longread-20261018/novel/N056.txt",
+            "locator": "N056-P0087",
+            "quote": "但这次他错了，这东西确实存放了一千八百九十万年，如果需要，还可以存放到宇宙末日，因为它在时间之外。最初它被放置在刻字的岩石旁边，还有一个实体的金属框架，但仅五十万年后金属就化为尘土。而这东西一直是崭新的，它不惧怕时间，因为它自己的时间还没有开始。本来它处在地层三十米深处，仍然在那块岩石旁，但它检测到了地面上的人，于是它升上地面，它与地层不发生作用，就像一个幻影。在地面上，它确认这两个人是它所等待的对象。"
+          },
+          {
+            "source": "N057",
+            "path": "research/longread-20261018/novel/N057.txt",
+            "locator": "N057-P0124",
+            "quote": "回归运动声明：我们宇宙的总质量减少至临界值以下，宇宙将由封闭转变为开放，宇宙将在永恒的膨胀中死去，所有的生命和记忆都将死去。请归还你们拿走的质量，只把记忆体送往新宇宙。"
+          },
+          {
+            "source": "N057",
+            "path": "research/longread-20261018/novel/N057.txt",
+            "locator": "N057-P0081",
+            "quote": "当然，他们最关心的是：小宇宙可以和大宇宙通信吗？智子告诉他们，小宇宙绝无可能向大宇宙传递信息，但接收到大宇宙的信息广播却是有可能的。她说，所有的宇宙都是一个超膜上的空泡（这涉及三体物理学和宇宙学中最基本的理论图景，对此她也无法进一步解释），大宇宙有足够的能量把信息在超膜上传播。但这很困难，需要难以想象的巨大能量，如果大宇宙这么做，可能需要把相当于一个银河系的质量化为纯能。其实，647号宇宙中的监测系统经常收到超膜上其他大宇宙的信息，有些是自然产生的，有些是无法解读的智慧信息，但从未收到他们所来的那个大宇宙的信息。"
+          },
+          {
+            "source": "N058",
+            "path": "research/longread-20261018/novel/N058.txt",
+            "locator": "N058-P0035",
+            "quote": "智子拿着一个金属盒，那是他们要留在小宇宙中的东西，是要送往新宇宙的漂流瓶。它的主体是一台微型电脑，电脑的量子存储器中存储着小宇宙电脑主机的全部信息，这几乎是三体和地球文明的全部记忆了。当新宇宙诞生时，金属盒会收到门发来的信号，然后用自己的小推进器穿过门，进入新宇宙。它会在新宇宙的高维太空中飘浮，等待着被拾取和解读的那一天。同时，它还会用中微子束把自己存储的信息不断地播放出来，如果新宇宙中也有中微子的话。"
+          },
+          {
+            "source": "N058",
+            "path": "research/longread-20261018/novel/N058.txt",
+            "locator": "N058-P0019",
+            "quote": "据智子介绍，小宇宙本身是没有质量的，它的质量都来自于从大宇宙中带来的物质。在三体世界曾经制造过的几百个小宇宙中，647号属于最小的一类，它总共从大宇宙中带走了约五十万吨物质，相当于公元世纪一艘大型油轮的运载量，从宇宙尺度上讲确实微不足道。"
+          },
+          {
+            "source": "N058",
+            "path": "research/longread-20261018/novel/N058.txt",
+            "locator": "N058-P0037",
+            "quote": "“还可以再留下五公斤吗？”程心问道。她在飞船的另一侧，身穿太空服，手中举着一个发光的透明球体，球体直径约半米，里面飘浮着几个水球，有的里面游动着几条小鱼，有的里面生长着绿藻；还有两块飘浮的微型陆地，上面长着嫩绿的青草。光亮是从球体顶部发出的，那里安装着一个小小的发光体，是这个小世界的太阳。这是一个全封闭的生态球，是程心和智子十多天的工作成果，只要球体内的小太阳还能够发光，这个小小的生态系统就能生存下去。只要有它留在这里，647号宇宙就不是一个没有生命的黑暗世界。"
+          }
+        ],
+        "derivation": [
+          "冥王星研究结论指向刻石，而实际蓝星的岩面字迹确实幸存，故B。",
+          "金属框架早已毁坏，但入口因自己的时间未开始而保留，故C。",
+          "回归声明要求归还物质、保留记忆；小宇宙不能直接向大宇宙发信，结尾实际采用D。",
+          "500000吨=500000000千克，扣5千克后归还比例99999999/100000000。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N053"
+            ],
+            "contribution": "无法从所有常规储存候选中建立千万年尺度的石刻选择原则"
+          },
+          {
+            "sources": [
+              "N056"
+            ],
+            "contribution": "无法验证实际幸存留言是凹刻岩石且存在残缺"
+          },
+          {
+            "sources": [
+              "N056"
+            ],
+            "contribution": "无法确定金属框架已毁而入口仍有效"
+          },
+          {
+            "sources": [
+              "N057"
+            ],
+            "contribution": "无法确定下一阶段须归还物质仅保存记忆的任务"
+          },
+          {
+            "sources": [
+              "N057"
+            ],
+            "contribution": "无法排除从小宇宙直接发送资料的替代通道"
+          },
+          {
+            "sources": [
+              "N058"
+            ],
+            "contribution": "无法确定完成第三阶段的具体留存载体"
+          },
+          {
+            "sources": [
+              "N058"
+            ],
+            "contribution": "无法取得质量预算基数"
+          },
+          {
+            "sources": [
+              "N058"
+            ],
+            "contribution": "无法取得生态球质量"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N053-P0080的事实则无法从所有常规储存候选中建立千万年尺度的石刻选择原则；去掉N056-P0076的事实则无法验证实际幸存留言是凹刻岩石且存在残缺；去掉N056-P0087的事实则无法确定金属框架已毁而入口仍有效；去掉N057-P0124的事实则无法确定下一阶段须归还物质仅保存记忆的任务；去掉N057-P0081的事实则无法排除从小宇宙直接发送资料的替代通道；去掉N058-P0035的事实则无法确定完成第三阶段的具体留存载体；去掉N058-P0019的事实则无法取得质量预算基数；去掉N058-P0037的事实则无法取得生态球质量。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      },
+      {
+        "id": "N10",
+        "answer": "DEBC;149/2",
+        "evidence": [
+          {
+            "source": "N015",
+            "path": "research/longread-20261018/novel/N015.txt",
+            "locator": "N015-P0087",
+            "quote": "对于地球发出的返航诱饵，“蓝色空间”号本来就比“青铜世纪”号多了一些犹豫和怀疑，它只进行低功率减速，直至收到“青铜世纪”号的警报时，还保持着离开太阳系的正速度。收到警报后，它立刻由减速转换为全功率加速，继续逃离太阳系。"
+          },
+          {
+            "source": "N020",
+            "path": "research/longread-20261018/novel/N020.txt",
+            "locator": "N020-P0001",
+            "quote": "危机纪元之初，在使用智子系统探测地球的同时，三体世界也向银河系的其他方向发射了接近光速的智子，首批发射了六个。但这些智子不久均进入盲区，最远的一个只飞行了7光年。后来发射的智子也遇到了同样的事情，最近的盲区是跟随“万有引力”号的智子遇到的，与地球的距离只有1.3光年。"
+          },
+          {
+            "source": "N020",
+            "path": "research/longread-20261018/novel/N020.txt",
+            "locator": "N020-P0006",
+            "quote": "智子进入盲区对“万有引力”号的使命并没有致命的影响，但却使任务复杂了许多。之前，潜入“蓝色空间”号内部的智子，使“万有引力”号一直能够掌握目标飞船内部的情况，现在“蓝色空间”号开始对“万有引力”号呈现黑箱状态。其次，水滴失去了三体世界的实时控制，其行为完全由内置的A.I.所控制，可能会发生意想不到的情况。"
+          },
+          {
+            "source": "N029",
+            "path": "research/longread-20261018/novel/N029.txt",
+            "locator": "N029-P0078",
+            "quote": "禇岩说：“我们相信，在地球那边事变已经发生，具体时间就是五小时前水滴对我们两舰发动袭击的时间。根据从‘万有引力’号上得到的信息，那正是地球上两任执剑人之间刚刚完成交接的时间，这就是三体世界等待了半个世纪的机会。两个水滴显然在进入盲区之前就接到了指令，这是一个策划已久的整体计划。现在可以肯定，黑暗森林威慑状态已不复存在，可能的结果有两个：引力波宇宙广播已经启动，或者没有启动。我们相信——”"
+          },
+          {
+            "source": "N031",
+            "path": "research/longread-20261018/novel/N031.txt",
+            "locator": "N031-P0044",
+            "quote": "“从三维空间看不到四维，但从四维空间能够看到三维世界的一切并且能对它产生作用。我们就是在四维的高度伏击了水滴。不管强互作用力探测器有多强大，它仍然是一个三维物体。现在看来，三维本身就意味着脆弱，从四维看去，它不过是一张展开的图纸而已，毫无防御能力，可以从四维接近它，不需要知道它的原理，只需在它的内部，哦，对四维来说全是外部，随意破坏就行。”"
+          },
+          {
+            "source": "N030",
+            "path": "research/longread-20261018/novel/N030.txt",
+            "locator": "N030-P0011",
+            "quote": "“三体星系的位置暴露了，当然太阳系也暴露了。三体人要跑了！他们的第二支舰队已经转向，离开太阳系了，所有的水滴也都从地球撤走了。用智子刚才的话说：太阳系再也不用担心入侵，这里和三体星系一样，已经成了全宇宙都避之不及的死亡之地。”"
+          }
+        ],
+        "derivation": [
+          "警报使D，盲区切断实时控制A；水滴依预先指令攻击，四维伏击构成E。",
+          "获得广播能力并启动B，广播使太阳系失去占领价值，故C。",
+          "按题设距离模型1.3×365=474.5天；400天接收比模型提前74.5=149/2天。实际小说传播距离与时刻不由该假设反推。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N015"
+            ],
+            "contribution": "无法连接史耐德警报与仍在外逃的蓝色空间"
+          },
+          {
+            "sources": [
+              "N020"
+            ],
+            "contribution": "无法确定演算所引用的距离"
+          },
+          {
+            "sources": [
+              "N020"
+            ],
+            "contribution": "无法排除实时控制节点A"
+          },
+          {
+            "sources": [
+              "N029"
+            ],
+            "contribution": "无法确定水滴使用预置指令的解释"
+          },
+          {
+            "sources": [
+              "N031"
+            ],
+            "contribution": "无法确定攻击为何没有摧毁广播载体"
+          },
+          {
+            "sources": [
+              "N030"
+            ],
+            "contribution": "无法把坐标暴露与撤离行动连接"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N015-P0087的事实则无法连接史耐德警报与仍在外逃的蓝色空间；去掉N020-P0001的事实则无法确定演算所引用的距离；去掉N020-P0006的事实则无法排除实时控制节点A；去掉N029-P0078的事实则无法确定水滴使用预置指令的解释；去掉N031-P0044的事实则无法确定攻击为何没有摧毁广播载体；去掉N030-P0011的事实则无法把坐标暴露与撤离行动连接。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      },
+      {
+        "id": "N11",
+        "answer": "AEC;F",
+        "evidence": [
+          {
+            "source": "N005",
+            "path": "research/longread-20261018/novel/N005.txt",
+            "locator": "N005-P0040",
+            "quote": "“不，陛下，安那托利亚人死后头部完好无损，全身各处也都完好。我派了二十个人监视他，每次五个轮班，从不同的角度死死盯着他。地窖的守卫也极严，一只蚊子都飞不进去……”法扎兰说着停了下来，好像被自己下面的回忆震惊了，皇帝示意他继续，“她走后不到两个小时，安那托利亚人突然全身抽搐，两眼翻白，然后就直挺挺倒地死了。在场的监视者中有一名经验丰富的希腊医生，还有打了一辈子仗的老兵，他们都说从来没见过人有这种死相。又过了一个多小时她回来了，拿着这个东西，这时医生才想起切开死者的头颅，一看里面没有大脑，是空的。”"
+          },
+          {
+            "source": "N031",
+            "path": "research/longread-20261018/novel/N031.txt",
+            "locator": "N031-P0044",
+            "quote": "“从三维空间看不到四维，但从四维空间能够看到三维世界的一切并且能对它产生作用。我们就是在四维的高度伏击了水滴。不管强互作用力探测器有多强大，它仍然是一个三维物体。现在看来，三维本身就意味着脆弱，从四维看去，它不过是一张展开的图纸而已，毫无防御能力，可以从四维接近它，不需要知道它的原理，只需在它的内部，哦，对四维来说全是外部，随意破坏就行。”"
+          },
+          {
+            "source": "N031",
+            "path": "research/longread-20261018/novel/N031.txt",
+            "locator": "N031-P0057",
+            "quote": "一个最令人震惊的事实是：“魔戒”是封闭的！它处于四维空间中，却没有呈现三维展开，它的内部完全不可见，这就意味着它是一个四维物体！进入四维空间后，这是人们第一次见到四维实体。"
+          },
+          {
+            "source": "N054",
+            "path": "research/longread-20261018/novel/N054.txt",
+            "locator": "N054-P0090",
+            "quote": "在三维世界的太阳落下去的同时，二维平面中的太阳却在升起。二维恒星把它的光能在二维平面内辐射，二维太阳系中第一次出现了阳光。四颗二维行星：海王星、土星、地球和水星，面向太阳的一侧都被照成金色的弧边，但它们能够受到光照的部分只是一维的边缘。围绕地球的巨型雪花在阳光中融化了，变成白色的水汽，被二维太阳风吹向二维的太空，一部分浸透了金色的阳光，像二维地球飘逸的长发。"
+          },
+          {
+            "source": "N055",
+            "path": "research/longread-20261018/novel/N055.txt",
+            "locator": "N055-P0082",
+            "quote": "“从三维世界可以凭一样东西检测到二维太阳系的存在，仅此一样：引力。二维太阳系的万有引力仍作用于三维世界，所以，那片空荡荡的太空中应该存在着一个完全看不见的引力源。”"
+          }
+        ],
+        "derivation": [
+          "三维水滴对四维者内部暴露，选A。",
+          "魔戒自身为四维物体，对四维观察者仍封闭，现有能力无法完成，选E。",
+          "二维太阳系释能结束后光学不可见，只能据引力定位，选C。",
+          "无伤口摘取器官是三维封闭被额外维度绕过的实例F；塔尖可见本身不证明内部可触达。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N005"
+            ],
+            "contribution": "无法获得封闭身体内部器官被取出的早期实例"
+          },
+          {
+            "sources": [
+              "N031"
+            ],
+            "contribution": "无法确定四维可以绕开三维水滴外壳"
+          },
+          {
+            "sources": [
+              "N031"
+            ],
+            "contribution": "无法确定魔戒本身为封闭四维实体"
+          },
+          {
+            "sources": [
+              "N054"
+            ],
+            "contribution": "无法区分二维化过程可见与最终不可见"
+          },
+          {
+            "sources": [
+              "N055"
+            ],
+            "contribution": "无法选择二维太阳系最终可探测的信号"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N005-P0040的事实则无法获得封闭身体内部器官被取出的早期实例；去掉N031-P0044的事实则无法确定四维可以绕开三维水滴外壳；去掉N031-P0057的事实则无法确定魔戒本身为封闭四维实体；去掉N054-P0090的事实则无法区分二维化过程可见与最终不可见；去掉N055-P0082的事实则无法选择二维太阳系最终可探测的信号。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      },
+      {
+        "id": "N12",
+        "answer": "BDFG;J;0",
+        "evidence": [
+          {
+            "source": "N008",
+            "path": "research/longread-20261018/novel/N008.txt",
+            "locator": "N008-P0023",
+            "quote": "何博士摇摇头，“从您提供的资金数额来看不可能，这些恒星的拍卖底价都远高于那个数额。您只能买一颗不带行星的裸星，且距离也不可能太近。实话跟您说吧，即使这样，您的资金数额也低于底价。昨天接到电话后，考虑到您是国内第一位投拍者，我们就把一颗恒星的底价降低到了您提出的这个金额。”他移动鼠标，把星图的一个区域放大，“看，就是这一颗，它的报价期已经多次延长，所以您只要确定购买，它就是您的了。”"
+          },
+          {
+            "source": "N016",
+            "path": "research/longread-20261018/novel/N016.txt",
+            "locator": "N016-P0008",
+            "quote": "联合国和舰队的要求让程心很为难。她当然不能独自占有一个世界，但也不能把深爱她的人送的礼物卖掉。她提出无偿放弃对DX3906的所有权，只保留那张证书作为纪念，但却被告知不行。按照现有法律，政府、联合国和舰队都不能无偿接收这样大宗的个人资产，他们只能从她手中买下DX3906，这是程心无论如何也无法接受的。经过痛苦的思考，她决定出让两颗行星的所有权，保留恒星，但同时与联合国和舰队签署一份附加协议，确定人类可以免费使用该恒星产生的能量。经过研究，这个想法在法律上是可行的。"
+          },
+          {
+            "source": "N040",
+            "path": "research/longread-20261018/novel/N040.txt",
+            "locator": "N040-P0009",
+            "quote": "可以确定，太阳系的四颗巨行星：木星、土星、天王星和海王星在黑暗森林打击后将保持完好。"
+          },
+          {
+            "source": "N043",
+            "path": "research/longread-20261018/novel/N043.txt",
+            "locator": "N043-P0028",
+            "quote": "“你以为我只是个商人，不错，我是，董事会也是，我们都追求利益最大化，但这与光速飞船不矛盾。从政治上考虑，政府肯定会把主要力量投入到掩体工程和黑域上，光速飞船是留给企业的机会……我们努力参与掩体工程，用其利润的一部分研究光速飞船。”"
+          }
+        ],
+        "derivation": [
+          "销售方按裸星描述B；之后发现行星使资产可以拆分，而不必出售所珍视的恒星。",
+          "不能把大宗资产无偿给政府，且保留恒星，因此出让两行星D。",
+          "同时让人类免费用恒星能量F，不等于赠与恒星所有权。",
+          "AA提出公司参与掩体工程，以其中利润研究飞船G；该工程依据巨行星在光粒模型中幸存，J。",
+          "删除G切断这里被要求的经营利润来源，不能援引同一来源，0；不推断世上没有其他融资手段。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N008"
+            ],
+            "contribution": "无法确定原先被售出的对象为何与后来可拆分资产不一致"
+          },
+          {
+            "sources": [
+              "N016"
+            ],
+            "contribution": "无法在保留恒星和政府不得无偿接收的双约束下选择资产拆分与能源许可"
+          },
+          {
+            "sources": [
+              "N040"
+            ],
+            "contribution": "无法确定企业参与的掩体工程依赖哪类行星而不是一般太空建设"
+          },
+          {
+            "sources": [
+              "N043"
+            ],
+            "contribution": "无法把资产变现后的公司经营收益连接到光速研发"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N008-P0023的事实则无法确定原先被售出的对象为何与后来可拆分资产不一致；去掉N016-P0008的事实则无法在保留恒星和政府不得无偿接收的双约束下选择资产拆分与能源许可；去掉N040-P0009的事实则无法确定企业参与的掩体工程依赖哪类行星而不是一般太空建设；去掉N043-P0028的事实则无法把资产变现后的公司经营收益连接到光速研发。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      }
+    ],
+    "change": [
+      {
+        "id": "XP01",
+        "answer": "27/40;2/35;59/252",
+        "evidence": [
+          {
+            "source": "P13",
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.txt",
+            "locator": "PDF page 3",
+            "quote": "For a thermally distributed sterile neutrino with temper-\natureT s, its relativistic energy density is proportional to\nT 4\ns . Hence, its contribution to the radiation density is\nrelated to its temperature by,\nTs\nTν,active\n= (∆Neff)1/4,where, Tν,active\nTγ\n≃\n\u0012 4\n11\n\u00131/3\n.\n(5)\nWe assume a Fermi–Dirac phase-space distribution for\nthe sterile neutrino. Since the number density scales\nasT 3\ns , partial thermalization also reduces the late-time\nabundance of the sterile species. In the non-relativistic\nregime, its cosmological density can therefore be ex-\npressed in terms of an effective mass,\nms,eff =m s(∆Neff)3/4.(6)"
+          },
+          {
+            "source": "P02",
+            "path": "research/longread-20261018/papers/P02-2609.26517v2.txt",
+            "locator": "PDF page 5",
+            "quote": "H2(z) =H 2\n0\n\u00141 +S(0)\n1 +S(z)\n\u00152\u0002\n(1 +z) 3Ωm0 + Ωde0\n\u0003\n,(30)\nwhere we have usedH 2"
+          },
+          {
+            "source": "P04",
+            "path": "research/longread-20261018/papers/P04-2608.19883v2.txt",
+            "locator": "PDF page 2",
+            "quote": "Om(z)≡ E(z)2 −1\n(1+z) 3 −1 = Ωm +(1−Ω m) X(z)−1\n(1+z) 3 −1 ,(4)\nwhereE(z) :=H(z)/H 0"
+          }
+        ],
+        "derivation": "E²′=3m-2b; E²″=6m-12mb+6b²-4c。先 m=2/5 后 ms=27/40，再 c=2/35，最终 Om1=59/252。二阶展开与解析展开交叉验证。",
+        "dependencies": [
+          {
+            "source": "P13",
+            "contribution": "温度四次方与有效质量三次方的不同映射"
+          },
+          {
+            "source": "P02",
+            "contribution": "H² 中归一化 susceptibility 的平方而非一次方"
+          },
+          {
+            "source": "P04",
+            "contribution": "Om 的 H0 归一化与红移分母"
+          }
+        ],
+        "ablation": "去掉P13后不能确定温度四次方与有效质量三次方的不同映射；去掉P02后不能确定H² 中归一化 susceptibility 的平方而非一次方；去掉P04后不能确定Om 的 H0 归一化与红移分母。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "新增二次形状参数仅为题设，不套用线性近似。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "XP02",
+        "answer": "1/150;16/81;16297/34200",
+        "evidence": [
+          {
+            "source": "P13",
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.txt",
+            "locator": "PDF page 3",
+            "quote": "For a thermally distributed sterile neutrino with temper-\natureT s, its relativistic energy density is proportional to\nT 4\ns . Hence, its contribution to the radiation density is\nrelated to its temperature by,\nTs\nTν,active\n= (∆Neff)1/4,where, Tν,active\nTγ\n≃\n\u0012 4\n11\n\u00131/3\n.\n(5)\nWe assume a Fermi–Dirac phase-space distribution for\nthe sterile neutrino. Since the number density scales\nasT 3\ns , partial thermalization also reduces the late-time\nabundance of the sterile species. In the non-relativistic\nregime, its cosmological density can therefore be ex-\npressed in terms of an effective mass,\nms,eff =m s(∆Neff)3/4.(6)"
+          },
+          {
+            "source": "P05",
+            "path": "research/longread-20261018/papers/P05-2609.40176v1.txt",
+            "locator": "PDF page 1",
+            "quote": "Ωg ≡1− GN\nGcosmo\n,(1)\nwhereG N is the locally measured Newtonian coupling\nandG cosmo is the coupling entering the Friedmann equa-\ntion. In a flat universe this background evolution corre-\nsponds to an effective dark-energy density\nρDE = ΩgρnonDE +ρ Λ\n1−Ω g\n,(2)\nwhereρ nonDE contains matter, radiation, and neutri-"
+          },
+          {
+            "source": "P04",
+            "path": "research/longread-20261018/papers/P04-2608.19883v2.txt",
+            "locator": "PDF page 2",
+            "quote": "Om(z)≡ E(z)2 −1\n(1+z) 3 −1 = Ωm +(1−Ω m) X(z)−1\n(1+z) 3 −1 ,(4)\nwhereE(z) :=H(z)/H 0"
+          }
+        ],
+        "derivation": "两 Om 作差除 r 和 [80/26-15/7] 得 a=1/150；回代 m=41/72；u³=(m-1/8)/(3/2)=8/27，ΔN=16/81；lambda=16297/34200。独立分解 E²=非暗+暗核验。",
+        "dependencies": [
+          {
+            "source": "P13",
+            "contribution": "由热温度比推有效质量后进入非暗部门"
+          },
+          {
+            "source": "P05",
+            "contribution": "G 比值与 glitch 参数互为非线性倒数及有效密度重写"
+          },
+          {
+            "source": "P04",
+            "contribution": "从含辐射的 E² 归一化构造 Om，而非直接等同 m"
+          }
+        ],
+        "ablation": "去掉P13后不能确定由热温度比推有效质量后进入非暗部门；去掉P05后不能确定G 比值与 glitch 参数互为非线性倒数及有效密度重写；去掉P04后不能确定从含辐射的 E² 归一化构造 Om，而非直接等同 m。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "用两个红移同时区分辐射诱导的 Om 变化和物质常数项。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "XP03",
+        "answer": "265/288;81/1325;115176/1755625",
+        "evidence": [
+          {
+            "source": "P15",
+            "path": "research/longread-20261018/papers/P15-2610.13589v1.txt",
+            "locator": "PDF page 3",
+            "quote": "2.The Schr¨ odinger picture:The stabilizers stay\nthe same, but the noise on the qubit (p X , pY , pZ)\nis permuted. The HadamardHdeformation would\ngive (pZ, pY , pX) swapping the Pauli-X and Z prob-\nabilities.\nWe note in passing that when circuit-level noise is\nconsidered, the Schr¨ odinger-picture analog formally\nbreaks down. There exist 6 possible deformations\nper qubit, including no deformationI/(p X , pY , pZ),\nH/(pZ, pY , pX),\n√\nZ/(p Y , pX , pZ),H\n√\nZ/(p Y , pZ, pX),√\nZH/(p Z, pX , pY ), andH\n√\nZH/(p X , pZ, pY ) withIthe"
+          },
+          {
+            "source": "P19",
+            "path": "research/longread-20261018/papers/P19-2610.03399v1.txt",
+            "locator": "PDF page 2",
+            "quote": "Definition 1(Noise sensitivity).The sensitivity of noise com-\nponentαis\nSα = ∂PL(λ;D)\n∂λα\n.(4)\nFor an independent Bernoulli noise component, this deriva-\ntive has a direct interpretation in terms of conditional logical\nfailure probabilities. LetE α ∈ {0,1}be the corresponding\nerror indicator, withP(E α = 1) =λ α. Conditioning onE α\ngives\nSα =P(L= 1|E α = 1)−P(L= 1|E α = 0).(5)\nThe sensitivityS α describes the local response of the log-\nical error rate to a small change inλ α. Multiplying this sen-\nsitivity by the component’s current noise strength gives a lin-\nearized measure of its marginal contribution to the logical er-\nror rate.\nDefinition 2(Linearized marginal risk).The linearized\nmarginal risk of noise componentαis\nRα =λ αSα =λ α\n∂PL(λ;D)\n∂λα\n.(6)"
+          },
+          {
+            "source": "P21",
+            "path": "research/longread-20261018/papers/P21-2610.00504v1.txt",
+            "locator": "PDF page 3",
+            "quote": "Given a confidence scores(x)∈Rfor each shot, and\nthresholdτ∈R, the rule accepts a shot iffs(x)≥τ.\nLarger scores indicate greater confidence in decoder suc-\ncess. The performance of the post-selector is charac-\nterised by two quantities:\nYield(τ) =P(s(x)≥τ),(1)\nLER(τ) =P(Ac(σ)̸=Ae|s(x)≥τ),(2)\nwhereAis the logical action matrix of Section II A. In\npractice the yield is the fraction of retained shots and the\nconditional LER is defined when the yield is non-zero."
+          }
+        ],
+        "derivation": "16态得Y=265/288,J=9/160,Q=81/1325。先得两个偏导[Fraction(38736, 351125), Fraction(248688, 1755625)]，链式法则 B=Σp_i Q_i′=115176/1755625。score 和端点两法一致；直接联合变化求导一致。",
+        "dependencies": [
+          {
+            "source": "P15",
+            "contribution": "仅 code-capacity 下 H 对 X/Z 概率的置换"
+          },
+          {
+            "source": "P19",
+            "contribution": "固定 decoder 的概率敏感度和分量求导"
+          },
+          {
+            "source": "P21",
+            "contribution": "阈值包括等号、LER 条件化而非联合失败概率"
+          }
+        ],
+        "ablation": "去掉P15后不能确定仅 code-capacity 下 H 对 X/Z 概率的置换；去掉P19后不能确定固定 decoder 的概率敏感度和分量求导；去掉P21后不能确定阈值包括等号、LER 条件化而非联合失败概率。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "联合无穷小改噪声，包含 yield 的参数依赖。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "XP04",
+        "answer": "6;4;958;9/985",
+        "evidence": [
+          {
+            "source": "P14",
+            "path": "research/longread-20261018/papers/P14-2610.21357v1.txt",
+            "locator": "PDF page 2",
+            "quote": "concatenate four distance-trotated surface-code patches\nwith the smallest non-trivial error-detecting CSS code,\n[[4,2,2]] [29–31], obtaining a [[4t 2,2,2t]] code of distance\nd= 2tthat encodesk= 2 logical qubits in a footprint\nofN= 2d 2 + 4d−3 physical qubits on a square lattice\nwith nn connectivity, see Fig. 1."
+          },
+          {
+            "source": "P23",
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.txt",
+            "locator": "PDF page 6",
+            "quote": "Suppose level-1 to level-(i−1) concatenated codes constitute an [[n, k, d]] code, and we want to construct a\nlevel-icode with distance two that is concatenated overrcopies of them. We call every logical X error that can be\ninduced by a weight-(2d−1) undetectable X error on level-0 (i.e., surface-code qubits in the multi-yoked surface\ncode) qubits aproblematic errorand denote their set byP prob,X ⊂ {I, X} ⊗k. Next, we list an independent set\nof Pauli Z operators that can detect all the problematic errors. We call this set of Pauli operators aseed code\nPseed,Z ⊂ {I, Z} ⊗k, which satisfies∀P∈ P prob,X,∃Q∈ P seed,Z,s.t. QP=−P Q. Then, the stabilizer generator\nset of a chain code is constructed as{P ⊗r|P∈ P seed,Z} ∪ {P ⊗r|P∈ P seed,X}. Note that elements of X and Z seed\ncodesP seed,X andP seed,Z do not necessarily commute with each other. Even in this case, the chain codes satisfy the\ncondition of stabilizer codes if we chooseras an even number. Thus, the chain code encodesrk− |P seed,X| − |Pseed,Z|\nlogical qubits withrklower-level qubits, and it is capable of detecting all block errors at the lower-level codes. Its\nencoding rate converges to one in the large-rlimit."
+          },
+          {
+            "source": "P23",
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.txt",
+            "locator": "PDF page 7",
+            "quote": "Proposition 1.LetP prob,X be the set of problematic X errors for an iceberg code[[n, k=n−2,2]]andc z be the\nsize of the Z-check seed codeP seed,Z forP prob,X. Then,c z is lower bounded asc z ≥ ⌈log2 (k+ 1)⌉. The same holds\nfor X checks for Z errors."
+          },
+          {
+            "source": "P21",
+            "path": "research/longread-20261018/papers/P21-2610.00504v1.txt",
+            "locator": "PDF page 3",
+            "quote": "Given a confidence scores(x)∈Rfor each shot, and\nthresholdτ∈R, the rule accepts a shot iffs(x)≥τ.\nLarger scores indicate greater confidence in decoder suc-\ncess. The performance of the post-selector is charac-\nterised by two quantities:\nYield(τ) =P(s(x)≥τ),(1)\nLER(τ) =P(Ac(σ)̸=Ae|s(x)≥τ),(2)\nwhereAis the logical action matrix of Section II A. In\npractice the yield is the fraction of retained shots and the\nconditional LER is defined when the yield is non-zero."
+          }
+        ],
+        "derivation": "Y=(1−e)^r+C(r,2)e²(1−e)^(r−2)；J=C(r,2)e²(1−e)^(r−2)[1−(1−f)²]，Q=J/Y。11可行设计，最优r=6,t=4,N=958,Q=9/985,Y=196079616/244140625,density=784318464/116943359375。二项式概率与独立两flag触发事件展开核验。",
+        "dependencies": [
+          {
+            "source": "P14",
+            "contribution": "由 inner t 到完整 footprint 8t²+8t−3，且每块编码两个逻辑比特"
+          },
+          {
+            "source": "P23",
+            "contribution": "seed 最小大小及偶数 r chain 编码数，决定 K 和附加检查控制器"
+          },
+          {
+            "source": "P21",
+            "contribution": "由置信阈值计算保留率与条件逻辑失败，再计算产出"
+          }
+        ],
+        "ablation": "去掉P14后不能确定由 inner t 到完整 footprint 8t²+8t−3，且每块编码两个逻辑比特；去掉P23后不能确定seed 最小大小及偶数 r chain 编码数，决定 K 和附加检查控制器；去掉P21后不能确定由置信阈值计算保留率与条件逻辑失败，再计算产出。题设没有提供上述原文关系，不能只靠其余独立输入唯一恢复。",
+        "claimScope": "替代规则完全由题设定义；其余资料结构不变。",
+        "difficultyRationale": "必须先定位适用模型及归一化，再将前一步输出代入下一来源的定义，最后完成精确逆推、商法则或有限约束优化；没有选项识别线索。"
+      },
+      {
+        "id": "XM01",
+        "answer": "66913/73008;257049/305809;553/507;A",
+        "evidence": [
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF p.1, (1.2)",
+            "quote": "For an ideal polytropic gas, the pressure is given by\np(v, θ) = Rθ\nv ,(1.2)\nwhereR >0 is the gas constant."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF p.3, (1.4)",
+            "quote": "The end states and the shock speed satisfy the Rankine–Hugoniot condition:\n\n\n\n−σ(v+ −v −)−(u + −u −) = 0,\n−σ(u+ −u −) + (p+ −p −) = 0,\n−σ(E+ −E −) + (p+u+ −p −u−) = 0.\n(1.4)"
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF pp.6–7, Lemma 2.3, (2.5)–(2.6)",
+            "quote": "Lemma 2.3.Let(v −, u−, θ−)∈R + ×R×R + be a left end state, and define\nσ(ε) :=\ns\nγp−\nv− + γ+1\n2 ε\n,|ε|< v−\nγ+ 1 .(2.5)\nThen the following holds.\n\n[PDF page 7]\nVISCOUS-DISPERSIVE SHOCKS FOR THE NSFK SYSTEM 7\n(i) Let a right end state(v +, u+, θ+)∈R + ×R×R + and a shock speedσ∈Rsatisfy the Rankine–\nHugoniot condition(1.4)and the Lax 3-shock condition in(1.5), and letε:=v + −v − < v−\nγ+1 .\nThenε >0and\np+ −p − =− γp−ε\nv− + γ+1\n2 ε\n, σ=σ(ε).(2.6)"
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "PDF p.1, pressure law",
+            "quote": "We adopt the polytropic pressure lawp(ρ) =bργ, forb >0andγ >1being fluid constants. Without loss\nof generality, we normalize the coefficientb= 1in the sequel."
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "PDF p.2, (1.3)",
+            "quote": "µ(ρ) =ρ, λ(ρ)≡0, γ∈(1,2],(1.3)"
+          },
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "PDF p.1, entropy-wave definition",
+            "quote": "These solutions are\ncharacterized by the pressure pM and velocity u being constant within the fluid. The density ρ and\nentropy ρsM of the fluid may be non-constant and are simply transported by the constant velocity\nu."
+          },
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "PDF p.8, (2.4) and ideal branch",
+            "quote": "(2.4)p(ρ, ϑ) =ϑ\nγ\nγ−1 P\n\u0012 ρ\nϑ\n1\nγ−1\n\u0013\n+ a\n3 ϑ4 =:p M(ρ, ϑ) +ap R(ϑ),\nwhere a > 0, γ > 2, and P∈C 1([0,∞ )) is an increasing function satisfying P (0) = 0. We further\nsuppose that there exists a constantZ >0 such thatP(Z) =Zfor allZ∈[0, Z ]."
+          }
+        ],
+        "derivation": "M08 的 RH 给 p_shock=(1−x/2)/(1+3x/2)=121/144，其中 x=46/507；其 p=Rθ/v，故 θ_shock=v₊p_shock=66913/73008。M10 归一化 γ=2，ρ₊=1/v₊=507/553，所以 p_bar=ρ₊²=257049/305809。M02 低 Z 支 p_M=ρθ，常压目标 1 令 θ_contact=1/ρ₊=v₊=553/507。精确差 p_shock−p_bar=-12167/44036496<0 且 θ_contact−θ_shock=12719/73008>0，故 A。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M08"
+            ],
+            "contribution": "从完整气体的 Rankine–Hugoniot 三式及其消元式恢复压力跳跃，而非把压强误作等熵常量。"
+          },
+          {
+            "sourceIds": [
+              "M10"
+            ],
+            "contribution": "恢复本论文的归一化 p=ρ^γ 和证明中 1<γ≤2 的范围。"
+          },
+          {
+            "sourceIds": [
+              "M02"
+            ],
+            "contribution": "恢复分子压强的低 Z 理想支 p_M=ρθ 及熵波的常压约束，同时识别其 γ>2 与另一文不同。"
+          }
+        ],
+        "ablation": "无 M08 不知下游非等熵压强与温度；无 M10 不知归一化比较压强；无 M02 不知常压接触温度与比较码。",
+        "claimScope": "仅按题面定义把三个不同 PDE 的状态量作代数映射；M08 的消元公式在满足其 RH 端态的代数层面使用，不声称给定有限跳跃落入未知 ε0 的存在性定理；M02 取 γ=3 的低 Z 分支，M10 取 γ=2。",
+        "difficultyRationale": "相同体积数据在完整气体、等熵归一化律和分子接触支给不同精确值；需辨认完整气体的熵变，不能直接套用 ρ² 到其端态。"
+      },
+      {
+        "id": "XM02",
+        "answer": "18/5;27/4;1;NZ",
+        "evidence": [
+          {
+            "source": "M13",
+            "path": "research/longread-20261018/papers/M13-2608.29138v1.txt",
+            "locator": "PDF p.3, (5) and flux identity",
+            "quote": "(5) W (x3) = 6 F x3(1 − x3)e(α), with FW =\n∫ 1\n0\nW (x3) ·e(α) dx3 = F."
+          },
+          {
+            "source": "M06",
+            "path": "research/longread-20261018/papers/M06-2608.17456v1.txt",
+            "locator": "PDF p.1, abstract",
+            "quote": "We prove that, for a suitable small external force in ˙H −2(R2), the\nstationary Navier–Stokes equations onR2 admit multiple solutions inL2(R2)."
+          },
+          {
+            "source": "M07",
+            "path": "research/longread-20261018/papers/M07-2609.14688v1.txt",
+            "locator": "PDF p.1, abstract",
+            "quote": "Abstract.We prove uniqueness of solutions to the Navier-Stokes equations in the space\nLp\u0000\n[0, T],eL3,∞(R3)\n\u0001\n∩C\n\u0000\n[0, T], B −1,∞\n∞ (R3)\n\u0001\n, p >2,"
+          }
+        ],
+        "derivation": "板层公式 W=6x₃(1−x₃)e。水平区域面积=3πR²，且 ∫₀¹x²(1−x)²dx=1/30，故 36×1/30×3=18/5。中面值 W(1/2)=3e/2，截面平方归一化为 (9/4)×3=27/4。对幅值阈值 τ，三维截断的分布函数等于水平面积乘一个只依 τ 而不依 R 的正垂直厚度；弱 L³ 准范数 sup_τ τ·measure{|W_R|>τ}^{1/3} 因而按 R^{2/3} 增长。平面 L² 范数按 R 增长，所以两个范数共同有界的最小 β=max(1,2/3)=1；此时平面 L² 范数保有有限非零常数，弱 L³ 范数按 R^{-1/3} 趋零，码为 NZ。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M13"
+            ],
+            "contribution": "给出有非零横向无限背景的精确抛物型剖面和流量归一化。"
+          },
+          {
+            "sourceIds": [
+              "M06"
+            ],
+            "contribution": "确认待比较的全平面定常解类是 L²(R²)。"
+          },
+          {
+            "sourceIds": [
+              "M07"
+            ],
+            "contribution": "确认三维演化唯一性类别涉及 L^{3,∞}(R³)，从而需要分布函数而非 L² 积分。"
+          }
+        ],
+        "ablation": "无板层剖面无法积分或得到分布函数；无全平面论文不知第一种空间门槛；无 Lorentz 论文不知第二种空间门槛与要优化的弱范数。",
+        "claimScope": "只比较显式函数的积分和解类，不转移三篇论文的唯一性定理；F=1 仅作为剖面的数值归一化。",
+        "difficultyRationale": "需从非紧水平背景重建截断面积、垂直 beta 积分、水平截面以及弱 Lorentz 分布函数的不同 R 缩放。"
+      },
+      {
+        "id": "XM03",
+        "answer": "B;17/450;216/425",
+        "evidence": [
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, Theorem 1 range",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have"
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, text after (1.6)",
+            "quote": "the integral\nin the dual moment is essentially supported on an interval of length T\nH ."
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "PDF p.2, (1.7)",
+            "quote": "(1.7) H2\nmax{p, q} > T 1+ϵ,\nwhich follows naturally from requiring the main term to dominate the error term."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "PDF p.2, definition of N(T,V)",
+            "quote": "LetN(T, V) be the\nsize of the largest 1-spaced subset of{t∈[T,2T] :|ζ( 1\n2 +it)|⩾V}."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "PDF p.2, Theorem 1.3",
+            "quote": "Theorem 1.3(Large value estimate).LetT⩾1. For anyV∈[T 7/60, T5/38]andε >0, we have\nN(T, V)≪ ε T\n24\n17 +εV − 128\n17 ."
+          },
+          {
+            "source": "M23",
+            "path": "research/longread-20261018/papers/M23-2610.05227v1.txt",
+            "locator": "PDF p.4, Theorem 1.2",
+            "quote": "Theorem 1.2.Letσbe a real number satisfying1/2⩽σ⩽1, and set\nασ := σ\n2σ+ 1 .\nThen for any Schwartz functionϕonRwithsupp( bϕ)⊂(−α σ, ασ)"
+          }
+        ],
+        "derivation": "M22 给 D=T^(1−δ) 与严格 2δ−a>1；因此 M15 阈值指数 v=b(1−δ)，须在 [7/60,5/38]，上界指数 E=24/17−128v/17。M23 给 α_σ=σ/(2σ+1)，闭支集 [-2v,2v] 包含在开区间 (-α_σ,α_σ) 的充要条件是 2v<α_σ。A:v=1/8, 2v=1/4, α_σ=1/4, 主项=True, 大值范围=True, Fourier严格支集=False；B:v=3/25, 2v=6/25, α_σ=5/18, 主项=True, 大值范围=True, Fourier严格支集=True；C:v=3/25, 2v=6/25, α_σ=3/10, 主项=True, 大值范围=True, Fourier严格支集=True；D:v=7/60, 2v=7/30, α_σ=2/7, 主项=True, 大值范围=True, Fourier严格支集=True。可行者按 (σ,δ) 字典序最小是 B，余量 α_σ−2v=17/450，E=216/425。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M22"
+            ],
+            "contribution": "对偶尺度 D=T/H 和主项严格指数条件。"
+          },
+          {
+            "sourceIds": [
+              "M15"
+            ],
+            "contribution": "1-分离大值阈值适用带与其上界幂。"
+          },
+          {
+            "sourceIds": [
+              "M23"
+            ],
+            "contribution": "加权密度的横线依赖 Fourier 开支集半宽 α_σ。"
+          }
+        ],
+        "ablation": "无互易论文则 D 与 twist 筛选未知；无大值论文则阈值范围和目标指数未知；无加权密度论文则 σ 的严格支集条件与最优方案未知。",
+        "claimScope": "只作同一预算参数下三个独立定理的合法性审计，不将大值计数代入加权密度的证明。",
+        "difficultyRationale": "必须处理三个不同形状的边界：主项严格号、大值闭阈值带与 Fourier 开支集；优化是两级字典序。"
+      },
+      {
+        "id": "XM04",
+        "answer": "1;Y;N;Y",
+        "evidence": [
+          {
+            "source": "M25",
+            "path": "research/longread-20261018/papers/M25-2609.26787v1.txt",
+            "locator": "PDF p.1, abstract, finite criterion",
+            "quote": "We introduce a finite-truncation version of Robin’s inequality determined\nintrinsically by the arithmetic structure ofn,\nσ(n)\nn < e γ\nω(n)X\nj=0\n(ln ln lnn)j\nj! , n >5040,"
+          },
+          {
+            "source": "M25",
+            "path": "research/longread-20261018/papers/M25-2609.26787v1.txt",
+            "locator": "PDF p.1, abstract",
+            "quote": "We also prove that this inequality is equivalent to Robin’s inequality, and hence to the Riemann\nhypothesis."
+          },
+          {
+            "source": "M20",
+            "path": "research/longread-20261018/papers/M20-2608.07399v1.txt",
+            "locator": "PDF p.1, abstract",
+            "quote": "Specifically, we show that an infinite family of\nSiegel zeros implies lim inf n→∞(γn+1 −γ n) log(γn)/2π <0.4733 on RH."
+          },
+          {
+            "source": "M20",
+            "path": "research/longread-20261018/papers/M20-2608.07399v1.txt",
+            "locator": "PDF pp.1–2, Definition 1",
+            "quote": "Definition 1(Siegel zero).ASiegel zerois a real numberβassociated to a primitive\nquadratic Dirichlet characterχmoduloqsuch thatL(β, χ) = 0 and\nβ= 1− 1\nElogq\n1\narXiv:2608.07399v1  [math.NT]  7 Aug 2026\n\n[PDF page 2]\nSIEGEL ZEROS AND SMALL GAPS 2\nwithE⩾3."
+          },
+          {
+            "source": "M18",
+            "path": "research/longread-20261018/papers/M18-2609.16048v1.txt",
+            "locator": "PDF p.1, abstract, first theorem range",
+            "quote": "Assuming the Generalized Riemann Hypothesis (GRH), we prove that for any\nϵ >0, one may takeθ >1/2, provided thatm < k(k+ 1)/2 and thatm, kare odd integers\nsufficiently large."
+          }
+        ],
+        "derivation": "设 k=4r+3。k(k+1)/2 的奇偶性是 偶，故严格小于该数的最大奇 m 与其差 1。M25 的对所有 n>5040 的有限准则等价 RH；因此两个世界均有 RH。M20 在 RH 加上趋于无穷的 Siegel 零序列时给 μ<0.4733，所以甲第二字段 Y。Siegel 零是二次 Dirichlet L 函数的实零 1−1/(E log q)，q→∞、E≥3 时最终 >1/2，故甲不能同时满足相关 Dirichlet GRH，不能援引 M18 的 GRH 定理。乙给出所需 GRH；题设 m,k 均足够大且 m 严格小于 k(k+1)/2、二者为奇数，故可援引首项表示定理。",
+        "dependencies": [
+          {
+            "sourceIds": [
+              "M25"
+            ],
+            "contribution": "把全称有限除数和准则转成 RH，注意单个 n 的已证类不够。"
+          },
+          {
+            "sourceIds": [
+              "M20"
+            ],
+            "contribution": "RH 与趋于无穷的 Siegel 零序列联合给规范化间距严格上界，并给 Siegel 零定义。"
+          },
+          {
+            "sourceIds": [
+              "M18"
+            ],
+            "contribution": "素数幂表示首定理的 GRH、奇整数、充分大和严格 m 阈值条件。"
+          }
+        ],
+        "ablation": "无有限准则等价结果不能由甲、乙共同假设得到 RH；无小间距论文不能得甲的间距码；无 Waring–Goldbach 论文不能判两世界表示定理的 GRH 和严格 m 范围。",
+        "claimScope": "只在各自世界的明示假设下判断可援引性，不宣称 RH、GRH 或 Siegel 零序列实际成立；固定 k 的“充分大”未给阈值，故题目把它作为假设。",
+        "difficultyRationale": "有全称量词到 RH 的转换、例外零与 Dirichlet GRH 的冲突、严格整数奇偶端点以及两种条件定理的不同前提。"
+      },
+      {
+        "id": "XN01",
+        "answer": "C;DE;1",
+        "evidence": [
+          {
+            "source": "N015",
+            "path": "research/longread-20261018/novel/N015.txt",
+            "locator": "N015-P0090",
+            "quote": "“万有引力”号立刻起航追击“蓝色空间”号，这是目前太阳系唯一一艘能够进行恒星际航行的飞船。在此之前，三体世界曾提议由速度更快的水滴（正式称呼是强互作用力宇宙探测器）追赶并摧毁目标，但地球世界坚决拒绝了这个提议，认为这是人类的内部事务。末日战役是人类最大的创伤，十多年来，其疼痛不但没有减轻，反而愈加剧烈。允许水滴再次攻击人类，在政治上是绝对不可接受的，尽管在大多数人的心目中，“蓝色空间”号已经是一艘异类的飞船了，但对其执法只能由人类实施。也许考虑到时间充裕，三体世界没有坚持，只是强调“万有引力”号具有发射引力波的能力，必须保证它的绝对安全，水滴应与其同行，以确保对“蓝色空间”号的压倒优势。"
+          },
+          {
+            "source": "N020",
+            "path": "research/longread-20261018/novel/N020.txt",
+            "locator": "N020-P0002",
+            "quote": "智子间的量子联结是一次性的，一旦中断不可能恢复，那些进入盲区的智子都永远迷失在了太空中。"
+          },
+          {
+            "source": "N031",
+            "path": "research/longread-20261018/novel/N031.txt",
+            "locator": "N031-P0044",
+            "quote": "“从三维空间看不到四维，但从四维空间能够看到三维世界的一切并且能对它产生作用。我们就是在四维的高度伏击了水滴。不管强互作用力探测器有多强大，它仍然是一个三维物体。现在看来，三维本身就意味着脆弱，从四维看去，它不过是一张展开的图纸而已，毫无防御能力，可以从四维接近它，不需要知道它的原理，只需在它的内部，哦，对四维来说全是外部，随意破坏就行。”"
+          },
+          {
+            "source": "N029",
+            "path": "research/longread-20261018/novel/N029.txt",
+            "locator": "N029-P0088",
+            "quote": "这是所有人都明白的一件事。隐伏在两舰上的智子进入盲区后不可恢复，它们与三体世界的联系永远中断，水滴也被摧毁，这样，两个世界就丢失了对两舰的跟踪。在奥尔特星云之外的茫茫太空中，即使以三体达到光速的技术力量，重新搜索到两艘灰尘般的飞船也是不可能的。"
+          },
+          {
+            "source": "N029",
+            "path": "research/longread-20261018/novel/N029.txt",
+            "locator": "N029-P0096",
+            "quote": "“我说过，我们是一个完整的世界，这个世界中的所有人都是普通人，但命运把我们推到了对两个世界做出最后审判的位置上。最后的决定必须做出，但不能由某个人或某些人做出，这将是这个世界的决定，我们举行全民公决。现在，赞同对三体星系的坐标进行引力波宇宙广播的人，请按动这个红色按钮；反对或弃权的什么都不要做。各位，目前‘蓝色空间’号和‘万有引力’号上的人员总数，包括在场的和正在值勤岗位的，共1415人，如果赞成人数达到或超过总人数的三分之二，即944人，宇宙广播将立刻启动；否则，将直到天线失效，永不启动。下面，全民公决开始。”"
+          }
+        ],
+        "derivation": [
+          "广播载体为万有引力C，不是逃亡者蓝色空间本身。",
+          "智子D进入盲区且水滴E毁坏后，三体跟踪才全部中断。",
+          "原门槛944；第一阶段708；余707人，第二阶段floor(707/3)=235；共943，差1。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N015"
+            ],
+            "contribution": "无法确定哪艘舰具有广播设备"
+          },
+          {
+            "sources": [
+              "N020"
+            ],
+            "contribution": "无法确定智子联结失效不可恢复"
+          },
+          {
+            "sources": [
+              "N031"
+            ],
+            "contribution": "无法确定水滴可被四维破坏而解除跟踪"
+          },
+          {
+            "sources": [
+              "N029"
+            ],
+            "contribution": "无法确认两种装置均失效后双舰才失去跟踪"
+          },
+          {
+            "sources": [
+              "N029"
+            ],
+            "contribution": "无法取得公决精确基数门槛"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N015-P0090的事实则无法确定哪艘舰具有广播设备；去掉N020-P0002的事实则无法确定智子联结失效不可恢复；去掉N031-P0044的事实则无法确定水滴可被四维破坏而解除跟踪；去掉N029-P0088的事实则无法确认两种装置均失效后双舰才失去跟踪；去掉N029-P0096的事实则无法取得公决精确基数门槛。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      },
+      {
+        "id": "XN02",
+        "answer": "199;BA",
+        "evidence": [
+          {
+            "source": "N039",
+            "path": "research/longread-20261018/novel/N039.txt",
+            "locator": "N039-P0309",
+            "quote": "饕餮鱼的黑鳍在周围的海面上出现，向小船围拢过来。公主坐在船尾，把穿在剑上的赫尔辛根默斯肯香皂浸到海水中，船尾立刻涌现一大团泡沫，在早晨的阳光中发出耀眼的白光，泡沫团迅速膨胀至一人多高，并在船尾保持这个高度，在后面则随着船的前行扩散开来，在海面形成雪白的一片。饕餮鱼纷纷游进泡沫浮在其中，像躺在雪白的毛绒毯上一样享受着无与伦比的舒适惬意。公主第一次这么近看饕餮鱼，它们除了肚皮通体乌黑，像钢铁做成的机器，但一进入泡沫就变得懒散温顺。小船在平静的海面上前进，后面拖曳了一条长长的泡沫尾迹，像一道落在海上的白云带。无数的饕餮鱼从两侧游过来进入泡沫中，像在进行一场云河中的朝圣。偶尔也有几条从前方游来的饕餮鱼啃几下船底，还把卫队长手中的木桨咬下了一小块，但它们很快就被后面的泡沫所吸引，没有造成大的破坏。看着船后海面上雪白的泡沫云河，以及陶醉其中的饕餮鱼，公主不由得想起了牧师讲过的天堂。"
+          },
+          {
+            "source": "N043",
+            "path": "research/longread-20261018/novel/N043.txt",
+            "locator": "N043-P0011",
+            "quote": "光速飞船几乎无法为地球文明提供任何安全保障，这一技术只能用于星际逃亡。这是三个选择中未知因素最多的一个，即使实现，进入茫茫外太空的人类前途也凶险莫测。同时，由于逃亡主义的危险性，这一计划的实现在政治上充满障碍和陷阱。"
+          },
+          {
+            "source": "N054",
+            "path": "research/longread-20261018/novel/N054.txt",
+            "locator": "N054-P0178",
+            "quote": "“这就是黑域。”罗辑说，“当然，要产生容纳一个恒星系的黑域，一艘飞船是远远不够的。据计算，生成容纳太阳系的黑域需要一千多艘曲率驱动飞船，这些飞船以太阳为中心，放射状地朝各个不同的方向加速到光速，它们产生的航迹在扩散中连成一体，形成一个笼罩整个太阳系的球体，这个球体中的光速为每秒16.7千米，这就是低光速黑洞，就是黑域。”"
+          },
+          {
+            "source": "N056",
+            "path": "research/longread-20261018/novel/N056.txt",
+            "locator": "N056-P0023",
+            "quote": "DX3906星系已经变成了低光速黑洞，与宇宙的其余部分完全隔绝了，那由纷繁的银线构成的星空，将永远是可望不可即的存在。"
+          }
+        ],
+        "derivation": [
+          "香皂船既前进又留尾迹，后来的曲率机制说明同一技术关联两条生路。",
+          "题设专属任务不允许复用，1200-1001=199艘可送199批。",
+          "黑域封闭后与外界隔绝，外逃者必须先越界B，才完成A。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N039"
+            ],
+            "contribution": "无法辨认船行进与其留下区域是同一过程的两种作用"
+          },
+          {
+            "sources": [
+              "N043"
+            ],
+            "contribution": "无法识别起初被区分的逃亡用途"
+          },
+          {
+            "sources": [
+              "N054"
+            ],
+            "contribution": "无法把飞船分配转成可生成黑域的共同资源"
+          },
+          {
+            "sources": [
+              "N056"
+            ],
+            "contribution": "无法约束黑域封闭后普通航行的可达性"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N039-P0309的事实则无法辨认船行进与其留下区域是同一过程的两种作用；去掉N043-P0011的事实则无法识别起初被区分的逃亡用途；去掉N054-P0178的事实则无法把飞船分配转成可生成黑域的共同资源；去掉N056-P0023的事实则无法约束黑域封闭后普通航行的可达性。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      },
+      {
+        "id": "XN03",
+        "answer": "2222;3472",
+        "evidence": [
+          {
+            "source": "N049",
+            "path": "research/longread-20261018/novel/N049.txt",
+            "locator": "N049-P0055",
+            "quote": "“这是城市自卫队。”维德对着武装的人群挥了一下手，“是我们保卫星环城和光速飞船理想的全部力量，几乎是全部了，外面还有一些人，还会有更多的人加入，但总人数不会超过一百。至于他们的装备……”维德从一名战士身上拿下步枪，哗啦一声拉动枪栓，“你没看错，古代武器，用现代材料制造，子弹的发射药也不是火药，比真正的古代步枪射程要远一些，精度要高一些。在太空中，这些枪可以在两千千米外击中一艘大型战舰，但也仅此而已，很原始的玩意儿。你一定觉得这很可笑，我也有这种感觉，除了一点——”他把枪还给那名战士，又从他胸前的弹链上抽出一发子弹，“我说过，基本上是古代的子弹，但弹头是新的，对现在而言也是未来的技术。这个弹头是一个超导容器，内部高度真空，用磁场把一粒小球悬浮在正中，避免它与外壳接触，这粒小球是反物质。”"
+          },
+          {
+            "source": "N053",
+            "path": "research/longread-20261018/novel/N053.txt",
+            "locator": "N053-P0080",
+            "quote": "“研究继续进行，但没有什么进展，科学家们显然已经有了一些结论，但在我面前总是欲言又止。我对他们说，没什么，不管你们得出的结果多么离奇或离谱，没有其他的结果，我们就应该接受。我向他们保证，不会有什么东西比我的经历更离奇和离谱的，我不会笑话他们。于是他们告诉我，基于现代科学在各个学科最先进的理论和技术，根据大量的理论研究和实验的结果，通过对大量方案的综合分析和比较，他们已经得出了把信息保存一亿年左右的方法，他们强调，这是目前已知的唯一可行的方法，它就是——”罗辑把拐杖高举过头，白发长须舞动着，看上去像分开红海的摩西，庄严地喊道，“把字刻在石头上！”"
+          },
+          {
+            "source": "N055",
+            "path": "research/longread-20261018/novel/N055.txt",
+            "locator": "N055-P0304",
+            "quote": "引导部分剩余时间68小时43分（跳动的秒数），总体剩余时间297小时52分（跳动的秒数）。"
+          },
+          {
+            "source": "N055",
+            "path": "research/longread-20261018/novel/N055.txt",
+            "locator": "N055-P0309",
+            "quote": "“穿梭机上有冬眠设备吗？”程心刚问出口就知道没有意义，冬眠设备也是电脑智能控制的，即使有，现在也不能用。"
+          },
+          {
+            "source": "N056",
+            "path": "research/longread-20261018/novel/N056.txt",
+            "locator": "N056-P0013",
+            "quote": "“没有问题，反物质发动机是专为低光速环境设计的，像这样的远程航行，飞行器上都配备有低光速动力系统……我们的世界对低光速技术做了大量研究，目的并不是解决误入曲率航迹的问题，而是考虑到万一有一天不得不躲进光墓，或者说黑域中。”"
+          },
+          {
+            "source": "N056",
+            "path": "research/longread-20261018/novel/N056.txt",
+            "locator": "N056-P0035",
+            "quote": "接下来，程心和关一帆只能开始做一件让他们深感恐惧、却又不得不做的事：确定现在的年代。低光速下的年代测定有一种特殊的方法，一些在正常光速的世界中不发生衰变的元素，在低光速下会出现不同速率的衰变，可由此精确测定低光速持续的时间。作为科学考察飞行器，穿梭机中有测定元素衰变的仪器，但它是一个独立的设备，没有神经元计算机控制系统，只有一个与穿梭机神经元主机的接口，关一帆费了很大周折，才使设备能够正常使用。他们让仪器依次测定从不同区域采集的十份岩石样本，以便于将结果进行对比。这个过程需要半个小时。"
+          }
+        ],
+        "derivation": [
+          "备用动力必须为低光速设计，A选2；常规控制冬眠不可用，B选2。",
+          "神经元控制才可启动，C选2；测年得知漫长年代后按石刻方法追索，D选2。",
+          "297小时52分-240小时=57小时52分=3472分钟。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N049"
+            ],
+            "contribution": "无法区分反物质武器与专用低光速动力"
+          },
+          {
+            "sources": [
+              "N053"
+            ],
+            "contribution": "无法选择跨地质年代追索石刻的方法"
+          },
+          {
+            "sources": [
+              "N055"
+            ],
+            "contribution": "无法确定控制恢复时间"
+          },
+          {
+            "sources": [
+              "N055"
+            ],
+            "contribution": "无法排除依赖常规电脑的冬眠设备"
+          },
+          {
+            "sources": [
+              "N056"
+            ],
+            "contribution": "无法确定实际可在低光速运作的动力"
+          },
+          {
+            "sources": [
+              "N056"
+            ],
+            "contribution": "无法确定测年是从通信失联转向古迹搜索的依据"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N049-P0055的事实则无法区分反物质武器与专用低光速动力；去掉N053-P0080的事实则无法选择跨地质年代追索石刻的方法；去掉N055-P0304的事实则无法确定控制恢复时间；去掉N055-P0309的事实则无法排除依赖常规电脑的冬眠设备；去掉N056-P0013的事实则无法确定实际可在低光速运作的动力；去掉N056-P0035的事实则无法确定测年是从通信失联转向古迹搜索的依据。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      },
+      {
+        "id": "XN04",
+        "answer": "0;B;0",
+        "evidence": [
+          {
+            "source": "N055",
+            "path": "research/longread-20261018/novel/N055.txt",
+            "locator": "N055-P0076",
+            "quote": "“不，什么都看不到了。”关一帆摇摇头，又指了指那片空旷的夜空，“即使你们现在回到那里去，也看不到什么了，那里已经是空荡荡的太空，一无所有。你们看到的二维太阳和行星，其实是二维化后三维物质的一种能量释放效应。你们看到的其实不只是二维物质，是它们释放的电磁波在二维和三维空间交界面的折射，能量释放完成后，一切都不可见了，二维太阳系与三维世界永远失去了联系。”"
+          },
+          {
+            "source": "N056",
+            "path": "research/longread-20261018/novel/N056.txt",
+            "locator": "N056-P0087",
+            "quote": "但这次他错了，这东西确实存放了一千八百九十万年，如果需要，还可以存放到宇宙末日，因为它在时间之外。最初它被放置在刻字的岩石旁边，还有一个实体的金属框架，但仅五十万年后金属就化为尘土。而这东西一直是崭新的，它不惧怕时间，因为它自己的时间还没有开始。本来它处在地层三十米深处，仍然在那块岩石旁，但它检测到了地面上的人，于是它升上地面，它与地层不发生作用，就像一个幻影。在地面上，它确认这两个人是它所等待的对象。"
+          },
+          {
+            "source": "N057",
+            "path": "research/longread-20261018/novel/N057.txt",
+            "locator": "N057-P0081",
+            "quote": "当然，他们最关心的是：小宇宙可以和大宇宙通信吗？智子告诉他们，小宇宙绝无可能向大宇宙传递信息，但接收到大宇宙的信息广播却是有可能的。她说，所有的宇宙都是一个超膜上的空泡（这涉及三体物理学和宇宙学中最基本的理论图景，对此她也无法进一步解释），大宇宙有足够的能量把信息在超膜上传播。但这很困难，需要难以想象的巨大能量，如果大宇宙这么做，可能需要把相当于一个银河系的质量化为纯能。其实，647号宇宙中的监测系统经常收到超膜上其他大宇宙的信息，有些是自然产生的，有些是无法解读的智慧信息，但从未收到他们所来的那个大宇宙的信息。"
+          },
+          {
+            "source": "N057",
+            "path": "research/longread-20261018/novel/N057.txt",
+            "locator": "N057-P0124",
+            "quote": "回归运动声明：我们宇宙的总质量减少至临界值以下，宇宙将由封闭转变为开放，宇宙将在永恒的膨胀中死去，所有的生命和记忆都将死去。请归还你们拿走的质量，只把记忆体送往新宇宙。"
+          },
+          {
+            "source": "N058",
+            "path": "research/longread-20261018/novel/N058.txt",
+            "locator": "N058-P0019",
+            "quote": "据智子介绍，小宇宙本身是没有质量的，它的质量都来自于从大宇宙中带来的物质。在三体世界曾经制造过的几百个小宇宙中，647号属于最小的一类，它总共从大宇宙中带走了约五十万吨物质，相当于公元世纪一艘大型油轮的运载量，从宇宙尺度上讲确实微不足道。"
+          },
+          {
+            "source": "N058",
+            "path": "research/longread-20261018/novel/N058.txt",
+            "locator": "N058-P0035",
+            "quote": "智子拿着一个金属盒，那是他们要留在小宇宙中的东西，是要送往新宇宙的漂流瓶。它的主体是一台微型电脑，电脑的量子存储器中存储着小宇宙电脑主机的全部信息，这几乎是三体和地球文明的全部记忆了。当新宇宙诞生时，金属盒会收到门发来的信号，然后用自己的小推进器穿过门，进入新宇宙。它会在新宇宙的高维太空中飘浮，等待着被拾取和解读的那一天。同时，它还会用中微子束把自己存储的信息不断地播放出来，如果新宇宙中也有中微子的话。"
+          },
+          {
+            "source": "N058",
+            "path": "research/longread-20261018/novel/N058.txt",
+            "locator": "N058-P0037",
+            "quote": "“还可以再留下五公斤吗？”程心问道。她在飞船的另一侧，身穿太空服，手中举着一个发光的透明球体，球体直径约半米，里面飘浮着几个水球，有的里面游动着几条小鱼，有的里面生长着绿藻；还有两块飘浮的微型陆地，上面长着嫩绿的青草。光亮是从球体顶部发出的，那里安装着一个小小的发光体，是这个小世界的太阳。这是一个全封闭的生态球，是程心和智子十多天的工作成果，只要球体内的小太阳还能够发光，这个小小的生态系统就能生存下去。只要有它留在这里，647号宇宙就不是一个没有生命的黑暗世界。"
+          },
+          {
+            "source": "N058",
+            "path": "research/longread-20261018/novel/N058.txt",
+            "locator": "N058-P0038",
+            "quote": "“当然可以，大宇宙不会因为这五公斤就不坍缩了。”关一帆说，他还有一个没说出来的想法：也许大宇宙真的会因为相差一个原子的质量而由封闭转为开放。大自然的精巧有时超出想象，比如生命的诞生，就需要各项宇宙参数在几亿亿分之一精度上的精确配合。但程心仍然可以留下她的生态球，因为在那无数文明创造的无数小宇宙中，肯定有相当一部分不响应回归运动的号召，所以，大宇宙最终被夺走的质量至少有几亿吨，甚至可能是几亿亿亿吨。"
+          }
+        ],
+        "derivation": [
+          "释能结束的二维太阳系不能光学取资料；石刻和入口使进入647号成为实际路径。",
+          "小宇宙不能向大宇宙通信，记忆应拷贝到漂流瓶B等待新宇宙。",
+          "允许留下500000000×(1-999999999/1000000000)=0.5千克；漂流瓶占0.4，剩0.1，不够5千克生态球，0个。",
+          "其他小宇宙归还量未知，不能用本宇宙比例保证宇宙再诞生，0。"
+        ],
+        "dependencies": [
+          {
+            "sources": [
+              "N055"
+            ],
+            "contribution": "无法排除二维太阳系光学旧资料作为新信息来源"
+          },
+          {
+            "sources": [
+              "N056"
+            ],
+            "contribution": "无法确定实际可取得的小宇宙入口"
+          },
+          {
+            "sources": [
+              "N057"
+            ],
+            "contribution": "无法排除小宇宙直接向大宇宙发通信"
+          },
+          {
+            "sources": [
+              "N057"
+            ],
+            "contribution": "无法确定回归呼吁所针对的整体质量危机"
+          },
+          {
+            "sources": [
+              "N058"
+            ],
+            "contribution": "无法取得预算基数"
+          },
+          {
+            "sources": [
+              "N058"
+            ],
+            "contribution": "无法确定记忆最终实际载体"
+          },
+          {
+            "sources": [
+              "N058"
+            ],
+            "contribution": "无法取得每球质量"
+          },
+          {
+            "sources": [
+              "N058"
+            ],
+            "contribution": "无法区分单宇宙预算与其他宇宙不归还的影响"
+          }
+        ],
+        "ablation": "按证明链逐项消融：去掉N055-P0076的事实则无法排除二维太阳系光学旧资料作为新信息来源；去掉N056-P0087的事实则无法确定实际可取得的小宇宙入口；去掉N057-P0081的事实则无法排除小宇宙直接向大宇宙发通信；去掉N057-P0124的事实则无法确定回归呼吁所针对的整体质量危机；去掉N058-P0019的事实则无法取得预算基数；去掉N058-P0035的事实则无法确定记忆最终实际载体；去掉N058-P0037的事实则无法取得每球质量；去掉N058-P0038的事实则无法区分单宇宙预算与其他宇宙不归还的影响。消融针对事实而非删除一个文件；小说可能在其他章重述同一事实，不声称单文件删除一定使问题不可答。",
+        "claimScope": "只依据小说叙事和题目明确给出的操作规则，不把人物推测升级为已证实事实。",
+        "difficultyRationale": "必须先确定情节中的技术或信息条件，再将条件传给后继节点，最后按题设约束构造结果；代码顺序不按题面排列。至少四章提供证据。"
+      }
+    ]
+  }
+}

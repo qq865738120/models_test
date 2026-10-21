@@ -1,0 +1,27 @@
+{
+  "reviewDate": "2026-10-20",
+  "backup": ".runtime/longread-v2-authoring/math-draft1.json",
+  "changes": [
+    {
+      "id": "M09",
+      "status": "wording_corrected_key_unchanged",
+      "answer": "F",
+      "reason": "将圆心接近t改成圆心虚部/高度接近t，按|φ−t|≤cN。"
+    },
+    {
+      "id": "XM01",
+      "status": "reviewer_correction_rejected_after_pdf_and_arithmetic_check",
+      "answer": "A",
+      "reviewerSuggested": "D",
+      "source": "research/longread-20261018/papers/M08-2610.16874v1.pdf",
+      "locator": "p.4, Corollary1.3, Eq.(1.14)",
+      "image": "pdf-math/M08-p4-hi.png",
+      "calculation": {
+        "sigma_minus": "2",
+        "A_star": "3",
+        "b": "9/2"
+      },
+      "reason": "式(1.14)另乘σ_-；9/4为漏乘因子的值，保留9/2并补充排除说明。"
+    }
+  ]
+}

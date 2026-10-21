@@ -1,0 +1,803 @@
+{
+  "model": "gpt-6-astra",
+  "questionsSha256": "03b3c1f2c53a6c26626e776809608346508c6b64749026faf98a0ed5fd9c5192",
+  "phases": {
+    "initial": [
+      {
+        "id": "M01",
+        "answer": "81/100;9/10;10/9",
+        "sources": [
+          "M08",
+          "M10",
+          "M02"
+        ],
+        "evidence": [
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "TXT newline-based line 60; exact statement excerpt",
+            "quote": "For an ideal polytropic gas, the pressure is given by\np(v, θ) = Rθ\nv ,(1.2)\nwhereR >0 is the gas constant. The specific total energy is\nE=e+ u2\n2 = Rθ\nγ−1 + κv2\nx\n2v5 + u2\n2 ,(1.3)\nwhereγ >1 is the adiabatic exponent andeis the internal energy, which includes the capillary\nenergyκv 2\nx/(2v5)."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "TXT newline-based line 165; exact statement excerpt",
+            "quote": "The end states and the shock speed satisfy the Rankine–Hugoniot condition:\n\n\n\n−σ(v+ −v −)−(u + −u −) = 0,\n−σ(u+ −u −) + (p+ −p −) = 0,\n−σ(E+ −E −) + (p+u+ −p −u−) = 0.\n(1.4)\nThe characteristic speeds of the underlying Euler system in Lagrangian mass coordinates are\nλ1 =−\nr\nγp(v, θ)\nv , λ 2 = 0, λ 3 =\nr\nγp(v, θ)\nv .\nThus, the Lax shock conditions for the 1- and 3-shock families are\n−\nr γp+\nv+\n< σ <−\nr γp−\nv−\nfor a 1-shock,\nr γp+\nv+\n< σ <\nr γp−\nv−\nfor a 3-shock.(1.5)\nIt follows from the Rankine–Hugoniot condition (1.4) and the Lax shock conditions (1.5) that\n1-shock:σ <0, v + < v −, u + < u −, θ + > θ −,\n3-shock:σ >0, v + > v −, u + < u −, θ + < θ −."
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "TXT newline-based line 40; exact statement excerpt",
+            "quote": "We adopt the polytropic pressure lawp(ρ) =bργ, forb >0andγ >1being fluid constants. Without loss\nof generality, we normalize the coefficientb= 1in the sequel. The spatial domain under consideration is\nR×TwithT:=R/Zdenoting the one-dimensional unit flat torus."
+          },
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "TXT newline-based line 474; exact statement excerpt",
+            "quote": "As mentioned in the introduction, the pressure we consider takes the form p = pM + apR with the\nmolecular and radiative pressures defined by\n(2.4)p(ρ, ϑ) =ϑ\nγ\nγ−1 P\n\u0012 ρ\nϑ\n1\nγ−1\n\u0013\n+ a\n3 ϑ4 =:p M(ρ, ϑ) +ap R(ϑ),\nwhere a > 0, γ > 2, and P∈C 1([0,∞ )) is an increasing function satisfying P (0) = 0. We further\nsuppose that there exists a constantZ >0 such thatP(Z) =Zfor allZ∈[0, Z ]."
+          }
+        ],
+        "derivation": "将三条RH消去速度及波速，得到[e]+(p₊+p₋)[v]/2=0；γ=2时e=pv，故p₊/p₋=(3v₋−v₊)/(3v₊−v₋)。v₋=1，1<v₊<3，压强为正且下降；正根σ²=−[p]/[v]给3激波方向。M10归一化p=ρ²；M02低Z支P(Z)=Z给p_M=ρθ（γ=3亦然），因此给定正常压唯一确定θ。 代入381/343得81/100，正平方根9/10，θ=1/(9/10)=10/9。",
+        "issues": [
+          "与M05完全同公式同流程，仅v₊换数字；宜二选一。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M08",
+          "M10",
+          "M02"
+        ],
+        "mechanism": "RH→另一状态律的正根→第三文常压温度",
+        "retentionRecommendation": "与M05二选一保留"
+      },
+      {
+        "id": "M02",
+        "answer": "4;9/4;3/2",
+        "sources": [
+          "M02",
+          "M08",
+          "M10"
+        ],
+        "evidence": [
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "TXT newline-based line 474; exact statement excerpt",
+            "quote": "As mentioned in the introduction, the pressure we consider takes the form p = pM + apR with the\nmolecular and radiative pressures defined by\n(2.4)p(ρ, ϑ) =ϑ\nγ\nγ−1 P\n\u0012 ρ\nϑ\n1\nγ−1\n\u0013\n+ a\n3 ϑ4 =:p M(ρ, ϑ) +ap R(ϑ),\nwhere a > 0, γ > 2, and P∈C 1([0,∞ )) is an increasing function satisfying P (0) = 0. We further\nsuppose that there exists a constantZ >0 such thatP(Z) =Zfor allZ∈[0, Z ]."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "TXT newline-based line 60; exact statement excerpt",
+            "quote": "For an ideal polytropic gas, the pressure is given by\np(v, θ) = Rθ\nv ,(1.2)\nwhereR >0 is the gas constant. The specific total energy is\nE=e+ u2\n2 = Rθ\nγ−1 + κv2\nx\n2v5 + u2\n2 ,(1.3)\nwhereγ >1 is the adiabatic exponent andeis the internal energy, which includes the capillary\nenergyκv 2\nx/(2v5)."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "TXT newline-based line 165; exact statement excerpt",
+            "quote": "The end states and the shock speed satisfy the Rankine–Hugoniot condition:\n\n\n\n−σ(v+ −v −)−(u + −u −) = 0,\n−σ(u+ −u −) + (p+ −p −) = 0,\n−σ(E+ −E −) + (p+u+ −p −u−) = 0.\n(1.4)\nThe characteristic speeds of the underlying Euler system in Lagrangian mass coordinates are\nλ1 =−\nr\nγp(v, θ)\nv , λ 2 = 0, λ 3 =\nr\nγp(v, θ)\nv .\nThus, the Lax shock conditions for the 1- and 3-shock families are\n−\nr γp+\nv+\n< σ <−\nr γp−\nv−\nfor a 1-shock,\nr γp+\nv+\n< σ <\nr γp−\nv−\nfor a 3-shock.(1.5)\nIt follows from the Rankine–Hugoniot condition (1.4) and the Lax shock conditions (1.5) that\n1-shock:σ <0, v + < v −, u + < u −, θ + > θ −,\n3-shock:σ >0, v + > v −, u + < u −, θ + < θ −."
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "TXT newline-based line 40; exact statement excerpt",
+            "quote": "We adopt the polytropic pressure lawp(ρ) =bργ, forb >0andγ >1being fluid constants. Without loss\nof generality, we normalize the coefficientb= 1in the sequel. The spatial domain under consideration is\nR×TwithT:=R/Zdenoting the one-dimensional unit flat torus."
+          }
+        ],
+        "derivation": "将三条RH消去速度及波速，得到[e]+(p₊+p₋)[v]/2=0；γ=2时e=pv，故p₊/p₋=(3v₋−v₊)/(3v₊−v₋)。v₋=1，1<v₊<3，压强为正且下降；正根σ²=−[p]/[v]给3激波方向。M10归一化p=ρ²；M02低Z支P(Z)=Z给p_M=ρθ（γ=3亦然），因此给定正常压唯一确定θ。 初始熵波p_M=2×2=4；v₊=57/43的RH比值9/16，得右压9/4，正密度3/2。",
+        "issues": [
+          "与M01/M05仍共享三个状态律串接，仅改变顺序，题型增量有限。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M02",
+          "M08",
+          "M10"
+        ],
+        "mechanism": "熵波压强→RH压强比→平面律密度",
+        "retentionRecommendation": "可保留但与M01/M05压缩同族数量"
+      },
+      {
+        "id": "M03",
+        "answer": "11809/13504;44521/58081;241/211;A",
+        "sources": [
+          "M08",
+          "M10",
+          "M02"
+        ],
+        "evidence": [
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "TXT newline-based line 60; exact statement excerpt",
+            "quote": "For an ideal polytropic gas, the pressure is given by\np(v, θ) = Rθ\nv ,(1.2)\nwhereR >0 is the gas constant. The specific total energy is\nE=e+ u2\n2 = Rθ\nγ−1 + κv2\nx\n2v5 + u2\n2 ,(1.3)\nwhereγ >1 is the adiabatic exponent andeis the internal energy, which includes the capillary\nenergyκv 2\nx/(2v5)."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "TXT newline-based line 165; exact statement excerpt",
+            "quote": "The end states and the shock speed satisfy the Rankine–Hugoniot condition:\n\n\n\n−σ(v+ −v −)−(u + −u −) = 0,\n−σ(u+ −u −) + (p+ −p −) = 0,\n−σ(E+ −E −) + (p+u+ −p −u−) = 0.\n(1.4)\nThe characteristic speeds of the underlying Euler system in Lagrangian mass coordinates are\nλ1 =−\nr\nγp(v, θ)\nv , λ 2 = 0, λ 3 =\nr\nγp(v, θ)\nv .\nThus, the Lax shock conditions for the 1- and 3-shock families are\n−\nr γp+\nv+\n< σ <−\nr γp−\nv−\nfor a 1-shock,\nr γp+\nv+\n< σ <\nr γp−\nv−\nfor a 3-shock.(1.5)\nIt follows from the Rankine–Hugoniot condition (1.4) and the Lax shock conditions (1.5) that\n1-shock:σ <0, v + < v −, u + < u −, θ + > θ −,\n3-shock:σ >0, v + > v −, u + < u −, θ + < θ −."
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "TXT newline-based line 40; exact statement excerpt",
+            "quote": "We adopt the polytropic pressure lawp(ρ) =bργ, forb >0andγ >1being fluid constants. Without loss\nof generality, we normalize the coefficientb= 1in the sequel. The spatial domain under consideration is\nR×TwithT:=R/Zdenoting the one-dimensional unit flat torus."
+          },
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "TXT newline-based line 474; exact statement excerpt",
+            "quote": "As mentioned in the introduction, the pressure we consider takes the form p = pM + apR with the\nmolecular and radiative pressures defined by\n(2.4)p(ρ, ϑ) =ϑ\nγ\nγ−1 P\n\u0012 ρ\nϑ\n1\nγ−1\n\u0013\n+ a\n3 ϑ4 =:p M(ρ, ϑ) +ap R(ϑ),\nwhere a > 0, γ > 2, and P∈C 1([0,∞ )) is an increasing function satisfying P (0) = 0. We further\nsuppose that there exists a constantZ >0 such thatP(Z) =Zfor allZ∈[0, Z ]."
+          }
+        ],
+        "derivation": "将三条RH消去速度及波速，得到[e]+(p₊+p₋)[v]/2=0；γ=2时e=pv，故p₊/p₋=(3v₋−v₊)/(3v₊−v₋)。v₋=1，1<v₊<3，压强为正且下降；正根σ²=−[p]/[v]给3激波方向。M10归一化p=ρ²；M02低Z支P(Z)=Z给p_M=ρθ（γ=3亦然），因此给定正常压唯一确定θ。 记x=241/211。θ_shock=x(3−x)/(3x−1)，p_bar=x⁻²，θ_contact=x。p_shock−p_bar=[x²(3−x)−(3x−1)]/[x²(3x−1)]=−(x−1)³/[x²(3x−1)]<0，且0<p_shock<1，故θ_shock<θ_contact，码A。",
+        "issues": [
+          "M03与XM01的答案结构、证明、比较方向完全相同，仅v₊换数字；change不引入新约束。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M08",
+          "M10",
+          "M02"
+        ],
+        "mechanism": "同一体积的三个状态律读数及精确不等式",
+        "retentionRecommendation": "保留一题，另一题改成实质约束变化"
+      },
+      {
+        "id": "M04",
+        "answer": "6/5;9/4;1;NZ",
+        "sources": [
+          "M13",
+          "M06",
+          "M07"
+        ],
+        "evidence": [
+          {
+            "source": "M13",
+            "path": "research/longread-20261018/papers/M13-2608.29138v1.txt",
+            "locator": "TXT newline-based line 116; exact statement excerpt",
+            "quote": "(5) W (x3) = 6 F x3(1 − x3)e(α), with FW =\n∫ 1\n0\nW (x3) ·e(α) dx3 = F."
+          },
+          {
+            "source": "M06",
+            "path": "research/longread-20261018/papers/M06-2608.17456v1.txt",
+            "locator": "p1 abstract; TXT lines 4-7",
+            "quote": "NAVIER–STOKES EQUATIONS ON THE WHOLE PLANE\nMIKIHIRO FUJII\nAbstract.We prove that, for a suitable small external force in ˙H −2(R2), the\nstationary Navier–Stokes equations onR2 admit multiple solutions inL2(R2)."
+          },
+          {
+            "source": "M07",
+            "path": "research/longread-20261018/papers/M07-2609.14688v1.txt",
+            "locator": "p1 abstract, actual closure space; TXT lines 5-15",
+            "quote": "RAMZI MAY\nAbstract.We prove uniqueness of solutions to the Navier-Stokes equations in the space\nLp\u0000\n[0, T],eL3,∞(R3)\n\u0001\n∩C\n\u0000\n[0, T], B −1,∞\n∞ (R3)\n\u0001\n, p >2,"
+          }
+        ],
+        "derivation": "背景W=6z(1−z)e；∫₀¹36z²(1−z)²dz=6/5，中面|W(1/2)|²=9/4。水平面积=1πR²，故两个平方范数系数分别为1×6/5、1×9/4。平面L²范数为常数×R；三维弱L³分布函数μ(λ)=1πR²×|{z:6z(1−z)>λ}|，范数为正有限常数×R^(2/3)。乘R^(−β)后共同有界要求β≥max(1,2/3)=1，极限NZ。",
+        "issues": [
+          "题干已完整提供L²与弱L³目标，M06/M07不承担任何未给条件或计算；实际只需M13和标准范数定义。",
+          "M07实际解类是Schwartz闭包eL^{3,∞}并有时间/Besov条件，不能将仅弱L³范数审计当作其完整解类检验；本题明确不当解，故数值无碍。",
+          "XM02仅把圆盘面积改成三倍的环，指数与判断全不变。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": false,
+        "actuallyNecessarySources": [
+          "M13"
+        ],
+        "mechanism": "显式竖直剖面的各向异性支集尺度与范数增长",
+        "retentionRecommendation": "不满足实质跨论文要求，需重设第二文必要条件"
+      },
+      {
+        "id": "M05",
+        "answer": "25/36;5/6;6/5",
+        "sources": [
+          "M08",
+          "M10",
+          "M02"
+        ],
+        "evidence": [
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "TXT newline-based line 60; exact statement excerpt",
+            "quote": "For an ideal polytropic gas, the pressure is given by\np(v, θ) = Rθ\nv ,(1.2)\nwhereR >0 is the gas constant. The specific total energy is\nE=e+ u2\n2 = Rθ\nγ−1 + κv2\nx\n2v5 + u2\n2 ,(1.3)\nwhereγ >1 is the adiabatic exponent andeis the internal energy, which includes the capillary\nenergyκv 2\nx/(2v5)."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "TXT newline-based line 165; exact statement excerpt",
+            "quote": "The end states and the shock speed satisfy the Rankine–Hugoniot condition:\n\n\n\n−σ(v+ −v −)−(u + −u −) = 0,\n−σ(u+ −u −) + (p+ −p −) = 0,\n−σ(E+ −E −) + (p+u+ −p −u−) = 0.\n(1.4)\nThe characteristic speeds of the underlying Euler system in Lagrangian mass coordinates are\nλ1 =−\nr\nγp(v, θ)\nv , λ 2 = 0, λ 3 =\nr\nγp(v, θ)\nv .\nThus, the Lax shock conditions for the 1- and 3-shock families are\n−\nr γp+\nv+\n< σ <−\nr γp−\nv−\nfor a 1-shock,\nr γp+\nv+\n< σ <\nr γp−\nv−\nfor a 3-shock.(1.5)\nIt follows from the Rankine–Hugoniot condition (1.4) and the Lax shock conditions (1.5) that\n1-shock:σ <0, v + < v −, u + < u −, θ + > θ −,\n3-shock:σ >0, v + > v −, u + < u −, θ + < θ −."
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "TXT newline-based line 40; exact statement excerpt",
+            "quote": "We adopt the polytropic pressure lawp(ρ) =bργ, forb >0andγ >1being fluid constants. Without loss\nof generality, we normalize the coefficientb= 1in the sequel. The spatial domain under consideration is\nR×TwithT:=R/Zdenoting the one-dimensional unit flat torus."
+          },
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "TXT newline-based line 474; exact statement excerpt",
+            "quote": "As mentioned in the introduction, the pressure we consider takes the form p = pM + apR with the\nmolecular and radiative pressures defined by\n(2.4)p(ρ, ϑ) =ϑ\nγ\nγ−1 P\n\u0012 ρ\nϑ\n1\nγ−1\n\u0013\n+ a\n3 ϑ4 =:p M(ρ, ϑ) +ap R(ϑ),\nwhere a > 0, γ > 2, and P∈C 1([0,∞ )) is an increasing function satisfying P (0) = 0. We further\nsuppose that there exists a constantZ >0 such thatP(Z) =Zfor allZ∈[0, Z ]."
+          }
+        ],
+        "derivation": "将三条RH消去速度及波速，得到[e]+(p₊+p₋)[v]/2=0；γ=2时e=pv，故p₊/p₋=(3v₋−v₊)/(3v₊−v₋)。v₋=1，1<v₊<3，压强为正且下降；正根σ²=−[p]/[v]给3激波方向。M10归一化p=ρ²；M02低Z支P(Z)=Z给p_M=ρθ（γ=3亦然），因此给定正常压唯一确定θ。 v₊=133/111得p₊=25/36，ρ*=5/6，θ*=6/5。",
+        "issues": [
+          "M01的同公式换数字题。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M08",
+          "M10",
+          "M02"
+        ],
+        "mechanism": "RH→平面律正根→熵波常压温度",
+        "retentionRecommendation": "与M01二选一"
+      },
+      {
+        "id": "M06",
+        "answer": "2;N;N;Y",
+        "sources": [
+          "M25",
+          "M20",
+          "M18"
+        ],
+        "evidence": [
+          {
+            "source": "M25",
+            "path": "research/longread-20261018/papers/M25-2609.26787v1.txt",
+            "locator": "TXT newline-based line 224; exact statement excerpt",
+            "quote": "(iii)Equivalence with the Riemann hypothesis.We prove that theω−inequality is equivalent\nto Robin’s inequality, and hence to the Riemann hypothesis. We give a proof of this\nequivalence using the structure of a minimal counterexample. As a consequence, the\nRiemann hypothesis is also equivalent to theω−inequality restricted to colossally abundant\nnumbers."
+          },
+          {
+            "source": "M20",
+            "path": "research/longread-20261018/papers/M20-2608.07399v1.txt",
+            "locator": "TXT newline-based line 38; exact statement excerpt",
+            "quote": "Definition 1(Siegel zero).ASiegel zerois a real numberβassociated to a primitive\nquadratic Dirichlet characterχmoduloqsuch thatL(β, χ) = 0 and\nβ= 1− 1\nElogq\n1\narXiv:2608.07399v1  [math.NT]  7 Aug 2026\n\n[PDF page 2]\nSIEGEL ZEROS AND SMALL GAPS 2\nwithE⩾3. The quantityEis referred to as thequalityofβ. We refer to an infinite\nfamily (βj, χj, qj,E j) withq j → ∞as anexceptional sequence."
+          },
+          {
+            "source": "M20",
+            "path": "research/longread-20261018/papers/M20-2608.07399v1.txt",
+            "locator": "TXT newline-based line 64; exact statement excerpt",
+            "quote": "Theorem 1.Assume RH and that there exists an exceptional sequence of Siegel\nzeros withE= inf j Ej sufficiently large. Then\nµ <0.4733."
+          },
+          {
+            "source": "M18",
+            "path": "research/longread-20261018/papers/M18-2609.16048v1.txt",
+            "locator": "TXT newline-based line 8; exact statement excerpt",
+            "quote": "LetNbe a sufficiently large odd integer. We study the representation of a large integer\nmN k as a sum ofmalmost equalk-th powers of primes, where the common distribution scale\nis at leastN θ. Assuming the Generalized Riemann Hypothesis (GRH), we prove that for any\nϵ >0, one may takeθ >1/2, provided thatm < k(k+ 1)/2 and thatm, kare odd integers\nsufficiently large."
+          },
+          {
+            "source": "M18",
+            "path": "research/longread-20261018/papers/M18-2609.16048v1.txt",
+            "locator": "TXT newline-based line 118; exact statement excerpt",
+            "quote": "Theorem 1.1.Settingm, kas two sufficiently large integers, when\nm >16klogk+ 4k+ 2θ k,m >1/"
+          }
+        ],
+        "derivation": "k≡1(mod4)，故B=k(k+1)/2为奇数，严格小于B的最大奇数是B−2。 截断不等式按M25结论可推出ζ的RH，但M20 Theorem 1还要求E=inf_j E_j充分大；仅q_j→∞不保证该品质条件，故甲不能援引0.4733，答N。ζ的RH不等于Dirichlet GRH，且Siegel序列与相关GRH不相容，甲不能用首项GRH表示定理，答N；乙明确给GRH，对于所设充分大k及m≈k²/2，m>16k log k+4k+2最终成立，故选充分大奇N及1/2<θ<2/3时可用，答Y。",
+        "issues": [
+          "缺少M20所需的统一充分大品质E，不能把“趋∞零序列”偷换为此条件；若希望答案Y须补E下界。",
+          "“首项GRH定理”需对应正文Theorem 1.1，正文是m>16k log k+4k+2，m<k(k+1)/2来自摘要；所设渐近m可兼容两者，但不可把摘要上界当唯一条件。",
+          "题目仅给有限准则与序列作条件推演，没有验证预印本证明；应注明按给定文献主张推演，不能宣称已独立确立RH等价。",
+          "由于品质缺失已足以否定间距援引，M25的RH转接对当前输出不必要；奇偶计算本身无需论文。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M20",
+          "M18"
+        ],
+        "mechanism": "区分ζ RH、Dirichlet GRH、Siegel品质量词并处理严格奇端点",
+        "retentionRecommendation": "补齐品质或明确故意考缺失条件；两题只留一题"
+      },
+      {
+        "id": "M07",
+        "answer": "B;8/17;1/4",
+        "sources": [
+          "M22",
+          "M15",
+          "M24"
+        ],
+        "evidence": [
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "TXT newline-based line 138; exact statement excerpt",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have\n(1.5)\nZ ∞\n−∞\n\u0012 p\nq\n\u0013it\f\fζ\n\u0000 1\n2 +it\n\u0001\f\f2 exp\n\u0012\n−(t−T) 2\nH2\n\u0013\ndt=\n2π√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n+\nX∗\nχmodp\n√p\niα(p−1) χ(q)\nZ ∞\n−∞\nGT,H\n\u0000 1\n2 +it\n\u0001\u0012 π\nq\n\u0013it Γ\n\u0000 1+2α−2it\n4\n\u0001\nΓ\n\u0000 1+2α+2it\n4\n\u0001\n\f\fL\n\u0000 1\n2 +it, χ\n\u0001\f\f2 dt\n+O\n \nT\nH (pqT) ϵ\n\"\u0012 p\nq\n\u0013 1\n2\n+\n\u0012 q\np\n\u0013 1\n2\n#!\n,"
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "TXT newline-based line 202; exact statement excerpt",
+            "quote": "By Lemma 6, the main term of (1.5) has size\n(1.6) 1√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n≍ H√pq log\n\u0012 T\npq\n\u0013\n.\nMoreover, as shown by Lemma 7,G T,H\n\u0000 1\n2 +it\n\u0001\ndecays rapidly for|t| ≫ T\nH . Thus, the integral\nin the dual moment is essentially supported on an interval of length T\nH . Two types of reciprocity\nappear in our result. The first is a type of arithmetic reciprocity which was already presented in\nKhan’s result. The second is a type of analytic reciprocity in which the original length of support\nHis transformed into T\nH in the dual moment.\nAnother objective of this paper is to observe the relation between the size of twisting parameter\nand the length of interval of integral. In general, the twisting parameter cannot be arbitrarily\nlarge, while the integral cannot be supported on an interval that is arbitrarily small. However, the\nrelation between these two quantities has not been made explicit in previous results. In our result,\nthis relation is given by\n(1.7) H2\nmax{p, q} > T 1+ϵ,\nwhich follows naturally from requiring the main term to dominate the error term. We comment in\nRemark 3.1 how our lower bound onHarises, and on the possibility of improvement."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "p2 Theorem 1.3; TXT lines 68-85",
+            "quote": "Theorem 1.3(Large value estimate).LetT⩾1. For anyV∈[T 7/60, T5/38]andε >0, we have\nN(T, V)≪ ε T\n24\n17 +εV − 128\n17 .\nIn§9 we record further bounds forN(T, V), which are superior to Theorem 1.3 for largeV.\n1.1.On the sixth and twelfth moments.The estimateM 12(T)≪ ε T 2+ε was proved by Heath-\nBrown via short second moments of zeta. The desire to improve on this bound has inspired many\ndevelopments in analytic number theory, and led to several different proofs of the same result. For\nexample, Iwaniec [Iwa80] deduced it from bounds for the fourth moment of zeta in short intervals,\nobtained via spectral theory of automorphic forms. Jutila [Jut91] gave a different proof of Iwaniec’s\nresult, bypassing the appeal to spectral theory. A textbook proof is given in [Ivi03, Chapter 8].\nBoth Iwaniec’s and Jutila’s methods give the same bounds for a fixed GL 2 L-function in place\nofζ 2. It is worth mentioning that significantly less is known for GL 3 L-functions. The best known\nbound for the second moment in thet-aspect (which should be compared toM 6(T)) isT 4/3+ε, due\nto Dasgupta, Leung, and Young [DLY24]. Interestingly, the boundT 5/4+ε was recently obtained\nby Aggarwal, Leung, and Munshi [ALM26] for a short second moment of lengthT 2/3.\nAs noted earlier, the sixth moment bound ofO ε(T 5/4+ε) follows by interpolating the fourth and"
+          },
+          {
+            "source": "M24",
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "p2 c(theta), Theorem 1.1; TXT lines 88-115",
+            "quote": "His argument combines Levinson’s method with a mollified mean-square estimate. In our first\nmain result, we will apply Lamzouri’s method in [13] to improve the range ofH in (1.6). Let\nc(θ) = 2−θ\n2−1√\n2 cot\n( θ√\n2\n)\n,0<θ<1.\nSince c′(θ) = 1\n2 cot2(θ/\n√\n2)> 0, the functionc is strictly increasing on(0, 1). It has a unique\nzero in this interval given by\nθ0 = 0.5501....\nTheorem 1.1.For every fixedθ0<θ<1, we have\n(1.7)lim inf\nT→∞\nNs\n0(T,T θ)\nN(T,T θ) ≥c(θ)>0.\nFor example, takingθ= 3/4in Theorem 1.1, we find that, for all sufficiently largeT, more\nthan41 .9%of the zeros in(T,T +T 3/4], counted with multiplicity, are simple and lie on the\ncritical line. Forθ≤θ0, that lower bound is nonpositive and gives no improvement on the\ntrivial bound. Regarding the proportion of distinct zeros ofζ(s)in( T,T +Tθ], by extending\nLamzouri’s inequality, we can get an explicit positive lower bound for every fixed0<θ<1.\n2\n"
+          }
+        ],
+        "derivation": "M22给固定指数条件1/2<δ<1、2δ−a>1及D=T^(1−δ)；M15 Theorem 1.3要求7/60≤v≤5/38，计数主幂e=(24−128v)/17；M24的c严格递增，故c(δ)≥c(δ₀)等价δ≥δ₀。 A:2δ−a=39/40<1淘汰；B:δ=3/4，v=1/8合法；C:v=3/25合法但计数幂216/425>8/17；D:v=1/10低于7/60淘汰。故B，对偶幂1/4。",
+        "issues": [
+          "三来源均有独立筛选作用，但与M10同一机制同公式候选优化。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M22",
+          "M15",
+          "M24"
+        ],
+        "mechanism": "扭曲主误差条件∩大值阈值窗∩单调零点比例约束",
+        "retentionRecommendation": "可保留"
+      },
+      {
+        "id": "M08",
+        "answer": "B;9/275;216/425",
+        "sources": [
+          "M22",
+          "M15",
+          "M23"
+        ],
+        "evidence": [
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "TXT newline-based line 138; exact statement excerpt",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have\n(1.5)\nZ ∞\n−∞\n\u0012 p\nq\n\u0013it\f\fζ\n\u0000 1\n2 +it\n\u0001\f\f2 exp\n\u0012\n−(t−T) 2\nH2\n\u0013\ndt=\n2π√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n+\nX∗\nχmodp\n√p\niα(p−1) χ(q)\nZ ∞\n−∞\nGT,H\n\u0000 1\n2 +it\n\u0001\u0012 π\nq\n\u0013it Γ\n\u0000 1+2α−2it\n4\n\u0001\nΓ\n\u0000 1+2α+2it\n4\n\u0001\n\f\fL\n\u0000 1\n2 +it, χ\n\u0001\f\f2 dt\n+O\n \nT\nH (pqT) ϵ\n\"\u0012 p\nq\n\u0013 1\n2\n+\n\u0012 q\np\n\u0013 1\n2\n#!\n,"
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "TXT newline-based line 202; exact statement excerpt",
+            "quote": "By Lemma 6, the main term of (1.5) has size\n(1.6) 1√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n≍ H√pq log\n\u0012 T\npq\n\u0013\n.\nMoreover, as shown by Lemma 7,G T,H\n\u0000 1\n2 +it\n\u0001\ndecays rapidly for|t| ≫ T\nH . Thus, the integral\nin the dual moment is essentially supported on an interval of length T\nH . Two types of reciprocity\nappear in our result. The first is a type of arithmetic reciprocity which was already presented in\nKhan’s result. The second is a type of analytic reciprocity in which the original length of support\nHis transformed into T\nH in the dual moment.\nAnother objective of this paper is to observe the relation between the size of twisting parameter\nand the length of interval of integral. In general, the twisting parameter cannot be arbitrarily\nlarge, while the integral cannot be supported on an interval that is arbitrarily small. However, the\nrelation between these two quantities has not been made explicit in previous results. In our result,\nthis relation is given by\n(1.7) H2\nmax{p, q} > T 1+ϵ,\nwhich follows naturally from requiring the main term to dominate the error term. We comment in\nRemark 3.1 how our lower bound onHarises, and on the possibility of improvement."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "p2 Theorem 1.3; TXT lines 68-85",
+            "quote": "Theorem 1.3(Large value estimate).LetT⩾1. For anyV∈[T 7/60, T5/38]andε >0, we have\nN(T, V)≪ ε T\n24\n17 +εV − 128\n17 .\nIn§9 we record further bounds forN(T, V), which are superior to Theorem 1.3 for largeV.\n1.1.On the sixth and twelfth moments.The estimateM 12(T)≪ ε T 2+ε was proved by Heath-\nBrown via short second moments of zeta. The desire to improve on this bound has inspired many\ndevelopments in analytic number theory, and led to several different proofs of the same result. For\nexample, Iwaniec [Iwa80] deduced it from bounds for the fourth moment of zeta in short intervals,\nobtained via spectral theory of automorphic forms. Jutila [Jut91] gave a different proof of Iwaniec’s\nresult, bypassing the appeal to spectral theory. A textbook proof is given in [Ivi03, Chapter 8].\nBoth Iwaniec’s and Jutila’s methods give the same bounds for a fixed GL 2 L-function in place\nofζ 2. It is worth mentioning that significantly less is known for GL 3 L-functions. The best known\nbound for the second moment in thet-aspect (which should be compared toM 6(T)) isT 4/3+ε, due\nto Dasgupta, Leung, and Young [DLY24]. Interestingly, the boundT 5/4+ε was recently obtained\nby Aggarwal, Leung, and Munshi [ALM26] for a short second moment of lengthT 2/3.\nAs noted earlier, the sixth moment bound ofO ε(T 5/4+ε) follows by interpolating the fourth and"
+          },
+          {
+            "source": "M23",
+            "path": "research/longread-20261018/papers/M23-2610.05227v1.txt",
+            "locator": "p4 Theorem 1.2; TXT lines 219-239",
+            "quote": "Theorem 1.1 is known by the work of Hughes and Rudnick [10].\nOur result on the weighted one-level density for{ζ t}t>0 is stated as follows.\nTheorem 1.2.Letσbe a real number satisfying1/2⩽σ⩽1, and set\nασ := σ\n2σ+ 1 .\nThen for any Schwartz functionϕonRwithsupp( bϕ)⊂(−α σ, ασ), we have\n1R 2T\nT |ζ(σ+it)| 2dt\nZ 2T\nT\n|ζ(σ+it)| 2DT (ζt, ϕ)dt=\nZ ∞\n−∞\nϕ(x)WU,σ(x)dx+O\n\u0012 1\nlogT\n\u0013\nasT→ ∞, whereW U,σ is the same function as(1.5).\nBy Theorem 1.2, we conclude that the symmetry type of the one-level density for{ζt}t>0\nweighted by|ζ t(σ)|2 changes if and only ifσ= 1/2. This is evidence toward the weighted\ndensity conjecture (1.4) for unitary families."
+          }
+        ],
+        "derivation": "取v=b(1−δ)，主误差需2δ−a>1，大值窗7/60≤v≤5/38。M23许可半宽α_σ=σ/(2σ+1)，实际闭支集半宽2v，必须2v<α_σ。A:v=1/8，2v=1/4=α_(1/2)，严格开区间条件失败。B:v=3/25，主误差条件满足，σ=3/5，支集余量=9/275，e=(24−128×3/25)/17=216/425。其余候选σ更大，不可能胜过合格B。",
+        "issues": [
+          "XM03与M08仍是同机制同候选赢家，只换部分数字，变化阶段鉴别度弱。",
+          "候选中a=1/2的主项可能发生系数抵消，但不影响本题最小σ合格赢家B（其a<1/2）。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M22",
+          "M15",
+          "M23"
+        ],
+        "mechanism": "扭曲预算→大值阈值指数→闭支集严格包含于密度定理开区间",
+        "retentionRecommendation": "可保留一题；change宜改变机制或赢家"
+      },
+      {
+        "id": "M09",
+        "answer": "C;1;3",
+        "sources": [
+          "M22",
+          "M16",
+          "M15"
+        ],
+        "evidence": [
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "TXT newline-based line 138; exact statement excerpt",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have\n(1.5)\nZ ∞\n−∞\n\u0012 p\nq\n\u0013it\f\fζ\n\u0000 1\n2 +it\n\u0001\f\f2 exp\n\u0012\n−(t−T) 2\nH2\n\u0013\ndt=\n2π√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n+\nX∗\nχmodp\n√p\niα(p−1) χ(q)\nZ ∞\n−∞\nGT,H\n\u0000 1\n2 +it\n\u0001\u0012 π\nq\n\u0013it Γ\n\u0000 1+2α−2it\n4\n\u0001\nΓ\n\u0000 1+2α+2it\n4\n\u0001\n\f\fL\n\u0000 1\n2 +it, χ\n\u0001\f\f2 dt\n+O\n \nT\nH (pqT) ϵ\n\"\u0012 p\nq\n\u0013 1\n2\n+\n\u0012 q\np\n\u0013 1\n2\n#!\n,"
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "TXT newline-based line 202; exact statement excerpt",
+            "quote": "By Lemma 6, the main term of (1.5) has size\n(1.6) 1√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n≍ H√pq log\n\u0012 T\npq\n\u0013\n.\nMoreover, as shown by Lemma 7,G T,H\n\u0000 1\n2 +it\n\u0001\ndecays rapidly for|t| ≫ T\nH . Thus, the integral\nin the dual moment is essentially supported on an interval of length T\nH . Two types of reciprocity\nappear in our result. The first is a type of arithmetic reciprocity which was already presented in\nKhan’s result. The second is a type of analytic reciprocity in which the original length of support\nHis transformed into T\nH in the dual moment.\nAnother objective of this paper is to observe the relation between the size of twisting parameter\nand the length of interval of integral. In general, the twisting parameter cannot be arbitrarily\nlarge, while the integral cannot be supported on an interval that is arbitrarily small. However, the\nrelation between these two quantities has not been made explicit in previous results. In our result,\nthis relation is given by\n(1.7) H2\nmax{p, q} > T 1+ϵ,\nwhich follows naturally from requiring the main term to dominate the error term. We comment in\nRemark 3.1 how our lower bound onHarises, and on the possibility of improvement."
+          },
+          {
+            "source": "M16",
+            "path": "research/longread-20261018/papers/M16-2609.27715v1.txt",
+            "locator": "p2 Theorem 1.2; TXT lines 84-101",
+            "quote": "Theorem 1.2.Letq≥8/3and letN, T≥2. Let(c n)n∈N ⊂Cand suppose that\nX\nN <n≤2N\n|cn|q ≪N 1+o(1).\nLetW⊂[0, T]be a1-separated set such that\n\n\n\n\n\n\n\nX\nN <n≤2N\ncnnit\n\n\n"
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "p2 Theorem 1.3; TXT lines 68-85",
+            "quote": "Theorem 1.3(Large value estimate).LetT⩾1. For anyV∈[T 7/60, T5/38]andε >0, we have\nN(T, V)≪ ε T\n24\n17 +εV − 128\n17 .\nIn§9 we record further bounds forN(T, V), which are superior to Theorem 1.3 for largeV.\n1.1.On the sixth and twelfth moments.The estimateM 12(T)≪ ε T 2+ε was proved by Heath-\nBrown via short second moments of zeta. The desire to improve on this bound has inspired many\ndevelopments in analytic number theory, and led to several different proofs of the same result. For\nexample, Iwaniec [Iwa80] deduced it from bounds for the fourth moment of zeta in short intervals,\nobtained via spectral theory of automorphic forms. Jutila [Jut91] gave a different proof of Iwaniec’s\nresult, bypassing the appeal to spectral theory. A textbook proof is given in [Ivi03, Chapter 8].\nBoth Iwaniec’s and Jutila’s methods give the same bounds for a fixed GL 2 L-function in place\nofζ 2. It is worth mentioning that significantly less is known for GL 3 L-functions. The best known\nbound for the second moment in thet-aspect (which should be compared toM 6(T)) isT 4/3+ε, due\nto Dasgupta, Leung, and Young [DLY24]. Interestingly, the boundT 5/4+ε was recently obtained\nby Aggarwal, Leung, and Munshi [ALM26] for a short second moment of lengthT 2/3.\nAs noted earlier, the sixth moment bound ofO ε(T 5/4+ε) follows by interpolating the fourth and"
+          }
+        ],
+        "derivation": "按M22式(1.7)的形式指数预算，四候选均有2δ−a>1。令n=1−δ，则M16三项幂依次2n−2v、18n/5−4v、1+12n/5−4v。A为(1/4,2/5,11/10)，ζ幂8/17，联合11/10；B为(6/25,48/125,137/125)，ζ幂216/425，联合137/125；C为(4/25,6/25,1)，ζ幂216/425，联合1；D为(1/2,17/20,7/5)，ζ幂8/17，联合7/5。形式答案C;1;3；但C的a=1/2仅同阶不足以保证真实主项占优，见issues。",
+        "issues": [
+          "C取p,q∼T^{1/2}，M22主项含log(T/(2πpq))+2γ，允许系数抵消；仅比较2δ−a>1不足以对全部同阶素数保证主项占优。若严格要求保证而剔除无法保证的C，则B;137/125;3；若排除抵消或只问式(1.7)形式预算，则C;1;3。因此当前题干缺少选择解释所需假设。",
+          "按题意取所有显示项最大而不与平凡|W|≤T取min，故出现>1预算并非计算错误；建议写明不采用平凡截断。"
+        ],
+        "uniqueAnswer": false,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M22",
+          "M16",
+          "M15"
+        ],
+        "mechanism": "两类大值估计的多项幂最大值优化",
+        "retentionRecommendation": "补主项非消失条件或更改a<1/2后可保留"
+      },
+      {
+        "id": "M10",
+        "answer": "B;984/2125;21/100",
+        "sources": [
+          "M22",
+          "M15",
+          "M24"
+        ],
+        "evidence": [
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "TXT newline-based line 138; exact statement excerpt",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have\n(1.5)\nZ ∞\n−∞\n\u0012 p\nq\n\u0013it\f\fζ\n\u0000 1\n2 +it\n\u0001\f\f2 exp\n\u0012\n−(t−T) 2\nH2\n\u0013\ndt=\n2π√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n+\nX∗\nχmodp\n√p\niα(p−1) χ(q)\nZ ∞\n−∞\nGT,H\n\u0000 1\n2 +it\n\u0001\u0012 π\nq\n\u0013it Γ\n\u0000 1+2α−2it\n4\n\u0001\nΓ\n\u0000 1+2α+2it\n4\n\u0001\n\f\fL\n\u0000 1\n2 +it, χ\n\u0001\f\f2 dt\n+O\n \nT\nH (pqT) ϵ\n\"\u0012 p\nq\n\u0013 1\n2\n+\n\u0012 q\np\n\u0013 1\n2\n#!\n,"
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "TXT newline-based line 202; exact statement excerpt",
+            "quote": "By Lemma 6, the main term of (1.5) has size\n(1.6) 1√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n≍ H√pq log\n\u0012 T\npq\n\u0013\n.\nMoreover, as shown by Lemma 7,G T,H\n\u0000 1\n2 +it\n\u0001\ndecays rapidly for|t| ≫ T\nH . Thus, the integral\nin the dual moment is essentially supported on an interval of length T\nH . Two types of reciprocity\nappear in our result. The first is a type of arithmetic reciprocity which was already presented in\nKhan’s result. The second is a type of analytic reciprocity in which the original length of support\nHis transformed into T\nH in the dual moment.\nAnother objective of this paper is to observe the relation between the size of twisting parameter\nand the length of interval of integral. In general, the twisting parameter cannot be arbitrarily\nlarge, while the integral cannot be supported on an interval that is arbitrarily small. However, the\nrelation between these two quantities has not been made explicit in previous results. In our result,\nthis relation is given by\n(1.7) H2\nmax{p, q} > T 1+ϵ,\nwhich follows naturally from requiring the main term to dominate the error term. We comment in\nRemark 3.1 how our lower bound onHarises, and on the possibility of improvement."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "p2 Theorem 1.3; TXT lines 68-85",
+            "quote": "Theorem 1.3(Large value estimate).LetT⩾1. For anyV∈[T 7/60, T5/38]andε >0, we have\nN(T, V)≪ ε T\n24\n17 +εV − 128\n17 .\nIn§9 we record further bounds forN(T, V), which are superior to Theorem 1.3 for largeV.\n1.1.On the sixth and twelfth moments.The estimateM 12(T)≪ ε T 2+ε was proved by Heath-\nBrown via short second moments of zeta. The desire to improve on this bound has inspired many\ndevelopments in analytic number theory, and led to several different proofs of the same result. For\nexample, Iwaniec [Iwa80] deduced it from bounds for the fourth moment of zeta in short intervals,\nobtained via spectral theory of automorphic forms. Jutila [Jut91] gave a different proof of Iwaniec’s\nresult, bypassing the appeal to spectral theory. A textbook proof is given in [Ivi03, Chapter 8].\nBoth Iwaniec’s and Jutila’s methods give the same bounds for a fixed GL 2 L-function in place\nofζ 2. It is worth mentioning that significantly less is known for GL 3 L-functions. The best known\nbound for the second moment in thet-aspect (which should be compared toM 6(T)) isT 4/3+ε, due\nto Dasgupta, Leung, and Young [DLY24]. Interestingly, the boundT 5/4+ε was recently obtained\nby Aggarwal, Leung, and Munshi [ALM26] for a short second moment of lengthT 2/3.\nAs noted earlier, the sixth moment bound ofO ε(T 5/4+ε) follows by interpolating the fourth and"
+          },
+          {
+            "source": "M24",
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "p2 c(theta), Theorem 1.1; TXT lines 88-115",
+            "quote": "His argument combines Levinson’s method with a mollified mean-square estimate. In our first\nmain result, we will apply Lamzouri’s method in [13] to improve the range ofH in (1.6). Let\nc(θ) = 2−θ\n2−1√\n2 cot\n( θ√\n2\n)\n,0<θ<1.\nSince c′(θ) = 1\n2 cot2(θ/\n√\n2)> 0, the functionc is strictly increasing on(0, 1). It has a unique\nzero in this interval given by\nθ0 = 0.5501....\nTheorem 1.1.For every fixedθ0<θ<1, we have\n(1.7)lim inf\nT→∞\nNs\n0(T,T θ)\nN(T,T θ) ≥c(θ)>0.\nFor example, takingθ= 3/4in Theorem 1.1, we find that, for all sufficiently largeT, more\nthan41 .9%of the zeros in(T,T +T 3/4], counted with multiplicity, are simple and lie on the\ncritical line. Forθ≤θ0, that lower bound is nonpositive and gives no improvement on the\ntrivial bound. Regarding the proportion of distinct zeros ofζ(s)in( T,T +Tθ], by extending\nLamzouri’s inequality, we can get an explicit positive lower bound for every fixed0<θ<1.\n2\n"
+          }
+        ],
+        "derivation": "M22给固定指数条件1/2<δ<1、2δ−a>1及D=T^(1−δ)；M15 Theorem 1.3要求7/60≤v≤5/38，计数主幂e=(24−128v)/17；M24的c严格递增，故c(δ)≥c(δ₀)等价δ≥δ₀。 形式上A满足2δ−a=1，不能严格占优；B:δ=79/100，v=(3/5)(21/100)=63/500∈[7/60,5/38]，满足比例门槛；C:v=3/25合法但计数幂较大；D:v=57/500<7/60失败。B的e=(24−128×63/500)/17=984/2125，对偶幂21/100。该形式答案依赖将式(1.7)视为充分预算条件。",
+        "issues": [
+          "所有候选a=1/2，p,q同阶只固定幂，不能避免主项中的log(T/(2πpq))+2γ抵消。精确M22主项为2π/√pq·(G′(1)−G(1)log(pq)+2γG(1))，T可随pq调整至其为零，因而没有保证主项占优的唯一合法赢家。须加主系数远离零，或明确只检查作者式(1.7)的形式指数预算。",
+          "与M07结构重复，仅a、b、比例门槛及候选数字变化。"
+        ],
+        "uniqueAnswer": false,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M22",
+          "M15",
+          "M24"
+        ],
+        "mechanism": "与M07相同的三重指数窗优化",
+        "retentionRecommendation": "修订非消失假设并与M07压缩重复"
+      },
+      {
+        "id": "M11",
+        "answer": "BC;1/5;5/8",
+        "sources": [
+          "M22",
+          "M17",
+          "M24"
+        ],
+        "evidence": [
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "TXT newline-based line 138; exact statement excerpt",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have\n(1.5)\nZ ∞\n−∞\n\u0012 p\nq\n\u0013it\f\fζ\n\u0000 1\n2 +it\n\u0001\f\f2 exp\n\u0012\n−(t−T) 2\nH2\n\u0013\ndt=\n2π√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n+\nX∗\nχmodp\n√p\niα(p−1) χ(q)\nZ ∞\n−∞\nGT,H\n\u0000 1\n2 +it\n\u0001\u0012 π\nq\n\u0013it Γ\n\u0000 1+2α−2it\n4\n\u0001\nΓ\n\u0000 1+2α+2it\n4\n\u0001\n\f\fL\n\u0000 1\n2 +it, χ\n\u0001\f\f2 dt\n+O\n \nT\nH (pqT) ϵ\n\"\u0012 p\nq\n\u0013 1\n2\n+\n\u0012 q\np\n\u0013 1\n2\n#!\n,"
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "TXT newline-based line 202; exact statement excerpt",
+            "quote": "By Lemma 6, the main term of (1.5) has size\n(1.6) 1√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n≍ H√pq log\n\u0012 T\npq\n\u0013\n.\nMoreover, as shown by Lemma 7,G T,H\n\u0000 1\n2 +it\n\u0001\ndecays rapidly for|t| ≫ T\nH . Thus, the integral\nin the dual moment is essentially supported on an interval of length T\nH . Two types of reciprocity\nappear in our result. The first is a type of arithmetic reciprocity which was already presented in\nKhan’s result. The second is a type of analytic reciprocity in which the original length of support\nHis transformed into T\nH in the dual moment.\nAnother objective of this paper is to observe the relation between the size of twisting parameter\nand the length of interval of integral. In general, the twisting parameter cannot be arbitrarily\nlarge, while the integral cannot be supported on an interval that is arbitrarily small. However, the\nrelation between these two quantities has not been made explicit in previous results. In our result,\nthis relation is given by\n(1.7) H2\nmax{p, q} > T 1+ϵ,\nwhich follows naturally from requiring the main term to dominate the error term. We comment in\nRemark 3.1 how our lower bound onHarises, and on the possibility of improvement."
+          },
+          {
+            "source": "M17",
+            "path": "research/longread-20261018/papers/M17-2609.22624v1.txt",
+            "locator": "p1 Corollary 1; TXT lines 35-46",
+            "quote": "t > t 0 andt 2/3 > h > h 0, the proportion of zerosρofζ(s)withℑ(ρ)∈[t−h, t+h]\nfor whichℜ(ρ)∈[α,1−α]is bounded below by an explicitly computable positive\nconstant. That is\n1− 2N(t−h, t+h, α)\nN(t+h)−N(t−h) > C α,h0,t0 >0.\nExample values ofCα,h0,t0 are given in Table 1.\n2020Mathematics Subject Classification.Primary 11M26; Secondary 11M06, 11Y35.\nKey words and phrases.Riemannzetafunction, zerodensity, shortintervals, explicitestimates.\nAndrew Fiori thanks and acknowledges the University of Lethbridge for their financial support\nas well as the support of NSERC Discovery Grant RGPIN-2020-05316.\n1\narXiv:2609.22624v1  [math.NT]  18 Sep 2026"
+          },
+          {
+            "source": "M17",
+            "path": "research/longread-20261018/papers/M17-2609.22624v1.txt",
+            "locator": "p2 Table 1; TXT lines 58-81",
+            "quote": "down.\nα h 0 t0 mechanismC α,h0,t0\n1/7 100 10 10000 L0.0628\n1/8 100 10 1000 L0.0970\n1/9 10 10 10000 L0.0760\n1/10 5 10 10000 L0.0236\n1/12 5 10 10000 L0.1040\n1/16 5 10 10000 L0.2122\n1/16 100 10 43 L0.0054\n1/16 100 10 100 L0.1374\n1/16 100 10 10000 L0.3484\n1/32 100 10 100 L0.2157\n1/64 2 10 1000 J0.1649\n1/64 100 10 50 L0.1312\n1/128 100 10 1000 L0.5527\n1/256 1 10 10000 L0.0934\n1/2048 100 10 10000 L0.7163\nThe above says that a positive proportion of zeros are not near the edge of the\ncritical strip in relatively small intervals. Tables 8 and 9 allow one to get many\nmore explicit examples of positive proportions, whereas Tables 10 and 11 illustrate\nminimal values fort0 for which a positive proportion result is attainable.\nThis result is in some ways qualitatively weaker than other estimates about\nzeros being on or near the critical line. For example the approach of Levinson, as\nimproved by Conrey and then Pratt, Robles, Zaharescu and Zeindler (See [14,26,"
+          },
+          {
+            "source": "M24",
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "p2 c(theta), Theorem 1.1; TXT lines 88-115",
+            "quote": "His argument combines Levinson’s method with a mollified mean-square estimate. In our first\nmain result, we will apply Lamzouri’s method in [13] to improve the range ofH in (1.6). Let\nc(θ) = 2−θ\n2−1√\n2 cot\n( θ√\n2\n)\n,0<θ<1.\nSince c′(θ) = 1\n2 cot2(θ/\n√\n2)> 0, the functionc is strictly increasing on(0, 1). It has a unique\nzero in this interval given by\nθ0 = 0.5501....\nTheorem 1.1.For every fixedθ0<θ<1, we have\n(1.7)lim inf\nT→∞\nNs\n0(T,T θ)\nN(T,T θ) ≥c(θ)>0.\nFor example, takingθ= 3/4in Theorem 1.1, we find that, for all sufficiently largeT, more\nthan41 .9%of the zeros in(T,T +T 3/4], counted with multiplicity, are simple and lie on the\ncritical line. Forθ≤θ0, that lower bound is nonpositive and gives no improvement on the\ntrivial bound. Regarding the proportion of distinct zeros ofζ(s)in( T,T +Tθ], by extending\nLamzouri’s inequality, we can get an explicit positive lower bound for every fixed0<θ<1.\n2\n"
+          }
+        ],
+        "derivation": "若把M22视为独立Gaussian宽度预算，则同时条件为δ>θ₀≈0.5501、2δ−a>1、δ≤2/3。最后的≤是因为h=T^δ/2且t=T+H/2，δ=2/3仍有h<t^(2/3)，不能误删端点。M17 α=1/16 Table 1在足够大t且h>100时给正比例。A的δ=1/2既不在M22开区间也不超过θ₀；B(9/16,1/10)和C(5/8,1/5)通过；D的2δ−a=1不严格；E的δ=11/16>2/3失败。 因此形式预算答案为BC;1/5;5/8。",
+        "issues": [
+          "M22 Theorem 1实际积分为全实轴Gaussian权exp(−(t−T)²/H²)，没有“原区间(T,T+H]”。题干将其改成锐截断区间并要求三个结论同区间使用，不能由原定理推出。数值答案仅在删除该假称、明确H是独立平滑宽度参数时成立；严格字面不存在已证明的该锐截断矩结论。",
+          "M11与M12只替换候选参数表，共用完全相同判定式和机制。",
+          "M24的c(δ)是liminf保证，足够大T可保证任意略低于c的正比例；题干仅要求正比例，故这点无误。"
+        ],
+        "uniqueAnswer": false,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M22",
+          "M17",
+          "M24"
+        ],
+        "mechanism": "平滑矩窗口条件∩中央带半宽上界∩简单零点正比例门槛",
+        "retentionRecommendation": "纠正Gaussian/锐截断混淆后两题留一题"
+      },
+      {
+        "id": "M12",
+        "answer": "BD;7/25;13/20",
+        "sources": [
+          "M22",
+          "M17",
+          "M24"
+        ],
+        "evidence": [
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "TXT newline-based line 138; exact statement excerpt",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have\n(1.5)\nZ ∞\n−∞\n\u0012 p\nq\n\u0013it\f\fζ\n\u0000 1\n2 +it\n\u0001\f\f2 exp\n\u0012\n−(t−T) 2\nH2\n\u0013\ndt=\n2π√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n+\nX∗\nχmodp\n√p\niα(p−1) χ(q)\nZ ∞\n−∞\nGT,H\n\u0000 1\n2 +it\n\u0001\u0012 π\nq\n\u0013it Γ\n\u0000 1+2α−2it\n4\n\u0001\nΓ\n\u0000 1+2α+2it\n4\n\u0001\n\f\fL\n\u0000 1\n2 +it, χ\n\u0001\f\f2 dt\n+O\n \nT\nH (pqT) ϵ\n\"\u0012 p\nq\n\u0013 1\n2\n+\n\u0012 q\np\n\u0013 1\n2\n#!\n,"
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "TXT newline-based line 202; exact statement excerpt",
+            "quote": "By Lemma 6, the main term of (1.5) has size\n(1.6) 1√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n≍ H√pq log\n\u0012 T\npq\n\u0013\n.\nMoreover, as shown by Lemma 7,G T,H\n\u0000 1\n2 +it\n\u0001\ndecays rapidly for|t| ≫ T\nH . Thus, the integral\nin the dual moment is essentially supported on an interval of length T\nH . Two types of reciprocity\nappear in our result. The first is a type of arithmetic reciprocity which was already presented in\nKhan’s result. The second is a type of analytic reciprocity in which the original length of support\nHis transformed into T\nH in the dual moment.\nAnother objective of this paper is to observe the relation between the size of twisting parameter\nand the length of interval of integral. In general, the twisting parameter cannot be arbitrarily\nlarge, while the integral cannot be supported on an interval that is arbitrarily small. However, the\nrelation between these two quantities has not been made explicit in previous results. In our result,\nthis relation is given by\n(1.7) H2\nmax{p, q} > T 1+ϵ,\nwhich follows naturally from requiring the main term to dominate the error term. We comment in\nRemark 3.1 how our lower bound onHarises, and on the possibility of improvement."
+          },
+          {
+            "source": "M17",
+            "path": "research/longread-20261018/papers/M17-2609.22624v1.txt",
+            "locator": "p1 Corollary 1; TXT lines 35-46",
+            "quote": "t > t 0 andt 2/3 > h > h 0, the proportion of zerosρofζ(s)withℑ(ρ)∈[t−h, t+h]\nfor whichℜ(ρ)∈[α,1−α]is bounded below by an explicitly computable positive\nconstant. That is\n1− 2N(t−h, t+h, α)\nN(t+h)−N(t−h) > C α,h0,t0 >0.\nExample values ofCα,h0,t0 are given in Table 1.\n2020Mathematics Subject Classification.Primary 11M26; Secondary 11M06, 11Y35.\nKey words and phrases.Riemannzetafunction, zerodensity, shortintervals, explicitestimates.\nAndrew Fiori thanks and acknowledges the University of Lethbridge for their financial support\nas well as the support of NSERC Discovery Grant RGPIN-2020-05316.\n1\narXiv:2609.22624v1  [math.NT]  18 Sep 2026"
+          },
+          {
+            "source": "M17",
+            "path": "research/longread-20261018/papers/M17-2609.22624v1.txt",
+            "locator": "p2 Table 1; TXT lines 58-81",
+            "quote": "down.\nα h 0 t0 mechanismC α,h0,t0\n1/7 100 10 10000 L0.0628\n1/8 100 10 1000 L0.0970\n1/9 10 10 10000 L0.0760\n1/10 5 10 10000 L0.0236\n1/12 5 10 10000 L0.1040\n1/16 5 10 10000 L0.2122\n1/16 100 10 43 L0.0054\n1/16 100 10 100 L0.1374\n1/16 100 10 10000 L0.3484\n1/32 100 10 100 L0.2157\n1/64 2 10 1000 J0.1649\n1/64 100 10 50 L0.1312\n1/128 100 10 1000 L0.5527\n1/256 1 10 10000 L0.0934\n1/2048 100 10 10000 L0.7163\nThe above says that a positive proportion of zeros are not near the edge of the\ncritical strip in relatively small intervals. Tables 8 and 9 allow one to get many\nmore explicit examples of positive proportions, whereas Tables 10 and 11 illustrate\nminimal values fort0 for which a positive proportion result is attainable.\nThis result is in some ways qualitatively weaker than other estimates about\nzeros being on or near the critical line. For example the approach of Levinson, as\nimproved by Conrey and then Pratt, Robles, Zaharescu and Zeindler (See [14,26,"
+          },
+          {
+            "source": "M24",
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "p2 c(theta), Theorem 1.1; TXT lines 88-115",
+            "quote": "His argument combines Levinson’s method with a mollified mean-square estimate. In our first\nmain result, we will apply Lamzouri’s method in [13] to improve the range ofH in (1.6). Let\nc(θ) = 2−θ\n2−1√\n2 cot\n( θ√\n2\n)\n,0<θ<1.\nSince c′(θ) = 1\n2 cot2(θ/\n√\n2)> 0, the functionc is strictly increasing on(0, 1). It has a unique\nzero in this interval given by\nθ0 = 0.5501....\nTheorem 1.1.For every fixedθ0<θ<1, we have\n(1.7)lim inf\nT→∞\nNs\n0(T,T θ)\nN(T,T θ) ≥c(θ)>0.\nFor example, takingθ= 3/4in Theorem 1.1, we find that, for all sufficiently largeT, more\nthan41 .9%of the zeros in(T,T +T 3/4], counted with multiplicity, are simple and lie on the\ncritical line. Forθ≤θ0, that lower bound is nonpositive and gives no improvement on the\ntrivial bound. Regarding the proportion of distinct zeros ofζ(s)in( T,T +Tθ], by extending\nLamzouri’s inequality, we can get an explicit positive lower bound for every fixed0<θ<1.\n2\n"
+          }
+        ],
+        "derivation": "若把M22视为独立Gaussian宽度预算，则同时条件为δ>θ₀≈0.5501、2δ−a>1、δ≤2/3。最后的≤是因为h=T^δ/2且t=T+H/2，δ=2/3仍有h<t^(2/3)，不能误删端点。M17 α=1/16 Table 1在足够大t且h>100时给正比例。A的δ=11/20=0.55<θ₀≈0.5501失败；B通过；C的2δ−a=1失败；D通过；E的δ=3/4>2/3失败。 因此形式预算答案为BD;7/25;13/20。",
+        "issues": [
+          "M22 Theorem 1实际积分为全实轴Gaussian权exp(−(t−T)²/H²)，没有“原区间(T,T+H]”。题干将其改成锐截断区间并要求三个结论同区间使用，不能由原定理推出。数值答案仅在删除该假称、明确H是独立平滑宽度参数时成立；严格字面不存在已证明的该锐截断矩结论。",
+          "M11与M12只替换候选参数表，共用完全相同判定式和机制。",
+          "M24的c(δ)是liminf保证，足够大T可保证任意略低于c的正比例；题干仅要求正比例，故这点无误。"
+        ],
+        "uniqueAnswer": false,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M22",
+          "M17",
+          "M24"
+        ],
+        "mechanism": "平滑矩窗口条件∩中央带半宽上界∩简单零点正比例门槛",
+        "retentionRecommendation": "纠正Gaussian/锐截断混淆后两题留一题"
+      }
+    ],
+    "change": [
+      {
+        "id": "XM01",
+        "answer": "66913/73008;257049/305809;553/507;A",
+        "sources": [
+          "M08",
+          "M10",
+          "M02"
+        ],
+        "evidence": [
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "TXT newline-based line 60; exact statement excerpt",
+            "quote": "For an ideal polytropic gas, the pressure is given by\np(v, θ) = Rθ\nv ,(1.2)\nwhereR >0 is the gas constant. The specific total energy is\nE=e+ u2\n2 = Rθ\nγ−1 + κv2\nx\n2v5 + u2\n2 ,(1.3)\nwhereγ >1 is the adiabatic exponent andeis the internal energy, which includes the capillary\nenergyκv 2\nx/(2v5)."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "TXT newline-based line 165; exact statement excerpt",
+            "quote": "The end states and the shock speed satisfy the Rankine–Hugoniot condition:\n\n\n\n−σ(v+ −v −)−(u + −u −) = 0,\n−σ(u+ −u −) + (p+ −p −) = 0,\n−σ(E+ −E −) + (p+u+ −p −u−) = 0.\n(1.4)\nThe characteristic speeds of the underlying Euler system in Lagrangian mass coordinates are\nλ1 =−\nr\nγp(v, θ)\nv , λ 2 = 0, λ 3 =\nr\nγp(v, θ)\nv .\nThus, the Lax shock conditions for the 1- and 3-shock families are\n−\nr γp+\nv+\n< σ <−\nr γp−\nv−\nfor a 1-shock,\nr γp+\nv+\n< σ <\nr γp−\nv−\nfor a 3-shock.(1.5)\nIt follows from the Rankine–Hugoniot condition (1.4) and the Lax shock conditions (1.5) that\n1-shock:σ <0, v + < v −, u + < u −, θ + > θ −,\n3-shock:σ >0, v + > v −, u + < u −, θ + < θ −."
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "TXT newline-based line 40; exact statement excerpt",
+            "quote": "We adopt the polytropic pressure lawp(ρ) =bργ, forb >0andγ >1being fluid constants. Without loss\nof generality, we normalize the coefficientb= 1in the sequel. The spatial domain under consideration is\nR×TwithT:=R/Zdenoting the one-dimensional unit flat torus."
+          },
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "TXT newline-based line 474; exact statement excerpt",
+            "quote": "As mentioned in the introduction, the pressure we consider takes the form p = pM + apR with the\nmolecular and radiative pressures defined by\n(2.4)p(ρ, ϑ) =ϑ\nγ\nγ−1 P\n\u0012 ρ\nϑ\n1\nγ−1\n\u0013\n+ a\n3 ϑ4 =:p M(ρ, ϑ) +ap R(ϑ),\nwhere a > 0, γ > 2, and P∈C 1([0,∞ )) is an increasing function satisfying P (0) = 0. We further\nsuppose that there exists a constantZ >0 such thatP(Z) =Zfor allZ∈[0, Z ]."
+          }
+        ],
+        "derivation": "将三条RH消去速度及波速，得到[e]+(p₊+p₋)[v]/2=0；γ=2时e=pv，故p₊/p₋=(3v₋−v₊)/(3v₊−v₋)。v₋=1，1<v₊<3，压强为正且下降；正根σ²=−[p]/[v]给3激波方向。M10归一化p=ρ²；M02低Z支P(Z)=Z给p_M=ρθ（γ=3亦然），因此给定正常压唯一确定θ。 记x=553/507。θ_shock=x(3−x)/(3x−1)，p_bar=x⁻²，θ_contact=x。p_shock−p_bar=[x²(3−x)−(3x−1)]/[x²(3x−1)]=−(x−1)³/[x²(3x−1)]<0，且0<p_shock<1，故θ_shock<θ_contact，码A。",
+        "issues": [
+          "M03与XM01的答案结构、证明、比较方向完全相同，仅v₊换数字；change不引入新约束。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M08",
+          "M10",
+          "M02"
+        ],
+        "mechanism": "同一体积的三个状态律读数及精确不等式",
+        "retentionRecommendation": "保留一题，另一题改成实质约束变化"
+      },
+      {
+        "id": "XM02",
+        "answer": "18/5;27/4;1;NZ",
+        "sources": [
+          "M13",
+          "M06",
+          "M07"
+        ],
+        "evidence": [
+          {
+            "source": "M13",
+            "path": "research/longread-20261018/papers/M13-2608.29138v1.txt",
+            "locator": "TXT newline-based line 116; exact statement excerpt",
+            "quote": "(5) W (x3) = 6 F x3(1 − x3)e(α), with FW =\n∫ 1\n0\nW (x3) ·e(α) dx3 = F."
+          },
+          {
+            "source": "M06",
+            "path": "research/longread-20261018/papers/M06-2608.17456v1.txt",
+            "locator": "p1 abstract; TXT lines 4-7",
+            "quote": "NAVIER–STOKES EQUATIONS ON THE WHOLE PLANE\nMIKIHIRO FUJII\nAbstract.We prove that, for a suitable small external force in ˙H −2(R2), the\nstationary Navier–Stokes equations onR2 admit multiple solutions inL2(R2)."
+          },
+          {
+            "source": "M07",
+            "path": "research/longread-20261018/papers/M07-2609.14688v1.txt",
+            "locator": "p1 abstract, actual closure space; TXT lines 5-15",
+            "quote": "RAMZI MAY\nAbstract.We prove uniqueness of solutions to the Navier-Stokes equations in the space\nLp\u0000\n[0, T],eL3,∞(R3)\n\u0001\n∩C\n\u0000\n[0, T], B −1,∞\n∞ (R3)\n\u0001\n, p >2,"
+          }
+        ],
+        "derivation": "背景W=6z(1−z)e；∫₀¹36z²(1−z)²dz=6/5，中面|W(1/2)|²=9/4。水平面积=3πR²，故两个平方范数系数分别为3×6/5、3×9/4。平面L²范数为常数×R；三维弱L³分布函数μ(λ)=3πR²×|{z:6z(1−z)>λ}|，范数为正有限常数×R^(2/3)。乘R^(−β)后共同有界要求β≥max(1,2/3)=1，极限NZ。",
+        "issues": [
+          "题干已完整提供L²与弱L³目标，M06/M07不承担任何未给条件或计算；实际只需M13和标准范数定义。",
+          "M07实际解类是Schwartz闭包eL^{3,∞}并有时间/Besov条件，不能将仅弱L³范数审计当作其完整解类检验；本题明确不当解，故数值无碍。",
+          "XM02仅把圆盘面积改成三倍的环，指数与判断全不变。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": false,
+        "actuallyNecessarySources": [
+          "M13"
+        ],
+        "mechanism": "显式竖直剖面的各向异性支集尺度与范数增长",
+        "retentionRecommendation": "不满足实质跨论文要求，需重设第二文必要条件"
+      },
+      {
+        "id": "XM03",
+        "answer": "B;17/450;216/425",
+        "sources": [
+          "M22",
+          "M15",
+          "M23"
+        ],
+        "evidence": [
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "TXT newline-based line 138; exact statement excerpt",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have\n(1.5)\nZ ∞\n−∞\n\u0012 p\nq\n\u0013it\f\fζ\n\u0000 1\n2 +it\n\u0001\f\f2 exp\n\u0012\n−(t−T) 2\nH2\n\u0013\ndt=\n2π√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n+\nX∗\nχmodp\n√p\niα(p−1) χ(q)\nZ ∞\n−∞\nGT,H\n\u0000 1\n2 +it\n\u0001\u0012 π\nq\n\u0013it Γ\n\u0000 1+2α−2it\n4\n\u0001\nΓ\n\u0000 1+2α+2it\n4\n\u0001\n\f\fL\n\u0000 1\n2 +it, χ\n\u0001\f\f2 dt\n+O\n \nT\nH (pqT) ϵ\n\"\u0012 p\nq\n\u0013 1\n2\n+\n\u0012 q\np\n\u0013 1\n2\n#!\n,"
+          },
+          {
+            "source": "M22",
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "TXT newline-based line 202; exact statement excerpt",
+            "quote": "By Lemma 6, the main term of (1.5) has size\n(1.6) 1√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n≍ H√pq log\n\u0012 T\npq\n\u0013\n.\nMoreover, as shown by Lemma 7,G T,H\n\u0000 1\n2 +it\n\u0001\ndecays rapidly for|t| ≫ T\nH . Thus, the integral\nin the dual moment is essentially supported on an interval of length T\nH . Two types of reciprocity\nappear in our result. The first is a type of arithmetic reciprocity which was already presented in\nKhan’s result. The second is a type of analytic reciprocity in which the original length of support\nHis transformed into T\nH in the dual moment.\nAnother objective of this paper is to observe the relation between the size of twisting parameter\nand the length of interval of integral. In general, the twisting parameter cannot be arbitrarily\nlarge, while the integral cannot be supported on an interval that is arbitrarily small. However, the\nrelation between these two quantities has not been made explicit in previous results. In our result,\nthis relation is given by\n(1.7) H2\nmax{p, q} > T 1+ϵ,\nwhich follows naturally from requiring the main term to dominate the error term. We comment in\nRemark 3.1 how our lower bound onHarises, and on the possibility of improvement."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "p2 Theorem 1.3; TXT lines 68-85",
+            "quote": "Theorem 1.3(Large value estimate).LetT⩾1. For anyV∈[T 7/60, T5/38]andε >0, we have\nN(T, V)≪ ε T\n24\n17 +εV − 128\n17 .\nIn§9 we record further bounds forN(T, V), which are superior to Theorem 1.3 for largeV.\n1.1.On the sixth and twelfth moments.The estimateM 12(T)≪ ε T 2+ε was proved by Heath-\nBrown via short second moments of zeta. The desire to improve on this bound has inspired many\ndevelopments in analytic number theory, and led to several different proofs of the same result. For\nexample, Iwaniec [Iwa80] deduced it from bounds for the fourth moment of zeta in short intervals,\nobtained via spectral theory of automorphic forms. Jutila [Jut91] gave a different proof of Iwaniec’s\nresult, bypassing the appeal to spectral theory. A textbook proof is given in [Ivi03, Chapter 8].\nBoth Iwaniec’s and Jutila’s methods give the same bounds for a fixed GL 2 L-function in place\nofζ 2. It is worth mentioning that significantly less is known for GL 3 L-functions. The best known\nbound for the second moment in thet-aspect (which should be compared toM 6(T)) isT 4/3+ε, due\nto Dasgupta, Leung, and Young [DLY24]. Interestingly, the boundT 5/4+ε was recently obtained\nby Aggarwal, Leung, and Munshi [ALM26] for a short second moment of lengthT 2/3.\nAs noted earlier, the sixth moment bound ofO ε(T 5/4+ε) follows by interpolating the fourth and"
+          },
+          {
+            "source": "M23",
+            "path": "research/longread-20261018/papers/M23-2610.05227v1.txt",
+            "locator": "p4 Theorem 1.2; TXT lines 219-239",
+            "quote": "Theorem 1.1 is known by the work of Hughes and Rudnick [10].\nOur result on the weighted one-level density for{ζ t}t>0 is stated as follows.\nTheorem 1.2.Letσbe a real number satisfying1/2⩽σ⩽1, and set\nασ := σ\n2σ+ 1 .\nThen for any Schwartz functionϕonRwithsupp( bϕ)⊂(−α σ, ασ), we have\n1R 2T\nT |ζ(σ+it)| 2dt\nZ 2T\nT\n|ζ(σ+it)| 2DT (ζt, ϕ)dt=\nZ ∞\n−∞\nϕ(x)WU,σ(x)dx+O\n\u0012 1\nlogT\n\u0013\nasT→ ∞, whereW U,σ is the same function as(1.5).\nBy Theorem 1.2, we conclude that the symmetry type of the one-level density for{ζt}t>0\nweighted by|ζ t(σ)|2 changes if and only ifσ= 1/2. This is evidence toward the weighted\ndensity conjecture (1.4) for unitary families."
+          }
+        ],
+        "derivation": "取v=b(1−δ)，主误差需2δ−a>1，大值窗7/60≤v≤5/38。M23许可半宽α_σ=σ/(2σ+1)，实际闭支集半宽2v，必须2v<α_σ。A:v=1/8，2v=1/4=α_(1/2)，严格开区间条件失败。B:v=3/25，主误差条件满足，σ=5/8，支集余量=17/450，e=(24−128×3/25)/17=216/425。其余候选σ更大，不可能胜过合格B。",
+        "issues": [
+          "XM03与M08仍是同机制同候选赢家，只换部分数字，变化阶段鉴别度弱。",
+          "候选中a=1/2的主项可能发生系数抵消，但不影响本题最小σ合格赢家B（其a<1/2）。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M22",
+          "M15",
+          "M23"
+        ],
+        "mechanism": "扭曲预算→大值阈值指数→闭支集严格包含于密度定理开区间",
+        "retentionRecommendation": "可保留一题；change宜改变机制或赢家"
+      },
+      {
+        "id": "XM04",
+        "answer": "1;N;N;Y",
+        "sources": [
+          "M25",
+          "M20",
+          "M18"
+        ],
+        "evidence": [
+          {
+            "source": "M25",
+            "path": "research/longread-20261018/papers/M25-2609.26787v1.txt",
+            "locator": "TXT newline-based line 224; exact statement excerpt",
+            "quote": "(iii)Equivalence with the Riemann hypothesis.We prove that theω−inequality is equivalent\nto Robin’s inequality, and hence to the Riemann hypothesis. We give a proof of this\nequivalence using the structure of a minimal counterexample. As a consequence, the\nRiemann hypothesis is also equivalent to theω−inequality restricted to colossally abundant\nnumbers."
+          },
+          {
+            "source": "M20",
+            "path": "research/longread-20261018/papers/M20-2608.07399v1.txt",
+            "locator": "TXT newline-based line 38; exact statement excerpt",
+            "quote": "Definition 1(Siegel zero).ASiegel zerois a real numberβassociated to a primitive\nquadratic Dirichlet characterχmoduloqsuch thatL(β, χ) = 0 and\nβ= 1− 1\nElogq\n1\narXiv:2608.07399v1  [math.NT]  7 Aug 2026\n\n[PDF page 2]\nSIEGEL ZEROS AND SMALL GAPS 2\nwithE⩾3. The quantityEis referred to as thequalityofβ. We refer to an infinite\nfamily (βj, χj, qj,E j) withq j → ∞as anexceptional sequence."
+          },
+          {
+            "source": "M20",
+            "path": "research/longread-20261018/papers/M20-2608.07399v1.txt",
+            "locator": "TXT newline-based line 64; exact statement excerpt",
+            "quote": "Theorem 1.Assume RH and that there exists an exceptional sequence of Siegel\nzeros withE= inf j Ej sufficiently large. Then\nµ <0.4733."
+          },
+          {
+            "source": "M18",
+            "path": "research/longread-20261018/papers/M18-2609.16048v1.txt",
+            "locator": "TXT newline-based line 8; exact statement excerpt",
+            "quote": "LetNbe a sufficiently large odd integer. We study the representation of a large integer\nmN k as a sum ofmalmost equalk-th powers of primes, where the common distribution scale\nis at leastN θ. Assuming the Generalized Riemann Hypothesis (GRH), we prove that for any\nϵ >0, one may takeθ >1/2, provided thatm < k(k+ 1)/2 and thatm, kare odd integers\nsufficiently large."
+          },
+          {
+            "source": "M18",
+            "path": "research/longread-20261018/papers/M18-2609.16048v1.txt",
+            "locator": "TXT newline-based line 118; exact statement excerpt",
+            "quote": "Theorem 1.1.Settingm, kas two sufficiently large integers, when\nm >16klogk+ 4k+ 2θ k,m >1/"
+          }
+        ],
+        "derivation": "k≡3(mod4)，故B=k(k+1)/2为偶数，严格小于B的最大奇数是B−1。 截断不等式按M25结论可推出ζ的RH，但M20 Theorem 1还要求E=inf_j E_j充分大；仅q_j→∞不保证该品质条件，故甲不能援引0.4733，答N。ζ的RH不等于Dirichlet GRH，且Siegel序列与相关GRH不相容，甲不能用首项GRH表示定理，答N；乙明确给GRH，对于所设充分大k及m≈k²/2，m>16k log k+4k+2最终成立，故选充分大奇N及1/2<θ<2/3时可用，答Y。",
+        "issues": [
+          "缺少M20所需的统一充分大品质E，不能把“趋∞零序列”偷换为此条件；若希望答案Y须补E下界。",
+          "“首项GRH定理”需对应正文Theorem 1.1，正文是m>16k log k+4k+2，m<k(k+1)/2来自摘要；所设渐近m可兼容两者，但不可把摘要上界当唯一条件。",
+          "题目仅给有限准则与序列作条件推演，没有验证预印本证明；应注明按给定文献主张推演，不能宣称已独立确立RH等价。",
+          "由于品质缺失已足以否定间距援引，M25的RH转接对当前输出不必要；奇偶计算本身无需论文。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M20",
+          "M18"
+        ],
+        "mechanism": "区分ζ RH、Dirichlet GRH、Siegel品质量词并处理严格奇端点",
+        "retentionRecommendation": "补齐品质或明确故意考缺失条件；两题只留一题"
+      }
+    ]
+  },
+  "reviewScope": "仅读取review-input/math.json、manifest及指定数学论文TXT；未读取authoring、已有host或其他审稿结果。answer在uniqueAnswer=false时为明确标注的形式预算答案，不表示题干严格成立。所有论文结论均按材料主张条件推演，未审定预印本证明。"
+}

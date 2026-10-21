@@ -19,18 +19,18 @@ class CorpusTests(unittest.TestCase):
     def test_distribution_excludes_host_reference_and_legacy_answers(self):
         with tempfile.TemporaryDirectory() as folder:
             target=Path(folder);install(ROOT,target)
-            task=target/'tasks/05-memory'
+            task=target/'tasks/06-memory'
             self.assertEqual(len(list((task/'materials/papers').glob('*.pdf'))),50)
             self.assertEqual(len(list((task/'materials/novel').glob('N*.txt'))),58)
             self.assertFalse((task/'materials/host').exists())
             self.assertFalse((task/'materials/holdout.json').exists())
-            self.assertTrue((target/'admin/05-memory/reference.md').exists())
+            self.assertTrue((target/'admin/06-memory/reference.md').exists())
             self.assertFalse(any(p.name in ('REFERENCE.md','RUBRIC.json','TASK-CORE.md') for p in task.rglob('*')))
-    def test_six_questions_with_separate_host_rubric(self):
-        prompt=candidate_task('05-memory',read_standard(ROOT/'llm-evaluation-standard.html'))
-        for word in ['问题一','问题二','问题三','问题四','问题五','问题六','output/index.html']:
+    def test_objective_questions_with_separate_host_key(self):
+        prompt=candidate_task('06-memory',read_standard(ROOT/'llm-evaluation-standard.html'))
+        for word in ['18题','output/answers.json','全部字段正确','0分']:
             self.assertIn(word,prompt)
-        for word in ['评分','权重','N058-P0038','西游记','NPC']:
+        for word in ['output/index.html','N058-P0038','西游记','NPC']:
             self.assertNotIn(word,prompt)
         self.assertEqual(sum(d['weight'] for d in catalog()[-1]['rubric']),100)
 
@@ -39,23 +39,23 @@ class HistoryTests(unittest.TestCase):
     tearDown=fixture.LifecycleTests.tearDown
     init=fixture.LifecycleTests.init
     def test_new_research_change_needs_no_legacy_npc_files(self):
-        run=self.init(task='5')
-        private=run/'control/private/05-memory'
+        run=self.init(task='6')
+        private=run/'control/private/06-memory'
         for name in ('change-corpus.json','change-dev.json'):
             (private/name).unlink()
         from evalkit.longread import CHANGE
         (private/'change.txt').write_text(CHANGE)
-        m.snapshot(argparse.Namespace(run=str(run),task='5',phase='initial',allow_invalid=False))
-        m.release_change(run,'05-memory',run/'tasks/05-memory')
-        self.assertIn('前提敏感性复核',(run/'control/prompts/05-memory-change.txt').read_text())
-        self.assertFalse((run/'tasks/05-memory/materials/change').exists())
-        self.assertEqual(m.integrity(run,'05-memory'),[])
+        m.snapshot(argparse.Namespace(run=str(run),task='6',phase='initial',allow_invalid=False))
+        m.release_change(run,'06-memory',run/'tasks/06-memory')
+        self.assertIn('前提敏感性复核',(run/'control/prompts/06-memory-change.txt').read_text())
+        self.assertFalse((run/'tasks/06-memory/materials/change').exists())
+        self.assertEqual(m.integrity(run,'06-memory'),[])
     def test_pinned_old_title_and_timer_survive_catalog_changes(self):
-        run=self.init(task='5');pinned=m.load(run/'control/rubric.json')
-        old=next(t for t in pinned['tasks'] if t['id']=='05-memory');old.update(title='旧研究题',minutes=90)
+        run=self.init(task='6');pinned=m.load(run/'control/rubric.json')
+        old=next(t for t in pinned['tasks'] if t['id']=='06-memory');old.update(title='旧研究题',minutes=90)
         m.dump(run/'control/rubric.json',pinned)
-        m.mark_start(argparse.Namespace(run=str(run),task='5'))
-        state=m.load(run/'control/run.json')['tasks']['05-memory']
+        m.mark_start(argparse.Namespace(run=str(run),task='6'))
+        state=m.load(run/'control/run.json')['tasks']['06-memory']
         duration=dt.datetime.fromisoformat(state['deadlineAt'])-dt.datetime.fromisoformat(state['startedAt'])
         self.assertAlmostEqual(duration.total_seconds(),5400,delta=2)
         from evalkit.studio import Studio

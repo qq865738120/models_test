@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-20",
+  "purpose": "Independent methodological cross-checks; not external certification of every preprint theorem or empirical result. These sources are not hidden prerequisites for candidates.",
+  "sources": [
+    {
+      "title": "Bayes in the sky: Bayesian inference and model selection in cosmology",
+      "url": "https://ned.ipac.caltech.edu/level5/Sept13/Trotta/Trotta4.html",
+      "locator": "Sections 4.1, 4.2 and 4.7",
+      "verification": "Evidence averages likelihood under a specified prior. Prior support and normalization matter; information criteria and evidence need not rank models identically. Comparisons require matched assumptions/data, not merely the same baseline name."
+    },
+    {
+      "title": "Clay Mathematics Institute — Riemann Hypothesis",
+      "url": "https://www.claymath.org/millennium/riemann-hypothesis/",
+      "locator": "Official problem page",
+      "verification": "Independent context for the distinction between a conditional statement about zeta zeros and an accepted proof of RH. The scoring key uses the supplied statements and their conditions, not an unverified claim of resolution."
+    },
+    {
+      "title": "Existence and Smoothness of the Navier–Stokes Equation, Charles L. Fefferman",
+      "url": "https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf",
+      "locator": "Official problem description, formulations (A)–(D)",
+      "verification": "A priori estimates on regular solutions or conditional continuation criteria do not by themselves settle existence/smoothness for every datum in the full problem. No status prediction about pending submissions is used as a scored fact."
+    }
+  ]
+}

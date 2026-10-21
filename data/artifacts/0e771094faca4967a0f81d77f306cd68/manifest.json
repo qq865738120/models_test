@@ -1,0 +1,18 @@
+{
+  "runId": "20261021-131937-gpt-6-astro-r1-191ecd",
+  "taskId": "06-memory",
+  "phase": "initial",
+  "files": {
+    "answers.json": {
+      "sha256": "82ac9f9407d3c6ccec66d484487c814bd961839ab2a828a15a0c5810c82264f9",
+      "executable": false
+    },
+    "index.html": {
+      "sha256": "aa7f8ff435467a861a778f4fd2534de5b53b539c1f7f08ce374e473a5e529a58",
+      "executable": false
+    }
+  },
+  "answerSha256": "82ac9f9407d3c6ccec66d484487c814bd961839ab2a828a15a0c5810c82264f9",
+  "answerKeySha256": "93f770c546b16fd1ae17c8747b4357f11e156210c2e84cd1ce69cbd3d7e02de6",
+  "questionVersion": "longread-qa-v4"
+}

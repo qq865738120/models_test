@@ -1,0 +1,1061 @@
+{
+  "version": "longread-qa-v4",
+  "phases": {
+    "initial": [
+      {
+        "id": "P01",
+        "domain": "physics",
+        "question": "仅作合成的低红移背景计算：使用资料中热分布、较低温度的 sterile relic 定义，将其非相对论有效质量按 Ωs=ms,eff/(1 eV) 计入物质；其余物质 Ωb 固定，Ωm=Ωb+Ωs。忽略辐射，真实 Ωde=1−Ωm。采用时变 gravitational susceptibility 模型的归一化背景式，令 (1+S(z))/(1+S(0))=1+bz。使用资料定义的 Om(z)，所有密度均为该背景式的真密度。此合成记账不声称是原论文联合拟合。 取 Ωb=1/6，Ts/Tν=1/2，b=1/10。未知物理质量 ms 由 [d(H²/H0²)/dz]z=0=3/5 确定。求 ms（以 eV 计）、Om(1)、Om′(1)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "ms/eV",
+            "kind": "rational"
+          },
+          {
+            "name": "Om(1)",
+            "kind": "rational"
+          },
+          {
+            "name": "Om prime(1)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P02",
+        "domain": "physics",
+        "question": "仅作合成的低红移背景计算：使用资料中热分布、较低温度的 sterile relic 定义，将其非相对论有效质量按 Ωs=ms,eff/(1 eV) 计入物质；其余物质 Ωb 固定，Ωm=Ωb+Ωs。忽略辐射，真实 Ωde=1−Ωm。采用时变 gravitational susceptibility 模型的归一化背景式，令 (1+S(z))/(1+S(0))=1+bz。使用资料定义的 Om(z)，所有密度均为该背景式的真密度。此合成记账不声称是原论文联合拟合。 取 Ωb=1/8、ms=1 eV。实验仪的温度比仅可能为 n/10（整数1≤n≤9），b仅可能为 j/100（整数0≤j≤25）。两次测量给 Om(1)=3203/11449、Om(2)=10708/42237。同时满足二者时，求 n、j、ΔNeff；必须用同一组隐参数同时解释两红移。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "n",
+            "kind": "integer"
+          },
+          {
+            "name": "j",
+            "kind": "integer"
+          },
+          {
+            "name": "DeltaNeff",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P03",
+        "domain": "physics",
+        "question": "仅作合成的低红移背景计算：使用资料中热分布、较低温度的 sterile relic 定义，将其非相对论有效质量按 Ωs=ms,eff/(1 eV) 计入物质；其余物质 Ωb 固定，Ωm=Ωb+Ωs。忽略辐射，真实 Ωde=1−Ωm。采用时变 gravitational susceptibility 模型的归一化背景式，令 (1+S(z))/(1+S(0))=1+bz。使用资料定义的 Om(z)，所有密度均为该背景式的真密度。此合成记账不声称是原论文联合拟合。 取 Ωb=1/10、ms=1 eV，温度比=n/10（1≤n≤9的整数），b=j/100（0≤j≤25的整数）。要求 Ωm<1、[d(H²/H0²)/dz]0>0、1/5≤Om(1)≤1/4、1/6≤Om(2)≤1/5。最大化 sterile 有效质量；如并列，取最小 b。求 n、j、该方案 Om(2)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "n",
+            "kind": "integer"
+          },
+          {
+            "name": "j",
+            "kind": "integer"
+          },
+          {
+            "name": "Om(2)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P04",
+        "domain": "physics",
+        "question": "采用资料中 cosmic glitch 的定义与有效暗能量重写，并使用另一资料的热 sterile 定义和 Om 诊断。以下均为合成平直背景：r=Gcosmo/GN>0；m、a、lambda 分别是以 3H0²/(8πGN) 为单位的今日非相对论物质、辐射、常数项密度。非暗能量密度为 m(1+z)³+a(1+z)⁴。今日 E(0)=1 决定 lambda。sterile 已非相对论，其物质贡献为 ms,eff/(1 eV)，其余物质 m_b 另给。取原资料 cosmic glitch 有效暗能量密度为本题 rhoDE，同样以该今日临界密度为单位；不要求 rhoDE 在所有红移为正。 取 a=1/100、m_b=1/5、ms=1 eV。未知 r 与温度比 u=Ts/Tν。测得 Om(1)=873/2800，Om(2)=333/1040。求 r、ΔNeff、rhoDE(2)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "r",
+            "kind": "rational"
+          },
+          {
+            "name": "DeltaNeff",
+            "kind": "rational"
+          },
+          {
+            "name": "rhoDE(2)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P05",
+        "domain": "physics",
+        "question": "采用资料中 cosmic glitch 的定义与有效暗能量重写，并使用另一资料的热 sterile 定义和 Om 诊断。以下均为合成平直背景：r=Gcosmo/GN>0；m、a、lambda 分别是以 3H0²/(8πGN) 为单位的今日非相对论物质、辐射、常数项密度。非暗能量密度为 m(1+z)³+a(1+z)⁴。今日 E(0)=1 决定 lambda。sterile 已非相对论，其物质贡献为 ms,eff/(1 eV)，其余物质 m_b 另给。取原资料 cosmic glitch 有效暗能量密度为本题 rhoDE，同样以该今日临界密度为单位；不要求 rhoDE 在所有红移为正。 取 m_b=1/4、ms=2 eV、ΔNeff=1/16、a=1/162。调节 r，使 rhoDE 恰在 z=2 为零；r 不得等于零。求 r、Omega_g、Om(2)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "r",
+            "kind": "rational"
+          },
+          {
+            "name": "Omega_g",
+            "kind": "rational"
+          },
+          {
+            "name": "Om(2)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P06",
+        "domain": "physics",
+        "question": "采用资料中 cosmic glitch 的定义与有效暗能量重写，并使用另一资料的热 sterile 定义和 Om 诊断。以下均为合成平直背景：r=Gcosmo/GN>0；m、a、lambda 分别是以 3H0²/(8πGN) 为单位的今日非相对论物质、辐射、常数项密度。非暗能量密度为 m(1+z)³+a(1+z)⁴。今日 E(0)=1 决定 lambda。sterile 已非相对论，其物质贡献为 ms,eff/(1 eV)，其余物质 m_b 另给。取原资料 cosmic glitch 有效暗能量密度为本题 rhoDE，同样以该今日临界密度为单位；不要求 rhoDE 在所有红移为正。 固定 m_b=1/10、ms=1 eV、a=1/200。温度比=n/10，整数1≤n≤9；r=j/100，整数80≤j≤100。要求 lambda>0、rhoDE(2)≥0、1/4≤Om(2)≤1/3。最大化 sterile 有效质量；并列时选最小 r。求 n、j、rhoDE(2)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "n",
+            "kind": "integer"
+          },
+          {
+            "name": "j",
+            "kind": "integer"
+          },
+          {
+            "name": "rhoDE(2)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P07",
+        "domain": "physics",
+        "question": "在一个合成的两位置 code-capacity 噪声实验中，固定代码和解码器，把每个 Pauli 写作 X^a Z^b（忽略相位）。位置1、2独立，各自 pI=1−p，且 pX=pY；偏置定义 η=pZ/(pX+pY)。仅可施加 I 或 H 的 Clifford deformation，按资料的 Schrödinger picture 处理；不得把它当作 circuit-level 等价性。变形后的误差位为(a,b)、(c,d)，记录 syndrome=(a xor c,b xor d)；已固定的 residual logical failure 位 L=a xor d xor (c AND b)。置信分数对 syndrome 00、10、01、11依次为3、2、1、0，按资料的阈值规则接受。用资料的 noise sensitivity 定义，计算 post-selected LER 对原始 p1 或 p2 的导数时，阈值、偏置、变形和解码器均保持不变，必须包括接受概率的变化。 取(p1,p2)=(1/5,1/4)，(η1,η2)=(3,2)，变形为位置1用H、位置2用I，阈值τ=2。求 yield、条件 LER、条件 LER 对 p1 的导数。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "yield",
+            "kind": "rational"
+          },
+          {
+            "name": "conditional LER",
+            "kind": "rational"
+          },
+          {
+            "name": "derivative p1",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P08",
+        "domain": "physics",
+        "question": "在一个合成的两位置 code-capacity 噪声实验中，固定代码和解码器，把每个 Pauli 写作 X^a Z^b（忽略相位）。位置1、2独立，各自 pI=1−p，且 pX=pY；偏置定义 η=pZ/(pX+pY)。仅可施加 I 或 H 的 Clifford deformation，按资料的 Schrödinger picture 处理；不得把它当作 circuit-level 等价性。变形后的误差位为(a,b)、(c,d)，记录 syndrome=(a xor c,b xor d)；已固定的 residual logical failure 位 L=a xor d xor (c AND b)。置信分数对 syndrome 00、10、01、11依次为3、2、1、0，按资料的阈值规则接受。用资料的 noise sensitivity 定义，计算 post-selected LER 对原始 p1 或 p2 的导数时，阈值、偏置、变形和解码器均保持不变，必须包括接受概率的变化。 取(p1,p2)=(1/5,1/4)，(η1,η2)=(3,2)。任选两位置 I/H 变形及整数阈值 τ∈{1,2,3}，要求 yield≥3/5，最小化条件 LER。若并列，先按 II<IH<HI<HH 排列，再选最小 τ。求两字母变形代码、τ、条件 LER 对 p2 的导数。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "deformation",
+            "kind": "code"
+          },
+          {
+            "name": "tau",
+            "kind": "integer"
+          },
+          {
+            "name": "derivative p2",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P09",
+        "domain": "physics",
+        "question": "在一个合成的两位置 code-capacity 噪声实验中，固定代码和解码器，把每个 Pauli 写作 X^a Z^b（忽略相位）。位置1、2独立，各自 pI=1−p，且 pX=pY；偏置定义 η=pZ/(pX+pY)。仅可施加 I 或 H 的 Clifford deformation，按资料的 Schrödinger picture 处理；不得把它当作 circuit-level 等价性。变形后的误差位为(a,b)、(c,d)，记录 syndrome=(a xor c,b xor d)；已固定的 residual logical failure 位 L=a xor d xor (c AND b)。置信分数对 syndrome 00、10、01、11依次为3、2、1、0，按资料的阈值规则接受。用资料的 noise sensitivity 定义，计算 post-selected LER 对原始 p1 或 p2 的导数时，阈值、偏置、变形和解码器均保持不变，必须包括接受概率的变化。 取(p1,p2)=(1/5,1/4)，(η1,η2)=(3,2)，固定τ=2。可选 I/H 变形，须使干预前 yield≥3/5；随后只改一个位置：花无穷小预算 ε，位置1可令p1乘(1−ε/2)，位置2可令p2乘(1−ε)。最大化条件 LER 的一阶下降量除以 ε；并列按 II<IH<HI<HH，再选较小位置编号。求变形代码、位置编号、该一阶下降系数。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "deformation",
+            "kind": "code"
+          },
+          {
+            "name": "position",
+            "kind": "integer"
+          },
+          {
+            "name": "improvement coefficient",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P10",
+        "domain": "physics",
+        "question": "设计合成的 stitched-block memory bank：每个底层块由四个距离t的 rotated patches 按资料的 stitched 结构构成，总 footprint 必须包含 corridor 和测量 ancilla。把 r 个底层块的两个逻辑比特全部用于一次 chain-code 拼接。对底层 [[4,2,2]] outer code，分别选能区分全部单逻辑位及两逻辑位错误的最小独立 X/Z seed；按资料 chain 规则取允许的偶数r。此次只做资源与后选择记账，不宣称额外门操作已实现：chain 检查控制器另需每个独立 chain generator 恰 t 个物理 qubit。每个块独立出现可见 flag 的概率 e=1/(t+1)²；接受置信分数为负 flag 数，阈值−1。已接受时若无 flag 则永不失败；恰一个 flag 时以 f=1/(t+1) 的条件概率失败。一个 accepted shot 保留全部 K 个 chain 逻辑比特。定义有效产出 T=K·yield；失败率用资料的 conditional LER。r∈{4,6,8,10,12}、t∈{3,4,5,6,7}。 单 bank 要求 N≤3500、conditional LER≤1/20。最大化 T/N；并列先最小N，再最小r，再最小t。求 r、t、N、T/N。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "r",
+            "kind": "integer"
+          },
+          {
+            "name": "t",
+            "kind": "integer"
+          },
+          {
+            "name": "N",
+            "kind": "integer"
+          },
+          {
+            "name": "T/N",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "P11",
+        "domain": "physics",
+        "question": "设计合成的 stitched-block memory bank：每个底层块由四个距离t的 rotated patches 按资料的 stitched 结构构成，总 footprint 必须包含 corridor 和测量 ancilla。把 r 个底层块的两个逻辑比特全部用于一次 chain-code 拼接。对底层 [[4,2,2]] outer code，分别选能区分全部单逻辑位及两逻辑位错误的最小独立 X/Z seed；按资料 chain 规则取允许的偶数r。此次只做资源与后选择记账，不宣称额外门操作已实现：chain 检查控制器另需每个独立 chain generator 恰 t 个物理 qubit。每个块独立出现可见 flag 的概率 e=1/(t+1)²；接受置信分数为负 flag 数，阈值−1。已接受时若无 flag 则永不失败；恰一个 flag 时以 f=1/(t+1) 的条件概率失败。一个 accepted shot 保留全部 K 个 chain 逻辑比特。定义有效产出 T=K·yield；失败率用资料的 conditional LER。r∈{4,6,8,10,12}、t∈{3,4,5,6,7}。 单 bank 要求 T≥12、conditional LER≤1/25。最小化N；并列先最小r，再最小t。求 r、t、N、conditional LER。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "r",
+            "kind": "integer"
+          },
+          {
+            "name": "t",
+            "kind": "integer"
+          },
+          {
+            "name": "N",
+            "kind": "integer"
+          },
+          {
+            "name": "conditional LER",
+            "kind": "rational"
+          }
+        ],
+        "weight": 2,
+        "scoring": "exact"
+      },
+      {
+        "id": "P12",
+        "domain": "physics",
+        "question": "设计合成的 stitched-block memory bank：每个底层块由四个距离t的 rotated patches 按资料的 stitched 结构构成，总 footprint 必须包含 corridor 和测量 ancilla。把 r 个底层块的两个逻辑比特全部用于一次 chain-code 拼接。对底层 [[4,2,2]] outer code，分别选能区分全部单逻辑位及两逻辑位错误的最小独立 X/Z seed；按资料 chain 规则取允许的偶数r。此次只做资源与后选择记账，不宣称额外门操作已实现：chain 检查控制器另需每个独立 chain generator 恰 t 个物理 qubit。每个块独立出现可见 flag 的概率 e=1/(t+1)²；接受置信分数为负 flag 数，阈值−1。已接受时若无 flag 则永不失败；恰一个 flag 时以 f=1/(t+1) 的条件概率失败。一个 accepted shot 保留全部 K 个 chain 逻辑比特。定义有效产出 T=K·yield；失败率用资料的 conditional LER。r∈{4,6,8,10,12}、t∈{3,4,5,6,7}。 现在并行两个独立 bank；只有两者都接受才保留整次 shot，只要任一 bank 失败即整体失败。两 bank 的(r,t)按字典序从小到大记为A、B。总N≤6500、整体 conditional LER≤1/15。最大化(KA+KB)·整体yield；并列先最小总N，再按(rA,tA,rB,tB)字典序。求rA、tA、rB、tB、总N。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "rA",
+            "kind": "integer"
+          },
+          {
+            "name": "tA",
+            "kind": "integer"
+          },
+          {
+            "name": "rB",
+            "kind": "integer"
+          },
+          {
+            "name": "tB",
+            "kind": "integer"
+          },
+          {
+            "name": "total N",
+            "kind": "integer"
+          }
+        ],
+        "weight": 2,
+        "scoring": "exact"
+      },
+      {
+        "id": "M01",
+        "domain": "math",
+        "question": "做三个方程的端态代数转接，不把它们视为同一流体解。第一份完整气体行波资料取 γ=2、R=1、左态 v₋=1、p₋=1，令右态 v₊=381/343，并要求其端态满足该文的 Rankine–Hugoniot 关系和正速 3-激波的压强降方向。把由此得到的右态压强数值，作为第二份平面激波资料的归一化多方律在某个正密度 ρ* 处的压强；第二份资料取 γ=2。最后在第三份熵波资料中取 γ=3、分子压强的低 Z 理想支，使同一 ρ* 的温度 θ* 与第一份资料的左态压强构成常压状态；假定所有第三份资料所需的 Z 值均在理想支。按顺序给出第一份的右态压强、第二份的 ρ*、第三份的 θ*，均为最简有理数。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "行波右态压强",
+            "kind": "rational"
+          },
+          {
+            "name": "映射正密度",
+            "kind": "rational"
+          },
+          {
+            "name": "常压状态温度",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "M02",
+        "domain": "math",
+        "question": "作一个按顺序的三文代数归一化。熵波资料取 γ=3，且两个正状态落在其分子压强的低 Z 理想支；左状态密度为 2、温度为 2，把它的分子压强作为完整气体行波资料的左端压强。行波资料另取 γ=2、R=1、v₋=1、v₊=57/43，端态须满足其 Rankine–Hugoniot 关系，并取正速 3-激波方向。把算出的行波右端压强交给平面激波资料的归一化多方律，后者取 γ=2，求使其压强相同的正密度。依次答左端压强、行波右端压强、映射后的正密度；均用最简有理数。这里仅比较数值，不断言三种方程共享解。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "接触分子压强",
+            "kind": "rational"
+          },
+          {
+            "name": "行波右端压强",
+            "kind": "rational"
+          },
+          {
+            "name": "平面律正密度",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "M03",
+        "domain": "math",
+        "question": "对同一数值体积跳跃做三种独立读数。完整气体行波资料取 γ=2、R=1、v₋=1、p₋=1、v₊=241/211，只用其 Rankine–Hugoniot 端态关系求下游温度 θ_shock。平面激波资料另取其已归一化的 γ=2 多方律，把 ρ₊=1/v₊ 代入，求其压强 p_bar。熵波资料另取 γ=3 且处于分子压强低 Z 理想支，要求 ρ₊ 与左端目标压强 1 形成常压接触态，求温度 θ_contact。依次输出 θ_shock、p_bar、θ_contact 和比较码；比较码 A 表示 p_shock<p_bar 且 θ_shock<θ_contact，B 表示前者等号且后者等号，C 表示其余。所有量取精确最简分数。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "完整气体下游温度",
+            "kind": "rational"
+          },
+          {
+            "name": "归一化平面律压强",
+            "kind": "rational"
+          },
+          {
+            "name": "接触温度",
+            "kind": "rational"
+          },
+          {
+            "name": "精确比较码",
+            "kind": "code"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "M04",
+        "domain": "math",
+        "question": "有一篇板层定常流论文给出水平无限的 Poiseuille 背景；取通量参数 F=1、任意单位水平方向 e，仅对其显式背景做函数空间审计，不把截断场当成任何 PDE 的解。令 W_R 为该背景在 |x'|<1R、0<x₃<1 内的截断，外部补零；另令 w_R 为其 x₃=1/2 水平截面，在同一水平区域外补零。另一篇全平面定常论文的解类为 L²(R²)，第三篇三维演化论文的解类含 L^{3,∞}(R³)。给这两个截断场同时乘以 R^{−β}，选择使平面 L² 范数和三维弱 L³ 范数在 R→∞ 时都一致有界的最小 β。按顺序输出 ∥W_R∥²_{L²(R³)}/(πR²)、∥w_R∥²_{L²(R²)}/(πR²)、最小 β，以及在该 β 下两范数极限状态的二字码；每位 N 表示有限非零，Z 表示趋零，I 表示发散，顺序为平面 L² 后三维弱 L³。所有数值取最简分数。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "体积平方范数系数",
+            "kind": "rational"
+          },
+          {
+            "name": "中面平方范数系数",
+            "kind": "rational"
+          },
+          {
+            "name": "共同归一化指数",
+            "kind": "rational"
+          },
+          {
+            "name": "两种极限状态",
+            "kind": "code"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "M05",
+        "domain": "math",
+        "question": "做三个方程的端态代数转接，不把它们视为同一流体解。第一份完整气体行波资料取 γ=2、R=1、左态 v₋=1、p₋=1，令右态 v₊=133/111，并要求其端态满足该文的 Rankine–Hugoniot 关系和正速 3-激波的压强降方向。把由此得到的右态压强数值，作为第二份平面激波资料的归一化多方律在某个正密度 ρ* 处的压强；第二份资料取 γ=2。最后在第三份熵波资料中取 γ=3、分子压强的低 Z 理想支，使同一 ρ* 的温度 θ* 与第一份资料的左态压强构成常压状态；假定所有第三份资料所需的 Z 值均在理想支。按顺序给出第一份的右态压强、第二份的 ρ*、第三份的 θ*，均为最简有理数。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "行波右态压强",
+            "kind": "rational"
+          },
+          {
+            "name": "映射正密度",
+            "kind": "rational"
+          },
+          {
+            "name": "常压状态温度",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "M06",
+        "domain": "math",
+        "question": "比较两个明确分开的假设世界，并计算一个严格整数端点。令 k 为足够大的奇整数，k≡1 (mod 4)，令 m 为严格小于 k(k+1)/2 的最大奇整数，且假定 m 也在相关定理的“充分大”范围内。世界甲假定有限截断除数和准则对全部 n>5040 成立，同时存在趋于无穷的 Siegel 零序列；世界乙以相关 Dirichlet L 函数的 GRH 替换该 Siegel 零序列，保留有限准则。两世界的假设只作条件推演。依次输出 k(k+1)/2−m、世界甲能否援引 ζ 归一化零点间距的 0.4733 结论、世界甲能否援引短区间素数幂表示的首项 GRH 定理、世界乙能否援引该素数幂表示定理；后三项用 Y/N。须按各论文的条件量词判断。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "严格奇整数端点差",
+            "kind": "integer"
+          },
+          {
+            "name": "甲的间距推论",
+            "kind": "code"
+          },
+          {
+            "name": "甲的表示定理适用性",
+            "kind": "code"
+          },
+          {
+            "name": "乙的表示定理适用性",
+            "kind": "code"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "M07",
+        "domain": "math",
+        "question": "作三篇 zeta 资料的合成参数预算。短扭曲二次矩取 H=T^δ，两个不同奇素数扭曲参数均与 T^2/5 同阶；只保留能使该文主项支配误差的固定指数。将其对偶支撑长度 D 定义为大值阈值 V=D^1/2，要求另一文的 1-分离大值定理正好适用。还要求第三文在长度 T^δ 上给出的简单临界零点比例的显式保证函数 c(δ) 至少为 c(3/4)。候选表为 A:δ=11/16、B:δ=3/4、C:δ=19/25、D:δ=4/5。只在所有条件成立的候选中，使大值计数上界的 T 主幂最小。依次输出最佳候选码、该上界主幂、其对偶长度的 T 幂；指数均写精确分数。这里各论文只提供各自条件与公式。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "最佳候选码",
+            "kind": "code"
+          },
+          {
+            "name": "大值计数上界主幂",
+            "kind": "rational"
+          },
+          {
+            "name": "对偶长度主幂",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "M08",
+        "domain": "math",
+        "question": "设计三篇论文共用的一组无量纲预算，但只分别使用各文定理：原短扭曲矩长 H=T^δ，扭曲素数大小与 T^a 同阶，要求主项支配误差；对偶尺度 D=T/H 指定 1-分离 ζ 大值阈值 V=D^b。测试函数的 Fourier 支集取闭区间 [−2v,2v]，其中 v 是 V 对 T 的幂指数；特殊值加权零点密度取固定横线 σ，要求完整闭支集严格落在该定理许可的开区间内。候选 A:(δ,a,b,σ)=(3/4,2/5,1/2,1/2)、B:(δ,a,b,σ)=(19/25,2/5,1/2,3/5)、C:(δ,a,b,σ)=(4/5,1/2,3/5,2/3)、D:(δ,a,b,σ)=(3/4,1/2,1/2,3/4)。在三文条件都成立的候选中，先使 σ 最小，再使 δ 最小。输出候选码、许可支集半宽与实际支集半宽之差、该候选的 ζ 大值计数主幂；均用精确分数。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "最优方案码",
+            "kind": "code"
+          },
+          {
+            "name": "严格支集余量",
+            "kind": "rational"
+          },
+          {
+            "name": "大值计数指数",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "M09",
+        "domain": "math",
+        "question": "比较两项独立的大值实验的最坏 T 主幂。短扭曲二次矩原长 H=T^δ、两个不同奇素数大小与 T^a 同阶，且须满足主项占优；用其对偶长度 D=T/H 作为一项 Dirichlet 多项式的长度 N，观测高度仍为 T。该多项式系数满足对应论文 q=8/3 的矩假设，采样点 1-分离，数值阈值 V=T^v；另一项 ζ 临界线大值实验取相同数值阈值与 1-分离采样。把各定理上界中所有 T 主幂项的最大值作为该实验预算，两实验预算再取最大；忽略 o(1) 与 ε。候选 A:(δ,a,v)=(3/4,2/5,1/8)、B:(δ,a,v)=(19/25,2/5,3/25)、C:(δ,a,v)=(4/5,1/2,3/25)、D:(δ,a,v)=(5/8,1/5,1/8)。输出联合预算最小的候选码、该预算指数、使其达到该指数的 Dirichlet 多项式项序号（按论文三项书写顺序 1/2/3；若非此类项主导则填 0）。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "最小预算方案码",
+            "kind": "code"
+          },
+          {
+            "name": "最坏主幂",
+            "kind": "rational"
+          },
+          {
+            "name": "主导多项式项号",
+            "kind": "integer"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "M10",
+        "domain": "math",
+        "question": "作三篇 zeta 资料的合成参数预算。短扭曲二次矩取 H=T^δ，两个不同奇素数扭曲参数均与 T^1/2 同阶；只保留能使该文主项支配误差的固定指数。将其对偶支撑长度 D 定义为大值阈值 V=D^3/5，要求另一文的 1-分离大值定理正好适用。还要求第三文在长度 T^δ 上给出的简单临界零点比例的显式保证函数 c(δ) 至少为 c(79/100)。候选表为 A:δ=3/4、B:δ=79/100、C:δ=4/5、D:δ=81/100。只在所有条件成立的候选中，使大值计数上界的 T 主幂最小。依次输出最佳候选码、该上界主幂、其对偶长度的 T 幂；指数均写精确分数。这里各论文只提供各自条件与公式。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "最佳候选码",
+            "kind": "code"
+          },
+          {
+            "name": "大值计数上界主幂",
+            "kind": "rational"
+          },
+          {
+            "name": "对偶长度主幂",
+            "kind": "rational"
+          }
+        ],
+        "weight": 2,
+        "scoring": "exact"
+      },
+      {
+        "id": "M11",
+        "domain": "math",
+        "question": "令 T 足够大，同时超过显式中央带结论中的数值高度门槛。把一篇短扭曲二次矩的原区间 (T,T+H] 写成中心 t=T+H/2、半宽 h=H/2，H=T^δ；令其中两个不同奇素数参数都与 T^a 同阶。要求其主项严格占优；还要求另一篇短区间零点论文能在 [t−h,t+h] 给 α=1/16 的表列中央带正比例，并要求第三篇在 (T,T+H] 给简单临界零点的显式正比例。候选为 A:(δ,a)=(1/2,1/20)、B:(δ,a)=(9/16,1/10)、C:(δ,a)=(5/8,1/5)、D:(δ,a)=(2/3,1/3)、E:(δ,a)=(11/16,1/4)。按顺序输出所有合格候选码按字母顺序连写、合格者中最大的 a、实现该 a 的 δ。指数用精确分数。区间端点差异按各文约定处理；只问三个各自结论能否同时在这些参数下使用。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "全部合格码",
+            "kind": "code"
+          },
+          {
+            "name": "最大扭曲指数",
+            "kind": "rational"
+          },
+          {
+            "name": "对应区间指数",
+            "kind": "rational"
+          }
+        ],
+        "weight": 2,
+        "scoring": "exact"
+      },
+      {
+        "id": "M12",
+        "domain": "math",
+        "question": "令 T 足够大，同时超过显式中央带结论中的数值高度门槛。把一篇短扭曲二次矩的原区间 (T,T+H] 写成中心 t=T+H/2、半宽 h=H/2，H=T^δ；令其中两个不同奇素数参数都与 T^a 同阶。要求其主项严格占优；还要求另一篇短区间零点论文能在 [t−h,t+h] 给 α=1/16 的表列中央带正比例，并要求第三篇在 (T,T+H] 给简单临界零点的显式正比例。候选为 A:(δ,a)=(11/20,1/20)、B:(δ,a)=(3/5,1/6)、C:(δ,a)=(5/8,1/4)、D:(δ,a)=(13/20,7/25)、E:(δ,a)=(3/4,2/5)。按顺序输出所有合格候选码按字母顺序连写、合格者中最大的 a、实现该 a 的 δ。指数用精确分数。区间端点差异按各文约定处理；只问三个各自结论能否同时在这些参数下使用。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "全部合格码",
+            "kind": "code"
+          },
+          {
+            "name": "最大扭曲指数",
+            "kind": "rational"
+          },
+          {
+            "name": "对应区间指数",
+            "kind": "rational"
+          }
+        ],
+        "weight": 2,
+        "scoring": "exact"
+      },
+      {
+        "id": "N01",
+        "domain": "novel",
+        "question": "追捕最终反而促成广播。只考虑原著中已经实际成立的链条，把下列节点按信息或行动的依赖顺序连成一条链：A 两舰共同公决；B 追捕方失去通过智子查看目标内部的能力；C 史耐德发出警报；D 从额外空间维度破坏水滴并夺取广播载体；E 原逃亡舰改为全功率继续外逃。然后做一次只改人数的演算：公决总人数比原著少17人，赞成比例门槛沿用原著，表决前已有900票赞成，还最少需要多少赞成票？输出节点链；新增票数。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "依赖链",
+            "kind": "code"
+          },
+          {
+            "name": "新增票",
+            "kind": "integer"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "N02",
+        "domain": "novel",
+        "question": "做一个情报转运审计。以阶梯计划被选中的执行人为起点，以人类确认三体光速飞船的推进原理为终点；只许使用书中成功发生过的转运和解读。代码：A 程心的记忆与返航复述；B 公开向公众征集三个童话的解读；C 先在三体世界讲述并出版童话；D 智子会面通道；E IDC的保密解读；F 阶梯飞行器；G 会面艇的电子录像；H 把香皂推动纸船与空间曲率联系起来。按依赖顺序输出实际可行的最短节点链（每节点一次）。再假设在会面开始前只让程心失去长期记忆形成能力，其他限制不变，且不增加原著没有的通道：这条链上最先失效的节点代码是什么？输出链；失效节点。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "转运链",
+            "kind": "code"
+          },
+          {
+            "name": "失效节点",
+            "kind": "code"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "N03",
+        "domain": "novel",
+        "question": "设一个只检验技术可达性的疏散演练：时间固定在罗辑向程心说明三套曲率引擎去向的那次谈话，要求在二维跌落结束前送出三批人，每批必须独占一套已经回到太阳系且完成试航的引擎；不许新造、不许等待太阳系外的引擎回来、不计座位与航路。先从掩体计划所依据的攻击模型出发，识别歌者为何改用另一种武器，再用实际二维逃逸门槛筛选当时可用引擎。引擎用原书的一、二、三号写作1、2、3。输出可分配引擎编号串；尚无引擎的批次数；该攻击下原掩体模型预期幸存的四颗巨行星中实际能仅靠自身遮挡保住的颗数。只使用歌者的武器选择理由，不认定他投出的武器就是后来抵达太阳系的那一片。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "可用引擎",
+            "kind": "code"
+          },
+          {
+            "name": "缺额",
+            "kind": "integer"
+          },
+          {
+            "name": "遮挡可保住颗数",
+            "kind": "integer"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "N04",
+        "domain": "novel",
+        "question": "给太阳系安全声明设计一条按小说已实现机制执行的研发路线。候选节点代码：A 在介质中把光变慢；B 从童话解出把太阳系变成低光速黑洞；C 用微型标准黑洞直接改变真空光速；D 扩大曲率驱动实验并识别尾迹；E 多艘飞船让尾迹连成覆盖太阳系的区域；F 确立声明必须能被遥远观察者信任的要求。只保留能把要求传递至实现、且每一步都为后一步提供必要依据的节点，按依赖顺序输出。再设尾迹设计目标为书中太阳系第三宇宙速度的9/10，求目标真空光速，单位千米/秒，用精确数。输出链；目标速度。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "路线",
+            "kind": "code"
+          },
+          {
+            "name": "目标速度",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "N05",
+        "domain": "novel",
+        "question": "重建童话解码怎样改变三条生路的关系。代码：A 降低船后水面张力；B 雪浪纸卷曲后被熨平；C 光速飞船的航迹降低真空光速；D 把飞船与黑域当作不同实现难度的计划；E 伞的旋转；F 介质折射。先输出把肥皂船从普通故事固定为“空间曲率驱动”的双层隐喻第一层机制及含义坐标，随后输出人类最初规划状态和后来使该划分发生实质改变的发现，形成四字母串。反事实只删除第四个节点的知识，不删除前面已完成的解码：按三条生路最初给出的用途，企业的光速飞船工程仍可被直接论证的用途是哪一个？G 星际逃亡，H 在地球长久居住且完成安全声明。输出四字母串；用途代码。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "解码到规划的链",
+            "kind": "code"
+          },
+          {
+            "name": "仍可论证用途",
+            "kind": "code"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "N06",
+        "domain": "novel",
+        "question": "模拟低光速事故的备用设备检查。只用银河人类后来实际使用成功的装置，按因果先后为下列目标选择设备：先跨过控制电脑失效后、备用电脑尚未启动的生存空档，再恢复控制，最后使飞行器脱离绕蓝星的低光速运行。代码：A 依赖常规电脑的体外循环冬眠舱；B 无需体外循环的短期冬眠药；C 神经元计算机；D 原聚变发动机；E 低光速专用反物质发动机；F 星环城的反物质子弹。技术资格须结合星环城武器的容器、太阳系黑域预测、实际事故和醒来后的操作判断，不能把所有含“反物质”的物品通用化。假定药物保障时间按书中约十五天精确取十五天，启动等待按屏幕总体剩余小时和分钟计算，余量为多少分钟？输出设备链；余量。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "设备链",
+            "kind": "code"
+          },
+          {
+            "name": "余量分钟",
+            "kind": "integer"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "N07",
+        "domain": "novel",
+        "question": "程心和关一帆醒来后，要获取云天明留给她的礼物。设他们起初不知道礼物内容，只知道AA掌握程心此前在冥王星听到的长期保存信息方法；不得事先知道小宇宙入口的位置。代码：A 根据长时保存方法搜寻地层中的大字；B 以低光速衰变测年确认流逝时长；C 读出幸存石刻；D 经识别后进入门；E 从647号管理者处确认带来的只是入口而非整个宇宙；F 等待AA无线电回答。输出能恢复这件礼物的证据链。再按实际搜寻步骤，求从第一次地下遥感到找到文字，共失败了几层深度区间？输出链；失败层数。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "证据链",
+            "kind": "code"
+          },
+          {
+            "name": "失败层数",
+            "kind": "integer"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "N08",
+        "domain": "novel",
+        "question": "审计一个跨时代的秘密解读方案。方案要把云天明的童话从会面现场送到IDC，又要避免智子窥视解读，最后把647号中对回归运动的答复发回原来的大宇宙。只许原著成功用过的机制。代码：A 会面中电子转播；B 程心记忆返航；C 在IDC的屏蔽室内使用电子演示设备；D 在屏蔽室由人讨论；E 用原先进入盲区的那个智子恢复联结；F 由小宇宙直接向大宇宙发通信；G 带着答复通过门回到大宇宙。请输出满足全部约束的一条传递链（必须经过秘密解读）；再输出这条链中跨过小宇宙边界时必须搬运的载体人数，按结尾实际同行者而非只数生物人。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "传递链",
+            "kind": "code"
+          },
+          {
+            "name": "同行载体数",
+            "kind": "integer"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "N09",
+        "domain": "novel",
+        "question": "为跨地质年代直到下一宇宙的资料传递选择最小载体链。每一阶段只能使用小说已展示成功或明确设计用于该阶段的载体：第一阶段把AA和云天明的留言保存到程心再次着陆，并使她有文本依据寻找礼物；第二阶段通过礼物进入保存两文明资料的地方；第三阶段按回归运动“只把记忆送往新宇宙”的要求转存资料。代码：A 一般无线电广播；B 在岩面凹刻大字；C 647号入口；D 微型电脑漂流瓶；E 等待时原样封存的金属框架；F 从647号直接向大宇宙发送电信。结合程心在冥王星获知的长期信息保存结论，输出三个阶段的载体链。然后审计第三阶段：把647号取走的约五十万吨按500000吨计，只留下书中生态球且忽略漂流瓶质量，归还比例是多少？",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "载体链",
+            "kind": "code"
+          },
+          {
+            "name": "归还比例",
+            "kind": "rational"
+          }
+        ],
+        "weight": 3,
+        "scoring": "exact"
+      },
+      {
+        "id": "N10",
+        "domain": "novel",
+        "question": "把广播后的澳大利亚撤离理解为远方信息到达的后果。以史耐德警报为起点，代码A 通过智子对两舰实时控制；B 由原逃亡舰获得并启动原追捕舰的广播能力；C 三体得知坐标广播后放弃占领太阳系；D 警报使蓝色空间继续远离太阳系；E 水滴按预先收到的指令攻击但被四维伏击破坏。只保留原著成立的节点，按因果依赖输出到澳大利亚可以疏散的链。然后作约定演算：把两舰与太阳系距离取智子最近盲区的1.3光年，信号在该段按每年1光年走直线；广播后第400天太阳系才接收，按一年365天计，该接收声明比此模型最早可能到达时间提前多少天？输出链；提前天数（可为分数）。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "因果链",
+            "kind": "code"
+          },
+          {
+            "name": "提前天数",
+            "kind": "rational"
+          }
+        ],
+        "weight": 2,
+        "scoring": "exact"
+      },
+      {
+        "id": "N11",
+        "domain": "novel",
+        "question": "小说中的降维并不让每一层的封闭物都能被高一维观察者同样处理。现设一位观察员具有原著四维探险者的能力，先要不破坏外壳取到三维水滴内部，再要从四维观察魔戒内部，最后回到三维对能量释放已经结束的二维太阳系定位。允许操作代码：A 从额外维度直接接近内部；B 隔壳光学成像；C 用引力定位；D 等待二维化时释放的光；E 现有能力无法完成。依次输出三项操作代码。再问：若观察员把魔戒的失败误当成三维水滴也不可进入，君士坦丁堡那名女子已展示的哪一种证据最能推翻这一步类比？代码F 无伤口取出封闭身体内部器官，G 塔尖最终重新可见；输出该证据代码。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "操作序列",
+            "kind": "code"
+          },
+          {
+            "name": "反证",
+            "kind": "code"
+          }
+        ],
+        "weight": 2,
+        "scoring": "exact"
+      },
+      {
+        "id": "N12",
+        "domain": "novel",
+        "question": "为星环公司的科研资金重建一条带约束的资产链。起点是云天明购买礼物时销售方对它的描述，终点是AA提出用经营收益支持光速飞船。必须同时满足：保留礼物中的恒星；按照程心苏醒时的法律使政府取得可以出让的天体资产；不要求政府无偿接收；企业参与当时已有可执行工程并把部分利润投入曲率研究。代码：A 当作有类地行星的恒星出售；B 当作裸星出售；C 出让恒星并保留行星；D 出让两颗行星并保留恒星；E 放弃恒星能量的免费使用许可；F 保留恒星所有权而让人类免费用其能量；G 参与掩体工程再投入利润；H 以纯捐赠让政府接收整个星系。输出按“最初描述→资产拆分→能量安排→经营筹资”四环节的唯一代码串。然后将这条链置于掩体计划原定模型：公司参与的工程主要利用哪类行星的幸存区域？类地记T，巨行星记J。若取消最后一环而其他选择不变，是否还能援引AA提出的同一利润来源作为曲率研究经费依据？能1不能0。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "资产链",
+            "kind": "code"
+          },
+          {
+            "name": "依赖行星类别",
+            "kind": "code"
+          },
+          {
+            "name": "同一利润依据",
+            "kind": "integer"
+          }
+        ],
+        "weight": 2,
+        "scoring": "exact"
+      }
+    ],
+    "change": [
+      {
+        "id": "XP01",
+        "domain": "physics",
+        "question": "仅作合成的低红移背景计算：使用资料中热分布、较低温度的 sterile relic 定义，将其非相对论有效质量按 Ωs=ms,eff/(1 eV) 计入物质；其余物质 Ωb 固定，Ωm=Ωb+Ωs。忽略辐射，真实 Ωde=1−Ωm。采用时变 gravitational susceptibility 模型的归一化背景式，令 (1+S(z))/(1+S(0))=1+bz+cz²。使用资料定义的 Om(z)，所有密度均为该背景式的真密度。此合成记账不声称是原论文联合拟合。 改为二次 susceptibility，Ωb=1/5，Ts/Tν=2/3，b=1/7。未知 ms 与 c；测得 E²′(0)=32/35、E²″(0)=394/245，E=H/H0。求 ms/eV、c、Om(1)。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "ms/eV",
+            "kind": "rational"
+          },
+          {
+            "name": "c",
+            "kind": "rational"
+          },
+          {
+            "name": "Om(1)",
+            "kind": "rational"
+          }
+        ],
+        "weight": 9,
+        "scoring": "exact"
+      },
+      {
+        "id": "XP02",
+        "domain": "physics",
+        "question": "采用资料中 cosmic glitch 的定义与有效暗能量重写，并使用另一资料的热 sterile 定义和 Om 诊断。以下均为合成平直背景：r=Gcosmo/GN>0；m、a、lambda 分别是以 3H0²/(8πGN) 为单位的今日非相对论物质、辐射、常数项密度。非暗能量密度为 m(1+z)³+a(1+z)⁴。今日 E(0)=1 决定 lambda。sterile 已非相对论，其物质贡献为 ms,eff/(1 eV)，其余物质 m_b 另给。取原资料 cosmic glitch 有效暗能量密度为本题 rhoDE，同样以该今日临界密度为单位；不要求 rhoDE 在所有红移为正。 固定 r=19/20、m_b=1/8、ms=3/2 eV。现有未知辐射 a 及温度比 u，给 Om(1)=27949/50400、Om(2)=52459/93600。求 a、ΔNeff、lambda。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "a",
+            "kind": "rational"
+          },
+          {
+            "name": "DeltaNeff",
+            "kind": "rational"
+          },
+          {
+            "name": "lambda",
+            "kind": "rational"
+          }
+        ],
+        "weight": 9,
+        "scoring": "exact"
+      },
+      {
+        "id": "XP03",
+        "domain": "physics",
+        "question": "在一个合成的两位置 code-capacity 噪声实验中，固定代码和解码器，把每个 Pauli 写作 X^a Z^b（忽略相位）。位置1、2独立，各自 pI=1−p，且 pX=pY；偏置定义 η=pZ/(pX+pY)。仅可施加 I 或 H 的 Clifford deformation，按资料的 Schrödinger picture 处理；不得把它当作 circuit-level 等价性。变形后的误差位为(a,b)、(c,d)，记录 syndrome=(a xor c,b xor d)；已固定的 residual logical failure 位 L=a xor d xor (c AND b)。置信分数对 syndrome 00、10、01、11依次为3、2、1、0，按资料的阈值规则接受。用资料的 noise sensitivity 定义，计算 post-selected LER 对原始 p1 或 p2 的导数时，阈值、偏置、变形和解码器均保持不变，必须包括接受概率的变化。 变更为(p1,p2)=(1/6,1/3)，(η1,η2)=(4,3)，变形IH，τ=1。两位置同时乘(1−ε)，偏置保持固定。求未干预 yield、条件 LER、一阶下降系数 −[d LER/dε]ε=0。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "yield",
+            "kind": "rational"
+          },
+          {
+            "name": "conditional LER",
+            "kind": "rational"
+          },
+          {
+            "name": "improvement coefficient",
+            "kind": "rational"
+          }
+        ],
+        "weight": 8,
+        "scoring": "exact"
+      },
+      {
+        "id": "XP04",
+        "domain": "physics",
+        "question": "设计合成的 stitched-block memory bank：每个底层块由四个距离t的 rotated patches 按资料的 stitched 结构构成，总 footprint 必须包含 corridor 和测量 ancilla。把 r 个底层块的两个逻辑比特全部用于一次 chain-code 拼接。对底层 [[4,2,2]] outer code，分别选能区分全部单逻辑位及两逻辑位错误的最小独立 X/Z seed；按资料 chain 规则取允许的偶数r。此次只做资源与后选择记账，不宣称额外门操作已实现：chain 检查控制器另需每个独立 chain generator 恰 t 个物理 qubit。每个块独立出现可见 flag 的概率 e=1/(t+1)²；接受置信分数为负 flag 数，阈值−1。已接受时若无 flag 则永不失败；恰一个 flag 时以 f=1/(t+1) 的条件概率失败。一个 accepted shot 保留全部 K 个 chain 逻辑比特。定义有效产出 T=K·yield；失败率用资料的 conditional LER。r∈{4,6,8,10,12}、t∈{3,4,5,6,7}。 本题替换后选择规则：置信分数为1当且仅当 flag 数是0或2，否则为0，阈值1。无flag永不失败；恰2个flag时，各flag独立以f触发失败，至少一个触发即失败。其余结构不变。要求N≤3500、conditional LER≤1/100，最大化K·yield/N；并列先最小N，再最小r、t。求r、t、N、conditional LER。 按所列字段顺序，以 ASCII 分号分隔，只填精确值。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "r",
+            "kind": "integer"
+          },
+          {
+            "name": "t",
+            "kind": "integer"
+          },
+          {
+            "name": "N",
+            "kind": "integer"
+          },
+          {
+            "name": "conditional LER",
+            "kind": "rational"
+          }
+        ],
+        "weight": 8,
+        "scoring": "exact"
+      },
+      {
+        "id": "XM01",
+        "domain": "math",
+        "question": "对同一数值体积跳跃做三种独立读数。完整气体行波资料取 γ=2、R=1、v₋=1、p₋=1、v₊=553/507，只用其 Rankine–Hugoniot 端态关系求下游温度 θ_shock。平面激波资料另取其已归一化的 γ=2 多方律，把 ρ₊=1/v₊ 代入，求其压强 p_bar。熵波资料另取 γ=3 且处于分子压强低 Z 理想支，要求 ρ₊ 与左端目标压强 1 形成常压接触态，求温度 θ_contact。依次输出 θ_shock、p_bar、θ_contact 和比较码；比较码 A 表示 p_shock<p_bar 且 θ_shock<θ_contact，B 表示前者等号且后者等号，C 表示其余。所有量取精确最简分数。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "完整气体下游温度",
+            "kind": "rational"
+          },
+          {
+            "name": "归一化平面律压强",
+            "kind": "rational"
+          },
+          {
+            "name": "接触温度",
+            "kind": "rational"
+          },
+          {
+            "name": "精确比较码",
+            "kind": "code"
+          }
+        ],
+        "weight": 9,
+        "scoring": "exact"
+      },
+      {
+        "id": "XM02",
+        "domain": "math",
+        "question": "有一篇板层定常流论文给出水平无限的 Poiseuille 背景；取通量参数 F=1、任意单位水平方向 e，仅对其显式背景做函数空间审计，不把截断场当成任何 PDE 的解。令 W_R 为该背景在 1R<|x'|<2R、0<x₃<1 内的截断，外部补零；另令 w_R 为其 x₃=1/2 水平截面，在同一水平区域外补零。另一篇全平面定常论文的解类为 L²(R²)，第三篇三维演化论文的解类含 L^{3,∞}(R³)。给这两个截断场同时乘以 R^{−β}，选择使平面 L² 范数和三维弱 L³ 范数在 R→∞ 时都一致有界的最小 β。按顺序输出 ∥W_R∥²_{L²(R³)}/(πR²)、∥w_R∥²_{L²(R²)}/(πR²)、最小 β，以及在该 β 下两范数极限状态的二字码；每位 N 表示有限非零，Z 表示趋零，I 表示发散，顺序为平面 L² 后三维弱 L³。所有数值取最简分数。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "体积平方范数系数",
+            "kind": "rational"
+          },
+          {
+            "name": "中面平方范数系数",
+            "kind": "rational"
+          },
+          {
+            "name": "共同归一化指数",
+            "kind": "rational"
+          },
+          {
+            "name": "两种极限状态",
+            "kind": "code"
+          }
+        ],
+        "weight": 8,
+        "scoring": "exact"
+      },
+      {
+        "id": "XM03",
+        "domain": "math",
+        "question": "设计三篇论文共用的一组无量纲预算，但只分别使用各文定理：原短扭曲矩长 H=T^δ，扭曲素数大小与 T^a 同阶，要求主项支配误差；对偶尺度 D=T/H 指定 1-分离 ζ 大值阈值 V=D^b。测试函数的 Fourier 支集取闭区间 [−2v,2v]，其中 v 是 V 对 T 的幂指数；特殊值加权零点密度取固定横线 σ，要求完整闭支集严格落在该定理许可的开区间内。候选 A:(δ,a,b,σ)=(3/4,1/3,1/2,1/2)、B:(δ,a,b,σ)=(19/25,1/3,1/2,5/8)、C:(δ,a,b,σ)=(4/5,1/2,3/5,3/4)、D:(δ,a,b,σ)=(23/30,2/5,1/2,2/3)。在三文条件都成立的候选中，先使 σ 最小，再使 δ 最小。输出候选码、许可支集半宽与实际支集半宽之差、该候选的 ζ 大值计数主幂；均用精确分数。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "最优方案码",
+            "kind": "code"
+          },
+          {
+            "name": "严格支集余量",
+            "kind": "rational"
+          },
+          {
+            "name": "大值计数指数",
+            "kind": "rational"
+          }
+        ],
+        "weight": 8,
+        "scoring": "exact"
+      },
+      {
+        "id": "XM04",
+        "domain": "math",
+        "question": "比较两个明确分开的假设世界，并计算一个严格整数端点。令 k 为足够大的奇整数，k≡3 (mod 4)，令 m 为严格小于 k(k+1)/2 的最大奇整数，且假定 m 也在相关定理的“充分大”范围内。世界甲假定有限截断除数和准则对全部 n>5040 成立，同时存在趋于无穷的 Siegel 零序列；世界乙以相关 Dirichlet L 函数的 GRH 替换该 Siegel 零序列，保留有限准则。两世界的假设只作条件推演。依次输出 k(k+1)/2−m、世界甲能否援引 ζ 归一化零点间距的 0.4733 结论、世界甲能否援引短区间素数幂表示的首项 GRH 定理、世界乙能否援引该素数幂表示定理；后三项用 Y/N。须按各论文的条件量词判断。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "严格奇整数端点差",
+            "kind": "integer"
+          },
+          {
+            "name": "甲的间距推论",
+            "kind": "code"
+          },
+          {
+            "name": "甲的表示定理适用性",
+            "kind": "code"
+          },
+          {
+            "name": "乙的表示定理适用性",
+            "kind": "code"
+          }
+        ],
+        "weight": 8,
+        "scoring": "exact"
+      },
+      {
+        "id": "XN01",
+        "domain": "novel",
+        "question": "改变双舰公决为两阶段授权，其余故事事实保持：必须先获得一艘可发宇宙广播的舰船、解除仍能追踪双舰的三体装置，再投票。代码：A 青铜世纪；B 蓝色空间；C 万有引力；D 智子联结；E 水滴。输出提供广播能力的舰船代码；必须失效的三体跟踪装置代码串（按字母序）。最后按原著总人数，假设先有原门槛的3/4人赞成，之后其余人中恰好1/3赞成；不足整数时每一步向下取整。要达到原门槛还差多少票？",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "广播舰",
+            "kind": "code"
+          },
+          {
+            "name": "跟踪装置",
+            "kind": "code"
+          },
+          {
+            "name": "缺票",
+            "kind": "integer"
+          }
+        ],
+        "weight": 9,
+        "scoring": "exact"
+      },
+      {
+        "id": "XN02",
+        "domain": "novel",
+        "question": "重做太阳系避难分配，采用一个明确的反事实规则：曲率工程已经提供1200艘船，每艘只能选一种任务，载人离开或留在太阳系生成黑域；本题规定黑域恰需1001艘，最后一艘铺设完毕后立刻封闭。准备离开的群体有200批，每批独占一艘。请结合童话中香皂航道的作用、最初三条生路的关系、罗辑最终揭示的技术关联、低光速封闭后的实际结果，求最多能让多少批人离开，同时留下完整黑域；再按代码给出两个阶段的顺序（A 完成封闭，B 最后一批外逃者越出未来黑域边界）。不许让已封闭者通过普通宇宙航行补逃，也不许把同艘船计两次。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "最大离开批数",
+            "kind": "integer"
+          },
+          {
+            "name": "先后",
+            "kind": "code"
+          }
+        ],
+        "weight": 8,
+        "scoring": "exact"
+      },
+      {
+        "id": "XN03",
+        "domain": "novel",
+        "question": "反事实搜救只改变设备库存：在进入死线扩散区前，关一帆可以从四类库存中每类带一件。A 类是星环城反物质子弹或低光速专用反物质动力；B 类是依赖常规电脑的冬眠设备或无需体外循环的冬眠药；C 类是普通电子控制或神经元备用控制；D 类是无线电持续等待AA或使用地质测年后追索石刻。每类前者记1、后者记2。任务不是保住一时生命，而是完成低光速事故后的降落、理解为何故人未在原地、追到礼物入口。输出ABCD四位库存选择；若药物只有十天有效，按原启动屏幕总体剩余时间，还差多少分钟才能覆盖控制恢复？",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "库存",
+            "kind": "code"
+          },
+          {
+            "name": "缺少分钟",
+            "kind": "integer"
+          }
+        ],
+        "weight": 8,
+        "scoring": "exact"
+      },
+      {
+        "id": "XN04",
+        "domain": "novel",
+        "question": "一次结尾通信与物质审计采用以下严格规则：先证明二维化后的太阳系不能靠正常光学取得旧资料，再沿小说实际路径进入647号；在收到回归呼吁后，只允许把原有电脑主机资料复制到原著留存载体，不另造容器。若把小宇宙取走质量按500000吨计，审计要求归还比例至少为999999999/1000000000，漂流瓶按0.4千克计，生态球沿用原著质量，人员与船均归还，最多能保留几个完整生态球？再输出把记忆送向新宇宙的载体代码：A 石刻；B 漂流瓶；C 无线电由小宇宙直接发往大宇宙。最后输出在缺少宇宙整体质量统计时，能否仅凭647号达到该比例保证新宇宙诞生，能1不能0。",
+        "answerType": "structured",
+        "answerParts": [
+          {
+            "name": "完整生态球",
+            "kind": "integer"
+          },
+          {
+            "name": "载体",
+            "kind": "code"
+          },
+          {
+            "name": "保证",
+            "kind": "integer"
+          }
+        ],
+        "weight": 8,
+        "scoring": "exact"
+      }
+    ]
+  }
+}

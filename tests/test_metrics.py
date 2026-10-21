@@ -2,7 +2,7 @@ import importlib.util
 import unittest
 from evalkit.manager import ROOT
 
-spec=importlib.util.spec_from_file_location('metrics',ROOT/'templates/05-memory/tools/metrics.py')
+spec=importlib.util.spec_from_file_location('metrics',ROOT/'templates/06-memory/tools/metrics.py')
 metrics=importlib.util.module_from_spec(spec); spec.loader.exec_module(metrics)
 
 

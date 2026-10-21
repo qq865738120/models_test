@@ -17,7 +17,7 @@ class MockTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory(); root=Path(self.temp.name)
         (root/'tools').mkdir(); (root/'materials').mkdir()
-        shutil.copy(ROOT/'templates/02-dispatch/tools/mock-server.mjs',root/'tools/mock-server.mjs')
+        shutil.copy(ROOT/'templates/03-dispatch/tools/mock-server.mjs',root/'tools/mock-server.mjs')
         rows=[{'id':f'O{i}','customer':f'客户{i}','address':'A园' if i%2==0 else 'B园','status':'pending','courierId':None} for i in range(30)]
         (root/'materials/orders.json').write_text(json.dumps(rows))
         self.proc=subprocess.Popen(['node','tools/mock-server.mjs'],cwd=root,env=dict(os.environ,MOCK_PORT='0'),stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)

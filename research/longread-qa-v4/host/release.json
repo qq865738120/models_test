@@ -1,0 +1,250 @@
+{
+  "version": "longread-qa-v4",
+  "difficulty": "中级",
+  "initialQuestions": 18,
+  "changeQuestions": 6,
+  "frozenAt": "2026-10-21T04:02:24.035937+00:00",
+  "status": "frozen-before-candidate",
+  "answerContract": "exact-structured-v1",
+  "models": [
+    "gpt-6-astra",
+    "gpt-6-sol",
+    "gpt-6.1-sol"
+  ],
+  "reviewedItems": [
+    {
+      "id": "P01",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "P02",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "P03",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "P04",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "P05",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "P06",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "XP01",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "XP02",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "M01",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "M02",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "M03",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "M04",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "M05",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "M06",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "XM01",
+      "phase": "change",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "XM02",
+      "phase": "change",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "N01",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "N02",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "N03",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "N04",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "N05",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "N06",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "XN01",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    },
+    {
+      "id": "XN02",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true,
+      "uniqueAnswer": true,
+      "crossSourceNecessary": true
+    }
+  ],
+  "sha256": {
+    "research/longread-qa-v4/questions.json": "77b01179579ae86a55676d825d1df0afd1c5b7c1fe0d637eb5b11a5047b7f555",
+    "research/longread-qa-v4/host/answer-key.json": "88cf01adef550dcd346d8cecd902164f4bec81e50a1c114c745685c161cd72bf",
+    "research/longread-qa-v4/host/mechanical-audit.json": "f53c6269903bd002133604078bd8fcaf2d54971ce732c3c324fd7c845944b936",
+    "research/longread-qa-v4/review-input/physics.json": "b5f11b8815342d28d8019ac10d6e493804fc6746d590f5db64001eab3f1a15f3",
+    "research/longread-qa-v4/host/review/physics-blind.json": "53e1c0fa1bbe44dd12e3209b064221808c0d5cd1674e0cbb78f65760127861c6",
+    "research/longread-qa-v4/review-input/math.json": "44ef98db3727f7d5b49e1c4fe4b6b46da2d52af0197fcfe68b605b95005c9a0c",
+    "research/longread-qa-v4/host/review/math-blind.json": "157d451a7e34a25863ab54a6c55151c8b80622a53cb7036ac189a70cbd325e83",
+    "research/longread-qa-v4/review-input/novel.json": "e483365994247cad20118dc7ae36b8dce03ef99662ccb47df0f28032fefc8438",
+    "research/longread-qa-v4/host/review/novel-blind.json": "058af271998b875eac24ca82c6d660721d59933fd2bedd6e9a6331b71b627eb1",
+    "research/longread-qa-v4/host/review/question-only.json": "b63bc796ecb69cd4b2edf155374a4a78918b1bcf7d14911d8d96c71d863e194f"
+  },
+  "mergedAnswerKeySha256": "93f770c546b16fd1ae17c8747b4357f11e156210c2e84cd1ce69cbd3d7e02de6",
+  "limitations": [
+    "Source-dependent answers do not establish the scientific truth of every preprint.",
+    "Question-only cue review is not a calibrated measure of difficulty.",
+    "No desired candidate score is imposed; no answer changes after candidate execution."
+  ]
+}

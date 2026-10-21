@@ -1,5 +1,5 @@
 """Frozen local long-reading corpus. Host references never enter candidate workspaces."""
-import hashlib,json,shutil
+import hashlib,json,shutil,subprocess,sys
 from pathlib import Path
 
 CORPUS='longread-20261018'
@@ -10,6 +10,23 @@ CHANGE='''请审计你刚才六问中的论证，不增加外部资料：
 
 def load(path):return json.loads(path.read_text(encoding='utf-8'))
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def prepare_pdf_renderer(root, project):
+    """Prepare a local CoreGraphics renderer before any candidate session starts."""
+    if sys.platform != 'darwin':
+        return
+    tools = project / 'tools'
+    tools.mkdir(exist_ok=True)
+    source = tools / 'pdf-page.swift'
+    shutil.copyfile(root/'templates/06-memory/tools/pdf-page.swift', source)
+    subprocess.run(['/usr/bin/xcrun', 'swiftc', str(source), '-o', str(tools/'pdf-page')],
+                   check=True, timeout=120, capture_output=True, text=True)
+    (project/'materials/TOOLS.md').write_text(
+        '# 本地PDF核对工具\n\n'
+        '`tools/pdf-page materials/papers/文件.pdf 页码 .runtime/page.png`\n\n'
+        '页码从1开始；先创建.runtime目录，输出路径须不存在。'
+        '工具在准备阶段编译，依赖macOS系统CoreGraphics；无需联网或安装库。'
+        '可用图像查看工具检查输出PNG中的公式。TXT仅用于检索。\n', encoding='utf-8')
 
 def validate(root):
     source=root/'research'/CORPUS
@@ -35,16 +52,15 @@ def validate(root):
 
 def install(root,target):
     source,meta=validate(root)
-    dest=target/'tasks/05-memory/materials';dest.mkdir(parents=True,exist_ok=True)
+    dest=target/'tasks/06-memory/materials';dest.mkdir(parents=True,exist_ok=True)
     for r in meta['papers']:
         for key in ('pdf','text'):
             path=Path(r[key]);(dest/path.parent).mkdir(parents=True,exist_ok=True);shutil.copyfile(source/path,dest/path)
     shutil.copytree(source/'novel',dest/'novel')
     for name in ('manifest.json','corpus.sha256','INDEX.md','index.html'):
         shutil.copyfile(source/name,dest/name)
-    private=target/'admin/05-memory';private.mkdir(parents=True,exist_ok=True)
-    shutil.copyfile(source/'host/REFERENCE.md',private/'reference.md')
-    shutil.copyfile(source/'host/RUBRIC.json',private/'rubric.json')
-    (private/'change.txt').write_text(CHANGE,encoding='utf-8')
-    (target/'tasks/05-memory/research').mkdir(exist_ok=True)
+    private=target/'admin/06-memory';private.mkdir(parents=True,exist_ok=True)
+    from .objective import install as install_objective
+    install_objective(target)
+    (target/'tasks/06-memory/research').mkdir(exist_ok=True)
     (dest/'README.md').write_text('50篇论文/预印本与用户提供的《三体Ⅲ：死神永生》全文。先查INDEX.md及novel/INDEX.md；PDF与TXT内容均在本题目录。小说引用Nxxx-Pxxxx；论文引用材料编号及PDF页码。PDF为公式的权威版本。不得将小说设定与现实研究结论混为一谈。\n',encoding='utf-8')

@@ -17,7 +17,7 @@ from evalkit.studio import Studio, StudioError, Handler, ArtifactHandler, score_
 
 class ScoreTests(unittest.TestCase):
     def test_browser_mock_atomic_failure_and_response_race(self):
-        source=m.ROOT/'templates/02-dispatch/public/materials/mock-api.js'
+        source=m.ROOT/'templates/03-dispatch/public/materials/mock-api.js'
         with tempfile.TemporaryDirectory() as folder:
             module=Path(folder)/'mock.mjs'; module.write_bytes(source.read_bytes())
             script='''import assert from 'node:assert/strict';
@@ -45,13 +45,13 @@ assert.equal((await api.detail('a')).courierId,'P03');
         for task in catalog():
             self.assertEqual(sum(d['weight'] for d in task['rubric']),100)
             prompt=candidate_task(task['id'],standard)
-            self.assertIn('output/index.html',prompt)
+            self.assertIn('output/answers.json' if task.get('delivery')=='answers-json' else 'output/index.html',prompt)
             for word in ('评分','权重','扣分','加权'):
-                self.assertNotIn(word,prompt)
+                if task.get('scoringMode')!='objective': self.assertNotIn(word,prompt)
                 self.assertNotIn(word,(m.ROOT/'rules/COMMON_RULES.md').read_text())
 
     def test_score_zero_missing_and_weighting(self):
-        dims=catalog()[0]['rubric']
+        dims=[{'id':'structure','weight':25},{'id':'motion','weight':75}]
         values={d['id']:0 for d in dims}
         self.assertEqual(score_values(dims,values)[1],0)
         values[dims[0]['id']]=10
@@ -64,6 +64,25 @@ assert.equal((await api.detail('a')).courierId,'P03');
         for value in (True,-1,11,float('nan'),float('inf'),'5'):
             with self.subTest(value=value),self.assertRaises(StudioError): score_values(dims,{key:value})
         with self.assertRaises(StudioError): score_values(dims,{'unknown':5})
+
+    def test_binary_scores_use_whole_weights_and_reject_partial_credit(self):
+        dims=[{'id':'A','weight':35},{'id':'B','weight':65}]
+        self.assertEqual(score_values(dims,{'A':1,'B':0},'binary'),({'A':1,'B':0},35))
+        self.assertEqual(score_values(dims,{'A':1,'B':1},'binary')[1],100)
+        self.assertEqual(score_values(dims,{'A':0,'B':0},'binary')[1],0)
+        for value in (True,.5,2,10,-1,float('nan')):
+            with self.subTest(value=value),self.assertRaises(StudioError):
+                score_values(dims,{'A':value,'B':0},'binary')
+
+    def test_hybrid_scores_use_binary_api_weights_and_manual_ten_point_scale(self):
+        dims=[{'id':'query','weight':40,'scoring':'auto'},
+              {'id':'visual','weight':60,'scoring':'manual'}]
+        self.assertEqual(score_values(dims,{'query':1,'visual':5},'hybrid')[1],70)
+        self.assertEqual(score_values(dims,{'query':0,'visual':10},'hybrid')[1],60)
+        self.assertIsNone(score_values(dims,{'query':None,'visual':10},'hybrid')[1])
+        for value in (.5,2,10,-1,True):
+            with self.subTest(value=value),self.assertRaises(StudioError):
+                score_values(dims,{'query':value,'visual':5},'hybrid')
 
 
 class StudioTests(unittest.TestCase):
@@ -84,6 +103,10 @@ class StudioTests(unittest.TestCase):
 
     def test_immutable_versions_score_binding_and_persistence(self):
         run=self.init(); source=self.output(run); studio=self.studio()
+        # Historical score-to-artifact binding stays unchanged when review is manual.
+        pinned=m.load(run/'control/rubric.json')
+        next(t for t in pinned['tasks'] if t['id']=='01-svg').pop('scoringMode',None)
+        m.dump(run/'control/rubric.json',pinned)
         detail=studio.import_artifact(run.name,'01-svg','initial')
         artifact=detail['tasks']['01-svg']['artifacts']['initial'][0]
         values={d['id']:8 for d in catalog()[0]['rubric']}
@@ -124,10 +147,161 @@ class StudioTests(unittest.TestCase):
         (source/'linked').symlink_to(source/'app.js')
         with self.assertRaises(StudioError): studio.import_artifact(run.name,'01-svg','initial')
 
+    def binary_run(self):
+        run=self.init(task='6')
+        options={letter:'option '+letter for letter in 'ABCDEF'}
+        question=lambda ident,weight,answer,multiple=False:{'id':ident,'question':ident,'weight':weight,
+            'options':options,'multiple':multiple,'answer':answer,'scoring':'exact'}
+        key={'version':'longread-qa-v2','phases':{
+            'initial':[question('P01',20,'A'),question('P02',30,'B'),question('N01',50,'AC',True)],
+            'change':[question('C01',60,'D'),question('C02',40,'A')]}}
+        key_path=run/'control/private/06-memory/answer-key.json';m.dump(key_path,key)
+        pinned=m.load(run/'control/rubric.json')
+        spec=next(t for t in pinned['tasks'] if t['id']=='06-memory')
+        rubric=lambda phase:[{'id':q['id'],'name':q['id'],'weight':q['weight'],'description':'核对答案',
+            'anchors':[{'score':0,'text':'错误'},{'score':1,'text':'正确'}]} for q in key['phases'][phase]]
+        spec.update(delivery='answers-json',scoringMode='objective',questionVersion=key['version'],
+            answerKeySha256=m.sha(key_path),rubric=rubric('initial'),rubricChange=rubric('change'))
+        m.dump(run/'control/rubric.json',pinned)
+        return run,key
+
+    def test_answers_import_auto_grades_archived_versions_and_blocks_manual_scores(self):
+        run,key=self.binary_run();studio=self.studio()
+        output=run/'tasks/06-memory/output';m.dump(output/'answers.json',{'P01':'a','P02':'D','N01':'C A'})
+        first=studio.import_artifact(run.name,'06-memory','initial')
+        artifact=first['tasks']['06-memory']['artifacts']['initial'][0]
+        score=first['review']['scores'][artifact['id']]
+        self.assertEqual(score['values'],{'P01':1,'P02':0,'N01':1})
+        self.assertEqual(score['total'],70)
+        self.assertEqual(score['autoGrade']['correct'],2)
+        self.assertEqual(first['run']['taskScores']['06-memory']['initial']['score'],70)
+        self.assertEqual(score['questionVersion'],key['version'])
+        self.assertEqual(score['answerSha256'],m.sha(studio.artifacts/artifact['id']/'files/answers.json'))
+        self.assertEqual(score['answerKeySha256'],m.sha(studio.artifacts/artifact['id']/'answer-key.json'))
+        self.assertFalse((output/'index.html').exists())
+        self.assertFalse((output/'answer-key.json').exists())
+        self.assertFalse((studio.artifacts/artifact['id']/'files/answer-key.json').exists())
+        with self.assertRaisesRegex(StudioError,'不允许手工修改'):
+            studio.save_score(run.name,'06-memory','initial',{'revision':first['review']['revision'],
+                'artifactId':artifact['id'],'values':{'P01':.5,'P02':1,'N01':1}})
+        m.dump(output/'answers.json',{'P01':'D','P02':'B'})
+        second=studio.import_artifact(run.name,'06-memory','initial')
+        self.assertEqual(second['run']['taskScores']['06-memory']['initial']['score'],30)
+        self.assertEqual(second['review']['scores'][artifact['id']],score)
+        self.assertEqual(m.load(studio.artifacts/artifact['id']/'files/answers.json')['P01'],'a')
+        self.assertEqual(self.studio().detail(run.name)['review']['scores'][artifact['id']]['total'],70)
+        export=studio.export('csv')[0].decode()
+        self.assertIn('scoring_mode,question_version,answer_key_sha256',export)
+        self.assertIn('objective,longread-qa-v2',export)
+
+    def test_evidence_tiers_import_with_partial_credit_and_cannot_be_manually_overridden(self):
+        run,key=self.binary_run()
+        key['version']='longread-qa-v2'
+        for questions in key['phases'].values():
+            for q in questions:
+                q['options']={letter:'option '+letter for letter in 'ABCDEF'}
+                q['scoring']='exact'
+        q=key['phases']['initial'][-1]
+        q.update(multiple=False,answer='C',scoring='evidence-tier',
+                 creditByAnswer={'A':0,'B':0.5,'C':1,'D':0,'E':1,'F':0.5})
+        key_path=run/'control/private/06-memory/answer-key.json';m.dump(key_path,key)
+        pinned=m.load(run/'control/rubric.json')
+        spec=next(t for t in pinned['tasks'] if t['id']=='06-memory')
+        spec.update(scoringMode='objective',questionVersion=key['version'],answerKeySha256=m.sha(key_path))
+        m.dump(run/'control/rubric.json',pinned)
+        m.dump(run/'tasks/06-memory/output/answers.json',{'P01':'A','P02':'B','N01':'F'})
+        studio=self.studio()
+        detail=studio.import_artifact(run.name,'06-memory','initial')
+        artifact=detail['tasks']['06-memory']['artifacts']['initial'][-1]
+        score=detail['review']['scores'][artifact['id']]
+        self.assertEqual(score['total'],75)
+        self.assertEqual(score['values'],{'P01':1,'P02':1,'N01':0.5})
+        self.assertEqual((score['autoGrade']['correct'],score['autoGrade']['partial']),(2,1))
+        self.assertEqual(score['scoringMode'],'objective')
+        self.assertEqual(score['autoGrade']['items'][-1]['creditByAnswer'],q['creditByAnswer'])
+        with self.assertRaisesRegex(StudioError,'不允许手工修改'):
+            studio.save_score(run.name,'06-memory','initial',{'revision':detail['review']['revision'],
+                'artifactId':artifact['id'],'values':{'P01':1,'P02':1,'N01':1}})
+
+    def test_binary_answer_scores_remain_locked_when_other_tasks_are_manual(self):
+        run,_=self.binary_run()
+        pinned=m.load(run/'control/rubric.json')
+        next(t for t in pinned['tasks'] if t['id']=='06-memory')['scoringMode']='binary'
+        m.dump(run/'control/rubric.json',pinned)
+        m.dump(run/'tasks/06-memory/output/answers.json',{'P01':'A','P02':'B','N01':'AC'})
+        studio=self.studio()
+        detail=studio.import_artifact(run.name,'06-memory','initial')
+        artifact=detail['tasks']['06-memory']['artifacts']['initial'][0]
+        before=(run/'control/review.json').read_bytes()
+        self.assertEqual(next(t for t in detail['rubric'] if t['id']=='06-memory')['scoringMode'],'binary')
+        with self.assertRaisesRegex(StudioError,'不允许手工修改'):
+            studio.save_score(run.name,'06-memory','initial',{'revision':detail['review']['revision'],
+                'artifactId':artifact['id'],'values':{'P01':0,'P02':0,'N01':0}})
+        self.assertEqual((run/'control/review.json').read_bytes(),before)
+
+    def test_answers_snapshot_phase_keys_and_invalid_json(self):
+        run,_=self.binary_run();studio=self.studio()
+        output=run/'tasks/06-memory/output'
+        m.dump(output/'answers.json',{'P01':'A','P02':'B','N01':'AC'})
+        m.snapshot(argparse.Namespace(run=str(run),task='6',phase='initial',allow_invalid=False))
+        m.write(output/'answers.json','{}')
+        frozen=studio.import_artifact(run.name,'06-memory','initial')
+        self.assertEqual(frozen['run']['taskScores']['06-memory']['initial']['score'],100)
+        m.dump(output/'answers.json',{'P01':'A','P02':'B','N01':'AC'})
+        m.release_change(run,'06-memory',run/'tasks/06-memory')
+        m.dump(output/'answers.json',{'C01':'D','C02':'B'})
+        changed=studio.import_artifact(run.name,'06-memory','change')
+        artifact=changed['tasks']['06-memory']['artifacts']['change'][0]
+        self.assertEqual(changed['review']['scores'][artifact['id']]['values'],{'C01':1,'C02':0})
+        self.assertEqual(changed['run']['taskScores']['06-memory']['change']['score'],60)
+        m.write(output/'answers.json','<script>alert("candidate")</script>')
+        invalid=studio.import_artifact(run.name,'06-memory','change')
+        artifact=invalid['tasks']['06-memory']['artifacts']['change'][-1]
+        self.assertEqual(invalid['review']['scores'][artifact['id']]['total'],0)
+        self.assertTrue(invalid['review']['scores'][artifact['id']]['autoGrade']['errors'])
+        preview=(studio.artifacts/artifact['id']/'files/index.html').read_text()
+        self.assertIn('&lt;script&gt;',preview);self.assertNotIn('<script>',preview)
+
+    def test_answers_reject_mismatched_frozen_key_and_rubric(self):
+        run,key=self.binary_run();studio=self.studio()
+        m.dump(run/'tasks/06-memory/output/answers.json',{'P01':'A'})
+        key['phases']['initial'][0]['answer']='D'
+        m.dump(run/'control/private/06-memory/answer-key.json',key)
+        with self.assertRaisesRegex(StudioError,'固定版本'):
+            studio.import_artifact(run.name,'06-memory','initial')
+        self.assertFalse(studio.review(run)['artifacts'])
+        pinned=m.load(run/'control/rubric.json')
+        spec=next(t for t in pinned['tasks'] if t['id']=='06-memory')
+        spec['answerKeySha256']=m.sha(run/'control/private/06-memory/answer-key.json')
+        spec['questionVersion']='another-version';m.dump(run/'control/rubric.json',pinned)
+        with self.assertRaisesRegex(StudioError,'版本'):
+            studio.import_artifact(run.name,'06-memory','initial')
+        spec['questionVersion']=key['version'];spec['rubric'][0]['weight']=21
+        m.dump(run/'control/rubric.json',pinned)
+        with self.assertRaisesRegex(StudioError,'权重'):
+            studio.import_artifact(run.name,'06-memory','initial')
+
+    def test_historical_research_html_keeps_manual_scoring(self):
+        run=self.init(task='6');studio=self.studio()
+        pinned=m.load(run/'control/rubric.json')
+        spec=next(t for t in pinned['tasks'] if t['id']=='06-memory')
+        for field in ('delivery','scoringMode','questionVersion','answerKeySha256'): spec.pop(field,None)
+        spec['rubric']=catalog()[0]['rubric']
+        m.dump(run/'control/rubric.json',pinned)
+        output=run/'tasks/06-memory/output';m.dump(output/'answers.json',{})
+        with self.assertRaises(StudioError): studio.import_artifact(run.name,'06-memory','initial')
+        m.write(output/'index.html','<!doctype html><html>旧版论文报告</html>')
+        detail=studio.import_artifact(run.name,'06-memory','initial')
+        artifact=detail['tasks']['06-memory']['artifacts']['initial'][0]
+        self.assertNotIn(artifact['id'],detail['review']['scores'])
+        detail=studio.save_score(run.name,'06-memory','initial',{'revision':detail['review']['revision'],
+            'artifactId':artifact['id'],'values':{d['id']:7.5 for d in spec['rubric']}})
+        self.assertEqual(detail['review']['scores'][artifact['id']]['total'],75)
+
     def test_model_edits_archive_and_export(self):
         run=self.init(); self.output(run); studio=self.studio()
         d=studio.import_artifact(run.name,'01-svg','initial'); a=d['tasks']['01-svg']['artifacts']['initial'][0]
-        studio.save_score(run.name,'01-svg','initial',{'revision':1,'artifactId':a['id'],'values':{d['id']:0 for d in catalog()[0]['rubric']}})
+        studio.save_score(run.name,'01-svg','initial',{'revision':1,'artifactId':a['id'],'values':{d['id']:None if d.get('scoring')=='auto' else 0 for d in catalog()[0]['rubric']}})
         d=studio.update_run(run.name,{'model':'=unsafe','archived':True,'notes':'local'})
         self.assertTrue(d['run']['archived'])
         self.assertIn("'=unsafe",studio.export('csv')[0].decode())

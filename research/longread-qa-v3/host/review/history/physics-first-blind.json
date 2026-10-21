@@ -1,0 +1,599 @@
+{
+  "model": "gpt-6-sol",
+  "questionsSha256": "023a4bc3c4092447ce5f769445979b2f502b6b25b66b4b76083eb602cf90cfee",
+  "phases": {
+    "initial": [
+      {
+        "id": "P01",
+        "answer": "CEF",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": true,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "P02",
+          "P03",
+          "P08",
+          "P11"
+        ],
+        "reason": "A: P08 pp.6,16–19 无鬼要求ξeff>0而穿越需<0。B/F: P02 pp.3,13 的易感率背景对应不带来de Sitter解。C/D: P03 pp.1,5–6,10–14 给出适度GB下稳定穿越与未来稳定de Sitter，关耦合无穿越；过强耦合会有声速不稳定。E: P11 pp.1,11 的BDE-BDM始终w>−1。",
+        "issues": []
+      },
+      {
+        "id": "P02",
+        "answer": "ABD",
+        "optionVerdicts": {
+          "A": true,
+          "B": true,
+          "C": false,
+          "D": true,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "P02",
+          "P07",
+          "P09"
+        ],
+        "reason": "A/E: P02 pp.5–7,13 的真实w=−1与有效背景穿越可共存，重复H(z)不破简并。B: P09 pp.14–17 的RSD分析还改变扰动正则支持，须固定支持比较。C/D/F: P07 pp.1,11–18 近中心ΛLTB可近各向同性；kSZ排除部分距离允许域，但约300 Mpc/h、10%过密分支仍存。",
+        "issues": []
+      },
+      {
+        "id": "P03",
+        "answer": "ADE",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "P01",
+          "P11",
+          "P12"
+        ],
+        "reason": "A: P11 pp.18–20 的CPL拟合改善可大而证据较低，证据需各自先验。B/C/D: P01 pp.8–12 的单参数非局域模型只诱导一维CPL轨迹，不能任意赋全平面均匀理论先验或借全平面极值。E/F: P12 pp.13–16 幂律偏离受加入超新星改变；指数参数偏离不等于AIC/BIC明确胜出。",
+        "issues": []
+      },
+      {
+        "id": "P04",
+        "answer": "CDE",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": true,
+          "D": true,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "P14",
+          "P17"
+        ],
+        "reason": "A/C: P14 p.1,3 的走廊超边按构造可分解并单次matching。B/E/F: P17 pp.1,5–8 的η=100 MWPF中心阈值rotated≈0.36%、XZZX≈0.70%，0.50%只低于后者；换PyMatching不能搬用该测量。D: P17 pp.9–10 指中等偏置破坏对角链解耦，阈值非单调。",
+        "issues": []
+      },
+      {
+        "id": "P05",
+        "answer": "BEF",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "P18",
+          "P24"
+        ],
+        "reason": "A/B/D: P24 pp.2,5–7,18 的X测量要所有非零分支兼容；理想测量确定或反对易于Z稳定子且反馈限DCP时，DCP故障闭包才获认证。B/E/F: P18 pp.1,5–6,12 在code-capacity纯近邻ZZ有多项式采样，混合一般相干单比特Z与ZZ有多项式层级障碍；C的twirling改变相干模型。",
+        "issues": []
+      },
+      {
+        "id": "P06",
+        "answer": "CEF",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": true,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "P14",
+          "P24",
+          "P25"
+        ],
+        "reason": "C/F: P14 pp.1–3 码为[[4t²,2,2t]]，t=5给100数据位、2逻辑位、距离10，非总硬件数；P25 pp.5,31 的等syndrome必要界wmax≥ceil(d/2)=5。A/E: P24 pp.2,5–7 的码空间保持不保证X测量所有分支仍3PP。B: 外校验重量4t=20并非旋转生成元下界。D: P25 p.6 区分Pauli旋转深度与编译到原生门的电路深度。",
+        "issues": []
+      },
+      {
+        "id": "P07",
+        "answer": "ADE",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "P19",
+          "P21"
+        ],
+        "reason": "P21 pp.1–3 给10%拒绝、72比特BB保留样本失败率p/3700；P19 pp.1–2 给上端25%定向降噪。A/D/E: 甲成本1/.9+Cp/3700，乙1+.75Cp，交点Cp=(1/.9−1)/(.75−1/3700)=0.14820；故0.10乙、1甲。B/C/F: 甲尝试成本为1/.9，p/3700已是条件于保留的失败率，不能再除产率。",
+        "issues": []
+      },
+      {
+        "id": "P08",
+        "answer": "DEF",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "P14",
+          "P22",
+          "P23"
+        ],
+        "reason": "E: P14 pp.1–3 的[[4,2,2]]外码率2/4=.5，整体近邻平面。F: P23 pp.1,8–12 报[[256,166,8]]，166/256=.6484375并保留平面近邻，但还要内层与工作区。D: P22 pp.1–2 的投影码率1/16与距离下界22，对比12/288=1/24和18，率比1.5。A/B/C: 外码率不能替代物理开销；P22跨模块边界耦合不满足单一平面近邻；P23外码距离不等于最终电路距离。",
+        "issues": []
+      },
+      {
+        "id": "P09",
+        "answer": "ACE",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": false,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "P05",
+          "P13"
+        ],
+        "reason": "P05 p.1式(1)(2): Ωg=1−1/.992=−1/124，ρDE/ρΛ=(1+Ωg R)/(1−Ωg)=(124−R)/125。P13 pp.2–3: T比=(ΔNeff)^(1/4)，ms,eff=2(ΔNeff)^(3/4)eV。A: Δ=.1296给T=.6、m=.432、R=127.64，密度=−3.64/125=−.02912。C: Δ=.0625给T=.5、m=.25、R=124，零。E: Δ=.01给m=.0632456、R=120.2649，密度=.02988。B/D/F均与此代数相反。",
+        "issues": []
+      },
+      {
+        "id": "P10",
+        "answer": "ADE",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "P04",
+          "P06"
+        ],
+        "reason": "P06 pp.1–2,31 的全示踪物缩减6%、4%，合并LRG为15%、10%；P04 pp.1–3 的独立斜率.022±.012且AIC/Bayes未分辨常数。A: .94×.96×sqrt(.75)=.7815。D: .85×.90×sqrt(.75)=.6625。E: .022/.012=1.833，椭圆改进不传给独立斜率。B/C/F故不成立。",
+        "issues": []
+      },
+      {
+        "id": "P11",
+        "answer": "ACE",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": false,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "P02",
+          "P04"
+        ],
+        "reason": "P04 p.3式(4)的E²=.3(1+z)^3+.7X、Om=(E²−1)/((1+z)^3−1)，z=1分母7。X=.8给E²=2.96、Om=.28；X=1.2给3.24、.32；z=1处适用（p.3）。P02 pp.5–7 的真实w=−1易感率模型能复现同一E，故Om不是其真实流体w的判据。B/D/F错误。",
+        "issues": []
+      },
+      {
+        "id": "P12",
+        "answer": "ACDF",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": true,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "P16",
+          "P17",
+          "P21"
+        ],
+        "reason": "P16 pp.1,3–6 的SMP以线性预处理把局部超边motif证据投到matching边权，motif不证明故障必发生；整体matching复杂度不能随预处理改称线性。P17 pp.1,5 使用原生超图MWPF，违反不换后端。P21 pp.1–3 的后选择需拒shot。故A/C/D/F，B/E不成立。",
+        "issues": []
+      },
+      {
+        "id": "P13",
+        "answer": "BEF",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "P09",
+          "P12",
+          "P13"
+        ],
+        "reason": "B: P09 pp.14–17 的RSD增加和正则支持变化需固定支持拆分；A中Bayes因子同向也可依先验规范变数值。E: P13 pp.1,11–12 的诱导先验检查只排除质量位移完全由变量变换体积造成，不是任何先验免疫，亦不替P09作对照。F: P12 pp.13–16 指数f(T)参数非零还须AIC/BIC模型级判断；D不能跨研究相加σ。",
+        "issues": []
+      },
+      {
+        "id": "P14",
+        "answer": "AEF",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "P10",
+          "P13"
+        ],
+        "reason": "P13 p.1 报H0=70.9±.7并采用HDN 73.50±.81。F: |70.9−73.5|/sqrt(.7²+.81²)=2.428；因后验已含HDN只能作题设诊断，B/C错误。P10 pp.5–6,23 在不同fiducial模拟目录，1%于40/80对应绝对误差.4/.8，改注入不是真实新观测，也无排除35–115的波形先验，故A/E而D错。",
+        "issues": []
+      },
+      {
+        "id": "P15",
+        "answer": "BCDF",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": true,
+          "D": true,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "P11",
+          "P13"
+        ],
+        "reason": "P13 pp.2–3 的热遗迹ms,eff=ms(Ts/Tν)^3；B的固定有效质量下ms新/旧=(.5/.8)^3=.24414；F的固定ms降T则有效质量降。P11 pp.6,20–21 的凝聚后初始相对论性束缚暗物质有小尺度自由流动预测，但拟合未纳入卫星尺度，所以D而A错。C需定量鉴别；E把两种独立参数混同。",
+        "issues": []
+      },
+      {
+        "id": "P16",
+        "answer": "ABF",
+        "optionVerdicts": {
+          "A": true,
+          "B": true,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "P19",
+          "P21"
+        ],
+        "reason": "P21 pp.1–3 的144比特BB在10%拒绝时保留条件失败率p/740、产率.9，故联合保留且失败=.9p/740；原失败中拒绝占1−.9/740=.9987838。P19 pp.2–3,9 的签名敏感度S=.02−.03=−.01，降噪δλ<0导致一阶δLER=Sδλ>0；不可取绝对值。C/D/E错，物理噪声率未被后选择改变。",
+        "issues": []
+      },
+      {
+        "id": "P17",
+        "answer": "AC",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": false,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "P15",
+          "P19"
+        ],
+        "reason": "P19 pp.2–3,9 的一阶改进为λS/2：a=.00010，b=.00016，c=−.00003；故A成立、C为失败率增加.00003，D错。B是有限改动非恒等；P15 pp.1–4 的形变表现依噪声与解码器，变后需重估，E/F无保证。",
+        "issues": []
+      },
+      {
+        "id": "P18",
+        "answer": "AC",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": false,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "P18",
+          "P24"
+        ],
+        "reason": "P24 p.5例1：CCZ态测X1负支概率1/4、支撑2且3PP；正支3/4、支撑6且非仿射，故整测量不兼容，A真D/F/E假。C: 抛正支使无条件分布变为后选择。P18 pp.1,5–6,12 的纯ZZ可解不能推广至一般相干单比特Z+ZZ，故B假。",
+        "issues": []
+      },
+      {
+        "id": "P19",
+        "answer": "CD",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": true,
+          "D": true,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "P14",
+          "P22"
+        ],
+        "reason": "P14 pp.1–3,7 的严格界N<2(2t+1)^2；t=3给<98，t=4给<162，单rotated distance 2t物理位2(2t)^2−1，所以双patch分别142和254。t=4节省>1−162/254=.3622047；t=3仅由界保证>1−98/142=.30986，非40%，且<不等于实测98。P22 pp.5–6,16 的extractor/memory=1/4.5，总计1.2222倍；B/E/F假。",
+        "issues": []
+      },
+      {
+        "id": "P20",
+        "answer": "BF",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": false,
+          "D": false,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "P15",
+          "P24"
+        ],
+        "reason": "P15 p.1 明报B-XZZX相对优势随d=3到11由约5%升至12%，并非C所说12%降到5%；形变差异占比O(1/d)，rotated数据位O(d²)，故差异数可为O(d)，E错F真；排序只在指定噪声和PyMatching下成立，D错。P24 pp.22–23 的DCP-rank≤stabilizer rank但可随规模增长，不保证任意展开多项式，更非都rank=1；A错B真。",
+        "issues": []
+      },
+      {
+        "id": "P21",
+        "answer": "ACD",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": true,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "P11",
+          "P12"
+        ],
+        "reason": "P11 p.18表IV同列作差：4.09−(−2.11)=6.20、4.12−(−.26)=4.38、4.83−(−.56)=5.39；exp为约493、80、219，第一列归一概率493/(1+493)=.99797。E混淆ln比和比；F三套超新星替代组合非独立相乘。P12 pp.13–16 的指数f(T)参数偏离不能换算为P11的lnB=4.83，故B错。",
+        "issues": [
+          "P11正文p.18称首列差值6.21，但同页表中四舍五入值4.09−(−2.11)=6.20；题目明确按列示值比较，判C为真，仍应标出舍入歧义。"
+        ]
+      },
+      {
+        "id": "P22",
+        "answer": "CDF",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": true,
+          "D": true,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "P02",
+          "P09"
+        ],
+        "reason": "C: P02 pp.5–7 的易感率对应可复现两背景而真实w仍−1。按CPL公式甲z=2为−1.2，乙为−.83333；甲解−.8−.6z/(1+z)=−1得z=.5，乙解−1.1+.4z/(1+z)=−1得z=1/3。甲早期phantom且今天−.8，乙反向；P09 pp.1,7,14,20–21讨论早期phantom至今天quintessence方向。A/B/E错。",
+        "issues": []
+      },
+      {
+        "id": "P23",
+        "answer": "AEF",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "P16",
+          "P19",
+          "P21"
+        ],
+        "reason": "P16 pp.1,14 的77.8%与35.5%失败率降低分别乘.222和.645，非产率；P19 pp.1–2 的定向降噪15%–25%亦是全shot失败率变化。P21 pp.1–3 的90%产率与3700/740倍保留条件LER分母不同，原尝试吞吐需乘.9。B/C/D混淆设置或降低百分比与降至百分比。",
+        "issues": []
+      },
+      {
+        "id": "P24",
+        "answer": "ACDEF",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": true,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "P15",
+          "P20"
+        ],
+        "reason": "P20 pp.1,6–9,14 的模拟预训练、硬件微调与轻量空间聚合适配跨实验，测量误差扫描可联合训练单一解码器，但仍使用数据，故A/C/E真B假。P15 pp.1–4,11–16 的Clifford形变最优性依噪声和解码器；换后端须以新LER验证，D/F真。",
+        "issues": []
+      }
+    ],
+    "change": [
+      {
+        "id": "XP01",
+        "answer": "ABDF",
+        "optionVerdicts": {
+          "A": true,
+          "B": true,
+          "C": false,
+          "D": true,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "P19",
+          "P21"
+        ],
+        "reason": "P19 pp.2–3 的原始S=.40−.02=.38；P21 pp.1–3 区分保留条件LER。独立条件下保留失败联合概率n=.20(.40)λ+.90(.02)(1−λ)=.018+.062λ，产率y=.20λ+.90(1−λ)=.9−.7λ。λ=.1时原始LER=.058、n=.0242、y=.83、n/y=.0291566；λ=.05时y=.865、n/y=.0243931。导数(n/y)'= (.062×.9+.7×.018)/(.9−.7λ)^2，λ=.1为.09929，非.38/.83；C/E错。",
+        "issues": []
+      },
+      {
+        "id": "XP02",
+        "answer": "DF",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "P14",
+          "P24",
+          "P25"
+        ],
+        "reason": "P14 pp.1–3 给四patch距离d=2t；P25 pp.5,31 的必要界wmax≥ceil(d/2)=t。A重量不足；B虽重够但删DCP反馈限制；C的CCZ正支非3PP（P24 p.5）；E任意非DCP反馈不获P24 pp.2,18定理认证。D t2,w2且理想X反对易Z、DCP反馈；F t5,w6且理想X合格、DCP反馈，二者仅通过所问两项。",
+        "issues": []
+      },
+      {
+        "id": "XP03",
+        "answer": "CDF",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": true,
+          "D": true,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "P01",
+          "P09"
+        ],
+        "reason": "沿P01 pp.8–12 的受限一维轨迹及P09 pp.14–17 支持改变需区分归一的原则实算：甲∫₀¹x²dx=1/3；乙∫₀¹u du=1/2，坐标变换需Jacobian。丙∫₁/₂¹x²dx=7/24；丁除保留先验质量1/2得7/12，丁/丙=2，丁/甲=7/4。A/B/E忽略轨迹或支持先验测度，C/D/F真。",
+        "issues": []
+      },
+      {
+        "id": "XP04",
+        "answer": "CDE",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": true,
+          "D": true,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "P15",
+          "P19"
+        ],
+        "reason": "P19 pp.2–3,9 的共享率导数由三位置签名S相加=.10−.04+.20=.26，不能绝对值化或再乘3。减25%收益重复组件.002×.25×.26=.00013；单次组件.004×.25×.15=.00015，故C/D/E真A错。P15 pp.1–4 显示噪声/解码器依赖性，换后端须重估，且25%有限变化只获一阶近似，B/F错。",
+        "issues": []
+      },
+      {
+        "id": "XP05",
+        "answer": "ABCF",
+        "optionVerdicts": {
+          "A": true,
+          "B": true,
+          "C": true,
+          "D": false,
+          "E": false,
+          "F": true
+        },
+        "sources": [
+          "P10",
+          "P13"
+        ],
+        "reason": "P10 p.6 的Planck 67.34与Union3 67.10差.24；P13 p.1 热遗迹70.9±.7与HDN 73.50差2.6。D(N)=Δ/sqrt(.49+100/N)。第一差的N→∞上限.24/.7=.34286；第二上限2.6/.7=3.71429。第二达到3要求100/N≤(2.6/3)^2−.49=.261111，N≥382.9787，整数383。电磁误差底限阻止全D随N翻倍；fiducial不被模拟波形排除；HDN已在原后验中，F须保留。",
+        "issues": []
+      },
+      {
+        "id": "XP06",
+        "answer": "ACD",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": true,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "P06",
+          "P10"
+        ],
+        "reason": "P06 pp.11–15,38–41 的窗口作用是线性。W1b=(2,6)，W2b=(7,3)，加权=.25(2,6)+.75(7,3)=(5.75,3.75)，也等于(.25W1+.75W2)b；B/F不共享同一理论向量。P10 pp.4–6 的同E距离dL∝1/H0，故等效H0=1/(.25/60+.75/80)=73.84615，而平均H0=75；C/D成立E错。",
+        "issues": []
+      },
+      {
+        "id": "XP07",
+        "answer": "AD",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "P24",
+          "P25"
+        ],
+        "reason": "P24 pp.4–5式(2.3)要求一次系数任意mod8、二次偶数、三次4的倍数，四次须零。P25 pp.5,31 的距离8等syndrome必要界wmax≥4。A的(1,2,4),w4与D的(7,6,4),w5两项均通过；B二次1、C四次4、F三次2非法，E重量3不足。仅必要筛查不构成门。",
+        "issues": []
+      },
+      {
+        "id": "XP08",
+        "answer": "BEF",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "P05",
+          "P13"
+        ],
+        "reason": "P13 pp.2–3: ms,eff=msΔNeff^(3/4)；P05 p.1: g=.992±.0025。F中心=.992×.16^.75=.250959 eV。相对方差=(.0025/.992)^2+.1²+(.75×.02/.16)^2+2ρ(.1)(.75×.02/.16)。ρ=.5时σF=.04212，ρ=−.5时=.02436，中心不变。A不取倒数；D的指数是3/4非1/4；C相关改号不改中心；忽略正协方差低估误差。",
+        "issues": []
+      }
+    ]
+  },
+  "limitations": []
+}

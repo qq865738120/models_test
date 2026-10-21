@@ -1,0 +1,48 @@
+{
+  "model": "gpt-6-sol",
+  "blind": true,
+  "originalReview": ".runtime/longread-v2-authoring/blind/math-review-sol.json",
+  "corrections": [
+    {
+      "id": "XM01",
+      "priorAnswer": "D",
+      "correctedAnswer": "A",
+      "finding": "The PDF page 4 equation (1.14) contains σ_- A_* before the coefficient ratio; the prior review omitted σ_- when deriving b.",
+      "evidence": [
+        {
+          "path": ".runtime/longread-v2-authoring/pdf-math/M08-p4-hi.png",
+          "locator": "PDF p.4, Corollary 1.3, equation (1.14), lower third of page",
+          "quote": "| (p̃−p_+)/(ṽ−v_+) − (p̃−p_-)/(ṽ−v_-) − σ_- A_* [μRγ/(μRγ+α(γ−1)^2)](v_+−v_-) | ≤ Cε²"
+        },
+        {
+          "path": "research/longread-20261018/papers/M08-2610.16874v1.pdf",
+          "locator": "PDF p.4, equations (1.9), (1.13), (1.14)",
+          "quote": "σ_- := √(γp_-/v_-); C_* := Rγ(γ+1)σ_- / [2(μRγ+α(γ−1)^2)]; A_* := γ(γ+1)p_- / (2v_-²σ_-)."
+        },
+        {
+          "path": "research/longread-20261018/papers/M13-2608.29138v1.txt",
+          "locator": "PDF p.3, equation (5)",
+          "quote": "W (x3) = 6 F x3(1 − x3)e(α)"
+        }
+      ],
+      "independentFractionCalculation": {
+        "sigmaMinus": "2",
+        "denominator": "8",
+        "CStar": "3/4",
+        "a": "3/16",
+        "AStar": "3",
+        "b": "9/2",
+        "JOverFSquared": "12"
+      },
+      "reason": "σ_-=√(2·2/1)=2, μRγ+α(γ−1)^2=3·1·2+2=8. Therefore C_*=3/4 and midpoint a=C_*/4=3/16. A_*=2·3·2/(2·1²·2)=3. Formula (1.14) gives b=σ_-A_*·6/8=2·3·6/8=9/2. Formula W=6Fz(1−z) gives J/F²=12. Thus option A is exact; option D omits σ_- in b.",
+      "impact": "Original blind review is preserved as an audit trail and should be superseded for XM01 only."
+    }
+  ],
+  "wordingNotes": [
+    {
+      "id": "M09",
+      "answerUnchanged": "F",
+      "finding": "The mathematically precise statement is that the disk center is 1+iφ with |φ−t|=O((log T)^(1/200)); replacing “圆心接近t” by “圆心高度接近t” resolves the shorthand without changing the answer."
+    }
+  ]
+}

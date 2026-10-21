@@ -1,0 +1,276 @@
+{
+  "version": "novel-draft2",
+  "backup": "novel-draft1.json",
+  "reviewSource": "blind/novel-review-astra.json",
+  "changedIds": [
+    "N04",
+    "N06",
+    "N08",
+    "N12",
+    "XN04"
+  ],
+  "changes": [
+    {
+      "id": "N04",
+      "decision": "接受问题，不以作者原键压过严格证据。",
+      "change": "B从手术前改成医院外；答案仍BDF。",
+      "evidence": [
+        "N012-P0016",
+        "N012-P0055",
+        "N012-P0056",
+        "N012-P0057",
+        "N012-P0060"
+      ],
+      "reason": "通知说将做手术、随后院外揭晓，不能证明揭晓瞬间手术尚未开始；地点医院外则明确。"
+    },
+    {
+      "id": "N06",
+      "change": "加入假警报时期常规赴木星25—30天、预警24小时及几十分钟光速临警逃亡的争议，再与后期尾迹合作和覆盖方案合并。",
+      "essentialSources": {
+        "N043": [
+          "P0045",
+          "P0141",
+          "P0146"
+        ],
+        "N054": [
+          "P0178",
+          "P0180",
+          "P0181"
+        ]
+      },
+      "discriminator": "C与满分答案的后期机制均相同，区别是早期常规航程天/小时；E的早期事实相同，区别是后期放射覆盖/单侧加厚。只读任一章无法排除另一章干扰。",
+      "credits": {
+        "A": 1,
+        "B": 0.5,
+        "C": 0,
+        "D": 0.5,
+        "E": 0,
+        "F": 1
+      }
+    },
+    {
+      "id": "N08",
+      "change": "移除靠后章即可解的逃逸速度/引擎条目，改为公告时间与船上倒计时两独立时钟四元组。",
+      "essentialSources": {
+        "N053": [
+          "P0026",
+          "P0027",
+          "P0031"
+        ],
+        "N054": [
+          "P0153",
+          "P0218",
+          "P0231"
+        ]
+      },
+      "discriminator": "B/C/F与D有相同船钟但公告时间不同；A/E与D有相同公告时间但船钟不同。",
+      "answer": "D",
+      "calculation": [
+        "5-1=4小时",
+        "起航2小时后接收",
+        "64*60+18-180=3678秒",
+        "64*60+18-50=3808秒"
+      ]
+    },
+    {
+      "id": "N12",
+      "change": "每个选项改为航程与测年双栏；R必须用AA询问并获AI确认的286年与52小时，不能用286.5光年距离代替；保留0.4%名义误差计算。",
+      "essentialSources": {
+        "N055": [
+          "P0003",
+          "P0006",
+          "P0007",
+          "P0008"
+        ],
+        "N056": [
+          "P0035",
+          "P0040",
+          "P0041",
+          "P0043"
+        ]
+      },
+      "discriminator": "A/B同航程比但测年不同，A/C同测年但把距离错填为年数；其他选项仍两栏同时核对。",
+      "answer": "AF",
+      "calculation": [
+        "286*365.25*24/52=48213",
+        "18903729*.004=75614.916"
+      ]
+    },
+    {
+      "id": "XN04",
+      "change": "不再考同章内的简单门阈值，改为广播阶段/终值、古文字用途与搬运质量/空间体积/飞船实际引擎动作交织。",
+      "essentialSources": {
+        "N057": [
+          "P0080",
+          "P0116",
+          "P0117",
+          "P0118",
+          "P0121"
+        ],
+        "N058": [
+          "P0019",
+          "P0022",
+          "P0037",
+          "P0042"
+        ]
+      },
+      "discriminator": "A/B及E/F仅差N058事实；C/D仅差N057阶段值/终值。每项包含两章条件，密度计算本身也须跨章取质量与体积。",
+      "answer": "ACE",
+      "calculation": [
+        "5/(500000*1000)=1e-8",
+        "(500000*1000)/(1000^3)=.5kg/m^3"
+      ]
+    }
+  ],
+  "validation": {
+    "DecimalArithmetic": "passed",
+    "optionQuotes": "exact substrings in the actual cited paragraph, including preserved questions",
+    "weights": "initial33/change33",
+    "unchangedIds": [
+      "N01",
+      "N02",
+      "N03",
+      "N05",
+      "N07",
+      "N09",
+      "N10",
+      "N11",
+      "XN01",
+      "XN02",
+      "XN03"
+    ],
+    "longestOnlyInitial": {
+      "score": 7.0,
+      "outOf": 33,
+      "ties": "first ABCDEF maximum",
+      "items": [
+        {
+          "id": "N01",
+          "chosen": "E",
+          "credit": 1.0,
+          "length": 66
+        },
+        {
+          "id": "N02",
+          "chosen": "F",
+          "credit": 0.0,
+          "length": 57
+        },
+        {
+          "id": "N03",
+          "chosen": "B",
+          "credit": 1.0,
+          "length": 46
+        },
+        {
+          "id": "N04",
+          "chosen": "F",
+          "credit": 0.0,
+          "length": 56
+        },
+        {
+          "id": "N05",
+          "chosen": "C",
+          "credit": 0.0,
+          "length": 60
+        },
+        {
+          "id": "N06",
+          "chosen": "C",
+          "credit": 0,
+          "length": 106
+        },
+        {
+          "id": "N07",
+          "chosen": "D",
+          "credit": 0.0,
+          "length": 56
+        },
+        {
+          "id": "N08",
+          "chosen": "A",
+          "credit": 0.0,
+          "length": 22
+        },
+        {
+          "id": "N09",
+          "chosen": "B",
+          "credit": 0.0,
+          "length": 62
+        },
+        {
+          "id": "N10",
+          "chosen": "A",
+          "credit": 1,
+          "length": 90
+        },
+        {
+          "id": "N11",
+          "chosen": "C",
+          "credit": 0.0,
+          "length": 63
+        },
+        {
+          "id": "N12",
+          "chosen": "C",
+          "credit": 0.0,
+          "length": 59
+        }
+      ]
+    },
+    "unchangedQuestionAnswerRecords": "all other 11 question/answer objects byte-equivalent after JSON parsing"
+  },
+  "optionLengths": {
+    "N04": {
+      "A": 33,
+      "B": 42,
+      "C": 39,
+      "D": 49,
+      "E": 48,
+      "F": 56
+    },
+    "N06": {
+      "A": 99,
+      "B": 96,
+      "C": 106,
+      "D": 99,
+      "E": 96,
+      "F": 97
+    },
+    "N08": {
+      "A": 22,
+      "B": 22,
+      "C": 22,
+      "D": 22,
+      "E": 19,
+      "F": 22
+    },
+    "N12": {
+      "A": 54,
+      "B": 54,
+      "C": 59,
+      "D": 48,
+      "E": 52,
+      "F": 55
+    },
+    "XN04": {
+      "A": 49,
+      "B": 49,
+      "C": 50,
+      "D": 50,
+      "E": 50,
+      "F": 50
+    }
+  },
+  "followupReviewFixes": [
+    {
+      "id": "N08",
+      "reason": "Blind reviewer found initial countdown disclosed in stem and cancellable from distractor differences.",
+      "changes": [
+        "Initial 64m18s removed from stem; must retrieve from second chapter.",
+        "Option A changed to 3618s/3748s: same 130s difference as D, but wrong initial countdown."
+      ],
+      "verifiedBy": "blind/novel-review-astra-revised.json"
+    }
+  ]
+}

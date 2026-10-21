@@ -1,0 +1,100 @@
+{
+  "harness": "codex",
+  "harnessCustom": "",
+  "id": "20261021-131937-gpt-6-astro-r1-191ecd",
+  "suiteId": "pelican-v1.0",
+  "suiteName": "鹈鹕测评 v1.0",
+  "rubricVersion": "pelican-rubric-14",
+  "model": "GPT 6 Astra",
+  "repeat": 1,
+  "createdAt": "2026-10-21T08:23:06.707610+00:00",
+  "bundleSha256": "e67d79c0499b5e6bf3aa19cc863ca386bf7678fd6f98655331947770a4dcadbd",
+  "materialVersion": "pelican-v1.0-project-rules-v2-20261021",
+  "rulesSha256": "9767e807f59035da684fc8657a57368097b8bc38eebd9b9888c2ee3bf6a0cb11",
+  "preparedEnvironment": {
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "architecture": "arm64",
+    "node": "v24.21.0",
+    "npm": "11.19.0"
+  },
+  "profile": "local",
+  "enforcement": "rules-only",
+  "toolPolicy": "offline; no extra models/agents/connectors; single task root",
+  "environment": {
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "python": "3.9.6",
+    "node": "v24.21.0",
+    "npm": "11.19.0",
+    "browser": null,
+    "agentClient": "Codex desktop",
+    "reasoning": "ultra",
+    "reasoningLevel": "5",
+    "temperature": null,
+    "hardware": null
+  },
+  "calibration": null,
+  "tasks": {
+    "01-svg": {
+      "phase": "initial",
+      "initialSnapshot": null,
+      "changeSnapshot": null,
+      "changeReleasedAt": null,
+      "startedAt": "2026-10-21T08:25:21.777502+00:00",
+      "finishedAt": null,
+      "deadlineAt": "2026-10-21T08:35:21.777647+00:00"
+    },
+    "02-static": {
+      "phase": "initial",
+      "initialSnapshot": null,
+      "changeSnapshot": null,
+      "changeReleasedAt": null,
+      "startedAt": "2026-10-21T08:25:44.809398+00:00",
+      "finishedAt": null,
+      "deadlineAt": "2026-10-21T08:45:44.809530+00:00"
+    },
+    "03-dispatch": {
+      "phase": "initial",
+      "initialSnapshot": null,
+      "changeSnapshot": null,
+      "changeReleasedAt": null,
+      "startedAt": "2026-10-21T08:25:45.378369+00:00",
+      "finishedAt": null,
+      "deadlineAt": "2026-10-21T09:10:45.378519+00:00"
+    },
+    "04-game2d": {
+      "phase": "initial",
+      "initialSnapshot": null,
+      "changeSnapshot": null,
+      "changeReleasedAt": null,
+      "startedAt": "2026-10-21T08:25:45.995906+00:00",
+      "finishedAt": null,
+      "deadlineAt": "2026-10-21T09:10:45.996107+00:00"
+    },
+    "05-game3d": {
+      "phase": "initial",
+      "initialSnapshot": null,
+      "changeSnapshot": null,
+      "changeReleasedAt": null,
+      "startedAt": "2026-10-21T08:25:46.812474+00:00",
+      "finishedAt": null,
+      "deadlineAt": "2026-10-21T09:25:46.812651+00:00"
+    },
+    "06-memory": {
+      "phase": "initial",
+      "initialSnapshot": null,
+      "changeSnapshot": null,
+      "changeReleasedAt": null,
+      "startedAt": "2026-10-21T08:25:47.475716+00:00",
+      "finishedAt": null,
+      "deadlineAt": "2026-10-21T10:25:47.475870+00:00"
+    }
+  },
+  "manualInterventions": [],
+  "cost": {
+    "tokens": null,
+    "amount": null,
+    "unit": null,
+    "source": null
+  },
+  "results": {}
+}

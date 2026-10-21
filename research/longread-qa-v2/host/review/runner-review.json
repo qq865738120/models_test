@@ -1,0 +1,58 @@
+{
+  "reviewedAt": "2026-10-20T15:08:14.004811+00:00",
+  "reviewer": "hard_math",
+  "target": "scripts/run_memory_candidate.py",
+  "sha256": "e86297b7406581800a6d2cd8289b08252d4949d76ed05665b8c7bbd26cac38ac",
+  "method": "Read-only latest source inspection and recorded full preflight evidence inspection; prior local CLI help inspection. No candidate execution, auth access, run mutation or test rerun by this reviewer.",
+  "status": "pass: no blocking context, permission or PDF capability issue found",
+  "blockingFindings": [],
+  "checks": [
+    {
+      "name": "fresh-Q6-only",
+      "result": "pass",
+      "evidence": "main requires tasks == {06-memory}, initial phase, no startedAt/snapshot/submitted answers, protected-material integrity and pinned key hash. It invokes a new ephemeral exec, never resume/fork, with cwd set to this task."
+    },
+    {
+      "name": "candidate-context",
+      "result": "pass-by-source-and-configuration",
+      "evidence": "stdin is only control/prompts/06-memory-initial.txt. No key, future prompt, previous output or other-run content is concatenated. initial_prompt is generated from public COMMON_RULES.md and TASK.md. project_doc_max_bytes=0 disables automatic project-doc content; memories, apps/plugins, hooks, multi-agent, browser/computer use, web search and host skill discovery are disabled. --ignore-user-config excludes user config; --ignore-rules excludes execpolicy rules (it does not itself disable AGENTS.md)."
+    },
+    {
+      "name": "command-filesystem-policy",
+      "result": "pass-by-source-and-recorded-full-preflight",
+      "evidence": "Named longread profile grants minimal system-runtime reads, denies home, grants the more-specific task directory writes and protects other existing top-level task paths including materials/TASK.md/tools as read-only. Thus PDF/TXT materials are readable and output is writable while host control, sibling tasks and other runs under home remain denied. manager.integrity scans the complete task tree and rejects external symlinks, special files and hardlinks. Full integration preflight observed public reads and local writes allowed; host private/key reads and protected TASK.md writes denied."
+    },
+    {
+      "name": "network-and-approval",
+      "result": "pass-by-configuration-and-recorded-full-preflight",
+      "evidence": "permissions.longread.network.enabled=false, approval_policy=never, web_search=disabled. Runtime preflight requires a forbidden-network observation and explicit PermissionError for host probe/key reads and TASK.md write access before model launch. The full integration preflight records network=denied and all six observations match expectations."
+    },
+    {
+      "name": "honest-isolation-scope",
+      "result": "pass",
+      "evidence": "execution metadata explicitly identifies command sandbox verification and configuration-constrained client context, and does not claim a separate OS user or VM. CLI host logging to control/retest is separate from candidate command permissions."
+    },
+    {
+      "name": "usable-PDF-renderer",
+      "result": "pass-by-latest-source-and-recorded-full-preflight",
+      "evidence": "The task-local CoreGraphics renderer tools/pdf-page ran inside the same named candidate sandbox on materials/papers/M01.pdf page 1, exited 0 with empty stderr, and produced a valid PNG signature and recorded SHA256. The runner now performs this check before every model launch, raises on failure, records renderer/output hashes, and deletes the probe PNG afterward. Root additionally visually checked the rendered M08 page 4 formula image.",
+      "rendererSha256": "9ba8477e7cc1fd83f0c19178e55844d1f55ccab83e6bbebf64b38ce6401ec258",
+      "outputSha256": "d3564b0f814be9e57c042b4299121065f8568e6ceed0264edbae2fc3782e22a2",
+      "visualCheck": {
+        "reviewer": "root",
+        "image": ".runtime/longread-v2-authoring/pdf-render-probe/.runtime/page4-scaled.png",
+        "status": "reported formula image visually legible"
+      }
+    }
+  ],
+  "pendingValidation": [],
+  "limits": [
+    "This review independently inspected recorded complete preflight results and current source but did not rerun the probes. Network connection failure alone is not a proof of every network restriction; the explicit disabled policy supplies the intended enforcement.",
+    "Freshness of a model conversation is established by new exec invocation. The workspace guard verifies protected materials and the absence of answers.json, not absence of every optional scratch file; the approved run must come from fresh init_run, which refuses overwrites.",
+    "The review does not claim every in-process CLI operation is OS-sandboxed. The documented guarantee is command sandboxing plus client feature/context configuration."
+  ],
+  "evidenceFiles": [
+    ".runtime/longread-v2-authoring/preflight-integration/control/retest/sandbox-preflight.json",
+    ".runtime/longread-v2-authoring/preflight-integration/control/retest/pdf-preflight.json"
+  ]
+}

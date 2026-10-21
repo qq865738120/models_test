@@ -1,0 +1,57 @@
+{
+  "model": "gpt-6-astra",
+  "reasoning": "ultra",
+  "phase": "initial",
+  "promptPolicy": "exact frozen initial prompt; one message per task; no follow-ups",
+  "enforcement": "rules-only",
+  "tasks": [
+    {
+      "task": "01-svg",
+      "threadId": "01a15d90-a0d5-7370-a2c3-9b26334aeb1a",
+      "hostId": "local",
+      "promptSha256": "5539885b8669e0a3de02d09b18ca4cf06ca5ed56acdfb53d86017d4136752995",
+      "startedAt": "2026-10-21T08:25:21.777502+00:00",
+      "deadlineAt": "2026-10-21T08:35:21.777647+00:00"
+    },
+    {
+      "task": "02-static",
+      "threadId": "01a15d90-fab6-7003-91a2-465745411057",
+      "hostId": "local",
+      "promptSha256": "9af1bd386a7075b15d8c69dad5782fbf7bcadd2ce04c68e4a7c824dc31d5a65f",
+      "startedAt": "2026-10-21T08:25:44.809398+00:00",
+      "deadlineAt": "2026-10-21T08:45:44.809530+00:00"
+    },
+    {
+      "task": "03-dispatch",
+      "threadId": "01a15d90-fcf8-7c01-9c81-d1827e67578a",
+      "hostId": "local",
+      "promptSha256": "058a0aff271a966a8e8e788e4847243aa7f6b3e2b7616cad720782fd39d3a14b",
+      "startedAt": "2026-10-21T08:25:45.378369+00:00",
+      "deadlineAt": "2026-10-21T09:10:45.378519+00:00"
+    },
+    {
+      "task": "04-game2d",
+      "threadId": "01a15d91-0024-7223-a13f-8605ed12cb5b",
+      "hostId": "local",
+      "promptSha256": "e0e2e8d04e90f352570348cc3510b9c39198e5e1d8afe75e640c969b8fc011ad",
+      "startedAt": "2026-10-21T08:25:45.995906+00:00",
+      "deadlineAt": "2026-10-21T09:10:45.996107+00:00"
+    },
+    {
+      "task": "05-game3d",
+      "threadId": "01a15d91-02b6-7222-b27f-b568e055f671",
+      "hostId": "local",
+      "promptSha256": "c384d4d104da2d29b685114b0bcdec075613dae993fa5c334e87c7dacea5e5c3",
+      "startedAt": "2026-10-21T08:25:46.812474+00:00",
+      "deadlineAt": "2026-10-21T09:25:46.812651+00:00"
+    },
+    {
+      "task": "06-memory",
+      "threadId": "01a15d91-052c-7ee1-9e20-0b1e18858438",
+      "hostId": "local",
+      "promptSha256": "cb85bf5a0fa8f1be2c29c2cc8822ed88c5d59a8f003c2614572453e6ed7de705",
+      "startedAt": "2026-10-21T08:25:47.475716+00:00",
+      "deadlineAt": "2026-10-21T10:25:47.475870+00:00"
+    }
+  ]
+}

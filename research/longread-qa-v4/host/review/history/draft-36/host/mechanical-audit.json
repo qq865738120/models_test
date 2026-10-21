@@ -1,0 +1,610 @@
+{
+  "passed": true,
+  "errors": [],
+  "questions": [
+    {
+      "id": "P01",
+      "phase": "initial",
+      "sources": [
+        "P02",
+        "P04",
+        "P13"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "P02",
+      "phase": "initial",
+      "sources": [
+        "P02",
+        "P04",
+        "P13"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "P03",
+      "phase": "initial",
+      "sources": [
+        "P02",
+        "P04",
+        "P13"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "P04",
+      "phase": "initial",
+      "sources": [
+        "P04",
+        "P05",
+        "P13"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "P05",
+      "phase": "initial",
+      "sources": [
+        "P04",
+        "P05",
+        "P13"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "P06",
+      "phase": "initial",
+      "sources": [
+        "P04",
+        "P05",
+        "P13"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "P07",
+      "phase": "initial",
+      "sources": [
+        "P15",
+        "P19",
+        "P21"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "P08",
+      "phase": "initial",
+      "sources": [
+        "P15",
+        "P19",
+        "P21"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "P09",
+      "phase": "initial",
+      "sources": [
+        "P15",
+        "P19",
+        "P21"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "P10",
+      "phase": "initial",
+      "sources": [
+        "P14",
+        "P21",
+        "P23"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "P11",
+      "phase": "initial",
+      "sources": [
+        "P14",
+        "P21",
+        "P23"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "P12",
+      "phase": "initial",
+      "sources": [
+        "P14",
+        "P21",
+        "P23"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "M01",
+      "phase": "initial",
+      "sources": [
+        "M02",
+        "M08",
+        "M10"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "M02",
+      "phase": "initial",
+      "sources": [
+        "M02",
+        "M08",
+        "M10"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "M03",
+      "phase": "initial",
+      "sources": [
+        "M02",
+        "M08",
+        "M10"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "M04",
+      "phase": "initial",
+      "sources": [
+        "M06",
+        "M07",
+        "M13"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "M05",
+      "phase": "initial",
+      "sources": [
+        "M02",
+        "M08",
+        "M10"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "M06",
+      "phase": "initial",
+      "sources": [
+        "M18",
+        "M20",
+        "M25"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "M07",
+      "phase": "initial",
+      "sources": [
+        "M15",
+        "M22",
+        "M24"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "M08",
+      "phase": "initial",
+      "sources": [
+        "M15",
+        "M22",
+        "M23"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "M09",
+      "phase": "initial",
+      "sources": [
+        "M15",
+        "M16",
+        "M22"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "M10",
+      "phase": "initial",
+      "sources": [
+        "M15",
+        "M22",
+        "M24"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "M11",
+      "phase": "initial",
+      "sources": [
+        "M17",
+        "M22",
+        "M24"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "M12",
+      "phase": "initial",
+      "sources": [
+        "M17",
+        "M22",
+        "M24"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "N01",
+      "phase": "initial",
+      "sources": [
+        "N015",
+        "N020",
+        "N029",
+        "N031"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "N02",
+      "phase": "initial",
+      "sources": [
+        "N012",
+        "N038",
+        "N039",
+        "N041"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "N03",
+      "phase": "initial",
+      "sources": [
+        "N040",
+        "N050",
+        "N053",
+        "N054"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "N04",
+      "phase": "initial",
+      "sources": [
+        "N036",
+        "N041",
+        "N048",
+        "N054"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "N05",
+      "phase": "initial",
+      "sources": [
+        "N040",
+        "N041",
+        "N043",
+        "N054"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "N06",
+      "phase": "initial",
+      "sources": [
+        "N043",
+        "N049",
+        "N055",
+        "N056"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "N07",
+      "phase": "initial",
+      "sources": [
+        "N053",
+        "N055",
+        "N056",
+        "N057"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "N08",
+      "phase": "initial",
+      "sources": [
+        "N020",
+        "N038",
+        "N039",
+        "N057",
+        "N058"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "N09",
+      "phase": "initial",
+      "sources": [
+        "N053",
+        "N056",
+        "N057",
+        "N058"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "N10",
+      "phase": "initial",
+      "sources": [
+        "N015",
+        "N020",
+        "N029",
+        "N030",
+        "N031"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "N11",
+      "phase": "initial",
+      "sources": [
+        "N005",
+        "N031",
+        "N054",
+        "N055"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "N12",
+      "phase": "initial",
+      "sources": [
+        "N008",
+        "N016",
+        "N040",
+        "N043"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "XP01",
+      "phase": "change",
+      "sources": [
+        "P02",
+        "P04",
+        "P13"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "XP02",
+      "phase": "change",
+      "sources": [
+        "P04",
+        "P05",
+        "P13"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "XP03",
+      "phase": "change",
+      "sources": [
+        "P15",
+        "P19",
+        "P21"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "XP04",
+      "phase": "change",
+      "sources": [
+        "P14",
+        "P21",
+        "P23"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "XM01",
+      "phase": "change",
+      "sources": [
+        "M02",
+        "M08",
+        "M10"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "XM02",
+      "phase": "change",
+      "sources": [
+        "M06",
+        "M07",
+        "M13"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "XM03",
+      "phase": "change",
+      "sources": [
+        "M15",
+        "M22",
+        "M23"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "XM04",
+      "phase": "change",
+      "sources": [
+        "M18",
+        "M20",
+        "M25"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "XN01",
+      "phase": "change",
+      "sources": [
+        "N015",
+        "N020",
+        "N029",
+        "N031"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "XN02",
+      "phase": "change",
+      "sources": [
+        "N039",
+        "N043",
+        "N054",
+        "N056"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "XN03",
+      "phase": "change",
+      "sources": [
+        "N049",
+        "N053",
+        "N055",
+        "N056"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    },
+    {
+      "id": "XN04",
+      "phase": "change",
+      "sources": [
+        "N055",
+        "N056",
+        "N057",
+        "N058"
+      ],
+      "scoring": "exact",
+      "answerType": "structured"
+    }
+  ],
+  "quotesChecked": 238,
+  "sourceSha256": {
+    "research/longread-20261018/papers/P13-2610.10585v1.txt": "dcdf95bb213f1b8da183c6bfec81162e1bb4de0eefc2a718b601189d58318e6d",
+    "research/longread-20261018/papers/P02-2609.26517v2.txt": "13ec3efff2b3b2d7a6709acdf387bd0acd0315cd0934b92515e3ac7ac639cc6a",
+    "research/longread-20261018/papers/P04-2608.19883v2.txt": "9763c21c0c1f74d26f5728700bb3bee0f6cc83ea8ed6d8d1595ea9a9ecac7ab1",
+    "research/longread-20261018/papers/P05-2609.40176v1.txt": "776c151ad4ca63dde28baa1a5c4d4a7dcda0709576ddd7595d4adc1d2ab9ab8b",
+    "research/longread-20261018/papers/P15-2610.13589v1.txt": "482ef3cd95b886a256aa4d4f7a0904da916a62ad5ebac78408016716474fdd86",
+    "research/longread-20261018/papers/P19-2610.03399v1.txt": "a93b7f9bbc58a588c9bd086cb40394ddc7fdeb37a330bb45fe87ed7b0829c88d",
+    "research/longread-20261018/papers/P21-2610.00504v1.txt": "23167c248c4ff9bee650af6e0132b609c564e1a25c2df69a1e1f2ab247281bf8",
+    "research/longread-20261018/papers/P14-2610.21357v1.txt": "a531f5c7bfa6a029e54b28dc7a916580549a00fb5334e8a475c725663f5e9d11",
+    "research/longread-20261018/papers/P23-2610.04613v1.txt": "c4870d6c4bc690eccb77e63c67add81d527fc40edc34cf2c4c73f76a206c959a",
+    "research/longread-20261018/papers/M08-2610.16874v1.txt": "2e65cf9614d3471d644f25700930712b64441cf92cf186d861b9cf2dad3f765e",
+    "research/longread-20261018/papers/M10-2610.10341v1.txt": "aa0c6b27adf1b0dc86fb436d8da2562bccd2202eb4b3c462689ccc51afb274b3",
+    "research/longread-20261018/papers/M02-2610.14383v1.txt": "63da533f64f5a3433565b61579417a7055127fd2a4f083f8f876816db1fcb5cb",
+    "research/longread-20261018/papers/M13-2608.29138v1.txt": "140da75134ebe914a8c66ed9b45083ac7d5d82341c8027902f9f6d1d7aa60103",
+    "research/longread-20261018/papers/M06-2608.17456v1.txt": "683c278160c2b9f1f1ab6d29d0b5cc4a0a6b26bd1a0f236b46d66088585416a8",
+    "research/longread-20261018/papers/M07-2609.14688v1.txt": "0596693833fc9ef2f27a208306968b5cee522a2ec233b86c5f092a43af5c97ed",
+    "research/longread-20261018/papers/M25-2609.26787v1.txt": "6441811920027ba21d38579ba095c3d8dd44b32dad6d6f842b1766b79e0a00fd",
+    "research/longread-20261018/papers/M20-2608.07399v1.txt": "9c877baa98d88ce16fcd4509d38c4ef658602d0e93c8bb0e8f586bcece5be43a",
+    "research/longread-20261018/papers/M18-2609.16048v1.txt": "f0e6acb2345d0417ae5680dea309eb07254076b56fa02390e15376bcf4dc5efa",
+    "research/longread-20261018/papers/M22-2608.14852v1.txt": "81d29de0e20781b3f790c4af69f9bb2b969391a71ec35bf3cea7c1d7b1e5fb95",
+    "research/longread-20261018/papers/M15-2610.01035v1.txt": "3ee93244b16a76828721a27d0191c5d407f261ec5857674a7b6dce999c9751e5",
+    "research/longread-20261018/papers/M24-2609.07918v2.txt": "afa5660c9c7ba25f8df60ac22505ea5b18ea6294cbd002045226b97d0686c583",
+    "research/longread-20261018/papers/M23-2610.05227v1.txt": "715bfc789e0fb45664a5b8d4c3e4eb52d287701ce4d3d76e24a7f97ed7b8dc8e",
+    "research/longread-20261018/papers/M16-2609.27715v1.txt": "5c168447f9af18592367abda8fe3760367e72c821cc7a00ae0083ef1b76d2440",
+    "research/longread-20261018/papers/M17-2609.22624v1.txt": "9f8f538cd36b25269a4f099b7029e21dae8b0d8fc06a52f73d5abbeb123a1875",
+    "research/longread-20261018/novel/N015.txt": "3ae48338d849d71893a13b5c07366342996051c299325587d9968f30f5b404f4",
+    "research/longread-20261018/novel/N020.txt": "ea4820257d367c7fb384907e2d64c78e8e5fa1cd4c9b729e82a8601712a815d3",
+    "research/longread-20261018/novel/N031.txt": "9e03896f7988a2ab97e7e5f9e6136de21e7de479ecf895023713d4a00dbe8bb2",
+    "research/longread-20261018/novel/N029.txt": "a84aefedcea819655a42bda3746f610a608f78a27e4b546879c18e8a37378119",
+    "research/longread-20261018/novel/N012.txt": "c0a2cc0c2ed9709b6d1a3882a6b175ebb564fe3056136e15dabd6ee2e7fb3b28",
+    "research/longread-20261018/novel/N038.txt": "a152be296e26b79c68b495bd3c15e28b137f79211fcb58ce8cb8c97137748e75",
+    "research/longread-20261018/novel/N039.txt": "2080a737f51c792bb734d050ac73d8ed13aead64b08373865347b78e2fe99e85",
+    "research/longread-20261018/novel/N041.txt": "7e5bbdf7b088eb89c9816a70877d616720b20e2a676c5d24982d719a3e7e9b55",
+    "research/longread-20261018/novel/N040.txt": "e1b5118dcc0dffd5a4b236447053be172a5f89321bcb5e273cffccfb511bc061",
+    "research/longread-20261018/novel/N050.txt": "7f15f1abf176f1cd95fe29aa4e9dfacc9cf501eb080e0b65ce6ad9658fd9710e",
+    "research/longread-20261018/novel/N053.txt": "a8c5e2bc7ea05b42cbd6693a72bfb482e67aa800ed90da2fdeaa07b202edaf71",
+    "research/longread-20261018/novel/N054.txt": "c4c9d1d87bada22b3edcfdb8da1b1e513e71a7ed301510d594e6e136dbfdb01c",
+    "research/longread-20261018/novel/N036.txt": "82e014054c64342adfcdaec7f1256efd7a4b1bd89b0ca528c4e9cc9e56871931",
+    "research/longread-20261018/novel/N048.txt": "509fb1008f50d07ccabf077ed21a383507ed7b325dce2c816f3956e9cd95d5e7",
+    "research/longread-20261018/novel/N043.txt": "e629f6e23781ff3841c6b55a1a62fb34c0b8779b678fd37d11052ac551a2f8a3",
+    "research/longread-20261018/novel/N049.txt": "e4205c371505fc423acb44170c4374149d7b3fad7890af20913f2bd2f7ccc35d",
+    "research/longread-20261018/novel/N055.txt": "31a7633f19b68d37a04b7a32a207a9127bd3245e5fec6b6f35fcb48718a29787",
+    "research/longread-20261018/novel/N056.txt": "b18282425fec2acdaf5402022eb9cda7508f30df2d6d5a748f0d0801b7a0f312",
+    "research/longread-20261018/novel/N057.txt": "e4154f951a3cf89cc8181e52cea5e8a69182fd820daa756fc8dc9af7ae8cc0a9",
+    "research/longread-20261018/novel/N058.txt": "80440a7501d60aae4704fbfb4b6837cb89b8d11b46444b29d4ae74c5246cebeb",
+    "research/longread-20261018/novel/N030.txt": "da92153f60e3f758d9e550bcc3d62519f19818cb6e69a160fa36bbe43631df3f",
+    "research/longread-20261018/novel/N005.txt": "58a920a93cfa202b64e2550a8b69958c32fe573c913905a8662ddc9d10817ee2",
+    "research/longread-20261018/novel/N008.txt": "715982bee68d9fdd3bf2b1502fe651e4a61b3d92fe5644a5aa45953e4a9146da",
+    "research/longread-20261018/novel/N016.txt": "8907c68ffb15b2f363980e6bbab2fe5343af23333dec519109688270b595d9e7"
+  },
+  "scope": "字段、来源定位、引用子串与答案档位一致性；科学有效性和跨材料必要性须另行独立复核。",
+  "version": "longread-qa-v4",
+  "exhaustiveSubsetsChecked": 0,
+  "structuredCasesChecked": 497,
+  "questionsSha256": "6c8c91a4660727f38635f3e38cd0e2718a2bc00a49a19ac0d062e907d7468e0c",
+  "hostAnswersSha256": "2397f9dbe1f7332c7f018d1793504cb38dd80a49a65fa69e54b3323a5812e176",
+  "limitation": "Mechanical quotation and scoring checks supplement independent human/model review; they do not prove preprint claims."
+}

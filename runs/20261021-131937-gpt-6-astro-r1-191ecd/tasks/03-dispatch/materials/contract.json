@@ -1,0 +1,13 @@
+{
+  "version": "dispatch-http-v1",
+  "delivery": "node-http",
+  "frontend": "output/index.html",
+  "server": "output/server/index.mjs",
+  "productionSeed": "output/server/data/orders.json",
+  "host": "127.0.0.1",
+  "portEnvironment": "PORT",
+  "developmentPort": 4174,
+  "health": "/health",
+  "apiPrefix": "/api",
+  "state": "process-memory"
+}

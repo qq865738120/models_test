@@ -1,0 +1,327 @@
+{
+  "model": "gpt-6-astra",
+  "questionsSha256": "44ef98db3727f7d5b49e1c4fe4b6b46da2d52af0197fcfe68b605b95005c9a0c",
+  "phases": {
+    "initial": [
+      {
+        "id": "M01",
+        "answer": "4;9/4;3/2",
+        "sources": [
+          "M02",
+          "M08",
+          "M10"
+        ],
+        "evidence": [
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "PDF page 7; TXT newline 474",
+            "quote": "As mentioned in the introduction, the pressure we consider takes the form p = pM + apR with the\nmolecular and radiative pressures defined by\n(2.4)p(ρ, ϑ) =ϑ\nγ\nγ−1 P\n\u0012 ρ\nϑ\n1\nγ−1\n\u0013\n+ a\n3 ϑ4 =:p M(ρ, ϑ) +ap R(ϑ),\nwhere a > 0, γ > 2, and P∈C 1([0,∞ )) is an increasing function satisfying P (0) = 0. We further\nsuppose that there exists a constantZ >0 such thatP(Z) =Zfor allZ∈[0, Z ]."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF page 1; TXT newline 60",
+            "quote": "For an ideal polytropic gas, the pressure is given by\np(v, θ) = Rθ\nv ,(1.2)\nwhereR >0 is the gas constant. The specific total energy is\nE=e+ u2\n2 = Rθ\nγ−1 + κv2\nx\n2v5 + u2\n2 ,(1.3)\nwhereγ >1 is the adiabatic exponent andeis the internal energy, which includes the capillary\nenergyκv 2\nx/(2v5)."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF page 3; TXT newline 165",
+            "quote": "The end states and the shock speed satisfy the Rankine–Hugoniot condition:\n\n\n\n−σ(v+ −v −)−(u + −u −) = 0,\n−σ(u+ −u −) + (p+ −p −) = 0,\n−σ(E+ −E −) + (p+u+ −p −u−) = 0.\n(1.4)\nThe characteristic speeds of the underlying Euler system in Lagrangian mass coordinates are\nλ1 =−\nr\nγp(v, θ)\nv , λ 2 = 0, λ 3 =\nr\nγp(v, θ)\nv .\nThus, the Lax shock conditions for the 1- and 3-shock families are\n−\nr γp+\nv+\n< σ <−\nr γp−\nv−\nfor a 1-shock,\nr γp+\nv+\n< σ <\nr γp−\nv−\nfor a 3-shock.(1.5)\nIt follows from the Rankine–Hugoniot condition (1.4) and the Lax shock conditions (1.5) that\n1-shock:σ <0, v + < v −, u + < u −, θ + > θ −,\n3-shock:σ >0, v + > v −, u + < u −, θ + < θ −."
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "PDF page 1; TXT newline 40",
+            "quote": "We adopt the polytropic pressure lawp(ρ) =bργ, forb >0andγ >1being fluid constants. Without loss\nof generality, we normalize the coefficientb= 1in the sequel. The spatial domain under consideration is\nR×TwithT:=R/Zdenoting the one-dimensional unit flat torus."
+          }
+        ],
+        "derivation": "M02式(2.4)低Z支P(Z)=Z化为p_M=ρθ，故左压2×2=4。M08三条RH消去u和σ，得到[e]+(p₊+p₋)[v]/2=0；γ=2时e=pv，于是p₊/p₋=(3v₋−v₊)/(3v₊−v₋)。代v₋=1、v₊=57/43得9/16，p₊=9/4。M10归一化p=ρ²，正根ρ=3/2唯一。v₊>v₋且p₊<p₋，σ=√(−[p]/[v])>0可满足3激波方向。",
+        "issues": [],
+        "warnings": [
+          "与M02共享状态律，但本题是链式压强映射，M02是平行读数及精确比较；非完全同公式换数。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M02",
+          "M08",
+          "M10"
+        ],
+        "mechanism": "三种状态律依次串接，正密度分支消除符号歧义"
+      },
+      {
+        "id": "M02",
+        "answer": "11809/13504;44521/58081;241/211;A",
+        "sources": [
+          "M08",
+          "M10",
+          "M02"
+        ],
+        "evidence": [
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF page 1; TXT newline 60",
+            "quote": "For an ideal polytropic gas, the pressure is given by\np(v, θ) = Rθ\nv ,(1.2)\nwhereR >0 is the gas constant. The specific total energy is\nE=e+ u2\n2 = Rθ\nγ−1 + κv2\nx\n2v5 + u2\n2 ,(1.3)\nwhereγ >1 is the adiabatic exponent andeis the internal energy, which includes the capillary\nenergyκv 2\nx/(2v5)."
+          },
+          {
+            "source": "M08",
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "PDF page 3; TXT newline 165",
+            "quote": "The end states and the shock speed satisfy the Rankine–Hugoniot condition:\n\n\n\n−σ(v+ −v −)−(u + −u −) = 0,\n−σ(u+ −u −) + (p+ −p −) = 0,\n−σ(E+ −E −) + (p+u+ −p −u−) = 0.\n(1.4)\nThe characteristic speeds of the underlying Euler system in Lagrangian mass coordinates are\nλ1 =−\nr\nγp(v, θ)\nv , λ 2 = 0, λ 3 =\nr\nγp(v, θ)\nv .\nThus, the Lax shock conditions for the 1- and 3-shock families are\n−\nr γp+\nv+\n< σ <−\nr γp−\nv−\nfor a 1-shock,\nr γp+\nv+\n< σ <\nr γp−\nv−\nfor a 3-shock.(1.5)\nIt follows from the Rankine–Hugoniot condition (1.4) and the Lax shock conditions (1.5) that\n1-shock:σ <0, v + < v −, u + < u −, θ + > θ −,\n3-shock:σ >0, v + > v −, u + < u −, θ + < θ −."
+          },
+          {
+            "source": "M10",
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "PDF page 1; TXT newline 40",
+            "quote": "We adopt the polytropic pressure lawp(ρ) =bργ, forb >0andγ >1being fluid constants. Without loss\nof generality, we normalize the coefficientb= 1in the sequel. The spatial domain under consideration is\nR×TwithT:=R/Zdenoting the one-dimensional unit flat torus."
+          },
+          {
+            "source": "M02",
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "PDF page 7; TXT newline 474",
+            "quote": "As mentioned in the introduction, the pressure we consider takes the form p = pM + apR with the\nmolecular and radiative pressures defined by\n(2.4)p(ρ, ϑ) =ϑ\nγ\nγ−1 P\n\u0012 ρ\nϑ\n1\nγ−1\n\u0013\n+ a\n3 ϑ4 =:p M(ρ, ϑ) +ap R(ϑ),\nwhere a > 0, γ > 2, and P∈C 1([0,∞ )) is an increasing function satisfying P (0) = 0. We further\nsuppose that there exists a constantZ >0 such thatP(Z) =Zfor allZ∈[0, Z ]."
+          }
+        ],
+        "derivation": "令x=241/211。RH给p_shock=(3−x)/(3x−1)=49/64；完整气体θ_shock=p_shock x=11809/13504。M10的p_bar=(1/x)²=44521/58081。M02低Z支p_M=ρθ，故常压1给θ_contact=x=241/211。差p_shock−p_bar=−(x−1)³/[x²(3x−1)]<0，而0<p_shock<1，故θ_shock<x。比较码A唯一。",
+        "issues": [],
+        "warnings": [],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M08",
+          "M10",
+          "M02"
+        ],
+        "mechanism": "同一体积经三个状态律获得不同读数，并用立方差严格比较"
+      },
+      {
+        "id": "M03",
+        "answer": "2;Y;N;Y",
+        "sources": [
+          "M25",
+          "M20",
+          "M18"
+        ],
+        "evidence": [
+          {
+            "source": "M25",
+            "path": "research/longread-20261018/papers/M25-2609.26787v1.txt",
+            "locator": "PDF page 4; TXT newline 224",
+            "quote": "(iii)Equivalence with the Riemann hypothesis.We prove that theω−inequality is equivalent\nto Robin’s inequality, and hence to the Riemann hypothesis. We give a proof of this\nequivalence using the structure of a minimal counterexample. As a consequence, the\nRiemann hypothesis is also equivalent to theω−inequality restricted to colossally abundant\nnumbers."
+          },
+          {
+            "source": "M20",
+            "path": "research/longread-20261018/papers/M20-2608.07399v1.txt",
+            "locator": "PDF page 2; TXT newline 64",
+            "quote": "Theorem 1.Assume RH and that there exists an exceptional sequence of Siegel\nzeros withE= inf j Ej sufficiently large. Then\nµ <0.4733."
+          },
+          {
+            "source": "M18",
+            "path": "research/longread-20261018/papers/M18-2609.16048v1.txt",
+            "locator": "PDF page 2; TXT newline 118",
+            "quote": "Theorem 1.1.Settingm, kas two sufficiently large integers, when\nm >16klogk+ 4k+ 2θ k,m >1/2\nthe equation has a solution. The number of solutions is\nI(N) =N 2kθ(1−(1− 1\nk )m1 )+θ(m−1)+1−k∆(Q)Ψ(N)(logN) −m0 +O(R)\nwhere\nR=N (2θ−1)m0+2kθ(1−1(1− 1\nk )m1 )(logN) −2m0\nand\nm1 = 4k m 0 = [8klogk] + 1\nBy the way, the best previous result ism > k(k+ 1)/2, which comes from [13], and we promoted it\ntom >16klogk+ 4k+ 2 under GRH."
+          }
+        ],
+        "derivation": "k=4r+1使k(k+1)/2=(4r+1)(2r+1)为奇数，严格较小最大奇数m=B−2，差2。按M25主张，全部n>5040有限准则推出ζ的RH；甲同时给q_j→∞与统一E充分大，满足M20 Theorem1，故间距Y。ζ的RH不自动给Dirichlet GRH，且甲Siegel序列与其GRH相冲突，因此甲不能援引GRH表示定理，N。乙有相关GRH，题干补充分大奇N、1/2<θ<2/3及m>16k log k+4k+2，符合M18所述条件，Y。",
+        "issues": [],
+        "warnings": [
+          "所有结论按文献主张条件推演；本次未审定预印本证明。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M25",
+          "M20",
+          "M18"
+        ],
+        "mechanism": "截断算术准则→ζ RH，与Siegel品质和Dirichlet GRH量词区分"
+      },
+      {
+        "id": "M04",
+        "answer": "B;8/17;1/4",
+        "sources": [
+          "M15",
+          "M24"
+        ],
+        "evidence": [
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "PDF page 2; TXT newline 68",
+            "quote": "Theorem 1.3(Large value estimate).LetT⩾1. For anyV∈[T 7/60, T5/38]andε >0, we have\nN(T, V)≪ ε T\n24\n17 +εV − 128\n17 ."
+          },
+          {
+            "source": "M24",
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "PDF page 2; TXT newline 90",
+            "quote": "c(θ) = 2−θ\n2−1√\n2 cot\n( θ√\n2\n)\n,0<θ<1.\nSince c′(θ) = 1\n2 cot2(θ/\n√\n2)> 0, the functionc is strictly increasing on(0, 1). It has a unique\nzero in this interval given by\nθ0 = 0.5501....\nTheorem 1.1.For every fixedθ0<θ<1, we have\n(1.7)lim inf\nT→∞\nNs\n0(T,T θ)\nN(T,T θ) ≥c(θ)>0."
+          }
+        ],
+        "derivation": "题干已给形式条件，固定指数下等价2δ−2/5>1，另v=(1−δ)/2。M15要求7/60≤v≤5/38，计数指数e=(24−128v)/17。M24 c′(δ)>0，因此比例要求等价δ≥3/4。A的2δ−a=39/40<1且比例门槛失败；B有v=1/8、e=8/17；C有v=3/25、e=216/425>8/17；D有v=1/10<7/60失败。唯一B，对偶指数1/4。",
+        "issues": [],
+        "warnings": [
+          "M22的公式条件与D=T/H均已写在题干，故M22属于已提供背景；实际仍有M15、M24两篇必要依赖。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M15",
+          "M24"
+        ],
+        "mechanism": "大值定理阈值窗与简单零点比例单调门槛交集优化"
+      },
+      {
+        "id": "M05",
+        "answer": "B;9/275;216/425",
+        "sources": [
+          "M15",
+          "M23"
+        ],
+        "evidence": [
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "PDF page 2; TXT newline 68",
+            "quote": "Theorem 1.3(Large value estimate).LetT⩾1. For anyV∈[T 7/60, T5/38]andε >0, we have\nN(T, V)≪ ε T\n24\n17 +εV − 128\n17 ."
+          },
+          {
+            "source": "M23",
+            "path": "research/longread-20261018/papers/M23-2610.05227v1.txt",
+            "locator": "PDF page 4; TXT newline 221",
+            "quote": "Theorem 1.2.Letσbe a real number satisfying1/2⩽σ⩽1, and set\nασ := σ\n2σ+ 1 .\nThen for any Schwartz functionϕonRwithsupp( bϕ)⊂(−α σ, ασ), we have\n1R 2T\nT |ζ(σ+it)| 2dt\nZ 2T\nT\n|ζ(σ+it)| 2DT (ζt, ϕ)dt=\nZ ∞\n−∞\nϕ(x)WU,σ(x)dx+O\n\u0012 1\nlogT\n\u0013\nasT→ ∞, whereW U,σ is the same function as(1.5)."
+          }
+        ],
+        "derivation": "固定指数预算为2δ−a>1，v=b(1−δ)。M15窗7/60≤v≤5/38；M23许可半宽α_σ=σ/(2σ+1)，闭支集要求2v<α_σ。A有v=1/8、α=1/4，端点相等失败。B有v=3/25，α_(3/5)=3/11，余量3/11−6/25=9/275，且2δ−a=28/25>1；ζ指数216/425。C也可行，但σ=2/3更大；D的2δ−a=1不严格。唯一B。",
+        "issues": [],
+        "warnings": [
+          "M22公式已由题干提供，不列为实际必要来源；M15与M23均必要。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M15",
+          "M23"
+        ],
+        "mechanism": "大值阈值指数映射为Fourier支集，审计闭支集与开许可域严格包含"
+      },
+      {
+        "id": "M06",
+        "answer": "C;1;3",
+        "sources": [
+          "M16",
+          "M15"
+        ],
+        "evidence": [
+          {
+            "source": "M16",
+            "path": "research/longread-20261018/papers/M16-2609.27715v1.txt",
+            "locator": "PDF page 2; TXT newline 84",
+            "quote": "Theorem 1.2.Letq≥8/3and letN, T≥2. Let(c n)n∈N ⊂Cand suppose that\nX\nN <n≤2N\n|cn|q ≪N 1+o(1).\nLetW⊂[0, T]be a1-separated set such that\n\f\f\f\f\f\f\nX\nN <n≤2N\ncnnit\n\f\f\f\f\f\f\n≥V\nfor everyt∈W. Then, we have\n|W| ≤(N T) o(1)\n\u0010\nN 2V −2 +N 18/5V −4 +T N 12/5V −4\n\u0011\n."
+          },
+          {
+            "source": "M15",
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "PDF page 2; TXT newline 68",
+            "quote": "Theorem 1.3(Large value estimate).LetT⩾1. For anyV∈[T 7/60, T5/38]andε >0, we have\nN(T, V)≪ ε T\n24\n17 +εV − 128\n17 ."
+          }
+        ],
+        "derivation": "设n=1−δ，M16三项主幂为2n−2v、18n/5−4v、1+12n/5−4v；M15的ζ主幂为(24−128v)/17，所有候选阈值均在其许可窗。形式预算2δ−a依次11/10、28/25、11/10、21/20，均>1。A三项(1/4,2/5,11/10)，ζ=8/17，联合11/10；B三项(6/25,48/125,137/125)，ζ=216/425，联合137/125；C三项(4/25,6/25,1)，ζ=216/425，联合1；D三项(1/2,17/20,7/5)，ζ=8/17，联合7/5。最小C，第三项唯一主导。",
+        "issues": [],
+        "warnings": [
+          "题干指定取显示项的最大幂，未与平凡计数界取min，故A/B/D出现大于1的预算符合定义。",
+          "已明确只作形式指数预算，原来的临界a=1/2主系数抵消不再是阻塞。",
+          "M22公式已由题干给定，实际必要来源M16与M15。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M16",
+          "M15"
+        ],
+        "mechanism": "两个大值定理的多项上界进行最大值预算优化"
+      }
+    ],
+    "change": [
+      {
+        "id": "XM01",
+        "answer": "BC;1/5;5/8",
+        "sources": [
+          "M17",
+          "M24"
+        ],
+        "evidence": [
+          {
+            "source": "M17",
+            "path": "research/longread-20261018/papers/M17-2609.22624v1.txt",
+            "locator": "PDF page 1; TXT newline 34",
+            "quote": "Corollary 1.Suppose0< α <1/6. Forh 0 andt 0 sufficiently large, and for all\nt > t 0 andt 2/3 > h > h 0, the proportion of zerosρofζ(s)withℑ(ρ)∈[t−h, t+h]\nfor whichℜ(ρ)∈[α,1−α]is bounded below by an explicitly computable positive\nconstant. That is\n1− 2N(t−h, t+h, α)\nN(t+h)−N(t−h) > C α,h0,t0 >0.\nExample values ofCα,h0,t0 are given in Table 1."
+          },
+          {
+            "source": "M17",
+            "path": "research/longread-20261018/papers/M17-2609.22624v1.txt",
+            "locator": "PDF page 2; TXT newline 53",
+            "quote": "Table 1.Table of values for Corollary 1. Fort > t 0 andt 2/3 >\nh > h 0 the proportion of zeros with imaginary part withinhof\ntwhose real part is in[α,1−α]is at leastC α,h0,t0. The column\n“mechanism” records which of Corollary 4 (J) and Corollary 5 (L)\ngives the stronger bound. The constantsC α,h0,t0 are rounded\ndown.\nα h 0 t0 mechanismC α,h0,t0\n1/7 100 10 10000 L0.0628\n1/8 100 10 1000 L0.0970\n1/9 10 10 10000 L0.0760\n1/10 5 10 10000 L0.0236\n1/12 5 10 10000 L0.1040\n1/16 5 10 10000 L0.2122\n1/16 100 10 43 L0.0054\n1/16 100 10 100 L0.1374\n1/16 100 10 10000 L0.3484\n1/32 100 10 100 L0.2157\n1/64 2 10 1000 J0.1649\n1/64 100 10 50 L0.1312\n1/128 100 10 1000 L0.5527\n1/256 1 10 10000 L0.0934\n1/2048 100 10 10000 L0.7163"
+          },
+          {
+            "source": "M24",
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "PDF page 2; TXT newline 90",
+            "quote": "c(θ) = 2−θ\n2−1√\n2 cot\n( θ√\n2\n)\n,0<θ<1.\nSince c′(θ) = 1\n2 cot2(θ/\n√\n2)> 0, the functionc is strictly increasing on(0, 1). It has a unique\nzero in this interval given by\nθ0 = 0.5501....\nTheorem 1.1.For every fixedθ0<θ<1, we have\n(1.7)lim inf\nT→∞\nNs\n0(T,T θ)\nN(T,T θ) ≥c(θ)>0."
+          }
+        ],
+        "derivation": "形式预算为2δ−a>1。M17 Corollary1/Table1给α=1/16、t充分大、h>100、h<t^(2/3)的正比例；因为h=T^δ/2、t=T+H/2，渐近许可δ≤2/3（δ=2/3也严格成立）。M24简单零点保证要求δ>θ₀≈0.5501。A的δ=1/2失败；B:δ=9/16、2δ−a=41/40，满足；C:δ=5/8、2δ−a=21/20，满足；D:2δ−a=1失败；E:δ=11/16>2/3失败。合格BC，最大a=1/5对应δ=5/8。",
+        "issues": [],
+        "warnings": [
+          "题干已区分Gaussian宽度与人工锐截断，旧区间误用已解决。",
+          "M22公式直接给定，实际必要来源M17与M24；端点计数约定不影响正比例适用结论。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M17",
+          "M24"
+        ],
+        "mechanism": "中央带短窗上界与简单零点比例下界夹住窗口指数，并用扭曲预算筛选"
+      },
+      {
+        "id": "XM02",
+        "answer": "AC;C;5/24",
+        "sources": [
+          "M19",
+          "M16"
+        ],
+        "evidence": [
+          {
+            "source": "M19",
+            "path": "research/longread-20261018/papers/M19-2608.12257v1.txt",
+            "locator": "PDF page 2; TXT newline 81",
+            "quote": "Remark.By replacingπwithπ[it] and using (4.8), we find that for allε >0, there exists\nan ineffective constantc 5 =c 5(n, F, ε)>0 such that ifσ≥1−c 5 (Cπ(|t|+ 3)) −ε, then\n|L(σ+it, π)| ≥c 5 (Cπ(|t|+ 3)) −ε."
+          },
+          {
+            "source": "M16",
+            "path": "research/longread-20261018/papers/M16-2609.27715v1.txt",
+            "locator": "PDF page 2; TXT newline 53",
+            "quote": "Theorem 1.1.Letπbe a cuspidal automorphic representation ofGL 2(AQ)with unitary central\ncharacter, and letL(s, π)be its standardL-function. LetN π(σ, T)denote the number of zerosρof\nL(s, π)withRe(ρ)≥σand|Im(ρ)| ≤T. Uniformly for 1\n2 ≤σ≤1, we have\nNπ(σ, T)≪T\n5\n2 (1−σ)+o(1)."
+          }
+        ],
+        "derivation": "M19高度依赖结论在ε=1/4时排除σ≥1−c[Cπ(|t|+3)]^(−1/4)内零点。对|t|≤U，最窄带发生在|t|=U。设X=Cπ(U+3)>1，移动线右侧全部受认证的充要带宽条件为cX^(−b)≤cX^(−1/4)，即b≥1/4；等号可用，因为原结论含≥边界。形式预算2δ−a>1：A=11/10，B=21/20，C=13/12，D=11/10，E=1。A通过；B、D因b=1/5失败；C通过；E虽带宽通过但严格预算失败，故AC。M16固定π的Nπ(σ,U)≪U^[(5/2)(1−σ)+o(1)]，σ=3/4给U^(5/8+o(1))，改写T幂为(5/8)(1−δ)。A=1/4，C=5/24，C唯一更小。",
+        "issues": [],
+        "warnings": [
+          "常数c可以无效但相同且正，比较候选带宽只用幂，不需其数值。",
+          "M22条件及对偶尺度已给出，实际必要来源为M19与M16。"
+        ],
+        "uniqueAnswer": true,
+        "crossSourceNecessary": true,
+        "actuallyNecessarySources": [
+          "M19",
+          "M16"
+        ],
+        "mechanism": "高度依赖无零带的最坏高度认证，与固定线GL₂零密度指数经对偶尺度复合优化"
+      }
+    ]
+  },
+  "reviewScope": "重新只读当前公开题、指定语料论文TXT，未读取authoring、host答案或其他审稿成果；所有预印本结论按文献所述条件推演。"
+}

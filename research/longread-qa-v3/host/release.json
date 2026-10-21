@@ -1,0 +1,752 @@
+{
+  "version": "longread-qa-v3",
+  "difficulty": "中级",
+  "initialQuestions": 72,
+  "changeQuestions": 24,
+  "frozenAt": "2026-10-21T03:11:51.042420+00:00",
+  "status": "frozen-before-candidate",
+  "models": [
+    "gpt-6-astra",
+    "gpt-6-sol",
+    "gpt-6.1-sol"
+  ],
+  "reviewedItems": [
+    {
+      "id": "P01",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P02",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P03",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P04",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P05",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P06",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P07",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P08",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P09",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P10",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P11",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P12",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P13",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P14",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P15",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P16",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P17",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P18",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P19",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P20",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P21",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P22",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P23",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "P24",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XP01",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XP02",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XP03",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XP04",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XP05",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XP06",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XP07",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XP08",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M01",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M02",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M03",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M04",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M05",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M06",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M07",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M08",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M09",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M10",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M11",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M12",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M13",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M14",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M15",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M16",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M17",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M18",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M19",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M20",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M21",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M22",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M23",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M24",
+      "phase": "initial",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XM01",
+      "phase": "change",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XM02",
+      "phase": "change",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XM03",
+      "phase": "change",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XM04",
+      "phase": "change",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XM05",
+      "phase": "change",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XM06",
+      "phase": "change",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XM07",
+      "phase": "change",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XM08",
+      "phase": "change",
+      "authorModel": "gpt-6-sol",
+      "reviewerModel": "gpt-6-astra",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N01",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N02",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N03",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N04",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N05",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N06",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N07",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N08",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N09",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N10",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N11",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N12",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N13",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N14",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N15",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N16",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N17",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N18",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N19",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N20",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N21",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N22",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N23",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "N24",
+      "phase": "initial",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XN01",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XN02",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XN03",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XN04",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XN05",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XN06",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XN07",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XN08",
+      "phase": "change",
+      "authorModel": "gpt-6-astra",
+      "reviewerModel": "gpt-6-sol",
+      "independentAnswerAgrees": true
+    }
+  ],
+  "additionalReviewedItems": [
+    {
+      "id": "M13",
+      "phase": "initial",
+      "reviewerModel": "gpt-6.1-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M14",
+      "phase": "initial",
+      "reviewerModel": "gpt-6.1-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M19",
+      "phase": "initial",
+      "reviewerModel": "gpt-6.1-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M21",
+      "phase": "initial",
+      "reviewerModel": "gpt-6.1-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M22",
+      "phase": "initial",
+      "reviewerModel": "gpt-6.1-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "M24",
+      "phase": "initial",
+      "reviewerModel": "gpt-6.1-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XM06",
+      "phase": "change",
+      "reviewerModel": "gpt-6.1-sol",
+      "independentAnswerAgrees": true
+    },
+    {
+      "id": "XM07",
+      "phase": "change",
+      "reviewerModel": "gpt-6.1-sol",
+      "independentAnswerAgrees": true
+    }
+  ],
+  "sha256": {
+    "research/longread-qa-v3/questions.json": "5cfdc0857ffe115e4d8aeda4e0ad5a1a755474de333cd056922ab7f02313ce7e",
+    "research/longread-qa-v3/host/answer-key.json": "9ea65d8559909f9aa767edd1901001720807d60e4987cc3cdf78b53ec1662f76",
+    "research/longread-qa-v3/host/mechanical-audit.json": "0eb0955f00bf70e25cda1311b348bae080955baf5cdbd10d84d3ef41f0a95d3b",
+    "research/longread-qa-v3/host/review/physics-blind.json": "e8f3551bba9df46ab8a9d43110299749f94d653cf2fc3779137c3d73c60d6566",
+    "research/longread-qa-v3/host/review/math-blind.json": "60120a26f466171fb68f0274bcc90a1d0008cfbf924f417d139d9103c3f5c6f3",
+    "research/longread-qa-v3/host/review/novel-blind.json": "96d536f37334b0354297899018a925ac15ff0b83c0017a8fb8cfbb3d3417f34c",
+    "research/longread-qa-v3/host/review/math-additional.json": "3268c69661aeb116c8464dab319e99dc72c7c6a902f72216bb4db771ed6098b2"
+  },
+  "mergedAnswerKeySha256": "a182267d70c4f7774797b8864a173b78e6556717311b8b81e32b22ab615f3152",
+  "limitations": [
+    "Model agreement and quotation checks do not prove all source claims.",
+    "Difficulty label is a requested presentation label, not empirical population calibration.",
+    "No target candidate score is imposed; answers are frozen before the candidate run."
+  ]
+}

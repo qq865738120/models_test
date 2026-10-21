@@ -1,0 +1,447 @@
+{
+  "passed": true,
+  "errors": [],
+  "questions": [
+    {
+      "id": "N01",
+      "phase": "initial",
+      "sources": [
+        "N005",
+        "N020",
+        "N031"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N02",
+      "phase": "initial",
+      "sources": [
+        "N006",
+        "N055",
+        "N057"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N03",
+      "phase": "initial",
+      "sources": [
+        "N010",
+        "N040",
+        "N043",
+        "N044"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N04",
+      "phase": "initial",
+      "sources": [
+        "N010",
+        "N011",
+        "N012",
+        "N038"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N05",
+      "phase": "initial",
+      "sources": [
+        "N011",
+        "N014",
+        "N015",
+        "N031"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N06",
+      "phase": "initial",
+      "sources": [
+        "N008",
+        "N053"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N07",
+      "phase": "initial",
+      "sources": [
+        "N014",
+        "N015",
+        "N020"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N08",
+      "phase": "initial",
+      "sources": [
+        "N017",
+        "N018",
+        "N050"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N09",
+      "phase": "initial",
+      "sources": [
+        "N015",
+        "N017",
+        "N020",
+        "N025",
+        "N029"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N10",
+      "phase": "initial",
+      "sources": [
+        "N018",
+        "N027",
+        "N038"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N11",
+      "phase": "initial",
+      "sources": [
+        "N017",
+        "N027"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N12",
+      "phase": "initial",
+      "sources": [
+        "N033",
+        "N035",
+        "N050"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N13",
+      "phase": "initial",
+      "sources": [
+        "N036",
+        "N041",
+        "N043",
+        "N050",
+        "N054"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N14",
+      "phase": "initial",
+      "sources": [
+        "N040",
+        "N046",
+        "N052",
+        "N054"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N15",
+      "phase": "initial",
+      "sources": [
+        "N035",
+        "N044",
+        "N052"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N16",
+      "phase": "initial",
+      "sources": [
+        "N043",
+        "N048",
+        "N054"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N17",
+      "phase": "initial",
+      "sources": [
+        "N038",
+        "N039",
+        "N043"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N18",
+      "phase": "initial",
+      "sources": [
+        "N040",
+        "N041",
+        "N043",
+        "N052",
+        "N054",
+        "N055"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N19",
+      "phase": "initial",
+      "sources": [
+        "N031",
+        "N054",
+        "N055"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N20",
+      "phase": "initial",
+      "sources": [
+        "N053",
+        "N056"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N21",
+      "phase": "initial",
+      "sources": [
+        "N038",
+        "N040",
+        "N048",
+        "N057",
+        "N058"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N22",
+      "phase": "initial",
+      "sources": [
+        "N038",
+        "N055",
+        "N056",
+        "N057"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N23",
+      "phase": "initial",
+      "sources": [
+        "N043",
+        "N048",
+        "N056"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "N24",
+      "phase": "initial",
+      "sources": [
+        "N014",
+        "N035",
+        "N050"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XN01",
+      "phase": "change",
+      "sources": [
+        "N005",
+        "N031",
+        "N054",
+        "N055",
+        "N056",
+        "N057",
+        "N058"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XN02",
+      "phase": "change",
+      "sources": [
+        "N041",
+        "N043",
+        "N050",
+        "N054",
+        "N055",
+        "N056"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XN03",
+      "phase": "change",
+      "sources": [
+        "N008",
+        "N053",
+        "N056",
+        "N058"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XN04",
+      "phase": "change",
+      "sources": [
+        "N008",
+        "N014",
+        "N015",
+        "N031",
+        "N043",
+        "N044"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XN05",
+      "phase": "change",
+      "sources": [
+        "N020",
+        "N025",
+        "N029",
+        "N031"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XN06",
+      "phase": "change",
+      "sources": [
+        "N017",
+        "N050",
+        "N057",
+        "N058"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XN07",
+      "phase": "change",
+      "sources": [
+        "N018",
+        "N027",
+        "N038",
+        "N055",
+        "N057"
+      ],
+      "scoring": "exact"
+    },
+    {
+      "id": "XN08",
+      "phase": "change",
+      "sources": [
+        "N010",
+        "N011",
+        "N012",
+        "N033",
+        "N035",
+        "N038",
+        "N040",
+        "N043",
+        "N046",
+        "N050",
+        "N052",
+        "N054"
+      ],
+      "scoring": "exact"
+    }
+  ],
+  "quotesChecked": 929,
+  "sourceSha256": {
+    "research/longread-20261018/novel/N005.txt": "58a920a93cfa202b64e2550a8b69958c32fe573c913905a8662ddc9d10817ee2",
+    "research/longread-20261018/novel/N031.txt": "9e03896f7988a2ab97e7e5f9e6136de21e7de479ecf895023713d4a00dbe8bb2",
+    "research/longread-20261018/novel/N020.txt": "ea4820257d367c7fb384907e2d64c78e8e5fa1cd4c9b729e82a8601712a815d3",
+    "research/longread-20261018/novel/N057.txt": "e4154f951a3cf89cc8181e52cea5e8a69182fd820daa756fc8dc9af7ae8cc0a9",
+    "research/longread-20261018/novel/N006.txt": "0efe7c13a02ed48ec31fb005e37d25349b926a6c71bb1c978fd6af2c6c926e3b",
+    "research/longread-20261018/novel/N055.txt": "31a7633f19b68d37a04b7a32a207a9127bd3245e5fec6b6f35fcb48718a29787",
+    "research/longread-20261018/novel/N043.txt": "e629f6e23781ff3841c6b55a1a62fb34c0b8779b678fd37d11052ac551a2f8a3",
+    "research/longread-20261018/novel/N044.txt": "7dc4680ad34b9e4f7fee73fd04ac0b1581215e32e49c87ffe0e529dd570ad79e",
+    "research/longread-20261018/novel/N010.txt": "93ee29404d47ac11975ba8a29e0cdd535286a7cc6eca34b9c5735b83bb4b30e6",
+    "research/longread-20261018/novel/N040.txt": "e1b5118dcc0dffd5a4b236447053be172a5f89321bcb5e273cffccfb511bc061",
+    "research/longread-20261018/novel/N012.txt": "c0a2cc0c2ed9709b6d1a3882a6b175ebb564fe3056136e15dabd6ee2e7fb3b28",
+    "research/longread-20261018/novel/N038.txt": "a152be296e26b79c68b495bd3c15e28b137f79211fcb58ce8cb8c97137748e75",
+    "research/longread-20261018/novel/N011.txt": "8bd8dfd99d799a8a1074112a92196608c6b5c520c5fa0dc2bc761851b2b502cb",
+    "research/longread-20261018/novel/N015.txt": "3ae48338d849d71893a13b5c07366342996051c299325587d9968f30f5b404f4",
+    "research/longread-20261018/novel/N014.txt": "de9a052893066ebcbbe92cc216625d54cbe4ff5deb3f2aca5b8fa68fbf4532e2",
+    "research/longread-20261018/novel/N053.txt": "a8c5e2bc7ea05b42cbd6693a72bfb482e67aa800ed90da2fdeaa07b202edaf71",
+    "research/longread-20261018/novel/N008.txt": "715982bee68d9fdd3bf2b1502fe651e4a61b3d92fe5644a5aa45953e4a9146da",
+    "research/longread-20261018/novel/N050.txt": "7f15f1abf176f1cd95fe29aa4e9dfacc9cf501eb080e0b65ce6ad9658fd9710e",
+    "research/longread-20261018/novel/N017.txt": "3d103a647df644a76ccf670c98d304034ed9d23c92ce6eff0104e4e2da656e66",
+    "research/longread-20261018/novel/N018.txt": "8ed909d0cc3d1f6d4cafd4f96dca68e9d70655129fb9993cf1fcf3d91d654fd0",
+    "research/longread-20261018/novel/N029.txt": "a84aefedcea819655a42bda3746f610a608f78a27e4b546879c18e8a37378119",
+    "research/longread-20261018/novel/N025.txt": "6b173a48cf140384fe35028c1b6c7a6c27b571a9ee4bfd840b154226aa3e7d9f",
+    "research/longread-20261018/novel/N027.txt": "9368e7f70e9d2aae51f7c8417380e6a9136caa240cf8fec5f05a24b1d6dd1b08",
+    "research/longread-20261018/novel/N035.txt": "f1526410fc8107277b4d27741855b3135cc528469c38a6d1fee11ef03512d4c8",
+    "research/longread-20261018/novel/N033.txt": "53d2f803e5ce6192fbeb4cafe12bf93e205b43af7afaeae3718396f2ca73c10f",
+    "research/longread-20261018/novel/N036.txt": "82e014054c64342adfcdaec7f1256efd7a4b1bd89b0ca528c4e9cc9e56871931",
+    "research/longread-20261018/novel/N041.txt": "7e5bbdf7b088eb89c9816a70877d616720b20e2a676c5d24982d719a3e7e9b55",
+    "research/longread-20261018/novel/N054.txt": "c4c9d1d87bada22b3edcfdb8da1b1e513e71a7ed301510d594e6e136dbfdb01c",
+    "research/longread-20261018/novel/N046.txt": "a312ea27203f25e31962581fd4fdd221512e8517db026bbeb551cdad769bcacd",
+    "research/longread-20261018/novel/N052.txt": "3f9daacbcecc60d791bf34f8647c6bb52125bb03ca2490c94793f55762f1e7e0",
+    "research/longread-20261018/novel/N048.txt": "509fb1008f50d07ccabf077ed21a383507ed7b325dce2c816f3956e9cd95d5e7",
+    "research/longread-20261018/novel/N039.txt": "2080a737f51c792bb734d050ac73d8ed13aead64b08373865347b78e2fe99e85",
+    "research/longread-20261018/novel/N056.txt": "b18282425fec2acdaf5402022eb9cda7508f30df2d6d5a748f0d0801b7a0f312",
+    "research/longread-20261018/novel/N058.txt": "80440a7501d60aae4704fbfb4b6837cb89b8d11b46444b29d4ae74c5246cebeb"
+  },
+  "scope": "字段、来源定位、引用子串与答案档位一致性；科学有效性和跨材料必要性须另行独立复核。",
+  "rawSubstringFailures": [],
+  "cardinalities": {
+    "initial": {
+      "N01": 2,
+      "N02": 2,
+      "N03": 3,
+      "N04": 4,
+      "N05": 3,
+      "N06": 3,
+      "N07": 2,
+      "N08": 4,
+      "N09": 3,
+      "N10": 3,
+      "N11": 3,
+      "N12": 2,
+      "N13": 3,
+      "N14": 3,
+      "N15": 4,
+      "N16": 3,
+      "N17": 5,
+      "N18": 3,
+      "N19": 4,
+      "N20": 3,
+      "N21": 3,
+      "N22": 3,
+      "N23": 3,
+      "N24": 5
+    },
+    "change": {
+      "XN01": 4,
+      "XN02": 5,
+      "XN03": 2,
+      "XN04": 4,
+      "XN05": 4,
+      "XN06": 3,
+      "XN07": 5,
+      "XN08": 4
+    }
+  },
+  "weightTotals": {
+    "initial": 33,
+    "change": 33
+  },
+  "questionCounts": {
+    "initial": 24,
+    "change": 8
+  },
+  "independentReviewStatus": "author-only; pending blind review by another model"
+}

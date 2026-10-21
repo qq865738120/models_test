@@ -1,0 +1,492 @@
+{
+  "model": "gpt-6-sol",
+  "blind": true,
+  "phases": {
+    "initial": [
+      {
+        "id": "M01",
+        "answer": "C",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M12-2608.29721v1.txt",
+            "locator": "p.2 (1.3)",
+            "quote": "there is someα >2 such that\nlim sup\nx→X(0)\n|w0(x)−w 0(X(0))|\n|x−X(0)| α <∞.(1.3)\nThis contains the case ofw 0 being constant nearX(0) as a special case.\n1.1.Main result.We say that a given triple (w, u, X) is a solution to the vortex wave system for\ninitial da"
+          },
+          {
+            "path": "research/longread-20261018/papers/M07-2609.14688v1.txt",
+            "locator": "p.3 Theorem 1.1",
+            "quote": "Theorem 1.1.letT >0andp >2. The equations of Navier-Stokes have at most one solution\nin the spaceL p([0, T], ˜L3,∞(R3))∩C([0, T], B −1,∞\n∞ (R3)).Moreover, ifuis a such solution then\nit satisfies the following regularity properties:\n(1)u∈C ∞((0, T]×R 3).\n(2)For"
+          }
+        ],
+        "issues": [],
+        "difficulty": "medium",
+        "crossSourceNecessary": true,
+        "reason": "r^(5/2)log(1/r)=O(r^α) for any 2<α<5/2; p=3>2, with weak-L³ closure and Besov continuity. B lacks an α>2 power; D and F omit required conditions; p=2 is excluded."
+      },
+      {
+        "id": "M02",
+        "answer": "E",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M13-2608.29138v1.txt",
+            "locator": "p.3 (5), Theorem 1.1",
+            "quote": "W (x3) = 6 F x3(1 − x3)e(α), with FW =\n∫ 1\n0\nW (x3) ·e(α) dx3 = F.\nBy utilizing this explicit correspondence, we show there is a velocity field u = W + v\nwhose far-field line-flux approaches to the prescribed constant F along the direction e(α).\nNow we state the main results of this paper.\nTheorem 1.1. Let the slab domain Ω = R2 × (0, 1) and let V ′ denote the dual space of\nV = D1,2\n0,σ(Ω) . Assume that the external force f ∈ V ′. Let F ∈ R be a prescribed far-field\nconstant "
+          },
+          {
+            "path": "research/longread-20261018/papers/M06-2608.17456v1.txt",
+            "locator": "p.2 Theorem 1.1",
+            "quote": "Theorem 1.1.Letn= 2,q >1, andε >0. Then, there exists a divergence-free\nexternal forcef∈ ˙B−2\n2,q(R2)generating two distinct solutionsu +, u− ∈ ˙B0\n2,q(R2)to\n(1.1)onR 2 and\n∥u+∥ ˙B0\n2,q\n+∥u −∥ ˙B0\n2,q\n+∥f∥ ˙B−2\n2,q\n< ε.\nWe outline3 the proof of Theorem 1.1. Th"
+          },
+          {
+            "path": "research/longread-20261018/papers/M13-2608.29138v1.txt",
+            "locator": "p.3 Theorem 1.1 uniqueness class",
+            "quote": "unique in the class\nof functions satisfying u − W ∈ H 1(Ω) .\nRemark 1.1. The assumption that f has a compact support can be replaced by f has the\ndecay property at infini"
+          }
+        ],
+        "issues": [],
+        "difficulty": "medium",
+        "crossSourceNecessary": true,
+        "reason": "W′=6F(1−2z), J=36F²/3=12F². The finite H¹ condition applies to u−W, and nonuniqueness extends to every q>1."
+      },
+      {
+        "id": "M03",
+        "answer": [
+          "A",
+          "C",
+          "E"
+        ],
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M05-2610.11927v1.txt",
+            "locator": "p.4 (1.8)–(1.9), Uniqueness Theorem",
+            "quote": "forρ t a.e.x, y∈Rand a.e.t >0 (1.8)\nand theinitial kinetic energy bound\nZ\nR\nv(x, t)2dρt(x)≤\nZ\nR\nv0(x)2dρ0(x) for almost everyt≥0. (1.9)\n4\n\n[PDF page 5]\nNote that (1.6) is a stronger condition than (1.8). It also turns out that (1.9) implies that\n(1.7) holds with the limit understood as an essential limit forg∈C b(R); see Lemma 2.2\nbelow. Regardless, we will work directly with (1.8) and (1.9) since weak solution pairs which\nhav"
+          },
+          {
+            "path": "research/longread-20261018/papers/M02-2610.14383v1.txt",
+            "locator": "p.1 abstract",
+            "quote": "profiles with constant velocity and pressure) in the class\nof vanishing dissipation limits from the Navier–Stokes–Fourier system. If the initial data of our\nsequence of solutions to the Navier–Stokes–Fourier system converges to the initial data of the\nentropy wave solution, we further have convergence of the solutions to the entropy wave. This gives\nuniqueness and stability of the entropy wave in "
+          }
+        ],
+        "issues": [],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "First pair meets at t=1,x=3 and proceeds at speed 2; third meets at t=4/3,x=11/3. Final speed is 1/2 and x(2)=4. E0=3, final E=1/4. Entropy is required only ρ-a.e. plus initial energy bound; entropy-wave uniqueness is for vanishing-dissipation limits."
+      },
+      {
+        "id": "M04",
+        "answer": "A",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M03-2609.08158v1.txt",
+            "locator": "p.6 MGHD boundary",
+            "quote": "The solution remains smooth along both the future- and past-\nCauchy horizons (which by definition do not contain their crease boundary points, where\ngradient-blowup occurs). The two Cauchy horizons are not part ofM Max, but they are\npart of its topological closure:C Max\nFuture,C Max\nPast ⊂ M\nMax\n.\n(3)(Maximality and Uniqueness).M Max is maximal (i.e., there is no way to uniquely extend\nthe classical solutio"
+          },
+          {
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "pp.3–4 signs and Theorem 1.1",
+            "quote": "3-shock:σ >0, v + > v −, u + < u −, θ + < θ −.\nThroughout this paper, we restrict our attention to small-amplitude Lax shocks, the shock\nstrength being measured by|v + −v −|.\nFor traveling waves, the NSFK system (1.1) becomes the system of ordinary differential equations\n\n\n\n−σ˜v′ −˜u′ = 0,\n−σ˜u′ + ˜p′ =\n\u0012\nµ ˜u′\n˜v\n\u0013′\n+κ\n\u0012\n− ˜v′′\n˜v5 + 5(˜v′)2\n2˜v6\n\u0013′\n,\n−σ ˜E′ + (˜p˜u)′ =\n \nα\n˜θ′\n˜v\n!′\n+\n\u0012\nµ ˜u˜u′\n˜v\n\u0013′\n+κ\n\u0014\u0012\n− ˜v′′\n˜v5 + 5(˜v′)2\n2˜v6\n\u0013\n˜u+˜v′˜u′\n˜v5\n\u0015′\n,\n(1.6)\nwhere ˜p:=p(˜v,˜θ) and ˜E:= R\nγ−1\n˜θ+ κ\n2\n(˜v′)2\n˜v5 + ˜u2\n2 . The profile is subject to the far-field conditions\nlim\nξ→±∞\n(˜v,˜u,˜θ)(ξ) = (v ±, u±, θ±).(1.7)\nA solution of (1.6)–(1.7) is called a monotone profile if each of ˜v, ˜u, and ˜θis monotone onR.\n1.3.Main Results.The following theorem establishes the existence and uniqueness up to trans-\nlation of small-amplitude monotone viscous-dispersive shock profiles, t"
+          },
+          {
+            "path": "research/longread-20261018/papers/M03-2609.08158v1.txt",
+            "locator": "p.6 Theorem 1.1 metric and crease",
+            "quote": "By globally hyperbolic, we mean with re-\nspect to the acoustical metricg, the solution-dependent Lorentzian metric that determines\nthe intrinsic causal structure of the solution; see(448)–(450).\n(2)(MGHD boundary). Viewed as a subset of(t, r)-coordinate space, the boundary ofM Max\nconsists of the following sets, depicted in Fig. 1:\n•A future-crease∂ −BFuture, which is the unique spacetime point (corresponding to a\n2Dsphere inR 1+3) whose temporal component is the first positive time for which\nthe gradient of the physical fluid variables (i.e., the velocity and density) blows up,\nwhile the undifferentiated fluid variables remain bounded. 6 There is also a past crease\n∂+BPast, which is the unique spacetime point whose temporal component is the first\nnegative time for which the gradient of the fluid variables bl"
+          }
+        ],
+        "issues": [],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "Acoustic metric governs MGHD; fluid variables remain smooth on Cauchy horizons excluding crease, where gradients blow up and variables stay bounded. The small 3-shock signs and translation uniqueness within monotone profiles finish A. Tier: B correctly states metric, horizon, and monotone-class uniqueness but omits the three monotonicity directions (0.5); D correctly states metric and directions but omits the crease exception and uniqueness class (0.5). C wrongly makes all boundary points singular and arbitrary amplitudes monotone; E wrongly extends uniqueness to oscillatory profiles; F wrongly substitutes Minkowski for the acoustic metric. Those factual errors get 0, not partial credit.",
+        "creditByAnswer": {
+          "A": 1,
+          "B": 0.5,
+          "C": 0,
+          "D": 0.5,
+          "E": 0,
+          "F": 0
+        }
+      },
+      {
+        "id": "M05",
+        "answer": [
+          "A",
+          "C",
+          "E"
+        ],
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "pp.1–2 (1.2)–(1.3)",
+            "quote": "λ(ρ) = 2(µ′(ρ)ρ−µ(ρ)).(1.2)\nWe adopt the polytropic pressure lawp(ρ) =bργ, forb >0andγ >1being fluid constants. Without loss\nof generality, we normalize the coefficientb= 1in the sequel. The spatial domain under consideration is\nR×TwithT:=R/Zdenoting the one-dimensional unit flat torus. The initial density and momentum are\nprescribed as\n(ρ(0, x), ρu(0, x)) = (ρ0(x), m0(x)),\nDate: October 8, 2026.\n2010Mathematics Subject Classification. 76N10, 35L"
+          },
+          {
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "p.1 (1.3)",
+            "quote": "whereγ >1 is the adiabatic exponent andeis the internal energy, which includes the capillary\nenergyκv 2\nx/(2v5).\nThe NSFK system describes compressible flows with internal capillarity, in which the Korteweg\nstress depends on the density and its spatial derivat"
+          },
+          {
+            "path": "research/longread-20261018/papers/M10-2610.10341v1.txt",
+            "locator": "p.2 (1.3) chosen exponent range",
+            "quote": "µ(ρ) =ρ, λ(ρ)≡0, γ∈(1,2],(1.3)\nwhich gives the system\n( ρt + div(ρu) = 0,(t, x) = (t, x 1, x2)∈R + ×R×T,\n(ρu)t + div(ρu⊗u) +∇p(ρ) = div(2νρDu).\n(1.4)\nHowever, the framework develop"
+          }
+        ],
+        "issues": [],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "For μ=ρ^a, λ=2(a−1)ρ^a and μ+λ=(2a−1)ρ^a. Hence a=1/2 satisfies the physical bound at equality, a=0 fails it, a=1 gives λ=0, and a=2 does not. NSFK γ>1 includes 3; M10 selects γ∈(1,2]."
+      },
+      {
+        "id": "M06",
+        "answer": [
+          "A",
+          "C",
+          "D"
+        ],
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M11-2609.17962v1.txt",
+            "locator": "pp.4–5 Theorems 1.2–1.3",
+            "quote": "If0< κ≤κ ∗, thenγ= 0andS µ,ν,λ ={ω L\nλ,WL(·+ (a,0)) :a∈R}\nfor\nWL =W L(λ, µ) = µλ\nj2\n1,1π .(1.12)\nMoreover,\n∥ωL\nλ,WL∥L1(R2\n+)\n®\n< ν,0< κ < κ ∗,\n=ν, κ=κ ∗.(1.13)\n(B) (Mass-saturated regime) Ifκ ∗ < κ, thenγ >0and everyω∈S µ,ν,λ satisfies\n(1.14)∥ω∥ L1(R2\n+) =ν,dist(sptω, ∂R 2\n+)>0.\nFigure 1.Mass transition from the Lamb dipole (left) to a mass-saturated traveling\nvortex dipole (right)\nThus,κ ∗ marks the sharp transition at which the mass constraint becomes “active” and the\nexplicit Lamb dipole regime gives way to non-explicit traveling dipoles; see Figure 1. In contrast\nto the mass-unsaturated regime (A), the uniqueness of variational solutions in the mass-saturated\nregime (B) is considerably more delicate since the resulting vortex profile is no longer radially\nsymmetric. Nevertheless, we show that the variational solution to (1.4) is uniqu"
+          },
+          {
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "p.3 Theorem 1.1",
+            "quote": "unique up to translation within the monotone class.\nLet(˜v,˜u,˜θ)be normalized by˜v(0) = v−+v+\n2 . Then\n˜vξ >0,˜u ξ <0, ˜θξ <0, ξ∈R,\n|(˜v(ξ)−v−,˜u(ξ)−u −, ˜θ(ξ)−θ −)| ≤Cε e −cε|ξ|, ξ≤0,\n|(˜v(ξ)−v+,˜u(ξ)−u +, ˜θ(ξ)−θ +)| ≤Cε e −cε|ξ|, ξ≥0,\n|(˜vξ,˜uξ, ˜θξ)| ≤Cε "
+          },
+          {
+            "path": "research/longread-20261018/papers/M11-2609.17962v1.txt",
+            "locator": "p.5 Theorem 1.3 uniqueness intervals",
+            "quote": "for some Steiner symmetricω κ andκ∈(0, κ ∗ +δ ∗]∪[κ ∗∗,∞). Moreover, the mapκ7− →ω κ is\ncontinuous inL 2 ∩L 1\n∗ ∩L ∞(R2\n+)on each of the intervals(0, κ ∗ +δ ∗]and[κ ∗∗,∞).\nTheorem 1.4(Stability).Letλ, µ, ν >0satisfy(1.15"
+          }
+        ],
+        "issues": [],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "At κ* the mass equals ν but γ=0. Scaling λ by 4 and μ by 1/2 fixes κ=μ√λ/ν and doubles W_L=μλ/(j²π). Strictly monotone v crosses its midpoint once, fixing translation. No claimed uniqueness across the gap or oscillatory class."
+      },
+      {
+        "id": "M07",
+        "answer": "D",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "p.1 Theorem 1.1",
+            "quote": "Theorem 1.1(Sixth moment bound).For everyT⩾1andε >0, we have\nZ T\n0\n|ζ( 1\n2 +it)| 6 dt≪ ε T\n5\n4 − 1\n60 +ε.\nWe also improve the best known upper bound for thek-th moment of zeta, for every 4< k⩽12.\nTheorem 1.2(General moment bound).For each4< k⩽12, there existsδ"
+          },
+          {
+            "path": "research/longread-20261018/papers/M16-2609.27715v1.txt",
+            "locator": "p.2 Theorem 1.1 and old coefficient",
+            "quote": "Theorem 1.1.Letπbe a cuspidal automorphic representation ofGL 2(AQ)with unitary central\ncharacter, and letL(s, π)be its standardL-function. LetN π(σ, T)denote the number of zerosρof\nL(s, π)withRe(ρ)≥σand|Im(ρ)| ≤T. Uniformly for 1\n2 ≤σ≤1, we have\nNπ(σ, T)≪T\n5\n2 (1−σ)+o(1).\nForπcorresponding to a holomorphic cuspidal eigenform for SL 2(Z), Ivi´ c [20] proved the uniform\nzero density estimate\n(2)N π(σ, T)≪T\n8\n3 (1−σ)+o(1),\nfor 1\n2 ≤σ≤1, later reproved by Yashiro [40]. The same estimate holds for Hecke–Maass forms;\nsee [36, 37]. The extension from full level to arbitrary fixed level is routine. In either case, the\nb"
+          },
+          {
+            "path": "research/longread-20261018/papers/M16-2609.27715v1.txt",
+            "locator": "p.2 old 8/3 coefficient",
+            "quote": "from 8/3 to 5/2.\nNote that any cuspidal representationπis unitarizable, and itsL-function differs from that of the\nassociated unitary repres"
+          }
+        ],
+        "issues": [],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "Markov exponent 5/4−1/60−6/5=1/30; GL₂ exponent at 4/5 is (5/2)(1/5)=1/2; saving over (8/3)(1/5) is 1/30."
+      },
+      {
+        "id": "M08",
+        "answer": "B",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M18-2609.16048v1.txt",
+            "locator": "p.1 modulus R_k",
+            "quote": "γ=\n(\nτ+ 2 ifp= 2 andτ >0\nτ+ 1otherwise\nand we define\nRk =\nY\n(p−1)|k\npγ\nSpecifically, the Waring-Goldbach Problem is to partition the integermN k ≡m(modR k) into the\nsum ofmthek-th powers of primes in "
+          },
+          {
+            "path": "research/longread-20261018/papers/M25-2609.26787v1.txt",
+            "locator": "pp.1–2 truncation and ω≤6",
+            "quote": "whereω(n) denotes the number of distinct prime factors ofn, andγis the Euler-Mascheroni\nconstant. The resulting bound is pointwise stronger than Robin’s inequality and we prove it\nunconditionally for integers withω(n)≤6, primorials, odd integers and square-free integers.\nWe also prove that this inequality is equivalent to Robin’s inequality, and hence to the Riemann\nhypothesis. Consequently, the Riemann hypothesis is equivalent to the truncated inequality\nholding fo"
+          },
+          {
+            "path": "research/longread-20261018/papers/M25-2609.26787v1.txt",
+            "locator": "p.1 abstract unconditional range",
+            "quote": "unconditionally for integers withω(n)≤6, primorials, odd integers and square-free integers.\nWe also prove that this inequality is equivalent to Robin’s inequality, and he"
+          }
+        ],
+        "issues": [],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "For k=12 the eligible primes are 2,3,5,7,13 with exponents 4,2,1,1,1. Thus R12=65520, ω=5, σ/n=62/15, truncation j≤5. The paper claims the n>5040, ω≤6 result unconditionally; no large-k existence assertion is used."
+      },
+      {
+        "id": "M09",
+        "answer": "F",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M21-2608.31060v1.txt",
+            "locator": "p.2 Theorem 1.1 (1.2)",
+            "quote": "Then there is a real numberϕsatisfying\n|ϕ−t| ≤cN\nsuch that, for every parameterLin the range\ncN 6 ≤L≤ 1\n2 logx,\nthe disk \u001a\ns:|s−(1 + iϕ)|< L logT\n(logx) 2\n\u001b\n(1.2)\ncontains at leastL/360non-trivial zeros ofζ(s), counted with multiplicity.\nThe center in (1.2) is necessarily close to 1 + i t. Here t0 plays the role of the small\ntwisting parameter ϕ in [6, Theorem 1.3]. Because the associated Dirichlet series is\nζ(s−it ), the corresponding "
+          },
+          {
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "p.2 Theorem 1 (1.5)–(1.6)",
+            "quote": "By Lemma 6, the main term of (1.5) has size\n(1.6) 1√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n≍ H√pq log\n\u0012 T\npq\n\u0013\n.\nMoreover, as shown by Lemma 7,G T,H\n\u0000 1\n2 +it\n\u0001\ndecays rapidly for|t| ≫ T\nH . Thus, the integral\nin the dual moment is essentially supported on an interval of length T\nH . Two types of reciprocity\nappear in our result. The first is a type of arithmetic reciprocity which was already presented in\nKhan’s result. The second is a type of analytic reciprocity in which the original length of support\nHis transformed into T\nH in the dual moment.\nAnother objective of this paper is to observe the relation between"
+          }
+        ],
+        "issues": [
+          "Option F says the disk center is close to t; strictly, the center is 1+iφ and its height φ satisfies |φ−t|=O((log T)^(1/200)). Read the option as referring to the center height."
+        ],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "Center is 1+iφ with |φ−t|=O(N). Radius L logT/(log x)²=9(logT)^(−9/10). Dual length T/H=T^(1/3). H²/max(p,q)=T^(13/12), so any ε<1/12 works. All theorem parameter ranges hold for sufficiently large T."
+      },
+      {
+        "id": "M10",
+        "answer": [
+          "A",
+          "C",
+          "F"
+        ],
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M17-2609.22624v1.txt",
+            "locator": "p.2 Corollary 1 table",
+            "quote": "1/16 100 10 100 L0.1374\n1/16 100 10 10000 L0.3484\n1/32 100 10 100 L0.2157\n1/64 2 10 1000 J0.1649\n1/64 100 10 50 L0.1312\n1/128 100 10 1000 L0.5527\n1/256 1 10 10000 L0.0934\n1/2048 100 10 10000 L0.7163\nThe above says that a positive proportion of zeros are not near the edge of the\ncritical st"
+          },
+          {
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "pp.2–3 Theorems 1.1–1.2",
+            "quote": "Theorem 1.1.For every fixedθ0<θ<1, we have\n(1.7)lim inf\nT→∞\nNs\n0(T,T θ)\nN(T,T θ) ≥c(θ)>0.\nFor example, takingθ= 3/4in Theorem 1.1, we find that, for all sufficiently largeT, more\nthan41 .9%of the zeros in(T,T +T 3/4], counted with multiplicity, are simple and lie on the\ncritical line. Forθ≤θ0, that lower bound is nonpositive and gives no improvement on the\ntrivial bound. Regarding the proportion of distinct zeros ofζ(s)in( T,T +Tθ], by extending\nLamzouri’s inequality, we can get an explicit positive lower bound for every fixed0<θ<1.\n2\n\n[PDF page 3]\nTheorem 1.2.For any0<θ<1, set\nCθ= θ\n2 + 1√\n2 cot\n( θ√\n2\n)\n.\nForC≥1, define\n(1.8)D(C) = 2q+ 1−C\nq(q+ 1) , q=⌊C⌋,\nwhere⌊C⌋:= max{n∈Z:n≤C}. Then, unconditionally, we have\n(1.9)lim inf\nT→∞\nNd(T,T θ)\nN(T,T θ) ≥D(Cθ)>0\nfor any0<θ<1.\nFor example, takingθ= 1/4in Theorem 1.2, we obtainNd(T,T 1/4)> 0.2458N(T,T 1/4)\nfor all "
+          },
+          {
+            "path": "research/longread-20261018/papers/M17-2609.22624v1.txt",
+            "locator": "p.2 Corollary 1 admissible h",
+            "quote": "Fort > t 0 andt 2/3 >\nh > h 0 the proportion of zeros with imaginary part withinhof\ntwhose real part is in[α,1−α]is at leastC α,h0,t0. The column\n“mechanism” records which of Corol"
+          }
+        ],
+        "issues": [],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "The table requires t>10^100, h>100 and h<t^(2/3): t^(3/5) qualifies, t^(3/4) does not. Simple-critical positivity requires θ>θ0≈0.5501; 1/4 fails. Distinct-zero positivity applies for every 0<θ<1. Strip membership does not imply critical simple status."
+      },
+      {
+        "id": "M11",
+        "answer": "A",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M23-2610.05227v1.txt",
+            "locator": "p.4 Theorem 1.2",
+            "quote": "ασ := σ\n2σ+ 1 .\nThen for any Schwartz functionϕonRwithsupp( bϕ)⊂(−α σ, ασ), we have\n1R 2T\nT |ζ(σ+it)| 2dt\nZ 2T\nT\n|ζ(σ+it)| 2DT (ζt, ϕ)dt=\nZ ∞\n−∞\nϕ(x)WU,σ(x)dx+O\n\u0012 1\nlogT\n\u0013\nasT→ ∞, whereW U,σ is the same function as(1.5).\nBy Theorem 1.2, we conclude that the symmetry type of the one-level density for{ζt}t>0\nweighted by|ζ t(σ)|2 changes if and only ifσ= 1/2. This is evidence toward the weighted\ndensity conjecture (1.4) for unitary families.\nWe intr"
+          },
+          {
+            "path": "research/longread-20261018/papers/M16-2609.27715v1.txt",
+            "locator": "p.2 Theorem 1.1",
+            "quote": "Nπ(σ, T)≪T\n5\n2 (1−σ)+o(1).\nForπcorresponding to a holomorphic cuspidal eigenform for SL 2(Z), Ivi´ c [20] proved the uniform\nzero density estimate\n(2)N π(σ, T)≪T\n8\n3 (1−σ"
+          }
+        ],
+        "issues": [],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "Exact closed support [-7/25,7/25] must fit in the theorem’s open interval, so 7/25<σ/(2σ+1), equivalent to σ>7/11. There the weighted unitary density is 1. GL₂ exponent at σ=3/4 is 5/8."
+      },
+      {
+        "id": "M12",
+        "answer": "A",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M25-2609.26787v1.txt",
+            "locator": "pp.1,4 abstract/main results",
+            "quote": "We further show that if the inequality fails, its\nminimal counterexample must be a superabundant number, placing any obstruction within a\nrigid extremal class of integers.\n1.Introduction\nIn [Rob84], Robin conjectured the inequality (calledRobin’s inequality)σ(n)< e γnln lnn, for\nalln >5040, whereσ(n) is the s"
+          },
+          {
+            "path": "research/longread-20261018/papers/M19-2608.12257v1.txt",
+            "locator": "p.1 abstract",
+            "quote": "ineffective constantsc=c n,F,ε >0 andc ′ =c ′\nn,F,π′,ε >0\nsuch that the standardL-functionL(s, π) satisfies\n|L(σ+it, π)| ≥c(C π(|t|+ 3)) −ε, σ≥1−c(C π(|t|+ 3)) −ε\nand the Rankin–SelbergL-functionL(s, π×π ′) satisfies\n|L(σ+it, π×π ′)| ≥c ′(Cπ(|t|+ 3)) −ε, σ≥1−c ′(Cπ(|t|+ 3)) −ε.\nApplications include improvements to the prime number theorems for theseL-functions\nand new generalizations of the Brauer–Siegel theorem.\n1.Introduction and main results\nWe develop a new method for establishing zero-free "
+          },
+          {
+            "path": "research/longread-20261018/papers/M25-2609.26787v1.txt",
+            "locator": "p.4 main results CA equivalence",
+            "quote": "restricted to colossally abundant\nnumbers.\n2.Theω−inequality forω(n)≤6\nThe goal of this section is to prove that theω−inequality holds for alln >5040 withω(n)≤6,\nas state"
+          }
+        ],
+        "issues": [],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "Paper M25 claims any counterexample has ω≥7, a minimal one is superabundant, and all-CA checking is RH-equivalent; superabundant does not imply colossally abundant. M19 has π-uniform standard constants at fixed n,F,ε, while Rankin–Selberg constants may depend on fixed π′; both are ineffective. This grades the preprint claims, without external RH endorsement. Tier: C correctly has ω≥7 and π-uniform standard constants, but omits superabundance, CA equivalence and Rankin–Selberg dependence (0.5); D correctly has superabundance and π′ dependence, but omits ω≥7, CA equivalence and standard constants (0.5). B falsely equates superabundant with CA and uniformizes all parameters; E falsely turns ineffective constants into explicit numerics; F denies the stated CA equivalence. None of these false options gets partial credit.",
+        "creditByAnswer": {
+          "A": 1,
+          "B": 0,
+          "C": 0.5,
+          "D": 0.5,
+          "E": 0,
+          "F": 0
+        }
+      }
+    ],
+    "change": [
+      {
+        "id": "XM01",
+        "answer": "D",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M08-2610.16874v1.txt",
+            "locator": "p.4 (1.9),(1.13),(1.14)",
+            "quote": "Setσ − :=\np\nγp−/v− andC ∗ := Rγ(γ+1)σ −\n2(µRγ+α(γ−1) 2). Then the shock speed satisfies\n|σ−σ −| ≤Cε,(1.9)\nthe derivatives satisfy\nC−1|˜vξ| ≤ |˜uξ| ≤C|˜vξ|, C −1|˜vξ| ≤ | ˜θξ| ≤C|˜vξ|, ξ∈R,(1.10)\nand, more precisely,\n|˜uξ +σ −˜vξ| ≤Cε|˜vξ|,\n\f\f\f\f˜θξ + (γ−1)p −\nR ˜vξ\n\f\f\f\f ≤Cε|˜vξ|, ξ∈R.(1.11)\nMoreover,\nC−1(v+ −˜v)(˜v−v−)≤˜vξ ≤C(v + −˜v)(˜v−v−), ξ∈R,(1.12)\nand, more precisely,\n\f\f˜vξ −C ∗(v+ −˜v)(˜v−v−)\n\f\f ≤Cε(v + −˜v)(˜v−v−), ξ∈R.(1.13)\nFinally, ifΩ⊂ {(v, θ) :v >0, θ >0}is compact, thenε 0,c, andCcan be chosen uniformly for\nall left end states with(v −, θ−)∈Ω.\nRemark1.2.The change of variables (ξ, u, σ)7→(−ξ,−u,−σ) maps a 1-shock profile to a 3-shock\nprofile, with the end states changing as\n\u0000\n(v−, u−, θ−),(v +, u+, θ+)\n\u0001\n7→\n\u0000\n(v+,−u +, θ+),(v −,−u −, θ−)\n\u0001\n.\nHence the conclusions of Theorem 1.1 hold for 1-shocks, with ˜vξ <0, ˜uξ <0, ˜θξ >0 in place of the\nsigns in (1.8), with−˜vξ in place of ˜vξ in (1.12), and withσ − andp − replaced by−\np\nγp+/v+ and\np+ elsewhere, including inC ∗. Since the reflected left end state depends onε, we apply the last\nstatement of Theorem 1.1 with a compact set Ω that contains (v +, θ+) forε≤ v−\nγ+1 . In the rest of\nthe paper, we consider 3-shocks and assume\nv− < v+, ε=v + −v −, σ=\nr\n− p+ −p −\nv+ −v −\n>0.\nThe following corollary provides the second-order estimate used in the companion stability anal-\nysis [22].\nCorollary 1.3.For a given left end state(v −, u−, θ−)∈R + ×R×R +, there exist positive constants\nε0 andCsuch that the following holds for every right end state(v +, u+, θ+)∈R + ×R×R + and\nevery shock speedσ∈Rsatisfying the Rankine–Hugoniot condition(1.4), the Lax 3-shock condition\nin(1.5), andε:=|v + −v −|< ε 0. Let(˜v,˜u,˜θ)be the traveling wave solution of Theorem 1.1 and\ndefineA ∗ := γ(γ+1)p −\n2v2\n−σ−\n. Then\n\f\f\f\f\n˜p−p+\n˜v−v+\n− ˜p−p−\n˜v−v−\n−σ −A∗\nµRγ\nµRγ+α(γ−1) 2 (v+ −v −)\n\f\f\f\f ≤Cε 2, ξ∈R.(1.14)\nMoreover, ifΩ⊂ {(v, θ) :v >0, θ >0}is compact, thenε 0 andCcan be chosen uniformly for all\nleft end states with(v −, θ−)∈Ω.\n1.4.Main Ideas of the Proof.In Section 2, the integrated profile equations reduce to a third-\norder equation for ˜v, which the rescaling ˜v(ξ) =v− +εφ0(z),z=εξ, turns into the slow-fast system\n(2.14). The main difficulty is that its right-hand side contains a term of order 1\nε, while Fenichel’s\ntheorem (Proposition 2.2) requires a vector field that isC ∞ up toε= 0. By Lemma 2.3, the\nRankine–Hugoniot condition givesσ=σ(ε), and the identity (2.7) forσ(ε) cancels "
+          },
+          {
+            "path": "research/longread-20261018/papers/M13-2608.29138v1.txt",
+            "locator": "p.3 (5)",
+            "quote": "W (x3) = 6 F x3(1 − x3)e(α), with FW =\n∫ 1\n0\nW (x3) ·e(α) dx3 = F.\nBy utilizing this explicit correspondence, we show there is a velocity field u = W + v\nwhose far-field line-flux approaches to the prescribed constant F along the direction e(α).\nNow we state t"
+          }
+        ],
+        "issues": [
+          "M08 PDF-to-text flattens the fraction in (1.14). Reading the original PDF fraction places 2v_-²σ_- below γ(γ+1)p_- and μRγ/[μRγ+α(γ−1)²] as a multiplier; this determines b=9/4."
+        ],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "σ−=2, μRγ+α(γ−1)²=8. Hence C*=3/4; midpoint derivative gives a=C*/4=3/16. A*=γ(γ+1)p−/(2v−²σ−)=3 and the (1.14) multiplier is μRγ/8=3/4, so b=9/4. The slab integral is J/F²=12."
+      },
+      {
+        "id": "XM02",
+        "answer": "C",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M16-2609.27715v1.txt",
+            "locator": "p.2 Theorem 1.2",
+            "quote": "N 2V −2 +N 18/5V −4 +T N 12/5V −4\n\u0011\n.\nFor 2< q < 8\n3, the argument also givesq-dependent variants of the large-values estimate;\nthese give zero density estimates strictly between the classical exponent 8/3 and the exponent 5/2\nobtained here onceq > 5\n2.\nWe ded"
+          },
+          {
+            "path": "research/longread-20261018/papers/M15-2610.01035v1.txt",
+            "locator": "p.1 Theorem 1.1",
+            "quote": "Theorem 1.1(Sixth moment bound).For everyT⩾1andε >0, we have\nZ T\n0\n|ζ( 1\n2 +it)| 6 dt≪ ε T\n5\n4 − 1\n60 +ε.\nWe also improve the best known upper bound for thek-th moment of zeta, for every 4< k⩽12.\nTheorem 1.2(General moment bound).For each4< k⩽12, there existsδ"
+          }
+        ],
+        "issues": [],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "After N=T^(3/4), V=N^(4/5), three exponents are 3/10,3/10,2/5, with leading 2/5. Markov subtracts 6·1/6 from 5/4−1/60, leaving 7/30."
+      },
+      {
+        "id": "XM03",
+        "answer": "A",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M24-2609.07918v2.txt",
+            "locator": "p.3 Theorem 1.2 (1.8)–(1.10)",
+            "quote": "ForC≥1, define\n(1.8)D(C) = 2q+ 1−C\nq(q+ 1) , q=⌊C⌋,\nwhere⌊C⌋:= max{n∈Z:n≤C}. Then, unconditionally, we have\n(1.9)lim inf\nT→∞\nNd(T,T θ)\nN(T,T θ) ≥D(Cθ)>0\nfor any0<θ<1.\nFor example, takingθ= 1/4in Theorem 1.2, we obtainNd(T,T 1/4)> 0.2458N(T,T 1/4)\nfor all sufficiently largeT. Moreover, by\n2q+ 1−C\nq(q+ 1) −1\nC = (C−q)(q+ 1−C)\nCq(q+ 1) ≥0\nforC−1<q=⌊C⌋≤C, we get a simpler, though generally weaker, lower bound\n(1.10)lim inf\nT→∞\nNd(T,T θ)\nN(T,T θ) ≥1\nCθ\n>0.\nTo prove Theorem 1.1, in Section 2 we will cite Lamzouri’s inequality on finite multisets\ninvariant under complex conjugation, and prove Montgomery’s pair correlation formula in\nshort intervals. Then to apply Lamzouri’s ineq"
+          },
+          {
+            "path": "research/longread-20261018/papers/M14-2609.02882v2.txt",
+            "locator": "pp.2–3 (1.1), Theorem 1.1",
+            "quote": "(1.1)C 0 := 3\n2 − 1√\n2 cot\n\u0012 1√\n2\n\u0013\n= 0.6725007. . . ,\nand this was improved to0.6792by Chirre, Gonçalves, and de Laat [7]. By a different\nmethod, Conrey, Ghosh and Gonek [9] proved, assuming RH and the Generalized Lindelöf\nHypothesis (GLH), that at least19\n27 = 0.7037. . .of the zeta zeros are simple, and that at\nleast0.8456of the zeros are distinct. Bui and Heath-Brown [5] subsequently removed G"
+          },
+          {
+            "path": "research/longread-20261018/papers/M14-2609.02882v2.txt",
+            "locator": "p.3 Theorem 1.1 full-height distinct constant",
+            "quote": "C 1 := C0 + 1\n2 = 0.83625. . . .\nMoreover, we have\nlim inf\nT→∞\nNs∪0(T)\nN(T) ⩾C 2 = 0.88762. . .andlim inf\nT→∞\nNs(T) +N 0(T)\n2N(T) ⩾C 1 = 0.83625. . . .\nHereC 0 "
+          }
+        ],
+        "issues": [],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "At 7/3, q=2 gives D=4/9 and D−1/C=1/63. At C=3, q=3 yields 1/3 and the q=2 left limit is 1/3. M14 defines C0=3/2−cot(1/√2)/√2 and full-height distinct constant (1+C0)/2. Cθ→2−C0 as θ→1−, so D(Cθ) tends to (1+C0)/2, only as an endpoint limit. Tier: B has the endpoint computation and gain but omits the C=3 branch check (0.5); D has branch continuity and endpoint but omits the 7/3 strict gain (0.5). C confuses distinct and simple-critical limits; E promotes an endpoint limit to every fixed θ; F swaps the constants. Each false option gets 0.",
+        "creditByAnswer": {
+          "A": 1,
+          "B": 0.5,
+          "C": 0,
+          "D": 0.5,
+          "E": 0,
+          "F": 0
+        }
+      },
+      {
+        "id": "XM04",
+        "answer": "E",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/M23-2610.05227v1.txt",
+            "locator": "pp.7–8 Theorems 2.4–2.5",
+            "quote": "Theorem 2.4.Let1/2< σ⩽1andm∈Z >0. Then forT >10andm < T /10, we have\nIm(σ, T)\nI(σ, T) =m −σ +O σ(mσ−1T 1−2σ) +O σ(mT −σ(logT) 2) +O σ(mσT −σ/2(logT) 2).\nProof.We write (2.2) and (2.3) in Lemma 2.2 asF m andE m, respectively. Then the ratio\nwe want to evaluate is\nIm(σ, T)\nI(σ, T) = Fm +E m\nF1 +E 1\n= Fm\nF1\n+\nEm − Fm\nF1\nE1\nF1 +E 1\n,(2.8)\nWe remark that the decomposition (2.8) is also used in [15, Proposition 3.1], [20, Corollary\n2.10] and [21, Equation (2.3)]. We notice that forσ∈(1/2,1),\n(2π)2σ−1(22−2σ −1)\n2−2σ = (2π)2σ−1(log 2 +O(σ−1))≍1,\nthus this is bounded on (1/2,1]. Sinceζ(2−2σ)/ζ(2σ) is also bounded on (1/2,1], the\nfirst term of the right-hand side of (2.8) is evaluated as\nFm\nF1\n= m−σζ(2σ)T+O(ζ(2−2σ)m σ−1T 2−2σ)\nζ(2σ)T+O(ζ(2−2σ)T 2−2σ) = m−σ +O(m σ−1T 1−2σ)\n1 +O(T 1−2σ)\n=\n\b\nm−σ +O(m σ−1T 1−2σ)\n\t\n×\n\b\n1 +O(T 1−2σ)\n\t\n=m −σ +O(m σ−1T 1−2σ).\nThe second term of the right-hand side of (2.8) is estimated as\nEm − Fm\nF1\nE1\nF1 +E 1\n≪σ\nmT 1−σ(logT) 2 +m σT 1−σ/2(logT) 2 + (m−σ +m σ−1T 1−2σ)T 1−σ/2(logT) 2\nT\n≪mT −σ(logT) 2 +m σT −σ/2(logT) 2 +m σ−1T 1−5σ/2(logT) 2\n≪mT −σ(logT) 2 +m σT −σ/2(logT) 2,\nsince 1−2σ <0 forσ∈(1/2,1]. This completes the proof.□\nOn the critical line, we have the following.\nTheorem 2.5.LetT >10. Form∈Z >0 satisfyingm < T /10, we have\nIm(1/2, T)\nI(1/2, T) =m −1/2 −m −1/2 logm\nlogT +O\n\u0012 m−1/2 logm\n(logT) 2\n\u0013\n+O(mT −1/2 logT) +O(m 1/2T −1/4 logT).\n7\n\n[PDF page 8]\nProof.We write (2.5) and (2.6) in Lemma 2.3 asF m an"
+          },
+          {
+            "path": "research/longread-20261018/papers/M22-2608.14852v1.txt",
+            "locator": "p.2 Theorem 1",
+            "quote": "Theorem 1.Letp, qbe distinct odd primes,T >1andH=T δ forδ∈\n\u0000 1\n2 ,1\n\u0001\n. We have\n(1.5)\nZ ∞\n−∞\n\u0012 p\nq\n\u0013it\f\fζ\n\u0000 1\n2 +it\n\u0001\f\f2 exp\n\u0012\n−(t−T) 2\nH2\n\u0013\ndt=\n2π√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n+\nX∗\nχmodp\n√p\niα(p−1) χ(q)\nZ ∞\n−∞\nGT,H\n\u0000 1\n2 +it\n\u0001\u0012 π\nq\n\u0013it Γ\n\u0000 1+2α−2it\n4\n\u0001\nΓ\n\u0000 1+2α+2it\n4\n\u0001\n\f\fL\n\u0000 1\n2 +it, χ\n\u0001\f\f2 dt\n+O\n \nT\nH (pqT) ϵ\n\"\u0012 p\nq\n\u0013 1\n2\n+\n\u0012 q\np\n\u0013 1\n2\n#!\n,\nforα= 0ifχ(−1) = 1andα= 1ifχ(−1) =−1.\nBy Lemma 6, the main term of (1.5) has size\n(1.6) 1√pq\n\u0000\nG′\nT,H (1)−G T,H (1) log(pq) + 2γGT,H (1)\n\u0001\n≍ H√pq log\n\u0012 T\npq\n\u0013\n.\nMoreover, as shown by Lemma 7,G T,H\n\u0000 1\n2 +it\n\u0001\ndecays rapidly for|t| ≫ T\nH . Thus, the integral\nin the dual moment is essentially supported on an interval of length T\nH . Two types of reciprocity\nappear in our result. The first is a type of arithmetic reciprocity which was already presented in\nKhan’s result. The second is a type of analytic reciprocity in which the original length of support\nHis transformed into T\nH in the dual moment.\nAnother objective of this paper is to observe the relation between the size of twisting parameter\nand the length of interval of integral. In general, the twisting parameter cannot be arbitrarily\nlarge, while the integral cannot be supported on an interval that is arbitrarily small. However, the\nrelation between these two "
+          },
+          {
+            "path": "research/longread-20261018/papers/M23-2610.05227v1.txt",
+            "locator": "p.7 Theorem 2.5 critical-line ratio",
+            "quote": "Theorem 2.5.LetT >10. Form∈Z >0 satisfyingm < T /10, we have\nIm(1/2, T)\nI(1/2, T) =m −1/2 −m −1/2 logm\nlogT +O\n\u0012 m−1/2 logm\n(logT) 2\n\u0013\n+O(mT −1/2 logT) +O(m 1/2T −1/4 logT).\n7\n\n[PDF page 8]\nProof.We write (2.5) and (2.6) in Lemma 2.3 asF m andE m, respectively. Then the\nequation (2.8) is also valid whenσ= 1/2. SettingC:= 2γ E −logπ−1 + log 2, we can\nsimplify the first term on the most right-hand side of (2.8) forσ= 1/2 to\nFm\nF1\n= m−1/2TlogT−m −1/2(logm)T+Cm −1/2T\nTlogT+CT\n=m −1/2 logT−logm+C\nlog"
+          }
+        ],
+        "issues": [],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "For m=floor(T^(1/5)), critical-line ratio is m^(−1/2)(1−logm/logT)=(4/5)T^(−1/10)(1+o(1)); the stated errors are smaller. At σ=3/4 the ratio is T^(−3/20)(1+o(1)), likewise with smaller errors. H²/max(p,q)≈T^(5/4−1/5)=T^(21/20), giving strict ε<1/20."
+      }
+    ]
+  },
+  "summary": {
+    "initialCount": 12,
+    "changeCount": 4,
+    "answers": {
+      "M01": "C",
+      "M02": "E",
+      "M03": [
+        "A",
+        "C",
+        "E"
+      ],
+      "M04": "A",
+      "M05": [
+        "A",
+        "C",
+        "E"
+      ],
+      "M06": [
+        "A",
+        "C",
+        "D"
+      ],
+      "M07": "D",
+      "M08": "B",
+      "M09": "F",
+      "M10": [
+        "A",
+        "C",
+        "F"
+      ],
+      "M11": "A",
+      "M12": "A",
+      "XM01": "D",
+      "XM02": "C",
+      "XM03": "A",
+      "XM04": "E"
+    },
+    "evidenceTier": {
+      "M04": {
+        "A": 1,
+        "B": 0.5,
+        "C": 0,
+        "D": 0.5,
+        "E": 0,
+        "F": 0
+      },
+      "M12": {
+        "A": 1,
+        "B": 0,
+        "C": 0.5,
+        "D": 0.5,
+        "E": 0,
+        "F": 0
+      },
+      "XM03": {
+        "A": 1,
+        "B": 0.5,
+        "C": 0,
+        "D": 0.5,
+        "E": 0,
+        "F": 0
+      }
+    },
+    "fractionChecks": "Independent Python Fraction calculations checked M03, M07–M09, M11, XM01–XM04.",
+    "scope": "The review assesses supplied October 2026 preprint statements and elementary deductions. It does not externally confirm any preprint claim implying RH.",
+    "crossSourceNecessaryAll": true,
+    "tierPolicy": "Only factually correct but expressly incomplete evidence-tier options receive 0.5. All options with a false mathematical assertion receive 0."
+  }
+}

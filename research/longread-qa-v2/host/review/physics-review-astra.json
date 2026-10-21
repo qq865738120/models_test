@@ -1,0 +1,540 @@
+{
+  "model": "gpt-6-astra",
+  "blind": true,
+  "phases": {
+    "initial": [
+      {
+        "id": "P01",
+        "answer": "C",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P05-2609.40176v1.pdf",
+            "locator": "PDF pp1–2 Eq.(3),(5)",
+            "quote": "GN/Gcosmo = 1−Ωg = 1+3(λ−1)/2; Ωg=−0.0081±0.0025."
+          },
+          {
+            "path": "research/longread-20261018/papers/P11-2610.20716v1.pdf",
+            "locator": "PDF p2 Eq.(3), p7 Eq.(29)",
+            "quote": "acΛc/eV=1.0939×10⁻⁴; Λc=43.67±0.13 eV."
+          }
+        ],
+        "issues": [],
+        "difficulty": "medium",
+        "crossSourceNecessary": true,
+        "reason": "独立Python：λ=1−2Ωg/3=1.0054，ac=1.0939e−4/43.67=2.5049232883e−6。A误用简化似然Ωg；B误用理论Λc中心34；C全对；D的λ符号错；E两统计口径都错；F符号和凝聚尺度均错。P11脚注重算常数1.09393e−4不影响允许舍入答案。"
+      },
+      {
+        "id": "P02",
+        "answer": "C",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P04-2608.19883v2.pdf",
+            "locator": "PDF Table I与final-release forecast",
+            "quote": "Lyman-α DR1 errors +0.024/−0.028; final errors are half the original DR1 errors."
+          },
+          {
+            "path": "research/longread-20261018/papers/P06-2610.01836v1.pdf",
+            "locator": "PDF p31 Table 6及正文",
+            "quote": "Reductions are 15% and 10% for the combined LRG sample."
+          }
+        ],
+        "issues": [],
+        "difficulty": "medium",
+        "crossSourceNecessary": true,
+        "reason": "Python：(0.024+0.028)/2/2=.013，1−.15=.85，1−.10=.90。A用了all-tracer缩减；B用了DR2误差减半；C全对；D只作√2缩减；E同时混淆DR2/all-tracer；F把减少比例当剩余误差。"
+      },
+      {
+        "id": "P03",
+        "answer": "B",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P12-2610.20002v1.pdf",
+            "locator": "PDF p13 Table 2",
+            "quote": "ΛCDM χ²=1417.99, AIC=1427.99; f2CDM χ²=1415.89, AIC=1427.89, ΔBIC=+5.29."
+          },
+          {
+            "path": "research/longread-20261018/papers/P09-2609.31113v1.pdf",
+            "locator": "PDF p19 Table IV",
+            "quote": "ΛCDM k=4 χ²=1675.640; SVT k=9 χ²=1664.024; ΔAIC=−1.616, ΔBIC=+26.034."
+          }
+        ],
+        "issues": [],
+        "difficulty": "medium",
+        "crossSourceNecessary": true,
+        "reason": "原PDF表格视觉核验。Python两差=(1415.89−1417.99)+2=−.10；(1664.024−1675.640)+2×5=−1.616。A把χ²当AIC且BIC方向错；B全对；C用了无RSD数据；D符号反；E漏第一参数惩罚且BIC方向错；F第一BIC方向错。"
+      },
+      {
+        "id": "P04",
+        "answer": "D",
+        "creditByAnswer": {
+          "A": 0.5,
+          "B": 0.5,
+          "C": 0,
+          "D": 1,
+          "E": 0,
+          "F": 0
+        },
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P09-2609.31113v1.pdf",
+            "locator": "PDF p16 Eq.(4.11)–(4.14)",
+            "quote": "froot=.33642; ΔlnBII=ΔlnBI−ln froot; same likelihood and posterior distribution over the regular branch."
+          },
+          {
+            "path": "research/longread-20261018/papers/P11-2610.20716v1.pdf",
+            "locator": "PDF p18 Table IV",
+            "quote": "Union3.1: lnB BDE-BDM=4.12, CPL=−.26; DIC BDE-BDM=11051.73, CPL=11047.62."
+          }
+        ],
+        "issues": [
+          "A/B直接公开两半正确结论，D为并集；C/E/F可由统计常识排除，不要求实质读取两篇。建议六项同等完整，只在真实数值或先验分母上区分。"
+        ],
+        "difficulty": "easy",
+        "crossSourceNecessary": false,
+        "reason": "Python：1/.33642=2.97247488；4.12−(−.26)=4.38。A仅支持归一及后验不变，缺第二比较，.5；B仅支持第二比较，缺第一归一，.5；C倍率方向反，0；D两处及各自条件完整，1；E重归一不会改成RSD穿越概率，0；F不能用χ²min代替DIC/证据，0。P11叙述DIC差4.12而表列差4.11仅末位显示差，未影响本题方向。"
+      },
+      {
+        "id": "P05",
+        "answer": [
+          "A",
+          "D"
+        ],
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.pdf",
+            "locator": "PDF p3 Eq5, p6 Table IV",
+            "quote": "r=(ΔNeff)^(1/4); ms∈[.5,1.5], ΔNeff∈[.01,.80], w0∈[−2,−.4], wa∈[−2,1]."
+          },
+          {
+            "path": "research/longread-20261018/papers/P09-2609.31113v1.pdf",
+            "locator": "PDF p14 Eq4.3",
+            "quote": "wDE(0)>−1 and wDE(z)<−1 for at least one 0<z≤4."
+          }
+        ],
+        "issues": [],
+        "difficulty": "medium",
+        "crossSourceNecessary": true,
+        "reason": "A: ΔNeff=.0625,w(4)=−1.12通过；B:w(4)=−1且此前更大，严格不等式失败；C:.3⁴=.0081低于先验；D:.6⁴=.1296,w(4)=−1.06通过；E:.95⁴=.81450625超过.80；F:w(0)=−1.1方向失败。Python复算全部值，单调性保证连续区间判断。"
+      },
+      {
+        "id": "P06",
+        "answer": "D",
+        "creditByAnswer": {
+          "A": 0.5,
+          "B": 0.5,
+          "C": 0,
+          "D": 1,
+          "E": 0,
+          "F": 0
+        },
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P05-2609.40176v1.pdf",
+            "locator": "PDF Table I; p12 Bayesian comparison",
+            "quote": "CGG: Δχ²=−6.4−2.2, one extra parameter; CPL: −5.6−5.3, two extra parameters; both ΔlnZ=3.2."
+          },
+          {
+            "path": "research/longread-20261018/papers/P11-2610.20716v1.pdf",
+            "locator": "PDF p18 Table IV",
+            "quote": "Union3.1 DIC favors CPL whereas evidence favors BDE-BDM."
+          },
+          {
+            "path": "research/longread-20261018/papers/P10-2609.35317v1.pdf",
+            "locator": "PDF pp22–24",
+            "quote": "Rejection of extreme fiducials comes from the electromagnetic data, not from the gravitational-wave likelihood."
+          }
+        ],
+        "issues": [
+          "D是唯一完整且没有明显统计方法错误的选项，A/B自报未完成，可不读材料排除。建议所有选项完整度相等并含两篇独有的真实参数/数据条件。"
+        ],
+        "difficulty": "easy",
+        "crossSourceNecessary": false,
+        "reason": "A简化似然下少参数相近表现受支持，缺第二研究/汽笛，.5；B证据/DIC排序差受支持，缺汽笛与跨研究比较，.5；C不同研究证据不可借同名ΛCDM相减且模拟不是独立验证，0；D Python ΔAIC=−8.6+2=−6.6、−10.9+4=−6.9且其余条件正确，1；E同名基线不足以匹配证据积分，0；F模拟精度不证明唯一H0，0。"
+      },
+      {
+        "id": "P07",
+        "answer": [
+          "A",
+          "C",
+          "E"
+        ],
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P20-2610.03869v1.pdf",
+            "locator": "PDF p8 SecIV.B.2",
+            "quote": "Extra classical measurement flip of probability sin²(α/2)."
+          },
+          {
+            "path": "research/longread-20261018/papers/P19-2610.03399v1.pdf",
+            "locator": "PDF p2 Definition1, Eq5,8",
+            "quote": "Sα=P(L=1|Eα=1)−P(L=1|Eα=0); Sc=Σ Sα for a common error probability."
+          }
+        ],
+        "issues": [
+          "题干给出了独立Bernoulli与灵敏度，正弦平方为基本量子公式，其余由条件概率和链式法则可导，实质两来源不足。",
+          "C应明确是对共同翻转概率p的灵敏度；若对角度α，须乘dp/dα。建议增加两篇各自特有、未在选项公开的数据。"
+        ],
+        "difficulty": "medium",
+        "crossSourceNecessary": false,
+        "reason": "Python p旧=.25,p新=.0669872981，Δp=.1830127019。A的减少.0366025404正确；B二次缩放不精确，错；C对p总导数.50，一阶减少.0915063509正确；D两处同时变化有混合二阶项，独立噪声不保证失败事件可加，错；E PL(p)=p a+(1−p)b单组件仿射，固定解码器/其余分布时有限变化精确，正确；F违背原噪声公式，错。"
+      },
+      {
+        "id": "P08",
+        "answer": "D",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P20-2610.03869v1.pdf",
+            "locator": "PDF p7 capacity comparison",
+            "quote": "Default ε7=.215%, wide=.179%, AlphaQubit=.130%; about 40% of the gap closes."
+          },
+          {
+            "path": "research/longread-20261018/papers/P16-2610.02734v1.pdf",
+            "locator": "PDF pp13–14, Table III",
+            "quote": "Failure .535% to .345%; corrects 49 shots, introduces 11 failures; same 20,000 circuit samples."
+          }
+        ],
+        "issues": [],
+        "difficulty": "medium",
+        "crossSourceNecessary": true,
+        "reason": "Python (.215−.179)/(.215−.130)=.4235294；(49−11)/[(.535−.345)/100]=20000。A把自身降幅16.7%当差距消除；B未扣11新增失败；C是旧模型超额错误率而非消除比例；D全对；E两个分母均错；F把49和11相加而非相减。共享测试结果不能冒充独立验证。"
+      },
+      {
+        "id": "P09",
+        "answer": "B",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.pdf",
+            "locator": "PDF pp10–12 SecIV.F",
+            "quote": "tnarrow=(2dhook+4)dinner; t1=v(s+1)tnarrow,t2=su t1,t3=msu t1; dinner=10,dhook=4,s=u=v=2,m=3."
+          },
+          {
+            "path": "research/longread-20261018/papers/P22-2610.03682v1.pdf",
+            "locator": "PDF p34 EqS20–S24",
+            "quote": "Fine-graining does not change topology ... k unchanged, data qubits grow quadratically in L."
+          }
+        ],
+        "issues": [],
+        "difficulty": "medium",
+        "crossSourceNecessary": true,
+        "reason": "原PDF公式视觉核验。tnarrow=120；t1=720,t2=2880,t3=8640；n=L²|F□|，k由拓扑固定。A第二/三层漏u；B全对；C第一层漏v且层级不自洽；D错n指数；E错k；F漏m又错n指数。含接口附加项的硬件总数只有近似标度，题中已说明近似。"
+      },
+      {
+        "id": "P10",
+        "answer": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P24-2610.06811v1.pdf",
+            "locator": "PDF p4 Eq2.3; p5 Definition5/Example1",
+            "quote": "Weighted phase coefficients: linear ai, quadratic 2bij, cubic 4cijk; compatibility requires all nonzero branches."
+          },
+          {
+            "path": "research/longread-20261018/papers/P24-2610.06811v1.pdf",
+            "locator": "PDF p5",
+            "quote": "CCZ X1 positive branch has six support elements; Z measurement intersects affine support with affine hyperplane."
+          },
+          {
+            "path": "research/longread-20261018/papers/P18-2609.40279v1.pdf",
+            "locator": "PDF p2; p12 Theorem1",
+            "quote": "Pure nearest-neighbor ZZ has arbitrary edge angles; mixed-noise sampler with |p̃−p|≤εp,0≤ε<1, for all allowed angles implies PH collapse."
+          }
+        ],
+        "issues": [
+          "困难性须保留“除非PH塌缩”，F的“所排除”建议改为“给出条件困难性”。",
+          "P18实质作用主要在D，建议D加入具体允许角度集、奇距离或点态乘法误差条件以强化跨来源。"
+        ],
+        "difficulty": "hard",
+        "crossSourceNecessary": true,
+        "reason": "A系数2、4合法且X不全闭包，对；B T|+〉测X两分支|±〉均3PP但不可普遍化，对；C丢弃正分支不满足完整测量兼容，错；D纯ZZ与混合困难性适用域不同，3PP另需门集与闭包，对；E相干旋转的干涉/条件态不由Pauli twirl保持，错；F Z型闭包正确而非通用混合采样保证，对。PDF定义和CCZ分支已核验。"
+      },
+      {
+        "id": "P11",
+        "answer": [
+          "A",
+          "C",
+          "F"
+        ],
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P22-2610.03682v1.pdf",
+            "locator": "PDF p2; p34 EqS20–S24",
+            "quote": "36 physical/logical including measure qubits; two-gross BB 48 including check qubits; k unchanged with L."
+          },
+          {
+            "path": "research/longread-20261018/papers/P23-2610.04613v1.pdf",
+            "locator": "PDF p1,p10,p16",
+            "quote": "[[256,166,8]] outer code; additional resources required when loading information; load/store hallways excluded."
+          }
+        ],
+        "issues": [
+          "B/D/E含基本QEC、百分比常识可排除的错误，A/C/F是显然谨慎的口径，几乎无需两篇。",
+          "P09先前已泄漏相同L标度。建议改成两份真实布局的完整数值资源账单，要求加载通道、测量比特与内层距离参与计算。"
+        ],
+        "difficulty": "easy",
+        "crossSourceNecessary": false,
+        "reason": "A n×4,k不变，166/256=83/128但不是硬件率，对；B k不随L增长且不能忽略辅助，错；C (48−36)/48=25%且加载资源另计，对；D 256是外码长度未含内层/workspace，错；E75%是剩余比例且外码率非节省，错；F不同资源口径无法统一计算开销排序，对。"
+      },
+      {
+        "id": "P12",
+        "answer": [
+          "A",
+          "D"
+        ],
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P25-2610.17612v1.pdf",
+            "locator": "PDF p8 Theorem2 Eq23–24",
+            "quote": "For each check Πμ R̄μ^((sμ)a)=Ī; same order-two logical action gives zero binary syndrome-sum condition."
+          },
+          {
+            "path": "research/longread-20261018/papers/P24-2610.06811v1.pdf",
+            "locator": "PDF p5 Definition5/Example1",
+            "quote": "Every nonzero outcome must be3PP; CCZ X1 positive branch is not3PP; Z-type measurements preserve3PP."
+          }
+        ],
+        "issues": [
+          "与P10重复CCZ/X及T/X例子，第二来源答案已泄漏；第一部分归约为基本奇偶检查。",
+          "题干应明确syndrome指Wμ内部Pauli生成元的共同syndrome，且跨分区生成元满足完整对易条件；仅Wμ相互对易略弱于Theorem2前提。",
+          "建议非统一R̄μ逻辑动作加一个此前未出现的新3PP态，避免两来源均可绕过。"
+        ],
+        "difficulty": "medium",
+        "crossSourceNecessary": false,
+        "reason": "A XOR=00且Z1Z2兼容，对；B XOR通过但CCZ X正分支失败；C XOR=01失败，即使T/X兼容；D XOR=00且T/X两分支兼容，对；E XOR=10失败；F只写负分支不能改变完整测量不兼容。C非恒等且C²=I使选中奇数分区不能逻辑恒等，零异或在本设定也是必要。"
+      }
+    ],
+    "change": [
+      {
+        "id": "XP01",
+        "answer": "E",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P07-2610.05729v1.pdf",
+            "locator": "PDF p26 EqF.1",
+            "quote": "Dfit3000≈1.69 exp[((Δr/r0)/.60)²]exp[.077(m/.10)](m/.10)²(r0/1000)^3.25 μK²."
+          },
+          {
+            "path": "research/longread-20261018/papers/P13-2610.10585v1.pdf",
+            "locator": "PDF p3 Eq6",
+            "quote": "ms,eff=ms(ΔNeff)^(3/4)."
+          }
+        ],
+        "issues": [],
+        "difficulty": "medium",
+        "crossSourceNecessary": true,
+        "reason": "两公式PDF视觉核验。Python [exp(−.077)/4]^(1/3.25)=.6374723224；(.01/.16)^(.75)=.125。A有效质量比错；B漏指数修正；C错用ΔNeff线性质量比；D把r0比当简单1/2；E全对；F两项错。仅经验诊断式换算，不作新观测结论。"
+      },
+      {
+        "id": "XP02",
+        "answer": "E",
+        "creditByAnswer": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0.5,
+          "E": 0.5,
+          "F": 0
+        },
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P19-2610.03399v1.pdf",
+            "locator": "PDF p4 Eq19,p5 Eq21/Fig3",
+            "quote": "Eq19 PL(7)=1.89193e−5; Eq21 target=1.56532e−5; Fig3=17.57%."
+          },
+          {
+            "path": "research/longread-20261018/papers/P19-2610.03399v1.pdf",
+            "locator": "PDF p10 TableI,p13 AppB.1,p14 EqB1/B3,p15 TableIV",
+            "quote": "TableI has8e9 shots; intervention has2.6784e9 X+3.0618e9 Z shots. TableIV baseline=1.89902e−5,target=1.56532e−5,reduction=17.57%."
+          },
+          {
+            "path": "research/longread-20261018/papers/P20-2610.03869v1.pdf",
+            "locator": "PDF p7",
+            "quote": "Default=.215%,wide=.179%,AlphaQubit=.130%; about40% of gap closes."
+          }
+        ],
+        "issues": [
+          "必须重写：无完整证据1分选项。E是现有最接近者，并非满分。",
+          "题设误把Eq19与Eq21看作同一干预前后样本；附录TableIV已经给Fig3匹配baseline，不能宣称本地材料无法解释。",
+          "Python混用baseline得到17.263323696%；匹配TableIV得到17.572221462%。混用数值的舍入区间17.262840757%至17.263806632%不能解释差，但样本口径不同已在本地说明。",
+          "建议满分项写明两套baseline/shot预算；TableIV配对复现17.57%，P20差距缩小42.4%与自身下降16.7%为不同分母。",
+          "B/D向E提供数字且E明显更完整，仍有选项泄漏，应同时改。"
+        ],
+        "difficulty": "hard",
+        "crossSourceNecessary": false,
+        "reason": "A0：不能把图当唯一精确答案、两式当示意，未显示小数也解释不了。B0：混算17.26%正确，但“不能从这些材料判定”是实质错误，TableIV/AppB已解释匹配实验口径。C0：自身下降16.7%不否定差距缩小42.4%，不能丢弃两文。D.5：P20核算正确，未处理P19附录。E.5：两式混算17.26%、不可用舍入解释及P20的42.4%都正确，要求核查统计口径也合理；但停在待核查而遗漏本地已给的匹配baseline，不是最完整证据。F0：反推替换数据不是核验，后者分母又错。已视觉核验P19原PDF p4/p5/p14/p15；不把不完整E误判算术错，但不能给1。"
+      },
+      {
+        "id": "XP03",
+        "answer": [
+          "A",
+          "B",
+          "F"
+        ],
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P21-2610.00504v1.pdf",
+            "locator": "PDF p8",
+            "quote": "18 of74,290 failures; approximately3700×; pipeline1.09ms per attempted shot."
+          },
+          {
+            "path": "research/longread-20261018/papers/P14-2610.21357v1.pdf",
+            "locator": "PDF p6",
+            "quote": "All shots are decoded; no postselection is applied."
+          },
+          {
+            "path": "research/longread-20261018/papers/P15-2610.13589v1.pdf",
+            "locator": "PDF p5",
+            "quote": "Increasing psearch to.5% expands gap to∼1100× under HBD noise."
+          }
+        ],
+        "issues": [
+          "选项自己公开74290、18、1.09ms和各口径；C/D/E由概率、量纲常识可排除，不需三篇。建议至少两篇关键统计量只在原文出现，错误选项用真实但错配的实验条件。"
+        ],
+        "difficulty": "easy",
+        "crossSourceNecessary": false,
+        "reason": "Python A:1000/.9=1111.111次×1.09ms=1.211111s，对；B:条件改善.9×74290/18=3714.5，所有尝试分母4127.222，对；C保留率放反，错；D搜索效率与错误率不能相乘成可靠性，错；E每次尝试≠每保留shot，错；F三种不同任务/分母不能统一排名，对。"
+      },
+      {
+        "id": "XP04",
+        "answer": "F",
+        "evidence": [
+          {
+            "path": "research/longread-20261018/papers/P25-2610.17612v1.pdf",
+            "locator": "PDF p7 Eq17–18 Walsh construction",
+            "quote": "Target angle sum=±2^m; all other basis states have equal plus/minus contributions and angle sum0."
+          },
+          {
+            "path": "research/longread-20261018/papers/P24-2610.06811v1.pdf",
+            "locator": "PDF p4 Eq2.3,p5 Example1",
+            "quote": "CCZ cubic coefficient4 mod8; positive X1 branch ∝|+〉⊗(|00〉+|01〉+|10〉), support six."
+          }
+        ],
+        "issues": [
+          "题干已写只给111负号并给A111=8，逻辑门几乎公开；P25可由Walsh正交性和已知目标绕过。",
+          "P10/P12已泄漏同一个CCZ测X反例；读P24一篇就足够。建议换非单基态相位的Walsh配置，并给物理生成元约束让P25真正必要，再换未出现过的测量。"
+        ],
+        "difficulty": "medium",
+        "crossSourceNecessary": false,
+        "reason": "Python枚举8个Walsh字符：A111=8，其余0；态幅(−1)^(x1x2x3)/√8，(I+X1)/2投影概率.75，支持6个基矢，非仿射故非3PP。A概率错；B相位系数1只给π/4而非负号；C A110错；D正分支判断错；E多项错；F全对。PDF构造与分支均已核验。"
+      }
+    ]
+  },
+  "summary": {
+    "completed": true,
+    "itemsReviewed": 16,
+    "optionsReviewed": 96,
+    "criticalFinding": "XP02混用P19两组模拟的baseline；附录TableIV已给可复算17.57%的匹配基线，现有选项无1分答案。",
+    "mustRewriteForCorrectness": [
+      "XP02"
+    ],
+    "mustRewriteForCrossSourceRequirement": [
+      "P04",
+      "P06",
+      "P07",
+      "P11",
+      "P12",
+      "XP02",
+      "XP03",
+      "XP04"
+    ],
+    "crossSourceNecessaryCount": 8,
+    "crossSourceNecessaryMeaning": "考虑全部选项和前面题目已公开信息，是否仍需两篇各自不可绕过的未知量；不是按证据列表计篇数。",
+    "tierCredit": {
+      "P04": {
+        "A": 0.5,
+        "B": 0.5,
+        "C": 0,
+        "D": 1,
+        "E": 0,
+        "F": 0
+      },
+      "P06": {
+        "A": 0.5,
+        "B": 0.5,
+        "C": 0,
+        "D": 1,
+        "E": 0,
+        "F": 0
+      },
+      "XP02": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0.5,
+        "E": 0.5,
+        "F": 0
+      }
+    },
+    "answers": {
+      "initial": {
+        "P01": "C",
+        "P02": "C",
+        "P03": "B",
+        "P04": "D",
+        "P05": [
+          "A",
+          "D"
+        ],
+        "P06": "D",
+        "P07": [
+          "A",
+          "C",
+          "E"
+        ],
+        "P08": "D",
+        "P09": "B",
+        "P10": [
+          "A",
+          "B",
+          "D",
+          "F"
+        ],
+        "P11": [
+          "A",
+          "C",
+          "F"
+        ],
+        "P12": [
+          "A",
+          "D"
+        ]
+      },
+      "change": {
+        "XP01": "E",
+        "XP02": "E",
+        "XP03": [
+          "A",
+          "B",
+          "F"
+        ],
+        "XP04": "F"
+      }
+    },
+    "numericalChecks": "全部派生数值由独立Python复算；CPL端点/单调性、Walsh字符和8维CCZ投影另行枚举。",
+    "pdfVisualChecks": [
+      "P05 p1 Eq3",
+      "P07 p26 EqF1",
+      "P09 p19 TableIV",
+      "P11 p2 Eq3/footnote",
+      "P12 p13 Table2",
+      "P13 p3 Eq5–6",
+      "P19 p4 Eq19",
+      "P19 p5 Eq21/Fig3",
+      "P19 p14 EqB1/B3",
+      "P19 p15 TableIV",
+      "P22 p34 EqS20–S24",
+      "P23 p10 narrow formula",
+      "P23 p11 intervals",
+      "P24 p4 weighted phase",
+      "P24 p5 compatibility/CCZ",
+      "P25 p7 Walsh",
+      "P25 p8 lifting"
+    ],
+    "sourceScope": "只读盲题、允许的P系列PDF/TXT与research/longread-20261018/INDEX.md；未读拟定答案、其他组答案、host、.prepared/admin或runs；工具运行时依赖用于内存PDF渲染，未写临时内容文件。",
+    "externalFacts": "未引入外部事实作暗扣分。按本地预印本设定/报告审查，不视为确证物理；困难性保留PH非塌缩条件。",
+    "overallRecommendation": "先重写XP02并重设分档。若每题必须实质跨两篇，8道可绕过跨材料题均应调整。避免A+B并集型正确项、自报未完成的半分项、重复CCZ反例。数值配对P01/P02/P03/P05/P08/P09/XP01可保留；P10补条件并强化P18作用。"
+  }
+}

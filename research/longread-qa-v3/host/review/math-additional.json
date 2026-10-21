@@ -1,0 +1,338 @@
+{
+  "model": "gpt-6.1-sol",
+  "questionsSha256": "4d82a5026115ffd9d4c66ba88fb6fcc3716064068753600066559318eb3a24a2",
+  "phases": {
+    "initial": [
+      {
+        "id": "M13",
+        "answer": "AEF",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "M08",
+          "M10"
+        ],
+        "reason": "A真：M08 PDF第1页(1.2)给p=Rθ/v且R>0；M10第1页p=ρ^γ及第2页(1.3)给1<γ≤2。令ρ=1/v，则Rθ/v=v^(−γ)，所以θ=v^(1−γ)/R；1−γ<0且v₊>v₋使θ₊<θ₋。B假：写成v^(γ+1)/R是解方程时幂次错误。C假：端态压强的跨模型数值相等不包含速度与能量跳跃关系；M08第3页(1.4)、(1.5)和定理1.1还独立要求RH、Lax 3激波及小强度。D假：5/2>2，不属于M10第2页(1.3)及第4页定理1.2的γ范围。E真：M08第3页(1.8)明确ṽξ>0、θ̃ξ<0，与上述端态方向相符；M10第4—5页定理1.2研究特定弱无黏极限类，不能与NSFK剖面类等同。F真：γ=3/2时(θ₊/θ₋)=(v₊/v₋)^(−1/2)=4^(−1/2)=1/2；这一比值不蕴含M08的RH、Lax与小ε条件。",
+        "issues": []
+      },
+      {
+        "id": "M14",
+        "answer": "ACE",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": true,
+          "D": false,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "M08",
+          "M10"
+        ],
+        "reason": "A真：M08第3页定理1.1及第4页(1.11)的导数估计均以RH、Lax 3激波和ε<ε₀为前提；三个标量数值不足以指定合格端态。B假：M08第4页定义σ₋=sqrt(γp₋/v₋)，代入得到sqrt(2·4/2)=2，4是根号内数值。C真：M10第2页(1.3)和第4页定理1.2包含γ=2端点；M08第1页(1.3)要求γ>1。M08有常正µ、α、κ；M10的系统只有其密度依赖黏性结构。D假：M10第1页摘要虽允许激波方向扰动任意大，第4—5页定理1.2仍要求近平面数据、(1.13)及指定的弱无黏极限类。E真：σ₋=2，因此M08第4页(1.11)直接成为|ũξ+2ṽξ|≤Cε|ṽξ|。F假：M10的λ=0仅是其体黏性系数为零；第2页(1.4)仍有div(2νρDu)。M08第1页明确α、κ>0，λ不能与其导热、毛细系数混同。",
+        "issues": []
+      },
+      {
+        "id": "M19",
+        "answer": "ADEF",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "M15",
+          "M16"
+        ],
+        "reason": "A真：新题干明确“注明旧界的选项按原文旧界判断”。M15 PDF第1页说明旧六次矩上界T^(5/4+ε)；M16第2页(2)列旧GL₂界T^((8/3)(1−σ)+o(1))，σ=3/4时为T^(2/3+o(1))，恰与A所说“均使用旧界”一致。B假：两篇讨论的函数和计数量不同，两个上界不提供相减所得的精确等式。C假：σ是横坐标，改进结果的T指数是(5/2)(1−σ)，σ=3/4给5/8，并非3/4。D真：M15第1页定理1.1为5/4−1/60=37/30；M16第2页定理1.1给(5/2)(1−3/4)=5/8。E真：M16第2页定理1.1明示1/2≤σ≤1一致；M15第1页定理1.1明示每个T≥1、ε>0。F真：(5/2)(1−4/5)=1/2<37/30。新限定已消除上一轮指出的旧界适用歧义。",
+        "issues": []
+      },
+      {
+        "id": "M21",
+        "answer": "BEF",
+        "optionVerdicts": {
+          "A": false,
+          "B": true,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "M16",
+          "M19"
+        ],
+        "reason": "A假：M19第2页定理1.1后的Remark给σ≥1−w(t)时|L(σ+it,π)|≥w(t)>0，w(t)=c₅(Cπ(|t|+3))^(−ε)。w(t)<1/10只表示σ=9/10不在明示带内，不能断言有零。B真：9/10≥1−w(t)等价于w(t)≥1/10；原文为非严格≥，等号边界也被覆盖。C假：M16第2页定理1.1是上界，并不蕴含正下界或零点存在。D假：ε=1/4仍有w(t)=c₅(Cπ(|t|+3))^(−1/4)，既依赖导子和高度，也不恒等于1/10。E真：对固定π、ε>0及c₅>0，|t|→∞使w(t)→0，故这一明示带本身不能在所有大高度覆盖固定横坐标9/10。F真：M16定理1.1的指数为(5/2)(1−9/10)=1/4，故Nπ(9/10,T)≪T^(1/4+o(1))。",
+        "issues": []
+      },
+      {
+        "id": "M22",
+        "answer": "ADE",
+        "optionVerdicts": {
+          "A": true,
+          "B": false,
+          "C": false,
+          "D": true,
+          "E": true,
+          "F": false
+        },
+        "sources": [
+          "M16",
+          "M19"
+        ],
+        "reason": "令a(T)=c₅Q_T^(−ε)>0。M19第2页Remark的非零区域在t=T为σ≥1−a(T)。A真：σ_out=1−2a(T)<1−a(T)，在明示带外；这不给该点存在零的结论，M16第2页定理1.1仍可对其右侧零数给上界。B假：2a(T)>a(T)，所写不等式方向错误。C假：Q_T→∞使a(T)→0，因此σ_in=1−a(T)/2趋向1。D真：M16定理1.1对σ一致，可代入移动横坐标；(5/2)(1−σ_out)=5a(T)=5c₅Q_T^(−ε)，所得上界不能单独推出零数为0。E真：|t|≤T时c₅(Cπ(|t|+3))^(−ε)≥a(T)>a(T)/2，故所有Re(s)≥σ_in且|Im(s)|≤T的点均在M19非零带内，Nπ(σ_in,T)=0。F假：M16对应形式指数(5/2)(a(T)/2)=5a(T)/4虽正确，但隐含常数、T^o(1)以及仅为上界均阻止从该式单独得零数为0；零数为0来自M19。",
+        "issues": []
+      },
+      {
+        "id": "M24",
+        "answer": "ABC",
+        "optionVerdicts": {
+          "A": true,
+          "B": true,
+          "C": true,
+          "D": false,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "M17",
+          "M21"
+        ],
+        "reason": "A真：M17第1—2页Corollary 1及Table 1需t>10^100且100<h<t^(2/3)；M21第2页定理1.1给|ϕ−t|≤cN及半径r=L logT/(logx)^2。若高度相配且h覆盖cN+r并符合其余限制，可在同一窗口分别援引两类结论，不能把比例等同于个数。B真：M21定理1.1要求exp(sqrt(logT))≤x≤sqrt(T)；x=T^(1/3)时logx=(logT)/3≥sqrt(logT)对logT≥9成立，且T^(1/3)≤T^(1/2)。C真：M17第1页明确计重数、边界取半重数；M21第2页明确圆盘内零点按重数计。中央带给以窗口总零数归一化的比例，圆盘给至少L/360个零点。D假：M21定理1.1严格限定cN^6≤L≤(logx)/2，不能任意取L。E假：h>100不控制随N变化的中心漂移cN或随L、T变化的圆盘半径；还须核对上限h<t^(2/3)。F假：两篇上述主结论均无条件；M21第3页讨论RH的段落针对推论应用，未把RH加入定理1.1。",
+        "issues": []
+      }
+    ],
+    "change": [
+      {
+        "id": "XM06",
+        "answer": "EF",
+        "optionVerdicts": {
+          "A": false,
+          "B": false,
+          "C": false,
+          "D": false,
+          "E": true,
+          "F": true
+        },
+        "sources": [
+          "M14",
+          "M17",
+          "M24"
+        ],
+        "reason": "A假：简单临界零点的实部为1/2，属于中央带[1/16,15/16]，两个集合有包含关系而非不交，不能直接相加。B假：中央带还可能有临界线外零点及重零点，中央带比例下界不能反推简单临界比例。C假：M14第1页的约67.25%为全高度比例，不给每个短区间同一下界；M24第2页定理1.1才是短区间定理。D假：M17第1页Corollary 1和第2页Table 1明确要求h<t^(2/3)。这里h=T^(3/4)/2，t=T+T^(3/4)/2~T，故h/t^(2/3)~T^(1/12)/2→∞；虽然t>10^100、h>100最终成立，上半宽门槛最终必失败。E真：M24第2页定理1.1及其θ=3/4例子给充分大T时简单临界零点比例>41.9%；c(3/4)=2−(3/4)/2−cot((3/4)/sqrt(2))/sqrt(2)=0.419075012975…；集合包含使同一窗口中央带比例至少如此，无需直接援引M17显式短窗口定理。F真：1/16<1/2<15/16，逐点包含即给所述中央带下界；M24的(T,T+H]与M17窗口端点计数约定之差按题设忽略。",
+        "issues": []
+      },
+      {
+        "id": "XM07",
+        "answer": "ABCD",
+        "optionVerdicts": {
+          "A": true,
+          "B": true,
+          "C": true,
+          "D": true,
+          "E": false,
+          "F": false
+        },
+        "sources": [
+          "M15",
+          "M23"
+        ],
+        "reason": "A真且D真，二者是不同强度的有效上界：M15 PDF第1页定理1.1在[0,2T]给六次矩≪T^(37/30+ε)，在E_T上|ζ|^6≥T^(6/8)，所以Markov直接给|E_T|≪T^(37/30−3/4+ε)=T^(29/60+ε)，即D。由于T≥1且29/60<37/30+3/4=119/60，这一强上界蕴含A的较弱上界|E_T|≪T^(119/60+ε)；甚至|E_T|≤T也蕴含A。新题干明说不要求上界最优，不能因A未写Markov直接算得的指数就判假。上一轮A=false是把“非最优”误作“不成立”，本轮纠正。B真：E_T上|ζ|²≤T^(−4/8)|ζ|^6，因而∫E_T|ζ|²dt≪T^(11/15+ε)；但加权密度分子还含D_T，删去E_T的论证仍须控制∫E_T|ζ|²D_T，不能仅估计测度或权重积分。C真：M23第3页定义D_T与加权平均，第4页定理1.2给α_σ=σ/(2σ+1)，σ=1/2时α_σ=1/4，严格支集条件符合；分母是∫_T^(2T)|ζ(1/2+it)|²dt。E假：M23第3页(1.5)及第4页定理1.2给σ=1/2时W=1−(sin(πx)/(πx))²，σ>1/2时W=1，极限函数发生变化。F假：|E_T|/T→0单独只涉及未加权测度，不控制加权分子在E_T上的贡献，不能替代对|ζ|²D_T的估计。",
+        "issues": []
+      }
+    ]
+  },
+  "limitations": [
+    "仅使用当前及明确授权的历史公开题面、M*.txt论文正文及本模型自己的既有输出；页码为文本标注的PDF页码。未读取authoring、其他host答案或他模型复核、runs。",
+    "结论是题目与论文声明、适用范围及所需代数计算的独立核对，不构成对所引论文完整证明的重做。复核未改变题面，仅更新本模型复核结果。"
+  ],
+  "revisionReview": {
+    "previousQuestionsSha256": "a9edae7ce566519bcb2c31cc3bc25600f9a1a37d0ae9653741a63ad7468f9b0d",
+    "questionsSha256": "4d82a5026115ffd9d4c66ba88fb6fcc3716064068753600066559318eb3a24a2",
+    "previousPublicInput": "/Users/zhengwenjun/大模型测试/research/longread-qa-v3/host/review/history/math-before-final-clarification-questions.json",
+    "currentPublicInput": "/Users/zhengwenjun/大模型测试/research/longread-qa-v3/review-input/math.json",
+    "comparedEntirePublicMathInput": true,
+    "publicDiff": {
+      "initialQuestionCount": 24,
+      "changeQuestionCount": 8,
+      "changedQuestionIds": [
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M11",
+        "M12",
+        "M13",
+        "M14",
+        "M19",
+        "M21",
+        "M22",
+        "XM07"
+      ],
+      "questionStemClarifications": [
+        "M19",
+        "XM07"
+      ],
+      "optionTextReplacementCount": 40,
+      "optionTextReplacements": [
+        "M03-A",
+        "M03-B",
+        "M03-C",
+        "M03-D",
+        "M03-E",
+        "M03-F",
+        "M04-A",
+        "M04-B",
+        "M04-D",
+        "M05-A",
+        "M05-B",
+        "M05-C",
+        "M05-D",
+        "M05-E",
+        "M05-F",
+        "M06-A",
+        "M06-B",
+        "M06-D",
+        "M06-E",
+        "M11-D",
+        "M12-A",
+        "M12-B",
+        "M12-D",
+        "M12-E",
+        "M12-F",
+        "M13-C",
+        "M13-D",
+        "M13-E",
+        "M13-F",
+        "M14-A",
+        "M14-C",
+        "M14-D",
+        "M14-E",
+        "M14-F",
+        "M21-A",
+        "M21-B",
+        "M21-C",
+        "M21-D",
+        "M22-E",
+        "M22-F"
+      ],
+      "paperIdentifierReplacements": {
+        "M02": "熵波选择研究",
+        "M03": "球对称Euler梯度奇性研究",
+        "M06": "全平面定常Navier–Stokes研究",
+        "M08": "一维NSFK行波研究",
+        "M10": "二维平面激波选择研究",
+        "M13": "三维板层研究",
+        "M16": "GL₂零密度结果",
+        "M19": "点态无零带结果"
+      },
+      "additionalLocationTextReplacement": {
+        "id": "M05",
+        "option": "D",
+        "before": "其(1.8)",
+        "after": "其剖面估计",
+        "meaningChanged": false
+      },
+      "otherUnexpectedChanges": [],
+      "formulaValuesChanged": false,
+      "questionOrderingIdsWeightsAndScoringChanged": false,
+      "comparisonMethod": "逐字段对比全部32题；40处选项改动均精确匹配论文编号替换及M05-D公式定位文字替换；仅M19、XM07题干增加判断限定。"
+    },
+    "rereviewedIds": [
+      "M13",
+      "M14",
+      "M19",
+      "M21",
+      "M22",
+      "M24",
+      "XM06",
+      "XM07"
+    ],
+    "results": [
+      {
+        "id": "M13",
+        "questionTextChanged": true,
+        "previousAnswer": "AEF",
+        "answer": "AEF",
+        "verdictChangedOptions": [],
+        "reason": "仅将论文编号替换为数学对象名称，未改公式或逻辑；按原始论文重检后六个选项真值均不变。"
+      },
+      {
+        "id": "M14",
+        "questionTextChanged": true,
+        "previousAnswer": "ACE",
+        "answer": "ACE",
+        "verdictChangedOptions": [],
+        "reason": "仅将论文编号替换为数学对象名称，未改公式或逻辑；按原始论文重检后六个选项真值均不变。"
+      },
+      {
+        "id": "M19",
+        "questionTextChanged": true,
+        "previousAnswer": "ADEF",
+        "answer": "ADEF",
+        "verdictChangedOptions": [],
+        "reason": "M19新题干明确旧界按旧界判断；A真，旧界歧义已解决，ADEF不变。"
+      },
+      {
+        "id": "M21",
+        "questionTextChanged": true,
+        "previousAnswer": "BEF",
+        "answer": "BEF",
+        "verdictChangedOptions": [],
+        "reason": "仅将论文编号替换为数学对象名称，未改公式或逻辑；按原始论文重检后六个选项真值均不变。"
+      },
+      {
+        "id": "M22",
+        "questionTextChanged": true,
+        "previousAnswer": "ADE",
+        "answer": "ADE",
+        "verdictChangedOptions": [],
+        "reason": "仅将论文编号替换为数学对象名称，未改公式或逻辑；按原始论文重检后六个选项真值均不变。"
+      },
+      {
+        "id": "M24",
+        "questionTextChanged": false,
+        "previousAnswer": "ABC",
+        "answer": "ABC",
+        "verdictChangedOptions": [],
+        "reason": "新旧题面逐字一致；原始论文适用范围、集合关系及推导结论重检不变。"
+      },
+      {
+        "id": "XM06",
+        "questionTextChanged": false,
+        "previousAnswer": "EF",
+        "answer": "EF",
+        "verdictChangedOptions": [],
+        "reason": "新旧题面逐字一致；原始论文适用范围、集合关系及推导结论重检不变。"
+      },
+      {
+        "id": "XM07",
+        "questionTextChanged": true,
+        "previousAnswer": "BCD",
+        "answer": "ABCD",
+        "verdictChangedOptions": [
+          "A"
+        ],
+        "reason": "XM07-A由假改真：Markov最直接指数29/60，而A指数119/60更大，是可由该强界推出的弱上界；不等式成立，无需最优。上一轮误判已更正。"
+      }
+    ],
+    "resolvedIssues": [
+      {
+        "id": "M19",
+        "issue": "旧界是否允许作为答案",
+        "resolution": "题干已明示注明旧界者按旧界判断，A确定为真。"
+      }
+    ],
+    "openIssues": []
+  }
+}
