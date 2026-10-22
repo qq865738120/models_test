@@ -1,0 +1,1576 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>鹈鹕 · 不止一张大嘴</title>
+<meta name="description" content="从长喙、喉囊到海岸与湖泊：一份关于鹈鹕的互动自然志。">
+<style>
+:root{
+  --ink:#061819;
+  --ink-2:#0a2426;
+  --panel:#0d2c2e;
+  --cream:#f4ecdd;
+  --sand:#e7d9c2;
+  --coral:#ff6b42;
+  --apricot:#f3a35c;
+  --gold:#e9c46a;
+  --teal:#6fd3bd;
+  --muted:#9fb6af;
+  --line:rgba(244,236,221,.16);
+  --line-soft:rgba(244,236,221,.09);
+  --serif:"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC",Georgia,serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --latin:Georgia,"Times New Roman",var(--serif);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--ink);color:var(--cream);
+  font-family:var(--sans);font-size:16px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+  mix-blend-mode:soft-light;
+}
+::selection{background:var(--coral);color:var(--ink)}
+a{color:inherit}
+button{font:inherit;color:inherit}
+svg{display:block}
+:focus-visible{outline:2px solid var(--coral);outline-offset:4px;border-radius:4px}
+.wrap{width:min(1480px,100%);margin-inline:auto}
+h1,h2,h3,p,dl,dd{margin:0}
+img{max-width:100%}
+
+/* ---------- header ---------- */
+.scroll-progress{position:fixed;top:0;left:0;width:100%;height:2px;background:var(--coral);transform:scaleX(0);transform-origin:0 50%;z-index:120}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:110;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px clamp(18px,4.4vw,72px);transition:background .4s,padding .4s,border-color .4s;border-bottom:1px solid transparent}
+.site-header.scrolled{background:rgba(6,24,25,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom-color:var(--line-soft);padding-block:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.brand-glyph{width:36px;height:36px;color:var(--coral)}
+.brand-txt{display:flex;flex-direction:column;line-height:1.1}
+.brand-txt strong{font-family:var(--serif);font-size:21px;letter-spacing:.12em;font-weight:600}
+.brand-txt small{font-family:var(--latin);font-size:9px;letter-spacing:.34em;color:var(--muted);margin-top:4px}
+.site-nav{display:flex;align-items:center;gap:clamp(14px,2.2vw,32px)}
+.site-nav a{position:relative;text-decoration:none;font-size:12.5px;letter-spacing:.12em;color:#c6d3cd;padding:6px 0;display:flex;gap:7px;align-items:baseline;white-space:nowrap}
+.site-nav a i{font-family:var(--latin);font-style:normal;font-size:9px;color:var(--coral);letter-spacing:.05em}
+.site-nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--coral);transform:scaleX(0);transform-origin:0;transition:transform .35s}
+.site-nav a:hover,.site-nav a.active{color:var(--cream)}
+.site-nav a:hover::after,.site-nav a.active::after{transform:scaleX(1)}
+.header-explore{display:none}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:clamp(108px,13vh,160px) clamp(18px,4.4vw,72px) 64px;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
+  radial-gradient(60% 60% at 72% 44%,rgba(255,107,66,.16),transparent 65%),
+  radial-gradient(50% 45% at 20% 0%,rgba(111,211,189,.1),transparent 70%),
+  linear-gradient(180deg,#071d1f 0%,#061819 62%,#041314 100%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:220px;z-index:-1;background:linear-gradient(180deg,transparent,rgba(6,24,25,.85))}
+.hero-inner{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:clamp(24px,3vw,56px);width:min(1480px,100%);margin-inline:auto;position:relative;z-index:2}
+.hero-copy{max-width:760px}
+.eyebrow{display:flex;align-items:center;gap:14px;font-family:var(--latin);font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--coral);font-weight:600}
+.eyebrow::before{content:"";width:40px;height:1px;background:currentColor;display:block;opacity:.8}
+h1{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;line-height:1.02;margin:26px 0 0;font-size:clamp(66px,9.4vw,142px)}
+h1 .line{display:block;white-space:nowrap}
+h1 .line-2{padding-left:.42em}
+h1 .outline{color:transparent;-webkit-text-stroke:1.6px rgba(244,236,221,.72);font-style:normal}
+h1 .hot{color:var(--coral);position:relative;display:inline-block}
+h1 .hot::after{content:"";position:absolute;left:.04em;right:-.04em;bottom:.02em;height:.13em;border-radius:999px;background:var(--coral);opacity:.28;transform:rotate(-2deg)}
+h1 .dot{color:var(--gold)}
+.lede{margin-top:30px;max-width:47ch;color:#c4d2cc;font-size:clamp(15px,1.16vw,17px);line-height:1.95}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:11px;text-decoration:none;border-radius:999px;padding:14px 23px;font-size:13.5px;letter-spacing:.06em;border:1px solid var(--line);transition:transform .3s,background .3s,color .3s,box-shadow .3s;cursor:pointer}
+.btn svg{width:15px;height:15px;flex-shrink:0}
+.btn-primary{background:var(--coral);border-color:var(--coral);color:#1a0d08;font-weight:600;box-shadow:0 12px 34px rgba(255,107,66,.24)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(255,107,66,.32);background:#ff7d58}
+.btn-ghost{color:var(--cream);background:rgba(244,236,221,.03)}
+.btn-ghost:hover{background:rgba(244,236,221,.09);transform:translateY(-3px)}
+.hero-facts{display:flex;flex-wrap:wrap;gap:0;margin-top:46px;border-top:1px solid var(--line);max-width:600px}
+.hero-facts div{padding:18px 26px 0 0;margin-right:26px;border-right:1px solid var(--line-soft)}
+.hero-facts div:last-child{border-right:0;margin-right:0}
+.hero-facts dt{font-family:var(--latin);font-size:9.5px;letter-spacing:.24em;color:var(--muted);text-transform:uppercase}
+.hero-facts dd{font-family:var(--serif);font-size:clamp(17px,1.5vw,21px);margin-top:5px;letter-spacing:.02em}
+.hero-facts dd small{display:block;font-family:var(--sans);font-size:11px;color:#8aa39b;letter-spacing:.08em;margin-top:2px}
+
+.hero-art{position:relative;min-width:0;touch-action:pan-y}
+.art-stage{position:relative;transform:translate3d(var(--mx,0px),var(--my,0px),0);transition:transform .6s cubic-bezier(.2,.7,.3,1);will-change:transform}
+.hero-svg{width:100%;height:auto;max-height:calc(100svh - 150px);filter:drop-shadow(0 30px 70px rgba(0,0,0,.35))}
+.hero-svg .sun-disc{transform-origin:500px 340px;animation:sun-breathe 9s ease-in-out infinite}
+.hero-svg .sun-dash{animation:spin 80s linear infinite;transform-origin:500px 340px}
+.hero-svg .hero-bird{animation:bob 7s ease-in-out infinite;transform-origin:400px 660px}
+.hero-svg .far-birds{animation:drift 16s ease-in-out infinite alternate}
+.hero-svg .water-front{animation:wave-a 13s linear infinite}
+.hero-svg .water-back{animation:wave-b 19s linear infinite}
+.hero-svg .ripple{animation:ripple 8s ease-out infinite}
+@keyframes sun-breathe{0%,100%{transform:scale(1);opacity:.92}50%{transform:scale(1.035);opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-11px) rotate(-.5deg)}}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(22px,-14px)}}
+@keyframes wave-a{from{transform:translateX(0)}to{transform:translateX(-260px)}}
+@keyframes wave-b{from{transform:translateX(-120px)}to{transform:translateX(-380px)}}
+@keyframes ripple{0%{transform:scale(.4);opacity:.5}70%{opacity:0}100%{transform:scale(1.9);opacity:0}}
+
+.art-badge{position:absolute;right:-2%;bottom:4%;width:clamp(104px,10vw,142px);aspect-ratio:1;border-radius:50%;background:var(--coral);color:#1a0d08;display:grid;place-items:center;box-shadow:0 20px 50px rgba(255,107,66,.24);z-index:3}
+.art-badge .badge-ring{animation:spin 38s linear infinite;transform-origin:center}
+.art-badge::before{content:"";position:absolute;inset:7px;border:1px dashed rgba(26,13,8,.45);border-radius:50%}
+.art-badge svg.badge-ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.art-badge .badge-core{position:relative;text-align:center;line-height:1.15;font-family:var(--serif);font-weight:700}
+.art-badge .badge-core b{display:block;font-size:clamp(20px,2vw,26px);letter-spacing:-.03em}
+.art-badge .badge-core span{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.18em;margin-top:4px}
+.art-note{position:absolute;left:-1%;bottom:14%;display:flex;align-items:center;gap:10px;font-size:10.5px;letter-spacing:.16em;color:#b9cbc4;text-transform:uppercase}
+.art-note::before{content:"";width:34px;height:1px;background:rgba(244,236,221,.4)}
+.scroll-cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:9px;color:#8fa8a0;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;z-index:3}
+.scroll-cue span{width:1px;height:42px;background:linear-gradient(var(--coral),transparent);animation:cue 2.4s ease-in-out infinite;transform-origin:top}
+@keyframes cue{0%,100%{transform:scaleY(.35);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+
+.hero-anim{animation:rise 1s cubic-bezier(.2,.7,.3,1) both}
+.hero-anim.d1{animation-delay:.08s}.hero-anim.d2{animation-delay:.18s}.hero-anim.d3{animation-delay:.3s}.hero-anim.d4{animation-delay:.42s}.hero-anim.d5{animation-delay:.54s}
+.hero-art.hero-anim{animation:art-in 1.3s cubic-bezier(.2,.7,.3,1) .25s both}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes art-in{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
+
+/* ---------- ticker ---------- */
+.ticker{background:var(--coral);color:#1a0d08;overflow:hidden;border-block:1px solid rgba(0,0,0,.12);position:relative;z-index:3}
+.ticker-track{display:flex;width:max-content;animation:ticker 32s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker span{display:flex;align-items:center;gap:28px;padding:11px 28px 10px;font-family:var(--latin);font-size:11.5px;font-weight:700;letter-spacing:.26em;white-space:nowrap;text-transform:uppercase}
+.ticker span::after{content:"✦";font-size:12px;letter-spacing:0;opacity:.65}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+/* ---------- shared section ---------- */
+.section{position:relative;padding:clamp(76px,9vw,132px) clamp(18px,4.4vw,72px);scroll-margin-top:80px}
+.section-inner{width:min(1480px,100%);margin-inline:auto;position:relative}
+.sec-head{display:grid;grid-template-columns:1fr .78fr;gap:clamp(20px,4vw,70px);align-items:end;margin-bottom:clamp(38px,5vw,64px)}
+.sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(40px,5.4vw,80px);line-height:1.12;letter-spacing:-.02em;margin-top:20px}
+.sec-head h2 em{font-style:normal;color:var(--coral)}
+.sec-intro{color:#a9bdb6;font-size:clamp(14.5px,1.1vw,16px);line-height:1.95;max-width:52ch;justify-self:end;padding-bottom:8px}
+.sec-intro strong{color:var(--cream);font-weight:500}
+.sec-num{position:absolute;right:-1%;top:-3%;font-family:var(--latin);font-size:clamp(110px,15vw,230px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(244,236,221,.09);pointer-events:none;user-select:none;z-index:0}
+.section-inner>*:not(.sec-num){position:relative;z-index:1}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.2,.7,.3,1),transform .85s cubic-bezier(.2,.7,.3,1)}
+.reveal.is-in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+/* ---------- anatomy ---------- */
+.anatomy-shell{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(22px,3vw,48px);align-items:stretch}
+.anatomy-figure{position:relative;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:
+  radial-gradient(70% 70% at 55% 42%,rgba(255,107,66,.12),transparent 70%),
+  linear-gradient(155deg,#0f3234 0%,#0a2224 55%,#071a1b 100%);
+  padding:clamp(14px,2vw,26px);min-height:480px;display:flex;flex-direction:column;justify-content:center}
+.anatomy-figure::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(244,236,221,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(244,236,221,.045) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(70% 70% at 50% 50%,#000,transparent);pointer-events:none}
+.anatomy-fig-label{position:absolute;top:20px;left:22px;font-family:var(--latin);font-size:9.5px;letter-spacing:.28em;color:#86a39b;z-index:2}
+.anatomy-fig-label b{color:var(--coral);font-weight:600}
+.anatomy-svg{width:100%;height:auto;max-height:560px;margin-top:10px;overflow:visible}
+.hotspot{fill:rgba(255,107,66,0);stroke:rgba(255,107,66,0);stroke-width:2.5;stroke-dasharray:5 7;cursor:pointer;transition:fill .35s,stroke .35s}
+.hotspot:hover{fill:rgba(255,107,66,.08);stroke:rgba(255,107,66,.55)}
+.hotspot.is-active{fill:rgba(255,214,160,.1);stroke:var(--gold);stroke-dasharray:6 6;animation:dash 12s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-200}}
+.marker{cursor:pointer}
+.marker circle{fill:var(--coral);stroke:#0a2224;stroke-width:3;transition:r .3s,fill .3s}
+.marker text{fill:#1a0d08;font-family:var(--latin);font-size:15px;font-weight:700;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.marker .marker-ring{fill:none;stroke:var(--coral);stroke-width:1.5;opacity:0;transition:opacity .3s}
+.marker:hover circle{fill:var(--gold)}
+.marker.is-active circle{fill:var(--gold)}
+.marker.is-active .marker-ring{opacity:.8;animation:pulse-ring 1.8s ease-out infinite}
+@keyframes pulse-ring{0%{transform:scale(.85);opacity:.9}80%,100%{transform:scale(1.55);opacity:0}}
+.marker-ring{transform-box:fill-box;transform-origin:center}
+.anatomy-caption{align-self:flex-end;margin-top:2px;padding-right:4px;font-size:10px;letter-spacing:.16em;color:#7e9b93;text-transform:uppercase;font-family:var(--latin)}
+
+.parts{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.part-item{display:grid;grid-template-columns:52px 1fr;gap:10px;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:17px 4px 16px;cursor:pointer;transition:background .3s,padding .3s;position:relative}
+.part-item:hover{background:rgba(244,236,221,.035);padding-left:12px}
+.part-item::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--coral);transform:scaleY(0);transform-origin:top;transition:transform .35s}
+.part-item.is-active::before{transform:scaleY(1)}
+.part-item .idx{font-family:var(--latin);font-size:11px;color:var(--coral);letter-spacing:.08em;padding-top:6px}
+.part-item h3{font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.03em;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.part-item h3 small{font-family:var(--latin);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#7f9a92;font-weight:400}
+.part-item p{color:#9eb3ac;font-size:13px;line-height:1.8;margin-top:4px;max-width:46ch}
+.part-item.is-active h3{color:var(--gold)}
+.part-item.is-active p{color:#c3d2cc}
+
+.pouch-card{margin-top:22px;display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:center;background:linear-gradient(150deg,rgba(255,107,66,.12),rgba(244,236,221,.025));border:1px solid rgba(255,107,66,.25);border-radius:20px;padding:18px}
+.pouch-demo{width:100%;max-width:190px;justify-self:center}
+.pouch-demo .water{transition:transform 1s cubic-bezier(.3,.8,.3,1)}
+.pouch-demo.is-drained .water{transform:translateY(130px)}
+.pouch-demo .fish{transform-box:fill-box;transform-origin:center;animation:fish-wiggle 3.4s ease-in-out infinite}
+.pouch-demo .fish:nth-child(2){animation-delay:.5s}
+.pouch-demo .fish:nth-child(3){animation-delay:1s}
+@keyframes fish-wiggle{0%,100%{transform:rotate(-4deg) translateX(0)}50%{transform:rotate(5deg) translateX(5px)}}
+.pouch-card h4{font-family:var(--serif);font-size:19px;font-weight:600;margin:0 0 6px;letter-spacing:.02em}
+.pouch-card p{font-size:12.5px;line-height:1.75;color:#b8c9c2;min-height:44px}
+.drain-btn{margin-top:11px;display:inline-flex;align-items:center;gap:8px;background:var(--coral);border:0;border-radius:999px;padding:9px 16px;color:#1a0d08;font-size:12px;font-weight:600;letter-spacing:.06em;cursor:pointer;transition:background .3s,transform .3s}
+.drain-btn:hover{background:var(--gold);transform:translateY(-2px)}
+.pouch-flow{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;font-size:10px;letter-spacing:.08em;color:#8fa9a1}
+.pouch-flow span{padding:3px 8px;border:1px solid var(--line);border-radius:999px}
+.pouch-flow i{font-style:normal;color:var(--coral);align-self:center}
+.fact-note{display:flex;gap:18px;align-items:flex-start;margin-top:clamp(26px,3vw,40px);padding-top:24px;border-top:1px solid var(--line)}
+.fact-note .quote-mark{font-family:var(--serif);font-size:54px;line-height:.7;color:var(--coral);flex-shrink:0}
+.fact-note p{font-family:var(--serif);font-size:clamp(17px,1.6vw,22px);line-height:1.7;color:#dbe4df;max-width:62ch}
+.fact-note p b{color:var(--gold);font-weight:600}
+.fact-note cite{display:block;font-style:normal;font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;color:#80988f;margin-top:8px}
+
+/* ---------- species ---------- */
+.species-section{background:linear-gradient(180deg,#061819,#082022 55%,#061819)}
+.species-shell{display:grid;grid-template-columns:330px 1fr;gap:clamp(20px,3vw,40px);align-items:start}
+.species-tabs{display:flex;flex-direction:column;gap:10px}
+.species-tab{text-align:left;background:rgba(244,236,221,.025);border:1px solid var(--line);border-radius:18px;padding:18px 20px;cursor:pointer;transition:background .35s,color .35s,transform .35s,border-color .35s;display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start}
+.species-tab:hover{transform:translateX(4px);border-color:rgba(255,107,66,.45)}
+.species-tab .tab-index{font-family:var(--latin);font-size:10px;letter-spacing:.12em;color:var(--coral);padding-top:5px}
+.species-tab .tab-name{font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:.04em;line-height:1.3}
+.species-tab .tab-latin{display:block;font-family:var(--latin);font-size:11px;font-style:italic;color:#8ba39b;letter-spacing:.04em;margin-top:3px}
+.species-tab .tab-tag{display:inline-block;margin-top:9px;font-size:10px;letter-spacing:.1em;color:#9cb2aa;border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+.species-tab.is-active{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.species-tab.is-active .tab-index{color:#c24824}
+.species-tab.is-active .tab-latin{color:#6d6a5c}
+.species-tab.is-active .tab-tag{color:#4c4a40;border-color:rgba(6,24,25,.18)}
+.species-tab.is-active .tab-name{color:var(--ink)}
+.species-tab.is-active .tab-arrow{opacity:1;transform:none}
+.tab-arrow{margin-left:auto;grid-column:2;font-family:var(--latin);opacity:0;transform:translateX(-6px);transition:.3s;color:#c24824;font-size:14px;margin-top:6px}
+.species-hint{font-size:11px;color:#7f9a92;letter-spacing:.05em;padding:8px 4px 0;line-height:1.7}
+
+.species-panel{border:1px solid var(--line);border-radius:28px;overflow:hidden;background:linear-gradient(165deg,#0c2a2c,#071d1e);animation:panel-in .6s cubic-bezier(.2,.7,.3,1) both}
+@keyframes panel-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.species-panel[hidden]{display:none}
+.scene{position:relative;height:clamp(210px,24vw,310px);overflow:hidden;border-bottom:1px solid var(--line)}
+.scene svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.scene svg [color]{filter:drop-shadow(0 3px 7px rgba(4,18,19,.35))}
+.scene-label{position:absolute;left:20px;top:18px;font-family:var(--latin);font-size:9.5px;letter-spacing:.24em;color:rgba(244,236,221,.8);text-transform:uppercase;z-index:2;display:flex;align-items:center;gap:8px}
+.scene-label::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--coral)}
+.species-body{padding:clamp(22px,3vw,34px)}
+.species-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:18px}
+.species-top h3{font-family:var(--serif);font-size:clamp(32px,3.4vw,46px);font-weight:600;line-height:1.15;letter-spacing:-.01em}
+.species-top .latin{font-family:var(--latin);font-style:italic;font-size:14px;color:var(--gold);margin-top:5px}
+.species-top .conservation{font-size:10px;letter-spacing:.12em;color:#9db3ab;border:1px solid var(--line);border-radius:999px;padding:5px 11px;white-space:nowrap}
+.species-summary{margin-top:18px;font-size:15px;line-height:1.9;color:#c6d4ce;max-width:62ch}
+.species-facts{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;margin-top:14px}
+.species-facts div{border-bottom:1px solid var(--line-soft);padding:13px 0}
+.species-facts dt{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;font-family:var(--latin);color:var(--coral);margin-bottom:4px}
+.species-facts dd{font-size:13.5px;line-height:1.8;color:#b9cbc4}
+.species-foot{display:flex;align-items:center;gap:10px;margin-top:18px;font-size:11px;color:#829a92;letter-spacing:.02em}
+.species-foot::before{content:"※";color:var(--gold);font-size:14px}
+.species-disclaimer{margin-top:clamp(26px,3vw,38px);font-size:12.5px;color:#8fa69e;line-height:1.9;max-width:110ch;border-left:2px solid rgba(255,107,66,.5);padding-left:16px}
+.species-disclaimer b{color:var(--cream);font-weight:500}
+
+/* ---------- feeding ---------- */
+.feeding-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.8vw,24px);margin-top:10px}
+.method{position:relative;border:1px solid var(--line);border-radius:24px;background:linear-gradient(170deg,rgba(244,236,221,.045),rgba(244,236,221,.012));padding:clamp(20px,2.3vw,28px);display:flex;flex-direction:column;min-height:420px;overflow:hidden;transition:transform .4s,border-color .4s,background .4s}
+.method:hover{transform:translateY(-6px);border-color:rgba(255,107,66,.45);background:linear-gradient(170deg,rgba(255,107,66,.08),rgba(244,236,221,.012))}
+.method:nth-child(2){margin-top:clamp(0px,2.4vw,34px)}
+.method .m-top{display:flex;justify-content:space-between;align-items:center;font-family:var(--latin);font-size:10px;letter-spacing:.2em;color:#7f9a92}
+.method .m-top b{color:var(--coral);font-weight:600}
+.method-visual{height:150px;margin:18px -6px 12px;position:relative}
+.method-visual svg{width:100%;height:100%;overflow:visible}
+.method h3{font-family:var(--serif);font-size:clamp(24px,2.2vw,30px);font-weight:600;letter-spacing:.02em}
+.method p{font-size:13.5px;line-height:1.9;color:#a9beb7;margin-top:10px}
+.method .tag{margin-top:auto;padding-top:18px;display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.12em;color:var(--gold)}
+.method .tag::before{content:"";width:18px;height:1px;background:currentColor}
+.method-1 .method-visual .scoop{animation:scoop 4.6s ease-in-out infinite;transform-origin:120px 78px}
+@keyframes scoop{0%,100%{transform:rotate(0) translateY(0)}40%,60%{transform:rotate(9deg) translateY(9px)}}
+.method-2 .fish-orbit{animation:orbit 9s linear infinite;transform-origin:150px 75px}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.method-3 .diving{animation:dive 3.8s cubic-bezier(.6,0,.8,.7) infinite;transform-origin:center}
+.method-3 .splash-ring{animation:splash 3.8s ease-out infinite}
+@keyframes dive{0%,12%{transform:translate(12px,-34px) rotate(38deg);opacity:0}26%{opacity:1}55%{transform:translate(-2px,20px) rotate(38deg);opacity:1}62%,100%{transform:translate(-2px,34px) rotate(38deg);opacity:0}}
+@keyframes splash{0%,48%{transform:scale(.2);opacity:0}56%{opacity:.9}90%,100%{transform:scale(1.5);opacity:0}}
+.feeding-note{margin-top:28px;display:flex;gap:14px;align-items:center;border:1px dashed rgba(233,196,106,.4);border-radius:16px;padding:14px 18px;font-size:12.5px;color:#c1cfc9;background:rgba(233,196,106,.05)}
+.feeding-note b{color:var(--gold);font-weight:600;white-space:nowrap;font-size:10px;letter-spacing:.16em;font-family:var(--latin)}
+
+/* ---------- field notes / myths ---------- */
+.notes{background:var(--cream);color:var(--ink);position:relative;overflow:hidden}
+.notes::before{content:"";position:absolute;right:-8%;top:-20%;width:60vw;height:60vw;max-width:800px;max-height:800px;border:1px solid rgba(6,24,25,.1);border-radius:50%;box-shadow:0 0 0 60px rgba(6,24,25,.025),0 0 0 120px rgba(6,24,25,.02);pointer-events:none}
+.notes .sec-num{-webkit-text-stroke:1px rgba(6,24,25,.12)}
+.notes .eyebrow{color:#b8401f}
+.notes .sec-intro{color:#5b5a4d}
+.notes .sec-intro strong{color:var(--ink)}
+.myth-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.myth{background:none;border:0;padding:0;height:262px;perspective:1200px;cursor:pointer;text-align:left;color:var(--ink)}
+.myth-inner{position:relative;display:block;width:100%;height:100%;transition:transform .75s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.myth.is-flipped .myth-inner{transform:rotateY(180deg)}
+.myth-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:22px;padding:24px;display:flex;flex-direction:column;border:1px solid rgba(6,24,25,.16);overflow:hidden}
+.myth-front{background:#faf4e8;box-shadow:0 14px 40px rgba(22,35,30,.08)}
+.myth-front::after{content:"";position:absolute;right:-30px;bottom:-40px;width:150px;height:150px;border-radius:50%;border:1px solid rgba(6,24,25,.12)}
+.myth-back{background:var(--ink);color:var(--cream);transform:rotateY(180deg);border-color:var(--ink)}
+.myth-tag{font-family:var(--latin);font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:#b8401f;display:flex;align-items:center;gap:8px}
+.myth-tag::before{content:"";width:18px;height:1px;background:currentColor}
+.myth-back .myth-tag{color:var(--gold)}
+.myth-text{font-family:var(--serif);font-size:clamp(19px,1.85vw,25px);font-weight:600;line-height:1.55;letter-spacing:.01em;margin-top:auto;margin-bottom:auto;padding-block:12px}
+.myth-back .myth-text{font-family:var(--sans);font-size:14px;font-weight:400;line-height:1.9;color:#cddad4}
+.myth-back .myth-text b{color:var(--gold);font-weight:500}
+.myth-hint{font-size:10px;letter-spacing:.14em;color:#7f7c6c;display:flex;align-items:center;justify-content:space-between}
+.myth-hint svg{width:18px;height:18px;transition:transform .3s}
+.myth:hover .myth-hint svg{transform:translateX(4px)}
+.myth-back .myth-hint{color:#8fa69e}
+.myth:hover .myth-front{border-color:rgba(6,24,25,.35)}
+.myth:hover .myth-inner{transform:translateY(-4px)}
+.myth.is-flipped:hover .myth-inner{transform:translateY(-4px) rotateY(180deg)}
+
+/* ---------- life ---------- */
+.life-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(18px,2.4vw,32px)}
+.life-card{border:1px solid var(--line);border-radius:26px;overflow:hidden;background:rgba(244,236,221,.028);padding:clamp(22px,2.6vw,32px);position:relative}
+.life-card h3{font-family:var(--serif);font-size:clamp(25px,2.5vw,34px);font-weight:600;line-height:1.25}
+.life-card h3 small{display:block;font-family:var(--latin);font-size:9.5px;letter-spacing:.24em;color:var(--coral);margin-bottom:8px;font-weight:400;text-transform:uppercase}
+.life-card p{font-size:13.5px;line-height:1.95;color:#a9beb7;margin-top:12px}
+.life-card p b{color:var(--cream);font-weight:500}
+.flock-art{position:relative;height:190px;margin-top:18px;border-radius:16px;overflow:hidden;background:radial-gradient(80% 120% at 50% 100%,rgba(255,107,66,.18),transparent 65%),#082122;border:1px solid var(--line-soft)}
+.flock-art svg{width:100%;height:100%}
+.flock-art .flock{animation:flock-drift 22s ease-in-out infinite alternate}
+@keyframes flock-drift{from{transform:translate(-8px,3px)}to{transform:translate(14px,-6px)}}
+.life-card{display:flex;flex-direction:column}
+.mini-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:16px}
+.mini-chips span{font-size:10.5px;letter-spacing:.08em;border:1px solid var(--line);padding:5px 11px;border-radius:999px;color:#a9beb7}
+.nest-toggle{display:flex;gap:6px;margin-top:16px;background:#082022;border:1px solid var(--line);padding:5px;border-radius:999px;width:max-content;max-width:100%}
+.nest-toggle button{background:none;border:0;border-radius:999px;padding:8px 18px;font-size:12px;color:#a9beb7;cursor:pointer;transition:.3s;letter-spacing:.05em}
+.nest-toggle button.is-active{background:var(--cream);color:var(--ink);font-weight:600}
+.nest-stage{position:relative;height:198px;margin-top:14px;border-radius:16px;overflow:hidden;border:1px solid var(--line-soft);background:linear-gradient(180deg,#0a292b,#061a1b)}
+.nest-scene{position:absolute;inset:0;width:100%;height:100%;animation:panel-in .5s both}
+.nest-scene[hidden]{display:none}
+.nest-copy{min-height:76px}
+.nest-copy p{margin-top:8px}
+.nest-note{font-size:11px;line-height:1.8;color:#829a92;margin-top:14px;padding-top:13px;border-top:1px solid var(--line-soft)}
+
+/* ---------- care ---------- */
+.care{background:linear-gradient(180deg,#061819,#072022)}
+.care-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:start}
+.threats{display:flex;flex-direction:column}
+.threat{display:grid;grid-template-columns:58px 1fr;gap:16px;padding:20px 0;border-top:1px solid var(--line);align-items:start}
+.threat:last-child{border-bottom:1px solid var(--line)}
+.threat .t-num{font-family:var(--latin);font-size:11px;color:var(--coral);letter-spacing:.1em;padding-top:5px}
+.threat h3{font-family:var(--serif);font-size:clamp(20px,2vw,25px);font-weight:600;letter-spacing:.02em}
+.threat p{font-size:13px;line-height:1.85;color:#9fb5ae;margin-top:5px;max-width:52ch}
+.pact{background:var(--cream);color:var(--ink);border-radius:26px;padding:clamp(24px,2.8vw,34px);position:sticky;top:96px;box-shadow:0 24px 60px rgba(0,0,0,.26)}
+.pact .pact-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.pact h3{font-family:var(--serif);font-size:clamp(23px,2.3vw,30px);font-weight:600;line-height:1.3}
+.pact .pact-kicker{font-family:var(--latin);font-size:9px;letter-spacing:.2em;color:#b8401f;text-transform:uppercase;margin-bottom:8px}
+.pact .pact-badge{width:46px;height:46px;border-radius:50%;border:1px solid rgba(6,24,25,.2);display:grid;place-items:center;flex-shrink:0;font-family:var(--latin);font-size:10px;color:#5d5a4b}
+.pact > p{font-size:12.5px;line-height:1.85;color:#5b5a4d;margin-top:8px}
+.checks{display:flex;flex-direction:column;gap:2px;margin-top:18px}
+.check{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;padding:11px 0;border-top:1px solid rgba(6,24,25,.12);cursor:pointer;font-size:13px;line-height:1.7;color:#3e3d34;transition:color .25s}
+.check input{position:absolute;opacity:0;width:0;height:0}
+.check .box{width:22px;height:22px;border:1px solid rgba(6,24,25,.35);border-radius:7px;display:grid;place-items:center;transition:background .25s,border-color .25s,transform .25s;margin-top:1px;background:rgba(255,255,255,.35)}
+.check .box svg{width:13px;height:13px;opacity:0;transform:scale(.5);transition:.25s;color:var(--cream)}
+.check input:checked + .box{background:var(--coral);border-color:var(--coral);transform:rotate(-3deg)}
+.check input:checked + .box svg{opacity:1;transform:none}
+.check input:focus-visible + .box{outline:2px solid #b8401f;outline-offset:3px}
+.check:hover{color:#111}
+.check.done{color:#8b8778}
+.pact-progress{margin-top:18px}
+.pact-progress .bar{height:6px;background:rgba(6,24,25,.12);border-radius:99px;overflow:hidden}
+.pact-progress .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--coral),var(--gold));border-radius:99px;transition:width .45s cubic-bezier(.2,.7,.3,1)}
+.pact-progress .meta{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.12em;color:#7a7667;margin-top:8px;font-family:var(--latin)}
+.pact-done{font-size:12px;color:#b8401f;margin-top:10px;min-height:20px;font-family:var(--serif);font-size:15px;letter-spacing:.02em}
+.care-quote{margin-top:28px;font-family:var(--serif);font-size:clamp(19px,2vw,26px);line-height:1.7;color:#d5e0da;max-width:34ch}
+.care-quote em{font-style:normal;color:var(--gold)}
+.care-source{font-size:10.5px;color:#79918a;margin-top:16px;line-height:1.8;max-width:44ch}
+
+/* ---------- footer ---------- */
+.footer{border-top:1px solid var(--line);padding:clamp(46px,6vw,80px) clamp(18px,4.4vw,72px) 30px;position:relative;overflow:hidden;background:#041112}
+.footer-inner{width:min(1480px,100%);margin-inline:auto}
+.footer-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:30px;padding-bottom:36px;border-bottom:1px solid var(--line)}
+.footer-word{font-family:var(--latin);font-size:clamp(54px,11vw,160px);line-height:.8;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1px rgba(244,236,221,.28);font-weight:700}
+.footer-tag{font-family:var(--serif);font-size:clamp(18px,1.8vw,24px);color:var(--cream);text-align:right;line-height:1.6}
+.footer-tag span{display:block;font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;color:#7f978f;margin-top:6px}
+.footer-cols{display:grid;grid-template-columns:1.2fr 1.2fr .6fr;gap:clamp(22px,4vw,60px);padding:34px 0;border-bottom:1px solid var(--line)}
+.footer-cols h4{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);font-family:var(--latin);margin:0 0 14px}
+.footer-cols ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.footer-cols li{font-size:12.5px;line-height:1.7;color:#a0b6af}
+.footer-cols li a{color:#cbd8d2;text-decoration:none;border-bottom:1px solid rgba(244,236,221,.18);transition:color .3s,border-color .3s}
+.footer-cols li a:hover{color:var(--coral);border-color:var(--coral)}
+.footer-cols .note{font-size:11.5px;line-height:1.9;color:#829a92}
+.footer-cols .backtop{display:inline-flex;align-items:center;gap:8px;color:var(--cream);text-decoration:none;font-size:12px;letter-spacing:.08em;margin-top:8px;border:1px solid var(--line);padding:9px 15px;border-radius:999px;transition:.3s}
+.footer-cols .backtop:hover{background:rgba(244,236,221,.08);transform:translateY(-2px)}
+.footer-bottom{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;padding-top:20px;font-size:10px;letter-spacing:.08em;color:#647b74;font-family:var(--latin)}
+.footer-bottom span{display:flex;align-items:center;gap:8px}
+.footer-bottom i{width:5px;height:5px;border-radius:50%;background:var(--coral);display:inline-block}
+
+/* ---------- responsive ---------- */
+@media(max-width:1160px){
+  .species-shell{grid-template-columns:280px 1fr}
+  .hero-facts dd small{font-size:10.5px}
+}
+@media(max-width:980px){
+  .hero{min-height:auto;padding-top:112px;padding-bottom:80px}
+  .hero-inner{grid-template-columns:1fr;gap:30px}
+  .hero-copy{max-width:none}
+  h1{font-size:clamp(64px,13.5vw,130px)}
+  .lede{max-width:60ch}
+  .hero-art{max-width:640px;margin:0 auto;width:100%}
+  .hero-svg{max-height:none}
+  .hero-facts{max-width:none}
+  .art-badge{bottom:2%;right:2%}
+  .art-note{display:none}
+  .scroll-cue{display:none}
+  .site-nav{display:none}
+  .header-explore{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:11px;letter-spacing:.12em;border:1px solid var(--line);border-radius:999px;padding:8px 14px;color:#cbd8d2}
+  .sec-head{grid-template-columns:1fr;gap:18px}
+  .sec-intro{justify-self:start;max-width:64ch}
+  .anatomy-shell{grid-template-columns:1fr}
+  .anatomy-figure{min-height:0}
+  .species-shell{grid-template-columns:1fr}
+  .species-tabs{flex-direction:row;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;scroll-snap-type:x mandatory}
+  .species-tab{min-width:220px;flex:1 0 auto;scroll-snap-align:start}
+  .species-tab .tab-arrow{display:none}
+  .species-hint{display:none}
+  .feeding-grid{grid-template-columns:1fr;gap:14px}
+  .method{min-height:0}
+  .method:nth-child(2){margin-top:0}
+  .method-visual{height:130px}
+  .myth-grid{grid-template-columns:1fr;gap:14px}
+  .myth{height:240px}
+  .life-grid{grid-template-columns:1fr}
+  .care-grid{grid-template-columns:1fr}
+  .pact{position:static}
+  .footer-cols{grid-template-columns:1fr 1fr}
+  .footer-tag{text-align:left}
+}
+@media(max-width:640px){
+  body{font-size:15px}
+  .site-header{padding:14px 18px}
+  .brand-txt strong{font-size:19px}
+  .brand-glyph{width:30px;height:30px}
+  .hero{padding-top:96px;padding-bottom:62px}
+  h1{font-size:clamp(56px,16.5vw,96px);margin-top:20px}
+  h1 .line-2{padding-left:0}
+  .lede{margin-top:22px;font-size:14.5px;line-height:1.9}
+  .hero-actions{margin-top:26px}
+  .btn{padding:12px 18px;font-size:12px}
+  .hero-facts{margin-top:28px;gap:0;display:grid;grid-template-columns:repeat(3,1fr)}
+  .hero-facts div{padding:14px 8px 0 0;margin-right:0;border-right:1px solid var(--line-soft)}
+  .hero-facts div:last-child{border-right:0}
+  .hero-facts dt{font-size:8px;letter-spacing:.1em}
+  .hero-facts dd{font-size:15px;line-height:1.35}
+  .hero-facts dd small{font-size:9.5px;letter-spacing:.04em}
+  .art-badge{width:88px;right:0;bottom:2%}
+  .art-badge .badge-core b{font-size:16px}
+  .art-badge .badge-core span{font-size:8px}
+  .art-badge{width:96px;right:0;bottom:0}
+  .art-badge .badge-core b{font-size:18px}
+  .section{padding-inline:18px;padding-block:68px}
+  .sec-head h2{font-size:clamp(34px,9vw,52px)}
+  .sec-num{font-size:120px;top:-2%}
+  .part-item{grid-template-columns:38px 1fr}
+  .pouch-card{grid-template-columns:1fr;gap:10px;padding:16px}
+  .pouch-demo{max-width:160px}
+  .pouch-card p{min-height:0}
+  .fact-note{gap:10px}
+  .fact-note .quote-mark{font-size:40px}
+  .species-tab{min-width:205px;padding:14px 16px}
+  .species-tab .tab-name{font-size:18px}
+  .scene{height:190px}
+  .species-facts{grid-template-columns:1fr;gap:0}
+  .species-top h3{font-size:30px}
+  .myth{height:270px}
+  .myth-text{font-size:19px}
+  .flock-art{height:150px}
+  .nest-stage{height:170px}
+  .threat{grid-template-columns:42px 1fr;gap:10px}
+  .footer-cols{grid-template-columns:1fr;gap:26px}
+  .footer-word{font-size:54px}
+  .ticker span{font-size:10px;padding-block:9px}
+  .pact{padding:20px}
+  .footer-bottom{flex-direction:column;gap:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="sunG" cx="46%" cy="42%" r="62%">
+      <stop offset="0%" stop-color="#ffe3ad"/>
+      <stop offset="38%" stop-color="#ffb36b"/>
+      <stop offset="72%" stop-color="#ff7a4b"/>
+      <stop offset="100%" stop-color="#d94b2b"/>
+    </radialGradient>
+    <radialGradient id="haloG" cx="50%" cy="50%" r="50%">
+      <stop offset="55%" stop-color="#ff8a5c" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#ff8a5c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pfBody" x1="0" y1="0" x2=".8" y2="1">
+      <stop offset="0%" stop-color="#fbf4e5"/>
+      <stop offset="52%" stop-color="#ecdfc8"/>
+      <stop offset="100%" stop-color="#c9b99e"/>
+    </linearGradient>
+    <linearGradient id="pfBill" x1="0" y1="0" x2="1" y2=".7">
+      <stop offset="0%" stop-color="#ffb27a"/>
+      <stop offset="45%" stop-color="#ff8757"/>
+      <stop offset="100%" stop-color="#d94727"/>
+    </linearGradient>
+    <linearGradient id="pfPouch" x1="0" y1="0" x2=".7" y2="1">
+      <stop offset="0%" stop-color="#ffa171"/>
+      <stop offset="55%" stop-color="#f27247"/>
+      <stop offset="100%" stop-color="#c93c22"/>
+    </linearGradient>
+    <linearGradient id="pfWing" x1=".1" y1="0" x2=".9" y2="1">
+      <stop offset="0%" stop-color="#1d5657"/>
+      <stop offset="55%" stop-color="#123c3e"/>
+      <stop offset="100%" stop-color="#0a2729"/>
+    </linearGradient>
+    <linearGradient id="pfWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fe3cf" stop-opacity=".75"/>
+      <stop offset="100%" stop-color="#3d9f96" stop-opacity=".45"/>
+    </linearGradient>
+    <clipPath id="pouchClip">
+      <path d="M28 297 C52 370 130 445 225 442 C300 440 340 382 333 320 C331 292 313 270 292 260 C235 274 135 287 28 297 Z"/>
+    </clipPath>
+    <clipPath id="pouchClipMini">
+      <path d="M28 64 C44 152 110 206 192 198 C252 192 282 148 276 92 C194 84 102 74 28 64 Z"/>
+    </clipPath>
+
+    <symbol id="pelican-figure" viewBox="0 0 700 720">
+      <!-- legs & feet -->
+      <g stroke="#7d432c" stroke-width="13" stroke-linecap="round" fill="none">
+        <path d="M442 600 L430 668"/>
+        <path d="M497 602 L507 668"/>
+      </g>
+      <g fill="#a85a35" stroke="#07191b" stroke-width="4" stroke-linejoin="round">
+        <path d="M430 668 l-40 11 q-14 6 -2 13 l58 0 q11 0 5 -11 l-21 -13z"/>
+        <path d="M507 668 l38 11 q14 6 2 13 l-56 0 q-11 0 -5 -11 l21 -13z"/>
+      </g>
+      <!-- tail -->
+      <path d="M558 474 C612 445 652 434 688 440 C662 468 640 505 624 545 C612 518 588 496 558 474Z" fill="#cbbb9f" stroke="#07191b" stroke-width="5" stroke-linejoin="round"/>
+      <!-- body -->
+      <path d="M300 480 C300 398 370 350 455 361 C550 373 610 440 600 524 C590 600 520 641 440 630 C358 619 300 560 300 480Z" fill="url(#pfBody)" stroke="#07191b" stroke-width="5"/>
+      <path d="M330 462 C342 408 384 378 438 375 C410 444 388 518 399 584 C354 562 328 516 330 462Z" fill="#dccbb2" opacity=".55"/>
+      <!-- wing -->
+      <path d="M370 430 C435 390 535 398 600 450 C617 496 596 546 560 576 C550 546 530 526 505 516 C515 551 495 579 470 589 C472 556 455 531 430 516 C440 551 425 576 400 584 C400 546 385 511 370 491 C382 471 382 449 370 430Z" fill="url(#pfWing)" stroke="#07191b" stroke-width="5" stroke-linejoin="round"/>
+      <g fill="none" stroke="#5b8a86" stroke-width="2" opacity=".55" stroke-linecap="round">
+        <path d="M420 448 C445 470 462 500 470 532"/>
+        <path d="M472 448 C490 470 503 498 510 522"/>
+        <path d="M522 455 C540 476 551 498 558 518"/>
+      </g>
+      <path d="M380 456 C430 425 510 424 566 452" fill="none" stroke="#6ea29c" stroke-width="2.5" opacity=".45"/>
+      <!-- neck -->
+      <path d="M350 420 C310 380 285 340 285 300 C285 260 295 238 318 230 L355 225 C382 235 390 258 383 280 C372 320 385 352 415 380 C440 404 450 428 430 447 C400 470 372 452 350 420Z" fill="url(#pfBody)" stroke="#07191b" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M323 246 C312 282 321 323 350 356" fill="none" stroke="#dccbb2" stroke-width="6" opacity=".55" stroke-linecap="round"/>
+      <!-- head -->
+      <ellipse cx="330" cy="235" rx="62" ry="52" fill="url(#pfBody)" stroke="#07191b" stroke-width="5"/>
+      <!-- crest -->
+      <g fill="#e3d3b8" stroke="#07191b" stroke-width="3.5" stroke-linejoin="round">
+        <path d="M369 204 C385 191 404 187 419 192 C405 202 388 210 371 215 Z"/>
+        <path d="M374 221 C389 213 406 212 420 217 C406 226 389 231 376 230 Z"/>
+      </g>
+      <!-- bill -->
+      <path d="M285 212 C215 216 140 240 22 288 C14 292 18 303 28 301 C135 287 240 274 292 260 C300 245 298 225 285 212Z" fill="url(#pfBill)" stroke="#07191b" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M56 288 C142 271 226 258 288 248" fill="none" stroke="#ffd2a8" stroke-width="2.5" opacity=".65" stroke-linecap="round"/>
+      <!-- pouch -->
+      <path d="M28 297 C52 370 130 445 225 442 C300 440 340 382 333 320 C331 292 313 270 292 260 C235 274 135 287 28 297Z" fill="url(#pfPouch)" stroke="#07191b" stroke-width="5" stroke-linejoin="round"/>
+      <g clip-path="url(#pouchClip)">
+        <rect x="20" y="326" width="330" height="130" fill="url(#pfWater)" opacity=".5"/>
+        <path d="M20 330 Q 75 318 130 330 T 240 330 T 350 330" fill="none" stroke="#d8fff2" stroke-width="2" opacity=".55"/>
+        <g class="pouch-fish" fill="#0d3435" opacity=".85">
+          <path d="M132 382 q16 -13 34 -2 q-4 16 -20 16 q-9 0 -14 -14z"/>
+          <path d="M132 382 l-11 -10 v22z"/>
+          <path d="M196 402 q14 -11 30 -2 q-3 14 -18 14 q-8 0 -12 -12z"/>
+          <path d="M196 402 l-10 -9 v20z"/>
+          <path d="M246 370 q12 -9 26 -2 q-2 12 -15 12 q-7 0 -11 -10z"/>
+          <path d="M246 370 l-9 -8 v17z"/>
+        </g>
+      </g>
+      <path d="M70 331 C100 385 155 420 215 423" fill="none" stroke="#ffd4b8" stroke-width="2.5" opacity=".45" stroke-linecap="round"/>
+      <!-- eye -->
+      <circle cx="343" cy="232" r="15" fill="#f8f1e1" stroke="#07191b" stroke-width="3"/>
+      <circle cx="347" cy="233" r="7" fill="#07191b"/>
+      <circle cx="350" cy="230" r="2.4" fill="#fffaf0"/>
+      <path d="M326 217 C336 211 350 211 359 216" fill="none" stroke="#07191b" stroke-width="3" opacity=".5" stroke-linecap="round"/>
+      <!-- body rim light -->
+      <path d="M316 500 C319 548 348 590 395 610" fill="none" stroke="#fff7e6" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="pelican-sil" viewBox="0 0 320 220">
+      <g fill="currentColor">
+        <path d="M196 190 L191 216 L183 216 L188 190Z"/>
+        <path d="M224 190 L230 216 L238 216 L232 190Z"/>
+        <path d="M171 213 l-18 5 q-6 3 0 6 l28 0 q5 0 2 -5 l-8 -6z"/>
+        <path d="M248 213 l17 5 q6 3 0 6 l-27 0 q-5 0 -2 -5 l8 -6z"/>
+        <path d="M150 166 C144 136 165 114 197 111 C231 108 254 128 254 159 C254 184 232 198 204 197 C174 196 154 186 150 166Z"/>
+        <path d="M248 151 L292 132 L281 159 L289 176 L246 171Z"/>
+        <path d="M180 123 C166 102 168 79 181 65 C191 51 209 48 219 57 C228 66 227 80 219 89 C210 99 203 110 208 121Z"/>
+        <circle cx="214" cy="58" r="17"/>
+        <path d="M199 52 C165 53 130 62 104 75 C99 77 102 84 109 83 C136 79 174 70 203 68Z"/>
+        <path d="M106 76 C116 110 145 128 176 112 C189 105 195 89 191 74 C163 70 132 71 106 76Z"/>
+      </g>
+      <path d="M161 136 C187 121 226 123 249 142 C240 162 213 177 187 174 C181 158 172 147 161 136Z" fill="#000" opacity=".18"/>
+      <circle cx="211" cy="55" r="2.6" fill="#07191b"/>
+    </symbol>
+
+    <symbol id="pelican-fly" viewBox="0 0 360 180">
+      <g fill="currentColor">
+        <ellipse cx="180" cy="100" rx="58" ry="24" transform="rotate(-6 180 100)"/>
+        <path d="M160 86 C120 55 70 30 25 38 C65 63 100 86 135 103Z"/>
+        <path d="M205 86 C245 50 295 28 340 38 C305 65 265 90 225 104Z"/>
+        <path d="M235 95 L300 112 L280 122 L290 134 L232 116Z"/>
+        <path d="M138 88 C124 68 126 52 138 40 C148 28 164 26 172 35 C181 44 179 57 171 66 C163 75 156 82 160 92Z"/>
+        <circle cx="160" cy="38" r="14"/>
+        <path d="M147 33 C115 34 80 42 55 54 C50 56 53 63 60 62 C88 57 124 49 151 47Z"/>
+        <path d="M57 55 C66 84 92 100 120 85 C132 78 137 63 133 50 C107 46 80 48 57 55Z"/>
+      </g>
+      <circle cx="157" cy="36" r="2.2" fill="#07191b"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="#top" aria-label="回到页面顶部">
+    <svg class="brand-glyph" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 15c7-6 16-6 21 1 3 4 3 8 1 11l-8-1c-2 0-4-1-5-3-3 1-7 0-9-3 2 1 4 1 5 0-2-2-3-4-3-7 1 2 3 3 4 3-2-2-3-4-3-6 2 3 4 4 6 4-1-2-1-4-1-5 2 2 4 3 7 3 1 0 1-1 1-2 0-2 2-4 4-4 1 4 0 8-3 11 4 1 6 4 6 7l-3 1c0-3-2-5-5-6-2 2-5 3-8 2z" fill="currentColor"/></svg>
+    <span class="brand-txt"><strong>鹈鹕</strong><small>PELICANUS</small></span>
+  </a>
+  <nav class="site-nav" aria-label="页面目录">
+    <a href="#anatomy"><i>01</i>解剖</a>
+    <a href="#species"><i>02</i>物种</a>
+    <a href="#feeding"><i>03</i>觅食</a>
+    <a href="#life"><i>04</i>生活</a>
+    <a href="#care"><i>05</i>守护</a>
+  </nav>
+  <a class="header-explore" href="#anatomy">开始探索 <span aria-hidden="true">↓</span></a>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow hero-anim d1">Pelecanus · 鹈鹕属 · 大型水鸟</p>
+        <h1 class="hero-anim d2">
+          <span class="line">不止<em class="outline">一张</em></span>
+          <span class="line line-2"><span class="hot">大嘴</span><span class="dot">。</span></span>
+        </h1>
+        <p class="lede hero-anim d3">长喙下挂着一张可以伸展的喉囊。从内陆湖泊到海岸河口，鹈鹕用喙舀水、用蹼足划水、用宽翼滑翔——它装下的，从来不只是一条鱼。</p>
+        <div class="hero-actions hero-anim d4">
+          <a class="btn btn-primary" href="#anatomy">
+            推开这张嘴
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 3v13M4.5 10.5 10 16l5.5-5.5"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#species">认识三个物种 <span aria-hidden="true">→</span></a>
+        </div>
+        <dl class="hero-facts hero-anim d5">
+          <div><dt>Bill + Pouch</dt><dd>长喙 + 喉囊<small>捕食装备</small></dd></div>
+          <div><dt>Webbed Feet</dt><dd>蹼足<small>适于游泳</small></dd></div>
+          <div><dt>Broad Wings</dt><dd>宽大的翼<small>帮助滑翔</small></dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-art hero-anim" id="heroArt">
+        <div class="art-stage" id="artStage">
+          <svg class="hero-svg" viewBox="0 0 760 780" role="img" aria-label="插画：一只鹈鹕站在水边，巨大的喉囊里兜着水和鱼，背后是一轮橘红色的落日。">
+            <circle cx="500" cy="340" r="330" fill="url(#haloG)"/>
+            <circle class="sun-disc" cx="500" cy="340" r="266" fill="url(#sunG)"/>
+            <circle class="sun-dash" cx="500" cy="340" r="299" fill="none" stroke="rgba(244,236,221,.28)" stroke-width="1.2" stroke-dasharray="2 13"/>
+            <g fill="none" stroke="rgba(244,236,221,.13)" stroke-width="1.2">
+              <path d="M90 260 C260 175 610 158 720 280"/>
+              <path d="M70 310 C250 220 630 205 742 330"/>
+              <path d="M64 360 C240 270 640 255 748 380"/>
+              <path d="M240 520 C360 486 590 486 704 528"/>
+              <path d="M210 560 C350 526 600 528 716 566"/>
+            </g>
+            <g class="far-birds" fill="#123638" opacity=".85">
+              <use href="#pelican-fly" width="360" height="180" transform="translate(96,96) scale(.24)"/>
+              <use href="#pelican-fly" width="360" height="180" transform="translate(208,58) scale(.15)"/>
+              <use href="#pelican-fly" width="360" height="180" transform="translate(610,120) scale(.18)"/>
+            </g>
+            <g class="hero-bird">
+              <use href="#pelican-figure" width="700" height="720" x="30" y="34"/>
+            </g>
+            <g class="hero-water">
+              <g class="water-back">
+                <path d="M-300 690 Q-200 674 -100 690 T100 690 T300 690 T500 690 T700 690 T900 690 T1100 690 V 800 H-300 Z" fill="#0a2e2f"/>
+                <path d="M-300 718 Q-200 702 -100 718 T100 718 T300 718 T500 718 T700 718 T900 718 T1100 718 V 800 H-300 Z" fill="#082425"/>
+              </g>
+              <g class="water-front">
+                <path d="M-420 744 Q-320 728 -220 744 T-20 744 T180 744 T380 744 T580 744 T780 744 T980 744 V 810 H-420 Z" fill="#061a1b"/>
+                <path d="M-420 770 Q-320 758 -220 770 T-20 770 T180 770 T380 770 T580 770 T780 770 T980 770" fill="none" stroke="rgba(111,211,189,.28)" stroke-width="1.4"/>
+              </g>
+              <g fill="none" stroke="rgba(244,236,221,.35)" stroke-width="1.3" opacity=".7">
+                <path d="M280 704 q30 -8 60 0"/>
+                <path d="M560 712 q34 -9 68 0"/>
+                <path d="M420 728 q26 -7 52 0"/>
+              </g>
+              <ellipse class="ripple" cx="470" cy="712" rx="70" ry="13" fill="none" stroke="rgba(244,236,221,.3)" stroke-width="1.2"/>
+            </g>
+            <g class="hero-annotation" fill="#f4ecdd" font-family="'Songti SC','STSong',Georgia,serif">
+              <path d="M152 468 C138 430 152 402 186 390" fill="none" stroke="rgba(244,236,221,.55)" stroke-width="1.2" stroke-dasharray="3 5"/>
+              <circle cx="187" cy="389" r="3.5" fill="#f4ecdd"/>
+              <text x="52" y="496" font-size="17" letter-spacing="2">喉囊 / POUCH</text>
+              <text x="52" y="518" font-size="10" letter-spacing="2.6" fill="rgba(244,236,221,.55)" font-family="Georgia,serif">CAN STRETCH TO CATCH</text>
+            </g>
+          </svg>
+        </div>
+        <div class="art-badge" aria-hidden="true">
+          <svg class="badge-ring" viewBox="0 0 200 200">
+            <defs><path id="badgeCircle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+            <text fill="#1a0d08" font-family="Georgia,serif" font-size="9.4" letter-spacing="2.4"><textPath href="#badgeCircle">POUCH · NOT A FRIDGE · 喉囊不是冰箱 ·</textPath></text>
+          </svg>
+          <span class="badge-core"><b>≠</b><span>冰箱</span></span>
+        </div>
+        <p class="art-note">原创 SVG 插画 · 非照片</p>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><span></span>SCROLL TO EXPLORE</div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Pouch · Not a fridge</span><span>Broad wings</span><span>Webbed feet</span><span>Flocks</span><span>Estuary · Lake · Coast</span><span>Pelecanus</span>
+      <span>Pouch · Not a fridge</span><span>Broad wings</span><span>Webbed feet</span><span>Flocks</span><span>Estuary · Lake · Coast</span><span>Pelecanus</span>
+    </div>
+  </div>
+
+  <section class="section" id="anatomy">
+    <div class="section-inner">
+      <span class="sec-num" aria-hidden="true">01</span>
+      <div class="sec-head">
+        <div class="reveal">
+          <p class="eyebrow">01 / Anatomy · 解剖</p>
+          <h2>一张会伸缩的<em>网</em></h2>
+        </div>
+        <p class="sec-intro reveal d1">鹈鹕的照片通常只拍嘴。但嘴只是入口：<strong>长喙、喉囊、宽翼和蹼足</strong>一起，把它变成横跨水面与天空的捕食者。点击图中编号，逐个拆开看。</p>
+      </div>
+
+      <div class="anatomy-shell">
+        <div class="anatomy-figure reveal">
+          <span class="anatomy-fig-label"><b>FIG. 01</b> · PELECANUS ANATOMY</span>
+          <svg class="anatomy-svg" viewBox="0 0 700 720" role="img" aria-label="鹈鹕侧面解剖示意图，标注了长喙、喉囊、宽翼和蹼足四个部位。">
+            <ellipse cx="360" cy="690" rx="270" ry="22" fill="rgba(111,211,189,.12)"/>
+            <circle cx="330" cy="330" r="250" fill="none" stroke="rgba(244,236,221,.08)" stroke-width="1"/>
+            <circle cx="330" cy="330" r="320" fill="none" stroke="rgba(244,236,221,.05)" stroke-width="1"/>
+            <use href="#pelican-figure" width="700" height="720"/>
+            <g class="hotspots">
+              <path class="hotspot" data-part="bill" d="M22 282 C120 268 220 245 300 215 L305 272 L40 312 Z" aria-hidden="true"/>
+              <path class="hotspot" data-part="pouch" d="M32 300 C58 372 135 445 225 442 C300 440 340 382 333 320 L310 262 C240 278 142 292 32 300 Z" aria-hidden="true"/>
+              <path class="hotspot" data-part="wing" d="M382 430 C450 396 542 404 602 450 C612 500 590 548 556 578 C540 548 520 530 498 518 C500 552 486 578 466 590 C462 558 450 534 428 518 C424 550 414 572 398 584 C396 548 386 514 372 492 C380 472 386 450 382 430 Z" aria-hidden="true"/>
+              <ellipse class="hotspot" data-part="feet" cx="470" cy="676" rx="102" ry="34" aria-hidden="true"/>
+            </g>
+            <g class="markers">
+              <g class="marker" data-part="bill" tabindex="0" role="button" aria-label="查看长喙说明">
+                <circle class="marker-ring" cx="150" cy="262" r="24"/>
+                <circle cx="150" cy="262" r="19"/><text x="150" y="262">1</text>
+              </g>
+              <g class="marker" data-part="pouch" tabindex="0" role="button" aria-label="查看喉囊说明">
+                <circle class="marker-ring" cx="152" cy="392" r="24"/>
+                <circle cx="152" cy="392" r="19"/><text x="152" y="392">2</text>
+              </g>
+              <g class="marker" data-part="wing" tabindex="0" role="button" aria-label="查看翅膀说明">
+                <circle class="marker-ring" cx="548" cy="500" r="24"/>
+                <circle cx="548" cy="500" r="19"/><text x="548" y="500">3</text>
+              </g>
+              <g class="marker" data-part="feet" tabindex="0" role="button" aria-label="查看蹼足说明">
+                <circle class="marker-ring" cx="520" cy="664" r="24"/>
+                <circle cx="520" cy="664" r="19"/><text x="520" y="664">4</text>
+              </g>
+            </g>
+          </svg>
+          <span class="anatomy-caption">Tap the numbers · 点击编号</span>
+        </div>
+
+        <div class="reveal d1">
+          <div class="parts" role="group" aria-label="鹈鹕身体部位说明">
+            <button class="part-item is-active" type="button" data-part="bill" aria-pressed="true">
+              <span class="idx">01</span>
+              <span><h3>长喙 <small>Bill</small></h3><p>长而醒目的喙，是鹈鹕最好认的轮廓。它与下方的喉囊一起，构成捕食时的一张“捞网”。</p></span>
+            </button>
+            <button class="part-item" type="button" data-part="pouch" aria-pressed="false">
+              <span class="idx">02</span>
+              <span><h3>喉囊 <small>Pouch</small></h3><p>喙下可伸展的皮肤囊。捕食时兜住水和猎物，排干水后再吞咽——不是储存食物的冰箱。</p></span>
+            </button>
+            <button class="part-item" type="button" data-part="wing" aria-pressed="false">
+              <span class="idx">03</span>
+              <span><h3>宽翼 <small>Wings</small></h3><p>宽大的翅膀帮助滑翔。美洲白鹈鹕会成群飞行，利用上升气流节省体力。</p></span>
+            </button>
+            <button class="part-item" type="button" data-part="feet" aria-pressed="false">
+              <span class="idx">04</span>
+              <span><h3>蹼足 <small>Webbed feet</small></h3><p>蹼足适于游泳，是鹈鹕在水面活动时的重要装备。</p></span>
+            </button>
+          </div>
+
+          <div class="pouch-card">
+            <svg class="pouch-demo" viewBox="0 0 310 240" role="img" aria-label="喉囊工作示意：水和鱼被兜进喉囊，排水后鱼留在囊中。">
+              <path d="M16 52 L284 76" stroke="#ffb27a" stroke-width="0" fill="none"/>
+              <path d="M18 46 C92 47 206 61 292 78 C299 80 296 90 288 89 C188 80 96 66 18 58 Z" fill="url(#pfBill)" stroke="#07191b" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M28 64 C44 152 110 206 192 198 C252 192 282 148 276 92 C194 84 102 74 28 64 Z" fill="url(#pfPouch)" stroke="#07191b" stroke-width="4" stroke-linejoin="round"/>
+              <g clip-path="url(#pouchClipMini)">
+                <rect class="water" x="16" y="98" width="280" height="130" fill="#6fd3bd" opacity=".42"/>
+                <path class="water" d="M16 100 Q76 88 136 100 T256 100 T316 100" fill="none" stroke="#d8fff2" stroke-width="2" opacity=".65" transform="translate(0,0)"/>
+                <g fill="#0d3435" opacity=".9">
+                  <g class="fish"><path d="M110 154 q18 -14 38 -2 q-4 18 -23 18 q-10 0 -15 -16z"/><path d="M110 154 l-13 -10 v24z"/></g>
+                  <g class="fish"><path d="M172 174 q16 -12 33 -2 q-3 16 -20 16 q-8 0 -13 -14z"/><path d="M172 174 l-11 -9 v21z"/></g>
+                  <g class="fish"><path d="M218 142 q13 -10 28 -2 q-2 13 -16 13 q-7 0 -12 -11z"/><path d="M218 142 l-10 -8 v18z"/></g>
+                </g>
+              </g>
+              <path d="M44 84 C60 140 110 178 170 184" fill="none" stroke="#ffd4b8" stroke-width="2" opacity=".45" stroke-linecap="round"/>
+              <text x="22" y="228" font-family="Georgia,serif" font-size="8.5" letter-spacing="2" fill="#9fb6af">POUCH DEMO · 点击排水</text>
+            </svg>
+            <div>
+              <h4>喉囊，怎么用？</h4>
+              <p id="drainCaption" aria-live="polite">水和猎物一起被兜进喉囊，这时囊是鼓的。</p>
+              <button class="drain-btn" id="drainBtn" type="button">排干喉囊 <span aria-hidden="true">↓</span></button>
+              <div class="pouch-flow"><span>兜住水与鱼</span><i>→</i><span>排干水</span><i>→</i><span>吞咽猎物</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fact-note reveal">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <div>
+          <p>喉囊不是把一天的鱼长期存起来的<b>“冰箱”</b>。它更像捕鱼时的临时网兜：兜住水和猎物，把水排掉，再把食物吞下去。</p>
+          <cite>San Diego Zoo Wildlife Alliance · 喉囊用途</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section species-section" id="species">
+    <div class="section-inner">
+      <span class="sec-num" aria-hidden="true">02</span>
+      <div class="sec-head">
+        <div class="reveal">
+          <p class="eyebrow">02 / Species · 物种</p>
+          <h2>同一个属，<br>不同的<em>水域</em></h2>
+        </div>
+        <p class="sec-intro reveal d1">鹈鹕不是只有一种“海边的大鸟”。下面三种只是例子：分布、栖息地与捕食方式各不相同，<strong>也提醒我们别把一种的习性强加给整个类群</strong>。切换左侧名字，看看它们各自住在哪里。</p>
+      </div>
+
+      <div class="species-shell">
+        <div class="species-tabs" role="tablist" aria-label="鹈鹕物种选择" aria-orientation="vertical">
+          <button class="species-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-brown" id="tab-brown" data-species="brown">
+            <span class="tab-index">01</span>
+            <span><span class="tab-name">褐鹈鹕</span><span class="tab-latin">Pelecanus occidentalis</span><span class="tab-tag">美洲沿岸与河口</span></span>
+            <span class="tab-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="species-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-white" id="tab-white" data-species="white" tabindex="-1">
+            <span class="tab-index">02</span>
+            <span><span class="tab-name">美洲白鹈鹕</span><span class="tab-latin">Pelecanus erythrorhynchos</span><span class="tab-tag">北美内陆湖泊</span></span>
+            <span class="tab-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="species-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-australian" id="tab-australian" data-species="australian" tabindex="-1">
+            <span class="tab-index">03</span>
+            <span><span class="tab-name">澳大利亚鹈鹕</span><span class="tab-latin">Pelecanus conspicillatus</span><span class="tab-tag">澳、巴新与印尼西部</span></span>
+            <span class="tab-arrow" aria-hidden="true">↗</span>
+          </button>
+          <p class="species-hint">三种例子 · 不是全部物种名单<br>点击或使用方向键切换</p>
+        </div>
+
+        <div class="species-panels">
+          <article class="species-panel is-active" id="panel-brown" role="tabpanel" aria-labelledby="tab-brown" data-panel="brown">
+            <div class="scene">
+              <span class="scene-label">Pacific coast · 01</span>
+              <svg viewBox="0 0 900 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <defs>
+                  <linearGradient id="skyBrown" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#1b2b34"/><stop offset=".55" stop-color="#8e4d43"/><stop offset="1" stop-color="#ffa366"/>
+                  </linearGradient>
+                  <linearGradient id="seaBrown" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#bd6b4f"/><stop offset=".4" stop-color="#12494a"/><stop offset="1" stop-color="#072526"/>
+                  </linearGradient>
+                </defs>
+                <rect width="900" height="380" fill="url(#skyBrown)"/>
+                <circle cx="668" cy="188" r="82" fill="#ffcf87" opacity=".85"/>
+                <circle cx="668" cy="188" r="105" fill="none" stroke="#ffd9a3" stroke-opacity=".3" stroke-width="1"/>
+                <g fill="#f7e6c5" opacity=".35">
+                  <rect x="0" y="228" width="900" height="1"/>
+                  <rect x="0" y="244" width="900" height="1"/>
+                  <rect x="0" y="260" width="900" height="1"/>
+                </g>
+                <path d="M0 238 H900 V380 H0Z" fill="url(#seaBrown)"/>
+                <g fill="none" stroke="#f4ecdd" stroke-opacity=".22" stroke-width="1.3">
+                  <path d="M0 272 Q60 264 120 272 T240 272 T360 272 T480 272 T600 272 T720 272 T840 272 T960 272"/>
+                  <path d="M0 306 Q80 296 160 306 T320 306 T480 306 T640 306 T800 306 T960 306"/>
+                  <path d="M0 344 Q70 334 140 344 T280 344 T420 344 T560 344 T700 344 T840 344 T980 344"/>
+                </g>
+                <path d="M0 238 L118 236 L158 206 L196 238 Z" fill="#12292c"/>
+                <path d="M0 260 C60 250 120 254 170 274 L170 380 L0 380Z" fill="#0b1f21"/>
+                <path d="M742 250 C790 240 848 252 900 278 V380 H742Z" fill="#0a1c1e"/>
+                <g color="#f4ecdd">
+                  <use href="#pelican-sil" width="320" height="220" transform="translate(560,214) scale(.62)"/>
+                  <use href="#pelican-fly" width="360" height="180" transform="translate(300,84) scale(.36)" opacity=".85"/>
+                  <use href="#pelican-fly" width="360" height="180" transform="translate(196,132) scale(.22)" opacity=".6"/>
+                </g>
+                <g fill="none" stroke="#f4ecdd" stroke-opacity=".4" stroke-width="1.2" stroke-dasharray="3 6">
+                  <path d="M344 148 C380 178 400 204 414 232"/>
+                </g>
+              </svg>
+            </div>
+            <div class="species-body">
+              <div class="species-top">
+                <div><h3>褐鹈鹕</h3><p class="latin">Pelecanus occidentalis</p></div>
+                <span class="conservation">美洲沿岸 · 河口</span>
+              </div>
+              <p class="species-summary">常见于美洲沿岸和河口。它把“从天而降”加入菜单：能从空中俯冲入水捕食，这是它很有辨识度的觅食方式。</p>
+              <dl class="species-facts">
+                <div><dt>分布 / 栖息</dt><dd>美洲沿岸与河口</dd></div>
+                <div><dt>捕食方式</dt><dd>能从空中俯冲入水</dd></div>
+                <div><dt>筑巢 / 育雏</dt><dd>可在地面或树上筑巢；双亲共同孵卵，并给雏鸟喂食</dd></div>
+                <div><dt>保护状况</dt><dd>曾受农药污染影响，保护措施促进了其恢复</dd></div>
+              </dl>
+              <p class="species-foot">俯冲入水不是所有鹈鹕的统一动作。</p>
+            </div>
+          </article>
+
+          <article class="species-panel" id="panel-white" role="tabpanel" aria-labelledby="tab-white" data-panel="white" hidden>
+            <div class="scene">
+              <span class="scene-label">Inland lake · 02</span>
+              <svg viewBox="0 0 900 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <defs>
+                  <linearGradient id="skyWhite" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#173c3d"/><stop offset=".55" stop-color="#628d80"/><stop offset="1" stop-color="#e6cfa8"/>
+                  </linearGradient>
+                  <linearGradient id="seaWhite" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#7ba99a"/><stop offset=".35" stop-color="#1d5354"/><stop offset="1" stop-color="#082527"/>
+                  </linearGradient>
+                </defs>
+                <rect width="900" height="380" fill="url(#skyWhite)"/>
+                <circle cx="222" cy="152" r="60" fill="#f9e9c8" opacity=".65"/>
+                <ellipse cx="222" cy="152" rx="110" ry="110" fill="none" stroke="#f9e9c8" stroke-opacity=".18"/>
+                <path d="M0 226 C120 214 260 222 380 218 C520 212 700 220 900 210 V380 H0Z" fill="url(#seaWhite)"/>
+                <g fill="#0a2425">
+                  <path d="M42 226 C52 190 44 158 58 132 L66 134 C56 164 64 196 58 226Z"/>
+                  <path d="M78 226 C70 196 84 178 78 148 L86 146 C94 178 88 198 94 226Z"/>
+                  <path d="M112 226 C126 200 118 172 132 154 L140 158 C126 184 134 204 128 226Z"/>
+                  <path d="M18 226 C26 204 20 184 30 166 L38 168 C28 192 34 210 34 226Z"/>
+                </g>
+                <g fill="none" stroke="#f4ecdd" stroke-opacity=".2" stroke-width="1.2">
+                  <path d="M0 260 Q70 252 140 260 T280 260 T420 260 T560 260 T700 260 T840 260 T980 260"/>
+                  <path d="M0 298 Q90 288 180 298 T360 298 T540 298 T720 298 T900 298"/>
+                  <path d="M0 338 Q80 328 160 338 T320 338 T480 338 T640 338 T800 338 T960 338"/>
+                </g>
+                <g color="#f7efdf">
+                  <use href="#pelican-sil" width="320" height="220" transform="translate(560,216) scale(.6)"/>
+                  <use href="#pelican-fly" width="360" height="180" transform="translate(470,78) scale(.26)" opacity=".8"/>
+                  <use href="#pelican-fly" width="360" height="180" transform="translate(646,106) scale(.2)" opacity=".7"/>
+                  <use href="#pelican-fly" width="360" height="180" transform="translate(340,120) scale(.15)" opacity=".55"/>
+                </g>
+                <g fill="none" stroke="#f4ecdd" stroke-opacity=".28" stroke-width="1.1">
+                  <path d="M556 296 q34 -10 68 0"/>
+                  <path d="M636 314 q28 -8 56 0"/>
+                </g>
+              </svg>
+            </div>
+            <div class="species-body">
+              <div class="species-top">
+                <div><h3>美洲白鹈鹕</h3><p class="latin">Pelecanus erythrorhynchos</p></div>
+                <span class="conservation">北美内陆 · 繁殖岛屿</span>
+              </div>
+              <p class="species-summary">在北美内陆湖泊的岛屿上繁殖。常在浅水水面捕食，也会群体协作围鱼；食谱并不只有鱼，还会随环境与食物供应变化。</p>
+              <dl class="species-facts">
+                <div><dt>分布 / 栖息</dt><dd>北美内陆湖泊；在岛屿上繁殖</dd></div>
+                <div><dt>捕食方式</dt><dd>常在浅水水面舀食，也会群体围鱼</dd></div>
+                <div><dt>食谱</dt><dd>鱼为主，也取食蝾螈、蝌蚪和小龙虾等</dd></div>
+                <div><dt>筑巢 / 保护</dt><dd>在地面筑巢；繁殖群对人为干扰敏感</dd></div>
+              </dl>
+              <p class="species-foot">成群飞行时会利用上升气流滑翔。</p>
+            </div>
+          </article>
+
+          <article class="species-panel" id="panel-australian" role="tabpanel" aria-labelledby="tab-australian" data-panel="australian" hidden>
+            <div class="scene">
+              <span class="scene-label">Billabong · 03</span>
+              <svg viewBox="0 0 900 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <defs>
+                  <linearGradient id="skyAus" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#243b3b"/><stop offset=".45" stop-color="#b56b4d"/><stop offset="1" stop-color="#f6c178"/>
+                  </linearGradient>
+                  <linearGradient id="seaAus" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#c98e5c"/><stop offset=".35" stop-color="#2e5c50"/><stop offset="1" stop-color="#0b2928"/>
+                  </linearGradient>
+                </defs>
+                <rect width="900" height="380" fill="url(#skyAus)"/>
+                <circle cx="436" cy="166" r="96" fill="#ffd99a" opacity=".85"/>
+                <circle cx="436" cy="166" r="124" fill="none" stroke="#ffe7bd" stroke-opacity=".28"/>
+                <g fill="#3c2c28" opacity=".8">
+                  <path d="M0 204 C60 196 108 198 160 210 L160 380 L0 380Z"/>
+                  <path d="M760 204 C810 196 856 200 900 212 V380 H760Z"/>
+                </g>
+                <path d="M0 232 H900 V380 H0Z" fill="url(#seaAus)"/>
+                <g fill="none" stroke="#ffe9c6" stroke-opacity=".22" stroke-width="1.3">
+                  <path d="M0 270 Q60 262 120 270 T240 270 T360 270 T480 270 T600 270 T720 270 T840 270 T960 270"/>
+                  <path d="M0 308 Q70 298 140 308 T280 308 T420 308 T560 308 T700 308 T840 308 T980 308"/>
+                  <path d="M0 346 Q60 336 120 346 T240 346 T360 346 T480 346 T600 346 T720 346 T840 346 T960 346"/>
+                </g>
+                <g color="#f8efdd">
+                  <use href="#pelican-sil" width="320" height="220" transform="translate(508,224) scale(.7)"/>
+                  <use href="#pelican-fly" width="360" height="180" transform="translate(142,90) scale(.24)" opacity=".75"/>
+                  <use href="#pelican-fly" width="360" height="180" transform="translate(238,70) scale(.17)" opacity=".55"/>
+                </g>
+                <g stroke="#132c2b" stroke-width="3" fill="none" opacity=".8">
+                  <path d="M40 380 C44 312 34 274 52 240"/>
+                  <path d="M70 380 C76 320 66 286 86 254"/>
+                  <path d="M96 380 C94 330 104 300 94 272"/>
+                </g>
+                <g fill="#132c2b" opacity=".8">
+                  <ellipse cx="54" cy="240" rx="5" ry="16" transform="rotate(18 54 240)"/>
+                  <ellipse cx="88" cy="252" rx="4" ry="14" transform="rotate(-16 88 252)"/>
+                  <ellipse cx="95" cy="270" rx="4" ry="13" transform="rotate(10 95 270)"/>
+                </g>
+              </svg>
+            </div>
+            <div class="species-body">
+              <div class="species-top">
+                <div><h3>澳大利亚鹈鹕</h3><p class="latin">Pelecanus conspicillatus</p></div>
+                <span class="conservation">澳 · 巴新 · 印尼西部</span>
+              </div>
+              <p class="species-summary">分布横跨澳大利亚、巴布亚新几内亚和印度尼西亚西部。它不挑“海”或“湖”：淡水、河口和海岸水域都可能是它的活动范围。</p>
+              <dl class="species-facts">
+                <div><dt>分布</dt><dd>澳大利亚、巴布亚新几内亚、印度尼西亚西部</dd></div>
+                <div><dt>栖息地</dt><dd>淡水、河口及海岸水域</dd></div>
+                <div><dt>觅食</dt><dd>在水面舀取食物</dd></div>
+                <div><dt>提示</dt><dd>这三种只是物种例子，并非全部鹈鹕名单</dd></div>
+              </dl>
+              <p class="species-foot">别把所有鹈鹕都描述成只生活在海里。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <p class="species-disclaimer reveal"><b>关于数字：</b>体长、翼展等尺寸因物种而异。本页不把一个物种的极值当作所有鹈鹕的固定尺寸，也不把某一种的窝卵数、孵化时间或巢址扩展成全类规则。</p>
+    </div>
+  </section>
+
+  <section class="section" id="feeding">
+    <div class="section-inner">
+      <span class="sec-num" aria-hidden="true">03</span>
+      <div class="sec-head">
+        <div class="reveal">
+          <p class="eyebrow">03 / Feeding · 觅食</p>
+          <h2>把鱼赶进嘴里，<br>各有<em>办法</em></h2>
+        </div>
+        <p class="sec-intro reveal d1">鱼是主要食物，但不是唯一食物；食谱会受当地环境与食物供应影响。<strong>美洲白鹈鹕也会取食蝾螈、蝌蚪和小龙虾等</strong>。捕食这件事，鹈鹕并不只有一套标准动作。</p>
+      </div>
+
+      <div class="feeding-grid">
+        <article class="method method-1 reveal">
+          <div class="m-top"><span>TECHNIQUE</span><b>01</b></div>
+          <div class="method-visual" aria-hidden="true">
+            <svg viewBox="0 0 300 150">
+              <g class="scoop">
+                <path d="M78 42 C130 40 196 50 258 64 C264 66 262 74 255 73 C194 62 132 56 80 58Z" fill="#f4ecdd"/>
+                <path d="M80 58 C88 96 116 122 154 118 C180 116 194 100 192 82 C170 78 122 72 80 58Z" fill="#ff7a4b"/>
+              </g>
+              <g fill="none" stroke="#6fd3bd" stroke-width="1.6" opacity=".7">
+                <path d="M16 106 Q55 100 94 106 T172 106 T250 106 T328 106"/>
+                <path d="M10 122 Q50 116 90 122 T170 122 T250 122 T330 122"/>
+              </g>
+              <g fill="#6fd3bd">
+                <circle cx="216" cy="84" r="3.5"/><circle cx="234" cy="70" r="2.4"/><circle cx="246" cy="92" r="2.8"/><circle cx="202" cy="58" r="2"/>
+              </g>
+              <path d="M42 94 C36 108 42 120 52 126" fill="none" stroke="#ff6b42" stroke-width="1.4" stroke-dasharray="3 5"/>
+            </svg>
+          </div>
+          <h3>水面舀取</h3>
+          <p>把喙伸进水里，喉囊兜住水和猎物；排干水后，把留在囊中的食物吞下。这是鹈鹕最基础的一套“捞网”动作。</p>
+          <span class="tag">基础动作 · 排水后吞咽</span>
+        </article>
+
+        <article class="method method-2 reveal d1">
+          <div class="m-top"><span>TECHNIQUE</span><b>02</b></div>
+          <div class="method-visual" aria-hidden="true">
+            <svg viewBox="0 0 300 150">
+              <defs><marker id="arrowHead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#6fd3bd"/></marker></defs>
+              <circle cx="150" cy="75" r="50" fill="none" stroke="#6fd3bd" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="4 7"/>
+              <circle cx="150" cy="75" r="27" fill="none" stroke="#ff6b42" stroke-opacity=".5" stroke-width="1.2" stroke-dasharray="3 6"/>
+              <g class="fish-orbit">
+                <g fill="#f4ecdd">
+                  <path d="M150 20 q10 -8 22 -2 q-2 10 -12 10 q-6 0 -10 -8z"/><path d="M150 20 l-8 -6 v12z"/>
+                  <path d="M212 75 q10 -8 22 -2 q-2 10 -12 10 q-6 0 -10 -8z"/><path d="M212 75 l-8 -6 v12z"/>
+                  <path d="M150 130 q10 -8 22 -2 q-2 10 -12 10 q-6 0 -10 -8z"/><path d="M150 130 l-8 -6 v12z"/>
+                  <path d="M88 75 q10 -8 22 -2 q-2 10 -12 10 q-6 0 -10 -8z"/><path d="M88 75 l-8 -6 v12z"/>
+                </g>
+              </g>
+              <path d="M150 75 l0 0" stroke="none"/>
+              <g fill="none" stroke="#6fd3bd" stroke-width="1.4" stroke-dasharray="4 5" opacity=".7">
+                <path d="M110 48 A50 50 0 0 1 160 25" marker-end="url(#arrowHead)"/>
+                <path d="M190 104 A50 50 0 0 1 138 125" marker-end="url(#arrowHead)"/>
+              </g>
+              <text x="150" y="79" text-anchor="middle" font-family="Georgia,serif" font-size="9" letter-spacing="2.4" fill="#e9c46a">SCHOOL</text>
+            </svg>
+          </div>
+          <h3>群体围鱼</h3>
+          <p>成群协作，把鱼驱向浅水，再一起在水面舀食。集群不只发生在飞行时，也会出现在餐桌上。</p>
+          <span class="tag">美洲白鹈鹕 · 协作</span>
+        </article>
+
+        <article class="method method-3 reveal d2">
+          <div class="m-top"><span>TECHNIQUE</span><b>03</b></div>
+          <div class="method-visual" aria-hidden="true">
+            <svg viewBox="0 0 300 150">
+              <g fill="none" stroke="#6fd3bd" stroke-opacity=".3" stroke-width="1.2" stroke-dasharray="3 6">
+                <path d="M212 26 C196 54 178 76 158 94"/>
+              </g>
+              <g class="diving" color="#f4ecdd">
+                <use href="#pelican-fly" width="360" height="180" transform="translate(150,18) scale(.3)"/>
+              </g>
+              <g fill="none" stroke="#6fd3bd" stroke-width="1.4">
+                <path d="M30 118 Q75 110 120 118 T210 118 T300 118"/>
+                <path d="M16 134 Q66 126 116 134 T216 134 T316 134"/>
+              </g>
+              <g class="splash-ring" style="transform-origin:170px 118px" fill="none" stroke="#f4ecdd" stroke-width="1.2">
+                <ellipse cx="170" cy="118" rx="30" ry="8"/>
+                <ellipse cx="170" cy="118" rx="48" ry="13" opacity=".6"/>
+              </g>
+              <g fill="#6fd3bd">
+                <circle cx="146" cy="106" r="2.6"/><circle cx="178" cy="100" r="2"/><circle cx="192" cy="112" r="2.4"/><circle cx="132" cy="116" r="1.8"/>
+              </g>
+            </svg>
+          </div>
+          <h3>空中俯冲</h3>
+          <p>从空中俯冲入水捕食。请注意：这是褐鹈鹕的方式，不是所有鹈鹕的统一动作；美洲白鹈鹕更常在水面取食。</p>
+          <span class="tag">褐鹈鹕 · 并非全类标配</span>
+        </article>
+      </div>
+
+      <div class="feeding-note reveal">
+        <b>FIELD NOTE</b>
+        <span>别把一种鹈鹕的绝活，当成整个类群的标配。栖息地与食物供应，也在改写它们的菜单与吃法。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section notes" id="notes">
+    <div class="section-inner">
+      <div class="sec-head">
+        <div class="reveal">
+          <p class="eyebrow">Field notes · 常识核对</p>
+          <h2>先拆掉<br>三个<em>误会</em></h2>
+        </div>
+        <p class="sec-intro reveal d1">关于鹈鹕，最容易流传的三句话，恰好都需要补一句。<strong>点击卡片，核对事实。</strong></p>
+      </div>
+      <div class="myth-grid">
+        <button class="myth reveal" type="button" aria-pressed="false">
+          <span class="myth-inner">
+            <span class="myth-face myth-front">
+              <span class="myth-tag">误解 01</span>
+              <span class="myth-text">“喉囊是把鱼存一天的冰箱。”</span>
+              <span class="myth-hint">点击核对 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span>
+            </span>
+            <span class="myth-face myth-back">
+              <span class="myth-tag">事实 01</span>
+              <span class="myth-text">喉囊在捕食时兜住猎物和水，<b>排干水后再吞咽</b>。它不是把一天的鱼长期存起来的“冰箱”。</span>
+              <span class="myth-hint">再点一次收起 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 10a6 6 0 1 1 2 4.5M4 6v4h4"/></svg></span>
+            </span>
+          </span>
+        </button>
+        <button class="myth reveal d1" type="button" aria-pressed="false">
+          <span class="myth-inner">
+            <span class="myth-face myth-front">
+              <span class="myth-tag">误解 02</span>
+              <span class="myth-text">“鹈鹕只住在海边。”</span>
+              <span class="myth-hint">点击核对 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span>
+            </span>
+            <span class="myth-face myth-back">
+              <span class="myth-tag">事实 02</span>
+              <span class="myth-text">不同种类生活在<b>湖泊、河流、湿地、河口或海岸</b>。把鹈鹕统统放进海里，会让它们失去一大半栖息地。</span>
+              <span class="myth-hint">再点一次收起 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 10a6 6 0 1 1 2 4.5M4 6v4h4"/></svg></span>
+            </span>
+          </span>
+        </button>
+        <button class="myth reveal d2" type="button" aria-pressed="false">
+          <span class="myth-inner">
+            <span class="myth-face myth-front">
+              <span class="myth-tag">误解 03</span>
+              <span class="myth-text">“所有鹈鹕都会从空中俯冲。”</span>
+              <span class="myth-hint">点击核对 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span>
+            </span>
+            <span class="myth-face myth-back">
+              <span class="myth-tag">事实 03</span>
+              <span class="myth-text">俯冲入水是<b>褐鹈鹕</b>的典型捕食方式。美洲白鹈鹕常在浅水水面捕食，也会群体围鱼；别把一种的动作推广给全部。</span>
+              <span class="myth-hint">再点一次收起 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 10a6 6 0 1 1 2 4.5M4 6v4h4"/></svg></span>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="life">
+    <div class="section-inner">
+      <span class="sec-num" aria-hidden="true">04</span>
+      <div class="sec-head">
+        <div class="reveal">
+          <p class="eyebrow">04 / Life · 生活与繁殖</p>
+          <h2>群飞，<br>也<em>群食</em></h2>
+        </div>
+        <p class="sec-intro reveal d1">鹈鹕常集群活动。美洲白鹈鹕会成群飞行，利用上升气流滑翔，也常聚在一起觅食。它们是水域食物网中的一环，捕食鱼类等动物。</p>
+      </div>
+
+      <div class="life-grid">
+        <div class="life-card reveal">
+          <h3><small>Flock life</small>把天空，<br>变成一条共同的路线</h3>
+          <p>宽大的翅膀适合滑翔。美洲白鹈鹕<b>成群飞行</b>，借助上升气流节省体力；到了水面，它们也可能一起围鱼、一起取食。群体，是它们生活里的关键词。</p>
+          <div class="flock-art" aria-hidden="true">
+            <svg viewBox="0 0 700 240" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="flockSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a2a2c"/><stop offset="1" stop-color="#081d1f"/></linearGradient>
+              </defs>
+              <rect width="700" height="240" fill="url(#flockSky)"/>
+              <circle cx="512" cy="94" r="62" fill="#ff8a5c" opacity=".2"/>
+              <circle cx="512" cy="94" r="42" fill="#ffb26b" opacity=".28"/>
+              <path d="M0 206 C120 190 220 200 340 194 C470 188 590 196 700 188" fill="none" stroke="#6fd3bd" stroke-opacity=".35" stroke-width="1.4"/>
+              <path d="M0 220 C130 208 240 214 360 210 C480 206 600 212 700 206" fill="none" stroke="#f4ecdd" stroke-opacity=".14" stroke-width="1.2"/>
+              <g class="flock" color="#f4ecdd">
+                <use href="#pelican-fly" width="360" height="180" transform="translate(88,50) scale(.42)"/>
+                <use href="#pelican-fly" width="360" height="180" transform="translate(214,98) scale(.3)" opacity=".9"/>
+                <use href="#pelican-fly" width="360" height="180" transform="translate(322,42) scale(.34)" opacity=".85"/>
+                <use href="#pelican-fly" width="360" height="180" transform="translate(430,80) scale(.24)" opacity=".6"/>
+                <use href="#pelican-fly" width="360" height="180" transform="translate(504,118) scale(.2)" opacity=".45"/>
+              </g>
+              <g fill="none" stroke="#f4ecdd" stroke-opacity=".16" stroke-width="1">
+                <path d="M0 170 Q90 160 180 170 T360 170 T540 170 T720 170"/>
+              </g>
+            </svg>
+          </div>
+          <div class="mini-chips"><span>集群活动</span><span>借助上升气流</span><span>一起觅食</span><span>水域食物网</span></div>
+        </div>
+
+        <div class="life-card reveal d1">
+          <h3><small>Nesting</small>巢，筑在哪里？</h3>
+          <p>许多鹈鹕会集群繁殖，但巢址有物种差异。切换下面的位置，看看两种筑巢方式。</p>
+          <div class="nest-toggle" role="group" aria-label="切换筑巢位置">
+            <button type="button" class="is-active" data-nest="ground" aria-pressed="true">地面</button>
+            <button type="button" data-nest="tree" aria-pressed="false">树上</button>
+          </div>
+          <div class="nest-stage">
+            <svg class="nest-scene" data-nest="ground" viewBox="0 0 600 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <defs><linearGradient id="groundSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#123c3d"/><stop offset="1" stop-color="#0a2324"/></linearGradient></defs>
+              <rect width="600" height="260" fill="url(#groundSky)"/>
+              <circle cx="116" cy="82" r="38" fill="#ffcf87" opacity=".45"/>
+              <path d="M0 196 C120 188 240 194 360 190 C480 186 540 192 600 188 V260 H0Z" fill="#0a2829"/>
+              <g fill="none" stroke="#6fd3bd" stroke-opacity=".28" stroke-width="1.2">
+                <path d="M0 226 Q60 220 120 226 T240 226 T360 226 T480 226 T600 226"/>
+                <path d="M0 244 Q70 238 140 244 T280 244 T420 244 T560 244 T700 244"/>
+              </g>
+              <g color="#f4ecdd">
+                <use href="#pelican-sil" width="320" height="220" transform="translate(80,66) scale(.6)"/>
+                <use href="#pelican-sil" width="320" height="220" transform="translate(392,52) scale(.66)"/>
+              </g>
+              <ellipse cx="314" cy="202" rx="74" ry="20" fill="#183e3c"/>
+              <path d="M246 196 C264 176 364 174 384 196 C368 212 262 214 246 196Z" fill="#c8a97c" opacity=".9"/>
+              <ellipse cx="298" cy="192" rx="13" ry="17" fill="#f7efdd"/>
+              <ellipse cx="330" cy="192" rx="13" ry="17" fill="#f7efdd"/>
+              <path d="M290 202 q8 6 16 0 M322 202 q8 6 16 0" stroke="#0a2324" stroke-width="1.2" fill="none" opacity=".5"/>
+              <text x="314" y="234" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" letter-spacing="2.6" fill="#8fac9f">GROUND NEST</text>
+            </svg>
+            <svg class="nest-scene" data-nest="tree" viewBox="0 0 600 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" hidden>
+              <defs><linearGradient id="treeSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c3a39"/><stop offset="1" stop-color="#0a2223"/></linearGradient></defs>
+              <rect width="600" height="260" fill="url(#treeSky)"/>
+              <circle cx="474" cy="72" r="44" fill="#ffcf87" opacity=".35"/>
+              <path d="M70 260 C84 200 68 168 96 128 C104 116 128 116 132 132 C146 176 130 210 144 260Z" fill="#0a1e20"/>
+              <path d="M120 178 C172 160 220 162 266 176 C238 190 194 192 152 188Z" fill="#0a1e20"/>
+              <path d="M152 158 C186 114 218 106 258 106 C232 138 200 154 168 168Z" fill="#0d2627"/>
+              <path d="M110 138 C86 96 60 82 26 78 C46 110 72 128 104 144Z" fill="#0d2627"/>
+              <g color="#f4ecdd">
+                <use href="#pelican-sil" width="320" height="220" transform="translate(148,28) scale(.5)"/>
+                <use href="#pelican-sil" width="320" height="220" transform="translate(390,92) scale(.53)"/>
+              </g>
+              <path d="M242 156 C270 142 334 142 362 156 C344 174 260 176 242 156Z" fill="#c8a97c" opacity=".9"/>
+              <ellipse cx="292" cy="154" rx="11" ry="15" fill="#f7efdd" transform="rotate(-6 292 154)"/>
+              <ellipse cx="320" cy="154" rx="11" ry="15" fill="#f7efdd" transform="rotate(5 320 154)"/>
+              <text x="302" y="198" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" letter-spacing="2.6" fill="#8fac9f">TREE NEST</text>
+            </svg>
+          </div>
+          <div class="nest-copy" aria-live="polite">
+            <p data-nest-copy="ground"><b style="color:var(--cream);font-weight:500">美洲白鹈鹕在地面筑巢。</b>许多鹈鹕会集群繁殖，合适的岛屿与岸边因此格外重要。</p>
+            <p data-nest-copy="tree" hidden><b style="color:var(--cream);font-weight:500">褐鹈鹕可以在地面或树上筑巢。</b>双亲共同孵卵，并给雏鸟喂食。</p>
+          </div>
+          <p class="nest-note">不同物种的巢址、窝卵数与孵化时间并不相同；不要把一种鹈鹕的繁殖参数当成整个类群的规则。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section care" id="care">
+    <div class="section-inner">
+      <span class="sec-num" aria-hidden="true">05</span>
+      <div class="sec-head">
+        <div class="reveal">
+          <p class="eyebrow">05 / Care · 守护</p>
+          <h2>把距离，<br>留给<em>它们</em></h2>
+        </div>
+        <p class="sec-intro reveal d1">湿地与繁殖地的改变、人为干扰、污染和遗弃渔线，会威胁不同鹈鹕种群。<strong>褐鹈鹕曾受农药污染影响</strong>，保护措施促进了其恢复；但这并不等于所有鹈鹕种群都没有风险。</p>
+      </div>
+
+      <div class="care-grid">
+        <div class="reveal">
+          <div class="threats">
+            <div class="threat">
+              <span class="t-num">01</span>
+              <div><h3>湿地与繁殖地改变</h3><p>水位、岸线与岛屿的变化，会压缩它们觅食和繁殖的空间。</p></div>
+            </div>
+            <div class="threat">
+              <span class="t-num">02</span>
+              <div><h3>人为干扰</h3><p>美洲白鹈鹕的繁殖群对人为干扰尤其敏感。靠近巢区，就可能造成干扰。</p></div>
+            </div>
+            <div class="threat">
+              <span class="t-num">03</span>
+              <div><h3>污染</h3><p>褐鹈鹕曾受农药污染影响；保护措施帮助其恢复，但不代表所有种群都已无风险。</p></div>
+            </div>
+            <div class="threat">
+              <span class="t-num">04</span>
+              <div><h3>遗弃渔线</h3><p>留在水域里的渔线，可能缠住鸟类。带走自己的线，是最小也最具体的善意。</p></div>
+            </div>
+          </div>
+          <p class="care-quote">观察不是靠近。<em>把水域还给它们，</em>也是把完整的自然留给自己。</p>
+          <p class="care-source">依据：Cornell Lab of Ornithology 美洲白鹈鹕 / 褐鹈鹕生活史资料。观鸟礼仪为本页整理的一般性建议。</p>
+        </div>
+
+        <aside class="pact reveal d1" aria-labelledby="pactTitle">
+          <div class="pact-top">
+            <div>
+              <p class="pact-kicker">Observer's pact</p>
+              <h3 id="pactTitle">观察者公约</h3>
+            </div>
+            <span class="pact-badge" aria-hidden="true">4<br>STEPS</span>
+          </div>
+          <p>勾选你愿意做到的事。这个进度只保存在当前页面里，不会上传，也不会被记住。</p>
+          <div class="checks">
+            <label class="check">
+              <input type="checkbox" data-pact>
+              <span class="box" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2.5 8.5 6 12l7.5-8"/></svg></span>
+              <span>与巢区保持距离，不靠近繁殖群。</span>
+            </label>
+            <label class="check">
+              <input type="checkbox" data-pact>
+              <span class="box" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2.5 8.5 6 12l7.5-8"/></svg></span>
+              <span>不惊扰、不追逐鸟群，让它们自己决定距离。</span>
+            </label>
+            <label class="check">
+              <input type="checkbox" data-pact>
+              <span class="box" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2.5 8.5 6 12l7.5-8"/></svg></span>
+              <span>不留下渔线等垃圾，离开时带走所有东西。</span>
+            </label>
+            <label class="check">
+              <input type="checkbox" data-pact>
+              <span class="box" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2.5 8.5 6 12l7.5-8"/></svg></span>
+              <span>把观察留在远处，把水域还给它们。</span>
+            </label>
+          </div>
+          <div class="pact-progress">
+            <div class="bar"><i id="pactBar"></i></div>
+            <div class="meta"><span>YOUR PROMISE</span><span id="pactCount">0 / 4</span></div>
+          </div>
+          <p class="pact-done" id="pactDone" aria-live="polite"></p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <p class="footer-word" aria-hidden="true">PELICANUS</p>
+      <p class="footer-tag">不止一张大嘴。<span>A field guide to pelicans</span></p>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h4>Sources · 资料核验</h4>
+        <ul>
+          <li>San Diego Zoo Wildlife Alliance，<a href="https://animals.sandiegozoo.org/animals/pelican" target="_blank" rel="noopener noreferrer">Pelican</a>：外形、喉囊用途、游泳与滑翔。</li>
+          <li>Cornell Lab of Ornithology，<a href="https://www.allaboutbirds.org/guide/American_White_Pelican/lifehistory" target="_blank" rel="noopener noreferrer">American White Pelican</a>：栖息、食物、群体捕食、繁殖与威胁。</li>
+          <li>Cornell Lab of Ornithology，<a href="https://www.allaboutbirds.org/guide/Brown_Pelican/lifehistory" target="_blank" rel="noopener noreferrer">Brown Pelican</a>：捕食、巢址、育雏与保护。</li>
+          <li>Australian Museum，<a href="https://australian.museum/learn/animals/birds/australian-pelican/" target="_blank" rel="noopener noreferrer">Australian Pelican</a>：分布与栖息地。</li>
+        </ul>
+      </div>
+      <div>
+        <h4>About this page</h4>
+        <p class="note">一份纯前端的互动自然志。全部图形为本页原创 SVG 示意，未使用来源网站摄影作品；页面不请求外网资源。事实核对日期：2026-10-20。</p>
+        <p class="note" style="margin-top:10px">三种鹈鹕仅作物种例子，不是全部物种名单；页面不提供种群数量或最新保护等级。</p>
+      </div>
+      <div>
+        <h4>Back</h4>
+        <a class="backtop" href="#top">回到顶部 <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span><i></i> PELICAN · 不止一张大嘴</span>
+      <span>ORIGINAL SVG · NO EXTERNAL REQUESTS · 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function(s,c){ return (c||document).querySelector(s); };
+  var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
+
+  /* header + progress */
+  var header = $('#siteHeader');
+  var progress = $('.scroll-progress');
+  function onScroll(){
+    var y = window.scrollY || document.documentElement.scrollTop;
+    if(header) header.classList.toggle('scrolled', y > 30);
+    if(progress){
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* reveal */
+  var revealEls = $$('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('is-in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-in'); });
+  }
+
+  /* active nav */
+  var navLinks = $$('.site-nav a');
+  var sections = navLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if('IntersectionObserver' in window && sections.length){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          navLinks.forEach(function(a){
+            a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id);
+          });
+        }
+      });
+    }, {rootMargin:'-42% 0px -52% 0px'});
+    sections.forEach(function(s){ spy.observe(s); });
+  }
+
+  /* subtle hero parallax */
+  var hero = $('.hero'), stage = $('#artStage');
+  if(hero && stage && !reduceMotion && window.matchMedia('(pointer:fine)').matches){
+    hero.addEventListener('pointermove', function(e){
+      var r = hero.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      stage.style.setProperty('--mx', (x * 14).toFixed(2) + 'px');
+      stage.style.setProperty('--my', (y * 10).toFixed(2) + 'px');
+    });
+    hero.addEventListener('pointerleave', function(){
+      stage.style.setProperty('--mx','0px');
+      stage.style.setProperty('--my','0px');
+    });
+  }
+
+  /* anatomy part selection */
+  var partButtons = $$('.part-item');
+  var markers = $$('.marker');
+  var hotspots = $$('.hotspot');
+  function setPart(key){
+    partButtons.forEach(function(b){
+      var on = b.getAttribute('data-part') === key;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    markers.forEach(function(m){ m.classList.toggle('is-active', m.getAttribute('data-part') === key); });
+    hotspots.forEach(function(h){ h.classList.toggle('is-active', h.getAttribute('data-part') === key); });
+  }
+  partButtons.forEach(function(b){
+    b.addEventListener('click', function(){ setPart(b.getAttribute('data-part')); });
+  });
+  markers.forEach(function(m){
+    m.addEventListener('click', function(){ setPart(m.getAttribute('data-part')); });
+    m.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); setPart(m.getAttribute('data-part')); }
+    });
+  });
+  hotspots.forEach(function(h){
+    h.addEventListener('click', function(){ setPart(h.getAttribute('data-part')); });
+  });
+
+  /* pouch drain demo */
+  var drainBtn = $('#drainBtn');
+  var drainCaption = $('#drainCaption');
+  var pouchDemo = $('.pouch-demo');
+  var drained = false;
+  if(drainBtn && pouchDemo){
+    drainBtn.addEventListener('click', function(){
+      drained = !drained;
+      pouchDemo.classList.toggle('is-drained', drained);
+      drainBtn.innerHTML = drained ? '重新舀水 <span aria-hidden="true">↑</span>' : '排干喉囊 <span aria-hidden="true">↓</span>';
+      drainCaption.textContent = drained
+        ? '水从喉囊里排出，猎物留在囊中；随后才被吞下。'
+        : '水和猎物一起被兜进喉囊，这时囊是鼓的。';
+    });
+  }
+
+  /* species tabs */
+  var speciesTabs = $$('.species-tab');
+  var speciesPanels = $$('.species-panel');
+  function selectSpecies(index, focus){
+    speciesTabs.forEach(function(tab, i){
+      var on = i === index;
+      tab.classList.toggle('is-active', on);
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+      tab.tabIndex = on ? 0 : -1;
+      if(on && focus) tab.focus();
+    });
+    speciesPanels.forEach(function(panel, i){
+      var on = i === index;
+      panel.classList.toggle('is-active', on);
+      if(on){ panel.hidden = false; } else { panel.hidden = true; }
+    });
+  }
+  speciesTabs.forEach(function(tab, i){
+    tab.addEventListener('click', function(){ selectSpecies(i); });
+    tab.addEventListener('keydown', function(e){
+      var next = null;
+      if(e.key === 'ArrowDown' || e.key === 'ArrowRight') next = (i + 1) % speciesTabs.length;
+      if(e.key === 'ArrowUp' || e.key === 'ArrowLeft') next = (i - 1 + speciesTabs.length) % speciesTabs.length;
+      if(e.key === 'Home') next = 0;
+      if(e.key === 'End') next = speciesTabs.length - 1;
+      if(next !== null){ e.preventDefault(); selectSpecies(next, true); }
+    });
+  });
+
+  /* myth cards flip */
+  $$('.myth').forEach(function(card){
+    card.addEventListener('click', function(){
+      var on = card.classList.toggle('is-flipped');
+      card.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  });
+
+  /* nesting toggle */
+  var nestButtons = $$('.nest-toggle button');
+  var nestScenes = $$('.nest-scene');
+  var nestCopies = $$('[data-nest-copy]');
+  nestButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var key = btn.getAttribute('data-nest');
+      nestButtons.forEach(function(b){
+        var on = b === btn;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      nestScenes.forEach(function(s){ s.hidden = s.getAttribute('data-nest') !== key; });
+      nestCopies.forEach(function(p){ p.hidden = p.getAttribute('data-nest-copy') !== key; });
+    });
+  });
+
+  /* pact checkboxes */
+  var pactInputs = $$('[data-pact]');
+  var pactBar = $('#pactBar');
+  var pactCount = $('#pactCount');
+  var pactDone = $('#pactDone');
+  function updatePact(){
+    var n = pactInputs.filter(function(i){ return i.checked; }).length;
+    if(pactBar) pactBar.style.width = (n / pactInputs.length * 100) + '%';
+    if(pactCount) pactCount.textContent = n + ' / ' + pactInputs.length;
+    if(pactDone) pactDone.textContent = n === pactInputs.length ? '谢谢你。把距离留给它们，就是最好的靠近。' : '';
+    pactInputs.forEach(function(i){
+      i.closest('.check').classList.toggle('done', i.checked);
+    });
+  }
+  pactInputs.forEach(function(i){ i.addEventListener('change', updatePact); });
+  updatePact();
+})();
+</script>
+</body>
+</html>

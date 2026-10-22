@@ -1,0 +1,8325 @@
+
+[PDF page 1]
+UNIQUENESS AND STABILITY OF PLANAR SHOCK WAVE TO 2D
+COMPRESSIBLE EULER EQUATIONS IN THE VANISHING VISCOSITY LIMIT OF
+COMPRESSIBLE NAVIER-STOKES EQUATIONS
+GENG CHEN, JEFFREY CHENG, ALEXIS F. VASSEUR, AND YI WANG
+Abstract.It is well known that the compressible Euler equations with planar shock initial data may
+admit infinitely many entropy weak solutions, as shown by Chiodaroli, De Lellis and Kreml [Comm. Pure
+Appl. Math. (2015)]. In this paper, we introduce a suitable notion of global-in-time weak solutions to
+the two-dimensional (2D) compressible Navier-Stokes equations with density-dependent viscosities inR×T.
+Within this solution framework, we establish the first vanishing viscosity limit selection criterion for the
+physically relevant planar shock solution to the 2D compressible Euler equations. More precisely, we prove
+the uniqueness and stability of the 2D Euler planar shock solution within a class of inviscid limits of Navier-
+Stokes solutions emanating from near-planar initial data while the shock direction perturbation can be
+arbitrarily large. Starting from the relativeκ-entropy for 2D compressible Navier-Stokes equations inT2 by
+Bresch, Noble and Vila [ESAIM Proc. Surveys (2017)], we first establish the relative1
+2-entropy between 2D
+weak solution of compressible Navier-Stokes equations inR×Tand one-dimensional (1D) strong solution
+for averaged initial data inR. Then we achieve the desired vanishing viscosity limit selection criterion
+by successfully bridging the fundamental structural gap between 2D Eulerian formulation of the original
+Navier-Stokes system in the relative1
+2-entropy and 1D vanishing viscosity limit to a shock solution of Euler
+equations in Lagrangian coordinates by Kang and Vasseur [Invent. Math. (2021)]. The framework developed
+herein can be applied to the three-dimensional limit selection criterion inR×T2, as well as to more complex
+planar Riemann solutions and interacting wave patterns.
+1.Introduction
+Consider the following 2D barotropic compressible Navier-Stokes equations with density-dependent vis-
+cosities: ( ρt + div(ρu) = 0,(t, x) = (t, x 1, x2)∈R + ×R×T,
+(ρu)t + div(ρu⊗u) +∇p(ρ) = div(2νµ(ρ)Du) +∇(νλ(ρ)divu),
+(1.1)
+whereρ=ρ(t, x)andu=u(t, x) = (u 1, u2)(t, x)denote the fluid density and velocity field, respectively.
+The deformation rate tensor is defined asDu:= ∇u+∇uT
+2 where∇u T denotes the transpose of the velocity
+gradientmatrix∇u. Thepressureisgivenbythebarotropicequationofstatep(ρ), andthedensity-dependent
+shear and bulk viscosities take the form2νµ(ρ)andνλ(ρ), withν >0being a constant kinetic viscosity
+parameter. These viscosity functions satisfy the standard physical constraints
+µ(ρ)≥0, µ(ρ) +λ(ρ)≥0,
+along with the Bresch–Desjardins relation
+λ(ρ) = 2(µ′(ρ)ρ−µ(ρ)).(1.2)
+We adopt the polytropic pressure lawp(ρ) =bργ, forb >0andγ >1being fluid constants. Without loss
+of generality, we normalize the coefficientb= 1in the sequel. The spatial domain under consideration is
+R×TwithT:=R/Zdenoting the one-dimensional unit flat torus. The initial density and momentum are
+prescribed as
+(ρ(0, x), ρu(0, x)) = (ρ0(x), m0(x)),
+Date: October 8, 2026.
+2010Mathematics Subject Classification. 76N10, 35L67, 35B35.
+Key words and phrases. Vanishing viscosity limit, uniqueness selection criteria, planar shock wave.
+Acknowledgement: G. Chen was partially supported by NSF grants DMS 2306258 and 2625028. A. Vasseur was partially
+supported by NSF grants DMS 2306852 and 2219434. Y. Wang was partially supported by NSFC Grants No. 12421001 and
+12288201 and CAS Project for Young Scientists in Basic Research, Grant No. YSBR-031.
+1
+arXiv:2610.10341v1  [math.AP]  7 Oct 2026
+
+[PDF page 2]
+2 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+whereρ 0(x)≥0onR×T, and the initial momentumm 0(x)satisfies the physical compatibility condition
+m0(x) = 0almost everywhere on the vacuum set{x|ρ0(x) = 0}.
+In the present work, we restrict our analysis to the specific regime defined by
+µ(ρ) =ρ, λ(ρ)≡0, γ∈(1,2],(1.3)
+which gives the system
+( ρt + div(ρu) = 0,(t, x) = (t, x 1, x2)∈R + ×R×T,
+(ρu)t + div(ρu⊗u) +∇p(ρ) = div(2νρDu).
+(1.4)
+However, the framework developed here naturally extends to the broader class of viscosities satisfying the
+Bresch–Desjardins relation (1.2). Notably, the classical shallow water system, corresponding to the case
+γ= 2in (1.3), is fully covered within the scope of our results.
+For the compressible Navier-Stokes models with constant viscosities, that is, when both viscositiesµ(ρ)
+andλ(ρ)are constants, the global existence of multi-dimensional weak solutions can be traced back to the
+classical works by Lions [45], Jiang and Zhang [39], and Feireisl, Novotný and Petzeltová [32], while the
+well-posedness of small smooth solutions near a constant equilibrium state was established by Matsumura
+and Nishida [48]. However, from the Chapman–Enskog expansion of the Boltzmann equation, viscosity is
+intrinsically a temperature-dependent transport coefficient, which in turn reduces to a density-dependent
+function in the barotropic regime [15]. It turns out that the viscosity is expected to degenerate near vacuum
+(ρ= 0) as a power of the density, which corresponds to the model we have taken above where the viscosity
+degenerates linearly in the density near vacuum.
+We are interested in the limitν→0+for the selection criteria of 2D physical planar shock. Formally, we
+recover the 2D compressible Euler equations:(
+ρt + div(ρu) = 0,
+(ρu)t + div(ρu⊗u) +∇p(ρ) = 0.
+(1.5)
+There is a large body of work on the idea of using the vanishing viscosity limit to establish existence
+and stability results for inviscid gases. In the 1D setting, the vanishing viscosity limit using the so-called
+“artificial viscosity” (when the viscosity does not depend on the density, and there is also an artificial diffusion
+on the continuity equation) has been used to construct entropy solutions to the isentropic Euler system (see
+[28], [35]). The same limit was shown to be valid and stable in the case when the limit solution is small-BV
+[3]. The vanishing physical viscosity limit to the small-BV solution, i.e. the limit from Navier-Stokes to
+Euler equations, is a much harder problem, which was solved recently for the isentropic case in one space
+dimension, see [40], [19]. Also see the recent work [1] for a detailed description of shock formation in the
+vanishing viscosity limit, and the earlier result for the limit in the relative energy space [22] using the method
+of compensated compactness.
+In the multi-dimensional setting, the vanishing viscosity limit has been established for short times [16],
+[33], [4]. The short-time limitation corresponds to the fact that the limiting Euler solution must be a strong
+solution, which exists only locally in time. There are very few results that hold after the time of shock
+formation; let us mention the works of Zumbrun et. al ([36], [37], [38]) which construct smooth viscous
+shocks converging to curved inviscid shocks as the viscosity tends to zero.
+However, to the best of our knowledge, no existing results have established the vanishing physical viscosity
+as a uniqueness criterion for multi-dimensional planar shock waves, while simultaneously verifying both the
+validity and stability of the multi-dimensional vanishing viscosity limit in the regime where the solutions to
+system (1.1) are themselves weak and potentially discontinuous. The aim of the present paper is to provide
+some results in this direction, in the case when the limiting inviscid profile is a single planar shock. It is
+important to study the inviscid limit to the compressible Euler equations because it is a natural option to
+select physical solution for Euler equations in multiple space dimensions. It is well known that the entropy
+BV solution of Euler equations in one space dimension is unique [11, 12, 17, 18, 20, 21]. However, the entropy
+condition is not strong enough to select a unique solution for Euler equations in multiple spatial dimensions,
+when there is an initial shock wave, even just a planar shock. In a seminal paper [24], Chiodaroli, De Lellis
+and Kreml constructed infinitely many 2D solutions starting from the same planar initial shock, using the
+method of convex integration (see also [27]). We refer readers to [47], [46], [42], for subsequent non-uniqueness
+results associated to more general Riemann data. See also results showing density of the set of wild initial
+
+[PDF page 3]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 3
+data in various topologies [30], [25], [23], and [34] for non-uniqueness in the class of continuous solutions.
+A fundamental open problem is how to define a selection criterion for the physical unique solution of Euler
+equation. In this paper, we provide such a selection criterion using the method of inviscid physical limit,
+to show the uniqueness of 2D solution for compressible Euler equations, including an initial planar shock.
+See also the recent interesting works [29, 31], in which refined selection criteria based on maximal energy
+dissipation–purely at the level of compressible Euler equations (1.5)–are given for dissipative solutions.
+Given two states(ρ−, u1,−,0)and(ρ +, u1,+,0)verifying the Rankine-Hugoniot conditions for the planar
+shock, i.e. the 1D jump condition,
+there existsσ∈Rsuch that
+
+
+
+(ρ−u1,− −ρ +u1,+) =σ(ρ − −ρ +)
+(ρ−u2
+1,− +p(ρ −)−ρ +u2
+1,+ −p(ρ +)) =σ(ρ −u1,− −ρ +u1,+)
+u2,− =u 2,+ = 0,
+and eitherρ − < ρ+ andu 1,− > u1,+ orρ − > ρ+ andu 1,− > u1,+ holds, (1.6)
+there exists an inviscid entropy shock(ˆρ,ˆu)solving (1.5) given by the following equation:
+(ˆρ,ˆu)(x1) =
+(
+(ρ−, u1,−,0)x 1 <0,
+(ρ+, u1,+,0)x 1 >0. (1.7)
+Forσverifying (1.6),(ˆρ,ˆu)(x1 −σt)is an entropy solution to the compressible Euler equations (1.5). In this
+paper, we are interested in the stability of(ˆρ,ˆu)(x−σt)in the vanishing viscosity limit from 2D Navier-Stokes
+equations (1.4) to 2D Euler equations (1.5).
+1.1.Main results.Our first main result establishes global-in-time existence of weak solutions to (1.4)
+which take different limits whenx1 =±∞. To handle this, let the functions˜ρ(x1)and˜u(x 1)be two smooth
+monotone functions satisfying
+˜ρ(x1) =ρ ± for±x 1 ≥1,˜ρ(x1)>0,∀x 1 ∈R,
+˜u(x1) =
+ ˜u1(x1)
+˜u2(x1)
+
+=
+u1,±
+u2,±
+
+for±x 1 ≥1.
+Also define
+˜v= ˜u+ν∇ln(˜ρ),
+˜w=ν∇ln(˜ρ).
+Further, for functions(ρ, v, w),(r, V, W) :R + ×R×T→(R ≥0 ×R 2 ×R 2), we may define the relative
+1
+2-entropy on the channelR×T:
+E 1
+2
+(ρ, v, w|r, V, W) =
+Z
+R×T
+ 
+ρ |v−V| 2 +|w−W| 2
+2 +F(ρ|r)
+
+dx,(1.8)
+where
+F(ρ) = ργ
+γ−1 ,
+and for any functionf, the relative quantity is
+f(a|b) :=f(a)−f(b)−f ′(b)(a−b).(1.9)
+Then, we have the following definition.
+Definition 1.1.The initial data(ρ 0, v0, w0) :R×T→R ≥0 ×R 2 ×R 2 is “suitable” if it verifies
+√ρ0u0 = √ρ0v0 − √ρ0w0 inL 2
+loc(R×T),
+√ρ0w0 = 2ν∇√ρ0, ρ 0w0 =ν∇ρ 0 inD ′(R×T),
+and there exists a constantc0 >0such that the following conditions hold. Let
+(¯ρ0,¯u0)(x1) :=
+Z
+T
+(ρ0, u0)(x1, x2)dx2,
+¯w0(x1) :=ν∇ln(¯ρ0(x1)),
+
+[PDF page 4]
+4 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+¯v0(x1) := ¯u0(x1) + ¯w0(x1).(1.10)
+Then
+E 1
+2
+(ρ0, v0, w0|˜ρ,˜v,˜w)<∞,
+E 1
+2
+(ρ0, v0, w0|¯ρ0,¯v0,¯w0)<∞,
+||(¯ρ0,¯u0)−(˜ρ,˜u)||H 6(R) <∞,
+|∂x1(¯u0)1| ≤ 1
+2ν (¯ρ0)γ−1,
+¯ρ0(x1)≥c 0 >0.(1.11)
+The first main theorem is the following.
+Theorem 1.1.Fix any far field statesρ ±,
+u1,±
+u2,±
+
+. Let(ρ 0, v0, w0)be suitable initial data in the sense of
+Definition 1.1. Then, there exists a global-in-time weak solution(ρ, v, w), in the sense of Definition 3.4, to
+(1.4)verifying, for anyT >0,
+E 1
+2
+(ρ, v, w|˜ρ,˜v,˜w)(t)≤C(T)for anyt∈[0, T].
+Further, there exists a unique planar strong solution(¯ρ,¯v,¯w)(x1)to(1.4)with averaged initial data
+(ρ0, v0, w0)defined in(1.10). Finally, these verify the estimate
+E 1
+2
+(ρ, v, w|¯ρ,¯v,¯w)(t)≤
+Ce
+ 
+||∂x1 ¯v||L∞ ([0,t]×R)+||∂x1 ¯w||L∞ ([0,t]×R)+||∂x1 x1 ln(¯ρ)||L∞ ([0,t]×R)+||∂x1 ln(¯ρ)||2
+L∞ ([0,t]×R)
+
+t
+× E 1
+2
+(ρ0, v0, w0|¯ρ0,¯v0,¯w0),∀t∈[0, T].(1.12)
+Remark1.1.We use here the notation(ρ, v, w)corresponding to the augmented system introduced by Bresch,
+Desjardins and Zatorska [7]. Formally,v=u+ν∇ln(ρ)andw=ν∇ln(ρ). However, the a priori estimates
+do not allow definingln(ρ). Note that, considering the pair(ρ, u) = (ρ, v−w), it is enforced in Definition 3.4
+that(ρ, u)verifies (1.4) in the sense of distributions. So our notion of weak solution in Definition 3.4 recovers
+the classical notion of weak solution.
+Remark1.2.There are no smallness constraints on the initial data in Definition 1.1.
+Remark1.3.The condition||(¯ρ 0,¯u0)−(˜ρ,˜u)||H 6(R) <∞may be relaxed toH 4(R); we enforceH 6(R)to
+additionally obtain that(ρ, v, w)verifies the relative 1
+2-entropy inequality (1.12).
+Global existence to the compressible Navier-Stokes equations with density-dependent viscosity, as in (1.4),
+remainedanopenproblemformanyyearsafterthecorrespondingproblemwithconstantviscositywassolved.
+Global existence of weak solutions on the domainTd was first shown by Vasseur-Yu [51] and refined in [43],
+[10], based on the a priori estimates given by the Bresch-Desjardins (BD) entropy [5], [6]). Global existence
+of weak solutions has also been shown onRd (beginning with the work of Li-Xin [44]), with constant fixed
+density and zero velocity at|x|=∞[44], [2]. Theorem 1.1 extends the constructions to the unbounded
+domainR×Twith possibly two different limits for the density and velocity atx1 =±∞, which is a suitable
+framework to consider shocks.
+Our second main theorem is on stability and uniqueness of the planar shock (1.7) in the vanishing viscosity
+limit of the solutions constructed in Theorem 1.1. To handle the stability and uniqueness of the entropy
+shock, we use the relative entropy associated to the entropy of the Euler system (1.5). For any functions
+ρ1, u1, ρ2, u2, define
+η(ρ1, u1|ρ2, u2) :=ρ 1
+|u1 −u 2|2
+2 +F(ρ 1|ρ2).
+The second main theorem is the following.
+Theorem 1.2.Letγ∈(1,2]. Then, there exists an integerj >0, a constantC >0, and a function
+C ∗ :R + →R +, withC ∗(ν)→0asν→0+, so that the following holds. For eachν >0, consider(1.4). For
+a given constant state(ρ−, u1,−,0), there existsϵ0 >0so that for anyϵ < ϵ 0 and any(ρ +, u1,+,0)satisfying
+(1.6)with|ρ + −ρ −|=:ϵ, the following holds.
+
+[PDF page 5]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 5
+LetE 0 >0, and let(ρ ν
+0, vν
+0 , wν
+0)be a sequence of suitable initial data in the sense of Definition 1.1,
+additionally verifying
+lim sup
+ν→0
+Z
+R
+η(¯ρν
+0,¯uν
+0|ˆρ,ˆu)dx1 =E 0,
+lim
+ν→0
+ν2
+Z
+R
+¯ρν
+0|ln(¯ρν
+0)x1 |2dx1 = 0,
+||(¯ρν
+0,¯uν
+0)−(˜ρ,˜u)||H 6(R) ≤ 1
+ν ,
+¯ρν
+0 ≥c ν
+0 ≥ 1
+ν ,
+E 1
+2
+(ρν
+0, vν
+0 , wν
+0 |¯ρν
+0,¯vν
+0 ,¯wν
+0)≤C ∗(ν).
+(1.13)
+Let(ρ ν, vν, wν)be a sequence of solutions to(1.4)constructed in Theorem 1.1 with initial data(ρν
+0, vν
+0 , wν
+0).
+Then, for a givenT >0, there exists a constantC >0and limitsρ ∞, u∞ such that asν→0+(up to a
+subsequence)
+√ρν(vν +w ν)⇀ √ρ∞u∞ weakly inL 2
+loc([0, T]×R×T),
+√ρνuν ⇀ √ρ∞u∞ weakly inH −1
+loc([0, T]×R×T),
+√ρν ⇀ √ρ∞ weakly inL 2γ
+loc([0, T]×R×T).(1.14)
+In addition, there exists a shiftX∞(t)∈L ∞([0, T])so that for almost everyt∈[0, T]
+Z
+R×T
+
+ρ∞(t,·) |u∞(t,·)−ˆu(x−X ∞(t))|2
+2 +F(ρ ∞(t,·)|ˆρ(x−X ∞(t)))
+
+dx≤C(E 0 +
+p
+E0).(1.15)
+Moreover, the shiftX∞(t)satisfies
+||X∞(·)−σ· || L∞([0,T]) ≤ C
+|ρ− −ρ +|2
+
+E0 +
+p
+E0
+
+.(1.16)
+Therefore, planar entropy shocks (with small amplitude) of the2Disentropic Euler system(1.5)are unique
+and stable in the class of weak inviscid limits of solutions to the2Dcompressible Navier-Stokes system(1.4).
+Some comments are in order:
+Remark1.4.More growth inνof the quantity||(¯ρ ν
+0,¯uν
+0)−(˜ρ,˜u)||H 6(R) may be allowed, at the price of faster
+decay of the functionC∗(ν)to zero asν→0+. For simplicity, we do not address this here.
+Remark1.5.We present the results ford= 2as our main example is the shallow water equations forγ= 2.
+However, the same analysis gives similar results ford≥3onR×T d−1 and the more general viscosity
+functions satisfying Bresch-Desjardins relation (1.2).
+Therestofthepaperisasfollows. WeexplainthemainideasoftheproofsofTheorem1.1andTheorem1.2
+in Section 2. In Section 3, we prove Theorem 1.1. Finally, in Section 4, we prove Theorem 1.2.
+2.Ideas of the proof
+We describe in this section the methodology of our results.
+Weak solutions to2DNavier-Stokes inR×T. The first objective is to construct weak solutions to
+(1.4) on the unbounded domainR×Tfor fixedν >0. In this step,ν >0is fixed, so we will omit indexing
+the solution byν. This already presents significant challenges due to the density dependent viscosity. The
+natural conserved quantities are the energy and the BD-entropy. However, these are not strong enough to
+control many desired quantities; for example,ln(ρ)and∇uare generally not defineable, and there is no way
+to rule out vacuum formation, even if it is not initially present.
+
+[PDF page 6]
+6 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+This issue was solved (on bounded domains) in [51], [43], where the authors pass into the limitϵ0, ϵ1, ϵ2 →
+0+for solutions of the following “quantum Navier-Stokes equations with drag terms” (see also [44] for global
+existence of weak solutions inR2 via a different strategy):
+
+
+
+(ρR)t + div(ρRuR) = 0,(t, x)∈R + ×(R/3RZ)×T, R >0,
+(ρRuR)t + div(ρRuR ⊗u R) +∇p(ρ R) = div(2νρ RDuR)
++2ϵ2ρR∇
+ ∆√ρR
+√ρR
+)−ϵ 0uR −ϵ 1ρR|uR|2uR,
+(ρR(0, x),(ρ RuR)(0, x)) = (ρR,0(x), mR,0(x)).
+(2.17)
+Our strategy is to pass into the limitsϵ2, ϵ0, ϵ1 →0+andR→+∞for the solutions to the above system
+constructed in [43]. Note that on unbounded domains it is not natural to expect for the initial data to have
+finite energy and entropy, especially if we want to enforce that the solution has the same far field states as the
+planar shock(ˆρ,ˆu). Instead, we impose that the initial data has finiterelativeenergy and entropy to its mean
+(inx 2). The first difficulty is to prove that the relative energy and entropy between the weak solution and its
+mean remains boundeduniformlyin the widthRof the spatial domain. To solve this, we use the “relative
+κ-entropy” structure first introduced in [9] at the level of the Navier-Stokes equations (ϵ2 =ϵ 0 =ϵ 1 = 0).
+However, we rigorously justify the relative entropy structure by establishing it at the levelϵ2, ϵ0, ϵ1 >0,
+where all the computations may be justified, and then passing into the limitϵ2, ϵ0, ϵ1 →0+. The estimate
+we obtain is roughly the following
+sup
+t∈[0,T]
+Z
+(R/3RZ)×T
+η(ρR, uR|¯ρR,¯uR)dx1dx2
+
+(t)
+≤Ce
+ 
+∥∂x1 ¯ρR∥L∞ ([0,T];H 3 )+∥∂x1 ¯uR∥L∞ ([0,T];H 2 )
+
+T
+Z
+(R/3RZ)×T
+η(ρR,0, uR,0|¯ρR,0,¯uR,0)dx1dx2,(2.18)
+where(ρ R, uR)is the weak solution to (2.17) withϵ2, ϵ0, ϵ1 = 0and
+(¯ρR,0,¯uR,0)(x1) :=
+Z
+T
+(ρR,0(x1, x2), uR,0(x1, x2))dx2,
+and(¯ρR,¯uR)solves the following reduction of (2.17) withϵ2, ϵ0, ϵ1 = 0for solutions depending only onx1
+
+
+
+(¯ρR)t + (¯ρR¯uR,1)x1 = 0,(t, x 1)∈R + ×(R/3RZ),
+(¯ρR¯uR,1)t + (¯ρR¯u2
+R,1)x1 +p(¯ρR)x1 = (2ν¯ρR(¯uR,1)x1)x1 ,
+(¯ρR¯uR,2)t + (¯ρR¯uR,1¯uR,2)x1 = (ν¯ρR(¯uR,2)x1)x1 ,
+(¯ρR(0, x1),(¯ρR¯uR)(0, x1)) = (¯ρR,0(x1),¯mR,0(x1)).
+(2.19)
+The next step is to establish uniform-in-Rbounds on the derivatives of the planar strong solution(¯ρR,¯uR)
+to (2.19). To do so we revisit the regularity theory for the1-d Navier-Stokes equations (see e.g. [50], [26])
+and prove that one may have uniform derivative bounds invariant in the size of the spatial domain. Note
+that (2.19) is not exactly the1-d Navier-Stokes equations due to the presence of the equation for¯uR,2, so
+additional considerations must be made. Combined with (2.18), this provides uniform-in-Rbounds on some
+norms of the weak solutions.
+With the bounds in hand, we are ready to pass into the limitR→+∞. In order to pass into the limit in
+the momentum equation (more specifically the termdiv(ρRuR ⊗u R)), it is introduced in [43] the concept
+of solutions which are renormalized in the velocity variable. This was used already to pass into the limit
+ϵ2, ϵ0, ϵ1 →0+in (2.17). Here, we use the renormalization of the velocity variable again to pass into the
+limit inR→+∞and obtain a weak solution(ρ ν, uν)to (1.4), (1.3).
+The vanishing viscosity limit.Next, we want to take the limitν→0+in the solutions(ρ ν, uν)
+constructed in the previous step. We can retain (2.18) in the limitR→+∞and already have the estimate
+sup
+t∈[0,T]
+Z
+R×T
+η(ρν, uν|¯ρν,¯uν)dx1dx2
+
+(t)
+
+[PDF page 7]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 7
+≤Ce
+ 
+||∂x1 ¯ρν ||L∞ ([0,T];H 3 (R))+||∂x1 ¯uν ||L∞ ([0,T];H 2 (R))
+
+T
+Z
+R×T
+η(ρν
+0, uν
+0|¯ρν
+0,¯uν
+0)dx1dx2,(2.20)
+where again(¯ρν,¯uν)is the strong solution to (1.4) depending only onx1 generated by the mean of the initial
+data inx2. The next goal is to obtain the estimate on the relative entropy between the planar strong solution
+and the inviscid shock
+sup
+t∈[0,T]
+Z
+R×T
+η
+ 
+¯ρν,¯uν|ˆρ(x1 −X ν
+E(·)),ˆu(x1 −X ν
+E(·))
+
+dx1dx2
+
+(t)≤C(E 0 +ν),(2.21)
+for some appropriate shift functionXν
+E(t)(recallE 0 from Theorem 1.2). This can be obtained by swapping
+to the Lagrangian coordinates under the Euler-Lagrange change of variable
+y1(t, x1) =
+Z (t,x1)
+(0,0)
+ρνdx1 − ρνuνdt,
+using thea-contraction estimate [40, Theorem 1.2], which shows a relative entropy estimate (uniformly-in-
+ν) between the Lagrangian solution and the Lagrangian shock, and then swapping back to the Eulerian
+coordinates. This gives (2.21). Note, however, that the Euler-Lagrange change of variables itself depends
+onν. Since all theL ∞ bounds on¯ρν and¯uν grow inν, the change of variables itself becomes degenerated
+asν→0+. This causes loss of compactness on the shift functionsX ν
+E(t), which has to be very delicately
+recovered. In the end, however, we can only obtain uniform bounds on the shifts inL∞ compared to the
+uniform bounds inW1,1 obtained in [40]. Actually, we expect this loss due to the degeneration of the change
+of variables.
+Then, we expect that (2.20) and (2.21) may be combined to show
+sup
+t∈[0,T]
+Z
+R×T
+η
+ 
+ρν, uν|ˆρ(x1 −X ν
+E(·)),ˆu(x1 −X ν
+E(·))
+
+dx1dx2
+
+(t)
+≤C(E 0 +ν) +Ce
+ 
+∥∂x1 ¯ρν ∥L∞ ([0,T];H 3 (R))+∥∂x1 ¯uν ∥L∞ ([0,T];H 2 (R))
+
+T
+Z
+R×T
+η(ρν
+0, uν
+0|¯ρν
+0,¯uν
+0)dx1dx2.(2.22)
+However, the relative entropy is not exactly a norm, so some error terms arise when estimating the difference.
+Since we are working with genuinely weak solutions to the 2D Navier-Stokes equation (1.4), these error terms
+present major difficulties. In particular, we have to deal with the fact thatρν may attain vacuum and there
+are no uniformL ∞ bounds on(ρ ν, uν). Nevertheless, detailed analysis near the vacuum regions allows for
+(2.22) to be obtained.
+Finally, wearereadytotakethevanishingviscositylimit. Theideaistoenforcethat
+Z
+R×T
+η(ρν
+0, uν
+0|¯ρν
+0,¯uν
+0)dx1dx2
+is sufficiently small so that the term
+Ce
+ 
+∥∂x1 ¯ρν ∥L∞ ([0,T];H 3 (R))+∥∂x1 ¯uν ∥L∞ ([0,T];H 2 (R))
+
+t
+Z
+R×T
+η(ρν
+0, uν
+0|¯ρν
+0,¯uν
+0)dx1dx2,
+converges to zero asν→0+. Clearly, this will depend on how fast the Sobolev norms of the planar
+strong solution(¯ρν,¯uν)grow asymptotically asν→0+. In this last step, we revisit the analysis of the1-d
+Navier-Stokes equations and prove the optimal bound
+||∂x1 ¯ρν||L∞([0,T];H 3(R)) +||∂ x1 ¯uν||L∞([0,T];H 2(R)) ≤ C
+νj ,
+for some integerj >0. Thus, enforcing
+C ∗(ν)≤exp
+ 
+−Cν −j
+,
+gives
+sup
+t∈[0,T]
+Z
+R×T
+η
+ 
+ρν, uν|ˆρ(x1 −X ν
+E(·)),ˆu(x1 −X ν
+E(·))
+
+dx1dx2
+
+(t)is uniformly bounded inν,
+which allows to take the vanishing viscosity limitν→0+via standard techniques.
+
+[PDF page 8]
+8 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+3.Weak solutions to 2D Na vier-Stokes equations inR×T
+Fixν >0. In this section, under suitable conditions on the initial data (Definition 1.1), we will define a
+notion of weak solution to (1.4) on the channelR×Tthat takes possibly two different limits atx1 =±∞. Let
+TR := [−R,2R] periodic ×T∼R/3RZ×T, where we have identifiedR/3RZwith[−R,2R] periodic. The strategy
+is to consider the renormalized weak solutions onTR constructed in [43] and pass into the limitR→ ∞on
+the partial domain[−M, M]×T⊂[−R, R/2]×T. First, we revisit the construction of renormalized weak
+solutions to the Navier-Stokes equations onTR.
+Notation 3.1.In this section, we will work with a fixed constantν >0, so we will omit the dependence of
+any functions onνfor brevity. However, we will carefully track the dependence of any constants onν, as
+this will be important when we take the limitν→0+in forthcoming sections.
+3.1.Renormalized weak solutions to 2D Navier-Stokes equations onTR.In this section, we review
+and refine the construction of renormalized weak solutions for the following system:
+
+
+ρt + div(ρu) = 0,(t, x)∈R + ×T R,
+(ρu)t + div(ρu⊗u) +∇p(ρ) = div(2ν √ρS(u)),
+(ρ(0, x),(ρu)(0, x)) = (ρ 0(x), m0(x)),
+(3.1)
+where √ρS(u)is formally equal toρDu. More specifically, it will be shown thatS(u)is the symmetric part
+of the matrixT(u)verifying
+√ρT(u) =∇(ρu)−2 √ρu⊗ ∇ √ρ,inD ′.(3.2)
+The energy and BD entropy inequalities provide control on the following quantity
+E0(ρ, u) =
+Z
+TR
+ 
+ρ |u|2
+2 + 4ν2|∇(√ρ)|2 +F(ρ)
+
+dx,
+where
+F(ρ) = ργ
+γ−1 ,(3.3)
+with associated dissipation
+D0(ρ, u) =
+Z
+TR
+ 
+ν|∇ρ
+γ
+2 |2 +ν|T(u)| 2
+dx.
+For technical reasons, we will also work with the so-called quantum Navier-Stokes equations with drag forces,
+which constitute the following system
+
+
+ρt + div(ρu) = 0,(t, x)∈R + ×T R,
+(ρu)t + div(ρu⊗u) +∇p(ρ) = div(2ν √ρS(u) + ϵ2
+ν
+√ρT(w))−ϵ 0u−ϵ 1ρ|u|2u,
+(ρ(0, x),(ρu)(0, x)) = (ρ 0(x), m0(x)),
+(3.4)
+forϵ 0, ϵ1, ϵ2 ≥0, where formally
+div( ϵ2
+ν
+√ρT(w)) = 2ϵ 2ρ∇
+ ∆√ρ√ρ
+
+.
+More specifically, it is enforced that
+1
+ν
+√ρT(w) = 2
+ √ρ
+ 
+∇2√ρ−4
+ 
+∇ρ
+1
+4 ⊗ ∇ρ
+1
+4 )
+
+= 2∇(√ρ∇√ρ)−4∇ √ρ⊗ ∇ √ρ.(3.5)
+At the point, the notationT(w)for the quantum term may appear unmotivated, as no quantitywhas been
+defined. We anticipate formally definingw=ν∇ln(ρ), andT(w)is formally √ρ∇w. In the end, however,
+there is not enough a priori estimates to defineln(ρ), andwmust be implicitly defined through (3.9), and
+T(w)implicitly defined through (3.5).
+The energy and BD-entropy for the system (3.4) provide control on
+Eϵ(ρ, u) =
+Z
+TR
+ 
+ρ |u|2
+2 + (2ϵ2 + 4ν2)|∇(√ρ)|2 +F(ρ) +ϵ 0ν(ρ−ln(ρ))
+
+dx,
+
+[PDF page 9]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 9
+with associated dissipation
+Dϵ(ρ, u) =
+Z
+TR
+
+ν|∇ρ
+γ
+2 |2 +νϵ 2(|∇ρ
+1
+4 |4 +|∇ 2√ρ|2) +ν|T(u)| 2 +ϵ 0|u|2 +ϵ 1ρ|u|4
+
+dx.
+These provide the following a priori estimates.
+√ρ∈L ∞(R+;L 2γ(TR)),∇ √ρ∈L ∞(R+;L 2(TR)),∇ρ
+γ
+2 ∈L 2(R+;L 2(TR)),
+√ρu∈L ∞(R+;L 2(TR)),T(u)∈L 2(R+;L 2(TR)), √κ∇2√ρ∈L 2(R+;L 2(TR)),
+κ
+1
+4 ∇ρ
+1
+4 ∈L 4(R+;L 4(TR)), ϵ
+1
+4
+1 ρ
+1
+4 u∈L 4(R+;L 4(TR)),
+ϵ
+1
+2
+0 u∈L 2(R+;L 2(TR)), ϵ 0 ln(ρ)∈L ∞(R+;L 1(TR)).(3.6)
+Now, we give the various definitions of weak solutions that we will consider. The following definitions will
+be valid for all ranges of parametersϵ0, ϵ2 ≥0,0< ν < 4
+3,0≤ϵ 1 < 2
+3.
+Definition 3.1.We say that(ρ, u)is a weak solution to (3.4) if it verifies the a priori estimates (3.6), and
+for any functionψ∈C ∞
+c (R+ ×T R):
+Z ∞
+0
+Z
+TR
+(ρψt +ρu· ∇ψ)dxdt= 0,
+Z ∞
+0
+Z
+TR
+h
+ρuψt +
+ 
+ρu⊗u−(2ν √ρS(u) + ϵ2
+ν
+√ρT(w))
+
+· ∇ψ
++ (−2ρ
+γ
+2 ∇(ρ)
+γ
+2 −ϵ 0u−ϵ 1ρ|u|2u)ψ
+i
+dxdt= 0,(3.7)
+whereT(w)verifies(3.5)andS(u)isthesymmetricpartofT(u)whichverifies(3.2), andforany ψ∈C ∞
+c (TR)
+lim
+t→0
+Z
+TR
+ρ(t, x)ψ(x)dx=
+Z
+TR
+ρ0(x)ψ(x)dx,
+lim
+t→0
+Z
+TR
+ρ(t, x)u(t, x)ψ(x)dx=
+Z
+TR
+m0(x)ψ(x)dx.
+Definition 3.2.We say that(ρ, u)is a renormalized weak solution to (3.4) if it verifies the a priori estimates
+(3.6), and for any functionϕ∈W 2,∞(R2)compactly supported, there exist two Radon measuresΞϕ,eΞϕ ∈
+M(R+ ×T R), with
+||(Ξϕ,eΞϕ)||M([0,T]×T R) ≤C||ϕ ′′||L∞(R2),
+for anyT >0, where the constantCdepends only on the solution(ρ, u)andT, and for any function
+ψ∈C ∞
+c (R+ ×T R):
+Z ∞
+0
+Z
+TR
+(ρψt +ρu· ∇ψ)dxdt= 0,
+Z ∞
+0
+Z
+TR
+h
+ρϕ(u)ψt +
+ 
+ρϕ(u)u−(2ν √ρS(u) + ϵ2
+ν
+√ρT(w))ϕ ′(u)
+
+· ∇ψ
+(−2ρ
+γ
+2 ∇(ρ)
+γ
+2 −ϵ 0u−ϵ 1ρ|u|2u)ϕ′(u)ψ
+i
+dxdt=⟨Ξ ϕ, ψ⟩,
+where √ρT(w)verifies (3.5) andS(u)is the symmetric part ofT(u)which verifies
+ν√ρϕ′(u)[T(u)] jk :=ν∂ j
+ 
+ρϕ′(u)uk
+
+−2ν √ρukϕ′(u)∂j
+√ρ+ eΞϕ,
+and for anyψ∈C ∞
+c (TR)
+lim
+t→0
+Z
+TR
+ρ(t, x)ψ(x)dx=
+Z
+TR
+ρ0(x)ψ(x)dx,
+lim
+t→0
+Z
+TR
+ρ(t, x)u(t, x)ψ(x)dx=
+Z
+TR
+m0(x)ψ(x)dx.(3.8)
+
+[PDF page 10]
+10 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+We note that a renormalized weak solution is actually a weak solution in the usual sense [43, Section
+4]. Finally, we can put even more structure on a (renormalized) weak solution to obtain a “1
+2-entropy”
+(renormalized) weak solution. For this, we need to define the auxiliary velocitiesvandw, which are,
+formally,v=u+ν∇ln(ρ)andw=v−u. However, we really need to definewthrough Equation (3.9) for
+vandwto be defined at the limitϵ 0 =ϵ 1 =ϵ 2 = 0.
+Definition 3.3.A (renormalized) weak solution to (3.1) is called1
+2-entropicif there additionally exist two
+functionsv, wverifying
+√ρv, √ρw∈L ∞(R+;L 2(TR)), √ρu= √ρv− √ρwinL ∞([R+;L 2(TR)),
+√ρ0u0 = √ρ0v0 − √ρ0w0 inL 2(TR), √ρw= 2ν∇ √ρ, ρw=ν∇ρinD ′ (3.9)
+such that(ρ, v, w)verify, in the sense of distributions
+
+
+
+ρt + div(ρu) = 0,(t, x)∈R + ×T R,
+(ρv)t + div(ρv⊗u) +∇p(ρ)−νdiv( √ρT(v)) + (ν− ϵ2
+ν )div(√ρT(w))
++ϵ0u+ϵ 1ρ|u|2u= 0,
+(ρw)t + div(ρw⊗u) +νdiv( √ρT(u) t) = 0,
+(ρ(0, x),(ρv)(0, x),(ρw)(0, x)) = (ρ 0(x), ρ0v0(x), ρ0w0(x)).
+(3.10)
+More specifically, for any functionψ∈C ∞
+c (R+ ×T R):
+Z ∞
+0
+Z
+TR
+(ρψt +ρu· ∇ψ)dxdt= 0,
+Z ∞
+0
+Z
+TR
+h
+ρvψt +
+ 
+ρv⊗u−(ν √ρT(v)−(ν− ϵ2
+ν )√ρT(w))
+
+· ∇ψ
+(−2ρ
+γ
+2 ∇(ρ)
+γ
+2 −ϵ 0u−ϵ 1ρ|u|2u)ψ
+i
+dxdt= 0,
+Z ∞
+0
+Z
+TR
+h
+ρwψt +
+ 
+ρw⊗u+ν √ρT(u) t · ∇ψ
+i
+dxdt= 0,(3.11)
+whereT(v),T(w)are defined by
+√ρT(θ) =∇(ρθ)−ρθ⊗ w
+ν ,inD ′ forθ=u, v, w,(3.12)
+and for anyψ∈C ∞
+c (TR)
+lim
+t→0
+Z
+TR
+ρ(t, x)ψ(x)dx=
+Z
+TR
+ρ0(x)ψ(x)dx,
+lim
+t→0
+Z
+TR
+ρ(t, x)v(t, x)ψ(x)dx=
+Z
+TR
+ρ0(x)v0ψ(x)dx,
+lim
+t→0
+Z
+TR
+ρ(t, x)w(t, x)ψ(x)dx=
+Z
+TR
+ρ0(x)w0ψ(x)dx,(3.13)
+and also, it obeys the energy estimate for anyt >0
+E 1
+2 ,ϵ(ρ, v, w)(t) +
+Z t
+0
+D 1
+2 ,ϵ(ρ, v, w)(τ)dτ≤ E 1
+2 ,ϵ(ρ, v, w)(0),(3.14)
+where
+E 1
+2 ,ϵ(ρ, v, w) =
+Z
+TR
+ 
+ρ( |v|2 +|w| 2
+2 ) +F(ρ) +ϵ 0ν(ρ−ln(ρ)) + 2ϵ 2|∇√ρ|2
+dx,
+D 1
+2 ,ϵ(ρ, v, w) = (ν−ζ)
+Z
+TR
+|T(u)| 2dx+ϵ 0
+Z
+TR
+|u|2dx+ (ϵ 1 −ζ)
+Z
+TR
+ρ|u|4dx
++ ν
+2
+Z
+TR
+8
+γ |∇ρ
+γ
+2 |2dx+ ϵ2ν
+2
+Z
+TR
+ρ|∇2 ln(ρ)|2dx,(3.15)
+
+[PDF page 11]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 11
+where
+ζ= 3νϵ1
+4 .(3.16)
+A couple of remarks are in order:
+Remark3.1.In the caseϵ 2 = 0, there is not enough a priori estimates to defineT(v),T(w)sensibly. In this
+case, the term−νdiv(√ρT(v)) + (ν− ϵ2
+ν )div(√ρT(w))in (3.10) should be understood as−νdiv( √ρT(u)).
+Remark3.2.The existence of 1
+2-entropic renormalized weak solutions for finite energy and entropy initial
+data is shown via a small modification of [43, Theorem 2.1]. The inequality (3.14) may be proven at the
+level of the Faedo-Galerkin approximation for positiveϵ0, ϵ1, ϵ2 and passed into the limit to obtain it for
+ϵ0, ϵ1, ϵ2 = 0. For convenience, we will show this in Section A.
+Remark3.3.If(ρ, u)verifies (3.7) andwverifies (3.9), it is straightforward to see that(ρ, v, w)verify (3.11).
+Indeed, differentiating the continuity equation gives the equation onρw, and theρvequation is obtained by
+linearity.
+WealsodefinethetensorsS(θ),A(θ)forθ=u, v, wasthesymmetricandanti-symmetricpartsrespectively
+ofT(θ).
+Given two 1
+2-entropy weak solutions(ρ, v, w)and(r, V, W), we may define the relative 1
+2-entropy:
+E 1
+2 ,ϵ(ρ, v, w|r, V, W) =
+Z
+TR
+ 
+ρ |v−V| 2 +|w−W| 2
+2 +F(ρ|r) +ϵ 0νG(ρ|r)
++ 2ϵ2|∇√ρ− ∇ √r|2
+dx,(3.17)
+where
+G(x) =x−ln(x).
+The quantityE 1
+2 ,0(ρ, v, w)and relative quantityE 1
+2 ,0(ρ, v, w|r, V, W)are defined in the obvious way (omit
+the terms withϵ0, ϵ2 in (3.15), (3.17)):
+E 1
+2 ,0(ρ, v, w) =
+Z
+TR
+ 
+ρ |v|2 +|w| 2
+2 +F(ρ)
+
+dx,
+E 1
+2 ,0(ρ, v, w|r, V, W) =
+Z
+TR
+ 
+ρ |v−V| 2 +|w−W| 2
+2 +F(ρ|r)
+
+dx.(3.18)
+The following proposition shows existence of a1
+2-entropy renormalized weak solution to (3.4) for initial
+data with finite energy and entropy which additionally obeys arelative entropy inequality. In what follows,
+by a strong solution to (3.1), we mean a pair of functions(r, U)verifyingr∈C 2(R+ ×T R), r >0,U∈
+C2(R+ ×TR)which verify (3.1) pointwise, and we may define the quantitiesV=U+ν∇ln(r),W=ν∇ln(r).
+Proposition 3.1.Fixϵ 0, ϵ1, ϵ2 >0. LetE ϵ(ρ0, u0)<∞. Then, there exists a 1
+2-entropic renormalized weak
+solution to(3.4). Further, if(r, V, W)is a strong solution to the Navier-Stokes equations(3.1)(without
+quantum and drag terms), then for anyt >0, the following relative entropy inequality is verified:
+E 1
+2 ,0(ρ, v, w|r, V, W)(t) +
+Z t
+0
+Z
+TR
+h
+(ν−ζ)|T(u)− √ρ∇U|2
++ν| 2√γ ∇ρ
+γ
+2 −
+p
+ρp′(ρ)∇ln(r)| 2
+i
+dxdτ
+≤Ce
+ 
+||∇V|| L∞ ([0,t]×TR )+||∇W|| L∞ ([0,t]×TR )+||∆ ln(r)||L∞ ([0,t]×TR )+||∇ln(r)|| 2
+L∞ ([0,t]×TR )
+
+t
+×
+
+E 1
+2 ,ϵ(ρ, v, w|r, V, W)(0) +E(t)
+
+,(3.19)
+whereE(t)is given by
+E(t) =
+Z t
+0
+Z
+TR
+ 
+| ϵ2
+ν
+√ρS(w) :∇V|+|ϵ 0u·V|+|ϵ 1ρ|u|2u·V|
++|2ζ √ρA(v) :A(V)|+|2ζS(u) :D(U)|
+
+dxdτ
+
+[PDF page 12]
+12 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
++ϵ 0ν
+Z
+TR
+|G(r0)−G ′(r0)(ρ0 −r 0)|dx+ 2ϵ 2
+Z
+TR
+|∇√r0|2dx
++ 4ϵ2
+Z
+TR
+|∇√ρ0 · ∇√r0|dx.
+Further, for any compact subsetK⊂T R, we have an estimate
+(ν−ζ)||Ξ ϕ||M([0,t]×K) ≤C||ϕ ′′||L∞
+ 
+(ν−ζ)
+Z t
+0
+Z
+K
+ρ|∇(U)| 2dxdτ
++Ce
+ 
+||∇V|| L∞ ([0,t]×TR )+||∇W|| L∞ ([0,t]×TR )+||∆ ln(r)||L∞ ([0,t]×TR )+||∇ln(r)|| 2
+L∞ ([0,t]×TR )
+
+t
+×
+
+E 1
+2 ,ϵ(ρ, v, w|r, V, W)(0) +E(t)
+
++||T(u)|| L2([0,t]×TR)|| ϵ2
+ν T(w)|| L2([0,t]×TR)
+!
+.(3.20)
+The constantCdoes not depend onR.
+By passing into the limitϵ0, ϵ1, ϵ2 →0+, we obtain the following corollary:
+Proposition 3.2.Letϵ 0, ϵ1, ϵ2 = 0. LetE 0(ρ0, u0)<∞. Then, there exists a 1
+2-entropic renormalized weak
+solution to(3.1). Further, if(r, V, W)is a strong solution to the Navier-Stokes equations(3.1), then the
+following relative entropy inequality is verified:
+E 1
+2 ,0(ρ, v, w|r, V, W)(t) +ν
+Z t
+0
+Z
+TR
+ 
+|T(u)− √ρ∇U|2 +| 2√γ ∇ρ
+γ
+2 −
+p
+ρp′(ρ)∇ln(r)| 2
+dxdτ
+≤Ce
+ 
+||∇V|| L∞ ([0,t]×TR )+||∇W|| L∞ ([0,t]×TR )+||∆ ln(r))||L∞ ([0,t]×TR )+||∇ln(r)|| 2
+L∞ ([0,t]×TR )
+
+t
+×
+
+E 1
+2 ,0(ρ, v, w|r, V, W)(0)
+
+.(3.21)
+Further, for any compact subsetK⊂T R, we have an estimate
+ν||Ξϕ||M([0,t]×K) ≤C||ϕ ′′||L∞
+ 
+ν
+Z t
+0
+Z
+K
+ρ|∇(U)| 2dxdτ
++Ce
+ 
+||∇V|| L∞ ([0,t]×TR )+||∇W|| L∞ ([0,t]×TR )+||∆ ln(r)||L∞ ([0,t]×TR )+||∇ln(r)|| 2
+L∞ ([0,t]×TR )
+
+t
+× E 1
+2 ,0(ρ, v, w|r, V, W)(0)
+!
+.
+The constantCdoes not depend onR.
+Proposition 3.2 is a simple corollary of Proposition 3.1 and [43, Theorem 2.1]. Indeed, for any initial data
+(ρ0, u0)withE 0(ρ0, u0)<∞, take positive sequencesϵ0,n, ϵ1,n, ϵ2,n all converging to0. A slight regularization
+of the initial data gives a sequence of initial data(ρϵn
+0 , uϵn
+0 )such thatE ϵn(ρ0, u0)is uniformly bounded and
+converges toE 0. Proposition 3.1 gives existence of 1
+2-entropic renormalized weak solutions verifying the
+relative entropy inequalities forϵ0,n, ϵ1,n, ϵ2,n >0with initial data(ρ ϵn
+0 , uϵn
+0 ). Finally, [43, Theorem 2.1, (4)]
+gives at the limit a1
+2-entropic renormalized weak solution to (3.1) verifying the relative entropy inequalities.
+3.1.1.Proof of Proposition 3.1.Letϵ 0, ϵ1, ϵ2 >0. Let(ρ 0, u0)be such thatE ϵ(ρ0, u0)<∞. Let √ρ0w0 =
+2ν∇√ρ0. [52, Theorem1]showsexistenceofaweaksolutionto(3.4). Asmallmodificationoftheirarguments
+can be done to show that the inequality (3.14) holds at the level of the Faedo-Galerkin approximation and
+the a priori estimates (3.6) allow to pass it into the limit (see Section A). The a priori estimates also allow
+to pass into the limit of the Faedo-Galerkin in (3.12) and (3.9). It is straightforward to obtain the equation
+(3.11) from (3.7) and (3.9) (see Remark 3.1). The attainment of the initial data (3.13) follows from (3.9)
+and (3.8). Finally, [43, Theorem 2.1, (3)] shows that this is actually a1
+2-entropy renormalized weak solution.
+It remains to prove the relative entropy inequality (3.19). The argument mostly follows the basic strategy
+in [9]. However, we choose to do the computation at the level of the system (3.4) to ensure that the weak
+solution has enough regularity to justify all the computations. This gives rise to the error termsE(t).
+
+[PDF page 13]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 13
+However, these will all vanish at the limitϵ0, ϵ1, ϵ2 →0. See the papers [13], [14], [8] for similar analyses in
+the situation whenϵ2 > ν. However, this is not the regime we are interested in here.
+The relative entropy estimate.Let us first estimate
+E 1
+2 ,0(ρ, v, w|r, V, W)(t)− E 1
+2 ,ϵ(ρ, v, w|r, V, W)(0)
+=
+h1
+2
+Z
+TR
+ρ(|v|2 +|w| 2) +F(ρ)
+i
+(t)
+−
+h1
+2
+Z
+TR
+ρ(|v|2 +|w| 2) +F(ρ) + ϵ0ν
+2 G(ρ) + 2ϵ2|∇√ρ|2
+i
+(0)
++
+h1
+2
+Z
+TR
+ρ(|V| 2 +|W| 2)−
+Z
+TR
+(F(r) +F ′(r)(ρ−r))−
+Z
+TR
+ρ(w·W+v·V)
+i
+(t)
+−
+h1
+2
+Z
+TR
+ρ(|V| 2 +|W| 2)−
+Z
+TR
+(F(r) +F ′(r)(ρ−r))−
+Z
+TR
+ρ(w·W+v·V)
+i
+(0)
++
+h ϵ0ν
+2
+Z
+TR
+(G(r)−G ′(r)(ρ−r)) + 2ϵ 2
+Z
+TR
+(|∇√r|2 + 2∇√ρ· √r)
+
+(0).(3.22)
+Next, we compute
+(ν−ζ)
+Z t
+0
+Z
+TR
+|A(v)− √ρA(V)| 2 + (ν−ζ)
+Z t
+0
+Z
+TR
+|S(U)− √ρD(U)|2
++ν
+Z t
+0
+Z
+TR
+(p′(ρ)2∇√ρ−p ′(r)∇ln(r) √ρ)(2∇√ρ− √ρ∇ln(r))
+= (ν−ζ)
+Z t
+0
+Z
+TR
+|T(u)| 2 + ν
+2
+Z
+TR
+8
+γ |∇ρ
+γ
+2 |2
++ (ζ−ν)
+Z t
+0
+Z
+TR
+√ρA(V) : ( √ρA(V)− A(v)) + (ζ−ν)
+Z t
+0
+Z
+TR
+√ρD(U) : ( √ρD(V)− S(u))
++ν
+Z t
+0
+Z
+TR
+p′(r)∇ln(r) √ρ(√ρ∇ln(r)−2∇ √ρ)
+−
+h
+(ν−ζ)
+Z t
+0
+Z
+TR
+√ρA(v) :A(V) +
+Z t
+0
+Z
+TR
+√ρS(U) :D(U)
++ν
+Z t
+0
+Z
+TR
+2∇√ρ√ρp′(ρ)∇ln(r)
+i
+.(3.23)
+Now, testing the equations forρvandρw((3.10)) byVandWrespectively, we obtainZ
+TR
+ρ(v·V+w·W)(t)−
+Z
+TR
+ρ(v·V+w·W)(t)(0)
+−
+Z t
+0
+Z
+TR
+∂tV·ρv+∂ tW·ρw−
+Z t
+0
+Z
+TR
+ρu·(∇V·v+∇W·w)
+−
+Z t
+0
+Z
+TR
+p(ρ)div(U) +
+Z t
+0
+Z
+TR
+p′(ρ)∇ρ·W
++ν
+Z t
+0
+Z
+TR
+√ρS(u) :D(U) +ν
+Z t
+0
+Z
+TR
+√ρA(v) :A(U)
++ν
+Z t
+0
+Z
+TR
+√ρ(A(v) :A(W)− A(w) :A(V))
++ ϵ2
+ν
+Z t
+0
+Z
+TR
+√ρS(w) :∇V+ϵ 0
+Z t
+0
+Z
+TR
+u·V+ϵ 1
+Z t
+0
+Z
+TR
+ρ|u|2u·V= 0.(3.24)
+
+[PDF page 14]
+14 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+Then, testing the mass equation by|V| 2+|W| 2
+2 gives
+1
+2
+Z
+TR
+ρ(|V| 2 +|W| 2)(t)− 1
+2
+Z
+TR
+ρ(|V| 2 +|W| 2)(0)
+=
+Z t
+0
+Z
+TR
+ρ(V·∂ tV+W·∂ tW)−
+Z t
+0
+Z
+TR
+ρu·(∇V·v+∇W·w).(3.25)
+Using∂ t(F(r)−F ′(r)r) =−∂ tF ′(r)r:
+−
+Z
+TR
+(F(r)−F ′(r)r)(t) +
+Z
+TR
+(F(r)−F ′(r)r)(0) =
+Z t
+0
+Z
+TR
+r∂tF ′(r).(3.26)
+Next, multiplying the mass equation byF′(r)and integrating in space and time
+−
+Z
+TR
+F ′(r)ρ(t) +
+Z
+TR
+F ′(r)ρ(0) =−
+Z t
+0
+Z
+TR
+ρ∂tF ′(r)−
+Z t
+0
+Z
+TR
+ρu· ∇F ′(r).(3.27)
+Finally, we have the identity
+0 =
+Z t
+0
+Z
+TR
+p(r)div(U) +rU· ∇F ′(r).(3.28)
+Using (3.22)-(3.28) gives the relative entropy inequality:
+E 1
+2 ,0(ρ, v, w|r, V, W)(t)− E 1
+2 ,ϵ(ρ, v, w|r, V, W)(0)
++ (ν−ζ)
+Z t
+0
+Z
+TR
+|A(v)− √ρA(V)| 2 + (ν−ζ)
+Z t
+0
+Z
+TR
+|S(U)− √ρD(U)|2
++ν
+Z t
+0
+Z
+TR
+(p′(ρ)2∇√ρ−p ′(r)∇ln(r) √ρ)(2∇√ρ− √ρ∇ln(r))
+≤
+Z t
+0
+Z
+TR
+ρ(∂tW·(W−w) +∂ tV·(V−v)) +
+Z t
+0
+Z
+TR
+ρu·(∇W·(W−w) +∇V·(V−v))
++
+Z t
+0
+Z
+TR
+∂tF ′(r)(r−ρ)−
+Z t
+0
+Z
+TR
+∇F ′(r)·(ρu−rU)
++
+Z t
+0
+Z
+TR
+(p(r)−p(ρ))div(U)−
+Z t
+0
+Z
+TR
+p′(ρ)∇ρ·(ν∇ln(r)−W)
++ (ν−ζ)
+Z t
+0
+Z
+TR
+√ρA(V) : ( √ρA(V)− A(v)) + (ν−ζ)
+Z t
+0
+Z
+TR
+√ρD(U) : ( √ρD(U)− S(u))
++ν
+Z t
+0
+Z
+TR
+√ρ(A(W) : (A(v)− √ρA(V))−(A(w)− √ρA(W)) :A(V))
++ν
+Z t
+0
+Z
+TR
+p′(r)∇ln(r) √ρ(√ρ∇ln(r)−2∇ √ρ)
++ζ
+Z t
+0
+Z
+TR
+√ρS(u) :D(U) +ζ
+Z t
+0
+Z
+TR
+√ρA(v) :A(U)
++ ϵ2
+ν
+Z t
+0
+Z
+TR
+√ρS(w) :∇V+ϵ 0
+Z t
+0
+Z
+TR
+u·V+ϵ 1
+Z t
+0
+Z
+TR
+ρ|u|2u·V
++
+ ϵ0ν
+2
+Z
+TR
+(G(r)−G ′(r)(ρ−r)) + 2ϵ 2
+Z
+TR
+(|∇√r|2 + 2∇√ρ· √r)
+
+(0).(3.29)
+Now, we can use the fact that(r, V, W)is a strong solution to (3.10) (withϵ0 =ϵ 1 =ϵ 2 = 0) to further
+simplify (3.29). Testing the equations forrVandrWby ρ(V−v)
+r and ρ(W−w)
+r respectively and summing the
+result, we obtain
+Z t
+0
+Z
+TR
+ρ(∂tV·(V−v) +∂ tW·(W−w))
+
+[PDF page 15]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 15
++ν
+Z t
+0
+Z
+TR
+√ρD(U) : ( √ρD(U)− S(u)) +ν
+Z t
+0
+Z
+TR
+√ρA(U) : ( √ρA(U)− A(u))
++ν
+Z t
+0
+Z
+TR
+√ρ(A(W) : (A(v)− √ρA(V))−(A(w)− √ρA(W)) :A(V))
+=−
+Z t
+0
+Z
+TR
+ρU·(∇V·(V−v) +∇W·(W−w))
+−
+Z t
+0
+Z
+TR
+ρ
+r ∇p(r)·(V−v)−ν
+Z t
+0
+Z
+TR
+rD(V) :
+  ∇√ρ
+r +∇(
+√ρ
+r )
+√ρ(V−v)
+−ν
+Z t
+0
+Z
+TR
+rA(V) :
+  ∇√ρ
+r +∇(
+√ρ
+r )
+√ρ(V−v)
++ν
+Z t
+0
+Z
+TR
+r∇W:
+  ∇√ρ
+r +∇(
+√ρ
+r )
+√ρ(V−v)
+−ν
+Z t
+0
+Z
+TR
+r∇W:
+  ∇√ρ
+r +∇(
+√ρ
+r )
+√ρ(W−w)
++ν
+Z t
+0
+Z
+TR
+r(∇V) t :
+  ∇√ρ
+r +∇(
+√ρ
+r )
+√ρ(W−w).(3.30)
+We will use this alongside the other following simplifications to simplify (3.29). We have
+−
+Z t
+0
+Z
+TR
+ρ
+r ∇p(r)·(V−v) =−
+Z t
+0
+Z
+TR
+ρ∇F ′(r)·U−
+Z t
+0
+Z
+TR
+ρ
+r p′(r)∇r·(W−w).(3.31)
+Further, we have the identities
+p′(ρ)∇ρ·(ν∇ln(r)−W) =p ′(r)∇ln(r) √ρ(√ρ∇ln(r)−2∇ √ρ)− ρ
+r p′(r)∇r·(W−w) = 0,(3.32)
+which is true whenW=ν∇ln(r)andρw=ν∇ρ. Consider also the identity
+(∂tF ′(r) +U· ∇F ′(r))(r−ρ) =−div(U)(r−ρ)p ′(r).(3.33)
+Plugging (3.30)-(3.33) into (3.29), we obtain
+E 1
+2 ,0(ρ, v, w|r, V, W)(t)− E 1
+2 ,ϵ(ρ, v, w|r, V, W)(0)
++ (ν−ζ)
+Z t
+0
+Z
+TR
+|A(v)− √ρA(V)| 2 + (ν−ζ)
+Z t
+0
+Z
+TR
+|S(U)− √ρD(U)|2
++ν
+Z t
+0
+Z
+TR
+(p′(ρ)2∇√ρ−p ′(r)∇ln(r) √ρ)(2∇√ρ− √ρ∇ln(r))
+≤
+Z t
+0
+Z
+TR
+ρ(u−U)·(∇W·(W−w) +∇V·(V−v))
++
+Z t
+0
+Z
+TR
+(p(r)−p(ρ) +p ′(r)(ρ−r))div(U)
+−ν
+Z t
+0
+Z
+TR
+rD(V) :
+  ∇√ρ
+r +∇(
+√ρ
+r )
+√ρ(V−v)
+−ν
+Z t
+0
+Z
+TR
+rA(V) :
+  ∇√ρ
+r +∇(
+√ρ
+r )
+√ρ(V−v)
++ν
+Z t
+0
+Z
+TR
+r∇W:
+  ∇√ρ
+r +∇(
+√ρ
+r )
+√ρ(V−v)
+−ν
+Z t
+0
+Z
+TR
+r∇W:
+  ∇√ρ
+r +∇(
+√ρ
+r )
+√ρ(W−w)
++ν
+Z t
+0
+Z
+TR
+r(∇V) t :
+  ∇√ρ
+r +∇(
+√ρ
+r )
+√ρ(W−w)
+
+[PDF page 16]
+16 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
++ 2ζ
+Z t
+0
+Z
+TR
+√ρS(u) :D(U) + 2ζ
+Z t
+0
+Z
+TR
+√ρA(v) :A(U)
++ ϵ2
+ν
+Z t
+0
+Z
+TR
+√ρS(w) :∇V+ϵ 0
+Z t
+0
+Z
+TR
+u·V+ϵ 1
+Z t
+0
+Z
+TR
+ρ|u|2u·V
++
+ ϵ0ν
+2
+Z
+TR
+(G(r)−G ′(r)(ρ−r)) + 2ϵ 2
+Z
+TR
+(|∇√r|2 + 2∇√ρ· √r)
+
+(0).(3.34)
+Let us simplify some of the terms on the right-hand side. Firstly, note
+|
+Z
+TR
+ρ(u−U)·(∇W·(W−w) +∇V·(V−v))
++
+Z
+TR
+(p(r)−p(ρ) +p ′(r)(ρ−r))div(U)|
+≤c(||∇V|| L∞([0,t]×TR) +||∇W|| L∞([0,t]×TR))E 1
+2 ,0(ρ, v, w|r, V, W)(t).(3.35)
+Further, using√ρw= 2ν∇ √ρ, we have
+  ∇√ρ
+r +∇(
+√ρ
+r )
+√ρ= 1
+ν
+ρ
+r (w−W).
+This allows to control
+| −ν
+Z
+TR
+rD(V) :
+  ∇√ρ
+r +∇(
+√ρ
+r )
+√ρ(V−v)−ν
+Z
+TR
+rA(V) :
+  ∇√ρ
+r +
+∇(
+√ρ
+r )
+√ρ(V−v) +ν
+Z
+TR
+r∇W:
+  ∇√ρ
+r +∇(
+√ρ
+r )
+√ρ(V−v)−ν
+Z
+TR
+r∇W:
+  ∇√ρ
+r
++∇(
+√ρ
+r )
+√ρ(W−w) +ν
+Z
+TR
+r(∇V) t :
+  ∇√ρ
+r +∇(
+√ρ
+r )
+√ρ(W−w)|
+≤C(||∇V|| L∞([0,t]×TR) +||∇W|| L∞([0,t]×TR))E 1
+2 ,ϵ(ρ, v, w|r, V, W)(t).(3.36)
+It remains to control the term on the left-hand side
+I=ν
+Z t
+0
+Z
+TR
+(p′(ρ)2∇√ρ−p ′(r)∇ln(r) √ρ)(2∇√ρ− √ρ∇ln(r)).
+By adding and subtractingp′(ρ)√ρ∇ln(r), note that we can write it as
+I=
+Z t
+0
+Z
+TR
+| 2√γ ∇ρ
+γ
+2 − √ρp′(ρ)∇ln(r)| 2dxdτ
++
+Z t
+0
+Z
+TR
+√ρ∇ln(r)(p ′(ρ)−p ′(r))(2∇√ρ− √ρ∇ln(r))dxdτ=I 1 +I 2.
+To control the termI2, we use the identity
+√ρ∇ln(r)(p ′(ρ)−p ′(r))(2∇√ρ− √ρ∇ln(r)) =∇
+ 
+p(ρ)−p(r)−p ′(r)(ρ−r)
+
+· ∇ln(r)
+−
+ 
+ρ(p′(ρ)−p ′(r))−p ′′(r)(ρ−r)r
+
+|∇ln(r)| 2.
+So
+I2 ≤
+Z t
+0
+Z
+TR
+|p(ρ|r)||∆ ln(r)|+|
+ 
+ρ(p′(ρ)−p ′(r))−p ′′(r)(ρ−r)r
+
+||∇ln(r)| 2.(3.37)
+Finally, we note
+ρ(p′(ρ)−p ′(r))−p ′′(r)(ρ−r)r=γ(γ−1)F(ρ|r).
+So, plugging (3.35)-(3.37) into (3.34), we obtain (3.19) via Gronwall’s inequality. Finally, the estimate (3.20)
+follows straightforwardly from (3.19) and the representation of the renormalization measure (see [43, page
+15])
+Ξϕ =ϕ ′′(u)T(u)(2νS(u) + ϵ2
+ν T(w)),
+where we note thatϵ2
+ν T(w) = 2 √κSκ in the terminology of [43].
+
+[PDF page 17]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 17
+3.2.Existence of weak solutions to 2D Navier-Stokes equations onR×T.
+3.2.1.Periodic initial data and solutions.Now, we define the suitable initial data onR×T. Recall from
+Section 1.1 that we let˜ρ(x1)and˜u(x 1)be two smooth monotone functions satisfying
+˜ρ(x1) =ρ ± for±x 1 ≥1,˜ρ(x1)>0,∀x 1 ∈R,
+˜u(x1) =
+ ˜u1(x1)
+˜u2(x1)
+
+=u ± for±x 1 ≥1.
+We have also defined
+˜v= ˜u+ν∇ln(˜ρ),
+˜w=ν∇ln(˜ρ).
+Further recall that for functions(ρ, v, w),(r, V, W) :R×T→(R ≥0 ×R 2 ×R 2), we have defined (see (1.8))
+the relative 1
+2-entropy on the channelR×T:
+E 1
+2
+(ρ, v, w|r, V, W) =
+Z
+R×T
+ 
+ρ( |v−V| 2 +|w−W| 2
+2 ) +F(ρ|r)
+
+dx.
+Note that compared to the definition ofE1
+2 ,0(ρ, v, w|r, V, W)((3.18)) we have just changed the domain of
+integration to have (1.8). Now, let us define the precise notion of a weak solution to (1.4) which verifies the
+correct far field at±∞.
+Definition 3.4.We say that(ρ, v, w)is a 1
+2-entropyweak solution to (1.4) if for anyT >0, it verifies the
+a priori estimate
+E 1
+2
+(ρ, v, w|˜ρ,˜v,˜w)(t)≤C(T),for all0≤t≤T,(3.38)
+and for any functionψ∈C ∞
+c (R+ ×R×T):
+Z ∞
+0
+Z
+R×T
+(ρψt +ρu· ∇ψ)dxdt= 0,
+Z ∞
+0
+Z
+R×T
+h
+ρuψt +
+ 
+ρu⊗u−(2ν √ρS(u)
+
+· ∇ψ
++ (−2ρ
+γ
+2 ∇(ρ)
+γ
+2 )ψ
+i
+dxdt= 0,(3.39)
+whereS(u)is the symmetric part ofT(u)which verifies (3.2), and for any ψ∈C ∞
+c (R×T)
+lim
+t→0
+Z
+R×T
+ρ(t, x)ψ(x)dx=
+Z
+R×T
+ρ0(x)ψ(x)dx,
+lim
+t→0
+Z
+R×T
+ρ(t, x)u(t, x)ψ(x)dx=
+Z
+R×T
+m0(x)ψ(x)dx,(3.40)
+and further,
+√ρu= √ρv− √ρwinL 2
+loc(R+ ×R×T),
+√ρ0u0 = √ρ0v0 − √ρ0w0 inL 2
+loc(R×T),
+√ρw= 2ν∇ √ρ, ρw=ν∇ρinD ′,(3.41)
+and further, for any functionψ∈C ∞
+c (R+ ×R×T),(ρ, v, w)verifies the equations for the augmented system
+in the sense of distributions:Z ∞
+0
+Z
+R×T
+(ρψt +ρu· ∇ψ)dxdt= 0,
+Z ∞
+0
+Z
+R×T
+h
+ρvψt +
+ 
+ρv⊗u−(ν √ρT(u))
+
+· ∇ψ
+(−2ρ
+γ
+2 ∇(ρ)
+γ
+2 )ψ
+i
+dxdt= 0,
+Z ∞
+0
+Z
+R×T
+h
+ρwψt +
+ 
+ρw⊗u+ν √ρT(u) t · ∇ψ
+i
+dxdt= 0,(3.42)
+
+[PDF page 18]
+18 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+and for anyψ∈C ∞
+c (R×T)
+lim
+t→0
+Z
+R×T
+ρ(t, x)ψ(x)dx=
+Z
+R×T
+ρ0(x)ψ(x)dx,
+lim
+t→0
+Z
+R×T
+ρ(t, x)v(t, x)ψ(x)dx=
+Z
+R×T
+ρ0(x)v0(x)ψ(x)dx,
+lim
+t→0
+Z
+R×T
+ρ(t, x)w(t, x)ψ(x)dx=
+Z
+R×T
+ρ0(x)w0(x)ψ(x)dx.(3.43)
+3.3.Proof of Theorem 1.1.Given suitable initial data(ρ 0, v0, w0), the strategy to construct the solution
+to (1.4) is as follows. First, we cutoff and periodize the functions(˜ρ,˜v,˜w),(¯ρ0,¯v0,¯w0), and(ρ 0, v0, w0)to
+be defined onTR. Then, there exists a1
+2-entropy renormalized weak solution(ρR, vR, wR)(t, x)to (3.1) (by
+Proposition 3.2) and a strong planar solution(¯ρR,¯vR,¯wR)(t, x1)to (3.1) (by Proposition 3.3). For fixed
+T >0, we prove uniform-in-Rbounds on||(¯ρ R,¯uR)x1 ||L∞([0,T];H 2(TR)) andinf (t,x)∈[0,T]×T R ρR(t, x). Then,
+by Proposition 3.2 and Definition 1.1,E1
+2
+((ρR, vR, wR)|(¯ρR,¯vR,¯wR))(t)is uniformly bounded inR. Then,
+forTfinite, in Section 3.3.5, we show that this implies we may take the limitR→ ∞to obtain a weak
+solution to (1.4).
+Notation 3.2.In this section, we again denote byCa constant which may change line to line, and we
+emphasize that it does not depend onR.
+By the definition of suitable initial data (Definition 1.1), there exist constantsδ1, δ2, δ3 >0so that
+E 1
+2
+(ρ0, v0, w0|˜ρ,˜v,˜w)≤δ1,
+E 1
+2
+(ρ0, v0, w0|¯ρ0,¯v0,¯w0)≤δ 2,
+||(¯ρ0,¯u0)−(˜ρ,˜u)||H 6(R) ≤δ 3,
+¯ρ0(x1)≥c 0 >0.(3.44)
+3.3.1.Periodic reference function.First, we define the periodic reference function. Consider the interval
+[−R,2R]. Then, define
+(˜ρR,˜uR,2)(x1) :=
+
+
+
+(˜ρ,˜uR,2)(x1), x 1 ∈[−R, R
+3 ],
+(ρ+, u2,+)x 1 ∈[ R
+3 , 2R
+3 ],
+(˜ρ,˜uR,2)(R−x 1)x 1 ∈[ 2R
+3 , 4R
+3 ],
+(ρ−, u2,−)x 1 ∈[ 4R
+3 ,2R].
+(3.45)
+Note that these are smooth as the reference functions˜ρ,˜uR,2 are constant outside of{x1 ∈[−1,1]}. Some
+more care needs to taken to define the periodized velocity component˜uR,1. This is because the equation
+(3.1) verifies an anti-symmetry property in the first component of the velocity for planar solutions; formally,
+if(ρ(t, x 1), u1(t, x1), u2(t, x1))solves (3.1), then(ρ(t,−x 1),−u 1(t,−x 1), u2(t,−x 1))remains a solution to the
+equation. This will be essential in the proof of Lemma 3.2. Letθbe a smooth function verifying
+0≤θ≤1, θ(s) = 0fors≤0,θ(s) = 1fors≥1.(3.46)
+We define
+˜uR,1(x1) :=
+
+
+
+˜u1(x1), x 1 ∈[−R, R
+3 ],
+u1,+(1−2θ( 3x1
+R −1))x 1 ∈[ R
+3 , 2R
+3 ],
+−˜u1(R−x 1)x 1 ∈[ 2R
+3 , 4R
+3 ],
+u1,−(2θ( 3x1
+R −4)−1)x 1 ∈[ 4R
+3 , 5R
+3 ],
+u1,− x∈[ 5R
+3 ,2R].
+(3.47)
+Then, we define(˜ρR,˜uR)onT R by periodicity.
+
+[PDF page 19]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 19
+3.3.2.Periodic planar strong solution.Next, we define the initial data for the periodic strong solution. Let
+χbe an even, smooth bump function verifying
+0≤χ≤1, χ(s) = 1for|s| ≤ 1
+4,χ(s) = 0for|s| ≥ 1
+3,|χ ′(s)|2 ≤Cχ(s)(1−χ(s)).(3.48)
+Let us also define
+χR(x1) =χ( x1
+R ).(3.49)
+Then, define the periodic planar initial data on[−R,2R]:
+(¯ρR)0(x1) = ˜ρR(x1) +χ R(x1)(¯ρ0(x1)−˜ρ(x1)) +χ R(R−x 1)(¯ρ0(R−x 1)−˜ρ(R−x 1)),
+(¯uR,1)0(x1) = ˜uR,1(x1) +χ R(x1)((¯u1)0(x1)−˜u1(x1))−χ R(R−x 1)((¯u1)0(R−x 1)−˜u1(R−x 1)),
+(¯uR,2)0(x1) = ˜uR,2(x1) +χ R(x1)((¯u2)0(x1)−˜u2(x1)) +χ R(R−x 1)((¯u2)0(R−x 1)−˜u2(R−x 1)),
+(3.50)
+and extend periodically as above. Note that these fields verify the representation
+(¯ρR)0,(¯uR,1)0,(¯uR,1)0)(x1) =
+
+
+
+((¯ρ0,(¯u1)0,(¯u2)0)(x1)|x 1| ≤ R
+4 ,
+((¯ρ0,−(¯u1)0,(¯u2)0)(R−x 1)|x 1 −R| ≤ R
+4 ,
+χR(x1)(¯ρ0,(¯u1)0,(¯u2)0)(x1) + (1−χ R(x1))(˜ρ,˜u1,˜u2)(x1)x 1 ∈[− R
+3 ,− R
+4 ]∪[ R
+4 , R
+3 ],
+χR(R−x 1)(¯ρ0,−(¯u1)0,(¯u2)0)(R−x 1) + (1−χ R(R−x 1))(˜ρ,−˜u1,˜u2)(R−x 1)x 1 ∈[ 2R
+3 , 3R
+R ]∪[ 5R
+4 , 4R
+3 ],
+(˜ρR,˜uR,1,˜uR,2)(x1)otherwise.
+(3.51)
+Note that the planar periodic initial data is either equal to the (reflected) original periodic initial data—where
+theu 1 component is also negated–, exactly equal to the periodic reference fields, or a convex combination of
+the original data and the original reference function. Due to this, it is clear that
+||((¯ρR)0,(¯uR)0)−(˜ρR,˜uR)||H 6(TR) ≤Cδ 3.
+Further, it may be proved that
+|∂x1(¯uR,1)0)| ≤ 1
+2ν (¯ρR)γ−1
+0 ,(3.52)
+forRsufficiently large. Indeed, (3.52) holds by definition when|x1| ≤ R
+4 or|x 1 −R| ≤ R
+4. When(¯uR,1)0 =
+˜uR,1, note that from the definition (3.47) on these regions it holds that
+∂x1(¯uR,1)0 =∂ x1 ˜uR,1 ≤ C
+R ,
+which, combined with(¯ρR)0 ≥c >0, grants (3.52) forRsufficiently large. Finally, we consider the regions
+where(¯uR,1)0 is a convex combination of the original data and reference function. For simplicity, let us
+consider only the region[R
+4 , R
+3 ]. In this region, we have
+∂x1(¯uR,1)0 =χ ′
+R(x1)[(¯u1)0 −u 1,+] +χ R(x1)∂x1(¯u1)0.
+Let
+ωR :=||(¯ρ0,¯u0)−(˜ρ,˜u)||H 5({|x1|≥ R
+5 }).(3.53)
+Then,ω R →0asR→ ∞by (3.44). This immediately gives
+|∂x1(¯uR,1)0| ≤Cω R →0,
+giving (3.52) forRsufficiently large.
+Then, the existence of a planar strong solution to (3.1) with initial data((¯ρR)0,(¯uR)0)follows from the
+following proposition.
+
+[PDF page 20]
+20 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+Proposition3.3.Let(ρ 0, v0, w0)be the suitable initial data in the sense of Definition 1.1. LetT >0be fixed.
+Then, there exists a planar strong solution(¯ρR,¯vR,¯wR)(t, x1)to(3.1)with initial data((¯ρ R)0,(¯vR)0,( ¯wR)0),
+where¯vR = ¯uR +ν∇ln(¯ρR), and¯wR =ν∇ln(¯ρR). Further, there exists a constantC=C(T, ν, δ 3, c0)>0
+such that the following holds:
+inf
+(t,x1)∈[0,T]×T R
+¯ρR(t, x1)≥C −1,
+sup
+t∈[0,T]
+E 1
+2 ,0(¯ρR,¯vR,¯wR|˜ρR,˜vR,˜wR)(t) +||(¯ρR,¯uR)−(˜ρR,˜uR)||L∞([0,T]×T R)
++||(¯ρR,¯uR)−(˜ρR,˜uR)||L∞([0,T];H 6(TR)) +||¯uR −˜uR||L2([0,T];H 7(TR)) ≤C.
+The constantC(T, ν, δ 3, c0)does not depend onR.
+Proposition 3.3 is proven in Section B. Note that similar analyses onTandRhave been performed in [26],
+[41]. However, in our situation there are two notable differences. Firstly, the equation for¯uR,2 is present.
+Secondly, we are interested in obtaining Sobolev estimates uniform inR, so we carefully do the estimates to
+make sure they are independent ofR.
+3.3.3.Periodic 2D weak solution.Now, we appropriately define the periodic initial data for the 2D weak
+solution. Letm 0 :=ρ 0u0. Then, define
+(ρR)0(x1, x2) = ˜ρR(x1) +χ R(x1)(ρ0(x1, x2)−˜ρ(x1)) +χ R(R−x 1)(ρ0(R−x 1, x2)−˜ρ(R−x 1)),
+(mR,1)0(x1, x2) = ˜ρR(x1)˜uR,1(x1) +χ R(x1)((m1)0(x1, x2)−˜ρ(x1)˜u1(x1))
+−χ R(R−x 1)((m1)0(R−x 1)−˜ρ(x1)˜u1(R−x 1)),
+(mR,2)0(x1) = ˜ρR(x1)˜uR,2(x1) +χ R(x1)((m2)0(x1, x2)−˜ρ(x1)˜u2(x1))
++χ R(R−x 1)((m2)0(R−x 1)−˜ρ(R−x 1)˜u2(R−x 1)).(3.54)
+Similarly to (3.51), the periodized initial data are either equal to the (reflected) original initial data, the
+periodized reference fields, or a convex combination of the original data and the original reference fields.
+Extend((ρ R)0,(m R)0)toT R periodically inx 1. Further, we may define(vR)0 and(w R)0 onT R via the
+formulas p
+(ρR)0(wR)0 = 2ν∇
+p
+(ρR)0,
+p
+(ρR)0(vR)0 = (mR)0p
+(ρR)0
++
+p
+(ρR)0(wR)0.(3.55)
+The following lemma shows that((ρR)0,(v R)0,(w R)0)is valid initial data to give rise to a2Dweak solution.
+Lemma 3.1.Let(ρ R)0,(v R)0,(w R)0)be the initial data defined in(3.54),(3.55). Then
+E 1
+2 ,0((ρR)0,(v R)0,(w R)0|˜ρR,˜vR,˜wR)≤Cδ 1 +C(τ R + 1
+R),(3.56)
+and
+E 1
+2 ,0((ρR)0,(v R)0,(w R)0|(¯ρR)0,(¯vR)0,( ¯wR)0)≤Cδ 2 +C(τ R +ω R + 1
+R),(3.57)
+where
+τR :=
+Z
+{|x1|> R
+4 }×T
+ρ0
+  |v0 −˜v|2 +|w 0 −˜w|2
+2
+
++F(ρ 0|˜ρ)dx→0,
+andω R is defined in(3.53)
+Proof.We first prove (3.56). We have
+E 1
+2 ,0((ρR)0,(v R)0,(w R)0|˜ρR,˜vR,˜wR) =
+Z
+{|x1|≤ R
+4 }
+(ρR)0
+  |(vR)0 −˜vR|2
+2 + |(wR)0 −˜wR|2
+2
+
++F((ρ R)0|˜ρR)dx
++
+Z
+{|x1−R|≤ R
+4 }
+(ρR)0
+  |(vR)0 −˜vR|2
+2 + |(wR)0 −˜wR|2
+2
+
++F((ρ R)0|˜ρR)dx
+
+[PDF page 21]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 21
++
+Z
+{ R
+3 ≤x1≤ 2R
+3 }
+(ρR)0
+  |(vR)0 −˜vR|2
+2 + |(wR)0 −˜wR|2
+2
+
++F((ρ R)0|˜ρR)dx
++
+Z
+{ 4R
+3 ≤x1≤ −R
+3 }
+(ρR)0
+  |(vR)0 −˜vR|2
+2 + |(wR)0 −˜wR|2
+2
+
++F((ρ R)0|˜ρR)dx
++
+Z
+{0<χR(x1)<1}
+(ρR)0
+  |(vR)0 −˜vR|2
+2 + |(wR)0 −˜wR|2
+2
+
++F((ρ R)0|˜ρR)dx
++
+Z
+{0<χR(R−x1)<1}
+(ρR)0
+  |(vR)0 −˜vR|2
+2 + |(wR)0 −˜wR|2
+2
+
++F((ρ R)0|˜ρR)dx.
+The first and second terms are bounded byδ1, while the third and fourth terms are zero. So it remains to
+control the last two. For simplicity, we will consider only[R
+4 , R
+3 ], as the other regions are identical. Using
+the identities (3.55) and the fact that˜ρR,˜uR is constant on this interval, we have
+(ρR)0
+  |(vR)0 −˜vR|2
+2 + |(wR)0 −˜wR|2
+2
+
++F((ρ R)0|˜ρR) = |(mR)0 +ν∇(ρ R)0 −(ρ R)0u±|2 +ν 2|∇(ρR)0|2
+2(ρR)0
++F((ρ R)0|ρ±).
+Further note that on this interval, we have representations
+(ρR)0 =χ Rρ0 + (1−χ R)ρ+,
+∇(ρR)0 =χ R∇ρ0 + (ρ0 −ρ +)∇χR,
+(mR)0 =χ Rm0 + (1−χ R)ρ+u+.
+So, noting that the function(ρ, m,∇ρ)7→ |m+ν∇ρ−ρu +|2+ν2|∇ρ|2
+2ρ +F(ρ|ρ +)is convex in(ρ, m,∇ρ), we obtain
+via the convexity inequality
+Z
+[ R
+4 , R
+3 ]
+|(mR)0 +ν∇(ρ R)0 −(ρ R)0u+|2 +ν 2|∇(ρR)0|2
+2(ρR)0
++F((ρ R)0|ρ+)
+≤
+Z
+[ R
+4 , R
+3 ]
+|m0 +ν∇ρ 0 −ρ 0u+|2 +ν 2|∇ρ0|2
+2ρ0
++F(ρ 0|ρ+) +C
+Z
+[ R
+4 , R
+3 ]
+(ρ0 −ρ +)2|∇χR|2
+χRρ0 + (1−χ R)ρ+
+dx
+≤τ R +C
+Z
+[ R
+4 , R
+3 ]
+(ρ0 −ρ +)2|∇χR|2
+χRρ0 + (1−χ R)ρ+
+dx.(3.58)
+To control the second term, using (3.48) and the identity
+χR(1−χ R)(ρ0 −ρ +)2
+χRρ0 + (1−χ R)ρ+
+≤(1−χ R)ρ0 +χ Rρ+ ≤ρ 0 +ρ +,
+we obtain Z
+[ R
+4 , R
+3 ]
+(ρ0 −ρ +)2|∇χR|2
+χRρ0 + (1−χ R)ρ+
+dx≤ C
+R2
+Z
+[ R
+4 , R
+3 ]
+(ρ0 +ρ +)dx
+≤ C
+R2
+Z
+[ R
+4 , R
+3 ]
+(1 +F(ρ 0|ρ+) +ρ +)dx≤C (1 +δ 1)
+R ,
+where we have used (4.65) in the second inequality. This proves (3.56).
+To prove (3.57), it again suffices to consider only the intervals whereχR ̸∈ {0,1}. We again restrict to
+the interval[ R
+4 , R
+3 ]for simplicity. Here, we need to control
+Z
+[ R
+4 , R
+3 ]
+(ρR)0
+  |(vR)0 −(¯vR)0|2
+2 + |(wR)0 −( ¯wR)0|2
+2
+
++F((ρ R)0|(¯ρR)0)dx.(3.59)
+For the first term in (3.59), we have
+Z
+[ R
+4 , R
+3 ]
+(ρR)0
+  |(vR)0 −(¯vR)0|2
+2 + |(wR)0 −( ¯wR)0|2
+2
+
+≤
+Z
+[ R
+4 , R
+3 ]
+(ρR)0
+ 
+|(vR)0 −u +|2 +|(w R)0|2
++
+Z
+[ R
+4 , R
+3 ]
+(ρR)0
+ 
+|(¯vR)0 −u +|2 +|( ¯wR)0|2
+.(3.60)
+
+[PDF page 22]
+22 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+The first term on the right-hand side of (3.60) is controlled byτR + C
+R as above. For the second term, using
+(4.65), we haveZ
+[ R
+4 , R
+3 ]
+(ρR)0
+ 
+|(¯vR)0 −u +|2 +|( ¯wR)0|2
+≤C
+Z
+[ R
+4 , R
+3 ]
+(1 +F((ρ R)0|ρ+))
+ 
+|(¯vR)0 −u +|2 +|( ¯wR)0|2
+≤C(ω R +ω 2
+R
+Z
+[ R
+4 , R
+3 ]
+F((ρ R)0|ρ+))
+≤C(ω R +ω 2
+RτR).(3.61)
+So, we obtain
+Z
+[ R
+4 , R
+3 ]
+(ρR)0
+  |(vR)0 −(¯vR)0|2
+2 + |(wR)0 −( ¯wR)0|2
+2
+
+≤C(τ R +ω R +ω 2
+RτR + 1
+R).(3.62)
+For the second term in (3.59), we computeZ
+[ R
+4 , R
+3 ]
+F((ρ R)0|(¯ρR)0) =
+Z
+[ R
+4 , R
+3 ]
+ 
+F((ρ R)0|ρ+) + (F′(ρ+)−F ′((¯ρR)0)((ρR)0 −ρ +) +F(ρ +|(¯ρR)0)
+
+=
+3X
+j=1
+Rj.
+We have computed already in (3.58) thatR1 ≤τ R. ForR 2, we haveZ
+[ R
+4 , R
+3 ]
+(F ′(ρ+)−F ′((¯ρR)0)((ρR)0 −ρ +)≤C
+Z
+[ R
+4 , R
+3 ]
+(ρ+ −(¯ρR)0)(
+p
+F((ρ R)0|ρ+) +F((ρ R)0|ρ+)
+1
+γ )
+≤C(ω R
+√τR +ω Rτ
+1
+γ
+R ).(3.63)
+ForR 3 we have Z
+[ R
+4 , R
+3 ]
+F(ρ +|(¯ρR)0)≤Cω 2
+R.(3.64)
+So, combining (3.58), (3.63) and (3.64), we haveZ
+[ R
+4 , R
+3 ]
+F((ρ R)0|(¯ρR)0)≤C(τ R +ω R +ω 2
+R).(3.65)
+Combined with (3.62) and plugging into (3.59), this gives
+Z
+[ R
+4 , R
+3 ]
+(ρR)0
+  |(vR)0 −(¯vR)0|2
+2 + |(wR)0 −( ¯wR)0|2
+2
+
++F((ρ R)0|(¯ρR)0)dx≤C(τ R +ω R + 1
+R).
+This completes the proof of (3.57).□
+Then, by (3.56) and Proposition 3.2, there exists a1
+2-entropic renormalized weak solution(ρR, vR, wR)to
+(3.1) with initial data((ρR)0,(v R)0,(w R)0).
+3.3.4.Uniform-in-Rbounds on 2D weak solution.FixT >0. By uniform-in-Rbounds on the planar strong
+solution in Proposition 3.3 and the uniform-in-Rrelative1
+2-entropy estimate in Proposition 3.2, we have the
+following uniform-in-Rbounds on 2D weak solution(ρR, vR, wR):
+sup
+t∈[0,T]
+E 1
+2 ,0((ρR, vR, wR)|(¯ρR,¯vR,¯wR))(t)
++ν
+Z T
+0
+Z
+TR
+|T(u R)− √ρR∇¯uR|2dxdt
++ν
+Z T
+0
+Z
+TR
+| 2√γ ∇ρ
+γ
+2
+R −
+p
+ρRp′(ρR)∇ln(¯ρR)|2dxdt≤C,
+(3.66)
+which implies that
+||√ρR(uR −¯uR)||L∞(0,T;L 2([−R,R/2]×T)) ≤C;
+||p(ρR|¯ρR)||L∞(0,T;L 1([−R,R/2]×T)) ≤C;
+
+[PDF page 23]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 23
+||√ρR ( wR
+ν − ∇ln ¯ρR)||L∞(0,T;L 2([−R,R/2]×T)) ≤C;
+|| 2√γ ∇ρ
+γ
+2
+R −
+p
+ρRp′(ρR)∇ln(¯ρR)||L2([0,T]×[−R,R/2]×T) ≤C;
+||T(u R)− √ρR∇¯uR||L2([0,T]×[−R,R/2]×T) ≤C;(3.67)
+By Proposition 3.3, noting that∀(t, x1)∈[0, T]×[−R, R/2]×T,
+C −1 ≤¯ρR(t, x1)≤C,
+we can do the estimate asZ R/2
+−R
+Z
+T
+(√ρR − √¯ρR)2dx
+=
+Z R/2
+−R
+Z
+T
+(√ρR − √¯ρR)2 
+1{ 1
+2 C−1(T,ν)≤ρ R≤ 3
+2 C(T,ν)}
++1{0≤ρR< 1
+2 C−1(T,ν)} +1 {ρR> 3
+2 C(T,ν)}
+
+dx
+:=I 1 +I 2 +I 3.
+(3.68)
+ForI 1, we have
+I1 =
+Z R/2
+−R
+Z
+T
+(√ρR − √¯ρR)21{ 1
+2 C−1(T,ν)≤ρ R≤ 3
+2 C(T,ν)} dx
+≤C
+Z R/2
+−R
+Z
+T
+(ρR −¯ρR)21{ 1
+2 C−1(T,ν)≤ρ R≤ 3
+2 C(T,ν)} dx
+≤C
+Z R/2
+−R
+Z
+T
+p(ρR|¯ρR)dx <∞.
+(3.69)
+Then
+I2 =
+Z R/2
+−R
+Z
+T
+(√ρR − √¯ρR)21{0≤ρR< 1
+2 C−1(T,ν)} dx
+≤C
+Z R/2
+−R
+Z
+T
+p(ρR|¯ρR)1{0≤ρR< 1
+2 C−1(T,ν)} dx <∞,
+(3.70)
+and
+I3 =
+Z R/2
+−R
+Z
+T
+(√ρR − √¯ρR)21{ρR> 3
+2 C(T,ν)} dx
+≤C
+Z R/2
+−R
+Z
+T
+p(ρR|¯ρR)1{ρR> 3
+2 C(T,ν)} dx <∞.
+(3.71)
+Substituting (3.69)-(3.71) into (3.68) yields the following uniform-in-Restimate
+||√ρR − √¯ρR||L∞(0,T;L 2([−R,R/2]×T)) ≤C.(3.72)
+Similarly, the following uniform-in-Restimate holds true.
+||ρ
+γ
+2
+R −¯ρ
+γ
+2
+R||L∞(0,T;L 2([−R,R/2]×T)) ≤C.(3.73)
+On the other hand, (3.73) implies that
+sup
+t∈[0,T]
+Z R/2
+−R
+Z
+T
+(ρR +ρ γ
+R)|∇ln ¯ρR|2dx≤C,
+which combined with (3.67) and (3.43) gives
+sup
+t∈[0,T]
+Z R/2
+−R
+Z
+T
+|∇(√ρR)|2dx≤C,(3.74)
+and Z T
+0
+Z
+TR
+|∇(ρ
+γ
+2
+R)|2dx≤C.(3.75)
+
+[PDF page 24]
+24 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+Therefore, (3.72), (3.74) and (3.73), (3.75) imply the following uniform-in-Restimates
+||√ρR − √¯ρR||L∞(0,T;H 1([−R,R/2]×T)) ≤C,
+||ρ
+γ
+2
+R −¯ρ
+γ
+2
+R||L2(0,T;H 1([−R,R/2]×T)) ≤C.
+(3.76)
+3.3.5.Passing into the limitR→ ∞.∀M >0,setΩ M := [−M, M]×T. IfRis sufficiently large, then
+ΩM ⊂⊂[−R, R/2]×T.
+Based on the uniform-in-Restimates in Subsection 3.3.4, we have the following weak/strong convergence.
+Step 1. Convergence ofρR.
+First,
+ρRuR = √ρR(uR −¯uR)√ρR +ρ R¯uR
+= √ρR(uR −¯uR)(√ρR − √¯ρR) + √¯ρR
+√ρR(uR −¯uR)
++(√ρR − √¯ρR)2¯uR + 2√¯ρR¯uR(√ρR − √¯ρR) + ¯ρR¯uR,
+is uniformly bounded inL∞(0, T;L p(ΩM))for any1≤p <2. Then by the continuity equation, we have
+∂tρR is uniformly bounded inL ∞(0, T;W −1,p(ΩM)),
+for any1≤p <2. On the other hand,
+ρR =
+ 
+(√ρR − √¯ρR) + √¯ρR
+2
+= (√ρR − √¯ρR)2 + 2√¯ρR(√ρR − √¯ρR) + ¯ρR,
+is uniformly bounded inL∞(0, T;L p(ΩM))for any1≤p <∞. And
+∇ρR = 2√ρR∇√ρR = 2(√ρR − √¯ρR)∇√ρR + 2√¯ρR∇√ρR,
+is uniformly bounded inL ∞(0, T;L p(ΩM))for any1≤p <2. Thus,ρ R is uniformly bounded in
+L∞(0, T;W 1,p(ΩM))for any1≤p <2.
+By Aubin-Lions Lemma,ρR is precompact inC([0, T];L q(ΩM))for any2≤q <∞. Up to a subsequence,
+ρR →ρinC([0, T];L q(ΩM)),(3.77)
+asR→+∞for any2≤q <∞.
+Step 2. Convergence of pressurepR.
+By Step 1, up to a subsequence,ργ
+R −¯ργ
+R →ρ γ −¯ργ,a. e. in[0, T]×Ω M .By (3.76), we have
+ρ
+γ
+2
+R −¯ρ
+γ
+2
+R,
+is uniformly bounded inL2(0, T;H 1(ΩM)). Therefore,
+ργ
+R −¯ργ
+R,
+is uniformly bounded inL1(0, T;L q(ΩM))∩L ∞(0, T;L 1(ΩM))and then is uniformly bounded inLr([0, T]×
+ΩM)for anyr∈[1,2). Therefore, Egorov Theorem implies that
+ργ
+R −¯ργ
+R →ρ γ −¯ργ,strongly inL 1([0, T]×Ω M).
+Step 3. Convergence of the momentum.
+Since
+∇(ρRuR)
+=
+ 
+(√ρR − √¯ρR) + √¯ρR
+
+T(u R) + 2
+ √ρR(uR −¯uR) + √ρR¯uR
+
+∇√ρR,
+(3.78)
+is uniformly bounded inL2(0, T;L 1(ΩM)), and by Step 1,ρRuR is uniformly bounded inL∞(0, T;L p(ΩM))
+for any1≤p <2, we have thatρ RuR is uniformly bounded inL2(0, T;W 1,1(ΩM)). On the other hand, by
+the momentum equation (3.1)2, it holds that
+∂t(ρRuR),
+is uniformly bounded inL2(0, T;H −N(ΩM))for sufficiently largeN >1.
+
+[PDF page 25]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 25
+Therefore, by Aubin-Lions Lemma, the momentumρ RuR is pre-compact inL 2(0, T;L q(ΩM))for any
+q∈[1,2). Up to a subsequence,
+ρRuR →m,
+strongly inL 2(0, T;L q(ΩM))for anyq∈[1,2).
+Step 4. Convergence ofT(u R).
+By (3.67), we have that bothT(uR)andS(u R)is uniformly bounded inL 2([0, T]×Ω M), and then
+T(u R)⇀T,S(u R)⇀S,(3.79)
+for some tensorsT,S ∈L 2([0, T]×Ω M).
+Step 5. Convergence of the renormalized quantity.
+LetH∈W 2,∞(R)and the constantα∈(0, γq
+2 )withq∈[1,4). Denote the non-vacuum regionQ T,M :=
+{(t, x)∈[0, T]×Ω M |ρ(t, x)>0}and the vacuum regionQ c
+T,M :={(t, x)∈[0, T]×Ω M |ρ(t, x) = 0}=
+[0, T]×Ω M \QT,M .Define the velocity
+u(t, x) :=
+
+
+
+m(t, x)
+ρ(t, x) ,(t, x)∈Q T,M ,
+0,(t, x)∈Q c
+T,M .
+Then the momentumm(t, x) =ρ(t, x)u(t, x)for all(t, x)∈[0, T]×Ω M. Now we want to obtain the
+convergence of the renormalized quantityρRH(u R).
+∀(t, x)∈Q T,M ,we haveρ R(t, x)>0, otherwise, ifρ R(t, x) = 0, thenρ(t, x) = 0. Sinceρ R →ρand
+ρRuR →ρua. e. in[0, T]×Ω M, then∀(t, x)∈Q T,M ,
+uR(t, x) = ρR(t, x)uR(t, x)
+ρR(t, x) → ρ(t, x)u(t, x)
+ρ(t, x) =u(t, x),(3.80)
+a. e. inQ T,M. Therefore,
+(ρR(t, x))αH(u R)(t, x)→(ρ(t, x)) αH(u)(t, x),(3.81)
+a. e. inQ T,M.
+On the other hand,∀(t, x)∈Q c
+T,M ,we have
+|(ρR(t, x))αH(u R)(t, x)| ≤C(ρ R(t, x))α →C(ρ(t, x)) α = 0.(3.82)
+Thus,∀(t, x)∈Q c
+T,M ,
+(ρR(t, x))αH(u R)(t, x)→0 = (ρ(t, x)) αH(u)(t, x).
+Consequently,
+(ρR(t, x))αH(u R)(t, x)→(ρ(t, x)) αH(u)(t, x).
+a. e. in[0, T]×Ω M. By Step 2,
+ρ
+γ
+2
+R −¯ρ
+γ
+2
+R,
+is uniformly bounded inL ∞(0, T;L 2(ΩM))∩L 2(0, T;H 1(ΩM)), and therefore inL q([0, T]×Ω M)for any
+1≤q <4.
+Since
+|(ρR(t, x))αH(u R)(t, x)|p ≤C(ρ R(t, x))αp =C
+ 
+(ρR(t, x))αp −(¯ρR(t, x))αp
++C(¯ρR(t, x))αp, (3.83)
+if1≤αp < γq
+2 for any1≤q <4, then by Egorov Theorem
+(ρR)αH(u R)→ρ αH(u),(3.84)
+strongly inL p([0, T]×Ω M)for any1≤p < γq
+2α with1≤q <4.
+Now, we are ready to pass into the limitR→ ∞. Recall that for anyϕ∈W2,∞(R2)compactly supported,
+there exist two measures(Ξϕ,R, ˜Ξϕ,R)such that(ρ R, vR, wR)verifies
+Z ∞
+0
+Z
+TR
+(ρRψt +ρ RuR · ∇ψ)dxdt= 0,
+
+[PDF page 26]
+26 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+Z ∞
+0
+Z
+TR
+h
+ρRϕ(uR)ψt +
+ 
+ρRϕ(uR)uR −(2ν √ρRS(u R)ϕ′(uR)
+
+· ∇ψ
+(−2ρ
+γ
+2
+R∇(ρR)
+γ
+2 )ϕ′(uR)ψ
+i
+dxdt=⟨Ξ ϕ,R, ψ⟩,(3.85)
+whereS(u R)is the symmetric part ofT(u R)which verifies
+ν√ρRϕ′(uR)[T(u R)]jk :=ν∂ j
+ 
+ρRϕ′(uR)uR,k
+
+−2ν √ρuR,kϕ′(uR)∂j
+√ρR +eΞϕ,R.(3.86)
+In fact, we have more information on these measures. By [52, Remark 2.1], it holds
+˜Ξϕ,R =−ϕ ′′(uR)T(u R)√ρRuR,(3.87)
+and by Proposition 3.2, we have a bound
+||Ξϕ,R||M([0,T]×Ω M) ≤C||ϕ ′′||L∞ ,
+where the bound is uniform inRthanks to the uniform bounds on||ρ R||L∞(0,T;L 1(ΩM)) and||∇ uR||L∞.
+Similarly, thanks to (3.67), we obtain
+||˜Ξϕ,R||M([0,T]×Ω M) ≤C||ϕ ′′||L∞ ,
+Then by Banach–Alaoglu theorem, there exist two Radon measuresΞϕ,eΞϕ ∈ M([0, T]×Ω M)such that
+Ξϕ,R ⇀Ξ ϕ, eΞϕ,R ⇀eΞϕ (3.88)
+weakly-∗inM([0, T]×Ω M).
+For the renormalized momentum, it holds that
+ρRϕ(uR) = √ρRϕ(uR)√ρR.(3.89)
+By (3.84), we have √ρRϕ(uR)→ √ρϕ(u),(3.90)
+strongly inL p([0, T]×Ω M)for any1≤p < γqwith1≤q <4, which together with (3.77) in Step 1 implies
+that the renormalized momentum in (3.89) converges strongly toρϕ(u)inL2([0, T]×Ω M).
+For the renormalized convection term, it holds that
+ρRuRϕ(uR) = √ρRuR
+√ρRϕ(uR).(3.91)
+By (3.67), we have √ρRuR ⇀ √ρu,(3.92)
+weakly inL2([0, T]×Ω M), which together with (3.90) implies that the renormalized convection term in (3.91)
+converges toρuϕ(u)inD ′([0, T]×Ω M).
+For the renormalized diffusion, (3.79) along with (3.84) implies that
+√ρRS(u R)ϕ′(uR)→ √ρSϕ ′(u),
+inD ′([0, T]×Ω M).
+To pass to the limit for the renormalized pressure, by (3.84) it holds that
+(ρR)
+γ
+2 ϕ′(uR)→ρ
+γ
+2 ϕ′(u),(3.93)
+strongly inL p([0, T]×Ω M)for anyp∈[1,4).
+By (3.67),
+∇(ρR)
+γ
+2 ⇀∇ρ
+γ
+2 (3.94)
+weakly inL 2([0, T]×Ω M).
+Then it holds that
+2ρ
+γ
+2
+R∇(ρR)
+γ
+2 ϕ′(uR)→2ρ
+γ
+2 ∇(ρ)
+γ
+2 ϕ′(u)(3.95)
+inD ′([0, T]×Ω M). TakingR→+∞in (3.85), we have that for anyϕ∈W 2,∞(R2)compactly supported,
+there exist measures(Ξϕ, ˜Ξϕ)verifying
+||Ξϕ, ˜Ξϕ||M([0,T]×Ω M) ≤C||ϕ ′′||L∞ ,
+such that(ρ, v, w)verifies
+Z T
+0
+Z
+ΩM
+(ρψt +ρu· ∇ψ)dxdt= 0,
+
+[PDF page 27]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 27
+Z T
+0
+Z
+ΩM
+h
+ρϕ(u)ψt +
+ 
+ρϕ(u)u−(2ν √ρS(u)ϕ ′(u)
+
+· ∇ψ
+(−2ρ
+γ
+2 ∇(ρ)
+γ
+2 )ϕ′(u)ψ
+i
+dxdt=⟨Ξ ϕ,R, ψ⟩,(3.96)
+for any test functionψ∈C ∞
+c ([0, T]×Ω M). Similarly, we may pass into the limitR→ ∞in (3.86) to obtain
+ν√ρϕ′(u)[T] jk :=ν∂ j
+ 
+ρϕ′(u)uk
+
+−2ν √ρukϕ′(u)∂j
+√ρ+ eΞϕ,(3.97)
+inD ′([0, T]×Ω M). Using the standard argument taking a sequence ofϕn such thatϕ n(y)converges toy i
+fori= 1,2(see [43, Section 4]) we obtain that that for anyϕ∈W 2,∞(R2)compactly supported, there exist
+measures(Ξ ϕ, ˜Ξϕ)verifying
+||Ξϕ, ˜Ξϕ||M([0,T]×Ω M) ≤C||ϕ ′′||L∞ ,
+such that(ρ, v, w)verifies
+Z T
+0
+Z
+ΩM
+(ρψt +ρu· ∇ψ)dxdt= 0,
+Z T
+0
+Z
+ΩM
+h
+ρuψt +
+ 
+ρu×u−(2ν √ρS
+
+· ∇ψ
+(−2ρ
+γ
+2 ∇(ρ)
+γ
+2 )ψ
+i
+dxdt= 0,(3.98)
+for any test functionψ∈C ∞
+c ([0, T]×Ω M). and
+√ρT ∇(ρu)−2 √ρu⊗ ∇ √ρ,(3.99)
+inD ′([0, T]×Ω M). Therefore,T=T(u), and soS=S(u).
+Therefore, we proved that∀M >1,the limit(ρ, u)is still a weak solution to the2-D compressible Navier-
+Stokes equations in[0, T]×Ω M. By the standard diagonal arguments, takingT, M→ ∞, we can obtain
+that the limit(ρ, u)is a weak solution to (1.4), i.e. it verifies (3.39) and (3.40).
+Further, by (3.67),√ρRwR and √ρRvR are uniformly bounded inL2([0, T]×Ω M), so they converge up
+to a subsequence to√ρwand √ρv. Taking a diagonal sequence again asT, M→ ∞, we obtain √ρw, √ρv
+which verify (3.41). The equation (3.42) and (3.43) follow directly from (3.39), (3.40), and (3.43).
+To obtain the relative entropy estimate (1.12), we also need to pass into the limitR→ ∞for the planar
+strong solutions(¯ρR,¯vR,¯wR). By Proposition 3.3, we have uniform-in-Rbounds
+inf
+(t,x)∈[0,T]×Ω M
+¯ρR(t, x)≥C −1,||¯ρ R||L∞([0,T];H 6(ΩM)) ≤C,
+||¯uR||L∞([0,T];H 6(ΩM)) +||¯uR||L2([0,T];H 7(ΩM)) ≤C.(3.100)
+Using the equation (1.4) to control the time derivatives, this implies the following bounds
+||¯ρR||H 3([0,T]×Ω M) ≤C,
+||¯uR||H 3([0,T]×Ω M) ≤C,
+||∇¯uR||H 3([0,T]×Ω M) ≤C.(3.101)
+Indeed, let us show just one step of the argument. The spatial derivatives of¯ρR are controlled already, so
+we need only to control the derivatives in time. For the first, we have
+(¯ρR)t =−(¯ρR¯uR,1)x1 ∈L 2([0, T]×Ω M),
+uniformly inRby (3.100). For the second time derivative, we differentiate the continuity equation and use
+the continuity and momentum equations to replace the time derivatives with spatial ones:
+( ¯ρR)tt = ((¯ρR¯uR,1)x1 ¯ρR)x1 −(¯uR,1)t(¯ρR)x1 −(¯uR,1)tx1 ¯ρR.(3.102)
+Using the momentum equation to obtain
+(¯uR,1)t = ¯ρ−1
+R
+
+(2ν¯ρR(¯uR,1)x1)x1 −(¯ρR¯u2
+R,1 +p(¯ρR))x1 + (¯ρR(¯uR,1)x1)x1 ¯uR,1
+
+,
+plugging this into (3.102), and using (3.100), we obtain
+(¯ρR)tt ∈L 2([0, T]×Ω M),
+
+[PDF page 28]
+28 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+uniformly inR. By the same process with more time derivatives and doing similarly with¯uR, we may have
+(3.101). So, by passing to a subsequence, we obtain the convergence
+¯ρR →¯ρinH 2([0, T]×Ω M),
+¯uR →¯uinH 2([0, T]×Ω M),
+∇¯uR → ∇¯uinH 1([0, T]×Ω M).(3.103)
+This allows also to obtain at the limit
+vR → v= u+ν∇ln( ρ)inH 1([0, T]×Ω M),
+wR → w=ν∇ln( ρ)inH 1([0, T]×Ω M).
+By a diagonal argument asT, M→ ∞we obtain a planar strong solution(¯ρ,¯u)to (1.4) verifying
+sup
+t∈[0,T]
+E 1
+2
+(¯ρ,¯v,¯w|˜ρ,˜v,˜w) +||(¯ρ,¯u)−(˜ρ,˜u)||H 3([0,T]×R) ≤C,(3.104)
+for allT >0. In fact, this is the unique planar strong solution with initial data(¯ρ0,¯u0)(uniqueness may be
+proven by a relative entropy method, see e.g. a small modification of [50, Proposition 5.1]). Further, it may
+be proven that
+Lemma 3.2.Let(¯ρR,¯uR)be the planar strong solutions to(3.1)with initial data given by(3.50)constructed
+in Proposition 3.3. Let(¯ρ,¯u)be the unique planar strong solution to(1.4)with initial data(¯ρ0,¯u0). Then
+we have the convergence
+||∇¯vR||L∞([0,T]×T R) → ||∇¯v||L∞([0,T]×R×T) ,
+||∇¯wR||L∞([0,T]×T R) → ||∇¯w||L∞([0,T]×R×T) ,
+||∆ ln(¯ρR)||L∞([0,T]×T R) → ||∆ ln(¯ρ)||L∞([0,T]×R×T) ,
+||∇ln(¯ρR)||L∞([0,T]×T R) → ||∇ln(¯ρ)||L∞([0,T]×R×T) .
+A proof of Lemma 3.2 is given in Section C.
+By convexity, strong convergence of(¯ρR,¯vR,¯wR), (3.57), and Lemma 3.2, we may pass into the limit
+R→ ∞in (3.21) to obtain
+sup
+t∈[0,T]
+Z
+ΩM
+ρ
+  |v−¯v|2 +|w−¯w| 2
+2
+
++F(ρ|¯ρ)dx≤
+Ce
+ 
+||∇v||L∞ ([0,T]×R) +||∇w||L∞ ([0,T]×R) +||∆ ln(ρ)||L∞ ([0,T]×R) +||∇ln( ρ)||2
+L∞ ([0,T]×R)
+
+t
+× E 1
+2
+(ρ0, v0, w0|¯ρ0,¯v0,¯w0)
+
+.
+Passing to the limitM→ ∞, we obtain exactly (1.12).
+Finally we aim to prove that the limit(ρ, v, w)has the right far-fields(ρ ±, u±)in the channel domain
+R×T, i.e. we want to prove that (3.38) holds. Note that we may write
+E 1
+2
+(ρ, v, w|˜ρ,˜v,˜w)(t)≤C
+
+E 1
+2
+(ρ, v, w|¯ρ,¯v,¯w)(t) +E1
+2
+(¯ρ,¯v,¯w|˜ρ,˜v,˜w)(t)
+
++
+Z
+R×T
+(ρ−¯ρ)
+  |¯v−˜v|2 +|¯w−˜w|2
+2
+
+dx(t)−
+Z
+R×T
+(F ′(˜ρ)−F ′(¯ρ))(ρ−¯ρ)dx(t).
+Note that the first two terms are controlled by (1.12) and (3.104). It remains to control the latter two. For
+the first, noting that¯ρ≥c >0, and using (3.104), we use Young’s inequality
+Z
+R×T
+(ρ−¯ρ)
+  |¯v−˜v|2 +|¯w−˜w|2
+2
+
+dx(t)
+≤C
+
+E 1
+2
+(ρ, v, w|¯ρ,¯v,¯w)(t) +||(¯v−˜v,¯w−˜w)||4
+L∞([0,T];L 4(R×T))
+
+<∞.
+
+[PDF page 29]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 29
+For the second, using the fact that˜ρ,¯ρare both bounded from above and below away from zero, and using
+Lemma 4.2 Z
+R×T
+(F ′(˜ρ)−F ′(¯ρ))(ρ−¯ρ)dx(t)≤C
+
+||˜ρ−¯ρ||2E 1
+2
+(ρ, v, w|¯ρ,¯v,¯w)(t)
+1
+2
++||˜ρ−¯ρ|| γ
+γ−1
+E 1
+2
+(ρ, v, w|¯ρ,¯v,¯w)(t)
+1
+γ
+
+.
+This completes the proof of Theorem 1.1.
+4.V anishing viscosity limit of 2D compressible Na vier-Stokes equations
+The rest of the paper is devoted to proving Theorem 1.2. Let(ρν
+0, vν
+0 , wν
+0)be sequence of initial data for
+(1.4) as in Theorem 1.2. Let(ρν, vν, wν)be a sequence of weak solutions to (1.4) with initial data(ρν
+0, vν
+0 , wν
+0)
+as given by Theorem 1.1. Further, let(¯ρν,¯vν,¯wν)be the unique planar solutions to (1.4) with initial data
+(ρν
+0, vν
+0, wν
+0)given by Proposition 3.3.
+We have already proven the required estimate on the relative entropy between the2Dweak solution
+(ρν, vν, wν)and the planar strong solution(¯ρ ν,¯vν,¯wν). The next step is to obtain an estimate on the
+relative entropy between the planar strong solution(¯ρν,¯vν,¯wν)and the inviscid planar shock(ˆρ,ˆu). For this
+part, we first estimate the distance between the planar strong solution and the viscous shock associated to
+(ˆρ,ˆu). We use thea-contraction estimate proven in [40, Theorem 1.2]. However, thea-contraction estimate
+is given in the Lagrangian coordinates, so we must first consider the planar strong solution in the Lagrangian
+coordinates.
+Without loss of generality, let us assume that(ˆρ,ˆu)is a1−shock, so thatρ− < ρ+.
+4.1.1-D uniform-in-νestimates: from Lagrangian to Eulerian.Given the planar strong solution
+(¯ρν,¯vν,¯wν)to (1.4), consider the Euler-Lagrange change of variables in the first coordinate
+y1(t, x1) =
+Z (t,x1)
+(0,0)
+ρνdx1 − ρνuνdt.(4.1)
+Under this change of coordinates, we obtain a strong solution(¯sν(t, y1),¯uν(t, y1))to the equation
+
+
+
+(¯sν)t −(¯uν
+1)y1 = 0,(t, y 1, x2)∈R + ×R×T,
+(¯uν
+1)t +p L(¯sν)y1 = (2ν (¯uν
+1)y1
+(¯sν)2 )y1 ,
+(¯uν
+2)t = (ν (¯uν
+2)y1
+(¯sν)2 )y1 ,
+(4.2)
+where sν(t, y1) = 1
+ρν(t,x1) andp L(s) =s −γ. Note that the third equation for¯uν
+2 is decoupled with the first
+two equations for(¯sν,¯uν
+1).
+Also corresponding to the inviscid Eulerian shock(ˆρ,ˆu)is an inviscid Lagrangian shock(ˆs,ˆu)(y1 −σ ′t)
+given by the equation
+(ˆs,ˆu)(y1) =
+(
+(s−, u1,−,0)y 1 <0,
+(s+, u1,+,0)y 1 >0, (4.3)
+where
+s− := 1
+ρ−
+,
+s+ := 1
+ρ+
+,
+and(ˆs,ˆu)(y1 −σ ′t)is a solution to (4.2) withν= 0for an appropriate speedσ ′ ∈Rgiven by the Rankine-
+Hugoniot conditions.
+Finally, associated to (4.3) are the corresponding planar viscous profiles(ˆsν,ˆuν)(y1 −σ ′t)which verify,
+for the same speedσ′ (see e.g. [49]),
+−σ′(ˆsν)′ −(ˆu1)′ = 0,
+−σ′(ˆuν
+1)′ +p L(ˆsν)′ = 2ν( 1
+(ˆsν)2 (ˆuν
+1)′)′,
+
+[PDF page 30]
+30 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+ˆuν
+2 = 0,
+lim
+ξ→∞
+(ˆsν,ˆuν)(ξ) = ( 1
+ρ±
+, u1,±,0).(4.4)
+Thea-contraction estimate in [40] allows to estimate the difference in an appropriate relative functional
+E(·,·), uniformly inν, between the solution( sν, uν
+1)and the viscous profile(ˆs ν,ˆuν
+1)up to suitable time-
+dependent shiftX ν(t). Here, the relative entropy in the Lagrangian frame is
+Eν((s1, u1)|(s2, v2)) := 1
+2
+ 
+u1 + 2ν(s−1
+1 )y1 −u 2 −2ν(s −1
+2 )y1)2 +Q(s 1|s2),
+where
+Q(s) := s−γ+1
+γ−1 , s >0,
+andQ(s 1|s2)is the relative quantity (recall (1.9)).
+First, we need to verify that the initial values(¯sν
+0,¯uν
+0)are suitable to apply thea-contraction estimate.
+This is content of the following lemma.
+Lemma 4.1.Let( ρν
+0, vν
+0, wν
+0)be initial data as in Theorem 1.2, giving rise to planar strong solutions
+(¯ρν,¯vν,¯wν)to(1.4). Let(¯s ν
+0,¯uν
+0)be the corresponding initial data for the strong solution to(4.2), given
+by the formula
+(¯sν
+0(y1),¯uν
+0(y1)) = ( 1
+¯ρν
+0(x1) ,¯uν
+0(x1)),
+under the change of coordinates corresponding to(4.1)att= 0:
+dy1
+dx1
+(0, x1) = ¯ρν
+0(x1), y 1(0,0) = 0.
+Finally, let(ˆsν,ˆuν)be the viscous profile solving(4.4). Then, there exists a constantCdepending only onˆs
+andγso that (up to a subsequence)
+lim
+ν→0
+Z
+R
+Eν(sν
+0,( uν
+1)0|ˆs,ˆuν
+1)dy1 ≤CE 0.
+Proof.Thanks to (1.13), making the change of variables (4.1) gives, up to a subsequence
+lim
+ν→0
+Z
+R
+|(uν
+1)0 −ˆu1|2
+2 +Q(¯sν
+0|ˆs)≤ 1
+γ−1 E0.(4.5)
+First, we replace the inviscid shock(ˆs,ˆu)by the viscous profile in the above estimate. We have
+Q(¯sν
+0|ˆs)−Q(¯sν
+0|ˆsν) =Q(ˆsν|ˆs) + (Q′(ˆsν)−Q ′(ˆs))[(¯sν
+0 −ˆs) + (ˆs−ˆsν)].
+Then, we compute
+lim
+ν→0
+Z
+R
+|Q(¯sν
+0|ˆs)−Q(¯sν
+0|ˆsν)|dy1 ≤lim
+ν→0
+Z
+R
+|Q(ˆsν|ˆs) + (Q′(ˆsν)−Q ′(ˆs))(ˆs−ˆsν)|dy1
++ lim
+ν→0
+Z
+R
+|(Q′(ˆsν)−Q ′(ˆs))(¯sν
+0 −ˆs)|dy1.
+The first term is equal to0thanks to the fact that||ˆsν −ˆs||Lp(R) =ν||ˆs1 −ˆs||Lp(R), for any1≤p <∞and
+the fact thatˆsν,ˆsare bounded above and below away from0uniformly inν. For the second term, we have
+lim
+ν→0
+Z
+R
+(Q′(ˆsν)−Q ′(ˆs))(¯sν
+0 −ˆs)dy1 = lim
+ν→0
+Z
+R
+(Q′(ˆsν)−Q ′(ˆs))(¯sν
+0 −ˆs)1 {¯sν
+0 ≤ˆs}dy1
++ lim
+ν→0
+Z
+R
+(Q′(ˆsν)−Q ′(ˆs))(¯sν
+0 −ˆs)1 {¯sν
+0 >ˆs}dy1.
+The first term above equals zero again for the same reasons as above. For the second term, using the fact
+that
+lim
+¯sν
+0 →∞
+(¯sν
+0 −ˆs)
+Q(¯sν
+0|ˆs)= 1
+−Q′(ˆs),
+
+[PDF page 31]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 31
+we have Z
+R
+|(Q′(ˆsν)−Q ′(ˆs))(¯sν
+0 −ˆs)1 {¯sν
+0 >ˆs}|dy1 ≤C||Q ′(ˆsν)−Q ′(ˆs)||L∞(R)||Q(¯sν
+0|ˆs)||L1(R)
+≤CE 0.
+Combining all the above contributions gives (up to a subsequence)
+lim
+ν→0
+Z
+R
+|Q(¯sν
+0|ˆs)−Q(¯sν
+0|ˆsν)|dy1 ≤CE 0.(4.6)
+By a similar analysis, we have
+lim
+ν→0
+Z
+R
+[ |(uν
+1)0 −ˆuν
+1|2
+2 − |(uν
+1)0 −ˆu1|2
+2 ]dy1 = 0.(4.7)
+Plugging (4.6) and (4.7) into (4.5) gives
+lim
+ν→0
+Z
+R
+|(uν
+1)0 −ˆuν
+1|2
+2 +Q(¯sν
+0|ˆsν)dy1 ≤CE 0.(4.8)
+Finally, we have
+Z
+R
+|(uν
+1)0 + 2ν( 1
+¯sν
+0
+)y1 −ˆuν
+1 −2ν( 1
+ˆsν )y1 |2
+2 dy1 ≤
+Z
+R
+|(uν
+1)0 −ˆuν
+1|2dy1
++ 2
+Z
+R
+|ν( 1
+¯sν
+0
+)y1 −ν( 1
+ˆsν )y1)|2dy1.
+Note that the first term is controlled already, while the second converges to0asν→0thanks to (1.13).
+Thus, up to a subsequence we have
+lim
+ν→0
+Z
+R
+|(uν
+1)0 + 2ν( 1
+¯sν
+0
+)y1 −ˆuν
+1 −2ν( 1
+ˆsν )y1 |2
+2 +Q(¯sν
+0|ˆsν)dy1 ≤CE 0,
+as desired. □
+Now, we may apply thea-contraction estimate. Letϵ0 in Theorem 1.2 be small enough so that|pL( 1
+ρ−
+)−
+pL( 1
+ρ+
+)|is sufficiently small for [40, Theorem 1.2] to be applied. Then, applying [40, Theorem 1.2] to the
+functions
+s(t, y1) = ¯sν(νt, νy1), u (t, y1) = ¯uν(νt, νy1),ˆs(t, y1) = ˆsν(νy1),
+ˆu(t, y1) = ˆuν(νy1),
+and changing variablest7→ t
+ν , y1 7→ y1
+ν as in [40, page 120], we obtain
+sup
+t∈[0,T]
+Z
+R
+h
+|¯h1 − ˆhν,X ν
+1 (·)
+1 |2 +Q(¯sν|ˆsν,X ν
+1 (·))
+i
+(t, y1)dy1 ≤C
+Z
+R
+Eν(sν
+0,( uν
+1)0|ˆsν,ˆuν
+1)dy1, (4.9)
+for some suitable shift functionXν
+1 (t), where
+¯hν
+1 := ¯uν
+1 + 2ν((¯sν)−1)y1 , ˆhν
+1 := ˆuν
+1 + 2ν((ˆsν)−1)y1 ,
+and we have used the notation
+f(t, y1)X ν
+1 (t) :=f(t, y 1 −X ν
+1 (t)).(4.10)
+By Lemma 4.1, this implies that there existsν∗ such that for any0< ν < ν ∗
+sup
+t∈[0,T]
+Z
+R
+h
+|¯hν
+1 − ˆhν,X ν
+1 (·)
+1 |2 +Q(¯sν|ˆsν,X ν
+1 (·))
+i
+(t, y1)dy1 ≤CE 0. (4.11)
+Further, multiplying the third equation in (4.2) by¯uν
+2 and integrating iny1 andt, we obtain
+sup
+t∈[0,T]
+Z
+R
+|¯uν
+2|2(t, y1)dy1 +ν
+Z +∞
+0
+Z
+R
+|(¯uν
+2)y1 |2
+(¯sν)2 dy1dt≤C
+Z
+R
+|(¯uν
+2)0|2dy1
+=C
+Z
+R
+¯ρν
+0|(¯uν
+2)0|2dx1
+≤CE 0,
+(4.12)
+
+[PDF page 32]
+32 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+where the last inequality follows from (1.13). Summing (4.11) and (4.12) gives
+sup
+t∈[0,T]
+Z
+R
+h
+|¯hν
+1 − ˆhν,X ν
+1 (·)
+1 |2 +|¯uν
+2|2 +Q(¯sν|ˆsν,X ν
+1 (·))
+i
+(t, y1)dy1 ≤CE 0.(4.13)
+Now, we would like to replace the viscous profile in (4.13) with the inviscid Lagrangian shock(ˆs,ˆu). This
+is needed to apply the Euler-Lagrange change-of-variables to attain an analogous estimate in the Eulerian
+frame. Note that we cannot apply the change of variables to (4.13) directly because under the change of
+variables associated to(¯sν,¯uν), the image of the viscous Lagrangian shock(ˆsν,ˆuν)has no interpretation.
+The change-of-variables only behaves nicely for the piecewise constant inviscid shock(ˆs,ˆu).
+By the properties of the viscous shock, it holds thatZ
+R
+| ˆhν
+1
+X ν
+1 (·)
+−ˆu1
+X ν
+1 (·)|2(t, y1)dy1
+≤2
+Z
+R
+|ˆu1
+ν,X ν
+1 (·) −ˆu1
+X ν
+1 (·)|2(t, y1)dy1 + 4ν2
+Z
+R
+|( 1
+ˆsν,X ν
+1 (·) )y1 |2(t, y1)dy1
+≤Cν,
+(4.14)
+and Z
+R
+Q(ˆsν,X ν
+1 (·)|ˆsX ν
+1 (·))(t, y1)dy1
+≤C
+Z
+R
+|ˆsν,X ν
+1 (·) −ˆsX ν
+1 (·)|2(t, y1)dy1 ≤Cν.
+(4.15)
+By (4.11) and (4.14), we have
+sup
+t∈[0,T]
+Z
+R
+|¯hν
+1 − ˆhX ν
+1 (·)
+1 |2(t, y1)dy1 ≤C
+
+E0 +ν
+
+. (4.16)
+Since
+Q(¯sν|ˆsX ν
+1 (t))
+=Q(¯sν|ˆsν,X ν
+1 (t)) +Q(ˆsν,X ν
+1 (t)|ˆsX ν
+1 (t)) +
+
+Q′(ˆsν,X ν
+1 (t))−Q ′(ˆsX ν
+1 (t))
+
+(¯sν −ˆsν,X ν
+1 (t)).
+(4.17)
+While Z
+R
+
+Q′(ˆsν,X ν
+1 (·))−Q ′(ˆsX ν
+1 (·))
+
+(¯sν −ˆsν,X ν
+1 (t·)(t, y1)dy1
+=
+Z
+R
+
+Q′(ˆsν,X ν
+1 (·))−Q ′(ˆsX ν
+1 (·))
+
+(¯sν −ˆsν,X ν
+1 (·))
+h
+1 {0≤¯sν ≤
+s+
+2 }
++1 {
+s+
+2 ≤¯sν ≤2s−} +1 {¯sν ≥2s−}
+i
+(t, y1)dy1
+=I 1 +I 2 +I 3.
+(4.18)
+Since
+lim
+¯sν →0
+|¯sν −ˆsν,X ν
+1 (t)|
+Q(¯sν|ˆsν,X ν
+1 (t)) = 0,
+we have
+|I1| ≤C∥Q ′(ˆsν,X ν
+1 (t))−Q ′(ˆsX ν
+1 (t))∥L∞(R)∥(¯sν −ˆsν,X ν
+1 (t))1 {0≤¯sν ≤
+s+
+2 }∥L1(R)
+≤C∥Q(¯sν|ˆsν,X ν
+1 (t))∥L1(R).
+(4.19)
+|I2| ≤C∥Q ′(ˆsν,X ν
+1 (t))−Q ′(ˆsX ν
+1 (t))∥L2(R)∥(¯sν −ˆsν,X ν
+1 (t))1 {
+s+
+2 ≤¯sν ≤2s−}∥L2(R)
+≤C∥ˆsν,X ν
+1 (t) −ˆsX ν
+1 (t)∥L2(R)∥Q(¯sν|ˆsν,X ν
+1 (t))∥
+1
+2
+L1(R)
+≤Cν
+1
+2 ∥Q(¯sν|ˆsν,X ν
+1 (t))∥
+1
+2
+L1(R).
+(4.20)
+Since
+lim
+¯sν →+∞
+|¯sν −ˆsν,X ν
+1 (t)|
+Q(¯sν|ˆsν,X ν
+1 (t)) =− 1
+Q′(ˆsν,X ν
+1 (t)) ,
+
+[PDF page 33]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 33
+which is positive and bounded below and above, then it holds that
+|I3| ≤C∥Q ′(ˆsν,X ν
+1 (t))−Q ′(ˆsX ν
+1 (t))∥L∞(R)∥(¯sν −ˆsν,X ν
+1 (t))1 {¯sν ≥2s−}∥L1(R)
+≤C∥Q(¯sν|ˆsν,X ν
+1 (t))∥L1(R).
+(4.21)
+By (4.11), (4.15), (4.17)-(4.21), we haveZ
+R
+Q(¯sν|ˆsX ν
+1 (·))(t, y1)dy1
+=
+Z
+R
+h
+Q(¯sν|ˆsν,X ν
+1 (·)) +Q(ˆsν,X ν
+1 (·)) +
+
+Q′(ˆsν,X ν
+1 (·))−Q ′(ˆsX ν
+1 (·))
+
+(¯sν −ˆsν,X ν
+1 (·))
+i
+(t, y1)dy1
+≤C
+
+E0 +ν
+
+.
+(4.22)
+Collecting (4.11), (4.12), (4.16) and (4.22), we have
+sup
+t∈[0,T]
+Z
+R
+h
+|¯hν
+1 −ˆu1
+X ν
+1 (·)|2 +|¯uν
+2|2 +Q(¯sν|ˆsX ν
+1 (·))
+i
+(t, y1)dy1 ≤C
+
+E0 +ν
+
+. (4.23)
+Turning back to Eulerian coordinate transformation (recall (4.1))
+x1(t, y1) :=
+I (t,y1)
+(0,0)
+¯sνdy1 + ¯uν
+1dt,(4.24)
+we have
+sup
+t∈[0,T]
+Z
+R
+h
+¯ρν|¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(·)
+1 |2 + ¯ρν|¯uν
+2|2 +F(¯ρν|ˆρX ν
+E(·))
+i
+(t, x1)dx1 ≤C
+
+E0 +ν
+
+, (4.25)
+where
+¯vν
+1 := ¯uν
+1 +ν ¯ρν
+x1
+¯ρν ,
+¯wν
+1 :=ν ¯ρν
+x1
+¯ρν ,(4.26)
+andX ν
+E(t)is the image ofX ν
+1 (t)under the change of coordinates (4.24).
+4.2.Estimates on the shiftX ν
+E(t).Now, we want to show that asν→0,
+|X ν
+E(t)−σt| ≤ C
+|ρ+ −ρ −|2
+ 
+E0 +ν
+ 1
+2 + (E0 +ν)
+
+,∀t∈[0, T],(4.27)
+whereσ= ρ−u1,−−ρ+u1,+
+ρ−−ρ+
+is the shock speed in Eulerian coordinates determined by Rankine-Hugoniot con-
+dition (1.6). Recall that(¯ρν,¯uν)is a solution to the system
+
+
+(¯ρν)t + (¯ρν ¯uν
+1)x1 = 0,(t, x 1)∈R + ×R,
+(¯ρν ¯uν
+1)t +
+ 
+¯ρν(¯uν
+1)2 + ¯p(¯ρν)
+
+x1
+= (2ν¯ρν(¯uν
+1)x1)x1 ,
+(¯ρν ¯uν
+2)t +
+ 
+¯ρν ¯uν
+1 ¯uν
+2
+
+x1
+= (ν¯ρν(¯uν
+2)x1)x1 .
+(4.28)
+To prove (4.27), we use the mass equation (4.28)1. Define the test functionφ M(x1)∈W 2,∞(R)with the
+support supp(φM) = [−2M,2M]andM >0being a sufficiently large constant to be determined
+φM(x1) :=
+
+
+
+0, x 1 ∈(−∞,−2M],
+−2( x1
+M + 1)3 −3( x1
+M + 1)2 + 1, x 1 ∈[−2M,−M],
+1, x 1 ∈[−M, M],
+2( x1
+M −1) 3 −3( x1
+M −1) 2 + 1, x 1 ∈[M,2M],
+0x 1 ∈[2M,+∞),
+(4.29)
+
+[PDF page 34]
+34 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+and we can compute that
+φ′
+M(x1) = −6(x1 +M)(x 1 + 2M)
+M3 1 [−2M,−M] + 6(x1 −M)(x 1 −2M)
+M3 1 [M,2M] ∈W 1,∞(R),(4.30)
+and
+φ′′
+M(x1) = −6(2x1 + 3M)
+M3 1 [−2M,−M] + 6(2x1 −3M)
+M3 1 [M,2M] ∈L ∞(R).(4.31)
+By the mass equation (4.28)1 and the relation (4.26), we have
+(¯ρν)t + (¯ρν¯hν
+1)x1 = 2ν¯ρν
+x1x1 .(4.32)
+Multiplying equation (4.32) by the test functionφM(x1)gives that
+(¯ρνφM)t + (¯ρ¯hν
+1φM)x1 = 2ν(¯ρνφM)x1x1 −4ν(¯ρνφ′
+M)x1 +φ ′
+M ¯ρν¯hν
+1 + 2νφ′′
+M ¯ρν.(4.33)
+Integrating the equation (4.33) with respect to(τ, x1)over[0, t]×Rwitht∈[0, T]implies that
+Z
+R
+¯ρν(t, x1)φM(x1)dx1 −
+Z
+R
+¯ρν
+0(x1)φM(x1)dx1 +
+Z t
+0
+(¯ρν¯hν
+1φM)
+
+x1=+∞
+x1=−∞
+dτ
+= 2ν
+Z t
+0
+(¯ρνφM)x1
+
+x1=+∞
+x1=−∞
+dτ−4ν
+Z t
+0
+¯ρνφ′
+M
+
+x1=+∞
+x1=−∞
+dτ
++
+Z t
+0
+Z
+R
+¯ρν¯hν
+1φ′
+M dx1dτ+ 2ν
+Z t
+0
+Z
+R
+¯ρνφ′′
+M dx1dτ.
+(4.34)
+Due to the compact support of bothφM andφ ′
+M, all the boundary terms in (4.34) vanish. Therefore, we
+can rewrite (4.34) asZ
+R
+(¯ρν −ˆρX ν
+E(t))φM(x1)dx1 −
+Z
+R
+(¯ρν
+0 −ˆρ)φM(x1)dx1 +
+Z
+R
+φM(x1)(ˆρX ν
+E(t) −ˆρ)dx1
+=
+Z t
+0
+Z
+R
+ 
+¯ρν¯hν
+1 −ˆρX ν
+E(t)ˆuX ν
+E(t)
+1
+
+φ′
+M dx1dτ+
+Z t
+0
+Z
+R
+ˆρX ν
+E(t)ˆuX ν
+E(t)
+1 φ′
+M dx1dτ
++2ν
+Z t
+0
+Z
+R
+ 
+¯ρν −ˆρX ν
+E(t)
+φ′′
+M dx1dτ+ 2ν
+Z t
+0
+Z
+R
+ˆρX ν
+E(t)φ′′
+M dx1dτ.
+(4.35)
+First, we a priori assume that
+|X ν
+E(t)| ≤M,∀t∈[0, T].(4.36)
+Then we can compute thatZ
+R
+φM(x1)(ˆρX ν
+E(t) −ˆρ)dx1
+=ρ −
+Z X ν
+E(t)
+−∞
+φM(x1)dx1 +ρ +
+Z +∞
+X ν
+E(t)
+φM(x1)dx1
+−ρ−
+Z 0
+−∞
+φM(x1)dx1 −ρ +
+Z +∞
+0
+φM(x1)dx1
+=ρ −
+Z X ν
+E(t)
+0
+φM(x1)dx1 −ρ +
+Z X ν
+E(t)
+0
+φM(x1)dx1
+= (ρ− −ρ +)X ν
+E(t),
+(4.37)
+
+[PDF page 35]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 35
+and Z t
+0
+Z
+R
+φ′
+M(x1)ˆρX ν
+E(t)ˆuX ν
+E(t)
+1 dx1dτ
+=−
+Z t
+0
+Z −M
+−2M
+ρ−u1,−
+6(x1 +M)(x 1 + 2M)
+M3 dx1dτ
++
+Z t
+0
+Z 2M
+M
+ρ+u1,+
+6(x1 −M)(x 1 −2M)
+M3 dx1dτ
+=−ρ −u1,−t
+Z −M
+−2M
+6(x1 +M)(x 1 + 2M)
+M3 dx1
++ρ+u1,+t
+Z 2M
+M
+6(x1 −M)(x 1 −2M)
+M3 dx1
+= (ρ−u1,− −ρ +u1,+)t.
+(4.38)
+Substituting (4.37) and (4.38) into (4.35) yields that
+ 
+X ν
+E(t)−σt
+
+(ρ− −ρ +)
+=−
+Z
+R
+(¯ρν −ˆρX ν
+E(t))φM(x1)dx1 +
+Z
+R
+(¯ρν
+0 −ˆρ)φM(x1)dx1
++
+Z t
+0
+Z
+R
+ 
+¯ρν¯hν
+1 −ˆρX ν
+E(t)ˆuX ν
+E(t)
+1
+
+φ′
+M dx1dτ
++2ν
+Z t
+0
+Z
+R
+ 
+¯ρν −ˆρX ν
+E(t)
+φ′′
+M dx1dτ+ 2ν
+Z t
+0
+Z
+R
+ˆρX ν
+E(t)φ′′
+M dx1dτ
+:=
+5X
+i=1
+Ji.
+(4.39)
+We will estimateJi (i= 1, ...,5)as follows. First,
+J1 =−
+Z
+R
+(¯ρν −ˆρX ν
+E(t))φM(x1)dx1
+=−
+Z 2M
+−2M
+(¯ρν −ˆρX ν
+E(t))φM(x1)
+h
+1 {0≤¯ρν ≤
+ρ−
+2 } +1 {
+ρ−
+2 ≤¯ρν ≤2ρ+} +1 {¯ρν ≥2ρ+}
+i
+dx1
+:=J 11 +J 12 +J 13.
+(4.40)
+Since
+lim
+¯ρν →0
+|¯ρν −ˆρX ν
+E(t)|
+F(¯ρν|ˆρX ν
+E(t)) = 1
+(ˆρX ν
+E(t))γ−1 ,
+which is positively bounded below and above, we have
+|J11| ≤ ∥(¯ρν −ˆρX ν
+E(t))1 {0≤¯ρν ≤
+ρ−
+2 }∥L1(R)
+≤C∥F(¯ρν|ˆρX ν
+E(t))∥L1(R).
+(4.41)
+And
+|J12| ≤ ∥(¯ρν −ˆρX ν
+E(t))1 {
+ρ−
+2 ≤¯ρν ≤2ρ+}∥L2(R)∥φM ∥L2[−2M,2M]
+≤CM
+1
+2 ∥F(¯ρν|ˆρX ν
+E(t))∥
+1
+2
+L1(R).
+(4.42)
+Since
+lim
+¯ρν →+∞
+|¯ρν −ˆρX ν
+E(t)|
+F(¯ρν|ˆρX ν
+E(t)) = 0,
+we have
+|J13| ≤ ∥(¯ρν −ˆρX ν
+E(t))1 {¯ρν ≥2ρ+}∥L1(R)
+≤C∥F(¯ρν|ˆρX ν
+E(t))∥L1(R).
+(4.43)
+
+[PDF page 36]
+36 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+Combining the above estimates (4.41)-(4.43) implies that
+|J1| ≤C
+
+∥F(¯ρν|ˆρX ν
+E(t))∥L1(R) +M
+1
+2 ∥F(¯ρν|ˆρX ν
+E(t))∥
+1
+2
+L1(R)
+
+.(4.44)
+Similarly,
+|J2| ≤C
+
+∥F(¯ρν
+0|ˆρ)∥L1(R) +M
+1
+2 ∥F(¯ρν
+0|ˆρ)∥
+1
+2
+L1(R)
+
+.(4.45)
+Now we estimateJ3 as follows.
+J3 =
+Z t
+0
+Z
+R
+¯ρν ¯hν
+1 −ˆuX ν
+E(t)
+1
+
+φ′
+M dx1dτ+
+Z t
+0
+Z
+R
+ˆuX ν
+E(t)
+1
+ 
+¯ρν −ˆρX ν
+E(t)
+φ′
+M dx1dτ
+=
+Z t
+0
+Z
+R
+√¯ρν ¯hν
+1 −ˆuX ν
+E(t)
+1
+ √¯ρν −
+q
+ˆρX ν
+E(t)
+φ′
+M dx1dτ
++
+Z t
+0
+Z
+R
+√¯ρν ¯hν
+1 −ˆuX ν
+E(t)
+1
+q
+ˆρX ν
+E(t)φ′
+M dx1dτ
++
+Z t
+0
+Z
+R
+ˆuX ν
+E(t)
+1
+ 
+¯ρν −ˆρX ν
+E(t)
+φ′
+M dx1dτ
+:=J 31 +J 32 +J 33.
+(4.46)
+Then we have
+|J31| ≤
+Z t
+0
+∥√¯ρν ¯hν
+1 −ˆuX ν
+E(t)
+1
+
+∥L2(R)∥√¯ρν −
+q
+ˆρX ν
+E(t)∥L2(R)dτ.(4.47)
+while
+∥√¯ρν −
+q
+ˆρX ν
+E(t)∥L2(R)
+=
+
+√¯ρν −
+q
+ˆρX ν
+E(t)
+h
+1 {0≤¯ρν ≤
+ρ−
+2 } +1 {
+ρ−
+2 ≤¯ρν ≤2ρ+} +1 {¯ρν ≥2ρ+}
+i
+L2(R)
+≤C∥F(¯ρν|ˆρX ν
+E(t))∥
+1
+2
+L1(R),
+(4.48)
+due to the facts that
+lim
+¯ρν →0
+√¯ρν −
+p
+ˆρX ν
+E(t)
+2
+F(¯ρν|ˆρX ν
+E(t)) = 1
+ 
+ˆρX ν
+E(t)γ−1 ,
+and
+lim
+¯ρν →+∞
+√¯ρν −
+p
+ˆρX ν
+E(t)
+2
+F(¯ρν|ˆρX ν
+E(t)) = 0.
+Substituting (4.48) into (4.47) yields that
+|J31| ≤C
+Z t
+0
+∥√¯ρν ¯hν
+1 −ˆuX ν
+E(t)
+1
+
+∥L2(R)∥F(¯ρν|ˆρX ν
+E(t))∥
+1
+2
+L1(R)dτ.(4.49)
+J32 can be estimated as
+J32 =−
+Z t
+0
+Z −M
+−2M
+√¯ρν ¯hν
+1 −ˆuX ν
+E(t)
+1
+q
+ˆρX ν
+E(t) 6(x1 +M)(x 1 + 2M)
+M3 dx1dτ
++
+Z t
+0
+Z 2M
+M
+√¯ρν ¯hν
+1 −ˆuX ν
+E(t)
+1
+q
+ˆρX ν
+E(t) 6(x1 −M)(x 1 −2M)
+M3 dx1dτ
+≤ CT
+M3 sup
+t∈[0,T]
+∥√¯ρν ¯hν
+1 −ˆuX ν
+E(t)
+1
+
+∥L2(R)
+h
+∥(x1 +M)(x 1 + 2M)∥L2[−2M,−M]
++∥(x1 −M)(x 1 −2M)∥ L2[M,2M]
+i
+≤C T M − 1
+2 sup
+t∈[0,T]
+∥√¯ρν ¯hν
+1 −ˆuX ν
+E(t)
+1
+
+∥L2(R).
+(4.50)
+
+[PDF page 37]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 37
+Then
+J33 =
+Z t
+0
+Z
+R
+ˆuX ν
+E(t)
+1
+ 
+¯ρν −ˆρX ν
+E(t)h
+1 {0≤¯ρν ≤
+ρ−
+2 } +1 {
+ρ−
+2 ≤¯ρν ≤2ρ+} +1 {¯ρν ≥2ρ+}
+i
+φ′
+M dx1dτ
+≤C
+Z t
+0
+∥
+ 
+¯ρν −ˆρX ν
+E(t)h
+1 {0≤¯ρν ≤
+ρ−
+2 } +1 {¯ρν ≥2ρ+}
+i
+∥L1(R)∥φ′
+M ∥L∞[−2M,2M] dτ
++C
+Z t
+0
+∥
+ 
+¯ρν −ˆρX ν
+E(t)
+1 {
+ρ−
+2 ≤¯ρν ≤2ρ+}∥L2(R)∥φ′
+M ∥L2[−2M,2M] dτ
+≤CT M −1 sup
+t∈[0,T]
+∥p(¯ρν|ˆρX ν
+E(t))∥L1(R) +CT M − 1
+2 sup
+t∈[0,T]
+∥p(¯ρν|ˆρX ν
+E(t))∥
+1
+2
+L1(R).
+(4.51)
+On the other hand,
+J4 = 2ν
+Z t
+0
+Z
+R
+ 
+¯ρν −ˆρX ν
+E(t)h
+1 {0≤¯ρν ≤
+ρ−
+2 } +1 {
+ρ−
+2 ≤¯ρν ≤2ρ+} +1 {¯ρν ≥2ρ+}
+i
+φ′′
+M dx1dτ
+=−2ν
+Z t
+0
+Z −M
+−2M
+ 
+¯ρν −ˆρX ν
+E(t)h
+1 {0≤¯ρν ≤
+ρ−
+2 } +1 {
+ρ−
+2 ≤¯ρν ≤2ρ+}
++1 {¯ρν ≥2ρ+}
+i6(2x1 + 3M)
+M3 dx1dτ+ 2ν
+Z t
+0
+Z 2M
+M
+ 
+¯ρν −ˆρX ν
+E(t)h
+1 {0≤¯ρν ≤
+ρ−
+2 }
++1 {
+ρ−
+2 ≤¯ρν ≤2ρ+} +1 {¯ρν ≥2ρ+}
+i6(2x1 −3M)
+M3 dx1dτ
+≤2ν
+Z t
+0
+∥
+ 
+¯ρν −ˆρX ν
+E(t)h
+1 {0≤¯ρν ≤
+ρ−
+2 } +1 {¯ρν ≥2ρ+}
+i
+∥L1(R)
+h
+∥6(2x1 −3M)
+M3 ∥L∞[−2M,−M]
++∥6(2x1 + 3M)
+M3 ∥L∞[M,2M]
+i
+dτ+ 2ν
+Z t
+0
+∥
+ 
+¯ρν −ˆρX ν
+E(t)
+1 {
+ρ−
+2 ≤¯ρν ≤2ρ+}∥L2(R)·
+h
+∥6(2x1 −3M)
+M3 ∥L2[−2M,−M] +∥ 6(2x1 + 3M)
+M3 ∥L2[M,2M]
+i
+dτ
+≤CνM −2Tsup
+t∈[0,T]
+∥F(¯ρν|ˆρX ν
+E(t))∥L1(R) +CνM − 3
+2 Tsup
+t∈[0,T]
+∥F(¯ρν|ˆρX ν
+E(t))∥
+1
+2
+L1(R).
+(4.52)
+J5 = 2ν
+Z t
+0
+Z
+R
+ˆρX ν
+E(t)φ′′
+M dx1dτ
+=−2ν
+Z t
+0
+Z −M
+−2M
+ˆρX ν
+E(t) 6(2x1 + 3M)
+M3 dx1dτ+ 2ν
+Z t
+0
+Z 2M
+M
+ˆρX ν
+E(t) 6(2x1 −3M)
+M3 dx1dτ
+≤Cν
+Z −M
+−2M
+6|2x1 + 3M|
+M3 dx1dτ+Cν
+Z t
+0
+Z 2M
+M
+6|2x1 −3M|
+M3 dx1dτ
+≤CνM −1T.
+(4.53)
+Collecting all the above estimates together, we have∀t∈[0, T]
+|X ν
+E(t)−σt| ≤ CT
+|ρ+ −ρ −|
+h 
+E0 +ν
+
++
+ 
+E0 +ν
+ 1
+2 M
+1
+2 +
+ 
+E0 +ν
+ 1
+2
+i
+.(4.54)
+if we takeM >1. Therefore, we have∀t∈[0, T]
+|X ν
+E(t)| ≤ |σ|T+ CT
+ 
+E0 +ν
+ 1
+2
+|ρ+ −ρ −|
+
+M
+1
+2 + 1
+
+.(4.55)
+If we choose
+M= max
+
+
+1,2|σ|T+ 2 CT
+ 
+E0 +ν
+ 1
+2
+|ρ+ −ρ −| + |CT |2 
+E0 +ν
+
+(ρ+ −ρ −)2
+
+
+ ,(4.56)
+then the a priori assumption (4.36) is valid for∀t∈[0, T].By (4.54),
+|X ν
+E(t)−σt| ≤ CT
+|ρ+ −ρ −|2
+ 
+E0 +ν
+ 1
+2 + (E0 +ν)
+
+.(4.57)
+
+[PDF page 38]
+38 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+4.3.The relative entropy between 2D weak solution and the shifted shock.By (1.12), we have
+sup
+t∈[0,T]
+Z
+R×T
+
+ρν(vν
+1 −¯vν
+1)2 +ρ ν(wν
+1 −¯wν
+1)2 +ρ ν|vν
+2 −¯uν
+2|2 +ρ ν|wν
+2 |2 +F(ρ ν|¯ρν)
+
+dx1dx2
+≤Ce
+ 
+||∂x1 ¯vν ||L∞ ([0,T]×R) +||∂x1 ¯wν ||L∞ ([0,T]×R) +||∂x1 x1 ln(¯ρν)||L∞ ([0,T]×R) +||∂x1 ln(¯ρν)||2
+L∞ ([0,T]×R)
+
+T
+×E 1
+2
+(ρν
+0, vν
+0 , wν
+0 |¯ρν
+0,¯vν
+0 ,¯wν
+0).
+(4.58)
+Further, we have the following estimate on the norms of the planar strong solutions:
+Proposition 4.1.There existsC >0andj∈Nso that the following holds. Let(ρ ν
+0, vν
+0 , wν
+0)be as in
+Theorem 1.2. Let(¯ρν,¯uν)be the unique planar strong solution to(1.4)with initial data(¯ρν
+0,¯uν
+0). Then:
+sup
+(t,x)∈[0,T]×R
+1
+¯ρν(t, x) +||¯ρν −˜ρ||L∞([0,T];H 3(R))
++||(¯uν
+1,¯uν
+2)−(˜u1,˜u2)||L∞([0,T];H 2(R)) ≤ C
+νj .
+A proof of Proposition 4.1 is given in Section D. Plugging the estimate of Proposition 4.1 into (4.58) gives
+sup
+t∈[0,T]
+Z
+R×T
+
+ρν(vν
+1 −¯vν
+1)2 +ρ ν(wν
+1 −¯wν
+1)2 +ρ ν|vν
+2 −¯uν
+2|2 +ρ ν|wν
+2 |2 +F(ρ ν|¯ρν)
+
+dx1dx2
+≤e
+C
+νj × E 1
+2
+(ρν
+0, vν
+0 , wν
+0 |¯ρν
+0,¯vν
+0 ,¯wν
+0),
+(4.59)
+for some integerj >0.
+By (4.25), we have
+sup
+t∈[0,+∞)
+Z
+R
+h
+¯ρν|¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(·)
+1 |2 + ¯ρν|¯uν
+2|2 +F(¯ρν|ˆρX ν
+E(·))
+i
+(t, x1)dx1 ≤C
+
+E0 +ν
+
+. (4.60)
+We would like to combine (4.59) and (4.60) to obtain an estimate on
+sup
+t∈[0,T]
+Z
+R×T
+
+ρν(vν
+1 +w ν
+1 −ˆuX ν
+E(t)
+1 )2 +ρ ν|vν
+2 |2 +ρ ν|wν
+2 |2 +F(ρ ν|ˆρX ν
+E(t))
+
+dx1dx2.(4.61)
+First, we prove a couple of estimates on the relative quantityF(v|w)that will be crucial in the following
+proofs.
+Lemma 4.2.For given constantsγ, M >1, there exists a constantC >0andk 0 >1such that the following
+inequalities hold.
+(1) For anyk≥3Mandw∈(M −1, M),
+
+max
+ 
+(k−1 −v) +,(v−k) +
+γ
+≤C F(v|w),for anyv >0.(4.62)
+(2) For anyw 1, w2 ∈(M −1, M),
+F(v|w 1)≤C F(v|w 2),for anyv∈(0, k −1
+0 )∪(k 0,∞).(4.63)
+(3) Further, forw∈(M −1, M), we have the pointwise estimate
+|v−w| ≤C
+ p
+F(v|w) +F(v|w)
+1
+γ
+
+,for anyv >0.(4.64)
+(4) In particular,(4.64)implies
+v≤C(1 +F(v|w)),for anyv >0.(4.65)
+Finally, in all of the above, the constantCverifies
+C≤M j,for somej∈N.(4.66)
+Proof.SinceF(v) =v γ/(γ−1), we haveF ′(v) =γv γ−1/(γ−1), and hence
+F(v|w) =F(v)−F(w)−F ′(w)(v−w) = vγ −γw γ−1v+ (γ−1)w γ
+γ−1 .
+Note that (4.62) holds trivially forv∈[k −1, k]. So first assumev < k −1. Then
+
+max
+ 
+(k−1 −v) +,(v−k) +
+γ
+= (k−1 −v) γ < k −γ,0< v < k −1,
+
+[PDF page 39]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 39
+and, using the identity above,
+F(v|w) = vγ −γw γ−1v+ (γ−1)w γ
+γ−1 ≥M −γ − γM γ−1
+(γ−1)k ,
+forw∈(M −1, M)andv < k −1. Hence, taking
+C > 2
+ 
+2γM 2γ−1−γ
+(γ−1) 2M −γ ,
+we obtain (4.62) in this case.
+Next, assumev > k, so that
+
+max
+ 
+(k−1 −v) +,(v−k) +
+γ
+= (v−k) γ.
+DefineZ(v) =CF(v|w)−(v−k) γ. We showZ(v)≥0on[k,∞)forCchosen appropriately. Atv=k,
+Z(k) =CF(k|w)≥0. Next, compute
+Z ′(v) = Cγ
+γ−1
+ 
+vγ−1 −w γ−1
+−γ(v−k) γ−1.
+Using the fact thatv > k≥3M >3w,
+Z ′(v)≥γv γ−1
+ C
+γ−1
+ 
+1−3 1−γ
+−1
+
+.
+So, picking
+C >max
+ 
+2
+ 
+2γM 2γ−1−γ
+(γ−1) 2M −γ , γ−1
+1−3 1−γ
+!
+,
+we obtain (4.62) in all cases.
+Next, we prove (4.63). We break the analysis into two regions. First, assumev > k0. Then
+F(v|w) = vγ
+γ−1
+
+1−γ
+ w
+v
+γ−1
++ (γ−1)
+ w
+v
+γ
+.
+Ask 0 → ∞, the bracketed term converges to1uniformly inw∈(M −1, M). So, by takingk 0 sufficiently
+large (depending onM), we have
+1
+2 · vγ
+γ−1 ≤F(v|w)≤ 3
+2 · vγ
+γ−1 ,for anyw∈(M −1, M), v > k 0.
+This gives (4.63) in this range.
+Now assume0< v < k −1
+0 . As before,
+F(v|w)≥M −γ − γM γ−1
+(γ−1)k 0
+,
+forw∈(M −1, M)andv < k −1
+0 . So, takingk0 sufficiently large, we have for allw∈(M−1, M)
+F(v|w)≥ 1
+2 M −γ.
+Further, noting thatF(v|w)≤C 2 for some constantC2 (depending onγ, M, k 0) whenw∈(M −1, M)and
+v < k −1
+0 , we have
+F(v|w 1)≤C 2 ≤2C 2M γ F(v|w 2).
+This completes the proof of (4.63).
+Finally, we prove (4.64). First, assume that0< v < 1
+6M. Then, pickingC≥6M 2 gives
+|v−w|=w−v≤M−v≤ C
+6M2 (M−v)< C
+6M ≤C
+ 1
+3M −v
+
+.
+Pickingk= 3Mand using (4.62), we obtain (4.64) in this case. Next, assume thatv >6M. Then, for
+C≥3,
+|v−w| ≤v+M≤C v
+2 ≤C(v−3M).
+
+[PDF page 40]
+40 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+Pickingk= 3Mand using (4.62), we obtain (4.64) in this case.
+Finally, assume thatv∈[ 1
+6M ,6M]. Then, we have
+F(v|w)≥inf
+z∈[ 1
+6M ,6M]
+F ′′(z)
+2 |v−w| 2.
+Re-arranging and takingC≥
+ 
+inf
+z∈[ 1
+6M ,6M]
+−1
+, we obtain (4.64) in all cases.
+Finally, it is evident from the proof that (4.66) is verified.□
+Now, let us begin the estimate of (4.61). First,
+ρν(vν
+1 +w ν
+1 −ˆuX ν
+E(t)
+1 )2 ≤2ρ ν
+h
+(vν
+1 +w ν
+1 −¯vν
+1 −¯wν
+1)2 + (¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 )2
+i
+≤2
+h
+ρν(vν
+1 −¯vν
+1)2 +ρ ν(wν
+1 −¯wν
+1)2 + ¯ρν(¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 )2 + (ρν −¯ρν)(¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 )2
+i
+.
+(4.67)
+We need to estimate the last term in (4.67). By Proposition 4.1 and Lemma 4.2, we haveZ
+R×T
+(ρν −¯ρν)(¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 )2dx1dx2
+≤Cν −j
+Z
+R×T
+ p
+F(ρ ν|¯ρν) +F(ρ ν|¯ρν)
+1
+γ
+
+(¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 )2dx1dx2.
+By Holder’s inequalityZ
+R×T
+ p
+F(ρ ν|¯ρν) +F(ρ ν|¯ρν)
+1
+γ
+
+(¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 )2dx1dx2
+≤Cν −j
+
+||
+p
+F(ρ ν|¯ρν)||L2(R×T)||(¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 )2||L2(R×T)
++||F(ρ ν|¯ρν)
+1
+γ ||Lγ(R×T)||(¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 )2||
+L
+γ
+γ−1 (R×T)
+
+.
+For the first term, we compute
+||
+p
+F(ρ ν|¯ρν)||L2(R×T)||(¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 )2||L2(R×T) =||F(ρ ν|¯ρν)||
+1
+2
+L1(R×T)||¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 ||2
+L4(R×T).
+Then, using Proposition 4.1 and the fact thatˆuν
+1 is bounded, we obtain
+∥¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 ∥2
+L4(R) ≤C
+h
+∥¯vν
+1 + ¯wν
+1 −ˆuν,X ν
+E(t)
+1 ∥2
+L4(R) +∥ˆuν,X ν
+E(t)
+1 −ˆuX ν
+E(t)
+1 ∥2
+L4(R)
+i
+≤Cν −j
+h
+∥¯vν
+1 + ¯wν
+1 −ˆuν,X ν
+E(t)
+1 ∥L2(R) +ν
+1
+2
+i
+≤Cν −j(E0 +ν)
+1
+2 .
+This gives
+||
+p
+F(ρ ν|¯ρν)||L2(R×T)||(¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 )2||L2(R×T) ≤Cν −j(E0 +ν)
+1
+2 ||F(ρ ν|¯ρν)||
+1
+2
+L1(R×T).
+In a similar fashion, we estimate
+||F(ρ ν|¯ρν)
+1
+γ ||Lγ(R×T)||(¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 )2||
+L
+γ
+γ−1 (R×T)
+=∥F(ρ ν|¯ρν)∥
+1
+γ
+L1(R×T)∥¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 ∥2
+L
+2γ
+γ−1 (R)
+≤Cν −j(E0 +ν) 1− 1
+γ ∥F(ρ ν|¯ρν)∥
+1
+γ
+L1(R×T).
+Altogether, we obtainZ
+R×T
+ p
+F(ρ ν|¯ρν) +F(ρ ν|¯ρν)
+1
+γ
+
+(¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 )2dx1dx2
+≤Cν −j max((E0 +ν)
+1
+2 ,(E 0 +ν) 1− 1
+γ ) max(∥F(ρν|¯ρν)∥
+1
+2
+L1(R×T),∥F(ρ ν|¯ρν)∥
+1
+γ
+L1(R×T)),
+
+[PDF page 41]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 41
+which, by plugging this back into (4.67), givesZ
+R×T
+ρν|vν
+1 +w ν
+1 −ˆuX ν
+E(t)
+1 |2dx1dx2
+≤C
+Z
+R×T
+h
+ρν|vν
+1 −¯vν
+1 |2 +ρ ν|wν
+1 −¯wν
+1 |2 + ¯ρν|¯vν
+1 + ¯wν
+1 −ˆuX ν
+E(t)
+1 |2
+i
+dx1dx2
++Cν −j max((E0 +ν)
+1
+2 ,(E 0 +ν) 1− 1
+γ ) max(∥F(ρν|¯ρν)∥
+1
+2
+L1(R×T),∥F(ρ ν|¯ρν)∥
+1
+γ
+L1(R×T)).
+(4.68)
+Similarly, we haveZ
+R×T
+ρν|vν
+2 |2dx1dx2 ≤C
+Z
+R×T
+h
+ρν|vν
+2 −¯uν
+2|2 + ¯ρν|¯uν
+2|2 + (ρν −¯ρν)|¯uν
+2|2
+i
+dx1dx2
+≤C
+Z
+R×T
+h
+ρν|vν
+2 −¯uν
+2|2 + ¯ρν|¯uν
+2|2
+i
+dx1dx2
++Cν −j max((E0 +ν)
+1
+2 ,(E 0 +ν) 1− 1
+γ ) max(∥F(ρν|¯ρν)∥
+1
+2
+L1(R×T),∥F(ρ ν|¯ρν)∥
+1
+γ
+L1(R×T)).
+(4.69)
+For the term with the relative pressure, we have the relation
+F(ρ ν|ˆρX ν
+E(t)) =F(ρ ν|¯ρν) +F(¯ρν|ˆρX ν
+E(t)) + (ρν −¯ρν)
+ 
+F ′(¯ρν)−F ′(ˆρX ν
+E(t))
+
+.(4.70)
+Again, the last term in (4.70) needs to be estimated. Using Lemma 4.2 twice, alongside the bounds in
+Proposition 4.1 andC −1 ≤ |ˆρ| ≤CgivesZ
+R×T
+(ρν −¯ρν)
+ 
+F ′(¯ρν)−F ′(ˆρX ν
+E(t))
+
+dx1dx2
+≤Cν −j
+Z
+R×T
+ p
+F(ρ ν|¯ρν) +F(ρ ν|¯ρν)
+1
+γ
+ q
+F(¯ρν|ˆρX ν
+E(t)) +F(¯ρν|ˆρX ν
+E(t))
+1
+γ
+
+dx1dx2.
+For the first term, we estimateZ
+R×T
+p
+F(ρ ν|¯ρν)
+q
+F(¯ρν|ˆρX ν
+E(t))dx1dx2
+≤ ||F(ρ ν|¯ρν)||
+1
+2
+L1(R×T)||F(¯ρν|ˆρX ν
+E(t))||
+1
+2
+L1(R×T)
+≤(E 0 +ν)
+1
+2 ||F(ρ ν|¯ρν)||
+1
+2
+L1(R×T),(4.71)
+by (4.60). For the second Z
+R×T
+p
+F(ρ ν|¯ρν)F(¯ρν|ˆρX ν
+E(t))
+1
+γ dx1dx2
+≤ ||F(ρ ν|¯ρν)||
+1
+2
+L1(R×T)||F(¯ρν|ˆρX ν
+E(t))
+2
+γ ||
+1
+2
+L1(R×T)
+≤Cν −j(E0 +ν)
+1
+2 ||F(ρ ν|¯ρν)||
+1
+2
+L1(R×T),(4.72)
+where in the last inequality we have used the fact that2
+γ ≥1forγ∈(1,2]and|¯ρ ν|,|ˆρ| ≤Cν −j. For the
+third: Z
+R×T
+F(ρ ν|¯ρν)
+1
+γ
+q
+F(¯ρν|ˆρX ν
+E(t))dx1dx2
+≤ ||F(ρ ν|¯ρν)||
+1
+γ
+L1(R×T)||F(¯ρν|ˆρX ν
+E(t))
+γ
+2(γ−1) ||
+1− 1
+γ
+L1(R×T)
+≤Cν −j(E0 +ν) 1− 1
+γ ||F(ρ ν|¯ρν)||
+1− 1
+γ
+L1(R×T),(4.73)
+
+[PDF page 42]
+42 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+as γ
+2(γ−1) ≥1. Finally
+Z
+R×T
+F(ρ ν|¯ρν)
+1
+γ F(¯ρν|ˆρX ν
+E(t))
+1
+γ dx1dx2
+≤ ||F(ρ ν|¯ρν)||
+1
+γ
+L1(R×T)||F(¯ρν|ˆρX ν
+E(t))
+1
+γ−1 ||
+1− 1
+γ
+L1(R×T)
+≤Cν −j(E0 +ν) 1− 1
+γ ||F(ρ ν|¯ρν)||
+1− 1
+γ
+L1(R×T),(4.74)
+by identical reasoning. Combining (4.71)-(4.74) and using (4.70), we obtainZ
+R×T
+(ρν −¯ρν)
+ 
+F ′(¯ρν)−F ′(ˆρX ν
+E(t))
+
+dx1dx2
+≤Cν −j max((E0 +ν)
+1
+2 ,(E 0 +ν) 1− 1
+γ ) max(∥F(ρν|¯ρν)∥
+1
+2
+L1(R×T),∥F(ρ ν|¯ρν)∥
+1
+γ
+L1(R×T)).(4.75)
+By (4.59), (4.60), (4.68), (4.69), and (4.75), we have
+sup
+t∈[0,T]
+Z
+R×T
+
+ρν(vν
+1 +w ν
+1 −ˆuX ν
+E(t)
+1 )2 +ρ ν|vν
+2 |2 +F(ρ ν|ˆρX ν
+E(t))
+
+dx1dx2
+≤Csup
+t∈[0,T]
+Z
+R×T
+
+ρν(vν
+1 −¯vν
+1)2 +ρ ν|vν
+2 −¯uν
+2|2 +F(ρ ν|¯ρν)
++¯ρν(¯vν
+1 −ˆuX ν
+E(t)
+1 )2 + ¯ρν|¯uν
+2|2 +p(¯ρν|ˆρX ν
+E(t))
+i
+dx1dx2
++Cν −j max((E0 +ν)
+1
+2 ,(E 0 +ν) 1− 1
+γ ) max(∥F(ρν|¯ρν)∥
+1
+2
+L1(R×T),∥F(ρ ν|¯ρν)∥
+1
+γ
+L1(R×T))
+≤C(E 0 +ν) +Cν −j[
+ 
+1 + max((E0 +ν)
+1
+2 ,(E 0 +ν) 1− 1
+γ )
+
+×max(
+q
+E 1
+2
+(ρν
+0, vν
+0 , wν
+0 |¯ρν
+0,¯vν
+0 ,¯wν
+0)e
+C
+νj+1 ,(E 1
+2
+(ρν
+0, vν
+0 , wν
+0 |¯ρν
+0,¯vν
+0 ,¯wν
+0)e
+C
+νj+1 )
+1
+γ ).
+(4.76)
+4.4.Proof of Theorem 1.2.Using (4.57) and (4.76), we can take 2D weak inviscid limit as follows.
+4.4.1.Convergence of √ρν.Now, by (4.76), there exists a constantC >0and an integerj >0so that if
+E 1
+2
+(ρν
+0, vν
+0 , wν
+0 |¯ρν
+0,¯vν
+0 ,¯wν
+0)≤exp
+ 
+−Cν −j
+,
+then we have
+sup
+t∈[0,T]
+Z
+R×T
+
+ρν|vν +w ν −ˆuE,X ν
+E(t)|2 +p(ρ ν|ˆρX ν
+E(t))
+
+dx1dx2 ≤C(E 0 +ν) +E 1(ν), (4.77)
+whereE 1(ν)→0asν→0. Set the functionC ∗(ν)in the statement of Theorem 1.2 equal toexp
+ 
+−Cν −j
+for thisCandj.
+Next, given the two end statesρ± of the shockˆρ, fix a constantM >1so that
+(min(ρ−, ρ+),max(ρ −, ρ+))⊂(M −1, M).
+Then, fix the constantk0 >1in Lemma 4.2 and set
+K= max(3M, k 0).
+Then, let ψbe a continuous function defined by
+ψ(x) =
+
+
+
+x,ifK −1 ≤x≤K,
+K −1,ifx < K −1,
+K,ifx > K.
+Then set
+ρν := ψ(ρν), ρ ν
+e :=ρ ν −ρ ν.
+
+[PDF page 43]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 43
+Note that the truncationρν will be used in the proof of (1.15) later. Now, since
+|ρν
+e |= [max
+ 
+(k−1 −ρ ν)+,(ρ ν −k) +
+
+],
+andM −1 <ˆρX ν
+E < M, we use (4.62) to have
+|ρν
+e |γ ≤CF(ρ ν|ˆρX ν
+E).
+It follows from (4.76) that Z
+R×T
+|ρν
+e |γdx1dx2 ≤C(E 0 +ν) +E 1(ν).
+Therefore,{ρ ν
+e }ν>0 is bounded inL∞([0, T];L γ(R×T)). Further, since{ρ ν}ν>0 is bounded inL∞([0, T]×
+R×T)⊂L ∞([0, T];L γ
+loc(R×T)), we obtain
+{√ρν}ν>0 is bounded inL∞([0, T];L 2γ
+loc(R×T)).(4.78)
+Therefore, there exists√ρ∞ such that, up to a subsequence
+√ρν ⇀ √ρ∞ inL ∞([0, T];L 2γ
+loc(R×T)).
+4.4.2.Convergence of √ρν(vν +w ν)and √ρνuν.For convenience, let us denote by
+hν =v ν +w ν.(4.79)
+Take the constantKlarger if needed so that
+(min(u1,−, u1,+),min(u 1,−, u1,+))⊂( −K
+2 , K
+2 ).
+Then set
+ϕ(x) =
+
+
+
+x,if−K≤x≤K,
+−K,ifx <−K,
+K,ifx > K.
+and
+hν := (ϕ(hν
+1), ϕ(hν
+2)), h ν
+e :=h ν −h ν.
+Again, the truncationhν will be used in the proof of (1.15) later. Now, since
+|(hν
+e)1|= max
+ 
+(−hν
+1 −K) +,(h ν
+1 −K) +
+
+,
+and−K <ˆu ν,X ν
+E
+1 < K, we have
+|hν
+e | ≤ |h ν −ˆuν,X ν
+E |.
+It follows from (4.77) that Z
+R×T
+ρν|hν
+e |2dx1dx2 ≤C(E 0 +ν) +E 1(ν).
+Therefore,{ √ρνhν
+e }ν>0 is bounded inL ∞([0, T];L 2(R×T)). Further,{ √ρνhν}ν>0 is bounded in
+L∞([0, T];L 2γ
+loc(R×T)),→L ∞([0, T];L 2
+loc(R×T)). So, there existsu ∞ so that up to a subsequence
+√ρνhν ∗
+⇀ √ρ∞u∞ inL ∞([0, T];L 2
+loc(R×T)).
+Finally, by (4.78),{ √ρν}ν>0 is bounded inL 2
+loc([0, T]×R×T). Using the identity (3.41), this implies√ρνwν = 2ν∇ √ρν converges to0inH −1
+loc ([0, T]×R×T). Using the linearity √ρνuν = √ρνvν − √ρνwν
+gives
+√ρνuν ∗
+⇀ √ρ∞u∞ inH −1
+loc ([0, T]×R×T).
+This proves (1.14).
+
+[PDF page 44]
+44 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+4.4.3.Convergence ofX ν
+E and proof of(1.16).By (4.57),{X ν
+E}ν>0 is uniformly bounded inL∞([0, T]). So,
+there existsX ∞ ∈L ∞([0, T])so that, up to a subsequence
+X ν
+E
+∗
+⇀ X ∞ inL ∞([0, T]).
+Further, by the weak-* lower semi-continuity of theL∞ norm, we immediately obtain (1.16) from (4.57).
+4.4.4.Proof of(1.15).For the truncationsρ ν, hν, withKfixed, let
+Lν(t) :=
+Z
+R×T
+η(ρν, hν|ˆρX ν
+E ,ˆuX ν
+E)dx.
+Using the definitions of the truncations together with (4.77), we have
+||Lν||L∞([0,T]) ≤C(E 0 +ν) +E 1(ν).
+Then, we have the following lemma.
+Lemma 4.3.For the fixed constantK >1, let
+Rν(t) :=
+Z
+R×T
+η(ρν, hν|ˆρX∞ ,ˆuX∞)dx.
+Then,
+lim sup
+ν→0
+||Lν −R ν||L∞([0,T]) ≤ C
+|ρ− −ρ +|2
+
+E0 +
+p
+E0
+
+.
+Proof.Sinceh ν,ˆuare bounded, we have|hν −ˆuX ν
+E |2 − |hν −ˆuX∞ |2
+ ≤C|ˆuX ν
+E −ˆuX∞ |.
+Thus, using||ˆuX ν
+E −ˆuX∞ ||L1(R×T) =|u 1,− −u 1,+||X ν
+E −X ∞|, we have
+Z
+R×T
+ρν
+2
+|hν −ˆuX ν
+E |2 − |hν −ˆuX∞ |2
+dx≤C||X ν
+E −X ∞||L∞([0,T]) ≤ C
+|ρ− −ρ +|2
+
+E0 +
+p
+E0
+
+.
+For the second part, again using the fact thatρν andˆρare bounded
+|F(ρ ν|ˆρX ν
+E)−F(ρ ν|ˆρX∞)|
+≤ |F(ˆρX ν
+E)−F(ˆρ X∞)|
++|F ′(ˆρX ν
+E)||ˆρX ν
+E −ˆρX∞ |
++ (|ρν +|ˆρX∞ |)|F ′(ˆρX ν
+E)−F ′(ˆρX∞)|
+≤C|ˆρX ν
+E −ˆρX∞ |.
+So, we obtain the result by the same computations as above.□
+Now, we consider Z
+R×T
+η(ρν, hν|ˆρX∞ ,ˆuX∞)dx
+=
+Z
+ρν ∈[K −1,K]∩h ν ∈[−K,K]
+ρν |hν −ˆuX∞ |2
+2 dx
++
+Z
+ρν ̸∈[K −1,K]∪h ν ̸∈[−K,K]
+ρν |hν −ˆuX∞ |2
+2 dx
++
+Z
+ρν ∈[K −1,K]
+F(ρ ν|ˆρX∞)dx
++
+Z
+ρν ̸∈[K −1,K]
+F(ρ ν|ˆρX∞)dx
+=:
+4X
+i=1
+Ji.
+
+[PDF page 45]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 45
+Note that
+J1 +J 3 ≤R ν = (Rν −L ν) +L ν ≤(R ν −L ν) +C(E 0 +ν) +E 1(ν).
+ForJ 2, sinceˆu∈[ −K
+2 , K
+2 ], we have
+|hν −ˆuX∞ | ≤3|h ν −ˆuX ν
+E |whenh ν ̸∈[−K, K].
+So, using (4.77)
+J2 ≤C(E 0 +ν+E 1(ν)).
+ForJ 4, asˆρ∈[M −1, M], recalling thatK≥k 0 and using (4.63) gives
+J4 ≤C(E 0 +ν+E 1(ν)).
+In total, we obtain
+Z
+R×T
+
+ρν |hν −ˆuX∞ |2
+2 +F(ρ ν|ˆρX∞)
+
+dx≤ |R ν −L ν|+C(E 0 +ν+E 1(ν)).(4.80)
+It remains to take the limitν→0in (4.80). By the weak lower semi-continuity of theL 2-norm, we may
+take the limitν→0in the first term. Further, asx7→F(x|ˆρ X∞)is convex, the second term is weakly lower
+semi-continuous as well. So, we have
+Z
+R×T
+
+ρ∞
+|u∞ −ˆuX∞ |2
+2 +F(ρ ∞|ˆρX∞)
+
+dx
+≤lim inf
+ν→0
+Z
+R×T
+
+ρν |hν −ˆuX∞ |2
+2 +F(ρ ν|ˆρX∞)
+
+dx
+≤ C
+|ρ− −ρ +|2
+
+E0 +
+p
+E0
+
+,
+using Lemma 4.3 andE1(ν)→0asν→0, giving exactly (1.15). This completes the proof of Theorem 1.2.
+5.AI acknowledgement Statement
+A completed previous version of this manuscript was given to GPT-6.1 Sol to check for typos and exposi-
+tory imprecision. Afterwards, alongside fixing some minor typos, we added the statement of Lemma 3.2 and
+the proof (in Appendix C) to clarify the exposition and give more details.
+AppendixA.The a priori 1
+2 -entropy estimate
+In this section, we show how to obtain the 1
+2-entropy inequality (3.14) for smooth solutions, slightly
+modifying the a priori estimates proved in [43, Appendix A]. Note that existence of weak solutions to (3.4)
+has been proved in [52]. The solution they construct is actually a renormalized solution [43, Theorem 2.1].
+Their construction can be slightly modified to also obtain at1
+2-entropy solution by proving the inequality
+(3.14) at the level of the Faedo-Galerkin approximation forϵ0, ϵ1, ϵ2 >0and passing it into the limit.
+Consider a smooth solution of (3.4). Then, we have the following quantities
+E(ρ, u) =
+Z
+TR
+ 
+ρ |u|2
+2 +F(ρ) + 2ϵ 2|∇√ρ|2
+dx,
+DE(u) = 2ν
+Z
+TR
+|S(u)|2dx,
+EBD(ρ, u) =
+Z
+TR
+ 
+ρ |u+ 2ν∇ln(ρ)| 2
+2 +F(ρ) + 2ϵ 2|∇√ρ|2
+dx,
+DBD(ρ, u) =ν
+Z
+TR
+  8
+γ |∇ρ
+γ
+2 |2 +ϵ 2ρ|∇2 ln(ρ)|2 + 2|A(u)|2
+dx.
+Multiplying the continuity equation (3.4)1 by γργ−1
+γ−1 and the second equation byu, and integrating in space
+the sum of these quantities gives
+∂tE(ρ, u) +D E(u) +ϵ 0
+Z
+TR
+|u|2dx+ϵ 1
+Z
+TR
+ρ|u|4dx= 0.(A.1)
+
+[PDF page 46]
+46 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+The equation onk:=u+ 2ν∇ln(ρ)is
+∂t(ρk) + div(ρu⊗k) +∇ρ γ −2div(νρAu+κρS ϵ2) =−ϵ 0u−ϵ 1ρ|u|2u.(A.2)
+Multiplyingtheequation(A.2)byk, addingthecontinuityequationmultipliedby γργ−1
+γ−1 +ϵ0ν, andintegrating
+in space gives:
+∂t
+
+EBD(ρ, u) + 2ϵ0ν
+Z
+TR
+(ρ−ln(ρ))dx
+
++D BD(ρ, u) +ϵ 0
+Z
+TR
+|u|2dx+ϵ 1
+Z
+TR
+ρ|u|4
+=ϵ 1ν
+Z
+TR
+2√ρ|u|2u· ∇ √ρdx.
+Then, we estimate
+|ϵ1ν
+Z
+TR
+2√ρ|u|2u· ∇ √ρdx| ≤3νϵ 1
+Z
+TR
+√ρ|u|2√ρ|∇u|dx.
+Using Young’s inequality gives:
+∂t
+
+EBD(ρ, u) + 2ϵ0ν
+Z
+TR
+(ρ−ln(ρ))dx
+
++D BD(ρ, u) +ϵ 0
+Z
+TR
+|u|2dx+ (ϵ 1 −2ζ)
+Z
+TR
+ρ|u|4
+−2ζ
+Z
+TR
+|T(u)| 2dx≤0,(A.3)
+whereζis defined in (3.16). Finally, definingv=u+ν∇ln(ρ)andw=ν∇ln(ρ), we note the identity
+1
+2 |k|2 + 1
+2 |u|2 =|v| 2 +|w| 2.
+So, adding 1
+2 times (A.1) and 1
+2 times (A.3) and integrating in time gives exactly (3.14).
+AppendixB.Proof of Proposition 3.3
+In this section, we prove Proposition 3.3. We work with the planar strong solution to the system
+
+
+(¯ρR)t + (¯ρR¯uR,1)x1 = 0,(t, x 1, x2)∈R + ×[−R,2R] periodic ×T,
+(¯ρR¯uR,1)t + (¯ρR¯u2
+R,1)x1 +p(¯ρR)x1 = (2ν¯ρR(¯uR,1)x1)x1 ,
+(¯ρR¯uR,2)t + (¯ρR¯uR,1¯uR,2)x1 = (ν¯ρR(¯uR,2)x1)x1 ,
+(¯ρR(0, x1),(¯ρR¯uR)(0, x1)) = ((¯ρR)0,( ¯mR)0)(x1).
+(B.1)
+The initial value((¯ρR)0,( ¯mR)0)verifies (uniformly inR):
+||((¯ρR)0,(¯uR)0)−(˜ρR,˜uR)||H 6(TR) ≤2δ 3,
+|∂x1(¯uR,1)0| ≤ 1
+2ν ((¯ρR)0)γ−1,
+(¯ρR)0 ≥c 0 >0.(B.2)
+The global existence and smoothness for solutions such a system on fixed domainsT×TandR×Twith
+initial data verifying these bounds is a straightforward generalization of previous works (see [50], [26], [41])
+and clearly holds on[−R,2R] periodic ×T, but we redo the estimates here for completeness to show the
+constantC(T, ν, δ 3, c0)need not depend onRif the initial data verifies the bounds (B.2) uniformly inR.
+In particular, we are careful not to use any Poincaré inequality onTR or bounds involving theL2-norm of
+(¯ρR,¯uR). For brevity, we drop thex2 direction, the bar notation, and the parameterRand instead work
+with the following system
+
+
+ρt + (ρu1)x = 0,(t, x)∈R + ×[−R,2R] periodic,
+(ρu1)t + (ρu2
+1)x +p(ρ) x = (2νρu1x)x,
+(ρu2)t + (ρu1u2)x = (νρu2x)x,
+(ρ(0, x),(ρu)(0, x)) = (ρ 0, m0)(x),
+(B.3)
+
+[PDF page 47]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 47
+whereu(t, x) =
+
+u1(t, x)
+u2(t, x)
+
+. Note that the equation foru2 in (B.3) is decoupled from the equations forρand
+u1. So the system (B.3) can mostly be treated as the usual1-D compressible Navier-Stokes equations.
+Notation B.1.For brevity, in the section we will use the following notation.
+U0 = (ρ0, u0),
+U= (ρ, u),
+Π := [−R,2R] periodic,
+˜S= (˜ρ,˜u) := (˜ρR,˜uR),
+Lp
+t Lq
+x :=L p([0, T];L q(Π))for1≤p, q≤ ∞,
+Lp
+t H q
+x :=L p([0, T];H q(Π))for1≤p, q≤ ∞.
+We letjdenote an arbitrary positive integer that may vary line by line, that depends only onγ. Fi-
+nally, we letCdenote an arbitrary constant that may vary line by line. The constantCmay depend
+onδ 3, c0,||(˜ρ,˜u)||W 1,∞(Π), T,&ν, but notR.
+We will consider initial data(ρ0, u0)verifying (by (B.2)),
+||(ρ0, u0)−(˜ρ,˜u)||H 6(Π) ≤2δ 3,
+|∂x(u1)0| ≤ 1
+2ν (ρ0)γ−1,
+ρ0(x)≥c 0 >0.(B.4)
+Proposition 3.3 follows immediately from the following proposition for (B.3).
+Proposition B.1.Let(ρ 0, u0)verify the bounds(B.4). LetT >0be fixed. Then, there exists a strong
+solution(ρ, u)to(B.3), whereu=
+u1
+u2
+
+. Further, there exists a constantC >0such that
+inf
+(t,x)∈[0,T]×Π
+ρ−1(t, x) +||(ρ, u)−(˜ρ,˜u)||L∞([0,T];H 6(Π))
++||u−˜u|| L2([0,T];H 7(Π)) ≤C.(B.5)
+The constantCdoes not depend onR.
+Let us begin the proof. Firstly, by Theorem 1.6 in [26], there exists a global strong solution(ρ, u1)to the
+first two equations of (B.3), with lower bound on the density (uniform inR)
+κ := inf
+x∈Π
+ρ(t, x)≥
+
+[ inf
+x∈Π
+ρ0(x)]1−γ + T
+ν (γ−1)
+ −1
+γ−1
+.(B.6)
+Further, notice that once(ρ, u1)have been shown to exist, we see thatu2 verifies the linear parabolic equation
+(u2)t = ((νlog(ρ)) x −u 1)(u2)x +ν(u 2)xx.(B.7)
+By standard theory for linear parabolic equations, there exists a local solutionu2, which easily extends to a
+global solution once the bound (B.5) has been established. So it suffices to prove (B.5).
+Define the following quantities:
+η(U| ˜S) := ρ|u1 −˜u1|2
+2 +p(ρ|˜ρ),
+ηBD(U| ˜S) := ρ|u1 −˜u1 +ϕ(ρ) x|2
+2 ,(B.8)
+wherep(ρ|˜ρ)is the relative pressure:
+p(ρ|˜ρ) := 1
+γ−1 ργ − 1
+γ−1 ˜ργ − γ
+γ−1 ˜ργ−1(ρ−˜ρ),
+andϕverifies
+ϕ′(ρ) = µ(ρ)
+ρ2 ,forµ(ρ) = 2νρ.
+
+[PDF page 48]
+48 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+Finally, note that by (B.4), we have bounds (uniform inR)Z
+Π
+η(U0| ˜S)dx≤C,
+Z
+Π
+ηBD(U0| ˜S)dx≤C.
+The first step is to obtain the relative energy/BD-entropy inequalities.
+Step 1: Energy and BD-entropy inequality.Firstly, we compute the time evolution of the relative
+entropy. Following the proof of Lemma 3.1 in [50], we obtain
+d
+dt
+Z
+Π
+η(U| ˜S)dx+
+Z
+Π
+µ(ρ)|(u1)x|2dx
+≤ −
+Z 1
+−1
+∇2η( ˜S)A( ˜S)x((ρ, u1)−(˜ρ,˜u1))dx+
+Z 1
+−1
+(˜u1)xµ(ρ)(u1)xdx
+−
+Z 1
+−1
+(∇η( ˜S))xA(U| ˜S)dx−
+Z 1
+−1
+D(η( ˜S))xA( ˜S)dx,
+where
+A(U) =
+
+ρu1
+ρu2
+1 +ρ γ
+
+,
+A(U| ˜S) =
+ 0
+ρ(u1 −˜u1)2 + (γ−1)p(ρ|˜ρ).
+
+.
+We bound each term as follows. For the first,
+−
+Z 1
+−1
+∇2η( ˜S)A( ˜S)x((ρ, u1)−(˜ρ,˜u1))dx≤C
+Z 1
+−1
+|U− ˜S|dx
+≤
+Z 1
+−1
+|ρ−˜ρ|dx+
+Z 1
+−1
+ρ|(ρ, u1)−(˜ρ,˜u1)|dx+
+Z 1
+−1
+|˜u1(ρ−˜ρ)|dx
+≤C
+Z 1
+−1
+(1 +p(ρ|˜ρ))dx+
+ Z 1
+−1
+ρdx
+ 1
+2
+ Z 1
+−1
+ρ(u1 −˜u1)2dx
+ 1
+2
+≤C
+Z 1
+−1
+(1 +p(ρ|˜ρ))dx+
+ Z 1
+−1
+(1 +p(ρ|˜ρ))dx
+ 1
+2
+ Z 1
+−1
+η(U| ˜S)dx
+ 1
+2
+≤C+C
+Z
+Π
+η(U| ˜S)dx,
+where we have used [50, (3.3)] for the third and fourth inequalities. For the second, we compute
+Z 1
+−1
+(˜u1)xµ(ρ)(u1)xdx≤ 1
+2
+Z 1
+−1
+µ(ρ)|(u1)x|2dx+C
+Z 1
+−1
+ρdx
+≤ 1
+2
+Z 1
+−1
+µ(ρ)|(u1)x|2dx+C+C
+Z
+Π
+η(U| ˜S)dx.
+For the third:
+−
+Z 1
+−1
+(Dη( ˜S))xA(U| ˜S)dx≤C
+Z 1
+−1
+A(U| ˜S)dx
+≤C
+Z
+Π
+η(U| ˜S)dx,
+as|A(U| ˜S)| ≤max(1,(γ−1))η(U| ˜S). Finally,
+Z 1
+−1
+∇(η( ˜S))xA( ˜S)dx≤C.
+
+[PDF page 49]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 49
+Altogether, we obtain
+d
+dt
+Z
+Π
+η(U| ˜S)dx+ 1
+2
+Z
+Π
+µ(ρ)|(u1)x|2dx≤C+C
+Z
+Π
+η(U| ˜S)dx.(B.9)
+Next, we compute the time evolution of the relative BD entropy. By in [50, (3.17)], we have
+d
+dt
+Z
+Π
+ρ(u1 −˜u1)ϕ(ρ)x + ρ|ϕ(ρ)x|2
+2 dx
+
++
+Z
+Π
+ϕ(ρ)x(ργ)xdx
+=
+Z
+Π
+µ(ρ)((u1)x)2dx−
+Z
+Π
+µ(ρ)(u1)x(˜u1)xdx−
+Z
+Π
+ρϕ(ρ)xu1(˜u1)xdx.
+The first term on the right-hand side may be controlled by the dissipation in (B.9) (up to a constant). For
+the second, we compute
+−
+Z
+Π
+µ(ρ)(u1)x(˜u1)xdx≤C
+Z
+Π
+µ(ρ)(u1)2
+xdx+C
+Z
+Π
+ρ((˜u1)x)2dx
+≤C
+Z
+Π
+µ(ρ)(u1)2
+xdx+C
+Z 1
+−1
+(1 +p(ρ|˜ρ)dx
+≤C
+Z
+Π
+µ(ρ)(u1)2
+xdx+C+C
+Z
+Π
+η(U| ˜S)dx.
+For the last, we compute
+−
+Z
+Π
+ρϕ(ρ)xu1(˜u1)xdx≤C
+Z 1
+−1
+ρ|ϕ(ρ)x|2dx+C
+Z 1
+1
+ρu2
+1dx
+≤C
+Z 1
+−1
+ρ(ϕ(ρ)x −(u 1 −˜u1))2dx+C
+Z 1
+−1
+ρ(u1 −˜u1)2dx+C
+Z 1
+−1
+ρ˜u2
+1dx
+≤C+C
+Z
+Π
+ηBD(U| ˜S)dx+C
+Z
+Π
+η(U| ˜S)dx.
+Altogether, we obtain
+d
+dt
+Z
+Π
+ρ(u1 −˜u1)ϕ(ρ)x + ρ|ϕ(ρ)x|2
+2 dx
+
++
+Z
+Π
+ϕ(ρ)x(ργ)xdx
+≤C+C
+Z
+Π
+µ(ρ)(u1)2
+xdx+C
+Z
+Π
+η(U| ˜S)dx+
+Z
+Π
+ηBD(U| ˜S)dx.(B.10)
+Adding a constant multiple of (B.9) to (B.10) and using Gronwall, we obtain
+Z
+Π
+η(U| ˜S)dx(t) +
+Z
+Π
+ηBD(U| ˜S)dx(t) +
+Z t
+0
+Z
+Π
+µ(ρ)(u1)2
+xdxdτ+
+Z t
+0
+Z
+Π
+ϕ(ρ)x(ργ)xdxdτ≤C.(B.11)
+RemarkB.1.At this point, it may be obtained from the above computations that the constantCin (B.11)
+is independent ofν.
+Step 2: Upper and lower bounds on the density.In this step, we obtain upper and lower bounds
+onρ(t, x)uniform inR(but notT). We note that the uniform lower boundκ (see (B.6)) is already obtained
+in [26] (it is not stated explicitly therein but it is easy to check that the constant does not depend on the
+width of the torus). So we need only obtain an upper bound. We follow the same strategy as [50, Proposition
+4.5].
+Lets= γ−1
+2 . Then, forK⊂⊂Π
+Z
+K
+(ρs)xdx=s
+Z
+K
+|ρs−1ρx|dx
+≤
+ Z
+K
+ργdx
+ 1
+2
+ Z
+K
+1
+ρ3 ρ2
+xdx
+ 1
+2
+≤ C
+νκ
+ Z
+K
+1 +p(ρ|˜ρ)dx
+ 1
+2
+ Z
+K
+ρ( µ(ρ)
+ρ2 )2ρ2
+xdx
+ 1
+2
+≤ C
+νκ
+ 
+|K|+ 1
+ 1
+2 ,
+
+[PDF page 50]
+50 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+by (B.11). Further Z
+K
+ρsdx≤
+Z
+K
+1 +ρ γdx≤C(|K|+ 1),
+by (B.11). It follows thatρ s ∈L ∞([0, T];W 1,1
+loc (Π)), where theW 1,1(K)norm ofρ s(t,·)depends only on
+|K|(crucially, it does not depend onR). Then, fix(t, x)∈[0, T]×Π. We wish to estimateρ s(t, x). Let
+K:= [x−1, x+ 1]. Then, uniformly inR, by Markov’s inequality we have
+|{ρs(t, x)≥M, x∈K}| ≤ ||ρs(t,·)|| L1(K)
+M .
+ChoosingM≥2||ρ s||L∞([0,T];L 1(K)), we obtain
+|{ρs(t, x)≥M, x∈K}| ≤ 1
+2 .
+So, there existsy∈Kso thatρ s(t, y)≤M. Then,
+|ρs(t, x)| ≤ |ρ s(t, y)|+||(ρ s)x||L1(K) .
+This implies that we have an upper bound on the density uniformly inR
+ρs(t, x)≤ C
+νκ ≤C.(B.12)
+RemarkB.2.At this point, it may be computed that the constant C in (B.12) scales inνlike C
+νj for some
+integerj >0.
+Step 3:H 1-estimate. In this step, we obtain the estimate
+||ρ−˜ρ||L∞
+t H 1x +||u 1 −˜u1||L∞
+t H 1x +||u 1 −˜u1||L2
+t H 2x
+≤C.(B.13)
+Firstly, as bothρ,˜ρare bounded from above and below, we computeZ
+Π
+(ρ−˜ρ)2dx≤C
+Z
+Π
+p(ρ|˜ρ)dx≤C,
+by (B.11). For the derivative estimate,Z
+Π
+ρ2
+xdx≤C
+Z
+Π
+ρϕ(ρ)2
+xdx≤C,
+by (B.11), asρis bounded from above. As supp(˜ρ)⊂[−1,1], this grants
+||ρ−˜ρ||L∞
+t H 1x ≤C.(B.14)
+For theH 1 bound onu 1 −˜u1, first note that||u1 −˜u1||L∞
+t L2x ≤Cby (B.11) and (B.6). Next, we do an
+energy estimate on(u1)x, which verifies the equation
+(u1)xt −2ν(u 1)xxx =−γ(γ−2)ρ γ−3ρx −γρ γ−2ρxx + (˜u1)x(u1)x + ˜u(u1)xx
++ (νlog(ρ) xx −((u 1)x −(˜u1)x))(u1)x + (νlog(ρ) x −(u 1 −˜u1))(u1)xx.
+Multiplying the equation by(u1)x and integrating by parts, we obtain
+d
+dt
+Z
+Π
+1
+2(u1)2
+xdx+ 2ν
+Z
+Π
+(u1)2
+xxdx=−
+Z
+Π
+γ(γ−2)ρ γ−3ρx(u1)xdx
+−γ
+Z
+Π
+ργ−2ρxx(u1)xdx+
+Z
+Π
+(˜u1)x(u1)2
+xdx+
+Z
+Π
+˜u1(u1)xx(u1)xdx
++ 1
+2
+Z
+Π
+(νlog(ρ) xx)(u1)2
+xdx− 1
+2
+Z
+Π
+((u1)x −(˜u1)x))(u1)2
+xdx.
+For the first two terms, we compute
+−
+Z
+Π
+γ(γ−2)ρ γ−3ρx(u1)xdx−γ
+Z
+Π
+ργ−2ρxx(u1)xdx=
+Z
+Π
+(−γργ−2ρx)x(u1)xdx
+=
+Z
+Π
+γργ−2ρx(u1)xxdx
+
+[PDF page 51]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 51
+≤ ν
+4
+Z
+Π
+(u1)2
+xxdx+C
+Z
+Π
+ρ2
+xdx.
+For the third and fourthZ
+Π
+(˜u1)x(u1)2
+xdx+
+Z
+Π
+˜u1(u1)xx(u1)xdx≤C
+Z
+Π
+(u1)2
+xdx.
+For the fifth
+1
+2
+Z
+Π
+(νlog(ρ) xx)(u1)2
+xdx≤C||(u 1)xx||2||(u1)x||∞||ρx||2
+≤C||(u 1)xx||
+3
+2 ||(u1)x||
+1
+2
+2 ||ρx||2 ≤ ν
+4 ||(u1)xx||2
+2 +C||(u 1)x||2
+2||ρx||4
+2
+≤ ν
+4 ||(u1)xx||2
+2 +C||(u 1)x||2
+2,
+where the second inequality follows from the Gagliardo-Nirenberg inequality (note that the constant is
+uniform inRas derivatives have mean zero), and we note by (B.14),||ρx||2 is uniformly bounded in time.
+Finally, for the last
+−1
+2
+Z
+Π
+((u1)x −(˜u1)x))(u1)2
+xdx=
+Z
+Π
+(u1 −˜u1)(u1)xx(u1)xdx
+≤ ||(u1)xx||2||(u1)x||∞||u1 −˜u1||2
+≤ ||(u1)xx||
+3
+2
+2 ||(u1)x||
+1
+2
+2 ||u1 −˜u1||2
+≤ ν
+4 ||(u1)xx||2
+2 +C||(u 1)x||2
+2,
+by the Gagliardo-Nirenberg inequality. Applying Gronwall gives (B.13).
+RemarkB.3.We remark that at this point, the constantCin (B.13) can be computed to scale inνlike
+Cexp
+  C
+νj
+
+for somej∈N.
+Step 3:H 2-estimate In this step, we obtain the estimate
+||ρ−˜ρ||L∞
+t H 2x +||u 1 −˜u1||L∞
+t H 2x +||u 1 −˜u1||L2
+t H 3x
+≤C.(B.15)
+The strategy is to do energy estimates simultaneously onρxx and also the derivative of theactive potential
+w, which is defined as
+w:=−p(ρ) +µ(ρ)(u 1)x.(B.16)
+Note thatw x verifies the equation
+wx =−p ′(ρ)ρx +µ ′(ρ)ρx(u1)x +µ(ρ)(u 1)xx.(B.17)
+The active potential was introduced in [26] and is crucially used to obtain existence results for more general
+relations betweenγandµ(ρ)than are treated here. Firstly, note that from (B.13) and the Gagliardo-
+Nirenberg inequality, we have bounds
+||w||L2
+t L∞x
++||w x||L2
+t L2x
+≤C.(B.18)
+Differentiating [41, (2.10)] in space, multiplying bywx, and integrating by parts, we obtain
+d
+dt
+Z
+Π
+w2
+x
+2 dx=−
+Z
+Π
+µ(ρ)
+ρ |w2
+xx|dx+
+Z
+Π
+µ(ρ)
+ρ2 ρxwxwxxdx
+−
+Z
+Π
+ux
+w2
+x
+2 dx+
+Z
+Π
+f1(ρ)|wx|2dx+
+Z
+Π
+f ′
+1(ρ)ρxwwxdx
+−2
+Z
+Π
+f2(ρ)w|wx|2dx−
+Z
+Π
+f ′
+2(ρ)ρxw2wx +
+Z
+Π
+f ′
+3(ρ)ρxwxdx
+=−2ν
+Z
+Π
+|w2
+xx|dx+
+7X
+k=1
+Ik,
+
+[PDF page 52]
+52 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+where
+f1(ρ) :=ρ p′(ρ)
+µ(ρ) −2p(ρ) ρµ′(ρ) +µ(ρ)
+µ(ρ)2 ,
+f2(ρ) := ρµ′(ρ) +µ(ρ)
+µ(ρ)2 ,
+f3(ρ) :=
+ 
+ρ p′(ρ)
+µ(ρ) −p(ρ) ρµ′(ρ) +µ(ρ)
+µ(ρ)2
+
+p(ρ).
+We show how to bound each term. ForI1:
+I1 ≤C||ρ x||∞||wx||2||wxx||2 ≤ ν
+2 ||wxx||2
+2 +C||ρ x||2
+∞||wx||2
+2
+≤ ν
+2 ||wxx||2
+2 +C||ρ x||2||ρxx||2||wx||2
+2
+≤ ν
+2 ||wxx||2
+2 +C(||ρ x||2
+2 +||ρ xx||2
+2)||wx||2
+2.
+Note that we do not sufficiently controlρxx inL 2
+t L2
+x. This is why we need to simultaneously do an energy
+estimate onρ xx. However, the rest of the terms may be bounded in terms of norms we already control as
+follows.
+I2 +I 3 ≤C||w x||2
+2,
+I4 ≤C||ρ x||2(||w||2
+∞ +||w x||2
+2),
+where we note that||ρx||2||w||2
+∞ ∈L 1([0, T])by (B.13) and (B.18). Continuing:
+I5 ≤C||w|| ∞||wx||2
+2,
+I6 ≤C(||ρ x||2
+2||w||2
+∞ +||w|| 2
+∞||wx||2
+2),
+I7 ≤C(||ρ x||2
+2 +||w x||2
+2).
+So, altogether, we obtain that there existsF1, F2 ∈L 1([0, T])so that
+d
+dt
+Z
+Π
+w2
+x
+2 dx≤ −ν
+Z
+Π
+|w2
+xx|dx+F 1(t) +F 2(t)
+Z
+Π
+w2
+x
+2 dx+C||ρ xx||2
+2||wx||2
+2.(B.19)
+Next, we do the energy estimate onρxx. Differentiating the continuity equation in (B.3) twice in space,
+multiplying byρ xx, and integrating in space, we obtain
+d
+dt
+Z
+Π
+ρ2
+xx
+2 dx=
+Z
+Π
+(u1)x
+ρ2
+xx
+2 dx−
+Z
+Π
+(u1ρx)xx −u 1ρxxx)ρxxdx
+−
+Z
+Π
+ρ(u1)xxxρxxdx−
+Z
+Π
+((ρ(u1)x)xx −ρ(u 1)xxx)ρxxdx
+=
+4X
+k=1
+Jk.
+Each term may be estimated as follows.
+J1 ≤ ||(u1)x||∞||ρxx||2
+2,
+J2 =−
+Z
+Π
+((u1)xxρx + 2(u1)xρxx)ρxxdx
+≤C(||(u 1)xx||2||ρx||∞||ρxx||2 +||(u 1)x||∞||ρxx||2
+2)
+≤C(||(u 1)xx||2
+2||ρx||2
+2 +||(u 1)xx||2
+2||ρxx||2
+2 +||(u 1)x||∞||ρxx||2
+2),
+where we note||(u1)xx||2
+2||ρx||2
+2 ∈L 1([0, T])by (B.13). ForJ 3, it will be necessary to estimate||(u1)xxx||2.
+Similar to [41, (A.6)], we estimate
+||(u1)xxx||2 ≤
+ 
+||w||∞||ρx||2
+2 +||w|| ∞||ρxx||2||ρx||2
++||ρ xx||2||w||∞ +||ρ x||2||wx||∞
+
+[PDF page 53]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 53
++||w xx||2 +||ρ x||∞ +||ρ x||2
+2 +||ρ xx||2
+
+.
+Noting||w|| ∞ ∈L 2([0, T])by (B.13) and using the Gagliardo-Nirenberg inequality to control||wx||∞ and
+||ρx||∞, forJ 3 we obtain
+J3 ≤C||(u 1)xxx||2||ρxx||2 ≤H 1(t) +H 2(t)(||ρxx||2
+2 +||w x||2
+2) + ν
+2 ||wxx||2
+2,
+whereH 1, H2 ∈L 1([0, T]). Finally forJ 4
+J4 =−
+Z
+Π
+(ρxxu1x + 2ρxu1xx)ρxxdx
+≤C(∥u 1x∥∞∥ρxx∥2
+2 +∥ρ x∥∞∥u1xx∥2∥ρxx∥2)
+≤C(∥u 1x∥∞∥ρxx∥2
+2 +∥u 1xx∥2[∥ρx∥4
+2 +∥ρ xx∥2
+2]).(B.20)
+Summing (B.19) and (B.20), we obtain that there existsG1, G2 ∈L 1([0, T])so that
+d
+dt
+Z
+Π
+w2
+x
+2 dx+
+Z
+Π
+ρ2
+xx
+2 dx
+
++ν
+Z
+Π
+w2
+xxdx≤G 1(t) +G 2(t)
+Z
+Π
+w2
+x
+2 dx+
+Z
+Π
+ρ2
+xx
+2 dx
+
+.
+Applying Gronwall gives the estimate
+||ρxx||L∞
+t L2x +||w x||L∞
+t L2x +||w xx||L2
+t L2x
+≤C.(B.21)
+Using the equation forw(B.16) and the fact that supp(˜S)⊂[−1,1], this easily implies (B.15).
+RemarkB.4.Note that at this point, the constantCin (B.15) scales inνlikeCexp
+ 
+exp
+  C
+νj
+
+.
+Step 5:H 2-estimate foru 2 −˜u2. Next, we obtain the estimate
+||u2 −˜u2||L∞
+t H 2x +||u 2 −˜u2||L2
+t H 3x
+≤C.(B.22)
+By (B.7), we see thatv:=u 2 −˜u2 verifies
+vt =νlog(ρ) xvx +νv xx −u 1vx +ν(˜u2)xx −u 1(˜u2)x +νlog(ρ) x(˜u2)x
+=:νlog(ρ) xvx +νv xx −u 1vx +I.(B.23)
+Multiplying (B.23) byvand integrating gives
+d
+dt
+Z
+Π
+v2
+2 dx+ν
+Z
+Π
+v2
+xdx=−ν
+Z
+Π
+ρx
+ρ vxvdx+
+Z
+Π
+Ivdx.
+Using the fact that||ρx
+ρ ||L∞([0,T]×Π) ≤Cand Young’s inequality gives
+d
+dt
+Z
+Π
+v2
+2 dx+ ν
+2
+Z
+Π
+v2
+xdx≤C
+Z
+Π
+v2dx+F 1(t),(B.24)
+whereF 1(t) =
+R
+Π I2dx∈L 1(0, T). Next, we differentiate (B.7), multiply by(u2)x, and integrate to obtain
+d
+dt
+Z
+Π
+(u2)2
+x
+2 dx+ν
+Z
+Π
+(u2)2
+xxdx=−ν
+Z
+Π
+log(ρ)x(u2)x(u2)xxdx− 1
+2
+Z
+Π
+(u1)x(u2)2
+xdx.
+Using the fact that||log(ρ)x||L∞([0,T]×Π) +||(u 1)x||L∞([0,T]×Π) ≤Cand Young’s inequality gives
+d
+dt
+Z
+Π
+(u2)2
+x
+2 dx+ ν
+2
+Z
+Π
+(u2)2
+xxdx≤C
+Z
+Π
+(u2)2
+xdx.(B.25)
+Finally, differentiating (B.7) twice in space, multiplying by(u2)xx, and integrating gives
+d
+dt
+Z
+Π
+(u2)2
+xx
+2 dx+ν
+Z
+Π
+(u2)2
+xxxdx=ν
+Z
+Π
+(log(ρ)x(u2)x)xx(u2)xxdx
+−
+Z
+Π
+(u1)xx(u2)x(u2)xxdx−2
+Z
+Π
+(u1)x(u2)2
+xxdx
+−
+Z
+Π
+(u1)x(u2)xxx(u2)xxdx.
+
+[PDF page 54]
+54 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+For the latter three terms, integration by parts and Young’s inequality give
+d
+dt
+Z
+Π
+(u2)2
+xx
+2 dx+ ν
+2
+Z
+Π
+(u2)2
+xxxdx≤ν
+Z
+Π
+(log(ρ)x(u2)x)xx(u2)xxdx
++C
+Z
+Π
+(u2)2
+xdx+
+Z
+Π
+(u2)2
+xxdx
+
+.(B.26)
+It remains the handle the first term. Integrating by parts and expanding we obtain
+ν
+Z
+Π
+(log(ρ)x(u2)x)xx(u2)xxdx≤ν
+Z
+Π
+ρxx
+ρ (u2)x(u2)xxxdx
++ν
+Z
+Π
+ρ2
+x
+ρ2 (u2)x(u2)xxxdx
++
+Z
+Π
+log(ρ)xu2xxu2xxxdx.(B.27)
+The second term above can be handled by Young’s inequality. For the first we use the Gagliardo-Nirenberg
+inequality to obtain
+ν
+Z
+Π
+ρxx
+ρ (u2)x(u2)xxxdx≤C||ρ xx||2||(u2)x||∞||(u2)xxx||2
+≤C||ρ xx||2||(u2)x||
+1
+2
+2 ||(u2)xx||
+1
+2
+2 ||(u2)xxx||2
+≤C||ρ xx||2
+2
+ 
+||(u2)x||2
+2 +||(u 2)xx||2
+2
+
++ ν
+8 ||(u2)xxx||2
+2.(B.28)
+The third is also easily handled using Young’s inequality. Plugging (B.27) and (B.28) into (B.26) and using
+Young’s inequality gives
+d
+dt
+Z
+Π
+(u2)2
+xx
+2 dx+ ν
+8
+Z
+Π
+(u2)2
+xxxdx≤F 2(t)
+ 
+||(u2)x||2
+2 +||(u 2)xx||2
+2
+
+,(B.29)
+whereF 2(t)∈L 1(0, T). Finally, combining (B.24), (B.25) and (B.29) gives
+d
+dt
+Z
+Π
+(u2 −˜u2)2
+2 dx+
+Z
+Π
+(u2)2
+x
+2 dx+
+Z
+Π
+(u2)2
+xx
+2 dx
+
++ ν
+8
+Z
+Π
+(u2)2
+xxxdx
+≤F 1(t) +F 2(t)
+Z
+Π
+(u2 −˜u2)2
+2 dx+
+Z
+Π
+(u2)2
+x
+2 dx+
+Z
+Π
+(u2)2
+xx
+2 dx
+
+,
+whereF 1, F2 ∈L 1(0, T). Applying Gronwall’s inequality gives (B.22).
+RemarkB.5.Note that constantCin (B.22) can be computed to scale inνlikeCexp
+ 
+exp
+ 
+exp
+  C
+νj
+
+.
+Step 6: Higher-order estimates via induction.At this point, combining (B.15), (B.21), and (B.22),
+we have shown
+||ρ−˜ρ||L∞
+t H 2x +||w−˜w|| L∞
+t H 1x +||w−˜w|| L2
+t H 2x
++||u−˜u|| L∞
+t H 2x +||u−˜u|| L2
+t H 3x
+≤M 2,(B.30)
+where we denote byMk a constant which, in terms of the Sobolev norms ofρ0 −˜ρandu 0 −˜u, depends only
+on theirH k norm (in terms of the other constants, it has the same dependencies as the constant C). In this
+step, we prove the following lemma:
+Lemma B.1.For anyk≥2, there existsM k >0so that
+||∂k
+xρ||L∞
+t L2x +||∂ k−1
+x w||L∞
+t L2x +||∂ k
+xw||L2
+t L2x
++||∂ k
+xu||L∞
+t L2x +||∂ k+1
+x u||L2
+t L2x
+≤M k.(B.31)
+Proof.The proof is by induction. Note that (B.31) holds fork= 2by (B.30). So, assume that it holds for
+k−1fork≥3. Then, differentiating the continuity equationk-times, multiplying by∂ k
+xρ, and integrating
+in space gives
+1
+2
+d
+dt
+Z
+Π
+|∂k
+xρ|2dx=−
+Z
+Π
+u1∂k+1
+x ρ∂k
+xρdx−
+Z
+Π
+([∂k
+x, u1]∂xρ)∂k
+xρdx
+−
+Z
+Π
+([∂k
+x, ρ]∂xu1)∂k
+xρdx−
+Z
+Π
+ρ∂k+1
+x u1∂k
+xρdx
+
+[PDF page 55]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 55
+=:
+4X
+j=1
+Ij.
+The terms are controlled as follows:
+I1 ≤C||(u 1)x||∞||∂k
+xρ||2
+2,
+and using the Kato-Ponce commutator inequality
+I2 ≤C
+ 
+||(u1)x||∞||∂k
+xρ||2 +||∂ k
+xu1||2||ρx||∞
+
+||∂k
+xρ||2 ≤M k−1(1 +||∂ k
+xρ||2
+2),
+by the induction hypothesis. Next
+I3 ≤C
+ 
+||ρx||∞||∂k
+xu1||2 +||∂ k
+xρ||2||(u1)x||∞
+
+||∂k
+xρ||2 ≤M k−1(1 +||∂ k
+xρ||2
+2),
+where again we control some higher norms byMk−1 by the induction hypothesis. Next,
+I4 ≤ ||ρ|| ∞||∂k+1
+x u1||2||∂k
+xρ||2.
+To control the termI4, we need to estimate∂k+1
+x u1. Using the equation forw(B.16), solving for(u1)x, and
+differentiatingktimes, we have the estimate
+||∂k+1
+x u1||2 ≤C
+ 
+||∂k
+x(wρ−1)||2 +||∂ k
+xργ−1||2
+
+≤C
+ 
+||[∂k
+x, ρ−1]w||2 +||∂ k
+xρ||2 + 1 +||ρ −1∂k
+xw||2
+
+,
+where for the last term we have used thatρis bounded from above and below away from zero and the
+induction hypothesis. Using again the Kato-Ponce commutator inequality to control the first term, we
+obtain
+||∂k+1
+x u1||2 ≤C
+ 
+||∂k
+xρ||2 + 1 +||∂ k
+xw||2
+
+.
+So, combining all the terms, we obtain
+1
+2
+d
+dt
+Z
+Π
+|∂k
+xρ|2dx≤M k−1
+ 
+||∂k
+xρ||2
+2 + 1
+
++ ν
+2 ||∂k
+xw||2
+2.(B.32)
+We need now to simultaneously do the energy estimate on∂k−1
+x w. Differentiating [41, (2.10)]k−1times in
+space, multiplying by∂k−1
+x w, and integrating in space, we obtain
+1
+2
+d
+dt
+Z
+Π
+|∂k−1
+x w|2dx+ 2ν||∂ k
+xw||2
+2 =
+Z
+Π
+∂k−2
+x
+ 
+(u1 + 2νln(ρ) x)wx
+
+∂k
+xwdx
++C
+Z
+Π
+∂k
+x(ρ−1w2)∂k−1
+x wdx+C
+Z
+Π
+∂k−1
+x
+ 
+ργ−1(w+ρ)
+
+∂k−1
+x w
+=:
+3X
+j=1
+Ij.
+For the first term, we control
+I1 ≤ ν
+2 ||∂k
+xw||2
+2 +C||∂ k−2
+x
+ 
+(u1 + 2νln(ρ) x)wx
+
+||2
+2
+≤ ν
+2 ||∂k
+xw||2
+2 +C
+ 
+||∂k−1
+x w(u1 + 2νln(ρ) x)||2
+2 +||[∂ k−2
+x ,(u 1 + 2νln(ρ) x)]wx||2
+2
+
+≤ ν
+2 ||∂k
+xw||2
+2 +M k−1||∂k−1
+x w||2
+2
++C
+ 
+||(u1 + 2νln(ρ) x)x||2
+∞||∂k−2
+x w||2
+2 +||∂ k−2
+x (u1 + 2νln(ρ) x)||2
+2||wx||2
+∞
+
+≤ ν
+2 ||∂k
+xw||2
+2 +M k−1(1 +||∂ k−1
+x w||2
+2),
+by the Gagliardo-Nirenberg inequality to control theL∞ norms in the third line and the induction hypothesis.
+RemarkB.6.Note that in the casek= 3, we do not controlw x inL ∞. However, using the Gagliardo-
+Nirenberg inequality
+||wx||2
+∞ ≤C||w x||2||wxx||2,
+and||w xx||2 ∈L 1(0, T)by the induction hypothesis, which is sufficient for the Gronwall inequality. So the
+proof proceeds with this small modification.
+
+[PDF page 56]
+56 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+The bounds onI2 andI 3 are similar. So, we obtain
+1
+2
+d
+dt
+Z
+Π
+|∂k−1
+x w|2dx+ν||∂ k
+xw||2
+2 ≤M k−1(||∂k−1
+x w||2
+2 + 1).(B.33)
+Summing (B.32) and (B.33) and using Gronwall’s inequality, we obtain□
+||∂k
+xρ||L∞
+t L2x +||∂ k−1
+x w||L∞
+t L2x +||∂ k
+xw||L2
+t L2x
+≤M k.(B.34)
+To obtain (B.31), it remains to prove the estimates on the higher-derivatives ofu. The estimate
+||∂k
+xu1||L∞
+t L2x +||∂ k+1
+x u1||L2
+t L2
+x
+≤M k,
+is easily recovered from (B.34) and the definition ofw(B.16). So it remains only to do theHk-estimate on
+u2. Differentiating (B.7)ktimes in space, multiplying by∂ k
+xu2, and integrating, we obtain
+1
+2
+d
+dt
+Z
+Π
+|∂k
+xu2|2dx+ν||∂ k+1
+x u2||2
+2 =
+Z
+Π
+∂k−1
+x
+ 
+(log(ρ)x −u 1)(u2)x
+
+∂k+1
+x u2dx.
+Using Young’s inequality and then (B.34) and the induction hypothesis similarly to above, we obtain
+1
+2
+d
+dt
+Z
+Π
+|∂k
+xu2|2dx+ ν
+2 ||∂k+1
+x u2||2
+2 ≤M k(1 +||∂ k
+xu2||2
+2).
+So, using Gronwall’s inequality, we finish the proof of Lemma B.1. Applying Lemma B.1 withk= 6, this
+completes the proof of Proposition B.1.
+AppendixC.Proof of Lemma 3.2
+In this section, we present a proof of Lemma 3.2. Recall that we have strong solutions(¯ρR,¯uR)to (3.1)
+with initial data given by (3.50). Further, owing to Definition 1.1, by [41] there exists a global-in-time unique
+smooth solution(¯ρ,¯u)with initial data(¯ρ0,¯u0)verifying for fixedT >0the bounds
+||¯ρ−˜ρ,¯u−˜u||C([0,T];H 6(R)) ≤Cδ 3,
+0< κ ≤¯ρ(x1)≤ κ.(C.1)
+In (3.103), we have already established the local strong convergence of(¯ρR,¯uR)to(¯ρ,¯u). Here, we would
+like to compare some norms of(¯ρR,¯uR)to(¯ρ,¯u)on the full regionT R. The main issue is that on the full
+region, the initial data of(¯ρR,¯uR)and(¯ρ,¯u)are not the same (due to the reflection). For this reason, we
+will use(¯ρ,¯u)to create an auxiliary function(ρapp
+R , uapp
+R )to compare to(¯ρ R,¯uR). Then, we will compare
+(ρapp
+R , uapp
+R )to(¯ρ,¯u)to obtain the result.
+C.0.1.Definition of the auxiliary function.Recall the functionχdefined in (3.48), (3.49). Also recall the
+definitions of the periodized reference functions(˜ρR,˜uR)in (3.45), (3.47). Then, we define the auxiliary
+function(ρ app
+R , uapp
+R )onT R:
+ρapp
+R (t, x1) = ˜ρR(x1) +χ R(x1)(¯ρ(t, x1)−˜ρ(x1)) +χ R(R−x 1)(¯ρ(t, R−x1)−˜ρ(R−x 1)),
+uapp
+R,1(t, x1) = ˜uR,1(x1) +χ R(x1)(¯u1)(t, x1)−˜u1(x1))−χ R(R−x 1)(¯u1(t, R−x 1)−˜u1(R−x 1)),
+uapp
+R,2(x1) = ˜uR,2(x1) +χ R(x1)(¯u2(t, x1)−˜u2(x1)) +χ R(R−x 1)(¯u2(t, R−x 1)−˜u2(R−x 1)).(C.2)
+The function(ρ app
+R , uapp
+R )has a similar piecewise representation to (3.51). Indeed, we have
+ρapp
+R , uapp
+R,1, uapp
+R,2(t, x1) =
+
+
+
+(¯ρ,¯u1,¯u2)(t, x1)|x 1| ≤ R
+4 ,
+(¯ρ,−¯u1,¯u2)(t, R−x 1)|x 1 −R| ≤ R
+4 ,
+χR(x1)(¯ρ,¯u1,¯u2)(t, x1) + (1−χ R(x1))(˜ρ,˜u1,˜u2)(x1)x 1 ∈[− R
+3 ,− R
+4 ]∪[ R
+4 , R
+3 ],
+χR(R−x 1)(¯ρ,−¯u1,¯u2)(t, R−x 1) + (1−χ R(R−x 1))(˜ρ,−˜u1,˜u2)(R−x 1)x 1 ∈[ 2R
+3 , 3R
+R ]∪[ 5R
+4 , 4R
+3 ],
+(˜ρR,˜uR,1,˜uR,2)(x1)otherwise.
+(C.3)
+
+[PDF page 57]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 57
+In other words,(ρapp
+R , uapp
+R )is either equal to the (reflected) full-line solution, the periodic reference function,
+or a convex combination of them. Due to this, and also (C.1), it is clear that
+||ρapp
+R −˜ρR, uapp
+R −˜uR||C([0,T];H 6(TR)) ≤Cδ 3,
+0< κ ≤ρ app
+R ≤ κ,(C.4)
+where we have changed the values ofκ, κslightly if needed. Further, note that
+(ρapp
+R (0,·), u app
+R (0,·)) = ((¯ρR)0,(¯uR)0).(C.5)
+C.0.2.The error in the equation for the auxiliary function.Now, we would like to do anH3-estimate on
+the difference between(ρapp
+R , uapp
+R )and(¯ρ R,¯uR). The main difficulty is that(ρapp
+R , uapp
+R )is not a solution to
+(3.1). In this section, we compute the error that arises from plugging(ρapp
+R , uapp
+R )into the equation (3.1).
+For brevity, we drop thex2 direction. Further, for the rest of this section, as(ρapp
+R , uapp
+R )and(¯ρ R,¯uR)are
+both sufficiently regular and bounded away from vacuum, we may instead consider the equivalent system
+
+
+ρt +u 1ρx +ρ(u 1)x = 0,(t, x)∈R + ×Π,
+(u1)t +u 1(u1)x +γρ γ−2ρx −2νln(ρ) x(u1)x = 2ν(u1)xx,
+(u2)t +u 1(u2)x −νln(ρ) x(u2)x =ν(u 2)xx,
+(C.6)
+whereΠ = [−R,2R] periodic. Note that(¯ρR,¯uR)verifies (C.6) exactly. The main lemma in this section will
+estimate the error obtained from plugging(ρapp
+R , uapp
+R )into (C.6).
+Lemma C.1.Let(ρ app
+R , uapp
+R )be defined in(C.2). Then,(ρ app
+R , uapp
+R )verifies the equations
+
+
+
+ρt +u 1ρx +ρ(u 1)x =f 1(t, x),(t, x)∈R + ×[−R,2R] periodic,
+(u1)t +u 1(u1)x +γρ γ−2ρx −2νln(ρ) x(u1)x −2ν(u 1)xx =f 2(t, x),
+(u2)t +u 1(u2)x −νln(ρ) x(u2)x −ν(u 2)xx =f 3(t, x),
+(C.7)
+wheref i obeys the bound for1≤i≤3,
+||fi(t, x)||L∞([0,T];H 3(Π)) ≤C(s R +R
+−1
+2 ),(C.8)
+where
+sR :=||¯ρ−˜ρ,¯u−˜u||C([0,T];H 5({|x1> R
+5 })) →0asR→ ∞.(C.9)
+Proof.Let us show only the estimate onf2, as the rest are somewhat simpler. Note that on the two regions
+{|x| ≤ R
+4 }and{|x−R| ≤ R
+4 },(ρ app
+R , uapp
+R )is an exact solution to (C.6). Sof 2(t, x) = 0there. Next, we
+consider the regions where(ρapp
+R , uapp
+R ) = (˜ρR,˜uR). Let us consider only[R
+3 , 2R
+3 ]for simplicity (the other one
+is identical). Noting thatρapp
+R andu app
+R,2 are constant on this region, we see
+f2(t, x) = ˜uR,1(˜uR,1)x −2ν(˜uR,1)xx.
+From the definition (3.47), we can directly compute that
+||˜uR,1(˜uR,1)x −2ν(˜uR,1)xx||H 3([ R
+3 , 2R
+3 ]) ≤R
+−1
+2 .(C.10)
+Finally, we consider the regions where(ρapp
+R , uapp
+R )is a convex combination of(¯ρ,¯u)and˜ρ,(˜u). Again, let us
+consider only[ R
+4 , R
+3 ]for simplicity. In this region, we have representations
+ρapp
+R =ρ + +χ R(¯ρ−ρ+),
+uapp
+R =u + +χ R(¯u−u+).
+Plugging these formulas into the second equation in (C.6) gives
+f2(t, x) = (uapp
+R,1)+(uapp
+R,1)(uapp
+R,1)x +γ(ρ app
+R )γ−2(ρapp
+R )x −2 ln(ρ app
+R )x(uapp
+R,1)x −2ν(u app
+R,1)xx
+=χ R(uapp
+R,1 −¯u1,+)(¯u1 −u +)x +γχ R((ρapp
+R )γ−2 −¯ργ−2)¯ρx + (χR)x
+ 
+uapp
+R,1(¯u1 −u 1,+)
++γ(ρ app
+R )γ−2(¯ρ−ρ+)
+
+−4ν(χ R)x(¯u1 −u 1,+)x −2ν(χ R)xx(¯u1 −u 1,+)
++ 2νχR(ln(¯ρ)x −ln(ρ app
+R )x)(¯u1 −u 1,+)x −2ν(χ R)x ln(ρapp
+R )x(¯u1 −u 1,+).(C.11)
+
+[PDF page 58]
+58 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+Note that every single term on the right-hand side of (C.11) consists of either(¯ρ−ρ+)or(¯u1 −u1,+)(or their
+derivatives), times a coefficient which is uniformly bounded inW4,∞(TR)(due to (C.1) and Proposition 3.3).
+So, applying the Leibniz formula and using Young’s inequality to bound theH3-norm gives
+||f2(t, x)||L∞([0,T];H 3([ R
+4 , R
+3 ])) ≤Cs R.(C.12)
+Combining (C.10) and (C.12) gives (C.8) fori= 2. The computations fori= 1,3are similar.□
+C.0.3.TheH 3-estimate between the approximate solution and the periodic solution.Now, denote:
+r=ρ app
+R −¯ρR, U=u app
+R −¯uR.
+Further note from (C.5) that
+r(0,·) =U(0,·) = 0.(C.13)
+Using the fact that(ρ app
+R , uapp
+R )solves (C.7) and(¯ρ R,¯uR)solves (C.6), we derive that(r, U)verifies the
+equations
+rt + ¯uR,1rx + ¯ρR(U1)x =−(ρ app
+R )xU1 −(u app
+R,1)xr−f 1(t, x),
+(U1)t + (¯uR,1 −2νln(ρ app
+R )x)(U1)x + (γ¯ργ−2 −2ν
+(uapp
+R,1)x
+¯ρR
+)rx −2ν(U 1)xx = (uapp
+R,1)xU1 −γ(¯ργ−2 −(ρ app
+R )γ−2)(ρapp
+R )x
+−2ν
+(ρapp
+R )x(uapp
+R,1)x
+¯ρRρapp
+R
+r−f 2(t, x),
+(U2)t + (¯uR,1 −νln(ρ app
+R )x)(U2)x −ν
+(uapp
+R,1)x
+¯ρR
+rx −ν(U 2)xx =−(u app
+R,2)x(U1)−ν
+(ρapp
+R )x(uapp
+R,1)x
+¯ρRρapp
+R
+r−f 3(t, x).
+(C.14)
+As the energy estimate on this system is very similar to what we have already done in Section B (actually it
+is much easier, since we already have established that all of the coefficients are bounded inW4,∞), we will
+omit the details. In the end, we may establish
+d
+dt ||r, U||2
+H 3(TR) ≤C(||r, U|| 2
+H 3(TR) +
+3X
+i=1
+||fi||H 3(TR)).
+Using Gronwall’s inequality, (C.13), and Lemma C.1, we obtain
+||r, U||2
+L∞([0,T];H 3(TR)) ≤C(s R +R
+−1
+2 )2 →0asR→ ∞.(C.15)
+C.0.4.Comparing the approximate solution and the full-line solution.Definev app
+R =u app
+R +νln(ρ app
+R )and
+wapp
+R =νln(ρ app
+R ). Via (C.15), we have already that
+||(¯vR)x −(v app
+R )x||L∞([0,T]×T R) +||( ¯wR)x −(w app
+R )x||L∞([0,T]×T R)
++||ln(¯ρR)xx −ln(ρ app
+R )xx||L∞([0,T]×T R) +||ln(¯ρR)x −ln(ρ app
+R )x||L∞([0,T]×T R) →0asR→ ∞.(C.16)
+It remains to compare the norms of the approximate solution to the norms of the full-line solution(¯ρ,¯u). We
+consider each of the three regimes separately. Firstly, when{|x| ≤R
+4 }and{|x−R| ≤ R
+4 }, we have exactly
+||(vapp
+R )x||∞ =||(¯v)x||∞,
+||(wapp
+R )x||∞ =||( ¯w)x||∞,
+||ln(ρ app
+R )xx||∞ =||ln(¯ρ)xx||∞,
+||ln(ρ app
+R )x||∞ =||ln(¯ρ)x||∞.
+On the regions where(ρapp
+R , uapp
+R )is equal to(˜ρR,˜uR), we see that
+||(vapp
+R )x||∞ =||(˜uR)x||∞ ≤ C
+R ,
+||(wapp
+R )x||∞ = 0,
+
+[PDF page 59]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 59
+||ln(ρ app
+R )xx||∞ = 0,
+||ln(ρ app
+R )x||∞ = 0.
+Finally, on the regions where(ρapp
+R , uapp
+R )is a convex combination of(¯ρ,¯u)and(˜ρ,˜u), the norms of derivatives
+of the approximate solution all converge to0asR→ ∞. Indeed, on these regions all the above norms may
+be controlled bysR (recall (C.9)). Combining the contributions from all three regions, we see
+||(vapp
+R )x||L∞([0,T]×T R) → ||¯vx||L∞([0,T]×R) ,
+||(wapp
+R )x||L∞([0,T]×T R) → ||¯wx||L∞([0,T]×R)
+||ln(ρ app
+R )xx||L∞([0,T]×T R) → ||ln(¯ρ)xx||L∞([0,T]×R) ,
+||ln(ρ app
+R )x||L∞([0,T]×T R) → ||ln(¯ρ)x||L∞([0,T]×R) ,(C.17)
+asR→ ∞. Combining (C.16) and (C.17) gives exactly Lemma 3.2.
+AppendixD.Optimal norm growth for the planar strong solution
+In this section, we compute how some norms of the planar strong solution on the channel scale with the
+viscosity. By taking the limitR→ ∞in Proposition B.1, we obtain already a poor (triple exponential)
+bound (see Remark B.5). It is our objective to obtain better scaling with respect to the viscosity. For this
+reason, we will need to pass to the Lagrangian mass coordinates, which we are able to do on the full space.
+Note that the energy estimates are possible in the Lagrangian coordinates due to the absence of the triple
+productρu 2 in the Lagrangian coordinates. This term is especially harmful because we only have an estimate
+||u||L∞ ≤exp
+  C
+νj
+
+from Section B, compared to the bound||ρ||L∞ ≤ C
+νj. We work with the strong solution
+to the equation (where we have dropped the bars for convenience)
+
+
+ρt + (ρu1)x = 0,(t, x)∈R + ×R,
+(ρu1)t + (ρu2
+1)x +p(ρ) x = (2νρu1x)x,
+(ρu2)t + (ρu1u2)x = (νρu2x)x,
+(ρ(0, x),(ρu)(0, x)) = (ρ 0, m0)(x),
+(D.1)
+whereu(t, x) =
+u1(t, x)
+u2(t, x)
+
+The initial value(ρ0, u0)verifies:
+||(ρ0, u0)−(˜ρ,˜u)||H 6(R) ≤ 1
+ν ,
+|(u0
+1)x1 | ≤ 1
+2ν (ρ0)γ−1,
+ρ0 ≥c 0 > 1
+ν >0.(D.2)
+For brevity, in the section we will use the following notation.
+Notation D.1.
+U0 = (ρ0, u0),
+U= (ρ, u),
+˜S= (˜ρ,˜u),
+Lp
+t Lq
+y :=L p([0, T];L q(R))for1≤p, q≤ ∞,
+Lp
+t H q
+y :=L p([0, T];H q(R))for1≤p, q≤ ∞.
+We letjdenote an arbitrary positive integer that may vary line by line and depends only onγ. Finally, we
+letCdenote an arbitrary constant that may vary line by line. The constantCmay depend on||(ρ 0, u0)−
+(˜ρ,˜u)||H 6(R), c0,||(˜ρ,˜u)||W 1,∞(R), T,&δ 3. Note that in this sectionCwill not depend onν, as we are careful
+to track the norm dependence onν.
+Our main proposition is the following. Note that it is exactly Proposition 4.1 in the new notation.
+
+[PDF page 60]
+60 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+Proposition D.1.Let(ρ 0, u0)verify the bounds(D.2). LetT >0be fixed. Consider the strong solution
+(ρ, u)to(D.1)with initial data(ρ 0, u0), whereu=
+u1
+u2
+
+. Then, there exists a constantC(T, δ3, c0)>0and
+an integerj∈Nsuch that
+inf
+(t,x)∈[0,T]×R
+ρ−1(t, x) +||ρ−˜ρ|| L∞([0,T];H 3(R))
++||(u 1, u2)−(˜u1,˜u2)||L∞([0,T];H 2(R)) ≤ C
+νj .(D.3)
+D.0.1.Lagrangian mass coordinates.Our strategy to prove Proposition D.1 is to do energy estimates in the
+Lagrangian mass coordinates. Making the change of variablesdy=ρdx−ρu 1dt, we obtain the system:
+
+
+vt −(u 1)y = 0,
+(u1)t +p L(v)y = 2ν
+  (u1)y
+v2
+
+y,
+(u2)t =ν
+  (u2)y
+v2
+
+y,
+(D.4)
+wherep L(v) =v −γ. Now, let˜v(y) = 1
+˜ρ(x). Recalling that
+κ ≤v(t, y)≤ κfor 1
+κ ≤ C
+νj , κ≥Cν j,(D.5)
+(see (B.6) and Remark B.2), it is straightforward to obtain
+||(v0, u0)−(˜v,˜u)||H 4(R) ≤ C
+νj ,(D.6)
+where the reference functions are now
+˜v(y) = 1
+˜ρ(x(0, y)),
+˜u(y) = ˜u(x(0, y)).
+Proposition D.1 follows directly from the following proposition in the Lagrangian mass coordinates:
+Proposition D.2.Let(ρ 0, u0)verify the bounds(D.2). LetT >0be fixed. Let(v, u)be the associated
+solution to(D.4)with initial data(v 0, u0). Then, there exists a constantC(T, δ 3, c0)>0and an integer
+j∈Nso that
+||v−˜v||L∞([0,T];H 3(R)) +||(u 1, u2)−(˜u1,˜u2)||L∞([0,T];H 2(R)) ≤ C
+νj .(D.7)
+D.0.2.L 2-estimate.We start by obtaining the analog of the BD-entropy inequality in Lagrangian mass
+coordinates. Using(˜u1)t = 0and combining the first and second equation in (D.4) gives
+((u1 −˜u1) + 2ν
+ 1
+v
+
+y)t +p L(v)y = 0.(D.8)
+Multiplying by(u 1 −˜u1) + 2ν
+  1
+v
+
+y gives
+((u1 −˜u1) + 2ν
+  1
+v
+
+y)2
+2
+
+t
++p L(v)y(u1 −˜u1) + 2νγv−γ−3v2
+y = 0.
+Now, adding and subtracting(˜u1)y to the first equation in (D.4) and multiplying by−(pL(v)−p L(˜v))gives
+ 
+−
+Z v
+˜v
+pL(s)ds+p L(˜v)(v−˜v)
+
+t + (pL(v)−p L(˜v))(u1 −˜u1)y
++ (˜u1)y(pL(v)−p L(˜v) = 0.(D.9)
+Adding the previous two equations and integrating in space gives
+∂t
+Z
+R
+((u1 −˜u1) + 2ν
+  1
+v
+
+y)2
+2 +
+ 
+−
+Z v
+˜v
+pL(s)ds+p L(˜v)(v−˜v)
+
+dy
++ 2νγ
+Z
+R
+v−γ−3v2
+ydy+
+Z
+R
+pL(˜v)y(u1 −˜u1)dy+
+Z
+R
+(˜u1)y(pL(v)−p L(˜v))dy= 0.(D.10)
+
+[PDF page 61]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 61
+Now, adding and subtracting2ν
+  (˜u1)y
+v2
+
+y to the second equation in (D.4), multiplying by(u1 −˜u1), and
+integrating in space:
+∂t
+Z
+R
+(u1 −˜u1)2
+2 dy+
+Z
+R
+pL(v)y(u1 −˜u1)dy
++ 2ν
+Z
+R
+(u1 −˜u1)y
+v2 dy+ 2ν
+Z
+R
+(˜u1)y
+v2 (u1 −˜u1)ydy= 0.
+Adding (D.9) to the previous equation, we obtain
+∂t
+Z
+R
+(u1 −˜u1)2
+2 +
+ 
+−
+Z v
+˜v
+pL(s)ds+p L(˜v)(v−˜v)
+
+dy+ 2ν
+Z
+R
+(u1 −˜u1)y
+v2 dy
++ 2ν
+Z
+R
+(˜u1)y
+v2 (u1 −˜u1)ydy+
+Z
+R
+pL(˜v)y(u1 −˜u1)dy
++
+Z
+R
+(˜u1)y(pL(v)−p L(˜v))dy= 0.(D.11)
+Adding and subtractingν
+  (˜u2)y
+v2
+
+y to the third equation in (D.4), multiplying by(u2 −˜u2), and integrating
+in space:
+∂t
+Z
+R
+(u2 −˜u2)2
+2 dy+ν
+Z
+R
+(u2 −˜u2)y
+v2 dy+ν
+Z
+R
+(˜u2)y
+v2 (u2 −˜u2)ydy= 0.(D.12)
+Finally, adding (D.10), (D.11), and (D.12) gives
+∂t
+Z
+R
+((u1 −˜u1) + 2ν
+  1
+v
+
+y)2
+2 + 2
+ 
+−
+Z v
+˜v
+pL(s)ds+p L(˜v)(v−˜v)
+
++ (u1 −˜u1)2
+2 + (u2 −˜u2)2
+2
+
+dy+ 2ν
+Z
+R
+(u1 −˜u1)y
+v2 dy
++ν
+Z
+R
+(u2 −˜u2)y
+v2 dy+ 2νγ
+Z
+R
+v−γ−3v2
+ydy
+=−2
+Z
+R
+(˜u1)y(pL(v)−p L(˜v))dy−2
+Z
+R
+pL(˜v)y(u1 −˜u1)dy
+−2ν
+Z
+R
+(˜u1)y
+v2 (u1 −˜u1)ydy−ν
+Z
+R
+(˜u2)y
+v2 (u2 −˜u2)ydy
+=:
+4X
+k=1
+Ik.
+We estimate each term as follows:
+I1 ≤(||p L(v)||L∞([0,T]×R) +||p L(˜v)||L∞([0,T]×R) )
+Z
+R
+|(˜u1)y|dy≤ C
+νj .
+For the second, using Young’s inequality
+I2 ≤C+
+Z
+R
+(u1 −˜u1)2dy.
+For the third, using Young’s inequality and (D.5)
+I3 ≤ C
+νj + ν
+2
+Z
+R
+(u1 −˜u1)y
+v2 dy.
+The last term is handled identically:
+I4 ≤ C
+νj + ν
+2
+Z
+R
+(u2 −˜u2)y
+v2 dy.
+Finally, Gronwall’s inequality gives the bound:
+||u1 −˜u1||L∞
+t L2y +||u 2 −˜u2||L∞
+t L2y +||( 1
+v )y||L∞
+t L2y +||(v y,(u 1)y,(u 2)y)||L2
+t L2y
+≤ C
+νj .(D.13)
+
+[PDF page 62]
+62 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+Note that by (D.5) we also have a bound||vy||L∞
+t L2y ≤ C
+νj.
+D.0.3.H 1-estimate.Now, we obtain theH 1-estimate. We start by differentiating (D.8), multiplying by
+(u1 + 2ν
+  1
+v
+
+y)y, and integrating in space to obtain
+∂t
+Z
+R
+((u1) + 2ν
+  1
+v
+
+y)2
+y
+2
+
+dy+ 2νγ
+Z
+R
+v−γ−3v2
+yy dy+ 4νγ(γ+ 1)
+Z
+R
+v−γ−5v4
+ydy
++
+Z
+R
+(−2νγ(γ+ 1)−4νγ)v −γ−4v2
+yvyy dy+
+Z
+R
+pL(v)yy(u1)ydy= 0.(D.14)
+Now, differentiating the second equation in (D.4) iny, multiplying by(u1)y, and integrating:
+∂t
+Z
+R
+(u1)2
+y
+2 dy+
+Z
+R
+pL(v)yy(u1)ydy+ 2ν
+Z
+R
+(u1)2
+yy
+v2 dy= 4ν
+Z
+R
+(u1)yvy(u1)yy
+v3 dy.(D.15)
+Doing the same for the third equation gives
+∂t
+Z
+R
+(u2)2
+y
+2 dy+ν
+Z
+R
+(u2)yy
+v2 dy= 2ν
+Z
+R
+(u2)yvy(u2)yy
+v3 dy.(D.16)
+Finally, summing (D.14), (D.15), and (D.16) gives
+∂t
+Z
+R
+((u1) + 2ν
+  1
+v
+
+y)2
+y
+2
+
+dy+
+Z
+R
+(u1)2
+y
+2 dy+
+Z
+R
+(u2)2
+y
+2 dy
+
++ 2νγ
+Z
+R
+v−γ−3v2
+yy dy
++ 4νγ(γ+ 1)
+Z
+R
+v−γ−5v4
+ydy+ 2ν
+Z
+R
+(u1)2
+yy
+v2 dy+ν
+Z
+R
+(u2)yy
+v2 dy
+=−2
+Z
+R
+pL(v)yy(u1)ydy+
+Z
+R
+(2νγ(γ+ 1)4νγ)v −γ−4v2
+yvyy dy
++ 4ν
+Z
+R
+(u1)yvy(u1)yy
+v3 dy+ 2ν
+Z
+R
+(u2)yvy(u2)yy
+v3 dy=:
+4X
+k=1
+Jk.
+We estimate each term as follows:
+J1 ≤ C
+νj
+ Z
+R
+v2
+y(u1)ydy+
+Z
+R
+vyy(u1)ydy
+
+≤ C
+νj
+Z
+R
+(u1)2
+ydy+ 2νγ(γ+ 1)
+Z
+R
+v−γ−5v4
+ydy+νγ
+Z
+R
+v−γ−3v2
+yy dy+ C
+νj
+Z
+R
+(u1)2
+ydy,
+using (D.5). For the second, using Gagliardo-Nirenberg interpolation inequality
+J2 ≤ C
+νj ||vy||∞||vy||2||vyy ||2 ≤ C
+νj ||vy||
+3
+2
+2 ||vyy ||
+3
+2
+2 ≤ C
+νj ||vy||6
+2 + νγ
+2 κ−γ−3||vyy ||2
+2.
+For the third:
+J3 ≤ C
+νj ||(u1)yy ||2||(u1)y||∞||vy||2 ≤ C
+νj ||(u1)y||
+1
+2
+2 ||(u1)yy ||
+3
+2
+2 ||vy||2
+≤ν κ2||(u1)yy ||2
+2 + C
+νj ||(u1)y||2
+2||vy||4
+2.
+The termJ 4 may be handled identically. Finally, integrating in time and using (D.13) gives
+||u1 −˜u1||L∞
+t H 1y +||u 2 −˜u2||L∞
+t H 1y +||( 1
+v )yy ||L∞
+t L2y
++||v y||L4
+t L4y
++||(v yy ,(u 1)yy ,(u 2)yy)||L2
+t L2y
+≤ C
+νj .(D.17)
+Note that this implies||vy||L∞([0,T]×R) +||v yy ||L∞
+t L2y ≤ C
+νj.
+
+[PDF page 63]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 63
+D.0.4.H 2-estimate.Finally, we obtain theH 2-estimate. Differentiating (D.8) twice, multiplying by(u1 +
+2ν
+  1
+v )y)yy, and integrating in space gives
+∂t
+Z
+R
+((u1) + 2ν
+  1
+v
+
+y)2
+yy
+2
+
+dy+
+Z
+R
+pL(v)yyy(u1)yy dy
++ϕ 1(ν)
+Z
+R
+(v2
+yyy +v 2
+yv2
+yy +v 6
+y)dy≤ϕ 2(ν)
+Z
+R
+(v3
+yvyyy +v 4
+yvyy +v yyy vyvyy)dy,(D.18)
+for some functionsϕ1, ϕ2 verifying
+Cν j ≤ϕ 1(ν),
+ϕ2(ν)≤ C
+νj ,
+where we have used (D.5). Next, differentiating the second equation in (D.4) twice, multiplying by(u1)yy,
+and integrating:
+∂t
+Z
+R
+(u1)2
+yy
+2 dy+ 2ν
+Z
+R
+(u1)2
+yyy
+v2 dy=−
+Z
+R
+pL(v)yyy(u1)yy dy
++ 8ν
+Z
+R
+(u1)yy vy(u1)yyy
+v3 dy+ 4ν
+Z
+R
+(u1)yvyy(u1)yyy
+v3 dy
+−12ν
+Z
+R
+(u1)yv2
+y(u1)yyy
+v4 dy.(D.19)
+Doing the same for the third equation in (D.4) gives
+∂t
+Z
+R
+(u2)2
+yy
+2 dy+ν
+Z
+R
+(u2)2
+yyy
+v2 dy= 4ν
+Z
+R
+(u2)yy vy(u2)yyy
+v3 dy
++ 2ν
+Z
+R
+(u2)yvyy(u2)yyy
+v3 dy−6ν
+Z
+R
+(u2)yv2
+y(u2)yyy
+v4 dy.(D.20)
+Combining (D.18), (D.19), and (D.20) gives
+∂t
+Z
+R
+((u1) + 2ν
+  1
+v
+
+y)2
+yy
+2
+
+dy+
+Z
+R
+(u1)2
+yy
+2 dy+
+Z
+R
+(u2)2
+yy
+2 dy
+
++ϕ 1(ν)
+Z
+R
+(v2
+yyy +v 2
+yv2
+yy +v 6
+y)dy+ 2ν
+Z
+R
+(u1)2
+yyy
+v2 dy+ν
+Z
+R
+(u2)2
+yyy
+v2 dy
+≤ −2
+Z
+R
+pL(v)yyy(u1)yy dy+ϕ 2(ν)
+Z
+R
+(v3
+yvyyy +v 4
+yvyy +v yyy vyvyy)dy
++ 8ν
+Z
+R
+(u1)yy vy(u1)yyy
+v3 dy+ 4ν
+Z
+R
+(u1)yvyy(u1)yyy
+v3 dy
+−12ν
+Z
+R
+(u1)yv2
+y(u1)yyy
+v4 dy+ 4ν
+Z
+R
+(u2)yy vy(u2)yyy
+v3 dy
++ 2ν
+Z
+R
+(u2)yvyy(u2)yyy
+v3 dy−6ν
+Z
+R
+(u2)yv2
+y(u2)yyy
+v4 dy
+=:
+8X
+k=1
+Ik.
+We control the terms as follows:
+I1 ≤ C
+νj
+Z
+R
+(v3
+y +v yvyy +v yyy)(u1)yy dy≤ ϕ1(ν)
+8
+Z
+R
+(v6
+y +v 2
+yv2
+yy +v 2
+yyy)dy
++ C
+νj
+Z
+R
+(u1)2
+yy dy.
+
+[PDF page 64]
+64 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+For the second, we use Young’s inequality
+I2 ≤ ϕ1(ν)
+8
+Z
+R
+(v2
+yyy +v 2
+yv2
+yy +v 6
+y)dy+ C
+νj (||vy||4
+∞||vy||2
+2 +||v y||2
+∞||vyy ||2
+2).
+For the third,
+I3 ≤ C
+νj ||(u1)yy ||2||vy||∞||(u1)yyy ||2
+≤ ν
+2 κ2||(u1)yyy ||2
+2 + C
+νj ||(u1)yy ||2
+2||vy||2
+∞.
+Next, we have
+I4 ≤ C
+νj ||(u1)yyy ||2||vyy ||∞||(u1)y||2 ≤ C
+νj ||(u1)yyy ||2||vyy ||
+1
+2
+2 ||vyyy ||
+1
+2
+2 ||(u1)y||2
+≤ ν
+2 κ2||(u1)yyy ||2
+2 + ϕ1(ν)
+8 ||vyyy ||2
+2 + C
+νj ||vyy ||2
+2||(u1)y||4
+2.
+Further
+I5 ≤ C
+νj ||vy||2
+∞||(u1)y||2||(u1)yyy ||2 ≤ ν
+2 κ2||(u1)yyy ||2
+2 + C
+νj ||vy||4
+∞||(u1)y||2
+2.
+The termsI 6 toI 8 may be handled identically. So, integrating in time and using the bounds (D.17) gives
+||u1 −˜u1||L∞
+t H 2y +||u 2 −˜u2||L∞
+t H 2y +||( 1
+v )yyy ||L∞
+t L2y ≤ C
+νj .(D.21)
+Finally, using the formula(1
+v )yyy =− vyyy
+v2 + 6vyy vy
+v3 −
+6v3
+y
+v4 and the bounds (D.13),(D.17), we obtain exactly
+Proposition D.2. Making the change of variables back to the Eulerian coordinates gives Proposition D.1.
+References
+[1] John Anderson, Sanchit Chaturvedi, and Cole Graham. Shock formation in 1d conservation laws ii: Vanishing viscosity.
+Preprint on arXiv, jan 2025.
+[2] Paolo Antonelli, Lars Eric Hientzsch, and Stefano Spirito. Global existence of finite energy weak solutions to the quantum
+Navier-Stokes equations with non-trivial far-field behavior.J. Differential Equations, 290:147–177, 2021.
+[3] Stefano Bianchini and Alberto Bressan. Vanishing viscosity solutions of nonlinear hyperbolic systems.Ann. of Math. (2),
+161(1):223–342, 2005.
+[4] Luca Bisconti and Matteo Caggio. Inviscid limit for the compressible Navier-Stokes equations with density dependent
+viscosity.J. Differential Equations, 390:370–425, 2024.
+[5] Didier Bresch and Benoît Desjardins. Existence of global weak solutions for a 2D viscous shallow water equations and
+convergence to the quasi-geostrophic model.Comm. Math. Phys., 238(1-2):211–223, 2003.
+[6] Didier Bresch, Benoît Desjardins, and Chi-Kun Lin. On some compressible fluid models: Korteweg, lubrication, and shallow
+water systems.Comm. Partial Differential Equations, 28(3-4):843–868, 2003.
+[7] Didier Bresch, Benoît Desjardins, and Ewelina Zatorska. Two-velocity hydrodynamics in fluid mechanics: Part II. Existence
+of globalκ-entropy solutions to the compressible Navier-Stokes systems with degenerate viscosities.J. Math. Pures Appl.
+(9), 104(4):801–836, 2015.
+[8] Didier Bresch, Marguerite Gisclon, and Ingrid Lacroix-Violet. On Navier-Stokes-Korteweg and Euler-Korteweg systems:
+application to quantum fluids models.Arch. Ration. Mech. Anal., 233(3):975–1025, 2019.
+[9] Didier Bresch, Pascal Noble, and Jean-Paul Vila. Relative entropy for compressible Navier-Stokes equations with density
+dependent viscosities and various applications. InLMLFN 2015—low velocity flows—application to low Mach and low
+Froude regimes, volume 58 ofESAIM Proc. Surveys, pages 40–57. EDP Sci., Les Ulis, 2017.
+[10] Didier Bresch, Alexis F. Vasseur, and Cheng Yu. Global existence of entropy-weak solutions to the compressible Navier-
+Stokes equations with non-linear density dependent viscosities.J. Eur. Math. Soc. (JEMS), 24(5):1791–1837, 2022.
+[11] Alberto Bressan.Hyperbolic systems of conservation laws, volume 20 ofOxford Lecture Series in Mathematics and its
+Applications. Oxford University Press, Oxford, 2000. The one-dimensional Cauchy problem.
+[12] Alberto Bressan and Camillo De Lellis. A remark on the uniqueness of solutions to hyperbolic conservation laws.Arch.
+Ration. Mech. Anal., 247(6):Paper No. 106, 12, 2023.
+[13] Matteo Caggio and Donatella Donatelli. High Mach number limit for Korteweg fluids with density dependent viscosity.J.
+Differential Equations, 277:1–37, 2021.
+[14] Matteo Caggio and Donatella Donatelli. Relative entropy inequality for capillary fluids with density dependent viscosity
+and applications.Math. Ann., 390(2):2897–2929, 2024.
+[15] Sydney Chapman and T. G. Cowling.The mathematical theory of nonuniform gases. Cambridge Mathematical Library.
+Cambridge University Press, Cambridge, third edition, 1990. An account of the kinetic theory of viscosity, thermal con-
+duction and diffusion in gases, In co-operation with D. Burnett, With a foreword by Carlo Cercignani.
+
+[PDF page 65]
+INVISCID LIMIT FOR 2D NA VIER-STOKES 65
+[16] Geng Chen, Gui-Qiang G. Chen, and Shengguo Zhu. Vanishing viscosity limit of the three-dimensional barotropic com-
+pressible Navier-Stokes equations with degenerate viscosities and far-field vacuum.Ann. Inst. H. Poincaré C Anal. Non
+Linéaire, 39(1):121–170, 2022.
+[17] Geng Chen, Cooper. Faile, and Sam G. Krupa. Infinite BV, largeL∞ solutions of conservation laws are Hölder-stable in
+L2 in the class of front tracking limits.Submitted, Available at arXiv:2507.23645, 2025.
+[18] Geng Chen, Cooper. Faile, and Sam G. Krupa. Quantitative stability of “wild” solutions to compressible euler equations,
+with a view towards higher systems.to appear in Comptes Rendus. Mathématique, 2025.
+[19] Geng Chen, Moon-Jin Kang, and Alexis F. Vasseur. From Navier-Stokes to BV solutions of the barotropic euler equations.
+Preprint on arXiv, jan 2024.
+[20] Geng Chen, Sam G. Krupa, and Alexis F. Vasseur. Uniqueness and weak-BV stability for2×2conservation laws.Arch.
+Ration. Mech. Anal., 246(1):299–332, 2022.
+[21] Geng Chen and Alexis F. Vasseur.L2 stability and weak-BV uniqueness for nonisentropic Euler equations.Commun. Math.
+Anal. Appl., 3(3):450–482, 2024.
+[22] Gui-Qiang Chen and Mikhail Perepelitsa. Vanishing viscosity limit of the Navier-Stokes equations to the Euler equations
+for compressible fluid flow.Comm. Pure Appl. Math., 63(11):1469–1504, 2010.
+[23] Robin Ming Chen, Alexis F. Vasseur, and Cheng Yu. Global ill-posedness for a dense set of initial data to the isentropic
+system of gas dynamics.Adv. Math., 393:Paper No. 108057, 46, 2021.
+[24] Elisabetta Chiodaroli, Camillo De Lellis, and Ondˇ rej Kreml. Global ill-posedness of the isentropic system of gas dynamics.
+Comm. Pure Appl. Math., 68(7):1157–1190, 2015.
+[25] Elisabetta Chiodaroli and Eduard Feireisl. On the density of “wild” initial data for the barotropic Euler system.Ann. Mat.
+Pura Appl. (4), 203(4):1809–1817, 2024.
+[26] PeterConstantin, TheodoreD.Drivas, HuyQ.Nguyen, andFedericoPasqualotto.Compressiblefluidsandactivepotentials.
+Ann. Inst. H. Poincaré C Anal. Non Linéaire, 37(1):145–180, 2020.
+[27] Camillo De Lellis and László Székelyhidi, Jr. On admissibility criteria for weak solutions of the Euler equations.Arch.
+Ration. Mech. Anal., 195(1):225–260, 2010.
+[28] Ronald J. DiPerna. Convergence of the viscosity method for isentropic gas dynamics.Comm. Math. Phys., 91(1):1–30,
+1983.
+[29] Eduard Feireisl, Ansgar Jüngel, and Mária Lukácová-Medvid’ová. Maximal dissipation and well-posedness of the Euler
+system of gas dynamics.Arch. Ration. Mech. Anal., 250(4):Paper No. 53, 36, 2026.
+[30] Eduard Feireisl, Christian Klingenberg, and Simon Markfelder. On the density of “wild” initial data for the compressible
+Euler system.Calc. Var. Partial Differential Equations, 59(5):Paper No. 152, 17, 2020.
+[31] Eduard Feireisl, Mária Lukáčová-Medvid’ová, and Changsheng Yu. Oscillatory approximations and maximum entropy
+principle for the euler system of gas dynamics.J. Euro. Math. Soc., online, 2026.
+[32] Eduard Feireisl, Antonín Novotný, and Hana Petzeltová. On the existence of globally defined weak solutions to the navier-
+stokes equations.J. Math. Fluid Mech., 3(4):358–392, 2001.
+[33] YongcaiGeng, YachunLi, andShengguoZhu.VanishingviscositylimitoftheNavier-StokesequationstotheEulerequations
+for compressible fluid flow with vacuum.Arch. Ration. Mech. Anal., 234(2):727–775, 2019.
+[34] Vikram Giri and Hyunju Kwon. On non-uniqueness of continuous entropy solutions to the isentropic compressible Euler
+equations.Arch. Ration. Mech. Anal., 245(2):1213–1283, 2022.
+[35] Jonathan Goodman and Zhou Ping Xin. Viscous limits for piecewise smooth solutions to systems of conservation laws.
+Arch. Rational Mech. Anal., 121(3):235–265, 1992.
+[36] C. M. I. Olivier Guès, Guy Métivier, Mark Williams, and Kevin Zumbrun. Navier-Stokes regularization of multidimensional
+Euler shocks.Ann. Sci. École Norm. Sup. (4), 39(1):75–175, 2006.
+[37] Olivier Guès, Guy Métivier, Mark Williams, and Kevin Zumbrun. Multidimensional viscous shocks. II. The small viscosity
+limit.Comm. Pure Appl. Math., 57(2):141–218, 2004.
+[38] Olivier Guès, Guy Métivier, Mark Williams, and Kevin Zumbrun. Existence and stability of multidimensional shock fronts
+in the vanishing viscosity limit.Arch. Ration. Mech. Anal., 175(2):151–244, 2005.
+[39] Song Jiang and Ping Zhang. On spherically symmetric solutions of the compressible isentropic navier-stokes equations.
+Comm. Math. Phys., 215(3):559–581, 2001.
+[40] M.-J. Kang and A. Vasseur. Uniqueness and stability of entropy shocks to the isentropic Euler system in a class of inviscid
+limits from a large family of Navier-Stokes systems.Invent. Math., 224(1):55–146, 2021.
+[41] Moon-Jin Kang and Alexis F. Vasseur. Global smooth solutions for 1D barotropic Navier-Stokes equations with a large
+class of degenerate viscosities.J. Nonlinear Sci., 30(4):1703–1721, 2020.
+[42] Christian Klingenberg, Ondˇ rej Kreml, Václav Mácha, and Simon Markfelder. Shocks make the Riemann problem for the
+full Euler system in multiple space dimensions ill-posed.Nonlinearity, 33(12):6517–6540, 2020.
+[43] Ingrid Lacroix-Violet and Alexis Vasseur. Global weak solutions to the compressible quantum Navier-Stokes equation and
+its semi-classical limit.J. Math. Pures Appl. (9), 114:191–210, 2018.
+[44] Jing Li and Zhouping Xin. Global existence of weak solutions to the barotropic compressible navier-stokes flows with
+degenerate viscosities.Preprint on arXiv, nov 2015.
+[45] Pierre-Louis Lions.Mathematical topics in fluid mechanics. Vol. 2, volume 10 ofOxford Lecture Series in Mathematics
+and its Applications. The Clarendon Press, Oxford University Press, New York, 1998. Compressible models, Oxford Science
+Publications.
+[46] Simon Markfelder.Convex integration applied to the multi-dimensional compressible Euler equations, volume 2294 of
+Lecture Notes in Mathematics. Springer, Cham, [2021]©2021.
+
+[PDF page 66]
+66 GENG CHEN, JEFFREY CHENG, ALEXIS F. V ASSEUR, AND YI W ANG
+[47] Simon Markfelder and Christian Klingenberg. The Riemann problem for the multidimensional isentropic system of gas
+dynamics is ill-posed if it contains a shock.Arch. Ration. Mech. Anal., 227(3):967–994, 2018.
+[48] Akitaka Matsumura and Takaaki Nishida. The initial value problem for the equations of motion of viscous and heat-
+conductive gases.J. Math. Kyoto Univ., 20(1):67–104, 1980.
+[49] Akitaka Matsumura and Yang Wang. Asymptotic stability of viscous shock wave for a one-dimensional isentropic model
+of viscous gas with density dependent viscosity.Methods Appl. Anal., 17(3):279–290, 2010.
+[50] A. Mellet and A. Vasseur. Existence and uniqueness of global strong solutions for one-dimensional compressible Navier-
+Stokes equations.SIAM J. Math. Anal., 39(4):1344–1365, 2007/08.
+[51] AlexisF.VasseurandChengYu.Existenceofglobalweaksolutionsfor3DdegeneratecompressibleNavier-Stokesequations.
+Invent. Math., 206(3):935–974, 2016.
+[52] AlexisF.VasseurandChengYu.GlobalweaksolutionstothecompressiblequantumNavier-Stokesequationswithdamping.
+SIAM J. Math. Anal., 48(2):1489–1511, 2016.
+(Geng Chen)
+Department of Mathematics,
+The University of Kansas, La wrence, KS 66049, USA.
+Email address:gengchen@ku.edu
+(Jeffrey Cheng)
+Department of Mathematics,
+The University of Texas at Austin, Austin, TX 78712, USA.
+Email address:jeffrey.cheng@utexas.edu
+(Alexis F. Vasseur)
+Department of Mathematics,
+The University of Texas at Austin, Austin, TX 78712, USA.
+Email address:vasseur@math.utexas.edu
+(Yi Wang)
+Institute of Applied Mathematics, AMSS, CAS, Beijing 100190, P. R. China
+and School of Mathematical Sciences, University of Chinese Academy of Sciences, Beijing 100049, P. R. China
+Email address:wangyi@amss.ac.cn

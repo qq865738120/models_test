@@ -420,8 +420,9 @@ def get_task(run, value):
 def integrity(run, key):
     baseline=load(run/'control/baseline.json')[key]
     project=run/'tasks'/key
-    # 全树扫描会拒绝任何外部链接，但只对公开的受保护路径做变更判定。
-    current=manifest(project)
+    # 浏览器等临时状态不归档，也不扫描其 socket / 临时链接。
+    # 其余路径仍检查链接边界，只对公开的受保护路径判定变更。
+    current=manifest(project,skip=('.runtime',))
     problems=[]
     for name in sorted(set(baseline)|set(current)):
         if protected(name) and current.get(name)!=baseline.get(name):
@@ -508,7 +509,7 @@ def release_change(run,key,project):
         shutil.copy(run/'control/private/06-memory/change-corpus.json',dest/'corpus.json')
         shutil.copy(run/'control/private/06-memory/change-dev.json',dest/'dev.json')
         baselines=load(run/'control/baseline.json')
-        for rel,info in manifest(project).items():
+        for rel,info in manifest(project,skip=('.runtime',)).items():
             if rel.startswith('materials/change/'): baselines[key][rel]=info
         atomic_json(run/'control/baseline.json',baselines)
     spec=pinned_task(run,key); budget=spec['changeMinutes']
@@ -517,7 +518,7 @@ def release_change(run,key,project):
     # 在被测项目内加入当前阶段要求；此文件同样受保护。
     write(project/'materials/CHANGE.md',text)
     baselines=load(run/'control/baseline.json')
-    baselines[key]['materials/CHANGE.md']=manifest(project)['materials/CHANGE.md']
+    baselines[key]['materials/CHANGE.md']=manifest(project,skip=('.runtime',))['materials/CHANGE.md']
     atomic_json(run/'control/baseline.json',baselines)
     state.update(phase='change',changeReleasedAt=now(),startedAt=None,finishedAt=None)
     atomic_json(run/'control/run.json',metadata)

@@ -101,6 +101,27 @@ class StudioTests(unittest.TestCase):
         m.write(source/'app.js','document.body.dataset.loaded="yes"')
         return source
 
+    def test_static_import_and_freeze_ignore_browser_runtime_links(self):
+        run=self.init(task='2'); project=run/'tasks/02-static'; studio=self.studio()
+        profile=project/'.runtime/cdp-profile'
+        profile.mkdir(parents=True)
+        # Chrome uses an external, possibly stale socket symlink.
+        (profile/'SingletonSocket').symlink_to(self.root/'missing-browser-socket')
+        (profile/'SingletonCookie').symlink_to('missing-cookie')
+        self.assertEqual(m.integrity(run,'02-static'),[])
+        detail=studio.import_artifact(run.name,'02-static','initial')
+        artifact=detail['tasks']['02-static']['artifacts']['initial'][0]
+        self.assertEqual((studio.artifacts/artifact['id']/'files/index.html').read_bytes(),
+                         (project/'output/index.html').read_bytes())
+        m.snapshot(argparse.Namespace(run=str(run),task='2',phase='initial',allow_invalid=False))
+        self.assertFalse((run/'control/snapshots/02-static/initial/project/.runtime').exists())
+        m.release_change(run,'02-static',project)
+        self.assertEqual(m.integrity(run,'02-static'),[])
+        # Runtime exclusions must not weaken delivery link validation.
+        (project/'output/leak').symlink_to(profile/'SingletonSocket')
+        with self.assertRaisesRegex(ValueError,'越界'):
+            m.integrity(run,'02-static')
+
     def test_immutable_versions_score_binding_and_persistence(self):
         run=self.init(); source=self.output(run); studio=self.studio()
         # Historical score-to-artifact binding stays unchanged when review is manual.

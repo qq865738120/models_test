@@ -1,0 +1,1575 @@
+
+[PDF page 1]
+Graph Neural Post-selection for Quantum Error Correction
+Conor Carty, 1,∗ Tamas Noszko,2 Joschka Roffe,2 and Roberto Bondesan 1
+1Department of Computing, Imperial College London, 180 Queen ’s Gate, SW7 2AZ, UK
+2School of Informatics, The University of Edinburgh, 10 Crichton St, EH8 9AB, UK
+Post-selection improves the logical reliability of quantum computation by rejecting shots which
+are likely to result in logical failure. We introduce graph neural networks that predict decoder failure
+without additional decoder executions, using only syndromes, and for high-rate quantum low-density
+parity-check (qLDPC) codes, existing belief-propagation posteriors. We evaluate rotated surface and
+bivariate bicycle (BB) code memories under uniform depolarising circuit-level noise. Retaining 90%
+of shots gives approximately 3700×and 740×reductions in logical error rates for [[72,12,6]] and
+[[144,12,12]] BB codes at realistic physical error rates. For the distance 5 surface code at physical
+noisep= 0.003, our neural post-selector achieves logical error suppression comparable to the leading
+complementary gap method without running the decoder.
+I. INTRODUCTION
+Current quantum computers have hundreds of noisy
+qubits, and, at present, do not achieve quantum advan-
+tage over conventional means for operationally useful ap-
+plications. Quantum error correction (QEC) is neces-
+sary to enable large-scale fault-tolerant quantum compu-
+tation, and improving the efficiency of QEC protocols is
+central to efforts to build industrially- and scientifically-
+relevant quantum computers. Recent years have seen
+rapid progress on both the theoretical side of QEC – such
+as the introduction of novel and more efficient quantum
+codes [1–3] and decoders [4–6] – and on the experimental
+side, where small scale experimental demonstrations of
+codes and logical operations have been achieved [7–9].
+An important technique used to achieve low logical er-
+ror rates (LER) in experiments ispost-selection: iden-
+tifying which shots are most likely to result in a logical
+error – instances in which the decoder fails – and reject-
+ing them. While the LER decreases exponentially with
+code distance below the threshold, the low error rates
+necessary for practical applications require large code dis-
+tances and, consequently, a substantial qubit overhead.
+Post-selection on the other hand allows one to achieve
+LER comparable to those of larger codes with a fraction
+of the qubits and is thus expected to be a critical tool to
+enable useful fault-tolerant quantum computing in the
+near future [10]. The price to pay for this reduction in
+qubits is a loweryield(the fraction of shots accepted),
+which increases runtime.
+The trade-off between LER and yield is favourable
+whenever discarding a shot is cheap relative to incur-
+ring a logical fault, for instance in magic state prepa-
+ration [13] and distillation [10], scalable preparation of
+resource states [14], and logical error mitigation, where
+decoder or syndrome information is used to either reject
+shots [15, 16], or to condition the mitigation [17].
+In this work, we introduce two post-selection models:
+the Message Passing Neural Network (MPNN) for sur-
+∗ c.carty24@imperial.ac.uk
+0 1% 10% 90%
+Rejection rate
+10−8
+10−7
+10−6
+10−5
+10−4
+Post-selected LER per cycle
+FMPNN (ours)
+Q(2)
+LLR
+No post-selection
+3R-LEC
+FIG. 1. Neural post-selection on the [[72,12,6]] bivariate bi-
+cycle code under uniform depolarising circuit-level noise at
+a physical error ratep= 0.001, contrasted with popular
+benchmarks for quantum low-density parity-check code post-
+selection:Q (2)
+LLR [11] and the three-round logical-error crite-
+rion (3R-LEC) [12]. LER per-cycle is defined as 1−(1−
+LER)
+1
+T , forTcycles.
+face codes, and the factor MPNN (FMPNN) for high-
+rate quantum low-density parity-check (qLDPC) codes,
+which satisfy the following three desiderata:
+1.Generality:the architectures apply across code
+families and decoders. Their input is the syndrome
+(surface codes) or the syndrome together with the
+decoder’s own belief-propagation (BP) posteriors
+(qLDPC codes).
+2.Specialisable:each model is trained on(input,
+label)pairs obtained from running the decoder
+of interest, and can be fine-tuned to desired noise
+models and error rates. Since it operates on the
+detector error model (DEM), it applies in principle
+to any circuit-level procedure.
+3.Single-staged:post-selection involves a single for-
+ward pass per shot on a GPU, with no repeated
+arXiv:2610.00504v1  [quant-ph]  30 Sep 2026
+
+[PDF page 2]
+2
+TABLE I.Per-cycle logical error rate suppression at 10% rejection.Higher is better, errors are 95% intervals. 3R-LEC
+ranges span the nearest measured points, with rejection percentages in parentheses. ∗: cutoff;†: fewer than five accepted
+failures.
+CodepNeural DensityQ
+(2)
+LLR Gap 3R-LEC (Rej. %)
+Surface [[25,1,5]] 0.001†7.4 +0.3
+−0.3 151.5 +24.0
+−20.7 †19.9 (1.54 ∗ )
+0.003 96.5 +3.4
+−3.3 2.0 9.6 104.2 +3.9
+−3.7 9.4–11.6 (5.54–10.15)
+Surface [[49,1,7]] 0.001†4.4 +0.4
+−0.4 301.0 +224.9
+−128.6 †42.4 (0.77 ∗ )
+0.003 70.5 +3.3
+−3.2 1.7 7.1 463.3 +58.3
+−51.7 15.7–17.4 (4.95–10.89)
+Surface [[81,1,9]] 0.001†3.4 +0.9
+−0.7 † † †(0.56 ∗ )
+0.003 20.5 +0.8
+−0.8 1.6 6.7 +0.1
+−0.1 2096.1 +1022.8
+−687.3 22.4–26.4 (4.73–12.80)
+BB [[72,12,6]] 0.001 3716.6 +2158.6
+−1365.4 5.3 70.6 +4.6
+−4.3 n/a 469.8 (2.66 ∗ )
+BB [[144,12,12]] 0.003 738.2 +171.1
+−138.9 1.6 70.0 +4.6
+−4.3 n/a 75.2–381.0 (6.92–20.30)
+decoder calls.
+Our work treats post-selection as a binary classifica-
+tion task: each shot is labelled withY= 1 if the de-
+coder succeeds andY= 0 if it fails. The architecture
+is decoder-agnostic, with the caveat that qLDPC codes
+require a BP-based decoder. Labelled data can be gen-
+erated cheaply and on demand by simulation, as we do
+here, or directly by hardware, for example by a quantum
+memory experiment that checks whether the decoder pre-
+serves a known logical state.
+Our contributions are:
+•A learned graph neural post-selector for
+qLDPC codes.We evaluate the FMPNN on the
+[[72,12,6]] and [[144,12,12]] bivariate bicycle (BB)
+codes [3] under circuit-level noise. The FMPNN
+achieves the best LER suppression (Table I) vs
+yield trade-offs at all rejection rates amongst meth-
+ods that do not execute the decoder multiple times.
+It further matches or outperforms the three-round
+logical-error criterion (3R-LEC) variant of argu-
+ment reweighting [12], which requires 3 passes of
+the decoder.
+•A specialised model for surface codes.The
+MPNN requires only the syndrome at inference,
+meaning it can be executed before decoding. We
+evaluate it on the rotated surface codes at dis-
+tances 5,7,9 under circuit-level noise. The MPNN
+achieves the best LER suppression at all rejec-
+tion rates amongst methods which do not execute
+the decoder multiple times. At distance 5 and
+p= 3×10 −3, it achieves similar LER suppres-
+sion at all rejection rates to the complementary
+gap [18], the leading post-selection strategy for sur-
+face codes, with higher throughput.
+•A cost analysis.We give the graph-size de-
+pendence of the neural post-selection models (Sec-
+tion III F) and measure the per-shot processing
+times empirically, comparing against other common
+baselines on the same hardware.
+Recently, several works have proposed post-selection
+criteria for QEC. These approaches fall into three broad
+families.
+The first reuses decoder confidence: posterior es-
+timates, BP log-likelihood ratios (LLRs), or cluster-
+level soft information from localized statistics decoding
+(LSD) [11, 15, 16, 19, 20]. These criteria can be inexpen-
+sive to extract, but depend on the decoder used.
+The second family compares repeated decoder execu-
+tions.The complementary gap compares correction
+weights across opposite logical outcomes [13, 18, 21,
+22]; argument reweighting modifies the error model
+and checks agreement between successive logical predic-
+tions [12]. Forced gap applies separate logical constraints
+forklogical observables usingk+ 1 decoder calls [23].
+The third family learns confidence from data.Neu-
+ral decoders can support post-selection through per-
+logical confidence estimates [24], graph neural network
+(GNN) [25] logits used as complementary gap prox-
+ies [26], and transformer confidence outputs [27]. Haug
+et al. distinguish between low and high noise syn-
+dromes [28]. Bhambay et al. use partial syndrome his-
+tories for adaptive aborting during syndrome extrac-
+tion [29]. In contrast, our models predict the success
+of an existing decoder.
+Post-selection has also been studied through
+statistical-mechanical analyses of abort and condi-
+tional logical thresholds [30], and large-deviation
+arguments for scalable logical-error suppression [31].
+These approaches provide theoretical insights into the
+scalability of post-selection.
+The remainder of this paper is organised as follows.
+Section II introduces the basics of quantum error cor-
+recting codes, decoders, and post-selection in more de-
+tail. Section III describes the MPNN and FMPNN ar-
+chitectures and training scheme. Section IV presents our
+results of post-selected memory experiments on surface
+
+[PDF page 3]
+3
+codes and BB codes for a variety of settings. Section V
+concludes and outlines directions for future work.
+II. PRELIMINARIES
+A. Stabiliser codes and syndrome extraction
+A [[n, k, d]] stabiliser code encodesklogical qubits into
+nphysical qubits and corrects up to⌊ d−1
+2 ⌋errors. The
+codespace is defined as the simultaneous +1 eigenspace
+of a set of commuting Pauli operators, the elements of
+which are called stabiliser generators. Errors are diag-
+nosed by repeatedly measuring these generators; a sin-
+gle round of measurement produces a syndrome bit per
+generator, acrossTrounds of syndrome extraction we
+obtain the syndrome vectors∈ {0,1} mT , wheremis
+the number of generators. For circuit-level noise, it is
+convenient to work withdetectors: parities of stabiliser
+measurements that evaluate to 0 in the absence of noise.
+The detector vectorσ∈ {0,1} r forrdetectors is the
+input to all decoders and post-selectors considered here.
+The relationship between fault mechanisms and detectors
+is encoded by the DEM, equivalent to a Tanner graph
+G={V fault
+S Vdet, E}in which each fault mechanism in
+Vfault is connected to the detectors inV det it triggers.
+WritingF:=|V fault|, the parity check matrix is the ad-
+jacency matrixH∈F r×F
+2 of the Tanner graph, where
+rows correspond to detectors and columns to fault mech-
+anisms. The logical action matrix (or logical observable
+matrix)A∈F k×F
+2 contains one row per logical observ-
+able:A if = 1 when faultftoggles observablei. For a
+binary fault vectore, the detector syndrome isσ=He
+and the logical outcome isL=Ae. A correctionccon-
+sistent withσis successful whenAc=Ae.
+B. Code families
+Our experiments focus on rotated surface code and BB
+code memories under circuit-level noise.
+Rotated surface codes[32–35]. A planar [[d 2,1, d]]
+topological code with weight-4X- andZ-type stabilisers
+in the bulk and weight-2 stabilisers at the boundary. We
+studyd= 5,7 and 9 instances.
+Bivariate bicycle codes[3, 36]. A family of qLDPC
+codes constructed from two commuting polynomials over
+F2[x, y]/(xl −1, y m −1). They achieve higher encoding
+rates and competitive distances to that of the surface
+code, but require non-local connectivity. We study the
+[[72,12,6]] and [[144,12,12]] instances.
+C. Decoders
+We benchmark using the following two decoders:
+1. Minimum Weight Perfect Matching
+The surface code admits a decomposition to agraph-
+likeDEM, where each fault results in the flip of at most
+two detectors. This property allows it to be decoded
+using Minimum Weight Perfect Matching (MWPM). We
+use PyMatching [37] as our MWPM implementation.
+2. Belief propagation and Localized Statistics Decoding
+In general, qLDPC codes do not have graph-like DEMs
+and hence we cannot use MWPM; instead, it is common
+to use a two-stage general purpose decoder, consisting
+of BP [38] and some post-processing step, in our case,
+LSD [5]. We provide the full implementation details and
+parameters for the decoders in Appendix A 3.
+D. Post-selection in quantum error correction
+We describe post-selection in the following way. De-
+notexfor the information available to a post-selector.
+Given a confidence scores(x)∈Rfor each shot, and
+thresholdτ∈R, the rule accepts a shot iffs(x)≥τ.
+Larger scores indicate greater confidence in decoder suc-
+cess. The performance of the post-selector is charac-
+terised by two quantities:
+Yield(τ) =P(s(x)≥τ),(1)
+LER(τ) =P(Ac(σ)̸=Ae|s(x)≥τ),(2)
+whereAis the logical action matrix of Section II A. In
+practice the yield is the fraction of retained shots and the
+conditional LER is defined when the yield is non-zero. A
+good post-selector significantly suppresses LER at yields
+acceptable to the application.
+Existing post-selection strategies.
+•Complementary gap [18]:For the surface code, the
+complementary gap re-runs the decoder once under
+the constraint that the returned correction lies in
+the complementary logical class, and uses the log-
+likelihood difference between the constrained and
+unconstrained corrections, the gap, as the confi-
+dence score. A small gap indicates the decoder can-
+not confidently distinguish the two outcomes and
+such shots are rejected. This construction under-
+pins recent surface-code protocols for magic state
+preparation [13] and magic state cultivation [22].
+The method does not extend directly to high-rate
+qLDPC codes as they are not matchable in general
+and also have 4 k logical classes, rendering a naive
+enumeration of the joint outcomes prohibitively ex-
+pensive.
+
+[PDF page 4]
+4
+(a)
+... ...
+... ... ...
+fault no de BP p osterior
+(b) ...
+...
+(c)
+z 1
+...
+z k
+FIG. 2. Factor-graph MPNN (FMPNN). (a) Detector and fault nodes carry syndrome, circuit and belief-propagation features.
+(b) Message passing combines local and global context. (c) Fault embeddings are pooled over their logical supports; overlapping
+supports can share nodes (highlighted). A shared multilayer perceptron produces per-observable logits, which are used to
+produce the final confidence score.
+•Forced gap [23]:After an initial decode, this
+method forces the complementary outcome of each
+of theklogical observables and uses the small-
+est increase in correction weight as confidence. It
+requiresk+ 1 decoder executions. Using Relay-
+BP [6], it has been shown to achieve efficient gap-
+based post-selection for high-rate qLDPC codes.
+As the forced-gap method has been established for
+Relay-BP and our FMPNN model was trained for
+use in conjunction with BP+LSD, we do not di-
+rectly compare the two approaches.
+•Argument reweighting [12]:A related construction
+for qLDPC codes by re-decoding a desired number
+of times under a modified error model which is re-
+weighted to suppress the previous correction(s), ac-
+cepting the shot only when the subsequent decodes
+agree with the first. Re-decoding can be done an
+arbitrary number of times for higher performance
+at the cost of increased runtime.
+•Neural Decoder logit-based post-selection:The Cas-
+cade neural decoder [24] provides confidence es-
+timates for post-selection. The GNN decoder of
+Lange et al. [25] supplies the logit used to perform
+post-selection [26]; in both cases the score is specific
+to the neural decoder that produces it.
+•Other Neural post-selection techniques:Bhambay
+et al. [29] introduce neural predictors for adaptively
+aborting shots during syndrome extraction. Their
+scheme uses a convolutional neural network to esti-
+mate the probability of a logical failure from partial
+syndrome history, aborting and restarting when it
+exceeds a desired threshold. Haug et al. [28] train
+a classifier to distinguish syndrome samples gen-
+erated at low and high physical error rates, reject-
+ing shots whose syndrome is predicted to be associ-
+ated with a high physical error rate with probability
+higher than a specified threshold.
+•Correction weight [11]:For a returned correctionc
+and DEM prior probabilitiesp j, define:
+w(c) =
+X
+j
+cj log 1−p j
+pj
+.
+A high-weight correction reflects an improbable er-
+ror and is treated as less trustworthy, shots whose
+correction weight exceeds a given threshold are re-
+jected. This procedure is essentially free once the
+decoder has returned a correction, however it tends
+to require very low yields to achieve meaningful
+LER suppression.
+•Cluster-based confidence scores:Meister et al. [19]
+extract soft-information from clusters grown by
+MWPM or union-find decoding for the surface
+code. Setting edge weights to zero within these
+clusters they use the minimum remaining weight
+of a path connecting inequivalent boundaries as a
+confidence score, where a small score indicates lit-
+tle additional error weight is needed to produce a
+logical fault, and such shots are rejected. Lee et
+al. [11] develop confidence scores from the clusters
+produced by LSD [5]. Assigning each cluster the to-
+tal LLR weight of the faults it contains, the statis-
+ticQ (2)
+LLR is the Euclidean norm of these per-cluster
+weights divided by the total weight of all mecha-
+nisms: shots with larger values are less trustworthy
+and rejected.
+•Detector density:A simple baseline ofs density(σ) =
+1− 1
+r
+P
+i σi, where shots are discarded once the frac-
+tion of detectors which fired passes a specified cut-
+off. Its usage is motivated by the desirable prop-
+erty of running before decoder execution. It has
+also been shown to exhibit a statistical mechanical
+abort phase transition for post-selection of surface
+codes in the code-capacity setting [30].
+
+[PDF page 5]
+5
+Our experiments compare our models with that of de-
+tector density, correction weight, the LSD cluster statis-
+tics, argument reweighting, and the complementary gap
+for surface codes.
+Related uses of machine learning in QEC.Neu-
+ral approaches to QEC also address decoding, such as
+topological-code decoders [39], neural BP [40], equivari-
+ant decoders [41], the transformer-based AlphaQubit and
+AlphaQubit 2 [42, 43], and the state-space Mamba de-
+coder of [44]. On the encoding side, machine learning
+has also been used for the discovery and design of QEC
+codes [45–51]. Neural pre-decoders for surface [52] and
+colour codes [53] pass simplified residual syndromes to
+a downstream decoder to improve its reliability; unlike
+post-selection, no shots are rejected.
+III. THE MPNN ARCHITECTURE
+A. Problem statement
+Letσ∈ {0,1} r denote the detector vector of a single
+shot andY=1[Ac(σ) =Ae] indicate successful decod-
+ing. For a fixed circuit and decoder, letx= (σ, b BP )
+for the BB-model input andx=σfor the surface-model
+input, whereb BP denotes the BP features defined in Sec-
+tion III B 2. We train GNNs to predictY.
+We first describe the factor-graph model for general
+qLDPC codes, then specialise the model to graph-like
+decoding for surface codes.
+B. Factor MPNN for qLDPC codes
+For general qLDPC codes, a single fault can trigger
+three or more detectors, and as such, it need not admit
+a graph-like decomposition. The FMPNN operates on
+the full bipartite DEM graph (Figure 2), with both de-
+tector nodes and fault nodes. We use this model for our
+evaluations on BB codes.
+1. Graph and node features
+Each detector has six features: its syndrome bit, along-
+side 5 static features: three spacetime coordinates, a
+boundary indicator and a boundary-fault probability.
+The fault node represents each fault mechanism and is
+connected to each detector it flips, each fault node has
+three static features: its prior probabilityp f, the LLR
+log 1−pf
+pf
+, and its degree, in addition to the per-shot BP
+features of Section III B 2. Letx det
+i ∈R 6,x fault
+f ∈R 6
+be the respective detector and fault node features. Two
+learned input maps initialise the hidden embeddings:
+h(0)
+i =φ det(xdet
+i )∈R h,(3)
+h(0)
+f =φ fault(xfault
+f )∈R h,(4)
+where both maps consist of a learned linear layer followed
+by ReLU.his the hidden dimension held fixed across
+message-passing layers.
+2. Belief-propagation input features
+For qLDPC codes, it is common to use BP-based de-
+coders, which offer rich soft-information which can be
+used as an input to the GNN in addition to the syndrome.
+We additionally give the following three BP features to
+each fault node: the posterior LLR of the fault, the dif-
+ference between the posterior and prior, and BP’s hard
+decision.
+3. Message-passing layers
+The network appliesLrounds of local message passing
+between neighbouring detector and fault nodes:
+m(ℓ)
+j→i :=ψ ℓ(h(ℓ)
+i ,h (ℓ)
+j ),(5)
+˜h(ℓ+1)
+i :=φ ℓ(h(ℓ)
+i ,
+X
+j∈Ni
+m(ℓ)
+j→i),(6)
+whereN i is the neighbourhood of nodei.ψ ℓ is a small
+messaging function which constructs the information sent
+from neighbourjto nodei, it concatenates their em-
+beddings and applies a two-layer multilayer perceptron
+(MLP):
+ψℓ(u,v) =W 2ReLU(W1[u||v] +b 1) +b 2,(7)
+whereu,vare two node embeddings. Here, weight ma-
+tricesW 1, W2 and biasesb 1,b 2 are learned; each message
+is of dimensionh.
+For a node embeddinguand summed incoming mes-
+sagesm, the update functionφ ℓ is an MLP given by
+r=U 2ReLU(U1[u||m] +c 1) +c 2,(8)
+φℓ(u,m) =u+ ReLU(BN ℓ(r)).(9)
+Here,U 1, U2,c 1,c 2 are the MLP’s learned weights and
+biases, and BN ℓ is the batch normalisation at layerℓ.
+Each layer has separate messages and update parameters
+which are shared across both node types.
+The receptive field of the local message-passing grows
+withL. FMPNN edges have no features and just describe
+connectivity. Each layer is followed by a global context
+update described in Section III B 4, and final fault em-
+beddings are pooled over logical supports as described in
+Section III B 5.
+
+[PDF page 6]
+6
+(a) (b) ...
+...
+(c)
+FIG. 3. Surface-code MPNN. (a) Detector graph labelled by the syndrome. (b) Message passing combines local and global
+context. (c) Attention pooling and a multilayer perceptron produce a confidence score from the final embeddings of the
+detectors.
+4. Global context update
+After each local update, we mean-pool the intermedi-
+ate embeddings over all detector and fault nodes:
+g(ℓ+1) := 1
+|V|
+X
+v∈V
+˜h(ℓ+1)
+v ,(10)
+with|V|=r+F, and ˜h(ℓ+1)
+v is used to denote the interme-
+diate embedding after theℓ-th message-passing update
+but before the global context update. The global update
+is broadcast back to every node, through a shared MLP
+and residual connection,
+h(ℓ+1)
+v = ˜h(ℓ+1)
+v + MLPglobal
+ ˜h(ℓ+1)
+v ||g (ℓ+1)
+,(11)
+where ˜h(ℓ+1)
+v ||g (ℓ+1) is the vector formed from concate-
+nation of ˜h(ℓ+1)
+v andg (ℓ+1). Empirically, models with
+this component outperformed those without it.
+5. Per-logical support pooling
+A memory experiment trackingklogical observables
+haskindividual success labels and 2 k joint outcomes.
+We use one prediction head per observable. Rowiof
+the logical action matrixAdefines the support of logical
+observablei, the set of fault mechanisms that flip it:S i =
+{f:A if = 1}.
+zi = 1
+|Si|
+X
+f∈S i
+h(L)
+f , i= 1, . . . , k,(12)
+and a shared small 2-layer MLPηmaps each pooled vec-
+tor to a per-observable success logitλ i =η(z i). Detector
+embeddings enter the readout only indirectly, through
+their influence on fault embeddings during message pass-
+ing. The acceptance score derives from the product of the
+per-observable success probabilities which we compute as
+sθ(x) =
+kX
+i=1
+log sigmoid(λi),(13)
+where we take the logarithmic form for numerical stabil-
+ity, larger scores favour acceptance. Each sigmoid out-
+putp i = sigmoid(λi) is trained to estimate the marginal
+success probability for logical observablei. The per-
+logical support idea was inspired by the Cascade neural
+decoder [24], where data qubits were pooled in a logical
+support.
+C. Surface-code specialisation
+For the surface-code memory circuits we consider here,
+the DEM can be decomposed into graph-like components
+each affecting at most two detectors [37, 54]. This per-
+mits MWPM decoding and a simpler detector graph rep-
+resentation for our MPNN.
+1. Detector graph and inputs
+Each surface code detector carries six features: its syn-
+drome bit, and five static features: its spacetime coordi-
+nates(x,y,round), a boundary indicator for detectors
+affected by single-detector components, and a boundary-
+fault probability. We use Stim’s [54] graph-like DEM
+decomposition, which represents each fault by correlated
+components affecting at most two detectors each. A two-
+detector component contributes an edge between those
+detectors, while a single-detector component sets that
+detector’s boundary indicator. We encode the single-
+detector contribution as node features rather than intro-
+ducing boundary nodes. Their combined probability is
+
+[PDF page 7]
+7
+given byp B =
+1−Q
+j (1−2pj )
+2 , wherejindexes independent
+DEM faults contributing a single-detector component at
+that detector with probabilityp j.
+For each edge connecting detectorsu, v, contributions
+from two-detector components on that pair are combined
+using the same rule, writing the resulting probability as
+puv, the edge additionally carries the following two fea-
+tures:
+euv =
+
+puv,log 1−p uv
+puv
+
+,(14)
+which are the prior fault probability and its LLR. This
+graph encodes contributions from all components but
+does not explicitly encode their correlations. Figure 3
+depicts this representation. All features except the syn-
+drome are fixed by the circuit and noise model.
+2. Message passing and readout
+A learned linear layer followed by ReLU embeds each
+detector into the hidden space of dimensionhsimilarly
+as in Section III B 1. Message passing now includes the
+edge features:
+m(ℓ)
+j→i =ψ SC
+ℓ (h(ℓ)
+i ,h (ℓ)
+j , eij),(15)
+where the message functionψ SC
+ℓ follows the same setup
+as in Eq. 7, but now the edge features are additionally
+concatenated with the two detector embeddings, the up-
+date functionφ ℓ remains of the same form as in Eq. 9.
+Parameters are learned separately for each layer.
+Each layer then applies the global context update of
+Section III B 4 over detector nodes. AfterLlayers of
+message passing we use attention pooling followed by an
+MLP readoutρto produce the final score:
+sθ(σ) =ρ
+ rX
+i=1
+αih(L)
+i
+!
+,(16)
+whereα i = softmaxi
+
+a(h(L)
+i )
+
+, for a small gating MLP
+a. Bothaandρare two-layer MLPs with separate
+learned weights and biases:
+a(z) =w T
+a ReLU(Waz+b a) +c a,
+ρ(z) =w T
+ρ ReLU(Wρz+b ρ) +c ρ.
+D. Training objective
+For BB codes, the per-observable success labels are
+Yi =1[(Ac(σ)) i = (Ae) i], wherec(σ) is the decoder’s
+returned correction. The shot-level label isY= Qk
+i=1 Yi.
+We minimise binary cross-entropy (BCE) for these indi-
+vidual labels. For surface code training, we use weighted
+BCE for the shot-level labelY. Written in terms of the
+success logitz, the BCE is
+ℓBCE(y, z) =ysoftplus(−z) + (1−y) softplus(z).(17)
+The primary objectives are
+LBB =E
+"
+1
+k
+kX
+i=1
+ℓBCE(Yi, λi)
+#
+,(18)
+LSC =E[w(Y)ℓ BCE(Y, sθ)].(19)
+Herew(Y) is a weighting term to address the highly im-
+balanced classes, which we use for sampling at higher
+error rates. At lower error rates, we use importance
+sampling. Training is specific to the chosen decoder: in
+our case, BP+LSD for BB codes and MWPM for surface
+codes. Appendix A 5 gives further details on our training
+procedure.
+E. Post-selection pipeline
+The acceptance thresholdτis calibrated for the de-
+sired LER (or yield). For high-rate qLDPC codes, BP
+supplies features to the FMPNN which then scores the
+shots, and the post-processing (LSD in our case) is exe-
+cuted only for accepted shots. For surface codes, given
+a syndrome, only one forward pass of the MPNN is re-
+quired to produce the score, and accepted shots are then
+passed onto MWPM for decoding. The neural networks
+do not propose a correction or require repeated decoder
+passes, unlike alternative methods. Section III F reports
+the costs, with further empirical results in Appendix A 1.
+F. Computational cost
+LetVandEbe the number of nodes and undirected
+edges. We count operations per shot forLlayers of
+message passing with hidden dimensionh. The matrix-
+vector multiplication costsO(h 2), so evaluating the mes-
+sage MLP on each edge and the update MLP on each
+node costsO(L(V+E)h 2). One can avoid repeating the
+same matrix products for neighbouring edges resulting in
+an optimised implementation reducing this cost to
+O
+ 
+L(V h2 +Eh)
+
+,(20)
+details of this optimisation can be found in Ap-
+pendix A 1 c.
+At each layer, computing the global mean costsO(V h),
+and combining it with every node through the MLP costs
+O(V h2). The final attention readout for the surface code
+MPNN computes one scalar per detector, with anh→
+h/2→1 MLP, costingO(V h 2). Softmax costsO(V), the
+weighted sum costsO(V h), and the output MLP costs
+
+[PDF page 8]
+8
+0 0.5% 1% 3% 10% 30% 90%
+Rejection rate
+10−8
+10−7
+10−6
+10−5
+10−4
+Post-selected LER per cycle
+(a) [[72,12,6]] BB, p = 0.001
+0 0.5% 1% 3% 10% 30% 90%
+Rejection rate
+10−7
+10−6
+10−5
+10−4
+Post-selected LER per cycle
+(b) [[144,12,12]] BB, p = 0.003
+FMPNN
+Q(2)
+LLR
+Correction weight
+Detector density
+3R-LEC
+Raw LER (BP+LSD)
+FIG. 4. Post-selected logical error rate against rejection rate for the (a) [[72,12,6]] and (b) [[144,12,12]] bivariate bicycle codes
+under uniform depolarising circuit-level noise at physical error ratesp= 0.001 andp= 0.003 respectively.
+O(h2). Thus these contributions are within the bound of
+Eq. 20.
+For the high-rate qLDPC codes, the logical support
+pooling of Section III B 5 poolsFfault embeddings over
+klogical supports, costingO(F hk), applying the output
+MLP to each pooled embedding addsO(kh 2). The total
+scoring cost of the FMPNN is then
+O
+ 
+(LE+kF)h+ (LV+k)h 2
+.(21)
+The dominant factor which affects the cost of deploying
+the models is therefore the size of the hidden dimension,
+which we keep moderately small ath= 32 andh= 64 for
+BB and surface codes respectively. Using a simple global
+mean instead of logical support pooling would reduce the
+pooling cost toO(V h), however we retain the present
+readouts for their enhanced performance.
+IV. RESULTS
+We illustrate the performance of the FMPNN and
+MPNN on BB code and surface code memories through
+plotting the conditional post-selected LER per cycle
+against the rejection rate, the fraction of shots discarded
+(lower-left is better). For all codes we useT=dsyn-
+drome extraction cycles and circuit level depolarising
+noise as described in Appendix A 2. Shaded areas de-
+note 95% confidence. We additionally provide empirical
+timings comparing the throughput of the various meth-
+ods.
+A. Bivariate bicycle codes
+We evaluate the [[72,12,6]] and [[144,12,12]] BB codes
+of [3] under uniform depolarising circuit-level noise at
+physical error ratesp= 10 −3 and 3×10 −3 respectively.
+Figure 4 shows the trade-off between LER reduction and
+yield, where we achieve the best performance amongst
+compared methods for both codes. For the 72-qubit
+code, rejecting just 1% of shots reduces the LER from
+1.24×10 −4 to 6.41×10 −7; at 10% rejection, the LER is
+reduced by a factor of approximately 3700, accepting only
+18 of 74,290 failures, catching 99.976%. For the 144-qubit
+code, at a higher noise regime, 10% rejection reduces the
+LER from 6.02×10 −4 to 8.15×10 −7, a factor of 738. The
+corresponding factors at 10% rejection forQ (2)
+LLR are 70.6
+and 70. The FMPNN also compares favourably with 3R-
+LEC, especially once a larger rejection budget is available
+due to the known saturation of LER reduction as rejec-
+tion increases [12]. The post-selected LERs of 3R-LEC
+at 6.92% (b= 1.1) and 20.3% (b= 1.2) rejection are
+8×10 −6 and 1.58×10 −6 respectively. Using an NVIDIA
+A100 GPU and single-threaded CPU, at 10% rejection,
+our FMPNN pipeline takes 1.09 ms and 11.40 ms per at-
+tempted shot for the 72- and 144-qubit BB codes respec-
+tively, compared with 0.97 ms and 11.86 ms for the sin-
+gle threaded CPUQ (2)
+LLR. Here, GPU inference with the
+FMPNN makes up 0.052 ms and 0.584 ms of these totals,
+with the remainder being CPU decoding work (see Ta-
+ble V). The same two 3R-LEC points take 55.64 ms and
+104.48 ms per attempted shot.
+
+[PDF page 9]
+9
+10−8
+10−7
+10−6
+10−5
+10−4
+d = 5
+10−8
+10−7
+10−6
+10−5
+d = 7
+10−8
+10−7
+10−6
+p = 0.001
+d = 9
+0 0.5% 1% 3% 10% 50%
+Rejection rate
+10−7
+10−6
+10−5
+10−4
+10−3
+0 0.5% 1% 3% 10% 50%
+Rejection rate
+10−8
+10−7
+10−6
+10−5
+10−4
+0 0.5% 1% 3% 10% 50%
+Rejection rate
+10−8
+10−7
+10−6
+10−5
+10−4
+p = 0.003
+Post-selected LER per cycle
+MPNN
+Complementary gap
+Detector density
+3R-LEC
+Q(2)
+LLR (BP+LSD)
+Correction weight
+Raw LER (MWPM)
+Raw LER (BP+LSD)
+FIG. 5. Post-selected logical error rate against rejection rate for the rotated surface codes under uniform depolarising circuit-
+level noise at distances 5,7,9 and physical noisep= 0.001 andp= 0.003. Each (d, p) configuration uses a separately fine-tuned
+MPNN; see Appendix A 5 b.
+B. Surface codes
+We study circuit-levelZ-basis memory ofd= 5,7,9
+rotated surface codes under uniform depolarising circuit-
+level noise at physical error ratesp∈ {0.001,0.003}. Fig-
+ure 5 compares the MPNN post-selection performance
+with other available baselines, where we achieve the best
+LER suppression amongst methods only requiring one
+decoder run. Here,Q (2)
+LLR uses BP+LSD to obtain its
+cluster-level information, while all others use MWPM. At
+p= 3×10 −3, and 10% rejection, the MPNN suppresses
+the LER by factors of 96.5,70.5,and 20.5 ford= 5,7,9.
+The BP+LSD cluster-score factors relative to its own raw
+LER are 9.56,7.13,and 6.71. Table I summarises these
+values alongside a selection of other methods.
+Atd= 5, p= 3×10 −3, the MPNN achieves similar
+performance to that of the complementary gap, while the
+gap retains a significant advantage at larger distances. At
+p= 10 −3, the complementary gap, 3R-LEC and MPNN
+all achieve significant LER suppression within less than
+1% rejection. Atp= 3×10 −3 and 10% rejection,
+the complete post-selection and decoding pipeline takes
+4.91µs, 18.42µs, and 48.71µs atd= 5,7,9 respectively,
+which is 2.8×to 3.3×faster than the single-threaded
+complementary gap implementation (Table V).
+V. CONCLUSIONS, OUTLOOK AND FUTURE
+WORK
+We introduce a GNN which operates on the native
+DEM of a quantum error correcting code, and approaches
+the logical error reduction performance of state-of-the-art
+techniques, in a single GPU forward pass, without requir-
+ing multiple decoder runs. Because training needs only
+shots labelled by the deployed decoder, from simulation
+or hardware, the approach carries over to other codes and
+decoders.
+Rare-event sampling:As we pursue larger codes
+and/or lower physical error rates, the regime of vanish-
+ingly small LERs introduces the well-known rare event
+sampling problem where it becomes prohibitively ex-
+pensive to collect enough failing shots to train the
+MPNN. This is an outstanding challenge across QEC
+more broadly, and an active area of research [55–58].
+Progress there would allow MPNN training at lower
+LERs.
+Application to F ault-tolerant procedures:Train-
+ing FMPNN models for usage beyond memory in fault-
+tolerant protocols which already heavily rely on post-
+selection such as distillation [59] or cultivation [22] is an
+interesting next step.
+Throughput optimisation:In order to avoid the
+accumulation of errors during a QEC cycle, one would
+like to decode at a throughput of at least one syndrome-
+extraction round per microsecond, thus requiring our
+post-selector to also fit within these timescales. Promis-
+ing work has been done on optimising GNNs for field-
+
+[PDF page 10]
+10
+programmable gate array (FPGA) application at these
+timescales for high energy physics [60], which motivates
+further work in this area for post-selection.
+Model availability:The MPNN and FMPNN
+weights and codebase will shortly be available at
+https://github.com/conorcarty/MPNN4QEC.
+Acknowledgements:We acknowledge compu-
+tational resources and support provided by the
+Imperial College Research Computing Service
+(http://doi.org/10.14469/hpc/2232), the Impe-
+rial College London Department of Computing GPU
+Cluster, and the Edinburgh Compute and Data Fa-
+cility (https://information-services.ed.ac.uk/
+research-support/research-computing/ecdf). JR
+is funded by an EPSRC Quantum Career Acceleration
+Fellowship (grant code: UKRI1224). TN is supported by
+the Engineering and Physical Sciences Research Council
+(grant number EP/W524384/1), the University of
+Edinburgh and Quantinuum. This work was supported
+in part by a grant of access to OpenAI models through
+the ChatGPT for Academic Researchers program.
+Declaration of Generative AI usage:The core ideas
+of the paper were conceived by the authors. CC acknowl-
+edges the use of Claude Series 4-5 models (Sonnet, Opus,
+Fable), and GPT 5.6 Sol, GPT 6 Astra to assist with code
+development and debugging, performance optimisations,
+preparation of figures and tables, and manuscript draft-
+ing, editing, and review. CC reviewed and edited the
+resulting material and takes responsibility for its inclu-
+sion in this work.
+[1] N. P. Breuckmann and J. N. Eberhardt, Quantum low-
+density parity-check codes, PRX Quantum2, 040101
+(2021).
+[2] P. Panteleev and G. Kalachev, Asymptotically good
+quantum and locally testable classical LDPC codes, in
+Proceedings of the 54th Annual ACM SIGACT Sympo-
+sium on Theory of Computing, STOC 2022 (Association
+for Computing Machinery, New York, NY, USA, 2022)
+pp. 375–388.
+[3] S. Bravyi, A. W. Cross, J. M. Gambetta, D. Maslov,
+P. Rall, and T. J. Yoder, High-threshold and low-
+overhead fault-tolerant quantum memory, Nature627,
+778 (2024).
+[4] P. Panteleev and G. Kalachev, Degenerate quantum
+LDPC codes with good finite length performance, Quan-
+tum5, 585 (2021).
+[5] T. Hillmann, L. Berent, A. O. Quintavalle, J. Eisert,
+R. Wille, and J. Roffe, Localized statistics decoding for
+quantum low-density parity-check codes, Nature Com-
+munications16, 8214 (2025).
+[6] T. M¨ uller, T. Alexander, M. E. Beverland, M. B¨ uhler,
+B. R. Johnson, T. Maurer, and D. Vandeth, Improved
+belief propagation is sufficient for real-time decoding of
+quantum memory (2025), arXiv:2506.01779 [quant-ph].
+[7] D. Bluvstein, S. J. Evered, A. A. Geim, S. H. Li,
+H. Zhou, T. Manovitz, S. Ebadi, M. Cain, M. Kali-
+nowski, D. Hangleiter, J. P. Bonilla Ataides, N. Maskara,
+I. Cong, X. Gao, P. Sales Rodriguez, T. Karolyshyn,
+G. Semeghini, M. J. Gullans, M. Greiner, V. Vuleti´ c,
+and M. D. Lukin, Logical quantum processor based on
+reconfigurable atom arrays, Nature626, 58 (2023).
+[8] Google Quantum AI, Quantum error correction below
+the surface code threshold, Nature638, 920 (2025).
+[9] R. S. Gupta, N. Sundaresan, T. Alexander, C. J. Wood,
+S. T. Merkel, M. B. Healy, M. Hillenbrand, T. Jochym-
+O’Connor, J. R. Wootton, T. J. Yoder, A. W. Cross,
+M. Takita, and B. J. Brown, Encoding a magic state with
+beyond break-even fidelity, Nature625, 259 (2024).
+[10] S. C. Smith, B. J. Brown, and S. D. Bartlett, Mitigating
+errors in logical qubits, Communications Physics7, 386
+(2024).
+[11] S.-H. Lee, L. H. English, and S. D. Bartlett, Efficient
+post-selection for general quantum LDPC codes, npj
+Quantum Information12, 96 (2026).
+[12] H. Xie, N. Yoshioka, K. Tsubouchi, and Y. Li, Simple,
+efficient, and generic postselection decoding for qLDPC
+codes, Phys. Rev. Lett.137, 110601 (2026).
+[13] H. Bomb´ ın, M. Pant, S. Roberts, and K. I. Seetharam,
+Fault-tolerant postselection for low-overhead magic state
+preparation, PRX Quantum5, 010302 (2024).
+[14] J. W. Staples, W. Fu, and J. D. Thompson, Scalable post-
+selection of quantum resources (2026), arXiv:2603.08697
+[quant-ph].
+[15] M. Dinc˘ a, T. Chan, and S. C. Benjamin, Error mitiga-
+tion for logical circuits using decoder confidence (2025),
+arXiv:2512.15689 [quant-ph].
+[16] Z. Zhou, S. Pexton, A. Kubica, and Y. Ding, Error miti-
+gation of fault-tolerant quantum circuits with soft infor-
+mation (2025), arXiv:2512.09863 [quant-ph].
+[17] D. Aharonov, Y. Atia, E. Bairey, Z. Brakerski, I. Co-
+hen, O. Golan, I. Gurwich, N. H. Lindner, and M. Shut-
+man, Syndrome aware mitigation of logical errors (2025),
+arXiv:2512.23810 [quant-ph].
+[18] A. Hutter, J. R. Wootton, and D. Loss, Efficient Markov
+chain Monte Carlo algorithm for the surface code, Phys.
+Rev. A89, 022326 (2014).
+[19] N. Meister, C. A. Pattison, and J. Preskill, Effi-
+cient soft-output decoders for the surface code (2024),
+arXiv:2405.07433 [quant-ph].
+[20] K. Kishi, R. Toshio, J. Fujisaki, H. Oshima, S. Sato,
+and K. Fujii, Even more efficient soft-output decoding
+with extra-cluster growth and early stopping (2026),
+arXiv:2602.03336 [quant-ph].
+[21] C. Gidney, M. Newman, P. Brooks, and C. Jones, Yoked
+surface codes, Nature Communications16, 4498 (2025).
+[22] C. Gidney, N. Shutty, and C. Jones, Magic state cultiva-
+tion: growing T states as cheap as CNOT gates (2024),
+arXiv:2409.17595 [quant-ph].
+[23] A. Wills, T. J. Yoder, and I. Chuang, Forced gap post-
+selection for quantum LDPC codes and their operations
+(2026), arXiv:2605.20346 [quant-ph].
+[24] A. Gu, J. P. Bonilla Ataides, M. D. Lukin, and
+S. F. Yelin, Scalable neural decoders for practical fault-
+tolerant quantum computation (2026), arXiv:2604.08358
+[quant-ph].
+[25] M. Lange, P. Havstr¨ om, B. Srivastava, I. Bengtsson,
+V. Bergentall, K. Hammar, O. Heuts, E. van Nieuwen-
+
+[PDF page 11]
+11
+burg, and M. Granath, Data-driven decoding of quantum
+error correcting codes using graph neural networks, Phys.
+Rev. Res.7, 023181 (2025).
+[26] D. Dentelski, Neural network decoder confidence
+as a learned proxy for the logical gap (2026),
+arXiv:2606.08758 [quant-ph].
+[27] D. Seip, L. Colmenarez, M. Schmitt, and M. M¨ uller, Ma-
+chine learning optimal quantum error correction thresh-
+olds (2026), arXiv:2606.22194 [quant-ph].
+[28] T. Haug, A. Canabarro, and L. Aolita, Machine-learned
+syndrome post-selection for reliable quantum error cor-
+rection (2026), arXiv:2607.19563 [quant-ph].
+[29] S. Bhambay, P. Murali, N. Walton, and T. Vasantam,
+Adaptive aborting schemes for quantum error correction
+decoding (2026), arXiv:2602.16929 [quant-ph].
+[30] L. H. English, D. J. Williamson, and S. D. Bartlett,
+Thresholds for postselected quantum error correction
+from statistical mechanics, Phys. Rev. Lett.135, 120603
+(2025).
+[31] H. Chen, D. Xu, G. M. Sommers, D. A. Huse, J. D.
+Thompson, and S. Gopalakrishnan, Scalable accuracy
+gains from postselection in quantum error correcting
+codes, Phys. Rev. A114, 032455 (2026).
+[32] E. Dennis, A. Kitaev, A. Landahl, and J. Preskill,
+Topological quantum memory, Journal of Mathematical
+Physics43, 4452 (2002).
+[33] A. Kitaev, Fault-tolerant quantum computation by
+anyons, Annals of Physics303, 2 (2003).
+[34] H. Bombin and M. A. Martin-Delgado, Optimal resources
+for topological two-dimensional stabilizer codes: Com-
+parative study, Phys. Rev. A76, 012305 (2007).
+[35] Y. Tomita and K. M. Svore, Low-distance surface codes
+under realistic quantum noise, Phys. Rev. A90, 062320
+(2014).
+[36] T. J. Yoder, E. Schoute, P. Rall, E. Pritchett, J. M. Gam-
+betta, A. W. Cross, M. Carroll, and M. E. Beverland,
+Tour de gross: A modular quantum computer based on
+bivariate bicycle codes (2025), arXiv:2506.03094 [quant-
+ph].
+[37] O. Higgott and C. Gidney, Sparse Blossom: correcting
+a million errors per core second with minimum-weight
+matching, Quantum9, 1600 (2025).
+[38] J. Pearl, Reverend Bayes on inference engines: A dis-
+tributed hierarchical approach, inProbabilistic and causal
+inference: the works of Judea Pearl(ACM, New York,
+NY, USA, 2022) pp. 129–138.
+[39] G. Torlai and R. G. Melko, Neural decoder for topological
+codes, Phys. Rev. Lett.119, 030501 (2017).
+[40] Y.-H. Liu and D. Poulin, Neural belief-propagation de-
+coders for quantum error-correcting codes, Phys. Rev.
+Lett.122, 200501 (2019).
+[41] E. Egorov, R. Bondesan, and M. Welling, The END: An
+equivariant neural decoder for quantum error correction
+(2023), arXiv:2304.07362 [quant-ph].
+[42] J. Bausch, A. W. Senior, F. J. H. Heras, T. Edlich,
+A. Davies, M. Newman, C. Jones, K. Satzinger, M. Y.
+Niu, S. Blackwell, G. Holland, D. Kafri, J. Atalaya,
+C. Gidney, D. Hassabis, S. Boixo, H. Neven, and P. Kohli,
+Learning high-accuracy error decoding for quantum pro-
+cessors, Nature635, 834 (2024).
+[43] A. W. Senior, T. Edlich, F. J. H. Heras, L. M. Zhang,
+O. Higgott, J. S. Spencer, T. Applebaum, S. Blackwell,
+J. Ledford, A. ˇZemgulyt˙ e, A.ˇZ´ ıdek, N. Shutty, A. Cowie,
+Y. Li, G. Holland, P. Brooks, C. Beattie, M. Newman,
+A. Davies, C. Jones, S. Boixo, H. Neven, P. Kohli,
+and J. Bausch, A scalable and real-time neural decoder
+for topological quantum codes (2025), arXiv:2512.07737
+[quant-ph].
+[44] C. Lee, T. Hur, and D. K. Park, Scalable neural decoders
+for practical real-time quantum error correction (2025),
+arXiv:2510.22724 [quant-ph].
+[45] J. Olle, R. Zen, M. Puviani, and F. Marquardt, Si-
+multaneous discovery of quantum error correction codes
+and encoders with a noise-aware reinforcement learning
+agent, npj Quantum Information10, 126 (2024).
+[46] Y. Chengyu, R. Meister, C. Carty, S.-K. Lin, and
+R. Bondesan, Bayesian optimization for quantum
+error-correcting code discovery (2026), arXiv:2601.18562
+[quant-ph].
+[47] N. Meyer, C. Mutschler, A. Maier, and D. D. Scherer,
+Learning encodings by maximizing state distinguishabil-
+ity: variational quantum error correction, Quantum Sci-
+ence and Technology11, 045036 (2026).
+[48] J. Cruz-Benito, A. W. Cross, D. Kremer, and I. Faro,
+Evolutionary discovery of bivariate bicycle codes with
+LLM-guided search (2026), arXiv:2606.02418 [quant-ph].
+[49] O. S. Sella, R. Pinsler, and T. Heinis, Designing quantum
+error correcting codes to fit decoders via reinforcement
+learning (2026), arXiv:2608.15754 [quant-ph].
+[50] D. Qian and T. Li, Multi-agent discovery of practical
+quantum LDPC codes (2026), arXiv:2608.08996 [quant-
+ph].
+[51] G. Yan, S. Li, P. Ma, Q. Zhang, P. Ma, J. Wang, M.-
+H. Hsieh, and Y. Du, OmniQEC: discovering practical
+quantum error-correcting codes by an AI scientist (2026),
+arXiv:2607.25865 [quant-ph].
+[52] C. Chamberland, J. Olle, M. Li, S. Thornton, and
+I. Baratta, Fast and accurate AI-based pre-decoders for
+surface codes (2026), arXiv:2604.12841 [quant-ph].
+[53] J. Olle, C. Chamberland, M. Li, and I. Baratta, Fast and
+accurate AI-based pre-decoders for color codes (2026),
+arXiv:2607.10058 [quant-ph].
+[54] C. Gidney, Stim: a fast stabilizer circuit simulator, Quan-
+tum5, 497 (2021).
+[55] S. Bravyi and A. Vargo, Simulation of rare events in
+quantum error correction, Phys. Rev. A88, 062308
+(2013).
+[56] S. Heußen, D. Winter, M. Rispler, and M. M¨ uller, Dy-
+namical subset sampling of quantum error-correcting
+protocols, Phys. Rev. Res.6, 013177 (2024).
+[57] M. E. Beverland, M. Carroll, A. W. Cross, and T. J. Yo-
+der, Fail fast: techniques to probe rare events in quantum
+error correction (2025), arXiv:2511.15177 [quant-ph].
+[58] C. Mayer, A. Ganti, U. Onunkwo, T. Metodi, B. Anker,
+and J. Skryzalin, Rare event simulation of quantum error-
+correcting circuits (2025), arXiv:2509.13678 [quant-ph].
+[59] S. Bravyi and A. Kitaev, Universal quantum computa-
+tion with ideal Clifford gates and noisy ancillas, Phys.
+Rev. A71, 022316 (2005).
+[60] Z. Que, H. Fan, M. Loo, H. Li, M. Blott, M. Pierini,
+A. Tapper, and W. Luk, LL-GNN: Low latency graph
+neural networks on FPGAs for high energy physics, ACM
+Trans. Embed. Comput. Syst.23, 17 (2024).
+[61] A. Gong, S. Cammerer, and J. M. Renes, Toward low-
+latency iterative decoding of QLDPC codes under circuit-
+level noise (2024), arXiv:2403.18901 [quant-ph].
+[62] J. Roffe, LDPC: Python tools for low density parity check
+codes (2022).
+
+[PDF page 12]
+12
+Appendix A: Supplementary Material
+1. Additional Results
+In this section, we provide additional results detailing the LER suppression and timings of our models compared
+with other popular post-selection techniques. Tables II, III, IV show the LER suppression achieved by each method
+at fixed rejection rates 1%,5%,and 20%. Table V provides further information on the execution times for each
+post-selection strategy.
+a. Logical Error Suppression
+TABLE II.Per-cycle logical error rate suppression at 1% rejection.Errors are 95% intervals. 3R-LEC ranges span the
+nearest measured points, with rejection percentages in parentheses. ∗: cutoff;†: fewer than five accepted failures.
+CodepNeural DensityQ
+(2)
+LLR Gap 3R-LEC (Rej. %)
+Surface [[25,1,5]] 0.001 52.0
++6.7
+−5.9 1.6 6.8
++0.2
+−0.2 171.2
++42.3
+−33.9 14.8–19.6 (0.67–1.07)
+0.003 2.4 1.1 1.3 3.0 2.7–9.4 (0.87–5.54)
+Surface [[49,1,7]] 0.001 355.2
++476.0
+−203.1 1.4 6.2
++0.5
+−0.4 †42.4 (0.77
+∗
+)
+0.003 2.5 1.1 1.4 8.2
++0.1
+−0.1 4.4–15.7 (0.61–4.95)
+Surface [[81,1,9]] 0.001†1.3
++0.1
+−0.1 6.2
++1.4
+−1.1 † †(0.56
+∗
+)
+0.003 2.0 1.1 1.6 31.1
++1.5
+−1.4 6.7–26.4 (0.37–4.73)
+BB [[72,12,6]] 0.001 193.1
++20.3
+−18.4 1.5 9.1
++0.2
+−0.2 n/a 112.8–234.7 (0.86–1.50)
+BB [[144,12,12]] 0.003 2.9 1.1 1.7 n/a 2.8–75.2 (0.93–6.92)
+TABLE III.Per-cycle logical error rate suppression at 5% rejection.Errors are 95% intervals. 3R-LEC ranges span
+the nearest measured points, with rejection percentages in parentheses. ∗: cutoff;†: fewer than five accepted failures.
+CodepNeural DensityQ
+(2)
+LLR Gap 3R-LEC (Rej. %)
+Surface [[25,1,5]] 0.001 1425.0
++1283.2
+−675.0 3.2 57.6
++5.3
+−4.8 †19.9 (1.54
+∗
+)
+0.003 16.0
++0.2
+−0.2 1.5 3.5 19.3
++0.3
+−0.3 2.7–9.4 (0.87–5.54)
+Surface [[49,1,7]] 0.001†2.6
++0.2
+−0.2 105.9
++40.5
+−29.2 †42.4 (0.77
+∗
+)
+0.003 16.8
++0.4
+−0.4 1.4 2.9 106.4
++6.0
+−5.7 15.7–17.4 (4.95–10.89)
+Surface [[81,1,9]] 0.001†2.2
++0.4
+−0.3 † † †(0.56
+∗
+)
+0.003 7.1
++0.2
+−0.1 1.3 3.4 465.8
++93.6
+−77.9 22.4–26.4 (4.73–12.80)
+BB [[72,12,6]] 0.001 1535.1
++512.2
+−384.0 3.0 33.6
++1.4
+−1.4 n/a 469.8 (2.66
+∗
+)
+BB [[144,12,12]] 0.003 65.0
++4.0
+−3.8 1.4 10.3
++0.2
+−0.2 n/a 2.8–75.2 (0.93–6.92)
+
+[PDF page 13]
+13
+TABLE IV.Per-cycle logical error rate suppression at 20% rejection.Errors are 95% intervals. 3R-LEC ranges span
+the nearest measured points, with rejection percentages in parentheses. ∗: cutoff;†: fewer than five accepted failures.
+CodepNeural DensityQ
+(2)
+LLR Gap 3R-LEC (Rej. %)
+Surface [[25,1,5]] 0.001†16.3 +1.3
+−1.2 567.5 +199.4
+−147.5 †19.9 (1.54 ∗ )
+0.003 685.3 +71.6
+−64.8 3.1 24.6 +0.4
+−0.4 720.6 +77.3
+−69.8 11.6 (10.15 ∗ )
+Surface [[49,1,7]] 0.001†11.2 +2.0
+−1.7 † †42.4 (0.77 ∗ )
+0.003 451.5 +59.6
+−52.7 2.4 34.3 +1.0
+−0.9 2294.5 +738.5
+−558.7 17.4 (10.89 ∗ )
+Surface [[81,1,9]] 0.001†6.0 +2.7
+−1.8 † † †(0.56 ∗ )
+0.003 102.8 +10.1
+−9.2 2.0 27.1 +1.1
+−1.0 †22.4 (12.80 ∗ )
+BB [[72,12,6]] 0.001 8495.0 +9041.7
+−4379.7 11.8 +0.3
+−0.3 298.8 +44.4
+−38.7 n/a 469.8 (2.66 ∗ )
+BB [[144,12,12]] 0.003 3609.2 +2253.9
+−1387.3 2.2 874.9 +238.0
+−187.1 n/a 75.2–381.0 (6.92–20.30)
+b. Empirical Time Costs
+TABLE V. Complete processing time inµs per attempted shot, including required decoding. All methods except 3R-LEC
+target 10% rejection and report means±95% confidence intervals. 3R-LEC spans the prescribed sweep as in Appendix A 4.
+Neural uses an A100 plus one AMD EPYC 7702P thread; other baselines use one such CPU thread.
+CodepNeural DensityQ (2)
+LLR Gap
+3R-LEC
+bsweep
+Surfaced= 5 10 −3 4.14±0.01 0.426±0.004 601±3 12.05±0.03 990–1,000
+Surfaced= 5 3×10 −3 4.91±0.01 1.194±0.003 931±1 16.42±0.01 1,602–1,611
+Surfaced= 7 10 −3 15.64±0.03 1.32±0.01 2,398±5 41.75±0.06 4,760–4,810
+Surfaced= 7 3×10 −3 18.42±0.03 4.20±0.01 4,250±14 56.42±0.04 5,274–5,334
+Surfaced= 9 10 −3 41.80±0.07 3.11±0.01 6,995±17 99.43±0.10 11,118–11,240
+Surfaced= 9 3×10 −3 48.71±0.07 9.93±0.03 11,738±8 138.11±0.09 11,348–11,436
+BB72 10 −3 1,092±71 765±7 965±27 n/a 2,757–4,317
+BB144 3×10 −3 11,403±468 9,561±140 11,864±1,322 n/a 35,514–292,206
+c. Optimised Message Passing
+The optimisation in Section III F reuses matrix products within each layer of the MPNN and FMPNN architectures.
+Splitting the message MLP’s first weight matrix givesW 1[hi||hj] =W rhi +W shj. Both products are computed once
+per node per layer and reused, costingO(V h 2). MPNN messages also include two edge features which contribute
+O(h) per edge and may be cached in the case of a fixed graph. Combining terms and applying ReLU costsO(Eh).
+Writingu ji as the vector after ReLU, the final message matrix multiplication can be applied after summation:
+X
+j∈Ni
+mj→i =W 2
+X
+j∈Ni
+uji +|N i|b2.
+So,W 2 is applied once per node. Message aggregation costsO(Eh) and node updates costO(V h 2), giving Eq. 20 for
+Llayers.
+
+[PDF page 14]
+14
+2. Circuit noise description
+TABLE VI. Circuit-level noise model. All surface-code experiments use Stim’s generatedsurface code:rotated memory z
+circuit at code distancedwithdrounds of syndrome extraction, under uniform depolarising noise: a single physical error rate
+pis applied to all four channels below.
+Stim parameter Inserted channel (location) Rate
+after clifford depolarization DEPOLARIZE1/DEPOLARIZE2after each 1-/2-qubit gatep
+before round data depolarization DEPOLARIZE1on data qubits, start of each roundp
+before measure flip probability X ERRORbefore each measurementp
+after reset flip probability X ERRORafter each resetp
+TABLE VII. Circuit-level noise model for the bivariate bicycle experiments, using the unmodified circuit builder of [61],
+distributed through [11]. The [[72,12,6]] and [[144,12,12]] codes useZ-basis memory circuits with six and twelve rounds of
+syndrome extraction, respectively. All listed channels use the same physical error ratep.
+Operation/location Inserted channel Rate
+Two-qubit gatesDEPOLARIZE2after each CNOTp
+Data-qubit idlesDEPOLARIZE1on the left data block during the first CNOT layer of every round, and
+on the right data block at the start of each round after the first
+p
+Initial preparationX ERRORafter each initialZ-basis reset of data and ancilla qubitsp
+Ancilla reinitialisationX ERRORonZ-check ancillas andZ ERRORonX-check ancillas, at the start of each
+subsequent round
+p
+Check measurementsX ERRORbeforeZ-check measurements (MR) andZ ERRORbeforeX-check measurements
+(MRX)
+p
+3. Decoder configurations
+For the rotated surface codes, we use MWPM, implemented using the sparse-blossom algorithm inPyMatching[37].
+The matching graph is constructed withdecompose errors=True. We use standard matching without correlated
+matching enabled. For BB codes (and rotated surface codes post-selected using the clustering approach of [11]), we
+use BP+LSD and retain the BP parameters of the original LSD configuration [5]: min-sum BP with a maximum of
+30 iterations, with a scaling factor ofα= 0.625, and a parallel update schedule. We use order 0 LSD. We implement
+BP+LSD using the soft-output implementation released with [11], built upon theldpcpackage [62]. All qLDPC
+training labels and every baseline we report are computed from this configuration.
+4. Baseline implementations
+Table VIII identifies the software used for each baseline. The decoders are sourced fromPyMatching2.3.1 [37] and
+ldpc2.4.1 [5, 62]. We obtain soft outputs through Lee et al.’sldpc-post-selection0.1.1 [11].
+TABLE VIII. Sources of the implementations for compared baselines.
+Baseline Implementation and source
+Detector density Thedetector densityoutput of Lee et al.’s [11]ldpc-post-selectioncode.
+Correction weight Thepred llroutput of Lee et al.’sSoftOutputsMatchingDecoderfor surface codes and
+SoftOutputsBpLsdDecoderfor BB codes.
+Complementary gap Lee et al.’sSoftOutputsMatchingDecoderis used for the curves produced in Figure 5. Tim-
+ing analyses for the gap are done using Gidney et al.’s [22]magic-state-cultivationrepo’s
+PymatchingGapSampler.
+Q(2)
+LLR Lee et al.’sSoftOutputsBpLsdDecoder.
+3R-LEC Xie et al.’s [12]Argument-Reweightingcode:MWPM.pyfor surface codes andBPLSDPOST.pyfor
+BB codes.
+
+[PDF page 15]
+15
+a. 3R-LEC parameters.Surface code runs use MWPM; BB runs use the BP+LSD settings as in Appendix A 3.
+We implement 3R-LEC using the suggested parameters of Ref. [12], withb= 1 +δ:
+SC,p= 10 −3:δ∈ {10 −12,10 −6,10 −3,0.01,0.02,0.04,0.06,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1}
+SC,p= 3×10 −3:δ∈ {10 −3,0.01,0.1,0.3,0.5}
+BB:δ∈ {10 −15,10 −8,10 −4,10 −3,0.01,0.1,0.2,0.3,0.4,0.5}
+5. Training details
+a. Bivariate bicycle models
+TABLE IX. Architectures and inputs of the two final FMPNN models. The five-output auxiliary head adds 613 parameters and
+is unused at inference. Belief-propagation inputs are required at inference as well as during training. The number of message-
+passing layers and hidden dimension were chosen after non-exhaustive ablations and further optimisations could improve model
+performance.
+Setting BB72 BB144
+Code parameters [[72,12,6]] [[144,12,12]]
+Reported physical error rate 10 −3 3×10 −3
+Syndrome-extraction rounds 6 12
+Detector nodes 252 936
+Fault-mechanism nodes 2592 10368
+Message-passing layers 4 12
+Hidden dimension 32 32
+Logical output heads 12 12
+Model parameters at inference 39 137 115 425
+Graph Bipartite detector-mechanism graph from the undecomposed circuit DEM.
+Detector node features (6) Syndrome bit; three detector coordinates; boundary indicator; boundary-fault
+probability.
+Fault-mechanism node features (6) Prior fault probability, prior LLR, degree, BP posterior LLR, BP hard deci-
+sion, and posterior-minus-prior LLR.
+BP feature normalisation Posterior LLR and posterior-minus-prior LLR are each clipped to [−60,60]
+and divided by 20.
+Message passing Sum aggregation; ReLU activations, residual connections and batch normali-
+sation; global mean context in every layer.
+Readout Mean pooling over the fault-mechanism support of each logical observable,
+followed by one shared MLP.
+
+[PDF page 16]
+16
+TABLE X. Shared training procedure for the bivariate bicycle models. The 12 sigmoid outputs are combined into the acceptance
+score P12
+i=1 log sigmoid(λi).
+Training setting Procedure for both BB models
+Training data Online circuit-noise samples at the fixed error rate of each stage.
+Labels and BP inputs Min-sum BP, maximum 30 iterations, scaling factor 0.625, parallel updates, followed by
+order-0 LSD. The binary target for logical observableiis 1 when its decoder prediction
+is correct.
+Primary objective Unweighted BCE, averaged over the minibatch and the 12 logical outputs.
+Auxiliary objective Mean-squared error for five standardised targets: correction LLR,Q (2)
+LLR,Q (∞)
+LLR, detector
+density and correction weight. The total loss isL BCE +λ eLaux.
+Auxiliary normalisation Per-target running means and variances with update coefficient 0.01; divide centred
+targets by
+√
+v+ 10 −6. Statistics are initialised afresh at each trainer invocation,
+including resumes.
+Auxiliary coefficient Where enabled,λ e = 0.05[1 + cos(π(e−1)/(E−1))], for stage epoche= 1, . . . , E. Thus
+λe decreases from 0.1 to 0. The final BB144 stage usesλ e = 0 throughout.
+Optimiser split Muon for weight matrices whose two dimensions are both at least 16; Lion for all
+remaining parameters.
+Muon settings Momentum 0.95, Nesterov update, five Newton–Schulz iterations; weight decay 10 −4.
+Lion settings Momentum coefficients (0.9,0.99); weight decay 3×10 −3.
+Learning-rate schedule A fresh cosine schedule in each stage, with minimum-rate parameter 10 −6 for both
+groups and multiplicative linear warm-up. Stage learning rates and warm-up lengths are
+listed separately below.
+Gradient accumulation The stage tables give the minibatch size and accumulation factor. Accumulated
+gradients are clipped to Euclidean norm 1; a remaining partial accumulation is also
+updated at the end of each epoch.
+Numerical precision BF16 automatic mixed precision with FP32 model weights; auxiliary standardisation
+and auxiliary MSE in FP32.
+Weight averaging Exponential moving average (EMA), updated after each optimiser step.
+Batch-normalisation buffers are copied from the current model. Validation and reported
+inference use the EMA weights.
+Stage initialisation The first stage starts from random weights. Each subsequent stage loads its
+predecessor’s EMA weights and restarts the optimiser, learning-rate schedule and epoch
+counter.
+TABLE XI. Training stages in the ancestry of the final BB72 model. There are 250,000 shots per epoch,bis minibatch size,a
+is the gradient accumulation.
+StagepEpochsb×aMuon LR Lion LR Warm-up EMA Seed
+Pretraining 0.003 300 256×1 2×10 −2 3×10 −5 1000 0.9998 7
+Initial fine-tuning 0.001 300 512×4 2×10 −2 3×10 −5 125 0.998401 7
+Four fine-tuning continuations 0.001 300 512×4 10 −2 1.5×10 −5 125 0.998401 8,9,10,12
+TABLE XII. Training stages of the final BB144 model, with notation as in Table XI. There are 250,000 shots per epoch.
+StagepEpochsb×aMuon LR Lion LR Warm-up EMA Seed
+Pretraining 0.003 300 128×4 2×10 −2 3×10 −5 1000 0.9998 7
+Continuation 0.003 150 128×4 2×10 −2 3×10 −5 1000 0.9998 7
+Final continuation 0.003 300 128×4 1.25×10 −3 2×10 −6 1000 0.9998 20260819
+
+[PDF page 17]
+17
+TABLE XIII. Validation and checkpoint selection for the FMPNN models.
+Selection setting BB72 BB144
+Validation population 10 6 circuit shots at the stage’s physical error
+rate, fixed within each run.
+106 circuit shots atp= 0.003, fixed within each
+run.
+Validation seed 20260617 20260617
+Validation interval Every 25 epochs for pretraining and initial
+fine-tuning; every 10 epochs for continuations.
+Every 25 epochs.
+Model-selection score Failure-class average precision (PR-AUC), using
+EMA predictions. Continuation runs are ranked
+by the mean of their final five validation values,
+at epochs 260–300.
+Failure-class PR-AUC, using EMA predictions.
+The final stage retains its best validation
+checkpoint.
+Released weights Continuation 5, epoch-300 EMA; chosen using
+the fixed validation set.
+Final continuation, epoch-300 EMA; the saved
+best-validation checkpoint.
+b. Surface-code models
+Tables XIV–XVII describe the six surface-code models used in the figures. All final fine-tuning and evaluation
+use the all-component graph construction described in the main text. Five models descend from a mixed-distance
+parent trained with a different, first-component weighting convention: for a decomposed DEM instruction containing
+components separated by^, that convention accumulated the instruction probability only into its first component.
+The final convention includes every graph-like component.
+Thed= 5,p= 10 −3 model instead descends from an independently trained all-component parent. Thed= 5,
+p= 3×10 −3 model starts from the earlier distance/noise specialist. Thed= 7,9 models start directly from the
+mixed-distance parent, extended from three to four and five layers, respectively.
+TABLE XIV. Final surface architectures. The number of message-passing layers and hidden dimension were chosen after
+non-exhaustive ablations and further optimisations could improve model performance.
+Settingd= 5d= 7d= 9
+Reported error ratesp∈ {10 −3,3×10 −3}
+Syndrome-extraction rounds 5 7 9
+Message-passing layers 3 4 5
+Hidden dimension 64 64 64
+Model parameters 117 570 155 202 192 834
+Graph Detector graph from Stim’s decomposed circuit DEM.
+Node features (6) Syndrome bit; three detector coordinates; boundary indicator; boundary-fault prob-
+ability.
+Edge features (2) Fault probabilityp uv and log[(1−p uv)/puv].
+Message passing Sum aggregation with two-layer message and update MLPs, ReLU, residual connec-
+tions and batch normalisation; global mean context in each layer.
+Readout Attention pooling with a 64→32→1 gating MLP and a separate 64→32→1
+readout MLP. One success logit ranks shots; larger values favour acceptance.
+
+[PDF page 18]
+18
+TABLE XV. Final surface fine-tuning: 150 epochs of 204 800 shots.
+Training setting Final surface fine-tuning procedure
+Labels Binary MWPM success labels, usingPyMatchingwith target-pmatching weights; one logical
+observable per shot.
+Optimiser AdamW, weight decay 10 −4 and default momentum coefficients (0.9,0.999). Each fine-tuning
+run resets optimiser state and the learning-rate schedule.
+Schedule Full-run cosine decay towards 10 −6, multiplied by a linear warm-up factor; initial-rate
+parameters and warm-up lengths are in Table XVI.
+Batch updates One optimiser update per minibatch, with gradient norm clipped to 1; no gradient
+accumulation.
+Numerics FP32 weights and operations, with TF32 disabled. Batch-normalisation running moments
+remain fixed; scale and offset remain trainable. No EMA.
+Natural sampling (p= 0.003) Online circuit samples. For success labely∈ {0,1}and logitz, the minibatch loss averages
+w+ ysoftplus(−z) + (1−y) softplus(z). Fixed success weightsw + are 0.00330026, 0.00142402
+and 0.000547500 ford= 5,7,9, respectively. They are failure/success odds estimated from a
+separate 107-shot population.
+Importance sampling
+(p= 0.001)
+Sample the full undecomposed DEM at proposalp= 0.003, decode with target-pweights, and
+minimise importance-weighted BCE. Full-mechanism likelihood ratios are calculated in FP64,
+clipped at their minibatch 95th percentile and normalised to sum to one. Both clipping and
+finite-batch self-normalisation introduce bias. No additional class weighting is applied.
+Randomness Seeds are given below.
+TABLE XVI. Final surface runs (150 epochs each). Warm-up counts optimiser updates.
+d pInitial weights Batch Initial LR Warm-up Selected epoch Seed
+5 0.001 All-component parent 256 10 −4 1000 140 1648915393
+5 0.003 Earlierd= 5 specialist 512 3×10 −5 800 125 1345664080
+7 0.001 Mixed parent,L= 4 256 10 −4 1600 115 3662741859
+7 0.003 Mixed parent,L= 4 128 10 −4 3200 150 906026237
+9 0.001 Mixed parent,L= 5 256 10 −4 1600 70 74399240
+9 0.003 Mixed parent,L= 5 128 10 −4 3200 145 9051227
+TABLE XVII. Surface checkpoint selection, including epoch zero.
+Selection settingd= 5d= 7,9
+Natural validation population
+atp= 0.001
+5×10 6 shots 2×10 7 ford= 7; 10 8 ford= 9
+Natural validation population
+atp= 0.003
+106 shots 10 6 shots per distance
+Rows scored for selection All decoder failures plus 10 5 controls chosen independently of the labels. Rejection cutoffs
+are estimated from the controls.
+Selection priority Fewest retained failures at 5% rejection, then
+1%, then greatest area under the receiver
+operating characteristic curve (ROC-AUC).
+Fewest retained failures at 1% rejection, then
+5%, then greatest ROC-AUC.
+Validation epochs 0,1,2,5, then every 10 atp= 0.001 or every 5
+atp= 0.003, including epoch 150.
+0,1,2,5, then every 5, including epoch 150.
+Final curve evaluation 10 8 natural shots per distance/noise setting, distinct from the model-selection populations.
+No importance weights are used for the reported curves.
+a. Parent training and provenance.The all-component parent used atd= 5,p= 10 −3 has three layers and width
+64. It was trained from random weights for 300 epochs of 204 800 shots, with batch size 256, uniformly over the 25
+cellsd∈ {3,5,7,9,11}andp∈ {0.001,0.002,0.003,0.004,0.005}. It used the numerical and optimiser settings above,
+initial learning rate 3×10 −4, 1000 warm-up updates, fixed success-class weight 1962/498038, and seed 3385222094.
+
+[PDF page 19]
+19
+The earlier first-component mixed parent also has three layers and width 64, and was trained with AdamW and
+cosine warm restarts overd∈ {3,5,7,9,11}andp∈[0.001,0.01], with seed 7. The final all-component fine-tuning
+stages and selected weights are recorded separately in Tables XVI and XVII.

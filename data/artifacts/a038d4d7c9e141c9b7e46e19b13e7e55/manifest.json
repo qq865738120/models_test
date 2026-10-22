@@ -1,0 +1,40 @@
+{
+  "runId": "20261021-215918-deepseek-v4-1-flash-1017-r1-322016",
+  "taskId": "03-dispatch",
+  "phase": "initial",
+  "files": {
+    "DELIVERY.md": {
+      "sha256": "d28890ba261f58f25ea64ff0b34a79326c6d47a88d237da9fca921d48c5d53c1",
+      "executable": false
+    },
+    "assets/index-CzHzzJL3.css": {
+      "sha256": "18a444386039834d4455fa2248cc543d45f1aaf43ab32fa27fa2a232818b268e",
+      "executable": false
+    },
+    "assets/index-s4TmVTYk.js": {
+      "sha256": "f5e67e21a55fd536cf853e62fd9e78dc0d456ed0721d4ac71553b6f07f59e512",
+      "executable": false
+    },
+    "index.html": {
+      "sha256": "5c46632ba2a4a4e4a069fb763c8285a1ee8d58463ab69602bb31758578255ed0",
+      "executable": false
+    },
+    "materials/icon-search.svg": {
+      "sha256": "95c6167a4f47a5c81ff301d23212a87200b93d847b821c5095a47431c0d226a5",
+      "executable": false
+    },
+    "materials/reference.svg": {
+      "sha256": "96c827a2f85a41d295c5b980fcb77551610059d8127864568e1783e7039dbb3c",
+      "executable": false
+    },
+    "server/data/orders.json": {
+      "sha256": "74a993f59fddf8e2eacb2711648c46a8dc684d097360562bc147448a8f6fa4b5",
+      "executable": false
+    },
+    "server/index.mjs": {
+      "sha256": "050f8e5039a0377a906b5a493117344b4e44147689acf698b514225ab8d97140",
+      "executable": false
+    }
+  },
+  "delivery": "fullstack-node"
+}

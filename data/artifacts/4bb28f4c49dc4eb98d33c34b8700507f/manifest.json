@@ -1,0 +1,119 @@
+{
+  "runId": "20261021-215918-deepseek-v4-1-flash-1017-r1-322016",
+  "taskId": "05-game3d",
+  "phase": "initial",
+  "files": {
+    ".keep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executable": false
+    },
+    "DELIVERY.md": {
+      "sha256": "e1e007dd1123f0b99c00cbe9bd6bd3ffeaa39460b97e9b3b9351d20a39a053b6",
+      "executable": false
+    },
+    "assets/index-BCQqrLVA.js": {
+      "sha256": "83dbe44d05d51115ae534bba3d212d8868cc51db7839fd29c8a2c75c105c705c",
+      "executable": false
+    },
+    "assets/index-BYD7tsys.js": {
+      "sha256": "c223ee304b792631cf2cc1a90051f568758760a267f37cb17f79a41c4c4b1cf6",
+      "executable": false
+    },
+    "assets/index-C6IHzA_o.css": {
+      "sha256": "8dde1c934b80c9942a0ce015b9cac971d6ea59715b446561cfccf9c437f04777",
+      "executable": false
+    },
+    "assets/index-CEnCb--w.css": {
+      "sha256": "aad4c36e0b086c1a1277da338975972106ea3232a89e1ebef27c8fcf797750ae",
+      "executable": false
+    },
+    "assets/index-CbEHlYHA.js": {
+      "sha256": "bccd2b49199c856ee89a29729612b60e97bb9ed63af50972bb958ca65ebdf844",
+      "executable": false
+    },
+    "assets/index-DARIOY7G.js": {
+      "sha256": "16860383facc257f5d0cf583e51a7de08a99c508c699851be52e854ad012c319",
+      "executable": false
+    },
+    "assets/index-DGPSh8JG.js": {
+      "sha256": "94c8560ac0c7a2069a95bb6e605c7be1729c35eba08d4009955c7bf15ed0c296",
+      "executable": false
+    },
+    "assets/index-DRYG1vaV.js": {
+      "sha256": "a59f4aa2c82c3cd0f94f30ce85ece8e158043880fe78c27ac096ca40cfb9ef29",
+      "executable": false
+    },
+    "assets/index-DjrEWbZD.css": {
+      "sha256": "b7233bee5916535525c20259979921969739ec378d6386fc62de4f2ec6e82c7d",
+      "executable": false
+    },
+    "assets/index-EHjTudZ2.js": {
+      "sha256": "fff14f25203ae09aaebcf3fd3ac9029b013cab03512af9ec3310f2f7bba1788f",
+      "executable": false
+    },
+    "assets/index-GuoqpTsB.js": {
+      "sha256": "8f2d47ee447c9cee484d7c07ea3af6cb97920a204141b4db11d216a172305d10",
+      "executable": false
+    },
+    "assets/index-MPWcsrtI.js": {
+      "sha256": "ddd66d773c8dd8ceaaa6b948707cddc79107474eb6b97e2206dcefe99e158d25",
+      "executable": false
+    },
+    "assets/index-qbmII08M.js": {
+      "sha256": "51e55a665849f4efab506e642ec091d56938269e418e463baa2164bf8e491349",
+      "executable": false
+    },
+    "index.html": {
+      "sha256": "6f23f5c5a3aa93e37ae98f3eae6898faee459c36bf0b14196872d196e5302c4d",
+      "executable": false
+    },
+    "materials/warehouse.json": {
+      "sha256": "8f380e9ad3b7e426e512e65eaf962445f96a0e455eb4470c396cff017164e343",
+      "executable": false
+    },
+    "vendor/ammo/ammo.wasm.js": {
+      "sha256": "3fa63c584d4732f72b954c5ea105f1faca99559c95c57ce7bb738d3497f98228",
+      "executable": false
+    },
+    "vendor/ammo/ammo.wasm.wasm": {
+      "sha256": "16be07b989963bddebfef66eab28a4387536eb37014d9df1531dab380bd96a93",
+      "executable": false
+    },
+    "verification/01-start.png": {
+      "sha256": "c32911c2e5e8786ceff3e5780a2a21b3106d511ea7c86da160024608d6bbe9ff",
+      "executable": false
+    },
+    "verification/02-follow.png": {
+      "sha256": "c7b47108862adb8ddf2638e695df0782cf56eb81f9de69cde99094ef26fba96e",
+      "executable": false
+    },
+    "verification/03-near-view.png": {
+      "sha256": "d8e018c2f3b90d32acfcba75ee792467b2e10641fc61059b0ac8784f98c0cba8",
+      "executable": false
+    },
+    "verification/04-inspect-side.png": {
+      "sha256": "58ab98be20d8652b7a3467009b3e4c7eb51f5046dcc605157e043e7bff056d8b",
+      "executable": false
+    },
+    "verification/05-inspect-front.png": {
+      "sha256": "d4fc9e41b4d678fb16b8d0f8619af256eaa2faaf31a30bcb78a5c6241ead8701",
+      "executable": false
+    },
+    "verification/06-inspect-iso.png": {
+      "sha256": "0ce7c14fca399288fc4ff0cea1aed17240c93c7f919a290a7c70f0aee885b3c4",
+      "executable": false
+    },
+    "verification/07-win.png": {
+      "sha256": "510d9451e68d7d7e502831fd58d0eea108cb0aec80d3598f0cea9ce986f55e10",
+      "executable": false
+    },
+    "verification/08-timeout.png": {
+      "sha256": "6318331a477372c93576a1b07c4411eb3edd7f598216fc2a0a3d6659d258b9f3",
+      "executable": false
+    },
+    "verification/09-delivery.png": {
+      "sha256": "b32a226746a7bb1081e33a16a310b836275c6de226f44d36ce9c368ba56ca397",
+      "executable": false
+    }
+  }
+}
