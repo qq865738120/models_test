@@ -1,4 +1,4 @@
-"""Harness identities, independent from model names. Sources checked 2026-10-19."""
+"""Harness identities, independent from model names. Sources checked 2026-10-19; Kimi and MiniMax Code added 2026-10-24."""
 HARNESS_OPTIONS = [
     ('codex','Codex','https://github.com/openai/codex'),
     ('claude-code','Claude Code','https://code.claude.com/docs/'),
@@ -15,8 +15,10 @@ HARNESS_OPTIONS = [
     ('goose','Goose','https://github.com/aaif-goose/goose'),
     ('openhands','OpenHands','https://github.com/OpenHands/OpenHands'),
     ('qwen-code','Qwen Code','https://github.com/QwenLM/qwen-code'),
+    ('kimi','Kimi','https://www.kimi.com/'),
     ('kimi-code','Kimi Code CLI','https://github.com/MoonshotAI/kimi-code'),
     ('kimi-cli','Kimi CLI（旧版）','https://github.com/MoonshotAI/kimi-cli'),
+    ('minimax-code','MiniMax Code','https://agent.minimax.io/download'),
     ('factory-droid','Factory Droid','https://www.factory.ai/'),
     ('trae','TRAE','https://www.trae.ai/'),
     ('auggie','Augment / Auggie CLI','https://www.augmentcode.com/product/CLI'),

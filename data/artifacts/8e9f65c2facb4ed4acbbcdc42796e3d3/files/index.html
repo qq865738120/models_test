@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102f35">
+  <meta name="description" content="鹈鹕：不止一张大嘴。一份关于外形、栖息地、物种差异、捕食、繁殖与保护的交互式自然史图鉴。">
+  <title>鹈鹕 · 不止一张大嘴</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="回到首页">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><path d="M8 29c5-1 8-5 9-12 1-8 8-11 13-7 3 2 3 6 2 9l9 2-9 3c-1 8-6 13-14 12-5 0-9-3-10-7Z"/><circle cx="28" cy="13" r="1.5"/></svg>
+      <span>FIELD NOTES<small>水鸟观察室</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span class="sr-only">打开导航</span></button>
+    <nav id="mainNav" aria-label="主导航">
+      <a href="#anatomy">身体构造</a><a href="#species">三种鹈鹕</a><a href="#foraging">捕食现场</a><a href="#conservation">守护湿地</a>
+    </nav>
+    <a class="header-cta" href="#field-guide">观察守则 <span>↗</span></a>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-type" aria-hidden="true">PELICAN</div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> PELECANUS · 鹈鹕属</p>
+        <h1 id="hero-title">不止一张<br><em>大嘴。</em></h1>
+        <p class="hero-intro">它是滑翔者、游泳者，也是鱼群的围猎者。<br>从淡水湖泊到海岸，重新认识这位水域巨人。</p>
+        <a class="round-link" href="#anatomy"><span>开始探索</span><b>↓</b></a>
+      </div>
+      <div class="hero-art" aria-label="原创鹈鹕侧面矢量插画">
+        <div class="sun-disc"></div>
+        <svg class="pelican-hero" viewBox="0 0 780 720" role="img" aria-labelledby="pelicanTitle pelicanDesc">
+          <title id="pelicanTitle">站在水边的鹈鹕</title><desc id="pelicanDesc">一只白羽鹈鹕，有橙色长喙和醒目喉囊，背景是太阳与海浪。</desc>
+          <defs>
+            <linearGradient id="pouch" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffbf69"/><stop offset="1" stop-color="#f16e45"/></linearGradient>
+            <linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffdf4"/><stop offset="1" stop-color="#d7e5df"/></linearGradient>
+          </defs>
+          <g class="bird">
+            <path class="back-leg" d="M362 538l-9 93m50-93 9 92" fill="none" stroke="#df744b" stroke-width="15" stroke-linecap="round"/>
+            <path d="M354 625l-40 22 50-4 20 10m27-27-27 24 43-6 22 6" fill="none" stroke="#df744b" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M170 451c-25-98 56-178 176-158 73 12 149 57 178 126 28 66-18 133-112 147-105 16-213-13-242-115Z" fill="url(#body)"/>
+            <path d="M174 409c-33-22-68-22-99-6 36 7 57 25 81 50" fill="#d7e5df"/>
+            <path class="wing" d="M200 405c32-94 138-112 228-48 34 24 45 57 26 92-28 54-137 94-226 57-31-13-42-53-28-101Z" fill="#153e43"/>
+            <path d="M217 409c47-48 111-60 181-29-58 6-114 32-158 73m-12 16c62-20 124-23 187-6m-151 30c46-5 86 1 121 16" fill="none" stroke="#38646a" stroke-width="9" stroke-linecap="round"/>
+            <path d="M400 349c30-38 26-89 21-133-6-54 10-107 55-129 42-21 98-4 108 41 11 48-22 79-51 103-34 28-28 82 4 139l-84 56c-33-61-55-118-31-178 14-35 36-67 25-102-8-24-32-25-48-9-18 19-14 56-8 83 12 58 17 107-9 145Z" fill="url(#body)"/>
+            <path d="M490 105c23-20 61-15 77 5-30-9-51 1-66 24" fill="#fffdf4"/>
+            <path d="M551 144 746 168 554 184Z" fill="#f7a34b"/>
+            <path d="M554 181c48 1 119-2 190-12-26 75-104 125-168 75-17-14-24-38-22-63Z" fill="url(#pouch)"/>
+            <path d="M554 181 744 168" fill="none" stroke="#c85137" stroke-width="4"/>
+            <path d="M567 153 726 169" fill="none" stroke="#ffd287" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="535" cy="137" r="12" fill="#f3a34d"/><circle cx="535" cy="137" r="5.5" fill="#102f35"/><circle cx="537" cy="135" r="1.7" fill="white"/>
+            <path d="M468 87c-4-20 7-32 26-38-4 12 0 21 10 28m-42 1c-13-14-10-29 3-43 2 16 9 24 20 29" fill="none" stroke="#fffdf4" stroke-width="9" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div class="art-note"><span>01</span><p>长喙 · 喉囊<br><b>不是储物袋</b></p></div>
+      </div>
+      <div class="hero-bottom"><span>大型水鸟 / 鹈鹕科</span><span class="sound-note">无需远行，从这里开始观察</span><span>SCROLL TO DISCOVER</span></div>
+    </section>
+
+    <section class="ticker" aria-label="鹈鹕关键特征">
+      <div><span>✳</span> 会伸展的喉囊 <span>✳</span> 适合游泳的蹼足 <span>✳</span> 帮助滑翔的宽翼 <span>✳</span> 淡水与海岸之间</div>
+    </section>
+
+    <section class="intro section-pad reveal">
+      <div class="section-kicker">00 / 先认识它</div>
+      <div class="intro-grid">
+        <h2>大嘴只是<br>故事的<span>开场。</span></h2>
+        <div class="intro-copy"><p>鹈鹕是鹈鹕科、鹈鹕属的<strong>大型水鸟</strong>。它们最醒目的工具，是长喙下方可以伸展的喉囊；真正让它适应水域生活的，却是喙、蹼足与宽大翅膀的共同配合。</p><p>不同物种住在不同的水域，也有不同的捕鱼方式。认识鹈鹕，不能把一种鸟的习惯套在整个类群上。</p></div>
+      </div>
+      <div class="habitat-row" aria-label="鹈鹕栖息地">
+        <div><span>01</span><svg viewBox="0 0 80 45" aria-hidden="true"><path d="M3 33h74M13 33c0-18 5-25 8-29m-4 13-8-8m10 4 9-9M54 33c0-14 3-21 6-27m-3 12-7-7m8 3 7-8"/></svg><h3>湖泊</h3><p>内陆水域也是家</p></div>
+        <div><span>02</span><svg viewBox="0 0 80 45" aria-hidden="true"><path d="M2 13c18-12 24 15 40 4s22 5 36 10M2 28c17-10 28 12 43 2s21 1 33 7"/></svg><h3>河流与湿地</h3><p>浅水带来觅食机会</p></div>
+        <div><span>03</span><svg viewBox="0 0 80 45" aria-hidden="true"><path d="M2 34c12-12 22-12 34 0s22 12 42 0M7 22c11-10 20-10 30 0s20 10 36 0M25 11h31"/></svg><h3>河口</h3><p>咸淡水在此交汇</p></div>
+        <div><span>04</span><svg viewBox="0 0 80 45" aria-hidden="true"><path d="M2 34c12-12 22-12 34 0s22 12 42 0M2 24c12-12 22-12 34 0s22 12 42 0M17 13l8-8 8 8m17 0 7-7 7 7"/></svg><h3>海岸</h3><p>并非唯一栖息地</p></div>
+      </div>
+    </section>
+
+    <section class="anatomy" id="anatomy" aria-labelledby="anatomy-title">
+      <div class="section-pad">
+        <div class="section-kicker light">01 / 解剖一件捕鱼工具</div>
+        <div class="anatomy-heading"><h2 id="anatomy-title">一件装备，<br><em>不止一种用法。</em></h2><p>点击标记，看看醒目外形背后的功能。</p></div>
+        <div class="anatomy-grid">
+          <div class="anatomy-visual">
+            <svg viewBox="0 0 700 560" role="img" aria-label="鹈鹕身体结构交互示意图">
+              <path d="M97 376c-16-91 70-149 180-116 64 19 118 59 134 115 14 52-32 93-107 101-96 10-193-18-207-100Z" fill="#f4f0e5"/>
+              <path d="M111 341c44-76 137-75 215-20 26 18 34 44 18 70-30 47-119 66-192 38-39-15-55-48-41-88Z" fill="#2c5659"/>
+              <path d="M283 295c29-47 19-98 20-138 1-55 33-100 80-102 45-2 77 37 62 80-9 26-36 41-48 64-20 39 15 84 23 122l-92 51c-26-57-49-108-20-162 16-30 30-60 17-84-10-18-29-13-39 5-12 23-2 50 2 76 8 52 5 96-14 131Z" fill="#f4f0e5"/>
+              <path id="part-beak" class="svg-part" d="M421 116 665 146 423 157Z" fill="#f4a259"/>
+              <path id="part-pouch" class="svg-part" d="M424 156c64 0 152-1 240-10-38 84-122 116-199 66-29-19-40-36-41-56Z" fill="#ee805c"/>
+              <circle cx="409" cy="107" r="7" fill="#102f35"/>
+              <path id="part-wing" class="svg-part" d="M139 342c49-48 113-51 171-17-45 7-91 30-126 63m-38 14c52-14 107-12 154 8" fill="none" stroke="#9bb8ae" stroke-width="9" stroke-linecap="round"/>
+              <path id="part-feet" class="svg-part" d="M267 464l-7 54m54-51 9 50m-69 0-34 19 44-3 18 8m40-25-22 22 36-5 18 7" fill="none" stroke="#ee805c" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="hotspots">
+              <button class="hotspot active" data-part="pouch" style="--x:76%;--y:35%" aria-label="查看喉囊"><span>1</span></button>
+              <button class="hotspot" data-part="wing" style="--x:32%;--y:62%" aria-label="查看宽翼"><span>2</span></button>
+              <button class="hotspot" data-part="feet" style="--x:43%;--y:92%" aria-label="查看蹼足"><span>3</span></button>
+            </div>
+            <p class="diagram-note">结构示意 / 非比例复原</p>
+          </div>
+          <div class="anatomy-info" aria-live="polite">
+            <span class="info-number" id="partNumber">01</span>
+            <p class="info-label" id="partLabel">THE POUCH</p>
+            <h3 id="partTitle">会伸展的喉囊</h3>
+            <p id="partText">捕食时，喉囊兜住猎物和水；随后排出水，再吞咽食物。它不是把一天的鱼长期存起来的“冰箱”。</p>
+            <div class="myth-stamp"><span>误解纠正</span><b id="partMyth">喉囊 ≠ 长期储物袋</b></div>
+            <div class="part-tabs" role="group" aria-label="选择身体部位"><button class="active" data-part="pouch">01 喉囊</button><button data-part="wing">02 宽翼</button><button data-part="feet">03 蹼足</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="species section-pad" id="species" aria-labelledby="species-title">
+      <div class="section-kicker">02 / 同为鹈鹕，各有性格</div>
+      <div class="species-heading"><h2 id="species-title">三种鹈鹕，<br>三种<span>水域生活。</span></h2><p>以下是物种例子，而非全部物种名单。切换档案，比较它们的分布、捕食与繁殖。</p></div>
+      <div class="species-tabs" role="tablist" aria-label="鹈鹕物种">
+        <button id="tab-brown" role="tab" aria-selected="true" aria-controls="speciesPanel" data-species="brown"><span>01</span>褐鹈鹕<small>BROWN PELICAN</small></button>
+        <button id="tab-white" role="tab" aria-selected="false" aria-controls="speciesPanel" data-species="white" tabindex="-1"><span>02</span>美洲白鹈鹕<small>AMERICAN WHITE</small></button>
+        <button id="tab-australian" role="tab" aria-selected="false" aria-controls="speciesPanel" data-species="australian" tabindex="-1"><span>03</span>澳大利亚鹈鹕<small>AUSTRALIAN</small></button>
+      </div>
+      <article class="species-panel brown" id="speciesPanel" role="tabpanel" aria-labelledby="tab-brown">
+        <div class="species-portrait">
+          <span class="giant-index" id="speciesIndex">01</span>
+          <svg viewBox="0 0 500 420" role="img" aria-label="鹈鹕物种风格化插画">
+            <circle cx="252" cy="213" r="164" class="portrait-circle"/>
+            <path d="M91 280c-6-70 57-112 137-91 59 15 107 48 117 95 10 44-29 78-91 82-77 5-158-15-163-86Z" class="portrait-body"/>
+            <path d="M110 264c35-55 100-60 157-24 24 15 30 37 17 58-23 36-91 51-146 30-32-12-42-35-28-64Z" class="portrait-wing"/>
+            <path d="M236 211c22-36 15-71 15-104 0-41 23-72 57-75 36-3 61 25 53 59-5 23-26 34-36 52-16 29 10 61 20 92l-70 34c-22-42-36-81-16-122 12-25 25-48 16-65-8-14-24-9-31 5-9 17-1 39 2 59 6 40 2 70-13 97Z" class="portrait-body"/>
+            <path d="m342 90 151 23-151 15Z" class="portrait-beak"/>
+            <path d="M342 127c45 0 97-2 150-14-23 57-78 81-126 48-18-12-25-23-24-34Z" class="portrait-pouch"/>
+            <circle cx="332" cy="84" r="6" fill="#102f35"/>
+          </svg>
+          <p id="speciesLatin">Pelecanus occidentalis</p>
+        </div>
+        <div class="species-facts">
+          <p class="mini-label">SPECIES PROFILE / 物种档案</p>
+          <h3 id="speciesName">褐鹈鹕</h3>
+          <p class="species-summary" id="speciesSummary">海岸与河口边的俯冲猎手。</p>
+          <dl>
+            <div><dt>在哪里遇见</dt><dd id="speciesHabitat">常见于美洲沿岸和河口。</dd></div>
+            <div><dt>如何捕鱼</dt><dd id="speciesForaging">能从空中俯冲入水捕食。</dd></div>
+            <div><dt>繁殖笔记</dt><dd id="speciesBreeding">可在地面或树上筑巢；双亲共同孵卵，并给雏鸟喂食。</dd></div>
+          </dl>
+          <p class="species-caution" id="speciesCaution">俯冲是褐鹈鹕的捕食方式，不能推广为所有鹈鹕的统一动作。</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="foraging" id="foraging" aria-labelledby="foraging-title">
+      <div class="section-pad">
+        <div class="section-kicker light">03 / 晚餐时间</div>
+        <div class="foraging-heading"><h2 id="foraging-title">同一张嘴，<br><em>不同打法。</em></h2><p>鱼是主要食物，但菜单不只一种；捕食策略也因物种与环境而异。</p></div>
+        <div class="foraging-grid">
+          <div class="foraging-scene" id="foragingScene" data-mode="scoop">
+            <div class="scene-sky"><span class="scene-sun"></span><span class="cloud c1"></span><span class="cloud c2"></span></div>
+            <svg viewBox="0 0 700 440" role="img" aria-label="鹈鹕捕食方式动态示意图">
+              <g class="fish-school" fill="#102f35"><path d="M198 335q24-20 48 0-24 20-48 0l-18 14v-28Z"/><path d="M336 371q21-17 42 0-21 17-42 0l-15 12v-24Z"/><path d="M475 328q20-17 40 0-20 17-40 0l-15 12v-24Z"/><path d="M550 375q17-14 34 0-17 14-34 0l-13 10v-20Z"/></g>
+              <g class="scene-bird">
+                <path d="M112 239c23-63 103-81 166-45 33 19 51 50 37 78-19 39-93 57-151 35-42-16-64-36-52-68Z" fill="#fff9e9"/>
+                <path d="M261 224c27-23 27-62 20-87-9-34 10-66 39-68 28-2 49 23 39 49-7 18-25 24-30 42-8 27 16 47 27 70Z" fill="#fff9e9"/>
+                <path d="m337 105 193 32-190 7Z" fill="#f6a04b"/>
+                <path d="M340 143c59 3 122-1 189-6-33 55-109 77-162 38-18-13-26-22-27-32Z" fill="#ed7954"/>
+                <circle cx="329" cy="100" r="5" fill="#102f35"/>
+              </g>
+              <g class="water-lines" fill="none" stroke="#8fd4c9" stroke-width="5" stroke-linecap="round"><path d="M24 284c67-25 106 24 170 0s106 24 170 0 106 24 170 0 95 16 147 0"/><path d="M66 318c49-18 81 18 130 0m215 7c54-20 92 19 146 0"/></g>
+            </svg>
+            <div class="scene-caption"><span>行为示意</span><b id="sceneLabel">水面舀取</b></div>
+          </div>
+          <div class="foraging-controls">
+            <div class="hunt-tabs" role="group" aria-label="选择捕食方式">
+              <button class="active" data-mode="scoop"><span>01</span><b>水面舀取</b><small>浅水里的精准一兜</small></button>
+              <button data-mode="team"><span>02</span><b>协作围鱼</b><small>把鱼群赶向浅水</small></button>
+              <button data-mode="dive"><span>03</span><b>空中俯冲</b><small>褐鹈鹕的入水方式</small></button>
+            </div>
+            <div class="hunt-description" aria-live="polite"><p id="huntText">美洲白鹈鹕常在浅水水面捕食，用喙与喉囊舀取食物，而不是从空中扎入水中。</p></div>
+            <div class="diet-note"><span>菜单备注</span><p><b>鱼是主食，不是全部。</b>美洲白鹈鹕也会取食蝾螈、蝌蚪和小龙虾等；实际食谱受当地环境与食物供应影响。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="life section-pad" aria-labelledby="life-title">
+      <div class="section-kicker">04 / 群体生活</div>
+      <div class="life-grid">
+        <div><h2 id="life-title">一起飞，<br>一起<span>养育下一代。</span></h2><p class="life-lead">鹈鹕常集群活动。美洲白鹈鹕可成群飞行，利用上升气流滑翔，也常在一起觅食。许多鹈鹕集群繁殖，但巢址存在物种差异。</p></div>
+        <div class="life-cards">
+          <article><span>FLIGHT / 飞行</span><div class="formation" aria-hidden="true"><i>⌁</i><i>⌁</i><i>⌁</i><i>⌁</i><i>⌁</i></div><h3>借一阵上升气流</h3><p>宽大的翅膀帮助滑翔。成群飞行时，天空也是它们移动与寻找食物的通道。</p></article>
+          <article><span>NEST / 繁殖</span><div class="nest-icon" aria-hidden="true"><i></i><i></i><i></i></div><h3>巢址不能一概而论</h3><p>美洲白鹈鹕在地面筑巢；褐鹈鹕可在地面或树上筑巢。窝卵数、孵化时间等也不能套用单一物种。</p></article>
+          <article class="wide"><span>FOOD WEB / 食物网</span><h3>水域里的一环</h3><p>作为捕食鱼类等动物的水鸟，鹈鹕也是水域食物网的一部分，而不是孤立于环境之外的“大嘴符号”。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="conservation" id="conservation" aria-labelledby="conservation-title">
+      <div class="section-pad">
+        <div class="section-kicker light">05 / 让水域继续有朋友</div>
+        <div class="conservation-top"><h2 id="conservation-title">一张大嘴，<br>装不下<em>所有风险。</em></h2><p>褐鹈鹕曾受农药污染影响，保护措施促进了恢复。但这不等于所有鹈鹕种群都没有风险。</p></div>
+        <div class="threats" aria-label="鹈鹕面临的威胁"><div><span>01</span><b>湿地与繁殖地改变</b></div><div><span>02</span><b>人为干扰</b></div><div><span>03</span><b>污染</b></div><div><span>04</span><b>遗弃渔线</b></div></div>
+        <div class="field-guide" id="field-guide">
+          <div class="guide-copy"><p class="mini-label">A BETTER BIRDWATCHER / 观鸟者自检</p><h3>靠知识靠近，<br>用距离保护。</h3><p>美洲白鹈鹕繁殖群对人为干扰敏感。真正友好的观察，从不惊扰开始。勾选你愿意做到的观察守则。</p><div class="guide-progress"><span id="guideCount">0 / 4</span><div><i id="guideBar"></i></div></div></div>
+          <div class="checklist">
+            <label><input type="checkbox"><span class="checkmark">✓</span><span><b>与巢区保持距离</b><small>不进入繁殖区域，不追逐鸟群</small></span></label>
+            <label><input type="checkbox"><span class="checkmark">✓</span><span><b>让鸟决定距离</b><small>发现惊飞、聚集不安时就退后</small></span></label>
+            <label><input type="checkbox"><span class="checkmark">✓</span><span><b>带走渔线与垃圾</b><small>不把缠绕风险和污染物留在水边</small></span></label>
+            <label><input type="checkbox"><span class="checkmark">✓</span><span><b>观察，而不干预</b><small>不投喂，不为照片改变鸟的行为</small></span></label>
+            <p class="guide-complete" id="guideComplete" role="status"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sources section-pad">
+      <div><div class="section-kicker">资料与边界</div><h2>把好奇留给自然，<br>把事实留在纸上。</h2></div>
+      <div class="source-copy"><p>本页依据项目离线科普资料整理；物种内容仅对应文中点名的褐鹈鹕、美洲白鹈鹕与澳大利亚鹈鹕，不把单一物种特征推广至整个类群。插画均为原创程序矢量示意，非比例复原。</p><details><summary>查看资料来源 <span>＋</span></summary><ol><li>San Diego Zoo Wildlife Alliance — <i>Pelican</i>：外形、喉囊用途、游泳和滑翔。</li><li>Cornell Lab of Ornithology — <i>American White Pelican Life History</i>：栖息地、食物、群体捕食、繁殖与威胁。</li><li>Cornell Lab of Ornithology — <i>Brown Pelican Life History</i>：捕食、巢址、育雏与保护。</li><li>Australian Museum — <i>Australian Pelican</i>：分布与栖息地。</li></ol><p class="source-date">事实核对日期：2026-10-20 · 来源页仅作核验线索，不是运行依赖。</p></details></div>
+    </section>
+  </main>
+
+  <footer><a class="footer-brand" href="#top">PELICAN<span>不止一张大嘴</span></a><p>献给湖泊、河流、湿地、河口与海岸之间的水域巨人。</p><a class="back-top" href="#top" aria-label="回到顶部">↑</a></footer>
+</body>
+</html>

@@ -1,0 +1,2870 @@
+
+[PDF page 1]
+Classical simulation of coherent crosstalk in surface codes
+Andrew S. Darmawan,1 Yelyzaveta Kolesnyk,2, 3, 4 and Robert König5, 4
+1Independent Researcher, Kyoto, Japan
+2Quantum Research Center, Technology Innovation Institute (TII), Abu Dhabi, United Arab Emirates
+3Department of Mathematics, Technical University of Munich, 85748 Garching, Germany
+4Munich Center for Quantum Science and Technology (MCQST), 80799 München, Germany
+5Department of Mathematics, School of Computation, Information and Technology,
+Technical University of Munich, 85748 Garching, Germany
+(Dated: September 30, 2026)
+We give a polynomial-time classical algorithm which samples from the syndrome distribution of a
+surface code state corrupted by coherent nearest-neighborZZ crosstalk. Our algorithm complements
+the known efficient simulation algorithms for coherent single-qubit errors in the surface code. When
+both single-qubit coherent noise and coherent crosstalk are present, we find a complexity-theoretic
+obstruction to efficient simulation: unless the polynomial hierarchy collapses, there is no efficient
+classical algorithm for sampling from the syndrome distribution, even up to a constant multiplicative
+error. This is obtained by connecting the syndrome distribution under coherent noise to the output
+distribution of certain IQP circuits associated with a non-planar graph.
+I. INTRODUCTION
+Surface codes [1–3] are among the most promising pro-
+posals for a robust quantum memory. Superconducting-
+qubit experiments have realized surface codes with dis-
+tance up to seven, with logical lifetimes exceeding those
+of the best constituent physical qubit [4–7]. Yet basic
+questions about their robustness against experimental
+noise remain.
+One such question concerns coherent crosstalk. Resid-
+ual ZZ interactions – referred to as coherent crosstalk –
+between neighboring superconducting qubits are a ma-
+jor source of coherent errors [8–14], including in recent
+surface-code experiments [15]. Such a coupling acts coher-
+ently by the unitaryeiθZqZq′. Compared to probabilistic
+Pauli noise, interference arising from coherent noise can
+substantially change the resulting logical error rate [16–
+19]. We ask whether the surface code, with the efficient
+minimum-weight perfect matching (MWPM) decoder, can
+withstand this noise. We consider the code-capacity set-
+ting: coherent crosstalk acts on a prepared code state,
+followed by noise-free syndrome extraction and recovery.
+Noise-resilience is quantified by the resulting logical chan-
+nel’s diamond-norm distance from the identity, averaged
+over syndromes; we are interested in its scaling with the
+number of physical qubits as well as the noise strength
+expressed by the magnitude|θ|.
+Prior work.Surface-code performance is best under-
+stood under stochastic Pauli noise. The Gottesman–Knill
+theorem [20, 21] permits exact polynomial-time stabi-
+lizer simulation [22], enabling numerical threshold esti-
+mates [3, 23–25]. Analytic threshold estimates are also
+available for stochastic Pauli noise through mappings to
+disordered statistical-mechanics models [3]. Local stochas-
+tic Pauli noise is therefore the standard first test of a
+stabilizer code’s viability.
+Coherent noise is more difficult to simulate because
+interference enters the syndrome probabilities. Exact
+tensor-network contraction of coherentZZ crosstalk dur-
+ingsyndromeextractionhasbeenlimitedtodistance d = 3
+(17qubits) [ 26]. Methods that reach larger distances
+generally rely on approximations without rigorous er-
+ror bounds. These include truncated tensor networks
+for general local noise [27], a hybrid stabilizer–matrix-
+product-state method applied to coherent crosstalk up to
+distance d = 9[ 28], and perturbative effective error mod-
+els reaching distanced = 7[ 29]. Related matrix-product-
+state studies have considered single-qubit rotations about
+a generic axis [30] and combined single- and two-qubit
+coherent noise [31], again without rigorous a priori error
+bounds. Quasiprobability sampling gives unbiased esti-
+mates for coherent dephasing up to distanced = 11, but
+its cost grows exponentially with the non-Clifford content
+of the noise [32]. Pauli twirling makes stabilizer simula-
+tion efficient, but changes the noise model by discarding
+interference [33].
+An important case in which efficient classical simulation
+is possible without approximation is coherent single-qubit
+Z noise. A mapping to fermionic linear optics gives a
+polynomial-time algorithm that samples the syndrome
+distribution exactly for rotated surface codes [18]. Sub-
+sequent extensions apply to general planar graphs, in-
+cluding standard surface codes with smooth and rough
+boundaries [19]. These algorithms have enabled numerical
+threshold studies on codes with more than2 000physical
+qubits [18, 19, 34].
+Thus methods general enough to include coherent
+crosstalk were restricted to small codes, relied on em-
+pirically controlled approximations, incurred exponential
+sampling cost, or replaced the coherent model by its
+Pauli twirl. Efficient exact algorithms were known for
+single-qubit coherent noise, but not for nearest-neighbor
+coherent crosstalk on rotated surface codes. To our knowl-
+edge, no efficient exact simulation algorithm was available
+for nearest-neighbor coherent crosstalk at distances large
+enough to study threshold scaling. Our algorithm enables
+such a scaling analysis and model-dependent threshold
+extrapolations, whose limitations are discussed in Sec. V.
+arXiv:2609.40279v1  [quant-ph]  30 Sep 2026
+
+[PDF page 2]
+2
+II. OUR CONTRIBUTION
+An efficient simulation algorithm for coherent crosstalk.
+We give a polynomial-time classical algorithm which
+takes as input the coupling strengths{θe}e∈E of nearest-
+neighbor ZZ-interactions (generating coherent crosstalk)
+on a rotated surface code of odd distanced, and achieves
+the following: It (i) samples from the distribution
+of syndromes obtained when the unitary Unn(θ) =Q
+e={q,q ′}∈E eiθeZqZq′ is applied to a code state and all
+stabilizers are measured, and (ii) computes the final logi-
+cal operation once an (efficiently computable) syndrome-
+dependent Pauli correction is applied to map back to the
+code space. The coupling strengths {θe}e∈E ⊂R may
+be arbitrary and may vary from edge to edge, where an
+edge e∈ E of the surface code lattice connects two neigh-
+boring qubits. The cost per syndrome sample isO(d6)
+elementary arithmetic operations. In our implementation,
+drawing one syndrome sample atd = 37(1 369physical
+qubits) takes about5ms (see Table II).
+Using Algorithm 1, we assess the accuracy of the
+minimum-weight perfect matching decoder under coher-
+ent crosstalk in rotated surface codes at odd distances
+d∈ { 13, 21, 29, 37}. We simulate error recovery with
+uniform coupling θe = θ (for all e∈ E ) and compare
+with the incoherent model in which each interaction is
+replaced by its Pauli twirl, i.e., by aZqZq′ error occur-
+ring independently with probabilitysin2 θ on each edge
+e = {q, q′} ∈ E (see Sec. V). We find that the residual log-
+ical error under coherent crosstalk is substantially larger
+than under the per-interaction Pauli twirl at the same
+angle. A joint finite-size scaling fit gives threshold extrap-
+olations of θc/π = 0.0342(4)under coherent crosstalk and
+θc/π = 0.0493(5)under the per-interaction Pauli twirl.
+The corresponding values of sin2 θc are approximately
+1.1%and2 .4%, respectively. These extrapolations de-
+pend on the scaling ansatz and the specified decoder: the
+quoted spreads measure sensitivity to the included dis-
+tances, while the poor goodness of fit prevents controlled
+asymptotic threshold estimates (Sec. V).
+Hardness of sampling under combined coherent noise.
+Our second result concerns the combination of single-
+qubit Z-rotations and nearest-neighborZZ crosstalk, i.e.,
+noise described by the unitary
+Ucomb(φ,θ) =
+ Y
+q
+eiφqZq
+!
+ Y
+e={q,q ′}∈E
+eiθeZqZq′
+
+ .
+(1)
+For a distance-d rotated codeC rot
+d prepared in the state
+|0⟩, write p(s) = pCrot
+d
+|0⟩ (s|U comb(φ,θ ))for the probability
+of observing syndromes under ideal measurement. The
+superscript specifies the code family and distance, and
+the argument the noise. The input subscript is retained
+because combined noise can give a syndrome distribution
+that depends on the encoded state (Sec. VI). We show
+that the existence of a polynomial-time classical algorithm
+producing – for every allowed choice(φ,θ )of angles –
+a sample from a distribution epsatisfying, for a fixed
+0≤ϵ <1,
+ep(s)−p(s)
+ ≤ϵ p(s)(2)
+for every syndromes would imply a collapse of the poly-
+nomial hierarchy to its third level (Theorem 1 in Sec. VI).
+Three computational regimes.Single-qubit coherent
+Z-rotations and nearest-neighbor coherentZZ-crosstalk
+each admit efficient exact simulation, whereas the syn-
+drome distribution resulting from their combination is
+hard to sample from under the multiplicative approxima-
+tion guarantee above (see Eq.(2)), unless the polynomial
+hierarchy collapses. Thus the noise model affects not only
+the logical error rate but also the computational com-
+plexity of assessing code performance. This distinction
+complements the numerical evidence of Ref. [31] for an
+entanglement barrier to matrix-product-state decoding
+under combined single-qubit and two-qubit rotations: our
+hardness result concerns syndrome sampling itself.
+A. T echniques
+Reducing crosstalk to two independent single-qubit noise
+problems.Both single-qubit Z-rotations and nearest-
+neighbor ZZ rotations are generated by commuting terms,
+each of which flips at most twoX-stabilizers. Our algo-
+rithm exploits additional structure in the syndromes of
+the nearest-neighbor ZZ-errors. On a rotated code, the
+X-stabilizers split into two disjoint setsA and B such that
+every nearest-neighborZZ-error has its syndrome entirely
+within one set. Each set is in one-to-one correspondence
+with the X-stabilizers of a standard (unrotated) surface
+code of distance( d + 1)/2. Under this correspondence,
+each physical ZZ-rotation has the same syndrome action
+as a single-qubitZ-rotation on one auxiliary code; inter-
+actions with the same syndrome combine by adding their
+angles.
+As a consequence, the resulting syndrome distribution
+factorizes exactly as
+pCrot
+d (s|U nn) =p Cstd
+D (s(A) |U (A))pCstd
+D (s(B) |U (B)),(3)
+where D = (d + 1)/2and s(A), s(B) are the syndromes of
+the two auxiliary standard (unrotated) codes under their
+assigned single-qubit noiseU(A), U(B) (Sec. IV, Eq.(26)).
+No encoded input appears in Eq.(3): both sides are the
+same for any encoded state, on the original as well as
+on the auxiliary codes. One can therefore draws(A) and
+s(B) independently and combine them to obtain an ex-
+act syndrome sample of the original code. We use the
+single-qubit simulation algorithms of Refs. [18, 19] as sub-
+routines; the planar-graph construction of Ref. [19] applies
+to the auxiliary standard (unrotated) surface codes.
+The reduction of crosstalk simulation to single-qubit
+noise described here for rotated codes can similarly be
+carried out for odd-distance unrotated codes, using two
+
+[PDF page 3]
+3
+auxiliary rotated codes and the polynomial-time simulator
+of Ref. [18].
+Postselected universality with two-body interactions on
+a king lattice.Adding physical single-qubit rotations con-
+nects the two syndrome sets. On the syndrome register,
+the combined noise is equivalent to an instantaneous quan-
+tum polynomial-time (IQP) circuit: commuting diagonal
+gates act on|+⟩ inputs, followed by measurements in the
+Hadamard basis. Together, physical single-qubit rotations
+and ZZ-rotations give an interaction graph isomorphic
+to a finite subgraph of a king lattice (Sec. VI). Thus a
+combination of the two physical noise types on the surface
+code corresponds to an IQP circuit with only two-body
+interactions on this lattice.
+To establish hardness, we start from a universal nearest-
+neighbor brickwork circuit and replace its Hadamards
+by postselected gadgets [35]. Expanding controlled- Z
+gates leaves commutingZ and ZZ rotations on its planar
+space–time graph. A distributed Greenberger–Horne–
+Zeilinger (GHZ) reference state replaces theZ-rotations
+by ZZ couplings: its two computational-basis branches
+give identical data probabilities in the Hadamard basis,
+so discarding the reference outcomes preserves the target
+distribution. Postselected parity measurements prepare
+this reference and mediate interactions along lattice paths.
+A fixed crossing construction routes the reference and data
+paths through distinct king-lattice sites, with polynomial
+overhead, degree at most four, and angles in multiples of
+π/8(Appendix C). The resulting family is universal under
+postselection. A classical sampler with the pointwise
+guarantee in Eq.(2) would then simulate postselected
+quantum computation, implying the stated collapse [35,
+36].
+Outline.The remainder of the paper is structured as
+follows. Section III defines the code and noise model,
+formulates the simulation tasks, and establishes exact
+Pauli recovery for crosstalk noise on odd-distance rotated
+codes. Section IV presents the reduction to single-qubit
+noise and the sampling algorithm, Sec. V reports the
+numerical results, Sec. VI states the hardness of sampling
+under combined single-qubit and crosstalk noise, and
+Sec. VII discusses the scope of our results.
+III. PROBLEM ST A TEMENT
+A. Surface codes
+We consider a rotated square surface code of odd dis-
+tance d≥ 5, encoding one qubit inton = d2 physical
+qubits on ad×d array [37–39]. We denote this code by
+Crot
+d ; the superscript specifies the code family and the
+subscript its distance (see Figure 1).
+For the rotated surface codeCrot
+d , label the physical
+qubits qi,j, with0 ≤i, j < d , increasing rightward ini
+and upward inj. SetD= (d+ 1)/2and define
+G={(u, v) : 0≤u≤D−2,0≤v≤D−1}.(4)
+X Z
+X
+Z
+(a) Rotated surface code, d= 5 .
+X
+Z
+X
+Z (b) Standard (unrotated)
+surface code,d= 5.
+FIG. 1. Surface codes of distanced = 5. Circles are physical
+qubits and faces are stabilizers, grey forX and white forZ.
+The blue and red strings are the logical representativesX and
+Z. Full faces have weight four. In the rotated surface code (a),
+the boundary semicircles correspond to weight-two stabilizers.
+In the standard (unrotated) surface code (b), the boundary
+triangles are weight-three stabilizers. The left and right (top
+and bottom) sides of the standard surface code are also called
+rough (smooth) boundaries.
+We index the X-type stabilizer generators by triples
+(C, u, v), where C∈ {A, B} and( u, v) ∈G . Thus, their
+index set is{A, B} ×G . Writing Xi,j for a single-qubit
+PauliXon qubitq i,j, the bulk stabilizer generators are
+SX,(A)
+u,v =
+1Y
+α,β=0
+X2u+α,2v+β ,0≤v≤D−2,
+SX,(B)
+u,v =
+1Y
+α,β=0
+X2u+1+α,2v−1+β ,1≤v≤D−1,
+(5)
+and the generators on the top and bottom boundaries are
+SX,(A)
+u,D−1 =X 2u,d−1X2u+1,d−1 ,
+SX,(B)
+u,0 =X 2u+1,0X2u+2,0 ,
+(6)
+with0 ≤u≤D− 2. The superscript labelC∈ {A, B} ,
+which we refer to as a component, and(u, v) ∈G labels
+a generator within it.
+Writing Zi,j for Pauli Z on qi,j, the Z-type stabilizer
+generators are the bulk operators
+SZ
+i,j =
+1Y
+α,β=0
+Zi+α,j+β ,0≤i, j≤d−2, i+jodd,
+(7)
+and the weight-two operators Z0,2vZ0,2v+1 and
+Zd−1,2v+1Zd−1,2v+2, for0 ≤v≤D− 2, on the
+left and right boundaries. Encoded states have eigenvalue
++1for each of these commuting generators. There are
+rX = rZ = ( n− 1)/2independent generators of each
+type; when coordinates are not needed, we enumerate
+them as {SX
+u }rX
+u=1 and {SZ
+v }rZ
+v=1. For brevity, we call the
+X-type and Z-type stabilizer generators X-stabilizers
+andZ-stabilizers throughout the paper.
+
+[PDF page 4]
+4
+Logical Pauli operators X and Z commute with all
+stabilizers and anticommute with each other. Multiplying
+them by stabilizers gives equivalent representatives. The
+distance d is the minimum weight of a non-trivial logical
+Paulioperator, whereweightcountsthequbitsanoperator
+acts on non-trivially. We denote the logical-Z eigenstates
+by |0⟩ and |1⟩, with eigenvalues+1and −1, respectively.
+For comparison, the distance-d standard (unrotated)
+surface codeC std
+d has d2 + (d− 1)2 physical qubits and
+weight-three boundary stabilizers [1, 2]. We use the repre-
+sentation in Fig. 1(b), with physical qubits at vertices and
+grey and white faces forX- and Z-stabilizers. Figure 1
+shows both families at distance five.
+For either family, n(C)denotes the number of phys-
+ical qubits and rX(C)the number of independent X-
+stabilizers:
+n(Crot
+d ) =d 2 n(Cstd
+d ) =d 2 + (d−1) 2,
+rX(Crot
+d ) = (d2 −1)/2r X(Cstd
+d ) =d(d−1).
+(8)
+Both codes encode one logical qubit, so their code spaces
+have dimension two.
+B. Problem formulation: coherent noise and
+recovery
+Label the n physical qubits by[n] = {1, . . . , n}. For
+any subsetΓ ⊆ [n], define the n-qubit Pauli operator
+Z(Γ) =Q
+q∈Γ Zq. We call such an operator aZ-type Pauli
+operator, and refer tosupp(Z(Γ)) = Γas the support of
+Z(Γ). We consider coherent single-qubit (sq) rotations,
+nearest-neighbor (nn)ZZ crosstalk and their combination
+(comb), i.e.,
+Usq(φ) =
+Y
+q
+eiφqZq ,
+Unn(θ) =
+Y
+e={q,q ′}∈E
+eiθeZqZq′ ,
+Ucomb(φ,θ) =U sq(φ)Unn(θ).(9)
+Here φ = ( φq)q∈[n] and θ = ( θe)e∈E are collections of
+real angles that may vary independently. The setE con-
+sists of the edges of the lattice in Fig. 1(a); each edge
+e = {q, q′} ∈ E connects two horizontally or vertically
+neighboring physical qubitsq, q′.
+We assume ideal state preparation and stabilizer mea-
+surements, together with a specified correction rule. The
+error-correction procedure we are interested in consists of
+four steps:
+1. Prepare an encoded state|Ψ⟩.
+2. Apply the coherent noiseU.
+3. Measure all stabilizers. SinceU is diagonal in the
+computational basis, it commutes with every Z-
+stabilizer, whose outcome therefore remains+1.
+The non-trivial measurement record is thus the bi-
+nary vector
+s= (s 1, . . . , srX )∈ {0,1} rX ,
+of X-stabilizer outcomes, where su = 0denotes
+outcome+1and su = 1denotes outcome −1. The
+corresponding projector is
+Πs =
+rXY
+u=1
+I+ (−1) su SX
+u
+2 .(10)
+The syndromesoccurs with probability
+pC
+Ψ(s|U) =∥Π sU|Ψ⟩∥2 .(11)
+4. Apply a Z-type Pauli correctionCs chosen to have
+the syndromes, see Eq. (13) below.
+We now make the syndrome notation used in the third
+and fourth steps explicit. All binary-vector operations
+below are modulo two. For aZ-type Pauli errorZ(Γ),
+define its syndrome
+∂Γ∈ {0,1} rX
+through the commutation relations
+SX
+u Z(Γ) = (−1)(∂Γ)u Z(Γ)S X
+u for allu∈[r X].(12)
+Thus( ∂Γ)u = 1exactly when the support ofSX
+u intersects
+Γin an odd number of physical qubits. Equivalently,∂Γ
+records the X-stabilizers violated after application of
+Z(Γ).
+A Z-type correction operator Cs is compatible with
+syndrome s precisely when ∂(supp(Cs)) = s, or, equiva-
+lently,
+SX
+u Cs = (−1)suCsSX
+u for allu∈[r X].(13)
+Applying such a correction returns the measured state to
+the code space. For any syndromes with pC
+Ψ(s|U ) > 0,
+the resulting normalized state after correction is
+|ψs⟩= CsΠsU|Ψ⟩q
+pC
+Ψ(s|U)
+.(14)
+The problem of simulating noise and subsequent recovery
+then boils down to the following two computational tasks:
+(A) First, we must sample a syndromes according to the
+distributionp C
+Ψ(s|U).
+(B) Second, given a sampled syndromes∈ { 0, 1}rX and
+a compatible correctionCs, we must determine the
+resulting logical state|ψs⟩.
+In the next section, we characterize this conditional logical
+action for coherent crosstalk noise.
+
+[PDF page 5]
+5
+C. Logical action and recovery for coherent
+crosstalk
+Both tasks(A), (B) simplify when the noise consists
+of coherent crosstalk errors alone, without single-qubit
+rotations. Whenever the syndrome distribution is inde-
+pendent of the encoded initial state |Ψ⟩, we omit the
+associated subscript and writepC(s|U).
+Lemma 1 (Logical action and exact recovery) Let
+U = Unn be coherentZZ-crosstalk noise (see Eq.(9)) on
+a rotated surface codeCrot
+d of odd distanced. Let Cs be
+any correction operation ofZ-type compatible with the
+syndromes(see Eq.(13)). Define
+ts =|supp(C s)|mod 2.(15)
+Then there is a scalarκs ∈Csuch that
+CsΠsUnn|Ψ⟩=κ s Z
+ts
+|Ψ⟩, p Crot
+d (s|U nn) =|κ s|2 ,
+(16)
+for every encoded state|Ψ⟩ ∈ C . In particular, the syn-
+drome distribution pCrot
+d (s|U nn) = |κs|2 does not depend
+on the encoded state. The conditional logical operation
+defined by Eq.(14) (mapping the original state |Ψ⟩ to
+the state |ψs⟩) is – up to an irrelevant global phase – the
+identity whent s = 0and Zwhent s = 1, that is,
+|ψs⟩ ∝ Z
+ts
+|Ψ⟩.(17)
+We note that because we are working withCrot
+d where
+d is odd, the correction Cs can always be chosen such
+that ts = 0: for example, ifCs has odd weight, replace
+it with Ceven
+s = Z
+ts
+Cs. This gives ts = 0for every
+syndrome s, hence the recovery is exact for any rotation
+angles for this choice. This consequence of Lemma 1 is
+in line with the observation of Ref. [40] that stochastic
+nearest-neighbor ZZ errors on rotated surface codes are
+perfectly correctable. We emphasize that this does not
+make error correction trivial in practice, however. The
+even-weight rule relies on the prior knowledge that the
+noise consists ofZZ-errors alone, and it produces a logical
+error on every odd-weight error, for example a single-qubit
+Z-error. Without such prior knowledge one typically uses
+a generic decoder such as MWPM, which performs well
+both under local stochastic Pauli noise [3, 41] and under
+single-qubit coherent noise [18]. Its performance under
+coherent crosstalk is studied in Sec. V.
+Proof sketch.Every Z-stabilizer has even weight,
+whereas Z has odd weight. The noise contains only even-
+weight Z-errors; after a correction of parityts, all contri-
+butions with syndromes therefore have the same logical
+action Z
+ts
+. The detailed proof is given in Appendix A1
+□.
+Lemma 1 means that the simulation task of determining
+the effective logical channel after error recovery reduces
+to sampling from the distributionp(s) = pCrot
+d (s|U nn)of
+syndromes, independent of the encoded state|Ψ⟩. Once
+a syndrome s is drawn fromp, the residual logical sample
+can simply be read off from the decoder’s output by deter-
+mining the bit (parity)ts. We note that ordinary MWPM
+decoding does not return an even-weight correction for
+every syndrome s; hence it produces a logical Z-error
+precisely on the sampled syndromess with odd-weight
+correctionC s.
+The simplifications expressed by Lemma 1 do not hold
+for general coherent noise. In particular, if the noise
+involves (Hamiltonian)Z-type Paulis which do not com-
+mute with X, then both the syndrome distribution and
+the logical state|ψs⟩ after correction can depend on the
+initial code state |Ψ⟩. This already happens for single-
+qubit coherent rotations on standard surface codes [19];
+for odd-distance rotated surface codes, the syndrome dis-
+tribution under single-qubit coherent noise is independent
+of the initial code state, while the conditional logical
+operation is generally a non-trivialZ-rotation [18].
+D. Syndrome distribution and IQP circuits
+Here we show that the distribution of syndromes with
+coherent noise acting on a logical basis state|λ⟩ can be
+rewritten as the distribution of outputs of an instanta-
+neous quantum polynomial-time (IQP) circuit [35]. For
+an arbitrary encoded initial state|Ψ⟩, the syndrome dis-
+tribution is a convex combination of these distributions.
+Furthermore, the IQP circuit is generated by an Ising
+model on a specific graph determined by the code and
+noise considered. This observation is our main technical
+tool: it is used in the proof of Lemma 3 below (which
+underlies our algorithm) and in Sec. VI, where we estab-
+lish hardness of sampling in the case of general coherent
+noise.
+The representation in terms of an IQP circuit holds
+for general CSS codes, without assumptions on their ge-
+ometry or distance. The IQP circuits obtained below
+are generated by Ising-type Hamiltonians; the relation
+between such circuits and Ising partition functions was
+previously studied by Fujii and Morimae [42].
+Lemma 2 (Syndrome probabilities and IQP) Let
+C be an n-qubit CSS code encodingk logical qubits, with
+independent X-type stabilizer generators SX
+1 , . . . , SX
+rX.
+Let |λ⟩, λ∈ { 0, 1}k, denote the code state stabilized by
+all X- and Z-type generators and with eigenvalue(−1)λj
+for the j-th logical operatorZ j. Consider the coherent
+noise unitary
+U=
+Y
+Γ∈I
+eiθΓZ(Γ) ,
+where I is any finite collection of supportsΓ⊆ [n]of Z-
+type products on then physical qubits andθΓ ∈R . Define
+∂Γ ∈ {0, 1}rX as the (X-type) syndrome induced by the
+errorZ(Γ), i.e.,
+SX
+u Z(Γ) = (−1)(∂Γ)u Z(Γ)S X
+u for allu∈[r X],
+
+[PDF page 6]
+6
+and defineℓ(Γ)∈ {0,1} k by
+X jZ(Γ) = (−1) ℓj(Γ)Z(Γ)X j for allj∈[k].
+LetΠ s project onto the measuredX-stabilizer syndrome
+s. Then,
+pC
+λ(s|U) =∥Π sU| λ⟩∥2
+=
+⟨s|H⊗rX W|λ⟩|+⟩⊗rX
+
+2
+for everys∈ {0,1} rX ,
+(18)
+whereHis the Hadamard gate andW |λ⟩ is the unitary
+W|λ⟩ =
+Y
+Γ∈I
+eiθΓ(−1)λ·ℓ(Γ)Z(∂Γ) .(19)
+Here Z(∂Γ) =QrX
+u=1 Z(∂Γ)u
+u acts on the syndrome register
+((C2)⊗rX) and λ·ℓ (Γ)is the binary inner product. For a
+normalized encoded state|Ψ⟩= P
+λ aλ|λ⟩ ∈ C, we have
+pC
+|Ψ⟩(s|U) =
+X
+λ
+|aλ|2pC
+λ(s|U)
+for everys∈ {0,1} rX .
+(20)
+In particular, for one logical qubit (i.e.k = 1) and |Ψ⟩ =
+a|0⟩+b| 1⟩,
+pC
+|Ψ⟩(s|U) =|a| 2pC
+|0⟩(s|U) +|b| 2pC
+|1⟩(s|U).(21)
+Below we writeW = W|0⟩. By Eq.(21), input indepen-
+dence for one logical qubit is equivalent topC
+|0⟩ = pC
+|1⟩,
+in which case we writepC for the common distribution.
+On an odd-distance rotated code, chooseX = X ⊗n. For
+nearest-neighbor crosstalk alone, every active support has
+ℓ(Γ) = 0, so W|1⟩ = W|0⟩, recovering the input indepen-
+dence of Lemma 1. For single-qubit noise alone, every
+active support hasℓ(Γ) = 1, so W|1⟩ = W †
+|0⟩. Since W|0⟩
+is diagonal and the input and measurement vectors in
+Eq. (18) are real, the two amplitudes are complex con-
+jugates and againpC
+|0⟩ = pC
+|1⟩. When these distributions
+differ, sampling for a known encoded input reduces to
+their classical mixture in Eq. (21).
+A proof of Lemma 2 is given in Appendix A2. For the
+surface-code noise of Eq.(9), I consists of the singletons
+{q}, q∈ [n], and the edgese∈ E . Every such support
+Γ ∈ I flips at most twoX-stabilizers (i.e. |∂Γ| ≤ 2), soW
+consists of one- and two-qubit diagonal gates only, that
+is, W = eiH for an Ising HamiltonianH on the syndrome
+register whose interaction graph is determined by the
+code geometry. Lemma A.1 in Appendix A3 identifies
+these graphs, with the following results:
+(i) For nearest-neighbor crosstalkUnn on a rotated sur-
+face codeC rot
+d of odd distance d, H is an Ising
+model on two disconnected d−1
+2 × d+1
+2 square lat-
+tices, one for each of the two componentsA and B
+of X-stabilizers, with local fields (corresponding to
+|∂Γ| = 1) on one boundary column of each lattice
+(Fig. 5(a)). The d− 1edges e for which Z(e)is
+a weight-twoZ-stabilizer ofC rot
+d contribute only a
+global phase (|∂Γ|= 0).
+(ii) For single-qubit rotationsUsq on a standard (unro-
+tated) surface codeCstd
+D of distance D, H is an Ising
+model on a single(D− 1) ×D square lattice, with
+local fields on its left and right boundary columns.
+(iii) For combined noiseUcomb = UsqUnn on a rotated
+surface code, H is an Ising model on a finite sublat-
+tice of the king lattice, in which every site is coupled
+to its horizontal, vertical, and diagonal neighbors,
+with local fields on the sites near the left and right
+boundaries (Fig. 6).
+The king graph in (iii) is non-planar, which is the source
+of the hardness result in Sec. VI.
+IV. EFFICIENT SIMULA TION OF COHERENT
+CROSST ALK
+By Sec. IIIC, simulating coherent crosstalk on a rotated
+surface codeC rot
+d amounts to producing a sample from
+the syndrome distributionp(s) = pCrot
+d (s|U nn); the con-
+ditional logical state then can be determined according to
+Lemma 1. We now reduce this sampling problem – for an
+odd-distance-d rotated surface code with nearest-neighbor
+crosstalk – to the problem of producing samples from the
+syndrome distributions of two independent auxiliary in-
+stances of standard (unrotated) surface codesCstd
+(d+1)/2 of
+distance( d + 1)/2, with single-qubit coherent noise. For
+the latter problem, efficient samplers are known [18, 19].
+The construction relates crosstalk interaction angles in
+the original rotated code to corresponding interaction
+angles of single-qubit Z-rotations in the two auxiliary
+standard codes; the syndrome distribution of the orig-
+inal code then factorizes into the product of syndrome
+distributions associated with the two auxiliary codes.
+A. Reduction to single-qubit noise
+Consider a rotated surface codeCrot
+d of odd distanced≥
+5. Set D = (d+ 1)/2. As shown in Fig. 2 using two colors,
+the set of X-stabilizers ofC rot
+d is partitioned into two
+disjoint subsets A (blue) and B (red), as specified in
+Eqs. (5) and (6). Each component contains|A| = |B| =
+rX /2 = D(D− 1) X-stabilizers, indexed by the gridG of
+Eq. (4).
+Now consider two auxiliary standard (unrotated) sur-
+face codes of distanceD, each withm = D2 + (D− 1)2
+physical qubits, which we denote byCstd,(A)
+D andC std,(B)
+D .
+By Eq.(8),C std
+D has D(D− 1) X-stabilizers, and we index
+them by the same gridG, as in Fig. 2(b),(c). This gives a
+bijection between theX-stabilizers ofCrot
+d and the disjoint
+
+[PDF page 7]
+7
+(0,0)
+(0,1)
+(1,0)
+(1,1)
+(0,0)
+(0,1)
+(1,0)
+(1,1)
+(2,1)
+(1,3) (2,3)
+(1,2)
+(1,3)
+θ1
+θ2
+θ3
+θ4 θ5
+θ6
+(a) Original rotated surface code,d= 7.
+(0,0)
+(0,1)
+(1,0)
+(1,1) (2,1)
+(1,3) (2,3)
+0
+0
+0
+0
+θ1
+θ2 +θ 3 (b) Auxiliary standard (unrotated)
+surface codeA,D= 4.
+(0,0)
+(0,1)
+(1,0)
+(1,1)
+(1,2)
+(1,3)
+0
+0
+0
+0
+θ4 +θ 5
+θ6
+(c) Auxiliary standard (unrotated)
+surface codeB,D= 4.
+FIG. 2. Reduction of nearest-neighbor crosstalkUnn on a rotated surface code of distanced = 7to single-qubit noise on two
+standard (unrotated) surface codes of distanceD = 4. Panel (a) shows the original rotated surface code; panels (b) and (c) show
+the independent auxiliary surface codesA and B, respectively. Black dots denote physical qubits. Blue and red faces denote
+X-stabilizers of componentsA and B, respectively, and white faces denoteZ-stabilizers. An X face( u, v)in (a) corresponds
+to the face with the same color and grid label in (b) or (c). Thick blue and red bonds in (a), labeled at their centers byθk,
+denote crosstalk rotationseiθkZZ assigned to auxiliary surface codeA or B, respectively. Grey dashed bonds are the weight-two
+Z-stabilizers on the left and right boundaries, whose rotations have trivial syndrome and contribute only a global phase. In (b)
+and (c), bright blue and red dots are the physical qubits of the auxiliary codes carrying the resulting single-qubit rotationseiφZ,
+labeled by the angle sum they receive, while the sites labeled0on the inactive rough boundary of each surface code denote a
+physical qubit with no error (zero angle rotation). The illustrated mappings are:θ1 flips(1 , 3)and(2 , 3)in A; θ2 and θ3 each
+flip the single stabilizer(2, 1)in A; θ4 and θ5 each flip(1 , 2)and(1 , 3)in B; and θ6 flips the single stabilizer(0, 0)in B. A
+syndrome with two flipped stabilizers maps to the auxiliary qubit between the two correspondingly marked faces of the auxiliary
+code, and a syndrome with one flipped stabilizer maps to an auxiliary qubit on the rough boundary. Interactions with the same
+syndrome share an auxiliary qubit and their angles add, as inθ2 + θ3 and θ4 + θ5; this adds rotation angles, not Pauli error
+probabilities. The coordinate conventions are those of Sec. IIIA; Appendix A3 names the corresponding physical qubits of the
+auxiliary codes.
+union of the X-stabilizers ofC std,(A)
+D andC std,(B)
+D : the
+stabilizer SX,(C)
+u,v of component C∈ {A, B} is identified
+with the stabilizereSX,(C)
+u,v ofC std,(C)
+D carrying the same
+grid index(u, v)∈G.
+We write the syndrome ass = (s(A), s(B)) ∈ {0, 1}rX,
+where s(C) = (s(C)
+u,v )(u,v)∈G ∈ {0, 1}rX /2 collects the out-
+comes of componentC and, under this bijection, is also a
+syndrome ofC std,(C)
+D .
+Let Vrot
+d be the set of physical qubits ofC rot
+d and
+Erot
+d = E the set of edges, associated with nearest-neighbor
+ZZ-interactions of the formZ(e), e∈ E rot
+d appearing in
+Eq. (9). The pair( Vrot
+d ,E rot
+d )forms the d×d -grid graph
+of Fig. 2(a). For an edge e = {q, q′} ∈ E rot
+d , we write
+∂e∈ { 0, 1}rX for the syndrome of the errorZ(e) = ZqZq′
+and(∂e) (C) for its restriction to componentC.
+In more detail, the errorZ(e)anticommutes with anX-
+stabilizerifandonlyifthecorrespondingface(definingthe
+X-stabilizer) contains exactly one of the two qubits ofe.
+For a horizontal edgee, these X-stabilizers correspond to
+the faces located to its left and to its right. For a vertical
+edge e, the errorZ(e)affects the X-stabilizers at the faces
+below and above it. In either case both faces belong to
+the same componentC∈ {A, B} . Hence there are three
+kinds of edges e with different effects of the associated
+two-qubit operator Z(e). For an edgee in the bulk, the
+operator Z(e)changes the eigenvalue of two stabilizers
+of one component C, whose faces are adjacent in the
+grid G, that is,(∂e)(C) has support {(u, v), (u + 1, v)} or
+{(u, v), (u, v+1) }, and(∂e)( ¯C) = 0, where ¯C̸ = C denotes
+the other component. For a horizontal edgee adjacent to
+the left or right boundary, the operatorZ(e)flips a single
+X-stabilizer, which lies in the right columnu = D− 2of
+component A or in the left columnu = 0of B. Finally,
+the d− 1vertical edges e on the left and right boundaries
+for which the operatorZ(e)is a weight-two Z-stabilizer
+(dashed in Fig. 2(a)) have trivial syndrome. We write
+Erot,∗
+d ⊂ E rot
+d for the set of edges of the first two kinds;
+these are exactly the edgesewith∂e̸= 0.
+We now consider the two standard surface
+codesC std,(C)
+D , where C∈ {A, B} . We write
+∂(C){q} ∈ { 0, 1}G for the syndrome of the errorZq on
+a qubit q∈ V std
+D ofC std,(C)
+D . A single-qubit error Zq in
+the bulk changes the eigenvalue of the twoX-stabilizers
+whose faces containq, which are adjacent in the gridG.
+On the other hand, a single-qubit error Zq on any of
+the D qubits on each left or right boundary, changes
+only the eigenvalue of the unique stabilizer in the left
+column u = 0or the right column u = D− 2whose face
+containsq.
+
+[PDF page 8]
+8
+We note that for everye∈ E rot,∗
+d there is a unique
+component C and a unique qubitq∈ Cstd,(C)
+D such that a
+Z-error onq inC std,(C)
+D flips exactly the stabilizers flipped
+by Z(e)in the rotated surface code (under the bijection
+of syndromes discussed above). This defines a map
+ι:E rot,∗
+d → {A, B} × V std
+D ,
+e7→ι(e) = (C, q) (22)
+We note that forι(e) = (C, q)this map satisfies
+(∂e)(C) =∂ (C){q} ̸= 0,(23)
+(∂e)( ¯C) = 0.(24)
+The map ι is not injective, since edges with the same
+syndrome have the same image (such as those carrying the
+labels θ2 and θ3 in Fig. 2). Its image consists of all qubits
+ofC std,(A)
+D andC std,(B)
+D except those on the left rough
+boundary ofC std,(A)
+D and on the right rough boundary of
+Cstd,(B)
+D , and every qubit in the image is the image of one
+or two edges; Appendix A3 givesιexplicitly, Eq. (A26).
+Given crosstalk anglesθ = (θe)e∈Erot
+d
+, we assign to each
+qubit of an auxiliary code the sum of the angles associated
+with the edges mapped to it, and subject the auxiliary
+codes to the resulting single-qubit rotations:
+φ(C)
+q =
+X
+e∈Erot,∗
+d :ι(e)=(C,q)
+θe , U (C) =
+Y
+q∈Vstd
+D
+eiφ(C)
+q Z(C)
+q ,
+(25)
+where Z(C)
+q acts on qubitq ofC std,(C)
+D . A qubit outside
+the image ofι receives angle zero. The following lemma
+states the reduction that results from this construction.
+Lemma 3 (Reduction to single-qubit noise) Let
+d≥ 5be odd and D = (d + 1)/2. Let Unn = Unn(θ)be
+coherent nearest-neighbor ZZ-crosstalk noise, Eq. (9),
+on the rotated surface codeCrot
+d , with arbitrary angles
+θ. Let U(A) and U(B) be the single-qubit noise(25) on
+the auxiliary standard surface codesCstd,(A)
+D andC std,(B)
+D .
+Then, for every syndromes= (s (A), s(B))∈ {0,1} rX,
+pCrot
+d (s|U nn) =p Cstd
+D (s(A) |U (A))p Cstd
+D (s(B) |U (B)),
+(26)
+where none of the three distributions depends on the en-
+coded state.
+The proof of this lemma can be found in Appendix A4.
+It also explains why the noise considered here makes all
+three distributions state-independent. Thus the original
+syndrome can be sampled by independently sampling the
+two auxiliary syndromes and combining their outcomes.
+The edges e for which Z(e)has trivial syndrome (∂e = 0)
+do not affect syndrome probabilitiespCrot
+d (s|U nn), which
+is why they are omitted from Eq. (25).
+B. Sampling algorithm
+For single-qubit coherent noise, efficient algorithms for
+sampling a syndrome are known for rotated codes [18]
+and standard codes [19]. We writeSampleCstd
+D
+sq (φ)for the
+standard-code subroutine used below, which returns a
+syndrome s distributed with probabilitypCstd
+D (s|U sq(φ)).
+The reduction expressed by Lemma 3 gives the follow-
+ing syndrome sampling algorithm for nearest-neighbor
+coherent crosstalk on a rotated surface code.
+Algorithm 1:Sample
+Crot
+d
+nn (θ)
+(Syndrome sampling for nearest-neighbor coherent
+crosstalk)
+Input:an odd distance d≥ 5and real angles θ = (θe)e∈E
+for the edges of the rotated codeCrot
+d .
+1. Initialize the single-qubit error angle φ(C)
+q = 0
+for every physical qubit q of each auxiliary code
+C∈ {A, B} of distance D = ( d + 1)/2. This angle
+specifies the rotationeiφ(C)
+q Z(C)
+q .
+2. For each edge e = {q, q′} ∈ E rot
+d , compute ∂e∈
+{0, 1}{A,B}×G, the syndrome of the errorZqZq′. Its
+nonzero entries label the flippedX-stabilizers, de-
+termined by Eqs.(5) and (6). If ∂e = 0, continue
+to the next edge. Otherwise, identify its component
+C and the unique qubita of auxiliary codeCstd,(C)
+D
+(i.e. compute ι(e) = ( C, a)) with ∂(C) {a} = (∂e)(C),
+as in Eq. (22), and addθe toφ (C)
+a .
+3. Sample the two syndromes independently:
+s(A) ←Sample Cstd
+D
+sq (φ(A)),
+s(B) ←Sample Cstd
+D
+sq (φ(B)).
+4. Return the syndromes = (s(A), s(B))of the original
+code by concatenating the outcomes along the labels
+{A, B} ×G.
+Output:s∼p Crot
+d (· |U nn(θ)).
+The correctness of the algorithm, i.e., the fact that its
+output s is distributed according to pCrot
+d ( · |U nn(θ)),
+follows from Lemma 3.
+Given a sampled syndromes, a decoder is a map
+Dec:{0,1} rX → {Γ : Γ⊆[n]}
+s7→Γ s
+(27)
+with ∂Γs = s; its correction isCs = Z(Γs), applying Z
+to the qubits inΓs. To determine the conditional logical
+action when using such a decoder, compute the support
+Γs = Dec(s)and its parity ts = |Γs|mod 2. By Lemma 1,
+ts = 0means the identity and ts = 1means it is a logical
+Z, equivalently a logical rotation byΘs = πts/2up to a
+global phase.
+
+[PDF page 9]
+9
+C. Runtime of algorithm
+A rotated surface code of distance d maps to two
+auxiliary standard (unrotated) surface codes of distance
+D = (d+1) /2. Computation of angles, and concatenation
+of the output samples take O(d2)operations; the two
+calls to the single-qubit syndrome sampler dominate the
+complexity. Write T (A)for the number of elementary
+arithmetic operations required for one call to a sampler
+A.
+The standard-code subroutine uses fermionic linear
+optics (FLO). A distance-D standard surface codeCstd
+D
+has D2 + (D− 1)2 = O(D2)physical qubits; a syndrome
+sample requires O(D2)elementary FLO operations, each
+realizable withO(D 4)arithmetic operations [19]. Hence
+T
+
+SampleCstd
+D
+sq
+
+=O(D 6),(28)
+and the runtime per crosstalk syndrome sample is
+T
+
+SampleCrot
+d
+nn
+
+=O(d 2 +D 6) =O(d 6).(29)
+Algorithm 1 and the identities underlying it are formu-
+lated for arbitrary real angles and exact arithmetic. A
+numerical implementation must fix how the angles are
+represented with machine precision. We distinguish two
+cases. If the numberscosθ e and sinθ e are given exactly
+as elements of a fixed algebraic number fieldK (ratio-
+nals, or, as for the angleskπ/8of Theorem 1, elements
+of Q(cos π
+8 )), with at mostb bits per field element, we
+can carry out all arithmetic exactly inK. Every quantity
+the algorithm computes, from the entries of the fermionic
+covariance matrix to the conditional probabilities from
+which the syndrome bits are drawn, is a ratio of Pfaf-
+fians of matrices with entries inK of polynomial size,
+so all intermediate numbers havepoly(d, b)bits and the
+O(d6)arithmetic operations of Eq. (29) cost poly(d, b)
+bit operations. Exact sampling additionally compares a
+uniform random number, revealed through independent
+fair bits, with successively refined certified bounds on
+each conditional probability; this takes expected poly-
+nomial bit time, rather than a fixed worst-case bound.
+The output is distributed exactly as pCrot
+d ( · |U nn(θ));
+in particular the multiplicative criterion(2) holds with
+ϵ = 0. If instead the angles are arbitrary reals with
+polynomial-time access to their binary expansions, fix
+δ > 0, set bprec = ⌈log2(4d2/δ)⌉, and replace each θe
+by an angle˜θe with rational cos ˜θe,sin ˜θe of O(bprec)bits
+and |θe − ˜θe| ≤ 2−bprec. Since each factor ofUnn moves
+by at most2−bprec in operator norm and there are fewer
+than2 d2 factors, ∥Unn(θ) −U nn( ˜θ)∥ ≤ 2d2 2−bprec, and
+the exact sampler for˜θ produces a distribution ˜pwith
+|˜p(s) −p (s)| ≤δ for every syndrome and∥˜p−p∥1 ≤δ ,
+at expected bit costpoly(d,log (1/δ)). No multiplicative
+guarantee relative toθ itself can be expected in this case,
+sincepmay vanish by interference at isolated angles.
+V. NUMERICAL RESUL TS
+Minimum-weight perfect matching (MWPM) [43, 44]
+is a common surface-code decoder and provides a useful
+benchmark when recovery is not tailored to the physical
+noise model. For the coherent crosstalkUnn studied here,
+Eq. (9), a correction constrained to have even weight
+recovers exactly at every interaction strength, as shown in
+Sec. IIIC. The conventional MWPM decoder studied here
+can instead return odd-weight corrections and thereby
+introduce a logical Z-error. We therefore quantify the
+residual logical error it leaves under coherent crosstalk
+and compare it with that of the corresponding incoherent
+model.
+We compare uniform coherent nearest-neighbor ZZ
+noise Unn with a physical Pauli approximation on rotated
+surface codes of distanced∈ { 13, 21, 29, 37}. Preparation,
+syndrome measurements, and recovery are assumed to be
+ideal. For both noise models and every distance, we look
+at the same37rotation angles
+θ/π∈ {0.020 + 0.001j:j= 0, . . . ,36}. (30)
+Each distance, angle, and noise model usesN = 200 000
+syndrome samples of the original code, giving7.4 × 106
+samples per distance and model and5.92 ×107 samples in
+total. Figure 3 shows diamond-norm errors for both mod-
+els over this range. Syndromes for coherent crosstalk are
+generatedbythereductiondescribedinSec.IV,withauxil-
+iary surface code distancesD = (d+1) /2 ∈ {7, 11, 15, 19}.
+A. Logical error, physical twirling, and recovery
+For fixedd and θ, write p(s) = pCrot
+d (s|U nn(θ)), where
+Unn(θ)denotes uniform angles θe = θ on every edge e.
+We use the average conditional diamond-norm error,
+P L =
+X
+s∈{0,1}rX
+p(s)∥Λ s −id∥ ⋄ ,(31)
+where id is the (logical) identity channel andΛs is the
+normalized conditional logical channel
+Λs :ρ7→C sΠsUnnρ U †
+nnΠsC †
+s /p(s)(32)
+restricted to density operators supported on the code
+space. The mapΛs is linear because of the input indepen-
+dence of the syndrome distribution. Note thatP L ∈ [0, 2]
+is an error metric, not a probability: a definite logical
+Pauli-Zerror givesP L = 2.
+For the crosstalk noise studied here, Eq.(16) makes
+every conditional channelΛs either the identity or con-
+jugation by Z, according to the weight parity of the
+correctionC s returned by the decoder. Hence
+P L = 2pL
+fail , p L
+fail = Pr
+s∼p
+[|supp(C s)|odd].(33)
+
+[PDF page 10]
+10
+0.020 0.025 0.030 0.035 0.040 0.045 0.050 0.055
+µ=¼
+10−4
+10−3
+10−2
+10−1
+100
+P L
+d = 13
+d = 21
+d = 29
+d = 37
+95% Wilson CI
+fit tc = 0:0342
+0.020 0.025 0.030 0.035 0.040 0.045 0.050 0.055
+µ=¼
+10−4
+10−3
+10−2
+10−1
+100
+P L
+twirl
+d = 13
+d = 21
+d = 29
+d = 37
+95% Wilson CI
+fit tc = 0:0493
+(a)P L under coherent crosstalk noiseU nn.
+0.020 0.025 0.030 0.035 0.040 0.045 0.050 0.055
+µ=¼
+10−4
+10−3
+10−2
+10−1
+100
+P L
+d = 13
+d = 21
+d = 29
+d = 37
+95% Wilson CI
+fit tc = 0:0342
+0.020 0.025 0.030 0.035 0.040 0.045 0.050 0.055
+µ=¼
+10−4
+10−3
+10−2
+10−1
+100
+P L
+twirl
+d = 13
+d = 21
+d = 29
+d = 37
+95% Wilson CI
+fit tc = 0:0493 (b)P L
+twirl under the Pauli twirlN twirl.
+FIG. 3. Standard-MWPM logical error on odd-distance rotated codes for (a) coherent nearest-neighborZZ rotations and (b)
+the per-interaction physical Pauli twirl of Eq.(35). The vertical axes are logarithmic;d denotes code distance. Each point uses
+200 000samples. Both panels cover the same sampled range,0.020 ≤θ/π≤ 0.056, in steps of0.001. Only estimates strictly
+greater than10 −4 are plotted; lines connect the displayed estimates. The cutoff is for display only and does not imply zero
+logical error at omitted points. The normalization assignsP L = 2to a certain logical Pauli error, so P L = 1corresponds
+to failure probability1/2. Error bars show pointwise 95% Wilson confidence intervals for Monte Carlo sampling uncertainty.
+Dashed lines mark threshold estimates from Table I.
+In particular, averaging over the syndromes gives the
+averaged logical channel
+Λ(ρ) = (1−p L
+fail)ρ+p L
+failZρZ ,(34)
+a dephasing channel. Note thatP L = ∥Λ −id∥ ⋄. This
+last identity is special to the considered coherent crosstalk
+noise and need not hold for general coherent noise.
+For comparison, we consider incoherent noise that re-
+places the rotation on each edgee = {q, q′} ∈ E separately
+by its Pauli twirl,
+N twirl
+e (ρ) = cos2 θ ρ+ sin 2 θ ZqZq′ρZqZq′ ,(35)
+and composes these channels over all2 d(d− 1)edges
+e∈ E,
+Ntwirl =N twirl
+e1 ◦ · · · ◦ N twirl
+e2d(d−1) ,(36)
+which is order-independent because theseZ-type Pauli
+channels commute. Equivalently, theZZ-error Z(e)is
+applied independently on each edgee with probability
+sin2 θ. This twirls each interaction, not the complete
+product unitary. Its syndrome distributionptwirl is state-
+independent, and every sampled error has even weight,
+so Eqs.(33) and (34) apply verbatim withp replaced by
+ptwirl. We writeP L
+twirl for the resulting metric.
+For each distance, angle, and coherent / incoherent
+(twirled) model we record the numberM of theN sampled
+syndromes whose MWPM correction has odd weight, and
+report the empirical frequency
+ˆf=M/Nand bP L = 2 ˆf .(37)
+B. Coherent versus incoherent errors
+Figure 3 showsbP L for both models over the full range
+of angles. At equal angle, MWPM leaves a substantially
+larger logical error under coherent crosstalk than under its
+twirl: at d = 37and θ/π = 0.040we find bP L = 0.611(2)
+against bP L
+twirl = 0 .0124(4), a ratio of about49. The
+parentheses in these two estimates denote one binomial
+standard error.
+To summarize how the logical error depends on dis-
+tance and angle, we perform a finite-size scaling fit. Near
+a threshold, the failure rate is expected to depend on dis-
+tance and angle only through the single scaling variable
+x = (t−t c) d1/ν, where t = θ/π, tc is a location parame-
+ter that may be interpreted as a threshold if the scaling
+ansatz holds, and ν is a critical exponent. Truncating
+the dependence onx at second order gives the standard
+fitting form [23, 45]
+f(t, d)≃A+Bx+Cx 2 , x= (t−t c)d 1/ν ,(38)
+where f = pL
+fail is the odd-correction probability of
+Eq. (33) and ˆf of Eq. (37) is its estimator. For each
+noise model we fit the five parameterstc, ν, A, B, C once
+to all four distances simultaneously, with no correction-
+to-scaling term. Fit windows, weights, and the jackknife
+spread are specified in Appendix B, where Fig. 7 also
+shows the resulting collapse of all four distances onto a
+single curve. Table I collects the fitted values.
+The fitted tc is about30%smaller for coherent noise
+than for its twirl, and this ordering survives deleting
+any single distance or changing either fit window (Ap-
+
+[PDF page 11]
+11
+Noise modelt c ν χ 2
+red
+Coherent0.0342(4) 1.56 7.10
+Physical twirl0.0493(5) 1.49 6.50
+TABLE I. Parameters of the joint fit of Eq.(38) to the four
+simulated distances. Parentheses give the leave-one-distance-
+out spread sJK of Appendix B in the last digit. Each fit has
+23degrees of freedom.
+pendix B). The absolute values, however, deserve caution:
+the reduced χ2-values of7 .10and6 .50show that the
+quadratic ansatz does not describe the data within sam-
+pling uncertainty. We therefore read Table I as a set of
+model-dependent extrapolations rather than as controlled
+asymptotic thresholds, and note thatsJK covers only the
+set of distances included.
+C. Runtime
+Table II reports the average per-sample cost of syn-
+drome generation and of decoding. For coherent noise,
+sampling dominates decoding at every simulated distance;
+for the twirl it is two to three orders of magnitude cheaper,
+and decoding dominates throughout.
+dSampling (µs) MWPM (µs)
+Coherent crosstalk
+13 175.800 24.549
+21 759.948 137.801
+29 2208.120 494.955
+37 5101.692 1362.194
+Physical Pauli twirl
+13 1.477 10.330
+21 3.716 44.529
+29 7.043 143.966
+37 11.439 369.166
+TABLE II. Measured stage costs on an Apple M2 Max using
+serial execution on odd-distance rotated surface codes. Each
+row is a sample-weighted mean over all37angles of Eq.(30),
+with200 000samples per angle (7 .4 × 106 per row). Entries
+are microseconds per sample of the original code. For coherent
+noise, sampling includes both auxiliary code samples and the
+mapping to the X-stabilizer syndrome of the original code;
+for the physical twirl, it includes independent draws of the
+ZZ-error on each edge, combining their effects on each qubit,
+and constructing the syndrome. MWPM includes matching,
+correction construction, and validation. Setup and other wall-
+time overheads are excluded.
+VI. LIMITS OF EFFICIENT SIMULA TION:
+COMBINED NOISE
+The reduction of Sec. IV relies on the splitting of the
+syndromesof ZZ-errorsintotwodisconnectedsets. Single-
+qubit rotations connect them, and the resulting sampling
+problem is no longer known to be efficiently solvable. To
+state this precisely, takeC =C rot
+d , U = Ucomb(φ,θ )of
+Eq. (9), and fix the encoded input to |0⟩. Combined
+noise can have an input-dependent syndrome distribution,
+so we keep the encoded state in the notation, writing
+p(s) =p C
+|0⟩(s|U). Lemma 2 directly gives
+p|0⟩(s) =
+⟨s|H⊗rX W|+⟩ ⊗rX
+2
+,(39)
+where
+W=
+Y
+q
+eiφqZ(∂{q}) Y
+e∈E
+eiθeZ(∂e) .(40)
+HereHis the Hadamard gate, |+⟩ =H |0⟩, and Z(δ) =QrX
+u=1 Z δu
+u acts on the syndrome register (i.e.,(C2)⊗rX)
+rather than on the physical qubits, withδ∈ { 0, 1}rX a
+syndrome vector. Eq.(40) is an instantaneous quantum
+polynomial-time (IQP) circuit: commuting diagonal gates
+act on |+⟩⊗rX and every qubit is then measured in the
+eigenbasis of X. Because |∂{q}| ≤ 2and |∂e| ≤ 2, each
+gate in the product defining W couples at most two
+“syndrome” qubits.
+To see explicitly that combined noise can givep|0⟩ ̸=
+p|1⟩, onC rot
+5 take angle π/4on the four supports
+{q0,0, q1,0}, {q2,0}, {q3,0}, and {q4,0}, and zero elsewhere.
+Their product is the logical-Z string along the bottom
+row. Only the empty and full selections of these supports
+have zero syndrome, givingp|0⟩(0) = 1/4and p|1⟩(0) = 0.
+The geometry of these couplings inW is a king lattice,
+that is, the integer grid in which each site is adjacent to
+its horizontal, vertical, and diagonal neighbors. Label an
+X-stabilizer by the geometric coordinates(x, y)of the
+lower-left corner of its face, extended to the boundary
+faces, so that0 ≤x≤d− 2, −1 ≤y≤d− 1and x + y is
+even; the bottom boundary stabilizers sit aty = −1and
+the top ones aty = d− 1. These geometric coordinates
+are related to the component labels(C, u, v)of Eqs. (5)
+and(6)by the mapρof Eq.(A18). A single-qubit rotation
+flips two stabilizers separated by(∆x, ∆y) = (1,± 1), or a
+single one at the left or right boundary; a nearest-neighbor
+rotation flips two separated by(2, 0)or(0 , 2), a single
+one, or none. In the coordinates
+(a, b) =
+ x+y
+2 , x−y
+2
+
+,(41)
+the two-stabilizer supports of the first kind are the axial
+edges and those of the second kind are the diagonal edges
+of a king lattice; the remaining supports are single-site
+fields at the boundary. Distinct edges have disjoint sets
+of physical preimages, so in Eq.(40) their angles can
+
+[PDF page 12]
+12
+be chosen independently. Appendix C shows that king-
+lattice circuits of this form, with angles in{kπ/8 : k =
+0, 1, . . . ,15} and at most four nonzero couplings at each
+site, are universal under postselection, and that unused
+king-lattice edges have coupling zero.
+Our second main result is the following.
+Theorem 1 (Hardness of syndrome sampling)
+Consider rotated surface codesC rot
+d of odd dis-
+tance d prepared in |0⟩ and subjected to the
+combined noise Ucomb(φ,θ )of Eq. (9). Write
+p(s) = pCrot
+d
+|0⟩ (s|U comb(φ,θ )). Fix0 ≤ϵ < 1.
+Suppose there is a classical algorithm which, given
+d and collections of angles φ,θ with all entries in
+{kπ/8 : k = 0 , 1, . . . ,15} and at most four nonzero
+couplings at each site of Eq.(40), runs in time polynomial
+in d and outputs a sample from a distributionepsatisfying
+|ep(s)−p(s)| ≤ϵ p(s)for everys .(42)
+Then the polynomial hierarchy collapses to its third level:
+PH⊆BPP NP ⊆Σ p
+3 ∩Π p
+3 .(43)
+The proof is given in Appendix C. It is the postselection
+argument of Refs. [35, 36] applied to the king-lattice con-
+struction: Eq.(42) distorts any conditional probability by
+at most(1 + ϵ)/(1 −ϵ ), which amplification of the source
+computation absorbs. The statement concerns indepen-
+dently programmable angles and pointwise multiplicative
+error, including exact preservation of zero probabilities. It
+does not address approximate sampling at constant total-
+variation distance (which typically requires additional
+complexity-theoretic assumptions) [46], nor spatially uni-
+form angles φq = φ, θe = θ. For φ = 0, the regime
+studied in Sec. V, Algorithm 1 samples efficiently.
+VII. DISCUSSION
+We have shown that nearest-neighbor coherent crosstalk
+on a rotated surface code of odd distanced can be simu-
+lated exactly using two instances of the known efficient
+single-qubit noise samplers [18, 19], at a cost ofO(d6)
+arithmetic operations per syndrome sample.
+On odd-distance rotated codes, crosstalk noise consist-
+ing of nearest-neighbor ZZ-interactions is exactly cor-
+rectable, both for coherent and incoherent noise. Our
+numerical results demonstrate that the standard MWPM
+decoder instead leaves a nonzero logical Pauli error whose
+probability depends strongly on the physical model: co-
+herent interference can substantially increase the logical
+error at the same angle compared to the Pauli twirled
+counterpart. Joint finite-size scaling fits extrapolate a
+lower threshold angle for coherent noise,θc/π = 0.0342(4)
+versus0 .0493(5)for its twirl. This ordering is stable under
+the distance and fit-window checks performed here, but
+the poor goodness of fit makes the absolute thresholds
+model-dependent extrapolations.
+Adding independently programmable single-qubit rota-
+tions connects the two sets ofX-stabilizers, identifies the
+syndrome probabilities with the output probabilities of a
+king-lattice IQP circuit, and permits postselected univer-
+sal computation. This results in a complexity-theoretic
+obstruction to efficient sampling. We do not know whether
+the uniform weak-noise regime φq = φ, θe = θ of the
+combined model admits an efficient sampler, or whether
+approximate sampling in total-variation distance is com-
+putationally hard.
+Several open problems remain. The reduction of Sec. IV
+uses ideal syndrome measurements; dealing with measure-
+ment errors is a problem of immediate practical relevance.
+The parity structure of Lemma 1 shows that a decoder
+aware of the noise model removes the logical error en-
+tirely, so the more relevant question for realistic devices
+is how coherent crosstalk interacts with additional noise
+components that break this parity, such as single-qubit
+rotations or stochastic errors.
+ACKNOWLEDGMENTS
+RK acknowledges funding from the European Research
+Council under Grant Agreement No. 101001976 (project
+EQUIPTNT) and from the Munich Quantum Valley,
+which is supported by the Bavarian state government
+with funds from the Hightech Agenda Bayern Plus. RK
+would like to thank the Isaac Newton Institute for Mathe-
+matical Sciences, Cambridge, for support and hospitality
+during the programme “Mathematics of many-body entan-
+glement” where work on this paper was undertaken; this
+work was supported by EPSRC grant no EP/Z000580/1.
+Appendix A: Syndrome amplitudes and coordinate
+conventions
+1. Proof of Lemma 1
+In this proofC =C rot
+d and p|Ψ⟩(s) = pC
+|Ψ⟩(s|U nn); the
+lemma shows in particular thatp|Ψ⟩ does not depend on
+|Ψ⟩, so it equals the main-textpC(s|U nn).
+Proof.The argument is similar to that of Lemma 4
+in the Supplementary Material of Ref. [18], which treats
+single-qubit rotations. It follows from the fact that every
+Pauli term appearing in an (expansion of) the noiseU
+has even (Z-)weight; it thus applies, in particular, to
+nearest-neighbor coherentZZ-rotations.
+On a rotated surface code with odd distanced, we can
+consider the logicalX-representative
+X=X ⊗n (A1)
+which acts on all qubits. Then
+XC sX= (−1) ts Cs (A2)
+
+[PDF page 13]
+13
+by definition; furthermore, every even-weightZ-type op-
+erator commutes withX.
+Let PC denote the projector onto the full code space
+(including the Z-stabilizer constraints), distinct from the
+X-syndrome projectorΠ 0, and let
+Ks =P CCsΠsUnnPC .(A3)
+Since Cs is ofZ-type and has syndromes, within the joint
++1eigenspace of the Z-stabilizers it maps the syndrome-s
+subspace into C, so CsΠsUnn|Ψ⟩ = Ks|Ψ⟩ for every code
+state| Ψ⟩ ∈ C. Since
+[PC, Z] = [Π s, Z] = [C s, Z] = [Unn, Z] = 0,(A4)
+we conclude that[ Ks, Z] = 0. Because Ks = PCKsPC
+preserves the code spaceC (i.e., is a logical operator) and
+commutes with Z, we conclude that
+Ks =a sPC +b sZP C (A5)
+for some scalarsas, bs ∈C . These scalars are constrained
+by the following symmetry argument: since the operator
+X = X ⊗n of Eq.(A1) commutes withPC,Π s and Unn (as
+this is generated by even-weightZ-type operators), and
+because of Eq.(A2), we haveXC sX = (−1)ts Cs. Hence
+XK sX = ( −1)ts Ks. Since X Z X = −Z, conjugating
+Eq. (A5) byXgives
+asPC −b sZP C = (−1)ts
+ 
+asPC +b sZP C
+
+.
+Thus bs = 0if ts = 0and as = 0if ts = 1. It follows
+that Ks = κsZ
+ts
+PC with κs = as or κs = bs, respectively,
+which gives the conditional logical operation in Lemma 1.
+Since Cs is unitary, Eq.(11) gives p|Ψ⟩(s) = ∥Ks|Ψ⟩∥2 =
+|κs|2 for every state|Ψ⟩ ∈ C . For p|Ψ⟩(s) > 0, Eq. (14)
+becomes |ψs⟩ = (κs/|κs|)Z
+ts
+|Ψ⟩, which proves Eq.(16)
+and (17).□
+2. Syndrome distributions and IQP-circuit output
+probabilities
+Here we prove Lemma 2, which relates syndrome prob-
+abilities to output probabilities of IQP circuits. Within
+this appendix we suppress the code and noise argu-
+ments of Eq.(16) and write p|Ψ⟩(s), with p|λ⟩ for logical
+computational-basis inputs |λ⟩, λ∈ { 0, 1}k. The lemma
+applies to all such basis states and their superpositions.
+Proof of Lemma 2.The claimed identity follows by con-
+jugating the noise and syndrome projectors by a CSS
+encoding map V. To describe this in detail, partition
+an unencoded n-qubit register intok logical qubits, rX
+syndrome qubits, andrZ = n−k−r X qubits holding the
+eigenvalues of independentZ-stabilizers. Choose X-type
+logical representatives X j dual to the chosenZ j, j∈ [k],
+with overall phase+1. There is a unitary encoding mapV
+such that
+V †X jV=X j ⊗I⊗I ,
+V †Z jV=Z j ⊗I⊗Ifor everyj∈[k]
+V †SX
+u V=I⊗X u ⊗Ifor everyu∈[r X]
+V †SZ
+v V=I⊗I⊗Z v for everyv∈[r Z].
+(A6)
+For the CSS generators and logical representatives used
+here,Vcan be chosen to consist only of CNOT gates.
+Consequently, for every physical-qubit supportΓ⊆ [n]
+there areℓ(Γ)⊆[k]and a subsetT(Γ)⊆[r Z]such that
+V †Z(Γ)V=Z(ℓ(Γ))⊗Z(∂Γ)⊗Z(T(Γ)).(A7)
+Here ℓ(Γ)is defined by the condition thatj∈ℓ (Γ)for j∈
+[k]if and only if X jZ(Γ) = (−1)Z(Γ)X j. The operator
+Z(ℓ(Γ))acts on the “logical” register(C2)⊗k. The next
+rX qubits are X-type syndrome registers, with Z(∂Γ)
+corresponding to the syndrome bits that are flipped when
+applying the operator Z(Γ)to a code state. Finally,
+the last factorZ(T (Γ))in Eq. (A7) acts on anrZ-qubit
+register corresponding to theZ-type stabilizers.
+For λ∈ { 0, 1}k, fix the phases of the logical basis states
+by
+|λ⟩=V
+ 
+|λ⟩ ⊗ |+⟩⊗rX ⊗ |0⟩⊗rZ
+
+.(A8)
+Let I denote the elementary supports of the noise, and
+write θΓ for the real angle associated with the opera-
+tor Z(Γ), whereΓ ∈ I. For Eq.(9), these are the single-
+tons with θ{q} = φq and the edgese∈ E with θe as in the
+main text. Define the noise Hamiltonian and unitary by
+Hnoise =
+X
+Γ∈I
+θΓZ(Γ)andU=e iHnoise
+.
+(A9)
+Eq. (A7) implies
+V †U V= exp
+ 
+i
+X
+Γ∈I
+θΓZ(ℓ(Γ))⊗Z(∂Γ)⊗Z(T(Γ))
+!
+,
+Hλ =
+X
+Γ∈I
+θΓ(−1)λ·ℓ(Γ)Z(∂Γ), W |λ⟩ =e iHλ .
+(A10)
+Here we set λ·ℓ (Γ) = P
+j∈ℓ(Γ) λj. Indeed, the logi-
+cal factor acts on|λ⟩ with eigenvalue( −1)λ·ℓ(Γ), while
+Z(T(Γ))|0⟩ ⊗rZ =|0⟩ ⊗rZ. Thus
+V †U| λ⟩=|λ⟩ ⊗W |λ⟩|+⟩⊗rX ⊗ |0⟩⊗rZ .(A11)
+The syndrome projector transforms just as directly:
+V †ΠsV=I⊗
+ 
+H⊗rX |s⟩⟨s|H⊗rX
+
+⊗I .(A12)
+For each syndromesdefine the normalized state
+|s;λ⟩=V
+ 
+|λ⟩ ⊗H ⊗rX |s⟩ ⊗ |0⟩⊗rZ
+
+.(A13)
+
+[PDF page 14]
+14
+These2 rX states form an orthonormal basis of the joint
+eigenspace with eigenvalue+1for the Z-stabilizers and
+(−1)λj for each Z j, with |0; λ⟩ = |λ⟩, andΠ s|t; λ⟩ =
+δs,t|s; λ⟩ by Eq. (A12). Unitarity of V and Eq. (A11)
+therefore give
+Aλ(s) =⟨s;λ|U| λ⟩=⟨s|H ⊗rX W|λ⟩|+⟩⊗rX ,
+ΠsU| λ⟩=A λ(s)|s;λ⟩,∥Π sU| λ⟩∥2 =|A λ(s)|2 .
+(A14)
+Since the terms ofHλ commute,
+W|λ⟩ =e iHλ =
+Y
+Γ∈I
+eiθΓ(−1)λ·ℓ(Γ)Z(∂Γ) .(A15)
+Eqs. (A14) and (A15) give Eqs.(18) and (19): the diago-
+nal gates commute, the input is|+⟩⊗rX, and the syndrome
+is the outcome of measuring each register qubit in the
+X basis. Each factor in W|λ⟩ is supported on the bits
+marked by∂Γ. The derivation applies to any set ofZ-type
+elementary supports on a CSS code.
+For a superposition|Ψ⟩ =P
+λ aλ|λ⟩, Eq.(A14) gives
+ΠsU|Ψ⟩ = P
+λ aλAλ(s)|s; λ⟩. The states |s; λ⟩ are or-
+thonormal for distinct λ, so taking the squared norm
+proves Eq.(20) and its one-logical-qubit specialization,
+Eq. (21).
+Grouping the terms of the Hamiltonian by their syn-
+drome gives
+Hλ =χ λI+
+X
+δ̸=0
+
+
+X
+Γ∈I
+∂Γ=δ
+θΓ(−1)λ·ℓ(Γ)
+
+ Z(δ),
+χλ =
+X
+Γ∈I
+∂Γ=0
+θΓ(−1)λ·ℓ(Γ) .
+(A16)
+Thus supportsΓfor which Z(Γ)causes an identical
+syndrome δ contribute additively to one effective cou-
+pling, while trivial-syndrome terms contribute the (irrele-
+vant) global phaseeiχλ. For logical-zero input we write
+H = H|0⟩, W = W|0⟩ and χ = χ|0⟩, as used below. This
+proves Lemma 2.□
+3. Interaction graphs of IQP circuits
+By Lemma 2, the syndrome distribution of a CSS code
+prepared in |0⟩ is the output distribution of the IQP
+circuit W =Q
+Γ∈I eiθΓZ(∂Γ) on the rX-qubit syndrome
+register. If every support changes the eigenvalue of at
+most twoX-stabilizers, Eq. (A16) gives
+W=e iχ Y
+{ξ,η}∈E
+eiJ{ξ,η} ZξZη
+Y
+ξ∈V ′
+eihξZξ ,
+J{ξ,η} =
+X
+∂Γ={ξ,η}
+θΓ , h ξ =
+X
+∂Γ={ξ}
+θΓ , χ=
+X
+∂Γ=∅
+θΓ ,
+(A17)
+where Zξ is Pauli Z on the syndrome qubitξ, the sums
+run overΓ ∈ I, the edge setE consists of the two-element
+syndromes and the field-vertex setV ′ ⊆V of the one-
+element syndromes ∂Γ,Γ ∈ I . We call G = ( V, E),
+with V the set of X-stabilizers, the interaction graph.
+Since each support has exactly one syndrome, the sums
+in Eq.(A17) run over pairwise disjoint subsets ofI, so
+arbitrary couplings J and fields h on G are realized by
+giving one support with the corresponding syndrome the
+desired angle and setting all other angles to zero; this is
+used in Appendix C. It remains to list the syndromes of
+single qubits and of edges, which we do in coordinates.
+For the rotated surface code of odd distanced = 2D− 1,
+let ξ(C)
+u,v,( u, v) ∈G , denote the syndrome qubit of the
+stabilizer SX,(C)
+u,v of Eqs. (5) and (6), and let V (C) =
+{ξ(C)
+u,v : (u, v) ∈G} . Geometrically, the face ofSX,(C)
+u,v in
+Fig. 1(a) has lower-left corner
+ρ(ξ(A)
+u,v ) = (2u,2v), ρ(ξ (B)
+u,v ) = (2u+ 1,2v−1),
+(A18)
+which give the lower-left corner(x, y)of the face of the
+stabilizer in Fig. 1(a): the face contains the qubitsqi,j
+with i∈ {x, x +1 } and j∈ {y, y +1 }, and the faces on the
+bottom and top boundaries havey = −1and y = d− 1,
+respectively. The mapρ is a bijection fromV (A) ⊔V (B)
+onto
+X geo
+d ={(x, y)∈Z 2 : 0≤x≤d−2,
+−1≤y≤d−1, x+yeven},
+(A19)
+with V (A) the faces of evenx and V (B) those of odd x.
+For the standard (unrotated) surface code of distance
+D, let ξu,v,0 ≤u≤D− 2,0 ≤v≤D− 1, denote the
+syndrome qubit of theX-stabilizer with grid label(u, v),
+as in Fig. 2(b),(c). The m = D2 + (D− 1)2 physical
+qubits are hu,v,0 ≤u, v≤D− 1, lying between the faces
+(u− 1, v)and( u, v), and wu,v,0 ≤u, v≤D− 2, lying
+between the faces(u, v)and(u, v+ 1), so that
+∂{hu,v}={ξ u−1,v, ξu,v}, ∂{w u,v}={ξ u,v, ξu,v+1},
+(A20)
+where the undefined symbolsξ−1,v and ξD−1,v are to be
+omitted: the qubits h0,v and hD−1,v form the two rough
+boundaries and flip a single stabilizer each. ForD≥ 3
+these m syndromes are distinct and nonempty, and they
+exhaust the edges of the(D− 1) ×D grid graph on{ξu,v}
+and the vertices of its two boundary columnsu = 0and
+u=D−2.
+Figure 4 illustrates the complete angle assignment of
+Eq. (A26) ford= 5andD= 3.
+Lemma A.1 (Surface-code interaction graphs)
+Letd≥5be odd andD= (d+ 1)/2.
+(a) On the rotated surface codeCrot
+d , in the coordinates of
+
+[PDF page 15]
+15
+(0,0)
+(0,1)
+(0,2)
+(1,0)
+(1,1)
+(1,2)
+(0,0)
+(0,1)
+(0,2)
+(1,0)
+(1,1)
+(1,2)
+θ1 θ2 θ3 θ4
+θ5 θ6 θ7 θ8
+θ9 θ10 θ11 θ12
+θ13 θ14 θ15 θ16
+θ17 θ18 θ19 θ20
+θ21
+θ26
+θ31
+θ36
+θ22
+θ27
+θ32
+θ37
+θ23
+θ28
+θ33
+θ38
+θ24
+θ29
+θ34
+θ39
+θ25
+θ30
+θ35
+θ40
+i
+j
+q0,0 at the lower left
+(a) Rotated patch,d= 5.
+(0,0)
+(0,1)
+(0,2)
+(1,0)
+(1,1)
+(1,2)
+0 θ2+θ6 θ4+θ8
+0 θ10+θ14 θ12+θ16
+0 θ18 θ20
+θ26+θ27 θ28+θ29
+θ36+θ37 θ38+θ39
+(b) AuxiliaryA,D= 3.
+(0,0)
+(0,1)
+(0,2)
+(1,0)
+(1,1)
+(1,2)
+θ1 θ3 0
+θ5+θ9 θ7+θ11 0
+θ13+θ17 θ15+θ19 0
+θ22+θ23 θ24+θ25
+θ32+θ33 θ34+θ35
+(c) AuxiliaryB,D= 3.
+FIG. 4. The assignment of Eq.(A26) in full ford = 5and D = 3. (a) The2 d(d− 1) = 40edge angles are numberedθ1+i+4j = θh
+i,j
+(0 ≤i≤ 3,0 ≤j≤ 4) and θ21+i+5j = θv
+i,j (0 ≤i≤ 4,0 ≤j≤ 3): horizontal bonds first, row by row from bottom to top, then
+vertical bonds ordered by the row of their lower endpoint. This numbering is unrelated to the six illustrative angles of Fig. 2.
+Every X face carries the component-grid label(u, v)of SX,(C)
+u,v , with blue identifyingC = A and red C = B; the corresponding
+auxiliary faces in (b),(c) carry the identical labels ofeSX,(C)
+u,v . Colored physical qubits show the angle sums they receive; black
+sites marked0carry angle zero. Each auxiliary code receives18angles on10of its13qubits. The four dashed bonds {q0,0, q0,1},
+{q0,2, q0,3},{q 4,1, q4,2}and{q 4,3, q4,4}are weight-twoZ-stabilizers and contribute only the phaseχ=θ 21 +θ 30 +θ 31 +θ 40.
+Eq.(A19),
+∂{qi,j}=X geo
+d ∩
+ 
+{i−1, i} × {j−1, j}
+
+,(A21)
+∂{qi,j, qi+1,j}=X geo
+d ∩
+ 
+{i−1, i+ 1} × {j−1, j}
+
+,
+(A22)
+∂{qi,j, qi,j+1}=X geo
+d ∩
+ 
+{i−1, i} × {j−1, j+ 1}
+
+.
+(A23)
+Thus a single qubit flips two faces at displacement
+(1,± 1), or one face in the left columnx = 0or right
+column x = d− 2if i = 0or i = d− 1; an edge flips
+two faces at displacement(2, 0)or(0 , 2), one face in
+the column x = 1or x = d− 3if it is horizontal with
+i = 0or i = d− 2, or no face if its operatorZ(e)is
+one of thed− 1weight-two Z-stabilizers. Every such
+set of faces is the syndrome of some qubit or edge.
+(b) The interaction graphs of Eq.(A17)are as follows.
+(i) Crosstalk noiseUnn(θ)onC rot
+d : G = G(A) ⊔ G(B),
+where G(C) is the(D− 1)×D grid graph onV (C),
+with edges{ξ(C)
+u,v , ξ(C)
+u′,v′} for |u−u ′|+ |v−v ′| = 1,
+and the field vertices are the right columnu =
+D− 2of G(A) and the left columnu = 0of G(B)
+(Fig. 5(a)); χ is the sum of the angles of the
+d−1weight-twoZ-stabilizers, and
+W=e iχ W (A) ⊗W (B) ,(A24)
+with W (C) the product of the factors supported
+onV (C).
+(ii) Single-qubit noise Usq(φ)onC std
+D : G is the( D−
+1) ×D grid graph on{ξu,v}, with field vertices
+on both columns u = 0and u = D− 2, and
+χ = 0(Fig. 5(b)). The map ξ(C)
+u,v 7→ξ u,v is an
+isomorphism of G(C) in case (i) ontoG which
+maps the field vertices of G(A) onto the right
+column u = D− 2and those of G(B) onto the
+left columnu= 0.
+(iii) Combined noise Usq(φ)Unn(θ)onC rot
+d : identify-
+
+[PDF page 16]
+16
+ingVwithX geo
+d viaρ,
+E=E sq ∪E nn ,
+Esq =
+
+{ξ, η}:ξ−η∈ {±(1,1),±(1,−1)}
+	
+,
+Enn =
+
+{ξ, η}:ξ−η∈ {±(2,0),±(0,2)}
+	
+,
+V ′ ={(x, y)∈ X geo
+d :x∈ {0,1, d−3, d−2}},
+(A25)
+with χ as in case (i). In the coordinates(a, b) =
+((x + y)/2, (x−y )/2), the edges ofEsq are axial
+and those ofEnn are diagonal: G is the subgraph
+of the king lattice induced onX geo
+d (Fig. 6). The
+edges of Enn lie within V (A) or within V (B),
+whereas every edge ofEsq joinsV (A) toV (B).
+(c)Writing θh
+i,j = θ{qi,j ,qi+1,j } and θv
+i,j = θ{qi,j ,qi,j+1 }, the
+single-qubit angles assigned to the auxiliary codes by
+Eq.(25)are
+φ(A)
+hu,v
+=θ h
+2u−1,2v +θ h
+2u−1,2v+1 ,1≤u≤D−1,
+φ(A)
+wu,v =θ v
+2u,2v+1 +θ v
+2u+1,2v+1 ,
+φ(B)
+hu,v
+=θ h
+2u,2v−1 +θ h
+2u,2v ,0≤u≤D−2,
+φ(B)
+wu,v =θ v
+2u+1,2v +θ v
+2u+2,2v ,
+φ(A)
+h0,v
+=φ (B)
+hD−1,v
+= 0,
+(A26)
+with0 ≤u, v≤D− 2in the second and fourth lines
+and0 ≤v≤D− 1otherwise, where a term with a
+qubit index outside{0, . . . , d−1}is omitted.
+Proof.(a) The face( x, y)contains qi,j if and only if
+x∈ {i− 1, i} and y∈ {j− 1, j}, and Z(Γ)flips a face
+if and only if the face contains an odd number of qubits
+ofΓ; this gives Eqs.(A21)–(A23). Of the four candidate
+faces, the parity condition of Eq.(A19) selects the two at
+the stated displacement, and the condition0≤x≤d− 2
+removes those withx∈ {− 1, d− 1}. For a vertical edge
+both selected faces have the samex, so either both or
+none are removed; the syndrome is empty for{q0,j, q0,j+1}
+with j even and{qd−1,j, qd−1,j+1} with j odd, the weight-
+two Z-stabilizers. Conversely, two faces at displacement
+(1,± 1)share a qubit, two faces at displacement(2, 0)or
+(0, 2)are separated by an edge, and a face in the column
+x = 0,1, d− 3or d− 2contains a qubit q0,j, q1,j, qd−2,j
+orq d−1,j, respectively.
+(b) By Eq.(A17), E and V ′ are the sets of two- and
+one-element syndromes, which are listed in (a) and in
+Eq. (A20). In case (i), the displacements(2, 0)and(0 , 2)
+preserve the parity ofx, hence the component, and by
+Eq. (A18) correspond to( u, v) 7→ (u± 1, v)and( u, v) 7→
+(u, v± 1); the columns x = d− 3and x = 1consist
+of the faces ρ(ξ(A)
+D−2,v)and ρ(ξ(B)
+0,v ). Since no factor of
+Eq. (A17) couples V (A) to V (B), Eq. (A24) follows. In
+case (iii), the map( x, y) 7→ (a, b)is injective on X geo
+d
+and sends the displacements(1 , 1), (1,− 1), (2, 0), (0, 2)
+to(1 , 0), (0, 1), (1, 1), (1,− 1); the displacements(1 ,± 1)
+change the parity ofx.
+(c) By Eq.(22), the edges mapped to a qubitq of the
+auxiliary code C are those whose syndrome is∂{q} of
+Eq. (A20), read in componentC. Substituting Eq.(A18)
+into Eqs.(A22) and (A23) lists these edges. The single-
+tons {ξ(A)
+0,v } and {ξ(B)
+D−2,v} are not syndromes of edges, so
+h(A)
+0,v andh (B)
+D−1,v receive angle zero.□
+Appendix C embeds a rectangular king-lattice layout
+into case (iii) by setting the angles of all supports outside
+the layout to zero. IfW = eiKQ ⊗I Qc acts trivially on a
+setQ c of syndrome qubits, then
+H⊗rX W|+⟩ ⊗rX =
+ 
+H⊗|Q|eiKQ |+⟩⊗|Q|
+⊗ |0⟩⊗|Qc| ,
+(A27)
+so the outcomes onQc are deterministically zero and the
+distribution onQis that of the smaller register.
+4. Proof of Lemma 3
+Figure 5 compares the syndrome-register IQP circuits:
+crosstalk on the rotated surface code in (a) and single-
+qubit noise on the two auxiliary standard (unrotated) sur-
+facecodesin(b)and(c). WeshowthattheirHamiltonians
+agree under the stabilizer correspondence of Sec. IVA, up
+to the scalar from the edges with trivial syndrome. We
+first work at logical-zero inputs. For crosstalk, Eq.(A15)
+becomes
+A(s) =⟨s|H ⊗rX Wnn|+⟩⊗rX ,
+Hnn =
+X
+e∈E
+θeZ(∂e), W nn =e iHnn . (A28)
+In Fig. 5(a), the blue and red lattices are discon-
+nected. This is the decomposition of Eq. (A24): by
+Lemma A.1(b)(i), every nonzero∂e is an edge or a field
+vertex of exactly one component graphG(C), C∈ {A, B} .
+Under the stabilizer correspondence of Sec. IVA, its re-
+striction(∂e) (C) equals∂ (C){q}for a physical qubitqof
+the auxiliary code. ForD≥ 3, the single-qubit syndromes
+in Eq.(A20) are distinct and nonzero, soq is unique. For
+each of the remaining d− 1edges, Z(e)is one of the
+weight-two Z-stabilizers on the left and right boundaries
+and has trivial syndrome.
+Order the syndrome register bys = (s(A), s(B)). Each
+block contains |G| = D(D− 1) = rX /2qubits. Grouping
+physical edges with the same auxiliary image now gives
+the Hamiltonian identity
+Hnn =χI+H (A) ⊗I (B) +I (A) ⊗H (B) ,
+H(C) =
+X
+q
+
+ X
+e:ι(e)=(C,q)
+θe
+
+ Z(C)(∂(C){q})
+=
+X
+q
+φ(C)
+q Z(C)(∂(C){q}), χ=
+X
+e:∂e=0
+θe .
+(A29)
+
+[PDF page 17]
+17
+(a) Rotated surface code,d= 7, with
+nearest-neighborZZcrosstalk.
+A
+0
+0
+0
+0
+(b) Auxiliary standard (unrotated)
+surface code A, D = 4, with single-qubit
+Zrotations.
+B
+0
+0
+0
+0
+(c) Auxiliary standard (unrotated)
+surface code B, D = 4, with single-qubit
+Zrotations.
+FIG. 5. The same IQP circuit from two noise models. Nearest-neighborZZ crosstalk on the rotated code of distanced = 7in
+(a) induces two disconnected syndrome lattices, blue forA and red forB; single-qubit Z rotations on the two auxiliary standard
+(unrotated) surface codesA and B of distance D = 4in (b) and (c) induce the same lattices. Circles representX-stabilizer
+syndrome qubits, outlined in blue forA and red forB; a solid fill in the component color means no one-body field, and a white fill
+marks a one-body field. A thick colored line joins the two circles of a two-body coupling. Grey faces areX-stabilizers and white
+faces are Z-stabilizers. Grey dashed bonds in (a) are the physical edges with trivial syndrome, which contribute only the scalar
+eiχ, and crossings without circles are not vertices. Each component has12vertices,17edges, and4field vertices. Corresponding
+vertices carry the same componentC and grid index(u, v), with indices omitted for clarity. Assigning the auxiliary angles by
+Eq. (A26) matches every edge coupling and field. The opposite auxiliary rough boundaries carry zero rotation angles, marked0.
+Here Z(C) acts on the syndrome register of component
+C. In Fig. 5(b), an interior auxiliary qubit connects the
+two syndrome vertices corresponding to theX-stabilizers
+it touches, while an active rough-boundary qubit gives
+a field on one syndrome vertex. Eq.(A20) gives exactly
+the edges and field vertices of (a), under the stabilizer
+correspondence. The zero angles on the opposite rough
+boundaries remove the unused fields. Applying Eq.(A10)
+to U(C) at input |0⟩(C) therefore gives H(C): Eq. (25)
+matches the coefficient of each term as well as its support.
+Thus the two noise models realize the same weighted IQP
+circuit, up toeiχ.
+Exponentiating Eq. (A29) yields
+Wnn =e iχ(W (A) ⊗W (B)),
+W (C) =e iH(C)
+=
+Y
+q
+eiφ(C)
+q Z(C)(∂(C) {q}) . (A30)
+Applying Lemma 2 and the amplitude identity(A14) to
+auxiliary code C at input |0⟩(C) gives, with p(C)
+|0⟩ abbrevi-
+ated asp (C),
+A(C)(s(C)) =⟨s (C)|H⊗rX /2W (C)|+⟩⊗rX /2 ,
+p(C)(s(C)) =|A (C)(s(C))|2 .
+(A31)
+The input |+⟩⊗rX and the X-basis measurement factor
+over the two registers, so
+A(s(A), s(B)) =e iχA(A)(s(A))A(B)(s(B)).(A32)
+Taking the squared modulus proves Eq.(26) at logical-
+zero inputs.
+State independence of the left-hand side of Eq.(26)
+follows from Lemma 1. For the right-hand side, letBA
+and BB denote the left rough boundary ofCstd,(A)
+D and
+the right rough boundary ofCstd,(B)
+D , respectively. The
+assigned angles φ(C)
+q vanish on BC, so we choose the
+logical representatives
+X
+(C)
+=
+Y
+q∈BC
+X(C)
+q , C∈ {A, B}.(A33)
+Each commutes with every active single-qubit rotation,
+givingℓ(Γ) = 0for all active supports and henceW |1⟩ =
+W|0⟩ in Lemma 2. Both factors on the right-hand side
+are therefore state independent, for either parity ofD.
+Independent auxiliary samples consequently produce
+exactly the required syndrome of the original code for
+every encoded input. This proves Lemma 3.
+Figure 6 shows why the same factorization does not
+apply to combined noise: the single-qubit terms join the
+two components of Fig. 5. Their union gives the king-
+lattice interaction graph of Eq. (A25), used in Sec. VI.
+
+[PDF page 18]
+18
+FIG. 6. Combined-noise interaction graph at d = 9, with
+the same color and marker conventions as Fig. 5. Thin dark
+edges come from single-qubit rotations and colored edges from
+ZZ-rotations. The graph has40vertices,63single-qubit edges,
+62 ZZ-edges, and20field vertices; the eight dashed bonds
+contribute only a scalar phase. The single-qubit edges join
+A and B. In the geometric face coordinates(x, y), the edges
+have displacements(1 ,± 1),(2 , 0), or(0 , 2), up to sign; the
+graph is isomorphic to a finite subgraph of the king lattice.
+Appendix B: Numerical methods and threshold
+extrapolation
+Sampling and decoding.For every distance, angle and
+model of Sec. V, we useN = 200 000independent sam-
+ples, with separate random streams for the two auxiliary
+codes and for the physical twirl. Coherent samples use
+logical-zero auxiliary inputs, the angle sums of Eq.(25),
+and sequential FLO sampling of physicalX outcomes,
+whose products give the auxiliary stabilizer syndromes.
+For the twirl, each edge of the original code is selected in-
+dependently with probabilitysin2 θ; repeated Z operators
+on a qubit cancel before its syndrome is computed.
+Both models use the same MWPM decoder on the
+single-qubit Z-error graph. Each physical qubit con-
+tributes an edge between its adjacentX checks, or an edge
+to a rough boundary if it touches only one check. All phys-
+ical edges have unit weight, including boundary edges;
+matching costs are shortest-path lengths. Defects are
+paired with each other or with the nearest rough bound-
+ary to minimize the total cost. Equal-cost choices are
+resolved deterministically using a fixed ordering of checks
+and qubits, identical for both models. The correction is
+the symmetric difference of the selected paths, and its
+syndrome is checked against the sampled syndrome before
+its weight parity is recorded. No even-weight constraint
+or pair-noise reweighting is imposed.
+Numerical precision.FLO covariance updates use bi-
+nary64 arithmetic. Probability bounds and normalization
+identities are checked with absolute tolerances2× 10−10
+and2 × 10−9, respectively. A failed check or a covariance
+update requiring division by a conditional probability
+below10 −14 triggers a repeat of the entire auxiliary sam-
+ple with 113-bit precision and the same random draws.
+The corresponding tolerances are10−24,10 −22 and10 −28.
+Small negative weights within tolerance are set to zero.
+Validation includes exact small-instance probabilities and
+comparisons using the same random draws at both pre-
+cisions through d = 37. These checks address numerical
+stability; the intervals below quantify Monte Carlo sam-
+pling uncertainty.
+Sampling uncertainty.We estimate f and P L as
+in Eq. (37). The binomial standard error of bP L is
+2
+q
+ˆf(1− ˆf)/N. Plotted intervals are pointwise 95% Wil-
+son intervals forf, doubled forP L; the display cutoff in
+Fig. 3 does not remove observations from the fits. These
+intervals quantify sampling uncertainty at each point,
+rather than uncertainty in the extrapolated threshold.
+Joint scaling fit.For coherent noise we fit0.032 ≤t≤
+0.038; for the physical twirl we fit0.047 ≤t≤ 0.053,
+where t = θ/π. Each window contains seven angles at
+each of the four distances, hence28observations. We fit
+Eq. (38) by minimizing
+χ2 =
+X
+i
+[ ˆfi −A−Bx i −Cx 2
+i ]2
+σ2
+i
+,
+σ2
+i = qi(1−q i)
+Ni
+, q i = Mi + 1/2
+Ni + 1 ,(B1)
+where i labels distance–angle points,Mi is the observed
+failure count amongNi samples, and xi = (ti −t c)d1/ν
+i .
+The smoothed binomial variance keeps the weights fi-
+nite even for zero observed failures. For each trial
+(tc, ν), the unrestricted coefficientsA, B, C are obtained
+by linear weighted least squares. The remaining min-
+imization bounds tc to its fit window and0 .2 ≤ν≤
+10, and uses20starting points: five window fractions
+0.15, 0.35, 0.50, 0.65, 0.85, each with ν = 0 .5, 0.8, 1.5, 3.
+We retain the converged fit with the smallestχ2. No
+correction-to-scaling term is included;χ2
+red = χ2/(28 − 5).
+Figure 7 shows the joint fits reported in Table I.
+Distance and window sensitivity.We repeat the com-
+plete five-parameter fit four times, omitting one distance
+at a time. If t(−j)
+c denotes the result with distance j
+omitted, the quoted spread is
+sJK =
+
+ m−1
+m
+mX
+j=1
+(t(−j)
+c − ¯tc)2
+
+
+1/2
+,
+¯tc = 1
+m
+mX
+j=1
+t(−j)
+c , m= 4.(B2)
+Omitting d = 13 , 21, 29, 37in that order gives tc =
+0.034525, 0.034123, 0.034198, 0.033891for coherent noise
+and0 .049825, 0.049265, 0.049391, 0.048964for the twirl.
+
+[PDF page 19]
+19
+Thus sJK = 0 .000394and0 .000536, respectively. Nar-
+rowing both window endpoints inward by0 .001gives
+tc = 0 .034213and0 .049320; widening them outward
+by0 .001gives0 .034146and0 .049341. The ordering is
+unchanged in these checks. The jackknife spread is a
+measure of distance sensitivity, not a confidence interval
+accounting for scaling-model bias, which is indicated by
+the largeχ 2
+red values.
+Appendix C: Postselected universality on the king
+lattice
+1. The sampling problem
+The king lattice has vertex setZ2 and edges between
+distinct sites u, v with ∥u−v∥ ∞ = 1. Our conventions
+are
+Rj(α) =e iαZj , G jk(θ) =e iθZj Zk ,
+|x⟩X =
+O
+j
+|0⟩+ (−1) xj |1⟩√
+2 .
+Thus outcome0means |+⟩ and outcome1means |−⟩.
+For a finite rectangular regionΛ, define
+HJ =
+X
+{u,v}∈E(Λ)
+JuvZuZv ,
+UJ =e iHJ ,
+pJ(x) =
+⟨x|X UJ |+⟩⊗|Λ|
+
+2
+.
+(C1)
+There are no one-body fields. Couplings are individually
+specified; unused king-lattice edges have coupling zero.
+LetKbe the family in Eq. (C1) with
+Juv ∈ {kπ/8 :k= 0,1, . . . ,15},
+and at most four nonzero couplings at each site.
+2. Replace Hadamards and expand controlled-Z
+gates
+Start with a nearest-neighbor brickwork circuitC on
+q wires, over H, R(π/8)and CZ, with |+⟩ inputs and X
+measurements. Its two-qubit layers consist of disjoint CZ
+gates on neighboring wires, with the pairings staggered
+between layers. Single-qubit layers can be separated into
+diagonal rotations and Hadamards on subsets of wires.
+This form is universal with polynomial overhead; bound-
+ary Hadamards give the stated input and measurement
+conventions.
+For a regular layout, appendHH = I on every wire
+after each of theT layers. After a diagonal layer each
+wire then has two Hadamards. In a Hadamard layer
+it has three if that layer acts on it, and two otherwise.
+This padding does not changeC. As in the post-IQP
+construction of Bremner, Jozsa and Shepherd [35], replace
+every Hadamard by
+(⟨+|a ⊗I b)CZab(|ψ⟩a ⊗ |+⟩b) = 2−1/2H|ψ⟩ b .(C2)
+The identity also holds whena is entangled with other
+qubits. The old qubita is selected to+; subsequent gates
+on that logical wire act on the fresh qubitb, as shown in
+Fig. 8.
+After replacing the Hadamards, all gates are diagonal.
+No later gate uses a terminated qubit, so its measurement
+can be deferred to the end. Prepare all fresh|+⟩ qubits
+at the start and expand
+CZab =e −iπ/4Ra(π/4)Rb(π/4)Gab(−π/4).(C3)
+Ignoring an overall phase, the resulting IQP unitary onn
+qubits is
+U=e i(F+B) , F=
+X
+v
+αvZv, B=
+X
+e={u,v}
+βeZuZv ,
+(C4)
+where βe = −π/4. Combine all rotations at a vertex into
+oneangle αv ∈ (π/8)Z, takenmodulo2 π. EachHadamard
+replacement contributes the same nonzero scalar2−1/2 for
+every output. Thus, conditioned on its selected outcomes,
+this IQP circuit has exactly the output distribution ofC.
+Place the qubits for each logical wire on one horizontal
+row, in their original time order. The Hadamard gadgets
+form horizontal chains; the original CZ gates form vertical
+bonds between adjacent rows. Each vertex has at most
+two horizontal bonds and one vertical bond. This data
+graph is planar. Its vertices remain distinct after the
+gates commute: the original time coordinate has become
+a second spatial coordinate.
+3. Supply theZ-rotations with a GHZ reference
+a. The basic equality check
+Prepare an auxiliary qubita in |+⟩, couple it tou, v
+with opposite angles, and select itsX outcome to zero.
+Its Kraus operator is
+a⟨+|Gua(π/4)Gav(−π/4)|+⟩a = cos
+h π
+4 (Zu −Z v)
+i
+= I+Z uZv
+2 =:P +
+uv .
+(C5)
+It retains exactly equal computational-basis bits atu, v,
+without a phase correction. Apply this check between
+consecutive reference qubitsr1, . . . , rm, using m− 1aux-
+iliaries. Then
+PR =
+m−1Y
+j=1
+P +
+rj rj+1 =|0 m⟩⟨0m|+|1 m⟩⟨1m|,
+
+[PDF page 20]
+20
+0.02
+ 0.01
+ 0.00 0.01 0.02 0.03 0.04
+x = (t tc) d1/ , t = /
+0.050
+0.075
+0.100
+0.125
+0.150
+0.175
+0.200
+0.225logical failure rate f = k/N
+coherent ZZ crosstalk, N = 200000
+tc = 0.03416 ± 0.00039, = 1.56, 2/dof = 7.10
+0.032 0.034 0.036 0.038
+/
+0.05
+0.10
+0.15
+0.20
+f = k/N
+d = 13
+d = 21
+d = 29
+d = 37
+0.02
+ 0.01
+ 0.00 0.01 0.02 0.03 0.04
+x = (t tc) d1/ , t = /
+0.06
+0.08
+0.10
+0.12
+0.14
+0.16
+0.18logical failure rate f = k/N
+per-interaction Pauli twirl, N = 200000
+tc = 0.04933 ± 0.00054, = 1.49, 2/dof = 6.50
+0.048 0.050 0.052
+/
+0.050
+0.075
+0.100
+0.125
+0.150
+0.175
+f = k/N
+d = 13
+d = 21
+d = 29
+d = 37
+FIG. 7. Finite-size-scaling collapse for coherent noise (left) and its physical twirl (right). Main panels: the measured failure
+rate ˆf = M/N for d = 13 , 21, 29, 37against the scaling variable x = ( t−t c)d1/ν, with the fitted parabolaA + Bx + Cx 2 of
+Eq. (38) (gray). Insets: the same data before rescaling, againstt = θ/π, over the fitted angle windows, with the dashed line at
+the extrapolated tc. Each point uses200 000samples; error bars show pointwise 95% Wilson intervals forf and are generally
+smaller than the markers. Panel titles quotetc with the jackknife spreadsJK of Eq. (B2), together withνandχ 2
+red.
+|ψ⟩ H a:|ψ⟩
+b:|+⟩
+CZ
+⟨+|
+2−1/2H|ψ⟩
+FIG. 8. Each replacement makes a fresh IQP qubit represent the next segment of a logical wire. Time is recorded in the choice
+of qubits and their interactions.
+and
+PR|+⟩⊗m = 2−(m−1)/2|GHZm⟩,
+|GHZm⟩= |0m⟩+|1 m⟩√
+2 .
+(C6)
+The preparation succeeds with probability2−(m−1). For
+m= 1there are no checks and|GHZ 1⟩=|+⟩.
+b. Replacing the one-body rotations
+Chooseareferencechainlongenoughtoassignadistinct
+port rι(v) to every data vertexv (Fig. 9). ReplaceRv(αv)
+by Gvrι(v)(αv); a zero angle needs no coupling. The other
+reference qubits simply extend the chain between ports.
+The interaction is now
+W= exp
+ 
+iB+i
+X
+v
+αvZvZrι(v)
+!
+.(C7)
+On |0m⟩R it acts as U+ = ei(B+F) = U; on |1m⟩R it
+acts as U− = ei(B−F). The state after successful GHZ
+preparation and these interactions is therefore
+|0m⟩RU+|+⟩⊗n +|1 m⟩RU−|+⟩⊗n
+√
+2 .
+Take the data qubits as the output register. Its distri-
+bution is the marginal over the reference measurement
+outcomes, hence the equal mixture of the two branch
+distributions. These have identicalX-measurement prob-
+abilities: withX D =X ⊗n on the data,
+U− =X DU+XD ,
+XD|+⟩⊗n =|+⟩ ⊗n ,
+⟨x|X XD = (−1)|x|⟨x|X ,
+(C8)
+where |x| =P
+j xj. The last sign comes fromX|+⟩ = |+⟩
+and X|−⟩ = −|−⟩, and disappears upon taking the
+
+[PDF page 21]
+21
+r1
+v1
+α1
+r2
+v2
+α2
+r3
+v3
+α3
+r4
+v4
+α4
+a1
++π/4 −π/4 a2
++π/4 −π/4 a3
++π/4 −π/4
+reference chain: allr j carry the same bit
+select everya j to+; take the data qubits as the output register
+FIG. 9. One GHZ port for each requiredZ-rotation. Lines denote ZZ gates with the displayed angles. This is an interaction-
+graph schematic; Section C4 supplies a local king-lattice placement. Extra reference qubits may lie between the ports.
+squared modulus. Writing A±(x) = ⟨x|X U±|+⟩⊗n, we
+obtain, with t denoting the reference outcomes and con-
+ditioned on the GHZ-preparation checks,
+pD(x) =
+X
+t
+pDR(x, t)
+= 1
+2 |A+(x)|2 + 1
+2 |A−(x)|2
+=|A +(x)|2 =p U(x).
+(C9)
+This equality holds jointly for all data outcomes, so it
+also preserves any subsequent postselection on them.
+4. Lay the GHZ reference alongside the brickwork
+a. Data rows and a reference snake
+Keep the planar data layout just described. Put a ref-
+erence row below each data row and connect successive
+reference rows alternately at the right and left boundary,
+outside the data region. This gives one serpentine refer-
+ence chain. Short connections from the data vertices to
+their reference row supply theZ-rotations. The horizontal
+data chains do not cross anything. A vertical CZ bond
+between data rowsj and j +1crosses only reference rowj.
+These are the only crossings to resolve. Figure 10 shows
+the resulting layout.
+Here is an explicit placement with room for the local
+gadgets. Number the wires j = 0 , . . . , q− 1and the
+circuit layers t = 0, . . . , T− 1. Put the layer boundaries
+at(60 t, 60j). In each horizontal interval of length60, the
+two-Hadamard case has one intermediate data vertex at
+offset30; the three-Hadamard case has two at offsets20
+and40. The CZ bonds are vertical segments at layer
+boundaries. These segments are disjoint within each
+brickwork layer.
+Put reference rowj at height60j+20and extend it from
+x = −20to x = 60T + 20. Join the rows at alternating
+ends to form the snake. A data vertexv = ( x, y)has
+its reference port at(x + 6, y + 20). Connect them by
+six diagonal steps(x + i, y + i), i = 0, . . . ,6, followed by
+vertical steps to the port. This small rightward offset
+separates the field connection from a possible vertical CZ
+bond at columnx.
+b. One crossing tile
+At a crossing, translate coordinates so that the sur-
+rounding square is {0, . . . ,4}2. Replace the horizontal
+reference segment and the vertical data segment by the
+following two paths:
+reference:(0,2),(1,2),(2,1),(3,2),(4,2),
+data:(2,0),(1,1),(2,2),(2,3),(2,4).
+They keep their endpoints and lengths, and share no
+lattice site. The two diagonal edges cross between sites,
+so there is no qubit or interaction at their geometric
+intersection. The spacing above keeps the crossing tiles
+disjoint from each other, the data vertices and the field
+connections.
+Afterthesereplacements, putreferencequbitsandcheck
+auxiliaries alternately along the snake, starting with a
+reference qubit at its left endpoint on the first row. Each
+prescribed port is a reference qubit: all port positions have
+even distance along the original snake, and the crossing
+tiles preserve these distances. Couple each check auxiliary
+to its two reference neighbors with angles+π/4and −π/4,
+and select it to+. Eq.(C6) then prepares one GHZ state
+along the entire snake using local interactions.
+c. Realizing the data and field connections
+A drawn connection must implement its originalZZ
+gate, including when it passes through a crossing tile. The
+same parity check does this on any odd-length path.
+Lemma C.1 On consecutive sitesu, a1, c1, . . . , ak, ck, v,
+putc 0 =uand set
+Tuv(θ) =
+
+
+kY
+j=1
+Gcj−1 aj(π/4)Gaj cj(−π/4)
+
+ Gckv(θ).
+(C10)
+Prepare and select all internal qubits in|+⟩. Then
+a,c⟨+|⊗2kTuv(θ)|+⟩⊗2k
+a,c = 2−kGuv(θ).(C11)
+Proof.Selecting the aj imposes P +
+cj−1 cj. Every cj then
+has the same computational-basis bit asu, so the last
+
+[PDF page 22]
+22
+wire1
+wire2
+wire3
+wire4
+original time / horizontal position
+data chains and CZ bonds one GHZ reference chain
+FIG. 10. Schematic of the construction. The brickwork data graph is planar. A reference snake visits all data rows; grey
+connections supply the one-body rotations. Circles mark the crossings of vertical CZ bonds with reference rows. The fixed tile
+in Fig. 11 resolves each crossing. Intermediate qubits and parity-check auxiliaries are suppressed; Fig. 12 shows a fully expanded
+king-lattice subgraph.
+reference
+data bond
+(a) A vertical data bond passes through a reference row without sharing
+a site.
+(b) A detour adds one edge while preserving the
+path’s endpoints.
+FIG. 11. Crossing and path-length adjustments in the king-lattice embedding. Only the drawn edges are assigned nonzero
+couplings.
+gate has the phase ofGuv(θ). Each selected copycj con-
+tributes ⟨+|b⟩⟨b|+⟩ = 1/2. The scalar is independent of
+the endpoint state, so the identity also holds for entangled
+inputs.□
+All data and field paths in our placement have even
+length before adjustment. Add one unused site by re-
+placing a unit edge with a two-edge detour, as in Fig. 11.
+Explicitly, for a horizontal data path beginning at(x, y)
+use
+(x+ 8, y)− →(x+ 9, y−1)− →(x+ 9, y).
+For a vertical CZ path beginning at its lower endpoint
+(x, y)use
+(x, y+ 10)− →(x−1, y+ 11)− →(x, y+ 11).
+For the field path from(x, y)use
+(x+ 6, y+ 10)− →(x+ 7, y+ 11)− →(x+ 6, y+ 11).
+These detours avoid all other paths and crossing tiles.
+Apply Lemma C.1 to each resulting odd path, withθ =
+−π/4for a data bond andθ = αv for a field connection.
+Orient each field path from the reference port towards
+the data vertex: its equality checks bring the reference
+bit next to the data, where the final edge supplies the
+desired rotation.
+Each data vertex has at most two horizontal connec-
+tions, one vertical CZ connection and one reference con-
+nection, hence degree at most four. Reference ports have
+degree at most three, and all other sites have degree at
+most two. Every gate angle is a multiple ofπ/8, reduced
+modulo2 π; in particular, a check angle −π/4equals
+14π/8modulo2 π. The rectangle has areaO(q(T + 1)).
+Its remaining sites may contain uncoupled|+⟩ qubits,
+whoseXoutcomes are deterministically zero.
+d. The resulting IQP circuit
+Every path gadget contributes a nonzero scalar indepen-
+dent of the retained outcomes, while the GHZ reference
+preserves the data output distribution. If Q is the fi-
+nal circuit andE is the event that all prescribed gadget
+
+[PDF page 23]
+23
+outcomes are zero, then
+Pr
+Q
+(E)>0,Pr
+Q
+(z|E) =
+⟨z|X C|+⟩ ⊗q2
+.(C12)
+Here z lists the original circuit’s output bits and the
+probability on the left is their marginal distribution. Any
+postselections belonging to C can be imposed on the
+corresponding output bits.
+All fresh qubits can be prepared at the start, and
+all gadget postselections deferred to the end. Thus the
+king-lattice IQP circuit is exactly Eq.(C1): prepare |+⟩
+at every site, apply oneeiHJ containing only local two-
+body ZZ terms, and measure every qubit inX. The
+construction has polynomial size, with no routing of a
+general interaction graph.
+5. Physical embedding and multiplicative error
+In the geometric face coordinates of Sec. VI and the
+king coordinates of Eq.(41), the rotated stabilizer domain
+is
+Dd ={(a, b)∈Z 2 : 0≤a+b≤d−2,
+−1≤a−b≤d−1}, (C13)
+since a+ b is the geometricx coordinate and a−b the geo-
+metric y coordinate. Every king edge with both endpoints
+in Dd is the syndrome support of a physical single-qubit
+or ZZ term, as shown in Appendix A3. As a check, we
+enumerated both sets ford = 5, 7, 9, 11, 13; the numbers
+of king edges ofDd and of realized supports agree at29,
+69,125,197and285.
+The domain Dd contains arbitrarily large rectangular
+subsets as d increases, so the finite rectangular layout
+constructed above can be translated into the bulk of
+a sufficiently large surface code. Its side lengths are
+polynomial in q and T, and hence the required surface-
+code instance is polynomial in the size of the source
+circuit.
+For each active king edge in this translated layout,
+choose one physical preimage and assign its single-qubit
+or ZZ-rotation angle the corresponding couplingJuv; set
+all other physical angles to zero. The retained data out-
+comes, gadget postselections and GHZ-reference outcomes
+are then outcomes of physical syndrome-register qubits,
+while every unused register qubit is deterministically zero
+by Eq.(A27). Marginalizing the GHZ-reference outcomes
+preserves the pointwiseϵ-multiplicative bound, whereas
+conditioning on the gadget and source-circuit postselec-
+tions changes conditional probabilities only by the factor
+Rϵ = (1 +ϵ)/(1−ϵ)used below.
+6. Multiplicative-error sampling consequence
+The starting circuits give postselected universal com-
+putation by the construction of Ref. [35]. Our exact
+polynomial-overhead reduction preserves their conditional
+distributions. Conversely,K uses ordinary quantum gates.
+Aaronson’s postselection theorem [36] therefore gives
+postK=postBQP=PP.
+For completeness, the postselection argument extends
+the exact-sampling consequence of the gate construction
+to every fixedϵ < 1in Eq. (42). Put Rϵ = (1 + ϵ)/(1 −ϵ ).
+Summing the pointwise bounds over events gives, for
+p(P)>0,
+ep(E|P)≤R ϵp(E|P),ep(P)>0.(C14)
+Amplify a postselected quantum decision computation so
+that its conditional error isη < 1/(3Rϵ). Independent
+repetition, conditioning on all original selections, and a
+majority decision achieve this with a constant number of
+copies for fixedϵ. Compile the amplified circuit before
+applying the hypothetical sampler. On both yes and no
+instances, use Eq. (C14) for the event of an incorrect
+decision. The classical sampler conditioned onP then
+has error below1/3. This is a postselected classical com-
+putation, not ordinary rejection sampling in polynomial
+time.
+It follows that PP⊆postBPP . Approximate count-
+ing gives postBPP⊆BPP NP [47, 48]. Combining this
+containment with Toda’s theorem and the relativized
+randomized-time containment yields [48, 49]
+PH⊆P PP ⊆P postBPP ⊆P BPPNP
+=BPP NP ⊆Σ p
+3 ∩Π p
+3 .
+(C15)
+Polynomially many oracle calls can be amplified to justify
+the equality. This proves Eq.(43) and hence Theorem 1.
+Exact sampling is included by settingϵ = 0; constant
+total-variation error does not supply Eq.(C14) for rare
+postselection events.
+[1] A. Y. Kitaev, Ann. Phys.303, 2 (2003), arXiv:quant-
+ph/9707021 [quant-ph].
+[2] S. B. Bravyi and A. Y. Kitaev, Quantum codes on a
+lattice with boundary (1998), arXiv:quant-ph/9811052.
+[3] E. Dennis, A. Kitaev, A. Landahl, and J. Preskill, J. Math.
+Phys.43, 4452 (2002).
+[4] S. Krinner, N. Lacroix, A. Remm, A. Di Paolo, E. Genois,
+C. Leroux, C. Hellings, S. Lazar, F. Swiadek, J. Her-
+rmann, G. J. Norris, C. K. Andersen, M. Müller, A. Blais,
+C. Eichler, and A. Wallraff, Nature605, 669 (2022).
+[5] Y. Zhao, Y. Ye, H.-L. Huang, Y. Zhang, D. Wu, H. Guan,
+Q. Zhu, Z. Wei, T. He, S. Cao,et al., Phys. Rev. Lett.
+
+[PDF page 24]
+24
+0
+6
+12
+18
+24
+30
+36
+42
+48
+0
+8
+16
+24
+32
+(a) Complete expanded graph; the dashed box is enlarged in (b).
+22
+23
+24
+25
+26
+27
+28
+29
+14
+15
+16
+17
+18
+19
+20
+21
+22
+(b) Bulk data site(24 , 16)and reference port(26 , 20). The data site has degree four; the crossing near(24 , 20)has no
+shared vertex.
+FIG. 12. An actual king-lattice subgraph, including every auxiliary qubit, for five data rows and four staggered diagonal
+brickwork layers, each followed by theHH padding. Every dot is a physical qubit; every colored segment is one king move (an
+edge of ℓ∞ length one). Large blue rings mark original data vertices, and orange rings mark reference ports. Blue segments
+are data-interaction paths, orange segments form the GHZ reference/check chain, and green segments supply theZ-rotations.
+There are 842 active sites and 889 active couplings, with maximum degree four. Faint grid lines are coordinate guides; unused
+king-graph edges have zero coupling. This compact placement uses data-row spacing eight, horizontal data-vertex spacing six,
+and the same crossing and path-parity gadgets as the proof.
+
+[PDF page 25]
+25
+129, 030501 (2022).
+[6] Google Quantum AI, Nature614, 676 (2023).
+[7] Google Quantum AI and Collaborators, Nature638, 920
+(2025).
+[8] S. Sheldon, E. Magesan, J. M. Chow, and J. M. Gambetta,
+Phys. Rev. A93, 060302(R) (2016).
+[9] P. Mundada, G. Zhang, T. Hazard, and A. Houck, Phys.
+Rev. Applied12, 054023 (2019).
+[10] S. Krinner, S. Lazar, A. Remm, C. K. Andersen,
+N. Lacroix, G. J. Norris, C. Hellings, M. Gabureac,
+C. Eichler, and A. Wallraff, Phys. Rev. Applied14, 024042
+(2020).
+[11] M. Sarovar, T. Proctor, K. Rudinger, K. Young,
+E. Nielsen, and R. Blume-Kohout, Quantum4, 321 (2020).
+[12] A. Kandala, K. X. Wei, S. Srinivasan, E. Magesan,
+S. Carnevale, G. A. Keefe, D. Klaus, O. Dial, and D. C.
+McKay, Phys. Rev. Lett.127, 130501 (2021).
+[13] P. Zhao, K. Linghu, Z. Li, P. Xu, R. Wang, G. Xue, Y. Jin,
+and H. Yu, PRX Quantum3, 020301 (2022).
+[14] V. Tripathi, H. Chen, M. Khezri, K.-W. Yip, E. M.
+Levenson-Falk, and D. A. Lidar, Phys. Rev. Applied18,
+024068 (2022).
+[15] A. Vezvaee, C. Benito, M. Morford-Oberst, A. Bermudez,
+and D. A. Lidar, Nat. Commun.17, 9201 (2026).
+[16] M. Gutiérrez, C. Smith, L. Lulushi, S. Janardan, and K. R.
+Brown, Phys. Rev. A94, 042338 (2016), arXiv:1605.03604
+[quant-ph].
+[17] D. Greenbaum and Z. Dutton, Quantum Sci. Technol.3,
+015007 (2018), arXiv:1612.03908 [quant-ph].
+[18] S. Bravyi, M. Englbrecht, R. König, and N. Peard, npj
+Quantum Inf.4, 55 (2018).
+[19] F. Venn and B. Béri, Phys. Rev. Research2, 043412
+(2020).
+[20] D. Gottesman, The Heisenberg representation of quantum
+computers (1998), arXiv:quant-ph/9807006.
+[21] S. Aaronson and D. Gottesman, Phys. Rev. A70, 052328
+(2004).
+[22] C. Gidney, Quantum5, 497 (2021).
+[23] C. Wang, J. Harrington, and J. Preskill, Ann. Phys.303,
+31 (2003).
+[24] R. Raussendorf and J. Harrington, Phys. Rev. Lett.98,
+190504 (2007).
+[25] A. G. Fowler, M. Mariantoni, J. M. Martinis, and A. N.
+Cleland, Phys. Rev. A86, 032324 (2012).
+[26] C. Huang, X. Ni, F. Zhang, M. Newman, D. Ding, X. Gao,
+T. Wang, H.-H. Zhao, F. Wu, G. Zhang, C. Deng, H.-
+S. Ku, J. Chen, and Y. Shi, Alibaba cloud quantum
+development platform: Surface code simulations with
+crosstalk (2020), arXiv:2002.08918.
+[27] A. S. Darmawan and D. Poulin, Phys. Rev. Lett.119,
+040502 (2017).
+[28] B. Harper, A. C. Nakhl, M. Sevior, and M. Us-
+man, Non-Clifford crosstalk noise in surface codes us-
+ing hybrid stabilizer-tensor network methods (2026),
+arXiv:2605.29514.
+[29] J. Hines, C. Ostrove, K. Rudinger, S. Seritan, K. Young,
+R. Blume-Kohout, and T. Proctor, Simulating quantum
+error correction beyond Pauli stochastic errors (2026),
+arXiv:2603.18457.
+[30] J. Behrends and B. Béri, PRX Quantum6, 040305 (2025),
+arXiv:2410.22436.
+[31] Y. Bao and S. Anand, Phases of decodability in the surface
+code with unitary errors (2024), arXiv:2411.05785.
+[32] T. LeBlond, P. Groszkowski, J. G. Lietz, C. M. Seck, and
+R. S. Bennink, Phys. Rev. Research7, 043184 (2025).
+[33] Z. Zhou, A. Ji, and Y. Ding, Surface code error correction
+with crosstalk noise (2025), arXiv:2503.04642.
+[34] F. Venn, J. Behrends, and B. Béri, Phys. Rev. Lett.131,
+060603 (2023).
+[35] M. J. Bremner, R. Jozsa, and D. J. Shepherd, Proc. R.
+Soc. A467, 459 (2011).
+[36] S. Aaronson, Proc. R. Soc. A461, 3473 (2005).
+[37] X.-G. Wen, Phys. Rev. Lett.90, 016803 (2003).
+[38] H. Bombin and M. A. Martin-Delgado, Phys. Rev. A76,
+012305 (2007), arXiv:quant-ph/0703272 [quant-ph].
+[39] C. Horsman, A. G. Fowler, S. Devitt, and R. Van Meter,
+New J. Phys.14, 123011 (2012).
+[40] S. Wang, Y. Yan, Z. Xia, and X.-B. Wang, Phys. Rev. A
+112, 062419 (2025).
+[41] A. G. Fowler, Phys. Rev. Lett.109, 180502 (2012).
+[42] K. Fujii and T. Morimae, New J. Phys.19, 033003 (2017),
+arXiv:1311.2128.
+[43] J. Edmonds, Canad. J. Math.17, 449 (1965).
+[44] A. G. Fowler, A. C. Whiteside, and L. C. L. Hollenberg,
+Phys. Rev. Lett.108, 180501 (2012).
+[45] D. K. Tuckett, S. D. Bartlett, and S. T. Flammia, Phys.
+Rev. Lett.120, 050505 (2018).
+[46] M. J. Bremner, A. Montanaro, and D. J. Shepherd, Phys.
+Rev. Lett.117, 080501 (2016).
+[47] L. J. Stockmeyer, inProceedings of the 15th Annual ACM
+Symposium on Theory of Computing(ACM, New York,
+1983) pp. 118–126.
+[48] S. Arora and B. Barak,Computational Complexity: A
+Modern Approach(Cambridge University Press, Cam-
+bridge, 2009).
+[49] S. Toda, SIAM J. Comput.20, 865 (1991).

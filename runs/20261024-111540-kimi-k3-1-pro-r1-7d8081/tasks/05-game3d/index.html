@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101b22" />
+  <title>鹈鹕叉车驾校 · PELICAN FORKLIFT ACADEMY</title>
+</head>
+<body>
+  <div id="app"></div>
+  <div class="vignette"></div>
+  <header id="hud" class="hud hidden">
+    <div class="brand-mini"><span class="brand-mark">P</span><div><b>鹈鹕叉车驾校</b><small>PELICAN ACADEMY · 07号仓</small></div></div>
+    <div class="hud-stats">
+      <div class="stat"><small>剩余时间</small><strong id="time">02:00</strong></div>
+      <div class="stat"><small>交付进度</small><strong><span id="delivered">0</span><i>/ 3</i></strong></div>
+      <div class="stat speed"><small>行驶速度</small><strong><span id="speed">0.0</span><i> m/s</i></strong></div>
+    </div>
+    <button id="pauseBtn" class="icon-btn" aria-label="暂停"><span>Ⅱ</span><small>暂停 P</small></button>
+  </header>
+
+  <aside id="taskPanel" class="task-panel hidden">
+    <div class="eyebrow">当前实训 · 01</div>
+    <h2>货物配送考核</h2>
+    <p>托起三只货箱，送达对应颜色区域。</p>
+    <div id="cargoList" class="cargo-list"></div>
+    <div class="fork-readout"><span>货叉高度</span><b id="forkHeight">0.18 m</b></div>
+    <div class="fork-track"><i id="forkFill"></i></div>
+  </aside>
+
+  <div id="hint" class="hint hidden"><span class="hint-dot"></span><span id="hintText">寻找货箱</span></div>
+  <div id="toast" class="toast"></div>
+  <div id="badge" class="delivery-badge"><span>✓</span><div><b>交付完成</b><small></small></div></div>
+
+  <footer id="controls" class="controls hidden">
+    <div><kbd>W</kbd><kbd>S</kbd><span>前进 / 后退</span></div>
+    <div><kbd>A</kbd><kbd>D</kbd><span>转向</span></div>
+    <div><kbd>Q</kbd><kbd>E</kbd><span>降叉 / 升叉</span></div>
+    <div><kbd class="wide">SPACE</kbd><span>制动</span></div>
+    <div><kbd>C</kbd><span>切换视角</span></div>
+  </footer>
+
+  <section id="startScreen" class="screen start-screen">
+    <div class="start-card">
+      <div class="start-top"><span class="academy-seal">P</span><span>PELICAN<br/>DRIVING SCHOOL</span><i>实训档案<br/><b>NO. 007</b></i></div>
+      <div class="eyebrow">WAREHOUSE CERTIFICATION PROGRAM</div>
+      <h1>鹈鹕<br/><em>叉车驾校</em></h1>
+      <p class="lead">长嘴也能开好叉车。穿过晨光仓库，<br/>稳稳托起每一箱期待。</p>
+      <div class="mission-strip"><span><b>3</b> 只货箱</span><i></i><span><b>120</b> 秒限时</span><i></i><span>颜色对应交付</span></div>
+      <button id="startBtn" class="primary-btn"><span>开始实训</span><b>→</b></button>
+      <div class="start-foot"><span><i></i> 本地物理已就绪</span><span>建议佩戴耳机 · 无需联网</span></div>
+    </div>
+    <div class="start-side"><span>07</span><small>装载区<br/>LOADING BAY</small></div>
+  </section>
+
+  <section id="pauseScreen" class="screen modal-screen hidden">
+    <div class="modal-card pause-card">
+      <div class="eyebrow">TRAINING ON HOLD</div>
+      <h2>实训暂停</h2>
+      <p>物理与考核计时均已冻结。</p>
+      <div class="inspect-title"><span>机械模型检查</span><small>选择固定机位</small></div>
+      <div class="inspect-grid">
+        <button data-view="front">前视 <small>FRONT</small></button>
+        <button data-view="side">侧视 <small>SIDE</small></button>
+        <button data-view="rear">后视 <small>REAR</small></button>
+        <button data-view="top">斜上方 <small>ISOMETRIC</small></button>
+      </div>
+      <button id="resumeBtn" class="primary-btn"><span>继续驾驶</span><b>P</b></button>
+      <button id="restartPauseBtn" class="text-btn">重新开始本次实训</button>
+    </div>
+  </section>
+
+  <section id="endScreen" class="screen modal-screen hidden">
+    <div class="modal-card end-card">
+      <div id="endIcon" class="end-icon">✓</div>
+      <div id="endEyebrow" class="eyebrow">CERTIFICATION COMPLETE</div>
+      <h2 id="endTitle">实训通过！</h2>
+      <p id="endText">三只货箱都已安全抵达。</p>
+      <div class="end-stats"><div><small>完成交付</small><b id="endDelivered">3 / 3</b></div><div><small>剩余时间</small><b id="endTime">00:42</b></div></div>
+      <button id="restartBtn" class="primary-btn"><span>再练一次</span><b>↻</b></button>
+    </div>
+  </section>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

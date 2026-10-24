@@ -1,0 +1,2153 @@
+
+[PDF page 1]
+SMP: A General Hyperedge-Based Framework for Circuit-Level Quantum Error
+Correction
+Siying Wang,1,∗ Yue Yan,1,∗ Zhixin Xia,1 Canwei Shi,1 Hannuo Yuan,1 and Xiang-Bin Wang1, 2, 3,†
+1State Key Laboratory of Low Dimensional Quantum Physics,
+Department of Physics, Tsinghua University, Beijing 100084, China
+2Jinan Institute of Quantum Technology and Jinan branch,
+Hefei National Laboratory, Jinan, Shandong 250101, China
+3Frontier Science Center for Quantum Information, Beijing 100193, China
+(Dated: October 5, 2026)
+Hyperedge faults remain a major challenge in circuit-level quantum error correction. Accurately
+exploiting hyperedge correlations often requires substantial computational resources, which compli-
+cates real-time decoding. Matching-based decoders are fast and scalable, but their pairwise graph
+representation limits the use of higher-order fault information. Here, we introduce Syndrome Motif
+Projection (SMP), a general framework for incorporating hyperedge information into matching-
+based decoding. The key idea is that a hyperedge fault produces a characteristic local syndrome
+motif. Observing such a motif provides evidence for the corresponding fault. SMP extracts this
+information directly from the measured syndrome with linear-complexity preprocessing while pre-
+serving the matching backend. It can therefore serve as a lightweight front end to existing scalable
+and real-time matching decoders. We demonstrate SMP across surface code memories, color code
+memories, and logical gate circuits. On Google’s Willow experimental surface code data, SMP im-
+proves both standard and correlated matching and outperforms the tested belief matching baseline.
+For color code memories, SMP combined with Chromobius reduces logical failure probabilities by
+up to 77.8%. For logical gate circuits, SMP reduces the failure probability of a six-CNOT circuit by
+35.5% relative to logical observable matching while achieving performance comparable to iterative
+belief matching. These results demonstrate that SMP provides a lightweight and transferable ap-
+proach to hyperedge decoding, with a clear path toward integration into scalable real-time decoding
+architectures for fault-tolerant quantum computation.
+I. INTRODUCTION
+Fault-tolerant quantum computation relies on fast and
+accurate classical decoding of measured syndromes [1–6].
+However, hyperedge faults are a recurring challenge in
+circuit-level decoding [7]. A single circuit fault can trig-
+ger three or more correlated detection events, forming a
+hyperedge in the detector error model [2, 8]. In realistic
+quantum computing experiments, hyperedge faults can
+arise from circuit-level fault propagation, correlated noise
+such as crosstalk [9–12], and fault propagation across log-
+ical gate operations [13], and are also intrinsic to the
+syndrome structure of several quantum error-correcting
+codes [14–17].
+Several approaches have been developed to handle hy-
+peredge faults. Neural decoders can learn joint syndrome
+patterns from data [18–20]. Hypergraph and search-
+based decoders can also model multi-detector fault mech-
+anisms explicitly [21]. These approaches can achieve high
+decoding accuracy, but often require substantial compu-
+tation or model complexity [18, 21]. Matching-based de-
+coders are a leading practical choice for fault-tolerant
+quantum error correction. Fast implementations, paral-
+lelization, and windowed architectures make them well
+suited to large-scale and real-time decoding [22–25].
+∗ These authors contributed equally to this work.
+† xbwang@mail.tsinghua.edu.cn
+Existing matching-based decoders still face a trade-off
+between decoding accuracy and computational cost. Cor-
+related minimum-weight perfect matching (MWPM) uses
+correlations associated with hyperedge faults to reweight
+edges in the matching graph [26, 27], but remains less ac-
+curate than more powerful decoders [18]. Belief matching
+extracts richer hyperedge information through iterative
+belief propagation on the circuit-level Tanner graph [2],
+but it requires repeated message passing and depends
+strongly on the prior fault model [28]. How to exploit hy-
+peredge information more effectively without substantial
+additional complexity or resource cost therefore remains
+an important challenge for matching-based decoding.
+Here, we introduce Syndrome Motif Projection (SMP),
+a general framework for handling hyperedge faults in
+matching-based decoding. The main idea is that a hy-
+peredge fault produces a characteristic local syndrome
+motif. When nearby detection events match this pat-
+tern, they provide evidence that increases the posterior
+probability of the corresponding hyperedge fault. SMP
+approximates this local evidence and maps it onto the as-
+sociated matching edge weights. Unlike belief matching,
+which performs iterative inference on the Tanner graph
+[2], SMP uses direct local updates to the matching graph.
+This provides a lightweight way to exploit hyperedge in-
+formation and can be adapted to different codes and cir-
+cuit settings.
+We demonstrate SMP in three settings: surface code
+memories, color code memories, and logical gate circuits.
+arXiv:2610.02734v1  [quant-ph]  2 Oct 2026
+
+[PDF page 2]
+2
+For surface codes, SMP projects local hyperedge evidence
+directly onto the native matching graph. On Google’s
+Willow data, it improves both standard and correlated
+MWPM under both tested decoder priors [3]. At code
+distanced= 7 over 13 extraction rounds, SMP-correlated
+MWPM also achieves lower observed failure probabilities
+than the tested belief matching baseline with up to 10 BP
+iterations. For color codes, SMP transfers motif informa-
+tion to the M¨ obius matching graph used by Chromobius
+[14, 29]. It reduces the logical failure probability by up
+to 77.8% over the tested range. For logical gate circuits,
+SMP transfers information from complete motifs across
+separate logical observable matching graphs [15]. In a
+circuit with six successive transversal CNOTs and one
+error correction round between gates, SMP reduces the
+circuit failure probability by 35.5% relative to logical ob-
+servable matching. These results suggest that SMP is
+applicable to a broad range of quantum error correction
+settings.
+II. SURFACE CODE DECODING UNDER
+CIRCUIT-LEVEL NOISE
+The surface code encodes logical information in the
+common +1 eigenspace of localX- andZ-type stabilizers,
+which generate the stabilizer groupG[30–34]. Figure 1(a)
+shows a rotated surface code patch. Measurement qubits
+interact with neighboring data qubits to measure these
+stabilizers without measuring the encoded logical state.
+A Pauli error changes the eigenvalue of each stabilizer
+with which it anticommutes. The pattern of changed
+eigenvalues is the error syndrome. A decoder uses this
+information to infer a recovery operatorRfor the data
+errorE. IfRandEhave the same syndrome, the resid-
+ual operatorREcommutes with all stabilizers and re-
+turns the state to the code space. This alone does not
+guarantee recovery of the logical state. Up to an overall
+phase, decoding succeeds whenRE∈ Gand fails when
+RE∈ N(G)\ G. HereN(G) denotes the Pauli opera-
+tors that commute with all stabilizers; those outsideG
+act nontrivially on the logical state. The same correction
+principle applies to the XZZX code, with its different
+stabilizer structure [35–37].
+Circuit faults can also corrupt stabilizer measurements,
+so syndrome extraction is repeated over multiple rounds
+[4, 38, 39]. At the circuit level, depolarizing noise is com-
+monly used to model stochastic faults [2, 8, 32]. Let
+UCNOT be the ideal CNOT unitary. For an input state
+ρ, letρ C =U CNOTρU †
+CNOT denote the state after the
+ideal gate operation. The corresponding noisy channel is
+NCNOT(ρ) = (1−p)ρ C + p
+15
+X
+P∈P 2\{I⊗I}
+P ρCP,(1)
+whereP 2 ={I, X, Y, Z} ⊗2. Herepis the total probabil-
+ity of a nonidentity two-qubit Pauli error. These faults
+then propagate through the remaining syndrome extrac-
+tion circuit and trigger several detectors at different posi-
+tions and times. The resulting detector pattern depends
+not only on the Pauli error, but also on the circuit loca-
+tion where the fault occurs [2, 3, 40].
+Figure 1(b) shows one round ofXstabilizer measure-
+ment around the central measurement qubitq m. The
+four CNOT gates are labeled CNOT 1 to CNOT 4. We
+consider aZXfault immediately after each CNOT and
+propagate it through the rest of the circuit. Figure 1(c)
+shows the corresponding detector patterns. Although the
+sameZXerror is considered in each case, faults at differ-
+ent CNOT locations produce different four detector mo-
+tifs. These motifs therefore contain information about
+the underlying hyperedge faults, which we exploit for de-
+coding below.
+III. SYNDROME MOTIF PROJECTION
+A. Local posterior evidence and normalized graph
+reweighting
+As discussed in Sec. II, hyperedge faults leave char-
+acteristic syndrome patterns that provide local evidence
+for their occurrence. The key question is how to incorpo-
+rate this evidence into a pairwise matching graph. In this
+subsection, we first develop an explicit local-posterior for-
+mulation that quantifies the evidence for a candidate hy-
+peredge and converts it into a bounded modification of
+the matching weights. This formulation serves as a ref-
+erence model for SMP. The next subsection introduces
+SMP as a simpler approximation, while Appendix A im-
+plements the explicit local calculation and compares the
+two approaches.
+To evaluate a candidate fault and represent it in the
+decoder, we need its prior probability, detector support,
+and logical effect. A detector error model (DEM) supplies
+these quantities for independent stochastic error mecha-
+nisms [8]. We index the mechanisms byR, denote the
+detector set byV det, and writen L for the number of
+tracked logical observables:
+DEM =
+
+(pr, Sr,ℓ r)
+	
+r∈R, pr ∈[0,1], S r ⊆ Vdet,
+ℓr ∈F nL
+2 .
+(2)
+Herep r is the probability that mechanismroccurs. The
+supportS r contains the detectors flipped byr. Each en-
+try ofℓ r records whetherrflips the corresponding logical
+observable (one for a flip, zero otherwise). We focus on
+faults that flip three or more detectors, which cannot be
+represented by a single matching edge. These hyperedge
+faults form the set
+H={r∈ R:|S r| ≥3}.(3)
+Forh∈ H, its detector supportS h is called a syndrome
+motif. Mechanisms with the same support can have dif-
+ferent logical-observable flip vectors. When independent
+mechanisms with identical (S r,ℓ r) are grouped, we also
+
+[PDF page 3]
+3
+(a)
+CNO T -4
+Z stabiliz er
+data qubit
+CNO T - 3
+CNO T -1
+CNO T - 2
+X stabiliz er
+ancilla
+(b )
+qₘ
+(0,0)
+R H
+CNO T -1
+Z
+CNO T - 2
+Z
+CNO T - 3
+Z
+CNO T -4
+Z H MR
+( c)
+Xq₁
+(1,0)
+q₂
+(0,1)
+q₃
+(0,-1)
+q₄
+(-1,0)
+X
+X
+X
+ZX CNO T -1ZX CNO T -1
+ZX CNO T - 3
+ZX CNO T - 2
+ZX CNO T -4
+FIG. 1. Four-detector hyperedges induced by circuit-level faults.(a)Rotated surface code patch. Green and red plaquettes
+denoteX- andZ-type stabilizers, respectively; diamonds denote data qubits and circles denote measurement qubits. The four
+CNOT gates used to measure the highlightedX-type stabilizer are labeled CNOT-1 through CNOT-4.(b)Circuit for one
+syndrome extraction round (round 0). The measurement qubitq m at spatial coordinate (0,0) interacts sequentially with data
+qubitsq 1,q 2,q 3, andq 4 at (1,0), (0,1), (0,−1), and (−1,0), respectively. The fourZXmarkers are alternative single-fault
+locations: after CNOT-i, aZerror acts onq m and anXerror acts onq i, while the other CNOT gates are fault-free.(c)
+The resulting four-detector supports, with detector coordinates (x, y, t) defined relative toq m. Temporal propagation produces
+the common white vertex pairW={(0,0,0),(0,0,1)}. For CNOT-1 through CNOT-4, the gate-dependent black vertex pairs
+are, respectively,{(+1,+1,0),(+1,−1,0)},{(−1,+1,1),(+1,+1,0)},{(−1,−1,1),(+1,−1,0)}, and{(−1,+1,1),(−1,−1,1)};
+each four-detector support is the union ofWand the corresponding black vertex pair.
+usehfor the resulting effective fault. Its supportS h and
+logical-observable flip vectorℓ h are unchanged; its prior
+ph is given by Eq. (B1).
+The matching decoder selects edges to explain the ob-
+served detection events. For the surface code, its graph
+has vertices representing detectors and boundaries. We
+denote its edge set byE. Each edgee∈ Econnects
+either two detectors or one detector to a boundary ver-
+tex. Errors that trigger at most two detectors are called
+graphlike errors. Those with one or two detection events
+are represented by matching edges. Each edge has a prior
+probability 0< p e <1 and a weightb e = ln[(1−p e)/pe].
+Its logical-observable flip vectorℓ e ∈F nL
+2 has one entry
+per tracked logical observable: 1 if the error represented
+byeflips it, and 0 otherwise.
+To represent a hyperedge faulthin this graph, we need
+a set of edges with the same detector supportS h and
+logical-observable flip vectorℓ h. Consider an edge set
+E⊆ E. Each edge flips its detector endpoints. Repeated
+flips at a detector cancel in pairs. The resulting detec-
+tor support, denoted by∂E, therefore contains exactly
+the detectors connected to an odd number of edges in
+E. A boundary endpoint has no associated detector out-
+come. Thus, an edge joining a detector to a boundary
+contributes only its detector endpoint to∂E. For each
+logical observable, an odd number of flips gives a net flip,
+whereas an even number gives no net flip. The combined
+logical-observable flip vector is therefore
+ℓ(E) =
+M
+e∈E
+ℓe,(4)
+where L denotes componentwise addition modulo two.
+We call an edge setC h ⊆ Ea cluster representinghif
+∂Ch =S h,ℓ(C h) =ℓ h.(5)
+At the circuit level, a detector is a predefined parity
+check on measurement outcomes, represented by a vertex
+in the decoding graph. A detection event occurs when
+this parity differs from its fault-free value. We denote
+the binary detection-event vector byy, withy d = 1 for
+a detection event at detectordandy d = 0 otherwise.
+Hereafter, syndrome refers to these detection-event data,
+rather than the stabilizer eigenvalue changes described
+in Sec. II. To assess the local evidence forh, we compare
+its candidate motifS h with the observed event setY=
+{d∈ V det :y d = 1}. The observed part of the motif
+isO h =S h ∩Y. We denote the observed event count
+byn h =|O h|and the full motif size byk h =|S h|. A
+complete motif hask h −n h = 0; a motif with one missing
+event hask h −n h = 1.
+A complete motif or a motif with one missing event
+(kh −n h ≤1) can provide strong local evidence for
+the corresponding hyperedge faulth. For example, the
+surface-code circuit in Fig. 1(c) produces a complete mo-
+tif withn h =k h = 4, denoted 4/4. Suppose the ele-
+mentary fault probabilities scale linearly with the noise
+strengthp. This motif can arise fromhalone with proba-
+bilityO(p). A competing explanation with two indepen-
+dent edge errors has probabilityO(p 2). If one event is
+missing,k h −n h = 1 and (n h, kh) = (3,4), giving a 3/4
+motif in this example. The hyperedge must then occur
+together with another fault that cancels that event. This
+explanation has probabilityO(p 2), the same order as the
+two-independent-edge-error explanation.
+However, this local order comparison does not deter-
+mine whether the hyperedge belongs to the globally opti-
+
+[PDF page 4]
+4
+mal correction, which must also explain detection events
+outside the motif. In Fig. 2, the four eventss 1, . . . , s4
+form a candidate motif. Even if this pattern strongly
+favors the hyperedge,s 4 may instead be paired withs 5
+through a short edge. Assigning all four events to the hy-
+peredge would leaves 5 to be matched elsewhere, which
+could increase the total cost. We therefore use local ev-
+idence to adjust edge weights and let the matching de-
+coder choose the complete correction.
+s₁
+s₄ s₅
+s₂
+s₃
+FIG. 2. Local motif evidence does not determine a complete
+correction. The labelss 1, . . . , s5 denote detector locations
+with observed detection events. The shaded region highlights
+a candidate syndrome motif ons 1, . . . , s4. Committing those
+four events to one local correction leavess 5 to be explained
+by other events or a boundary, neither of which is shown. The
+connection betweens 4 ands 5 illustrates a competing use of
+a detector inside the motif. The drawing is schematic and
+assigns no numerical edge costs.
+Thus, the detector pattern onS h admits multiple ex-
+planations involving hyperedge faults or graphlike errors.
+We construct a local graph region containing the candi-
+date motif, overlapping candidate motifs, and selected
+matching edges incident to their detectors. Let Ω⊆ V det
+denote the detector set of this region. We writeyΩ for the
+syndrome restricted to Ω. The conditional probability of
+his
+Pr(h|y Ω) = ph Pr(yΩ |h)
+ph Pr(yΩ |h) + (1−p h) Pr(yΩ | ¬h) .(6)
+Here,hand¬hmean that the candidate fault occurs
+or is absent. Withouth, independent edge errors must
+explain the observed eventsY∩Ω. Withh, they must
+explain the residual events (Y△S h)∩Ω. HereY△S h
+means removing observed events inS h and adding the
+missing ones: each detector inS h is flipped once.
+We compare these alternatives by adding the probabil-
+ity weights of their allowed edge configurations. Under
+the independent-edge approximation, selecting edgeere-
+places a factor 1−p e byp e. Relative to no edge errors,
+an edge setEtherefore has weight
+e−W0(E) =
+Y
+e∈E
+pe
+1−p e
+.(7)
+HereW 0(E) = P
+e∈E be is the original matching cost.
+The alternative containinghalso includes its prior odds
+PH =p h/(1−p h). Summing the weights for each alter-
+native gives
+e−cI =
+local,IX
+E
+e−W0(E),
+e−ch =P H
+local,hX
+E
+e−W0(E).
+(8)
+The costsc I andc h are the negative logarithms of the
+total weights without and withh. The sums use the
+allowed local configurations specified in Appendix A. For
+an isolated candidate, dividing its weight by the sum of
+both weights gives
+αh = e−ch
+e−cI +e −ch
+= ηh
+1 +η h
+, η h =e −(ch−cI).(9)
+We callη h the evidence ratio. It includes the prior odds
+PH and is therefore the posterior odds within this two-
+explanation model, rather than a likelihood ratio alone.
+The normalized probabilityα h approximates Eq. (6).
+Matching needs an additive cost for each edge, whereas
+αh describes the complete candidate. We therefore use
+the physical prior to set the target cluster cost and the
+local probability to control the change toward that target.
+The original and target costs are
+WE,h =
+X
+e∈Ch
+be, W C,h =−lnP H = ln 1−p h
+ph
+.(10)
+We consider 0< p h <1/2 and retain proposals with
+WC,h < W E,h. We interpolate the cluster cost as (1−
+αh)WE,h +α hWC,h. To implement this change through
+individual edges, we distribute it in proportion to their
+original costs:
+we =b e +α h
+be
+WE,h
+(WC,h −W E,h)
+= (1−α h)be +α hebh,e, e∈C h,
+(11)
+Hereebh,e =b eWC,h/WE,h is the proposed edge weight.
+Summingw e overC h gives the interpolated cluster cost.
+B. Motif approximation for isolated and
+overlapping clusters
+For each observed syndrome, Eq. (8) requires find-
+ing edge configurations for both the observed events and
+the residual events after applying the candidate fault.
+
+[PDF page 5]
+5
+Our aim is to avoid this repeated search by identifying
+the matching edges associated with each candidate mo-
+tif once, then directly adjusting their weights using the
+observed partO h of the motif.
+For each candidate motifS h, we therefore determine
+a clusterC h once and use the same edges for subse-
+quent syndrome-dependent weight updates. LetE(S h)
+contain edges between detectors inS h and edges from
+those detectors to a boundary. We choose the lowest-
+cost local representation that preserves the candidate’s
+detector supportS h and logical effectℓ h:
+Ch ∈arg min
+E⊆E(S h)
+∂E=S h
+ℓ(E)=ℓh
+X
+e∈E
+be.(12)
+To estimate the local posterior, we assume that the
+observed partO h of the motif has only two explanations:
+independent edge errors within the motif, or the can-
+didate hyperedge fault. We first consider the complete
+four-detector motif in Fig. 1(c), withn h =k h = 4. The
+hyperedge alone has relative weightP H =p h/(1−p h).
+We approximate the internal independent-error explana-
+tion by one data error and one measurement error, with
+representative probabilitiesp iid andp meas. Their odds
+areP iid =p iid/(1−p iid) andP m =p meas/(1−p meas),
+givingP I =P iidPm. Normalizing only these two expla-
+nations gives the approximate conditional probability
+Pr
+local
+(h|O h =S h) = PH
+PH +P I
+.(13)
+This conditional probability refers to the two-explanation
+model. If elementary fault probabilities scale linearly
+with a small noise strengthp, thenP H =O(p) and
+PI =O(p 2). A complete motif therefore favors the single
+hyperedge fault in this comparison.
+Fork h −n h = 1, the hyperedge explanation requires
+an additional error to cancel the missing detection event.
+We estimate this contribution by assuming that the miss-
+ing detector can be paired with a nearest detection event
+through either a measurement-error edge or a data-error
+edge. Each pairing represents an additional error whose
+detector flip cancels the hyperedge’s flip at the missing
+detector, since detector flips add modulo two. In the 3/4
+example, we approximate the two pairing channels by in-
+dependent errors with representative probabilitiesp meas
+andp iid. We assume that each leaves the other three
+motif events unchanged. Exactly one of these channels
+must occur to cancel the missing event. Relative to nei-
+ther occurring, this estimate gives
+Phidden = piid(1−p meas) +p meas(1−p iid)
+(1−p iid)(1−p meas)
+=P iid +P m.
+(14)
+The hyperedge explanation then has relative weight
+PH Phidden. We retainP I as a representative weight for
+the competing independent-error explanation, without
+enumerating its configurations for the incomplete motif.
+The resulting conditional probability is
+Pr
+local
+(h|O h) = PH Phidden
+PI +P H Phidden
+,|O h|= 3.(15)
+Both explanations now have weightO(p 2), so the incom-
+plete motif need not strongly favor the hyperedge.
+These conditional probabilities set the strength of
+reweighting throughα h =η h/(1 +η h). For the four-
+detector example, the evidence ratio is
+ηh ≈
+(
+PH /PI , k h −n h = 0,
+PH Phidden/PI , k h −n h = 1.
+(16)
+The approximation retains the two competing explana-
+tions and an estimated cancellation weight, while omit-
+ting the detailed connectivity and multiplicity of local
+edge configurations. Complete three-detector motifs use
+the same comparison of hyperedge and independent-error
+evidence. Appendix B specifies their additional scoring
+convention and the missing-event score used in the bench-
+marks.
+For an isolated cluster, stronger evidence for a single
+correlated fault should move the cluster cost from the
+sum of independent edge costsW E,h toward the joint
+fault costW C,h. We use the evidence ratioη h to weight
+these two descriptions. Applying the proportional cost
+allocation in Eq. (11) gives
+we = (1−α h)be +α hebh,e
+= be +η hebh,e
+1 +η h
+,
+e∈C h.(17)
+Whenk h −n h = 1,C h still represents the complete sup-
+portS h. The missing-event factor controls the strength
+of the proposal; matching must supply any additional
+edges needed to cancel the detection event at the missing
+detector if it selects the full cluster.
+Different syndrome motifs can be activated by the
+same observed events, and their clusters can share match-
+ing edges. Figure 3(a) shows an example in a distance-5
+surface code. A single correlatedZ 3X12 fault triggers
+four detectors across two syndrome extraction rounds.
+These events activate both a four-detector motif and a
+three-detector motif contained within it. Figure 3(b)
+shows their graph representations,C A ={e 1, e2}and
+CB ={e 2, e3}. The two clusters sharee 2, so both motifs
+provide evidence for changing its cost.
+We seek an edge cost that reflects the evidence from
+all contributing motifs. For an isolated cluster, Eq. (17)
+averages the original cost and the cluster’s proposed cost
+with relative weights 1 andη h. We extend this prescrip-
+tion to a shared edge by assigning each proposal its own
+evidence ratioη h and retaining the original cost with unit
+relative weight. Thus, stronger evidence gives a proposal
+a larger share, while weak evidence leaves the cost near
+its original value. LetH e ={h:e∈C h}index the
+
+[PDF page 6]
+6
+activated clusters containing edgee. Normalizing these
+relative weights gives
+we = be +P
+h∈He ηhebh,e
+1 +P
+h∈He ηh
+.(18)
+With one contributing cluster, this expression reduces to
+Eq. (17); with none,w e =b e.
+For the two clusters in Fig. 3(b), the rule gives
+we1 = be1 +η AebA,e1
+1 +η A
+,
+we2 = be2 +η AebA,e2 +η BebB,e2
+1 +η A +η B
+,
+we3 = be3 +η BebB,e3
+1 +η B
+.
+(19)
+The shared edgee 2 combines evidence from both clusters,
+whilee 1 ande 3 each receive one proposal. This rule
+approximates the regional normalization in Appendix A
+by mixing costs separately on each edge. It does not
+construct a joint posterior over compatible combinations
+of complete clusters.
+C. Decoder workflow and complexity analysis
+For the native surface-code setting, SMP is imple-
+mented in the following four steps.
+1. Select the three- and four-detector motifsS h de-
+fined in Sec. III A, with candidate priorsp h ob-
+tained from the DEM as specified in Appendix B.
+2. Construct each clusterC h using Eq. (12) to re-
+produce the candidate’s detector supportS h and
+logical effectℓ h. Obtain its cost proposal from
+Eqs. (10) and (11), retaining only valid clusters
+with 0≤W C,h < W E,h.
+3. For the measured syndrome, evaluate the motif
+evidence using Eq. (16) and the three-detector
+rule in Appendix B. Update isolated clusters using
+Eq. (17) and combine overlapping proposals using
+Eq. (18).
+4. Decode the complete syndrome on the reweighted
+graph using the chosen matching decoder, such as
+standard or correlated MWPM, to infer the logical-
+observable flips.
+For a fixed DEM, each retained clusterC h and its pro-
+posalsebh,e are constructed once. For each syndromeY,
+evaluatingη h(Y) and accumulating its contributions to
+Eq. (18) takesO(k h +|C h|) work per candidate. In
+the surface-code circuits considered here,k h =|S h|,
+|Ch|, and the number of candidates containing any de-
+tector are bounded independently ofdandr. Thus,
+(a)
+8
+7
+6
+Y Coor dinat e 5
+4
+3
+2
+1
+0
+0
+66
+61
+2 4
+X Coor dinat e
+R ound 2 
+6 8
+8
+7
+6
+Y Coor dinat e 5
+4
+3
+2
+1
+0
+0
+105
+2
+101
+4
+X Coor dinat e
+6
+R ound 3 
+8
+(b )
+(3 , 0 , 3)
+(2, 1 , 3)
+Clust er A Clust er B
+(4 , −1 , 2)
+e₂
+e₁ e₃
+(3 , 0 , 2)
+(4 , 1 , 2)
+FIG. 3. Overlapping clusters generated by a single correlated
+circuit fault.(a)Detector outcomes from a distance-5 sur-
+face code circuit withr= 5 syndrome extraction rounds.
+The panels show rounds 2 and 3 under zero-based index-
+ing. A correlatedZ 3X12 fault is inserted after the second
+CX layer of round 2. It triggersD 61,D 66,D 101, andD 105.
+These events form a complete four-detector syndrome motif.
+(b)The matching graph edge sets defining the two clusters
+identified by SMP. Their detector graph coordinates (2,1,3),
+(3,0,2), (3,0,3), and (4,1,2) correspond toD 105,D 61,D 101,
+andD 66, respectively. Cluster A has the four-detector sup-
+portS A ={(2,1,3),(3,0,2),(3,0,3),(4,1,2)}. Cluster B has
+the three-detector supportS B ={(3,0,2),(3,0,3),(4,1,2)}.
+The open vertex at (4,−1,2) is a boundary endpoint in the
+matching representation of cluster B. It is not a detector in
+SB. The clusters areC A ={e 1, e2}andC B ={e 2, e3}. Edge
+e2 receives both cluster proposals.
+|H|=O(|V det|) =O(d 2r). SMP therefore addsO(d 2r)
+preprocessing time per syndrome andO(d 2r) storage for
+the motifs, clusters, and proposals. The matching step
+retains the complexity of the chosen backend.
+D. Applying SMP to different codes and circuits
+Extending SMP beyond the native surface-code setting
+requires two conditions on the fault representation. First,
+a candidate faulthmust have a known detector support
+Sh, so that the observed partO h =S h∩Yof its motif can
+provide local evidenceη h. Second, the fault must admit
+an edge representation in the chosen matching graph or
+graphs. This representation must preserve its detector
+support under the corresponding projection and induce
+the same logical-observable flips, as specified by Eq. (20).
+Two nontrivial situations arise when transferring this
+physical evidence to matching graphs:
+•The detector supportS h of one physical fault spans
+several matching graphs, so no single graph con-
+
+[PDF page 7]
+7
+tains the complete motif.
+•The graph structure changes under the matching
+representation, so the detector boundary ofC h rep-
+resents a mapped version ofSh rather than the orig-
+inal detector set itself.
+These two situations can occur together: a fault’s de-
+tector support can be mapped to a different representa-
+tion and distributed across several matching graphs. The
+M¨ obius and logical observable matching applications be-
+low illustrate how SMP transfers physical motif evidence
+to the corresponding graph representations. We first de-
+scribe how to preserve the fault’s detector and logical
+effects under projection, then explain how to share its
+evidence across graphs.
+a. Different matching representations.The physical
+fault and its syndrome motif do not depend on the match-
+ing representation, but their graph representation can.
+Index the matching graphs byj. LetG j have edge set
+Ej, and letι j(Sh) denote the detector support ofhin
+that graph. Here∂selects the graph’s detector vertices
+incident to an odd number of selected edges and excludes
+boundary vertices. A valid clusterC (j)
+h ⊆ E j must satisfy
+∂C (j)
+h =ι j(Sh),ℓ j(C(j)
+h ) =ℓ h,j.(20)
+Hereℓ h,j is the logical-observable flip vector ofhfor the
+observables tracked by graphj. The mapℓ j gives the
+logical-observable flip vector reconstructed from the se-
+lected edges by that backend, including any required lift-
+ing. The two conditions preserve the projected detector
+supportι j(Sh) and logical effectℓ h,j.
+The construction ofC (j)
+h is therefore backend depen-
+dent. For the surface code, the cluster is constructed
+directly in the native matching graph using Eq. (12).
+For the color code, the same principle is applied in
+the M¨ obius representation. If no parity- and logical-
+equivalent cluster exists, that candidate fault cannot be
+incorporated into SMP through the chosen matching rep-
+resentation.
+b. Motifs spanning several matching graphs.A
+physical fault can affect several matching problems, as in
+logical-gate circuits. We evaluate its local evidenceη h(Y)
+once from the physical syndromeY, before any projec-
+tion. We compare local explanations with and withouth
+using Eq. (9). The approximation for these explanations
+is specified in each application. Every graph receiving
+the fault uses the same evidence ratio.
+In graphG j, the candidate has a clusterC (j)
+h satisfying
+Eq. (20). Its original edge weightsb (j)
+e give the cluster
+costW (j)
+E,h, as in Eq. (10). The proposed cluster cost
+change depends on the matching representation, as spec-
+ified below for the color code and LOM. We distribute
+this change among the cluster edges in proportion to
+their original weights, following the allocation principle of
+Eq. (11). The shared evidence controls the interpolation
+between original and proposed edge costs. Overlapping
+proposals are combined using Eq. (18), and each graph
+is decoded with its updated weights.
+IV. SURFACE CODE MEMORY DECODING
+In the Willow evaluations, we directly reuse the pub-
+licly released DEM and learned priors, without any re-
+training [3]. The dataset contains surface code memory
+experiments at distancesd= 3,5,and 7, measured in
+both the logical-Xand logical-Zbases. We use circuits
+withr= 10,13,30,and 50 syndrome extraction rounds,
+with 50,000 shots for each logical basis. For each dataset,
+we decode the syndrome using either the SI1000 prior
+or the reinforcement-learning-optimized (RL) prior pro-
+vided with the public data.
+To compare experiments with different numbers of
+rounds, we extract the logical error rate per round,ϵ,
+from the decay of the logical fidelity [3, 18, 41]. For the
+logical failure probability per memory experiment,P L(r),
+withrrounds, we fit
+F(r) = 1−2P L(r) =F 0(1−2ϵ) r.(21)
+HereF 0 is a fitted prefactor. The two logical bases are fit-
+ted separately and their rates are averaged. Appendix B
+gives the fitting and decoder settings. Figures 4 and 5
+use the fitted logical error rate per roundϵto summarize
+decoder performance across the measured round counts,
+r= 10,13,30,50.
+SMP improves MWPM at every tested code distance
+under both priors (Fig. 4). We quantify this improvement
+by the relative reduction
+R= ϵbase −ϵ SMP
+ϵbase
+.(22)
+Hereϵ base andϵ SMP are the logical error rates per round
+of the baseline decoder and its SMP counterpart. For the
+comparisons below, the same definition uses the logical
+failure probability per memory experimentP L or the cir-
+cuit failure probabilityP fail in place ofϵ. The quantity
+Ris dimensionless; for example,R= 0.24 corresponds
+to a 24% reduction. Relative reductions are expressed as
+percentages throughout the figures and tables.
+The gain grows with code distance: under the RL
+(SI1000) prior,Rincreases from 6.1% (7.8%) atd= 3 to
+22.0% (22.1%) atd= 7.
+SMP also improves correlated MWPM, even though
+this decoder already uses reweighting to recover part of
+the error correlations (Fig. 5). The improvement per-
+sists at all three code distances under both priors. At
+d= 7, SMP further reduces the logical error rate per
+round by 6.0% with the RL prior and 7.9% with SI1000.
+This additional gain indicates that SMP extracts useful
+correlation information that correlated MWPM does not
+fully capture during its own reweighting procedure.
+The broader comparison in Table I further demon-
+strates the accuracy of SMP-correlated MWPM. On the
+
+[PDF page 8]
+8
+d = 3 d = 5 d = 7
+Code distance
+0.3
+0.5
+0.8
+1.2
+Logical error rate per round (%)
+RL-optimized prior
+6.1%
+14.5%
+22.0%
+MWPM
+SMP-MWPM
+d = 3 d = 5 d = 7
+Code distance
+SI1000 prior
+7.8%
+15.6%
+22.1%
+MWPM
+SMP-MWPM
+FIG. 4. Logical error rates per round for MWPM and SMP-MWPM on the Willow data. The panels use the reinforcement-
+learning-optimized (RL) prior and the SI1000 noise model prior. At each distance, the logical failure probability per memory
+experimentP L(r) is measured afterr= 10,13,30,50 extraction rounds, and the per-round rateϵis extracted from Eq. (21).
+Logical-Xand logical-Zdata are fitted separately and the resulting rates are averaged. Error bars show 95% intervals obtained
+from 5,000 parametric bootstrap resamples. Shading marks the gap between the two curves, and labels give the relative
+reductionR= 1−ϵ SMP/ϵbase, expressed as a percentage. Each input round count contains 50,000 shots per logical basis.
+d = 3 d = 5 d = 7
+Code distance
+0.2
+0.3
+0.5
+0.8
+1.2
+Logical error rate per round (%)
+RL-optimized prior
+3.3%
+4.8%
+6.0%
+Correlated MWPM
+SMP-correlated MWPM
+d = 3 d = 5 d = 7
+Code distance
+SI1000 prior
+4.2%
+6.6%
+7.9%
+Correlated MWPM
+SMP-correlated MWPM
+FIG. 5. Logical error rates per round for correlated MWPM and SMP-correlated MWPM on the Willow data. The panels use
+the reinforcement-learning-optimized (RL) prior and the SI1000 noise model prior with input round countsr= 10,13,30,50.
+The per-round rateϵis extracted independently for each distance, prior, logical basis, and decoder using Eq. (21). Logical-
+Xand logical-Zrates are averaged after fitting. Error bars show 95% intervals obtained from 5,000 parametric bootstrap
+resamples. Shading marks the gap between the two curves, and labels give the relative reductionR= 1−ϵ SMP/ϵbase, expressed
+as a percentage. Each input round count contains 50,000 shots per logical basis.
+d= 7,r= 13 Willow data, it achieves lower observed
+logical failure probabilities than both Google’s released
+correlated matching and belief matching with at most
+10 BP iterations, under both priors. Among the entries
+shown, the Harmony-51 ensemble has the lowest observed
+failure probability. Unlike the curves, this table reports
+the probability of failure over the entire 13-round exper-
+iment. Decoder settings are given in Appendix B.
+Further, we use Stim to simulate unrotated surface
+code memory circuits in the logical-Zbasis and test
+whether the advantage persists beyond the Willow code
+distances [8]. We apply uniform circuit-level depolariz-
+ing noise with strengthp. Each CNOT is followed by the
+two-qubit depolarizing channel in Eq. (1) of Sec. II, so
+each of the 15 nonidentity two-qubit Pauli errors occurs
+with probabilityp/15. Single-qubit depolarizing noise
+
+[PDF page 9]
+9
+TABLE I. Decoder comparison on thed= 7,r= 13 Wil-
+low data. Entries are pooled logical failure probabilities in
+percent, combining 50,000 shots from each logical basis. All
+methods use the prior indicated by the column. These prob-
+abilities refer to entire memory experiments, rather than the
+fitted per-round rates in Figs. 4 and 5. Decoder definitions
+are given in Appendix B.
+Decoder SI1000 RL
+Correlated matching
+(Google released) 2.415 2.274
+Harmony-51 2.026 1.916
+Belief matching (BP: max. 10) 2.541 2.215
+Correlated MWPM 2.487 2.379
+SMP-correlated MWPM2.265 2.171
+is applied after each single-qubit Clifford gate and to
+each data qubit before every syndrome extraction round,
+withX,Y, andZerrors each occurring with probability
+p/3. Measurement errors and reset errors each occur with
+probabilityp. We setr=dand supply the same 20,000
+sampled shots at each simulation point to the decoders
+being compared.
+In the four-decoder scan, SMP lowers the logical fail-
+ure probability at all points with at least 100 failures in
+the corresponding baseline: 44 points for MWPM and
+37 for correlated MWPM. We then extend the correlated
+MWPM comparison tod= 11,13,15,19 overp= 0.005–
+0.01. Figure 6 shows the results atp≃0.00816, where
+SMP reduces the logical failure probability by 13.6–17.4%
+across these four distances. The improvement through
+d= 19 shows that the benefit of syndrome-based corre-
+lation information persists beyond the sizes available in
+the Willow experiments. Appendix C shows the noise
+scan over 0.0065≤p≤0.01; the complete scan remains
+in the accompanying comma-separated values (CSV) file.
+V. COLOR CODE MEMORY DECODING
+A. The color code decoding problem
+Two-dimensional color codes combine local stabilizer
+checks with transversal Clifford gates, offering a route to
+low-overhead logical computation [42–46]. Their exper-
+imental promise is demonstrated by fault-tolerant gate
+operations and syndrome extraction in trapped ions, and
+by memory scaling and logical operations in supercon-
+ducting processors [47–49].
+Decoding these experiments requires accounting for
+correlations between checks of different colors. In the
+6.6.6 color code shown in Fig. 7, data qubits lie at ver-
+tices, and each colored face supports bothX- andZ-type
+stabilizers. AnXerror on a bulk qubit therefore flips the
+three neighboringZchecks, one of each color, produc-
+ing the motifS h ={s 1, s2, s3}. AZerror at the same
+location produces the corresponding motif in the three
+11 13 15 19
+Code distance d
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+3.0
+3.5
+4.0
+4.5
+Block failure probability (%)
+15.5%
+17.4% 15.9%
+13.6%
+Correlated MWPM
+SMP-correlated MWPM
+FIG. 6. Logical failure probabilities per memory experiment
+atp= 0.0081578947 (0.8158%) under uniform circuit-level de-
+polarizing noise. The circuit is unrotated logical-Zmemory
+withd= 11,13,15,19 andr=d. Both decoders use the same
+20,000 shots at each distance. Open gray squares with dashed
+lines show correlated MWPM. Filled teal squares with solid
+lines show SMP-correlated MWPM. Points show observed log-
+ical failure probabilities per memory experiment; vertical bars
+are marginal Wilson 95% intervals. Lines guide the eye. La-
+bels give the relative reduction from correlated MWPM to
+SMP-correlated MWPM. SMP gives the lower point estimate
+at all four distances, with reductions of 13.6–17.4%.
+neighboringXchecks. Thus, even with ideal measure-
+ments, one fault correlates three syndrome events. Prop-
+agation through the extraction circuit can extend this
+correlation to larger detector motifs [29, 50]. Represent-
+ing these faults in a matching graph requires mapping
+their multi-detector supports to edges with at most two
+detector endpoints.
+M¨ obius matching provides such a representation by
+joining subgraphs for pairs of check colors at their bound-
+aries [14]. Each subgraph contains detectors from two of
+the three colors. Joining these subgraphs allows match-
+ing to connect syndrome information across color sectors.
+Chromobius implements this construction for circuit-
+level noise using efficient minimum-weight matching [29].
+It thus combines a graph representation of the multi-color
+syndrome with a decoder that accounts for faults in the
+extraction circuit. We therefore use Chromobius as the
+decoding backend and apply SMP to its edge weights.
+The updated graph is decoded through its matching and
+lifting procedures.
+We use the native CX implementation of the Middle-
+out extraction circuit. This circuit requires no dedicated
+ancilla qubits and uses a hexagonal layout with three
+neighbors per qubit [29]. It extracts checks by folding sta-
+bilizers into single-qubit operators for measurement and
+then unfolding them. Alternating cycles extract comple-
+mentary checks. With Chromobius decoding, this circuit
+outperformed the other color code circuits compared by
+
+[PDF page 10]
+10
+FIG. 7. Structure of the 6.6.6 color code and the syndrome
+produced by a single data qubit error. Diamonds denote
+data qubits. Red, green, and blue faces label color sectors.
+Each face supports bothX- andZ-type stabilizers on its six
+vertices. With ideal measurements and no other errors, the
+markedXerror flips the threeZchecks that act on that
+qubit and leaves theXchecks unchanged. AZerror at the
+same location instead flips the three neighboringXchecks and
+leaves theZchecks unchanged. Filled circless 1,s 2, ands 3
+mark the flipped checks for the illustratedXerror. The gray
+triangle denotes their common fault supportS h, not three
+independent matching edges. The outer contour bounds the
+illustrated bulk region; it is not a code boundary.
+Gidney and Jones atp= 0.001, despite a reduced circuit
+distance [29].
+We map the faults in this circuit to the native M¨ obius
+graph according to Eq. (20). Each physical detector ap-
+pears in two pair-of-color sectors. These copies define the
+mapι(S), which contains both copies of every detector
+inS. For each faulth, we construct a graph clusterC h
+satisfying∂C h =ι(S h) andℓ(C h) =ℓ h. The first con-
+dition reproduces the duplicated detector support. The
+second preserves the fault’s logical-observable flips, with
+ℓ(Ch) obtained through the original lifting procedure.
+Detector copies represent the same physical outcomes,
+so we evaluate motif evidence before duplication. We ap-
+proximate the contribution of other faults by independent
+background flips with a common probability. We obtain
+this probability by averaging the detector marginals af-
+ter removing candidatehfrom the DEM. Thisuniform-
+hiddenapproximation uses the observed countn h =|O h|
+to compare the independent-error and hyperedge expla-
+nations. The common probability averages over spa-
+tial variation, and the independence assumption neglects
+background correlations. Appendix D gives the resulting
+evidence ratioη h(Y) and activation thresholds.
+For each candidate, SMP assigns a target cost to its
+graph cluster and uses the motif evidence to control the
+weight update. Under the doubled-cost convention used
+here, this target is 2W C,h. We distribute the target
+cost overC h using Eq. (11). We then combine propos-
+als from overlapping clusters using their motif evidence
+in Eq. (18). Chromobius matchesι(Y) with the up-
+dated weights and lifts the result to the predicted logical-
+observable flip vector ˆℓ[Fig. 8].
+B. Numerical results
+We simulate Middle-out color code memory circuits at
+d= 9,11,13 in both logical bases, withr= 2dextraction
+rounds. Heredspecifies the base width of the triangular
+patch; the Middle-out circuit has a smaller circuit-level
+distance. We compare SMP with official Chromobius un-
+der uniform circuit-level depolarizing noise atp= 0.001
+andp= 0.003. Both decoders use the same circuit, prior,
+and 100,000 shots at each point. Appendix D records the
+sample provenance and projection checks.
+TABLE II. Relative reductionR(percent) from SMP in
+Middle-out color code memory. Both noise strengths use the
+current uniform-hidden implementation,r= 2d, and 100,000
+shared shots per basis and patch size. Logical failure proba-
+bilities and paired statistics are given in Table V.
+p= 0.001p= 0.003
+d X Z X Z
+9 46.1 45.0 29.2 29.0
+11 52.9 54.2 36.6 35.2
+13 73.7 77.8 44.0 43.4
+SMP lowers the observed failure probability at every
+tested configuration. Atp= 0.001, the relative reduc-
+tion grows from about 45–46% atd= 9 to 74–78% at
+d= 13 in the two logical bases [Fig. 9]. Atd= 13, the
+logical-Zfailure probability falls from 0.036% to 0.008%.
+These estimates are based on few failures, with uncer-
+tainty shown by the Wilson intervals in the figure [full
+results and paired statistics in Table V]. Together, these
+results support using physical syndrome motifs to update
+matching weights in the M¨ obius representation.
+Atp= 0.003, SMP reduces the failure probability by
+about 29% atd= 9 and 43–44% atd= 13 [Table II].
+These relative gains are smaller than those atp= 0.001.
+This trend is consistent with the local comparison in
+Sec. III B, where lower noise favors a complete single-fault
+explanation over competing multiple-fault explanations.
+
+[PDF page 11]
+11
+OFFLINE: circuit DEM and Chromobius representation
+Fault catalogue
+(Sh,p h, ℓh)
+Detector support, prior, and flip vector
+Precompute count scores ah(n)
+Build native edge clusters
+Ch ⊆ Efor the detector set ι(Sh)
+Preserve∂Ch = ι(Sh) and ℓ(Ch) = ℓh
+Target cost 2WC,h; allocate using Eq. (11)
+PER SHOT
+Full syndrome
+Y
+Motif score ηh
+Oh = Sh∩Y
+using Eq. (D3)
+SMP reweighting
+Update edges e ∈Ch
+using Eq. (18)
+MWPM
+Matchι(Y )
+Updated costs
+Original lifting
+E⋆↦−→ˆℓ
+Sh, ah(n) Ch, proposed costs E
+ι(Y ): syndrome in the M¨ obius representation
+FIG. 8. SMP with Chromobius. Evidence is evaluated on the observed partO h =S h ∩Yof the physical motif before each
+detector is duplicated in the M¨ obius graph. The clusterC h representsι(S h) and receives target cost 2W C,h. Motif evidence
+controls the edge reweighting; matching and lifting give the logical-observable flip prediction. Teal boxes mark SMP; dashed
+arrows carry precomputed information.
+9 11 13
+Code distance d
+10−4
+10−3
+Block failure probability PL
+ 46.1%
+52.9%
+73.7%
+(a)  Logical X, p = 0.001
+Chromobius
+SMP + Chromobius
+9 11 13
+Code distance d
+45.0%
+54.2%
+77.8%
+(b)  Logical Z, p = 0.001
+Chromobius
+SMP + Chromobius
+FIG. 9. Color code memory decoding under circuit-level depolarizing noise. We use the Middle-out syndrome extraction circuit
+[29].(a,b)Logical failure probabilities per memory experiment for logicalXandZatp= 0.001, with the same vertical scale.
+Each point usesr= 2dand 100,000 shared shots. Open circles show official Chromobius; filled squares show uniform-hidden
+SMP followed by the same matching and lifting. Error bars are marginal Wilson 95% intervals. Shading marks the gap
+between the curves. Labels give the relative reductionR= 1−P L,SMP/PL,base, expressed as a percentage. Table II compares
+the reductions at two noise strengths.
+VI. DECODING FAST TRANSVERSAL
+LOGICAL GATES
+A. Decoding across transversal logical gates
+Transversal gates offer a route to fast logical opera-
+tions when hardware supports interactions between code
+blocks, as demonstrated in reconfigurable atom arrays
+[51]. Realizing this speed advantage requires reducing the
+number of error correction rounds between gates. Joint
+decoding across code blocks can reduce this overhead by
+accounting for fault correlations across the gates [13].
+This principle underlies transversal algorithmic fault tol-
+erance, which supports logical computation with a con-
+stant number of extraction rounds between operations
+[52]. To decode these correlations, matching-based ap-
+proaches track error propagation between blocks [53–
+55]. Among these approaches, we use logical observ-
+able matching (LOM) for its high decoding accuracy in
+transversal Clifford benchmarks and efficient matching
+
+[PDF page 12]
+12
+for each logical measurement [15].
+A transversal CNOT creates cross-block syndrome cor-
+relations through both error propagation and the detec-
+tor parity relations. Consider a control patch A and a
+target patch B, with physical CNOTs coupling corre-
+sponding data qubits. The propagating errors obey
+XA 7→X AXB, Z B 7→Z AZB,(23)
+whileZ A andX B remain on their original patch. The
+detector parities also depend on how the gate transforms
+the measured stabilizers. These parity constraints are
+formalized by circuit-to-code constructions and space-
+time codes [56–58]. For correspondingZstabilizers, the
+transformation isS A
+Z 7→S A
+Z andS B
+Z 7→S A
+Z SB
+Z . Lets ±
+A
+ands ±
+B be their binary outcomes before (−) and after (+)
+the gate. With no faults,s +
+A =s −
+A ands +
+B =s −
+A ⊕s −
+B.
+LOM uses a pre-gate detector frame, in which the target
+patch parity is [15]
+dB =s +
+A ⊕s +
+B ⊕s −
+B = 0.
+This detector assigned to B contains the outcomes+
+A from
+A. A measurement error on A can therefore trigger a
+detector on B through their shared measurement record.
+Figure 10 illustrates how this shared record produces
+a hyperedge across code blocks. A fault on aZ-check
+ancilla after the CNOT remains on the ancilla and flips
+one measurement record. That record enters three de-
+tector parities, so the fault produces three events across
+two patches and adjacent times. The same mechanism
+appears in Fig. 2 of Ref. [15] and Fig. 2(b) of Ref. [55].
+Splitting these events into pairwise edges can lose their
+common fault cost or connectivity [7, 15].
+LOM represents these faults by constructing a match-
+ing graph for each target logical measurementO. It first
+propagatesObackward through the circuit to identify
+the relevant patches and check types at each time. These
+checks define a detector setV O, and each fault support
+is restricted to this set through the mapι O(S) =S∩V O.
+The graph index in Sec. III D is thereforej=O. Un-
+der the basic model of independent data-X/Zfaults and
+measurement errors, each projected support has at most
+two endpoints and can be represented by an edge [15].
+For circuit-level noise, the LOM implementation sup-
+plies a decomposition into matching edges. The result-
+ing graphG O has edge setE O, including boundary edges.
+On this graph, matching selects a minimum-weight edge
+setE ⋆
+O with∂E ⋆
+O =Y∩V O and predicts the logical-
+observable flip ˆℓO. Repeating this procedure for the in-
+dependent logical measurements gives the circuit predic-
+tion.
+This restriction can discard evidence that identifies
+a fault. In Fig. 10(c), the complete support isS h =
+{a, b, c}. The graphG 0 for observableO 0 retains the edge
+e0 ={a, c}and omitsb. The graphG 1 forO 1 retains
+e1 ={b, c}and omitsa. Each projected contribution is
+absorbed into one matching edge, so each graph contains
+only part of the three-event pattern. Applying correlated
+MWPM independently within these graphs still limits its
+updates to the detectors and correlations retained in each
+graph. The complete motif therefore supplies additional
+evidence for their common fault origin.
+SMP uses this additional evidence by evaluatingη h(Y)
+on the observed partO h =S h ∩Yof the physical motif
+before restricting the syndrome. We compute the ev-
+idence using the motif and missing-event estimates of
+Sec. III B. These estimates refer to the complete phys-
+ical supportS h, with missing events identified byS h \Y.
+The resulting evidence is shared by all graphs receiving
+the fault. To use it inG O, we retain a native cluster
+CLOM
+h that satisfies Eq. (20) withj=O. This cluster
+reproducesS h ∩V O and preserves the logical-observable
+flipℓ h,O of the target observableO. Its edges receive the
+weight updates determined by the shared evidence.
+To set the proposed cost reduction on these edges, we
+compare costs for the complete fault support. The prior
+fault costW C,h in Eq. (10) describes the complete fault,
+whereas the native cluster costW (O)
+E,h describes only its
+projection. We therefore compare the prior with the
+costW full,h of matchingS h in the standard matching
+graph obtained by splitting hyperedges. The proposed
+cost change is
+δh =W C,h −W full,h.(24)
+The reference matching minimizes the cost over unre-
+stricted paths without constraining the logical-observable
+flip vector. This minimum sets the discount applied to
+the native cluster, whose edges preserve the projected
+detector supportS h ∩V O and logical effectℓ h,O. For fi-
+nite negativeδ h and positiveW (O)
+E,h , we distribute the cost
+change among these edges in proportion to their original
+weights, following Sec. III D. A single-edge projection re-
+ceives the full reduction.
+We then combine proposals from overlapping clusters
+using their evidenceη h(Y) in Eq. (18). Each graph is
+decoded with the updated weights and its restricted syn-
+dromeY∩V O, completing the workflow in Fig. 11. Ap-
+pendix E gives the scoring parameters, implementation
+safeguards, and verification of the projected example in
+Fig. 10.
+B. Numerical results
+We simulate the repeated transversal-CNOT circuit of
+Ref. [15] on two unrotatedd= 5 surface code patches
+[Fig. 12]. The circuit applies six CNOTs in the same
+direction, with logical-Zinitialization and readout. One
+quantum error correction (QEC) round follows each gate,
+giving seven rounds including the initial round. We use
+SI1000 noise atp= 0.001.
+All decoders receive the same 20,000 circuit samples.
+We measure the circuit failure probabilityP fail, the prob-
+ability that either independent logical observable is in-
+correct at the end of the six-gate circuit. LOM and
+
+[PDF page 13]
+13
+(a) (b ) ( c)
+A B
+t
+t = 2
+R X H Z
+CZ -1
+Z
+CZ - 2
+Z
+CZ - 3
+Z
+CZ -4
+Z H X M
+m₉₄
+A 29
+28
+20 X 38
+30
+B
+109
+101 119
+110
+111
+29 c
+30
+C X
+e₁
+h
+38
+t = 1
+e₀
+20
+Z stabiliz er X stabiliz er
+28 ba
+FIG. 10. Fault evolution and syndrome formation in a transversal CNOT circuit, with the corresponding edge sets in logical
+observable matching (LOM).(a)Unrotatedd= 5 patches A and B are the control and target of a transversal CNOT. Open
+circles denote data qubits; small grey dots denote check ancillas. Blue and pink faces showZ- andX-stabilizer supports.
+Ancilla 29 measuresZ 20Z28Z30Z38 on A. The greenXmarks a fault immediately after its reset in the QEC round following
+the CNOT.(b)Gates acting on ancilla 29 are shown in time order.R,H, andMdenote reset to|0⟩, Hadamard, andZ-basis
+measurement. All four CZ gates couple qubits within A, in the order 30, 38, 20, 28. Idles and gates acting only on data qubits
+are omitted. The greenXand redZmarkers track the same fault. The firstHmapsXtoZ, which commutes through the
+CZ gates. The finalHmaps it back toX, flipping only recordm 94 and producing no data qubit error.(c)The events are
+a=D 94 at (3,2,1),b=D 134 at (3,12,1), andc=D 174 at (3,2,2). Their parities arem 94 ⊕m 14,m 94 ⊕m 134 ⊕m 54, and
+m174 ⊕m 94, respectively. The shared recordm 94 flips all three. The orange membrane marks the physical detector support
+Sh ={a, b, c}of the ancilla fault. The graphsG 0 andG 1 correspond to the two target logical observables. The corresponding
+LOM edge sets areC (0)
+h ={e 0}inG 0 andC (1)
+h ={e 1}inG 1. The teal edgee 0 ={a, c}and dashed purple edgee 1 ={b, c}
+reproduce the projected detector supports in these graphs. The edges are overlaid to locate their endpoints; the two graphs
+are matched independently. Qubit, measurement, and detector indices are zero-based.
+OFFLINE: full DEM and target observable O
+Full fault support
+(Sh,p h, ℓh)
+Obtain the splitting cost of Sh
+Compute discount δh using Eq. (24)
+Build observable clusters
+C LOM
+h ⊆ EO for the detector set Sh∩VO
+Preserve∂CLOM
+h = Sh∩VO and flip ℓh,O
+Propose costs on e ∈C LOM
+h using Eq. (24)
+δh
+PER SHOT
+Full syndrome
+Y
+Motif score ηh
+Oh = Sh∩Y
+using Eq. (B3)
+SMP reweighting
+Update edges e∈C LOM
+h
+using Eq. (18)
+MWPM on GO
+MatchY∩VO
+Updated costs
+Observable flip
+E⋆
+O↦−→ˆℓO
+Sh, ph C LOM
+h , proposed costs GO
+Y∩VO: syndrome restricted to the target graph
+FIG. 11. SMP in LOM for one observableO. Full-motif evidence usesO h =S h ∩Yand Eq. (B3). Each clusterC LOM
+h ⊆ E O
+representsS h ∩V O and preserves the target logical-observable flipℓh,O. Equation (24) proposes costs on its edges. Equation (18)
+combines activated proposals from overlapping clusters. Matching receives the restricted syndromeY∩V O and the updated
+costs. Each observable is decoded independently. Teal boxes mark SMP; dashed arrows carry precomputed information.
+SMP+LOM use the same matching backend; the latter
+adds the motif-based weight updates. This evaluation
+reuses previously sampled data and has no independent
+validation set.
+SMP reduces the circuit failure probability from
+0.535% to 0.345%, a relative reduction of 35.5% [Ta-
+ble III]. On the shared samples, it corrects 49 shots that
+LOM fails and introduces 11 new failures. This result
+supports using the complete motif to set weights even
+when the final correction is chosen in separate observable-
+specific graphs.
+To compare this gain with another use of fault correla-
+
+[PDF page 14]
+14
+|0⟩A
+|0⟩B
+Repeat 6 ×
+Initial
+QEC QEC ̄Z
+QEC QEC ̄Z
+FIG. 12. Fast transversal CNOT circuit. Two unrotated
+d= 5 surface code patches are initialized in logical|0⟩. An
+initial quantum error correction (QEC) round is followed by
+six repetitions of a transversal CNOT from A (control) to
+B (target) and one QEC round. There is one QEC round
+between successive gates and seven rounds in total. Both
+patches are finally measured in logicalZ. The dashed box
+denotes the repeated circuit block. The noise model is SI1000
+withp= 0.001. Decoder results are listed in Table III.
+TABLE III. Decoder comparison for the six-CNOT circuit in
+Fig. 12. Each decoder uses the same 20,000 circuit samples.
+Pfail is the circuit failure probability: either independent log-
+ical observable is incorrect. Probabilities and marginal Wil-
+son 95% intervals are in percent.Ris the relative reduction
+from LOM+MWPM, expressed as a percentage. LOM and
+SMP+LOM use MWPM. BP10 uses at most 10 belief prop-
+agation iterations. It outputs its prediction on convergence;
+otherwise it uses LOM+MWPM with updated probabilities.
+Table VI also includes BP100, which allows at most 100 iter-
+ations.
+DecoderP fail (%) 95% intervalR(%)
+LOM 0.535 [0.443, 0.646] —
+SMP + LOM 0.345 [0.273, 0.436] 35.5
+BP10-assisted LOM 0.320 [0.251, 0.408] 40.2
+tions, we also evaluate belief-propagation-assisted LOM.
+BP10 and BP100 allow at most 10 and 100 BP itera-
+tions, respectively. Their observed failure probabilities
+are 0.320% and 0.260%, both below the SMP value [Ta-
+ble VI; paired comparisons in Appendix E]. Establishing
+the corresponding accuracy–runtime trade-off requires
+execution-time measurements, which were not collected
+in this evaluation.
+VII. DISCUSSION
+In this work, we developed Syndrome Motif Projec-
+tion (SMP) as a general framework for handling hyper-
+edge faults. We have applied SMP to surface codes, color
+codes, and logical gate circuits, where it consistently out-
+performs the corresponding baseline matching decoders.
+This opens several directions beyond the settings stud-
+ied here. Lattice surgery provides one example. Merge
+and split operations change the stabilizer measurements
+and produce new fault motifs [35, 59]. For example,
+crosstalk and leakage can generate correlations across
+space or time [9–11, 60]. Leakage-reduction circuits and
+flag-based extraction can also produce characteristic lo-
+cal fault patterns [6, 60, 61].
+TheO(d 2r) preprocessing cost derived in Sec. III C
+supports efficient implementation. Only activated mo-
+tifs require weight updates, so the additional overhead
+decreases in the low-noise regime. SMP modifies graph
+weights while leaving the matching solver unchanged. It
+can therefore be integrated with existing parallel and
+sliding-window decoding architectures [1, 22–25, 62]. The
+same motif evidence could also guide cluster growth in
+weighted union-find decoders, extending the idea beyond
+matching [2, 63, 64]. An important next step is to imple-
+ment SMP in parallel hardware and measure its end-to-
+end decoding latency. Recent real-time decoding demon-
+strations provide suitable architectures for testing SMP
+at microsecond-scale latency [20, 65].
+ACKNOWLEDGMENTS
+The authors acknowledge support from the Na-
+tional Natural Science Foundation of China (Grants
+No. 12174215 and No. 12374473) and the Quantum Sci-
+ence and Technology-National Science and Technology
+Major Project (No. 2021ZD0300705).
+Appendix A: Local-posterior reference
+implementation
+This appendix describes the local posterior implemen-
+tation used for comparison with SMP. It estimates the ev-
+idence in Eq. (8) from allowed local edge configurations
+of matching graph edges. It then uses the normalized
+posterior to interpolate cluster costs.
+1. Candidate hypotheses and local regions
+The implementation starts from a geometry-based pre-
+decoder catalog. Candidates with intersecting detector
+supports are grouped into connected components. The
+union of their supports defines a seed region. A greedy
+pass examines matching edges connected to the seed de-
+tectors in increasing order of their prior weight. It can
+join an active seed detector to another active detector or
+to a boundary. The touched detector vertices enlarge the
+region to Ω. This expansion only defines the local region;
+its edges are not assumed to have occurred. Seed regions
+or expanded regions containing more than 20 detectors
+are skipped.
+Each region contains an independent-edge branch and
+one branch for each retained candidate. A candidate
+
+[PDF page 15]
+15
+can contain several hyperedge members and explicitly
+included matching edges. Its prior odds are the prod-
+uct of the member odds and the included edge odds.
+For a single hyperedge this factor isP H. Member priors
+are obtained from matching DEM support records when
+available; the implementation otherwise uses its motif
+type prior. Duplicate descriptions with the same sup-
+port, target edges, and recorded logical-observable flips
+are merged by adding their relative prior weights. This
+is the convention of this comparison implementation. It
+differs from the independent-mechanism parity aggrega-
+tion in Eq. (B1).
+2. Probabilities of local edge configurations
+For the independent-edge branch, the required detec-
+tor set isY∩Ω. For a candidateh, it is (Y△S h)∩Ω.
+In the latter branch, edges touching (Y∩S h)∩Ω are
+forbidden. This prevents the residual edge configuration
+from reusing an observed detector already attributed to
+the candidate. For a composite candidate, its full XOR
+support replacesS h in these rules.
+The routine collects matching edges connected to at
+least one required detector and removes edges touching
+a forbidden detector. An allowed local edge configura-
+tion uses each required detector exactly once. Other
+endpoints are not constrained, except by the forbidden-
+detector rule. These rules determine the configurations
+included in the local score.
+At most eight distinct local edge configurations are
+generated for each branch. A greedy completion first
+chooses the unassigned required detector with the fewest
+available options. It selects the available edge with the
+largest prior odds and continues until each required de-
+tector has been assigned an edge. Further completions
+force one starting edge before applying the same proce-
+dure. Edges joining two required detectors are tried first.
+Duplicate edge sets are counted once. A failed comple-
+tion contributes no mass. The empty required set has
+unit relative mass.
+Each allowed local edge configuration contributes the
+product of its edge odds, as in Eq. (7). The implemen-
+tation sums these products using log-sum-exp. The can-
+didate branch multiplies this residual mass by its prior
+odds. Branches with no allowed local edge configuration
+are excluded. Extending the normalization in Eq. (9) to
+several competing candidates in the same region gives
+αh = e−ch
+e−cI +P
+h′ e−ch′
+.(A1)
+The sum includes all retained candidate branches in that
+region. These branches are treated as mutually exclusive
+alternatives, including any composite branches. Their
+probabilities are therefore normalized within a restricted
+hypothesis model.
+TABLE IV. Saved local posterior comparisons on shared sur-
+face code samples. Entries are logical failure counts. All
+methods use standard MWPM. The two evidence implemen-
+tations also differ in their candidate catalogs.
+d=r pShots MWPM Local posterior SMP
+3 0.008 10,000 590 552 543
+5 0.010 2,000 211 195 202
+7 0.008 20,000 1242 1082 1043
+3. Weight updates and comparison settings
+As an implementation safeguard, a negative target
+cluster cost can be set to zero. This nonnegative floor
+is inactive forp h <1/2 and does not alter the cost defi-
+nition in Eq. (10) in the noise regime considered here.
+The tested implementation uses posterior interpolation
+with unit interpolation power and permits only decreases
+from the original cluster cost. It distributes each de-
+crease in proportion to the original target edge weights,
+as in Eq. (11). Contributions from different candidate
+branches are accumulated on their target edges. The fi-
+nal weights have a zero floor. Matching edges used only
+to explain the residual syndrome receive no posterior up-
+date. The original syndrome is decoded with standard
+MWPM after all updates. This regional normalization
+and accumulation differ from SMP’s per-edge competi-
+tion in Eq. (18).
+The comparison entry point is
+run posterior comparison.pyin the accom-
+panyingposterior matchingexperiments. It
+calls the shared local posterior implementation in
+decoder v2 soft and hard information. The his-
+torical mode namecluster factor graph exactis
+retained in the code. The active routine nevertheless
+uses the bounded sum over greedily generated local edge
+configurations described above; the legacy exact-state
+budget is not used by that routine.
+Table IV summarizes the saved comparisons. All three
+methods use the same seeded samples, circuit, decom-
+posed DEM, and standard MWPM backend at each
+point. The circuits are unrotated surface code memo-
+ries in logicalZ, withr=d. Depolarizing noise follows
+Clifford gates and precedes each extraction round on data
+qubits. Measurement errors and reset errors also occur
+with probabilityp. The candidate catalogs differ: the
+local posterior version uses the geometry-based prede-
+coder, whereas the SMP approximation extracts three-
+and four-detector supports from the DEM. The compar-
+isons therefore evaluate the complete implementations.
+The local posterior and SMP predictions have un-
+adjusted two-sided exact McNemarpvalues of 0.3742,
+0.4101, and 0.0412 for the three rows. Atd= 7, SMP
+corrects 193 local posterior failures and introduces 154
+failures, reducing the observed failure probability from
+5.410% to 5.215%. These comparisons show competitive
+
+[PDF page 16]
+16
+decoding accuracy for the simpler SMP evidence model
+in the tested settings. They do not establish equivalence,
+numerical accuracy of its posterior estimates, or a gain
+attributable solely to the likelihood approximation.
+Appendix B: Willow data, decoder settings, and
+local evidence
+This appendix specifies the Willow data and decoder
+settings, the per-round fitting procedure, and the local
+score used in the surface code benchmarks. These details
+connect the comparisons in Sec. IV to the implementa-
+tion.
+We use patchesd3 at q6 7,d5 at q6 5, and
+d7 at q6 7. Each combination of distance, basis,
+round count, and prior uses its corresponding released
+DEM. The released RL prior was optimized jointly for
+d= 3 andd= 5 patches using 13-cycle calibration data
+[3, 28]. We reuse that prior and do not retrain it.
+“Correlated matching (Google released)” and
+“Harmony-51” refer to Google’s saved predictions
+for the indicated prior. “Correlated MWPM” refers to
+our evaluation with PyMatching 2.3.1 and correlations
+enabled [66]. SMP supplies syndrome-dependent weights
+using the same DEM. SMP with standard and correlated
+MWPM use the same prepared proposals. The original
+conditional correlation rules of the correlated backend
+are retained; they are not re-estimated from the SMP
+scores.
+Belief matching usesbeliefmatching0.2.0 on the un-
+modified full Google DEM. Its sum-product BP has at
+most ten iterations and uses one OpenMP thread. The
+archivedd= 7 comparison coversr= 13. The SI1000
+logical failure probabilities are 2.788% in X and 2.294% in
+Z. The corresponding RL values are 2.480% and 1.950%.
+Each basis contains 50,000 shots, giving the pooled en-
+tries in Table I. Missing round counts are not treated as
+zero-error measurements.
+The per-round reductions also depend on logical ba-
+sis. Atd= 7, the largest reductions occur in logicalZ
+under the SI1000 prior. SMP lowers the MWPM rate
+from 0.3906% to 0.2968% per round, a 24.0% reduction.
+It lowers the correlated MWPM rate from 0.2155% to
+0.1961%, a 9.0% reduction. These basis-resolved values
+differ from the X/Z averages plotted in Figs. 4 and 5.
+For the per-round fits, we regress log[1−2P L(r)]
+againstr. The slope determinesϵthrough Eq. (21), and
+the intercept determinesF 0. Following the basis-resolved
+fitting procedure in Sec. IV, a parametric bootstrap re-
+samples each of the four binomial counts for each basis
+and repeats the fit 5,000 times. The plotted intervals are
+the 2.5th and 97.5th percentiles of the averaged rates.
+These marginal intervals are not paired confidence inter-
+vals for a difference between decoders.
+For the surface code SMP implementation, indepen-
+dent mechanisms with the same detector supportS h and
+logical effectℓ h are grouped into one candidateh. Let
+Rh denote this group. Its prior is the probability of an
+odd number of these faults [67]:
+ph = 1
+2
+"
+1−
+Y
+r∈Rh
+(1−2p r)
+#
+.(B1)
+Mechanisms with different logical effects remain separate
+candidates.
+The surface code score reduces the evidence for a can-
+didate when some expected events are missing. We count
+these events asm h =k h −n h and estimate their cancel-
+lation by the two background channels of Sec. III B. The
+probability that exactly one channel occurs is
+q=p iid(1−p meas) + (1−p iid)pmeas.(B2)
+The score assigns a factorq/(1−q) to each missing event
+and a fixed unit penalty in the log score to three-detector
+candidates. For an activated motif, this gives
+logη h = logP H −log(P iidPm)
+−1 kh=3 −m h log 1−q
+q . (B3)
+The indicator1 kh=3 equals one for a three-detector sup-
+port and zero otherwise. This penalty is an implemen-
+tation convention, not a consequence of the two-channel
+derivation. For a missing event, the implementation uses
+q/(1−q), whereas Eq. (14) compares exactly one back-
+ground channel with neither. Since
+q
+1−q = Piid +P m
+1 +P iidPm
+,(B4)
+the two expressions agree to leading order at low noise. In
+the Willow benchmark,p iid = 0.002 andp meas = 0.005
+are fixed scoring parameters. They are not fitted edge
+probabilities. The candidate probabilityp h comes from
+the selected DEM through Eq. (B1). In the uniform-
+noise surface code simulations, both scoring parameters
+equal the nominalp.
+Motif activation follows Sec. III C. There is no recur-
+sive motif growth, virtual syndrome flip, or merging of
+observed motifs into larger clusters in these benchmarks.
+Duplicate proposals for the same physical representation
+are combined before the shared edge competition. The
+local derivation in Sec. III motivates the weighting struc-
+ture, while Eq. (B3) specifies the benchmark evidence.
+Appendix C: Surface code depolarizing noise scan
+This appendix gives the circuit noise specification and
+the noise scan behind the fixed-noise comparison in
+Sec. IV. The scan tests the persistence of the gain over
+the sampled range.
+The complete dataset contains 20 noise strengths from
+0.005 to 0.01 at each ofd= 11,13,15,19. Figure 13 dis-
+plays the 14 sampled strengths in 0.0065≤p≤0.01. The
+
+[PDF page 17]
+17
+first displayed point isp= 0.006578947. . .; no point is
+interpolated at 0.0065. The full 20-point scan is retained
+in the accompanying CSV. The circuits, noise model, and
+shared samples are those of Sec. IV.
+Low-noise points at large distance contain few failures,
+so their relative gains have substantial sampling uncer-
+tainty. The plot retains every sampled point in the dis-
+played interval and its marginal Wilson interval. We use
+the scan to test persistence over a finite range, not to
+extract a threshold or establish monotonic improvement
+with distance. This dataset is distinct from rotated-code
+simulations withr= 3d.
+Appendix D: Color code projection and paired
+results
+This appendix defines the uniform-hidden score and
+activation criteria used with the cost rule in Sec. V A.
+It also records the projection checks, replay provenance,
+and complete paired results for Sec. V.
+The Middle-out circuits of Sec. V B are passed to Chro-
+mobius without conversion from CX to CZ [29]. At every
+point, the first 1,000 shots were also checked against the
+local unmodified M¨ obius path. Their logical predictions
+agree.
+The color code score compares explanations of the ob-
+served partO h of the motif with and without candidate
+h. Both explanations require an estimate of detector
+flips caused by other faults. Candidate mechanisms are
+grouped only when both detector supportS h and logical-
+observable flip vectorℓ h agree. LetR h contain the mech-
+anisms grouped intoh. Excluding this group avoids
+counting the candidate as part of its own background.
+For detectorv, the odd-parity formula in Eq. (B1) gives
+the background flip probability
+qv|¬h = 1
+2
+
+1−
+Y
+r∈R\Rh
+v∈Sr
+(1−2p r)
+
+ .(D1)
+The individual marginals are exact under the DEM prior.
+To obtain a score that depends only on the observed event
+count, we approximate the background bits as indepen-
+dent flips with a common probability equal to their mean:
+¯qh = 1
+kh
+X
+v∈Sh
+qv|¬h.(D2)
+This approximation averages over spatial variation and
+neglects correlations. Withouth, the background must
+produce then h observed events. Withh, it must instead
+cancel thek h −n h missing events. Comparing these two
+possibilities and including the prior odds gives the log
+evidence ratio
+ah(nh) = logP H + (2nh −k h) log 1−¯qh
+¯qh
+,
+ηh =e ah(nh).
+(D3)
+This is the evidence ratio in Eq. (9) withc I(Y)−c h(Y) =
+ah(nh) under the uniform-hidden approximation. The
+countn h refers to physical detectors before the M¨ obius
+duplication. We precompute Eq. (D3) forn h = 0, . . . , kh,
+givingk h +1 scores per motif. The background probabil-
+ity ¯qh differs from the relative cancellation weightP hidden
+in Eq. (14).
+We consider support sizes three through seven. Three-
+detector candidates activate when at least two events are
+observed. Larger candidates require at least three. Pro-
+jection uses the upstream M¨ obius construction and re-
+quires the projected detector supportι(S h) and logical-
+observable flip vectorℓ h under forced lifting. Empty
+clusters and clusters that fail the parity checks are ex-
+cluded. Retained clusters have target cost 2W C,h and
+satisfy 0≤2W C,h < W E,h. The same cluster-cost con-
+vention applies to composite faults.
+Table V reports the current uniform-hidden replay on
+saved extension samples generated independently of the
+earlier confirmation set. The archived replay verifica-
+tion matched the sample, DEM, and baseline predic-
+tion hashes to each replay record. It reproduced the re-
+ported error probabilities and paired statistics from the
+saved predictions. The uniform-hidden and preceding
+count implementations give identical predictions at all
+sixp= 0.001 points. Atp= 0.003, their predictions
+differ slightly. We use the uniform-hidden version consis-
+tently.
+The archived single-mechanism audit for the preceding
+count implementation covered 439,124 DEM mechanisms
+across the twelve cases, with no logical failures. It checks
+the retained projection and lifting construction. It is sep-
+arate from the archived replay verification and does not
+certify every later evidence approximation or multiple-
+fault configuration.
+Appendix E: SMP projection to LOM and
+comparison settings
+This appendix gives the scoring and implementation
+settings for the LOM update in Eq. (24). It also speci-
+fies the decoder comparisons and the saved-DEM checks
+supporting Fig. 10.
+The gate circuit and LOM construction follow Ref. [15].
+We use the saved circuit rather than regenerating it from
+a seed, because equivalent detector orderings can differ
+between generator environments. The failure criterion in
+Sec. VI B uses the two independent logical observables
+and excludes the redundant third product observable.
+The present benchmark concerns transversal CNOTs.
+More general Clifford operations can use folded surface
+codes and fold-transversal constructions [68, 69]. A uni-
+versal transversal gate set is excluded for a fixed code
+that detects arbitrary single-subsystem errors [70], and
+constant-depth geometrically local gates obey further re-
+strictions [71]. Universal constructions therefore use ad-
+ditional ingredients, such as magic state distillation, re-
+
+[PDF page 18]
+18
+0.000
+0.025
+0.050
+0.075
+0.100
+0.125
+0.150
+0.175
+0.200
+Block failure probability PL
+d = 11
+Correlated MWPM
+SMP + correlated MWPM
+d = 13
+0.0065 0.0075 0.0085 0.0095 0.0100
+Physical error probability p
+0.000
+0.025
+0.050
+0.075
+0.100
+0.125
+0.150
+0.175
+0.200
+Block failure probability PL
+d = 15
+0.0065 0.0075 0.0085 0.0095 0.0100
+Physical error probability p
+d = 19
+FIG. 13. Surface code logical failure probabilities per memory experiment in the interval 0.0065≤p≤0.01 under uniform
+circuit-level depolarizing noise. Panels show unrotated logical-Zmemories withd= 11,13,15,19 andr=d. Both axes are
+linear; all panels share the same vertical scale with a zero origin. The horizontal coordinate is a probability, not a percentage.
+Gray dashed curves with open circles show correlated MWPM; teal solid curves with filled squares show SMP-correlated
+MWPM. Every original point in this interval is included. Each point uses 20,000 shared shots. Bars are marginal Wilson 95%
+intervals; connecting lines guide the eye. This is a restricted view of the original 20-point scan, with unchanged samples and
+statistics. Figure 6 shows a fixed-pslice.
+TABLE V. Color code logical failure probabilities per memory experiment for the current uniform-hidden implementation.
+Each row uses 100,000 shared shots withr= 2d. TheP L and relative reductionRcolumns are percentages. The baseline is
+official Chromobius. The last column gives unadjusted two-sided exact McNemarpvalues. These statisticalpvalues differ
+from the noise strengthpin the first column. Figure 9 shows low-noise uncertainty intervals.
+p dBasisP L,Chromobius (%)P L,SMP (%)R(%) Pairedpvalue
+0.001 9 X 0.306 0.165 46.1 2.6×10 −32
+0.001 9 Z 0.258 0.142 45.0 7.2×10 −28
+0.001 11 X 0.102 0.048 52.9 2.7×10 −12
+0.001 11 Z 0.107 0.049 54.2 2.1×10 −14
+0.001 13 X 0.038 0.010 73.7 7.7×10 −7
+0.001 13 Z 0.036 0.008 77.8 7.5×10 −9
+0.003 9 X 7.192 5.092 29.2<10 −300
+0.003 9 Z 7.025 4.989 29.0<10 −300
+0.003 11 X 5.668 3.594 36.6<10 −300
+0.003 11 Z 5.617 3.642 35.2<10 −300
+0.003 13 X 4.356 2.441 44.0<10 −300
+0.003 13 Z 4.339 2.455 43.4<10 −300
+
+[PDF page 19]
+19
+covery steps that restore the code space, or gauge fixing
+[72–74]. Generalized lattice surgery also allows a non-
+Clifford gate implemented transversally in one code to
+be teleported to another code [75]. These extensions are
+outside the six-CNOT test reported here.
+The implementation sets negative proposed edge costs
+to zero when the reduction exceeds the original projected
+cluster cost. This safeguard applies after the proportional
+allocation in Sec. III D.
+When constructing proposals for Eq. (24), an un-
+matched full support, an empty projection, or an ab-
+sent parity-preserving native cluster produces no update.
+The reference graph used to computeW full,h retains the
+archived splitting convention. It omits components that
+cannot be represented as matching edges. Sampling still
+uses the complete physical circuit.
+The score in Eq. (B3) usesp iid =p meas = 0.001. Sup-
+port sizes 3, 4, 5, 6, and 8 can contribute, with at least
+three observed detectors required. The full-syndrome
+cost affects only the proposed edge costs. We apply
+Eq. (18) without rescaling the log evidence.
+The software islomatching0.2.2, Stim 1.15.0, and
+PyMatching 2.3.1. BP-assisted LOM uses min-sum BP,
+scaling factor one, parallel schedule, and at most 10 or
+100 iterations. If BP converges, its estimated faults sup-
+ply the logical prediction directly. Otherwise, the BP
+probabilities initialize the LOM matching problems. The
+comparison reuses the saved BP predictions on the same
+shots and contains no timing measurements.
+TABLE VI. Decoder comparison, including BP100, for the
+six-CNOT circuit in Fig. 12, using the same 20,000 circuit
+samples. Circuit failure probabilities and marginal Wilson
+95% intervals are in percent.Ris the relative reduction from
+LOM+MWPM, expressed as a percentage.
+DecoderP fail (%) 95% intervalR(%)
+LOM + MWPM 0.535 [0.443, 0.646] —
+SMP + LOM + MWPM 0.345 [0.273, 0.436] 35.5
+BP10-assisted LOM 0.320 [0.251, 0.408] 40.2
+BP100-assisted LOM 0.260 [0.198, 0.341] 51.4
+The paired comparison of SMP and LOM reported in
+Sec. VI B gives a two-sided exact McNemarp= 7.56×
+10−7.
+The BP comparisons do not establish equal perfor-
+mance. Relative to BP10, SMP corrects 37 failures and
+introduces 42, givingp= 0.653. Relative to BP100, the
+corresponding counts are 28 and 45, givingp= 0.0604.
+These latter tests are unadjusted. Failure to reject equal
+marginal error rates does not demonstrate equivalence.
+These comparisons reuse the existing samples, without a
+new independent validation set.
+The three-point example in Fig. 10 can be verified
+without sampling. The representativeX 29 fault occurs
+immediately after reset at instruction 331, after 18 ticks.
+Its Pauli support remains on ancilla 29, and it flips only
+m94. The grouped raw DEM mechanism with support
+{D94, D134, D174}has probability 0.00757149; this is not
+the probability of the representative location alone. Its
+projections are{D 94, D174}inG 0 and{D 134, D174}in
+G1. Each pair maps to local indices{26,46}in its re-
+spective graph. Both saved LOM DEMs contain the ordi-
+nary instructionerror(0.00829355)D 26D46, with no cor-
+related component separator or target logical-observable
+flip label. The different probabilities reflect marginaliza-
+tion with other physical mechanisms. The correspond-
+ing prior edge weight is approximately 4.784. This is a
+check of the stored graph representation; the example is
+not itself a logical failure. The local reproduction script
+records the full supports, coordinate maps, native edge
+attributes, and representative circuit location.
+Archived checks compared mutable updates with fresh
+matchers and verified projected parity. The full-
+syndrome SMP implementation had zero failures when
+enumerating all 11,756 single DEM mechanisms. For this
+manuscript, we recounted all 20,000 saved shots and re-
+covered every entry in Table VI. Neither check proves
+fault tolerance for arbitrary gate circuits.
+[1] A. G. Fowler, A. C. Whiteside, and L. C. L. Hollenberg,
+Physical Review Letters108, 180501 (2012).
+[2] O. Higgott, T. C. Bohdanowicz, A. Kubica, S. T. Flam-
+mia, and E. T. Campbell, Physical Review X13, 031007
+(2023).
+[3] Google Quantum AI and Collaborators, Nature638, 920
+(2025).
+[4] Y. Zhao and Y. et al, Physical Review Letters129,
+030501 (2022), arXiv:2112.13505 [quant-ph].
+[5] Z. Ni, S. Li, X. Deng, Y. Cai, L. Zhang, W. Wang, Z.-B.
+
+[PDF page 20]
+20
+Yang, H. Yu, F. Yan, S. Liu, C.-L. Zou, L. Sun, S.-B.
+Zheng, Y. Xu, and D. Yu, Nature616, 56 (2023).
+[6] T. He, W. Lin, R. Wang, Y. Li,et al., Physical Review
+Letters135, 260601 (2025).
+[7] N. Delfosse, A. Paetznick, J. Haah, and M. B. Hast-
+ings, Splitting decoders for correcting hypergraph faults
+(2023), arXiv:2309.15354 [quant-ph].
+[8] C. Gidney, Quantum5, 497 (2021).
+[9] Z. Zhou, A. Ji, and Y. Ding, Surface code error correction
+with crosstalk noise (2025), arXiv:2503.04642 [quant-ph].
+[10] F. Liu, G. Tang, L. Duan, and Y. Wu, Physical Review
+Applied24, 014032 (2025).
+[11] T.-Q. Cai, X.-Y. Han, Y.-K. Wu, Y.-L. Ma, J.-H. Wang,
+Z.-L. Wang, H.-Y. Zhang, H.-Y. Wang, Y.-P. Song, and
+L.-M. Duan, Physical review letters127, 060505 (2021).
+[12] P. Zhao, K. Linghu, Z. Li, P. Xu, R. Wang, G. Xue,
+Y. Jin, and H. Yu, PRX quantum3, 020301 (2022).
+[13] M. Cain, C. Zhao, H. Zhou, N. Meister, J. P. B. Ataides,
+A. Jaffe, D. Bluvstein, and M. D. Lukin, Physical Review
+Letters133, 240602 (2024).
+[14] K. Sahay and B. J. Brown, PRX Quantum3, 010310
+(2022).
+[15] M. Serra-Peralta, M. H. Shaw, and B. M. Terhal, PRX
+Quantum7, 010335 (2026).
+[16] K. Wang, Z. Lu, C. Zhang,et al., Nature Physics22, 308
+(2026).
+[17] Z. Liang, K. Liu, H. Song, and Y.-A. Chen, PRX Quan-
+tum6, 020357 (2025).
+[18] J. Bausch, A. W. Senior, F. J. H. Heras, T. Edlich,
+A. Davies, M. Newman,et al., Nature635, 834 (2024).
+[19] A. W. Senior, T. Edlich, F. J. H. Heras, L. M. Zhang,
+O. Higgott, J. S. Spencer, T. Applebaum, S. Blackwell,
+J. Ledford, A. ˇZemgulyt´ e, A.ˇZ´ ıdek, N. Shutty, A. Cowie,
+Y. Li, G. Holland, P. Brooks, C. Beattie, M. Newman,
+A. Davies, C. Jones, S. Boixo, H. Neven, P. Kohli,
+and J. Bausch, A scalable and real-time neural decoder
+for topological quantum codes (2025), arXiv:2512.07737
+[quant-ph].
+[20] X. Yang, X. Sun, Z. Wu, J. Zhang, J. Jiang, X. Linpeng,
+Y. Zhou, J. Chu, J. Niu, Y. Zhong, S. Liu, and D. Yu,
+Real-time surface-code error correction using an FPGA-
+based neural-network decoder (2026), arXiv:2605.04892
+[quant-ph].
+[21] L. Aghababaie Beni, O. Higgott, and N. Shutty, Tesser-
+act: A search-based decoder for quantum error correction
+(2025), arXiv:2503.10988 [quant-ph].
+[22] O. Higgott and C. Gidney, Quantum9, 1600 (2025).
+[23] Y. Wu and L. Zhong, in2023 IEEE International Con-
+ference on Quantum Computing and Engineering (QCE),
+Vol. 1 (IEEE, 2023) pp. 928–938.
+[24] X. Tan, F. Zhang, R. Chao, Y. Shi, and J. Chen, PRX
+Quantum4, 040344 (2023).
+[25] L. Skoric, D. E. Browne, K. M. Barnes, N. I. Gillespie,
+and E. T. Campbell, Nature Communications14, 7040
+(2023).
+[26] A. G. Fowler, Optimal complexity correction of corre-
+lated errors in the surface code (2013), arXiv:1310.0863
+[quant-ph].
+[27] A. Paler and A. G. Fowler, Quantum7, 1205 (2023).
+[28] V. Sivak, M. Newman, and P. V. Klimov, Physical Re-
+view Letters133, 150603 (2024).
+[29] C. Gidney and C. Jones, New circuits and an open source
+decoder for the color code (2023), arXiv:2312.08813
+[quant-ph].
+[30] A. Y. Kitaev, Annals of Physics303, 2 (2003),
+arXiv:quant-ph/9707021.
+[31] E. Dennis, A. Kitaev, A. Landahl, and J. Preskill,
+Journal of Mathematical Physics43, 4452 (2002),
+arXiv:quant-ph/0110143.
+[32] A. G. Fowler, M. Mariantoni, J. M. Martinis, and A. N.
+Cleland, Physical Review A86, 032324 (2012).
+[33] B. M. Terhal, Reviews of Modern Physics87, 307 (2015).
+[34] D. Gottesman,Stabilizer Codes and Quantum Error Cor-
+rection, Ph.D. thesis, California Institute of Technology
+(1997), arXiv:quant-ph/9705052.
+[35] D. Horsman, A. G. Fowler, S. Devitt, and R. Van Meter,
+New Journal of Physics14, 123011 (2012).
+[36] A. R. O’Rourke and S. Devitt, Physical Review Research
+7, 033074 (2025).
+[37] J. P. Bonilla Ataides, D. K. Tuckett, S. D. Bartlett, S. T.
+Flammia, and B. J. Brown, Nature Communications12,
+2172 (2021).
+[38] S. Krinner, N. Lacroix, A. Remm, A. Di Paolo, E. Genois,
+C. Leroux, C. Hellings, S. Lazar, F. Swiadek, J. Her-
+rmann, G. J. Norris, C. K. Andersen, M. M¨ uller, A. Blais,
+C. Eichler, and A. Wallraff, Nature605, 669 (2022),
+arXiv:2112.03708 [cond-mat, physics:quant-ph].
+[39] Google Quantum AI, Nature595, 383 (2021).
+[40] A. G. Fowler, A. C. Whiteside, A. L. McInnes, and
+A. Rabbani, Physical Review X2, 041003 (2012).
+[41] Google Quantum AI, Nature614, 676 (2023).
+[42] H. Bombin and M. A. Martin-Delgado, Physical Review
+Letters97, 180501 (2006).
+[43] A. G. Fowler, Physical Review A83, 042310 (2011).
+[44] A. J. Landahl, J. T. Anderson, and P. R. Rice, Fault-
+tolerant quantum computing with color codes (2011),
+arXiv:1108.5738 [quant-ph].
+[45] F. Thomsen, M. S. Kesselring, S. D. Bartlett, and B. J.
+Brown, Physical Review Research6, 043125 (2024).
+[46] M. E. Beverland, A. Kubica, and K. M. Svore, PRX
+Quantum2, 020341 (2021).
+[47] L. Postler, S. Heußen, I. Pogorelov, M. Rispler, T. Feld-
+ker, M. Meth, C. D. Marciniak, R. Stricker, M. Ring-
+bauer, R. Blatt, P. Schindler, M. M¨ uller, and T. Monz,
+Nature605, 675 (2022).
+[48] L. Postler, F. Butt, I. Pogorelov, C. D. Marciniak,
+S. Heußen, R. Blatt, P. Schindler, M. Rispler, M. M¨ uller,
+and T. Monz, PRX Quantum5, 030326 (2024).
+[49] N. Lacroix, A. Bourassa, F. J. H. Heras, L. M. Zhang,
+J. Bausch, A. W. Senior,et al., Nature645, 614 (2025).
+[50] S.-H. Lee, A. Li, and S. D. Bartlett, Quantum9, 1609
+(2025).
+[51] D. Bluvstein, S. J. Evered, A. A. Geim, S. H. Li,
+H. Zhou, T. Manovitz, S. Ebadi, M. Cain, M. Kalinowski,
+D. Hangleiter, J. P. Bonilla Ataides, N. Maskara, I. Cong,
+X. Gao, P. Sales Rodriguez, T. Karolyshyn, G. Semegh-
+ini, M. J. Gullans, M. Greiner, V. Vuleti´ c, and M. D.
+Lukin, Nature626, 58 (2024).
+[52] H. Zhou, C. Zhao, M. Cain, D. Bluvstein, N. Maskara,
+C. Duckering, H.-Y. Hu, S.-T. Wang, A. Kubica, and
+M. D. Lukin, Nature646, 303 (2025).
+[53] K. H. Wan, M. Webber, A. G. Fowler, and W. K.
+Hensinger, An iterative transversal CNOT decoder
+(2024), arXiv:2407.20976 [quant-ph].
+[54] K. Sahay, Y. Lin, S. Huang, K. R. Brown, and S. Puri,
+PRX Quantum6, 020326 (2025).
+[55] M. Cain, D. Bluvstein, C. Zhao, S. Gu, N. Maskara,
+M. Kalinowski, A. A. Geim, A. Kubica, M. D. Lukin,
+
+[PDF page 21]
+21
+and H. Zhou, Fast correlated decoding of transversal log-
+ical algorithms (2025), arXiv:2505.13587 [quant-ph].
+[56] D. Bacon, S. T. Flammia, A. W. Harrow, and J. Shi,
+IEEE Transactions on Information Theory63, 2464
+(2017).
+[57] N. Delfosse and A. Paetznick, Spacetime codes of Clifford
+circuits (2023), arXiv:2304.05943 [quant-ph].
+[58] Y. Li, Physical Review Research7, 013115 (2025),
+arXiv:2403.10268 [quant-ph].
+[59] C. Chamberland and E. T. Campbell, PRX Quantum3,
+010331 (2022).
+[60] M. McEwen, D. Kafri, Z. Chen, J. Atalaya, K. J.
+Satzinger, C. Quintana, P. V. Klimov, D. Sank, C. Gid-
+ney, A. G. Fowler,et al., Nature Communications12,
+1761 (2021).
+[61] C. Chamberland, A. Kubica, T. J. Yoder, and G. Zhu,
+New Journal of Physics22, 023019 (2020).
+[62] A. B. Ziadet al., Nature Communications16, 11048
+(2025).
+[63] N. Delfosse and N. H. Nickerson, Quantum5, 595 (2021).
+[64] S. Huang, M. Newman, and K. R. Brown, Physical Re-
+view A102, 012419 (2020).
+[65] L. Caune, L. Skoric, N. S. Blunt, A. Ruban, J. McDaniel,
+J. A. Valery, A. D. Patterson, A. V. Gramolin, J. Ma-
+janiemi, K. M. Barnes, T. Bialas, O. Bu˘ gdaycı, O. Craw-
+ford, G. P. Geh´ er, H. Krovi, E. Matekole, C. Topal, S. Po-
+letto, M. Bryant, K. Snyder, N. I. Gillespie, G. Jones,
+K. Johar, E. T. Campbell, and A. D. Hill, Nature Com-
+munications17, 7383 (2026).
+[66] O. Higgott, ACM Transactions on Quantum Computing
+3, 1 (2022).
+[67] Stim Contributors, Stim detector error model file format,
+Stim documentation (n.d.).
+[68] J. E. Moussa, Physical Review A94, 042316 (2016).
+[69] N. P. Breuckmann and S. Burton, Quantum8, 1372
+(2024).
+[70] B. Eastin and E. Knill, Physical Review Letters102,
+110502 (2009).
+[71] S. Bravyi and R. K¨ onig, Physical Review Letters110,
+170503 (2013).
+[72] S. Bravyi and A. Kitaev, Physical Review A71, 022316
+(2005).
+[73] A. Paetznick and B. W. Reichardt, Physical Review Let-
+ters111, 090505 (2013).
+[74] H. Bomb´ ın, New Journal of Physics17, 083002 (2015).
+[75] Y. Wang and Y. Gu, Physical Review A113, 062410
+(2026).

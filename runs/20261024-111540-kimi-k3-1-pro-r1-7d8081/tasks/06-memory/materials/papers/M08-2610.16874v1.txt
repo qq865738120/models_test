@@ -1,0 +1,1387 @@
+
+[PDF page 1]
+EXISTENCE AND UNIQUENESS OF VISCOUS-DISPERSIVE SHOCK
+PROFILES FOR THE NAVIER–STOKES–FOURIER–KORTEWEG SYSTEM
+SUNGHO HAN
+Abstract.We establish the existence and uniqueness, up to translation, of monotone viscous-
+dispersive shock profiles for the one-dimensional Navier–Stokes–Fourier–Korteweg (NSFK) system,
+provided the two constant end states satisfy the Rankine–Hugoniot and Lax entropy conditions and
+the shock strength is small. Treating the small shock strength as a singular perturbation parameter,
+we construct the profiles via Fenichel’s geometric singular perturbation theory. We further provide
+pointwise estimates for the profiles, which are used in the nonlinear stability analysis of generic
+Riemann solutions to the NSFK system in the companion work [22].
+1.Introduction
+We consider the one-dimensional Navier–Stokes–Fourier–Korteweg (NSFK) system in Lagrangian
+mass coordinates (t, x)∈R + ×R, whereR + := (0,∞):
+
+
+
+vt −u x = 0,
+ut +p(v, θ) x =µ
+ ux
+v
+
+x
++κ
+
+− vxx
+v5 + 5v2
+x
+2v6
+
+x
+,
+Et + (p(v, θ)u)x =α
+ θx
+v
+
+x
++µ
+ uux
+v
+
+x
++κ
+
+− vxx
+v5 + 5v2
+x
+2v6
+
+u+ vxux
+v5
+
+x
+.
+(1.1)
+Here,v=v(t, x),u=u(t, x), andθ=θ(t, x) denote the specific volume, velocity, and absolute
+temperature, respectively, andE=E(t, x) denotes the specific total energy. The constantsµ, α, κ >
+0 are the viscosity, heat-conductivity, and capillarity coefficients, respectively.
+For an ideal polytropic gas, the pressure is given by
+p(v, θ) = Rθ
+v ,(1.2)
+whereR >0 is the gas constant. The specific total energy is
+E=e+ u2
+2 = Rθ
+γ−1 + κv2
+x
+2v5 + u2
+2 ,(1.3)
+whereγ >1 is the adiabatic exponent andeis the internal energy, which includes the capillary
+energyκv 2
+x/(2v5).
+The NSFK system describes compressible flows with internal capillarity, in which the Korteweg
+stress depends on the density and its spatial derivatives. The diffuse-interface description of capil-
+lary fluids goes back to van der Waals [39] and Korteweg [35]. Dunn and Serrin [13] introduced an
+interstitial work flux into the energy balance, thereby obtaining a formulation consistent with the
+second law of thermodynamics.
+2020Mathematics Subject Classification.35Q35, 76N06, 35C07.
+Key words and phrases.Navier–Stokes–Fourier–Korteweg system, traveling wave, viscous-dispersive shock, geo-
+metric singular perturbation theory, heteroclinic orbit.
+Acknowledgment.The author has been partially supported by the National Research Foundation of Korea
+(RS-2024-00361663 and NRF-2019R1A5A1028324) and by the Miwon Du-Myeong Fellowship. The author thanks
+Professor Moon-Jin Kang and Professor Jeongho Kim for their valuable comments.
+1
+arXiv:2610.16874v1  [math.AP]  12 Oct 2026
+
+[PDF page 2]
+2 S. HAN
+From (1.1) and (1.3), we obtain
+
+
+
+vt −u x = 0,
+ut +p(v, θ) x =µ
+ ux
+v
+
+x
++κ
+
+− vxx
+v5 + 5v2
+x
+2v6
+
+x
+,
+R
+γ−1 θt +p(v, θ)u x =α
+ θx
+v
+
+x
++ µu2
+x
+v .
+1.1.Literature Review and Motivation.For the barotropic Navier–Stokes–Korteweg (NSK)
+system, the existence theory is developed in [12, 27, 4, 21, 1]. Nonlinear stability is known for
+rarefaction waves [7], viscous-dispersive shock profiles [8, 23], and composite waves of a rarefaction
+wave and a viscous-dispersive shock profile [24]. Spectral stability of viscous-dispersive shock
+profiles in Korteweg-type and quantum-hydrodynamic models is investigated in [19, 20].
+For the full NSFK system, the existence theory is developed in [28, 26, 9, 29], and stability is
+known for a single viscous contact wave [11] and for a composite wave of two rarefaction waves
+and a viscous contact wave [10]. The companion work [22] treats a composite wave of a rarefaction
+wave, a viscous contact wave, and a viscous-dispersive shock profile, as the NSFK analogue of the
+result of Kang–Vasseur–Wang [34] for the full Navier–Stokes–Fourier (NSF) system.
+The analysis in [22] is based on the method ofa-contraction with shifts introduced by Kang and
+Vasseur [32, 31] and extended to composite waves by Kang–Vasseur–Wang [33]. The method has
+been applied to viscous-dispersive shocks of the NSK system [23, 24, 25, 17] and of KdV–Burgers-
+type equations [5, 6, 16]. It requires a monotone viscous-dispersive shock profile satisfying pointwise
+estimates, and the companion work [22] uses these estimates with constants uniform for left end
+states in a compact set.
+To construct such profiles for the NSFK system, we use Fenichel’s geometric singular perturbation
+theory [18]. See also [30]. The same framework was applied by Eo–Eun–Kang–Oh [15] and Eo and
+Eun [14] to establish the existence and uniqueness of viscous shock profiles for the Brenner–Navier–
+Stokes–Fourier (BNSF) system and to derive pointwise estimates. Related slow-manifold analyses
+of small-amplitude viscous-dispersive profiles appear in [23, 19, 20]. Compared with the barotropic
+problem, the full NSFK profile equations combine a temperature-dependent pressure and heat
+conduction with capillarity, leading to additional nonlinear coupling.
+Another issue concerns whether viscous-dispersive shock profiles are monotone or have oscilla-
+tory tails. For the scalar Korteweg–de Vries–Burgers (KdVB) equation, Bona and Schonbek [3]
+characterized the transition between the two behaviors. The stability of monotone KdVB profiles
+is studied in [36, 5], and the structure and stability of oscillatory KdVB profiles in [6]. For the
+modified KdVB equation, whose flux is non-convex, quantitative properties of monotone degener-
+ate shock profiles and the stability of their composite waves with a rarefaction wave are obtained
+in [16]. At the system level, Smoller and Shapiro [37] obtained early existence results under con-
+stant viscosity and dispersion matrices, and Folino–Lattanzio–Plaza [19] established the existence
+and uniqueness up to translation of viscous-dispersive shock profiles of arbitrary amplitude for the
+barotropic NSK system. The profiles constructed here for the NSFK system are monotone for fixed
+positiveµ, α, κand small shock strength.
+1.2.Viscous-Dispersive Shock Profiles.We consider viscous-dispersive shock profiles of the
+NSFK system, defined as traveling wave solutions (˜v,˜u, ˜θ)(ξ) withξ=x−σtconnecting two
+distinct constant end states (v ±, u±, θ±) asξ→ ±∞.
+Since the end states are constant, their capillary contribution to the total energy vanishes. We
+therefore define
+p± :=p(v ±, θ±) = Rθ±
+v±
+, E ± := R
+γ−1 θ± + u2
+±
+2 .
+
+[PDF page 3]
+VISCOUS-DISPERSIVE SHOCKS FOR THE NSFK SYSTEM 3
+The end states and the shock speed satisfy the Rankine–Hugoniot condition:
+
+
+
+−σ(v+ −v −)−(u + −u −) = 0,
+−σ(u+ −u −) + (p+ −p −) = 0,
+−σ(E+ −E −) + (p+u+ −p −u−) = 0.
+(1.4)
+The characteristic speeds of the underlying Euler system in Lagrangian mass coordinates are
+λ1 =−
+r
+γp(v, θ)
+v , λ 2 = 0, λ 3 =
+r
+γp(v, θ)
+v .
+Thus, the Lax shock conditions for the 1- and 3-shock families are
+−
+r γp+
+v+
+< σ <−
+r γp−
+v−
+for a 1-shock,
+r γp+
+v+
+< σ <
+r γp−
+v−
+for a 3-shock.(1.5)
+It follows from the Rankine–Hugoniot condition (1.4) and the Lax shock conditions (1.5) that
+1-shock:σ <0, v + < v −, u + < u −, θ + > θ −,
+3-shock:σ >0, v + > v −, u + < u −, θ + < θ −.
+Throughout this paper, we restrict our attention to small-amplitude Lax shocks, the shock
+strength being measured by|v + −v −|.
+For traveling waves, the NSFK system (1.1) becomes the system of ordinary differential equations
+
+
+
+−σ˜v′ −˜u′ = 0,
+−σ˜u′ + ˜p′ =
+
+µ ˜u′
+˜v
+′
++κ
+
+− ˜v′′
+˜v5 + 5(˜v′)2
+2˜v6
+′
+,
+−σ ˜E′ + (˜p˜u)′ =
+ 
+α
+˜θ′
+˜v
+!′
++
+
+µ ˜u˜u′
+˜v
+′
++κ
+
+− ˜v′′
+˜v5 + 5(˜v′)2
+2˜v6
+
+˜u+˜v′˜u′
+˜v5
+′
+,
+(1.6)
+where ˜p:=p(˜v,˜θ) and ˜E:= R
+γ−1
+˜θ+ κ
+2
+(˜v′)2
+˜v5 + ˜u2
+2 . The profile is subject to the far-field conditions
+lim
+ξ→±∞
+(˜v,˜u,˜θ)(ξ) = (v ±, u±, θ±).(1.7)
+A solution of (1.6)–(1.7) is called a monotone profile if each of ˜v, ˜u, and ˜θis monotone onR.
+1.3.Main Results.The following theorem establishes the existence and uniqueness up to trans-
+lation of small-amplitude monotone viscous-dispersive shock profiles, together with pointwise esti-
+mates for the normalized profile.
+Theorem 1.1.For a given left end state(v −, u−, θ−)∈R + ×R×R +, there exist positive constants
+ε0,c, andCsuch that the following holds for every right end state(v +, u+, θ+)∈R + ×R×R + and
+every shock speedσ∈Rsatisfying the Rankine–Hugoniot condition(1.4), the Lax 3-shock condition
+in(1.5), andε:=|v + −v −|< ε 0. There is a traveling wave solution(˜v,˜u, ˜θ) :R→R + ×R×R + to
+(1.6)–(1.7), which is a monotone profile and is unique up to translation within the monotone class.
+Let(˜v,˜u,˜θ)be normalized by˜v(0) = v−+v+
+2 . Then
+˜vξ >0,˜u ξ <0, ˜θξ <0, ξ∈R,
+|(˜v(ξ)−v−,˜u(ξ)−u −, ˜θ(ξ)−θ −)| ≤Cε e −cε|ξ|, ξ≤0,
+|(˜v(ξ)−v+,˜u(ξ)−u +, ˜θ(ξ)−θ +)| ≤Cε e −cε|ξ|, ξ≥0,
+|(˜vξ,˜uξ, ˜θξ)| ≤Cε 2e−cε|ξ|, ξ∈R,
+|∂k
+ξ (˜v,˜u,˜θ)| ≤Cε k−1 |˜vξ|, k= 2,3,4, ξ∈R.
+(1.8)
+
+[PDF page 4]
+4 S. HAN
+Setσ − :=
+p
+γp−/v− andC ∗ := Rγ(γ+1)σ −
+2(µRγ+α(γ−1) 2). Then the shock speed satisfies
+|σ−σ −| ≤Cε,(1.9)
+the derivatives satisfy
+C−1|˜vξ| ≤ |˜uξ| ≤C|˜vξ|, C −1|˜vξ| ≤ | ˜θξ| ≤C|˜vξ|, ξ∈R,(1.10)
+and, more precisely,
+|˜uξ +σ −˜vξ| ≤Cε|˜vξ|,
+˜θξ + (γ−1)p −
+R ˜vξ
+ ≤Cε|˜vξ|, ξ∈R.(1.11)
+Moreover,
+C−1(v+ −˜v)(˜v−v−)≤˜vξ ≤C(v + −˜v)(˜v−v−), ξ∈R,(1.12)
+and, more precisely,
+˜vξ −C ∗(v+ −˜v)(˜v−v−)
+ ≤Cε(v + −˜v)(˜v−v−), ξ∈R.(1.13)
+Finally, ifΩ⊂ {(v, θ) :v >0, θ >0}is compact, thenε 0,c, andCcan be chosen uniformly for
+all left end states with(v −, θ−)∈Ω.
+Remark1.2.The change of variables (ξ, u, σ)7→(−ξ,−u,−σ) maps a 1-shock profile to a 3-shock
+profile, with the end states changing as
+ 
+(v−, u−, θ−),(v +, u+, θ+)
+
+7→
+ 
+(v+,−u +, θ+),(v −,−u −, θ−)
+
+.
+Hence the conclusions of Theorem 1.1 hold for 1-shocks, with ˜vξ <0, ˜uξ <0, ˜θξ >0 in place of the
+signs in (1.8), with−˜vξ in place of ˜vξ in (1.12), and withσ − andp − replaced by−
+p
+γp+/v+ and
+p+ elsewhere, including inC ∗. Since the reflected left end state depends onε, we apply the last
+statement of Theorem 1.1 with a compact set Ω that contains (v +, θ+) forε≤ v−
+γ+1 . In the rest of
+the paper, we consider 3-shocks and assume
+v− < v+, ε=v + −v −, σ=
+r
+− p+ −p −
+v+ −v −
+>0.
+The following corollary provides the second-order estimate used in the companion stability anal-
+ysis [22].
+Corollary 1.3.For a given left end state(v −, u−, θ−)∈R + ×R×R +, there exist positive constants
+ε0 andCsuch that the following holds for every right end state(v +, u+, θ+)∈R + ×R×R + and
+every shock speedσ∈Rsatisfying the Rankine–Hugoniot condition(1.4), the Lax 3-shock condition
+in(1.5), andε:=|v + −v −|< ε 0. Let(˜v,˜u,˜θ)be the traveling wave solution of Theorem 1.1 and
+defineA ∗ := γ(γ+1)p −
+2v2
+−σ−
+. Then
+
+˜p−p+
+˜v−v+
+− ˜p−p−
+˜v−v−
+−σ −A∗
+µRγ
+µRγ+α(γ−1) 2 (v+ −v −)
+ ≤Cε 2, ξ∈R.(1.14)
+Moreover, ifΩ⊂ {(v, θ) :v >0, θ >0}is compact, thenε 0 andCcan be chosen uniformly for all
+left end states with(v −, θ−)∈Ω.
+1.4.Main Ideas of the Proof.In Section 2, the integrated profile equations reduce to a third-
+order equation for ˜v, which the rescaling ˜v(ξ) =v− +εφ0(z),z=εξ, turns into the slow-fast system
+(2.14). The main difficulty is that its right-hand side contains a term of order 1
+ε, while Fenichel’s
+theorem (Proposition 2.2) requires a vector field that isC ∞ up toε= 0. By Lemma 2.3, the
+Rankine–Hugoniot condition givesσ=σ(ε), and the identity (2.7) forσ(ε) cancels the factor 1
+ε in
+this term (Section 2.3.1). The other hypotheses of Proposition 2.2 are verified in Section 2.3, where
+
+[PDF page 5]
+VISCOUS-DISPERSIVE SHOCKS FOR THE NSFK SYSTEM 5
+the left end state is adjoined as a slow variable to obtain constants uniform in Ω. The flow on the
+slow manifold then reduces to
+dφ0
+dz =C ∗φ0(1−φ 0) +O(ε)
+(Section 2.4.1). By the invariance identities of Lemma 2.4, each zero of the right-hand side is an
+equilibrium of (2.14), and Lemma 2.5 shows that the right-hand side vanishes exactly at 0 and 1
+and is positive in between. The profile is built from the solution connecting 0 to 1 (Section 2.4.2).
+Uniqueness is proved in the class of all monotone solutions of (1.6)–(1.7). The difficulty is that
+such a solution satisfies the integrated profile equations with three unknown integration constants,
+while the far-field conditions (1.7) prescribe only the limits of the solution. In Section 3.1, we
+show that these constants vanish. For the constant in the integrated momentum equation, we use
+the auxiliary variable of [2], which satisfies a linear first-order equation with a coefficient bounded
+below by a positive constant. The solution then lies on the one-dimensional unstable manifold of
+the left end state, and, as in [15, 14], it is a translate of the constructed profile.
+The estimates in Theorem 1.1 compare ˜v ξ with (˜v−v −)(v+ −˜v) up to the end states, where
+both vanish. Since the end states are equilibria on the slow manifold, theO(ε) term of the reduced
+equation is zero atφ 0 = 0 andφ 0 = 1 and is therefore of orderεφ 0(1−φ 0). Hence
+˜vξ =
+
+C∗ +O(ε)
+
+(˜v−v−)(v+ −˜v),
+where theO(ε) term is uniform inξ∈R(Section 3.2.2). The factorization yields the bounds
+(1.12) and (1.13), the exponential decay, and Corollary 1.3 (Section 3.2.3). The bounds on higher
+derivatives follow from the equation forφ 0, and the formula for ˜θgives ˜θξ <0 (Section 3.2.1).
+1.5.Notation.
+•A dot denotes differentiation with respect to the slow variablez=εξof Section 2.
+•In Sections 2 and 3,Candcdenote positive constants that may change from line to line,
+depend only on Ω andγ, R, µ, α, κ, and are independent ofεandξ.
+•For nonnegative quantitiesAandB, we writeA∼BifC −1B≤A≤CBwith such a
+constantC.
+•We writeA=O(B) if|A| ≤C|B|with such a constantC.
+2.Existence of Monotone Traveling W aves
+We fix a compact set Ω⊂ {(v, θ) :v >0, θ >0}and prove the last statements of Theorem 1.1
+and Corollary 1.3 for this Ω in Sections 2 and 3. Taking Ω ={(v −, θ−)}gives the first statements
+for the given left end state.
+2.1.Geometric Singular Perturbation Framework.Letx=x(ξ)∈R n andy=y(ξ)∈R ℓ
+denote the fast and slow phase variables, respectively, whereξis the fast coordinate. We consider
+the fast system 
+
+
+dx
+dξ =F(x,y, ε),
+dy
+dξ =εG(x,y, ε),
+(2.1)
+whereεis a small parameter. Forε >0, reparametrizing the same trajectories by the slow
+coordinatez=εξ, and retaining the notationxandy, we obtain the equivalent slow system
+
+
+
+ε dx
+dz =F(x,y, ε),
+dy
+dz =G(x,y, ε).
+(2.2)
+
+[PDF page 6]
+6 S. HAN
+Atε= 0, the limiting fast system is
+dx
+dξ =F(x,y,0), dy
+dξ = 0.(2.3)
+We choose a subsetM 0 of its equilibrium set{F(x,y,0) = 0}and impose the following hypotheses:
+(H1) The functionsFandGareC ∞ onU×I, whereU⊂R n+ℓ is open andI⊂Ris an open
+interval containing 0.
+(H2) The setM 0 is a compactC ∞ manifold, possibly with boundary, and is normally hyperbolic
+relative to the limiting fast system (2.3).
+(H3) The manifoldM 0 is the graph of aC ∞ functionh 0 :Y→R n:
+M0 =
+
+(x,y) :x=h 0(y),y∈Y
+	
+,
+whereY⊂R ℓ is a compact, simply connected domain with smooth boundary.
+Under (H3), normal hyperbolicity means thatD xF
+ 
+h0(y),y,0
+
+has no eigenvalue on the imagi-
+nary axis fory∈Y. SinceYis compact and this matrix depends continuously ony, the separation
+from the imaginary axis is uniform onY.
+Definition 2.1([30]; see also [15, Definition 2.2]).Consider an autonomous system of ordinary
+differential equations with a locally Lipschitz vector field. A setMis locally invariant under the
+system if there is an open setV⊃Mwith the following property. If a trajectory of the system
+starts onMand stays inVon a time interval [0, T], then it stays onMon [0, T]. The same holds
+with [0, T] replaced by [−T,0].
+The following proposition states Fenichel’s persistence theorem. See [18] and [30, Theorems 1
+and 2]. See also [15, Proposition 2.1 and Remark 2.1] and [14, Proposition 2.1 and Remark 2.1].
+Proposition 2.2.Fix a finite integerr≥1and assume(H1)–(H3). There existε 1 >0and a
+familyh ε :Y→R n for|ε|< ε 1, such that(y, ε)7→h ε(y)is jointlyC r andh 0 is the graph function
+appearing in(H3). For every0<|ε|< ε 1, the graph
+{(x,y) :x=h ε(y),y∈Y}
+is contained in anℓ-dimensional manifoldM ε that is locally invariant under the fast system(2.1).
+Forε >0, the fast and slow systems differ only by the rescalingz=εξ, soM ε is also locally
+invariant under (2.2).
+We apply Proposition 2.2 withr= 6. Settings(y, ε) :=
+R 1
+0 ∂βhβ(y)|β=τ ε dτ, which is jointlyC 5,
+we obtain
+hε(y) =h 0(y) +εs(y, ε).(2.4)
+In what follows, a function is called smooth if it isC 5. This is the regularity used in Sections 2.4.2
+and 3.2.1.
+2.2.Profile Equations and Slow-Fast Reduction.We first parametrize the pressure jump
+p+ −p − and the shock speedσby the shock strengthε. This parametrization will later be used to
+verify the regularity hypothesis (H1) atε= 0.
+Lemma 2.3.Let(v −, u−, θ−)∈R + ×R×R + be a left end state, and define
+σ(ε) :=
+s
+γp−
+v− + γ+1
+2 ε
+,|ε|< v−
+γ+ 1 .(2.5)
+Then the following holds.
+
+[PDF page 7]
+VISCOUS-DISPERSIVE SHOCKS FOR THE NSFK SYSTEM 7
+(i) Let a right end state(v +, u+, θ+)∈R + ×R×R + and a shock speedσ∈Rsatisfy the Rankine–
+Hugoniot condition(1.4)and the Lax 3-shock condition in(1.5), and letε:=v + −v − < v−
+γ+1 .
+Thenε >0and
+p+ −p − =− γp−ε
+v− + γ+1
+2 ε
+, σ=σ(ε).(2.6)
+(ii) The functionσsatisfies
+σ(ε)2v− −γp − =− γp−(γ+ 1)
+2
+ 
+v− + γ+1
+2 ε
+ ε,(2.7)
+and it isC ∞ and positive withσ(0) =σ −. If(v −, θ−)∈Ω, then
+|σ(ε)−σ −| ≤C|ε|.(2.8)
+Proof.By the mass and momentum conditions (1.4) 1 and (1.4)2, we obtain
+u+ −u − =−σε, p + −p − =−σ 2ε.
+Sinceσ >0 for a Lax 3-shock, these relations andRθ ± =p ±v± from (1.2) reduce the energy
+condition (1.4)3 to
+p+v+ −p −v−
+γ−1 + 1
+2(p+ +p −)ε= 0,that is,γp −ε+
+
+v− + γ+1
+2 ε
+
+(p+ −p −) = 0.
+Ifε≤0, thenp + ≥p − andv + ≤v −, which contradicts the Lax 3-shock condition in (1.5). Hence
+ε >0, and the identity above is equivalent to the formula forp + −p − in (2.6). Withσ >0, the
+relationp + −p − =−σ 2εthen givesσ=σ(ε).
+The identity (2.7) andσ(0) =σ − follow from (2.5). For|ε|< v−
+γ+1 , we have
+v− + γ+1
+2 ε > v−
+2 ,
+soε7→σ(ε) isC ∞ and positive, and|σ ′(ε)| ≤Cfor (v −, θ−)∈Ω, which yields (2.8). See also [15]
+for the same computation.□
+We now reduce the profile equations to a single equation for ˜v. Every solution of the integrated
+system below solves the profile equations (1.6), and Section 3.1 shows that every monotone solution
+of (1.6)–(1.7) solves the integrated system. The system reads
+−σ(˜v−v −)−(˜u−u −) = 0,(2.9a)
+−σ(˜u−u −) + (˜p−p−) =µ ˜u′
+˜v+κ
+
+− ˜v′′
+˜v5 + 5(˜v′)2
+2˜v6
+
+,(2.9b)
+−σ( ˜E−E −) + (˜p˜u−p−u−) =α
+˜θ′
+˜v+µ ˜u˜u′
+˜v +κ˜u
+
+− ˜v′′
+˜v5 + 5(˜v′)2
+2˜v6
+
++κ ˜v′˜u′
+˜v5 .(2.9c)
+The Rankine–Hugoniot condition (1.4) ensures that the right end state is also an equilibrium of
+(2.9).
+The integrated mass equation (2.9a) gives
+˜u−u− =−σ(˜v−v −),˜u ′ =−σ˜v′.(2.10)
+With these relations, the integrated momentum and energy equations (2.9b) and (2.9c) yield
+−σ
+ R
+γ−1 (˜θ−θ −)− κ(˜v′)2
+2˜v5 − σ2
+2 (˜v−v−)2
+
+−σp −(˜v−v−) =α
+˜θ′
+˜v.(2.11)
+The integrated momentum equation (2.9b), with (2.10) and ˜p=R˜θ/˜v, determines the temperature,
+˜θ= ˜v
+R
+
+p− −σ 2(˜v−v−)−µσ ˜v′
+˜v+κ
+
+− ˜v′′
+˜v5 + 5(˜v′)2
+2˜v6
+
+.(2.12)
+
+[PDF page 8]
+8 S. HAN
+Hence, by (2.11) and the formula for ˜θ, ˜vsatisfies the third-order equation
+α
+R˜v
+
+(p− +σ 2v−)˜v′ − 25κ(˜v′)3
+2˜v6 −2σ 2˜v˜v′ + 9κ˜v′˜v′′
+˜v5 −µσ˜v′′ − κ˜v′′′
+˜v4
+
+= κσ
+2
+(˜v′)2
+˜v5 + σ˜v
+γ−1
+
+µσ ˜v′
+˜v− 5κ(˜v′)2
+2˜v6 +σ 2(˜v−v−) +κ ˜v′′
+˜v5
+
+− σp−(˜v−v−)
+γ−1 + σ3
+2 (˜v−v−)2 −σp −(˜v−v−).
+(2.13)
+We now introduce the small-amplitude scaling
+˜v(ξ) =v− +εφ 0(z), z=εξ, dk˜v
+dξk =ε k+1 dkφ0
+dzk (k≥1).
+Settingφ 1 = ˙φ0 andφ 2 =ε¨φ0 =ε˙φ1, equation (2.13) is equivalent to the slow-fast system
+
+
+
+˙φ0 =φ 1,
+ε˙φ1 =φ 2,
+ε˙φ2 =f(φ 0, φ1, φ2, ε),
+(2.14)
+where
+f(φ 0, φ1, φ2, ε;q)
+=− 1
+ε g(φ0, ε;q)− Rσ2(εφ0 +v −)5
+κα(γ−1)
+ σ(γ+ 1)
+2 φ2
+0 +µφ 1
+
+− Rσ(εφ0 +v −)
+α(γ−1) φ2
++ (εφ0 +v −)4
+κ
+
+(p− −σ 2v−)φ1 −2σ 2εφ0φ1 −µσφ 2
+
+− R(γ−6)
+2α(γ−1) σε2φ2
+1 + ε2φ1
+εφ0 +v −
+
+−25
+2
+ε2φ2
+1
+εφ0 +v −
++ 9φ2
+
+,
+(2.15)
+and
+g(φ0, ε;q) := R(εφ0 +v −)5φ0
+κα(γ−1) σ
+ 
+σ2v− −γp −
+
+.(2.16)
+Hereq:= (v −, θ−), andfandgdepend onqthroughv −,p − =Rθ −/v−, and the functionσ(ε) in
+(2.5).
+2.3.Hypotheses and Equilibria.We adjoin ˙q= 0 to the slow-fast system (2.14), withq=
+(v−, θ−) as in (2.15), and obtain the enlarged system
+
+
+
+˙φ0 =φ 1,˙q= 0,
+ε˙φ1 =φ 2,
+ε˙φ2 =f(φ 0, φ1, φ2, ε;q),
+(2.17)
+which has the form of the slow system (2.2) withx= (φ 1, φ2),y= (φ 0, q),F= (φ 2, f), and
+G= (φ 1,0). SetK:= [−1,2], and let ˆKbe a compact convex set with smooth boundary such that
+K×Ω⊂ ˆK⊂R×R + ×R +.
+The slow variable (φ0, q) ranges over ˆK. Thus ˆKis the domainYin (H3), and for eachq∈Ω the
+slice{φ 0 : (φ0, q)∈ ˆK}containsK. We verify (H1)–(H3) for (2.17). In what follows, we suppress
+the dependence onqin the notation.
+
+[PDF page 9]
+VISCOUS-DISPERSIVE SHOCKS FOR THE NSFK SYSTEM 9
+2.3.1.Verification of(H1)and Equilibria forε >0.In (2.15), only the term− 1
+ε gis singular at
+ε= 0. By (2.7) and (2.16),
+−1
+ε g(φ0, ε) = R(v− +εφ 0)5φ0
+κα(γ−1) σ(ε) γp−(γ+ 1)
+2
+ 
+v− + γ+1
+2 ε
+ .(2.18)
+Since ˆKis compact andv − >0 on ˆK, there existsε 2 >0 such that
+ε2 < 1
+γ+ 1 inf
+ˆK
+v− andv − +εφ 0 >0 for (φ 0, q)∈ ˆK,|ε|< ε 2.
+By (2.18),fextends to aC ∞ function of (φ0, φ1, φ2, q, ε) onU×I, whereI= (−ε 2, ε2) andU⊂R 5
+is an open neighborhood of{(φ 0, φ1, φ2, q) : (φ 0, q)∈ ˆK}. This is (H1). In particular, atε= 0,
+(2.18) gives 
+−1
+ε g(φ0, ε)
+
+ε=0
+= σ3
+−(γ+ 1)Rv 5
+−
+2κα(γ−1) φ0, σ − =σ(0).(2.19)
+The equilibria of the slow-fast system (2.14) forε >0 satisfyφ 1 =φ 2 = 0 andf(φ 0,0,0, ε) = 0.
+By (2.15),f(φ 0,0,0, ε) = 0 is equivalent to
+σ(ε)φ0
+
+φ0
+ σ(ε)2
+γ−1 + σ(ε)2
+2
+
++ σ(ε)2v− −γp −
+ε(γ−1)
+
+= 0,
+which by (2.7) becomes
+σ(ε)3
+ 1
+γ−1 + 1
+2
+
+φ0(φ0 −1) = 0.
+Hence the equilibria withφ0 ∈Kare (0,0,0) and (1,0,0) for everyε∈(0, ε 2). Both are independent
+ofε.
+2.3.2.Verification of(H3).Atε= 0, the enlarged system (2.17) givesφ 2 = 0 andf(φ 0, φ1,0,0) =
+0. By (2.15) and (2.19),f(φ 0, φ1,0,0) = 0 reads
+0 = Rv5
+−
+κα
+ σ3
+−(γ+ 1)
+2(γ−1) (φ0 −φ 2
+0)− µσ2
+−
+γ−1 φ1
+
++ (p− −σ 2
+−v−)v4
+−
+κ φ1.
+Hence the critical manifold is
+ˆM0 :=
+
+(φ0, φ1, φ2, q) : (φ1, φ2) =h 0(φ0, q),(φ 0, q)∈ ˆK
+	
+,
+where
+h0(φ0, q) :=
+ 
+C∗(q)(φ0 −φ 2
+0),0
+
+(2.20)
+and, as in Theorem 1.1,
+C∗ = Rγ(γ+ 1)σ −
+2(µRγ+α(γ−1) 2) .(2.21)
+This is (H3) withY= ˆKandM 0 = ˆM0. In particular, ˆM0 is compact.
+2.3.3.Verification of(H2).Since (H3) holds, normal hyperbolicity in (H2) means that the Jacobian
+Jof (φ 2, f) with respect to (φ 1, φ2) atε= 0 has no eigenvalue on the imaginary axis on ˆM0 (see
+Section 2.1). By (2.15) and (2.19),
+J=
+
+
+0 1
+−(µRγ+α(γ−1) 2)p−v4
+−
+κα(γ−1) −(Rκ+µα(γ−1)v 3
+−)σ−v−
+κα(γ−1)
+
+ ,
+which is independent ofφ 0, and
+trJ=− (Rκ+µα(γ−1)v 3
+−)σ−v−
+κα(γ−1) <0,detJ= (µRγ+α(γ−1) 2)p−v4
+−
+κα(γ−1) >0.
+
+[PDF page 10]
+10 S. HAN
+Hence both eigenvalues ofJhave negative real parts, which is (H2).
+2.4.Slow Manifold and the Profile.
+2.4.1.Slow Manifold and Endpoint Equilibria.We reduce the slow-fast system (2.14) on the slow
+manifold to the scalar equation (2.24). Letε 1 andh ε be given by Proposition 2.2 for the enlarged
+system (2.17), and setε 3 := 1
+2 min{ε1, ε2}withε 2 from Section 2.3.1. By (2.4) and (2.20), for
+ε∈[0, ε 3],
+hε =
+ 
+C∗(φ0 −φ 2
+0),0
+
++ε(h 1, h2) on ˆK,(h 1, h2) :=s.
+The functionsh 1 andh 2 are smooth on ˆK×[0, ε 3], and
+|h1| ≤C 4 on ˆK×[0, ε 3].(2.22)
+Forε∈(0, ε 3], let ˆMε be the three-dimensional manifold given by Proposition 2.2 for the enlarged
+system (2.17). It is locally invariant under (2.17) and contains
+
+(φ0, φ1, φ2, q) : (φ1, φ2) =h ε(φ0, q),(φ 0, q)∈ ˆK
+	
+.
+Forq∈Ω, set
+Mε :=
+
+(φ0, φ1, φ2) : (φ0, φ1, φ2, q)∈ ˆMε
+	
+.
+ThenM ε is a one-dimensional manifold, and it is locally invariant under the slow-fast system (2.14)
+since ˙q= 0. It contains the graph
+
+(φ0, φ1, φ2) :φ 0 ∈intK, φ 1 =C ∗(φ0 −φ 2
+0) +εh 1(φ0, ε), φ 2 =εh 2(φ0, ε)
+	
+,(2.23)
+which is one-dimensional and hence open inM ε. On this graph, the equation ˙φ 0 =φ 1 reads
+˙φ0 =F ε(φ0) :=C ∗(φ0 −φ 2
+0) +εh 1(φ0, ε), φ 0 ∈K.(2.24)
+A prime onF ε denotesd/dφ 0. Sinceh 1 is smooth on ˆK×[0, ε 3],∥F ε∥C5(K) ≤C.
+Lemma 2.4.Letε∈(0, ε 3]andφ 0 ∈intK. Then
+h2(φ0, ε) =F ′
+ε(φ0)F ε(φ0),(2.25)
+ε2 ∂φ0h2(φ0, ε)F ε(φ0) =f
+ 
+φ0, F ε(φ0), εh 2(φ0, ε), ε
+
+.(2.26)
+Proof.Letψ= (ψ 0, ψ1, ψ2) be the solution of the slow-fast system (2.14) with
+ψ(0) =
+ 
+φ0, F ε(φ0), εh 2(φ0, ε)
+
+.
+Sinceφ 0 ∈intK,ψ(0) lies on the graph (2.23), and hence onM ε. LetV⊃M ε be an open set as
+in Definition 2.1. By continuity, there isδ 1 >0 withψ(z)∈Vforz∈[0, δ 1], soψ(z)∈M ε for
+z∈[0, δ 1] by the choice ofV. Since the graph (2.23) is open inM ε, there isδ∈(0, δ 1] such that
+ψ(z) lies on this graph forz∈[0, δ], that is,
+ψ1(z) =F ε(ψ0(z)), ψ 2(z) =εh 2(ψ0(z), ε), z∈[0, δ].
+We differentiate these identities atz= 0 from the right. Since ˙ψ0(0) =ψ 1(0) =F ε(φ0), the
+equations for ˙φ1 and ˙φ2 in (2.14) give
+F ′
+ε(φ0)Fε(φ0) =h 2(φ0, ε), ε 2∂φ0h2(φ0, ε)Fε(φ0) =f
+ 
+φ0, Fε(φ0), εh2(φ0, ε), ε
+
+,
+which are (2.25) and (2.26).□
+Setη:= 1
+4, so that [−η,1 +η]⊂intK, and letε 4 ∈(0, ε 3] satisfyC 4ε4 < η(1−η) inf Ω C∗. Then
+the definition ofF ε in (2.24) and the bound (2.22) give
+|Fε(φ0)−C ∗φ0(1−φ 0)|< C ∗η(1−η), φ 0 ∈K, ε∈(0, ε 4].(2.27)
+
+[PDF page 11]
+VISCOUS-DISPERSIVE SHOCKS FOR THE NSFK SYSTEM 11
+Lemma 2.5.Letε∈(0, ε 4]. Then
+Fε(0) =F ε(1) = 0,(2.28)
+h2(0, ε) =h 2(1, ε) = 0,(2.29)
+Fε(φ0)>0for allφ 0 ∈(0,1).(2.30)
+In particular,(0,0,0)and(1,0,0)are equilibria of the slow-fast system(2.14)lying onM ε.
+Proof. Step 1:{φ 0 ∈intK:F ε(φ0) = 0} ⊂ {0,1}.IfF ε(φ0) = 0 for someφ 0 ∈intK, then
+h2(φ0, ε) = 0 by (2.25) andf(φ 0,0,0, ε) = 0 by (2.26). Thus (φ 0,0,0) is an equilibrium of (2.14),
+andφ 0 ∈ {0,1}by Section 2.3.1.
+Step 2:F ε(0) =F ε(1) = 0.SinceC ∗φ0(1−φ 0)≥C ∗η(1−η) on [η,1−η], (2.27) givesF ε >0
+on [η,1−η],F ε(−η)<0, andF ε(1 +η)<0. By the intermediate value theorem,F ε has a zero in
+(−η, η) and a zero in (1−η,1 +η). Both intervals lie in intK, and sinceη < 1
+2, Step 1 identifies
+these zeros as 0 and 1. This proves (2.28), and (2.25) gives (2.29).
+Step 3:F ε >0on(0,1).IfF ε(φ0)≤0 for someφ 0 ∈(0, η), then, sinceF ε(η)>0, the
+intermediate value theorem yields a zero ofF ε in (0,1), which contradicts Step 1. The same
+argument applies on (1−η,1), andF ε >0 on [η,1−η] by Step 2. This proves (2.30). Finally,
+(2.28) and (2.29) show that (0,0,0) and (1,0,0) lie on the graph (2.23), hence onM ε.□
+We prove Theorem 1.1 with
+ε0 := min{ε3, ε4, ε5, ε6, ε7}.
+Later,ε 5 is fixed for the positivity of ˜θin Section 2.4.2,ε 6 for the sign of ˜θξ in Section 3.2.1, and
+ε7 for the exponential decay in Section 3.2.2. The constantsC 4, . . . , C7 depend only on Ω andγ,
+R,µ,α,κ, and so doesε 0.
+2.4.2.Construction of the Monotone Profile.Forε∈(0, ε 0), we construct a solution (˜v,˜u,˜θ) :R→
+R+ ×R×R + of (1.6)–(1.7) with ˜vξ >0, ˜uξ <0, and ˜v(0) = v−+v+
+2 . By (2.28) and (2.30), the scalar
+initial value problem
+˙φ0 =F ε(φ0), φ 0(0) = 1
+2 ,
+has a unique global solutionφ 0 :R→(0,1), which is strictly increasing and satisfies
+lim
+z→−∞
+φ0(z) = 0,lim
+z→+∞
+φ0(z) = 1.(2.31)
+Set
+φ(z) :=
+ 
+φ0(z), F ε(φ0(z)), εh 2(φ0(z), ε)
+
+.
+Sinceφ 0(z)∈(0,1)⊂intK, the invariance identities (2.25) and (2.26) hold atφ 0 =φ 0(z), and
+˙φ0 =φ 1, ε˙φ 1 =εF ′
+ε(φ0)Fε(φ0) =φ 2, ε˙φ 2 =ε 2∂φ0h2(φ0, ε)Fε(φ0) =f(φ 0, φ1, φ2, ε).
+Henceφsolves the slow-fast system (2.14) onR, and it connects (0,0,0) to (1,0,0) by the limits
+(2.31) and Lemma 2.5.
+Set
+˜v(ξ) :=v− +εφ 0(εξ),
+and define
+˜u:=u− −σ(˜v−v −),
+˜θ:= ˜v
+R
+
+p− −σ 2(˜v−v−)−µσ ˜v′
+˜v+κ
+
+− ˜v′′
+˜v5 + 5(˜v′)2
+2˜v6
+
+.
+(2.32)
+Since ˜vξ =ε 2Fε(φ0) and ˜vξξ =ε 3F ′
+ε(φ0)Fε(φ0), (2.30) and∥F ε∥C5(K) ≤Cgive
+0<˜vξ ≤Cε 2,|˜v ξξ | ≤Cε|˜vξ|.(2.33)
+
+[PDF page 12]
+12 S. HAN
+Hence ˜uξ =−σ˜vξ <0. Sinceφ 0 takes values in (0,1) andφ 0(0) = 1
+2, we also havev − <˜v < v +
+and ˜v(0) =v−+v+
+2 . Forε∈(0, ε 4], the formula for ˜θin (2.32) and the bounds (2.33) give
+|˜θ−θ −| ≤C
+ 
+|˜v−v−|+|˜vξ|+|˜vξξ |+|˜vξ|2
+≤C 5ε.
+Letε 5 ∈(0, ε 4] satisfyC 5ε5 ≤ 1
+2 infΩ θ−. Then ˜θ≥θ −/2>0 forε∈(0, ε 5], so (˜v,˜u,˜θ) takes values
+inR + ×R×R +.
+By construction, ˜uand˜θsatisfy the integrated mass and momentum equations (2.9a) and (2.9b),
+under which the integrated energy equation (2.9c) is equivalent to the third-order equation (2.13).
+Sinceφsolves the slow-fast system (2.14), (2.13) holds for ˜v. Hence (˜v,˜u,˜θ) satisfies the integrated
+system (2.9), and therefore the profile equations (1.6). Sinceφconnects (0,0,0) to (1,0,0), we
+have ˜v→v ±, ˜v′ →0, and ˜v ′′ →0 asξ→ ±∞, and the Rankine–Hugoniot condition (1.4) gives
+(˜u,˜θ)→(u ±, θ±). Hence (˜v,˜u,˜θ) solves (1.6)–(1.7). The sign of ˜θξ is proved in Section 3.2.1.
+3.Uniqueness and Pointwise Estimates
+3.1.Proof of Uniqueness.We show that every monotone solution of (1.6)–(1.7) is a translate
+of the profile constructed in Section 2.4.2. As in [2, 23, 24, 25], we introduce the auxiliary variable
+˜w(ξ) :=−√κ ˜v′(ξ)
+˜v(ξ)5/2 ,
+so that the total energy (1.3) takes the form ˜E=R ˜θ/(γ−1) + ˜w2/2 + ˜u2/2. By the integrated
+system (2.9), the profile (˜v,˜w,˜θ) satisfies the first-order system
+˜v′ =− ˜v5/2
+√κ ˜w,
+˜w′ = ˜v5/2
+√κ
+
+σ2(˜v−v−) + (˜p−p−)
+
+− µσ√κ ˜v3/2 ˜w
+
+,
+˜θ′ =− σ˜v
+α
+ R
+γ−1 (˜θ−θ −)− σ2
+2 (˜v−v−)2 − ˜w2
+2 +p −(˜v−v−)
+
+,
+(3.1)
+subject to
+lim
+ξ→±∞
+(˜v,˜w,˜θ)(ξ) = (v ±,0, θ ±).
+The left end state (v −,0, θ −) is an equilibrium of (3.1).
+The Jacobian matrix of the first-order system (3.1) at the left end state (v −,0, θ −) is
+B=
+
+
+0−b 1 0
+b2 −b3 b4
+−b5 0−b 6
+
+ ,(3.2)
+where
+b1 := v5/2
+−√κ , b 2 := v5/2
+−√κ
+
+σ2 − p−
+v−
+
+, b 3 := σµv4
+−
+κ ,
+b4 := Rv3/2
+−√κ , b 5 := σv−p−
+α , b 6 := σRv−
+α(γ−1) .
+By the identity (2.7),
+trB=−b 3 −b 6 <0,detB= Rσv5
+−
+ακ(γ−1)
+ 
+γp− −σ 2v−
+
+= Rσ3v5
+−(γ+ 1)
+2ακ(γ−1) ε >0.
+
+[PDF page 13]
+VISCOUS-DISPERSIVE SHOCKS FOR THE NSFK SYSTEM 13
+Since the eigenvalues ofBhave a negative sum and a positive product,Bhas one positive
+eigenvalueλ u, and the other two eigenvalues have negative real parts. LetX= (X 1, X2, X3)̸= 0
+satisfyBX=λ uX. By (3.2),
+−b1X2 =λ uX1, b 2X1 −b 3X2 +b 4X3 =λ uX2,−b 5X1 −b 6X3 =λ uX3.
+IfX 1 = 0, thenb 1X2 = 0 and (λ u +b 6)X3 = 0, soX 2 =X 3 = 0 sinceb 1, b6, λu >0. HenceX 1 ̸= 0.
+By the unstable manifold theorem [38, Theorems 9.4 and 9.5], (v −,0, θ −) has a one-dimensional
+local unstable manifoldW u
+loc tangent toX. SinceX 1 ̸= 0,W u
+loc \ {(v−,0, θ −)}consists of two orbits
+of (3.1), one in{v > v −}and one in{v < v −}.
+Let (¯v,¯u,¯θ) be a monotone solution of (1.6)–(1.7), and set ¯w:=− √κ¯v′/¯v5/2. Integrating the
+profile equations (1.6) once, we obtain constantsm 1,m 2, andm 3 such that
+−σ(¯v−v −)−(¯u−u −) =m 1,
+−σ(¯u−u −) + (¯p−p−) =µ ¯u′
+¯v+κ
+
+− ¯v′′
+¯v5 + 5(¯v′)2
+2¯v6
+
++m 2,
+−σ( ¯E−E −) + (¯p¯u−p−u−) =α
+¯θ′
+¯v+µ ¯u¯u′
+¯v +κ¯u
+
+− ¯v′′
+¯v5 + 5(¯v′)2
+2¯v6
+
++κ ¯v′¯u′
+¯v5 +m 3,
+(3.3)
+where ¯p:=p(¯v,¯θ) and ¯E:= R
+γ−1
+¯θ+ κ
+2
+(¯v′)2
+¯v5 + ¯u2
+2 . We show thatm 1 =m 2 =m 3 = 0.
+Step 1:m 1 = 0.Lettingξ→ −∞in (3.3) 1 and using the far-field conditions (1.7), we obtain
+m1 = 0. Hence ¯u−u − =−σ(¯v−v −) and ¯u′ =−σ¯v′.
+Step 2:m 2 = 0.By Step 1, (3.3) 2 becomes
+¯w′ + Λ ¯w= Φ,Λ := µσ
+κ ¯v4,Φ := ¯v5/2
+√κ
+h
+σ2(¯v−v−) + ¯p−p− −m 2
+i
+.(3.4)
+By the far-field conditions (1.7), Φ/Λ→¯w − asξ→ −∞, where ¯w − :=− √κ m2/(µσv3/2
+− ). We
+show that ¯w→¯w− asξ→ −∞and that ¯w − = 0. The derivative ¯v ′ is integrable onR, since ¯v
+is nondecreasing and bounded. As ¯v≥v −, the function ¯wis integrable as well, so ¯w(ξ n)→0 for
+some sequenceξ n → −∞. In terms of ¯w−¯w−, the linear equation (3.4) reads
+( ¯w−¯w−)′ + Λ( ¯w−¯w−) = Φ−Λ ¯w−.
+Duhamel’s formula and the bound Λ≥µσv 4
+−/κgive, forξ n ≤ξ,
+|¯w(ξ)−¯w−| ≤e −µσv4
+−(ξ−ξn)/κ|¯w(ξn)−¯w−|+ κ
+µσv4
+−
+sup
+τ≤ξ
+Φ(τ)−Λ(τ) ¯w−
+.
+The term Φ−Λ ¯w− tends to 0 asξ→ −∞. Lettingn→ ∞and thenξ→ −∞, we obtain ¯w→¯w −.
+Since ¯w(ξn)→0, we conclude that ¯w − = 0. Hencem 2 = 0 and ¯w→0 asξ→ −∞.
+Step 3:m 3 = 0.By Steps 1 and 2, (3.3) 2 and (3.3)3 give
+−σ
+ R
+γ−1 (¯θ−θ −)− κ(¯v′)2
+2¯v5 − σ2
+2 (¯v−v−)2
+
+−σp −(¯v−v−) =α
+¯θ′
+¯v+m 3.
+By the far-field conditions (1.7) andκ(¯v′)2/¯v5 = ¯w2 →0, the left-hand side tends to 0 asξ→ −∞,
+so ¯θ′ → −v −m3/α. Since ¯θconverges, this limit is 0, and hencem 3 = 0.
+Withm 1 =m 2 =m 3 = 0, the triple (¯v,¯u,¯θ) satisfies the integrated system (2.9), and (¯v,¯w,¯θ)
+solves the first-order system (3.1). Since ¯uis determined by ¯vthrough Step 1, it suffices to show
+that
+(¯v,¯w,¯θ)(ξ) = (˜v,˜w,˜θ)(ξ+a), ξ∈R,(3.5)
+for somea∈R, where (˜v,˜u, ˜θ) is the solution constructed in Section 2.4.2. Both triples tend to
+(v−,0, θ −) asξ→ −∞.
+
+[PDF page 14]
+14 S. HAN
+We first show that ¯v > v− onR. If ¯v(ξ 0) =v − for someξ 0 ∈R, then, since ¯vis nondecreasing
+and ¯v≥v −,
+¯v≡v−,¯w≡0 on (−∞, ξ 0],
+and (3.1)2 gives ¯p≡p−, that is, ¯θ≡θ −, on (−∞, ξ0]. Thus (¯v,¯w,¯θ)(ξ0) = (v−,0, θ −), so (¯v,¯w,¯θ)≡
+(v−,0, θ −) by the uniqueness of solutions to (3.1), which contradicts ¯v(ξ)→v + > v − asξ→+∞.
+Since (v −,0, θ −) is hyperbolic and (¯v,¯w,¯θ)→(v −,0, θ −) asξ→ −∞, there isξ 1 ∈Rsuch that
+(¯v,¯w,¯θ)(ξ)∈W u
+loc forξ≤ξ 1. Since ¯v > v − and ˜v > v −, the points (¯v,¯w,¯θ)(ξ) forξ≤ξ 1 and
+(˜v,˜w,˜θ)(ξ) forξnear−∞lie on the orbit ofW u
+loc in{v > v −}. Hence (¯v,¯w,¯θ)(ξ1) = (˜v,˜w,˜θ)(ξ1+a)
+for somea∈R, and (3.5) follows from the uniqueness of solutions to (3.1).
+Finally, Step 1, (3.5), and the mass relation (2.10) give
+¯u(ξ)−u− =−σ
+ 
+¯v(ξ)−v−
+
+=−σ
+ 
+˜v(ξ+a)−v −
+
+= ˜u(ξ+a)−u −, ξ∈R.
+Since ˜vis strictly increasing, the normalization ˜v(0) = v−+v+
+2 in Theorem 1.1 fixesa, so the
+monotone profile is unique.
+3.2.Proof of Pointwise Estimates.
+3.2.1.Derivative Estimates.We first prove
+|∂k
+ξ (˜v,˜u,˜θ)| ≤Cε k−1|˜vξ|, k= 2,3,4.(3.6)
+Define functionsP k ofφ 0 ∈Kby
+P1 := 1, P k+1 :=F ′
+εPk +F εP ′
+k, k= 1, . . . ,5,
+where a prime denotesd/dφ 0, so thatP 2 =F ′
+ε andP 3 = (F ′
+ε)2+FεF ′′
+ε . Since ˙φ0 =F ε(φ0), induction
+onkgives
+dkφ0
+dzk =F ε(φ0)P k(φ0), k= 1, . . . ,6.
+SinceP k is a polynomial inF ε, . . . , F(k−1)
+ε and∥F ε∥C5(K) ≤C, we have|P k| ≤ConKfor
+k= 1, . . . ,6, and hence, withz=εξ,
+|∂k
+ξ ˜v|=εk+1
+ dkφ0
+dzk
+ ≤Cε k+1|Fε(φ0)|=Cε k−1|˜vξ|, k= 1, . . . ,6.(3.7)
+By the mass relation (2.10),∂ k
+ξ ˜u=−σ ∂k
+ξ ˜vfor everyk≥1, so (3.6) holds for ˜vand ˜u.
+We next prove the estimate (1.9) ofσ, the relations (1.11) and the comparability (1.10) of the
+derivatives, and ˜θξ <0. The estimate (1.9) is the bound (2.8) in Lemma 2.3. For the velocity, the
+mass relation (2.10) gives
+|˜u′ +σ −˜v′|=| −σ˜v ′ +σ −˜v′|=|σ − −σ||˜v′| ≤Cε|˜v′|.(3.8)
+For the temperature, differentiating the formula (2.12) for ˜θyields
+˜θ′ = 1
+R
+ 
+p− −2σ 2˜v+σ2v−
+
+˜v′ − µσ
+R ˜v′′ + κ
+R
+
+− ˜v′′′
+˜v4 + 9˜v′˜v′′
+˜v5 − 25(˜v′)3
+2˜v6
+
+.(3.9)
+By (3.7) and the bound ˜v′ ≤Cε 2 in (2.33), the terms with ˜v′′, ˜v′′′, or (˜v′)3 are bounded byCε|˜v′|.
+Since ˜v−v− =O(ε) andσ 2 = γp−
+v−
++O(ε) by (2.8), the leading coefficient in (3.9) satisfies
+p− −2σ 2˜v+σ2v− =p − −σ 2v− +O(ε) = (1−γ)p − +O(ε).
+Hence, forε∈(0, ε 4], (3.9) gives
+˜θ′ + (γ−1)p −
+R ˜v′
+ ≤C 6ε|˜v′|.(3.10)
+
+[PDF page 15]
+VISCOUS-DISPERSIVE SHOCKS FOR THE NSFK SYSTEM 15
+The bounds (3.8) and (3.10) are the relations (1.11). Letε 6 ∈(0, ε 4] satisfyC 6ε6 ≤ γ−1
+2R infΩ p−.
+Then, forε∈(0, ε 6], (3.10) yields ˜θ′ ≤ − (γ−1)p−
+2R ˜v′ <0 and| ˜θ′| ∼ |˜v′|. Since|˜u ′|=σ|˜v ′|by the
+mass relation (2.10) and
+p
+2/3σ − < σ < σ − by the formula (2.5) forσ, we also have|˜u ′| ∼ |˜v′|,
+which proves (1.10).
+Finally, differentiating the formula (3.9) for ˜θ′ gives
+˜θ′′ = 1
+R
+ 
+p− −2σ 2˜v+σ2v−
+
+˜v′′ − 2σ2
+R (˜v′)2 − µσ
+R ˜v′′′
++ κ
+R
+
+− ˜v′′′′
+˜v4 + 13˜v′˜v′′′
+˜v5 + 9(˜v′′)2
+˜v5 − 165(˜v′)2˜v′′
+2˜v6 + 75(˜v′)4
+˜v7
+
+.
+By (3.7) and the bound ˜v′ ≤Cε 2 in (2.33), each term is bounded byCε|˜v′|. The same computation
+for∂ 3
+ξ ˜θand∂ 4
+ξ ˜θgives|∂ k
+ξ ˜θ| ≤Cε k−1|˜v′|fork= 3,4. This completes the proof of (3.6).
+3.2.2.Factorization and Decay.We prove the two-sided bound (1.12) and the approximation (1.13)
+of ˜vξ, and the exponential decay in (1.8). By Lemma 2.5 and the definition ofF ε in (2.24),
+h1(0, ε) =h 1(1, ε) = 0 forε∈(0, ε 4]. Define
+˜h1(φ0, ε) := h1(φ0, ε)
+φ0(1−φ 0) , φ 0 ∈(0,1).
+Since 1−φ 0 ≥ 1
+2 forφ 0 ≤ 1
+2 andφ 0 ≥ 1
+2 forφ 0 ≥ 1
+2, the mean value theorem applied atφ 0 = 0
+and atφ 0 = 1 gives
+|˜h1| ≤2 sup
+ˆK×[0,ε3]
+|∂φ0h1| ≤C 7 on (0,1)×(0, ε 4].(3.11)
+In terms of ˜v, the scalar equation (2.24) reads
+˜v′ =
+
+C∗ +ε ˜h1
+
+(˜v−v−)(v+ −˜v).(3.12)
+Hence, by the bound (3.11) on ˜h1,
+˜v′ −C ∗(v+ −˜v)(˜v−v−)
+ =ε| ˜h1|(v + −˜v)(˜v−v−)≤Cε(v + −˜v)(˜v−v−),
+which is (1.13). Letε 7 >0 satisfyC 7ε7 ≤ 1
+2 infΩ C∗, so thatC ∗ +ε ˜h1 ≥C ∗/2>0 for every
+ε∈(0, ε 0). Sincev − <˜v < v+, the factorization (3.12) implies
+C−1(v+ −˜v)(˜v−v−)≤˜v ′(ξ)≤C(v + −˜v)(˜v−v−),
+which is (1.12).
+The normalization ˜v(0) =v−+v+
+2 givesv + −˜v≥ ε
+2 forξ≤0 and ˜v−v − ≥ ε
+2 forξ≥0. Integrating
+the two-sided bound (1.12) on each half-line then yields
+|˜v(ξ)−v−| ≤Cεe −cε|ξ| (ξ≤0),|˜v(ξ)−v +| ≤Cεe −cε|ξ| (ξ≥0).(3.13)
+Hence, by the factorization (3.12), the derivative satisfies
+|˜v′(ξ)| ≤Cε 2e−cε|ξ|.(3.14)
+Finally,|˜u−u ±|=σ|˜v−v ±|by the mass relation (2.10) and the Rankine–Hugoniot condition.
+The formula (2.12) for ˜θ, the bounds (2.33), and the factorization (3.12) yield
+|˜θ−θ ±| ≤C
+ 
+|˜v−v±|+|˜v′|+|˜v′′|+|˜v′|2
+≤C
+ 
+|˜v−v±|+|˜v′|
+
+≤C|˜v−v ±|.
+Hence, by the decay (3.13) of ˜v,
+|(˜v−v±,˜u−u ±, ˜θ−θ ±)| ≤Cεe −cε|ξ|,±ξ≥0,
+and, by the comparability (1.10) and the decay (3.14) of ˜v′,
+|(˜vξ,˜uξ, ˜θξ)| ≤Cε 2e−cε|ξ|.
+
+[PDF page 16]
+16 S. HAN
+This proves the exponential decay in (1.8) for everyε∈(0, ε 0), and the proof of Theorem 1.1 is
+complete.
+3.2.3.Proof of Corollary 1.3.Integrating the momentum equation (1.6) 2 from±∞toξand using
+the mass relation (2.10) and the Rankine–Hugoniot condition, we obtain
+˜p−p± =−σ 2(˜v−v±)− µσ˜v′
+˜v +κ
+
+− ˜v′′
+˜v5 + 5(˜v′)2
+2˜v6
+
+.(3.15)
+The two identities in (3.15) yield
+˜p−p+
+˜v−v+
+− ˜p−p−
+˜v−v−
+=
+ µσ˜v′
+˜v +κ
+ ˜v′′
+˜v5 − 5(˜v′)2
+2˜v6
+ ε
+(v+ −˜v)(˜v−v−) .(3.16)
+In (3.16), the factorization (3.12) and the bounds (2.33) give
+ε˜v′
+(v+ −˜v)(˜v−v−) =ε
+
+C∗ +ε ˜h1
+
+,|˜v ′′|+ (˜v′)2 ≤Cε˜v′.
+With the bound (2.8) onσ,|˜v−v −| ≤ε, and the bound (3.11) on ˜h1, we obtain
+˜p−p+
+˜v−v+
+− ˜p−p−
+˜v−v−
+=
+h µσ
+˜v +O(ε)
+i
+ε
+
+C∗ +ε ˜h1
+
+= µσ−C∗
+v−
+ε+O(ε 2).
+Finally, the definition (2.21) ofC ∗,σ 2
+− =γp −/v−, and the definition ofA ∗ give
+µσ−C∗
+v−
+= µRγ(γ+ 1)σ 2
+−
+2v−
+ 
+µRγ+α(γ−1) 2 =σ −A∗
+µRγ
+µRγ+α(γ−1) 2 ,
+which proves (1.14).
+Declaration of competing interest
+The author declares that he has no known competing financial interests or personal relationships
+that could have appeared to influence the work reported in this paper.
+References
+[1]Antonelli, P., and Spirito, S.Global existence of weak solutions to the Navier-Stokes-Korteweg equations.
+Ann. Inst. H. Poincar´ e C Anal. Non Lin´ eaire 39, 1 (2022), 171–200.
+[2]Benzoni-Gavage, S., Danchin, R., and Descombes, S.Well-posedness of one-dimensional Korteweg models.
+Electron. J. Differential Equations(2006), No. 59, 35.
+[3]Bona, J. L., and Schonbek, M. E.Travelling-wave solutions to the Korteweg-de Vries-Burgers equation.Proc.
+Roy. Soc. Edinburgh Sect. A 101, 3-4 (1985), 207–226.
+[4]Charve, F., and Haspot, B.Existence of a global strong solution and vanishing capillarity-viscosity limit in
+one dimension for the Korteweg system.SIAM J. Math. Anal. 45, 2 (2013), 469–494.
+[5]Chen, G., Eun, N., Kang, M.-J., and Shen, Y.L 2-contraction of shock waves for KdV-Burgers equation.
+arXiv:2603.09263, 2026.
+[6]Chen, G., Eun, N., Kang, M.-J., and Shen, Y.Uniform stability of oscillatory shocks for KdV-Burgers
+equation. arXiv:2602.22652, 2026.
+[7]Chen, Z.Asymptotic stability of strong rarefaction waves for the compressible fluid models of Korteweg type.
+J. Math. Anal. Appl. 394, 1 (2012), 438–448.
+[8]Chen, Z., He, L., and Zhao, H.Nonlinear stability of traveling wave solutions for the compressible fluid models
+of Korteweg type.J. Math. Anal. Appl. 422, 2 (2015), 1213–1234.
+[9]Chen, Z., He, L., and Zhao, H.Global smooth solutions to the nonisothermal compressible fluid models of
+Korteweg type with large initial data.Z. Angew. Math. Phys. 68, 4 (2017), Paper No. 79, 37.
+[10]Chen, Z., and Sheng, M.Global stability of combination of a viscous contact wave with rarefaction waves for
+the compressible fluid models of Korteweg type.Nonlinearity 32, 2 (2019), 395–444.
+[11]Chen, Z., and Xiao, Q.Nonlinear stability of viscous contact wave for the one-dimensional compressible fluid
+models of Korteweg type.Math. Methods Appl. Sci. 36, 17 (2013), 2265–2279.
+[12]Danchin, R., and Desjardins, B.Existence of solutions for compressible fluid models of Korteweg type.Ann.
+Inst. H. Poincar´ e C Anal. Non Lin´ eaire 18, 1 (2001), 97–133.
+
+[PDF page 17]
+VISCOUS-DISPERSIVE SHOCKS FOR THE NSFK SYSTEM 17
+[13]Dunn, J. E., and Serrin, J.On the thermomechanics of interstitial working.Arch. Rational Mech. Anal. 88,
+2 (1985), 95–133.
+[14]Eo, S., and Eun, N.Traveling wave solutions to a large class of Brenner-Navier-Stokes-Fourier systems.Com-
+mun. Math. Sci. 24, 6 (2026), 1577–1593.
+[15]Eo, S., Eun, N., Kang, M.-J., and Oh, H.Traveling wave solutions to Brenner-Navier-Stokes-Fourier system.
+J. Differential Equations 422(2025), 639–658.
+[16]Eun, N., Han, S., and Kim, J.Large-time behavior towards composite waves of degenerate shock and rarefac-
+tion wave for modified KdV-Burgers equation. arXiv:2609.20591, 2026.
+[17]Eun, N., Kang, M.-J., and Kim, J.Contraction of viscous-dispersive shocks: Zero viscosity-capillarity limits.
+arXiv:2602.13788, 2026.
+[18]Fenichel, N.Geometric singular perturbation theory for ordinary differential equations.J. Differential Equa-
+tions 31, 1 (1979), 53–98.
+[19]Folino, R., Lattanzio, C., and Plaza, R. G.Existence and spectral stability analysis of viscous-dispersive
+shock profiles for isentropic compressible fluids of Korteweg type.Stud. Appl. Math. 156, 4 (2026), Paper No.
+e70210, 31.
+[20]Folino, R., Plaza, R. G., and Zhelyazov, D.Spectral stability of weak dispersive shock profiles for quantum
+hydrodynamics with nonlinear viscosity.J. Differential Equations 359(2023), 330–364.
+[21]Germain, P., and LeFloch, P.Finite energy method for compressible fluids: the Navier-Stokes-Korteweg
+model.Comm. Pure Appl. Math. 69, 1 (2016), 3–61.
+[22]Han, S., Kang, M.-J., and Kim, J.Time-asymptotic stability of generic Riemann solutions for viscous-
+dispersive heat-conducting compressible fluids, 2026. In preparation.
+[23]Han, S., Kang, M.-J., Kim, J., and Lee, H.Long-time behavior towards viscous-dispersive shock for Navier-
+Stokes equations of Korteweg type.J. Differential Equations 426(2025), 317–387.
+[24]Han, S., and Kim, J.Time-asymptotic stability of composite wave for the one-dimensional compressible fluid
+of Korteweg type.SIAM J. Math. Anal. 58, 1 (2026), 547–597.
+[25]Han, S., Kim, J., and Oh, H.Time-asymptotic stability of viscous shocks for the outflow problem of one-
+dimensional compressible fluids of Korteweg type.J. Differential Equations 487(2027), Paper No. 114811.
+[26]Haspot, B.Existence of strong solutions for nonisothermal Korteweg system.Ann. Math. Blaise Pascal 16, 2
+(2009), 431–481.
+[27]Haspot, B.Existence of global weak solution for compressible fluid models of Korteweg type.J. Math. Fluid
+Mech. 13, 2 (2011), 223–249.
+[28]Hattori, H. H. H., and Li, D.Global solutions of a high-dimensional system for Korteweg materials.J. Math.
+Anal. Appl. 198, 1 (1996), 84–97.
+[29]Hou, X., Peng, H., and Zhu, C.Global well-posedness of the 3D non-isothermal compressible fluid model of
+Korteweg type.Nonlinear Anal. Real World Appl. 43(2018), 18–53.
+[30]Jones, C. K. R. T.Geometric singular perturbation theory. InDynamical systems (Montecatini Terme, 1994),
+vol. 1609 ofLecture Notes in Math.Springer, Berlin, 1995, pp. 44–118.
+[31]Kang, M.-J., and V asseur, A.Contraction property for large perturbations of shocks of the barotropic Navier-
+Stokes system.J. Eur. Math. Soc. (JEMS) 23, 2 (2021), 585–638.
+[32]Kang, M.-J., and V asseur, A. F.L 2-contraction for shock waves of scalar viscous conservation laws.Ann.
+Inst. H. Poincar´ e C Anal. Non Lin´ eaire 34, 1 (2017), 139–156.
+[33]Kang, M.-J., V asseur, A. F., and W ang, Y.Time-asymptotic stability of composite waves of viscous shock
+and rarefaction for barotropic Navier-Stokes equations.Adv. Math. 419(2023), Paper No. 108963, 66.
+[34]Kang, M.-J., V asseur, A. F., and W ang, Y.Time-asymptotic stability of generic Riemann solutions for
+compressible Navier-Stokes-Fourier equations.Arch. Ration. Mech. Anal. 249, 4 (2025), Paper No. 42, 80.
+[35]Korteweg, D. J.Sur la forme que prennent les ´ equations du mouvement des fluides si l’on tient compte
+des forces capillaires caus´ ees par des variations de densit´ e consid´ erables mais continues et sur la th´ eorie de la
+capillarit´ e dans l’hypoth` ese d’une variation continue de la densit´ e.Arch. N´ eerl. Sci. Exactes Nat. (2) 6(1901),
+1–24.
+[36]Pego, R. L.Remarks on the stability of shock profiles for conservation laws with dissipation.Trans. Amer.
+Math. Soc. 291, 1 (1985), 353–361.
+[37]Smoller, J. A., and Shapiro, R.Dispersion and shock-wave structure.J. Differential Equations 44, 2 (1982),
+281–305. Special issue dedicated to J. P. LaSalle.
+[38]Teschl, G.Ordinary differential equations and dynamical systems, vol. 140 ofGraduate Studies in Mathematics.
+American Mathematical Society, Providence, RI, 2012.
+[39]van der W aals, J. D.Thermodynamische Theorie der Kapillarit¨ at unter Voraussetzung stetiger
+Dichte¨ anderung.Z. Phys. Chem. 13U, 1 (1894), 657–725.
+
+[PDF page 18]
+18 S. HAN
+(Sungho Han)Department of Mathematical Sciences,
+Korea Advanced Institute of Science and Technology (KAIST),
+Daejeon 34141, Korea
+Email address:sungho han@kaist.ac.kr

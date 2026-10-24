@@ -1,0 +1,1165 @@
+
+[PDF page 1]
+Nonlocal Gravity, Restricted CPL Dynamics and DESI Constraints
+Luca Amendola,1, 2,∗ Ismael Ayuso,3,† Amlan Chakraborty,4, 1,‡ Javier Rubio,5,§ and Subinoy Das4, 1,¶
+1Institut für Theoretische Physik, Ruprecht-Karls-Universität Heidelberg, Philosophenweg 16, 69120 Heidelberg, Germany
+2Center for Astrophysics and Space Science, NYUAD Research Institute,
+New York University Abu Dhabi, PO Box 129188, Abu Dhabi, UAE
+3Department of Physics & EHU Quantum Center,
+University of the Basque Country UPV/EHU, Bilbao 48080, Spain
+4Indian Institute of Astrophysics, Bengaluru, Karnataka 560034, India
+5Departamento de Física Teórica and Instituto de Física de Partículas y del Cosmos (IPARCOS-UCM),
+Universidad Complutense de Madrid, 28040 Madrid, Spain
+Nonlocal modifications of gravity provide a theoretically motivated framework in which cosmic
+acceleration can emerge dynamically without introducing a fundamental cosmological constant.
+We revisit the cosmological predictions of the Maggiore–Mancarella nonlocalR□−2Rmodel, with
+particular emphasis on its background dynamics and observational viability in light of recent DESI
+baryon acoustic oscillation measurements. A key feature of the theory is its predictive character: for
+fixed standard cosmological parameters, each value of the nonlocal parameter determines a specific
+effective pair(w 0, wa), so that the model traces a restricted trajectory in the Chevallier–Polarski–
+Linder plane rather than spanning the full phenomenological parameter space. We construct this
+mapping explicitly and confront the model with observations by implementing its cosmological
+dynamics in a Boltzmann solver and performing a Markov chain Monte Carlo analysis using Cosmic
+Microwave Background, supernova, and DESI BAO data. We find that current datasets constrain
+the nonlocal parameter close to theΛCDM limit, with no statistically significant preference for
+nonlocal deviations.
+I. INTRODUCTION
+General Relativity (GR) provides an extremely successful description of gravitational phenomena over a vast range
+of scales, from laboratory and Solar System tests to the large-scale dynamics of the Universe. Combined with the
+cosmological principle and a cosmological constant, it leads to the standardΛCDM model, which provides an excellent
+fit to a broad set of cosmological observations, including the cosmic microwave background (CMB) [1], large-scale
+structure, and supernova distance measurements [2]. Despite this empirical success, the physical origin and the
+observed small value of the cosmological constant remain theoretically unexplained, giving rise to a severe fine-tuning
+problem. This has long motivated the exploration of theoretically consistent alternatives in which cosmic acceleration
+emerges dynamically rather than from a fundamental cosmological constant [3, 4].
+RecentobservationaldevelopmentsfurtherreinforcetheimportanceoftestingdeparturesfromΛCDM.Inparticular,
+the latest baryon acoustic oscillation measurements from the DESI collaboration have reached unprecedented precision
+andshowamildpreferencefordynamicaldark-energyparametrizationswhencombinedwithothercosmologicalprobes
+[5]. While the statistical significance of these deviations is still under active assessment, see e.g. [6, 7], they provide
+a timely opportunity to confront theoretically well-defined models of dynamical dark energy with high-quality data
+[8–14]. In this context, predictive models, in which the dark-energy evolution is not freely adjustable but instead
+follows from the underlying theory, are especially valuable.
+An important distinction must therefore be made between phenomenological evidence for an evolving dark-energy
+component and evidence for a specific theory of cosmic acceleration. While the CPL parametrization allows the
+present value and time dependence of the dark-energy equation of state to vary independently, a fundamental theory
+generally correlates these quantities through its equations of motion. Consequently, even a model capable of generating
+a time-dependent equation of state need not reproduce the particular evolutionary pattern favored by observations.
+Assessing this compatibility requires confronting the correlations imposed by the underlying dynamics with the data,
+rather than merely establishing the existence of an evolving dark-energy component.
+Among the proposed extensions of GR, nonlocal gravity constitutes a well-motivated class of modified theories
+[15]. Nonlocal interactions naturally arise in several approaches to quantum gravity. In string theory, for instance,
+∗ l.amendola@thphys.uni-heidelberg.de
+† ismael.ayuso@ehu.eus
+‡ amlan.chakraborty@iiap.res.in
+§ javier.rubio@ucm.es
+¶ subinoy@iiap.res.in
+arXiv:2610.20720v1  [astro-ph.CO]  14 Oct 2026
+
+[PDF page 2]
+2
+gravitational interactions are expected to acquire a nonlocal character at the Planck scale [16, 17]. From an ultraviolet
+perspective, nonlocality has also been investigated as a possible ingredient for improving the high-energy behavior
+of gravity and constructing ultraviolet-complete theories [18–20]. Nonlocal modifications, however, are not restricted
+to the ultraviolet regime. They can also emerge at large distances from several infrared mechanisms, including
+quantum corrections to the effective gravitational action [21–24], effective field theories obtained after integrating
+out light degrees of freedom [25, 26], more fundamental formulations of Euclidean quantum gravity [27, 28], effective
+descriptions of massive-graviton theories [29, 30], theories involving multiple metrics [31], and extensions based on
+post-Riemannian affine geometry [32]. The phenomenological implications of nonlocal gravity have also been explored
+in astrophysical settings, including compact stellar objects [33].
+At the level of the gravitational action, nonlocality is typically introduced through curvature invariants involving
+either infinitely many derivatives, encoded in non-polynomial functions of the d’Alembertian operator [19], or inverse
+differential operators such as□ −1 [23] or the inverse conformal anomaly operator [34]. The latter approach was
+pioneered in the context of cosmology by Deser and Woodard (DW) [23], who proposed one of the first nonlocal
+models aimed at explaining the late-time cosmic acceleration without explicitly introducing a cosmological constant.
+The DW model modifies the evolution of cosmological perturbations in a way that was initially considered to be
+in tension with observations [35]. Subsequent studies, however, showed that this tension could be alleviated [36],
+although a comprehensive confrontation of the model with observational data remains outstanding.
+In this work, we focus on the nonlocalR□−2Rmodel introduced by Maggiore and Mancarella (MM) [37]. In this
+framework, deviations from GR are controlled by a single mass scale and manifest themselves at cosmological scales
+as an effective dark-energy component. The model modifies the large-scale gravitational dynamics while preserving
+the successful local predictions of GR and yielding a matter power spectrum compatible with current observations
+[38–40]. More generally, the MM model and related realizations of nonlocal gravity have been shown to admit vi-
+able cosmological backgrounds and consistent perturbation dynamics without the need for an explicit cosmological
+constant [41, 42]. An important feature of the MM model is its predictive character: once the realization of the
+inverse d’Alembertian operator is fixed through the initial conditions of the corresponding auxiliary fields, the cos-
+mological evolution is no longer freely adjustable but is restricted to a narrow family of trajectories controlled by a
+nonlocal mass parameter [43]. Consequently, the theory does not span the full space of phenomenological dark-energy
+parametrizations; instead, its underlying dynamics impose a definite relation between the present-day value of the
+effective equation of state and its time evolution.
+The goal of this paper is to test these theoretically restricted dynamics against current cosmological data, with
+particular emphasis on the recent DESI results [5]. We first review the background evolution of the model using a
+dynamical-systems approach and identify the class of solutions capable of producing a slowly varying dark-energy
+component around the present epoch. We then construct a local mapping between these solutions and the effective
+CPL parameters(w 0, wa)[44, 45]. This mapping allows us to formulate the observational test in a particularly
+transparent way. Rather than asking whether the model can reproduce isolated CPL histories, we determine the one-
+dimensional trajectory that it predicts in the(w0, wa)plane and examine whether this trajectory intersects the region
+favored by current data once the standard cosmological parameters are varied simultaneously. We perform this test by
+implementing the cosmological dynamics in a Boltzmann solver and carrying out a Markov chain Monte Carlo analysis
+using CMB, supernova, and DESI BAO measurements. We find that varying the standard cosmological parameters
+does not substantially alter the restricted trajectory predicted by the model, and that current data constrain the
+nonlocal dynamics close to itsΛCDM-like limit.
+Beyond the numerical likelihood analysis, we show that the so-called path-B dynamics admit a simple local charac-
+terization in the CPL plane. Close to theΛCDM-like endpoint, the effective parameters satisfy a consistency relation
+of the formwa =−α NL(1 +w 0) +O((1 +w 0)2), where the coefficientαNL is determined by the underlying nonlocal
+dynamics. This relation provides a geometrical interpretation of the observational constraints, but does not by itself
+establish the viability of the model, since variations of the standard cosmological parameters can, in principle, dis-
+place and broaden the theoretical trajectory. Determining whether this freedom is sufficient requires the full likelihood
+analysis performed below.
+Thepaperisorganizedasfollows. InSec.IIweintroducethenonlocalmodelandderivethecosmologicalbackground
+equations together with their dynamical-system formulation. In Sec. III we present numerical solutions and discuss
+their effective CPL interpretation. In Sec. IV we present the observational analysis and parameter constraints. We
+summarize our conclusions in Sec. V.
+
+[PDF page 3]
+3
+II. NONLOCALR□ −2RGRAVITY AND COSMOLOGICAL BACKGROUND
+We consider the MM nonlocal gravity model [37], defined by the action
+S= M2
+Pl
+2
+ˆ
+d4x√−g
+
+R− m2
+6 R□−2R
+
++S m ,(1)
+whereM Pl = 2.435×10 18 GeVis the reduced Planck mass,gis the determinant of the spacetime metricgµν, andRis
+the Ricci scalar. The parametermsets the scale of the nonlocal modification and controls the departure from General
+Relativity, whileS m denotes the matter action, which we assume to be minimally coupled to gravity. The covariant
+d’Alembertian operator is defined as□≡g µν∇µ∇ν, where∇ µ is the metric-compatible covariant derivative, and
+□−2 ≡□ −1□−1. The inverse operator□−1 is defined through the retarded Green function, thereby ensuring causal
+evolution [46].
+Varying the nonlocal action (1) with respect to the metric yields the modified Einstein equations [37],
+Gµ
+ν − m2
+6 K µ
+ν = 8πG T µ
+ν ,(2)
+where the tensor
+K µ
+ν ≡2SG µ
+ν −2∇ µ∂νS+ 2δ µ
+ν□S+δ µ
+ν∂ρS∂ ρU− 1
+2 δµ
+νU2 −(∂ µS∂νU+∂ νS∂ µU)(3)
+encodes the contribution of the nonlocal sector. Here,UandSare auxiliary scalar fields defined by
+□U=−R ,□S=−U ,(4)
+so thatU=−□ −1RandS=□ −2Rfor a specified definition of the inverse d’Alembertian. Their general solutions
+can be written as
+U=U hom −□ −1
+retR , S=S hom −□ −1
+retU ,(5)
+where the homogeneous components satisfy
+□Uhom = 0,□S hom = 0,(6)
+and□ −1
+ret denotes the inverse d’Alembertian defined using the retarded Green function [46].
+Although the introduction ofUandSrenders the equations of motion formally local, the resulting system is
+not equivalent to an unconstrained local scalar–tensor theory. In particular, the auxiliary fields do not represent
+additional fundamental propagating degrees of freedom. Their homogeneous contributions are fixed once the nonlocal
+prescription, including the Green function and the associated initial or boundary conditions, has been fully specified
+[37]. Different admissible prescriptions may therefore define distinct realizations of the effective nonlocal dynamics,
+but the auxiliary fields do not introduce independent physical degrees of freedom within a given realization [37]. In the
+following, we restrict attention to the realization defined by the retarded prescription and the auxiliary-field initial
+conditions specified below. The observational constraints derived in Sec. IV consequently apply to this particular
+realization.
+To study the cosmological implications of the model, we assume a spatially flat Friedmann–Lemaître–Robertson–
+Walker (FLRW) spacetime,ds2 =−dt 2 +a 2(t)d⃗ x2, wherea(t)is the cosmological scale factor. The present-day
+Universe is characterized by the density parametersΩ0
+m andΩ 0
+r for matter and radiation, respectively. The background
+evolution equations can then be written as [37]
+h2 = Ω0
+me−3N + Ω0
+re−4N + (γ/4)U 2
+1 +γ
+ 
+−3V−3V ′ + 1
+2 V ′U ′ ,(7)
+U ′′ = 6 (2 +ξ)−(3 +ξ)U ′,(8)
+V ′′ =h −2U−(3 +ξ)V ′,(9)
+whereUandV≡H 2
+0 Sare the auxiliary fields introduced in the local formulation of the theory, and
+γ≡ m2
+9H2
+0
+, h≡ H
+H0
+, ξ≡ h′
+h ,(10)
+
+[PDF page 4]
+4
+are dimensionless variables defined in terms of the present-day Hubble rateH0. A prime denotes differentiation
+with respect to the number ofe-folds,N≡lna. Note that, in the formal limitγ→0, the nonlocal contribution
+vanishes and the equations reduce to those of General Relativity without a cosmological constant. However, once
+the normalization conditionH(N= 0) =H 0 is imposed, the required initial value of the auxiliary fieldUdiverges
+asγ→0, while the corresponding productγU 2 remains finite, so that the background expansion approaches that of
+ΛCDM. This singular scaling limit therefore reproduces aΛCDM-like background evolution despite the absence of an
+explicit cosmological constant term in the action.
+The background expansion is conveniently characterized by the effective total equation-of-state parameter,
+weff =−1− 2
+3
+h′
+h =−1− 2
+3 ξ .(11)
+The matter and radiation components are conserved separately. Combined with the Bianchi identity, this also implies
+a conservation equation for the effective dark-energy sector, such that
+Ω′
+m + (3 + 2ξ) Ωm = 0,Ω ′
+r + (4 + 2ξ) Ωr = 0,Ω ′
+DE + (3 + 3wDE + 2ξ) ΩDE = 0,(12)
+where
+ξ= −4Ωr −3Ω m + 3γ
+ 
+h−2U+U ′V ′ −4V ′
+2 (1−3γV) .(13)
+Using the cosmic sum rule together with the modified Friedmann equation, the effective dark-energy density fraction
+may be expressed equivalently as
+ΩDE = 1−h −2 
+Ω0
+me−3N + Ω0
+re−4N
+=γ
+1
+4 h−2U2 + 3V+ 3V ′ − 1
+2 V ′U ′
+
+.(14)
+The corresponding effective dark-energy equation of state is
+wDE = γ(4(U+ 3)−(U+ 2)U ′)V ′ +U(γV(Ω r + 3)−Ω DE) + 4 (3γV−Ω DE)
+U(1−3γV)Ω DE
+.(15)
+The background equations derived above constitute a coupled nonlinear system whose global behavior is not imme-
+diately transparent. To elucidate the structure of its cosmological solutions and identify the main dynamical regimes,
+we recast the equations as an autonomous system. This formulation allows the critical points to be identified, their
+stability to be assessed, and the admissible cosmological trajectories to be classified within a unified phase-space
+description.
+Introducing the auxiliary variablesY1 ≡U ′ andY 2 ≡V ′, the dynamics can be written as a first-order system in
+the six-dimensional phase space(U, V, Y1, Y2,Ω m,Ω r). Combining the auxiliary-field equations with the conservation
+equations for matter and radiation yields a closed autonomous system
+U ′ =Y 1, (16)
+V ′ =Y 2, (17)
+Y ′
+1 =− 3((U+ 2)Y 1 −4(U+ 3))(2(3γV−1)−γ(Y 1 −6)Y 2) + 3(U+ 4)(Y 1 −6)Ω m + 4(U+ 3)(Y 1 −6)Ω r
+2U(3γV−1) ,(18)
+Y ′
+2 =− Y2(6(3γV−1)−3γ(Y 1 −4)Y 2 + 3Ωm + 4Ωr)
+2(3γV−1)
+− (2(3γV−1) + 3γY 2)(2(3γV−1)−γ(Y 1 −6)Y 2 + 2(Ωm + Ωr))
+γU(3γV−1) ,(19)
+Ω′
+m =− Ωm
+ 
+U(3(3γV−1)−3γ(Y 1 −4)Y 2 + 3Ωm + 4Ωr) + 12(3γV−1) + 12(Ω m + Ωr)−6γ(Y 1 −6)Y 2
+
+U(3γV−1) ,(20)
+Ω′
+r =− Ωr
+ 
+U(4(3γV−1)−3γ(Y 1 −4)Y 2 + 3Ωm + 4Ωr) + 12(3γV−1) + 12(Ω m + Ωr)−6γ(Y 1 −6)Y 2
+
+U(3γV−1) .(21)
+The asymptotic solutions of this system describe cosmological regimes characterized by a constant effective equation-
+of-state parameter, although some phase-space variables may diverge in the corresponding limits. Their existence and
+stability were analyzed in detail in Ref. [47]. The phase space contains radiation- and matter-dominated saddle points,
+
+[PDF page 5]
+5
+PointU V U ′ V ′ Ωm Ωr weff Type
+I eU 1− eΩr
+3γ 0 0 0 eΩr 1
+3 Saddle
+II2N+ eU 1− eΩm
+3γ 2 0 eΩm 0 0Saddle
+III+∞ 1
+3γ 4 0 0 0−1Attractor
+IV4N+ eU±∞4±∞0 0−1Saddle
+V−3±∞0 4V∓∞0 1
+3 Attractor
+Table I. Critical points of the autonomous system defined by Eqs. (16)–(21). Tilded quantities denote constant values associated
+with the corresponding critical point.
+together with accelerated late-time solutions that may behave either as attractors or as transient saddle configurations.
+The relevant critical points and their main properties are summarized in Table I.
+Akeystructuralfeatureofthesystemistheexistenceoftwoqualitativelydistinctclassesofcosmologicaltrajectories,
+distinguished by whether the initial value of the auxiliary fieldUlies above or below a critical threshold¯U(γ)[47].
+Initial conditions withU0 > ¯Udefine path A [41], whereas those withU0 < ¯Udefine path B [47]. The two branches
+differ both in their asymptotic behavior and in the sequence of cosmological regimes encountered along their evolution.
+While path A follows the sequence I→II→III, path B follows the sequence I→II→IV→V. ForΩ 0
+m = 0.3, the
+critical value separating them was determined numerically in Ref. [47] as
+¯U(γ)≃ −14.82 + 0.67 logγ.(22)
+Trajectories along path A typically approach the late-time attractor III and may undergo a transient phantom phase
+withw eff <−1. By contrast, path B trajectories pass near the quasi-de Sitter saddle point, allowingweff to remain
+close to−1for an extended interval before the system eventually exits the accelerated regime.
+The distinction between these two branches is particularly relevant for late-time cosmology. Although both re-
+produce the conventional radiation- and matter-dominated stages, their subsequent evolution reflects different ways
+in which the nonlocal sector can drive cosmic acceleration. The asymptotic classification of the dynamical system
+therefore provides a useful starting point, but does not by itself determine which branch can reproduce the expansion
+history inferred from observations. Addressing this question requires examining the evolution near the present epoch,
+where the effective dark-energy contribution becomes observationally relevant.
+III. NUMERICAL BACKGROUND SOLUTIONS AND CPL MAPPING
+Having established the general structure of the dynamical system, we now investigate the background evolution
+numerically and relate it to the phenomenological CPL description commonly adopted in observational analyses
+[44, 45]. Our aim is to determine how the expansion histories predicted by the nonlocal model map onto the CPL
+form and to assess the extent to which the theory spans, or instead restricts, the corresponding parameter space.
+For fixed values of the cosmological parameters(Ω0
+m,Ω 0
+r, H0)and the model parameterγ, the background evolution
+is obtained by numerically integrating the system of equations derived in Sec. II. For simplicity, we setV0 = 0and
+V ′
+0 =U ′
+0 = 0atN=−20.7233e-folds before the current epoch, corresponding to a scale factora= 10 −9 well inside
+the radiation domination era. In path A,V0 = 0can be chosen without loss of generality due to the attractor nature
+of point III, while in path B this choice remains valid provided thatV0 <1/(3γ)−V ′
+0, ensuring a physically viable
+evolution [47]. The initial valueU0 is not fully free, as it is constrained by the requirement that the present expansion
+rate satisfies the normalization conditionH(N= 0) =H 0. In practice, this condition is enforced through a shooting
+procedure that determines the required initial valueU0 for each choice ofγand cosmological parameters. Owing to
+the existence of two possible evolutionary paths, the shooting procedure generally yields two distinct solutions forU0
+corresponding to the same set of cosmological and model parameters. In Fig. 1, we show the numerical values ofU0
+for path A (yellow points) and path B (cyan points). The figure shows thatU0 depends predominantly onγ, while
+its dependence onΩ0
+m andH 0 is considerably weaker.
+The system of Eqs. (7)–(9) can then be integrated numerically using the initial conditions specified above for each
+branch. In Fig. 2, we present the evolution of the effective equation-of-state parameter,weff, along each trajectory.
+In both cases, saddle points I and II can be clearly identified. They describe the radiation- and matter-dominated
+regimes, respectively. After the system leaves the vicinity of point II, the nonlocal sector becomes cosmologically
+relevant, and the differences between the two evolutionary paths become apparent. Remarkably, these paths lead to
+
+[PDF page 6]
+6
+0.0 0.1 0.2 0.3 0.4
+-25
+-20
+-15
+-10
+γ
+U0 PathA
+PathB
+Figure 1. Initial valuesU0 satisfying the normalization conditionH(N= 0) =H 0, shown as functions of(γ,Ω0
+m, H0). The two
+solution branches are clearly separated, so the fitting procedure cannot continuously move from one path to the other. The
+green line corresponds to Eq. (22) and marks the approximate boundary between paths A and B for fixed values ofΩ0
+m and
+H0. For each value ofγand each branch, the spread of points reflects variations inΩ0
+m ∈[0.25,0.35]andH 0 ∈[60,80].
+two unconventional late-time attractors, III and V, whose asymptotic equations of state mimic familiar cosmological
+regimes without reproducing their underlying physical properties, as we now discuss.
+In path A, after passing through the radiation- and matter-dominated saddle points, the system can enter a
+phantom regime,w eff <−1, whose depth depends on the initial conditionU0 (or, equivalently,γ). Different choices
+ofU 0 can lead to a stronger or weaker phantom regime, or even to its complete disappearance. After reaching its
+minimum value,w eff evolves toward−1as the system approaches attractor III. Despite its asymptotic equation of
+state, this configuration is not a genuine de Sitter state, since the Hubble parameter continues to grow without bound,
+H(N)→ ∞asN→ ∞. We may therefore dub this attractor“phantom de Sitter”. At the present epoch (N= 0),
+weff still exhibits a negative slope, indicating that it has not yet reached its minimum.
+In path B, the Universe likewise undergoes radiation- and matter-dominated eras as the system passes near saddle
+points I and II. The evolution then drives the system toward point IV, where it can transiently approach a de Sitter-
+like regime characterized byweff ≃ −1andH(N)≃const. This point, however, is a saddle rather than an attractor.
+The system eventually evolves toward attractor V, whereweff →1/3despite the vanishing radiation density fraction,
+Ωr →0. This peculiar radiation-like expansion, which we may call a“radiation mirage”, arises from the nonlocal
+gravitational dynamics rather than from a genuine radiation component. Indeed, along the physically viable branch
+satisfyingV 0 <1/(3γ)−V ′
+0, the matter density parameter diverges to+∞, while the effective dark-energy density
+parameter tends to−∞[47]. The latter does not imply a physical negative-energy matter component, sinceΩDE is
+an effective quantity associated with the nonlocal gravitational sector.
+From a phenomenological perspective, the crucial distinction between the two paths lies in their evolution around
+the present epoch. Along path B, the minimum ofweff associated with the vicinity of saddle point IV may occur
+either before or after the present time. Consequently, its present-day slope can be positive or negative, depending on
+U0 (or, equivalently,γ), whereas path A exhibits a negative slope for the solutions considered here. Moreover,weff
+does not enter a phantom regime along path B, although the effective dark-energy equation of state may still satisfy
+wDE <−1, sincew eff andw DE characterize different quantities.
+Having analyzed the numerical solutions along both paths, we now compare the phenomenology of the nonlocal
+model with that ofΛCDM and the CPL parametrization [44, 45]. The equation of state of dark-energy and the
+associated energy density inΛCDM are given by
+wDE =−1, ρ DE =ρ 0
+DE,(23)
+while, in the CPL parametrization [44, 45], we have
+wDE(a) =w 0 +w a(1−a), ρ DE(a) =ρ 0
+DEa−3(1+w0+wa)e−3wa(1−a).(24)
+
+[PDF page 7]
+7
+γ=0.001
+γ=0.01
+γ=0.3
+-15 -10 -5 0 5 10 15
+-1.5
+-1.0
+-0.5
+0.0
+ωeff(N)
+I II
+III
+γ=0.001
+γ=0.01
+γ=0.3
+-10 0 10 20 30 40
+-1.0
+-0.5
+0.0
+0.5
+ωeff(N)
+I
+II
+IV
+V
+Figure 2. Evolution of the effective equation-of-state parameterweff along path A (left panel) and path B (right panel). The
+cosmological parameters are fixed toΩ0
+m = 0.316,H 0 = 67.24, andΩ 0
+r = 0.415H −2
+0 . Different curves correspond to different
+values ofγ; for each value ofγand each branch, the initial valueU 0 is determined by imposing the normalization condition
+H(N= 0) =H 0.
+γ=0.001
+γ=0.01
+γ=0.05
+γ=0.1
+γ=0.25
+Desi+CMB Desi+CMB+Pantheon+
+ΛCDM
+-12 -10 -8 -6 -4 -2 0
+-1.5
+-1.0
+-0.5
+0.0
+0.5
+ωeff(N)
+γ=0.001
+γ=0.01
+γ=0.05
+γ=0.1
+γ=0.25
+Desi+CMB Desi+CMB+Pantheon+
+ΛCDM
+-12 -10 -8 -6 -4 -2 0
+-1.0
+-0.5
+0.0
+0.5
+ωeff(N)
+Figure 3. Evolution of the effective equation-of-state parameterweff inΛCDM, the CPL parametrization, and the nonlocal
+model along path A (left panel) and path B (right panel). Dotted curves correspond to CPL, while solid curves represent the
+nonlocal model. For the nonlocal model andΛCDM, we fixH0 = 67.24,Ω 0
+m = 0.316, andΩ 0
+r = 0.415H −2
+0 . For CPL, we use
+representative best-fit values of(Ω0
+m, H0, w0, wa)obtained from the DESI DR2 analysis of Ref. [5].
+Here,w 0 represents the present value of the dark-energy equation-of-state parameter ata= 1, whilewa parametrizes
+its evolution with the scale factor. Consequently, over the past interval0< a≤1,w DE(a)interpolates between
+w0 +w a at early times andw0 at the present cosmological epoch.
+A direct comparison among the three models can be performed at the level of the effective equation-of-state pa-
+rameterw eff, defined in Eq. (11). Since our goal is to derive observational constraints, we restrict the analysis to the
+past evolution, which is directly probed by the datasets considered below. In Fig. 3, we compare the evolution ofweff
+in the three scenarios, showing several values ofγfor the nonlocal model and representative choices of(w0, wa)for
+CPL.
+Path A solutions can produce an evolution ofweff close to that ofΛCDM, particularly asγ→0. For the examples
+displayed in Fig. 3, however, the negative present-day slope characteristic of path A differs from the CPL histories
+considered there, which have already passed their minimum and exhibit a positive slope atN= 0. This distinction
+should not be interpreted as a general incompatibility between path A and the entire CPL parameter space, since the
+sign and magnitude of the CPL slope depend on(w0, wa).
+Path B is, however, more flexible in the region of interest: for intermediate values ofγ, it can reproduce CPL-like
+histories, whereas in the limitγ→0it approaches theΛCDM expansion history. Thus, path B provides a continuous
+family of expansion histories interpolating between behavior close toΛCDM and that associated with selected regions
+oftheCPLparameterspace. Inwhatfollows, wethereforefocusonpathB,whoseeffectiveequation-of-stateparameter
+can vary slowly around the present epoch and whose present-day slope can have either sign. This makes it the branch
+
+[PDF page 8]
+8
+γ=0.001
+CPL(ω 0=-0.95,ω a=-0.03)
+-5 -4 -3 -2 -1 0 1 2
+-0.8
+-0.6
+-0.4
+-0.2
+0.0
+ωeff(N)
+γ=0.02
+CPL(ω 0=-0.79,ω a=-0.16)
+-5 -4 -3 -2 -1 0 1 2
+-0.6
+-0.4
+-0.2
+0.0
+0.2
+ωeff(N)
+Figure 4. Comparison between path B solutions of the nonlocal model and their locally matched CPL descriptions. The left
+panel showsw eff for the nonlocal solution withU0 =−70.23and for the CPL model with(w 0, wa) = (−0.952,−0.033). The
+right panel shows the corresponding comparison forU0 =−29.70and(w 0, wa) = (−0.791,−0.156). The agreement around
+the present epoch follows from the construction of the effective CPL parameters, whereas deviations at earlier or later times
+quantify the limitations of the local mapping.
+most relevant for comparison with dynamical-dark-energy parametrizations.
+To further quantify the comparison between the nonlocal and the CPL frameworks, we compute the effective CPL
+parameters,w 0 andw a, from the nonlocal theory. For the CPL parametrization, these quantities can be extracted
+from the present value and first derivative ofweff. In particular,
+w0 = 3w eff|N=0 −Ω 0
+r
+3(1−Ω 0m −Ω 0r) ,(25)
+wa = 2w0Ω0
+r −3w 2
+0(Ω0
+m + Ω0
+r) + 2ξ ′|N=0 −Ω 0
+r(1−Ω 0
+r)
+3(1−Ω 0m −Ω 0r) .(26)
+Applying these expressions to the nonlocal model, and fixingΩ0
+m andH 0, each value ofγuniquely determines, within
+a given branch, a pair(w 0, wa)reproducing the present value and slope ofw eff. These effective CPL parameters
+should be understood as local descriptors of the nonlocal expansion history, rather than as independent parameters
+of the underlying theory. The mapping guarantees agreement between the two descriptions only to first order around
+the present epoch, without implying an exact correspondence throughout their cosmological evolution. Nevertheless,
+it provides a useful phenomenological representation of the correlations imposed by the nonlocal dynamics.1
+As an illustrative example, we fix the cosmological parameters and examine the effective CPL parameters associated
+with two path B solutions, together with the corresponding expansion histories shown in Fig. 4. We first consider
+the free parameters of the nonlocal model:Ω 0
+m = 0.3114, H 0 = 67.51, γ= 0.001, with the associated value
+U0 =−70.2278selected by the normalization conditionH(N= 0) =H 0 along path B. Evaluating Eqs. (25) and (26),
+we obtain the corresponding CPL parametersw0 =−0.952andw a =−0.033. Repeating the procedure forγ= 0.02,
+which corresponds toU0 =−29.6991, while keepingΩ 0
+m andH 0 fixed, yieldsw0 =−0.791andw a =−0.156. In both
+cases,w a is negative and comparatively small in magnitude, particularly for the solution withγ= 0.001. However, as
+discussed above, both models undergo the standard radiation- and matter-dominated eras in the past, during which
+the effects of dark energy and the nonlocal contributions are negligible. As a result, once the values of(w0, wa)are
+chosen to match the present-day behavior ofweff, the two models also exhibit a very similar evolution at earlier times.
+This agreement is illustrated in Fig. 4. It naturally raises the question of whether the MM model can reproduce the
+behavior favored by DESI for an appropriate choice of its free parameters.
+It is important to emphasize, however, that for fixedΩ0
+m andH 0, the nonlocal model predicts a unique pair(w0, wa)
+for each value ofγwithin a given branch. Hence,w 0 andw a are not independent quantities, but are linked by the
+1 The accuracy of the local CPL mapping can be understood directly from the background evolution. By construction, the nonlocal and
+CPL descriptions share the same present value and first derivative ofweff, implying that their difference starts at second order in an
+expansion aroundN= 0. SincedlnH/dN=−3(1 +w eff)/2, their logarithmic Hubble rates, normalized to the same present value,
+differ only at third order inN. This explains the close agreement between the expansion histories near the present epoch, while also
+emphasizing that the local matching does not guarantee accuracy over the full redshift range probed by cosmological observations.
+
+[PDF page 9]
+9
+Figure 5. Left: locally matched CPL parametersw0 andw a predicted by path B as functions of the nonlocal parameterγ, for
+fixedΩ 0
+m = 0.3114andH 0 = 67.51. Right: corresponding one-dimensional trajectory in the(w0, wa)plane, compared with the
+68% and 95% confidence regions obtained from the DESI + CMB + Pantheon+ for the CPL analysis. The nonlocal model
+explores only a one-dimensional subset of the full phenomenological parameter space.
+underlying dynamics of the theory. Consequently, the nonlocal model explores only a restricted one-dimensional
+subset of the full CPL parameter space, in contrast to the CPL parametrization, wherew0 andw a are treated as
+independent free parameters. Therefore, not every CPL scenario can be realized within the nonlocal framework.
+This one-to-one correspondence is illustrated in the left panel of Fig. 5, which shows the relation betweenγand the
+corresponding values of(w0, wa)for fixed cosmological parametersΩ 0
+m = 0.3114andH 0 = 67.51. Asγincreases,w 0
+increases, whereasw a decreases. In the right panel of Fig. 5, we eliminateγand combine both curves to obtain the
+theoretical relation betweenw0 andw a predicted by the nonlocal model. The resulting trajectory is then compared
+with the results of DESI constraints [5] in the(w0, wa)plane obtained within the CPL parametrization.
+The shape of this trajectory admits a simple local interpretation close to itsΛCDM-like endpoint. As derived in
+Appendix A, it can be expanded as
+wa =−α NL(1 +w 0) +O
+ 
+(1 +w 0)2
+,(27)
+whereα NL >0determines the direction along which path B departs fromΛCDM in the CPL plane. As shown in
+Appendix A, an asymptotic expansion of the background equations in powers of√γyieldsα NL ≃0.686for the fiducial
+cosmological parameters considered here. Equation (27) therefore provides a quantitative consistency relation of the
+nonlocal model: the effective parameters enter the quadrantw0 >−1,w a <0, but cannot vary independently.
+The significance of this relation is not simply that the nonlocal model occupies a restricted region of the CPL plane,
+but that it predicts a specific direction of departure fromΛCDM. In particular, the evolution toward more negative
+values ofw a is necessarily accompanied by an increase inw0, preventing the two parameters from adjusting inde-
+pendently to the observationally preferred values. The orientation of the theoretical trajectory thus provides a direct
+connection between the underlying gravitational dynamics and the model’s ability to reproduce the phenomenology
+suggested by DESI.
+For the fiducial cosmological parameters adopted in Figs. 4 and 5, the theoretical trajectory does not intersect the
+region preferred by the unrestricted CPL fit. This comparison is nevertheless illustrative, since the effective CPL
+parameters are defined through a local matching of the expansion history, whereas the observational contours are
+inferred from its full redshift dependence. Moreover, variations of the standard cosmological parameters may modify
+the position and width of the theoretical trajectory. A definitive assessment therefore requires fitting the nonlocal
+background evolution directly to the cosmological data, as we do in the following section.
+IV. CONSTRAINTS FROM DESI AND COMPLEMENTARY DATASETS
+We fit the path-B model directly to the cosmological likelihoods, sampling the nonlocal parameterγtogether
+with the standard cosmological parameters. We recall that the initial valueU0 is not sampled independently but
+is determined at each point by imposing the normalization conditionH(N= 0) =H 0, while retaining the solution
+corresponding to path B.
+We implemented the background cosmological dynamics of path B in the Boltzmann code CLASS [48] and interfaced
+it with the Markov chain Monte Carlo samplerMontePython[49]. While the nonlocal background evolution is con-
+sistently incorporated, cosmological perturbations are treated within an effective smooth-dark-energy approximation.
+
+[PDF page 10]
+10
+Parameter Prior Description
+Ω0
+m U[0.27,0.35]Matter density
+H0 U[60,80]Hubble parameter (km s −1 Mpc−1)
+ωb Flat (Unbounded) Baryon density
+ωcdm Flat (Unbounded) Cold-dark-matter density
+100θs Flat (Unbounded) Angular acoustic scale
+τreio Flat (Unbounded) Reionization optical depth
+ln(1010As)Flat (Unbounded) Scalar amplitude
+ns Flat (Unbounded) Scalar spectral index
+γU[0.001,0.2]Nonlocal parameter
+Table II. Cosmological parameters and priors used in the MCMC analysis. The nuisance parameters associated with the
+different likelihoods are varied according to the prescriptions of the corresponding collaborations. Unbounded denotes a flat
+prior without explicitly imposed finite bounds.
+This distinction is particularly relevant because BAO and supernova distances primarily constrain the homogeneous
+expansion history, whereas CMB temperature and polarization observables also depend on perturbation dynamics.
+Nevertheless, since the observationally favored solutions exhibit a background evolution close to that ofΛCDM over
+the redshift range probed by current data, one may reasonably expect the corrections arising from a fully consistent
+treatment of nonlocal perturbations to remain relatively modest in this region of parameter space, although this
+remains to be verified explicitly. The constraints reported below should therefore be interpreted as conditional on the
+adopted effective perturbation prescription. A more complete assessment would require implementing the modified
+perturbation equations of the theory.
+For every point in parameter space, the auxiliary-field equations are integrated fromNini =−20.7233, imposing
+V(N ini) = 0, V ′(Nini) = 0, U ′(Nini) = 0,(28)
+whileU(N ini)≡U 0 is determined numerically by requiring the normalization condition. Among the two solutions of
+the shooting procedure, we retain the one belonging to path B, namelyU0 < ¯U(γ). We then sample the six standard
+cosmological parameters
+
+ωb, ωcdm, θs, τreio,ln(10 10As), ns
+	
+,(29)
+together with the nonlocal parameterγ. Hereωb ≡Ω 0
+b(H0/100)2 andω cdm ≡Ω 0
+cdm(H0/100)2 are the physical baryon
+and cold-dark-matter densities, respectively, whileθs denotes the acoustic-scale parameter used in the chains. The
+primordial scalar spectrum is taken to be a power law with amplitudeAs and spectral tiltns.
+In Table II, we summarize the cosmological parameters fitted in the different runs, together with the priors imposed
+on them. It should be noted that these priors are constrained by the grid over which the normalization ofH0 and
+U0 was performed, which depends on the parameter space ofH0,Ω 0
+m andγ. These values were chosen close to those
+expected for a broad range of cosmological models and within a relatively narrow region, allowing us to construct
+a finer grid to accurately capture the dependence onγ. The priors for the remaining cosmological parameters are
+assumed to be flat and unbounded, i.e., flat priors without explicitly imposed finite bounds. In addition, we impose
+γ≥0and restrict its range to values for which the path-B shooting procedure yields a regular cosmological evolution
+over the entire redshift interval relevant to the likelihood analysis. An upper prior boundaryγ <0.2is adopted
+to restrict the exploration to models whose background evolution isa prioriclose to bothΛCDM and the DESI
+CPL data fit. Since theΛCDM-like expansion history is approached through the singular scaling limitγ→0and
+U0 → −∞, the pointγ= 0is not integrated directly. Instead, it is understood as the limiting solution approached
+continuously asγdecreases.
+A. Datasets and statistical methodology
+To constrain the model parameters, we perform a comprehensive MCMC analysis based on the following cosmolog-
+ical datasets:
+•Planck 2018:The CMB likelihood combines the Planck TT, EE, and TE power spectra, usingsimalland
+Commanderforl <30andPlikforl≥30[1].
+•DESI DR2 BAO:We consider the Baryon Acoustic Oscillation (BAO) measurements from the second DESI
+data release [5]. The dataset combines information from several tracers, including galaxies, quasars, and the
+
+[PDF page 11]
+11
+Lyman-αforest, and provides both isotropic and anisotropic constraints on cosmological distances across the
+redshift range0.295≤z≤2.330, divided into nine redshift bins.
+•Pantheon+:We use the Pantheon+ compilation of 1550 unique Type Ia supernovae, covering the redshift
+range0.001≤z≤2.26.
+We denote this combination by Planck+DESI DR2+Pantheon+. For comparison, we also analyze DESI+CMB
+and CMB alone. These additional combinations allow us to assess the dependence of the inferred constraints on the
+adopted supernova compilation.
+We require the Gelman–Rubin convergence criterion to satisfyR−1<0.01for all sampled parameters [50]. The
+quoted intervals correspond to marginalized 68% and 95% credible regions unless stated otherwise. Best-fit points
+and minimum effective chi-squared values are obtained using the Sequential Least Squares Programming (SLSQP)
+optimizer implemented withinMontePython.
+B. Constraints on the nonlocal model
+The marginalized posterior distributions for the baseline dataset are shown in Fig. 6 and Table III. The standard
+cosmological parameters remain broadly consistent with their values inferred inΛCDM. The principal effect of the
+nonlocal extension is encoded in the posterior ofγ, which is peaked toward the lower prior boundary. For the
+Planck+DESI DR2+Pantheon+ dataset combination, we obtain
+γ <0.00495 (95% C.L.).(30)
+The fact that the posterior accumulates close toγ= 0indicates that the combined data favor the region in which the
+background expansion approaches itsΛCDM-like limit. This behavior can be understood from the restricted relation
+between the effective CPL parameters predicted by the model. Increasingγmoves the path-B solutions away from
+theΛCDM region, increasingw 0 while makingw a more negative, as shown in Fig. 5. The resulting trajectory does
+not follow the principal degeneracy direction of the phenomenological CPL constraints. Consequently, the values ofγ
+that generate an appreciable departure fromwDE =−1cannot simultaneously reproduce the combination ofw0 and
+wa preferred by an unrestrictedw0waCDM fit.
+The resulting constraints suggest that variations of the standard cosmological parameters do not provide sufficient
+freedom to reconcile the path-B background evolution with the expansion histories preferred by the unrestricted
+CPL fit. The local consistency relation (27) provides a dynamical interpretation of this result: moving toward more
+negative values ofw a necessarily drivesw 0 farther above−1, eventually degrading the fit to the combined data.
+Consequently, the nonlocal parameter is only weakly correlated with the other parameters, except for the Planck data
+set where we find a slight anticorrelation withH0, indicating that larger values ofγare compatible with smaller values
+ofH 0, and a stronger correlation withΩ0
+m. However, when all data sets are combined, these correlations become
+negligible, and the nonlocal model instead exhibits a tendency towards theΛCDM limit. In fact, the inferred Hubble
+constant,H 0 = 67.39+0.399
+−0.335 km s−1 Mpc−1 is slightly shifted downward relative to the correspondingΛCDM result.
+Nevertheless, this shift is not sufficient to activate the new dynamical features of the nonlocal model required to
+accommodate the data.
+On the other hand, the sharp edge in the Planck-onlyΩ0
+m posterior in Fig. 6 is caused by the upper boundary of the
+grid used for the calculation ofU0, which translates into the upper prior boundaryΩ0
+m = 0.35. The combined-dataset
+posteriors remain safely within the interpolation range.
+For fixed standard cosmological parameters, the mapping betweenγand(w 0, wa)defines a one-dimensional tra-
+jectory in the CPL plane. Allowing these parameters to vary broadens this trajectory into a family of closely related
+curves, whose observationally relevant region remains constrained by the correlations imposed by the nonlocal dy-
+namics.
+C. Goodness of fit and comparison withΛCDM
+To assess whether the additional nonlocal degree of freedom improves the description of the data, we compare the
+minimum effective chi-squared with that obtained inΛCDM using the same likelihood combination. From a combined
+Planck, DESI DR2 and Pantheon+ dataset, we find
+∆χ2
+min ≡χ 2
+min,nonlocal −χ 2
+min,ΛCDM =−2.654.(31)
+
+[PDF page 12]
+12
+0.114
+0.118
+0.123ωcdm
+63.6
+66
+68.5H0
+2.99
+3.05
+3.11ln1010As
+0.951
+0.968
+0.985ns
+0.001
+0.0192
+0.0375γ
+0.0313
+0.0627
+0.0941τ reio
+0.293
+0.319
+0.345Ω0
+m
+0.771 0.826 0.881
+S8
+2.2 2.25 2.31
+100 ωb
+0.771
+0.826
+0.881S8
+0.114 0.118 0.123
+ωcdm
+63.6 66 68.5
+H0
+2.99 3.05 3.11
+ln1010As
+0.951 0.968 0.985
+ns
+0.001 0.0192 0.0375
+γ
+0.0313 0.0627 0.0941
+τ reio
+0.293 0.319 0.345
+Ω0
+m
+Planck
+Planck+ DESI DR2
+Planck+ DESI DR2 + Pantheon+
+Figure 6. Marginalized posterior distributions for path B of the nonlocal model obtained from the combined Planck, DESI
+DR2 BAO, and Pantheon+ Type Ia supernova datasets.
+The minimum effectiveχ-squared values for the different dataset combinations are reported in Table III. Since the
+nonlocal model contains one additional sampled parameter relative toΛCDM, a small improvement of the best-fit
+chi-squared would not by itself constitute evidence in its favor. For reference, the difference in the Akaike information
+criterion is
+∆AIC = ∆χ2
+min + 2 =−0.654.(32)
+For the Planck+DESI DR2+Pantheon+ dataset combination, the negative value of∆AICindicates a marginal
+preference for the nonlocal model, even after accounting for the additional parameter. However, its small magnitude
+implies that this preference is not statistically meaningful. This result is also consistent with the behavior of the
+nonlocal parameter found in the observational analysis. The constraints tend to pushγtowards small values, precisely
+the regime in which the nonlocal model approachesΛCDM. Consequently, the modest improvement inχ2
+min does not
+appear to be associated with a preference for a genuinely nonlocal cosmological regime. Instead, the additional degree
+of freedom remains weakly activated by the data, with the best-fit region lying close to theΛCDM limit. In this
+
+[PDF page 13]
+13
+Planck Planck + DESI DR2 BAO Planck + DESI DR2 BAO +
+Pantheon+
+Parameter ΛCDM Nonlocal ΛCDM Nonlocal ΛCDM Nonlocal
+100ωb 2.240±0.015 2.238±0.015 2.250±0.013 2.260±0.013 2.250±0.013 2.260±0.013
+ωcdm 0.1200±0.0014 0.1198±0.0013 0.1180+0.00068
+−0.00069 0.11668+0.00075
+−0.00073 0.118±0.001 0.11670 +0.00074
+−0.00073
+100θs 1.04±0.00030 1.04191±0.00030 1.0423±0.00028 1.0422 +0.00030
+−0.00028 1.04±0.000278 1.04219±+0.00028
+ln(1010As) 3.05+0.016
+−0.017 3.046+0.015
+−0.017 3.050+0.016
+−0.018 3.048+0.016
+−0.018 3.05+0.016
+−0.018 3.047+0.0162
+−0.0180
+ns 0.965+0.0045
+−0.0046 0.9657+0.0043
+−0.0044 0.9710+0.0035
+−0.0034 0.9733+0.0035
+−0.0035 0.971±0.0034 0.9733 +0.0035
+−0.0036
+τreio 0.0545+0.0076
+−0.0082 0.0554+0.0074
+−0.0084 0.0579+0.0076
+−0.0085 0.0596+0.0077
+−0.0088 0.0575+0.0076
+−0.0085 0.0594+0.0076
+−0.0088
+γ(95%C.L.) −<0.0222 −<0.00624 −<0.00495
+H0 67.3+0.63
+−0.64 64.91+0.59
+−1.05 68.50+0.31
+−0.30 67.33+0.49
+−0.36 68.4±0.302 67.39 +0.40
+−0.34
+σ8 0.811+0.0077
+−0.0076 0.7937±+0.010 0.8040+0.0069
+−0.0075 0.7926+0.0082
+−0.0081 0.805+0.0069
+−0.0075 0.7930+0.0077
+−0.0079
+χ2
+min 2772.09 2771.41 2788.677 2786.129 4200.94 4198.286
+∆χ2
+min 0−0.68 0−2.548 0−2.654
+Table III. Constraints on the cosmological parameters ofΛCDM and the path-B nonlocal model with the best-fit effective chi-
+squared contributions. Both models are evaluated using the same likelihood combination and nuisance-parameter treatment.
+sense, the AIC comparison and the posterior constraints provide a consistent picture: the present data do not require
+the additional nonlocal degree of freedom to improve the fit, while remaining compatible with the nonlocal extension.
+V. SUMMARY AND CONCLUSIONS
+In this work, we have investigated the cosmological dynamics and observational viability of the nonlocalR□−2R
+model, focusing on the class of solutions known as path B. These solutions reproduce the standard radiation- and
+matter-dominated epochs before approaching a quasi-de Sitter saddle point, where cosmic acceleration can persist for
+an extended period. Unlike the asymptotic de Sitter-like behavior of path A, the accelerated stage along path B is
+transient, eventually giving way to a radiation-like regime without radiation. Around the present epoch, however,
+path B can generate expansion histories resembling those of dynamical dark-energy models.
+To characterize these histories, we have constructed a local mapping between the nonlocal background evolution
+and the effective CPL parameters(w0, wa). For fixed standard cosmological parameters, the dynamics restrict these
+quantities to a one-dimensional trajectory rather than allowing them to vary independently. Close to theΛCDM-like
+limit, we have shown that this trajectory obeys the consistency relationwa =−α NL(1 +w 0) +O((1 +w 0)2). By
+expanding the nonlocal background equations in powers of√γ, we have determined its asymptotic slope, obtaining
+αNL ≃0.686for our fiducial cosmological parameters. This result provides a quantitative connection between the
+underlying gravitational dynamics and the direction of departure fromΛCDM in the CPL plane.
+Although the path-B trajectory enters the quadrantw0 >−1,w a <0, also favored by phenomenological CPL
+fits to DESI, its orientation differs from that preferred by the data. In particular, increasingly negative values of
+wa necessarily correspond to values ofw0 farther above−1, preventing the model from exploring the full range of
+independently varying CPL parameters. Our likelihood analysis, combining CMB, DESI DR2 BAO, and Pantheon+
+observations, confirms that this restricted evolution does not provide sufficient freedom to reproduce the expansion
+histories preferred by an unrestricted CPL fit. Instead, the posterior favors small values ofγ, driving the allowed
+solutions toward theirΛCDM-like limit.
+The comparison withΛCDM for a combined dataset of Planck+DESI DR2+Pantheon+ yields a modest improve-
+ment in the minimum effective chi-squared,∆χ2
+min =−2.654, corresponding to∆AIC =−0.654. The latter difference
+istoosmalltoconstitutemeaningfulstatisticalevidenceinfavorofthenonlocalmodel. Thesefindingsshouldneverthe-
+less be interpreted within the scope of our implementation, which modifies the homogeneous cosmological background
+while retaining an effective treatment of perturbations. The resulting constraints are therefore conditional on this
+approximation and on the adopted priors. A complete assessment of the underlying modified-gravity theory would
+require a consistent implementation of its perturbation equations.
+Our analysis is also restricted to the path-B realization defined by the auxiliary-field initial conditions adopted
+here. Different admissible prescriptions for the nonlocal operator may lead to distinct cosmological histories, and their
+observational viability remains to be investigated. Extending the present framework to the complete perturbation
+sector and examining complementary cosmological probes would provide further tests of the model.
+More generally, our results illustrate the importance of confronting theoretically motivated models of cosmic ac-
+
+[PDF page 14]
+14
+celeration with observations beyond their ability to generate a time-dependent dark-energy equation of state. The
+relevant question is whether the specific correlations imposed by their underlying dynamics agree with those inferred
+from cosmological data. In the path-B realization studied here, these correlations favor an observationally allowed
+region close toΛCDM, with no significant evidence for genuinely nonlocal deviations.
+ACKNOWLEDGMENTS
+This article is based on work from COST Action CA21136 “Addressing observational tensions in cosmology with
+systematics and fundamental physics” (CosmoVerse) supported by COST (European Cooperation in Science and Tech-
+nology). IA is supported by the Basque Government Grant No. IT1628-22, Grant No. PID2021-123226NB-I00 (funded
+byMCIN/AEI/10.13039/501100011033, byERDF“AwayofmakingEurope”), andtheGrantJuandelaCiervafunded
+by MICIU/AEI/10.13039/501100011033 and by ESF+. JR (ORCID 0000-0001-7545-1533) is supported by a Ramón y
+Cajal contract from the Spanish Ministry of Science and Innovation with Ref. RYC2020-028870-I. This work was sup-
+ported by the project PID2022-139841NB-I00 of MICIU/AEI/10.13039/501100011033 and FEDER, UE. LA, AC, and
+SD acknowledge the support by DST-DAAD Indo-German joint research collaboration grant DST/INT/DAAD/P-
+07/2023(G). AC and SD thank Heidelberg University for its kind hospitality and stimulating research environment,
+where part of the research work was carried out during the scientific visit. LA acknowledges support by DFG under
+Germany’s Excellence Strategy EXC 2181/1 - 390900948 (the Heidelberg STRUCTURES Excellence Cluster), under
+Project 554679582 “GeoGrav: Cosmological Geometry and Gravity with nonlinear physics”, and by Tamkeen under
+the NYUAD Research Institute grant CG014.
+Appendix A: Local CPL mapping and asymptotic consistency relation
+In this appendix, we derive the local mapping between the background evolution of the nonlocal model and the
+effective Chevallier–Polarski–Linder parameters(w0, wa). We then determine the asymptotic behavior of the path-
+B solutions around theirΛCDM-like limit and derive the corresponding consistency relation in the CPL plane. In
+particular, we show that the leading deviations fromΛCDM can be obtained from a system of linear differential
+equations, allowing us to determine the tangent of the theoretical trajectory without integrating the full nonlinear
+system at finiteγ.
+1. Exact local mapping
+For a spatially flat cosmology containing pressureless matter, radiation, and an effective dark-energy component,
+the total effective equation-of-state parameter can be written as
+weff(N) = Ωr(N)
+3 +w DE(N)ΩDE(N),Ω DE(N) = 1−Ω m(N)−Ω r(N).(A1)
+For the CPL parametrization,
+wDE(a) =w 0 +w a(1−a) =w 0 +w a(1−e N),(A2)
+and thereforew DE(0) =w 0 andw ′
+DE(0) =−w a. Evaluating Eq. (A1) at the present epoch gives
+weff,0 = Ω0
+r
+3 +w 0Ω0
+DE ,Ω 0
+DE = 1−Ω 0
+m −Ω 0
+r ,(A3)
+from which
+w0 = 3weff,0 −Ω 0
+r
+3 (1−Ω 0m −Ω 0r) .(A4)
+Usingw eff =−1−2ξ/3, withξ≡H ′/H, this expression may equivalently be written as
+w0 = −3−2ξ 0 −Ω 0
+r
+3 (1−Ω 0m −Ω 0r) .(A5)
+
+[PDF page 15]
+15
+To determinew a, we differentiate Eq. (A1),
+w′
+eff = Ω′
+r
+3 +w ′
+DEΩDE +w DEΩ′
+DE .(A6)
+The matter and radiation fractions satisfy
+Ω′
+m =−(3 + 2ξ)Ω m ,Ω ′
+r =−(4 + 2ξ)Ω r ,(A7)
+while spatial flatness implies
+Ω′
+DE = (3 + 2ξ)Ωm + (4 + 2ξ)Ωr .(A8)
+Evaluating Eq. (A6) atN= 0, usingw ′
+eff =−2ξ ′/3, and solving forwa, we obtain
+wa = Ω′0
+r /3 +w 0Ω′0
+DE + 2ξ′
+0/3
+Ω0
+DE
+.(A9)
+Substituting Eqs. (A7) and (A8), and eliminatingξ0 using Eq. (A5), yields
+wa = 2w0Ω0
+r −3w 2
+0
+ 
+Ω0
+m + Ω0
+r
+
++ 2ξ′
+0 −Ω 0
+r(1−Ω 0
+r)
+3 (1−Ω 0m −Ω 0r) .(A10)
+Equations (A4) and (A10) show that the effective CPL parameters are determined by the present background evolution
+anditsderivatives, togetherwiththematterandradiationfractions. Themappingislocal: itmatchesthepresentvalue
+and first derivative of the effective dark-energy equation of state, without implying an exact correspondence between
+the nonlocal and CPL expansion histories at arbitrary redshift. As a consistency check, for aΛCDM background one
+hasw 0 =−1andw a = 0. Neglecting radiation for simplicity,ξ=−3Ω m/2andξ ′ = 9ΩmΩDE/2, so that Eq. (A10)
+gives
+wa =−3Ω 0
+m + 2
+3Ω0
+DE
+9
+2Ω0
+mΩ0
+DE = 0.(A11)
+2. Asymptotic expansion of the nonlocal background
+For fixed values of the standard cosmological parameters, each path-B solution determines a unique pair(w0, wa).
+The resulting trajectory is therefore one-dimensional, although its parametrization in terms ofγbecomes singular
+at theΛCDM-like endpoint. To characterize its local behavior, we introduceϵ≡ √γand expand the background
+equations in the limitϵ→0. At leading order, the expansion history approaches
+E2(N) = Ω 0
+me−3N + Ω0
+re−4N + ΩΛ ,Ω Λ ≡1−Ω 0
+m −Ω 0
+r ,(A12)
+whereE(N)denotes the normalized Hubble rate inΛCDM.
+Motivated by the singular behavior of the auxiliary-field initial condition, we consider the asymptotic expansions
+U(N) =− C
+ϵ +b+u(N) +O(ϵ), V(N) =− C
+ϵ q(N) +O(1),(A13)
+together with
+h2(N) =E 2(N) +ϵd(N) +O(ϵ 2).(A14)
+HereCandbare constants, whileu(N)andq(N)describe the leading time-dependent contributions. Substituting
+these expressions into the modified Friedmann equation and comparing terms of orderϵ0, we obtainC 2 = 4Ω Λ.
+Choosing the branch with negativeU, we haveC= 2√ΩΛ, and therefore
+U(N) =− 2√ΩΛ
+√γ +O(1).(A15)
+This scaling explains how the nonlocal contribution to the Friedmann equation can remain finite asγ→0, despite
+the divergence of the auxiliary field itself.
+
+[PDF page 16]
+16
+The time-dependent corrections follow from the auxiliary-field equations. At leading order, the equation forUgives
+u′′ + (3 +ξ Λ)u′ = 6(2 +ξ Λ),(A16)
+whereξ Λ ≡E ′/E. Similarly, the equation forVbecomes
+q′′ + (3 +ξ Λ)q′ = 1
+E2 .(A17)
+These equations are linear and depend only on the referenceΛCDM background. In accordance with the initial
+conditions adopted in the main text, we impose
+u(Nini) =u ′(Nini) = 0, q(N ini) =q ′(Nini) = 0.(A18)
+To determine the correctiond(N), we expand the modified Friedmann equation to first order inϵ. This yields
+d(N) =− C
+2 [b+u(N)]−CE 2(N)Q(N),(A19)
+where
+Q(N)≡3q(N) + 3q ′(N)− 1
+2 q′(N)u ′(N).(A20)
+The normalization conditionh(0) = 1impliesd(0) = 0, which fixesb=−u(0)−2Q(0). Consequently,
+d(N) =−C
+ u(N)−u(0)
+2 +E 2(N)Q(N)−Q(0)
+
+.(A21)
+Equation (A21) determines the leading departure fromΛCDM entirely in terms of the solutions of Eqs. (A16) and
+(A17). The first correction to the expansion history can therefore be obtained without solving the full nonlinear
+system at finiteγ.
+3. Determination of the CPL consistency relation
+We now relate the asymptotic expansion to the effective CPL parameters. To this end, we define the contribution
+of the nonlocal sector to the normalized expansion rate as
+D(N)≡h 2(N)−Ω 0
+me−3N −Ω 0
+re−4N .(A22)
+Using Eq. (A14), we have
+D(N) = Ω Λ +ϵd(N) +O(ϵ 2).(A23)
+The effective conservation equation implies
+wDE =−1− 1
+3
+D′
+D .(A24)
+Evaluating this expression and its first derivative atN= 0gives
+1 +w 0 =− D′
+0
+3D0
+, w a = 1
+3
+"
+D′′
+0
+D0
+−
+ D′
+0
+D0
+2#
+.(A25)
+These expressions are equivalent to the local mapping derived in the previous subsection, but are particularly conve-
+nient for studying theΛCDM-like limit. Substituting Eq. (A23), we obtain
+1 +w 0 =− ϵ
+3ΩΛ
+d′(0) +O(ϵ 2), w a = ϵ
+3ΩΛ
+d′′(0) +O(ϵ 2).(A26)
+Eliminatingϵyields the local consistency relation
+wa =−α NL(1 +w 0) +O
+ 
+(1 +w 0)2
+,(A27)
+
+[PDF page 17]
+17
+where
+αNL = lim
+γ→0
+
+− wa
+1 +w 0
+
+= d′′(0)
+d′(0) .(A28)
+The result assumesd′(0)̸= 0and identifiesα NL with the tangent of the path-B trajectory at itsΛCDM-like endpoint.
+Unlike the existence of a local linear relation, which follows generically from the regularity of a one-parameter curve,
+the value ofαNL is determined by the underlying nonlocal dynamics.
+The derivatives entering Eq. (A28) follow directly from Eq. (A21),
+d′(0) =−C
+ u′
+0
+2 + (E2)′
+0Q0 +Q ′
+0
+
+,(A29)
+and
+d′′(0) =−C
+ u′′
+0
+2 + (E2)′′
+0 Q0 + 2(E2)′
+0Q′
+0 +Q ′′
+0
+
+.(A30)
+The derivatives ofQcan be evaluated using Eq. (A20), while those ofuandqfollow from the linear equations
+of motion. For the fiducial cosmological parameters adopted in Sec. III, namelyΩ 0
+m = 0.3114,h= 0.6751, and
+Ω0
+r = 4.15×10 −5h−2, we integrate Eqs. (A16) and (A17) fromNini =−20.7233. The resulting present-day values are
+u(0)≃16.0783, u ′(0)≃3.1079, q(0)≃0.13907, q ′(0)≃0.26833.(A31)
+Evaluating the remaining derivatives through the linear equations, we obtaind′(0)≃ −3.13975andd ′′(0)≃ −2.15366
+and hence
+αNL ≃0.68593.(A32)
+More explicitly, the leading-order expressions for the effective CPL parameters read
+w0 =−1 + 1.5201 √γ+O(γ), w a =−1.0427 √γ+O(γ).(A33)
+The corresponding consistency relation is therefore
+wa =−0.68593(1 +w 0) +O
+ 
+(1 +w 0)2
+.(A34)
+The coefficient obtained here is consistent with the ratios−wa/(1 +w 0)≃0.69and0.75found for the representative
+finite-γsolutions discussed in Sec. III. The asymptotic calculation provides a more precise determination of the limiting
+tangent and explains the approximately linear orientation of the theoretical trajectory displayed in Fig. 5.
+We emphasize that the numerical value ofαNL depends on the standard cosmological parameters through the
+referenceΛCDM background and the corresponding linearized auxiliary-field evolution. The derivation is based on
+an asymptotic expansion of the path-B solutions in powers of√γ, and its leading-order prediction applies sufficiently
+close to theΛCDM-like endpoint.
+[1] N. Aghanim et al. (Planck), Astron. Astrophys.641, A6 (2020), [Erratum: Astron.Astrophys. 652, C4 (2021)], 1807.06209.
+[2] A. G. Riess et al. (Supernova Search Team), Astron. J.116, 1009 (1998), astro-ph/9805201.
+[3] L. Amendola and S. Tsujikawa,Dark Energy: Theory and Observations (Cambridge University Press, 2015), ISBN 978-1-
+107-45398-2.
+[4] P. Bull, Y. Akrami, et al., Phys. Dark Univ.12, 56 (2016), 1512.05356.
+[5] M. Abdul Karim et al. (DESI) (2025), 2503.14738.
+[6] W. Giarè, T. Mahassen, E. Di Valentino, and S. Pan, Phys. Dark Univ.48, 101906 (2025), 2502.10264.
+[7] S. Capozziello, H. Chaudhary, T. Harko, and G. Mustafa, Phys. Dark Univ.51, 102196 (2026), 2512.10585.
+[8] M. Ishak et al., JCAP09, 053 (2025), 2411.12026.
+[9] G. Ye, M. Martinelli, B. Hu, and A. Silvestri, Phys. Rev. Lett.134, 181002 (2025), 2407.15832.
+[10] J. Pan and G. Ye, Phys. Rev. D113, L041304 (2026), 2503.19898.
+[11] W. J. Wolf, P. G. Ferreira, and C. García-García, Phys. Rev. D113, 023551 (2026), 2509.17586.
+[12] Y. Cai, X. Ren, T. Qiu, M. Li, and X. Zhang, Natl. Sci. Rev.13, nwag115 (2026), 2505.24732.
+[13] A. Chakraborty, P. K. Chanda, S. Das, and K. Dutta, JCAP11, 047 (2025), 2503.10806.
+
+[PDF page 18]
+18
+[14] A. Chakraborty, T. Ray, S. Das, A. Banerjee, and V. Ganesan, Astrophys. J.998, 83 (2026), 2403.14247.
+[15] S. Nojiri and S. D. Odintsov, Phys. Rept.505, 59 (2011), 1011.0544.
+[16] W. Siegel (2003), hep-th/0309093.
+[17] G. Calcagni and L. Modesto, Phys. Rev.D91, 124059 (2015), 1404.2137.
+[18] T.Biswas, T.Koivisto, andA.Mazumdar, inProceedings, Barcelona Postgrad Encounters on Fundamental Physics, Barcelona
+(2013), pp. 13–24, 1302.0532.
+[19] T. Biswas, E. Gerwick, T. Koivisto, and A. Mazumdar, Phys. Rev. Lett.108, 031101 (2012), 1110.5249.
+[20] L. Modesto, Phys. Rev.D86, 044005 (2012), 1107.2403.
+[21] R. P. Woodard, Found. Phys.44, 213 (2014), 1401.0254.
+[22] A. O. Barvinsky, Mod. Phys. Lett.A30, 1540003 (2015), 1408.6112.
+[23] S. Deser and R. P. Woodard, Phys. Rev. Lett.99, 111301 (2007), 0706.2151.
+[24] E. Belgacem, Y. Dirian, A. Finke, S. Foffa, and M. Maggiore, JCAP04, 010 (2020), 2001.07619.
+[25] A. Codello and R. K. Jain (2015), 1507.06308.
+[26] J. F. Donoghue and B. K. El-Menoufi, JHEP10, 044 (2015), 1507.06321.
+[27] C. Wetterich, Gen. Rel. Grav.30, 159 (1998), gr-qc/9704052.
+[28] A. O. Barvinsky, Phys. Rev.D85, 104018 (2012), 1112.4340.
+[29] M. Jaccard, M. Maggiore, and E. Mitsou, Phys. Rev.D88, 044033 (2013), 1305.3034.
+[30] L. Modesto and S. Tsujikawa, Phys. Lett.B727, 48 (2013), 1307.6968.
+[31] G. Cusin, J. Fumagalli, and M. Maggiore, JHEP09, 181 (2014), 1407.5580.
+[32] A. Golovnev, T. Koivisto, and M. Sandstad, Phys. Rev.D93, 064081 (2016), 1509.06552.
+[33] G. Panotopoulos, J. Rubio, and I. Lopes, Int. J. Mod. Phys. D32, 2250139 (2023), 2106.10582.
+[34] H. Nersisyan, Y. Akrami, L. Amendola, T. S. Koivisto, J. Rubio, and A. R. Solomon, Phys. Rev. D95, 043539 (2017),
+1610.01799.
+[35] S. Dodelson and S. Park, Phys. Rev.D90, 043535 (2014), 1310.4329.
+[36] H. Nersisyan, A. F. Cid, and L. Amendola, JCAP04, 046 (2017), 1701.00434.
+[37] M. Maggiore and M. Mancarella, Phys. Rev.D90, 023005 (2014), 1402.0448.
+[38] Y. Dirian and E. Mitsou, JCAP1410, 065 (2014), 1408.5058.
+[39] Y. Dirian, S. Foffa, M. Kunz, M. Maggiore, and V. Pettorino (2016), 1602.03558.
+[40] Y. Dirian, Phys. Rev. D96, 083513 (2017), 1704.04075.
+[41] Y. Dirian, S. Foffa, M. Kunz, M. Maggiore, and V. Pettorino, JCAP1504, 044 (2015), 1411.7692.
+[42] Y. Dirian, S. Foffa, N. Khosravi, M. Kunz, and M. Maggiore, JCAP1406, 033 (2014), 1403.6068.
+[43] E. Belgacem, Y. Dirian, S. Foffa, and M. Maggiore, JCAP03, 002 (2018), 1712.07066.
+[44] M. Chevallier and D. Polarski, Int. J. Mod. Phys. D10, 213 (2001), gr-qc/0009008.
+[45] E. V. Linder, Phys. Rev. Lett.90, 091301 (2003), astro-ph/0208512.
+[46] Y.-l. Zhang, K. Koyama, M. Sasaki, and G.-B. Zhao, JHEP03, 039 (2016), 1601.03808.
+[47] H. Nersisyan, Y. Akrami, L. Amendola, T. S. Koivisto, and J. Rubio, Phys. Rev. D94, 043531 (2016), 1606.04349.
+[48] J. Lesgourgues (2011), 1104.2932.
+[49] T. Brinckmann and J. Lesgourgues (2018), 1804.07261.
+[50] A. Gelman and D. B. Rubin, Statist. Sci.7, 457 (1992).

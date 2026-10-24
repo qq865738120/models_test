@@ -2,6 +2,9 @@
 
 核对日期：2026-10-19。这是执行工具标识目录，不代表市场占有率或性能排名。旧版名称保留用于历史实验；模型名称另行填写。
 
+2026-10-24：新增 Kimi 选项，独立于 Kimi Code CLI 和旧版 Kimi CLI。
+同日新增 MiniMax Code 选项（`minimax-code`）。
+
 | 标识 | 名称 | 官方来源 |
 |---|---|---|
 | codex | Codex | [官网或仓库](https://github.com/openai/codex) |
@@ -19,8 +22,10 @@
 | goose | Goose | [官网或仓库](https://github.com/aaif-goose/goose) |
 | openhands | OpenHands | [官网或仓库](https://github.com/OpenHands/OpenHands) |
 | qwen-code | Qwen Code | [官网或仓库](https://github.com/QwenLM/qwen-code) |
+| kimi | Kimi | [官网](https://www.kimi.com/) |
 | kimi-code | Kimi Code CLI | [官网或仓库](https://github.com/MoonshotAI/kimi-code) |
 | kimi-cli | Kimi CLI（旧版） | [官网或仓库](https://github.com/MoonshotAI/kimi-cli) |
+| minimax-code | MiniMax Code | [官网](https://agent.minimax.io/download) |
 | factory-droid | Factory Droid | [官网](https://www.factory.ai/) |
 | trae | TRAE | [官网](https://www.trae.ai/) |
 | auggie | Augment / Auggie CLI | [官网](https://www.augmentcode.com/product/CLI) |

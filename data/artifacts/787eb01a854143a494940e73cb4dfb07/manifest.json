@@ -1,0 +1,35 @@
+{
+  "runId": "20261024-111540-kimi-k3-1-pro-r1-7d8081",
+  "taskId": "05-game3d",
+  "phase": "initial",
+  "files": {
+    ".keep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executable": false
+    },
+    "assets/index-DUCT1LK3.css": {
+      "sha256": "9d64fd6017ecaf4a24c78dc953690c777a825b1169fe0856c53cbc0f03398841",
+      "executable": false
+    },
+    "assets/index-SvEos2s-.js": {
+      "sha256": "1cf1093d1f485b204c839590e2f8b07d748c8fe2a0dbc56990d9470af208b0f7",
+      "executable": false
+    },
+    "index.html": {
+      "sha256": "031fab85339f294723a2544eb03026e5342907beb902158504f42c14711a72b1",
+      "executable": false
+    },
+    "materials/warehouse.json": {
+      "sha256": "8f380e9ad3b7e426e512e65eaf962445f96a0e455eb4470c396cff017164e343",
+      "executable": false
+    },
+    "vendor/ammo/ammo.wasm.js": {
+      "sha256": "3fa63c584d4732f72b954c5ea105f1faca99559c95c57ce7bb738d3497f98228",
+      "executable": false
+    },
+    "vendor/ammo/ammo.wasm.wasm": {
+      "sha256": "16be07b989963bddebfef66eab28a4387536eb37014d9df1531dab380bd96a93",
+      "executable": false
+    }
+  }
+}

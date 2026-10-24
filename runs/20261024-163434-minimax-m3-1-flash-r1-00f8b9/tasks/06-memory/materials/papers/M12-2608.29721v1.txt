@@ -1,0 +1,4352 @@
+
+[PDF page 1]
+A UNIQUENESS THEOREM FOR THE VORTEX-WAVE SYSTEM WITH
+NON-CONSTANT VORTICITY NEAR THE POINT VORTEX
+DAVID MEYER
+Abstract.We study the uniqueness of the vortex wave system, i.e. the 2D incompressible Euler
+equations with vorticity consisting of a point vortex and a bounded part. We show that if the initial
+vorticity and point vortex location (w 0, X0) satisfy a constraint of the type|w 0(x)−w 0(X0)|=
+O(|x−X 0|α) forα >2 and the vorticity is inL ∞, then solutions are unique, globally in time, even
+though the velocity is not log-Lipschitz.
+1.Introduction and main results
+The 2D incompressible Euler equations are one of the most fundamental models of fluid dynamics.
+In vorticity form, these equations read as
+∂tω+ (u· ∇)ω= 0 andu=∇ ⊥∆−1ω(1.1)
+whereω:R 2 →Ris the vorticity andu:R 2 →R 2 is the velocity.
+We are concerned with solutions of a specific form, given by the so-calledvortex-wave system.
+This case consists of solutions of the formω=w+δ X(t), i.e. a regular part and a point vortex.
+The system is a model for the interaction of a strongly concentrated vortex, idealized into a point
+vortex, with the surrounding fluid.
+For such data, the velocity is given by
+u(x) = (∇⊥∆−1w)(x) + (x−X(t)) ⊥
+2π|x−X(t)| 2 ,
+wherey ⊥ = (−y2, y1), thanks to the explicit form of the full-space inverse Laplacian.
+In general, this has a singularity atx=X(t) and the transport equation for the Dirac-Delta
+atX(t) needs to be somewhat reinterpreted. Since the velocity of the point-vortex is rotationally
+symmetric, it should not transport the point-vortex itself and the system should evolve according
+to the equations
+∂tw+ (u· ∇)w= 0, u=∇ ⊥∆−1w+ (x−X(t)) ⊥
+2π|x−X(t)| 2 , d
+dt X(t) = (∇ ⊥∆−1w)(X(t)).(1.2)
+Even with these modifications, such data is still far too singular to fit into the usual well-posedness
+framework for the 2D Euler equations.
+It is relatively straightforward to show that for initial dataw 0 ∈L 1 ∩L ∞ there exists a weak
+solution (see definition (1.4) below), which was first done by Marchioro and Pulvirenti in [29], see
+also [26] for theL p-case.
+Uniqueness of such solutions is a much more difficult and largely unresolved problem. Indeed,
+almost all existing uniqueness proofs for the 2D Euler equations require the velocity to be log-
+Lipschitz and that is not the case here.
+This limitation is also sharp, and it can be shown that for measure- or evenL p-valued vorticities
+(leading to velocities which are only Sobolev-regular), solutions to the Euler equations (1.1) with
+an additional forcing term on the right-hand side are non-unique, see e.g. [5, 19, 37, 38]. However,
+1
+arXiv:2608.29721v1  [math.AP]  30 Aug 2026
+
+[PDF page 2]
+2 D. MEYER
+in this specific problem, the singular part of the solution(s) has far more structure than a ”generic”
+measure-valued vorticity, and therefore one might hope that uniqueness still holds.
+In fact, it can be shown [23,36] that if the initial dataw0 ∈L 1∩L∞ is constant in a neighbourhood
+of the point-vortex, then this property is preserved globally in time and leads to (global in time)
+uniqueness of solutions, as log-Lipschitzness of the velocity in a neighborhood of the region where
+the vorticity is non-constant is sufficient for uniqueness.
+The goal of this paper is to improve this result and to show that uniqueness still holds for non-
+constant vorticities, if the initial vorticity converges faster than second order to a constant atX(0),
+i.e. that there is someα >2 such that
+lim sup
+x→X(0)
+|w0(x)−w 0(X(0))|
+|x−X(0)| α <∞.(1.3)
+This contains the case ofw 0 being constant nearX(0) as a special case.
+1.1.Main result.We say that a given triple (w, u, X) is a solution to the vortex wave system for
+initial dataw 0, X(0) if the first equation in (1.2) holds distributionally, i.e. for anyϕ∈C ∞
+c (R2×R⩾0)
+it holds that
+ˆ ∞
+0
+ˆ
+R2
+wt(x)∂tϕ(t, x) +u t(x)· ∇ϕ(t, x)w t(x) dxdt=−
+ˆ
+R2
+w0(x)ϕ(0, x) dx
+ut(x) = (∇⊥∆−1wt)(x) + (x−X(t)) ⊥
+2π|x−X(t)| 2
+d
+dt X(t) = (∇ ⊥∆−1wt)(X(t)).
+
+
+
+(1.4)
+Note that this is not equivalent to being a weak solution to the 2D Euler equations in velocity form
+in the usual sense (e.g. the velocity is not inL 2). Still, solutions withw t ∈L 1 ∩L ∞ always exist for
+w0 ∈L 1 ∩L ∞ [29] and can also be recovered as suitable limits of classical solutions [4]. Furthermore,
+w∈L 1 ∩L ∞ guarantees that∇ ⊥∆−1wt is log-Lipschitz (see Lemma A.2) and that the ODE forX
+is uniquely solvable for a givenw.
+A detailed discussion of the equivalence of this solution concept with Lagrangian formulations
+can be found in [23].
+Our main theorem is then the following:
+Theorem 1.1.SupposeX(0)∈R 2 is given andw 0 ∈L ∞(R2)has compact support and fulfills the
+assumption(1.3).
+Then the solutionw∈L ∞([0,∞), L 1(R2)∩L ∞(R2))to the vortex-wave system with this initial
+data in the sense of(1.4)is unique.
+Here the assumption of compact support ofw 0 merely serves to simplify the proof, one can prove
+the same result also forw 0 ∈L 1 ∩L ∞ at the price of a few additional calculations.
+In principle, the argument works also for multiple point vortices or bounded domains with a suf-
+ficiently regular boundary if there are no collisions of the point vortices with each other or the
+boundary.
+Let us say a few more words about the existing literature:
+The vortex-wave system is mostly used to study the interaction of a concentrated vortex with the
+surrounding vorticity, see e.g. [12, 21]. However, it can also be derived as the vanishing solid limit
+of fluid-solid systems with non-zero circulation around the solids, see e.g. [15–17].
+Similar models for the SQG or Vlasov-Poisson equations have been studied in [6,9,28,35].
+
+[PDF page 3]
+VORTEX-WAVE UNIQUENESS 3
+For the 2D Navier-Stokes equation, global existence and uniqueness for initial data containing
+point vortices has been established in [14]. A detailed study of the vanishing viscosity limit for such
+data has been given in [34].
+Regarding the uniqueness of the 2D Euler equations for velocities which are not log-Lipschitz or
+Osgood, there are various results, either relying on the vorticity being constant near the singular
+part, see e.g. [20, 23, 24], specific spiral symmetries [11, 22], the special structure of singularities
+induced by rough boundaries [2, 3], or the Baire category theorem [13]. Let us also mention the
+case of bounded vorticity without decay at∞as another area in which there is ongoing research,
+see e.g. [7,10,32] and the references therein.
+1.2.Idea of the proof.One can eliminate the variableXby rewriting the equations in a frame
+centered onX, i.e. by making the change of variablesx→x−X,ϖ t =w t(·−X(t)), ¯ut =u t(·−X(t)),
+leading to the equations
+∂tϖt + (¯ut · ∇)ϖt = 0,¯u t(x) =v t(x)−v t(0) + x⊥
+2π|x|2 , v t =∇ ⊥∆−1ϖt.(1.5)
+The classical argument for the uniqueness of the Euler equations is to show a differential estimate
+for
+X 1
+t − X 2
+t
+
+L2 whereX 1
+t andX 2
+t are the flow maps of two different solutions from the same
+initial data, and to conclude from Gronwall’s Lemma that this must be 0, implying uniqueness, see
+e.g. [25,30]. This normally requires one to estimate
+u1
+t (X 1
+t )−u 2
+t (X 1
+t )
+
+L2 and
+u2
+t (X 1
+t )−u 2
+t (X 2
+t )
+
+L2
+in an appropriate way. Closing the estimates for the latter term usually requires the velocity to be
+Lipschitz or log-Lipschitz, which is not the case here.
+Let us explain how to circumvent this issue here:
+Somewhat inspired by the approach in [3], the main idea is to adapt the usual proof of uniqueness
+to a more strict metric, in which the velocity of the point vortex is almost Lipschitz in the sense
+that its symmetric gradient in this metric is bounded (which is enough to control the spread of
+trajectories).
+This metric is
+m(x, y) := max(|x|,|y|)|x θ −y θ|+ max(|x|,|y|) −2|x| − |y|
+,(1.6)
+wherex θ andy θ are standard polar coordinates. The remaining velocityv t −v t(0) is clearly not
+Lipschitz or Log-Lipschitz in this metric, though. However, close to the point vortex one expects
+that the actual impact of the velocity fieldv−v(0) on the flow should be much smaller than the
+instantaneous velocityv t −v t(0), since there should be massive cancellations due to the fact that
+the rotation of a particle around the point vortex is much faster than the variations ofv t −v t(0) and
+hence the velocityv t −v t(0) should be ”averaged” along rotations around the point vortex which
+makes it much smaller.
+This idea is implemented by taking a metric which is equivalent tom, depending onϖ t, for
+which the relevant time derivatives under the flow are much smaller. More concretely, we will look
+at something like
+max(|x|,|y|)|x θ −y θ|+ max(|x|,|y|) −2d(t, x)−d(t, y)
+ ≈m(x, y),
+whered(t, x)≈ |x|and∇dis orthogonal to ¯unear 0 (see Section 2.4). If one then tracks the
+evolution ofd(t,X t(x))−d(t,X t(y)), whereX t is the flow map ofu, only the time derivative ofd
+itself contributes to the time derivative of this. This time derivative can be made≲max(|x|,|y|) 2|x−
+y|log(2+ 1
+|x−y|) if an assumption like (1.3) holds (see Lemma 3.4). Requiring some kind of smallness
+assumption like (1.3) is natural for such an argument, as the velocity with whichϖmoves diverges
+near 0 and hence the contribution of this part to the time derivative ofdwould be of a bigger order
+without a smallness condition. The assumption (1.3) can easily be shown to be propagated under
+the evolution, see Lemma 2.2.
+
+[PDF page 4]
+4 D. MEYER
+Hence, even though d
+dt m(Xt(x),X t(y)) is unbounded, we do still havem(Xt(x),X t(y))≲|x−y| e−Ct
+and the flow behaves as if its velocity were log-Lipschitz with respect to the metricm.
+However, this functional depends on ¯ut, and if we have two solutions from the same initial datum
+whose equality we are trying to prove, this also gives rise to two different realisations ofd. Hence,
+instead of looking atd(t,X 1
+t (x))−d(t,X 2
+t (x)), we will look atd 1(t,X 1
+t (x))−d 2(t,X 2
+t (x)), whered 1
+andd 2 are the two different realisations ofdfor the two different solutions and add an extra term
+of the type|x| −2|d1(t,X 1
+t (x))−d 2(t,X 1
+t (x))|+|x| −2|d1(t,X 2
+t (x))−d 2(t,X 2
+t (x))|(in the splitting
+(2.26), this isE 1
+t +E 2
+t ) which controls the error arising through this and whose time derivative can
+still be controlled throughE.
+The proof then proceeds by considering a weightedL 2-norm of these terms (defined in (2.24)),
+which in particular controls
+|x|−1+ α−2
+200 m(X 1
+t (x),X 2
+t (x))
+
+L2
+and showing a Gronwall estimate for
+this energy.
+1.2.1.A possible improvement.It would of course be very desirable to show a version of this
+result where the constraintα >2 in (1.3) is replaced byα⩾1, as the assumption is then true for
+any Lipschitzw 0. The author believes that this can be done by taking into account some further,
+more difficult cancellation effects. More precisely, the limiting factor in the current analysis is the
+contribution of the transport ofϖ t near 0 by the (diverging) velocity x⊥
+2π|x|2 to the time derivatives
+ofdand related quantities. However, this contribution should be highly oscillatory since, at leading
+order, particles are just rotating around the point vortex at a very high frequency and its actual
+influence should be much smaller than the bounds for the time derivative.
+This seems to be much more difficult to implement than the current argument.
+1.3.Structure of the paper.The rest of the article is devoted to the proof of Theorem 1.1.
+Section 2 contains the definition of distance and energy functionals as well as the proof that the
+Assumption (1.3) is propagated under the evolution. Section 3 contains the proof of the desired
+Gronwall estimate for the energy. Section 4 contains the proofs of some technical lemmas. An
+appendix contains some classical estimates.
+2.Preparations and definition of the energy functional
+2.1.Notation.We writeA≲Bif there is a constantCsuch thatA⩽CB. Such a constantC
+is allowed to depend on the initial dataϖ 0, the value of the limsup in the assumption (1.3), the
+constantsS 1 andS 2, defined further below andα. Such a constant is also allowed to vary from line
+to line.
+We generally work with the variablesϖ,¯u, vas defined in (1.5), where the first equation is
+understood distributionally.
+For the ease of notation, we also use the shorthand BS for the Biot-Savart law, i.e.
+BS[f] :=∇ ⊥∆−1f=f∗ x⊥
+2π|x|2 .
+For anx∈R 2\{0}, we denote its polar angle by
+xθ :=
+
+
+
+cos−1
+
+x1
+|x|
+
+forx 2 ⩾0
+−cos −1
+
+x1
+|x|
+
+forx 2 <0
+with the convention that the range of cos −1 is [0, π]. We will always understand these angles (and
+differences of them) as numbers inR/2πZ. The distance between polar angles is always understood
+as the distance onR/2πZ, i.e.|x θ −y θ|:= min k∈Z |xθ −y θ + 2πk|.
+
+[PDF page 5]
+VORTEX-WAVE UNIQUENESS 5
+2.2.Preliminaries.Let us first recall that we have
+|¯ut(x)|≲1 +|x| −1 (2.1)
+|vt(x)|≲1 (2.2)
+for allx, since the Biot-Savart law mapsL 1 ∩L ∞ toL ∞ by e.g. Young’s convolution inequality.
+We denote byX t the flow map ofudefined by
+X0(x) =x, d
+dt Xt(x) = ¯ut(Xt(x)).
+As ¯ut is locally log-Lipschitz (see Lemma A.2), except at 0, this is well-defined, as long asXt(x)̸= 0,
+which in fact always is the case forx̸= 0. Indeed it follows from the log-Lipschitz property ofv t
+(see e.g. Lemma A.2) and the fact that the point vortex velocity is radial around the origin that
+
+d
+dt |Xt(x)|
+ =|v t(Xt(x))−v t(0)|≲|X t(x)|log
+
+2 + 1
+|Xt(x)|
+
+and hence Gronwall’s Lemma implies that for|x|⩽1 we have
+|Xt(x)|≳|x| eCt
+(2.3)
+for someCnot depending onxort.
+At 0, where the ODE is not defined, we setX t(0) = 0.
+This is a volume-preserving and invertible map and fits into the formalism of regular Lagrangian
+flows, see e.g. [8].
+It is known that every solutionϖ∈L ∞
+t (L1
+x ∩L ∞
+x ) of (1.5) is of the formϖ t =ϖ 0 ◦ X −1
+t , see
+e.g. [23].
+2.3.Propagation of(1.3)and the compact support ofϖ.Before coming to the actual unique-
+ness proof, we show that the property (1.3) is propagated by the evolution and that the support of
+each solution remains compact.
+Lemma 2.1.Suppose that the initial datumϖ 0 ∈L ∞(R2)is supported inB S0(0). Then there is
+a functionS t :R ⩾0 →R, only depending onS 0 and∥ϖ 0∥L∞, such that every solutionϖ t to the
+equations(1.5)is supported inB St(0)at timet.
+Proof.Sinceϖis transported byu, we must have thatϖ t is supported inB St(0), whereS t ⩾
+max(1, S0 +
+´ t
+0 ∥¯us∥L∞(R2\B1(0)) ds). Since we have a uniform bound∥¯u s∥L∞(R2\B1(0)) ≲1 by (2.1),
+we see that thisS t can be chosen independently of the solution and finite.□
+Lemma 2.2.Supposeϖ 0 fulfills(1.3), then there is a constantC, only depending on
+∥| · |−α(ϖ0(·)−ϖ 0(0))∥L∞ and∥ϖ 0∥L1∩L∞, such that every solutionϖto(1.5)fulfills
+| · |−α(ϖt(·)−ϖ t(0))
+
+L∞(R2) ⩽Ce CeCt
+(2.4)
+and
+| · |−1(vt(·)−v t(0))
+
+L∞(R2) ⩽Ce Ct (2.5)
+for allt∈R ⩾0.
+Furthermore it holds thatϖ t(0) =ϖ 0(0).
+Proof.Since it holds thatX t(0) = 0 andϖ t is transported, we see that (1.3) and (2.3) imply that
+max(1,|x| −αe−Ct
+)(ϖt(x)−ϖ t(0))
+
+L∞x
+≲1.
+
+[PDF page 6]
+6 D. MEYER
+We then note that
+|x|−1|vt(x)−v t(0)|≲|x| −1
+
+ˆ  x−z
+|x−z| 2 + z
+|z|2
+
+ϖt(z) dz
+
+⩽|x| −1
+
+ˆ
+R2
+ x−z
+|x−z| 2 + z
+|z|2
+
+(ϖt(z)−1 B1(0)ϖt(0)) dz
+
++|x| −1
+
+ˆ
+R2
+ x−z
+|x−z| 2 + z
+|z|2
+
+1B1(0)ϖt(0) dz
+ .
+For|x|⩾ 1
+2, we trivially have an uniform bound on this because we have a uniform bound onv.
+For|x|⩽ 1
+2, the second term is uniformly bounded because |·|
+|·|2 ∗1 B1(0) is smooth inB 2
+3
+(0). The
+first term is uniformly bounded as
+ˆ
+R2
+ x−z
+|x−z| 2 + z
+|z|2
+
+(ϖt(z)−1 B1(0)ϖt(0)) dz
+
+≲
+ˆ
+B1(0)∪suppϖ t
+|x|
+ 
+|z|−2 +|z| −1|x−z| −1
+min(1,|z| αe−Ct
+) dz
+≲|x|
+ 
+1 +e Ct
+because| x−z
+|x−z|2 − z
+|z|2 |≲|x|(|z| −2 +|z| −1|x−z| −1) and because the measure of suppϖ t does not
+depend ont.
+In sum we have that
+|vt(x)−v t(0)|≲|x|e Ct
+with the same constantCfor all solutions.
+But then we have that the flow mapX t of every solution fulfils|X t(x)|⩾e −CeCt
+|x|by Gronwall,
+because the point-vortex velocity is radial around the origin and then we obtain that the property
+(2.4) holds with the same constant for all solutions sinceϖ t(·)−ϖ t(0) is transported.□
+2.4.Definition of the modulated distanced.Let Ψ R and Ψ denote the stream functions of
+vt(·)−v t(0) and ¯u, both normalized to be 0 at 0, i.e.
+ΨR(t, x) = 1
+2π
+ˆ
+R2
+
+log|x−z| −log|z|+ x·z
+|z|2
+
+ϖt(z) dz(2.6)
+and
+Ψ(t, x) = 1
+2π log|x|+ Ψ R(t, x).
+We set
+d(t, x) := exp(2πΨ(t, x)).
+Note that
+¯ut(x)⊥ ∇ xd(t, x) (2.7)
+for allxandtas one sees from the fact that ¯u t =∇ ⊥
+x Ψ and the chain rule.
+Sinceϖ t ∈L ∞, we have
+∥ΨR(t,·)∥ L∞ ≲1,(2.8)
+uniformly int.
+These quantities all depend onϖ t. Below in the uniqueness proof, we will compare two solutions
+ϖ1 andϖ 2, to denote the dependence on the solution, we will use a superscript as in e.g.d 1(t, x)
+
+[PDF page 7]
+VORTEX-WAVE UNIQUENESS 7
+andd 2(t, x). We remark that this kind of modulated distance was already used in the author’s
+earlier work [33] to study the long-time confinement of concentrated vortices.
+Let us note the useful identities
+d
+dt d(t,X t(x)) = (∂td)(t,X t(x)) (2.9)
+d(t, x) =|x|e 2πΨR(t,x) (2.10)
+for future reference. (2.9) follows from (2.7) and the chain rule.
+At leading order,dbehaves like the distance|x|, but varies very slowly with time, the following
+lemma gives a precise account of this relationship:
+Lemma 2.3.Supposeϖis a solution to(1.5)on[0, T], supported onB S(0), which fulfills(2.4).
+Then
+||x| −d(t, x)|≲|x| 3 (2.11)
+|∇x|x| − ∇xd(t, x)|≲|x| 2 forx̸= 0 (2.12)
+and 
+d
+dt d(t, x)
+ ≲|x| 3,(2.13)
+for allx∈B 10S(0)andt∈[0, T], where the implicit constant depends onSandT.
+In particular, it holds that
+d(t, x)≈ |x|.(2.14)
+for all sufficiently small|x|.
+Proof.For (2.11), we use that Ψ R has a double zero at 0, indeed, as already argued above in (2.5),
+its orthogonal derivativev t(·)−v t(0) has a first order zero at 0. Therefore (2.10) implies (2.11).
+Similarly, (2.12) follows from the product rule and because|∇ xΨR(t, x)|=|v t(x)−v t(0)|≲|x|,
+by (2.5).
+For (2.13), we use that| d
+dtΨR(t, x)|≲|x| 2, which is proven further below as part of Lemma 3.4
+and which yields the statement by (2.10).□
+2.5.Definition of the distance functionalD.To define the distance functional, we fix an initial
+datumϖ 0 which fulfils the assumptions of the theorem.
+Clearly, it suffices to show uniqueness on a short time interval, the global-in-time result then
+follows by applying the short-time result to the initial datumϖ t, which still fulfils the same as-
+sumptions by the Lemmata 2.1 and 2.2.
+Let us take two solutionsϖ 1 andϖ 2 of (1.5) for this initial datum of which we wish to show
+that they are the same.
+Let us denote by ¯u1
+t , v1
+t ,¯u2
+t , v2
+t the corresponding velocities and letX 1
+t andX 2
+t be the corresponding
+flow maps.
+Let us take anS 1 ∈(0, 1
+10) such that forx∈B S1(0) it holds that
+99
+100 |x|⩽|X 1
+t (x)|,|X 2
+t (x)|⩽ 101
+100 |x|(2.15)
+for allt∈[0,1]. This is possible by e.g. (2.9), (2.13) and (2.14).
+This implies that
+12
+10 |x|⩾ 11
+10 min(|X 1
+t (x)|,|X 2
+t (x)|)⩾max(|X 1
+t (x)|,|X 2
+t (x)|)⩾ 9
+10 |x|(2.16)
+
+[PDF page 8]
+8 D. MEYER
+for allton some small time interval [0, T] (whereTdoes not depend onx) and allx∈R 2. Indeed
+for small|x|it follows from (2.15), while for|x|⩾S 1 it holds becauseuis uniformly bounded
+outside ofB S1(0).
+After potentially loweringS 1, we can also assume by (2.12) and (2.14) that
+d1(t, x), d2(t, x)∈[ 1
+2 |x|,2|x|],
+∇xd1(t, x)− ∇|x|
+ +
+∇xd2(t, x)− ∇|x|
+ ⩽ 1
+10 forx∈B S1(0)
+(2.17)
+andt∈[0, T].
+We then consider the following regions in{(x, y)∈R 2+2 | 11
+10 min(|x|,|y|)⩾max(|x|,|y|)}:
+Ω :=
+
+(x, y)
+ max(|x|,|y|)⩽ 1
+10 S1, 11
+10 min(|x|,|y|)⩾max(|x|,|y|)
+
+Ω′ :=
+
+(x, y)
+ max(|x|,|y|)⩽ 1
+5 S1, 11
+10 min(|x|,|y|)⩾max(|x|,|y|)
+
+.
+We take a smooth, nonnegative cut-off functionηwith values in [0,1], which is supported in Ω ′ and
+which equals 1 on Ω.
+Let us fix anS 2 ⩾100 such that suppϖ 1
+t , ϖ2
+t ⊂B 1
+2 S2(0) for allt∈[0, T], this is possible by
+Lemma 2.1.
+Let us set
+β:= α−2
+100 >0.
+We then define
+D(x, y)2 :=η(x, y)
+ 1
+d1(t, x)4−β |Ψ1
+R(t, x)−Ψ 2
+R(t, x)|2 + 1
+d2(t, y)4−β |Ψ1
+R(t, y)−Ψ 2
+R(t, y)|2
++ 1
+max(d1(t, x), d2(t, y))6−β |d1(t, x)−d 2(t, y)|2 + max(d1(t, x), d2(t, y))β|xθ −y θ|2
+
++ (1−η(x, y))|x−y| 2
+and takeDitself as the non-negative square root of this.
+The following lemma shows that this indeed controls the distance|x| β/2−1m(x, y).
+Lemma 2.4.Whenever 11
+10 min(|x|,|y|)⩾max(|x|,|y|), we have
+D(x, y)≳|x|
+β
+2 −1m(x, y)≳|x|
+β
+2 −1|x−y|inB 2S2(0).(2.18)
+In particular,Dis non-negative and ifD(x, y) = 0, thenx=y.
+Proof.Recall the definition (1.6) ofm. Let us first note thatm(x, y)≳|x−y|on any compact set
+and that the statement is hence trivial outside of Ω ′. It therefore suffices to show that
+1
+d1(t, x)4−β |Ψ1
+R(t, x)−Ψ 2
+R(t, x)|2 + 1
+d2(t, y)4−β |Ψ1
+R(t, y)−Ψ 2
+R(t, y)|2
++ 1
+max(d1(t, x), d2(t, y))6−β |d1(t, x)−d 2(t, y)|2 + max(d1(t, x), d2(t, y))β|xθ −y θ|2
+≳|x|
+β
+2 −1m(x, y)
+(2.19)
+in Ω′.
+We directly control the difference of the polar angles by (2.17).
+
+[PDF page 9]
+VORTEX-WAVE UNIQUENESS 9
+To control the difference of the moduli, we note that by (2.10) and (2.17), it holds that
+1
+d1(t, x)2− β
+2
+Ψ1
+R(t, x)−Ψ 2
+R(t, x)
+ ≳|x| −2+ β
+2
+e2πΨ1
+R(t,x) −e 2πΨ2
+R(t,x)
+
+=|x| −3+ β
+2
+d1(t, x)−d 2(t, x)
+ ,
+since Ψ1
+R and Ψ2
+R are uniformly bounded by (2.8).
+Therefore, using (2.17) again, we see that
+1
+max(d1(t, x), d2(t, y))3− β
+2
+|d1(t, x)−d 2(t, y)|+ 1
+d1(t, x)2− β
+2
+|Ψ1
+R(t, x)−Ψ 2
+R(t, x)|
+≳|x| −3+ β
+2 |d2(t, x)−d 2(t, y)|.
+(2.20)
+We now claim that for (x, y)∈Ω ′, it holds that
+1
+|x|2 |d2(t, x)−d 2(t, y)|+|x||x θ −y θ|≳|x| −2||x| − |y||.(2.21)
+To see this, we lety ′ be the unique point such thaty ′
+θ =y θ and|y ′|=|x|. Then we conclude from
+the fact that|z ⊥ · ∇d2(t, z)|≲|x| 3 on the circle segment connectingy ′ andxby (2.12), we have
+that
+|d2(t, x)−d 2(t, y′)|≲|x| 3|xθ −y ′
+θ|,(2.22)
+since the circle segment has length≈ |x||x θ −y ′
+θ|.
+On the other hand, we also havez· ∇ zd2(t, z)≈ |z|for sufficiently smallzby (2.17) and hence
+it holds that
+|d2(t, y)−d 2(t, y′)|≳||y| − |y ′||=||y| − |x||.(2.23)
+Combining (2.22) and (2.23) and using the triangle inequality yields the claim (2.21).
+We hence see from (2.20) and (2.21), that for|x|⩽S 1, we have that
+D(x, y)≳|x|
+β
+2 −3 ||x| − |y||,
+showing the remaining part of (2.19).□
+2.6.The energy functionalE t.Our energy functional for the proof of uniqueness is
+Et :=
+ˆ
+BS2(0)
+D(X 1
+t (x),X 2
+t (x))2 dx.(2.24)
+We observe the following:
+•E 0 = 0, sinceD(x, x) = 0 if Ψ 1
+R = Ψ2
+R.
+•IfE t = 0, then both flow maps and hence alsoϖ 1
+t andϖ 2
+t agree.
+•E t can be infinite ifX 1
+t andX 2
+t are diffeomorphisms that do not come from a solution to
+(1.5). If they do come from two solutions to (1.5) with the same initial datum, then Lemma
+3.1 below shows thatE t is finite for allt.
+To prove uniqueness, it suffices to show that
+d
+dt Et ≲E t log
+
+2 + 1
+Et
+
+fort∈[0, T].(2.25)
+Gronwall’s lemma then impliesE t = 0 fort∈[0, T], showing thatϖ 1
+t =ϖ 2
+t and that uniqueness
+holds.
+As already explained above, uniqueness after the timeTfollows from applying this short time
+statement to the initial datumϖ T (with different constantsS 1 andS 2) since all the assumptions on
+
+[PDF page 10]
+10 D. MEYER
+the initial data are propagated. More precisely, this shows that the time interval on whichϖ 1 =ϖ 2
+is an open, nonempty subset ofR ⩾0. Since the solutions are also continuous in time in e.g.W −1,1,
+as the time derivatives are uniformly bounded in that space, the time interval on whichϖ 1 =ϖ 2
+is also closed. SinceR ⩾0 is connected, this time interval must be the fullR ⩾0.
+To show this, we splitE t =P5
+i=1 Ei
+t as
+E1
+t :=
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x)) 1
+d1(t,X 1
+t (x))4−β |Ψ1
+R(t,X 1
+t (x))−Ψ 2
+R(t,X 1
+t (x))|2 dx
+E2
+t :=
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x)) 1
+d2(t,X 2
+t (x))4−β |Ψ1
+R(t,X 2
+t (x))−Ψ 2
+R(t,X 2
+t (x))|2 dx
+E3
+t :=
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x))
+max(d1(t,X 1
+t (x)), d 2(t,X 2
+t (x)))6−β |d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))|2 dx
+E4
+t :=
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x)) max(d1(t,X 1
+t (x)), d 2(t,X 2
+t (x)))β|X 1
+t (x)θ − X 2
+t (x)θ|2 dx
+E5
+t :=
+ˆ
+BS2(0)
+(1−η)(X 1
+t (x),X 2
+t (x))|X 1
+t (x)− X 2
+t (x)|2 dx,
+(2.26)
+and estimate the time derivative of each summand separately.
+3.Proof of the differential estimate(2.25)forE t
+3.1.Preparations and Notation.To avoid line breaks, we introduce a few additional shorthands.
+We set
+kt(x) :=m(X 1
+t (x),X 2
+t (x))
+dt(x) := max
+ 
+d1(t,X 1
+t (x)), d2(t,X 2
+t (x))
+
+.
+Note that (2.17) and (2.15) imply that for|x|⩽ 1
+2 S1, it holds that
+dt(x)≈ |x|.(3.1)
+Lemma 3.1.Fort∈[0, T], it holds that
+D(X 1
+t (x),X 2
+t (x))2 +E t <∞
+for allx∈B S2(0).
+Proof.Obviously, finiteness ofDimplies finiteness ofE t, so it suffices to argue the former.
+The finiteness of the summand corresponding toE 5
+t is a trivial consequence of the boundedness
+of ¯u.
+It follows from (2.10), (2.11) and (3.1) that
+1
+d1(t, x)4−β
+Ψ1
+R(t,X 1
+t (x))−Ψ 2
+R(t,X 1
+t (x))
+2
+≲|x| −6+β
+|X 1
+t (x)| −d 1(t,X 1
+t (x))
+2
++
+|X 1
+t (x)| −d 2(t,X 1
+t (x))
+2
+≲|x| β,
+while it follows from (2.9), (2.11), (2.13) and (3.1) that
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+ ≲
+d1(t,X 1
+t (x))− |x|
+ +
+d2(t,X 2
+t (x))− |x|
+
+≲
+d1(0, x)− |x|
+ +
+ˆ t
+0
+(∂td1)(s,X 1
+s (x))
+ +
+(∂td2)(s,X 2
+s (x))
+ ds≲|x| 3,
+
+[PDF page 11]
+VORTEX-WAVE UNIQUENESS 11
+which also used thatd 1(0,·) =d 2(0,·). By (3.1), this implies that
+1
+max(d1(t,X 1
+t (x)), d 2(t,X 2
+t (x)))6−β
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+2
+≲|x| β.
+The finiteness of the angular term is trivial.□
+Lemma 3.2.Fort∈[0, T]andmax(|x|,|y|)⩽2 min(|x|,|y|)⩽2S 2, we have
+|¯ut(x)−¯ut(y)|≲|x| −2m(x, y) log
+
+2 + 1
+m(x, y)
+
+(3.2)
+¯ut(x)· x⊥
+|x|2 −¯ut(y)· y⊥
+|y|2
+ ≲|x| −1m(x, y) log
+
+2 + 1
+m(x, y)
+
+,(3.3)
+in the sense that these estimates hold for both¯u 1
+t and¯u2
+t in place of¯ut.
+Proof.We have
+|vt(x)−v t(y)|≲|x−y|log
+
+2 + 1
+|x−y|
+
+by Lemma A.2. Since|x−y|≲m(x, y) on compact sets by definition, we can estimate this part
+with
+|vt(x)−v t(y)|≲m(x, y) log
+
+2 + 1
+m(x, y)
+
+.
+For the point-vortex velocity, we note that
+
+x⊥
+|x|2 − y⊥
+|y|2
+ ⩽ |x−y|
+|x|2 + |y|||x|2 − |y|2|
+|x|2|y|2 ≲ |x−y|
+|x|2
+by the assumption that|x|and|y|are of the same scale. This has the desired bound (3.2).
+For the estimate (3.3), we note that
+(vt(x)−v t(0))· x⊥
+|x| −(v t(y)−v t(0))· y⊥
+|y|
+ ⩽
+
+x
+|x|2 − y
+|y|2
+ |vt(y)−v t(0)|+|x| −1|vt(x)−v t(y)|.
+The first difference is estimated as
+x
+|x|2 − y
+|y|2
+ |vt(y)−v t(0)|≲|x| −1|x−y|≲|x| −1m(x, y)
+with (2.5), and the fact that
+ x
+|x|2 − y
+|y|2
+ ≲|x| −2|x−y|.
+The other term is estimated as above.
+Regarding the contribution of the point vortex, we note that
+
+x⊥
+|x|2 · x⊥
+|x|2 − y⊥
+|y|2 · y⊥
+|y|2
+ =
+
+1
+|x|2 − 1
+|y|2
+ ≲|x| −3||x| − |y||≲|x| −1m(x, y).
+□
+3.2.A priori bounds ond,Ψ R andv t.In this subsection, we collect some bounds on the time
+derivatives of thedand Ψ R, which will be used in the proof of the differential estimate onE t below.
+All of their proofs are in principle straightforward, but somewhat tedious and therefore postponed
+to Section 4 further below.
+
+[PDF page 12]
+12 D. MEYER
+Lemma 3.3.It holds that
+ˆ
+B 1
+2
+(0)
+|∂tΨ1
+R(t, x)−∂ tΨ2
+R(t, x)|2|x|β−4 dx≲E t
+
+log
+
+2 + 1
+Et
+2
+(3.4)
+ˆ
+B 1
+2
+(0)
+|Ψ1
+R(t, x)−Ψ 2
+R(t, x)|2|x|β−4 dx≲E t.(3.5)
+Lemma 3.4.Suppose thatmax(|x|,|y|)⩽2 min(|x|,|y|)⩽S 1, then for allt∈[0, T]it holds that
+|∂tΨ1
+R(t, x)|≲|x| 2 (3.6)
+|Ψ1
+R(t, x)−Ψ 1
+R(t, y)|≲|x||x−y|(3.7)
+|∂tΨ1
+R(t, x)−∂ tΨ1
+R(t, y)|≲|x||x−y|log
+
+2 + 1
+|x−y|
+
+,(3.8)
+in particular
+∂td1(t, x)−∂ td1(t, y)
+ ≲|x| 2|x−y|log
+
+2 + 1
+|x−y|
+
+(3.9)
+and the exact same estimates hold forΨ 2
+R(t,·)andd 2(t,·).
+Lemma 3.5.It holds that
+ˆ
+B1(0)
+|x|β−2v1
+t (x)−v 2
+t (x)
+2
+dx≲E t (3.10)
+and
+v1
+t (0)−v 2
+t (0)
+ ≲
+p
+Et.(3.11)
+3.3.Bound onE 1
+t andE 2
+t .By the incompressibility of the flow, we can rewrite
+E1
+t =
+ˆ
+B 1
+2
+(0)
+η(x, x)|Ψ1
+R(t, x)−Ψ 2
+R(t, x)|2d1(t, x)β−4 dx,
+which also used that (X 1
+t )−1 maps suppηintoB 1
+2
+(0)2 by (2.16).
+We then estimate
+
+d
+dt
+ˆ
+B 1
+2
+(0)
+η(x, x)|Ψ1
+R(t, x)−Ψ 2
+R(t, x)|2d1(t, x)β−4 dx
+
+≲
+ˆ
+B 1
+2
+(0)
+η(x, x)
+ |∂td1(t, x)|
+d1(t, x) |Ψ1
+R(t, x)−Ψ 2
+R(t, x)|2
++
+∂tΨ1
+R(t, x)−∂ tΨ2
+R(t, x)
+Ψ1
+R(t, x)−Ψ 2
+R(t, x)
+
+
+d1(t, x)β−4 dx.
+The first summand is≲E t by (2.13) and (2.17).
+The second summand is≲E t log(2 + 1
+Et ) by Lemma 3.3 above and Cauchy-Schwarz, showing the
+desired bound on this part of the time derivative.
+ClearlyE 2
+t can be estimated in the same way.
+
+[PDF page 13]
+VORTEX-WAVE UNIQUENESS 13
+3.4.Bound onE 3
+t .We compute
+d
+dt E3
+t = d
+dt
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x))
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+2
+dt(x)β−6 dx
+≲
+ˆ
+BS2(0)
+∇η(X 1
+t (x),X 2
+t (x))·
+¯u1
+t (X 1
+t (x))
+¯u2
+t (X 2
+t (x))
+
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+2
+dt(x)β−6
++η(X 1
+t (x),X 2
+t (x))
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+2
+dt(x)β−6 max(|(∂td1)(t,X 1
+t (x))|,|(∂ td2)(t,X 2
+t (x))|)
+dt(x)
++η(X 1
+t (x),X 2
+t (x))
+(∂td1)(t,X 1
+t (x))−(∂ td2)(t,X 2
+t (x))
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+ dt(x)β−6 dx,
+(3.12)
+which crucially uses the formula (2.9).
+For the first term, we use that|¯u1
+t |+|¯u2
+t |+|d 1(t,·)| −1 +|d 2(t,·)| −1 ≲1 on supp∇ηby (2.1) and
+(2.17) and that the gradient of the cutoff function is only non-zero forx∈B 1
+2 S1(0)\B 1
+20 S1(0) by
+(2.15) to estimate
+∇η(X 1
+t (x),X 2
+t (x))·
+¯u1
+t (X 1
+t (x))
+¯u2
+t (X 2
+t (x))
+
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+2
+dt(x)β−6
+≲1 B 1
+2 S1
+(0)\B 1
+20 S1
+(0)(x)
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+2
+dt(x)β−6
+≲1 B 1
+2 S1
+(0)\B 1
+20 S1
+(0)(x)|x|β−6
+d2(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+2
++|x| 2
+e2πΨ1
+R(t,X 1
+t (x)) −e 2πΨ2
+R(t,X 1
+t (x))
+
+2
+≲1 B 1
+2 S1
+(0)\B 1
+20 S1
+(0)(x)
+ 
+|X 1
+t (x)− X 2
+t (x)|2 +|Ψ 1
+R(t,X 1
+t (x))−Ψ 2
+R(t,X 1
+t (x))|2
+where we have also used (3.1), (2.8), the identity (2.10) and thatd 2(t,·) is uniformlyW 1,∞ by
+(2.12).
+Applying (2.18), (3.5) and using that allx-dependent weights are≈1 onB 1
+2 S1(0)\B 1
+20 S1(0), we
+therefore see that
+ˆ
+BS2(0)
+∇η(X 1
+t (x),X 2
+t (x))·
+¯u1
+t (X 1
+t (x))
+¯u2
+t (X 2
+t (x))
+
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+2
+dt(x)β−6 dx≲E t.
+The second term in (3.12) is trivially bounded byE t thanks to the estimates ond 1 andd 2 in (2.13)
+and (2.17).
+The third term on the other hand is estimated as
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x))
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+(∂td1)(t,X 1
+t (x))−(∂ td2)(t,X 2
+t (x))
+ dt(x)β−6 dx
+≲
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x))
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+
+(∂td1)(t,X 1
+t (x))−(∂ td1)(t,X 2
+t (x))
+
++
+(∂td1)(t,X 2
+t (x))−(∂ td2)(t,X 2
+t (x))
+
+
+|x|β−6 dx,
+(3.13)
+where we used (3.1).
+
+[PDF page 14]
+14 D. MEYER
+The first summand in this is directly estimated by Lemma 3.4 as
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x))
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+(∂td1)(t,X 1
+t (x))−(∂ td1)(t,X 2
+t (x))
+ |x|β−6 dx
+≲
+ˆ
+η(X 1
+t (x),X 2
+t (x))
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+X 1
+t (x)− X 2
+t (x)
+
+×log
+ 
+2 + 1X 1
+t (x)− X 2
+t (x)
+
+!
+|x|β−4 dx
+≲
+p
+Et
+ ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x))
+X 1
+t (x)− X 2
+t (x)
+2
+log2
+ 
+2 + 1X 1
+t (x)− X 2
+t (x)
+
+!
+|x|β−2 dx
+! 1
+2
+where the last step uses Cauchy-Schwarz.
+This can be further estimated with Jensen’s inequality, applied to the concave functionylog(2 +
+y− 1
+2 )2 as
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x))
+X 1
+t (x)− X 2
+t (x)
+2
+log2
+ 
+2 + 1X 1
+t (x)− X 2
+t (x)
+
+!
+|x|β−2 dx
+≲
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x))
+X 1
+t (x)− X 2
+t (x)
+2
+|x|β−2 dx
+×log
+
+2 +
+ 
+A−1
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x))
+X 1
+t (x)− X 2
+t (x)
+2
+|x|β−2 dx
+!− 1
+2
+
+
+2
+≲E t log
+
+2 + 1
+Et
+2
+,
+whereA=
+´
+BS2(0) η(X 1
+t (x),X 2
+t (x))|x|β−2 dx≈1 is renormalisation factor to ensure that
+1BS2(0)η(X 1
+t (x),X 2
+t (x))|x|β−2 is a probability measure and the last step uses (2.18).
+For the other summand in (3.13), we recall the formula (2.10), and see that
+|(∂td1)(t,X 2
+t (x))−(∂ td2)(t,X 2
+t (x))|
+= 2π
+X 2
+t (x)
+
+e2πΨ1
+R(t,X 2
+t (x))(∂tΨ1
+R)(t,X 2
+t (x))−e 2πΨ2
+R(t,X 2
+t (x))(∂tΨ2
+R)(t,X 2
+t (x))
+
+≲|x|
+Ψ1
+R(t,X 2
+t (x))−Ψ 2
+R(t,X 2
+t (x))
+(∂tΨ1
+R)(t,X 2
+t (x))
+ +
+(∂tΨ1
+R)(t,X 2
+t (x))−(∂ tΨ2
+R)(t,X 2
+t (x))
+
+
+≲|x|
+d1(t,X 2
+t (x))−d 2(t,X 2
+t (x))
+ |x|+
+(∂tΨ1
+R)(t,X 2
+t (x))−(∂ tΨ2
+R)(t,X 2
+t (x))
+
+
+inB S1(0), which also uses (2.8), (3.6) and (2.17), and the bound (2.15). This yields that
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x))
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+(∂td1)(t,X 2
+t (x))−(∂ td2)(t,X 2
+t (x))
+ |x|β−6 dx
+≲
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x))
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+ |(∂tΨ1
+R)(t,X 2
+t (x))−(∂ tΨ2
+R)(t,X 2
+t (x))||x|β−5
++η(X 1
+t (x),X 2
+t (x))
+d1(t,X 1
+t (x))−d 2(t,X 2
+t (x))
+ |x|β−4 dx.
+The first term can be estimated byE t log(2 + 1
+Et ) in the same manner as the termE 1
+t after using
+Cauchy-Schwarz, the second term is trivially≲E t.
+
+[PDF page 15]
+VORTEX-WAVE UNIQUENESS 15
+Putting all these estimates back together again, we obtain the desired estimate
+
+d
+dt E3
+t
+ ≲E t log
+
+2 + 1
+Et
+
+.
+3.5.The termE 4
+t .We estimate
+
+d
+dt E4
+t
+ =
+
+d
+dt
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x))dt(x)β|X 1
+t (x)θ − X 2
+t (x)θ|2 dx
+
+≲
+ˆ
+BS2(0)
+∇η(X 1
+t (x),X 2
+t (x))·
+¯u1
+t (X 1
+t (x))
+¯u2
+t (X 2
+t (x))
+ dt(x)β|X 1
+t (x)θ − X 2
+t (x)θ|2
++η(X 1
+t (x),X 2
+t (x))max(|(∂td1)(t,X 1
+t (x))|,|(∂ td2)(t,X 2
+t (x))|)
+dt(x) dt(x)β|X 1
+t (x)θ − X 2
+t (x)θ|2
++η(X 1
+t (x),X 2
+t (x))dt(x)β|X 1
+t (x)θ − X 2
+t (x)θ|
+¯u1
+t (X 1
+t (x))· X 1
+t (x)⊥
+|X 1
+t (x)|2 −¯u2
+t (X 2
+t (x))· X 2
+t (x)⊥
+|X 2
+t (x)|2
+ dx,
+where in the last term, we have used the identity∂ tfθ =∂ tf· f ⊥
+|f| 2 .
+The first two terms are again directly estimated againstE t in the same manner as above.
+For the third term, we use the estimates (3.3), (2.16) and (3.1) to see that
+ˆ
+BS2(0)
+η(X 1
+t (x),X 2
+t (x))dt(x)β|X 1
+t (x)θ − X 2
+t (x)θ|
+¯u1
+t (X 1
+t (x))· X 1
+t (x)⊥
+|X 1
+t (x)|2 −¯u2
+t (X 2
+t (x))· X 2
+t (x)⊥
+|X 2
+t (x)|2
+ dx
+≲
+ˆ
+B 1
+2
+(0)
+|x|β/2−1
+
+kt(x) log
+
+2 + 1
+kt(x)
+
++|¯u1
+t (X 1
+t (x))−¯u2
+t (X 1
+t (x))|
+
+D(X 1
+t (x),X 2
+t (x)) dx.
+(3.14)
+For the first summand, we use Cauchy-Schwarz to see that
+ˆ
+B 1
+2
+(0)
+|x|β/2−1kt(x) log
+
+2 + 1
+kt(x)
+
+D(X 1
+t (x),X 2
+t (x)) dx
+≲
+p
+Et
+
+
+ˆ
+B 1
+2
+(0)
+|x|β−2kt(x)2 log
+
+2 + 1
+kt(x)
+2
+dx
+
+
+1
+2
+.
+We can then estimate, using Jensen’s inequality
+ˆ
+B 1
+2
+(0)
+|x|β−2kt(x)2 log
+
+2 + 1
+kt(x)
+2
+dx
+≲
+ˆ
+B 1
+2
+(0)
+|x|β−2kt(x)2 dxlog
+
+2 + 1
+(A′ ´
+B 1
+2
+(0) |x|β−2kt(x)2 dx)
+1
+2
+
+
+2
+≲
+ˆ
+B 1
+2
+(0)
+D(X 1
+t (x),X 2
+t (x))2 dx
+
+log
+
+2 + 1´
+B 1
+2
+(0) D(X 1
+t (x),X 2
+t (x))2 dx
+
+
+
+
+2
+≲E t log
+
+2 + 1
+Et
+2
+
+[PDF page 16]
+16 D. MEYER
+whereA ′ ≈1 is a renormalisation factor that ensures that1 B 1
+2
+(0)|x|β−2 is a probability measure
+and the penultimate step used (2.18). Hence we have
+ˆ
+B 1
+2
+(0)
+|x|β/2−1kt(x) log
+
+2 + 1
+kt(x)
+
+D(X 1
+t (x),X 2
+t (x)) dx≲E t log
+
+2 + 1
+Et
+
+.(3.15)
+For the second summand in (3.14), we split ¯u1
+t −¯u2
+t =v 1
+t (·)−v 1
+t (0)−v 2
+t (·) +v 2
+t (0) and estimate the
+corresponding summands separately. For the first one, we have by the incompressibility and (2.16)
+ˆ
+B 1
+2
+(0)
+|x|β/2−1v1
+t (X 1
+t (x))−v 2
+t (X 1
+t (x))
+ D(X 1
+t (x),X 2
+t (x)) dx
+≲
+ ˆ
+B1(0)
+|x|β−2v1
+t (x)−v 2
+t (x)
+2
+dx
+! 1
+2p
+Et ≲E t,
+(3.16)
+where the last step uses Lemma 3.5.
+The other summand on the other hand can be estimated by Cauchy-Schwarz as
+ˆ
+B 1
+2
+(0)
+|x|β/2−1|v1
+t (0)−v 2
+t (0)|D(X 1
+t (x),X 2
+t (x)) dx≲|v 1
+t (0)−v 2
+t (0)|
+p
+Et ≲E t (3.17)
+since|x| β−2 is integrable and where the last estimate is again Lemma 3.5.
+Combining (3.14), (3.15), (3.16) and (3.17) again, we see that
+
+d
+dt E4
+t
+ ≲E t log
+
+2 + 1
+Et
+
+.
+3.6.E 5
+t.We compute
+1
+2
+d
+dt E5
+t ⩽
+ˆ
+BS2(0)
+∇η(X 1
+t (x),X 2
+t (x))·
+¯u1
+t (X 1(x))
+¯u2
+t (X 2(x))
+ |X 1
+t (x)− X 2
+t (x)|2
++ (1−η)(X 1
+t (x),X 2
+t (x))
+⟨¯u1
+t (X 1
+t (x))−¯u2
+t (X 2
+t (x)),X 1
+t (x)− X 2
+t (x)⟩
+ dx.
+(3.18)
+The first term is directly estimated through
+´
+BS2(0) |X 1
+t (x)− X 2
+t (x)|2 dx≲E t as ¯u1
+t and ¯u2
+t are
+uniformly bounded away from 0 by (2.1).
+The second summand in (3.18) on the other hand proceeds analogously to the classical uniqueness
+proof. We can estimate
+ˆ
+BS2(0)
+(1−η)(X 1
+t (x),X 2(x))
+⟨¯u1
+t (X 1
+t (x))−¯u2
+t (X 2
+t (x)),X 1
+t (x)− X 2
+t (x)⟩
+ dx
+⩽
+ˆ
+BS2(0)
+(1−η)(X 1
+t (x),X 2
+t (x))
+¯u1
+t (X 1
+t (x))−¯u1
+t (X 2
+t (x))
+X 1
+t (x)− X 2
+t (x)
+ dx
++
+ˆ
+BS2(0)
+(1−η)(X 1
+t (x),X 2
+t (x))
+¯u1
+t (X 2
+t (x))−¯u2
+t (X 2
+t (x))
+X 1
+t (x)− X 2
+t (x)
+ dx
+=:I+II.
+The termIis estimated through ¯u 1
+t being log-Lipschitz on supp 1−ηby Lemma 3.2, yielding,
+together with Cauchy-Schwarz and Jensen’s inequality that
+I≲
+ ˆ
+BS2(0)\Ω
+kt(x)2 log
+
+2 + 1
+kt(x)
+2
+dx
+! 1
+2p
+Et
+
+[PDF page 17]
+VORTEX-WAVE UNIQUENESS 17
+≲
+ ˆ
+BS2(0)\Ω
+kt(x)2 dx
+! 1
+2
+log
+
+2 + 1
+ffl
+BS2(0)\Ω kt(x)2 dx
+ 1
+2
+
+
+p
+Et
+≲
+ ˆ
+BS2(0)\Ω
+kt(x)2 dx
+! 1
+2
+log
+ 
+2 + 1´
+BS2(0)\Ω kt(x)2 dx
+!p
+Et
+≲E t log
+
+2 + 1
+Et
+
+,
+where the last step uses (2.18).
+The termIIon the other hand is estimated by Cauchy-Schwarz as
+II≲
+p
+Et
+ ˆ
+BS2(0)
+|¯u1
+t (X 2
+t (x))−¯u2
+t (X 2
+t (x))|2 dx
+! 1
+2
+≲
+p
+Et
+ ˆ
+B2S2(0)
+|¯u1
+t (x)−¯u2
+t (x)|2 dx
+! 1
+2
+,
+where the last step uses the incompressibility and (2.16).
+We further haveˆ
+B2S2(0)
+|¯u1
+t (x)−¯u2
+t (x)|2 dx⩽2
+ˆ
+B2S2(0)
+|v1
+t (x)−v 2
+t (x)|2 +|v 1
+t (0)−v 2
+t (0)|2 dx.(3.19)
+We now utilize Lemma A.1 and the fact thatϖ 0 is supported inB S2(0) to estimateˆ
+BS2(0)
+|v1
+t (x)−v 2
+t (x)|2 dx≲
+X 1
+t − X 2
+t
+2
+L2(BS2(0)) ≲E t,
+where the last step uses (2.18) yet again. For the second term in (3.19), we can directly use (3.11)
+to estimate it withE t, which yields that
+II≲E t.
+This shows the desired differential estimate| d
+dt E5
+t |≲E t log(2 + 1
+Et ) and finishes the proof of (2.25).
+□
+4.Proof of Lemmas 3.3-3.5
+4.1.Proof of Lemma 3.3.We first show (3.4).
+We use the definition (2.6) and integrate by parts to see that
+2π
+∂tΨ1
+R(t, x)−∂ tΨ2
+R(t, x)
+ =
+
+d
+dt
+ˆ
+R2
+
+log|x−z| −log|z|+ x·z
+|z|2
+
+(ϖ1
+t (z)−ϖ 2
+t (z)) dz
+
+=
+
+ˆ
+R2
+
+log|x−z| −log|z|+ x·z
+|z|2
+
+¯u1
+t (z)· ∇ z(ϖ1
+t (z)−ϖ 2
+t (z))
++ (¯u1
+t (z)−¯u2
+t (z))· ∇ϖ 2
+t (z) dz
+
+⩽
+
+ˆ
+R2
+∇z(log|x−z| −log|z|+ x·z
+|z|2 )·¯u1
+t (z)(ϖ1
+t (z)−ϖ 2
+t (z)) dz
+
++
+
+ˆ
+R2
+∇z(log|x−z| −log|z|+ x·z
+|z|2 )·(¯u1
+t (z)−¯u2
+t (z))(ϖ2
+t (z)−˜η(z)ϖ2
+t (0)) dz
+
++
+
+ˆ
+R2
+∇z(log|x−z| −log|z|+ x·z
+|z|2 )·(¯u1
+t (z)−¯u2
+t (z))˜η(z)ϖ2
+t (0) dz
+
+=:P(x) +Q(x) +R(x) (4.1)
+
+[PDF page 18]
+18 D. MEYER
+whereP, QandRdepend on time through the ¯uandϖand ˜ηis a smooth, radially symmetric and
+nonnegative function supported inB 2(0) which equals 1 onB 1(0).
+Let us treat the termPfirst. In it we split the integral into the contributions ofϖ 1 andϖ 2 and
+substitute in the corresponding flows to see that
+P(x)⩽
+
+ˆ
+R2
+ (x− X 1
+t (z))
+|x− X 1
+t (z)|2 − X 1
+t (z)
+|X 1
+t (z)|2 + x|X 1
+t (z)|2 −(x· X 1
+t (z))X 1
+t (z)
+|X 1
+t (z)|4
+
+·¯u1
+t (X 1
+t (z))
+−
+ (x− X 2
+t (z))
+|x− X 2
+t (z)|2 − X 2
+t (z)
+|X 2
+t (z)|2 + x|X 2
+t (z)|2 −(x· X 2
+t (z))X 2
+t (z)
+|X 2
+t (z)|4
+
+·¯u1
+t (X 2
+t (z))
+
+(ϖ0(z)−˜η(z)ϖ0(0)) dz
+
++
+
+ˆ
+R2
+∇z(log|x−z| −log|z|+ x·z
+|z|2 )¯u1
+t (z)
+ 
+˜η◦(X1
+t )−1(z) + ˜η◦(X2
+t )−1(z)
+
+ϖ0(0) dz
+
+=:P ′(x) +P ′′(x).
+(4.2)
+We introduce the standard dyadic annuli
+An :=B 2−n(0)\B2−(n+1)(0).(4.3)
+We also introduce the fattened annuli and the inner and outer regions
+In :={0} ∪
+[
+m⩾n+2
+Am, ¯An :=A n+1 ∪A n ∪A n−1, ˜An :=
+2[
+i=−2
+An+i, O n :=
+[
+−⌈log2 S2⌉⩽m⩽n−2
+Am.
+(4.4)
+We now realize that the point vortex velocity is orthogonal to thex-independent terms and obtain
+that the integrand inP ′ can be rewritten as
+ (x− X 1
+t (z))
+|x− X 1
+t (z)|2 − X 1
+t (z)
+|X 1
+t (z)|2 + x|X 1
+t (z)|2 −(x· X 1
+t (z))X 1
+t (z)
+|X 1
+t (z)|4
+
+·¯u1
+t (X 1
+t (z))
+−
+ (x− X 2
+t (z))
+|x− X 2
+t (z)|2 − X 2
+t (z)
+|X 2
+t (z)|2 + x|X 2
+t (z)|2 −(x· X 2
+t (z))X 2
+t (z)
+|X 2
+t (z)|4
+
+·¯u1
+t (X 2
+t (z)))
+
+(ϖ0(z)−˜η(z)ϖ0(0))
+=
+ (x− X 1
+t (z))
+|x− X 1
+t (z)|2 − (x− X 2
+t (z))
+|x− X 2
+t (z)|2
+
+·¯u1
+t (X 1
+t (z))(ϖ0(z)−˜η(z)ϖ0(0))
++ (x− X 2
+t (z))
+|x− X 2
+t (z)|2 ·
+ 
+¯u1
+t (X 1
+t (z))−¯u1
+t (X 2
+t (z))
+
+(ϖ0(z)−˜η(z)ϖ0(0))
++
+ x|X 1
+t (z)|2 −(x· X 1
+t (z))X 1
+t (z)
+|X 1
+t (z)|4 − x|X 2
+t (z)|2 −(x· X 2
+t (z))X 2
+t (z)
+|X 2
+t (z)|4
+
+·¯u1
+t (X 1
+t (z))(ϖ0(z)−˜ηϖ0(0))
++ x|X 2
+t (z)|2 −(x· X 2
+t (z))X 2
+t (z)
+|X 2
+t (z)|4 ·
+ 
+¯u1
+t (X 1
+t (z))−¯u1
+t (X 2
+t (z))
+
+(ϖ0(z)−˜η(z)ϖ0(0))
+−
+ X 1
+t (z)
+|X 1
+t (z)|2 − X 2
+t (z)
+|X 2
+t (z)|2
+
+·(v 1
+t (X 1
+t (z))−v 1
+t (0))(ϖ0(z)−˜η(z)ϖ0(0))
+− X 2
+t (z)
+|X 2
+t (z)|2 ·
+ 
+v1
+t (X 1
+t (z))−v 1
+t (X 2
+t (z))
+
+(ϖ0(z)−˜η(z)ϖ0(0))
+=:
+6X
+i=1
+pi(x, z).
+
+[PDF page 19]
+VORTEX-WAVE UNIQUENESS 19
+We will estimate the weightedL 2 norm ofP ′ as follows:
+|x|β/2−2P ′
+
+L2(B 1
+2
+(0))
+≲
+6X
+i=1
+
+X
+m⩾1
+1Am(x)|x|β/2−2
+ˆ
+¯Am
+pi(x, z) dz
+
+L2(R2)
++
+
+X
+m⩾1
+1Am(x)|x|β/2−2
+ˆ
+Im
+pi(x, z) dz
+
+L2(R2)
++
+
+X
+m⩾1
+1Am(x)|x|β/2−2
+ˆ
+Om
+(p1 +p 3 +p 5)(x, z) dz
+
+L2(R2)
++
+
+X
+m⩾1
+1Am(x)|x|β/2−2
+ˆ
+Om
+(p2 +p 4 +p 6)(x, z) dz
+
+L2(R2)
+,
+(4.5)
+which uses that bothϖ 0 and ˜ηare 0 outside ofB S2(0)⊂I m ∪ ¯Am ∪O m. Before estimating these
+terms, let us point out that a pointwise estimate of the type
+
+ˆ
+¯An orI n
+pi(x, z) dz
+ ≲|x|
+p
+Et log
+
+2 + 1
+Et
+
+(4.6)
+forx∈A n implies that the weightedL 2-norm of the corresponding summand has the desired bound
+(i.e.
+
+P
+m⩾1 1Am(x)|x|β/2−2 ´
+¯Am orI m
+pi(x, z) dz
+
+L2(R2)
+≲ √Et log(2 + 1/Et)), as one sees directly
+from summing up. The same also holds for the integrals overO m.
+We now estimate these 14 terms separately. We first note that onI n and ¯An it holds ˜η= 1. We
+rewrite, using the substitution rule
+
+ˆ
+¯An
+p1(x, z) dz
+ =
+
+ˆ
+R2
+(x−z)
+|x−z| 2 ·
+ 
+eϖ(n)◦(X1
+t )−1(z)−eϖ(n)◦(X 2
+t )−1(z)
+
+dz
+
+whereeϖ(n)(y) :=1 ¯An ¯u1
+t (X 1
+t (y))(ϖ0(y)−ϖ 0(0)).
+We may now recognize that this convolution is the Biot-Savart law and apply theL 2-estimate
+from Lemma A.1 to this to see that
+ˆ
+R2
+(x−z)
+|x−z| 2 ·
+ 
+˜ϖ(n)◦(X1
+t )−1 −˜ϖ(n)◦(X 2
+t )−1
+dz
+
+L2x(An)
+≲
+X 1
+t − X 2
+t
+
+L2( ˜An) ∥˜ϖ(n)∥L∞ ,
+where we have also used that by (2.16), the preimage of ¯An under bothX 1
+t andX 2
+t is contained in
+˜An.
+We have
+∥eϖ(n)∥L∞ ≲2 −(α−1)n
+because|¯u1
+t (X 1
+t (z))|≲|z| −1 by (2.1) and (2.16) and because of the estimate (2.4).
+In sum, we obtain that
+
+X
+m⩾1
+1x∈Am|x|−2+ β
+2
+ˆ
+¯Am
+p1(x, z) dz
+
+
+2
+L2
+≲
+X
+m⩾1
+2(4−β)mX 1
+t − X 2
+t
+2
+L2( ˜Am) ∥˜ϖ(m)∥2
+L∞
+≲
+X
+m⩾−1
+2−2(α−2)mD(X 1
+t ,X 2
+t )
+2
+L2(An) ≲E t,
+where the penultimate step used (2.18) and the last one used thatα >2.
+
+[PDF page 20]
+20 D. MEYER
+On the regionI n, we can simply estimate the integral ofp 1 pointwise. Forx∈A n, we have
+
+ˆ
+In
+p1(x, z) dz
+ ≲
+
+ˆ
+In
+|X 1
+t (z)− X 2
+t (z)|
+|x|2 |¯u1
+t (X 1
+t (z))||ϖ0(z)−ϖ 0(0)|dz
+
+because dist(x,X 1
+t (In))≈dist(x,X 2
+t (In))≈xby definition and (2.16). Since we also have
+|¯u1
+t (X 1
+t (z))||ϖ0(z)−ϖ 0(0)|≲|z| α−1
+by (2.4), (2.1) and (2.16), we see that
+ˆ
+In
+|X 1
+t (z)− X 2
+t (z)|
+|x|2 |¯u1
+t (X 1
+t (z))||ϖ0(z)−ϖ 0(0)|dz≲
+ˆ
+In
+|X 1
+t (z)− X 2
+t (z)|
+|x|2 |z|α−1 dz
+≲
+p
+Et|x|
+2α−β−2
+2 ,
+where the last step uses Cauchy-Schwarz, thatI n is a ball of radius|x|, and 2.18. Upon noting that
+2α−β−2
+2 >1, we note that the pointwise estimate (4.6) holds for this term.
+We proceed to the next term, by (2.16), (2.4) and (3.2), we have, forx∈A n,
+
+ˆ
+¯An
+p2(x, z) dz
+ ≲
+ˆ
+¯An
+1
+|x− X 2
+t (z)| kt(z) log
+
+2 + 1
+kt(z)
+
+|z|α−2 dz
+≈ |x| α−1−β/2
+ˆ
+(X 2
+t )−1 ¯An
+1
+|x−z|
+
+kt log
+
+2 + 1
+kt
+
+◦(X 2
+t )−1(z)|z| β/2−1 dz,
+where the last step uses the substitution rule and that|z| ≈ |x|on this region.
+To estimate this integral, we use Young’s convolution inequality to see that
+
+ˆ
+(X 2
+t )−1 ¯An
+|z|β/2−1
+|x−z|
+
+kt log
+
+2 + 1
+kt
+
+◦(X 2
+t )−1(z) dz
+
+L2x(An)
+≲
+1B2−(n−5)(0)
+1
+| · |
+
+L1
+| · |β/2−1kt log
+
+2 + 1
+kt
+
+◦(X 2
+t )−1
+
+L2( ¯An)
+≲2 −n
+| · |β/2−1kt log
+
+2 + 1
+kt
+
+L2( ˜An)
+,
+where we have used that (X 2
+t )−1 ¯An ⊂ ˜An by (2.16) and that forz∈ ˜An andx∈ ¯An it holds that
+|x−z|⩽2 −(n−5).
+To further estimate thisL2-norm, we apply Jensen’s inequality with the concave functionylog(2+
+y− 1
+2 )2 and the probability measure| ˜An|−11 ˜An to see that
+| · |β/2−1kt log
+
+2 + 1
+kt
+
+L2( ˜An)
+≲
+ˆ
+˜An
+kt(z)2|z|β−2 dz
+ 1
+2
+log
+
+2 + 1
+ffl
+˜An
+kt(z)2|z|β−2 dz
+ 1
+2
+
+
+≲
+p
+Et log
+
+2 + 2n
+√Et
+
+≲
+p
+Et
+
+n+ log
+
+2 + 1
+Et
+
+,
+(4.7)
+where we have used (2.18).
+Combining the previous estimates, we see that
+
+X
+m⩾1
+1Am(x)|x|β/2−2
+
+ˆ
+¯Am
+p2(x, z) dz
+
+
+2
+L2x
+≲
+X
+m⩾0
+2−2(α−β/2−2+β/2)m Et
+ 
+n2 + log
+
+2 + 1
+Et
+2!
+
+[PDF page 21]
+VORTEX-WAVE UNIQUENESS 21
+≲E t log
+
+2 + 1
+Et
+2
+.
+In the inner region we can estimate pointwise, forx∈A n, using the bounds (2.1), (2.4) and (2.16)
+and the fact that by (2.16) and the definition ofI n we have that|x− X 1
+t (z)| ≈ |x|
+
+ˆ
+In
+p2(x, z) dz
+ ≲
+ˆ
+In
+|x|−1|z|α−2kt(z) log
+
+2 + 1
+kt(z)
+
+dz
+≲|x| α−2− β
+2
+ˆ
+In
+kt(z) log
+
+2 + 1
+kt(z)
+
+|z|
+β
+2 −1 dz
+≲|x| α−1− β
+2
+ ˆ
+In
+kt(z)2 log
+
+2 + 1
+kt(z)
+2
+|z|β−2 dz
+! 1
+2
+,
+where the last step is Cauchy-Schwarz combined with the fact that|I n| ≈ |x| 2. Applying Jensen’s
+inequality as in (4.7) above, we see that
+ ˆ
+In
+kt(z)2 log
+
+2 + 1
+kt(z)
+2
+|z|β−2 dz
+! 1
+2
+≲E t
+
+|log|x||+ log
+
+2 + 1
+Et
+
+,
+giving us the desired bound of the type (4.6) over this region since|x| α−1− β
+2 |log|x||≲|x|.
+We move on to the termp 3 forx∈A n, here one can treat the regionsI n and ¯An simultaneously.
+Estimating the difference with the derivative and using that|X 1
+t (z)| ≈ |X 2
+t (z)| ≈ |z|by (2.16), we
+see that
+x|X 1
+t (z)|2 −(x· X 1
+t (z))X 1
+t (z)
+|X 1
+t (z)|4 − x|X 2
+t (z)|2 −(x· X 2
+t (z))X 2
+t (z)
+|X 2
+t (z)|4
+ ≲|x||z| −3|X 1
+t (z)− X 2
+t (z)|
+≲|x||z| −3kt(z).
+Together with (2.1), (2.4), (2.16) and (2.18), this implies that
+|p3(x, z)|≲|x||z| α−4kt(z)≲|x||z| α−3− β
+2 D(X 1
+t (z),X 2
+t (z)).
+Sinceα−3− β
+2 > β
+2 −1, we conclude by Cauchy-Schwarz and the fact thatI n ∪ ¯An is a ball of
+radius≈ |x|that
+ˆ
+In∪ ¯An
+|p3(x, z)|dz≲|x|
+p
+Et,
+which is a pointwise bound of the type (4.6).
+We treatp 4 next, again forx∈A n, for whichI n and ¯An can be treated together too. Using yet
+again (3.2) and (2.16), we see that we have
+|p4(x, z)|≲|x||z| α−4kt(z) log
+
+2 + 1
+kt(z)
+
+,
+and hence we can estimate
+ˆ
+In∪ ¯An
+p4(x, z) dz
+ ≲
+ˆ
+In∪ ¯An
+|x||z|α−4kt(z) log
+
+2 + 1
+kt(z)
+
+dz
+≲|x| α−1−β/2
+ ˆ
+In∪ ¯An
+kt(z)2 log
+
+2 + 1
+kt(z)
+2
+|z|β−2 dz
+! 1
+2
+where the second step consists of applying Cauchy-Schwarz and estimating|z|≲|x|.
+
+[PDF page 22]
+22 D. MEYER
+This can be estimated by≲|x| α−1−β/2√Et
+
+|log|x||+ log
+
+2 + 1
+Et
+
+by the same argument as
+in (4.7) and in particular has a pointwise bound of the type (4.6) asα−1−β/2>1.
+We move on to thex-independent termsp 5 andp 6, for which one can handle the regionsI n ∪ ¯An
+together as well forx∈A n. Using that by (2.16), we have
+
+X 1
+t (z)
+|X 1
+t (z)|2 − X 2
+t (z)
+|X 2
+t (z)|2
+ ≲|z| −2|X 1
+t (z)− X 2
+t (z)|≲|z| −2kt(z),
+we can estimate, using (2.4) and the bound (2.5) onv 1
+tˆ
+In∪ ¯An
+|p5(x, z)|dz≲
+ˆ
+In∪ ¯An
+kt(z)|z| α−1 dz≲|x| α− β
+2
+ˆ
+In∪ ¯An
+kt(z)|z|
+β
+2 −1 dz≲|x| α− β
+2
+p
+Et
+where the last step is Cauchy-Schwarz, combined with (2.18). This has the desired pointwise bound
+(4.6).
+For the last summandp 6, we use thatv t is log-Lipschitz by Lemma A.2 and use the bounds (2.4)
+and (2.16) to estimate
+ˆ
+In∪ ¯An
+|p6(x, z)|dy≲
+ˆ
+In∪ ¯An
+|z|α−1kt(z) log
+
+2 + 1
+kt(z)
+
+dz.
+This term can be estimated similarly as the one in (4.7), yielding a bound of the type (4.6) (in fact,
+it is even an order smaller).
+4.1.1.The integrals overO n inP ′.We now proceed to the outerO n in the estimate ofP, here
+we do split things differently in order to recover the second-order zero of Ψ 1
+R. We regroup
+p1(x, z) +p 3(x, z) +p 5(x, z) =
+ (x− X 1
+t (z))
+|x− X 1
+t (z)|2 − X 1
+t (z)
+|X 1
+t (z)|2 + x|X 1
+t (z)|2 −(x· X 1
+t (z))X 1
+t (z)
+|X 1
+t (z)|4
+− (x− X 2
+t (z))
+|x− X 2
+t (z)|2 + X 2
+t (z)
+|X 2
+t (z)|2 − x|X 2
+t (z)|2 −(x· X 2
+t (z))X 2
+t (z)
+|X 2
+t (z)|4
+
+·¯u1
+t (X 1
+t (z)) (ϖ0(z)−˜ηϖ0(0))
+(4.8)
+and
+p2(x, z) +p 4(x, z) +p 6(x, z) =
+ (x− X 2
+t (z))
+|x− X 2
+t (z)|2 − X 2
+t (z)
+|X 2
+t (z)|2 + x|X 2
+t (z)|2 −(x· X 2
+t (z))X 2
+t (z)
+|X 2
+t (z)|4
+
+·
+ 
+¯u1
+t (X 1
+t (z))−¯u1
+t (X 2
+t (z))
+
+(ϖ0(z)−˜η(z)ϖ0(0)).
+(4.9)
+In the first group, we claim that forx∈A n andz∈O n it holds that
+
+(x− X 1
+t (z))
+|x− X 1
+t (z)|2 − X 1
+t (z)
+|X 1
+t (z)|2 + x|X 1
+t (z)|2 −(x· X 1
+t (z))X 1
+t (z)
+|X 1
+t (z)|4
+− (x− X 2
+t (z))
+|x− X 2
+t (z)|2 + X 2
+t (z)
+|X 2
+t (z)|2 − x|X 2
+t (z)|2 −(x· X 2
+t (z))X 2
+t (z)
+|X 2
+t (z)|4
+ ≲|x||z| α−3kt(z).
+(4.10)
+We will need to distinguish the cases|X 1
+t (z)− X 2
+t (z)|⩽ 1
+100 |z|and|X 1
+t (z)− X 2
+t (z)|⩾ 1
+100 |z|.
+In the first case, we may estimate, using the shorthandg(p, q) := log(|p−q| 2)
+
+(x− X 1
+t (z))
+|x− X 1
+t (z)|2 − X 1
+t (z)
+|X 1
+t (z)|2 + x|X 1
+t (z)|2 −(x· X 1
+t (z))X 1
+t (z)
+|X 1
+t (z)|4
+− (x− X 2
+t (z))
+|x− X 2
+t (z)|2 + X 2
+t (z)
+|X 2
+t (z)|2 − x|X 2
+t (z)|2 −(x· X 2
+t (z))X 2
+t (z)
+|X 2
+t (z)|4
+
+=
+∇qg(x,X 1
+t (z))− ∇ qg(0,X 1
+t (z))− ∇ 2
+pq(0,X 1
+t (z))·x
+
+[PDF page 23]
+VORTEX-WAVE UNIQUENESS 23
+−
+ 
+∇qg(x,X 2
+t (z))− ∇ qg(0,X 2
+t (z))− ∇ 2
+pq(0,X 2
+t (z))·x
+
+=
+
+ˆ 1
+0
+ˆ 1
+0
+
+∇3
+pqqg(s1
+x
+|x| ,(1−s 2)X 1
+t (z) +s 2X 2
+t (z))− ∇ 3
+pqqg(0,(1−s 2)X 1
+t (z) +s 2X 2
+t (z))
+
+:x⊗(X 1
+t (z)− X 2
+t (z)) ds1 ds2
+
+by applying the fundamental theorem of calculus twice. We now note that the line betweenX 1
+t (z)
+andX 2
+t (z) lies outside ofB 3
+4 |z|(0) thanks to (2.16) and the assumption in the case distinction, in
+particular it has a distance≈ |z|fromB |x|(0) and therefore we can estimate
+
+ˆ 1
+0
+ˆ 1
+0
+
+∇3
+pqqg(s1
+x
+|x| ,(1−s 2)X 1
+t (z) +s 2X 2
+t (z))− ∇ 3
+pqqg(0,(1−s 2)X 1
+t (z) +s 2X 2
+t (z))
+
+:x⊗(X 1
+t (z)− X 2
+t (z)) ds1 ds2
+
+≲|x||z| −3kt(z).
+The other case|X 1
+t (z)− X 2
+t (z)|⩾ 1
+100 |z|proceeds similarly, except we only use the fundamental
+theorem of calculus once to estimate∇qg(x,X 1
+t )− ∇ qg(0,X 1
+t )− ∇ 2
+pq(0,X 1
+t )·x−
+ 
+∇qg(x,X 2
+t )− ∇ qg(0,X 2
+t )− ∇ 2
+pq(0,X 2
+t )·x
+
+≲
+ˆ 1
+0
+∇2
+pqg(s1
+x
+|x| ,X 1
+t (z))− ∇ 2
+pqg(0,X 1
+t (z))
+ |x|+
+∇2
+pqg(s1
+x
+|x| ,X 2
+t (z))− ∇ 2
+pqg(0,X 2
+t (z))
+ |x|ds
+≲|x||z| −2 ≲|x||z| −3kt(z)
+where we have again used thatX 1
+t (z),X 2
+t (z) are outside ofB |x|(0) and used the assumption in the
+case distinction in the last step. This shows the claim (4.10).
+We have that|ϖ 0(z)−˜η(z)ϖ0(0)|≲|z| α by (2.4) and since ˜η= 1 near 0. Combining this with
+the rewriting (4.8) and the bounds (4.10), (2.1) and (2.16) shows that
+ˆ
+On
+p1(x, z) +p 3(x, z) +p 5(x, z) dz
+ ≲|x|
+
+ˆ
+On
+kt(z)|z| α−4 dz
+ ≲
+p
+Et
+where the second step uses (2.18) and thatα−2−β >0. This has a pointwise bound of the type
+(4.6).
+We continue with the second groupp 2(x, z)+p 4(x, z)+p 6(x, z). Here we can estimate, forx∈A n
+andz∈O n, similarly as in (4.10) above
+
+(x− X 2
+t (z))
+|x− X 2
+t (z)|2 − X 2
+t (z)
+|X 2
+t (z)|2 + x|X 2
+t (z)|2 −(x· X 2
+t (z))X 2
+t (z)
+|X 2
+t (z)|4
+ ≲|x||z| −2,
+which, together with the log-Lipschitz property (3.2) of ¯u 1
+t , (2.4), (2.16) and the rewritten form
+(4.9) yields
+ˆ
+On
+p2(x, z) +p 4(x, z) +p 6(x, z) dz
+ ⩽|x|
+ˆ
+On
+kt(z) log
+
+2 + 1
+kt(z)
+
+|z|α−4 dz
+≲|x| α−1−β
+ ˆ
+On
+kt(z)2 log
+
+2 + 1
+kt(z)
+2
+|z|β−2 dz
+! 1
+2
+,
+where the second step uses Cauchy-Schwarz and that|z|≲1. Jensen’s inequality then shows that
+ˆ
+On
+p2(x, z) +p 4(x, z) +p 6(x, z) dz
+ ≲|x|
+p
+Et log
+
+2 + 1
+Et
+
+,
+
+[PDF page 24]
+24 D. MEYER
+which is a bound of the desired type (4.6).
+Coming back to the splitting (4.5), all these estimates combined show that
+| · |β/2−2P ′
+
+L2(B 1
+2
+(0))
+≲
+p
+Et log
+
+2 + 1
+Et
+
+.(4.11)
+4.1.2.The termP ′′.Let us note that by (2.16), the difference ˜η◦(X 1
+t )−1 −˜η◦(X 2
+t )−1 in the
+definition (4.2) ofP ′′ can only be nonzero if|z| ∈( 3
+4 ,3). We note that for|x|⩽ 1
+2 and|z| ∈( 3
+4 ,3)
+we have
+∇z(log|x−z| −log|z|+ x·z
+|z|2 )
+ +
+∇2
+z(log|x−z| −log|z|+ x·z
+|z|2 )
+ ≲|x| 2,
+uniformly inxandzas one sees from the fundamental theorem of calculus. We also have thatu 1
+t
+is log-Lipschitz on that region by (3.2).
+We can hence take a functionh t =h t(x, z) which agrees with∇ z(log|x−z| −log|z|+ x·z
+|z|2 )·u 1
+t (z)
+onB 1
+2
+(0)×
+
+B3(0)\B 3
+4
+(0)
+
+and which enjoys the bound
+|ht(x, z)|+ |ht(x, z)−h t(x, z′)|
+|z−z ′|log(2 + 1
+|z−z ′|) ≲|x| 2
+on all ofB 1(0)×B 3(0), uniformly int. We therefore see that
+P ′′(x) =
+
+ˆ
+R2
+ht(x, z)
+ 
+˜η◦(X1
+t )−1(z)−˜η◦(X 2
+t )−1(z)
+
+ϖ0(0) dz
+
+=
+
+ˆ
+R2
+ 
+ht(x,X 1
+t (z))−h t(x,X 2
+t (z))
+
+˜η(z)ϖ0(0) dz
+
+≲|x| 2
+ˆ
+R2
+X 1
+t (z)− X 2
+t (z)
+ log
+ 
+2 + 1X 1
+t (z)− X 2
+t (z)
+
+!
+˜η(z) dz.
+Using Jensen’s inequality with the concave functionylog(2+y −1) and Cauchy-Schwarz, we see that
+P ′′(x)≲|x| 2p
+Et log
+
+2 + 1
+Et
+
+,
+yielding the desired bound
+| · |β/2−2P ′′
+
+L2(B 1
+2
+(0))
+≲
+p
+Et log
+
+2 + 1
+Et
+
+.(4.12)
+4.1.3.The termQ.We move on to the analysis of the termQ. We split the integral into the
+contributions fromI n ∪ ¯An andO n. Forx∈A n withn⩾1 we have ˜η= 1 onI n ∪ ¯An and can hence
+estimate, using (2.4) and that|z|≲|x|on that region
+
+ˆ
+In∪ ¯An
+∇z(log|x−z| −log|z|+ x·z
+|z|2 )
+ 
+v1
+t (z)−v 1
+t (0)−v 2
+t (z) +v 2
+t (0)
+ 
+ϖ2
+t (z)−˜η(z)ϖ2
+t (0)
+
+dz
+
+≲
+ˆ
+In∪ ¯An
+ 1
+|x−z| + 1
+|z| + |x|
+|z|2
+v1
+t (z)−v 2
+t (z)
+ |z|α dz
++|v 1
+t (0)−v 2
+t (0)|
+ˆ
+In∪ ¯An
+ 1
+|x−z| + 1
+|z| + |x|
+|z|2
+
+|z|α dz
+
+[PDF page 25]
+VORTEX-WAVE UNIQUENESS 25
+≲|x| α
+ˆ
+In∪ ¯An
+1
+|x−z|
+v1
+t (z)−v 2
+t (z)
+ dz+|x| α−1
+ˆ
+In∪ ¯An
+|v1
+t (z)−v 2
+t (z)|dz
++
+v1
+t (0)−v 2
+t (0)
+
+ˆ
+In∪ ¯An
+ 1
+|x−z| + 1
+|z| + |x|
+|z|2
+
+|z|α dz.
+(4.13)
+By e.g. Young’s convolution inequality, we see that
+|x|α−2+ β
+2
+ˆ
+In∪ ¯An
+1
+|x−z| |v1
+t (z)−v 2
+t (z)|dz
+
+L2x(An)
+≲2 −(α−2+β/2)nv1
+t −v 2
+t
+
+L2(In∪ ¯An)
+≲2 −(α−2+ β
+2 )nv1
+t −v 2
+t
+
+L2(B2(0))
+≲2 −(α−2− β
+2 )np
+Et
+where the last step used Lemma A.1 and (2.18). By summing up the square of this over all dyadic
+annuli we see that
+X
+m⩾1
+1Am(x)|x|α−2+ β
+2
+ˆ
+In∪ ¯An
+1
+|x−z| |v1
+t (z)−v 2
+t (z)|dz
+
+L2(R2)
+≲
+p
+Et (4.14)
+Similarly, we may estimate the second integral in (4.13) by
+|x|α−1
+ˆ
+In∪ ¯An
+|v1
+t (z)−v 2
+t (z)|dz≲|x| α−1p
+Et (4.15)
+by Lemma A.1 and (2.18), which has the desired weightedL 2 bound by integrating inx.
+The third integral in (4.13) can be estimated byE t through e.g. (3.11) as
+|v1
+t (0)−v 2
+t (0)|
+ˆ
+In∪ ¯An
+ 1
+|x−z| + 1
+|z| + |x|
+|z|2
+
+|z|α dz≲
+p
+Et
+ˆ
+In∪ ¯An
+ 1
+|x−z| + 1
+|z| + |x|
+|z|2
+
+|z|α dz
+≲
+p
+Et|x|α+1,
+(4.16)
+sinceI n ∪ ¯An is a ball of radius≈ |x|. This has the desiredL 2-bound after integrating inx.
+In the integral over the outer regionO n we note that|ϖ 2
+t (z)−˜η(z)ϖ 2
+t (0)|≲|z| α by (2.4) and
+because ˜η= 1 near 0, and therefore, forx∈A n, we have
+
+ˆ
+On
+∇z
+
+log|x−z| −log|z|+ x·z
+|z|2
+ 
+v1
+t (z)−v 1
+t (0)−v 2
+t (z) +v 2
+t (0)
+
+(ϖ2
+t (z)−˜η(z)ϖ2
+t (0)) dz
+
+≲
+ˆ
+On
+
+(x−z)
+|x−z| 2 − z
+|z|2 + x|z|2 −(x·z)z
+|z|4
+ |v1
+t (z)−v 2
+t (z)||z| α dz
++|v 1
+t (0)−v 2
+t (0)|
+ˆ
+On
+
+(x−z)
+|x−z| 2 − z
+|z|2 + x|z|2 −(x·z)z
+|z|4
+ |z|α dz.
+Since| (x−z)
+|x−z|2 − z
+|z|2 + x|z|2−(x·z)z
+|z|4 |≲|x||z| −2 for|z|⩾2|x|, we see that forx∈A n we have
+
+ˆ
+On
+∇z(log|x−z| −log|z|+ z·x
+|z|2 )
+ 
+v1
+t (z)−v 1
+t (0)−v 2
+t (z) +v 2
+t (0)
+
+(ϖ2
+t (z)−ϖ 2
+t (0)) dz
+
+≲|x|
+ˆ
+On
+|v1
+t (z)−v 2
+t (z)|dz+|v 1
+t (0)−v 2
+t (0)|
+ˆ
+On
+|x|dz≲|x|
+p
+Et
+(4.17)
+where the last step uses Lemma A.1 and (2.18) for the first integral and (3.11) for the second
+difference, as well as|x|,|z|≲1.
+
+[PDF page 26]
+26 D. MEYER
+Putting (4.14), (4.15), (4.16) and (4.17) together, we see that
+| · |β/2−2Q
+
+L2(B 1
+2
+(0))
+≲
+p
+Et.(4.18)
+4.1.4.The termR.We partially integrate to see that
+R(x) =|ϖ 0(0)|
+
+ˆ
+R2
+(log|x−z| −log|z|+ x·z
+|z|2 )
+ 
+¯u1
+t (z)−¯u2
+t (z)
+
+∇˜η(z) dz
+ .
+Note that by the fundamental theorem of calculus we have
+log|x−z| −log|z|+ x·z
+|z|2
+ ≲|x| 2
+for|z| ∈(1,2) and|x|⩽ 1
+2, which in particular contains the support of∇˜η. Therefore, for|x|⩽ 1
+2,
+we have
+R(x)≲
+ˆ
+R2
+|x|2¯u1
+t (z)−¯u2
+t (z)
+ |∇˜η(z)|dz≲|x| 2
+v1
+t −v 2
+t
+
+L2(B2(0) +|v 1
+t (0)−v 2
+t (0)|
+
+.
+By Lemma A.1, (2.18) and (3.11) we therefore see that
+R(x)≲|x| 2p
+Et,
+and hence also that | · |β/2−2R
+
+L2(B 1
+2
+(0))
+≲
+p
+Et.
+Combining this estimate and (4.11), (4.12) and (4.18) again shows (3.4).
+4.1.5.Proof of(3.5).Note that by definition it holds that Ψ 1
+R(t,0)−Ψ 2
+R(t,0) = 0 and
+∇⊥
+x (Ψ1
+R(t, x)−Ψ 2
+R(t, x)) =v 1
+t (x)−v 1
+t (0)−v 2
+t (x)−v 2
+t (0).
+We may hence use Hardy’s inequality [31, Formula (1.3.3)] to estimate
+ˆ
+B 1
+2
+(0)
+Ψ1
+R(t, x)−Ψ 2
+R(t, x)
+2
+|x|β−4 dx≲
+ˆ
+B 1
+2
+(0)
+v1
+t (x)−v 1
+t (0)−v 2
+t (x)−v 2
+t (0)
+2
+|x|β−2 dx≲E t,
+where the last step used Lemma 3.5.□
+4.2.Proof of Lemma 3.4.Let us first note that (3.9) is a direct consequence of (3.6)-(3.8), the
+identity (2.10), (2.8) and the discrete product rule.
+Indeed, using these, we have
+(∂td1)(t, x)−(∂ td1)(t, y)
+ =
+|x|e2πΨ1
+R(t,x)∂tΨ1
+R(t, x)− |y|e 2πΨ1
+R(t,y)∂tΨ1
+R(t, y)
+
+≲||x| − |y||
+e2πΨ1
+R(t,x)∂tΨ1
+R(t, x)
+ +|y|
+e2πΨ1
+R(t,x) −e 2πΨ1
+R(t,y)
+
+∂tΨ1
+R(t, x)
+
++|y|
+∂tΨ1
+R(t, x)−∂ tΨ1
+R(t, y)
+
+≲|x| 2|x−y|log
+
+2 + 1
+|x−y|
+
+,
+which also used the assumption that|x| ≈ |y|.
+To prove the estimates (3.6)-(2.13), we fix anx∈A n and again use the regionsI n, ¯An andO n,
+as defined in (4.4).
+
+[PDF page 27]
+VORTEX-WAVE UNIQUENESS 27
+4.2.1.The estimate(3.6).We use the explicit form of the Biot-Savart law, the governing equations
+and partial integration to see that
+2π d
+dtΨ1
+R(t, x) = d
+dt
+ˆ
+R2
+
+log|x−z| −log|z|+ z·x
+|z|2
+
+ϖ1
+t (z) dz
+=
+ˆ
+BS2(0)
+¯u1
+t (z)· ∇ z
+
+log|x−z| −log|z|+ z·x
+|z|2
+ 
+ϖ1
+t (z)−˜η(z)ϖ1
+t (0)
+
+dz
+−
+ˆ
+R2
+
+log|x−z| −log|z|+ z·x
+|z|2
+
+¯u1
+t (z)· ∇ z ˜η(z)ϖ1
+t (0) dz
+(4.19)
+here ˜ηis again a smooth, radially symmetric and nonnegative cutoff function, not depending on the
+other quantities, which equals 1 onB 1(0) and which is supported inB 2(0).
+The second integral here is trivially≲|x| 2 since|log|x−z| −log|z|+ z·x
+|z|2 |≲|x| 2 and|¯u1
+t (z)|≲1
+forz∈supp∇˜ηby (2.1) and the assumption that|x|⩽S 1 ⩽ 1
+2.
+We therefore only need to estimate the first integral in (4.19). Over the regionI n, we estimate all
+terms directly with the triangle inequality and, using that the point vortex velocity is orthogonal
+tozand that ˜η= 1 here, we see that
+
+ˆ
+In
+¯u1
+t (z)· ∇ z
+
+log|x−z| −log|z|+ z·x
+|z|2
+ 
+ϖ1
+t (z)−˜η(z)ϖ1
+t (0)
+
+dz
+
+=
+
+ˆ
+In
+(x−z)·¯u 1
+t (z)
+|x−z| 2 − z·(v 1
+t (z)−v t(0))
+|z|2 + ¯u1
+t (z)·x
+|z|2 − (z·x)(v 1
+t (z)−v t(0))·z
+2|z|4
+
+×
+ 
+ϖ1
+t (z)−ϖ 1
+t (0)
+
+dz
+
+≲
+ˆ
+In
+ 
+|x|−1|¯u1
+t (z)|+|v 1
+t (z)−v 1
+t (0)||z|−1 +|¯u1
+t (z)||x||z| −2 +|v 1
+t (z)−v 1
+t (0)||x||z|−2
+|z|α dz
+≲
+ˆ
+In
+|x|−1|z|α−1 +|z| α +|x||z| α−3 dz≲|x| 2 (4.20)
+here we have also used that|x−z| ≈ |x|onI n and the estimates (2.5) and (2.1) on the velocity, as
+well as (2.4) and thatI n is a ball of radius≈ |x|by definition.
+Over the region ¯An, we directly estimate everything with the triangle inequality to see that
+
+ˆ
+¯An
+∇z
+
+log|x−z| −log|z|+ x·z
+|z|2
+
+·¯u1
+t (z)(ϖ1
+t (z)−˜η(z)ϖ1
+t (0)) dz
+
+≲
+ˆ
+¯An
+ 1
+|x−z| + 1
+|z| + |x|
+|z|2
+
+|¯u1
+t (z)||z| α dz
+≲
+ˆ
+¯An
+|x|α−1
+|x−z| +|x| α−2 dz
+≲|x| 2 +|x|
+ˆ
+B10|x|(0)
+1
+|z| dz≲|x| 2 (4.21)
+by the estimate (2.1) on ¯u1
+t and the fact that|x| ≈ |z|here.
+Over the third regionO n, we use the elementary estimate
+∇z
+
+log|x−z| −log|z|+ z·x
+|z|2
+ ≲|x| 2|z|−3,
+
+[PDF page 28]
+28 D. MEYER
+which holds for allzandxwith|z|⩾2|x|(so in particular for allzinO n) and can be easily shown
+with the fundamental theorem of calculus. Together with (2.1) and (2.4), this yields that
+
+ˆ
+On
+¯u1
+t (z)· ∇ z
+
+log|x−z| −log|z|+ z·x
+|z|2
+ 
+ϖ1
+t (z)−˜η(z)ϖ1
+t (0)
+
+dz
+ ≲
+ˆ
+On
+|x|2|z|α−4 dz≲|x| 2.
+(4.22)
+Putting (4.20), (4.21) and (4.22) together shows (3.6).
+4.2.2.The estimate(3.7).We may rewrite
+2π(Ψ1
+R(t, x)−Ψ 1
+R(t, y)) =
+ˆ
+R2
+
+log|x−z| −log|y−z|+ z·(x−y)
+|z|2
+
+ϖ1
+t (z) dz
+=
+ˆ
+BS2(0)
+
+log|x−z| −log|y−z|+ z·(x−y)
+|z|2
+
+(ϖ1
+t (z)−˜η(z)ϖ1
+t (0)) dz
++
+ˆ
+R2
+(log|x−z| −log|y−z|) ˜η(z)ϖ 1
+t (0)) dz
+where the last step used the antisymmetry of z·(x−y)
+|z|2 .
+We first analyze the second integral. It can be estimated by|x−y|max(|x|,|y|) since ˜η∗log| · |
+is aC 2 function near 0 with a critical point at 0 (since it is radially symmetric).
+We split the first integral into the three regionsI n, ¯An, On again. Let us note that by the
+assumption ony, we havey∈ ¯An and dist(y, ∂ ¯An)≳|x|.
+We have
+ˆ
+In
+
+log|x−z| −log|y−z|+ z·(x−y)
+|z|2
+
+(ϖ1
+t (z)−˜ηϖ1
+t (0)) dz
+ ≲
+ˆ
+In
+|x−y|
+|z| |z|α dz
+≲|x−y|max(|x|,|y|) 3 (4.23)
+which used that|x−z| ≈ |y−z| ≈ |x|≳|z|on this region, as well as (2.4).
+On the region ¯An we use that|log|x−z| −log|y−z||≲|x−y||z| −1 forx, y, z∈ ¯An, as one can
+see by estimating the Lipschitz constant in ¯An with the supremum of the derivative.
+This yields by (2.4) that
+
+ˆ
+¯An
+
+log|x−z| −log|y−z|+ z·(x−y)
+|z|2
+ 
+ϖ1
+t (z)−˜η(z)ϖ1
+t (0)
+
+dz
+
+≲
+ˆ
+¯An
+|x−y||z| α−1 dz≲|x−y|max(|x|,|y|) 3.(4.24)
+We move on to the regionO n. Here we estimate the first bracket with the fundamental theorem of
+calculus aslog|x−z| −log|y−z|+ z·(x−y)
+|z|2
+ =
+
+ˆ 1
+0
+ (1−s)x+sy−z
+|(1−s)x+sy−z| 2 + z
+|z|2
+
+·(x−y) ds
+
+≲(|x|+|y|)|z| −2|x−y|.
+(4.25)
+This yields that
+ˆ
+On
+
+log|x−z| −log|y−z|+ z·(x−y)
+|z|2
+
+(ϖ1
+t (z)−˜η(z)ϖ1
+t (0)) dz
+
+≲(|x|+|y|)|x−y|
+ˆ
+On
+|z|α−2 dz≲max(|x|,|y|)|x−y|.(4.26)
+Putting (4.23), (4.24) and (4.26) together yields (3.7).
+
+[PDF page 29]
+VORTEX-WAVE UNIQUENESS 29
+4.2.3.The estimate(3.8).We use the governing equations and partial integration to rewrite
+2π
+ 
+∂tΨ1
+R(t, x)−∂ tΨ1
+R(t, y)
+
+=
+ˆ
+BS2(0)
+¯u1
+t (z)· ∇ z
+
+log|x−z| −log|y−z|+ z·(x−y)
+|z|2
+
+(ϖ1
+t (z)−˜η(z)ϖ1
+t (0)) dz
++
+ˆ
+BS2(0)
+
+log|x−z| −log|y−z|+ z·(x−y)
+|z|2
+
+¯u1
+t (z)· ∇˜η(z)ϖ1
+t (0) dz.
+The second integral is again bounded by|x−y|max(|x|,|y|) since the first bracket has this bound
+on supp∇˜η.
+This first integral is split into the three regionsI n, ¯An, On yet again. We have
+ˆ
+In
+¯u1
+t (z)· ∇ z
+
+log|x−z| −log|y−z|+ z·(x−y)
+|z|2
+ 
+ϖ1
+t (z)−˜η(z)ϖ1
+t (0)
+
+dz
+
+≲
+ˆ
+In
+
+x−z
+|x−z| 2 − y−z
+|y−z| 2 +∇ z
+z·(x−y)
+|z|2
+ |z|α−1 dz
+≲
+ˆ
+In
+|x−y||z| α−3 dz
+≲|x−y|max(|x|,|y|)
+by (2.1), (2.4) and because|x−z| ≈ |y−z| ≈ |x|≳|z|on this region.
+On the region ¯An, we split the bracket to see that
+ˆ
+¯An
+∇z
+
+log|x−z| −log|y−z|+ z·(x−y)
+|z|2
+
+¯u1
+t (z)(ϖ1
+t (z)−˜η(z)ϖ1
+t (0)) dz
+
+≲|h(x)−h(y)|+|x−y|
+ˆ
+¯An
+1
+|z|2 |¯u1
+t (z)|
+ϖ1
+t (z)−ϖ 1
+t (0)
+ dz
+≲|h(x)−h(y)|+|x−y|
+ˆ
+¯An
+|z|α−3 dz,
+wherehis a shorthand for ((¯u 1
+t (·)(ϖ1
+t (·)−ϖ 1
+t (0))1 ¯An)∗log| · |. To estimate this, we note that,
+thanks to Lemma A.2,his log-Lipschitz with modulus≲
+¯u1
+t (·)(ϖ1
+t (·)−ϖ 1
+t (0))1 ¯An
+
+L∞. This norm
+in turn is≲max(|x|,|y|) by (2.4) and (2.1). Hence we see that
+ˆ
+¯An
+∇
+
+log|x−z| −log|y−z|+ z·(x−y)
+|z|2
+
+¯u1
+t (z)(ϖ1
+t (z)−ϖ 1
+t (0)) dz
+
+≲max(|x|,|y|)|x−y|log
+
+2 + 1
+|x−y|
+
+.
+On the regionO n, we estimate with the fundamental theorem of calculus, similarly as in (4.25)
+above ∇z
+
+log|x−z| −log|y−z|+ z·(x−y)
+|z|2
+ ≲(|x|+|y|)|z| −3|x−y|,
+which holds whenever|z|⩾2 max(|x|,|y|), as it is the case onO n.
+This yields that
+ˆ
+On
+∇z
+
+log|x−z| −log|y−z|+ z·(x−y)
+|z|2
+
+¯u1
+t (z)(ϖ1
+t (z)−˜η(z)ϖ1
+t (0)) dz
+
+≲(|x|+|y|)|x−y|
+ˆ
+On
+|z|α−4 dz
+≲max(|x|,|y|)|x−y|.
+
+[PDF page 30]
+30 D. MEYER
+Combining these estimates shows (3.8).
+□
+4.3.Proof of Lemma 3.5.We begin with (3.10). We again use the dyadic annuliA n and balls
+In as defined in (4.4), and split
+ˆ
+B1(0)
+|x|β−2|v1
+t (x)−v 2
+t (x)|2 dx
+⩽
+∞X
+n=0
+ˆ
+An
+|x|β−2BS
+h
+(1In−4(ϖ0 −ϖ 0(0))◦(X 1
+t )−1 −(1 In−4(ϖ0 −ϖ 0(0)))◦(X 2
+t )−1
+i
+2
+dx
++
+ˆ
+An
+|x|β−2
+BS
+h
+(1B 1
+2 S2
+(0)\In−4(ϖ0 −ϖ 0(0)))◦(X 1
+t )−1
+−(1 B 1
+2 S2
+(0)\In−4(ϖ0 −ϖ 0(0)))◦(X 2
+t )−1
+i
+2
+dx
++
+ˆ
+B1(0)
+|x|β−2BS
+
+(1B 1
+2 S2
+(0)ϖ0(0))◦(X 1
+t )−1 −(1 B 1
+2 S2
+(0)ϖ0(0))◦(X 2
+t )−12 dx
+=:I+II+III,
+where we have used thatϖ 0 is supported inB 1
+2 S2(0) by definition. We estimate each term individ-
+ually.
+For the termI, we use Lemma A.1 and that
+1In−4(ϖ0 −ϖ 0(0))
+
+L∞ ≲2 −nα by (2.4), yielding
+the bound
+I≲
+∞X
+n=1
+22n(2−α−β)
+ˆ
+B2(0)
+(X 1
+t )(x)−(X 2
+t )(x)
+2
+dx≲
+ˆ
+B2(0)
+(X 1
+t )(x)−(X 2
+t )(x)
+2
+dx
+which also used that|x| β−2 ≈2 −(2−β)n on eachA n and that the preimage ofB 1(0) is contained in
+B2(0) by (2.16).
+This is bounded byE t, thanks to (2.18).
+The termIIon the other hand uses the explicit form of the Biot-Savart law. It holds that
+BS
+
+(1B 1
+2 S2(0)\In−4(ϖ0 −ϖ 0(0)))◦(X 1
+t )−1 −1 B 1
+2 S2(0)\In−4(ϖ0 −ϖ 0(0)))◦(X 2
+t )−1
+ (x)
+≲
+ˆ
+B 1
+2 S2(0)\In−4
+
+x− X 1
+t (z)
+|x− X 1
+t (z)|2 − x− X 2
+t (z)
+|x− X 2
+t (z)|2
+ |ϖ0(z)−ϖ 0(0)|dz
+≲
+ˆ
+BS2(0)\In−4
+|X 1
+t (z)− X 2
+t (z)|
+|z|2 |z|α dz,
+where we have used that forz∈R 2\In−4, it holds that|x− X 1
+t (z)| ≈ |x− X 2
+t (z)| ≈ |z|by (2.16)
+and also used (2.4). By Cauchy-Schwarz and (2.18), this can now be estimated by
+ˆ
+BS2(0)\In−4
+|X 1
+t (z)− X 2
+t (z)|
+|z|2 |z|α dz≲
+ ˆ
+BS2(0)
+kt(z)2zβ−2 dz
+! 1
+2
+ ˆ
+BS2(0)
+|z|2α−2+β dz
+! 1
+2
+≲
+p
+Et.
+Using this to estimateII, we see that
+II≲
+∞X
+n=1
+Et
+ˆ
+An
+|x|β−2 dx≲E t
+
+[PDF page 31]
+VORTEX-WAVE UNIQUENESS 31
+For the termIII, we note that ((1 B 1
+2 S2
+(0)ϖ0(0))◦(X 1
+t )−1 −(1 B 1
+2 S2
+(0)ϖ0(0))◦(X 2
+t )−1)(z) = 0, unless
+(X 1
+t )−1(z) lies inB 1
+2 S2(0) and (X 2
+t )−1(z) does not (or vice versa). By (2.16), this can only happen
+forx∈B 3
+4 S2(0)\B 1
+4 S2(0). We can therefore take aC 1-functionh x which agrees with x−z
+|x−z|2 outside
+ofB 1
+4 S2(0) and whoseC 1-norm is bounded uniformly inx∈B 1(0), and write
+BS
+
+(1B 1
+2 S2
+(0)ϖ0(0))◦(X 1
+t )−1 −(1 B 1
+2 S2
+(0)ϖ0(0))◦(X 2
+t )−1
+
+(x)
+
+=
+
+ˆ
+R2
+hx(z)
+
+1B 1
+2 S2
+(0)ϖ0(0))◦(X 1
+t )−1 −(1 B 1
+2 S2
+(0)ϖ0(0))◦(X 2
+t )−1
+
+(z) dz
+
+⩽
+ˆ
+BS2(0)
+hx(X 1
+t (z))−h x(X 2
+t (z))
+ |ϖ0(0)|dz
+≲
+ˆ
+BS2(0)
+X 1
+t (z)− X 2
+t (z)
+ dz≲
+p
+Et.
+Since|x| β−2 is integrable, this immediately yields the desired bound onIII.
+4.3.1.The estimate(3.11).We compute
+2π
+v1
+t (0)−v 2
+t (0)
+ =
+
+ˆ
+R2
+x⊥
+|x2|
+ 
+ϖ1
+t (x)−ϖ 2
+t (x)
+
+dx
+
+⩽
+ˆ
+R2
+|ϖ0(x)−1 B 1
+2 S2
+(0)ϖ0(0)|
+
+X 1
+t (x)
+|X 1
+t (x)|2 − X 2
+t (x)
+|X 2
+t (x)|2
+ dx
++
+
+ˆ
+R2
+x⊥
+|x|2
+
+1B 1
+2 S2
+(0)ϖ0(0)◦(X 1
+t )−1(x)−1 B 1
+2 S2
+(0)ϖ0(0)◦(X 2
+t )−1(x)
+
+(4.27)
+We can estimate the first integral here as
+ˆ
+R2
+ϖ0(x)−1 B 1
+2 S2
+(0)ϖ0(0)
+
+
+X 1
+t (x)
+|X 1
+t (x)|2 − X 2
+t (x)
+|X 2
+t (x)|2
+ dx
+≲
+ˆ
+R2
+ϖ0(x)−1 B 1
+2 S2
+(0)ϖ0(0)
+ |x|−2|X 1
+t (x)− X 2
+t (x)|dx
+≲
+ˆ
+BS2(0)
+|X 1
+t (x)− X 2
+t (x)||x|α−2 dx≲
+p
+Et
+where we have used (2.16), Cauchy-Schwarz and (2.18).
+For the second integral in (4.27), we argue similarly as for above and use that by (2.16), the first
+difference can only be non-zero if|x|⩾ 1
+4 and that we can again replace x
+|x|2 by aC 1-functionh
+(not depending on any of the other quantities) which agrees with x
+|x|2 on this region to see that
+
+ˆ
+R2
+x⊥
+|x|2
+
+1B 1
+2 S2
+(0)ϖ0(0)◦(X 1
+t )−1(x)−1 B 1
+2 S2
+(0)ϖ0(0)◦(X 2
+t )−1(x)
+
+dx
+
+=
+
+ˆ
+B 1
+2 S2
+(0)
+h(X 1
+t (x))−h(X 2
+t (x)) dx
+
+≲∥h∥ C1
+ˆ
+B 1
+2 S2
+(0)
+X 1
+t (x))− X 2
+t (x)
+ dx≲
+p
+Et,
+where the last step uses Cauchy-Schwarz and (2.18). Combining the estimates yields the statement.
+□
+
+[PDF page 32]
+32 D. MEYER
+Statement on competing interests:The author declares that he has no competing interests.
+Statement on AI usage:Generative AI (ChatGPT 5.6 Luna and Claude Sonnet 5) was used
+solely for proofreading. No part of this work was written by AI. All scientific content was developed
+by the author alone, who takes full responsibility for this work.
+AppendixA.Classical estimates
+Lemma A.1.LetΦ 1,Φ 2 :R 2 →R 2 be volume-preserving, invertible and measureable. Letf∈
+L1(R2)∩L ∞(R2), then it holds that
+∥BS[f◦Φ 1]−BS[f◦Φ 2]∥L2(R2) ≲∥f∥ L∞(R2)
+Φ−1
+1 −Φ −1
+2
+
+L2(suppf) .
+Proof.We have that
+∥BS[f◦Φ 1]−BS[f◦Φ 2]∥L2(R2) = sup
+g∈C ∞c (R2),∥g∥L2 ⩽1
+⟨g,BS[f◦Φ 1]−BS[f◦Φ 2]⟩
+= sup
+g∈C ∞c (R2),∥g∥L2 ⩽1
+⟨BS[g]◦Φ −1
+1 −BS[g]◦Φ −1
+2 , f⟩.
+We now use that for anyH 1 functionhit holds that
+|h(x)−h(y)|≲|x−y|(M|∇h|(x) +M|∇h|(y)),
+whereMis the classical Hardy-Littlewood maximal function, see e.g. [1] for more details. This
+yields that
+∥BS[f◦Φ 1]−BS[f◦Φ 2]∥L2(R2)
+≲sup
+g∈C ∞c (R2),∥g∥L2 ⩽1
+ˆ
+R2
+Φ−1
+1 (x)−Φ −1
+2 (x)
+ (M|∇BS[g]|(Φ −1
+1 (x)) +M|∇BS[g]|(Φ −1
+2 (x)))|f(x)|dx
+≲∥f∥ L∞(R2)
+Φ−1
+1 −Φ −1
+2
+
+L2(suppf) sup
+g∈C ∞c (R2),∥g∥L2 ⩽1
+∥M|∇BS[g]|∥ L2(R2) .
+The last supremum is≲1 sinceMmapsL 2 toL 2 boundedly, see e.g. [18, Thm. 2.1.6] and
+∥BS[g]∥ ˙H 1 =∥g∥ L2 by Plancherel.□
+Lemma A.2.Letf∈L 1(R2)∩L ∞(R2)and letx, y∈R 2, then it holds that
+|BS[f](x)−BS[f](y)|≲|x−y|log
+
+2 + 1
+|x−y|
+
+(∥f∥ L∞(R2) +∥f∥ L1(R2)).
+See e.g. [27, Lemma 8.1] for a proof.
+References
+[1] D. Aalto and J. Kinnunen. Maximal functions in Sobolev spaces. InSobolev Spaces In Mathematics I: Sobolev
+Type Inequalities, pages 25–67. Springer, 2009.
+[2] S. Agrawal and A. R. Nahmod. Uniqueness of the 2D Euler equation on a corner domain with non-constant
+vorticity around the corner.Nonlinearity, 35(6):2767, may 2022.
+[3] S. Agrawal and A. R. Nahmod. Uniqueness of the 2D Euler equation on rough domains.Journal of the European
+Mathematical Society, 2025.
+[4] C. Bjorland. The vortex-wave equation with a single vortex as the limit of the Euler equation.Communications
+in mathematical physics, 305(1):131–151, 2011.
+[5] E. Brue, M. Colombo, and A. Kumar. Flexibility of two-dimensional Euler flows with integrable vorticity.Duke
+Mathematical Journal, 175(9):1593–1647, 2026.
+[6] D. Cobb, M. Donati, and L. Godard-Cadillac. Existence and uniqueness for the SQG vortex-wave system when
+the vorticity is constant near the point-vortex.SIAM Journal on Mathematical Analysis, 57(3):2316–2362, 2025.
+[7] D. Cobb and H. Koch. Unbounded Yudovich Solutions of the Euler Equations.Archive for Rational Mechanics
+and Analysis, 250(3):45, 2026.
+
+[PDF page 33]
+VORTEX-WAVE UNIQUENESS 33
+[8] G. Crippa, M. C. L. Filho, E. Miot, and H. J. N. Lopes. Flows of vector fields with point singularities and the
+vortex-wave system.Discrete and Continuous Dynamical Systems, 36(5):2405–2417, 2016.
+[9] G. Crippa, S. Ligabue, and C. Saffirio. Lagrangian solutions to the Vlasov-Poisson system with a point charge.
+Kinetic and Related Models, 11(6):1277–1299, 2018.
+[10] T. M. Elgindi and I.-J. Jeong. Symmetries and critical phenomena in fluids.Communications on Pure and Applied
+Mathematics, 73(2):257–316, 2020.
+[11] T. M. Elgindi, R. W. Murray, and A. R. Said. Wellposedness and singularity formation beyond the Yudovich
+class.arXiv preprint arXiv:2312.17610, to appear in JEMS, 2023.
+[12] F. Flandoli, M. Palmieri, and M. Viviani. The early stage of the motion along the gradient of a concentrated
+vortex structure.Physica D: Nonlinear Phenomena, page 135289, 2026.
+[13] L. Galeati. The 2D Euler equations are well-posed for generic initial data inL 2.arXiv preprint arXiv:2604.14100,
+2026.
+[14] I. Gallagher and T. Gallay. Uniqueness for the two-dimensional Navier–Stokes equation with a measure as initial
+vorticity.Mathematische Annalen, 332(2):287–327, 2005.
+[15] O. Glass, C. Lacave, and F. Sueur. On the motion of a small body immersed in a two-dimensional incompressible
+perfect fluid.Bulletin de la soci´ et´ e math´ ematique de France, 142(3):489–536, 2014.
+[16] O. Glass, C. Lacave, and F. Sueur. On the motion of a small light body immersed in a two dimensional incom-
+pressible perfect fluid with vorticity.Communications in Mathematical Physics, 341(3):1015–1065, 2016.
+[17] O. Glass and F. Sueur. Dynamics of several rigid bodies in a two-dimensional ideal fluid and convergence to
+vortex systems.Bull. Soc. Math. France, 154(1):1–106, 2026.
+[18] L. Grafakos et al.Classical fourier analysis, volume 2. Springer.
+[19] F. Grotto and U. Pappalettera. Burst of point vortices and non-uniqueness of 2D Euler equations.Archive for
+Rational Mechanics and Analysis, 245(1):89–125, 2022.
+[20] Z. Han and A. Zlatoˇ s. Euler Equations on General Planar Domains.Annals of PDE, 7(2):20, 2021.
+[21] A. Ionescu and H. Jia. Axi-symmetrization near point vortex solutions for the 2D Euler equation.Communications
+on Pure and Applied Mathematics, 75(4):818–891, 2022.
+[22] I.-J. Jeong and A. R. Said. Logarithmic spirals in 2D perfect fluids.Journal de l’ ´Ecole polytech-
+nique—Math´ ematiques, 11:655–682, 2024.
+[23] C. Lacave and E. Miot. Uniqueness for the vortex-wave system when the vorticity is constant near the point
+vortex.SIAM journal on mathematical analysis, 41(3):1138–1163, 2009.
+[24] C. Lacave and A. Zlatoˇ s. The Euler Equations in Planar Domains with Corners.Archive for Rational Mechanics
+and Analysis, 234(1):57–79, 2019.
+[25] G. Loeper. Uniqueness of the solution to the Vlasov–Poisson system with bounded density.Journal de
+math´ ematiques pures et appliqu´ ees, 86(1):68–79, 2006.
+[26] M. C. Lopes Filho, E. Miot, and H. J. Nussenzveig Lopes. Existence of a Weak Solution inL p to the Vortex-Wave
+System.Journal of nonlinear science, 21(5):685–703, 2011.
+[27] A. J. Majda and A. L. Bertozzi.Vorticity and incompressible flow, volume 27 ofCambridge Texts in Applied
+Mathematics. Cambridge University Press, Cambridge, 2002.
+[28] C. Marchioro, E. Miot, and M. Pulvirenti. The Cauchy problem for the 3-D Vlasov–Poisson system with point
+charges.Archive for rational mechanics and analysis, 201(1):1–26, 2011.
+[29] C. Marchioro and M. Pulvirenti. On the vortex–wave system. InMechanics, analysis and geometry: 200 years
+after Lagrange, pages 79–95. Elsevier, 1991.
+[30] C. Marchioro and M. Pulvirenti.Mathematical theory of incompressible nonviscous fluids, volume 96. Springer
+Science & Business Media, 2012.
+[31] V. Maz’ya.Sobolev spaces. Springer, 2013.
+[32] R. McOwen and P. Topalov. Perfect fluid flows onR d with growth/decay conditions at infinity.Mathematische
+Annalen, 383(3):1451–1488, 2022.
+[33] D. Meyer. Long time confinement of multiple concentrated vortices.arXiv preprint arXiv:2506.01477, 2025.
+[34] T. T. Nguyen and T. T. Nguyen. The inviscid limit of Navier–Stokes equations for vortex-wave data onR 2.SIAM
+Journal on Mathematical Analysis, 51(3):2575–2598, 2019.
+[35] B. Pausader, K. Widmayer, and J. Yang. Stability of a point charge for the repulsive Vlasov–Poisson system.
+Journal of the European Mathematical Society, 2024.
+[36] V. N. Starovoitov. Uniqueness of a solution to the problem of evolution of a point vortex.Siberian Mathematical
+Journal, 35(3):625–630, 1994.
+[37] M. Vishik. Instability and non-uniqueness in the Cauchy problem for the Euler equations of an ideal incompressible
+fluid. Part I.arXiv preprint arXiv:1805.09426, 2018.
+[38] M. Vishik. Instability and non-uniqueness in the Cauchy problem for the Euler equations of an ideal incompressible
+fluid. Part II.arXiv preprint arXiv:1805.09440, 2018.
+
+[PDF page 34]
+34 D. MEYER
+David Meyer
+Max-Planck Institute for Mathematics in the Sciences, Leipzig, Germany
+Email address:david.meyer@mis.mpg.de

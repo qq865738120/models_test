@@ -1,0 +1,18 @@
+{
+  "runId": "20261024-111540-kimi-k3-1-pro-r1-7d8081",
+  "taskId": "06-memory",
+  "phase": "initial",
+  "files": {
+    "answers.json": {
+      "sha256": "e304cdf66fd1b93c1c8c9211618cba6f03abc6a0cfb63b0ae16caf2e2301d6b6",
+      "executable": false
+    },
+    "index.html": {
+      "sha256": "27cde0c39a0f08039cf5667d72db5d267412b31e4f61ab0c7c6f21103237b946",
+      "executable": false
+    }
+  },
+  "answerSha256": "e304cdf66fd1b93c1c8c9211618cba6f03abc6a0cfb63b0ae16caf2e2301d6b6",
+  "answerKeySha256": "93f770c546b16fd1ae17c8747b4357f11e156210c2e84cd1ce69cbd3d7e02de6",
+  "questionVersion": "longread-qa-v4"
+}

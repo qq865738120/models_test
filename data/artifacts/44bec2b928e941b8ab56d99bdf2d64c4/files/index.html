@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>鹈鹕骑车送布丁</title>
+<style>
+  *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#fff6dc}
+  body{display:grid;place-items:center;font-family:ui-rounded,"Avenir Next","PingFang SC",system-ui,sans-serif;overflow:hidden}
+  main{width:min(100vw,960px);padding:12px}
+  svg{display:block;width:100%;height:auto;max-height:calc(100vh - 24px);border-radius:28px;box-shadow:0 18px 60px #753f2024;background:#bceeff}
+  .ink{stroke:#263a4a;stroke-linecap:round;stroke-linejoin:round}
+  .frame{fill:none;stroke:#ef5c50;stroke-width:10;stroke-linecap:round;stroke-linejoin:round}
+  .spoke{stroke:#a8c4cb;stroke-width:2.4;stroke-linecap:round}
+  .feather{fill:#fffdf4;stroke:#263a4a;stroke-width:4;stroke-linejoin:round}
+  .label{font-weight:800;letter-spacing:1px;fill:#263a4a}
+  @media(prefers-reduced-motion:reduce){svg{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+<title id="title">鹈鹕骑车送布丁</title>
+<desc id="desc">一只白色鹈鹕双脚踩踏板、双翅扶把，骑着红色自行车送布丁。六秒内依次经过减速带、布丁跳起、鹈鹕回头查看。</desc>
+<defs>
+  <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#8ee5ff"/><stop offset="1" stop-color="#e9fbff"/></linearGradient>
+  <linearGradient id="road" x2="0" y2="1"><stop stop-color="#657786"/><stop offset="1" stop-color="#3d4e5d"/></linearGradient>
+  <linearGradient id="beak" x2="0" y2="1"><stop stop-color="#ffd64d"/><stop offset="1" stop-color="#ff9f36"/></linearGradient>
+  <linearGradient id="caramel" x2="0" y2="1"><stop stop-color="#ffc85a"/><stop offset="1" stop-color="#e98736"/></linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5"/></filter>
+  <clipPath id="roadClip"><rect x="0" y="365" width="640" height="115"/></clipPath>
+  <g id="wheel">
+    <circle r="65" fill="#f8ffff" stroke="#263a4a" stroke-width="9"/>
+    <circle r="56" fill="none" stroke="#d6e7e8" stroke-width="3"/>
+    <g class="spoke">
+      <path d="M0-55V55M-55 0H55M-39-39L39 39M39-39L-39 39M-21-51L21 51M51-21L-51 21M21-51L-21 51M51 21L-51-21"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2s" repeatCount="indefinite"/>
+    </g>
+    <circle r="8" fill="#ffd34e" stroke="#263a4a" stroke-width="4"/>
+  </g>
+</defs>
+
+<!-- sunny delivery route -->
+<rect width="640" height="480" fill="url(#sky)"/>
+<circle cx="542" cy="82" r="40" fill="#ffe477"/>
+<circle cx="542" cy="82" r="53" fill="none" stroke="#ffe477" stroke-width="5" stroke-dasharray="3 14" stroke-linecap="round"/>
+<g fill="#fff" opacity=".86">
+  <path d="M32 115c4-19 31-22 41-7 14-17 45-5 41 15H32c-8 0-8-8 0-8Z"/>
+  <path d="M469 155c3-15 25-18 33-6 11-13 36-4 33 12h-66c-6 0-6-6 0-6Z"/>
+</g>
+<path d="M0 284Q75 227 150 284T300 284T450 284T640 270V377H0Z" fill="#a5dfa0"/>
+<path d="M0 316Q105 266 208 319T418 310T640 304V380H0Z" fill="#65c68b"/>
+<g fill="#fff7c2" opacity=".9"><circle cx="74" cy="307" r="4"/><circle cx="112" cy="323" r="3"/><circle cx="520" cy="307" r="4"/><circle cx="579" cy="326" r="3"/></g>
+
+<!-- title and sequence key -->
+<g transform="translate(28 28)">
+ <rect width="260" height="62" rx="20" fill="#fffdf4" opacity=".95"/>
+ <text x="20" y="29" class="label" font-size="22">鹈鹕骑车送布丁</text>
+ <text x="20" y="49" font-size="11" font-weight="700" fill="#64808c" letter-spacing="2">PELICAN PUDDING EXPRESS</text>
+</g>
+<g transform="translate(434 34)">
+ <rect width="174" height="30" rx="15" fill="#263a4a"/>
+ <circle cx="18" cy="15" r="5" fill="#7de2a5"/>
+ <text x="31" y="20" font-size="12" font-weight="700" fill="#fff">6 秒 · 新鲜直达</text>
+</g>
+
+<!-- road and moving lane marks -->
+<rect y="365" width="640" height="115" fill="url(#road)"/>
+<rect y="365" width="640" height="7" fill="#fff2b8"/>
+<g clip-path="url(#roadClip)">
+ <g stroke="#d9e3dd" stroke-width="7" stroke-linecap="round" stroke-dasharray="54 106">
+  <path d="M-160 435H800">
+   <animateTransform attributeName="transform" type="translate" from="0 0" to="-160 0" dur="1.5s" repeatCount="indefinite"/>
+  </path>
+ </g>
+</g>
+<g opacity=".3" stroke="#263a4a" stroke-width="3" stroke-linecap="round">
+ <path d="M30 391h44M548 406h52M76 461h70"><animateTransform attributeName="transform" type="translate" from="120 0" to="-700 0" dur="6s" repeatCount="indefinite"/></path>
+</g>
+
+<!-- speed bump reaches the bicycle between 2s and 3s -->
+<g>
+ <animateTransform attributeName="transform" type="translate" values="760 0;460 0;220 0;-180 0" keyTimes="0;.333333;.5;1" dur="6s" repeatCount="indefinite"/>
+ <path d="M-52 370Q0 332 52 370Z" fill="#ffc94d" stroke="#263a4a" stroke-width="4"/>
+ <path d="M-27 356l14 13M3 348l18 20" stroke="#fff7d6" stroke-width="8"/>
+</g>
+
+<!-- soft contact shadow -->
+<ellipse cx="327" cy="390" rx="189" ry="13" fill="#203443" opacity=".2" filter="url(#soft)"/>
+
+<!-- bicycle and rider share every bump, preserving all contacts -->
+<g id="delivery-bike">
+ <animateTransform attributeName="transform" type="translate"
+  values="0 0;0 0;0 -3;0 -12;0 -3;0 -11;0 0;0 0"
+  keyTimes="0;.333333;.36;.405;.445;.475;.5;1" dur="6s" repeatCount="indefinite"/>
+
+ <!-- complete bicycle -->
+ <use href="#wheel" x="235" y="325"/>
+ <use href="#wheel" x="420" y="325"/>
+ <path d="M235 325L285 250L323 325L235 325M285 250L374 264L323 325L420 325L374 264" class="frame"/>
+ <path d="M374 264L387 236L400 232" fill="none" stroke="#263a4a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M387 236q16-10 27 0" fill="none" stroke="#263a4a" stroke-width="7" stroke-linecap="round"/>
+ <path d="M282 249l-5-16" stroke="#263a4a" stroke-width="7" stroke-linecap="round"/>
+ <path d="M259 234h48" stroke="#263a4a" stroke-width="12" stroke-linecap="round"/>
+ <path d="M235 325L206 253M235 325l42-72" fill="none" stroke="#59717c" stroke-width="4"/>
+ <!-- fixed rear rack and tray -->
+ <path d="M172 253H282M180 253l-9 14M274 253l8 14" fill="none" stroke="#263a4a" stroke-width="6" stroke-linecap="round"/>
+ <rect x="163" y="245" width="92" height="10" rx="5" fill="#f7b733" stroke="#263a4a" stroke-width="4"/>
+ <path d="M174 245v-8h70v8" fill="none" stroke="#263a4a" stroke-width="3"/>
+
+ <!-- far leg: opposite pedal phase -->
+ <path fill="none" stroke="#e8a13d" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"
+  d="M280 232L289 278L298 325">
+  <animate attributeName="d" dur="2s" repeatCount="indefinite" calcMode="spline"
+   keyTimes="0;.125;.25;.375;.5;.625;.75;.875;1"
+   keySplines=".42 0 .58 1;.42 0 .58 1;.42 0 .58 1;.42 0 .58 1;.42 0 .58 1;.42 0 .58 1;.42 0 .58 1;.42 0 .58 1"
+   values="M280 232L289 278L298 325;M280 232L292 268L305.3 307.3;M280 232L304 260L323 300;M280 232L321 267L340.7 307.3;M280 232L327 280L348 325;M280 232L326 302L340.7 342.7;M280 232L311 315L323 350;M280 232L293 307L305.3 342.7;M280 232L289 278L298 325"/>
+ </path>
+ <g transform="translate(323 325)">
+  <g>
+   <animateTransform attributeName="transform" type="rotate" from="180" to="540" dur="2s" repeatCount="indefinite"/>
+   <g transform="translate(25 0)">
+    <g>
+     <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="2s" repeatCount="indefinite"/>
+     <path d="M-12-5Q0-10 13-4L18 2L8 3L4 8L-2 3L-13 4Z" fill="#e8a13d" stroke="#263a4a" stroke-width="3"/>
+    </g>
+   </g>
+  </g>
+ </g>
+
+ <!-- pelican body remains seated on saddle -->
+ <path d="M251 227Q239 185 263 161Q282 143 307 159Q330 177 323 215Q319 244 287 248Q263 250 251 227Z" class="feather"/>
+ <path d="M257 214q-19 3-27 18 23 2 38-6" fill="#f1f4e9" stroke="#263a4a" stroke-width="4" stroke-linejoin="round"/>
+ <path d="M267 242q18 8 37 0" fill="none" stroke="#d6ded8" stroke-width="4" stroke-linecap="round"/>
+ <!-- upright S neck -->
+ <path d="M292 177Q320 170 311 144Q302 119 325 108Q344 100 355 117L347 144Q337 155 333 181Q329 207 311 216Z" class="feather"/>
+ <path d="M312 174q14-12 13-28" fill="none" stroke="#d6ded8" stroke-width="4" stroke-linecap="round"/>
+
+ <!-- head pivots in place and faces backward from 4s to 5.5s -->
+ <g transform="translate(336 126)">
+  <g>
+   <animateTransform attributeName="transform" type="scale" values="1 1;1 1;-1 1;-1 1;1 1;1 1" keyTimes="0;.666667;.75;.833333;.916667;1" dur="6s" repeatCount="indefinite"/>
+   <path d="M-25 4Q-30-22-7-31Q20-39 32-15Q39 1 25 17Q4 30-25 4Z" class="feather"/>
+   <path d="M18-10Q55-13 91-3Q98 0 91 6Q54 16 15 10Z" fill="url(#beak)" stroke="#263a4a" stroke-width="4" stroke-linejoin="round"/>
+   <path d="M17 9Q55 12 88 5Q69 38 34 35Q18 31 17 9Z" fill="#ffb84e" stroke="#263a4a" stroke-width="4" stroke-linejoin="round"/>
+   <path d="M33 34q23 3 40-15" fill="none" stroke="#e88c3c" stroke-width="3" stroke-linecap="round"/>
+   <circle cx="10" cy="-13" r="8" fill="#fff" stroke="#263a4a" stroke-width="3"/>
+   <circle cx="13" cy="-13" r="3.5" fill="#263a4a"/>
+   <path d="M1-24q10-5 19 0" fill="none" stroke="#263a4a" stroke-width="3" stroke-linecap="round"/>
+   <path d="M-17-26l-8-12M-8-30l-2-14" stroke="#263a4a" stroke-width="4" stroke-linecap="round"/>
+  </g>
+ </g>
+
+ <!-- near leg follows pedal exactly -->
+ <path fill="none" stroke="#ffb84e" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" d="M291 232L327 280L348 325">
+  <animate attributeName="d" dur="2s" repeatCount="indefinite" calcMode="spline"
+   keyTimes="0;.125;.25;.375;.5;.625;.75;.875;1"
+   keySplines=".42 0 .58 1;.42 0 .58 1;.42 0 .58 1;.42 0 .58 1;.42 0 .58 1;.42 0 .58 1;.42 0 .58 1;.42 0 .58 1"
+   values="M291 232L327 280L348 325;M291 232L329 299L340.7 342.7;M291 232L316 316L323 350;M291 232L297 308L305.3 342.7;M291 232L286 280L298 325;M291 232L293 266L305.3 307.3;M291 232L305 260L323 300;M291 232L321 268L340.7 307.3;M291 232L327 280L348 325"/>
+ </path>
+ <g transform="translate(323 325)">
+  <g>
+   <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2s" repeatCount="indefinite"/>
+   <g transform="translate(25 0)">
+    <g>
+     <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="2s" repeatCount="indefinite"/>
+     <path d="M-13-6Q0-11 14-5L21 1L11 4L6 9L0 4L-12 5Z" fill="#ffb84e" stroke="#263a4a" stroke-width="3"/>
+    </g>
+   </g>
+  </g>
+ </g>
+
+ <!-- both wings hold the handlebar -->
+ <path d="M293 174Q325 174 342 198Q361 221 398 229Q405 234 398 241Q355 239 329 222Q304 207 293 174Z" class="feather"/>
+ <path d="M306 194q29 30 69 39M316 211q22 18 47 23" fill="none" stroke="#d6ded8" stroke-width="4" stroke-linecap="round"/>
+ <path d="M396 229q9-6 15 1M396 236q9-5 14 1" fill="none" stroke="#263a4a" stroke-width="4" stroke-linecap="round"/>
+ <path d="M274 179Q306 186 329 207Q355 229 395 232" fill="none" stroke="#f5f6ec" stroke-width="15" stroke-linecap="round"/>
+ <path d="M274 179Q306 186 329 207Q355 229 395 232" fill="none" stroke="#263a4a" stroke-width="20" stroke-linecap="round" opacity=".95"/>
+ <path d="M274 179Q306 186 329 207Q355 229 395 232" fill="none" stroke="#fffdf4" stroke-width="13" stroke-linecap="round"/>
+
+ <!-- crank and two pedals, synchronized with webbed feet -->
+ <g transform="translate(323 325)">
+  <circle r="13" fill="#ffd34e" stroke="#263a4a" stroke-width="4"/>
+  <g>
+   <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="2s" repeatCount="indefinite"/>
+   <path d="M-25 0H25" stroke="#263a4a" stroke-width="5" stroke-linecap="round"/>
+   <path d="M-32 0h14M18 0h14" stroke="#263a4a" stroke-width="6" stroke-linecap="round"/>
+  </g>
+ </g>
+
+ <!-- one pudding; bottom never goes below tray top y=245 -->
+ <g id="pudding">
+  <animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 -58;0 -68;0 -48;0 0;0 0" keyTimes="0;.5;.56;.60;.635;.666667;1" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.2 .7 .4 1;.42 0 .58 1;.42 0 .58 1;.2 0 .6 1;.4 0 .6 1"/>
+  <ellipse cx="209" cy="241" rx="31" ry="5" fill="#263a4a" opacity=".16"/>
+  <path d="M183 195H235L230 239Q209 247 188 239Z" fill="#fff7df" stroke="#263a4a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M184 196Q181 182 192 178Q188 164 202 163Q209 150 217 163Q233 161 230 177Q242 183 234 196Z" fill="url(#caramel)" stroke="#263a4a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M190 197q19 8 38 0" fill="none" stroke="#e28a35" stroke-width="3"/>
+  <path d="M207 163q-3-13 7-17" fill="none" stroke="#438b58" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="215" cy="148" r="8" fill="#ef5c50" stroke="#263a4a" stroke-width="3"/>
+  <path d="M197 209v19" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".8"/>
+ </g>
+
+ <!-- readable event accents -->
+ <g fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity="0">
+  <path d="M153 198l-13-9M157 182l-6-15M247 178l9-13"/>
+  <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.52;.57;.69;.75;1" dur="6s" repeatCount="indefinite"/>
+ </g>
+ <g opacity="0">
+  <path d="M459 111q19-17 36 0" fill="none" stroke="#263a4a" stroke-width="4" stroke-linecap="round"/>
+  <text x="477" y="96" text-anchor="middle" font-size="28" font-weight="900" fill="#ef5c50">!</text>
+  <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.68;.73;.84;.91;1" dur="6s" repeatCount="indefinite"/>
+ </g>
+</g>
+
+<!-- tiny timeline, not an extra scene object -->
+<g transform="translate(144 454)" font-size="10" font-weight="800" letter-spacing="1">
+ <rect x="-16" y="-17" width="380" height="25" rx="12" fill="#263a4a" opacity=".82"/>
+ <text x="0" y="0" fill="#fff">平稳骑行</text><circle cx="82" cy="-4" r="2" fill="#8dabb5"/>
+ <text x="96" y="0" fill="#ffe074">减速带</text><circle cx="153" cy="-4" r="2" fill="#8dabb5"/>
+ <text x="167" y="0" fill="#ffb887">布丁跳跳</text><circle cx="240" cy="-4" r="2" fill="#8dabb5"/>
+ <text x="254" y="0" fill="#a9edff">回头检查</text>
+</g>
+</svg>
+</main>
+</body>
+</html>

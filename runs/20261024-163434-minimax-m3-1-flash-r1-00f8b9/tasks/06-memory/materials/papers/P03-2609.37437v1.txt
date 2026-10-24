@@ -1,0 +1,2371 @@
+
+[PDF page 1]
+Oscillatory dark energy with phantom crossings in Einstein–Gauss–Bonnet gravity
+Saddam Hussain 1,∗ and Sandip Biswas 2,†
+1Institute for Theoretical Physics and Cosmology, Zhejiang University of Technology, Hangzhou 310023, China
+2Department of Physics, Indian Institute of Technology, Kanpur, Kanpur-208016, Uttar Pradesh, India
+(Dated: September 30, 2026)
+Recent baryon acoustic oscillation measurements from the Dark Energy Spectroscopic Instrument (DESI),
+combined with supernova observations, show a mild preference for an evolving dark-energy equation of state,
+in which dark energy remains phantom-like at higher redshift while a transition toward the quintessence regime
+emerges around𝑧≲0.5. Beyond the monotonic evolution of the equation of state, an oscillatory dark-
+energy scenario provides a potential alternative realization of dynamical dark energy. We study such an
+oscillatory scenario within the Einstein-scalar-Gauss–Bonnet gravity framework, where a scalar field with a
+hybrid exponential-quadratic potential couples nonminimally to the Gauss–Bonnet (GB) invariant. We choose
+a Gaussian GB coupling function localized around the minimum of the potential. During the late-time epoch,
+the field thereby oscillates around the potential minimum and eventually exits toward a stable de Sitter attractor
+phase. In the minimally coupled limit, the effective equation of state oscillates in the quintessence regime at low
+redshift,𝑧∼0, without crossing the phantom divide. The nonminimal coupling amplifies the oscillations and
+drives the effective equation of state across the phantom divide multiple times. Although a sufficiently strong
+coupling can induce negative scalar and tensor sound speeds, rendering the perturbation modes unstable. We
+identify a region of parameter space in which the model undergoes multiple phantom crossings while remaining
+free of ghost and gradient instabilities and approaching a stable de Sitter attractor in the future.
+I. INTRODUCTION
+Technological advances in the21st century have enabled us
+to probe the Universe with unprecedented precision, allowing
+us to reconstruct its cosmic history while revealing increas-
+ingly challenging and counter-intuitive aspects of its nature.
+One of the most intriguing discoveries is that an unknown
+form of matter, which gravitates but does not interact elec-
+tromagnetically with ordinary baryonic matter, is one of the
+dominant components of the Universe and plays a crucial role
+in the formation of the large-scale structures we observe today,
+contributing nearly25%of the total cosmic energy budget.
+Ordinary baryonic matter constitutes roughly5%and radia-
+tion10 −3%of this budget, interacts electromagnetically, and
+makes up the familiar matter that can be detected in laboratory
+experiments. The remaining energy budget is attributed to an
+unknown component responsible for driving the accelerated
+expansion of the Universe, whose origin and fundamental na-
+ture remain unclear. These unknown components have signif-
+icantly challenged our understanding of fundamental physics
+across both microscopic and macroscopic scales.
+To explain these entities, the simplest cosmological frame-
+work is built by extending General Relativity with a cosmo-
+logical constant,Λ, that drives cosmic acceleration, together
+with a pressureless, non-relativistic fluid responsible for struc-
+ture formation. Together, these components constitute the
+ΛCDM framework, (where CDM refers to cold dark matter),
+which provides an excellent fit to the majority of cosmologi-
+cal observations [1–22]. Nevertheless, the model suffers from
+several fundamental problems. For instance, the observed
+value ofΛdiffers by up to120orders of magnitude from
+∗ saddamh@zjut.edu.cn
+† sandipb20@iitk.ac.in
+the value expected from quantum field theory, leading to the
+well-known fine-tuning problem. The model also fails to ex-
+plain the cosmic coincidence problem, which concerns why
+dark energy comes to dominate the energy budget only near
+the present epoch rather than much earlier or later [23–30].
+Various theoretical models have therefore been proposed to
+address these issues by introducing physically motivated dy-
+namical fields that mimic the behavior of the cosmological
+constant, including the quintessence field [31–33],𝑘-essence
+scalar fields [34–40], and tachyonic fields [41–43]. Exten-
+sions of these models have also been considered in which
+the fields interact directly with dark matter through coupling
+functions [44–54] or through modified energy-momentum re-
+lation [55–61]. Other approaches modify the gravitational
+sector by promoting𝑅→𝑓(𝑅), where𝑓(𝑅)is a general-
+ized function of the Ricci scalar, thereby attempting to explain
+cosmic acceleration as a property of geometry rather than
+through the introduction of an additional matter component.
+However, such approaches face stringent theoretical and ob-
+servational constraints, motivating scalar-tensor theories that
+couple a scalar field to curvature, such as𝑓(𝑅, 𝜙)gravity
+[62–68]. Subsequently, these ideas culminated in the Horn-
+deski framework, the most general scalar-tensor theory that
+exhibits second-order field equations and remains free from
+Ostrogradsky instabilities [69–75]. Alternative formulations
+include modifications of gravity based on torsion rather than
+curvature, giving rise to teleparallel gravity and its extensions
+such as𝑓(𝑇)gravity [76, 77]. More recently, gravity has also
+been formulated in a flat, torsion-free geometry characterized
+by non-metricity, resulting in𝑓(𝑄)gravity [78, 79]. These
+geometrical formulations are equivalent to General Relativity
+at the level of the gravitational action up to boundary terms,
+while providing alternative avenues for constructing modified-
+gravity theories and exploring deviations from the standard
+ΛCDM framework.
+Besides the theoretical drawbacks of the concordance
+arXiv:2609.37437v1  [gr-qc]  29 Sep 2026
+
+[PDF page 2]
+2
+model, recent measurements of Baryon Acoustic Oscillations
+(BAO) from the Dark Energy Spectroscopic Instrument (DESI)
+have revived interest in dynamical dark energy, with the two-
+parameter CPL model showing a2.6–3.9𝜎preference over the
+cosmological constant [80–83]. When constrained by observa-
+tional data, the CPL parameters produce a phantom-like behav-
+ior, with𝑤 de <−1at high redshifts,𝑧 >0.5, before transition-
+ing to the quintessence regime,𝑤 de >−1, at𝑧≲0.5. Such
+phantom dynamics at higher redshifts are, however, model
+dependent, as the CPL parametrization is one of the simplest
+extensions of the cosmological constant and is constructed as a
+Taylor expansion around the present value of scale factor𝑎=1
+[84, 85]. The parametrization was initially proposed to capture
+the behavior of quintessence fields and to distinguish the signa-
+tures of different dark-energy models, including𝑘-essence and
+modified-gravity models, while providing a phenomenologi-
+cal and model-independent description. However, the future
+extrapolation𝑎 >>1of the CPL parametrization leads to a di-
+vergent equation of state and therefore does not provide a con-
+sistent description of the late-time evolution of the Universe.
+Therefore, one must either adopt another parametrization or
+invoke a field-theoretic prescription that reproduces CPL-like
+behavior in the past while providing a consistent extrapolation
+into the future.
+Although phantom crossing is observationally viable, from
+a field-theoretic perspective it requires a negative kinetic term,
+which renders the energy unbounded from below and con-
+sequently introduces a ghost degree of freedom [86]. From
+the particle-physics perspective, such ghost fields are gen-
+erally considered theoretically problematic and cannot be
+consistently realized within a conventional, physically viable
+field-theoretic framework. A combination of two fields with
+positive- and negative-kinetic terms and appropriately chosen
+potentials, known as a quintom model [87], can produce sim-
+ilar dynamics, allowing the dark-energy equation of state to
+cross the phantom divide,𝑤 <−1, and enter the quintessence
+regime,𝑤 >−1[88, 89]. Yet such models also suffer from
+the presence of ghost degrees of freedom and face challenges
+in achieving a consistent fundamental realization [90]. Simi-
+lar behavior can also be realized within scalar-tensor theories
+through nonminimal couplings [91, 92]; such couplings may,
+however, induce variations in the effective gravitational con-
+stant on cosmological scales or generate an additional fifth
+force.
+The particular signature of phantom behavior at higher red-
+shifts is very likely to be a model artifact, it is important to
+investigate whether this behavior persists under more general
+parametrizations. The CPL parametrization can only exhibit
+monotonic evolution and does not provide sufficient degrees
+of freedom to capture additional variations in the equation of
+state. Thus, various parametric polynomial extensions of the
+equation of state have been proposed to capture additional
+degrees of freedom in the DESI BAO observational sam-
+ples [93–97], which consistently hint at dynamics involving
+multiple crossings of the phantom divide,𝑤=−1; in other
+words, they suggest an oscillatory equation of state for dark
+energy. Various phenomenological models with oscillatory
+parametrizations have been constructed using combinations of
+trigonometric functions [98–100]. For instance, in Model I of
+Ref. [98], the oscillations occur predominantly in the distant
+past, with a sufficiently low frequency, and the correspond-
+ing oscillatory behavior decays as the system evolves toward
+lower redshifts. Similar dynamics can be seen in the remain-
+ing models. Likewise, the models in Ref. [99] exhibit similar
+dynamics, where the corresponding frequency for all the con-
+sidered datasets becomes extremely small due to the particular
+choice of the functional form. These models, to some extent,
+behave similarly to the CPL parametrization, exhibiting phan-
+tom behavior at higher redshifts. This suggests that exploring
+oscillatory models within a generalized framework may re-
+veal distinct signatures compared with fixed functional forms.
+Later, Ref. [101] addressed the shortcomings of these oscilla-
+tory frameworks by adopting a dynamical principle governing
+the full oscillatory behavior, in which a damped harmonic
+oscillator equation of state was introduced in the form of a
+second-order differential equation with a damping term that
+can counteract the oscillations. The dynamical nature of the
+model allows it to capture oscillatory phenomena either in the
+past or at lower redshifts. The model exhibits underdamped
+behavior at low redshifts depending on the supernova compila-
+tion, while the equation of state decays toward the equilibrium
+value−1at higher redshifts. Due to the underdamped behav-
+ior, the equation of state crosses the phantom divide multiple
+times at lower redshifts, in contrast to the CPL parametrization
+[102].
+In this paper, we realize the low-redshift phantom cross-
+ing within the framework of Einstein-scalar-Gauss-Bonnet
+(EsGB) gravity, in which the Gauss-Bonnet (GB) invariant
+non-minimally couples to the scalar field and is well moti-
+vated by string/M-theory [103–112]. The idea of oscillatory
+dark-energy dynamics from a field-theoretic perspective is not
+new. Earlier works have investigated oscillatory scenarios to
+address the cosmic coincidence problem [113], periodic accel-
+eration [114–116], structure formation, and the suppression of
+the low-multipole ISW effect [117, 118]. In the field-theoretic
+approach, to realize an oscillatory scenario, one can consider
+a periodic or quadratic potential, for which a minimally cou-
+pled quintessence field can exhibit an oscillating equation of
+state that remains in the quintessence regime,𝑤≳−1[119–
+121]. An oscillatory equation of state with phantom crossing
+can then be realized in modified-gravity frameworks [122] or
+with quintom fields [116]. Recently, in Ref. [123], the condi-
+tion for phantom crossing within EsGB gravity was realized
+by reconstructing the nonminimal coupling term as a function
+of the number of e-folds,𝑁=log(𝑎). Additionally, it has
+been shown that a non-dynamical field𝜙can behave as a non-
+relativistic dust particle when it couples to the Gauss-Bonnet
+function, which can also increase the effective mass of the field.
+Consequently, the energy density of the dark matter particle
+decays more slowly than𝑎 −3, where𝑎is the scale factor. This
+scenario can exhibit acceleration in the low-redshift regime,
+similar to the CPL parametrization. However, unlike the re-
+construction mechanism used to realize CPL-like behavior, we
+establish a framework based on a suitable choice of the poten-
+tial and Gauss-Bonnet coupling function, for which the system
+exhibits oscillatory phantom crossing at the low redshift. We
+
+[PDF page 3]
+3
+will demonstrate that, unlike the parametrization proposed in
+Ref. [101], in which the non-transformed damping term can
+lead to a future singularity, no such future divergence arises
+in the physically motivated field-theoretic scenario. In other
+words, the oscillation occurs only over a finite epoch, and as
+the system transitions to the far future, the model approaches
+a stable de Sitter solution.
+We achieve this scenario by adopting a potential constructed
+from a combination of exponential and quadratic functions of
+the field𝜙. Due to this combination, a minimum can be
+formed around which the slowly rolling scalar field oscillates.
+However, if the minimum of the potential is sufficiently shal-
+low, the kinetic energy gained by the field while traversing
+the potential well can eventually drive the field away from the
+minimum. Thus, for a suitable value of the exponential pa-
+rameter, the field exhibits oscillations only for a finite period
+around the minimum, after which the oscillations cease and the
+field approaches a de Sitter-like solution. In the absence of the
+Gauss-Bonnet coupling function, the oscillations do not cross
+the phantom divide; the coupling, however, can exert addi-
+tional negative pressure, causing the equation of state to reach
+more negative values. Therefore, to demonstrate the effect
+of the nonminimal coupling only at late times, we consider
+a Gaussian-type functional form for the Gauss-Bonnet cou-
+pling function, which becomes nonzero only around a critical
+value of𝜙where the effective potential develops a minimum.
+We consider this particular form of the Gauss-Bonnet cou-
+pling function𝑓(𝜙)for the following reasons. In Ref. [124],
+model-independent dynamics of the system was realized by
+imposing the constraint𝑐 2
+T =1on the tensor sound speed.
+Under this constraint, the time derivative of the coupling func-
+tion becomes proportional to the scale factor, ¤𝑓∝𝑎. In
+such a scenario, it was shown that the model can produce an
+observationally viable matter- and radiation-dominated epoch
+only when the corresponding Gauss-Bonnet density at the
+present epoch is smaller than10 −20. Similar constraints on
+the Gauss-Bonnet coupling function have also been obtained
+in Refs. [125–127]. As the Gauss-Bonnet coupling function
+must remain very small to maintain𝑐2
+T =1, a large value of the
+coupling can increase the Gauss-Bonnet density and eventu-
+ally adversely affect the early-Universe. Since the oscillatory
+phenomenon appears only at late times, we choose a Gaussian
+function whose contribution becomes significant only around
+the critical value of the field. This enables us to satisfy the
+tensor-speed constraint in the higher-redshift regime while in-
+vestigating how it is affected by the oscillatory behavior of the
+field.
+We study the effective behavior of the model at the back-
+ground level using a dynamical-system stability framework
+and analyze the evolution of the cosmological parameters and
+dynamical variables. We obtain the critical points and apply
+linear stability theory to determine their stability conditions.
+For some critical points, linear stability theory becomes in-
+conclusive; hence, in these cases, we analyze their stability
+numerically as well as via the center manifold theorem. As
+the dark-energy equation of state crosses the phantom divide
+multiple times, we linearly perturb the homogeneous back-
+ground metric and derive the scalar and tensor propagation
+speeds, and determine the no-ghost and gradient instability
+conditions. We find that, for certain regions of the parameter
+space where the oscillation amplitude does not evolve toward
+increasingly negative values, the system does not exhibit ghost,
+and both sound speeds remain positive, indicating the absence
+of gradient instabilities and exponential growth of perturbation
+modes.
+The rest of the paper is organized as follows. In Sec. II, we
+derive the equations of motion and establish the Friedmann
+equation in the FLRW metric. We present a detailed analysis
+of the field behavior around the minimum of the potential,
+both in the absence and presence of the nonminimal coupling
+function, in Sec. III. In Sec. IV, we study the stability and
+behavior of the model using the dynamical-system analysis
+framework and present a detailed discussion of the critical
+points and the reduced phase-space dynamics. In Sec. V, we
+extend the analysis to linear perturbations of the metric, where
+we obtain the scalar and tensor sound speeds and determine the
+conditions under which the model realizes a phantom solution
+without ghost or gradient instabilities. Finally, we draw a brief
+conclusion in Sec. VI.
+II. BACKGROUND EQUATIONS
+The action governing the nonminimally coupled scalar field
+with the GB invariantGis given by
+𝑆=
+∫
+𝑑4𝑥√−𝑔
+ 𝑅
+2𝜅2 − 1
+2 ∇𝜇𝜙∇ 𝜇𝜙−𝑉(𝜙) −𝑓(𝜙) G
+
++𝑆m+𝑆r ,
+(2.1)
+where𝑅is the Ricci scalar,𝜅is the inverse Planck mass,𝜙
+is a quintessence scalar field with the potential𝑉(𝜙)respon-
+sible for late-time cosmic acceleration,𝑆 m,r is the action for
+the background pressureless matter and radiation components,
+which are minimally coupled to the gravitational sector. Here,
+𝑓(𝜙)is the nonminimal coupling function, andGis
+G ≡𝑅 2 −4𝑅 𝜇𝜈 𝑅 𝜇𝜈 +𝑅 𝜇𝜈𝜌 𝜎 𝑅 𝜇𝜈𝜌 𝜎 .(2.2)
+In 4D, the scalar field coupling𝑓(𝜙)Gcontributes non-trivially
+and modifies the gravitational sector. Since the other con-
+stituents of the Universe are minimally coupled to gravity,
+the effect of the nonminimal coupling propagates to the other
+species gravitationally. The other species conventionally
+obey the standard fluid equations and are individually con-
+served, i.e.,∇ 𝜇𝑇 𝜇𝜈
+(𝑚,𝑟) =0, where𝑇 𝜇𝜈 represents the energy-
+momentum tensor of the individual components. Assuming
+the Universe to be homogeneous, isotropic, and flat, the line
+element reads as
+𝑑𝑠2 =−𝑑𝑡 2 +𝑎(𝑡) 2𝑑®𝑥2,(2.3)
+where𝑎is the scale factor. Corresponding to this metric, the
+GB invariant becomesG=24𝐻 2   ¤𝐻+𝐻 2, where𝐻≡ ¤𝑎/𝑎
+is the Hubble parameter, and an overdot denotes a derivative
+with respect to cosmic time. Varying the action with respect
+to the metric𝑔 𝜇𝜈 yields
+𝐺 𝜇𝜈 =𝜅 2
+
+𝑇 𝜙
+𝜇𝜈 +𝑇 m
+𝜇𝜈 +𝑇 r
+𝜇𝜈 +𝑇 GB
+𝜇𝜈
+
+,(2.4)
+
+[PDF page 4]
+4
+where the stress-energy tensors of different components are
+𝑇 𝜙
+𝜇𝜈 =∇ 𝜇𝜙∇𝜈 𝜙− 1
+2 𝑔 𝜇𝜈
+
+∇𝛼𝜙∇ 𝛼𝜙+2𝑉(𝜙)
+
+,(2.5)
+𝑇m
+𝜇𝜈 =𝜌 𝑚 𝑢 𝜇𝑢𝜈 +𝑃 𝑚(𝑢 𝜇𝑢𝜈 +𝑔 𝜇𝜈 ),(2.6)
+𝑇r
+𝜇𝜈 =𝜌 𝑟 𝑢 𝜇𝑢𝜈 +𝑃 𝑟 (𝑢 𝜇𝑢𝜈 +𝑔 𝜇𝜈 ),(2.7)
+𝑇GB
+𝜇𝜈 =−2  ∇𝜇∇𝜈 𝑓  𝑅+2𝑔 𝜇𝜈
+ ∇𝜌∇𝜌 𝑓  𝑅
++4 (∇𝜌∇𝜈 𝑓 ) 𝑅𝜇𝜌 +4  ∇𝜌∇𝜇 𝑓  𝑅𝜈𝜌 −4  ∇𝜌∇𝜌 𝑓  𝑅𝜇𝜈
+−4𝑔 𝜇𝜈 (∇𝜌∇ 𝜎 𝑓 ) 𝑅𝜌 𝜎 +4 (∇𝜌∇ 𝜎 𝑓 ) 𝑅𝜇𝜌𝜈 𝜎 ,(2.8)
+and𝑢 𝜇 =(1,0,0,0)is the comoving four-velocity of the fluid,
+𝜌m,r represents the energy density of matter and radiation, and
+the corresponding pressure is denoted by𝑃 m,r. We assume
+matter to behave as a pressureless dust fluid, while the radiation
+pressure is𝑃 r =𝜌 r/3. In the flat FLRW metric given in
+Eq. (2.3), the Friedmann equation becomes
+3𝐻2 =𝜌 𝜙 +𝜌 𝑚 +𝜌 𝑟 +24𝐻 3 ¤𝑓 ,(2.9)
+and the field equation becomes
+¥𝜙+3𝐻 ¤𝜙+𝑉 , 𝜙 +𝑓 , 𝜙 G=0.(2.10)
+The equation of motion for other species is
+¤𝜌m,r +3𝐻(𝜌 m,r +𝑃 m,r)=0.(2.11)
+Corresponding to this metric, the field components, such as
+the energy density, pressure, and equation of state, become
+𝜌 𝜙 = 1
+2
+¤𝜙2 +𝑉(𝜙), 𝑃 𝜙 = 1
+2
+¤𝜙2 −𝑉(𝜙), 𝑤 𝜙 =𝑃 𝜙/𝜌 𝜙 ,(2.12)
+and GB density becomes
+𝜌GB =24𝐻 3 ¤𝑓 ,withG=24𝐻 2  ¤𝐻+𝐻 2 .(2.13)
+Similar to the continuity equation obtained for the matter and
+radiation components in Eq. (2.11), we can cast the field equa-
+tion in a similar form as
+¤𝜌𝜙 +3𝐻(𝜌 𝜙 +𝑃 𝜙)=−24𝐻 2 𝑓, 𝜙 ¤𝜙(𝐻 2 + ¤𝐻2)(2.14)
+which allows us to define the effective pressure of the
+quintessence field due to the GB coupling as
+𝑃eff
+𝜙 =𝑃 𝜙 +8𝐻 𝑓 , 𝜙 ¤𝜙(𝐻 2 + ¤𝐻), 𝑤 eff
+𝜙 =
+𝑃eff
+𝜙
+𝜌 𝜙
+,(2.15)
+and hence one can rewrite the above equation in a standard
+continuity relation as
+¤𝜌𝜙 +3𝐻(1+𝑤 eff
+𝜙 )𝜌 𝜙 =0.(2.16)
+For the quintessence field, whose equation of state remains
+𝑤 𝜙 >−1, the GB coupling can induce phantom behavior,
+allowing the effective equation of state to cross the phantom
+divide,𝑤≲−1, under suitable conditions. The time derivative
+of the Hubble parameter can be obtained by taking the time
+derivative of the Friedmann equation, Eq. (2.9), and using the
+field-fluid equation of motion, is given by
+¤𝐻= N
+D ,where,N=−𝜅 2
+"
+3
+ 
+32𝐻3 ¤𝜙 𝑓 , 𝜙 +192𝐻 6 𝑓 2
+, 𝜙
++8𝐻 2
+
+𝑓, 𝜙𝑉, 𝜙 − ¤𝜙 2 𝑓, 𝜙 𝜙
+
++ ¤𝜙 2
+!
++3𝜌 m +4𝜌 r
+#
+,
+D=6
+
+1−8𝜅 2𝐻 ¤𝜙 𝑓 , 𝜙 +96𝜅 2𝐻4 𝑓 2
+, 𝜙
+
+.(2.17)
+With this one can determine the effective equation of state of
+the system and deceleration parameter as
+𝑤eff =−1− 2 ¤𝐻
+3𝐻2 , 𝑞=−1−
+¤𝐻
+𝐻2 .(2.18)
+III. ANALYTICAL ANALYSIS OF THE MODEL
+We consider a potential consisting of an exponential func-
+tion with a nearly flat region, allowing the field to initially
+undergo slow roll toward the minimum of the potential. This
+behavior is achieved by adding a quadratic function of𝜙2, such
+that the potential becomes
+𝑉(𝜙)=𝑉 0𝑒−𝜅𝜆𝜙 + 1
+2 𝑚2
+𝜙 𝜙2 .(3.1)
+The potential is qualitatively similar to the potentials studied
+previously in Refs. [119], given by
+𝑉(𝜙)=
+𝑚2
+𝜙 𝑀2
+2
+ (𝜙/𝑀) 2
+1+ (𝜙/𝑀) 2(1−𝛼)
+
+,(3.2)
+and the pseudo-Nambu-Goldstone-boson quintessence poten-
+tial [120, 128],
+𝑉(𝜙)=𝑚 2
+𝜙 𝑀2
+
+1−cos(𝜙/𝑀)
+
+,(3.3)
+where𝑀is a mass-dimensional constant and𝑚 𝜙 represents
+the mass of the quintessence field. These potentials exhibit a
+nearly flat regime in which the field rolls slowly before reach-
+ing the minimum of the potential, where the field begins to
+oscillate. Near the minimum, these potentials approximately
+exhibit a𝜙 2 dependency. The behavior of the potential in
+Eq. (3.1) is shown in Fig. 1 for different values of𝑚 𝜙 and𝜆.
+The minimum of the potential occurs at a small value of𝜙
+when the magnitude of the exponential contribution becomes
+comparable to that of the quadratic contribution, followed by a
+nearly flat region where the field initially rolls. Depending on
+the relative magnitudes of the coefficients of the exponential
+and quadratic terms, the location of the minimum can vary,
+with the minimum occurring away from𝜙→0. In con-
+trast, for the potential in Eq. (3.2) the minimum always occurs
+around𝜙→0, while periodic minima occur for the potential
+in Eq. (3.3). In addition to the coefficients of the potential,
+(𝑉0, 𝑚 𝜙), the exponential parameter𝜆also plays an impor-
+tant role, as a smaller value of𝜆decreases the depth of the
+
+[PDF page 5]
+5
+log(m)= -29.99
+log(m)= -31.
+log(m)= -31.5
+log(m)= -32.
+-50 0 50
+ϕ
+log(V(ϕ))
+λ=0.01
+λ=0.07
+λ=0.2
+λ=0.5
+-40 -20 0 20 40
+ϕ
+log(V(ϕ))
+FIG. 1. The scalar-field potential in Eq. (3.1) is shown on a loga-
+rithmic scale, with𝑉 0 =10 −60 and𝜅=1. In the upper panel, the
+scalar-field mass(𝑚 𝜙 =𝑚)is varied logarithmically (base 10) while
+keeping𝜆=0.01fixed. In the lower panel, the mass is fixed at
+𝑚 𝜙 =10 −31, and the parameter𝜆is varied.
+minimum around𝜙→0. Therefore, the combination of an
+exponential and a quadratic function exhibits behavior similar
+to that of the other potentials, while potentially leading to in-
+teresting dynamics because the depth of the potential can be
+regulated by the external parameter𝜆, unlike the other poten-
+tials, where different values of𝑀can directly rescale the value
+of𝜙.
+A. Analysis without GB coupling𝑓(𝜙)=0
+At first, we study the oscillatory phase of the field in the
+absence of the GB coupling, i.e.,𝑓(𝜙)=0. During the
+matter- or radiation-dominated phase, we consider the field
+energy density to be comparable to that of the cosmological
+constant,𝜌 𝜙 ∼𝜌 Λ, while the field remains in the quintessence
+regime with equation of state𝑤 𝜙 ∼ −1. Hence, the kinetic
+contribution remains suppressed relative to the potential en-
+ergy, 1
+2 ¤𝜙2 ≪𝑉(𝜙). Therefore, during these epochs, up to the
+low-redshift regime, the field𝜙does not undergo significant
+evolution from its initial value [119]. As the system enters the
+low-redshift regime,𝑧 <1/3, the matter density decays signif-
+icantly and the Hubble parameter becomes sufficiently small
+compared with the characteristic energy scale of the potential,
+allowing the field𝜙to slowly roll toward the minimum of the
+potential,𝑉 , 𝜙 =0, satisfying
+𝜅𝜆𝑉0 =
+𝑚2
+𝜙 𝜙𝑐
+𝑒−𝜅𝜆𝜙 𝑐
+,(3.4)
+where𝜙 𝑐 represents the critical value of the field at which
+𝑉, 𝜙 =0, provided that
+𝑉, 𝜙 𝜙 =𝑚 2
+𝜙 +𝜅𝜆𝑚 2
+𝜙 𝜙𝑐 >0.(3.5)
+Therefore,(1+𝜆𝜅𝜙 𝑐)>0, which implies𝜅𝜙 𝑐 <−1/𝜆for𝜆 <
+0and𝜅𝜙 𝑐 >−1/𝜆for𝜆 >0. To examine the behavior of the
+field around the minimum of the potential at the homogeneous
+background level, we perturb the field to linear order around
+its minimum as
+𝜙(𝑡)=𝜙 𝑐 +𝛿𝜙(𝑡).(3.6)
+Here, for the time being, we consider the field fluctuations to
+remain homogeneous, such that the fluctuations depend only
+on time. Expanding the field equation, Eq. (2.10), around the
+minimum, we obtain
+¥𝛿𝜙+3𝐻 ¤𝛿𝜙+𝑚 2
+𝜙 (𝜙 𝑐 +𝛿𝜙) −𝜅𝜆𝑉 0𝑒−𝜅𝜆𝜙 =0.(3.7)
+Linearizing the exponential function, we get,
+¥𝛿𝜙+3𝐻 ¤𝛿𝜙+𝑚 2
+𝜙 (𝜙 𝑐 +𝛿𝜙) −𝑚 2
+𝜙 𝜙𝑐 (1−𝜅𝜆𝛿𝜙)=0,(3.8)
+¥𝛿𝜙+3𝐻 ¤𝛿𝜙+𝑚 2
+𝜙 (1+𝜆𝜅𝜙 𝑐)𝛿𝜙=0.(3.9)
+The equation takes the form of a damped harmonic oscillator,
+where3𝐻acts as a time-dependent damping term. Thus, for
+an arbitrary value of𝐻around the minimum of the potential,
+we obtain the solution for𝛿𝜙as
+𝛿𝜙=𝑒 − 3𝐻𝑡
+2 cos(𝜔 𝜙𝑡+𝜑),(3.10)
+where𝜑denotes a constant phase of the oscillation, and𝜔 𝜙 is
+the frequency of the oscillation, given by
+𝜔 𝜙 =𝑚 eff
+√︄
+1− 9𝐻2
+4𝑚2
+eff
+, 𝑚 2
+eff =𝑚 2
+𝜙 (1+𝜆𝜅𝜙 𝑐).(3.11)
+As long as𝑚 eff >3𝐻/2, the system oscillates, while the
+amplitude of the oscillation decays exponentially. The field’s
+equation of state remains𝑤 𝜙 ≳−1, and no phantom crossing
+occurs, as also found in Refs. [120, 121]. Nevertheless, many
+
+[PDF page 6]
+6
+standard and non-standard parameterized equations of state
+models, including CPL, Pade, Bell, and oscillatory models of
+the equation of state [97, 101, 102], hint at the possibility of
+phantom crossing. Therefore, we study the current framework
+in the presence of the GB coupling to explore whether the
+oscillations can cross the phantom divide.
+B. Analysis with𝑓(𝜙)≠0
+To study the effect of oscillations and the phantom-crossing
+phenomenon, we consider a Gaussian form of the GB coupling
+centered around the critical field value𝜙 𝑐, where𝑉 , 𝜙 =0:
+𝑓(𝜙)=𝜉 0 exp
+
+− 𝜅2 (𝜙−𝜙 𝑐)2
+2𝜎2
+
+,(3.12)
+where𝜎is the width parameter and𝜉 0 is the coupling am-
+plitude. The derivatives with respect to the field𝜙are given
+by
+𝑓, 𝜙 =− 𝜅2 (𝜙−𝜙 𝑐)
+𝜎2 𝑓(𝜙),(3.13)
+𝑓, 𝜙 𝜙 = 𝜅4 (𝜙−𝜙 𝑐)2 −𝜅 2𝜎2
+𝜎4 𝑓(𝜙).(3.14)
+Therefore, as the system moves away from the minimum, the
+coupling weakens, and the system gradually approaches the
+minimally coupled regime. In order to examine the effect of
+the coupling, we consider the field equation as in the previous
+section. Due to the GB coupling, the effective mass of the
+field is further modified as
+¥𝛿𝜙+3𝐻 ¤𝛿𝜙+𝑚 2
+𝜙 (1+𝜆𝜅𝜙 𝑐)𝛿𝜙−24 𝜅2 𝑓
+𝜎2 𝐻4
+ ¤𝐻
+𝐻2 +1
+
+𝛿𝜙=0
+(3.15)
+and the frequency becomes
+𝜔 𝜙 =𝑚 eff
+√︄
+1− 9𝐻2
+4𝑚2
+eff
+, 𝑚 2
+eff =𝑚 2
+𝜙
+ 1+𝜆𝜅𝜙 𝑐 −𝛾𝐻 2 ,
+(3.16)
+where
+𝛾=24 𝜅2 𝑓 𝐻2
+𝑚2
+𝜙𝜎2
+ ¤𝐻
+𝐻2 +1
+
+,(3.17)
+and the field fluctuation satisfies
+𝛿𝜙(𝑡)=𝑒 − 3𝐻𝑡
+2 cos(𝜔 𝜙𝑡+𝜑).(3.18)
+In this case, the system oscillates as long as
+𝛾𝐻 2 <1+𝜆𝜅𝜙 𝑐,(3.19)
+provided that𝑚 eff >3𝐻/2. Corresponding to this oscillatory
+scenario, the effective equation of state of the field in Eq. (2.15)
+becomes
+𝑤eff
+𝜙 =
+1
+2 ¤𝜙2 −𝑉(𝜙) +8𝐻 𝑓 , 𝜙 ¤𝜙( ¤𝐻+𝐻 2)
+1
+2 ¤𝜙2 +𝑉(𝜙) .(3.20)
+During the transition epoch between DM and DE, particularly
+in the very low-redshift regime where the field starts to oscil-
+late, the potential energy of the field dominates over its kinetic
+energy. Therefore, from the above expression, we can neglect
+the ¤𝜙2 term, and the equation of state (EoS) becomes
+𝑤eff
+𝜙 ≈ −1− 8𝐻
+𝑉
+𝜅2𝛿𝜙
+𝜎2 𝑓 ¤𝛿𝜙𝐻 2
+ ¤𝐻
+𝐻2 +1
+
+.(3.21)
+The deceleration parameter of the system is defined as𝑞=
+−
+ ¤𝐻
+𝐻 2 +1
+
+. Thus, the equation of state becomes
+𝑤eff
+𝜙 ≈ −1+ 8𝐻
+𝑉
+𝜅2𝛿𝜙
+𝜎2 𝑓 ¤𝛿𝜙𝐻 2𝑞 .(3.22)
+ForΛCDM, the transition regime is characterized by𝑞 <0.
+Since|𝛿𝜙|and| ¤𝛿𝜙|exhibits oscillatory behavior while the
+remaining parameters in the above expression are positive,
+the effective equation of state of the scalar field can cross the
+phantom divide for𝑓≠0with𝑞 <0.
+IV . DYNAMICAL SYSTEM AND STABILITY ANALYSIS
+In this section, we analyze the stability of the model at
+the background level using the dynamical-systems stability
+framework. We do this by transforming the field equation
+Eq. (2.10) and the Friedmann equation Eq. (2.9) into a set
+of coupled first-order differential equations, also known as
+an autonomous system, by defining dimensionless dynamical
+variables. The dimensionless variables are
+𝑥= 𝜅 ¤𝜙√
+6𝐻
+, 𝑦= 𝜅2𝑉0𝑒−𝜅𝜆𝜙
+3𝐻 2 , 𝐴= 𝜅2𝑚2𝜙2
+6𝐻2 , 𝑧=𝜅𝜙
+𝑢=8𝜅 2𝐻2 𝑓 ,Ω r = 𝜅2 𝜌r
+3𝐻2 ,Ω m = 𝜅2 𝜌m
+3𝐻2 , 𝑧𝑐 =𝜅𝜙 𝑐 .(4.1)
+Here, we normalize the field velocity¤𝜙with respect to the Hub-
+ble parameter and capture the corresponding dynamics through
+the variable𝑥, while𝑦is defined by normalizing the exponen-
+tial part of the potential with respect to𝐻. The quadratic part
+of the potential, normalized with respect to𝐻, is captured
+through𝐴. In order to close the system and obtain the cor-
+responding critical points, we define an additional variable𝑧
+that captures the field𝜙. The dynamics of the GB coupling
+parameter is captured by𝑢, which is proportional to𝑓rather
+than ¤𝑓, as it appears in Eq. (2.9). Since, in the current study,
+we choose a Gaussian function for𝑓, defining the dynamical
+variable corresponding to the original function𝑓sufficiently
+captures its essence and closes the system without requiring
+additional variables. The fractional energy-density parameters
+Ωr andΩ m describe the evolution of the radiation and matter
+densities, respectively. The variable𝑧 𝑐 represents the constant
+value of𝜙around which the GB coupling function Eq. (3.12)
+takes a non-zero value. In terms of these variables, the Fried-
+mann equation, which provides a constraint on the dynamical
+system, becomes
+1=𝑥 2 +𝑦+𝐴+Ω r +Ω m −
+√
+6𝑢𝑥(𝑧−𝑧 𝑐)
+𝜎2 .(4.2)
+
+[PDF page 7]
+7
+Using this equation, the dynamics of one of the variables,
+namely the radiation density, can be expressed in terms of the
+other dynamical variables asΩ r =1−𝑥 2 −𝑦−𝐴−Ω m −√
+6𝑢𝑥(𝑧−𝑧 𝑐 )
+𝜎2 . Since the radiation density must always be posi-
+tive and bounded within0≤Ω r ≤1, any solution that violates
+this condition cannot be considered physically viable. There-
+fore, the Friedmann equation not only provides a physical
+constraint on the system but also reduces the dimensionality
+of the independent variables required to close the system. The
+other relevant parameters, including the field density, GB den-
+sity, and effective equation of state, can be expressed in terms
+of the dynamical variables as
+Ω𝜙 =𝑥 2 +𝑦+𝐴,Ω GB =−
+√
+6𝑢𝑥(𝑧−𝑧 𝑐)
+𝜎2 ,
+𝑤eff ≡ −1− 2 ¤𝐻
+3𝐻2 ,(4.3)
+where ¤𝐻
+𝐻 2 ≡ N
+D , with
+N=𝜎 2𝑢
+
+6𝐴 (𝑧−𝑧 𝑐) +𝑧
+
+4
+√
+6𝑥 (𝑧−𝑧 𝑐) +3𝜆𝑦 (𝑧𝑐 −𝑧 )
+−6𝑥2
+
+−3𝑢𝑧 (𝑧−𝑧 𝑐)2  𝑢−2𝑥 2+𝜎4 (−𝑧)  3Ω𝑚 +4Ω 𝑟 +6𝑥 2 ,
+D=𝑧
+
+3𝑢2 (𝑧−𝑧 𝑐)2 +2
+√
+6𝜎2𝑢𝑥 (𝑧−𝑧 𝑐) +2𝜎 4
+
+.(4.4)
+Similarly, the effective equation of the state Eq. (3.20) of the
+field becomes
+𝑤eff
+𝜙 =
+𝑥2 −𝐴−𝑦−
+√ 2
+3 𝑢𝑥(𝑧−zc) (−𝜖+1 )
+𝜎2
+𝑥2 +𝐴+𝑦 ,(4.5)
+where𝜖≡ − ¤𝐻/𝐻 2. The autonomous equations of the system
+are
+𝑥′ =
+√︃
+3
+2 𝑢𝑧
+.
+𝐻
+𝐻2𝜎2 −
+√︃
+3
+2 𝑢𝑧 𝑐
+.
+𝐻
+𝐻2𝜎2 − 𝑥
+.
+𝐻
+𝐻2 −
+√
+6𝐴
+𝑧 +
+√︃
+3
+2 𝑢𝑧
+𝜎2 −
+√︃
+3
+2 𝑢𝑧 𝑐
+𝜎2 −3𝑥+
+√︂
+3
+2 𝜆𝑦,(4.6)
+𝑦′ =
+
+−
+√
+6
+
+𝜆𝑥𝑦− 2𝑦 ¤𝐻
+𝐻2 ,(4.7)
+𝐴′ = 2
+√
+6𝐴𝑥
+𝑧 − 2𝐴 ¤𝐻
+𝐻2 ,(4.8)
+𝑧′ =
+√
+6𝑥,(4.9)
+𝑢′ = 2𝑢
+.
+𝐻
+𝐻2 −
+√
+6𝑢𝑥𝑧
+𝜎2 +
+√
+6𝑢𝑥𝑧 𝑐
+𝜎2 ,(4.10)
+Ω′
+m =− 2Ωm
+.
+𝐻
+𝐻2 −3Ω m .(4.11)
+Here, the prime denotes the derivative with respect to the
+𝑒-folding parameter,𝑑𝑁=𝐻𝑑𝑡. Six variables are required
+to close the system; therefore, the dimensionality of the phase
+space is six. In the autonomous system, we see that the variable
+Point𝑥 ★ 𝑦★ 𝐴★ 𝑧★ 𝑢★ Ωm★
+𝑃1 0 2𝜎 2 −𝑢𝑧 2 +𝑢𝑧 𝑧 𝑐
+𝜎 2 (𝜆𝑧+2)
+𝑧 ( 𝜆𝜎 2 +𝑢𝑧−𝑢 𝑧 𝑐 )
+𝜎 2 (𝜆𝑧+2) Any Any0
+𝑃2 0 1 0Any− 𝜆𝜎 2
+𝑧−𝑧 𝑐
+0
+𝑃3 0 0 0 Any 0 0
+𝑃4 0 0 0 Any 0 1
+Point Eigenvalues Stability conditions Ω 𝜙
+𝑃 1 Fig. 2 hyperbolic 1
+𝑃 2 Fig. 2 non-hyperbolic 1
+𝑃 3 {0,−4,−1,1,4,4} non-hyperbolic &
+Unstable 0
+𝑃 4
+
+0,−3,− 3
+2 ,−1,3,3
+	 non-hyperbolic &
+Unstable 0
+TABLE I. The coordinates of the critical points of the system are
+labeled by★. The point𝑃 1 can take arbitrary values of(𝐴, 𝑧, 𝑢). The
+eigenvalues are computed at the corresponding critical points.
+𝑧appears in the denominator of𝑥 ′ and𝐴 ′, and hence the
+equations diverge as𝑧→0. However, the system may remain
+non-singular at this point if the potential parameter𝐴→0. To
+analyze the stability of the model, we obtain the critical points
+corresponding to the autonomous system of equations. The
+critical points and their corresponding stability conditions are
+summarized in Tab. I.
+A. Critical Points and Stability Analysis
+The autonomous system of equations, Eqs. (4.6)–(4.11),
+produces four critical points. In this autonomous system,
+Eq. (4.9) vanishes only for𝑥=0, which causes𝑧to remain
+constant at the critical points. Therefore, the remaining critical
+points are calculated by fixing𝑥=0, as reported in Tab. I. We
+label these critical points by𝑃 𝑖 and obtain their stability con-
+ditions by linearizing the right-hand side of the autonomous
+equations around each critical point using a Taylor-series ex-
+pansion. From this expansion, we construct a6×6Jacobian
+matrix and evaluate its eigenvalues, which are tabulated in
+Tab. I.
+If the real parts of all eigenvalues are non-zero, the point
+is hyperbolic, and its asymptotic behavior can be determined
+from the signs of the real parts. If all real parts are nega-
+tive (positive), the point is asymptotically stable (unstable),
+whereas if they have mixed signs, the corresponding point is
+a saddle point. A saddle point is characterized by trajecto-
+ries that approach the point along some directions in phase
+space and depart from it along others. If all trajectories in
+the relevant phase space approach and asymptotically settle at
+a point, the point is stable, whereas if trajectories repel from
+the point, it is unstable [33, 129, 130]. The linear stability
+analysis fails when one or more of the real parts of the eigen-
+values vanish while the remaining eigenvalues have negative
+real parts. To determine the characteristics of such points,
+
+[PDF page 8]
+8
+0.2 0.4 0.6 0.8 1.00.0
+0.1
+0.2
+0.3
+0.4
+0.5
+z
+u
+StabilityP 1
+0.08 0.10 0.12 0.14 0.16 0.18
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+z
+u
+StabilityP 2
+0.0 0.5 1.0 1.5 2.0 2.5 3.0
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+z
+u
+weff (P1)
+-1.0010
+-1.0008
+-1.0006
+-1.0004
+-1.0002
+0.0 0.5 1.0 1.5 2.0 2.5 3.0
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+z
+u
+weff (P2)
+-1.00
+-0.99
+-0.98
+-0.97
+-0.96
+FIG. 2. The stability of the critical points for𝜆=0.1,𝜎=0.01, and
+𝑧𝑐 =0.2. The point𝑃 1 is a hyperbolic point, for which all eigenvalues
+have non-zero real parts, whereas𝑃 2 is a non-hyperbolic point, for
+which one of the eigenvalues has a vanishing real part. Thus, in the
+parameter space shown above,𝑃 2 has eigenvalues with negative real
+parts and one eigenvalue with a vanishing real part. Consequently,
+linear stability analysis is insufficient to determine the characteristics
+of this point. The effective equation of state at𝑃 1 does not vary
+significantly with𝜆,𝜎, and𝑧 𝑐, whereas for𝑃 2,𝑤 eff increases with
+increasing𝜆and𝑧 𝑐. For different values of the model parameters,
+the overall contour remains similar.
+we either rely on numerical evolution or employ more math-
+ematically advanced techniques, such as the Center Manifold
+Theorem (CMT) [131].
+Finally, the physical significance of the critical points can
+be determined from the corresponding values of the effective
+equation of state,𝑤 eff, and the fractional energy densities at
+each point. A point is classified as accelerating (quintessential)
+if the corresponding𝑤 eff satisfies−1≤𝑤 eff ≤ −1/3, phantom
+if𝑤 eff <−1, matter dominated when𝑤 eff ∼0, and radiation
+dominated when𝑤 eff ∼1/3.
+•Point𝑷 1:The critical point is scalar-field dominated,
+withΩ 𝜙 =1. At this point, both potential variables take
+finite values whose sum satisfies(𝑦 ★ +𝐴 ★ =1). The non-
+minimal coupling variable𝑢 ★ can take any value at this point.
+The eigenvalues evaluated at this critical point depend on the
+free parameters and can take different values for(𝑧, 𝑢). We
+plot the real parts of the eigenvalues in the region where they
+are negative for the benchmark values𝜆=0.1,𝜎=0.01,
+and𝑧 𝑐 =0.2, and display this region in the(𝑢, 𝑧)parame-
+ter space. The point remains stable in the shaded regions,
+which occur around𝑧∼0.1and𝑧∼1.0. In the white region,
+one of the eigenvalues has a vanishing real part. Therefore,
+the point can be either hyperbolic or non-hyperbolic depend-
+ing on the asymptotic value of𝑧. When the point becomes
+non-hyperbolic, its stability cannot be determined using the
+standard linear stability theorem. We therefore infer the sta-
+bility in these regions by numerically solving the autonomous
+system in the vicinity of the corresponding critical points. Be-
+sides the numerical analysis, we also outline a general theory
+of CMT in Appendix A.
+•Point𝑷 2:The critical point is also scalar-field dominated;
+however, the potential𝐴 ★ vanishes, and the variable corre-
+sponding to the exponential potential dominates. The variable
+𝑧can take any value, while𝑢 ★ takes a specific value that de-
+pends on the model parameters(𝜆, 𝜎, 𝑧 𝑐). The point becomes
+singular at𝑧 𝑐; however, the constraint equation Eq. (4.2) re-
+mains finite, sinceΩGB ∝𝑥. Thus, at the asymptotic point, the
+contribution from the quadratic part of the potential vanishes.
+Consequently, the field does not oscillate asymptotically and
+saturates to the de-Sitter phase with𝑤 eff =−1. The point
+is non-hyperbolic, as one of the real parts of the eigenvalues
+is zero, and we illustrate the real parts with≲0condition
+in Fig. 2. We therefore infer the stability of the model using
+numerical evolution. At this point,𝑤 eff ≳−1and increases
+as𝑢 >0.04. Thus, large values of𝑢, irrespective of𝑧, tend to
+drive the equation of state close to de-Sitter solution.
+•Point𝑷 3:At this point, all coordinates vanish except𝑧,
+and from the constraint equation (4.2), the radiation fractional
+densityΩ r =1dominates, with the corresponding𝑤 eff =1/3.
+At this point, only the variable𝑧can take arbitrary values;
+however, the regime remains unaffected since the kinetic com-
+ponent vanishes. One of the eigenvalues is zero, while the
+remaining eigenvalues have real parts with alternating signs.
+Since the eigenvalues include a positive real part, the point is
+always a saddle point, and it is therefore not necessary to go
+beyond linear stability analysis to determine its stability.
+•Point𝑷 4:At this point,Ω m =1, while the remaining
+variables vanish except𝑧. The value of𝑧does not affect the
+matter-dominated regime, and the corresponding𝑤 eff =0.
+Therefore, this point represents the matter-dominated phase.
+The point also remains a saddle point, as the non-vanishing
+real parts of the eigenvalues have alternating signs, while one
+of the eigenvalues vanishes.
+B. Reduced Phase space and Numerical simulation
+The system exhibits a 6-dimensional phase space; therefore,
+tracing the trajectories in the full phase space is not feasible.
+We therefore trace the phase-space trajectories in the lower-
+dimensional sub-spaces corresponding to the field and fluid
+variables,(𝑥, 𝐴,Ω m)and(𝑥, 𝑦,Ω m), as shown in Fig. 3. The
+trajectories are obtained by solving the autonomous system
+of equations with initial conditions set deep in the radiation-
+dominated regime. The ranges of the initial conditions are
+given in the caption of the figure. Additionally, we plot the
+algebraic expressions corresponding to the right-hand sides of
+equations(𝑥 ′, 𝐴′,Ω ′
+m)and(𝑥 ′, 𝑦′,Ω ′
+m)by fixing the remaining
+variables and model parameters, shown in gray.
+The vector trajectories obtained from the algebraic expres-
+sions span a broad region of the phase space, whereas the
+solutions of the differential equations trace only those tra-
+
+[PDF page 9]
+9
+(a.) (b.) (c.)
+FIG. 3. The reduced 3D phase space of the system in the coordinates(𝑥,Ω m, 𝐴)and(𝑥,Ω m, 𝑦), obtained by solving the autonomous system
+of equations, Eqs. (4.6)–(4.11), and shown by the blue and red curves. We set the initial conditions deep in the radiation-dominated regime
+and vary both the initial conditions and model parameters over the specified ranges. The gray curves are obtained by varying the algebraic
+expression of the corresponding variables while fixing the other variables to specified values. (a) The gray curves are obtained by fixing
+𝑦=10 −4, 𝑢=10 −3, 𝑧=𝑧 𝑐 =5, 𝜎=0.2, 𝜆=0.01. For the other curves, we varylog 10 𝑦0 =[−50,−40],log 10 𝐴0 =[−33,−29], 𝑧 0 =
+[−6,6], 𝑢 0 =[−10 −3,0.1], 𝜆=[0.01,0.5],𝜎∈ [0.09,0.1], and𝑧 𝑐 =[−5.0,5.0], with fixed𝑥 0 =10 −30. We show only those solutions that
+satisfy0<Ω 𝜙 <1at𝑁=0. (b) The gray curve is obtained by fixing𝐴=0.2, 𝑢=0.1, 𝑧=1.3, 𝑧 𝑐 =1.2, 𝜎=0.099, 𝜆=0.01, while the
+other curves are obtained by varying𝑥 0 =10 −30,log 10 𝑦0 =[−34,−30.0],log 10 𝐴0 =[−31,−29.3], 𝑧 0 =[1.0,1.4], 𝑢 0 =[0.1,0.2], 𝜆=
+[0.01,0.3], 𝜎 0 =[0.09,0.1], 𝑧 𝑐 =[1.0,1.2]. (c) The gray curve corresponds to the fixed values𝐴=0.002, 𝑢=0.05, 𝑧=1.3, 𝑧 𝑐 =1.2, 𝜎=
+0.099, 𝜆=0.01, while the other curves are obtained by varying𝑥 0 =10 −30,log 10 𝑦0 =[−31.5,−29.9],log 10 𝐴0 =[−29.9,−29.6], 𝑧 0 =
+[1.0,1.4], 𝑢 0 =[0.15,0.2], 𝜆=[10 −3,0.3], 𝜎 0 =[0.098,0.099], 𝑧 𝑐 =[1.0,1.2]. The corresponding variations of each variable and
+cosmological parameters for (a), (b), and (c) are shown in Fig. 4.
+jectories that produce a matter-dominated phase followed by
+late-time dynamics dominated by the scalar field and remain
+non-divergent in the asymptotic past or future. We also show
+the evolution of each dynamical variable together with the
+cosmological parameters(Ω 𝜙,Ω m, 𝑤eff, 𝐻)in Fig. 4. This in-
+dividual evolution helps us decode the behavior of the model
+and provides additional insight into the phase-space represen-
+tation.
+In Fig. 3a, we show the trajectory behavior in(𝑥, 𝐴,Ω m).
+Here, we choose the initial condition,log 10 𝑦0 =[−50,−40],
+which is much smaller than thelog 10 𝐴0 =[−33,−29], con-
+sequently making the exponential contribution much smaller
+than the quadratic contribution𝐴 0 throughout the evolution,
+as shown in Fig. 4a. In this case, we consider a broad range of
+initial conditions and apply a filter such that only solutions that
+produce an accelerating universe with a positive field energy
+density are retained. We consider0< 𝜆 <0.5, together with
+a relatively narrow range of𝑢 0. Larger values of𝑢 0 lead to
+stiffness in the numerical solver, as the dynamical variables
+become divergent.
+For this range of parameters, when the exponential contri-
+bution is very small, the quadratic contribution plays the dom-
+inant role. As the system evolves toward lower redshifts, the
+field undergoes rapid oscillations, during which𝑤 eff crosses
+−1and can reach substantially higher negative values. In this
+case,𝑧does not exhibit significant deviation, while𝑢becomes
+finite only near𝑁=0. Thus, the GB coupling enhances the
+oscillation amplitude of𝑤 eff, allowing it to reach more nega-
+tive values and cross the phantom divide multiple times. As
+the system evolves toward the future, the solution asymptot-
+ically approaches𝑤 eff =−1. A similar late-time oscillatory
+behavior with excursions into the phantom regime has also
+been observed in the dark-energy parametrization studied in
+Ref. [101].
+In the phase space, some of the red and blue trajectories
+originate near𝑥∼0or𝑥∼1, move towardΩ m ∼1, cor-
+responding to the matter-dominated critical point𝑃 4, and are
+eventually attracted toward𝐴∼1, corresponding to𝑃 1. We
+do not label these points directly in the reduced phase space
+because it does not represent the full six-dimensional system.
+Moreover, their stability can be inferred numerically by ob-
+serving the behavior of each dynamical variable as shown in
+Fig. 4a. We find that, for a broad range of initial conditions,
+the variables asymptotically approach𝑃 1, where𝐴dominates
+while the other dynamical variables(𝑦, 𝑢, 𝑧)remain non-zero
+and asymptotically saturate to a finite value without exhibiting
+any divergence. This behavior indicates that𝑃 1 acts as a sta-
+ble attractor for this range of parameters. We have also traced
+the tensor sound speed(𝑐 2
+T)and adiabatic scalar sound speed
+(𝑐2
+s ), which we will discuss in the next section.
+We plot the phase-space trajectories with(𝑥, 𝑦,Ω m)vari-
+ables for different initial conditions in panels Fig. (3b) and
+(3c), with the corresponding numerical evolution of the pa-
+rameters shown in Fig. 4(b,c), respectively. In particular, we
+consider comparable ranges oflog 10 𝑦0 =[−34,−30]and
+log10 𝐴0 =[−31,−29.3]. In these cases, both𝑦and𝐴attain
+finite values at𝑁=0; however,𝑦 > 𝐴, and𝑤 eff exhibits
+oscillatory behavior. Most of the initial conditions lead to so-
+lutions in which the𝑤 eff oscillations remain above−1. This
+similar non-phantom oscillatory behavior has been reported in
+Ref. [121] for the minimally coupled quintessence field with
+potential Eq. (3.2). However, some initial conditions for which
+𝐴takes a somewhat large positive value with larger𝑢, exhibit
+larger negative values of𝑤 eff. In these scenarios, the variable
+𝑦dominates over𝐴, and the oscillation disappears in the late-
+time epoch, leading to a stable de Sitter solution. This case
+highlights that both the critical points𝑃 1,2 can asymptotically
+become stable points for different initial conditions; however,
+
+[PDF page 10]
+10
+the physical description of the system remains the same. Upon
+examining the behavior of the trajectories in blue and red, we
+find that most of the trajectories corresponding to Fig. 3(b,c)
+originate near(𝑥, 𝑦,Ω m)=(0,0,0), evolve towardΩ m ∼1,
+rendering a saddle matter-dominated epoch, and eventually
+stabilize at(0,1,0), the field-dominated point where the ex-
+ponential potential dominates. Thus, at the background level,
+the model yields a stable de-Sitter attractor while exhibiting
+oscillatory behavior during the transient DM–DE transition
+epoch around𝑁=0.
+For each case, we plot the Hubble function on a logarithmic
+scale and compare its evolution withΛCDM, showing that
+the deviation emerges only at low redshift, while both models
+remain consistent at higher redshift.
+V . LINEAR PERTURBATION AND MODEL’S STABILITY
+In the previous section, we determined the stability of the
+model at the background level. However, the stability con-
+dition does not guarantee the absence of ghost or gradient
+instabilities at the level of linear perturbations. To obtain the
+corresponding conditions, we consider scalar and tensor per-
+turbations of the background FLRW metric at first order. The
+perturbed line element can then be written as [108, 132]
+𝑑𝑠2 =−(1+2𝐴)𝑑𝑡 2 +2𝑎𝜕 𝑖 𝐵𝑑𝑥 𝑖 𝑑𝑡+𝑎 2
+
+(1+2𝜓)𝛿 𝑖 𝑗
++2𝜕 𝑖 𝑗 𝐸+2ℎ 𝑖 𝑗
+
+𝑑𝑥𝑖 𝑑𝑥 𝑗 ,(5.1)
+where𝐴,𝐵,𝜓, and𝐸are scalar perturbation quantities, while
+ℎ𝑖 𝑗 represents the tensor perturbation1. Corresponding to this
+perturbed metric, the tensor sound speed𝑐 2
+T and scalar sound
+speed𝑐 2
+s can be expressed as [108] assuming𝜅 2 =1
+𝑐2
+T = 1−8 ¤𝐻 𝑓, 𝜙 ¤𝜙−8𝐻 2 𝑓, 𝜙 𝜙 ¤𝜙2
+1−8 ¤𝐻 𝑓, 𝜙 ¤𝜙 ,(5.2)
+𝑐2
+s =
+
+(1−8𝐻 ¤𝑓)
+h
+(1−8𝐻 ¤𝑓) ¤𝜙2 +96  𝐻2 ¤𝑓 2
++128𝐻 2 ¤𝐻 ¤𝑓 2
+i
++256  𝐻2 ¤𝑓 2
+( ¥𝑓−𝐻 ¤𝑓)
+
+× 1
+(1−8𝐻 ¤𝑓)
+h
+(1−8𝐻 ¤𝑓) ¤𝜙2 +96  𝐻2 ¤𝑓 2i .(5.3)
+1 It should be noted that𝐴does not denote the dynamical variable defined in
+Eq. (4.1).
+These quantities can be expressed in terms of the background
+dynamical variables as𝑐 2
+s = N
+D ,with
+N=𝐻 2
+
+𝜎2𝑢3 (𝑧−𝑧 𝑐) 2
+
+6𝐴 (𝑧−𝑧 𝑐) +
+𝑧
+
+7
+√
+6𝑥 (𝑧−𝑧 𝑐) +3𝜆𝑦 (𝑧𝑐 −𝑧 ) −6𝑥 2
+ 
+−3𝑢 3𝑧 (𝑧−𝑧 𝑐) 4  𝑢−2𝑥 2 +3𝜎 4𝑢2𝑧 (𝑧−𝑧 𝑐) 2  1+4𝑥 2
++4
+√
+6𝜎6𝑢𝑥𝑧 (𝑧−𝑧 𝑐) +2𝜎 8𝑧
+
+−
+𝑢2𝑧
+.
+𝐻 (𝑧−𝑧 𝑐) 2
+
+3𝑢2 (𝑧−𝑧 𝑐) 2
++4
+√
+6𝜎2𝑢𝑥 (𝑧𝑐 −𝑧 ) −4𝜅 2𝜎4
+
+,
+D=𝐻 2𝜎2𝑧
+√
+6𝑢𝑥 (𝑧−𝑧 𝑐) +𝜎 2
+ 
+3𝑢2 (𝑧−𝑧 𝑐) 2
++2
+√
+6𝜎2𝑢𝑥 (𝑧−𝑧 𝑐) +2𝜎 4
+
+.(5.4)
+Similarly, the tensor sound speed becomes𝑐 2
+T = N
+D , where
+N=3𝑢𝑧 (𝑧−𝑧 𝑐) 2
+
+𝑢
+.
+𝐻+𝐻 2  𝑢−2𝑥 2
++3𝐻 2𝜎2𝑢
+
+2𝐴
+(𝑧𝑐 −𝑧 ) +𝑧
+√
+6𝑥 (𝑧𝑐 −𝑧 ) +𝜆𝑦 (𝑧−𝑧 𝑐) +2𝑥 2
+ 
++𝐻 2𝜎4𝑧,
+D=𝐻 2𝜎2𝑧
+√
+6𝑢𝑥 (𝑧−𝑧 𝑐) +𝜎 2
+
+.(5.5)
+To avoid ghost and gradient instabilities, the relevant quantities
+must satisfy
+0≤𝑐 2
+s , 𝑐2
+T ≤1, 𝑄 𝑇 ≡1−8𝐻 ¤𝑓 >0,(5.6)
+where a negative sound square speed leads to an exponential
+growth of perturbation modes and consequently signals an
+instability.
+A. Cosmological parameter evolution for representative values
+In Fig. 5, we plot the cosmological evolution of the fractional
+densities of radiation, matter, and the scalar field, as well as the
+effective equation of state𝑤 eff and the deceleration parameter
+𝑞, for the minimally coupled case, i.e.,𝑓(𝜙)=0, with different
+values of the model parameter𝜆. The initial conditions are set
+deep in the radiation-dominated regime and are chosen such
+that𝐴 0 ≳𝑦 0. Due to the comparable magnitudes of these two
+quantities, oscillations in𝑤 eff appear only around𝑁∼0, after
+which they gradually disappear as the system approaches the
+asymptotic future.
+We consider0.09≲𝜆≲1.5and observe that, during the
+late-time epoch, the variable𝑦dominates over𝐴. The variable
+𝐴attains a finite value and exhibits small oscillations around
+𝑁≳−2.0. Consequently, the field fractional density begins to
+
+[PDF page 11]
+11
+(a.)
+-10 -5 0 5 10
+-0.0015
+-0.0010
+-0.0005
+0.0000
+0.0005
+0.0010
+N
+x
+-10 -5 0 5 10
+-80
+-70
+-60
+-50
+-40
+N
+log(y)
+-10 -5 0 5 10
+1
+2
+3
+4
+5
+N
+z
+-4 -2 0 2 4
+0.00
+0.05
+0.10
+0.15
+N
+u
+-4 -2 0 2 4
+-2.5
+-2.0
+-1.5
+-1.0
+-0.5
+0.0
+N
+weff
+-10 -5 0 5 10
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+N
+Ωm
+-10 -5 0 5 10
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+N
+Ωϕ
+-10 -5 0 5 10
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+N
+A
+-10 -5 0 5 10
+0.0
+0.2
+0.4
+0.6
+0.8
+N
+Ωr
+-10 -5 0 5 10
+0
+5
+10
+15
+N
+log(H/H0)
+-4 -2 0 2 4
+-1.0
+-0.5
+0.0
+0.5
+1.0
+1.5
+2.0
+N
+cs
+2
+-4 -2 0 2 4
+-1.0
+-0.5
+0.0
+0.5
+1.0
+1.5
+2.0
+N
+cT
+2-1
+(b.)
+-10 -5 0 5
+-0.2
+-0.1
+0.0
+0.1
+0.2
+N
+x
+-10 -5 0 5
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+N
+y
+-10 -5 0 5
+-0.4
+-0.2
+0.0
+0.2
+0.4
+N
+z
+-5 -4 -3 -2 -1 0 12
+0.000
+0.005
+0.010
+0.015
+0.020
+N
+u
+-4 -2 0 2 4
+-1.5
+-1.0
+-0.5
+0.0
+0.5
+1.0
+N
+weff
+-10 -5 0 5
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+N
+Ωm
+-10 -5 0 5
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+N
+Ωϕ
+-10 -5 0 5
+0.00
+0.01
+0.02
+0.03
+0.04
+0.05
+0.06
+N
+A
+-10 -5 0 5
+0.0
+0.2
+0.4
+0.6
+0.8
+N
+Ωr
+-10 -5 0 5
+0
+5
+10
+15
+N
+log(H/H0)
+-4 -2 0 2 4
+-1.0
+-0.5
+0.0
+0.5
+1.0
+1.5
+2.0
+N
+cs
+2
+-4 -2 0 2 4
+-1.0
+-0.5
+0.0
+0.5
+1.0
+1.5
+2.0
+N
+cT
+2-1
+(c.)
+-10 -5 0 5
+-0.4
+-0.2
+0.0
+0.2
+0.4
+N
+x
+-10 -5 0 5
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+N
+y
+-10 -5 0 5
+-0.5
+0.0
+0.5
+1.0
+N
+z
+-5 -4 -3 -2 -1 0 1 2
+0.00
+0.02
+0.04
+0.06
+0.08
+0.10
+0.12
+N
+u
+-4 -2 0 2 4
+-1.5
+-1.0
+-0.5
+0.0
+0.5
+1.0
+N
+weff
+-10 -5 0 5
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+N
+Ωm
+-10 -5 0 5
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+N
+Ωϕ
+-10 -5 0 5
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+N
+A
+-10 -5 0 5
+0.0
+0.2
+0.4
+0.6
+0.8
+N
+Ωr
+-10 -5 0 5
+0
+5
+10
+15
+N
+log(H/H0)
+-4 -2 0 2 4
+-1.0
+-0.5
+0.0
+0.5
+1.0
+1.5
+2.0
+N
+cs
+2
+-4 -2 0 2 4
+-1.0
+-0.5
+0.0
+0.5
+1.0
+1.5
+2.0
+N
+cT
+2-1
+FIG. 4. The numerical evolution of the cosmological parameters for initial conditions set deep in the radiation-dominated regime at𝑁∼ −20.
+The initial conditions and behavior of the trajectories in the reduced phase space are discussed in Fig. 3. The Hubble parameter is shown on a
+logarithmic scale as𝐻/𝐻 0, with the gray dashed line corresponding to theΛCDM model.
+
+[PDF page 12]
+12
+increase, while the field velocity𝑥also starts to oscillate. The
+amplitude of the oscillations decreases as the system evolves
+toward the future, and for𝑁 >1.5, the dynamical variables
+approach their asymptotic values and the oscillations disap-
+pear. Since the system is free from the GB coupling in this
+case,𝑤 eff never crosses−1, and the model does not exhibit
+any ghost or gradient instability at the perturbation level; in
+particular,𝑐 2
+T =𝑐 2
+s =1throughout the evolution. For𝜆=1.5,
+the variable𝐴does not become negligible during the late-time
+epoch, unlike for the other values of𝜆. Thus, both components
+of the potential remain finite, with𝑦 > 𝐴, resulting in a much
+smaller oscillation amplitude in𝑤 eff for the same set of initial
+conditions.
+We plot the same cosmological parameters and sound-speed
+variables against𝑁for two distinct values,𝜆=0.31and0.006,
+in Fig. 6. The initial conditions𝐴 0 =10 −29.56,𝑦 0 =10 −30.72,
+𝑥0 =10 −20,𝑧 0 =1.20, and𝑢 0 =1.19are set deep in the
+radiation-dominated regime. The oscillation in𝑤 eff emerges
+around𝑁∼0, and its amplitude decays for𝑁 >1.5. This
+oscillatory pattern differs from the minimally coupled case
+owing to the finite value of the non-minimal coupling function
+𝑓(𝜙). As in the previous case, since the potential parame-
+ters are of comparable magnitude,𝑦dominates over𝐴at late
+times, while𝐴exhibits oscillations and takes a finite value in
+the range−2< 𝑁 <1.5. All the dynamical variables nearly
+saturate to particular values, indicating stability of the system
+at the background level. However, to verify the absence of
+ghost and gradient instabilities, we have also plotted𝑐 2
+s and
+𝑐2
+T. Owing to the non-minimal coupling,𝑤 eff crosses−1,
+and the oscillation amplitude rapidly reaches negative values
+in the range−1.5< 𝑤 eff <−0.5; such large negative val-
+ues cannot be achieved within the minimally coupled frame-
+work. This rapid oscillation drives𝑢∼0.005during𝑁∼1,
+around which𝑐 2
+T oscillates rapidly, with its lower amplitude
+approaching zero while its higher amplitude crosses into the
+superluminal regime𝑐 2
+s >1, whereas the scalar sound speed
+exhibits mild variation, remaining in the range0.5≤𝑐 2
+s <1.
+In the present case, the phantom-crossing oscillation occurs
+at𝑁∼1; however, with a suitable adjustment of the initial
+conditions and model parameters, it can be shifted very close
+to𝑁∼0, where observational constraints apply. The rapid
+oscillation of𝑐 2
+T violates the stringent bound obtained from
+gravitational-wave observations,|𝑐 2
+T −1|<10 −16 [133–137],
+in this case.
+We find that for𝜆=0.006, the variation in the oscillation
+amplitude of𝑤 eff is small, and hence𝑤eff reaches only∼ −1.2.
+A rapid oscillation occurs in𝑢, but its magnitude is of order
+10−7. Consequently, the minimum value attained by𝑐 2
+T is
+∼0.5, while𝑐 2
+s deviates very little from1. Because of the small
+values of𝑢for both𝜆values,𝑄 𝑇 remains positive and oscillates
+close to1, indicating the absence of ghosts. The behavior of
+the system for these benchmark parameters shows that it can
+realize phantom crossing without violating the ghost condition
+and while satisfying the non-negative sound-speed conditions.
+One must note that for a very small value of𝑢∼10 −10, the
+effect of the non-minimal coupling would be extremely small,
+and it can no longer drive the oscillation into the phantom
+regime. Thus, this demonstrates that the coupling function
+should be chosen such that it does not become extremely small
+while still allowing the model to retain observationally viable
+phases of the universe, since a prior study found [124] that
+a GB density of order∼10 −20 at the current epoch fails to
+produce phantom dynamics.
+Nevertheless, in a general simulation shown in Fig. 4, the
+model can exhibit negative scalar and tensor sound speeds,
+depending on the value of𝑢around𝑁∼0. If|𝑢|≳10 −2,
+the model can reach more negative values, i.e.,𝑤 eff ≲−1.5,
+which drives both sound speeds into the negative regime and
+causes a gradient instability. Although𝑄𝑇 may remain positive
+due to small magnitude of𝑢, rendering a ghost-free system,
+however, it still suffers from the exponential growth of per-
+turbation modes. Thus, we show that with a proper choice
+of model parameter value𝜆, 𝜎, the model can avoid gradient
+instability. However, whether the model genuinely prefers the
+small-phantom regime, i.e., small values of𝑢, will ultimately
+be determined by confronting it directly with cosmological
+observational datasets. In any case, the model at least exhibits
+an oscillatory solution near𝑁∼0and eventually settles into
+a stable de Sitter solution.
+VI. CONCLUSION
+In this paper, we have investigated an oscillatory dark-energy
+scenario in the Einstein-scalar-Gauss–Bonnet framework, in
+which the effective equation of state can cross the phantom
+divide multiple times before settling into a stable de Sitter fu-
+ture. The model combines a scalar-field potential containing
+exponential and quadratic terms with a Gaussian GB coupling
+function localized around the minimum of the potential, such
+that the field is temporarily trapped, undergoes oscillations,
+and eventually evolves toward the asymptotic attractor. The
+oscillatory behavior depends on the depth of the potential,
+which can be regulated through the choice of initial conditions
+in the deep radiation-dominated phase. When the exponential
+and quadratic contributions are of comparable magnitude, the
+resulting oscillations in the effective equation of state remain
+confined to the low-redshift regime and do not attain exces-
+sively large amplitudes.
+We have established a dynamical-systems framework to
+identify the regions of the initial-condition and model-
+parameter space for which the system produces a stable late-
+time de Sitter solution, with oscillations occurring during the
+dark matter–dark energy transition epoch. The model admits
+an extended radiation- and matter-dominated era, followed by
+a scalar-field-dominated late-time attractor that can exhibit
+phantom crossing. We find that, in the majority of cases
+where the GB coupling function is of orderO (−2), the effec-
+tive equation of state of the system reaches very large negative
+values, consequently driving both the scalar and tensor sound
+square speeds into the negative regime and resulting in gradi-
+ent instability. We find that for sufficiently small values of the
+exponential potential parameter𝜆, close to∼10 −3, together
+with suitable initial conditions, the effective equation of state
+can cross the phantom divide while remaining close to−1.2.
+In this regime, both the tensor and scalar sound speeds remain
+
+[PDF page 13]
+13
+Ωm
+Ωr
+Ωϕ
+weff
+q
+-10 -5 0
+-1.0
+-0.5
+0.0
+0.5
+1.0
+N
+λ=0.09
+,
+x
+y
+A
+z
+-8 -6 -4 -2 0 2 4 6
+-0.5
+0.0
+0.5
+1.0
+N
+λ=0.09
+Ωm
+Ωr
+Ωϕ
+weff
+q
+-10 -5 0
+-1.0
+-0.5
+0.0
+0.5
+1.0
+N
+λ=0.9 ,
+x
+y
+A
+z
+-8 -6 -4 -2 0 2 4 6
+-0.5
+0.0
+0.5
+1.0
+N
+λ=0.9
+Ωm
+Ωr
+Ωϕ
+weff
+q
+-10 -5 0
+-1.0
+-0.5
+0.0
+0.5
+1.0
+N
+λ=1.5
+x
+y
+A
+z
+-8 -6 -4 -2 0 2 4 6
+-0.4
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+N
+λ=1.5
+FIG. 5. Evolution of the cosmological parameters in the minimally coupled case,𝑓(𝜙)=0, plotted against𝑁for the representative initial
+values𝐴 0 =10 −29.2 and𝑦 0 =10 −30.4; the remaining initial conditions,𝑧 0 =1.0and𝑥 0 =10 −20, are set deep in the radiation-dominated
+epoch at𝑁=−20. The oscillatory behavior arises when the initial values𝑦 0 and𝐴 0 are comparable, so that the field settles into a minimum
+for a finite time before rolling again. Since the depth of the dip in the potential is controlled by𝜆, different values of𝜆shift the oscillations
+toward the future.
+(i)
+Ωm
+Ωr
+Ωϕ
+weff
+q
+-10 -5 0
+-1.0
+-0.5
+0.0
+0.5
+1.0
+N
+cs
+2
+cT
+2
+-2 -1 0 1 2 3
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+N
+-2 -1 0 1 2 3
+0.000
+0.001
+0.002
+0.003
+0.004
+0.005
+N
+u
+x
+y
+A
+z
+-8 -6 -4 -2 0 2 4 6
+-0.5
+0.0
+0.5
+1.0
+N
+(ii)
+Ωm
+Ωr
+Ωϕ
+weff
+q
+-10 -5 0
+-1.0
+-0.5
+0.0
+0.5
+1.0
+N
+cs
+2
+cT
+2
+-2 -1 0 1 2 3
+0.5
+1.0
+1.5
+2.0
+N
+-2 -1 0 1 2 3
+0
+5. × 10-8
+1. × 10-7
+1.5 × 10-7
+N
+u
+x
+y
+A
+z
+-8 -6 -4 -2 0 2 4 6
+-0.5
+0.0
+0.5
+1.0
+N
+FIG. 6. Evolution of the cosmological parameters and the sound speed, plotted as functions of𝑁for the representative values (i)𝜆=0.31,
+𝐴0 =10 −29.56,𝑦 0 =10 −30.72,𝑧 0 =𝑧 𝑐 =1.2,𝑥 0 =10 −20,𝑢 0 =1.19,𝜎=0.099, and (ii)𝜆=0.006,𝐴 0 =10 −29.57, with the remaining
+initial conditions the same as in (i). All initial conditions are set at𝑁=−20, deep in the radiation-dominated epoch.
+
+[PDF page 14]
+14
+positive, thereby avoiding gradient instability. We also find
+that, irrespective of whether the sound speeds become neg-
+ative or remain positive, the system does not exhibit a ghost
+instability because the magnitude of the GB coupling remains
+sufficiently small.
+The model therefore provides a dynamical realization of
+transient oscillatory dark energy that can be consistent at both
+the background and perturbation levels. However, whether the
+theoretically stable region of the parameter space is also fa-
+vored by current low-redshift observations, and what distinct
+perturbation signatures the oscillatory crossings may leave be-
+hind, requires confronting the model directly with cosmolog-
+ical observational data. Additionally, the transient oscillatory
+phenomenon can be explored in the context of interacting dark
+matter–dark energy frameworks, where the induced oscilla-
+tions during the current epoch may have non-trivial observa-
+tional consequences that can be constrained using large-scale
+structure observations.
+Appendix A: Center Manifold Theorem
+When all eigenvalues have non-zero real parts, the linearized
+system provides a clear characterization of the local stability.
+However, when one or more eigenvalues have zero real parts
+while the remaining eigenvalues have negative real parts, the
+linear stability analysis becomes inconclusive. Center mani-
+fold theory [130, 131] provides a framework to analyze such
+cases by reducing the dynamics near the equilibrium to an in-
+variant manifold tangent to the subspace associated with the
+zero-real-part eigenvalues.
+Consider an autonomous dynamical system
+X′ =F(X),X∈R 𝑛,(A1)
+where a prime denotes differentiation with respect to the evo-
+lution variable. LetX ∗ be an equilibrium point satisfying
+F(X ∗)=0.(A2)
+Introducing the perturbationU=X−X ∗, the system can be
+expanded about the equilibrium as
+U′ =JU+G(U),(A3)
+where
+J=DF(X ∗)(A4)
+is the Jacobian matrix,Dis derivative operator, evaluated at
+the equilibrium point and
+G(U)=O (|U| 2)(A5)
+contains the nonlinear terms. SinceJis an𝑛×𝑛matrix, it has𝑛
+eigenvalues, which can be divided into three categories: (i) sta-
+ble (𝑠), corresponding to eigenvalues with negative real parts,
+(ii) unstable (𝑢), corresponding to eigenvalues with positive
+real parts, and (iii) center (𝑐), corresponding to eigenvalues
+with zero real parts. The spaceR 𝑛 is then decomposed as
+R𝑛 =𝐸 𝑠 ⊕𝐸 𝑢 ⊕𝐸 𝑐,(A6)
+where𝐸 𝑠,𝐸 𝑢, and𝐸 𝑐 denote the subspaces spanned by the
+stable, unstable, and center eigenvectors, respectively. If the
+unstable subspace is empty, the system can be transformed
+locally into the form
+x′ =𝐴x+f(x,y),
+y′ =𝐵y+g(x,y), (A7)
+wherex∈R 𝑐 andy∈R 𝑠, with𝑐and𝑠denoting the dimen-
+sions of the center and stable subspaces, respectively. The
+matrix𝐴has eigenvalues with zero real parts, while all eigen-
+values of𝐵have negative real parts. The nonlinear functions
+satisfy
+f(0,0)=0,∇f(0,0)=0,(A8)
+and
+g(0,0)=0,∇g(0,0)=0.(A9)
+A center manifold is a geometrical space that can be locally
+represented as
+𝑊 𝑐 (0)= {(x,y) ∈R 𝑐 ×R 𝑠 |y=ℎ(x),|x|< 𝛿 } ,(A10)
+whereℎ(0)=0and∇ℎ(0)=0for sufficiently small𝛿. These
+conditions imply that𝑊 𝑐 (0)is tangent to the center eigen-
+space at the critical point.
+Since a trajectory that starts on the center manifold remains
+on it, the relationy=ℎ(x)must hold along the trajectory.
+Differentiating this relation with respect to the evolution vari-
+able givesy ′ =Dℎ(x)x ′. Usingy ′ =𝐵y+g(x,y)and setting
+y=ℎ(x), we obtain the invariance equation
+Dℎ(x) [ 𝐴x+f (x, ℎ(x) )] =𝐵ℎ(x) +g (x, ℎ(x) ) .(A11)
+As an illustrative example, consider the two-dimensional
+autonomous system
+𝑥′ =−𝑥,
+𝑦′ =0. (A12)
+The equilibrium condition requires
+𝑥=0,(A13)
+while𝑦remains arbitrary. The system therefore has a one-
+dimensional family of equilibrium points,
+Meq = {(0, 𝑦):𝑦∈R } .(A14)
+The Jacobian is
+J=
+
+−1 0
+0 0
+
+,(A15)
+with eigenvalues−1and0, so that the𝑥direction is the stable
+one and the𝑦direction is the center one. Since the center
+subspace is the𝑦-axis, the center manifold can be written as
+𝑊 𝑐 = {(𝑥, 𝑦):𝑥=ℎ(𝑦) } ,(A16)
+
+[PDF page 15]
+15
+where, as stated above, the definition of the center manifold
+requires
+ℎ(0)=0, ℎ ′ (0)=0.(A17)
+The relation𝑥=ℎ(𝑦)must remain satisfied along a trajectory
+on the center manifold. Differentiating with respect to the
+evolution variable, we obtain
+𝑥′ =ℎ , 𝑦(𝑦)𝑦 ′.(A18)
+On the manifold,𝑥 ′ =−𝑥=−ℎ(𝑦), and hence
+ℎ, 𝑦 𝑦′ =−ℎ(𝑦).(A19)
+Since𝑦 ′ =0, it follows that
+ℎ(𝑦)=0.(A20)
+On the center manifold,𝑥=0, and the reduced dynamics is
+therefore
+𝑦′ =0.(A21)
+Thus, perturbations along the center direction neither grow
+nor decay, while perturbations in the stable𝑥direction decay
+according to𝑥 ′ =−𝑥. The equilibrium manifold is therefore
+locally attracting in the transverse direction but neutrally stable
+along itself.
+Similarly, in our case, the critical point𝑃 1 contains two
+free parameters, which we denote by𝑧and𝑢. The critical
+points therefore form a two-dimensional equilibrium manifold,
+M1. If the Jacobian evaluated at𝑃1 possesses two eigenvalues
+with zero real parts, the corresponding center subspace is two-
+dimensional. The relation between the center subspace and
+the equilibrium manifold can be established by considering
+the tangent vectors
+𝜕𝑃1
+𝜕𝑧 , 𝜕𝑃1
+𝜕𝑢 .(A22)
+Since every point onM 1 is an equilibrium, it satisfies
+F (𝑃1 (𝑧, 𝑢) ) =0.(A23)
+Differentiating this relation with respect to𝑧and𝑢gives
+J(𝑃 1) 𝜕𝑃1
+𝜕𝑧 =0,J(𝑃 1) 𝜕𝑃1
+𝜕𝑢 =0.(A24)
+Thus, both tangent vectors to the equilibrium manifold be-
+long to the kernel of the Jacobian and hence correspond to
+zero-eigenvalue directions. Since the two tangent vectors are
+linearly independent, they span a two-dimensional subspace.
+As the center subspace is also two-dimensional, we obtain
+𝑇𝑃1 M1 =𝐸 𝑐
+𝑃1
+.(A25)
+Consequently, the equilibrium manifoldM 1 itself serves as
+the local center manifold associated with𝑃 1. For𝑃 1, the
+four nonzero eigenvalues have negative real parts, indicating
+that perturbations transverse to the equilibrium manifold decay
+with the evolution of the system. The two zero eigenvalues cor-
+respond to the tangent directions of the equilibrium manifold
+and therefore lead to neither growth nor decay of perturba-
+tions along the manifold. A trajectory starting sufficiently
+close to the equilibrium manifold is consequently attracted
+toward the manifold, but not necessarily toward a particular
+equilibrium point on it. Thus,𝑃 1 represents a transversely
+attracting equilibrium manifold, with neutral dynamics along
+its tangent directions.
+For the critical point𝑃2, the variable𝑧remains arbitrary, and
+hence the critical points form a one-dimensional equilibrium
+manifold,
+M2 = {𝑃2 (𝑧) } .(A26)
+Since every point on this manifold is an equilibrium, we have
+F (𝑃2 (𝑧) ) =0.(A27)
+Differentiating with respect to the free parameter𝑧gives
+J(𝑃 2) 𝜕𝑃2
+𝜕𝑧 =0.(A28)
+Thus, the tangent direction to the equilibrium manifold cor-
+responds to a zero eigenvalue of the Jacobian. When the
+Jacobian has exactly one eigenvalue with zero real part, the
+center subspace is one-dimensional, and therefore
+𝑇𝑃2 M2 =𝐸 𝑐
+𝑃2
+.(A29)
+Hence, the one-dimensional equilibrium manifoldM 2 itself
+serves as the local center manifold associated with𝑃 2. The
+stability of𝑃 2 is then determined by the eigenvalues transverse
+to this equilibrium manifold. Thus,𝑃 2 is also transversely
+attracting and neutrally stable along the equilibrium manifold.
+[1] S. Perlmutteret al.(Supernova Cosmology Project), Astrophys.
+J.517, 565 (1999), arXiv:astro-ph/9812133.
+[2] A. G. Riesset al.(Supernova Search Team), Astron. J.116,
+1009 (1998), arXiv:astro-ph/9805201.
+[3] D. N. Spergelet al.(WMAP), Astrophys. J. Suppl.148, 175
+(2003), arXiv:astro-ph/0302209.
+[4] B. D. Sherwinet al., Phys. Rev. Lett.107, 021302 (2011),
+arXiv:1105.0419 [astro-ph.CO].
+[5] E. L. Wright, Astrophys. J.664, 633 (2007), arXiv:astro-
+ph/0701584.
+
+[PDF page 16]
+16
+[6] J. Kwanet al.(DES), Mon. Not. Roy. Astron. Soc.464, 4045
+(2017), arXiv:1604.07871 [astro-ph.CO].
+[7] T. M. C. Abbottet al.(DES), Phys. Rev. D105, 043512 (2022),
+arXiv:2107.04646 [astro-ph.CO].
+[8] D. J. Eisensteinet al.(SDSS), Astrophys. J.633, 560 (2005),
+arXiv:astro-ph/0501171.
+[9] J. R. Primack, inMidrasha Mathematicae in Jerusalem:
+Winter School in Dynamical Systems(1997) arXiv:astro-
+ph/9707285.
+[10] A. Del Popolo, Astron. Rep.51, 169 (2007), arXiv:0801.1091
+[astro-ph].
+[11] J. Diao, S. Wei, Z. Wei, and C. Liu, J. Phys. Conf. Ser.2441,
+012025 (2023).
+[12] M. Mina, D. F. Mota, and H. A. Winther, Astron. Astrophys.
+662, A29 (2022), arXiv:2007.04119 [astro-ph.CO].
+[13] G. R. Blumenthal, S. M. Faber, J. R. Primack, and M. J. Rees,
+Nature311, 517 (1984).
+[14] C. Baccigalupi and V. Acquaviva, PoSCMB2006, 008 (2006),
+arXiv:astro-ph/0606069.
+[15] P. A. R. Adeet al.(Planck), Astron. Astrophys.594, A13
+(2016), arXiv:1502.01589 [astro-ph.CO].
+[16] N. Aghanimet al.(Planck), Astron. Astrophys.641, A6
+(2020), [Erratum: Astron.Astrophys. 652, C4 (2021)],
+arXiv:1807.06209 [astro-ph.CO].
+[17] D. J. Eisenstein, New Astron. Rev.49, 360 (2005).
+[18] W. J. Percival, S. Cole, D. J. Eisenstein, R. C. Nichol, J. A.
+Peacock, A. C. Pope, and A. S. Szalay, Mon. Not. Roy. Astron.
+Soc.381, 1053 (2007), arXiv:0705.3323 [astro-ph].
+[19] S. Alamet al.(BOSS), Mon. Not. Roy. Astron. Soc.470, 2617
+(2017), arXiv:1607.03155 [astro-ph.CO].
+[20] H. Li, J. Liu, J.-Q. Xia, L. Sun, Z. H. Fan, C. Tao, A. Tilquin,
+and X. Zhang, Phys. Lett. B675, 164 (2009), arXiv:0812.1672
+[astro-ph].
+[21] E. Krauseet al.(DES), (2017), arXiv:1706.09359 [astro-
+ph.CO].
+[22] ˇZ. Ivezi ´cet al.(LSST), Astrophys. J.873, 111 (2019),
+arXiv:0805.2366 [astro-ph].
+[23] E. J. Copeland, M. Sami, and S. Tsujikawa, Int. J. Mod. Phys.
+D15, 1753 (2006), arXiv:hep-th/0603057.
+[24] S. Weinberg, Rev. Mod. Phys.61, 1 (1989).
+[25] S. E. Rugh and H. Zinkernagel, Stud. Hist. Phil. Sci. B33, 663
+(2002), arXiv:hep-th/0012253.
+[26] T. Padmanabhan, Phys. Rept.380, 235 (2003), arXiv:hep-
+th/0212290.
+[27] S. M. Carroll, W. H. Press, and E. L. Turner, Ann. Rev. Astron.
+Astrophys.30, 499 (1992).
+[28] G. R. Bengochea, G. Le ´on, E. Okon, and D. Sudarsky, Eur.
+Phys. J. C80, 18 (2020), arXiv:1906.05406 [gr-qc].
+[29] K. Kohri and H. Matsui, JCAP06, 006, arXiv:1612.08818
+[hep-th].
+[30] M. L ´opez-Corredoira, Found. Phys.47, 711 (2017),
+arXiv:1701.08720 [astro-ph.CO].
+[31] P. J. E. Peebles and B. Ratra, Rev. Mod. Phys.75, 559 (2003),
+arXiv:astro-ph/0207347.
+[32] S. Hussain, A. Chatterjee, and K. Bhattacharya, Phys. Rev. D
+108, 103502 (2023), arXiv:2305.19062 [gr-qc].
+[33] N. Roy, S. Goswami, and S. Das, Phys. Dark Univ.36, 101037
+(2022), arXiv:2201.09306 [astro-ph.CO].
+[34] C. Armendariz-Picon, V. F. Mukhanov, and P. J. Steinhardt,
+Phys. Rev. Lett.85, 4438 (2000), arXiv:astro-ph/0004134.
+[35] C. Armendariz-Picon, V. F. Mukhanov, and P. J. Steinhardt,
+Phys. Rev. D63, 103510 (2001), arXiv:astro-ph/0006373.
+[36] T. Chiba, T. Okabe, and M. Yamaguchi, Phys. Rev. D62,
+023511 (2000), arXiv:astro-ph/9912463.
+[37] C. Armendariz-Picon and E. A. Lim, JCAP08, 007,
+arXiv:astro-ph/0505207.
+[38] N. Arkani-Hamed, H.-C. Cheng, M. A. Luty, and S. Muko-
+hyama, JHEP05, 074, arXiv:hep-th/0312099.
+[39] R. J. Scherrer, Phys. Rev. Lett.93, 011301 (2004), arXiv:astro-
+ph/0402316.
+[40] S. Hussain, S. Nelleri, and K. Bhattacharya, JCAP03, 025,
+arXiv:2406.07179 [astro-ph.CO].
+[41] J. S. Bagla, H. K. Jassal, and T. Padmanabhan, Phys. Rev. D
+67, 063504 (2003), arXiv:astro-ph/0212198.
+[42] S. Khoeini-Moghaddam, F. Momeni, and F. Yousefabadi, New
+Astron.100, 101986 (2023), arXiv:1807.05871 [gr-qc].
+[43] S. Hussain, S. Chakraborty, N. Roy, and K. Bhattacharya, Phys.
+Rev. D107, 063515 (2023), arXiv:2208.10352 [gr-qc].
+[44] O. Bertolami, P. Carrilho, and J. Paramos, Phys. Rev. D86,
+103522 (2012), arXiv:1206.2589 [gr-qc].
+[45] J.-H. He, B. Wang, and E. Abdalla, Phys. Rev. D84, 123526
+(2011), arXiv:1109.1730 [gr-qc].
+[46] A. Chatterjee, S. Hussain, and K. Bhattacharya, Phys. Rev. D
+104, 103505 (2021), arXiv:2105.00361 [gr-qc].
+[47] C. van de Bruck and J. Morrice, JCAP04, 036,
+arXiv:1501.03073 [gr-qc].
+[48] R. Kase and S. Tsujikawa, JCAP11, 032, arXiv:2005.13809
+[gr-qc].
+[49] E. M. Teixeira, A. Nunes, and N. J. Nunes, Phys. Rev. D101,
+083506 (2020), arXiv:1912.13348 [gr-qc].
+[50] K. Bhattacharya, A. Chatterjee, and S. Hussain, Eur. Phys. J.
+C83, 488 (2023), arXiv:2206.12398 [gr-qc].
+[51] S. Hussain, A. Chatterjee, and K. Bhattacharya, Universe9, 65
+(2023), arXiv:2203.10607 [gr-qc].
+[52] C. van de Bruck, J. Mifsud, J. P. Mimoso, and N. J. Nunes,
+JCAP11, 031, arXiv:1605.03834 [gr-qc].
+[53] C. G. Boehmer, N. Tamanini, and M. Wright, Phys. Rev. D91,
+123002 (2015), arXiv:1501.06540 [gr-qc].
+[54] C. G. Boehmer, N. Tamanini, and M. Wright, Phys. Rev. D91,
+123003 (2015), arXiv:1502.04030 [gr-qc].
+[55] L. Amendola, Phys. Rev. D62, 043511 (2000), arXiv:astro-
+ph/9908023.
+[56] C. G. Boehmer, G. Caldera-Cabral, R. Lazkoz, and
+R. Maartens, Phys. Rev. D78, 023505 (2008), arXiv:0801.1565
+[gr-qc].
+[57] Y. L. Bolotin, A. Kostenko, O. A. Lemets, and D. A. Yerokhin,
+Int. J. Mod. Phys. D24, 1530007 (2014), arXiv:1310.0085
+[astro-ph.CO].
+[58] B. Wang, E. Abdalla, F. Atrio-Barandela, and D. Pavon,
+Rept. Prog. Phys.79, 096901 (2016), arXiv:1603.08299 [astro-
+ph.CO].
+[59] G. Montani, N. Carlevaro, L. A. Escamilla, and E. Di Valentino,
+Phys. Dark Univ.48, 101848 (2025), arXiv:2404.15977 [gr-
+qc].
+[60] S. Pan and W. Yang 10.1007/978-981-99-0177-7 29 (2023),
+arXiv:2310.07260 [astro-ph.CO].
+[61] S. Hussain, Q. Wu, and T. Zhu, JCAP04, 067,
+arXiv:2509.09202 [astro-ph.CO].
+[62] T. P. Sotiriou and V. Faraoni, Rev. Mod. Phys.82, 451 (2010),
+arXiv:0805.1726 [gr-qc].
+[63] A. De Felice and S. Tsujikawa, Living Rev. Rel.13, 3 (2010),
+arXiv:1002.4928 [gr-qc].
+[64] J.-Q. Guo and A. V. Frolov, Phys. Rev. D88, 124036 (2013),
+arXiv:1305.7290 [astro-ph.CO].
+[65] A. Chatterjee and Y. Gong, Annals Phys.478, 170036 (2025),
+arXiv:2412.20209 [gr-qc].
+[66] W. Hu and I. Sawicki, Phys. Rev. D76, 064004 (2007),
+arXiv:0705.1158 [astro-ph].
+
+[PDF page 17]
+17
+[67] Y. Myrzakulov, S. Hussain, and M. Shahalam, Eur. Phys. J. C
+86, 1055 (2026), arXiv:2506.11755 [gr-qc].
+[68] A. Wang, Mod. Phys. Lett. A26, 387 (2011), arXiv:1003.5152
+[hep-th].
+[69] G. W. Horndeski, Int. J. Theor. Phys.10, 363 (1974).
+[70] C. Deffayet, X. Gao, D. A. Steer, and G. Zahariade, Phys. Rev.
+D84, 064039 (2011), arXiv:1103.3260 [hep-th].
+[71] T. Kobayashi, M. Yamaguchi, and J. Yokoyama, Prog. Theor.
+Phys.126, 511 (2011), arXiv:1105.5723 [hep-th].
+[72] T. Kobayashi, Rept. Prog. Phys.82, 086901 (2019),
+arXiv:1901.07183 [gr-qc].
+[73] E. Bellini and I. Sawicki, JCAP07, 050, arXiv:1404.3713
+[astro-ph.CO].
+[74] K. Takahashi, M. Minamitsuji, and H. Motohashi, PTEP2023,
+013E01 (2023), arXiv:2209.02176 [gr-qc].
+[75] J. Fier, H. Han, B. Li, K. Lin, S. Mukohyama, and A. Wang,
+(2025), arXiv:2503.01975 [gr-qc].
+[76] A. Einstein, Riemann-geometrie mit aufrechterhaltung
+des begriffes des fernparallelismus, inAlbert Einstein:
+Akademie-Vortr¨age(John Wiley, Ltd, 2005) pp. 316–321,
+https://onlinelibrary.wiley.com/doi/pdf/10.1002/3527608958.ch36.
+[77] Y.-F. Cai, S. Capozziello, M. De Laurentis, and E. N. Saridakis,
+Rept. Prog. Phys.79, 106901 (2016), arXiv:1511.07586 [gr-
+qc].
+[78] J. M. Nester and H.-J. Yo, Chin. J. Phys.37, 113 (1999),
+arXiv:gr-qc/9809049.
+[79] L. Heisenberg, Phys. Rept.1066, 1 (2024), arXiv:2309.15958
+[gr-qc].
+[80] A. G. Adameet al.(DESI), JCAP02, 021, arXiv:2404.03002
+[astro-ph.CO].
+[81] M. Abdul Karimet al.(DESI), Phys. Rev. D112, 083515
+(2025), arXiv:2503.14738 [astro-ph.CO].
+[82] B. O. S ´anchezet al.(DES), Astrophys. J.975, 5 (2024),
+arXiv:2406.05046 [astro-ph.CO].
+[83] B. Popovicet al.(DES), Mon. Not. Roy. Astron. Soc.548,
+stag632 (2026), arXiv:2511.07517 [astro-ph.CO].
+[84] M. Chevallier and D. Polarski, Int. J. Mod. Phys. D10, 213
+(2001), arXiv:gr-qc/0009008.
+[85] E. V. Linder, Phys. Rev. Lett.90, 091301 (2003), arXiv:astro-
+ph/0208512.
+[86] S. Nojiri, S. D. Odintsov, and V. K. Oikonomou, Fortsch. Phys.
+74, e70137 (2026), arXiv:2601.21356 [gr-qc].
+[87] B. Feng, X.-L. Wang, and X.-M. Zhang, Phys. Lett. B607, 35
+(2005), arXiv:astro-ph/0404224.
+[88] Y. Yang, X. Ren, Q. Wang, Z. Lu, D. Zhang, Y.-F. Cai, and
+E. N. Saridakis, Sci. Bull.69, 2698 (2024), arXiv:2404.19437
+[astro-ph.CO].
+[89] Y. Cai, X. Ren, T. Qiu, M. Li, and X. Zhang, Natl. Sci. Rev.
+13, nwag115 (2026), arXiv:2505.24732 [astro-ph.CO].
+[90] Y.-F. Cai, E. N. Saridakis, M. R. Setare, and J.-Q. Xia, Phys.
+Rept.493, 1 (2010), arXiv:0909.2776 [hep-th].
+[91] W. J. Wolf, C. Garc ´ıa-Garc´ıa, T. Anton, and P. G. Ferreira,
+Phys. Rev. Lett.135, 081001 (2025), arXiv:2504.07679 [astro-
+ph.CO].
+[92] G. Ye, M. Martinelli, B. Hu, and A. Silvestri, Phys. Rev. Lett.
+134, 181002 (2025), arXiv:2407.15832 [astro-ph.CO].
+[93] L. A. Escamilla and J. A. Vazquez, Eur. Phys. J. C83, 251
+(2023), arXiv:2111.10457 [astro-ph.CO].
+[94] G. Guet al.(DESI), Nature Astron.9, 1879 (2025), [Erra-
+tum: Nature Astron. 9, 1898–1898 (2025)], arXiv:2504.06118
+[astro-ph.CO].
+[95] A. N. Ormondroyd, W. J. Handley, M. P. Hobson, and A. N.
+Lasenby, Mon. Not. Roy. Astron. Soc.541, 3388 (2025),
+arXiv:2503.08658 [astro-ph.CO].
+[96] A. N. Ormondroyd, W. J. Handley, M. P. Hobson, and A. N.
+Lasenby, (2025), arXiv:2503.17342 [astro-ph.CO].
+[97] S. Hussain, S. Arora, A. Wang, and B. Rose, Mon. Not. Roy.
+Astron. Soc.545, staf1924 (2025), arXiv:2505.09913 [astro-
+ph.CO].
+[98] M. Rezaei, Astrophys. J.967, 2 (2024), arXiv:2403.18968
+[astro-ph.CO].
+[99] D. A. Kessler, L. A. Escamilla, S. Pan, and E. Di Valentino,
+(2025), arXiv:2504.00776 [astro-ph.CO].
+[100] L. A. Escamilla, S. Pan, E. Di Valentino, A. Paliathanasis,
+J. A. V´azquez, and W. Yang, Phys. Rev. D111, 023531 (2025),
+arXiv:2404.00181 [astro-ph.CO].
+[101] S. Hussain, S. Arora, Q. Wu, and T. Zhu, (2026),
+arXiv:2606.17550 [astro-ph.CO].
+[102] S. Hussain, M. Ahmad, M. Zhang, A. Ibitoye, and L. Cui,
+(2026), arXiv:2609.10138 [astro-ph.CO].
+[103] D. J. Gross and J. H. Sloan, Nucl. Phys. B291, 41 (1987).
+[104] M. C. Bento and O. Bertolami, Phys. Lett. B368, 198 (1996),
+arXiv:gr-qc/9503057.
+[105] S. Ferrara, R. R. Khuri, and R. Minasian, Phys. Lett. B375, 81
+(1996), arXiv:hep-th/9602102.
+[106] I. Antoniadis, S. Ferrara, R. Minasian, and K. S. Narain, Nucl.
+Phys. B507, 571 (1997), arXiv:hep-th/9707013.
+[107] S. Nojiri, S. D. Odintsov, and M. Sasaki, Phys. Rev. D71,
+123509 (2005), arXiv:hep-th/0504052.
+[108] S. Tsujikawa and M. Sami, JCAP01, 006, arXiv:hep-
+th/0608178.
+[109] A. De Felice, M. Hindmarsh, and M. Trodden, JCAP08, 005,
+arXiv:astro-ph/0604154.
+[110] M. Minamitsuji, S. Mukohyama, and S. Tsujikawa, Phys. Rev.
+D109, 104057 (2024), arXiv:2403.10048 [gr-qc].
+[111] S. Tsujikawa, Phys. Lett. B838, 137751 (2023),
+arXiv:2212.10022 [gr-qc].
+[112] A. De Felice, D. F. Mota, and S. Tsujikawa, Phys. Rev. D81,
+023532 (2010), arXiv:0911.1811 [gr-qc].
+[113] E. V. Linder, Astropart. Phys.25, 167 (2006), arXiv:astro-
+ph/0511415.
+[114] C. Rubano, P. Scudellaro, E. Piedipalumbo, and S. Capozziello,
+Phys. Rev. D68, 123501 (2003), arXiv:astro-ph/0311535.
+[115] W. Zhao, Chin. Phys.16, 2830 (2007), arXiv:astro-
+ph/0604459.
+[116] B. Feng, M. Li, Y.-S. Piao, and X. Zhang, Phys. Lett. B634,
+101 (2006), arXiv:astro-ph/0407432.
+[117] S. Das and T. Souradeep, JCAP02, 002, arXiv:1312.0025
+[astro-ph.CO].
+[118] F. Pace, C. Fedeli, L. Moscardini, and M. Bartelmann, Mon.
+Not. Roy. Astron. Soc.422, 1186 (2012), arXiv:1111.1556
+[astro-ph.CO].
+[119] M. A. Amin, P. Zukin, and E. Bertschinger, Phys. Rev. D85,
+103510 (2012), arXiv:1108.1793 [astro-ph.CO].
+[120] M. Bouhmadi-L ´opez and C. G. Boiza, Phys. Rev. D113,
+063567 (2026), arXiv:2601.09803 [astro-ph.CO].
+[121] J.-Q. Jiang, M. A. Amin, and A. Shafieloo, (2026),
+arXiv:2606.24221 [astro-ph.CO].
+[122] S. Nojiri, S. D. Odintsov, and V. K. Oikonomou, Phys. Rev. D
+112, 104035 (2025), arXiv:2506.21010 [gr-qc].
+[123] S. Nojiri, S. D. Odintsov, and V. K. Oikonomou, Eur. Phys. J.
+C86, 353 (2026), arXiv:2512.06279 [gr-qc].
+[124] S. Hussain, S. Arora, Y. Rana, B. Rose, and A. Wang, JCAP
+04, 070, arXiv:2507.05207 [gr-qc].
+[125] S. Hussain, S. Arora, Y. Rana, B. Rose, and A. Wang, JCAP
+11, 042, arXiv:2408.05484 [gr-qc].
+[126] S. Arora, S. Hussain, B. Rose, and A. Wang, Eur. Phys. J. C
+86, 420 (2026), arXiv:2508.08638 [astro-ph.CO].
+
+[PDF page 18]
+18
+[127] D. Wang and D. Mota, Phys. Dark Univ.32, 100813 (2021),
+arXiv:2103.12358 [astro-ph.CO].
+[128] L. J. Hall, Y. Nomura, and S. J. Oliver, Phys. Rev. Lett.95,
+141302 (2005), arXiv:astro-ph/0503706.
+[129] J. Wainwright and G. F. R. Ellis,Dynamical systems in cos-
+mology(1997).
+[130] S. Bahamonde, C. G. B ¨ohmer, S. Carloni, E. J. Copeland,
+W. Fang, and N. Tamanini, Phys. Rept.775-777, 1 (2018),
+arXiv:1712.03107 [gr-qc].
+[131] C. G. B ¨ohmer, N. Chan, and R. Lazkoz, Physics Letters B714,
+11–17 (2012).
+[132] B. A. Bassett, S. Tsujikawa, and D. Wands, Rev. Mod. Phys.
+78, 537 (2006), arXiv:astro-ph/0507632.
+[133] B. P. Abbottet al.(LIGO Scientific, Virgo, Fermi-GBM, INTE-
+GRAL), Astrophys. J. Lett.848, L13 (2017), arXiv:1710.05834
+[astro-ph.HE].
+[134] S. D. Odintsov and V. K. Oikonomou, Phys. Lett. B797,
+134874 (2019), arXiv:1908.07555 [gr-qc].
+[135] J. M. Ezquiaga and M. Zumalac ´arregui, Phys. Rev. Lett.119,
+251304 (2017), arXiv:1710.05901 [astro-ph.CO].
+[136] J. J. Terente D ´ıaz, K. Dimopoulos, M. Kar ˇciauskas, and
+A. Racioppi, JCAP10, 031, arXiv:2307.06163 [astro-ph.CO].
+[137] J. Fier, H. H. Han, B. Li, K. Lin, S. Mukohyama, and A. Wang,
+(2025), arXiv:2503.01975 [gr-qc].

@@ -1,0 +1,1625 @@
+
+[PDF page 1]
+Uniqueness of pressureless flow
+Ryan Hynd∗ and Hwa Kil Kim †
+October 9, 2026
+Abstract
+We consider the pressureless Euler equations in one spatial dimension. These equa-
+tions model the dynamics of particles on a line that interact only through perfectly
+inelastic collisions. The flow was first shown to be unique for given initial conditions
+by Huang and Wang, assuming the entropy and the strong initial continuity of energy
+conditions hold. In this paper, we prove an analogous uniqueness theorem using a
+Lagrangian interpretation. The key ingredients are showing that each solution sat-
+isfying the entropy condition and an initial kinetic energy bound has this particular
+type of Lagrangian interpretation and a monotonicity inequality involving conditional
+expectation.
+1 Introduction
+The pressureless Euler equations in one spatial dimension are
+(
+∂tρ+∂ x(ρv) = 0
+∂t(ρv) +∂ x(ρv2) = 0. (1.1)
+These equations hold inR×(0,∞) and the unknowns are the mass distributionρand the
+velocityv. This system governs the dynamics of collections of particles on the real line
+which do not interact pairwise. These particles also may collide, and they undergo perfectly
+inelastic collisions when they do.
+An analogous system of equations was considered in three dimensions by Zel’dovich in
+his work on the expansion of matter without pressure [24]. This was important in his
+theory for early galaxy formation. Zel’dovich was able to establish short time existence of
+solutions for given initial conditions essentially by the method of characteristics [9]; see (1.4)
+below for a solution obtained by this method. When characteristics cross this corresponds
+∗Department of Mathematics, University of Pennsylvania. Partially supported by NSF grant DMS-
+2350454.
+†Department of Mathematics Education, Hannam University. Partially supported by NRF grant RS·
+2026·25598735.
+1
+arXiv:2610.11927v1  [math.AP]  8 Oct 2026
+
+[PDF page 2]
+to particle collisions. Unfortunately, not much more is known in the higher dimensional
+setting; specifically, it is not known how to continue solutions past collisions for general
+initial conditions.
+The pressureless Euler equations also arise in the study of optimal mass transportation.
+See Chapter 5 of [22] and Chapter 13 of [23]. In particular, this system of equations is
+satisfied by geodesics in the space of Borel probability measures onRwhen endowed with
+the quadratic Wasserstein distance. However, this solution has its initial and terminal mass
+distribution prescribed rather than having its initial mass distribution and initial velocity
+prescribed. It corresponds to the case of a solution on a given time horizon in which particles
+never collide.
+Initial value problem. A basic problem is to verify that there is a solution for given
+initial conditions
+ρ|t=0 =ρ 0 andv| t=0 =v 0.(1.2)
+One typically assumesρ 0 is a finite Borel measure onRso that the particles initially have
+finite total mass. Without loss of generality, we may assume that the total mass is equal to
+one and considerρ 0 as a Borel probability measure onR. It is also natural to suppose that
+the kinetic energy is initially finite. That is,v 0 :R→Risρ 0 measurable with
+Z
+R
+v2
+0dρ0 <∞.
+Let us recall the definition of a weak solution pairρandvof the pressureless Euler
+equations (1.1) which satisfies the initial conditions (1.2). We will writeP(R) for the space
+of Borel probability measures onRand say (µ k)k∈N inP(R) convergesnarrowlytoµ∈ P(R)
+if
+lim
+k→∞
+Z
+R
+f dµk =
+Z
+R
+f dµ
+for eachf∈C b(R). See section 5.1 of [1] for more on this notion of convergence.
+Definition 1.1.Supposeρ 0 ∈ P(R) andv 0 ∈L 2(ρ0). A narrowly continuousρ: [0,∞)→
+P(R);t7→ρ t and Borelv:R×(0,∞)→Ris aweak solution pairof the pressureless Euler
+equations (1.1) which satisfies the initial conditions (1.2) provided
+Z T
+0
+Z
+R
+v2dρtdt <∞
+for eachT >0, Z ∞
+0
+Z
+R
+(∂tϕ+v∂ xϕ)dρtdt+
+Z
+R
+ϕ(·,0)dρ 0 = 0,
+and Z ∞
+0
+Z
+R
+(v∂tϕ+v 2∂xϕ)dρtdt+
+Z
+R
+ϕ(·,0)v 0dρ0 = 0 (1.3)
+for eachϕ∈C 1
+c (R×[0,∞)).
+2
+
+[PDF page 3]
+There are two classes of initial conditions in which it is possible to easily design a weak
+solution pair. The first is for anyρ 0 ∈ P(R) andv 0 :R→Rcontinuous and nondecreasing
+withv 0 ∈L 2(ρ0). In this case, a particle starting out at a positionxin the support ofρ 0
+is at positionx+tv 0(x) at timet. In particular, the distance between any two particles is
+nondecreasing and particles never collide. Moreover, it is easily verified that
+ρt = (idR +tv 0)#ρ0 andv(·, t) =v 0 ◦(id R +tv 0)−1 (1.4)
+specifies a weak solution pair. HereT #µ(A) =µ(T −1(A)) for BorelT:R→R, BorelA⊂R,
+andµ∈ P(R).
+x
+t
+x1 x2 x3 x4 x5 x6
+Figure 1: Particle trajectories for a nondecreasing initial velocityv0 with point masses located
+at the positionsx 1, . . . , x6. The particle initially atx i follows the straight linex=x i+t v0(xi),
+and the trajectories do not intersect. This corresponds to a weak solution of the pressureless
+Euler equations of the form (1.4).
+Another example is when the initial mass distribution is a convex combination of point
+massesρ 0 =PN
+i=1 miδxi.In this setting, particles move in straight lines unless they collide and
+undergo a perfectly inelastic collision. In such an event, the masses join and the instantaneous
+velocity of the larger mass is the mass average of the velocities of the individual particles
+immediately prior to the collision. Ifγ i : [0,∞)→Rdenotes the piecewise linear trajectory
+of the particle initially located atx i, then it turns out that
+ρt =
+NX
+i=1
+miδγi(t) andv(x, t) =
+(
+˙γi(t+), x=γ i(t)
+0,otherwise (1.5)
+is a weak solution pair [12].
+For general initial conditionsρ 0 andv 0, a weak solution pair was verified initially by E,
+Rykov, and Sinai [8] and by Brenier and Grenier [3]. There have also been many subsequent
+works on existence including [5,6,12,13,17,18,19].
+3
+
+[PDF page 4]
+x
+t
+x1 x2 x3 x4 x5 x6
+Figure 2: Evolution of finitely many particles located atx 1, . . . , x6. In this schematic,v 0 isn’t
+nondecreasing. The trajectories of the particles are piecewise linear. When trajectories meet,
+the corresponding particles undergo a perfectly inelastic collision and continue together. This
+is an example of a weak solution of the pressureless Euler equations described in (1.5).
+Two conditions. Weak solution pairs of the initial value problem above can be con-
+structed to have two additional properties. The first is theeverywhere entropy condition
+(v(x, t)−v(y, t))(x−y)≤ 1
+t (x−y) 2 for allx, y∈Rand a.e.t >0.(1.6)
+The second condition isstrong initial continuity of the energy. That is,
+lim
+t→0+
+Z
+R
+g(x)v(x, t)2dρt(x) =
+Z
+R
+g(x)v0(x)2dρ0(x) (1.7)
+forg∈C c(R). It turns out that a weak solution pair with these two properties is unique. This
+was first proved by Huang and Wang [11]. See also [2, 4, 10, 15, 16, 19, 20, 21] for subsequent
+discussions of uniqueness of weak solution pairs for (1.1) and related systems.
+In what follows, we will revisit this uniqueness question. In particular, we will consider
+this question for solutions which satisfy theentropy condition
+(v(x, t)−v(y, t))(x−y)≤ 1
+t (x−y) 2 forρ t a.e.x, y∈Rand a.e.t >0 (1.8)
+and theinitial kinetic energy bound
+Z
+R
+v(x, t)2dρt(x)≤
+Z
+R
+v0(x)2dρ0(x) for almost everyt≥0. (1.9)
+4
+
+[PDF page 5]
+Note that (1.6) is a stronger condition than (1.8). It also turns out that (1.9) implies that
+(1.7) holds with the limit understood as an essential limit forg∈C b(R); see Lemma 2.2
+below. Regardless, we will work directly with (1.8) and (1.9) since weak solution pairs which
+have these properties have been designed [12,13,17].
+Main result. In order to verify our main theorem below, we will make one additional
+simplifying assumption which is Z
+R
+x2dρ0(x)<∞.(1.10)
+By two weak solution pairsρ, vand ρ, vagreeing, we mean thatρ t = ρt for allt≥0 and
+v(x, t) = v(x, t) forρ t almost everyx∈Rand almost everyt≥0.
+Uniqueness Theorem.Supposeρ 0 ∈ P(R)satisfies(1.10)andv 0 ∈L 2(ρ0). There can
+be at most one weak solution pairρandvof the pressureless Euler equations(1.1)which
+has initial conditionsρ 0 andv 0, satisfies the entropy condition(1.8), and fulfills the initial
+kinetic energy bound(1.9).
+Let us consider a Lipschitz continuousX: [0,∞)→L 2(ρ0) such that
+( ˙X(t) =E ρ0[v0|X(t)] a.e.t≥0
+X(0) = id R. (1.11)
+HereE ρ0[v0|X(t)] is the conditional expectation ofv 0 givenX(t) which is also theL 2(ρ0)
+projection ofv 0 onto the subspace ofX(t) measurable functions onR. The differential
+equation in (1.11) is related to the pressureless Euler equations as it encodes the averaging
+which happens during perfectly inelastic collisions [12]. Dermoune introduced this initial
+value problem in [6] and explained that if we can solve it forX, we can choose a Borel
+v:R×(0,∞)→Rsuch that
+ρt =X(t) #ρ0 andv(X(t), t) =E ρ0[v0|X(t)]
+is a weak solution pair of (1.1) with the initial conditionsρ 0 andv 0.
+Since
+˙X(t) =v(X(t), t) a.e.t≥0
+with thevchosen above, we say thatXis aLagrangian coordinatecorresponding to the
+pressureless Euler equations. In what follows, we will show thateveryweak solution of
+the pressureless Euler equations which satisfies the entropy condition and the initial kinetic
+energy bound gives rise to such a Lagrangian coordinate. Then we will establish, in a certain
+sense, that the initial value problem (1.11) has a unique solution. The key device in that
+proof is the monotonicity inequality
+Z
+R
+(Eρ[Z|X]−E ρ[Z|Y])(X−Y)dρ≥0,(1.12)
+5
+
+[PDF page 6]
+which holds forρ∈ P(R) and nondecreasingX, Y, Z∈L 2(ρ).
+Our contribution.Our aim is to give a direct approach to the uniqueness question
+studied by Huang and Wang in 2001 [11]. Huang and Wang’s result allows more general
+initial mass measuresρ 0. However, their proof required bounded initial velocitiesv 0. Here
+we assume thatρ 0 has a finite second moment but only supposev 0 ∈L 2(ρ0).
+Uniqueness of solutions to the pressureless Euler equations for given initial conditions
+remains of interest. Recently, Suder and Tudorascu [21] use the Huang and Wang uniqueness
+criteria to identify the sticky particle flows considered there with scalar conservation law
+solutions for bounded, right-continuous initial velocities. Likewise, Carrillo and Galtung [4]
+established equivalence between gradient flow solutions and entropy solutions of associated
+scalar conservation laws for pressureless Euler systems, including systems with interaction
+forces.
+As mentioned above, we derive a Lagrangian coordinate from every weak solution pair
+satisfying the entropy condition and initial kinetic energy bound and prove uniqueness us-
+ing (1.12). Our proof is independent of earlier uniqueness results. We anticipate that this
+method may also be useful for pressureless Euler systems with interaction potentials.
+This paper is organized as follows. In the next section, we recall a few key properties
+of weak solutions and prove the strong initial continuity of energy. We also recall some
+properties of conditional expectation and prove inequality (1.12). In Section 3, we show that
+corresponding to any weak solution pair of (1.1) is a Borel probability measureηon the space
+of continuous functions from [0,∞) intoRwith the topology of local uniform convergence.
+Then we show in Section 4 that thisηis determined by anXwhich solves (1.11). Finally,
+we will use this observation to prove the Uniqueness Theorem in Section 5.
+2 Preliminaries
+In this section, we will discuss a few basic properties of weak solutions and conditional
+expectation that will be used throughout this note.
+2.1 Strong initial continuity of energy
+First, we recall some equivalent interpretations of the conservation of momentum (1.3). As
+the following claim is a fairly routine exercise with test functions, we will omit the proof.
+Proposition 2.1.Supposeρandvis a weak solution pair of the pressureless Euler equations
+(1.1)which has initial conditionsρ 0 ∈ P(R)andv 0 ∈L 2(ρ0). The following are equivalent.
+(i) For almost everyτ≥0,
+Z
+R
+ϕ(x, τ)v(x, τ)dρ τ(x) =
+Z
+R
+ϕ(x,0)v 0(x)dρ0(x) +
+Z τ
+0
+Z
+R
+v(∂tϕ+v∂ xϕ)dρtdt
+for allϕ∈C 1
+b (R×[0,∞)).
+6
+
+[PDF page 7]
+(ii) Equation(1.3)holds for allϕ∈C 1
+c (R×[0,∞)).
+(iii) For almost everyτ≥0,
+Z
+R
+g(x)v(x, τ)dρ τ(x) =
+Z
+R
+g(x)v0(x)dρ0(x) +
+Z τ
+0
+Z
+R
+v(x, t)2g′(x)dρt(x)dt
+for eachg∈C 1
+b (R).
+Note that for a Lebesgue measurable functionf: (0,∞)→R, we’ll write
+ess lim
+t→0+
+f(t) =L
+provided that for everyε >0, there existsδ >0 such that|f(t)−L|< εfor almost everyt
+with 0< t < δ.It is equivalent to require that there is a null setN⊂[0,∞) such that
+lim
+t→0+
+t̸∈N
+f(t) =L.
+Lemma 2.2.Supposeρandvis a weak solution pair of the pressureless Euler equations
+(1.1)which has initial conditionsρ 0 ∈ P(R)andv 0 ∈L 2(ρ0)and additionally satisfies the
+initial kinetic energy bound(1.9). The limit
+ess lim
+t→0+
+Z
+R
+g(x)v(x, t)2dρt(x) =
+Z
+R
+g(x)v0(x)2dρ0(x) (2.1)
+holds for eachg∈C b(R).
+Proof.ChooseN c ⊂[0,∞) as a subset of full measure such that for allt̸∈N,
+Z
+R
+g(x)v(x, t)dρt(x) =
+Z
+R
+g(x)v0(x)dρ0(x) +
+Z t
+0
+Z
+R
+g′(x)v(x, s)2dρs(x)ds
+for eachg∈C 1
+b (R). We may also assume
+Z
+R
+v(x, t)2dρt(x)≤
+Z
+R
+v0(x)2dρ0(x) (2.2)
+for allt̸∈Nsince this holds on a set of full Lebesgue measure.
+It follows that
+lim
+t→0+
+t̸∈N
+Z
+R
+g(x)v(x, t)dρt(x) =
+Z
+R
+g(x)v0(x)dρ0(x).
+for eachg∈C 1
+b (R). According to Theorem 5.4.4 of [1],
+lim inf
+t→0+
+t̸∈N
+Z
+R
+v(x, t)2dρt(x)≥
+Z
+R
+v0(x)2dρ0(x).
+7
+
+[PDF page 8]
+And by (2.2),
+lim sup
+t→0+
+t̸∈N
+Z
+R
+v(x, t)2dρt(x)≤
+Z
+R
+v0(x)2dρ0(x).
+Therefore,
+lim
+t→0+
+t̸∈N
+Z
+R
+v(x, t)2dρt(x) =
+Z
+R
+v0(x)2dρ0(x).(2.3)
+Now lett k ∈N c witht k →0. Theorem 5.4.4 of [1] also gives that
+(idR ×v(·, t k))#ρtk →(id R ×v 0)#ρ0
+ask→ ∞narrowly inP(R×R). It is now standard to employ (2.3) to show that
+(x, y)7→g(x)y 2
+is uniformly integrable with respect to the family{(id R ×v(·, t k))#ρtk}k∈N ⊂ P(R×R)
+provided thatg∈C b(R).
+Consequently,
+lim
+k→∞
+Z
+R
+g(x)v(x, tk)2dρtk(x) = lim
+k→∞
+Z
+R2
+g(x)y2d[(id R ×v(·, t k))#ρtk] (x, y)
+=
+Z
+R2
+g(x)y2d[(id R ×v 0)#ρ0] (x, y)
+=
+Z
+R
+g(x)v0(x)2dρ0(x).
+As the sequencet k was arbitrary, the limit (2.1) holds for eachg∈C b(R).
+2.2 Conditional expectation
+Supposeρ∈ P(R),Y∈L 2(ρ), andX:R→[−∞,∞] is a nondecreasing function.
+Recall that the conditional expectationE ρ[Y|X] is any functionf(X)∈L 2(ρ), where
+f: [−∞,∞]→Ris Borel and
+Z
+R
+f(X)h(X)dρ=
+Z
+R
+Y h(X)dρ
+for each Borelh: [−∞,∞]→Rwithh(X)∈L 2(ρ).
+It is a standard fact thatE ρ[Y|X] exists and is uniquely specifiedρalmost everywhere.
+Moreover, Z
+R
+(Eρ[Y|X]−Y) 2dρ≤
+Z
+R
+(h(X)−Y) 2dρ
+for each Borelh: [−∞,∞]→Rwithh(X)∈L 2(ρ). Therefore,E ρ[Y|X] is the projection
+ofYonto the subspace ofL 2(ρ) ofXmeasurable functions. We also note that the notion
+8
+
+[PDF page 9]
+of conditional expectation applies to general probability spaces as discussed in any standard
+reference on probability theory.
+It is routine to check that ifXis increasing, then
+Eρ[Y|X] =Y.
+IfXis not increasing, there are at most countably manyc∈[−∞,∞] whereX −1({c})
+has more than one point. The key thing to note here is that these fibers ofXare disjoint
+intervals; since these intervals are nontrivial, they each contain a rational number. As a
+result, the collection of such intervals must be countable.
+We will index these intervals withi∈I⊂Nand write
+Ci =X −1({ci})
+for a finite or infinite sequence of distinct values (ci)i∈I. Note in particular,C i is a nontrivial
+interval, possibly open, closed, half-open, or unbounded. We will also write
+O=R\
+[
+i∈I
+Ci
+and note thatXis increasing onO.
+The following assertion gives a characterization ofE ρ[Y|X]. In the proof, we will also
+consider the generalized inverse ofXwhich is defined by
+X −1(r) = inf
+
+y∈R:X(y)≥r
+
+,
+forr∈[−∞,∞]. Note thatX −1 is nondecreasing andX −1(X(y))≤yfor anyy∈R.
+Moreover, ify∈O, thenX −1(X(y)) =y.
+Lemma 2.3.For eachi∈I,
+Eρ[Y|X] = 1
+ρ(Ci)
+Z
+Ci
+Y dρ
+ρalmost everywhere onC i withρ(C i)>0and
+Eρ[Y|X] =Y
+ρalmost everywhere onO.
+Proof.DefineZ:R→Rvia
+Z=
+
+
+
+1
+ρ(Ci)
+Z
+Ci
+Y dρonC i withρ(C i)>0
+0 onC i withρ(C i) = 0
+YonO.
+9
+
+[PDF page 10]
+Since
+Z=Y◦X −1 ◦X
+onOand bothXandZare constant on allC i, it follows thatZisXmeasurable. That is,
+Z=h(X) for some Borelh: [−∞,∞]→R.
+It is straightforward to invoke Jensen’s inequality and show
+Z
+R
+Z2dρ≤
+Z
+R
+Y 2dρ.
+Furthermore, ifg: [−∞,∞]→Ris Borel withg(X)∈L 2(ρ), then
+Z
+R
+g(X)Zdρ=
+X
+i∈I +
+Z
+Ci
+g(X)Zdρ+
+Z
+O
+g(X)Zdρ
+=
+X
+i∈I +
+g(ci)
+Z
+Ci
+Zdρ+
+Z
+O
+g(X)Y dρ
+=
+X
+i∈I +
+g(ci)
+Z
+Ci
+Y dρ+
+Z
+O
+g(X)Y dρ
+=
+X
+i∈I +
+Z
+Ci
+g(X)Y dρ+
+Z
+O
+g(X)Y dρ
+=
+Z
+R
+g(X)Y dρ.
+HereI + are the indicesi∈Iwithρ(C i)>0. The assertion follows asE ρ[Y|X] is defined up
+to a set ofρmeasure 0.
+2.3 Monotonicity inequality
+Next we will verify inequality (1.12). When we say thatY∈L 2(ρ) is nondecreasing for a
+givenρ∈ P(R), we mean that there is a nondecreasing ˜Y:R→[−∞,∞] withY= ˜Y ρ
+almost everywhere. We will also say thatYis increasing if ˜Yis increasing.
+Lemma 2.4.Supposeρ∈ P(R)andX, Y, Z∈L 2(ρ)are nondecreasing. Then
+Z
+R
+(Eρ[Z|X]−E ρ[Z|Y])(X−Y)dρ≥0.
+Proof.By the defining property of conditional expectation,
+Z
+R
+ 
+Eρ[Z|X]−E ρ[Z|Y]
+
+(X−Y)dρ
+=
+Z
+R
+ 
+Z−E ρ[Z|X]
+
+Y dρ+
+Z
+R
+ 
+Z−E ρ[Z|Y]
+
+X dρ.
+10
+
+[PDF page 11]
+We will show that both integrals on the right are nonnegative.
+Without any loss of generality, we may assume thatX:R→[−∞,∞] is nondecreasing.
+Consequently, there is a countable family of disjoint intervals (C x
+i )i∈I x for whichX| Cx
+i is
+equal to a constantc x
+i for alli∈I x. AndX| Ox is increasing, where
+Ox =R\
+[
+i∈I x
+C x
+i .
+Moreover,
+Eρ[Z|X] =
+
+
+
+1
+ρ(C x
+i )
+Z
+Cx
+i
+ZdρonC x
+i withρ(C x
+i )>0
+ZinO x
+ρalmost everywhere by Lemma 2.3.
+Observe
+Z
+R
+ 
+Z−E ρ[Z|X]
+
+Y dρ=
+X
+i∈I x
+ρ(Cx
+i )>0
+Z
+Cx
+i
+ 
+Z− 1
+ρ(C x
+i )
+Z
+Cx
+i
+Z dρ
+!
+Y dρ.
+For eachi∈I x withρ(C x
+i )>0, we have
+Z
+Cx
+i
+ 
+Z− 1
+ρ(C x
+i )
+Z
+Cx
+i
+Z dρ
+!
+Y dρ
+=
+Z
+Cx
+i
+ZY dρ− 1
+ρ(C x
+i )
+ Z
+Cx
+i
+Z dρ
+! Z
+Cx
+i
+Y dρ
+!
+= 1
+2ρ(C x
+i )
+Z
+Cx
+i
+Z
+Cx
+i
+ 
+Z(a)−Z(w)
+ 
+Y(a)−Y(w)
+
+dρ(a)dρ(w)
+≥0,
+sinceYandZare nondecreasing. It follows that
+Z
+R
+ 
+Z−E ρ[Z|X]
+
+Y dρ≥0.
+InterchangingXandYgives
+Z
+R
+ 
+Z−E ρ[Z|Y]
+
+X dρ≥0.
+Combining these inequalities with the first identity proves the assertion.
+11
+
+[PDF page 12]
+3 Path space
+We will denote Γ as the space of continuous pathsγ: [0,∞)→Rendowed with the topology
+of local uniform convergence. It is well known that Γ is metrizable. Moreover, it is also a
+standard fact that Γ is complete and separable. We will adapt Theorem 8.2.1 of [1] and show
+that solutions of (1.1) can be characterized by a Borel probability measure on Γ.
+To this end, we will make use of the evaluation maps
+et : Γ→R;γ→γ(t)
+fort≥0. We recall eache t is continuous and therefore measurable. We will also write
+AC2
+loc([0,∞))
+for the pathsγ: [0,∞)→Rfor whichγ: [0, T]→Ris absolutely continuous with
+˙γ∈L 2([0, T]) for eachT >0.
+Lemma 3.1.Supposeρandvis a weak solution pair of the pressureless Euler equations
+(1.1)which has initial conditionsρ 0 ∈ P(R)andv 0 ∈L 2(ρ0)and additionally satisfies(1.8)
+and(1.9). There isη∈ P(Γ)with the following properties.
+(i)ηis concentrated onAC 2
+loc([0,∞)).
+(ii) Forηalmost everyγ∈Γ,˙γ(t) =v(γ(t), t)a.e.t≥0.
+(iii)ρ t =e t#ηfor eacht≥0.
+(iv) For everyγ, ζ∈supp(η)
+|γ(t)−ζ(t)|
+t ≤ |γ(s)−ζ(s)|
+s
+for0< s≤t.
+(v) For eachγ, ζ∈supp(η)withγ(0)< ζ(0),γ(t)≤ζ(t)fort≥0.
+(vi)
+lim
+t→0+
+Z
+Γ
+ γ(t)−γ(0)
+t −v 0(γ(0))
+2
+dη(γ) = 0.
+Proof.1. Parts (i), (ii), and (iii) follow from an adaptation of Theorem 8.2.1 of [1]. As a
+result, we will omit the details.
+2. It is routine to check that the entropy condition (1.8) implies (ρ t ⊗ρ t)(Et) = 1 for
+almost everyt >0, where
+Et =
+
+(x, y)∈R 2 : (v(x, t)−v(y, t))(x−y)≤ 1
+t (x−y) 2
+
+.
+12
+
+[PDF page 13]
+By part (iii),
+1 =
+Z ∞
+0
+Z
+R2
+χEt(x, y)e−td(ρt ⊗ρ t)(x, y)dt=
+Z ∞
+0
+Z
+Γ2
+χEt(γ(t), ζ(t))e −td(η⊗η)(γ, ζ)dt.
+It follows that (γ(t), ζ(t))∈E t forη⊗ηalmost every (γ, ζ)∈Γ 2 and almost everyt >0.
+And by parts (i) and (ii),
+d
+dt
+(γ(t)−ζ(t)) 2
+t2 = 2
+t2
+ 
+v(γ(t), t)−v(ζ(t), t)
+ 
+γ(t)−ζ(t)
+
+− (γ(t)−ζ(t)) 2
+t
+
+≤0
+forη⊗ηalmost every (γ, ζ)∈Γ 2 and almost everyt >0.
+Consequently,
+|γ(t)−ζ(t)|
+t ≤ |γ(s)−ζ(s)|
+s (3.1)
+forη⊗ηalmost every (γ, ζ)∈Γ 2 and each fixed 0< s≤t. Note that both sides of the above
+inequality are continuous in (γ, ζ). Therefore, the inequality holds for all (γ, ζ)∈supp(η⊗η).
+And as
+supp(η⊗η) = supp(η)×supp(η),
+the inequality actually holds for allγ, ζ∈supp(η). This proves (iv).
+Suppose now thatγ, ζ∈supp(η) andγ(0)< ζ(0). Ifγ(t)> ζ(t) for somet >0,
+continuity givess∈(0, t) withγ(s) =ζ(s). Inequality (3.1) then impliesγ(t) =ζ(t), which
+is a contradiction. Thusγ(t)≤ζ(t) for allt≥0, and we conclude (v).
+3. We are left to verify (vi). We first show that
+lim
+t→0+
+t̸∈N
+Z
+Γ
+ 
+v(γ(t), t)−v 0(γ(0))
+2
+dη(γ) = 0
+for a suitable Lebesgue null setN⊂[0,∞). ChooseNso that the identity in part (iii) of
+Proposition 2.1 and the initial kinetic energy bound hold for everyt̸∈N. By (iii),
+Z
+Γ
+v(γ(t), t)2dη(γ) =
+Z
+R
+v(x, t)2dρt(x)≤
+Z
+R
+v2
+0dρ0
+for these times.
+Fixh∈C 1
+c (R). Part (iii) of Proposition 2.1 implies
+lim
+t→0+
+t̸∈N
+Z
+Γ
+h(γ(t))v(γ(t), t)dη(γ) =
+Z
+R
+hv0dρ0.
+Dominated convergence also gives
+lim
+t→0+
+Z
+Γ
+|h(γ(t))−h(γ(0))| 2dη(γ) = 0.
+13
+
+[PDF page 14]
+The Cauchy–Schwarz inequality then implies
+
+Z
+Γ
+ 
+h(γ(t))−h(γ(0))
+
+v(γ(t), t)dη(γ)
+
+≤
+Z
+Γ
+|h(γ(t))−h(γ(0))| 2dη(γ)
+1/2Z
+R
+v2
+0dρ0
+1/2
+→0
+ast→0 + witht̸∈N. It follows that
+lim
+t→0+
+t̸∈N
+Z
+Γ
+h(γ(0))v(γ(t), t)dη(γ) =
+Z
+R
+hv0dρ0.
+4. The Cauchy–Schwarz inequality and the initial kinetic energy bound give
+
+Z
+Γ
+ 
+v0(γ(0))−h(γ(0))
+
+v(γ(t), t)dη(γ)
+
+≤
+Z
+Γ
+|v0(γ(0))−h(γ(0))| 2dη(γ)
+1/2Z
+Γ
+v(γ(t), t)2dη(γ)
+1/2
+≤ ∥v0 −h∥ L2(ρ0)∥v0∥L2(ρ0)
+fort̸∈N. In particular, this estimate is uniform int̸∈N. Also observe
+
+Z
+Γ
+v0(γ(0))v(γ(t), t)dη(γ)−
+Z
+R
+v2
+0dρ0
+
+≤
+
+Z
+Γ
+ 
+v0(γ(0))−h(γ(0))
+
+v(γ(t), t)dη(γ)
+
++
+
+Z
+Γ
+h(γ(0))v(γ(t), t)dη(γ)−
+Z
+R
+hv0dρ0
+ +
+
+Z
+R
+(h−v 0)v0dρ0
+
+≤2∥v 0 −h∥ L2(ρ0)∥v0∥L2(ρ0) +
+
+Z
+Γ
+h(γ(0))v(γ(t), t)dη(γ)−
+Z
+R
+hv0dρ0
+ .
+Here we applied the preceding estimate to the first term and the Cauchy–Schwarz inequality
+to the third.
+For each fixedh∈C 1
+c (R), the last absolute value tends to zero ast→0 + witht̸∈N.
+Consequently,
+lim sup
+t→0+
+t̸∈N
+
+Z
+Γ
+v0(γ(0))v(γ(t), t)dη(γ)−
+Z
+R
+v2
+0dρ0
+ ≤2∥v 0 −h∥ L2(ρ0)∥v0∥L2(ρ0).
+SinceC 1
+c (R) is dense inL 2(ρ0), the right hand side can be made arbitrarily small. We
+conclude that
+lim
+t→0+
+t̸∈N
+Z
+Γ
+v0(γ(0))v(γ(t), t)dη(γ) =
+Z
+R
+v2
+0dρ0.
+14
+
+[PDF page 15]
+It follows that
+Z
+Γ
+ 
+v(γ(t), t)−v 0(γ(0))
+2
+dη(γ)≤2
+Z
+R
+v2
+0dρ0 −2
+Z
+Γ
+v0(γ(0))v(γ(t), t)dη(γ)→0
+ast→0 + witht̸∈N.
+5. Finally, (i) and (ii), together with Jensen’s inequality and Tonelli’s theorem, give
+Z
+Γ
+ γ(t)−γ(0)
+t −v 0(γ(0))
+2
+dη(γ)≤ 1
+t
+Z t
+0
+Z
+Γ
+ 
+v(γ(s), s)−v 0(γ(0))
+2
+dη(γ)ds
+for everyt >0. The inner integral has essential limit zero ass→0 + and is bounded above
+by 4
+R
+R v2
+0dρ0 for almost everys >0. Therefore, we can apply dominated convergence and
+deduce (vi).
+Corollary 3.2.There is a sequence(t k)k∈N of positive numbers which decreases to0such
+that
+lim
+k→∞
+γ(tk)−γ(0)
+tk
+=v 0(γ(0)) (3.2)
+forηalmost everyγ∈Γ.
+Proof.This assertion follows from part (vi) of the above lemma asL 2(η) convergence implies
+almost everywhere convergence up to a subsequence.
+4 Lagrangian coordinate
+A basic assertion involving monotone functions is as follows.
+Lemma 4.1.SupposeA⊂Randf:A→Ris nondecreasing. There is a nondecreasing
+F:R→[−∞,∞]withF| A =f.
+Proof.Forx∈R, define
+F(x) = sup{f(a) :a∈A, a≤x},
+with the convention that sup∅=−∞. ThenF:R→[−∞,∞]. Also notice that ifx < y,
+then
+{a∈A:a≤x} ⊆ {a∈A:a≤y},
+soF(x)≤F(y). ThusFis nondecreasing.
+Now letx∈A. Sincex∈Aandx≤x, we haveF(x)≥f(x). On the other hand, if
+a∈Aanda≤x, then the monotonicity offgivesf(a)≤f(x). Therefore
+F(x) = sup{f(a) :a∈A, a≤x} ≤f(x).
+HenceF(x) =f(x). ThereforeF| A =f.
+15
+
+[PDF page 16]
+Supposeρ 0 ∈ P(R) satisfies Z
+R
+x2dρ0(x)<∞
+andv 0 ∈L 2(ρ0). For the remainder of this section, we will fix a weak solution pairρandv
+of (1.1) with initial conditionsρ 0 andv 0 and which satisfies (1.8) and (1.9). We will use the
+above lemma and Lemma 3.1 to show that there is a mappingXassociated withρandv.
+Proposition 4.2.There is a Lipschitz continuous
+X: [0,∞)→L 2(ρ0)
+withX(t)nondecreasing for eacht≥0,ρ t =X(t) #ρ0 fort≥0, and
+( ˙X(t) =v(X(t), t),a.e.t≥0
+X(0) =id R.
+Proof.According to Lemma 3.1, there is a BorelS⊂Γ for whichη(S) = 1 andγ∈
+AC2
+loc([0,∞)), ˙γ(t) =v(γ(t), t) for almost everyt≥0,γ(0)< ζ(0) impliesγ(t)≤ζ(t) for
+t≥0, and (3.2) holds for eachγ∈S. Fort≥0, we define the function
+X:e 0(S)×[0,∞)→R
+via
+X(γ(0), t) =γ(t) (4.1)
+forγ∈S. We claim that this function is well-defined.
+Supposeγ, ζ∈Swith
+γ(0) =ζ(0) =y.
+By our proof of Lemma 3.1 (iv),
+|γ(t)−ζ(t)|
+t ≤ |γ(s)−ζ(s)|
+s =
+
+γ(s)−y
+s − ζ(s)−y
+s
+
+for 0< s≤t. Choosings=t k and sendingk→ ∞givesγ(t) =ζ(t). It follows thatX(t) is
+well-defined.
+Furthermore,X(t) :e 0(S)→Ris nondecreasing. By the previous lemma, we extend
+this function to a monotoneX(t) :R→[−∞,∞] that satisfies (4.1) forγ∈S. Observe, if
+f∈C b(R)
+Z
+R
+f dρt =
+Z
+Γ
+f(γ(t))dη(γ)
+=
+Z
+Γ
+f(X(γ(0), t))dη(γ)
+=
+Z
+R
+f(X(t))dρ 0.
+16
+
+[PDF page 17]
+We conclude thatρ t =X(t) #ρ0 fort≥0. Also note
+Z
+Γ
+(γ(t)−γ(s)) 2dη(γ) =
+Z
+Γ
+Z t
+s
+v(γ(τ), τ)dτ
+2
+dη(γ)
+≤(t−s)
+Z t
+s
+Z
+R
+v(X(τ), τ) 2dρ0
+
+dτ
+= (t−s)
+Z t
+s
+Z
+R
+v(x, τ) 2dρτ(x)
+
+dτ
+≤(t−s) 2
+Z
+R
+v2
+0dρ0.
+Thus, Z
+R
+(X(t)−X(s)) 2dρ0 ≤(t−s) 2
+Z
+R
+v2
+0dρ0
+fort, s≥0. And as Z
+R
+X(0)2dρ0 =
+Z
+R
+x2dρ0(x)<∞,
+X(t)∈L 2(ρ0) for eacht≥0. Furthermore,X: [0,∞)→L 2(ρ0) is Lipschitz continuous.
+In addition,
+0 =
+Z
+Γ
+γ(t)−γ(0)−
+Z t
+0
+v(γ(s), s)ds
+ dη(γ)
+=
+Z
+Γ
+X(γ(0), t)−γ(0)−
+Z t
+0
+v(X(γ(0), s), s)ds
+ dη(γ)
+=
+Z
+R
+X(y, t)−y−
+Z t
+0
+v(X(y, s), s)ds
+ dρ0(y).
+It follows thatX(y,0) =yand∂ tX(y, t) =v(X(y, t), t) a.e.t≥0 forρ 0 almost every
+y∈R.
+We can also show that ifs≤tandX(y, s) =X(z, s), thenX(y, t) =X(z, t) forρ 0
+almost everyy, z. This property is implied by the following assertion.
+Proposition 4.3.Fixt >0. There is a Borel measurable functionf:R×(0, t]→Rwith
+X(t) =f(X(s), s)ρ 0 a.e.
+for eachs∈(0, t]. Moreover,
+0≤f(x 1, s)−f(x 2, s)≤ t
+s(x1 −x 2) (4.2)
+forx 1 ≥x 2 and0< s≤t.
+17
+
+[PDF page 18]
+Proof.By Proposition 4.2, there is BorelA⊂Rsuch thatρ 0(A) = 1,X(y,·) is absolutely
+continuous,X(y,0) =y, and
+∂tX(y, t) =v(X(y, t), t),a.e.t≥0
+for ally∈A. Employing part (iv) of Lemma 3.1, we find
+|X(y, t)−X(z, t)|
+t ≤ |X(y, s)−X(z, s)|
+s (4.3)
+fory, z∈Aand 0< s≤t.
+Set
+f(x, s) = inf
+
+X(y, t) + t
+s(x−X(y, s)) + :y∈A
+
+for (x, s)∈R×(0, t]. We will first show thatfis well-defined. Note that forz∈Aand
+0< s≤t,
+X(z, t)−X(y, t)≤ t
+s
+ 
+X(z, s)−X(y, s)
++
+(y∈A).(4.4)
+Indeed, this follows from (4.3) fory≤z; and ify≥z, the left-hand side is nonpositive.
+Moreover,  
+X(z, s)−X(y, s)
++
+≤
+ 
+X(z, s)−x
++
++
+ 
+x−X(y, s)
++
+.
+Consequently,
+X(y, t) + t
+s
+ 
+x−X(y, s)
++
+≥X(z, t)− t
+s
+ 
+X(z, s)−x
++
+.
+It follows that
+f(x, s)≥X(z, t)− t
+s
+ 
+X(z, s)−x
++
+>−∞
+forx∈Rand 0< s≤t.
+It is also evident thatfis upper semicontinuous and that (4.2) holds as stated. Further-
+more, forz∈Aands∈(0, t],
+f(X(z, s), s)≤X(z, t)
+by choosingy=zin the definition off. By (4.4), we also have
+X(y, t) + t
+s(X(z, s)−X(y, s)) + ≥X(z, t)
+fory∈A. Thus,
+f(X(z, s), s)≥X(z, t).
+We can now express the conservation of momentum in terms ofX.
+Proposition 4.4.For almost everyt≥0,
+˙X(t) =E ρ0[v0|X(t)].
+18
+
+[PDF page 19]
+Proof.Let us chooseT ⊂(0,∞) of full Lebesgue measure such that the following properties
+hold for eacht∈ T.
+(i)v(X(t), t)∈L 2(ρ0) with Z
+R
+v(X(t), t)2dρ0 ≤
+Z
+R
+v2
+0dρ0.
+(ii)X: [0,∞)→L 2(ρ0) is differentiable attwith ˙X(t) =v(X(t), t).
+(iii) For eachg∈C 1
+b (R),
+Z
+R
+g(x)v(x, t)dρt(x) =
+Z
+R
+g(x)v0(x)dρ0(x) +
+Z t
+0
+Z
+R
+g′(x)v(x, s)2dρs(x)ds.
+(iv)
+lim
+δ→0
+1
+δ
+Z t+δ
+t
+∥v(X(τ), τ)−v(X(t), t)∥ L2(ρ0)dτ= 0.
+We note that (iv) holds for almost everyt≥0 by Lebesgue differentiation; see Theorem 9
+of section 2 in Chapter II of [7].
+Next fixh∈C 1
+b (R) andT∈ T. We will show
+Z
+R
+h(X(T))v(X(T), T)dρ 0 =
+Z
+R
+h(X(T))v 0dρ0.(4.5)
+If we can verify this assertion, we would have
+v(X(T), T) =E ρ0[v0|X(T)]
+by the density ofC 1
+b (R) inL 2(ρT ).
+In view of Proposition 4.3, we may choose a Borelf:R×(0, T]→Rwith
+X(T) =f(X(s), s)ρ 0 a.e.
+for everys∈(0, T] and
+|f(x, s)−f(y, s)| ≤ T
+s |x−y|
+forx, y∈Rands∈(0, T].It follows that
+|h(f(x, s))−h(f(y, s))| ≤ ∥h ′∥∞
+T
+s |x−y|, x, y∈R.
+Let us fixt∈ T ∩(0, T] and choose a sequenceg n ∈C 1
+b (R) such that
+gn →h(f(·, t)) uniformly and∥(g n)′∥∞ ≤ ∥h ′∥∞
+T
+t .
+19
+
+[PDF page 20]
+This sequence can be obtained by using a standard mollifier.
+Supposes∈ Twiths < tand note
+Z
+R
+gn(x)v(x, t)dρt(x) =
+Z
+R
+gn(x)v(x, s)dρs(x) +
+Z t
+s
+Z
+R
+(gn)′(x)v(x, τ) 2dρτ(x)dτ.
+In particular,
+Z
+R
+gn(X(t))v(X(t), t)dρ 0 =
+Z
+R
+gn(X(s))v(X(s), s)dρ 0(x)+
+Z t
+s
+Z
+R
+(gn)′(X(τ))v(X(τ), τ) 2dρ0dτ.
+(4.6)
+We also have
+gn(X(t)) =g n(X(s)) +
+Z t
+s
+(gn)′(X(τ))v(X(τ), τ)dτ.
+Multiplying byv(X(s), s) and integrating gives
+Z
+R
+gn(X(t))v(X(s), s)dρ 0 (4.7)
+=
+Z
+R
+gn(X(s))v(X(s), s)dρ 0(x) +
+Z t
+s
+Z
+R
+(gn)′(X(τ))v(X(τ), τ)v(X(s), s)dρ 0dτ.
+Subtracting (4.7) from (4.6) yields
+Z
+R
+gn(X(t)) (v(X(t), t)−v(X(s), s))dρ 0
+=
+Z t
+s
+Z
+R
+(gn)′(X(τ))v(X(τ), τ)(v(X(τ), τ)−v(X(s), s))dρ 0dτ.
+Moreover,
+
+Z
+R
+gn(X(t)) (v(X(t), t)−v(X(s), s))dρ 0
+
+≤ ∥h ′∥∞
+T
+t
+Z t
+s
+∥v(X(τ), τ)∥ L2(ρ0)∥v(X(τ), τ)−v(X(s), s)∥ L2(ρ0)dτ
+≤ ∥h ′∥∞
+T
+t ∥v0∥L2(ρ0)
+Z t
+s
+∥v(X(τ), τ)−v(X(s), s)∥ L2(ρ0)dτ.
+And sendingn→ ∞gives
+
+Z
+R
+h(f(X(t), t)) (v(X(t), t)−v(X(s), s))dρ 0
+
+≤ ∥h ′∥∞
+T
+t ∥v0∥L2(ρ0)
+Z t
+s
+∥v(X(τ), τ)−v(X(s), s)∥ L2(ρ0)dτ.
+20
+
+[PDF page 21]
+That is,
+
+Z
+R
+h(X(T))v(X(t), t)dρ 0 −
+Z
+R
+h(X(T))v(X(s), s)dρ 0
+ (4.8)
+≤ ∥h ′∥∞
+T
+t ∥v0∥L2(ρ0)
+Z t
+s
+∥v(X(τ), τ)−v(X(s), s)∥ L2(ρ0)dτ
+fort, s∈ Twith 0< s≤t≤T.
+Now fixδ∈(0, T] and set
+m(t) =
+Z
+R
+h(X(T))v(X(t), t)dρ 0
+fort∈ T ∩[δ, T]. Note that
+∥v(X(τ), τ)−v(X(s), s)∥ L2(ρ0) ≤ ∥v(X(τ), τ)∥ L2(ρ0) +∥v(X(s), s)∥ L2(ρ0) ≤2∥v 0∥L2(ρ0)
+for almost everyτ, s≥0. In view of (4.8),
+|m(t)−m(s)| ≤ ∥h ′∥∞
+2T
+δ ∥v0∥2
+L2(ρ0)|t−s|
+fort, s∈ T ∩[δ, T]. Thus,m:T ∩[δ, T]→Ris a Lipschitz function.
+It follows thatmhas a Lipschitz extension to [δ, T] which we also denote bym. We
+conclude thatmis absolutely continuous. Furthermore, (4.8) implies that ift, s∈ T ∩(δ, T)
+witht > s, then
+
+m(t)−m(s)
+t−s
+ ≤ ∥h ′∥∞
+T
+δ ∥v0∥L2(ρ0)
+1
+t−s
+Z t
+s
+∥v(X(τ), τ)−v(X(s), s)∥ L2(ρ0)dτ.
+Sinces∈ T, the right hand side tends to 0 ast→s +.
+Therefore,m ′(s) = 0 for almost everys∈[δ, T]. Consequently,
+Z
+R
+h(X(T))v(X(T), T)dρ 0 =
+Z
+R
+h(X(T))v(X(s), s)dρ 0
+for almost everys∈[δ, T]. Asδis arbitrary, we can sendsto 0 along an appropriate
+sequence to conclude (4.5). Here we are using the strong convergencev(γ(s), s)→v 0(γ(0))
+inL 2(η) along a subsequence ofstending to 0 which was verified in our proof of Lemma
+3.1.
+5 Uniqueness
+Assumeρ 0 ∈ P(R) has a finite second moment andv 0 ∈L 2(ρ0). Let us also supposeρandv
+is a weak solution pair of (1.1) with initial conditions (1.2) and which satisfies (1.8) and (1.9).
+21
+
+[PDF page 22]
+As discussed in the previous section, there is a Lipschitz continuousX: [0,∞)→L 2(ρ0)
+which solves ( ˙X(t) =E ρ0[v0|X(t)] a.e.t≥0
+X(0) = id R.
+We will derive a few more properties ofXthat will allow us to conclude that this weak
+solution pair is uniquely specified. First we note thatXis differentiable att= 0.
+Lemma 5.1.The limit
+lim
+t→0+
+X(t)−id R
+t =v 0 (5.1)
+holds inL 2(ρ0).
+Proof.This follows from Lemma 3.1 part (vi) as
+lim
+t→0+
+Z
+R
+ X(t)−id R
+t −v 0
+2
+dρ0 = lim
+t→0+
+Z
+Γ
+ γ(t)−γ(0)
+t −v 0(γ(0))
+2
+dη(γ) = 0.
+We also will need the following implicit relation. We remark that this was essentially
+proved in Lemma 5.1 of [14].
+Lemma 5.2.For eacht≥0,
+X(t) =E ρ0[idR +tv 0|X(t)].(5.2)
+Proof.Fixt >0 and assumeh:R→Ris Borel withh(X(t))∈L 2(ρ0). Also recall that
+X(t) =f(X(s), s) fors∈(0, t] (as in Proposition 4.3) and set
+g(s) =
+Z
+R
+h(X(t))(X(s)−(id R +sv 0))dρ0.
+It is not hard to see thatgis absolutely continuous withg(0) = 0.
+Moreover,
+˙g(s) =
+Z
+R
+h(X(t))( ˙X(s)−v 0)dρ0 =
+Z
+R
+h(f(X(s), s))( ˙X(s)−v 0)dρ0 = 0
+for almost everys∈(0, t]. Thus,g(s) = 0 for alls∈[0, t]. That is,
+Z
+R
+h(X(t))(X(s)−(id R +sv 0))dρ0 = 0
+for alls∈[0, t]. We conclude by takings=t.
+We are finally ready to prove the Uniqueness Theorem stated in the introduction.
+22
+
+[PDF page 23]
+Proof of the Uniqueness Theorem.LetXbe as above and suppose there is another weak
+solution pair ρand vof (1.1) with initial conditions (1.2) and which satisfies (1.8) and (1.9).
+There is a LipschitzY: [0,∞)→L 2(ρ0) such thatY(t) is nondecreasing for eacht≥0,
+( ˙Y(t) =E ρ0[v0|Y(t)] a.e.t≥0
+Y(0) = id R,
+ρt =Y(t) #ρ0 fort≥0, and ˙Y(t) = v(Y(t), t) for almost everyt≥0.
+In view of the relation (5.2) and the inequality (1.12)
+d
+dt
+1
+2
+Z
+R
+(X(t)−Y(t)) 2dρ0
+=
+Z
+R
+(X(t)−Y(t))( ˙X(t)− ˙Y(t))dρ 0
+=
+Z
+R
+(X(t)−Y(t))(E ρ0[v0|X(t)]−E ρ0[v0|Y(t)])dρ 0
+= 1
+t
+Z
+R
+(X(t)−Y(t))(E ρ0[tv0|X(t)]−E ρ0[tv0|Y(t)])dρ 0
+= 1
+t
+Z
+R
+(X(t)−Y(t))(X(t)−E ρ0[idR|X(t)]−(Y(t)−E ρ0[idR|Y(t)]))dρ 0
+= 1
+t
+Z
+R
+(X(t)−Y(t)) 2dρ0 − 1
+t
+Z
+R
+(X(t)−Y(t))(E ρ0[idR|X(t)]−E ρ0[idR|Y(t)])dρ 0
+≤ 1
+t
+Z
+R
+(X(t)−Y(t)) 2dρ0
+for almost everyt >0. It follows that
+d
+dt
+Z
+R
+ X(t)−Y(t)
+t
+2
+dρ0 ≤0
+for almost everyt >0.
+Consequently,
+Z
+R
+ X(t)−Y(t)
+t
+2
+dρ0 ≤
+Z
+R
+ X(s)−Y(s)
+s
+2
+dρ0
+for 0< s≤t. Appealing to the limit (5.1), we also have
+lim
+s→0+
+Z
+R
+ X(s)−Y(s)
+s
+2
+dρ0 = lim
+s→0+
+Z
+R
+ X(s)−id R
+s − Y(s)−id R
+s
+2
+dρ0 = 0.
+Thus, Z
+R
+ X(t)−Y(t)
+t
+2
+dρ0 ≤0
+23
+
+[PDF page 24]
+andX(t) =Y(t)ρ 0 almost everywhere for allt >0.
+It follows that
+ρt =X(t) #ρ0 =Y(t) #ρ0 = ρt
+for eacht≥0. Furthermore, for almost everyt≥0,
+v(X(t), t) = ˙X(t) = ˙Y(t) = v(Y(t), t) = v(X(t), t)
+ρ0 almost everywhere. That is,v(x, t) = v(x, t) forρ t almost everyx∈Rand almost every
+t≥0.
+References
+[1] Luigi Ambrosio, Nicola Gigli, and Giuseppe Savar´ e.Gradient Flows in Metric Spaces
+and in the Space of Probability Measures. Lectures in Mathematics ETH Z¨ urich.
+Birkh¨ auser Verlag, Basel, second edition, 2008.
+[2] Yann Brenier, Wilfrid Gangbo, Giuseppe Savar´ e, and Michael Westdickenberg. Sticky
+particle dynamics with interactions.J. Math. Pures Appl. (9), 99(5):577–617, 2013.
+[3] Yann Brenier and Emmanuel Grenier. Sticky particles and scalar conservation laws.
+SIAM Journal on Numerical Analysis, 35(6):2317–2328, 1998.
+[4] Jos´ e Antonio Carrillo and Sondre Tesdal Galtung. Equivalence of entropy solutions and
+gradient flows for pressureless 1D Euler systems.Mathematische Annalen, 395:Paper
+No. 93, 2026.
+[5] Fabio Cavalletti, Marc Sedjro, and Michael Westdickenberg. A simple proof of global ex-
+istence for the 1D pressureless gas dynamics equations.SIAM Journal on Mathematical
+Analysis, 47(1):66–79, 2015.
+[6] Azzouz Dermoune. Probabilistic interpretation of sticky particles model.The Annals
+of Probability, 27(3):1357–1367, 1999.
+[7] Joseph Diestel and J. J. Uhl, Jr.Vector Measures, volume 15 ofMathematical Surveys.
+American Mathematical Society, Providence, RI, 1977.
+[8] Weinan E, Yuri Rykov, and Yakov Sinai. Generalized variational principles, global weak
+solutions and behavior with random initial data for systems of conservation laws arising
+in adhesion particle dynamics.Communications in Mathematical Physics, 177:349–380,
+1996.
+[9] Sergei N. Gurbatov, Aleksandr I. Saichev, and Sergey F. Shandarin. Large-scale struc-
+ture of the universe. The Zeldovich approximation and the adhesion model.Physics-
+Uspekhi, 55(3):223, 2012.
+24
+
+[PDF page 25]
+[10] Feimin Huang and Guirong Tang. Global well-posedness of pressureless Euler–Poisson
+system in one dimension. SSRN Scholarly Paper 4539247, July 2023.
+[11] Feimin Huang and Zhen Wang. Well posedness for pressureless flow.Communications
+in Mathematical Physics, 222:117–146, 2001.
+[12] Ryan Hynd. Lagrangian coordinates for the sticky particle system.SIAM J. Math.
+Anal., 51(5):3769–3795, 2019.
+[13] Ryan Hynd. Probability measures on the path space and the sticky particle system.An-
+nali della Scuola Normale Superiore di Pisa, Classe di Scienze, 21(special (1–2)):1333–
+1357, 2020.
+[14] Ryan Hynd and Adrian Tudorascu. Asymptotics of the sticky particles evolution.Non-
+linearity, 37(7):Paper No. 075017, 22, 2024.
+[15] Jiequan Li and Gerald G. Warnecke. On measure solutions to the zero-pressure gas
+model and their uniqueness.Mathematica Bohemica, 127(2):265–273, 2002.
+[16] Jiequan Li and Gerald G. Warnecke. Generalized characteristics and the uniqueness of
+entropy solutions to zero-pressure gas dynamics.Advances in Differential Equations,
+8(8):961–1004, 2003.
+[17] Luca Natile and Giuseppe Savar´ e. A Wasserstein approach to the one-dimensional sticky
+particle system.SIAM J. Math. Anal., 41(4):1340–1365, 2009.
+[18] Truyen Nguyen and Adrian Tudorascu. Pressureless Euler/Euler–Poisson systems via
+adhesion dynamics and scalar conservation laws.SIAM Journal on Mathematical Anal-
+ysis, 40(2):754–775, 2008.
+[19] Truyen Nguyen and Adrian Tudorascu. One-dimensional pressureless gas systems
+with/without viscosity.Communications in Partial Differential Equations, 40(9):1619–
+1665, 2015.
+[20] Mark David Suder.On the Lagrangian Description and Uniqueness for the One-
+Dimensional Pressureless Euler System. Ph.D. dissertation, West Virginia University,
+2021. Graduate Theses, Dissertations, and Problem Reports 10184.
+[21] Mark David Suder and Adrian Tudorascu. On the Lagrangian Description and Unique-
+ness for the One-Dimensional Pressureless Euler System.Indiana University Mathe-
+matics Journal, 72(2):785–819, 2023.
+[22] C´ edric Villani.Topics in optimal transportation, volume 58 ofGraduate Studies in
+Mathematics. American Mathematical Society, Providence, RI, 2003.
+[23] C´ edric Villani.Optimal transport, volume 338 ofGrundlehren der Mathematischen
+Wissenschaften [Fundamental Principles of Mathematical Sciences]. Springer-Verlag,
+Berlin, 2009. Old and new.
+25
+
+[PDF page 26]
+[24] Yakov B. Zel’dovich. Gravitational instability: An Approximate theory for large density
+perturbations.Astron. Astrophys., 5:84–89, 1970.
+26

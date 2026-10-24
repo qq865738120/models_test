@@ -1,0 +1,835 @@
+{
+  "title": "三体Ⅲ：死神永生",
+  "author": "刘慈欣",
+  "sourceKind": "user-provided EPUB",
+  "sourceFile": "source.epub",
+  "sourceSha256": "f5b08ff72c0c3749d758cb73a9013e9e86a4dfeb805b40c0cfea9ee4c30c3b4a",
+  "status": "converted",
+  "publicationNote": "用户指定作品；非新发表小说，不宣称排除训练数据重合。",
+  "usage": "用户提供文件，仅用于此本地评测；不发布小说全文到外部站点。",
+  "spine": [
+    {
+      "entry": "OEBPS/Text/cover.xhtml",
+      "blocks": 0,
+      "characters": 0
+    },
+    {
+      "entry": "OEBPS/Text/Copyright.xhtml",
+      "blocks": 3,
+      "characters": 112
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0001.xhtml",
+      "blocks": 1,
+      "characters": 15
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0002.xhtml",
+      "blocks": 14,
+      "characters": 2089
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0003.xhtml",
+      "blocks": 1,
+      "characters": 5
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0004.xhtml",
+      "blocks": 16,
+      "characters": 151
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0005.xhtml",
+      "blocks": 1,
+      "characters": 15
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0006.xhtml",
+      "blocks": 7,
+      "characters": 357
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0007.xhtml",
+      "blocks": 1,
+      "characters": 18
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0008.xhtml",
+      "blocks": 648,
+      "characters": 53010
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0009.xhtml",
+      "blocks": 1,
+      "characters": 18
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0010.xhtml",
+      "blocks": 1097,
+      "characters": 96361
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0011.xhtml",
+      "blocks": 1,
+      "characters": 12
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0012.xhtml",
+      "blocks": 1268,
+      "characters": 96783
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0013.xhtml",
+      "blocks": 1,
+      "characters": 15
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0014.xhtml",
+      "blocks": 280,
+      "characters": 29303
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0015.xhtml",
+      "blocks": 1,
+      "characters": 18
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0016.xhtml",
+      "blocks": 620,
+      "characters": 49872
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0017.xhtml",
+      "blocks": 1,
+      "characters": 17
+    },
+    {
+      "entry": "OEBPS/Text/santi3_0018.xhtml",
+      "blocks": 613,
+      "characters": 39383
+    }
+  ],
+  "sections": [
+    {
+      "id": "N001",
+      "title": "版权信息",
+      "file": "N001.txt",
+      "paragraphCount": 2,
+      "sources": [
+        "OEBPS/Text/Copyright.xhtml"
+      ],
+      "sha256": "de580d76a0bb0dcc3dcfcdf0c0566ab7a07490d165824ca4dbe15b734183042a"
+    },
+    {
+      "id": "N002",
+      "title": "刘慈欣2018克拉克奖获奖感言",
+      "file": "N002.txt",
+      "paragraphCount": 14,
+      "sources": [
+        "OEBPS/Text/santi3_0002.xhtml"
+      ],
+      "sha256": "1c825daf968f25b7c70bd167be2a9f60f6103f9c6edfc9b0768bee6f1c29040b"
+    },
+    {
+      "id": "N003",
+      "title": "纪年对照表",
+      "file": "N003.txt",
+      "paragraphCount": 16,
+      "sources": [
+        "OEBPS/Text/santi3_0004.xhtml"
+      ],
+      "sha256": "276b895c7a765e427b49b9994b5b1d2219228283a20eedb72f777e9d989b3034"
+    },
+    {
+      "id": "N004",
+      "title": "《时间之外的往事》序言（节选）",
+      "file": "N004.txt",
+      "paragraphCount": 7,
+      "sources": [
+        "OEBPS/Text/santi3_0006.xhtml"
+      ],
+      "sha256": "3b12a0eb79c10710784b269bbd2a38dae21f8de9876a9ba679ae723f24c8aaed"
+    },
+    {
+      "id": "N005",
+      "title": "第一部公元1453年5月，魔法师之死",
+      "file": "N005.txt",
+      "paragraphCount": 90,
+      "sources": [
+        "OEBPS/Text/santi3_0008.xhtml"
+      ],
+      "sha256": "58a920a93cfa202b64e2550a8b69958c32fe573c913905a8662ddc9d10817ee2"
+    },
+    {
+      "id": "N006",
+      "title": "【危机纪元元年，生命选项】",
+      "file": "N006.txt",
+      "paragraphCount": 51,
+      "sources": [
+        "OEBPS/Text/santi3_0008.xhtml"
+      ],
+      "sha256": "0efe7c13a02ed48ec31fb005e37d25349b926a6c71bb1c978fd6af2c6c926e3b"
+    },
+    {
+      "id": "N007",
+      "title": "【危机纪元4年，云天明】",
+      "file": "N007.txt",
+      "paragraphCount": 70,
+      "sources": [
+        "OEBPS/Text/santi3_0008.xhtml"
+      ],
+      "sha256": "e4b78edaf478e6379324522d5b1d7bf42cc84ee0b47caa11462b2f380c144e8c"
+    },
+    {
+      "id": "N008",
+      "title": "《时间之外的往事》（节选）群星计划——危机之初的幼稚症",
+      "file": "N008.txt",
+      "paragraphCount": 115,
+      "sources": [
+        "OEBPS/Text/santi3_0008.xhtml"
+      ],
+      "sha256": "715982bee68d9fdd3bf2b1502fe651e4a61b3d92fe5644a5aa45953e4a9146da"
+    },
+    {
+      "id": "N009",
+      "title": "【危机纪元1-4年，程心】",
+      "file": "N009.txt",
+      "paragraphCount": 88,
+      "sources": [
+        "OEBPS/Text/santi3_0008.xhtml"
+      ],
+      "sha256": "dd01924a4b141a3b12316fd4f6e8c30539e353f0eea9f14e20c26434019ccff8"
+    },
+    {
+      "id": "N010",
+      "title": "《时间之外的往事》（节选）人体冬眠——人类在时间上的首次直立行走",
+      "file": "N010.txt",
+      "paragraphCount": 53,
+      "sources": [
+        "OEBPS/Text/santi3_0008.xhtml"
+      ],
+      "sha256": "93ee29404d47ac11975ba8a29e0cdd535286a7cc6eca34b9c5735b83bb4b30e6"
+    },
+    {
+      "id": "N011",
+      "title": "《时间之外的往事》（节选）火龙出水、连发弩和阶梯计划",
+      "file": "N011.txt",
+      "paragraphCount": 73,
+      "sources": [
+        "OEBPS/Text/santi3_0008.xhtml"
+      ],
+      "sha256": "8bd8dfd99d799a8a1074112a92196608c6b5c520c5fa0dc2bc761851b2b502cb"
+    },
+    {
+      "id": "N012",
+      "title": "【危机纪元5-7年，阶梯计划】",
+      "file": "N012.txt",
+      "paragraphCount": 101,
+      "sources": [
+        "OEBPS/Text/santi3_0008.xhtml"
+      ],
+      "sha256": "c0a2cc0c2ed9709b6d1a3882a6b175ebb564fe3056136e15dabd6ee2e7fb3b28"
+    },
+    {
+      "id": "N013",
+      "title": "第二部威慑纪元12年，“青铜世纪”号",
+      "file": "N013.txt",
+      "paragraphCount": 14,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "06581162a9f3614d7fa93a1835f5cd43a7afdb7d9abb205c294a690a49c19f85"
+    },
+    {
+      "id": "N014",
+      "title": "《时间之外的往事》（节选）黑暗森林恐惧症",
+      "file": "N014.txt",
+      "paragraphCount": 24,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "de9a052893066ebcbbe92cc216625d54cbe4ff5deb3f2aca5b8fa68fbf4532e2"
+    },
+    {
+      "id": "N015",
+      "title": "【威慑纪元13年，审判】",
+      "file": "N015.txt",
+      "paragraphCount": 92,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "3ae48338d849d71893a13b5c07366342996051c299325587d9968f30f5b404f4"
+    },
+    {
+      "id": "N016",
+      "title": "【威慑纪元61年，执剑人】",
+      "file": "N016.txt",
+      "paragraphCount": 60,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "8907c68ffb15b2f363980e6bbab2fe5343af23333dec519109688270b595d9e7"
+    },
+    {
+      "id": "N017",
+      "title": "《时间之外的往事》（节选）面壁者的幽灵——执剑人",
+      "file": "N017.txt",
+      "paragraphCount": 37,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "3d103a647df644a76ccf670c98d304034ed9d23c92ce6eff0104e4e2da656e66"
+    },
+    {
+      "id": "N018",
+      "title": "《时间之外的往事》（节选）文化反射",
+      "file": "N018.txt",
+      "paragraphCount": 64,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "8ed909d0cc3d1f6d4cafd4f96dca68e9d70655129fb9993cf1fcf3d91d654fd0"
+    },
+    {
+      "id": "N019",
+      "title": "【威慑纪元62年，奥尔特星云外，“万有引力”号】",
+      "file": "N019.txt",
+      "paragraphCount": 7,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "553c301336927d6e75faf902ab7f3c4e6df5b9c826f6e3da0af6ceb7516ce206"
+    },
+    {
+      "id": "N020",
+      "title": "《时间之外的往事》（节选）黑暗森林的另一个间接证据——智子盲区",
+      "file": "N020.txt",
+      "paragraphCount": 111,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "ea4820257d367c7fb384907e2d64c78e8e5fa1cd4c9b729e82a8601712a815d3"
+    },
+    {
+      "id": "N021",
+      "title": "【威慑纪元62年11月28日16：00至16：17，威慑控制中心】",
+      "file": "N021.txt",
+      "paragraphCount": 9,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "61acd50209877e081c4982f6b4e8d2135a61d8e34a4956aae2870b1dd857007d"
+    },
+    {
+      "id": "N022",
+      "title": "《时间之外的往事》（节选）执剑人的抉择——生存与毁灭的十分钟",
+      "file": "N022.txt",
+      "paragraphCount": 53,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "9fa077dabb352d89cb5e197e4245a4483ecc78b1205309ffecda7b9b3e1806a5"
+    },
+    {
+      "id": "N023",
+      "title": "【威慑纪元最后十分钟，62年11月28日16：17：34至16：27：58，威慑控制中心】",
+      "file": "N023.txt",
+      "paragraphCount": 47,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "4b6d1fcd9ed00d9aea99df5988757798c8be4478efbb250335c469855bf21498"
+    },
+    {
+      "id": "N024",
+      "title": "【威慑后一小时，失落的世界】",
+      "file": "N024.txt",
+      "paragraphCount": 7,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "4bbd655ae5246080c3a9514d314b459e718687ac7c0d93c34077c4a7fc8238b0"
+    },
+    {
+      "id": "N025",
+      "title": "《时间之外的往事》（节选）对黑暗森林威慑失败的反思",
+      "file": "N025.txt",
+      "paragraphCount": 38,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "6b173a48cf140384fe35028c1b6c7a6c27b571a9ee4bfd840b154226aa3e7d9f"
+    },
+    {
+      "id": "N026",
+      "title": "【威慑后六十天，失落的世界】",
+      "file": "N026.txt",
+      "paragraphCount": 12,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "a205546d97532d7a21f25880c5b121e62e6a1936b4f9aeb0ef68127916412374"
+    },
+    {
+      "id": "N027",
+      "title": "《时间之外的往事》（节选）三体世界的技术爆炸",
+      "file": "N027.txt",
+      "paragraphCount": 15,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "9368e7f70e9d2aae51f7c8417380e6a9136caa240cf8fec5f05a24b1d6dd1b08"
+    },
+    {
+      "id": "N028",
+      "title": "【威慑后第一年，澳大利亚】",
+      "file": "N028.txt",
+      "paragraphCount": 186,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "f1fe5fa2c1b18e7feaea2f232ade1ad54d3be8148b09ae8aae1f87ca8c2b999d"
+    },
+    {
+      "id": "N029",
+      "title": "【威慑纪元最后十分钟，62年11月28日16：17：34至16：27：58，奥尔特星云外，“万有引力”号和“蓝色空间”号】",
+      "file": "N029.txt",
+      "paragraphCount": 107,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "a84aefedcea819655a42bda3746f610a608f78a27e4b546879c18e8a37378119"
+    },
+    {
+      "id": "N030",
+      "title": "【威慑后第一年，移民完成后第六天清晨，澳大利亚】",
+      "file": "N030.txt",
+      "paragraphCount": 18,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "da92153f60e3f758d9e550bcc3d62519f19818cb6e69a160fa36bbe43631df3f"
+    },
+    {
+      "id": "N031",
+      "title": "【威慑后第一天至第五天，奥尔特星云外，“万有引力”号和“蓝色空间”号】",
+      "file": "N031.txt",
+      "paragraphCount": 178,
+      "sources": [
+        "OEBPS/Text/santi3_0010.xhtml"
+      ],
+      "sha256": "9e03896f7988a2ab97e7e5f9e6136de21e7de479ecf895023713d4a00dbe8bb2"
+    },
+    {
+      "id": "N032",
+      "title": "第三部广播纪元7年，程心",
+      "file": "N032.txt",
+      "paragraphCount": 7,
+      "sources": [
+        "OEBPS/Text/santi3_0012.xhtml"
+      ],
+      "sha256": "ff3a51259b30a2810bb5a9e3aa17c84b2f5e7bd736a00802749c2ddf200a1d74"
+    },
+    {
+      "id": "N033",
+      "title": "《时间之外的往事》（节选）宇宙迫害妄想——对黑暗森林理论的最后质疑",
+      "file": "N033.txt",
+      "paragraphCount": 20,
+      "sources": [
+        "OEBPS/Text/santi3_0012.xhtml"
+      ],
+      "sha256": "53d2f803e5ce6192fbeb4cafe12bf93e205b43af7afaeae3718396f2ca73c10f"
+    },
+    {
+      "id": "N034",
+      "title": "【广播纪元7年，智子】",
+      "file": "N034.txt",
+      "paragraphCount": 0,
+      "sources": [],
+      "sha256": "6bd2e1a833ea5bff673b62b81f623980c8945c4b6c22dd86cdb6be4e2073da9d"
+    },
+    {
+      "id": "N035",
+      "title": "《时间之外的往事》（节选）黑暗森林的新模型",
+      "file": "N035.txt",
+      "paragraphCount": 61,
+      "sources": [
+        "OEBPS/Text/santi3_0012.xhtml"
+      ],
+      "sha256": "f1526410fc8107277b4d27741855b3135cc528469c38a6d1fee11ef03512d4c8"
+    },
+    {
+      "id": "N036",
+      "title": "《时间之外的往事》（节选）宇宙安全声明——孤独的行为艺术",
+      "file": "N036.txt",
+      "paragraphCount": 56,
+      "sources": [
+        "OEBPS/Text/santi3_0012.xhtml"
+      ],
+      "sha256": "82e014054c64342adfcdaec7f1256efd7a4b1bd89b0ca528c4e9cc9e56871931"
+    },
+    {
+      "id": "N037",
+      "title": "【广播纪元7年，云天明】",
+      "file": "N037.txt",
+      "paragraphCount": 0,
+      "sources": [],
+      "sha256": "35c9f6711576f2f6a23cee0dc2b8921e42d8eb76221f9d06c2dfca582c4b5106"
+    },
+    {
+      "id": "N038",
+      "title": "《时间之外的往事》（节选）漫长的阶梯",
+      "file": "N038.txt",
+      "paragraphCount": 163,
+      "sources": [
+        "OEBPS/Text/santi3_0012.xhtml"
+      ],
+      "sha256": "a152be296e26b79c68b495bd3c15e28b137f79211fcb58ce8cb8c97137748e75"
+    },
+    {
+      "id": "N039",
+      "title": "【广播纪元7年，云天明的童话】",
+      "file": "N039.txt",
+      "paragraphCount": 433,
+      "sources": [
+        "OEBPS/Text/santi3_0012.xhtml"
+      ],
+      "sha256": "2080a737f51c792bb734d050ac73d8ed13aead64b08373865347b78e2fe99e85"
+    },
+    {
+      "id": "N040",
+      "title": "《时间之外的往事》（节选）掩体计划——地球文明的方舟",
+      "file": "N040.txt",
+      "paragraphCount": 66,
+      "sources": [
+        "OEBPS/Text/santi3_0012.xhtml"
+      ],
+      "sha256": "e1b5118dcc0dffd5a4b236447053be172a5f89321bcb5e273cffccfb511bc061"
+    },
+    {
+      "id": "N041",
+      "title": "《时间之外的往事》（节选）弯曲空间的动力",
+      "file": "N041.txt",
+      "paragraphCount": 166,
+      "sources": [
+        "OEBPS/Text/santi3_0012.xhtml"
+      ],
+      "sha256": "7e5bbdf7b088eb89c9816a70877d616720b20e2a676c5d24982d719a3e7e9b55"
+    },
+    {
+      "id": "N042",
+      "title": "【广播纪元8年，命运的抉择】",
+      "file": "N042.txt",
+      "paragraphCount": 0,
+      "sources": [],
+      "sha256": "105e46d722a6464de22eee88f49fa31049c370e8a1247a167ccf5f53bb3f046b"
+    },
+    {
+      "id": "N043",
+      "title": "《时间之外的往事》（节选）地球文明的三条生路",
+      "file": "N043.txt",
+      "paragraphCount": 147,
+      "sources": [
+        "OEBPS/Text/santi3_0012.xhtml"
+      ],
+      "sha256": "e629f6e23781ff3841c6b55a1a62fb34c0b8779b678fd37d11052ac551a2f8a3"
+    },
+    {
+      "id": "N044",
+      "title": "《时间之外的往事》（节选）太空前哨——太阳系预警系统",
+      "file": "N044.txt",
+      "paragraphCount": 49,
+      "sources": [
+        "OEBPS/Text/santi3_0012.xhtml"
+      ],
+      "sha256": "7dc4680ad34b9e4f7fee73fd04ac0b1581215e32e49c87ffe0e529dd570ad79e"
+    },
+    {
+      "id": "N045",
+      "title": "《时间之外的往事》（节选）对无边暗夜的恐惧",
+      "file": "N045.txt",
+      "paragraphCount": 9,
+      "sources": [
+        "OEBPS/Text/santi3_0012.xhtml"
+      ],
+      "sha256": "51ee9cade98c25f8f3f1523b537de18425d01eb1153961cf898168a41dae9ff4"
+    },
+    {
+      "id": "N046",
+      "title": "【广播纪元8年，地日拉格朗日点】",
+      "file": "N046.txt",
+      "paragraphCount": 77,
+      "sources": [
+        "OEBPS/Text/santi3_0012.xhtml"
+      ],
+      "sha256": "a312ea27203f25e31962581fd4fdd221512e8517db026bbeb551cdad769bcacd"
+    },
+    {
+      "id": "N047",
+      "title": "第四部掩体纪元11年，掩体世界",
+      "file": "N047.txt",
+      "paragraphCount": 122,
+      "sources": [
+        "OEBPS/Text/santi3_0014.xhtml"
+      ],
+      "sha256": "c301a86a9cc7358681714c0d5b6005a159f2648e1ef5ee846d438f6e872ac456"
+    },
+    {
+      "id": "N048",
+      "title": "【掩体纪元11年，光速二号】",
+      "file": "N048.txt",
+      "paragraphCount": 43,
+      "sources": [
+        "OEBPS/Text/santi3_0014.xhtml"
+      ],
+      "sha256": "509fb1008f50d07ccabf077ed21a383507ed7b325dce2c816f3956e9cd95d5e7"
+    },
+    {
+      "id": "N049",
+      "title": "【掩体纪元11年，星环城】",
+      "file": "N049.txt",
+      "paragraphCount": 113,
+      "sources": [
+        "OEBPS/Text/santi3_0014.xhtml"
+      ],
+      "sha256": "e4205c371505fc423acb44170c4374149d7b3fad7890af20913f2bd2f7ccc35d"
+    },
+    {
+      "id": "N050",
+      "title": "第五部掩体纪元67年，银河系猎户旋臂",
+      "file": "N050.txt",
+      "paragraphCount": 74,
+      "sources": [
+        "OEBPS/Text/santi3_0016.xhtml"
+      ],
+      "sha256": "7f15f1abf176f1cd95fe29aa4e9dfacc9cf501eb080e0b65ce6ad9658fd9710e"
+    },
+    {
+      "id": "N051",
+      "title": "【掩体纪元67年，“星环”号】",
+      "file": "N051.txt",
+      "paragraphCount": 25,
+      "sources": [
+        "OEBPS/Text/santi3_0016.xhtml"
+      ],
+      "sha256": "aecedf26da8ec2579cb8a373c2706be404112b5546be84db906aa67a588c59b5"
+    },
+    {
+      "id": "N052",
+      "title": "【掩体纪元66年，太阳系外围】",
+      "file": "N052.txt",
+      "paragraphCount": 153,
+      "sources": [
+        "OEBPS/Text/santi3_0016.xhtml"
+      ],
+      "sha256": "3f9daacbcecc60d791bf34f8647c6bb52125bb03ca2490c94793f55762f1e7e0"
+    },
+    {
+      "id": "N053",
+      "title": "【掩体纪元67年，冥王星】",
+      "file": "N053.txt",
+      "paragraphCount": 130,
+      "sources": [
+        "OEBPS/Text/santi3_0016.xhtml"
+      ],
+      "sha256": "a8c5e2bc7ea05b42cbd6693a72bfb482e67aa800ed90da2fdeaa07b202edaf71"
+    },
+    {
+      "id": "N054",
+      "title": "【掩体纪元67年，二维太阳系】",
+      "file": "N054.txt",
+      "paragraphCount": 234,
+      "sources": [
+        "OEBPS/Text/santi3_0016.xhtml"
+      ],
+      "sha256": "c4c9d1d87bada22b3edcfdb8da1b1e513e71a7ed301510d594e6e136dbfdb01c"
+    },
+    {
+      "id": "N055",
+      "title": "第六部银河纪元409年，我们的星星",
+      "file": "N055.txt",
+      "paragraphCount": 330,
+      "sources": [
+        "OEBPS/Text/santi3_0018.xhtml"
+      ],
+      "sha256": "31a7633f19b68d37a04b7a32a207a9127bd3245e5fec6b6f35fcb48718a29787"
+    },
+    {
+      "id": "N056",
+      "title": "【时间开始后约170亿年，我们的星星】",
+      "file": "N056.txt",
+      "paragraphCount": 102,
+      "sources": [
+        "OEBPS/Text/santi3_0018.xhtml"
+      ],
+      "sha256": "b18282425fec2acdaf5402022eb9cda7508f30df2d6d5a748f0d0801b7a0f312"
+    },
+    {
+      "id": "N057",
+      "title": "【时间之外，我们的宇宙】",
+      "file": "N057.txt",
+      "paragraphCount": 135,
+      "sources": [
+        "OEBPS/Text/santi3_0018.xhtml"
+      ],
+      "sha256": "e4154f951a3cf89cc8181e52cea5e8a69182fd820daa756fc8dc9af7ae8cc0a9"
+    },
+    {
+      "id": "N058",
+      "title": "《时间之外的往事》（节选）责任的阶梯",
+      "file": "N058.txt",
+      "paragraphCount": 43,
+      "sources": [
+        "OEBPS/Text/santi3_0018.xhtml"
+      ],
+      "sha256": "80440a7501d60aae4704fbfb4b6837cb89b8d11b46444b29d4ae74c5246cebeb"
+    }
+  ],
+  "paragraphs": 4517,
+  "characters": 367750,
+  "fullText": "novel.txt",
+  "fullTextSha256": "fd3f5cf667f31b20d220de6b51325dd500267947a5fc97dbd630b285e5e0efad",
+  "images": [
+    {
+      "source": "OEBPS/Text/santi3_0001.xhtml",
+      "image": "../Images/qiu.png",
+      "alt": "qiu"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0003.xhtml",
+      "image": "../Images/qiu.png",
+      "alt": "qiu"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0005.xhtml",
+      "image": "../Images/qiu.png",
+      "alt": "qiu"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0007.xhtml",
+      "image": "../Images/qiu.png",
+      "alt": "qiu"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0008.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "1204年，十字军在第四次东征中曾占领并洗劫君士坦丁堡。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0008.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "奥斯曼土耳其苏丹穆罕默德二世的绰号，意为征服者。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0008.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "乌尔班，匈牙利工程师，曾到君士坦丁堡建造巨炮，但财政空虚的拜占庭当局连他微薄的工资都无法支付，他便投奔穆罕默德二世，为奥斯曼建造了一种巨型大炮，长逾八米，直径约七十五厘米，可发射半吨重的炮弹到一英里远的地方，史称乌尔班大炮，在对君士坦丁堡的攻城战中发挥了巨大的威力，是唯一能摧毁该城市坚固城墙的武器。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0008.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "美国国家航空航天局。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0008.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "即发动机的推力和发动机质量的比值。程心想象的飞船如果运载大量核弹，本身质量很大，推重比极低，不可能达到很高的速度。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0009.xhtml",
+      "image": "../Images/qiu.png",
+      "alt": "qiu"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0010.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "按照“青铜世纪”号在脱离太阳系时制订的法律，只有在舰上有人死亡时才能有新生儿出生。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0010.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "由于光速的限制，很难解释目前宇宙很高的均匀度，即宇宙的各个方向都具有相同的星系密度和微波背景温度，因为在大爆炸后，正常的膨胀过程中宇宙的各部分不可能相互作用取得平衡，因而出现了暴涨理论，认为宇宙在极短的时间内由很小的直径突然膨胀到目前的尺度。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0010.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "一种高密度的物质状态。由于泡利不相容原理禁止不同的组成粒子占据同一量子态，因此，减少体积就会迫使粒子进入高能态，从而产生巨大的简并压力。简并态物质包括电子简并态、中子简并态等。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0010.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "凌日干扰是指当观测者、观测目标和太阳处于同一条直线时，观测目标是以太阳为背景的，太阳是一个巨大的电磁发射源，这时观测者就会受到太阳发射的强烈干扰。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0010.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "见《三体II·黑暗森林》，一种超强度材料，其原子由基本粒子中的强互作用力联结。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0011.xhtml",
+      "image": "../Images/qiu.png",
+      "alt": "qiu"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0012.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "在行星与太阳构成的系统中，共有五个引力平衡的拉格朗日点，稳定的有两个，其中第二拉格朗日点位于行星与太阳连线上行星的外侧。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0012.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "这个试验的效果与水的硬度与清洁度有关，最好在小船后部加一个舵，否则船可能不走直线。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0012.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "当真空光速低于太阳系的逃逸速度时，太阳系的半径小于其史瓦西半径。史瓦西半径是任何具重力的质量之临界半径，当一个天体的半径小于史瓦西半径时，光无法从半径内的引力场逃脱，便会成为黑洞。史瓦西半径的公式，其实是从物体逃逸速度的公式衍生而来，它将物体的逃逸速度设为光速，配合万有引力常数及天体质量，便能得出其史瓦西半径。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0012.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "黑洞的边界称为视界。黑洞外的物质和辐射可以通过视界进入黑洞内部，而黑洞内的任何物质和辐射均不能穿出视界，因此又称视界为单向膜。视界并不是物质面，它表示外部观测者从物理意义上看，除了能知道它（指视界）所包含的总质量、总电荷等基本参量外，其他一无所知。球状黑洞的视界半径就是史瓦西半径。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0012.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "一种可以让人在其中呼吸的液体，可充满人体脏器和组织，在飞船进行大功率加速时可对人体起到保护作用，见《三体Ⅱ·黑暗森林》。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0012.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "天文单位。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0013.xhtml",
+      "image": "../Images/qiu.png",
+      "alt": "qiu"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0014.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "当引力源对物体产生力的作用时，由于物体上各点到引力源距离不等，受到引力大小不同，从而产生引力差，对物体产生撕扯效果，这种引力差就是潮汐力。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0015.xhtml",
+      "image": "../Images/qiu.png",
+      "alt": "qiu"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0016.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "以上内容见《三体》及《三体Ⅱ·黑暗森林》。"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0017.xhtml",
+      "image": "../Images/qiu.png",
+      "alt": "qiu"
+    },
+    {
+      "source": "OEBPS/Text/santi3_0018.xhtml",
+      "image": "../Images/AnnoIcon0.png",
+      "alt": "这让人想到暗物质。"
+    }
+  ],
+  "conversion": "EPUB spine order; all body text checked for loss; section and paragraph anchors added; no summarization."
+}
